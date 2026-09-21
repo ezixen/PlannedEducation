@@ -38,6 +38,7 @@ if (-not (Test-LocalPort 8000)) {
     Write-Host "Starting API (Port 8000) in new window..." -ForegroundColor Cyan
     $ApiLauncher = Join-Path $LauncherDir "start_api.ps1"
     Set-Content -Path $ApiLauncher -Encoding utf8 -Value @"
+`$env:DATABASE_URL="sqlite:///$($RepoRoot -replace '\\', '/')/plannededucation.db"
 `$env:DATABASE_URL="postgresql://postgres:postgres@localhost:5433/plannededucation"
 `$env:PLANNED_EDUCATION_ENV="development"
 `$env:ALLOW_DEV_AUTH="true"
