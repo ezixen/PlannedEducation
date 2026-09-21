@@ -5,23 +5,35 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
       "size_bytes": 15643
+    },
+    "src/plannededucation/api/ai_grading.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "43273ae474567e7386802519903d3468ec7a8d8b133089b7bc6c0ced26468a41",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
+      "sha256": "43273ae474567e7386802519903d3468ec7a8d8b133089b7bc6c0ced26468a41",
+      "size_bytes": 1921
     },
     "src/plannededucation/api/auth.py": {
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "5a7d56121c44cc2f24d8c38232d0c7cb98f7043203358e92b2b860a7bcb79882",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "5a7d56121c44cc2f24d8c38232d0c7cb98f7043203358e92b2b860a7bcb79882",
       "size_bytes": 812
     },
@@ -29,11 +41,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
       "size_bytes": 702
     },
@@ -41,11 +53,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "eb684cf5b0eb42572ca07cf1f479bebe1e48352321085a4cdac936d1929a9418",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "eb684cf5b0eb42572ca07cf1f479bebe1e48352321085a4cdac936d1929a9418",
       "size_bytes": 762
     },
@@ -53,11 +65,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "4ec2f0be86709c9720f029f67510e78532936986be1b5a4907305dcf8e5ac49d",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "4ec2f0be86709c9720f029f67510e78532936986be1b5a4907305dcf8e5ac49d",
       "size_bytes": 4354
     },
@@ -65,11 +77,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "9c7066235bc3411836ea17e7539aced1b83a8b8c590d9738231dd4b572680088",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "9c7066235bc3411836ea17e7539aced1b83a8b8c590d9738231dd4b572680088",
       "size_bytes": 3069
     },
@@ -77,11 +89,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "0ea8f8e0e3425f0693d6c10271fb5d52d965c026bb5b8d5514948ba94c05287f",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "0ea8f8e0e3425f0693d6c10271fb5d52d965c026bb5b8d5514948ba94c05287f",
       "size_bytes": 2964
     },
@@ -89,35 +101,47 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "e3cd8c2253bb2961ad0464f943617cc08956c7d61d0a0b688195d9c196f3f7a5",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "e3cd8c2253bb2961ad0464f943617cc08956c7d61d0a0b688195d9c196f3f7a5",
       "size_bytes": 1450
     },
     "src/plannededucation/api/seb_security.py": {
       "last_clean_command_key": "ed8ba179814eefc4",
-      "last_clean_sha256": "38bb9bc9160ad5f0295b6279c26c955a70871032be8f89422bdbe5b1efab39fd",
+      "last_clean_sha256": "0a86c2775fc745779ca17d37c3710c7e545d46bfa543df7c337ebd07fa5bbb5a",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
-      "sha256": "38bb9bc9160ad5f0295b6279c26c955a70871032be8f89422bdbe5b1efab39fd",
-      "size_bytes": 1494
+      "last_tested_utc": "2026-09-21T14:49:03Z",
+      "sha256": "0a86c2775fc745779ca17d37c3710c7e545d46bfa543df7c337ebd07fa5bbb5a",
+      "size_bytes": 1495
+    },
+    "tests/test_ai_grading.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "b8134213da475c411c799d25f3bf3defde812c008bae82c84ad65b229166f214",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
+      "sha256": "b8134213da475c411c799d25f3bf3defde812c008bae82c84ad65b229166f214",
+      "size_bytes": 1435
     },
     "tests/test_auth.py": {
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "907fff563a3b234777c008159ca4ff87a24568f29e026c200e49c192699ad81c",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "907fff563a3b234777c008159ca4ff87a24568f29e026c200e49c192699ad81c",
       "size_bytes": 24
     },
@@ -125,11 +149,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "18c5a0afe6faacd01d9a9ea44f6a70d2654f1e1f7f259d70245abbcdec8ad430",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "18c5a0afe6faacd01d9a9ea44f6a70d2654f1e1f7f259d70245abbcdec8ad430",
       "size_bytes": 2848
     },
@@ -137,11 +161,11 @@
       "last_clean_command_key": "ed8ba179814eefc4",
       "last_clean_sha256": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52",
       "last_clean_suite": "plannededucation-core",
-      "last_clean_utc": "2026-09-21T14:36:58Z",
+      "last_clean_utc": "2026-09-21T14:49:03Z",
       "last_command_key": "ed8ba179814eefc4",
       "last_result": "passed",
       "last_suite": "plannededucation-core",
-      "last_tested_utc": "2026-09-21T14:36:58Z",
+      "last_tested_utc": "2026-09-21T14:49:03Z",
       "sha256": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52",
       "size_bytes": 310
     }
@@ -451,6 +475,69 @@
       "started_utc": "2026-09-21T14:36:56Z",
       "suite": "plannededucation-core",
       "tracked_file_count": 12
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 4.108,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:47:42Z",
+      "git": {
+        "branch": "dev",
+        "commit": "5e1533738e5178965d71abc4a8c3aa8bc76f1a72",
+        "tracked_dirty": true
+      },
+      "id": "89e227aa19d4f4fa",
+      "result": "passed",
+      "stale_file_count_before_run": 3,
+      "stale_files_before_run": [
+        "src/plannededucation/api/ai_grading.py",
+        "src/plannededucation/api/seb_security.py",
+        "tests/test_ai_grading.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:47:38Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 14
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 4.098,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:49:03Z",
+      "git": {
+        "branch": "dev",
+        "commit": "5e1533738e5178965d71abc4a8c3aa8bc76f1a72",
+        "tracked_dirty": true
+      },
+      "id": "2c26ff59c3e2052e",
+      "result": "passed",
+      "stale_file_count_before_run": 2,
+      "stale_files_before_run": [
+        "src/plannededucation/api/ai_grading.py",
+        "tests/test_ai_grading.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:48:59Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 14
     }
   ],
   "schema_version": 1,
@@ -468,6 +555,7 @@
       "last_clean_dependency_hashes": {},
       "last_clean_file_hashes": {
         "scripts/testing/update_test_cache.py": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
+        "src/plannededucation/api/ai_grading.py": "43273ae474567e7386802519903d3468ec7a8d8b133089b7bc6c0ced26468a41",
         "src/plannededucation/api/auth.py": "5a7d56121c44cc2f24d8c38232d0c7cb98f7043203358e92b2b860a7bcb79882",
         "src/plannededucation/api/database.py": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
         "src/plannededucation/api/main.py": "eb684cf5b0eb42572ca07cf1f479bebe1e48352321085a4cdac936d1929a9418",
@@ -475,7 +563,8 @@
         "src/plannededucation/api/routes_auth.py": "9c7066235bc3411836ea17e7539aced1b83a8b8c590d9738231dd4b572680088",
         "src/plannededucation/api/routes_exam.py": "0ea8f8e0e3425f0693d6c10271fb5d52d965c026bb5b8d5514948ba94c05287f",
         "src/plannededucation/api/schemas.py": "e3cd8c2253bb2961ad0464f943617cc08956c7d61d0a0b688195d9c196f3f7a5",
-        "src/plannededucation/api/seb_security.py": "38bb9bc9160ad5f0295b6279c26c955a70871032be8f89422bdbe5b1efab39fd",
+        "src/plannededucation/api/seb_security.py": "0a86c2775fc745779ca17d37c3710c7e545d46bfa543df7c337ebd07fa5bbb5a",
+        "tests/test_ai_grading.py": "b8134213da475c411c799d25f3bf3defde812c008bae82c84ad65b229166f214",
         "tests/test_auth.py": "907fff563a3b234777c008159ca4ff87a24568f29e026c200e49c192699ad81c",
         "tests/test_exams.py": "18c5a0afe6faacd01d9a9ea44f6a70d2654f1e1f7f259d70245abbcdec8ad430",
         "tests/test_main.py": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52"
@@ -491,27 +580,25 @@
         ],
         "command_key": "ed8ba179814eefc4",
         "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
-        "duration_seconds": 2.828,
+        "duration_seconds": 4.098,
         "exit_code": 0,
-        "finished_utc": "2026-09-21T14:36:58Z",
+        "finished_utc": "2026-09-21T14:49:03Z",
         "git": {
           "branch": "dev",
-          "commit": "3ca536b27139ff25e77f92e44264676d33692d26",
+          "commit": "5e1533738e5178965d71abc4a8c3aa8bc76f1a72",
           "tracked_dirty": true
         },
-        "id": "628df28958651895",
+        "id": "2c26ff59c3e2052e",
         "result": "passed",
-        "stale_file_count_before_run": 4,
+        "stale_file_count_before_run": 2,
         "stale_files_before_run": [
-          "src/plannededucation/api/models.py",
-          "src/plannededucation/api/routes_exam.py",
-          "src/plannededucation/api/seb_security.py",
-          "tests/test_exams.py"
+          "src/plannededucation/api/ai_grading.py",
+          "tests/test_ai_grading.py"
         ],
         "stale_files_truncated": false,
-        "started_utc": "2026-09-21T14:36:56Z",
+        "started_utc": "2026-09-21T14:48:59Z",
         "suite": "plannededucation-core",
-        "tracked_file_count": 12
+        "tracked_file_count": 14
       },
       "last_run": {
         "cache_path": "artifacts/test_cache/source_test_results.json",
@@ -524,27 +611,25 @@
         ],
         "command_key": "ed8ba179814eefc4",
         "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
-        "duration_seconds": 2.828,
+        "duration_seconds": 4.098,
         "exit_code": 0,
-        "finished_utc": "2026-09-21T14:36:58Z",
+        "finished_utc": "2026-09-21T14:49:03Z",
         "git": {
           "branch": "dev",
-          "commit": "3ca536b27139ff25e77f92e44264676d33692d26",
+          "commit": "5e1533738e5178965d71abc4a8c3aa8bc76f1a72",
           "tracked_dirty": true
         },
-        "id": "628df28958651895",
+        "id": "2c26ff59c3e2052e",
         "result": "passed",
-        "stale_file_count_before_run": 4,
+        "stale_file_count_before_run": 2,
         "stale_files_before_run": [
-          "src/plannededucation/api/models.py",
-          "src/plannededucation/api/routes_exam.py",
-          "src/plannededucation/api/seb_security.py",
-          "tests/test_exams.py"
+          "src/plannededucation/api/ai_grading.py",
+          "tests/test_ai_grading.py"
         ],
         "stale_files_truncated": false,
-        "started_utc": "2026-09-21T14:36:56Z",
+        "started_utc": "2026-09-21T14:48:59Z",
         "suite": "plannededucation-core",
-        "tracked_file_count": 12
+        "tracked_file_count": 14
       }
     }
   },
@@ -563,5 +648,5 @@
     "scripts",
     "alembic"
   ],
-  "updated_utc": "2026-09-21T14:36:58Z"
+  "updated_utc": "2026-09-21T14:49:03Z"
 }
