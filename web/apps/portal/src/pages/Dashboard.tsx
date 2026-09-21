@@ -16,15 +16,27 @@ export function Dashboard() {
       <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
         
         {user.role === 'teacher' && (
-          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-            <h3>Manage Exams</h3>
-            <p>Create new exams, edit question banks, and configure SEB locks.</p>
-            <button 
-              onClick={() => navigate('/teacher-exams')} 
-              style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-              Create Exam
-            </button>
-          </div>
+          <>
+            <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+              <h3>Manage Exams</h3>
+              <p>Create new exams, edit question banks, and configure SEB locks.</p>
+              <button 
+                onClick={() => navigate('/teacher-exams')} 
+                style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+                Create Exam
+              </button>
+            </div>
+            
+            <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+              <h3>External AI Integrations</h3>
+              <p>Configure automated grading via our secure Anonymizer API.</p>
+              <button 
+                onClick={() => navigate('/ai-integrations')} 
+                style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: '#8b5cf6', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+                View AI API
+              </button>
+            </div>
+          </>
         )}
 
         {user.role === 'student' && (
