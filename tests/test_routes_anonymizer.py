@@ -27,7 +27,7 @@ def setup_anonymizer_data(db: Session):
         db.commit()
         db.refresh(exam)
         
-        q = models.Question(exam_id=exam.id, question_type="essay", text="What is water?", points=5)
+        q = models.Question(exam_id=exam.id, question_type="essay", text="What is water?", points=5, rubric="Must mention H2O")
         db.add(q)
         db.commit()
         db.refresh(q)

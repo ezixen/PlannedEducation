@@ -36,6 +36,7 @@ class QuestionBase(BaseModel):
     text: str
     options_json: Optional[str] = None
     correct_answer: Optional[str] = None
+    rubric: Optional[str] = None
     points: int = 1
 
 class QuestionCreate(QuestionBase):

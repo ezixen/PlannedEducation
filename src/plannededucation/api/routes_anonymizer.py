@@ -34,9 +34,11 @@ def get_anonymized_submissions(
         for ans in sub.answers:
             anon_answers.append({
                 "question_id": ans.question_id,
-                "question_text": ans.question.text,
+                "question_text": ans.generated_question_text or ans.question.text,
                 "student_response": ans.student_response,
-                "points_possible": ans.question.points
+                "points_possible": ans.question.points,
+                "correct_answer": ans.question.correct_answer,
+                "rubric": ans.question.rubric
             })
             
         anonymized_data.append({

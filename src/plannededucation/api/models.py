@@ -80,6 +80,7 @@ class Question(Base):
     text = Column(String, nullable=False)
     options_json = Column(String, nullable=True) # JSON array for multiple choice
     correct_answer = Column(String, nullable=True)
+    rubric = Column(Text, nullable=True) # Grading rubric for AI
     points = Column(Integer, default=1)
     
     exam = relationship("Exam", back_populates="questions")
