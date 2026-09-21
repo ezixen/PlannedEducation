@@ -13,8 +13,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=True) # Nullable for Google SSO users
-    google_id = Column(String, unique=True, index=True, nullable=True)
+    google_id = Column(String, unique=True, index=True, nullable=False)
     full_name = Column(String)
     role = Column(Enum(RoleEnum), default=RoleEnum.student, nullable=False)
     is_active = Column(Boolean, default=True)

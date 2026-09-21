@@ -7,12 +7,6 @@ class RoleEnum(str, Enum):
     teacher = "teacher"
     parent = "parent"
 
-class UserCreate(BaseModel):
-    email: EmailStr
-    password: str
-    full_name: str
-    role: RoleEnum
-
 class UserResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: int
