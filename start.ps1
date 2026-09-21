@@ -5,8 +5,7 @@ Start PlannedEducation local stack: API + Portal + Chrome Canary
 #>
 
 $ErrorActionPreference = "Stop"
-$RepoRoot = Split-Path -Parent $PSScriptRoot
-$RepoRoot = Split-Path -Parent $RepoRoot
+$RepoRoot = $PSScriptRoot
 Set-Location $RepoRoot
 
 $PortalUrl = "http://localhost:5173"
