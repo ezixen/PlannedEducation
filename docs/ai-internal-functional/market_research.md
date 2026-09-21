@@ -62,3 +62,4 @@ The individual components exist:
 3. **Cost Factor:** By making it open source, we bypass the heavy institutional licensing fees of Canvas, Respondus, and Gradescope, creating a massive impact for underfunded schools globally.
 
 **Recommendation:** We do not need to reinvent the wheel for the locking mechanism. We should study the source code of **Safe Exam Browser (SEB)** (or even fork/integrate it) to handle the deep OS-level locks, and focus our primary development on the AI grading, UI (Vite/React), and the inspirational Job Statistics features.
+

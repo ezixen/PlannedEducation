@@ -19,3 +19,4 @@ app.add_middleware(
 @app.get("/health")
 def health_check():
     return {"status": "ok", "message": "PlannedEducation API is running"}
+
