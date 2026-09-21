@@ -1,7 +1,24 @@
-# scripts/local/stop.ps1
+#!/usr/bin/env pwsh
+<#
+.SYNOPSIS
+Stop PlannedEducation local stack: API, Portal, and Chrome Canary
+#>
 
-Write-Host "Stopping PlannedEducation Local Environment..." -ForegroundColor Yellow
+Write-Host "Stopping PlannedEducation Local Stack..." -ForegroundColor Yellow
 
+# Kill Canary
+Write-Host "Killing Chrome Canary instances..." -ForegroundColor Cyan
+Get-WmiObject Win32_Process | Where-Object { $_.CommandLine -match "plannededucation-canary-profile" -and $_.Name -match "chrome" } | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
+
+# Kill terminals running our launchers
+Write-Host "Killing launcher terminals..." -ForegroundColor Cyan
+Get-WmiObject Win32_Process | Where-Object { ($_.CommandLine -match "start_api.ps1" -or $_.CommandLine -match "start_portal.ps1") -and $_.Name -match "pwsh" } | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
+
+# Kill by port
 function Kill-ProcessByPort {
     param([int]$Port)
     $connections = netstat -ano | findstr ":$Port"
@@ -22,4 +39,4 @@ function Kill-ProcessByPort {
 Kill-ProcessByPort 8000
 Kill-ProcessByPort 5173
 
-Write-Host "All processes stopped." -ForegroundColor Green
+Write-Host "Local stack fully stopped." -ForegroundColor Green
