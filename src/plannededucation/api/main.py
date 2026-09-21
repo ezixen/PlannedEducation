@@ -13,8 +13,8 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="PlannedEducation API",
-    description="Backend for the PlannedEducation app.",
+    title="Planned Education API",
+    description="Backend for the Planned Education app.",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -42,5 +42,5 @@ app.add_middleware(
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "message": "PlannedEducation API is running"}
+    return {"status": "ok", "message": "Planned Education API is running"}
 

@@ -1,14 +1,14 @@
-# PlannedEducation - Technical Implementation Plan
+# Planned Education - Technical Implementation Plan
 
 ## 1. Project Goal & Overview
-PlannedEducation aims to revolutionize test-taking and grading by providing a secure, open-source framework for schools. The system combines a secure kiosk test-taking environment (preventing cheating) with powerful, **privacy-first AI grading tools** to save teachers hours of work.
+Planned Education aims to revolutionize test-taking and grading by providing a secure, open-source framework for schools. The system combines a secure kiosk test-taking environment (preventing cheating) with powerful, **privacy-first AI grading tools** to save teachers hours of work.
 
 ## 2. Architecture & Tech Stack
 - **Frontend / Client UI**: React + TypeScript + Vite.
   - Follows WIWM conventions: Hamburger menu style, explicit theming support (`theme_mode`, `skin_id`), and nested submenus within Settings.
   - **Offline Capability**: Utilizes PWA Service Workers and IndexedDB to cache tests locally. If the network drops, progress is saved locally and synced once reconnected.
 - **Desktop Executable (Anti-Cheating Kiosk)**: **Safe Exam Browser (SEB)**. 
-  - We integrate with the open-source SEB ecosystem. PlannedEducation generates `.seb` configuration files to launch the SEB client securely on PC/Mac.
+  - We integrate with the open-source SEB ecosystem. Planned Education generates `.seb` configuration files to launch the SEB client securely on PC/Mac.
 - **Backend / API**: Python FastAPI (`src/plannededucation/api`).
 - **Database**: Cloud SQL / PostgreSQL (via SQLAlchemy) to handle relational data (Users, Tests, Grades).
 
@@ -42,7 +42,7 @@ All AI features utilize a free external AI API. **CRITICAL: AI processing is 100
 3. **Parent/Guardian Portal**: A secure, **read-only** login for parents to track their child's test scores and teacher feedback.
 
 ### Zero-Cost Account Management (Google SSO Only)
-To ensure the platform remains 100% free to operate and avoids costly email-sending APIs, **PlannedEducation does not send emails**.
+To ensure the platform remains 100% free to operate and avoids costly email-sending APIs, **Planned Education does not send emails**.
 - **Authentication**: Google SSO is the **ONLY** supported login method. We do not store passwords, meaning there are zero password reset liabilities or costs. Google natively handles account security and lost passwords.
 - **2FA (TOTP)**: If teachers enable secondary 2FA (via Google Authenticator/Authy) on their portal, they are given **static Backup Codes**. Because there is no email system, if they lose their phone *and* their backup codes, they cannot recover the 2FA lock. This is explicitly warned during setup.
 

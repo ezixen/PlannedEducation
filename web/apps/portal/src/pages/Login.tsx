@@ -39,7 +39,7 @@ export function Login() {
   return (
     <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)' }}>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
-        <h1 style={{ marginBottom: '1rem' }}>PlannedEducation</h1>
+        <h1 style={{ marginBottom: '1rem' }}>Planned Education</h1>
         <p style={{ marginBottom: '2rem', color: 'gray' }}>Sign in to continue</p>
 
         {error && <div style={{ color: 'red', marginBottom: '1rem', padding: '0.5rem', backgroundColor: '#fee2e2', borderRadius: '4px' }}>{error}</div>}

@@ -1,10 +1,10 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Stop PlannedEducation local stack: API, Portal, and Chrome Canary
+Stop Planned Education local stack: API, Portal, and Chrome Canary
 #>
 
-Write-Host "Stopping PlannedEducation Local Stack..." -ForegroundColor Yellow
+Write-Host "Stopping Planned Education Local Stack..." -ForegroundColor Yellow
 
 # Kill Canary
 Write-Host "Killing Chrome Canary instances..." -ForegroundColor Cyan

@@ -1,6 +1,6 @@
-# PlannedEducation 🎓
+# Planned Education 🎓
 
-PlannedEducation is a modern, open-source teacher's aid, grading software, and secure test-taking environment. It is designed to provide teachers with powerful tools to manage classes and automate grading without compromising student privacy or test integrity.
+Planned Education is a modern, open-source teacher's aid, grading software, and secure test-taking environment. It is designed to provide teachers with powerful tools to manage classes and automate grading without compromising student privacy or test integrity.
 
 ## 🌟 Main Goals
 

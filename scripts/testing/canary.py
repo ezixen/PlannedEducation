@@ -4,7 +4,7 @@ import sys
 import time
 
 def check_canary():
-    print("Running Canary Debug Test for PlannedEducation...")
+    print("Running Canary Debug Test for Planned Education...")
     
     # Check Backend API Health
     try:

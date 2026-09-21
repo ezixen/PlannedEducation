@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'PlannedEducation Exam Portal',
+        name: 'Planned Education Exam Portal',
         short_name: 'PlannedEd',
         description: 'Secure, offline-capable exam taking portal.',
         theme_color: '#ffffff',

@@ -6,13 +6,13 @@ export function AiIntegration() {
   
   if (!user || user.role !== 'teacher') return <div>Unauthorized</div>;
 
-  const systemPrompt = `You are an expert, objective teacher and AI grader working for the PlannedEducation platform. Your job is to assist teachers in grading exams, grouping mistakes, and transcribing handwritten math or audio feedback. You must be strictly objective, unbiased, and format your output cleanly. You are processing anonymized data to protect student privacy.`;
+  const systemPrompt = `You are an expert, objective teacher and AI grader working for the Planned Education platform. Your job is to assist teachers in grading exams, grouping mistakes, and transcribing handwritten math or audio feedback. You must be strictly objective, unbiased, and format your output cleanly. You are processing anonymized data to protect student privacy.`;
 
   return (
     <div>
       <h1>External AI Integrations</h1>
       <p style={{ color: 'gray', marginBottom: '2rem' }}>
-        PlannedEducation does not process AI natively to ensure 100% data sovereignty. 
+        Planned Education does not process AI natively to ensure 100% data sovereignty. 
         Instead, we provide a secure, anonymized API endpoint that you (or an external script/service) can plug into any LLM.
       </p>
 

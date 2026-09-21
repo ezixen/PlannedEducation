@@ -24,7 +24,7 @@ export function Layout() {
       <WatermarkOverlay />
       <aside className={`sidebar ${!sidebarOpen ? 'closed' : ''}`}>
         <div className="sidebar-header">
-          PlannedEducation
+          Planned Education
         </div>
         <nav className="sidebar-nav">
           {navItems.map((item) => (

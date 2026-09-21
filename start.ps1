@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Start the PlannedEducation local stack: API + Portal + visible Chrome Canary
+Start the Planned Education local stack: API + Portal + visible Chrome Canary
 #>
 
 $ErrorActionPreference = "Stop"
