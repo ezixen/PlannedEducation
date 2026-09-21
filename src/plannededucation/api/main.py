@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
-from . import models, routes_auth, routes_exam
+from . import models, routes_auth, routes_exam, routes_chat
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -14,6 +14,7 @@ app = FastAPI(
 
 app.include_router(routes_auth.router)
 app.include_router(routes_exam.router)
+app.include_router(routes_chat.router)
 
 # Allow CORS for local development
 app.add_middleware(

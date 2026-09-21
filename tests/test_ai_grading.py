@@ -37,3 +37,4 @@ def test_group_common_mistakes(mock_generate):
     
     mock_generate.assert_called_once()
     assert "Group 1:" in result
+

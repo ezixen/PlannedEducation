@@ -55,3 +55,4 @@ def group_common_mistakes(answers_batch: list[str]) -> str:
         return response.text
     except Exception as e:
         return f"AI Grouping failed: {str(e)}"
+
