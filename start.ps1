@@ -47,7 +47,7 @@ if (-not (Test-LocalPort 5173)) {
     Set-Content -Path $PortalLauncher -Value @"
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
-npm run dev
+npm.cmd run dev
 "@
     Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`""
 } else {
