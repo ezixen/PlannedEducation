@@ -2,3 +2,4 @@ test_plannededucation.db
 *.log
 agents.md
 AGENTS.md
+__pycache__/
