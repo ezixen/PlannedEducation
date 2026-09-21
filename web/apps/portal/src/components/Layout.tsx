@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, Moon, Sun, Home, Settings, GraduationCap, LogOut } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuth } from '../contexts/AuthContext';
+import { WatermarkOverlay } from './WatermarkOverlay';
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -20,6 +21,7 @@ export function Layout() {
 
   return (
     <div className="app-container">
+      <WatermarkOverlay />
       <aside className={`sidebar ${!sidebarOpen ? 'closed' : ''}`}>
         <div className="sidebar-header">
           PlannedEducation
