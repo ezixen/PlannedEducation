@@ -1,19 +1,41 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { useTheme } from '../contexts/ThemeContext';
+import type { ThemeColor, ThemeRadius } from '../contexts/ThemeContext';
 import { apiClient } from '../api';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
   padding: '0.5rem',
   marginTop: '0.25rem',
-  borderRadius: '4px',
+  borderRadius: 'var(--radius-sm, 4px)',
   border: '1px solid var(--border-color)',
   backgroundColor: 'var(--bg-color)',
   color: 'var(--text-color)',
 };
 
+const THEME_OPTIONS: { value: ThemeColor; label: string }[] = [
+  { value: 'skyward', label: 'Skyward' },
+  { value: 'carbon_cyan', label: 'Carbon Cyan' },
+  { value: 'enterprise_blue', label: 'Enterprise Blue' },
+  { value: 'blush_silver', label: 'Blush Silver' },
+  { value: 'matrix_green', label: 'Matrix Green' },
+  { value: 'black_orange', label: 'Black Orange' },
+  { value: 'sunset_cabin', label: 'Sunset Cabin' },
+  { value: 'aurora_night', label: 'Aurora Night' },
+  { value: 'comic_stage', label: 'Comic Stage' },
+  { value: 'ocean_calm', label: 'Ocean Calm' },
+];
+
+const RADIUS_OPTIONS: { value: ThemeRadius; label: string }[] = [
+  { value: 'square', label: 'Square Edges' },
+  { value: 'soft', label: 'Soft Edges' },
+  { value: 'round', label: 'Round Edges' },
+];
+
 export function Settings() {
   const { user, refreshUser } = useAuth();
+  const { color, setColor, radius, setRadius } = useTheme();
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -53,10 +75,8 @@ export function Settings() {
     setLoading(true);
     try {
       await apiClient.put('/auth/settings', payload);
-      // Refresh the auth context so the navbar/header updates
       await refreshUser?.();
       setNewPassword('');
-
       setConfirmNewPassword('');
       setMessage({ text: 'Profile updated successfully!', ok: true });
     } catch (err: any) {
@@ -76,8 +96,44 @@ export function Settings() {
 
       <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
+        {/* Appearance section */}
+        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+          <h3>Appearance</h3>
+          <p style={{ color: 'gray', fontSize: '0.9rem', marginBottom: '1rem' }}>
+            Customize your app theme and UI style.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
+            <label>
+              Theme Color
+              <select
+                value={color}
+                onChange={e => setColor(e.target.value as ThemeColor)}
+                style={inputStyle}
+              >
+                {THEME_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Border Style
+              <select
+                value={radius}
+                onChange={e => setRadius(e.target.value as ThemeRadius)}
+                style={inputStyle}
+              >
+                {RADIUS_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </div>
+
         {/* Profile section */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
           <h3>Account Profile</h3>
           <p style={{ color: 'gray', fontSize: '0.9rem', marginBottom: '1rem' }}>
             Your UUID (<code>{user?.id}</code>) cannot be changed.

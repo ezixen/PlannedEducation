@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Menu, Moon, Sun, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { Menu, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const { theme, toggleTheme } = useTheme();
   const { logout } = useAuth();
   const location = useLocation();
 
@@ -55,12 +53,6 @@ export function Layout() {
           <button onClick={toggleSidebar} className="icon-btn" aria-label="Toggle Menu">
             <Menu size={24} />
           </button>
-          
-          <div style={{ marginLeft: 'auto' }}>
-            <button onClick={toggleTheme} className="icon-btn" aria-label="Toggle Theme">
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </div>
         </header>
 
         <div className="page-content">

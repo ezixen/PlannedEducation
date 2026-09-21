@@ -1,36 +1,37 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type ThemeMode = 'light' | 'dark';
+export type ThemeRadius = 'square' | 'soft' | 'round';
+export type ThemeColor = 'skyward' | 'carbon_cyan' | 'enterprise_blue' | 'blush_silver' | 'matrix_green' | 'black_orange' | 'sunset_cabin' | 'aurora_night' | 'comic_stage' | 'ocean_calm';
 
 interface ThemeContextType {
-  theme: ThemeMode;
-  toggleTheme: () => void;
+  radius: ThemeRadius;
+  setRadius: (r: ThemeRadius) => void;
+  color: ThemeColor;
+  setColor: (c: ThemeColor) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem('theme_mode');
-    return (saved === 'dark' || saved === 'light') ? saved : 'light';
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [radius, setRadius] = useState<ThemeRadius>(() => {
+    return (localStorage.getItem('pe_theme_radius') as ThemeRadius) || 'soft';
+  });
+  const [color, setColor] = useState<ThemeColor>(() => {
+    return (localStorage.getItem('pe_theme_color') as ThemeColor) || 'skyward';
   });
 
   useEffect(() => {
-    localStorage.setItem('theme_mode', theme);
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
+    localStorage.setItem('pe_theme_radius', radius);
+    document.documentElement.setAttribute('data-radius', radius);
+  }, [radius]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  useEffect(() => {
+    localStorage.setItem('pe_theme_color', color);
+    document.documentElement.setAttribute('data-theme', color);
+  }, [color]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ radius, setRadius, color, setColor }}>
       {children}
     </ThemeContext.Provider>
   );

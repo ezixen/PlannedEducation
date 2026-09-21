@@ -1,28 +1,151 @@
 :root {
-  --bg-color: #f3f4f6;
-  --text-color: #111827;
+  --bg-color: #e8f4fb;
+  --bg-secondary: #f7fbfe;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
   --border-color: #e5e7eb;
-  --primary-color: #2563eb;
-  --hover-color: #f3f4f6;
+  --primary-color: #1b6ca8;
+  --text-color: #17324d;
+  --hover-color: #d8ecf8;
+  --text-muted: #4d6b82;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 }
 
-html.dark {
-  --bg-color: #111827;
-  --text-color: #f9fafb;
-  --sidebar-bg: #1f2937;
-  --header-bg: #1f2937;
-  --border-color: #374151;
-  --primary-color: #3b82f6;
-  --hover-color: #374151;
+:root[data-theme="skyward"] {
+  --bg-color: #e8f4fb;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #1b6ca8;
+  --primary-color: #1b6ca8;
+  --text-color: #17324d;
+  --text-muted: #4d6b82;
+  --hover-color: #d8ecf8;
+}
+
+:root[data-theme="carbon_cyan"] {
+  --bg-color: #e6f7fa;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #0891a8;
+  --primary-color: #0891a8;
+  --text-color: #0a1c22;
+  --text-muted: #3d6570;
+  --hover-color: #c9f0f5;
+}
+
+:root[data-theme="enterprise_blue"] {
+  --bg-color: #e8f1fb;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #1a7fd4;
+  --primary-color: #1a7fd4;
+  --text-color: #0c1e36;
+  --text-muted: #3d5a78;
+  --hover-color: #d1e5f8;
+}
+
+:root[data-theme="blush_silver"] {
+  --bg-color: #fff0f5;
+  --sidebar-bg: #fffcfe;
+  --header-bg: #fffcfe;
+  --border-color: #d4538a;
+  --primary-color: #d4538a;
+  --text-color: #4a2040;
+  --text-muted: #8a4f72;
+  --hover-color: #fce6ee;
+}
+
+:root[data-theme="matrix_green"] {
+  --bg-color: #e8f8ec;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #1a8f3c;
+  --primary-color: #1a8f3c;
+  --text-color: #0a2814;
+  --text-muted: #3d6b4a;
+  --hover-color: #c9ebd3;
+}
+
+:root[data-theme="black_orange"] {
+  --bg-color: #fff4eb;
+  --sidebar-bg: #fffdfa;
+  --header-bg: #fffdfa;
+  --border-color: #d46500;
+  --primary-color: #d46500;
+  --text-color: #2a1608;
+  --text-muted: #7a4a28;
+  --hover-color: #fae4cf;
+}
+
+:root[data-theme="sunset_cabin"] {
+  --bg-color: #f8f0ff;
+  --sidebar-bg: #fcf8ff;
+  --header-bg: #fcf8ff;
+  --border-color: #c084fc;
+  --primary-color: #e85d4c;
+  --text-color: #2e1a3a;
+  --text-muted: #7a5588;
+  --hover-color: #f0e6fa;
+}
+
+:root[data-theme="aurora_night"] {
+  --bg-color: #e7f7f2;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #0f8a6a;
+  --primary-color: #0f8a6a;
+  --text-color: #14352f;
+  --text-muted: #457066;
+  --hover-color: #d1efe7;
+}
+
+:root[data-theme="comic_stage"] {
+  --bg-color: #fff9c4;
+  --sidebar-bg: #fffde6;
+  --header-bg: #fffde6;
+  --border-color: #26a69a;
+  --primary-color: #26a69a;
+  --text-color: #1a3d36;
+  --text-muted: #5a7a6a;
+  --hover-color: #fff4a3;
+}
+
+:root[data-theme="ocean_calm"] {
+  --bg-color: #e4f2f4;
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --border-color: #087e8b;
+  --primary-color: #087e8b;
+  --text-color: #12343c;
+  --text-muted: #456870;
+  --hover-color: #cbe9ec;
+}
+
+:root[data-radius="square"] {
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+}
+:root[data-radius="soft"] {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+:root[data-radius="round"] {
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-container {
@@ -37,7 +160,7 @@ body {
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .sidebar.closed {
@@ -67,7 +190,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
+  border-radius: var(--radius-md);
   color: var(--text-color);
   text-decoration: none;
   transition: background-color 0.2s;
@@ -93,6 +216,7 @@ body {
   align-items: center;
   padding: 0 1rem;
   gap: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .icon-btn {
@@ -101,7 +225,7 @@ body {
   color: var(--text-color);
   cursor: pointer;
   padding: 0.5rem;
-  border-radius: 0.375rem;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,4 +239,19 @@ body {
   padding: 2rem;
   flex: 1;
   overflow-y: auto;
+}
+
+button {
+  border-radius: var(--radius-md);
+}
+input, select, textarea {
+  border-radius: var(--radius-md);
+}
+
+.card {
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
