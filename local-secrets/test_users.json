@@ -1,0 +1,20 @@
+[
+  {
+    "email": "student@plannededucation.local",
+    "password": "password123",
+    "role": "student",
+    "name": "Test Student"
+  },
+  {
+    "email": "teacher@plannededucation.local",
+    "password": "password123",
+    "role": "teacher",
+    "name": "Test Teacher"
+  },
+  {
+    "email": "parent@plannededucation.local",
+    "password": "password123",
+    "role": "parent",
+    "name": "Test Parent"
+  }
+]

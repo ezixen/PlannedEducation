@@ -13,7 +13,8 @@ export interface User {
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (googleToken: string, role?: string) => Promise<void>;
+  login: (googleToken: string) => Promise<void>;
+  loginWithPassword: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -44,15 +45,35 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     fetchUser();
   }, []);
 
-  const login = async (googleToken: string, role?: string) => {
+  const login = async (googleToken: string) => {
     try {
-      const payload = { token: googleToken, role: role };
+      const payload = { token: googleToken };
       const response = await apiClient.post('/auth/google', payload);
       localStorage.setItem('access_token', response.data.access_token);
-      await fetchUser(); // Reload user data
+      await fetchUser();
     } catch (error) {
       console.error("Login failed", error);
       throw error;
+    }
+  };
+
+  const loginWithPassword = async (email: string, password: string) => {
+    try {
+      // Must use application/x-www-form-urlencoded for OAuth2PasswordRequestForm
+      const formData = new URLSearchParams();
+      formData.append('username', email);
+      formData.append('password', password);
+
+      const response = await apiClient.post('/auth/token', formData, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+      localStorage.setItem('access_token', response.data.access_token);
+      await fetchUser();
+    } catch (error: any) {
+      console.error("Local login failed", error);
+      throw new Error(error.response?.data?.detail || "Local login failed");
     }
   };
 
@@ -62,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, loginWithPassword, logout }}>
       {children}
     </AuthContext.Provider>
   );
