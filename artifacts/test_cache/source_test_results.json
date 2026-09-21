@@ -1,0 +1,423 @@
+{
+  "dependency_hashes": {},
+  "files": {
+    "scripts/testing/update_test_cache.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
+      "size_bytes": 15643
+    },
+    "src/plannededucation/api/auth.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "e302fa740cb6134cad7e74c7fe521f40a60ae127bcb92c42659f9a16e23ea5cc",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "e302fa740cb6134cad7e74c7fe521f40a60ae127bcb92c42659f9a16e23ea5cc",
+      "size_bytes": 1005
+    },
+    "src/plannededucation/api/database.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
+      "size_bytes": 702
+    },
+    "src/plannededucation/api/main.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "2c2d631912fd7128415193d41dfcd1577673495c38bce09a704713479507026b",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "2c2d631912fd7128415193d41dfcd1577673495c38bce09a704713479507026b",
+      "size_bytes": 710
+    },
+    "src/plannededucation/api/models.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "c1d42d9ec317c43c7fd0f1410032403bebacc45ac4a21d344b17a4781d9287bb",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "c1d42d9ec317c43c7fd0f1410032403bebacc45ac4a21d344b17a4781d9287bb",
+      "size_bytes": 2210
+    },
+    "src/plannededucation/api/routes_auth.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "dbb2f1263d2cbfba34ac2890b6467c7b1cba795dbac3c324c7fbbc876731f19f",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "dbb2f1263d2cbfba34ac2890b6467c7b1cba795dbac3c324c7fbbc876731f19f",
+      "size_bytes": 4522
+    },
+    "src/plannededucation/api/schemas.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "695a79bfd5476a3c233122fb5f01888ca7155c4eb9346d1f98d810f2ba5c83ff",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "695a79bfd5476a3c233122fb5f01888ca7155c4eb9346d1f98d810f2ba5c83ff",
+      "size_bytes": 770
+    },
+    "tests/test_auth.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "a283197740028006e02a6dbb59f1494320a516f42ffacaeadee6278b1c6d1336",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "a283197740028006e02a6dbb59f1494320a516f42ffacaeadee6278b1c6d1336",
+      "size_bytes": 1076
+    },
+    "tests/test_main.py": {
+      "last_clean_command_key": "ed8ba179814eefc4",
+      "last_clean_sha256": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52",
+      "last_clean_suite": "plannededucation-core",
+      "last_clean_utc": "2026-09-21T14:24:19Z",
+      "last_command_key": "ed8ba179814eefc4",
+      "last_result": "passed",
+      "last_suite": "plannededucation-core",
+      "last_tested_utc": "2026-09-21T14:24:19Z",
+      "sha256": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52",
+      "size_bytes": 310
+    }
+  },
+  "runs": [
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests/test_main.py",
+        "-q"
+      ],
+      "command_key": "51d58e3df9ee4942",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests/test_main.py -q",
+      "duration_seconds": 3.709,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:00:59Z",
+      "git": {
+        "branch": "dev",
+        "commit": "39ffa083c5c2ca13080a748b837570357c7b7dbd",
+        "tracked_dirty": true
+      },
+      "id": "5347d86537ec19b9",
+      "result": "passed",
+      "stale_file_count_before_run": 5,
+      "stale_files_before_run": [
+        "scripts/testing/update_test_cache.py",
+        "src/plannededucation/api/database.py",
+        "src/plannededucation/api/main.py",
+        "src/plannededucation/api/models.py",
+        "tests/test_main.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:00:55Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 5
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 3.76,
+      "exit_code": 1,
+      "finished_utc": "2026-09-21T14:01:44Z",
+      "git": {
+        "branch": "dev",
+        "commit": "39ffa083c5c2ca13080a748b837570357c7b7dbd",
+        "tracked_dirty": true
+      },
+      "id": "c423ac3ac860f09c",
+      "result": "failed",
+      "stale_file_count_before_run": 5,
+      "stale_files_before_run": [
+        "src/plannededucation/api/auth.py",
+        "src/plannededucation/api/main.py",
+        "src/plannededucation/api/routes_auth.py",
+        "src/plannededucation/api/schemas.py",
+        "tests/test_auth.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:01:41Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 9
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 2.402,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:02:11Z",
+      "git": {
+        "branch": "dev",
+        "commit": "39ffa083c5c2ca13080a748b837570357c7b7dbd",
+        "tracked_dirty": true
+      },
+      "id": "5dc42797fdac4118",
+      "result": "passed",
+      "stale_file_count_before_run": 6,
+      "stale_files_before_run": [
+        "src/plannededucation/api/auth.py",
+        "src/plannededucation/api/main.py",
+        "src/plannededucation/api/models.py",
+        "src/plannededucation/api/routes_auth.py",
+        "src/plannededucation/api/schemas.py",
+        "tests/test_auth.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:02:08Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 9
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 3.32,
+      "exit_code": 1,
+      "finished_utc": "2026-09-21T14:19:18Z",
+      "git": {
+        "branch": "dev",
+        "commit": "e7700368ed8c369a0440eef742b3c4b21bc229c6",
+        "tracked_dirty": true
+      },
+      "id": "e4397263fa4be42b",
+      "result": "failed",
+      "stale_file_count_before_run": 6,
+      "stale_files_before_run": [
+        "src/plannededucation/api/auth.py",
+        "src/plannededucation/api/models.py",
+        "src/plannededucation/api/routes_auth.py",
+        "src/plannededucation/api/schemas.py",
+        "tests/test_auth.py",
+        "tests/test_main.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:19:14Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 9
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 2.595,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:19:28Z",
+      "git": {
+        "branch": "dev",
+        "commit": "e7700368ed8c369a0440eef742b3c4b21bc229c6",
+        "tracked_dirty": true
+      },
+      "id": "3264378797f2d179",
+      "result": "passed",
+      "stale_file_count_before_run": 6,
+      "stale_files_before_run": [
+        "src/plannededucation/api/auth.py",
+        "src/plannededucation/api/models.py",
+        "src/plannededucation/api/routes_auth.py",
+        "src/plannededucation/api/schemas.py",
+        "tests/test_auth.py",
+        "tests/test_main.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:19:26Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 9
+    },
+    {
+      "cache_path": "artifacts/test_cache/source_test_results.json",
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "duration_seconds": 2.759,
+      "exit_code": 0,
+      "finished_utc": "2026-09-21T14:24:19Z",
+      "git": {
+        "branch": "dev",
+        "commit": "2ca046d8fab82ea474bf28e11616bf26cc823307",
+        "tracked_dirty": true
+      },
+      "id": "6c9dde8f75306d9f",
+      "result": "passed",
+      "stale_file_count_before_run": 2,
+      "stale_files_before_run": [
+        "src/plannededucation/api/routes_auth.py",
+        "src/plannededucation/api/schemas.py"
+      ],
+      "stale_files_truncated": false,
+      "started_utc": "2026-09-21T14:24:16Z",
+      "suite": "plannededucation-core",
+      "tracked_file_count": 9
+    }
+  ],
+  "schema_version": 1,
+  "suites": {
+    "plannededucation-core": {
+      "command": [
+        "C:/.venv/Scripts/python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-q"
+      ],
+      "command_key": "ed8ba179814eefc4",
+      "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+      "last_clean_dependency_hashes": {},
+      "last_clean_file_hashes": {
+        "scripts/testing/update_test_cache.py": "f7c307d677238d140432648b17dbdc704a54ebe7cc2b8d9fbb67154935d9f096",
+        "src/plannededucation/api/auth.py": "e302fa740cb6134cad7e74c7fe521f40a60ae127bcb92c42659f9a16e23ea5cc",
+        "src/plannededucation/api/database.py": "1bd0d9a41eba544de239cdc2fb2cfab2071742028802aa34e4670d3143f3f744",
+        "src/plannededucation/api/main.py": "2c2d631912fd7128415193d41dfcd1577673495c38bce09a704713479507026b",
+        "src/plannededucation/api/models.py": "c1d42d9ec317c43c7fd0f1410032403bebacc45ac4a21d344b17a4781d9287bb",
+        "src/plannededucation/api/routes_auth.py": "dbb2f1263d2cbfba34ac2890b6467c7b1cba795dbac3c324c7fbbc876731f19f",
+        "src/plannededucation/api/schemas.py": "695a79bfd5476a3c233122fb5f01888ca7155c4eb9346d1f98d810f2ba5c83ff",
+        "tests/test_auth.py": "a283197740028006e02a6dbb59f1494320a516f42ffacaeadee6278b1c6d1336",
+        "tests/test_main.py": "33fdcb87a332a466d239a36854b95a788a8aaa8c10f60d97ff6d385bd7c7af52"
+      },
+      "last_clean_run": {
+        "cache_path": "artifacts/test_cache/source_test_results.json",
+        "command": [
+          "C:/.venv/Scripts/python.exe",
+          "-m",
+          "pytest",
+          "tests",
+          "-q"
+        ],
+        "command_key": "ed8ba179814eefc4",
+        "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+        "duration_seconds": 2.759,
+        "exit_code": 0,
+        "finished_utc": "2026-09-21T14:24:19Z",
+        "git": {
+          "branch": "dev",
+          "commit": "2ca046d8fab82ea474bf28e11616bf26cc823307",
+          "tracked_dirty": true
+        },
+        "id": "6c9dde8f75306d9f",
+        "result": "passed",
+        "stale_file_count_before_run": 2,
+        "stale_files_before_run": [
+          "src/plannededucation/api/routes_auth.py",
+          "src/plannededucation/api/schemas.py"
+        ],
+        "stale_files_truncated": false,
+        "started_utc": "2026-09-21T14:24:16Z",
+        "suite": "plannededucation-core",
+        "tracked_file_count": 9
+      },
+      "last_run": {
+        "cache_path": "artifacts/test_cache/source_test_results.json",
+        "command": [
+          "C:/.venv/Scripts/python.exe",
+          "-m",
+          "pytest",
+          "tests",
+          "-q"
+        ],
+        "command_key": "ed8ba179814eefc4",
+        "command_text": "C:/.venv/Scripts/python.exe -m pytest tests -q",
+        "duration_seconds": 2.759,
+        "exit_code": 0,
+        "finished_utc": "2026-09-21T14:24:19Z",
+        "git": {
+          "branch": "dev",
+          "commit": "2ca046d8fab82ea474bf28e11616bf26cc823307",
+          "tracked_dirty": true
+        },
+        "id": "6c9dde8f75306d9f",
+        "result": "passed",
+        "stale_file_count_before_run": 2,
+        "stale_files_before_run": [
+          "src/plannededucation/api/routes_auth.py",
+          "src/plannededucation/api/schemas.py"
+        ],
+        "stale_files_truncated": false,
+        "started_utc": "2026-09-21T14:24:16Z",
+        "suite": "plannededucation-core",
+        "tracked_file_count": 9
+      }
+    }
+  },
+  "tracked_config_files": [
+    "pyproject.toml",
+    "pytest.ini",
+    "setup.cfg",
+    "requirements.txt",
+    "requirements-dev.txt",
+    "uv.lock",
+    "poetry.lock"
+  ],
+  "tracked_source_dirs": [
+    "src",
+    "tests",
+    "scripts",
+    "alembic"
+  ],
+  "updated_utc": "2026-09-21T14:24:19Z"
+}

@@ -27,3 +27,7 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     email: Optional[str] = None
+
+class GoogleLogin(BaseModel):
+    token: str  # The ID token from Google frontend
+    role: Optional[RoleEnum] = None # Needed if signing up for the first time

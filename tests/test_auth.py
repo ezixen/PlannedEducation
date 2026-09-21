@@ -31,3 +31,4 @@ def test_signup_and_login():
     response = client.get("/auth/me", headers=headers)
     assert response.status_code == 200
     assert response.json()["email"] == "teacher@plannededucation.org"
+

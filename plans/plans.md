@@ -40,7 +40,11 @@ All AI features utilize a free external AI API. **CRITICAL: AI processing is 100
 1. **Student**: Test-taking interface inside SEB, and dashboard for upcoming tests.
 2. **Teacher**: Test creation, class groupings, secure chat monitoring, and AI grading dashboard.
 3. **Parent/Guardian Portal**: A secure, **read-only** login for parents to track their child's test scores and teacher feedback.
-*Note: There is NO Admin portal. The system is entirely self-managed by teachers to remain open-source. Administration relies on automated workflows (Lost password flows, TOTP 2FA).*
+
+### Automated Account Recovery (Zero Admin Workflow)
+Since there is no Admin portal, account recovery is 100% self-managed and automated.
+- **Password Reset**: If registered via email/password, a standard reset link is emailed using a free-tier transactional email API (e.g., SendGrid/Mailjet). However, the recommended and default path is **Google SSO**, where Google handles password security natively (free and highly secure).
+- **2FA (TOTP) Recovery**: When enabling 2FA, the user is given 5 static **Backup Codes**. If they lose their phone, they use a backup code. If they lose both, they can authenticate via a linked Google Account to bypass/reset 2FA, or click a 7-day delayed email reset link (delay prevents instant hacking).
 
 ## 7. Open Source Modular Extensions
 Teachers can share and download custom test modules or rubrics.
