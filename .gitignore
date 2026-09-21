@@ -4,3 +4,40 @@ agents.md
 AGENTS.md
 __pycache__/
 AGENTS.md
+# Secrets and Credentials
+local-secrets/
+secrets/
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+serviceAccountKey.json
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python Environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build and Artifacts
+artifacts/
+dist/
+build/
+*.egg-info/
+
+# OS/IDE
+.DS_Store
+.vscode/
+.idea/
