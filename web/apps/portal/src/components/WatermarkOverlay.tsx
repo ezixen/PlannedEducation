@@ -56,7 +56,7 @@ export function WatermarkOverlay() {
             whiteSpace: 'nowrap'
           }}
         >
-          {user.email} | {user.id}
+          Student ID: {user.id}
         </div>
       ))}
     </div>

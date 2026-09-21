@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from datetime import timedelta
 from jose import JWTError, jwt
@@ -32,25 +32,29 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 def read_users_me(current_user: models.User = Depends(get_current_user)):
     return current_user
 
+import os
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
-GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID" # Will be replaced via ENV
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 
 @router.post("/google", response_model=schemas.Token)
 def google_login(data: schemas.GoogleLogin, db: Session = Depends(database.get_db)):
     try:
-        if data.token == "dev-token-teacher":
+        allow_dev_auth = os.getenv("ALLOW_DEV_AUTH") == "true"
+        if allow_dev_auth and data.token == "dev-token-teacher":
             email = "teacher@plannededucation.local"
             google_id = "dev-123"
             name = "Test Teacher"
             if not data.role: data.role = "teacher"
-        elif data.token == "dev-token-student":
+        elif allow_dev_auth and data.token == "dev-token-student":
             email = "student@plannededucation.local"
             google_id = "dev-456"
             name = "Test Student"
             if not data.role: data.role = "student"
         else:
+            if not GOOGLE_CLIENT_ID:
+                raise HTTPException(status_code=503, detail="Google sign-in is not configured")
             # Validate the token with Google
             idinfo = id_token.verify_oauth2_token(data.token, requests.Request(), GOOGLE_CLIENT_ID)
             
@@ -62,14 +66,17 @@ def google_login(data: schemas.GoogleLogin, db: Session = Depends(database.get_d
         user = db.query(models.User).filter(models.User.email == email).first()
         if not user:
             # Create new user via Google
-            if not data.role:
-                raise HTTPException(status_code=400, detail="Role is required for first-time signup")
+            # Self-sign-up must never grant privileged teacher or parent roles.
+            # Those accounts need an invitation/provisioning flow, which has not
+            # been built yet.
+            if data.role not in (None, schemas.RoleEnum.student):
+                raise HTTPException(status_code=403, detail="Teacher and parent accounts must be provisioned by the school")
             
             user = models.User(
                 email=email,
                 google_id=google_id,
                 full_name=name,
-                role=data.role
+                role=schemas.RoleEnum.student
             )
             db.add(user)
             db.commit()

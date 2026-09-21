@@ -57,25 +57,58 @@ def get_user_from_token(token: str, db: Session) -> models.User:
 @router.websocket("/exam/{exam_id}")
 async def exam_chat_endpoint(
     websocket: WebSocket, 
-    exam_id: int, 
-    token: str = Query(...), 
+    exam_id: int
 ):
-    # Dependency injection doesn't work the same in WebSockets, we resolve DB manually
-    db = next(database.get_db())
-    user = get_user_from_token(token, db)
+    await websocket.accept()
     
-    if not user:
+    # Wait for the first message to be the auth token payload
+    try:
+        auth_data = await websocket.receive_text()
+        auth_json = json.loads(auth_data)
+        token = auth_json.get("token")
+        if not token:
+            await websocket.close(code=1008)
+            return
+    except Exception:
         await websocket.close(code=1008)
         return
         
-    await manager.connect(websocket, exam_id, user)
-    
+    db = next(database.get_db())
     try:
-        while True:
-            data = await websocket.receive_text()
-            # Broadcast the message to everyone in this exam's chat room (Teacher + Students)
-            await manager.broadcast_to_exam(data, exam_id, user.full_name, user.role)
-    except WebSocketDisconnect:
-        manager.disconnect(websocket, exam_id)
-        # Optional: broadcast that the user left
+        user = get_user_from_token(token, db)
+        if not user:
+            await websocket.close(code=1008)
+            return
+            
+        # Verify Authorization to join this exam room
+        exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
+        if not exam:
+            await websocket.close(code=1008)
+            return
+            
+        if user.role == "teacher" and exam.teacher_id != user.id:
+            await websocket.close(code=1008) # Unauthorized teacher
+            return
+            
+        if user.role == "student":
+            # Student must have an active submission to join chat
+            submission = db.query(models.ExamSubmission).filter(
+                models.ExamSubmission.exam_id == exam_id,
+                models.ExamSubmission.student_id == user.id
+            ).first()
+            if not submission:
+                await websocket.close(code=1008) # Student not taking this exam
+                return
+
+        await manager.connect(websocket, exam_id, user)
+        
+        try:
+            while True:
+                data = await websocket.receive_text()
+                # Broadcast the message to everyone in this exam's chat room (Teacher + Students)
+                await manager.broadcast_to_exam(data, exam_id, user.full_name, user.role)
+        except WebSocketDisconnect:
+            manager.disconnect(websocket, exam_id)
+    finally:
+        db.close()
 

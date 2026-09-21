@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Enum, ForeignKey, Text, Float
+from sqlalchemy import Column, Integer, String, Boolean, Enum, ForeignKey, Text, Float, DateTime
 from sqlalchemy.orm import relationship
 import enum
 from .database import Base
@@ -92,8 +92,10 @@ class ExamSubmission(Base):
     id = Column(Integer, primary_key=True, index=True)
     exam_id = Column(Integer, ForeignKey("exams.id"))
     student_id = Column(Integer, ForeignKey("users.id"))
-    started_at = Column(String) # ISO timestamp
-    completed_at = Column(String, nullable=True)
+    started_at = Column(DateTime)
+    completed_at = Column(DateTime, nullable=True)
+    score = Column(Float, nullable=True)
+    feedback = Column(Text, nullable=True)
     
     exam = relationship("Exam", back_populates="submissions")
     student = relationship("User")

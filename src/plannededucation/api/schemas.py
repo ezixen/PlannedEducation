@@ -47,6 +47,16 @@ class QuestionResponse(QuestionBase):
     id: int
     exam_id: int
 
+class StudentQuestionResponse(BaseModel):
+    """Question data safe to return before an exam begins."""
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    exam_id: int
+    question_type: QuestionTypeEnum
+    text: str
+    options_json: Optional[str] = None
+    points: int
+
 class ExamBase(BaseModel):
     title: str
     description: Optional[str] = None
@@ -61,3 +71,21 @@ class ExamResponse(ExamBase):
     id: int
     teacher_id: int
     questions: list[QuestionResponse] = []
+
+class StudentExamResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    title: str
+    description: Optional[str] = None
+    duration_minutes: int
+
+class AnswerSubmission(BaseModel):
+    question_id: int
+    response: str = ""
+
+class ExamSubmitRequest(BaseModel):
+    answers: list[AnswerSubmission]
+
+class AiGradeRequest(BaseModel):
+    feedback: str
+    score: Optional[float] = None

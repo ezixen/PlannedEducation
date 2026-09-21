@@ -16,9 +16,14 @@ export function SecureChat({ examId }: { examId: number }) {
     const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     // Remove protocol from API_URL
     const host = API_URL.replace(/^https?:\/\//, '');
-    const wsUrl = `${wsProtocol}//${host}/chat/exam/${examId}?token=${token}`;
+    const wsUrl = `${wsProtocol}//${host}/chat/exam/${examId}`;
 
     ws.current = new WebSocket(wsUrl);
+
+    ws.current.onopen = () => {
+      // Send token securely in first frame, not in URL
+      ws.current?.send(JSON.stringify({ token: token }));
+    };
 
     ws.current.onmessage = (event) => {
       const data = JSON.parse(event.data);

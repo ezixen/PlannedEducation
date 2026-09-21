@@ -64,16 +64,19 @@ def create_exam(
     db.refresh(db_exam)
     return db_exam
 
-@router.get("/", response_model=List[schemas.ExamResponse])
+@router.get("/")
 def get_exams(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user)
 ):
     if current_user.role == schemas.RoleEnum.teacher:
-        # Teachers see their own exams
-        return db.query(models.Exam).filter(models.Exam.teacher_id == current_user.id).all()
-    # Students would see exams assigned to them (for now return all for simplicity in MVP)
-    return db.query(models.Exam).all()
+        # Teachers see their own exams, full data
+        exams = db.query(models.Exam).filter(models.Exam.teacher_id == current_user.id).all()
+        return [schemas.ExamResponse.model_validate(e) for e in exams]
+    
+    # Students see exams (omitting questions and answers)
+    exams = db.query(models.Exam).all()
+    return [schemas.StudentExamResponse.model_validate(e) for e in exams]
 
 @router.post("/{exam_id}/questions", response_model=schemas.QuestionResponse)
 def create_question(
@@ -130,7 +133,7 @@ def start_exam(
     submission = models.ExamSubmission(
         exam_id=exam.id,
         student_id=current_user.id,
-        started_at=datetime.utcnow().isoformat()
+        started_at=datetime.utcnow()
     )
     db.add(submission)
     db.commit()
@@ -208,7 +211,7 @@ def submit_exam(
     if not submission or submission.completed_at:
         raise HTTPException(status_code=400, detail="Invalid submission state")
 
-    submission.completed_at = datetime.utcnow().isoformat()
+    submission.completed_at = datetime.utcnow()
 
     for item in answers:
         ans = db.query(models.Answer).filter(

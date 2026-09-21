@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Start PlannedEducation local stack: API + Portal + Chrome Canary
+Start the PlannedEducation local stack: API + Portal + visible Chrome Canary
 #>
 
 $ErrorActionPreference = "Stop"
@@ -9,11 +9,19 @@ $RepoRoot = $PSScriptRoot
 Set-Location $RepoRoot
 
 $PortalUrl = "http://localhost:5173"
-$ApiUrl = "http://localhost:8000"
 $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-canary-profile"
+$PythonExe = "C:\.venv\Scripts\python.exe"
+$NodeDirectory = "C:\Program Files\nodejs"
+$JwtSecret = "plannededucation-local-development-secret-only"
 
 if (-not (Test-Path $LauncherDir)) { New-Item -ItemType Directory -Path $LauncherDir | Out-Null }
+if (-not (Test-Path $PythonExe)) {
+    throw "Required project Python environment was not found at $PythonExe."
+}
+if (-not (Test-Path (Join-Path $RepoRoot "web\apps\portal\package.json"))) {
+    throw "Portal package.json was not found. Run this script from the repository root."
+}
 
 function Test-LocalPort([int]$Port) {
     $client = New-Object System.Net.Sockets.TcpClient
@@ -29,11 +37,15 @@ function Test-LocalPort([int]$Port) {
 if (-not (Test-LocalPort 8000)) {
     Write-Host "Starting API (Port 8000) in new window..." -ForegroundColor Cyan
     $ApiLauncher = Join-Path $LauncherDir "start_api.ps1"
-    Set-Content -Path $ApiLauncher -Value @"
-`$env:DATABASE_URL="sqlite:///./plannededucation.db"
+    Set-Content -Path $ApiLauncher -Encoding utf8 -Value @"
+`$env:DATABASE_URL="sqlite:///$($RepoRoot -replace '\\', '/')/plannededucation.db"
+`$env:PLANNED_EDUCATION_ENV="development"
+`$env:ALLOW_DEV_AUTH="true"
+`$env:JWT_SECRET_KEY="$JwtSecret"
+`$env:CORS_ORIGINS="$PortalUrl"
 Set-Location "$RepoRoot"
 Write-Host "Starting FastAPI Backend..." -ForegroundColor Green
-C:/.venv/Scripts/python.exe -m uvicorn src.plannededucation.api.main:app --reload --port 8000
+& "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8000
 "@
     Start-Process pwsh -ArgumentList "-NoExit","-File","`"$ApiLauncher`""
 } else {
@@ -43,17 +55,18 @@ C:/.venv/Scripts/python.exe -m uvicorn src.plannededucation.api.main:app --reloa
 # 2. Start Portal if not running
 if (-not (Test-LocalPort 5173)) {
     Write-Host "Starting Portal (Port 5173) in new window..." -ForegroundColor Cyan
-    $npmCmd = (Get-Command npm.cmd -ErrorAction SilentlyContinue).Source
-    if (-not $npmCmd) {
-        $npmCmd = "C:\Program Files\nodejs\npm.cmd"
+    $npmCmd = Join-Path $NodeDirectory "npm.cmd"
+    if (-not (Test-Path $npmCmd)) {
+        $npmCmd = (Get-Command npm.cmd -ErrorAction Stop).Source
     }
 
     $PortalLauncher = Join-Path $LauncherDir "start_portal.ps1"
-    Set-Content -Path $PortalLauncher -Value @"
-`$env:PATH = "C:\Program Files\nodejs;" + `$env:PATH
+    Set-Content -Path $PortalLauncher -Encoding utf8 -Value @"
+`$env:PATH = "$NodeDirectory;" + `$env:PATH
+`$env:VITE_API_URL="http://localhost:8000"
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
-& "$npmCmd" run dev
+& "$npmCmd" run dev -- --host 127.0.0.1 --port 5173
 "@
     Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`""
 } else {
@@ -80,9 +93,15 @@ if (-not (Test-Path $CanaryPath)) {
     $CanaryPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 }
 
-if (Test-Path $CanaryPath) {
-    Start-Process $CanaryPath -ArgumentList "--remote-debugging-port=9222", "--user-data-dir=`"$CanaryUserData`"", "--no-first-run", "--no-default-browser-check", "`"$PortalUrl/login`""
-    Write-Host "Stack is up! Services and browser running." -ForegroundColor Green
-} else {
-    Write-Host "Could not find Chrome. Services are running, please open $PortalUrl/login manually." -ForegroundColor Red
+if (-not (Test-Path $CanaryPath)) {
+    throw "Chrome Canary or Chrome was not found. Services are running at $PortalUrl/login."
 }
+
+Start-Process -FilePath $CanaryPath -ArgumentList @(
+    "--remote-debugging-port=9222",
+    "--user-data-dir=`"$CanaryUserData`"",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "`"$PortalUrl/login`""
+)
+Write-Host "Stack is up. Chrome Canary opened at $PortalUrl/login." -ForegroundColor Green

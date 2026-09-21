@@ -12,7 +12,7 @@ export function ParentDashboard() {
     
     const fetchProgress = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('access_token');
         const res = await fetch(`${API_URL}/parents/children-progress`, {
           headers: { Authorization: `Bearer ${token}` }
         });

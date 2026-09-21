@@ -1,29 +1,48 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { SecureChat } from '../components/SecureChat';
+import { API_URL } from '../api';
 
 export function TakeExam() {
   const { user } = useAuth();
+  const { id } = useParams<{ id: string }>();
   const [examData, setExamData] = useState<any>(null);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Mock fetching the randomized exam from /exams/{id}/start
-    setTimeout(() => {
-      setExamData({
-        title: 'Midterm Calculus',
-        questions: [
-          { question_id: 1, question_type: 'dynamic_math', text: 'Solve for x: 3x + 6 = 15', points: 10 },
-          { question_id: 2, question_type: 'multiple_choice', text: 'What is the derivative of x^2?', options: ['2x', 'x', 'x^2', '2'], points: 5 },
-          { question_id: 3, question_type: 'short_answer', text: 'Explain the fundamental theorem of calculus in your own words.', points: 15 }
-        ]
-      });
-    }, 1000);
-  }, []);
+    if (!id) return;
+    const startExam = async () => {
+      try {
+        const token = localStorage.getItem('access_token');
+        const res = await fetch(`${API_URL}/exams/${id}/start`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        if (!res.ok) {
+          const data = await res.json();
+          setError(data.detail || 'Failed to start exam');
+          return;
+        }
+        const data = await res.json();
+        setExamData(data); // data has { submission_id, questions: [] }
+      } catch (err: any) {
+        setError(err.message || 'Network error');
+      }
+    };
+    startExam();
+  }, [id]);
 
   if (!user || user.role !== 'student') return <div>Unauthorized</div>;
+
+  if (error) {
+    return <div style={{ color: 'red', textAlign: 'center', marginTop: '4rem' }}>{error}</div>;
+  }
 
   if (submitted) {
     return (
@@ -36,14 +55,36 @@ export function TakeExam() {
 
   if (!examData) return <div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading secure exam payload...</div>;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Mock POST to /exams/{id}/submit
-    setTimeout(() => {
+    
+    try {
+      const token = localStorage.getItem('access_token');
+      const payload = Object.entries(answers).map(([qId, resp]) => ({
+        question_id: parseInt(qId, 10),
+        response: resp
+      }));
+      
+      const res = await fetch(`${API_URL}/exams/${id}/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(payload) // ExamSubmitRequest expects list of answers directly? Wait, schema: ExamSubmitRequest is NOT used in the signature directly, it's `answers: list[dict]` but fastAPI expects list of objects! Oh wait, let's check routes_exam.py
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json();
+        setError(data.detail || 'Failed to submit exam');
+      }
+    } catch (err: any) {
+      setError(err.message || 'Network error');
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -51,7 +92,7 @@ export function TakeExam() {
       
       {/* Exam Content */}
       <div style={{ flex: 1, overflowY: 'auto', paddingRight: '1rem' }}>
-        <h1 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>{examData.title}</h1>
+        <h1 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Secure Exam Mode</h1>
         
         <form onSubmit={handleSubmit}>
           {examData.questions.map((q: any, idx: number) => (
@@ -79,7 +120,7 @@ export function TakeExam() {
                 </div>
               )}
 
-              {(q.question_type === 'short_answer' || q.question_type === 'dynamic_math') && (
+              {(q.question_type === 'essay' || q.question_type === 'dynamic_math') && (
                 <textarea 
                   rows={4}
                   style={{ width: '100%', padding: '0.75rem', borderRadius: '4px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', resize: 'vertical' }}
@@ -104,7 +145,7 @@ export function TakeExam() {
       <div style={{ width: '300px', borderLeft: '1px solid var(--border-color)', paddingLeft: '2rem' }}>
         <h3 style={{ marginBottom: '1rem' }}>Digital Hand Raise</h3>
         <p style={{ fontSize: '0.9rem', color: 'gray', marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
-        <SecureChat examId={1} />
+        <SecureChat examId={Number(id)} />
       </div>
 
     </div>

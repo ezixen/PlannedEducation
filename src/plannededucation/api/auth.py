@@ -1,10 +1,16 @@
 from datetime import datetime, timedelta, timezone
 from typing import Optional
-from jose import JWTError, jwt
-from passlib.context import CryptContext
+from jose import jwt
+import os
 
-# In a real app, load this from ENV. For now, hardcode for MVP testing.
-SECRET_KEY = "SUPER_SECRET_PLANNED_EDUCATION_KEY_REPLACE_IN_PROD"
+# Local development needs an explicit temporary key. Deployments must inject a
+# strong value through the environment instead of shipping a known JWT secret.
+SECRET_KEY = os.getenv("JWT_SECRET_KEY", "")
+if not SECRET_KEY:
+    if os.getenv("PLANNED_EDUCATION_ENV") == "development":
+        SECRET_KEY = "local-development-only-secret-do-not-deploy"
+    else:
+        raise RuntimeError("JWT_SECRET_KEY must be configured outside local development")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 120
 

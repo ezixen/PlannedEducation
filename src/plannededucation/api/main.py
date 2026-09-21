@@ -1,15 +1,22 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from . import models, routes_auth, routes_exam, routes_chat, routes_anonymizer, routes_parent
 
-# Create database tables
-Base.metadata.create_all(bind=engine)
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Create database tables
+    Base.metadata.create_all(bind=engine)
+    yield
 
 app = FastAPI(
     title="PlannedEducation API",
     description="Backend for the PlannedEducation app.",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 app.include_router(routes_auth.router)
@@ -18,10 +25,16 @@ app.include_router(routes_chat.router)
 app.include_router(routes_anonymizer.router)
 app.include_router(routes_parent.router)
 
-# Allow CORS for local development
+# CORS is deliberately explicit: credentialed requests cannot be safely served
+# to arbitrary origins.
+cors_origins = [
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+    if origin.strip()
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Restrict this in production
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
