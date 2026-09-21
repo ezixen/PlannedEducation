@@ -45,13 +45,32 @@ export function Login() {
           </small>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <GoogleLogin
             onSuccess={handleGoogleSuccess}
             onError={() => setError('Google Authentication Failed')}
             useOneTap
           />
         </div>
+
+        {window.location.hostname === 'localhost' && (
+          <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
+            <p style={{ color: 'gray', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Local Dev Bypass</p>
+            <button 
+              onClick={async () => {
+                try {
+                  await login(roleSelection === 'teacher' ? 'dev-token-teacher' : 'dev-token-student', roleSelection);
+                  navigate('/');
+                } catch (e) {
+                  setError('Dev login failed');
+                }
+              }}
+              style={{ padding: '0.5rem 1rem', background: 'var(--primary-color, #2563eb)', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+            >
+              Login as {roleSelection} (Dev)
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
