@@ -57,7 +57,7 @@ npm run dev
 
 # 3. Wait for services
 Write-Host "Waiting for services to become available..."
-$retries = 30
+$retries = 60
 while (-not (Test-LocalPort 8000) -or -not (Test-LocalPort 5173)) {
     Start-Sleep -Seconds 1
     $retries--
