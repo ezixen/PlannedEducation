@@ -52,3 +52,28 @@ def create_question(
     db.commit()
     db.refresh(db_question)
     return db_question
+
+from .seb_security import verify_seb_request
+
+@router.post("/{exam_id}/start")
+def start_exam(
+    exam_id: int,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+    is_secure: bool = Depends(verify_seb_request)
+):
+    """
+    This endpoint can ONLY be hit if the student is using a cryptographically verified Safe Exam Browser window.
+    """
+    if current_user.role != schemas.RoleEnum.student:
+        raise HTTPException(status_code=403, detail="Only students can take exams")
+        
+    submission = models.ExamSubmission(
+        exam_id=exam_id,
+        student_id=current_user.id,
+        started_at="NOW" # Simplified for MVP, use real UTC datetime
+    )
+    db.add(submission)
+    db.commit()
+    db.refresh(submission)
+    return {"message": "Exam started securely in SEB", "submission_id": submission.id}

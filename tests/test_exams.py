@@ -51,3 +51,28 @@ def test_create_exam_and_question():
     assert len(exams_list) >= 1
     # Check if questions are nested in response
     assert len(exams_list[0]["questions"]) >= 1
+
+def test_seb_security_rejection():
+    # Setup mock student
+    db: Session = next(database.get_db())
+    student_email = "student@school.edu"
+    user = db.query(models.User).filter(models.User.email == student_email).first()
+    if not user:
+        user = models.User(email=student_email, google_id="mock_g_stu", full_name="Math Student", role="student")
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+        
+    # Setup Exam with a config key
+    exam = models.Exam(title="Locked Exam", teacher_id=1, seb_config_key="secret_hash_key_123")
+    db.add(exam)
+    db.commit()
+    db.refresh(exam)
+    
+    token = auth.create_access_token(data={"sub": user.email, "role": user.role})
+    headers = {"Authorization": f"Bearer {token}"}
+    
+    # Attempt to start exam WITHOUT the SEB Header
+    response = client.post(f"/exams/{exam.id}/start", headers=headers)
+    assert response.status_code == 403
+    assert "Safe Exam Browser is required" in response.json()["detail"]

@@ -54,6 +54,7 @@ class Exam(Base):
     description = Column(String)
     duration_minutes = Column(Integer, default=60)
     teacher_id = Column(Integer, ForeignKey("users.id"))
+    seb_config_key = Column(String, nullable=True) # SEB Config Hash
     
     questions = relationship("Question", back_populates="exam", cascade="all, delete")
     submissions = relationship("ExamSubmission", back_populates="exam", cascade="all, delete")
