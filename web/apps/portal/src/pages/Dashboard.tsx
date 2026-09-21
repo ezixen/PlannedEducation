@@ -1,5 +1,6 @@
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { ProctoringToggle } from '../components/ProctoringToggle';
 
 export function Dashboard() {
   const { user } = useAuth();
@@ -29,7 +30,13 @@ export function Dashboard() {
         {user.role === 'student' && (
           <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
             <h3>Upcoming Exams</h3>
-            <p>You have no pending exams.</p>
+            <p>You have 1 exam waiting to be taken.</p>
+            <button 
+              onClick={() => navigate('/exam')} 
+              style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', marginBottom: '2rem' }}>
+              Enter SEB Portal
+            </button>
+            <ProctoringToggle />
           </div>
         )}
 
