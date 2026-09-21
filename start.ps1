@@ -43,11 +43,16 @@ C:/.venv/Scripts/python.exe -m uvicorn src.plannededucation.api.main:app --reloa
 # 2. Start Portal if not running
 if (-not (Test-LocalPort 5173)) {
     Write-Host "Starting Portal (Port 5173) in new window..." -ForegroundColor Cyan
+    $npmCmd = (Get-Command npm.cmd -ErrorAction SilentlyContinue).Source
+    if (-not $npmCmd) {
+        $npmCmd = "C:\Program Files\nodejs\npm.cmd"
+    }
+
     $PortalLauncher = Join-Path $LauncherDir "start_portal.ps1"
     Set-Content -Path $PortalLauncher -Value @"
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
-npm.cmd run dev
+& "$npmCmd" run dev
 "@
     Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`""
 } else {
