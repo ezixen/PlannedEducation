@@ -25,3 +25,37 @@ class TokenData(BaseModel):
 class GoogleLogin(BaseModel):
     token: str  # The ID token from Google frontend
     role: Optional[RoleEnum] = None # Needed if signing up for the first time
+
+class QuestionTypeEnum(str, Enum):
+    multiple_choice = "multiple_choice"
+    essay = "essay"
+    dynamic_math = "dynamic_math"
+
+class QuestionBase(BaseModel):
+    question_type: QuestionTypeEnum
+    text: str
+    options_json: Optional[str] = None
+    correct_answer: Optional[str] = None
+    points: int = 1
+
+class QuestionCreate(QuestionBase):
+    pass
+
+class QuestionResponse(QuestionBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    exam_id: int
+
+class ExamBase(BaseModel):
+    title: str
+    description: Optional[str] = None
+    duration_minutes: int = 60
+
+class ExamCreate(ExamBase):
+    pass
+
+class ExamResponse(ExamBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    teacher_id: int
+    questions: list[QuestionResponse] = []
