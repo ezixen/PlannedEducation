@@ -50,6 +50,7 @@ class ExamBase(BaseModel):
     title: str
     description: Optional[str] = None
     duration_minutes: int = 60
+    seb_config_key: Optional[str] = None
 
 class ExamCreate(ExamBase):
     pass
