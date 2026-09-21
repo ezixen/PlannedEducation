@@ -73,3 +73,4 @@ async def teacher_audio_feedback(
         return {"transcription": response.text}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+

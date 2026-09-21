@@ -70,3 +70,4 @@ def test_speech_to_text_endpoint():
         
         assert response.status_code == 200
         assert response.json()["transcription"] == "Great job on the essay."
+

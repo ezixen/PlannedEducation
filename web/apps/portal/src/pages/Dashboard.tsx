@@ -44,6 +44,11 @@ export function Dashboard() {
           <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
             <h3>Child's Progress</h3>
             <p>View test scores and teacher feedback.</p>
+            <button 
+              onClick={() => navigate('/parent-dashboard')} 
+              style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+              View Scores
+            </button>
           </div>
         )}
 

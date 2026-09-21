@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Response
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -6,6 +6,48 @@ from . import models, schemas, database
 from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/exams", tags=["exams"])
+
+@router.get("/{exam_id}/seb-config")
+def generate_seb_config(exam_id: int, db: Session = Depends(database.get_db)):
+    """
+    Generates a .seb configuration file that students can double-click to launch 
+    the locked-down exam portal securely.
+    """
+    exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
+    if not exam:
+        raise HTTPException(status_code=404, detail="Exam not found")
+        
+    start_url = f"https://portal.plannededucation.org/exam/{exam_id}/start"
+    
+    # Very basic SEB XML plist template
+    xml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>originatorVersion</key>
+    <string>SEB_Win_3.7.0</string>
+    <key>startURL</key>
+    <string>{start_url}</string>
+    <key>sebServerURL</key>
+    <string></string>
+    <key>hashedQuitPassword</key>
+    <string></string>
+    <key>enableZoomPage</key>
+    <true/>
+    <key>browserWindowAllowReload</key>
+    <true/>
+    <key>examKey</key>
+    <string>{exam.seb_config_key or ''}</string>
+</dict>
+</plist>"""
+    
+    return Response(
+        content=xml_content,
+        media_type="application/seb",
+        headers={
+            "Content-Disposition": f"attachment; filename=Exam_{exam_id}_Lock.seb"
+        }
+    )
 
 @router.post("/", response_model=schemas.ExamResponse)
 def create_exam(

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Enum, ForeignKey, Text
+from sqlalchemy import Column, Integer, String, Boolean, Enum, ForeignKey, Text, Float
 from sqlalchemy.orm import relationship
 import enum
 from .database import Base
@@ -42,6 +42,7 @@ class StudentRecord(Base):
     id = Column(Integer, primary_key=True, index=True)
     student_id = Column(Integer, ForeignKey("users.id"))
     parent_id = Column(Integer, ForeignKey("users.id"), nullable=True) # The parent tied to this student
+    time_multiplier = Column(Float, default=1.0) # IEP accommodations, e.g. 1.5x time
     
     student = relationship("User", foreign_keys=[student_id], back_populates="student_records")
     parent = relationship("User", foreign_keys=[parent_id])
