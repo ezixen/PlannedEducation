@@ -1,17 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
-from . import database, models, schemas
+from . import database, models, schemas, ai_client
 from .routes_auth import get_current_user
-import os
-import tempfile
-from google import genai
-from google.genai import types
 
 router = APIRouter(prefix="/ai", tags=["ai"])
-
-# Setup Gemini API (Free Tier)
-GENAI_API_KEY = os.environ.get("GEMINI_API_KEY", "dummy_key_for_testing")
-client = genai.Client(api_key=GENAI_API_KEY)
 
 @router.post("/ocr-math")
 async def ocr_handwritten_math(
@@ -25,25 +17,12 @@ async def ocr_handwritten_math(
     if current_user.role != schemas.RoleEnum.teacher:
         raise HTTPException(status_code=403, detail="Only teachers can run OCR grading tools")
 
-    # Read the file into a temporary location so we can upload it to Gemini
-    # Gemini requires the file to be uploaded to their File API for processing
     try:
         content = await file.read()
-        
-        # Use inline data (Base64) for small images instead of File API to keep it simple and stateless
-        import base64
-        encoded_image = base64.b64encode(content).decode('utf-8')
-        
         prompt = "Transcribe this handwritten math into digital text and LaTeX. Only output the transcription, no chat."
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=[
-                prompt,
-                types.Part.from_bytes(data=content, mime_type=file.content_type)
-            ]
-        )
-        return {"transcription": response.text}
+        result = ai_client.get_ai_response(current_user, prompt, image_bytes=content)
+        return {"transcription": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -60,17 +39,10 @@ async def teacher_audio_feedback(
 
     try:
         content = await file.read()
-        
         prompt = "Transcribe this teacher's grading feedback audio into text. Only output the transcription, no chat."
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=[
-                prompt,
-                types.Part.from_bytes(data=content, mime_type=file.content_type)
-            ]
-        )
-        return {"transcription": response.text}
+        result = ai_client.get_ai_response(current_user, prompt, audio_bytes=content)
+        return {"transcription": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

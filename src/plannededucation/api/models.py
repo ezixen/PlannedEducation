@@ -21,6 +21,12 @@ class User(Base):
     # 2FA / Security
     totp_secret = Column(String, nullable=True)
     totp_enabled = Column(Boolean, default=False)
+    
+    # AI Provider Settings (For Teachers)
+    ai_provider = Column(String, default="gemini") # gemini, openrouter, ollama, openai
+    ai_api_key = Column(String, nullable=True) 
+    ai_model_name = Column(String, default="gemini-2.5-flash")
+    ai_base_url = Column(String, nullable=True)
 
     # Relationships
     student_records = relationship("StudentRecord", foreign_keys="[StudentRecord.student_id]", back_populates="student", cascade="all, delete")

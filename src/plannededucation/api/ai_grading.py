@@ -1,19 +1,11 @@
-import os
-from google import genai
+from . import ai_client, models
 
-# Setup Gemini API (Free Tier)
-GENAI_API_KEY = os.environ.get("GEMINI_API_KEY", "dummy_key_for_testing")
-client = genai.Client(api_key=GENAI_API_KEY)
-
-def anonymize_and_grade_submission(answers_text: str, rubric: str) -> str:
+def anonymize_and_grade_submission(user: models.User, answers_text: str, rubric: str) -> str:
     """
     CRITICAL PRIVACY RULE: We ONLY pass the raw answers text.
     The student's name, email, and ID are completely stripped before calling this function.
-    
-    This function asks the free external AI to pre-grade the exam based on a rubric.
     """
     prompt = f"""
-    You are an expert, objective teacher grading an exam.
     Please grade the following anonymized student answers strictly according to the rubric provided.
     
     RUBRIC:
@@ -24,17 +16,12 @@ def anonymize_and_grade_submission(answers_text: str, rubric: str) -> str:
     
     Provide your grading in a structured, concise format, highlighting where points were lost.
     """
-    
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-        )
-        return response.text
+        return ai_client.get_ai_response(user, prompt)
     except Exception as e:
         return f"AI Grading failed: {str(e)}"
 
-def group_common_mistakes(answers_batch: list[str]) -> str:
+def group_common_mistakes(user: models.User, answers_batch: list[str]) -> str:
     """
     Takes an anonymized list of student answers across the whole class and asks the AI 
     to group them by common mathematical or logical mistakes.
@@ -48,11 +35,7 @@ def group_common_mistakes(answers_batch: list[str]) -> str:
     {answers_batch}
     """
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-        )
-        return response.text
+        return ai_client.get_ai_response(user, prompt)
     except Exception as e:
         return f"AI Grouping failed: {str(e)}"
 

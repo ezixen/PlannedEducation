@@ -9,7 +9,6 @@ client = TestClient(app)
 def test_ocr_math_endpoint():
     db: Session = next(database.get_db())
     
-    # Setup mock teacher
     teacher_email = "ai_teacher@school.edu"
     teacher = db.query(models.User).filter(models.User.email == teacher_email).first()
     if not teacher:
@@ -20,13 +19,9 @@ def test_ocr_math_endpoint():
 
     teacher_token = auth.create_access_token(data={"sub": teacher.email, "role": teacher.role})
 
-    # Mock the Gemini client
-    with patch('src.plannededucation.api.routes_ai.client.models.generate_content') as mock_generate:
-        mock_response = MagicMock()
-        mock_response.text = "x = 5"
-        mock_generate.return_value = mock_response
+    with patch('src.plannededucation.api.routes_ai.ai_client.get_ai_response') as mock_get_ai:
+        mock_get_ai.return_value = "x = 5"
 
-        # Create a dummy image file
         file_data = b"dummy_image_data"
         files = {'file': ('math.jpg', file_data, 'image/jpeg')}
         
@@ -38,14 +33,8 @@ def test_ocr_math_endpoint():
         
         assert response.status_code == 200
         assert response.json()["transcription"] == "x = 5"
-        
-        # Verify Gemini was called
-        mock_generate.assert_called_once()
-        kwargs = mock_generate.call_args[1]
-        assert kwargs['model'] == 'gemini-2.5-flash'
-        # Ensure the prompt and the file bytes are in the contents
-        contents = kwargs['contents']
-        assert "Transcribe this handwritten math" in contents[0]
+        mock_get_ai.assert_called_once()
+        assert "Transcribe this handwritten math" in mock_get_ai.call_args[0][1]
 
 def test_speech_to_text_endpoint():
     db: Session = next(database.get_db())
@@ -54,10 +43,8 @@ def test_speech_to_text_endpoint():
     teacher = db.query(models.User).filter(models.User.email == teacher_email).first()
     teacher_token = auth.create_access_token(data={"sub": teacher.email, "role": teacher.role})
 
-    with patch('src.plannededucation.api.routes_ai.client.models.generate_content') as mock_generate:
-        mock_response = MagicMock()
-        mock_response.text = "Great job on the essay."
-        mock_generate.return_value = mock_response
+    with patch('src.plannededucation.api.routes_ai.ai_client.get_ai_response') as mock_get_ai:
+        mock_get_ai.return_value = "Great job on the essay."
 
         file_data = b"dummy_audio_data"
         files = {'file': ('audio.mp3', file_data, 'audio/mpeg')}
@@ -70,4 +57,5 @@ def test_speech_to_text_endpoint():
         
         assert response.status_code == 200
         assert response.json()["transcription"] == "Great job on the essay."
+
 
