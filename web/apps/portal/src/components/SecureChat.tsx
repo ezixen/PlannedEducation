@@ -85,3 +85,4 @@ export function SecureChat({ examId }: { examId: number }) {
     </div>
   );
 }
+

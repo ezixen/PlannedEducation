@@ -78,3 +78,4 @@ async def exam_chat_endpoint(
     except WebSocketDisconnect:
         manager.disconnect(websocket, exam_id)
         # Optional: broadcast that the user left
+
