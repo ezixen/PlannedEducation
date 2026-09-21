@@ -6,7 +6,6 @@ class RoleEnum(str, Enum):
     student = "student"
     teacher = "teacher"
     parent = "parent"
-    admin = "admin"
 
 class UserCreate(BaseModel):
     email: EmailStr

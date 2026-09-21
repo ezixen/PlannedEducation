@@ -37,14 +37,18 @@ All AI features utilize a free external AI API. **CRITICAL: AI processing is 100
 6. **Audio Feedback & Speech-to-Text**: Teachers can record audio memos for feedback. Integrated speech recognition translates teacher speech to text for faster grading note generation.
 
 ## 6. Portals & Roles
-1. **Student**: Test-taking interface.
-2. **Teacher**: Test creation, secure chat monitoring, and AI grading dashboard.
+1. **Student**: Test-taking interface inside SEB, and dashboard for upcoming tests.
+2. **Teacher**: Test creation, class groupings, secure chat monitoring, and AI grading dashboard.
 3. **Parent/Guardian Portal**: A secure, **read-only** login for parents to track their child's test scores and teacher feedback.
-4. **Admin**: High-level school administration.
+*Note: There is NO Admin portal. The system is entirely self-managed by teachers to remain open-source. Administration relies on automated workflows (Lost password flows, TOTP 2FA).*
 
-## 7. Execution Order (The Roadmap)
-1. **Phase 1: Foundation**: Database models, Authentication (Student, Teacher, Parent), and the React Vite Portal Shell (Routing, Hamburger Menu, Themes).
-2. **Phase 2: Core Exam Engine**: Test creation, Question Banks, Variables, Accommodations, and offline PWA support.
+## 7. Open Source Modular Extensions
+Teachers can share and download custom test modules or rubrics.
+**CRITICAL SECURITY CONSTRAINT**: To prevent malicious supply-chain attacks, modules are strictly data-definitions (e.g., JSON/YAML test templates). **NO executable code** (Python/JS/WASM) can be uploaded or shared through the modular system to prevent backdoors infecting student computers.
+
+## 8. Execution Order (The Roadmap)
+1. **Phase 1: Foundation**: Database models, Authentication (Google SSO + Standard + TOTP 2FA), and the React Vite Portal Shell (Routing, Hamburger Menu, Themes).
+2. **Phase 2: Core Exam Engine**: Test creation, Class Groupings, Question Banks, Variables, Accommodations, and offline PWA support.
 3. **Phase 3: Security Integration**: SEB header validation, Screen Watermarking, and the Secure Chat (WIWM port).
 4. **Phase 4: AI & Grading**: Anonymization pipeline, external AI integration, OCR, Audio/Speech-to-text, and the Teacher Dashboard.
 5. **Phase 5: Optional Proctoring**: The WebRTC/Webcam AI proctoring toggle with GDPR compliance flags.

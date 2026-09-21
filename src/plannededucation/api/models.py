@@ -7,21 +7,35 @@ class RoleEnum(str, enum.Enum):
     student = "student"
     teacher = "teacher"
     parent = "parent"
-    admin = "admin"
 
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=False)
+    hashed_password = Column(String, nullable=True) # Nullable for Google SSO users
+    google_id = Column(String, unique=True, index=True, nullable=True)
     full_name = Column(String)
     role = Column(Enum(RoleEnum), default=RoleEnum.student, nullable=False)
     is_active = Column(Boolean, default=True)
+    
+    # 2FA / Security
+    totp_secret = Column(String, nullable=True)
+    totp_enabled = Column(Boolean, default=False)
 
     # Relationships
     student_records = relationship("StudentRecord", foreign_keys="[StudentRecord.student_id]", back_populates="student", cascade="all, delete")
     taught_courses = relationship("Course", back_populates="teacher")
+    class_groups = relationship("ClassGroup", back_populates="teacher")
+
+class ClassGroup(Base):
+    __tablename__ = "class_groups"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    teacher_id = Column(Integer, ForeignKey("users.id"))
+    
+    teacher = relationship("User", back_populates="class_groups")
 
 class StudentRecord(Base):
     __tablename__ = "student_records"
