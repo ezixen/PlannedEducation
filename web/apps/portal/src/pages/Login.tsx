@@ -5,19 +5,34 @@ import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 
 export function Login() {
-  const { login } = useAuth();
+  const { login, loginWithPassword } = useAuth();
   const navigate = useNavigate();
-  const [roleSelection, setRoleSelection] = useState<'student' | 'teacher' | 'parent'>('student');
   const [error, setError] = useState('');
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
     if (!credentialResponse.credential) return;
     try {
       setError('');
-      await login(credentialResponse.credential, roleSelection);
+      await login(credentialResponse.credential);
       navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Login failed. Please try again.');
+    }
+  };
+
+  const handleLocalLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      setError('');
+      if (loginWithPassword) {
+        await loginWithPassword(email, password);
+        navigate('/');
+      }
+    } catch (err: any) {
+      setError(err.message || 'Local login failed.');
     }
   };
 
@@ -28,22 +43,6 @@ export function Login() {
         <p style={{ marginBottom: '2rem', color: 'gray' }}>Sign in to continue</p>
 
         {error && <div style={{ color: 'red', marginBottom: '1rem', padding: '0.5rem', backgroundColor: '#fee2e2', borderRadius: '4px' }}>{error}</div>}
-
-        <div style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
-          <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>If you are new, select your role:</label>
-          <select 
-            value={roleSelection} 
-            onChange={(e) => setRoleSelection(e.target.value as any)}
-            style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)' }}
-          >
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-            <option value="parent">Parent/Guardian</option>
-          </select>
-          <small style={{ color: 'gray', display: 'block', marginTop: '0.5rem' }}>
-            Note: Role selection is only used during your very first sign-in.
-          </small>
-        </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <GoogleLogin
