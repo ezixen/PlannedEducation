@@ -116,3 +116,4 @@ Prefer **short, one-concern files** composed by imports. Split at **logical turn
 - **How-it-works** stays in **Dev / Plan** only.
 - **Plan Tracking**: Maintain plans in `plans/` (like `plans/plans.md`).
 - **Git Hygiene**: Commit cleanly. Main branch is reserved for production releases.
+

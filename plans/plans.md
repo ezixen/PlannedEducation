@@ -55,3 +55,4 @@ Follows the ELA (EasyLegalAid) structure:
 - **Step 4**: Develop the test delivery and offline-capable auto-save mechanisms.
 - **Step 5**: Build the teacher grading interface and integrate AI OCR and TTS APIs.
 - **Step 6**: Beta testing in a controlled school environment.
+
