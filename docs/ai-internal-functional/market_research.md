@@ -18,7 +18,7 @@
 1. **Safe Exam Browser (SEB)**
    - **Status:** Free & Open Source (GitHub).
    - **What it does:** It acts as a "kiosk" application that turns any computer into a secure workstation. It locks the computer, prevents task switching, disables shortcuts (like Ctrl+Alt+Del, Alt+Tab), detects virtual machines, and restricts navigation.
-   - **Overlap with PlannedEducation:** This is *exactly* the PC-locking technology we are planning to build. SEB is widely integrated into Canvas and Moodle.
+   - **Overlap with Planned Education:** This is *exactly* the PC-locking technology we are planning to build. SEB is widely integrated into Canvas and Moodle.
 2. **OpenLock**
    - **Status:** Open Source (Linux focus).
    - **What it does:** Similar to SEB, focuses on providing a secure lockdown browser environment, specifically tailored for Linux systems.
@@ -50,13 +50,13 @@ Finding a complete, end-to-end open-source AI grading software is rare because h
 ---
 
 ## 4. Conclusion & Our Unique Value Proposition
-### Is PlannedEducation a new idea?
+### Is Planned Education a new idea?
 The individual components exist:
 - **Lockdown Browsers:** Safe Exam Browser (Open Source), Respondus (Paid).
 - **LMS:** Canvas, Moodle (Open Source).
 - **AI Grading:** Gradescope (Paid).
 
-### How PlannedEducation Stands Out:
+### How Planned Education Stands Out:
 1. **All-in-One Kiosk + AI Grader:** There is currently no *free, open-source* platform that seamlessly combines a native desktop locking app (like Safe Exam Browser) with an integrated AI-driven teacher grading and text-to-speech module out of the box. 
 2. **The "Job Statistics" Vision:** No LMS currently maps student grades directly to real-world job statistics, average incomes, or career trajectories to inspire students natively within the testing platform. This feature is highly unique.
 3. **Cost Factor:** By making it open source, we bypass the heavy institutional licensing fees of Canvas, Respondus, and Gradescope, creating a massive impact for underfunded schools globally.

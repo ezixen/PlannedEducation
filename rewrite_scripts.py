@@ -5,12 +5,12 @@ def rewrite_start():
         content = f.read()
 
     # Replace specific strings
-    content = content.replace('WIWM local stack', 'PlannedEducation local stack')
+    content = content.replace('WIWM local stack', 'Planned Education local stack')
     content = content.replace('https://127.0.0.1:5173', 'http://localhost:5173')
     content = content.replace('http://127.0.0.1:8000', 'http://localhost:8000')
     content = content.replace('wiwm-canary-debug-profile', 'plannededucation-canary-profile')
     content = content.replace('wiwm', 'plannededucation')
-    content = content.replace('WIWM', 'PlannedEducation')
+    content = content.replace('WIWM', 'Planned Education')
     
     # Remove admin bits
     lines = content.split('\n')
