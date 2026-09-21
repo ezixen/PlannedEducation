@@ -99,23 +99,124 @@ from .seb_security import verify_seb_request
 
 @router.post("/{exam_id}/start")
 def start_exam(
-    exam_id: int,
+    exam_id: int, 
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),
     is_secure: bool = Depends(verify_seb_request)
 ):
     """
     This endpoint can ONLY be hit if the student is using a cryptographically verified Safe Exam Browser window.
+    Generates unique question permutations, scrambles multiple choice, and handles dynamic math variables.
     """
     if current_user.role != schemas.RoleEnum.student:
         raise HTTPException(status_code=403, detail="Only students can take exams")
         
+    exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
+    if not exam:
+        raise HTTPException(status_code=404, detail="Exam not found")
+
+    existing_sub = db.query(models.ExamSubmission).filter(
+        models.ExamSubmission.exam_id == exam_id,
+        models.ExamSubmission.student_id == current_user.id
+    ).first()
+    if existing_sub:
+        raise HTTPException(status_code=400, detail="Exam already started")
+
+    import random
+    import json
+    import re
+    from datetime import datetime
+
     submission = models.ExamSubmission(
-        exam_id=exam_id,
+        exam_id=exam.id,
         student_id=current_user.id,
-        started_at="NOW" # Simplified for MVP, use real UTC datetime
+        started_at=datetime.utcnow().isoformat()
     )
     db.add(submission)
     db.commit()
     db.refresh(submission)
-    return {"message": "Exam started securely in SEB", "submission_id": submission.id}
+
+    questions = db.query(models.Question).filter(models.Question.exam_id == exam_id).all()
+    
+    # 1. Randomization: Randomly pull 10 questions from the pool if pool is > 10.
+    if len(questions) > 10:
+        questions = random.sample(questions, 10)
+    else:
+        random.shuffle(questions)
+
+    generated_questions = []
+    for q in questions:
+        q_text = q.text
+        
+        # 2. Dynamic Math: replace [rand:1-10] with actual numbers
+        if q.question_type == models.QuestionType.dynamic_math:
+            def replace_rand(match):
+                min_val, max_val = map(int, match.group(1).split('-'))
+                return str(random.randint(min_val, max_val))
+            q_text = re.sub(r'\[rand:(\d+-\d+)\]', replace_rand, q_text)
+
+        # 3. Scramble multiple choice options
+        scrambled_options = None
+        if q.question_type == models.QuestionType.multiple_choice and q.options_json:
+            try:
+                opts = json.loads(q.options_json)
+                random.shuffle(opts)
+                scrambled_options = json.dumps(opts)
+            except:
+                pass
+
+        ans = models.Answer(
+            submission_id=submission.id,
+            question_id=q.id,
+            student_response="",
+            generated_question_text=q_text,
+            generated_options_json=scrambled_options
+        )
+        db.add(ans)
+        
+        generated_questions.append({
+            "question_id": q.id,
+            "question_type": q.question_type,
+            "text": q_text,
+            "options": json.loads(scrambled_options) if scrambled_options else None,
+            "points": q.points
+        })
+
+    db.commit()
+
+    return {
+        "message": "Exam started securely in SEB", 
+        "submission_id": submission.id,
+        "questions": generated_questions
+    }
+
+@router.post("/{exam_id}/submit")
+def submit_exam(
+    exam_id: int, 
+    answers: list[dict], # [{"question_id": 1, "response": "4"}]
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+    is_secure: bool = Depends(verify_seb_request)
+):
+    from datetime import datetime
+    
+    submission = db.query(models.ExamSubmission).filter(
+        models.ExamSubmission.exam_id == exam_id,
+        models.ExamSubmission.student_id == current_user.id
+    ).first()
+    
+    if not submission or submission.completed_at:
+        raise HTTPException(status_code=400, detail="Invalid submission state")
+
+    submission.completed_at = datetime.utcnow().isoformat()
+
+    for item in answers:
+        ans = db.query(models.Answer).filter(
+            models.Answer.question_id == item["question_id"], 
+            models.Answer.submission_id == submission.id
+        ).first()
+        if ans:
+            ans.student_response = item.get("response", "")
+
+    db.commit()
+    return {"status": "success", "message": "Exam submitted securely"}

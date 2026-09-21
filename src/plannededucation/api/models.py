@@ -104,8 +104,12 @@ class Answer(Base):
     id = Column(Integer, primary_key=True, index=True)
     submission_id = Column(Integer, ForeignKey("exam_submissions.id"))
     question_id = Column(Integer, ForeignKey("questions.id"))
-    student_response = Column(String)
+    student_response = Column(Text, nullable=True) # Text for short/long/math, Option index for multiple choice
     
+    # Store the actual text seen by the student in case of Dynamic Math or Scrambled Options
+    generated_question_text = Column(Text, nullable=True)
+    generated_options_json = Column(Text, nullable=True)
+
     submission = relationship("ExamSubmission", back_populates="answers")
     question = relationship("Question", back_populates="answers")
 
