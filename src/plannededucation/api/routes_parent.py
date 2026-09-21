@@ -46,3 +46,4 @@ def get_children_progress(
         })
 
     return result
+

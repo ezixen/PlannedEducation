@@ -2,10 +2,10 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# Default to SQLite for local development, can be overridden by ENV vars for Cloud SQL
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./plannededucation.db")
+# Default to PostgreSQL for production
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost/plannededucation")
 
-# check_same_thread is needed only for SQLite
+# We only need check_same_thread for SQLite (e.g. during pytest if overridden)
 engine_args = {"check_same_thread": False} if SQLALCHEMY_DATABASE_URL.startswith("sqlite") else {}
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args=engine_args)

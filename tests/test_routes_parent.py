@@ -67,3 +67,4 @@ def test_get_children_progress():
     assert len(child_data["recent_exams"]) > 0
     assert child_data["recent_exams"][0]["exam_title"] == "History Final"
     assert child_data["recent_exams"][0]["score"] == "Pending"
+
