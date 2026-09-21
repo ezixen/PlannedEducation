@@ -1,11 +1,18 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .database import engine, Base
+from . import models, routes_auth
+
+# Create database tables
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="PlannedEducation API",
     description="Backend for the PlannedEducation app.",
     version="1.0.0",
 )
+
+app.include_router(routes_auth.router)
 
 # Allow CORS for local development
 app.add_middleware(
