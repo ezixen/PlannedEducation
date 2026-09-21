@@ -1,10 +1,10 @@
-import { useAuth } from '../contexts/AuthContext';
+
 import { API_URL } from '../api';
 
 export function AiIntegration() {
-  const { user } = useAuth();
   
-  if (!user || user.role !== 'teacher') return <div>Unauthorized</div>;
+  
+  
 
   const systemPrompt = `You are an expert, objective teacher and AI grader working for the Planned Education platform. Your job is to assist teachers in grading exams, grouping mistakes, and transcribing handwritten math or audio feedback. You must be strictly objective, unbiased, and format your output cleanly. You are processing anonymized data to protect student privacy.`;
 

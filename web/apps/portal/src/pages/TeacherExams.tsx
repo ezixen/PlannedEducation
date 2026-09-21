@@ -13,7 +13,8 @@ export function TeacherExams() {
 
   const fetchExams = async () => {
     try {
-      const response = await apiClient.get('/exams/');
+      const response = await apiClient.get('/exams/mine');
+
       setExams(response.data);
     } catch (e) {
       console.error(e);

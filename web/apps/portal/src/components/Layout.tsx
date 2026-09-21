@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Menu, Moon, Sun, Home, Settings, GraduationCap, LogOut } from 'lucide-react';
+import { Menu, Moon, Sun, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuth } from '../contexts/AuthContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
@@ -13,9 +13,15 @@ export function Layout() {
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
+
+
   const navItems = [
     { path: '/', label: 'Dashboard', icon: <Home size={20} /> },
     { path: '/exam', label: 'Take Exam', icon: <GraduationCap size={20} /> },
+    { path: '/teacher-classes', label: 'Classes', icon: <Users size={20} /> },
+    { path: '/teacher-exams', label: 'Exam Editor', icon: <BookOpen size={20} /> },
+    { path: '/parent-dashboard', label: 'Parent Dashboard', icon: <Users size={20} /> },
+    { path: '/ai-integrations', label: 'AI Integrations', icon: <BrainCircuit size={20} /> },
     { path: '/settings', label: 'Settings', icon: <Settings size={20} /> },
   ];
 

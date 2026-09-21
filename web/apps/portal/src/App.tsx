@@ -4,6 +4,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Login } from './pages/Login';
+import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Settings } from './pages/Settings';
 import { TeacherExams } from './pages/TeacherExams';
@@ -22,7 +23,7 @@ function App() {
         <ThemeProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<Login />} />`n              <Route path="/register" element={<Register />} />
               
               {/* Protected Routes inside the Layout */}
               <Route path="/" element={<ProtectedRoute />}>

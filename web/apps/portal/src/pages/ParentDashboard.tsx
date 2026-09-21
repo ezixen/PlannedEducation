@@ -4,11 +4,12 @@ import { API_URL } from '../api';
 
 export function ParentDashboard() {
   const { user } = useAuth();
+  
   const [loading, setLoading] = useState(true);
   const [childrenData, setChildrenData] = useState<any[]>([]);
 
   useEffect(() => {
-    if (!user || user.role !== 'parent') return;
+    
     
     const fetchProgress = async () => {
       try {
@@ -30,7 +31,7 @@ export function ParentDashboard() {
     fetchProgress();
   }, [user]);
 
-  if (!user || user.role !== 'parent') return <div>Unauthorized</div>;
+  
 
   if (loading) return <div>Loading child progress...</div>;
 

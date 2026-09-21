@@ -1,48 +1,62 @@
 import hashlib
 import hmac
+import os
 from fastapi import Request, HTTPException, Depends
 from sqlalchemy.orm import Session
 from . import database, models
 
-def verify_seb_request(request: Request, exam_id: int, db: Session = Depends(database.get_db)):
+
+def verify_seb_request(
+    request: Request,
+    exam_id: str,
+    db: Session = Depends(database.get_db),
+) -> bool:
     """
     Validates the X-SafeExamBrowser-RequestHash header.
-    The hash is computed by SEB as SHA256(URL + SEB_CONFIG_KEY).
+
+    SEB computes the hash as: SHA256(url + seb_config_key)
+    where `url` is the full request URL including query string.
+
+    In development mode (ALLOW_DEV_SEB_BYPASS=true), this check is skipped
+    so you can test without actually running Safe Exam Browser.
     """
-    import os
-    if os.getenv("PLANNED_EDUCATION_ENV") == "development" and os.getenv("ALLOW_DEV_AUTH") == "true":
+    env = os.getenv("PLANNED_EDUCATION_ENV")
+    if (
+        env in ("development", "test")
+        and os.getenv("ALLOW_DEV_SEB_BYPASS", "").lower() == "true"
+    ):
         return True
 
-    # 1. Fetch Exam SEB Config Key
     exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
     if not exam:
         raise HTTPException(status_code=404, detail="Exam not found")
-        
+
     if not exam.seb_config_key:
         raise HTTPException(
             status_code=409,
-            detail="This exam has no Safe Exam Browser configuration and cannot be started."
+            detail="This exam has no Safe Exam Browser configuration. "
+                   "Generate a .seb config file first.",
         )
 
-    # 2. Extract SEB Header
     seb_header = request.headers.get("X-SafeExamBrowser-RequestHash")
     if not seb_header:
         raise HTTPException(
-            status_code=403, 
-            detail="Safe Exam Browser is required. Please launch the exam via the .seb config file."
+            status_code=403,
+            detail="Safe Exam Browser is required. "
+                   "Please launch the exam via the .seb config file.",
         )
 
-    # 3. Compute expected hash
-    # The URL must exactly match what SEB sends (including query params)
+    # Recompute expected hash
     url = str(request.url)
-    payload = url + exam.seb_config_key
-    expected_hash = hashlib.sha256(payload.encode('utf-8')).hexdigest()
+    expected_hash = hashlib.sha256(
+        (url + exam.seb_config_key).encode("utf-8")
+    ).hexdigest()
 
-    if not hmac.compare_digest(expected_hash, seb_header):
+    # Constant-time comparison prevents timing side-channel attacks
+    if not hmac.compare_digest(expected_hash, seb_header.lower()):
         raise HTTPException(
             status_code=403,
-            detail="SEB Security Violation: Config Key Hash mismatch. You are using an unauthorized browser or modified SEB."
+            detail="SEB security violation: request hash mismatch.",
         )
-    
-    return True
 
+    return True

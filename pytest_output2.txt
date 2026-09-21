@@ -1,0 +1,30 @@
+............................F.........F.......                           [100%]
+================================== FAILURES ===================================
+____________________ test_start_and_submit_exam_dev_bypass ____________________
+tests\test_exams.py:167: in test_start_and_submit_exam_dev_bypass
+    assert r.status_code == 200
+E   assert 403 == 200
+E    +  where 403 = <Response [403 Forbidden]>.status_code
+---------------------------- Captured stdout call -----------------------------
+
+
+START RESPONSE: {'detail': 'Safe Exam Browser is required. Please launch the exam via the .seb config file.'} 
+
+
+_________________ test_start_and_submit_with_multiple_choice __________________
+tests\test_routes_exam.py:93: in test_start_and_submit_with_multiple_choice
+    assert r.status_code == 200
+E   assert 403 == 200
+E    +  where 403 = <Response [403 Forbidden]>.status_code
+============================== warnings summary ===============================
+tests/test_auth.py::test_register_weak_password_rejected[alllowercase1-no uppercase]
+tests/test_auth.py::test_register_weak_password_rejected[ALLUPPERCASE1-no lowercase]
+tests/test_auth.py::test_register_weak_password_rejected[NoDigitsHere!-no digit]
+  C:\dev\PlannedEducation\src\plannededucation\api\routes_auth.py:100: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+    _validate_password(user.password)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_exams.py::test_start_and_submit_exam_dev_bypass - assert 40...
+FAILED tests/test_routes_exam.py::test_start_and_submit_with_multiple_choice
+2 failed, 44 passed, 3 warnings in 28.54s

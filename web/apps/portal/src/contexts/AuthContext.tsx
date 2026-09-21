@@ -1,12 +1,13 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import { apiClient } from '../api';
 
 export interface User {
-  id: number;
+  id: string;
   email: string;
-  full_name: string;
-  role: 'student' | 'teacher' | 'parent';
+  username: string;
+  full_name: string | null;
+  phone_number: string | null;
   is_active: boolean;
 }
 
@@ -14,8 +15,9 @@ interface AuthContextType {
   user: User | null;
   loading: boolean;
   login: (googleToken: string) => Promise<void>;
-  loginWithPassword: (email: string, password: string) => Promise<void>;
+  loginWithPassword: (emailOrUsername: string, password: string) => Promise<void>;
   logout: () => void;
+  refreshUser: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -24,56 +26,48 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchUser = async () => {
+  const refreshUser = useCallback(async () => {
     const token = localStorage.getItem('access_token');
     if (!token) {
+      setUser(null);
       setLoading(false);
       return;
     }
     try {
-      const response = await apiClient.get('/auth/me');
+      const response = await apiClient.get<User>('/auth/me');
       setUser(response.data);
-    } catch (error) {
-      console.error("Failed to fetch user", error);
+    } catch {
+      // Token is invalid or expired — clear it
       localStorage.removeItem('access_token');
+      setUser(null);
     } finally {
       setLoading(false);
     }
-  };
-
-  useEffect(() => {
-    fetchUser();
   }, []);
 
+  useEffect(() => {
+    refreshUser();
+  }, [refreshUser]);
+
   const login = async (googleToken: string) => {
-    try {
-      const payload = { token: googleToken };
-      const response = await apiClient.post('/auth/google', payload);
-      localStorage.setItem('access_token', response.data.access_token);
-      await fetchUser();
-    } catch (error) {
-      console.error("Login failed", error);
-      throw error;
-    }
+    const response = await apiClient.post<{ access_token: string }>('/auth/google', { token: googleToken });
+    localStorage.setItem('access_token', response.data.access_token);
+    await refreshUser();
   };
 
-  const loginWithPassword = async (email: string, password: string) => {
-    try {
-      // Must use application/x-www-form-urlencoded for OAuth2PasswordRequestForm
-      const formData = new URLSearchParams();
-      formData.append('username', email);
-      formData.append('password', password);
+  const loginWithPassword = async (emailOrUsername: string, password: string) => {
+    const formData = new URLSearchParams();
+    formData.append('username', emailOrUsername);
+    formData.append('password', password);
 
-      const response = await apiClient.post('/auth/token', formData, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+    try {
+      const response = await apiClient.post<{ access_token: string }>('/auth/token', formData, {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       localStorage.setItem('access_token', response.data.access_token);
-      await fetchUser();
+      await refreshUser();
     } catch (error: any) {
-      console.error("Local login failed", error);
-      throw new Error(error.response?.data?.detail || "Local login failed");
+      throw new Error(error.response?.data?.detail || 'Login failed');
     }
   };
 
@@ -83,7 +77,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, loginWithPassword, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, loginWithPassword, logout, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

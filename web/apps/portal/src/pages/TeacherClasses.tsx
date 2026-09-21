@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+
 
 export function TeacherClasses() {
-  const { user } = useAuth();
+  
   const [classes, setClasses] = useState<any[]>([]);
   const [newClassName, setNewClassName] = useState('');
 
@@ -14,7 +14,7 @@ export function TeacherClasses() {
     ]);
   }, []);
 
-  if (!user || user.role !== 'teacher') return <div>Unauthorized</div>;
+  
 
   const handleCreateClass = (e: React.FormEvent) => {
     e.preventDefault();

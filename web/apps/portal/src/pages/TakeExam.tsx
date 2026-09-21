@@ -1,14 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+
 import { SecureChat } from '../components/SecureChat';
 import { API_URL } from '../api';
 
+interface ExamQuestion {
+  question_id: string;
+  question_type: 'multiple_choice' | 'essay' | 'dynamic_math';
+  text: string;
+  options: string[] | null;
+  points: number;
+}
+
+interface ExamData {
+  submission_id: string;
+  questions: ExamQuestion[];
+}
+
 export function TakeExam() {
-  const { user } = useAuth();
   const { id } = useParams<{ id: string }>();
-  const [examData, setExamData] = useState<any>(null);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [examData, setExamData] = useState<ExamData | null>(null);
+  // Keys are question UUIDs (strings), not numbers
+  const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -20,17 +33,15 @@ export function TakeExam() {
         const token = localStorage.getItem('access_token');
         const res = await fetch(`${API_URL}/exams/${id}/start`, {
           method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
+          headers: { 'Authorization': `Bearer ${token}` },
         });
         if (!res.ok) {
           const data = await res.json();
           setError(data.detail || 'Failed to start exam');
           return;
         }
-        const data = await res.json();
-        setExamData(data); // data has { submission_id, questions: [] }
+        const data: ExamData = await res.json();
+        setExamData(data);
       } catch (err: any) {
         setError(err.message || 'Network error');
       }
@@ -38,7 +49,7 @@ export function TakeExam() {
     startExam();
   }, [id]);
 
-  if (!user || user.role !== 'student') return <div>Unauthorized</div>;
+  
 
   if (error) {
     return <div style={{ color: 'red', textAlign: 'center', marginTop: '4rem' }}>{error}</div>;
@@ -58,14 +69,17 @@ export function TakeExam() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    
+
     try {
       const token = localStorage.getItem('access_token');
-      const payload = Object.entries(answers).map(([qId, resp]) => ({
-        question_id: parseInt(qId, 10),
-        response: resp
-      }));
-      
+      // Wrap in { answers: [...] } to match backend ExamSubmitRequest schema
+      const payload = {
+        answers: Object.entries(answers).map(([qId, resp]) => ({
+          question_id: qId,   // UUID string — do NOT parseInt
+          response: resp,
+        })),
+      };
+
       const res = await fetch(`${API_URL}/exams/${id}/submit`, {
         method: 'POST',
         headers: {
@@ -145,7 +159,7 @@ export function TakeExam() {
       <div style={{ width: '300px', borderLeft: '1px solid var(--border-color)', paddingLeft: '2rem' }}>
         <h3 style={{ marginBottom: '1rem' }}>Digital Hand Raise</h3>
         <p style={{ fontSize: '0.9rem', color: 'gray', marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
-        <SecureChat examId={Number(id)} />
+        <SecureChat examId={id ?? ''} />
       </div>
 
     </div>

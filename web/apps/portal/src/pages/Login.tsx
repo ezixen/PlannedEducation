@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
@@ -24,7 +24,7 @@ export function Login() {
   };
 
   const handleLocalLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); 
     try {
       setError('');
       if (loginWithPassword) {
@@ -82,6 +82,10 @@ export function Login() {
             </button>
           </form>
         )}
+
+        <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
+          Don't have an account? <Link to="/register" style={{ color: 'var(--primary-color)' }}>Register here</Link>
+        </p>
       </div>
     </div>
   );
