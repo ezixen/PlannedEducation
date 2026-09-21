@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
 
 export function Layout() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { logout } = useAuth();
   const location = useLocation();
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-
-
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { path: '/', label: 'Dashboard', icon: <Home size={20} /> },
@@ -26,35 +26,40 @@ export function Layout() {
   return (
     <div className="app-container">
       <WatermarkOverlay />
-      <aside className={`sidebar ${!sidebarOpen ? 'closed' : ''}`}>
-        <div className="sidebar-header">
-          Planned Education
-        </div>
-        <nav className="sidebar-nav">
-          {navItems.map((item) => (
-            <Link 
-              key={item.path}
-              to={item.path} 
-              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-            >
-              {item.icon}
-              <span>{item.label}</span>
-            </Link>
-          ))}
-          <button onClick={logout} className="nav-item" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer', color: 'inherit' }}>
-            <LogOut size={20} />
-            <span>Log Out</span>
-          </button>
-        </nav>
-      </aside>
+
+      <header className="floating-header">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="icon-btn hamburger-btn" aria-label="Toggle Menu">
+          <Menu size={24} />
+        </button>
+        <div className="brand-title">Planned Education</div>
+      </header>
+
+      {menuOpen && (
+        <>
+          <div className="menu-backdrop" onClick={() => setMenuOpen(false)}></div>
+          <div className="floating-menu">
+            <nav className="bubble-nav">
+              {navItems.map((item) => (
+                <Link 
+                  key={item.path}
+                  to={item.path} 
+                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </Link>
+              ))}
+              <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
+              <button onClick={logout} className="nav-item text-danger" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}>
+                <LogOut size={20} />
+                <span>Log Out</span>
+              </button>
+            </nav>
+          </div>
+        </>
+      )}
 
       <main className="main-content">
-        <header className="header">
-          <button onClick={toggleSidebar} className="icon-btn" aria-label="Toggle Menu">
-            <Menu size={24} />
-          </button>
-        </header>
-
         <div className="page-content">
           <Outlet />
         </div>
@@ -62,4 +67,3 @@ export function Layout() {
     </div>
   );
 }
-
