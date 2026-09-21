@@ -50,6 +50,7 @@ if (-not (Test-LocalPort 5173)) {
 
     $PortalLauncher = Join-Path $LauncherDir "start_portal.ps1"
     Set-Content -Path $PortalLauncher -Value @"
+`$env:PATH = "C:\Program Files\nodejs;" + `$env:PATH
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
 & "$npmCmd" run dev
