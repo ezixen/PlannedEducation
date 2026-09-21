@@ -1,7 +1,9 @@
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export function Dashboard() {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   if (!user) return null;
 
@@ -16,7 +18,11 @@ export function Dashboard() {
           <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
             <h3>Manage Exams</h3>
             <p>Create new exams, edit question banks, and configure SEB locks.</p>
-            <button style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Create Exam</button>
+            <button 
+              onClick={() => navigate('/teacher-exams')} 
+              style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+              Create Exam
+            </button>
           </div>
         )}
 

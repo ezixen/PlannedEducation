@@ -6,6 +6,8 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import { Settings } from './pages/Settings';
+import { TeacherExams } from './pages/TeacherExams';
+import { ExamEditor } from './pages/ExamEditor';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'dummy-client-id.apps.googleusercontent.com';
 
@@ -23,6 +25,8 @@ function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="exam" element={<div><h1>Exam Portal</h1><p>SEB Integration active.</p></div>} />
+                <Route path="teacher-exams" element={<TeacherExams />} />
+                <Route path="teacher-exams/:id" element={<ExamEditor />} />
               </Route>
             </Routes>
           </BrowserRouter>
