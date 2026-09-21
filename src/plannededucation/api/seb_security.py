@@ -38,3 +38,4 @@ def verify_seb_request(request: Request, exam_id: int, db: Session = Depends(dat
         )
     
     return True
+

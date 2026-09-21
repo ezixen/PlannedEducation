@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Menu, Moon, Sun, Home, Settings, GraduationCap } from 'lucide-react';
+import { Menu, Moon, Sun, Home, Settings, GraduationCap, LogOut } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useAuth } from '../contexts/AuthContext';
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const { theme, toggleTheme } = useTheme();
+  const { logout } = useAuth();
   const location = useLocation();
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -33,6 +35,10 @@ export function Layout() {
               <span>{item.label}</span>
             </Link>
           ))}
+          <button onClick={logout} className="nav-item" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer', color: 'inherit' }}>
+            <LogOut size={20} />
+            <span>Log Out</span>
+          </button>
         </nav>
       </aside>
 

@@ -1,21 +1,40 @@
+import { useAuth } from '../contexts/AuthContext';
+
 export function Dashboard() {
+  const { user } = useAuth();
+
+  if (!user) return null;
+
   return (
     <div>
-      <h1>Welcome to PlannedEducation</h1>
-      <p>Select an option from the menu to get started.</p>
+      <h1>Welcome, {user.full_name}</h1>
+      <p style={{ color: 'gray', textTransform: 'capitalize' }}>Role: {user.role}</p>
       
       <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-          <h3>Recent Exams</h3>
-          <p>No recent exams found.</p>
-        </div>
         
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-          <h3>Upcoming Assignments</h3>
-          <p>You are all caught up!</p>
-        </div>
+        {user.role === 'teacher' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+            <h3>Manage Exams</h3>
+            <p>Create new exams, edit question banks, and configure SEB locks.</p>
+            <button style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Create Exam</button>
+          </div>
+        )}
+
+        {user.role === 'student' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+            <h3>Upcoming Exams</h3>
+            <p>You have no pending exams.</p>
+          </div>
+        )}
+
+        {user.role === 'parent' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+            <h3>Child's Progress</h3>
+            <p>View test scores and teacher feedback.</p>
+          </div>
+        )}
+
       </div>
     </div>
   );
 }
-
