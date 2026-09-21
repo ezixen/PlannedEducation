@@ -28,6 +28,16 @@ export function Dashboard() {
             </div>
             
             <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+              <h3>Manage Classes</h3>
+              <p>Group students and configure IEP time accommodations.</p>
+              <button 
+                onClick={() => navigate('/teacher-classes')} 
+                style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: '#3b82f6', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+                View Classes
+              </button>
+            </div>
+
+            <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
               <h3>External AI Integrations</h3>
               <p>Configure automated grading via our secure Anonymizer API.</p>
               <button 
