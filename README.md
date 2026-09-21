@@ -67,3 +67,4 @@ We provide clean, localized PowerShell scripts to spin up the entire ecosystem o
 If you have questions about extending the AI integrations, setting up a Safe Exam Browser profile, or contributing to the codebase, please review the architecture guidelines in `AGENTS.md` and `docs/`.
 
 *Built for the future of equitable education.*
+
