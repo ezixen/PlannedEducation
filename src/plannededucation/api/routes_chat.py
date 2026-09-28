@@ -1,6 +1,8 @@
 import json
+import os
+import asyncio
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends
-from typing import Dict, List
+from typing import Dict, List, Optional
 from jose import jwt, JWTError
 from . import auth, database, models
 from sqlalchemy.orm import Session
@@ -8,42 +10,173 @@ from sqlalchemy.orm import Session
 router = APIRouter(prefix="/chat", tags=["chat"])
 
 
-# ── Connection Manager ────────────────────────────────────────────────────────
+# ── Redis Pub/Sub Manager (for multi-worker deployments) ─────────────────────
 
-class ConnectionManager:
+class RedisPubSubManager:
     """
-    In-memory connection manager. Sufficient for single-process deployments.
-    For multi-worker/multi-server deployments, replace broadcast_to_exam
-    with a Redis Pub/Sub publisher.
+    Redis-backed Pub/Sub for cross-worker WebSocket message broadcasting.
+    Falls back to in-memory if Redis is not configured.
     """
 
     def __init__(self):
-        # exam_id -> list of {"websocket": ws, "user": User}
-        self.active_connections: Dict[str, List[Dict]] = {}
+        self.redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+        self._redis = None
+        self._pubsub = None
+        self._listener_task = None
+        self._local_connections: Dict[str, List[Dict]] = {}  # exam_id -> [{"ws": ws, "user": user}]
+        self._running = False
 
-    async def connect(self, websocket: WebSocket, exam_id: str, user: models.User) -> None:
-        if exam_id not in self.active_connections:
-            self.active_connections[exam_id] = []
-        self.active_connections[exam_id].append({"websocket": websocket, "user": user})
+    async def _get_redis(self):
+        """Lazy Redis connection."""
+        if self._redis is None:
+            try:
+                import redis.asyncio as redis
+                self._redis = redis.from_url(self.redis_url, decode_responses=True)
+                await self._redis.ping()
+            except Exception:
+                self._redis = None
+        return self._redis
 
-    def disconnect(self, websocket: WebSocket, exam_id: str) -> None:
-        if exam_id in self.active_connections:
-            self.active_connections[exam_id] = [
-                c for c in self.active_connections[exam_id] if c["websocket"] is not websocket
-            ]
+    async def start(self):
+        """Start the Redis listener."""
+        redis = await self._get_redis()
+        if not redis:
+            return  # Fall back to in-memory only
+        self._running = True
+        self._pubsub = redis.pubsub()
+        await self._pubsub.subscribe("chat:broadcast")
+        self._listener_task = asyncio.create_task(self._listen())
 
-    async def broadcast_to_exam(self, message: str, exam_id: str, sender_name: str) -> None:
-        connections = self.active_connections.get(exam_id, [])
-        dead: list = []
-        payload = json.dumps({"sender": sender_name, "message": message})
+    async def stop(self):
+        """Stop the Redis listener."""
+        self._running = False
+        if self._listener_task:
+            self._listener_task.cancel()
+            try:
+                await self._listener_task
+            except asyncio.CancelledError:
+                pass
+        if self._pubsub:
+            await self._pubsub.unsubscribe("chat:broadcast")
+            await self._pubsub.close()
+        if self._redis:
+            await self._redis.close()
+
+    async def _listen(self):
+        """Listen for messages on Redis channel and broadcast locally."""
+        try:
+            async for message in self._pubsub.listen():
+                if message["type"] == "message":
+                    data = json.loads(message["data"])
+                    await self._broadcast_local(data["exam_id"], data["payload"])
+        except asyncio.CancelledError:
+            pass
+        except Exception:
+            pass  # Log in production
+
+    async def _broadcast_local(self, exam_id: str, payload: str):
+        """Broadcast to local connections only."""
+        connections = self._local_connections.get(exam_id, [])
+        dead = []
         for conn in connections:
             try:
                 await conn["websocket"].send_text(payload)
             except Exception:
                 dead.append(conn)
-        # Clean up dead connections
         for d in dead:
-            self.active_connections[exam_id].remove(d)
+            if exam_id in self._local_connections:
+                self._local_connections[exam_id].remove(d)
+
+    async def connect(self, websocket, exam_id: str, user):
+        """Register a local connection."""
+        if exam_id not in self._local_connections:
+            self._local_connections[exam_id] = []
+        self._local_connections[exam_id].append({"websocket": websocket, "user": user})
+
+    def disconnect(self, websocket, exam_id: str):
+        """Remove a local connection."""
+        if exam_id in self._local_connections:
+            self._local_connections[exam_id] = [
+                c for c in self._local_connections[exam_id] if c["websocket"] is not websocket
+            ]
+
+    async def broadcast_to_exam(self, message: str, exam_id: str, sender_name: str):
+        """Broadcast to all workers via Redis, then locally."""
+        payload = json.dumps({"sender": sender_name, "message": message})
+        
+        # Publish to Redis for other workers
+        redis = await self._get_redis()
+        if redis:
+            try:
+                await redis.publish("chat:broadcast", json.dumps({
+                    "exam_id": exam_id,
+                    "payload": payload
+                }))
+            except Exception:
+                pass  # Fall through to local broadcast
+        
+        # Always broadcast locally
+        await self._broadcast_local(exam_id, payload)
+
+
+# ── Connection Manager (auto-detects Redis) ──────────────────────────────────
+
+class ConnectionManager:
+    """
+    Unified connection manager that uses Redis Pub/Sub when available,
+    falls back to in-memory for single-process deployments.
+    """
+
+    def __init__(self):
+        self._redis_manager = RedisPubSubManager()
+        self._use_redis = os.getenv("USE_REDIS_CHAT", "false").lower() == "true"
+
+    async def start(self):
+        if self._use_redis:
+            await self._redis_manager.start()
+
+    async def stop(self):
+        if self._use_redis:
+            await self._redis_manager.stop()
+
+    async def connect(self, websocket, exam_id: str, user):
+        if self._use_redis:
+            await self._redis_manager.connect(websocket, exam_id, user)
+        else:
+            # In-memory fallback
+            if not hasattr(self, '_local_connections'):
+                self._local_connections = {}
+            if exam_id not in self._local_connections:
+                self._local_connections[exam_id] = []
+            self._local_connections[exam_id].append({"websocket": websocket, "user": user})
+
+    def disconnect(self, websocket, exam_id: str):
+        if self._use_redis:
+            self._redis_manager.disconnect(websocket, exam_id)
+        else:
+            if hasattr(self, '_local_connections') and exam_id in self._local_connections:
+                self._local_connections[exam_id] = [
+                    c for c in self._local_connections[exam_id] if c["websocket"] is not websocket
+                ]
+
+    async def broadcast_to_exam(self, message: str, exam_id: str, sender_name: str):
+        if self._use_redis:
+            await self._redis_manager.broadcast_to_exam(message, exam_id, sender_name)
+        else:
+            # In-memory fallback
+            if not hasattr(self, '_local_connections'):
+                return
+            connections = self._local_connections.get(exam_id, [])
+            dead = []
+            payload = json.dumps({"sender": sender_name, "message": message})
+            for conn in connections:
+                try:
+                    await conn["websocket"].send_text(payload)
+                except Exception:
+                    dead.append(conn)
+            for d in dead:
+                if exam_id in self._local_connections:
+                    self._local_connections[exam_id].remove(d)
 
 
 manager = ConnectionManager()

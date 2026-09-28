@@ -1,0 +1,15 @@
+# Grafana Dashboard Provisioning - Free/Open-Source Only
+# Automatically loads dashboards from the dashboards folder
+
+apiVersion: 1
+
+providers:
+  - name: 'PlannedEducation Dashboards'
+    orgId: 1
+    folder: 'PlannedEducation'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards

@@ -26,6 +26,9 @@ else:
     engine_kwargs["pool_size"] = 10
     engine_kwargs["max_overflow"] = 20
     engine_kwargs["pool_pre_ping"] = True  # Detect stale connections
+    # SSL mode for production
+    if os.getenv("PLANNED_EDUCATION_ENV") != "development":
+        engine_kwargs["connect_args"] = {"sslmode": "require"}
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, **engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -38,3 +41,22 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+# ── Database Security Event Listeners ────────────────────────────────────────
+# Log all DDL changes for audit trail
+@event.listens_for(engine, "before_execute")
+def log_ddl(conn, clauseelement, multiparams, params, execution_options):
+    if hasattr(clauseelement, "__visit_name__") and clauseelement.__visit_name__ in (
+        "create_table", "drop_table", "alter_table", "create_index", "drop_index"
+    ):
+        import logging
+        logger = logging.getLogger("plannededucation.db")
+        logger.warning(
+            f"DDL operation: {clauseelement.__visit_name__}",
+            extra={
+                "security_event": "ddl_operation",
+                "operation": clauseelement.__visit_name__,
+                "sql": str(clauseelement),
+            }
+        )

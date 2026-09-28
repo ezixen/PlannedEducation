@@ -36,6 +36,7 @@ class UserResponse(UserBase):
 
 class Token(BaseModel):
     access_token: str
+    refresh_token: Optional[str] = None
     token_type: str
 
 
@@ -45,6 +46,10 @@ class TokenData(BaseModel):
 
 class GoogleLogin(BaseModel):
     token: str  # The ID token from Google frontend
+
+
+class RefreshTokenRequest(BaseModel):
+    refresh_token: str
 
 
 # ── Questions ─────────────────────────────────────────────────────────────────
@@ -144,3 +149,69 @@ class RelationshipRequest(BaseModel):
 
 class RelationshipApproval(BaseModel):
     approved: bool
+
+
+# ── Password Reset ────────────────────────────────────────────────────────────
+
+class PasswordResetRequest(BaseModel):
+    email: EmailStr
+
+
+class PasswordResetResponse(BaseModel):
+    message: str
+    otp_sent: bool
+
+
+class PasswordResetConfirm(BaseModel):
+    email: EmailStr
+    new_password: str = Field(..., min_length=8, max_length=128)
+    otp: Optional[str] = Field(None, pattern=r"^\d{6}$")
+    recovery_code: Optional[str] = Field(None, min_length=8, max_length=16)
+
+
+# ── 2FA / TOTP ────────────────────────────────────────────────────────────────
+
+class TwoFASetupResponse(BaseModel):
+    secret: str
+    qr_code_uri: str
+    recovery_codes: list[str]
+    message: str
+
+
+class TwoFAConfirm(BaseModel):
+    code: str = Field(..., pattern=r"^\d{6}$")
+
+
+class TwoFAConfirmResponse(BaseModel):
+    message: str
+
+
+class TwoFADisable(BaseModel):
+    totp_code: Optional[str] = Field(None, pattern=r"^\d{6}$")
+    recovery_code: Optional[str] = Field(None, min_length=8, max_length=16)
+
+
+class TwoFADisableResponse(BaseModel):
+    message: str
+
+
+class RecoveryCodesResponse(BaseModel):
+    recovery_codes: list[str]
+    message: str
+
+
+# ── AI Key Management ────────────────────────────────────────────────────────
+
+class AIKeyUpdate(BaseModel):
+    ai_provider: Optional[str] = Field(None, pattern=r"^(gemini|openrouter|ollama|openai)$")
+    ai_api_key: Optional[str] = Field(None, max_length=512)
+    ai_model_name: Optional[str] = Field(None, max_length=128)
+    ai_base_url: Optional[str] = Field(None, max_length=512)
+
+
+class AIKeyResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    ai_provider: Optional[str] = None
+    ai_model_name: Optional[str] = None
+    ai_base_url: Optional[str] = None
+    has_api_key: bool = False

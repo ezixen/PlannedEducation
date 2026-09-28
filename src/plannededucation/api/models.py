@@ -47,6 +47,11 @@ class User(Base):
     totp_secret = Column(String(64), nullable=True)
     totp_enabled = Column(Boolean, default=False, nullable=False)
 
+    # Password Reset (self-service, email OTP or recovery codes)
+    password_reset_otp = Column(String(6), nullable=True)
+    password_reset_otp_expires = Column(DateTime(timezone=True), nullable=True)
+    recovery_codes = Column(Text, nullable=True)  # JSON array of one-time recovery codes
+
     # AI Provider Settings — api_key stored ENCRYPTED via crypto.py
     ai_provider = Column(String(32), default="gemini")
     ai_api_key_encrypted = Column(Text, nullable=True)  # Renamed; plaintext never stored

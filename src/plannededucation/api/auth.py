@@ -1,13 +1,13 @@
 from datetime import datetime, timedelta, timezone
 from typing import Optional
-from jose import jwt
-import os
+import re
+import hashlib
 import secrets
+import os
+from jose import jwt  # Required for create_access_token and JWT encoding
 
 # ── JWT Configuration ────────────────────────────────────────────────────────
 # A strong secret MUST be injected via the environment in every environment.
-# The development fallback uses os.urandom so the secret is never a known string,
-# but tokens will be invalidated on every process restart (intentional: dev only).
 SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "")
 
 if not SECRET_KEY:
@@ -31,11 +31,80 @@ if not SECRET_KEY:
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60  # Reduced from 120 to 60 min for tighter security
 
+# ── Password & 2FA Configuration ─────────────────────────────────────────────
+# Password is stored but ONLY used for self-service reset.
+# Login is Google SSO only. Password reset is email-OTP or recovery-code based.
+PASSWORD_MIN_LEN = 8
+PASSWORD_PATTERN = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$") if True else None
 
+# 2FA settings
+TOTP_ISSUER = "PlannedEducation"
+RECOVERY_CODE_COUNT = 5  # Number of one-time recovery codes to generate
+RECOVERY_CODE_LENGTH = 8  # Length of each recovery code in characters
+
+
+def hash_password(password: str) -> str:
+    """Hash a password for storage (SHA-256, kept for reset flow only)."""
+    return hashlib.sha256(password.encode("utf-8")).hexdigest()
+
+
+def verify_password(plain: str, hashed: str) -> bool:
+    """Verify a password against its hash. Used only for self-service reset flow."""
+    return hash_password(plain) == hashed
+
+
+def generate_recovery_codes(count: int = RECOVERY_CODE_COUNT, length: int = RECOVERY_CODE_LENGTH) -> list[str]:
+    """Generate a list of one-time recovery codes for 2FA / password reset fallback."""
+    codes: list[str] = []
+    for _ in range(count):
+        code = secrets.token_hex(length // 2)[:length]
+        codes.append(code)
+    return codes
+
+
+# ── Token Configuration ──────────────────────────────────────────────────────
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
+REFRESH_TOKEN_EXPIRE_DAYS = 30
+
+# ── Token Creation ───────────────────────────────────────────────────────────
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     to_encode = data.copy()
     expire = datetime.now(timezone.utc) + (
-        expires_delta if expires_delta else timedelta(minutes=15)
+        expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     )
     to_encode["exp"] = expire
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    to_encode["type"] = "access"
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+
+def create_refresh_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
+    """Create a long-lived refresh token."""
+    to_encode = data.copy()
+    expire = datetime.now(timezone.utc) + (
+        expires_delta if expires_delta else timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+    )
+    to_encode["exp"] = expire
+    to_encode["type"] = "refresh"
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+
+def create_token_pair(data: dict) -> dict:
+    """Create both access and refresh tokens."""
+    return {
+        "access_token": create_access_token(data),
+        "refresh_token": create_refresh_token(data),
+        "token_type": "bearer",
+    }
+
+
+def verify_refresh_token(token: str) -> Optional[dict]:
+    """Verify a refresh token and return its payload if valid."""
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        if payload.get("type") != "refresh":
+            return None
+        return payload
+    except JWTError:
+        return None

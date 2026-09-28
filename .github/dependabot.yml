@@ -1,0 +1,68 @@
+# Dependabot Configuration - Free/Open-Source Only
+# Uses GitHub's free Dependabot version updates and security updates
+# NO PAID SERVICES
+
+version: 2
+updates:
+  # Python dependencies (backend)
+  - package-ecosystem: "pip"
+    directory: "/src"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "python"
+      - "backend"
+    commit-message:
+      prefix: "[deps] "
+      prefix-development: "[deps-dev] "
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      # Ignore major version updates that might break compatibility
+      - dependency-name: "*"
+        update-type: "version-update:semver-major"
+
+  # Node.js dependencies (frontend portal)
+  - package-ecosystem: "npm"
+    directory: "/web/apps/portal"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:30"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "npm"
+      - "frontend"
+    commit-message:
+      prefix: "[deps] "
+      prefix-development: "[deps-dev] "
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      # Ignore major version updates that might break compatibility
+      - dependency-name: "*"
+        update-type: "version-update:semver-major"
+
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "[deps] "
