@@ -340,3 +340,406 @@ input, select, textarea {
 .main-content {
   padding-top: 4rem; /* space for the floating header */
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Toast System Styles (ported from WIWM)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.toast-viewport {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 420px;
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  animation: slideIn 0.3s ease-out;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 420px;
+}
+
+.toast-item.exiting {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-item.is-sticky {
+  /* sticky toasts don't auto-dismiss */
+}
+
+.toast-close {
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  padding: 0.25rem;
+  color: inherit;
+  opacity: 0.5;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+.toast-message {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.toast-item--info {
+  background-color: var(--info-bg, #eff6ff);
+  border: 1px solid var(--info-border, #3b82f6);
+  color: var(--info-text, #1e40af);
+}
+
+.toast-item--success {
+  background-color: var(--success-bg, #ecfdf5);
+  border: 1px solid var(--success-border, #10b981);
+  color: var(--success-text, #065f46);
+}
+
+.toast-item--warn {
+  background-color: var(--warning-bg, #fffbeb);
+  border: 1px solid var(--warning-border, #f59e0b);
+  color: var(--warning-text, #92400e);
+}
+
+.toast-item--error {
+  background-color: var(--error-bg, #fef2f2);
+  border: 1px solid var(--error-border, #ef4444);
+  color: var(--error-text, #991b1b);
+}
+
+.toast-item--info,
+.toast-item--success,
+.toast-item--warn,
+.toast-item--error {
+  border: 1px solid;
+  border-radius: var(--radius-lg, 12px);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 0.75rem;
+  animation: slideIn 0.3s ease-out;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 420px;
+}
+
+.toast-item.exiting {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  padding: 0.25rem;
+  color: inherit;
+  opacity: 0.5;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+.toast-message {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Toast type colors - these work with all themes via CSS variables */
+:root {
+  --info-bg: #eff6ff;
+  --info-border: #3b82f6;
+  --info-text: #1e40af;
+
+  --success-bg: #ecfdf5;
+  --success-border: #10b981;
+  --success-text: #065f46;
+
+  --warning-bg: #fffbeb;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fef2f2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --info-bg: #1e3a5f;
+    --info-border: #3b82f6;
+    --info-text: #93c5fd;
+
+    --success-bg: #064e3b;
+    --success-border: #10b981;
+    --success-text: #6ee7b7;
+
+    --warning-bg: #78350f;
+    --warning-border: #f59e0b;
+    --warning-text: #fde68a;
+
+    --error-bg: #7f1d1d;
+    --error-border: #ef4444;
+    --error-text: #fca5a5;
+  }
+}
+
+/* Theme-specific toast colors */
+:root[data-theme="skyward"] {
+  --info-bg: #dbeafe;
+  --info-border: #1b6ca8;
+  --info-text: #1e3a5f;
+
+  --success-bg: #d1fae5;
+  --success-border: #10b981;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="carbon_cyan"] {
+  --info-bg: #cffafe;
+  --info-border: #0891a8;
+  --info-text: #0e4d56;
+
+  --success-bg: #a7f3d0;
+  --success-border: #0f8a6a;
+  --success-text: #064e3b;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="enterprise_blue"] {
+  --info-bg: #dbeafe;
+  --info-border: #1a7fd4;
+  --info-text: #1e3a5f;
+
+  --success-bg: #d1fae5;
+  --success-border: #10b981;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="blush_silver"] {
+  --info-bg: #fce7f3;
+  --info-border: #d4538a;
+  --info-text: #4a2040;
+
+  --success-bg: #d1fae5;
+  --success-border: #10b981;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="matrix_green"] {
+  --info-bg: #dbeafe;
+  --info-border: #1a8f3c;
+  --info-text: #1e3a5f;
+
+  --success-bg: #dcfce7;
+  --success-border: #1a8f3c;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="black_orange"] {
+  --info-bg: #ffedd5;
+  --info-border: #d46500;
+  --info-text: #2a1608;
+
+  --success-bg: #dcfce7;
+  --success-border: #1a8f3c;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="sunset_cabin"] {
+  --info-bg: #e0e7ff;
+  --info-border: #c084fc;
+  --info-text: #2e1a3a;
+
+  --success-bg: #dcfce7;
+  --success-border: #1a8f3c;
+  --success-text: #065f46;
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e;
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b;
+}
+
+:root[data-theme="aurora_night"] {
+  --info-bg: #ccfbf1;
+  --info-border: #0f8a6a;
+  --info-text: #14352f;
+
+  --success-bg: #dcfce7;
+  --success-border: #1a8f3c;
+  --success-text: #065f46.
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e.
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b.
+}
+
+:root[data-theme="comic_stage"] {
+  --info-bg: #e0e7ff;
+  --info-border: #26a69a;
+  --info-text: #1a3d36;
+
+  --success-bg: #dcfce7;
+  --success-border: #26a69a;
+  --success-text: #065f46.
+
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
+  --warning-text: #92400e.
+
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
+  --error-text: #991b1b.
+}
+
+:root[data-theme="ocean_calm"] {
+  --info-bg: #cffafe;
+  --info-border: #087e8b;
+  --info-text: #12343c.
+
+  --success-bg: #a7f3d0;
+  --success-border: #0f8a6a.
+  --success-text: #065f46.
+
+  --warning-bg: #fef3c7.
+  --warning-border: #f59e0b.
+  --warning-text: #92400e.
+
+  --error-bg: #fee2e2.
+  --error-border: #ef4444.
+  --error-text: #991b1b.
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --info-bg: #1e3a5f;
+    --info-border: #3b82f6;
+    --info-text: #93c5fd;
+
+    --success-bg: #064e3b;
+    --success-border: #10b981;
+    --success-text: #6ee7b7;
+
+    --warning-bg: #78350f;
+    --warning-border: #f59e0b;
+    --warning-text: #fde68a;
+
+    --error-bg: #7f1d1d;
+    --error-border: #ef4444;
+    --error-text: #fca5a5;
+  }
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

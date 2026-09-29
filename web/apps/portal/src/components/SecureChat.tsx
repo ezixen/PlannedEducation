@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { useToast } from '../contexts/ToastContext';
 import { API_URL } from '../api';
 
 interface ChatMessage {
@@ -9,6 +10,7 @@ interface ChatMessage {
 
 export function SecureChat({ examId }: { examId: string }) {
   const { user } = useAuth();
+  const { error: showError } = useToast();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [connected, setConnected] = useState(false);
@@ -42,12 +44,15 @@ export function SecureChat({ examId }: { examId: string }) {
     };
 
     socket.onclose = () => setConnected(false);
-    socket.onerror = () => setConnected(false);
+    socket.onerror = () => {
+      setConnected(false);
+      showError('Chat connection lost. Attempting to reconnect...');
+    };
 
     return () => {
       socket.close();
     };
-  }, [examId]);
+  }, [examId, showError]);
 
   // Auto-scroll to latest message
   useEffect(() => {
@@ -70,9 +75,9 @@ export function SecureChat({ examId }: { examId: string }) {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '400px', border: '1px solid var(--border-color)', borderRadius: '8px', overflow: 'hidden' }}>
-      <div style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--sidebar-bg)', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <strong>Digital Hand Raise</strong>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '400px', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
+      <div style={{ padding: '0.75rem 1rem', backgroundColor: 'var(--sidebar-bg)', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <strong style={{ fontSize: '0.95rem', color: 'var(--text-color)' }}>Digital Hand Raise</strong>
         <span style={{
           width: 8, height: 8, borderRadius: '50%',
           backgroundColor: connected ? '#10b981' : '#ef4444',
@@ -88,19 +93,20 @@ export function SecureChat({ examId }: { examId: string }) {
               key={i}
               style={{
                 alignSelf: isMe ? 'flex-end' : 'flex-start',
-                backgroundColor: isMe ? 'var(--primary-color, #2563eb)' : 'var(--sidebar-bg)',
-                color: isMe ? '#fff' : 'inherit',
-                padding: '0.4rem 0.75rem',
-                borderRadius: '8px',
-                maxWidth: '80%',
+                backgroundColor: isMe ? 'var(--primary-color)' : 'var(--sidebar-bg)',
+                color: isMe ? '#fff' : 'var(--text-color)',
+                padding: '0.5rem 0.875rem',
+                borderRadius: 'var(--radius-md)',
+                maxWidth: '85%',
                 border: '1px solid var(--border-color)',
                 wordBreak: 'break-word',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
               }}
             >
-              <small style={{ display: 'block', opacity: 0.7, fontSize: '0.72rem', marginBottom: '0.15rem' }}>
+              <small style={{ display: 'block', opacity: 0.7, fontSize: '0.7rem', marginBottom: '0.125rem' }}>
                 {msg.sender}
               </small>
-              {msg.message}
+              <span style={{ wordBreak: 'break-word', lineHeight: 1.4 }}>{msg.message}</span>
             </div>
           );
         })}
@@ -116,7 +122,7 @@ export function SecureChat({ examId }: { examId: string }) {
           placeholder={connected ? 'Ask a question…' : 'Connecting…'}
           disabled={!connected}
           maxLength={500}
-          style={{ flex: 1, padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
+          style={{ flex: 1, padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.9rem' }}
         />
         <button
           onClick={sendMessage}
@@ -126,8 +132,11 @@ export function SecureChat({ examId }: { examId: string }) {
             backgroundColor: connected ? '#10b981' : '#6b7280',
             color: '#fff',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: 'var(--radius-md)',
             cursor: connected ? 'pointer' : 'not-allowed',
+            fontWeight: 500,
+            fontSize: '0.875rem',
+            whiteSpace: 'nowrap',
           }}
         >
           Send
