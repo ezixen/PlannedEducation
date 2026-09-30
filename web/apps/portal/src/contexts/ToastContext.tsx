@@ -1,103 +1,4 @@
-// Toast constants - exported separately to avoid fast-refresh warnings
-export const TOAST_NOTE_HOLD_MS = 1000
-export const TOAST_MEDIUM_HOLD_MS = 5000
-export const TOAST_FADE_MS = 3000
-const DEDUP_MS = 900
-
-export type ToastKind = 'info' | 'success' | 'warn' | 'error'
-
-export type ToastOptions = {
-  sticky?: boolean
-  key?: string
-  holdMs?: number
-}
-
-type ToastItem = {
-  id: string
-  kind: ToastKind
-  message: string
-  exiting: boolean
-  sticky: boolean
-  key?: string
-}
-
-type ToastApi = {
-  push: (kind: ToastKind, message: string, opts?: ToastOptions) => void
-  info: (message: string, opts?: ToastOptions) => void
-  success: (message: string, opts?: ToastOptions) => void
-  warn: (message: string, opts?: ToastOptions) => void
-  error: (message: string, opts?: ToastOptions) => void
-  dismissKey: (key: string) => void
-}
-
-const ToastContext = createContext<ToastApi | null>(null)
-
-let globalApi: ToastApi | null = null
-
-function nextId(): string {
-  return `toast-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
-}
-
-function isStickyDefault(kind: ToastKind, opts?: ToastOptions): boolean {
-  if (opts?.sticky != null) return opts.sticky
-  return kind === 'error' || kind === 'warn'
-}
-
-function holdMsFor(kind: ToastKind, opts?: ToastOptions): number {
-  if (opts?.holdMs != null && Number.isFinite(opts.holdMs)) return Math.max(0, opts.holdMs)
-  if (kind === 'success') return TOAST_NOTE_HOLD_MS
-  return TOAST_MEDIUM_HOLD_MS
-}
-
-export const toast: ToastApi = {
-  push(kind, message, opts) {
-    const text = message.trim()
-    if (!text) return
-    globalApi?.push(kind, text, opts)
-  },
-  info(message, opts) {
-    toast.push('info', message, opts)
-  },
-  success(message, opts) {
-    toast.push('success', message, opts)
-  },
-  warn(message, opts) {
-    toast.push('warn', message, opts)
-  },
-  error(message, opts) {
-    toast.push('error', message, opts)
-  },
-  dismissKey(key) {
-    globalApi?.dismissKey(key)
-  },
-}
-
-export function useToast(): ToastApi {
-  const ctx = useContext(ToastContext)
-  if (!ctx) throw new Error('useToast requires ToastProvider')
-  return ctx
-}
-
-/** Settings-style feedback helpers: empty string clears nothing (toasts dismiss themselves). */
-export function notifyOk(message: string): void {
-  toast.success(message)
-}
-
-export function notifyNote(message: string): void {
-  toast.info(message)
-}
-
-export function notifyWarn(message: string): void {
-  toast.warn(message)
-}
-
-export function notifyError(message: string): void {
-  toast.error(message)
-}
-
-export function ToastProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<ToastItem[]>([])
-  import {
+import {
   createContext,
   useCallback,
   useContext,
@@ -187,6 +88,23 @@ export function useToast(): ToastApi {
   const ctx = useContext(ToastContext)
   if (!ctx) throw new Error('useToast requires ToastProvider')
   return ctx
+}
+
+/** Settings-style feedback helpers: empty string clears nothing (toasts dismiss themselves). */
+export function notifyOk(message: string): void {
+  toast.success(message)
+}
+
+export function notifyNote(message: string): void {
+  toast.info(message)
+}
+
+export function notifyWarn(message: string): void {
+  toast.warn(message)
+}
+
+export function notifyError(message: string): void {
+  toast.error(message)
 }
 
 export function ToastProvider({ children }: { children: ReactNode }) {
@@ -320,25 +238,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     }
   }, [api])
 
-  // Render toasts using a separate component to avoid ref access during render
-  const ToastViewport = useMemo(() => (
-    <div className="toast-viewport" aria-live="polite" aria-relevant="additions text">
-      {items.map((item) => (
-        <ToastItem key={item.id} item={item} onDismiss={dismiss} />
-      ))}
-    </div>
-  ), [items, dismiss])
-
   return (
     <ToastContext.Provider value={api}>
       {children}
       <div className="toast-viewport" aria-live="polite" aria-relevant="additions text">
         {items.map((item) => (
-          <ToastItem
-            key={item.id}
-            item={item}
-            onDismiss={dismiss}
-          />
+          <ToastItem key={item.id} item={item} onDismiss={dismiss} />
         ))}
       </div>
     </ToastContext.Provider>
@@ -348,7 +253,6 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 // Separate ToastItem component to avoid ref access during render
 function ToastItem({ item, onDismiss }: { item: ToastItem; onDismiss: (id: string) => void }) {
   const { id, kind, message, exiting, sticky } = item
-  const role = kind === 'warn' || kind === 'error' ? 'alert' : 'status'
 
   return (
     <div
@@ -360,7 +264,7 @@ function ToastItem({ item, onDismiss }: { item: ToastItem; onDismiss: (id: strin
         type="button"
         className="toast-close"
         aria-label="Dismiss"
-        onClick={() => dismiss(id)}
+        onClick={() => onDismiss(id)}
       >
         ×
       </button>

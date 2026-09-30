@@ -161,6 +161,7 @@ export function TakeExam() {
         <div style={{ flex: 1, minHeight: 0 }}>
           <SecureChat examId={id ?? ''} />
         </div>
+      </div>
     </div>
   );
 }

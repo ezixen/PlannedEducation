@@ -29,6 +29,9 @@ slowapi>=0.1.9
 # Email (for self-service password reset - use free SMTP in prod)
 aiosmtplib>=3.0.0
 
+# Redis (for WebSocket Pub/Sub - free, open-source)
+redis>=5.0.0
+
 # Utilities
 python-multipart>=0.0.6  # For form data parsing
 

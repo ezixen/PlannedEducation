@@ -1,25 +1,27 @@
 {
-  "$schema": "https://oxc-project.github.io/oxlint.json",
-  "plugins": [],
-  "rules": {
-    "correctness": "error",
-    "suspicious": "error",
-    "perf": "warn",
-    "style": "warn",
-    "nursery": "off"
+  "rules": {},
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc"
+  ],
+  "env": {
+    "builtin": true
   },
   "overrides": [
     {
-      "files": ["**/grafana/**/*.yml", "**/grafana/**/*.yaml"],
-      "rules": {
-        "correctness": "off"
-      }
+      "rules": {},
+      "files": [
+        "**/grafana/**/*.yml",
+        "**/grafana/**/*.yaml"
+      ]
     },
     {
-      "files": [".github/dependabot.yml"],
-      "rules": {
-        "correctness": "off"
-      }
+      "rules": {},
+      "files": [
+        ".github/dependabot.yml"
+      ]
     }
-  ]
+  ],
+  "$schema": "https://oxc-project.github.io/oxlint.json"
 }

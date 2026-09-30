@@ -4,6 +4,8 @@ import { useTheme } from '../contexts/ThemeContext';
 import { useToast } from '../contexts/ToastContext';
 import type { ThemeColor, ThemeRadius } from '../contexts/ThemeContext';
 import { apiClient } from '../api';
+import { AIKeySettings } from '../components/AIKeySettings';
+import { TwoFASettings } from '../components/TwoFASettings';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -210,87 +212,6 @@ export function Settings() {
               )}
             </label>
 
-            {/* Profile section */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h3>Account Profile</h3>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-            Your UUID (<code>{user?.id}</code>) cannot be changed.
-          </p>
-
-          <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
-            <label>
-              Full Name
-              <input
-                type="text"
-                value={fullName}
-                onChange={e => setFullName(e.target.value)}
-                maxLength={128}
-                autoComplete="name"
-                style={inputStyle}
-              />
-            </label>
-
-            <label>
-              Email Address
-              <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                maxLength={255}
-                autoComplete="email"
-                style={inputStyle}
-              />
-            </label>
-
-            <label>
-              Phone Number <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>(optional)</span>
-              <input
-                type="tel"
-                value={phone}
-                onChange={e => setPhone(e.target.value)}
-                maxLength={32}
-                autoComplete="tel"
-                style={inputStyle}
-              />
-            </label>
-
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)' }} />
-            <h4 style={{ margin: '0 0 0.5rem' }}>Change Password</h4>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: 0 }}>Leave blank to keep your current password.</p>
-
-            <label>
-              New Password
-              <input
-                type="password"
-                value={newPassword}
-                onChange={e => setNewPassword(e.target.value)}
-                minLength={8}
-                maxLength={128}
-                autoComplete="new-password"
-                style={inputStyle}
-              />
-            </label>
-
-            <label>
-              Confirm New Password
-              <input
-                type="password"
-                value={confirmNewPassword}
-                onChange={e => setConfirmNewPassword(e.target.value)}
-                minLength={8}
-                maxLength={128}
-                autoComplete="new-password"
-                style={{
-                  ...inputStyle,
-                  borderColor: confirmNewPassword && confirmNewPassword !== newPassword ? '#ef4444' : 'var(--border-color)',
-                }}
-              />
-              {confirmNewPassword && confirmNewPassword !== newPassword && (
-                <small style={{ color: '#ef4444' }}>Passwords do not match</small>
-              )}
-            </label>
-
             <button
               type="submit"
               disabled={loading}
@@ -311,24 +232,12 @@ export function Settings() {
         </div>
 
         {/* Security section */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h3>Security</h3>
-          <p style={{ color: 'var(--text-muted)' }}>
-            Two-Factor Authentication (TOTP) — coming soon.
-          </p>
-        </div>
+        <TwoFASettings />
 
         {/* AI Key Management */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h3>AI Provider Settings</h3>
-          <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-            Configure your AI provider for automated grading. Your API key is encrypted and never exposed.
-          </p>
-          <AIKeySettings />
-        </div>
+        <AIKeySettings />
 
       </div>
     </div>
-  </div>
   );
 }

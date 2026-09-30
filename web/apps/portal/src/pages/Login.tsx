@@ -19,7 +19,7 @@ export function Login() {
       await login(credentialResponse.credential);
       navigate('/');
     } catch (err: any) {
-      showError('Login failed. Please try again.', err.response?.data?.detail);
+      showError('Login failed. Please try again. ' + (err.response?.data?.detail || ''));
     }
   };
 
@@ -31,7 +31,7 @@ export function Login() {
         navigate('/');
       }
     } catch (err: any) {
-      showError('Local login failed.', err.message);
+      showError('Local login failed. ' + err.message);
     }
   };
 
@@ -44,7 +44,7 @@ export function Login() {
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
           <GoogleLogin
             onSuccess={handleGoogleSuccess}
-            onError={() => showError('Google Authentication Failed', 'Please try again or use email login.')}
+            onError={() => showError('Google Authentication Failed. Please try again or use email login.')}
             useOneTap
           />
         </div>

@@ -42,6 +42,7 @@ class User(Base):
     full_name = Column(String(128), nullable=True)
     phone_number = Column(String(32), nullable=True)
     is_active = Column(Boolean, default=True, nullable=False)
+    role = Column(String(16), default='student', nullable=False)  # teacher, student, parent
 
     # 2FA
     totp_secret = Column(String(64), nullable=True)

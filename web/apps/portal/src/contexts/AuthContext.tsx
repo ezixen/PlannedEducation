@@ -9,6 +9,8 @@ export interface User {
   full_name: string | null;
   phone_number: string | null;
   is_active: boolean;
+  role: 'teacher' | 'student' | 'parent';
+  totp_enabled: boolean;
   ai_provider?: string | null;
   ai_model_name?: string | null;
   ai_base_url?: string | null;

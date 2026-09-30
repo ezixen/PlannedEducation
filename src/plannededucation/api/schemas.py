@@ -29,6 +29,8 @@ class UserResponse(UserBase):
     model_config = ConfigDict(from_attributes=True)
     id: str
     is_active: bool
+    role: str
+    totp_enabled: bool
     # hashed_password, totp_secret, ai_api_key_encrypted NEVER included here
 
 

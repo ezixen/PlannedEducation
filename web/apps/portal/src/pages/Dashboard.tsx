@@ -1,12 +1,10 @@
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { useToast } from '../contexts/ToastContext';
 import { ProctoringToggle } from '../components/ProctoringToggle';
 
 export function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { success: showSuccess, error: showError } = useToast();
 
   if (!user) return null;
 
