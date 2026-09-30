@@ -14,6 +14,7 @@ import { ParentDashboard } from './pages/ParentDashboard';
 import { AiIntegration } from './pages/AiIntegration';
 import { TeacherClasses } from './pages/TeacherClasses';
 import { TakeExam } from './pages/TakeExam';
+import { TeacherDashboard } from './pages/TeacherDashboard';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'dummy-client-id.apps.googleusercontent.com';
 
@@ -35,6 +36,7 @@ function App() {
                   <Route path="exam" element={<TakeExam />} />
                   <Route path="teacher-exams" element={<TeacherExams />} />
                   <Route path="teacher-exams/:id" element={<ExamEditor />} />
+                  <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
                   <Route path="teacher-classes" element={<TeacherClasses />} />
                   <Route path="parent-dashboard" element={<ParentDashboard />} />
                   <Route path="ai-integrations" element={<AiIntegration />} />

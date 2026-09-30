@@ -64,9 +64,12 @@ export function TeacherExams() {
                 <h3 style={{ margin: '0 0 0.5rem 0' }}>{exam.title}</h3>
                 <small style={{ color: 'gray' }}>{exam.duration_minutes} minutes | {exam.questions?.length || 0} questions</small>
               </div>
-              <div>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <Link to={`/teacher-exams/${exam.id}`} style={{ padding: '0.5rem 1rem', backgroundColor: '#3b82f6', color: '#fff', textDecoration: 'none', borderRadius: '4px' }}>
                   Edit Editor
+                </Link>
+                <Link to={`/teacher-dashboard/${exam.id}`} style={{ padding: '0.5rem 1rem', backgroundColor: '#8b5cf6', color: '#fff', textDecoration: 'none', borderRadius: '4px' }}>
+                  AI Grading
                 </Link>
               </div>
             </div>
