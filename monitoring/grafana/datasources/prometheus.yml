@@ -1,5 +1,6 @@
 # Grafana Datasource Configuration - Free/Open-Source Only
 # Prometheus datasource for Grafana
+# Schema: https://grafana.com/docs/grafana/latest/administration/provisioning/#datasources
 
 apiVersion: 1
 

@@ -9,6 +9,10 @@ export interface User {
   full_name: string | null;
   phone_number: string | null;
   is_active: boolean;
+  ai_provider?: string | null;
+  ai_model_name?: string | null;
+  ai_base_url?: string | null;
+  ai_api_key_encrypted?: string | null;
 }
 
 interface AuthContextType {

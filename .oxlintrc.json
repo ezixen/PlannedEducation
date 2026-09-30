@@ -1,0 +1,25 @@
+{
+  "$schema": "https://oxc-project.github.io/oxlint.json",
+  "plugins": [],
+  "rules": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn",
+    "style": "warn",
+    "nursery": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/grafana/**/*.yml", "**/grafana/**/*.yaml"],
+      "rules": {
+        "correctness": "off"
+      }
+    },
+    {
+      "files": [".github/dependabot.yml"],
+      "rules": {
+        "correctness": "off"
+      }
+    }
+  ]
+}
