@@ -199,3 +199,112 @@ class Course(Base):
     teacher_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
     teacher = relationship("User", back_populates="taught_courses")
+
+
+# ── Proctoring Models ────────────────────────────────────────────────────────
+
+class ProctoringEventType(str, enum.Enum):
+    """Types of proctoring events that can be recorded."""
+    face_detected = "face_detected"
+    face_lost = "face_lost"
+    multiple_faces = "multiple_faces"
+    eye_movement = "eye_movement"
+    gaze_off_screen = "gaze_off_screen"
+    audio_anomaly = "audio_anomaly"
+    tab_switch = "tab_switch"
+    window_blur = "window_blur"
+    fullscreen_exit = "fullscreen_exit"
+    seb_violation = "seb_violation"
+    session_start = "session_start"
+    session_end = "session_end"
+
+
+class ProctoringSession(Base):
+    """Proctoring session for an exam submission."""
+    __tablename__ = "proctoring_sessions"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    submission_id = Column(String(36), ForeignKey("exam_submissions.id", ondelete="CASCADE"), nullable=False, unique=True)
+    student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
+    
+    # GDPR Consent
+    consent_given = Column(Boolean, default=False, nullable=False)
+    consent_timestamp = Column(DateTime(timezone=True), nullable=True)
+    consent_version = Column(String(32), nullable=True)
+    
+    # Session tracking
+    started_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    ended_at = Column(DateTime(timezone=True), nullable=True)
+    duration_seconds = Column(Integer, nullable=True)
+    
+    # Configuration
+    camera_enabled = Column(Boolean, default=False, nullable=False)
+    microphone_enabled = Column(Boolean, default=False, nullable=False)
+    screen_recording_enabled = Column(Boolean, default=False, nullable=False)
+    
+    # Summary statistics
+    total_events = Column(Integer, default=0, nullable=False)
+    violation_count = Column(Integer, default=0, nullable=False)
+    max_simultaneous_faces = Column(Integer, default=1, nullable=False)
+    
+    # Relationships
+    submission = relationship("ExamSubmission")
+    student = relationship("User")
+    exam = relationship("Exam")
+    events = relationship("ProctoringEvent", back_populates="session", cascade="all, delete-orphan")
+
+
+class ProctoringEvent(Base):
+    """Individual proctoring event recorded during a session."""
+    __tablename__ = "proctoring_events"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    session_id = Column(String(36), ForeignKey("proctoring_sessions.id", ondelete="CASCADE"), nullable=False)
+    
+    # Event details
+    event_type = Column(Enum(ProctoringEventType), nullable=False)
+    timestamp = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    severity = Column(String(16), default="info", nullable=False)  # info, warning, violation
+    
+    # Event data (JSON)
+    event_data = Column(Text, nullable=True)  # JSON with event-specific data
+    
+    # Media references (optional)
+    screenshot_ref = Column(String(256), nullable=True)  # Reference to stored screenshot
+    audio_ref = Column(String(256), nullable=True)  # Reference to stored audio clip
+    
+    # Relationships
+    session = relationship("ProctoringSession", back_populates="events")
+
+
+class ProctoringConsent(Base):
+    """GDPR consent record for proctoring."""
+    __tablename__ = "proctoring_consents"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
+    
+    # Consent details
+    consent_given = Column(Boolean, default=False, nullable=False)
+    consent_timestamp = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    consent_version = Column(String(32), nullable=False)
+    
+    # What was consented to
+    camera_consent = Column(Boolean, default=False, nullable=False)
+    microphone_consent = Column(Boolean, default=False, nullable=False)
+    screen_recording_consent = Column(Boolean, default=False, nullable=False)
+    data_processing_consent = Column(Boolean, default=False, nullable=False)
+    
+    # Withdrawal
+    withdrawn = Column(Boolean, default=False, nullable=False)
+    withdrawn_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # Relationships
+    student = relationship("User")
+    exam = relationship("Exam")
+    
+    __table_args__ = (
+        UniqueConstraint("student_id", "exam_id", name="uq_student_exam_consent"),
+    )
