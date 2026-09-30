@@ -210,7 +210,22 @@ def refresh_access_token(
     if not user or not user.is_active:
         raise HTTPException(status_code=401, detail="User not found or inactive")
     
+    # Verify refresh token hash matches database
+    if not user.refresh_token_hash or not user.refresh_token_expires:
+        raise HTTPException(status_code=401, detail="No refresh token stored")
+    
+    provided_hash = hashlib.sha256(payload.refresh_token.encode()).hexdigest()
+    if not secrets.compare_digest(user.refresh_token_hash, provided_hash):
+        raise HTTPException(status_code=401, detail="Invalid refresh token")
+    
+    if user.refresh_token_expires < datetime.now(timezone.utc):
+        raise HTTPException(status_code=401, detail="Refresh token expired")
+    
     tokens = auth.create_token_pair({"sub": user.email})
+    # Update refresh token hash in database (rotate)
+    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
+    user.refresh_token_expires = datetime.now(timezone.utc) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
+    db.commit()
     return tokens
 
 
@@ -263,11 +278,12 @@ def google_login(
     if not user.is_active:
         raise HTTPException(status_code=403, detail="Account is deactivated")
 
-    access_token = auth.create_access_token(
-        data={"sub": user.email},
-        expires_delta=timedelta(minutes=auth.ACCESS_TOKEN_EXPIRE_MINUTES),
-    )
-    return {"access_token": access_token, "token_type": "bearer"}
+    tokens = auth.create_token_pair({"sub": user.email})
+    # Store refresh token hash in database
+    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
+    user.refresh_token_expires = datetime.now(timezone.utc) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
+    db.commit()
+    return tokens
 
 
 @router.put("/settings", response_model=schemas.UserResponse)

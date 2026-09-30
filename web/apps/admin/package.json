@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.20.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
@@ -21,5 +23,19 @@
     "oxlint": "^1.81.0",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
-  }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "npm@10.0.0",
+  "description": "PlannedEducation Admin Portal - Free/Open-Source Only. NO PAID SERVICES.",
+  "keywords": [
+    "education",
+    "admin",
+    "dashboard",
+    "open-source",
+    "free"
+  ],
+  "author": "PlannedEducation Contributors",
+  "license": "MIT"
 }

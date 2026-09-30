@@ -59,6 +59,10 @@ class User(Base):
     ai_model_name = Column(String(128), default="gemini-2.5-flash")
     ai_base_url = Column(String(512), nullable=True)
 
+    # Refresh Tokens (for session management)
+    refresh_token_hash = Column(String(256), nullable=True)  # Hashed refresh token
+    refresh_token_expires = Column(DateTime(timezone=True), nullable=True)  # Expiry timestamp
+
     # Relationships
     exams = relationship("Exam", back_populates="teacher", cascade="all, delete-orphan")
     student_records = relationship(
