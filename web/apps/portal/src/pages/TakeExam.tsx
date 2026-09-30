@@ -4,6 +4,7 @@ import { useToast } from '../contexts/ToastContext';
 
 import { SecureChat } from '../components/SecureChat';
 import { API_URL } from '../api';
+import { useOfflineSync } from '../hooks/useOfflineSync';
 
 interface ExamQuestion {
   question_id: string;
@@ -25,7 +26,10 @@ export function TakeExam() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { error: showError, success: showSuccess } = useToast();
+  const { error: showError, success: showSuccess, info: showInfo } = useToast();
+  
+  // Offline sync integration
+  const { online, syncing, saveAnswer, submitExam, sync } = useOfflineSync(id);
 
   useEffect(() => {
     if (!id) return;
@@ -50,6 +54,31 @@ export function TakeExam() {
     startExam();
   }, [id, showError]);
 
+  // Auto-save answers to offline storage
+  useEffect(() => {
+    if (!id || Object.keys(answers).length === 0) return;
+    
+    const saveTimer = setTimeout(async () => {
+      for (const [qId, response] of Object.entries(answers)) {
+        if (response.trim()) {
+          await saveAnswer(qId, response);
+        }
+      }
+    }, 1000); // Debounce saves
+    
+    return () => clearTimeout(saveTimer);
+  }, [answers, id, saveAnswer]);
+
+  // Handle online/offline status changes
+  useEffect(() => {
+    if (online && syncing) {
+      showInfo('Online - syncing progress...');
+      sync();
+    } else if (!online) {
+      showInfo('Offline mode - answers saved locally');
+    }
+  }, [online, syncing, sync]);
+
   if (submitted) {
     return (
       <div style={{ textAlign: 'center', marginTop: '4rem' }}>
@@ -66,32 +95,18 @@ export function TakeExam() {
     setSubmitting(true);
 
     try {
-      const token = localStorage.getItem('access_token');
-      // Wrap in { answers: [...] } to match backend ExamSubmitRequest schema
-      const payload = {
-        answers: Object.entries(answers).map(([qId, resp]) => ({
-          question_id: qId,   // UUID string — do NOT parseInt
-          response: resp,
-        })),
-      };
-
-      const res = await fetch(`${API_URL}/exams/${id}/submit`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(payload)
-      });
-      if (res.ok) {
+      // Use offline sync submit (handles both online and offline)
+      const result = await submitExam(answers);
+      
+      if (result.queued) {
+        showSuccess('Exam queued for submission when online');
+        // Don't set submitted=true yet - will be submitted when online
+      } else {
         showSuccess('Exam submitted successfully!');
         setSubmitted(true);
-      } else {
-        const data = await res.json();
-        showError('Failed to submit exam', data.detail);
       }
     } catch (err: any) {
-      showError('Network error', err.message);
+      showError('Failed to submit exam', err.message);
     } finally {
       setSubmitting(false);
     }
