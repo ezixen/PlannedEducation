@@ -12,7 +12,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from contextlib import asynccontextmanager
 
 from .database import engine, Base
-from . import models, routes_auth, routes_exam, routes_chat, routes_anonymizer, routes_parent
+from . import models, routes_auth, routes_exam, routes_chat, routes_anonymizer, routes_parent, routes_ocr
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────
@@ -196,6 +196,7 @@ app.include_router(routes_exam.router)
 app.include_router(routes_chat.router)
 app.include_router(routes_anonymizer.router)
 app.include_router(routes_parent.router)
+app.include_router(routes_ocr.router)
 
 
 @app.get("/health")

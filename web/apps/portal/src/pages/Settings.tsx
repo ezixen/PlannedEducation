@@ -6,6 +6,7 @@ import type { ThemeColor, ThemeRadius } from '../contexts/ThemeContext';
 import { apiClient } from '../api';
 import { AIKeySettings } from '../components/AIKeySettings';
 import { TwoFASettings } from '../components/TwoFASettings';
+import { OCRProcessor } from '../components/OCRProcessor';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -236,6 +237,9 @@ export function Settings() {
 
         {/* AI Key Management */}
         <AIKeySettings />
+
+        {/* OCR Processor */}
+        <OCRProcessor />
 
       </div>
     </div>
