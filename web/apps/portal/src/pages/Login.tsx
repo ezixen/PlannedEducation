@@ -19,7 +19,16 @@ export function Login() {
       await login(credentialResponse.credential);
       navigate('/');
     } catch (err: any) {
-      showError('Login failed. Please try again. ' + (err.response?.data?.detail || ''));
+      const detail = err.response?.data?.detail || err.message || 'Login failed';
+      let message = 'Google login failed';
+      if (detail === 'Google sign-in is not configured on this server') {
+        message = 'Google sign-in is not configured. Please use email login instead.';
+      } else if (detail === 'Invalid Google token') {
+        message = 'Invalid Google token. Please try again.';
+      } else {
+        message = detail;
+      }
+      showError(message);
     }
   };
 
@@ -31,7 +40,25 @@ export function Login() {
         navigate('/');
       }
     } catch (err: any) {
-      showError('Local login failed. ' + err.message);
+      console.error('Login error:', err);
+      console.error('Login error response:', err.response);
+      console.error('Login error response data:', err.response?.data);
+      const detail = err.response?.data?.detail || err.message || 'Login failed';
+      console.error('Login error detail:', detail);
+      // Provide more specific error messages
+      let message = 'Login failed';
+      if (detail === 'Invalid email/username or password') {
+        message = 'Invalid email/username or password. Please check your credentials and try again.';
+      } else if (detail === 'This account uses Google sign-in. Please use the Google button to log in.') {
+        message = 'This account uses Google sign-in. Please use the Google button to log in.';
+      } else if (detail === 'Account is deactivated. Please contact support.') {
+        message = 'This account has been deactivated. Please contact support.';
+      } else if (detail.includes('rate limit') || detail.includes('too many')) {
+        message = 'Too many login attempts. Please wait a moment and try again.';
+      } else {
+        message = detail;
+      }
+      showError(message);
     }
   };
 

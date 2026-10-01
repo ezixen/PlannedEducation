@@ -1,0 +1,23 @@
+{
+  "results": {
+    "test_ui_full.py::test_ui_full": {
+      "test_file": "test_ui_full.py",
+      "test_name": "test_ui_full",
+      "status": "passed",
+      "duration": 30,
+      "timestamp": "2026-10-01T22:19:12.017698",
+      "file_hash": "cb88e8f4c75f028034c112d3736faa5d9f63153d9e67c069736f7ad02c76ed2a",
+      "error_message": null
+    },
+    "test_e2e_comprehensive.py::test_e2e_comprehensive": {
+      "test_file": "test_e2e_comprehensive.py",
+      "test_name": "test_e2e_comprehensive",
+      "status": "passed",
+      "duration": 60,
+      "timestamp": "2026-10-01T22:16:08.670236",
+      "file_hash": "83dab6bb00b74973414a05140257f4a440cbb3d628f88939696b0612bab9a237",
+      "error_message": null
+    }
+  },
+  "last_updated": "2026-10-01T22:19:12.017968"
+}

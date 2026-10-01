@@ -114,7 +114,7 @@ if os.getenv("PLANNED_EDUCATION_ENV") == "production":
 # ── CORS (explicit allow-list, never wildcard) ───────────────────────────────
 cors_origins = [
     origin.strip()
-    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:5174,http://localhost:5175").split(",")
     if origin.strip()
 ]
 app.add_middleware(

@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = $PSScriptRoot
 Set-Location $RepoRoot
 
-$PortalUrl = "http://localhost:5173"
+$PortalUrl = "http://localhost:5175"
 $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-student-profile"
 $PythonExe = "C:\.venv\Scripts\python.exe"
@@ -34,8 +34,8 @@ function Test-LocalPort([int]$Port) {
 }
 
 # 1. Start API if not running
-if (-not (Test-LocalPort 8000)) {
-    Write-Host "Starting API (Port 8000) in new window..." -ForegroundColor Cyan
+if (-not (Test-LocalPort 8001)) {
+    Write-Host "Starting API (Port 8001) in new window..." -ForegroundColor Cyan
     $ApiLauncher = Join-Path $LauncherDir "start_api_student.ps1"
     Set-Content -Path $ApiLauncher -Encoding utf8 -Value @"
 `$env:DATABASE_URL="postgresql://postgres:postgres@localhost:5433/plannededucation"
@@ -45,16 +45,16 @@ if (-not (Test-LocalPort 8000)) {
 `$env:CORS_ORIGINS="$PortalUrl"
 Set-Location "$RepoRoot"
 Write-Host "Starting FastAPI Backend..." -ForegroundColor Green
-& "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8000
+& "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8001
 "@
-    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$ApiLauncher`""
+    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$ApiLauncher`"" 
 } else {
-    Write-Host "API already listening on 8000." -ForegroundColor Yellow
+    Write-Host "API already listening on 8001." -ForegroundColor Yellow
 }
 
 # 2. Start Portal if not running
-if (-not (Test-LocalPort 5173)) {
-    Write-Host "Starting Portal (Port 5173) in new window..." -ForegroundColor Cyan
+if (-not (Test-LocalPort 5175)) {
+    Write-Host "Starting Portal (Port 5175) in new window..." -ForegroundColor Cyan
     $npmCmd = Join-Path $NodeDirectory "npm.cmd"
     if (-not (Test-Path $npmCmd)) {
         $npmCmd = (Get-Command npm.cmd -ErrorAction Stop).Source
@@ -63,20 +63,20 @@ if (-not (Test-LocalPort 5173)) {
     $PortalLauncher = Join-Path $LauncherDir "start_portal_student.ps1"
     Set-Content -Path $PortalLauncher -Encoding utf8 -Value @"
 `$env:PATH = "$NodeDirectory;" + `$env:PATH
-`$env:VITE_API_URL="http://localhost:8000"
+`$env:VITE_API_URL="http://localhost:8001"
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
-& "$npmCmd" run dev -- --host 127.0.0.1 --port 5173
+& "$npmCmd" run dev -- --host 127.0.0.1 --port 5175
 "@
-    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`""
+    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`"" 
 } else {
-    Write-Host "Portal already listening on 5173." -ForegroundColor Yellow
+    Write-Host "Portal already listening on 5175." -ForegroundColor Yellow
 }
 
 # 3. Wait for services
 Write-Host "Waiting for services to become available..."
 $retries = 60
-while (-not (Test-LocalPort 8000) -or -not (Test-LocalPort 5173)) {
+while (-not (Test-LocalPort 8001) -or -not (Test-LocalPort 5175)) {
     Start-Sleep -Seconds 1
     $retries--
     if ($retries -le 0) {

@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Start the Planned Education local stack: API + Portal + visible Chrome Canary
+Start the Planned Education local stack: API + Portal + 3 Chrome instances (Teacher, Student, Parent)
 #>
 
 $ErrorActionPreference = "Stop"
@@ -12,6 +12,8 @@ $PortalUrl = "http://localhost:5175"
 $ApiUrl = "http://localhost:8001"
 $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-canary-profile"
+$StudentUserData = Join-Path $env:TEMP "plannededucation-student-profile"
+$ParentUserData = Join-Path $env:TEMP "plannededucation-parent-profile"
 $PythonExe = "C:\.venv\Scripts\python.exe"
 $NodeDirectory = "C:\Program Files\nodejs"
 $JwtSecret = "plannededucation-local-development-secret-only"
@@ -86,8 +88,8 @@ while (-not (Test-LocalPort 8001) -or -not (Test-LocalPort 5175)) {
     }
 }
 
-# 4. Launch Canary
-Write-Host "Launching Chrome Canary..." -ForegroundColor Cyan
+# 4. Launch Teacher Chrome (Canary) on port 9222
+Write-Host "Launching Teacher Chrome (Canary)..." -ForegroundColor Cyan
 $CanaryPath = "${env:LOCALAPPDATA}\Google\Chrome SxS\Application\chrome.exe"
 if (-not (Test-Path $CanaryPath)) {
     Write-Host "Canary not found at $CanaryPath, falling back to standard Chrome..." -ForegroundColor Yellow
@@ -105,4 +107,43 @@ Start-Process -FilePath $CanaryPath -ArgumentList @(
     "--no-default-browser-check",
     "`"$PortalUrl/login`""
 )
-Write-Host "Stack is up. Chrome Canary opened at $PortalUrl/login." -ForegroundColor Green
+Write-Host "Teacher Chrome opened at $PortalUrl/login." -ForegroundColor Green
+
+# 5. Launch Student Chrome on port 9223
+Write-Host "Launching Student Chrome..." -ForegroundColor Cyan
+$StudentPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+if (-not (Test-Path $StudentPath)) {
+    throw "Chrome was not found. Services are running at $PortalUrl/login."
+}
+
+Start-Process -FilePath $StudentPath -ArgumentList @(
+    "--remote-debugging-port=9223",
+    "--user-data-dir=`"$StudentUserData`"",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "`"$PortalUrl/login`""
+)
+Write-Host "Student Chrome opened at $PortalUrl/login." -ForegroundColor Green
+
+# 6. Launch Parent Chrome on port 9224
+Write-Host "Launching Parent Chrome..." -ForegroundColor Cyan
+$ParentPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+if (-not (Test-Path $ParentPath)) {
+    throw "Chrome was not found. Services are running at $PortalUrl/login."
+}
+
+Start-Process -FilePath $ParentPath -ArgumentList @(
+    "--remote-debugging-port=9224",
+    "--user-data-dir=`"$ParentUserData`"",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "`"$PortalUrl/login`""
+)
+Write-Host "Parent Chrome opened at $PortalUrl/login." -ForegroundColor Green
+
+Write-Host "Stack is up. All three browsers opened at $PortalUrl/login." -ForegroundColor Green
+Write-Host "Teacher:  http://localhost:9222 (Canary)" -ForegroundColor Cyan
+Write-Host "Student:  http://localhost:9223 (Chrome)" -ForegroundColor Cyan
+Write-Host "Parent:   http://localhost:9224 (Chrome)" -ForegroundColor Cyan
+Write-Host "Portal:   $PortalUrl" -ForegroundColor Cyan
+Write-Host "API:      $ApiUrl" -ForegroundColor Cyan

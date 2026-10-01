@@ -170,17 +170,21 @@ def login_for_access_token(
         .first()
     )
 
-    if not user or not user.hashed_password:
+    if not user:
         # Perform a dummy verify to prevent timing oracle
         verify_password(form_data.password, _DUMMY_HASH)
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+        raise HTTPException(status_code=401, detail="Invalid email/username or password")
 
+    if not user.hashed_password:
+        # User exists but has no password (e.g., Google-only account)
+        verify_password(form_data.password, _DUMMY_HASH)
+        raise HTTPException(status_code=401, detail="This account uses Google sign-in. Please use the Google button to log in.")
 
     if not verify_password(form_data.password, user.hashed_password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+        raise HTTPException(status_code=401, detail="Invalid email/username or password")
 
     if not user.is_active:
-        raise HTTPException(status_code=403, detail="Account is deactivated")
+        raise HTTPException(status_code=403, detail="Account is deactivated. Please contact support.")
 
     access_token = auth.create_access_token(
         data={"sub": user.email},
