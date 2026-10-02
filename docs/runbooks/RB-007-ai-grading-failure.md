@@ -83,8 +83,8 @@ AnalyzerEngine()  # Triggers model download
 
 ### Test AI Provider Directly
 ```bash
-# Test Gemini
-curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=API_KEY" \
+# Test Gemini (replace YOUR_API_KEY with actual key)
+curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"contents":[{"parts":[{"text":"Hello"}]}]}'
 ```

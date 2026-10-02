@@ -4,7 +4,7 @@ import re
 import hashlib
 import secrets
 import os
-from jose import jwt  # Required for create_access_token and JWT encoding
+import jwt  # PyJWT for JWT encoding/decoding
 
 # ── JWT Configuration ────────────────────────────────────────────────────────
 # A strong secret MUST be injected via the environment in every environment.

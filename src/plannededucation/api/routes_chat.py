@@ -3,7 +3,7 @@ import os
 import asyncio
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends
 from typing import Dict, List, Optional
-from jose import jwt, JWTError
+import jwt  # PyJWT for JWT encoding/decoding
 from . import auth, database, models
 from sqlalchemy.orm import Session
 
@@ -192,7 +192,7 @@ def _get_user_from_ws_token(token: str, db: Session) -> models.User | None:
             return None
         user = db.query(models.User).filter(models.User.email == email).first()
         return user if (user and user.is_active) else None
-    except JWTError:
+    except jwt.exceptions.InvalidTokenError:
         return None
 
 

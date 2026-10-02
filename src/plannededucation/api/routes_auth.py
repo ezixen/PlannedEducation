@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from jose import JWTError, jwt
+import jwt  # PyJWT for JWT encoding/decoding
 from google.oauth2 import id_token
 from google.auth.transport import requests as google_requests
 from passlib.context import CryptContext
@@ -95,7 +95,7 @@ def get_current_user(
         email: str | None = payload.get("sub")
         if email is None:
             raise credentials_exception
-    except JWTError:
+    except jwt.exceptions.InvalidTokenError:
         raise credentials_exception
 
     user = db.query(models.User).filter(models.User.email == email).first()
