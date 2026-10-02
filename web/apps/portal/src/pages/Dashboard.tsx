@@ -1,6 +1,5 @@
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { ProctoringToggle } from '../components/ProctoringToggle';
 
 export function Dashboard() {
   const { user } = useAuth();
