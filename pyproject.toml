@@ -43,3 +43,88 @@ extend-immutable-calls = []
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = false
+warn_unused_configs = false
+ignore_missing_imports = true
+namespace_packages = true
+explicit_package_bases = true
+disable_error_code = [
+    "attr-defined",
+    "assignment",
+    "arg-type",
+    "call-overload",
+    "index",
+    "misc",
+    "var-annotated",
+]
+
+[[tool.mypy.overrides]]
+module = "sqlalchemy.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "fastapi.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "pydantic.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "starlette.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "slowapi.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "argon2.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "jwt.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "pyotp.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "cryptography.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "google.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "presidio_analyzer.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "presidio_anonymizer.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "faster_whisper.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "pytesseract.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "PIL.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "redis.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "aiosmtplib.*"
+ignore_errors = true
