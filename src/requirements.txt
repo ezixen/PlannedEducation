@@ -12,6 +12,7 @@ psycopg2-binary>=2.9.9  # PostgreSQL driver (free)
 # Validation & Serialization
 pydantic>=2.6.3
 pydantic-settings>=2.0.0  # For settings management
+pydantic[email]>=2.6.3  # For EmailStr validation
 
 # Authentication & Security
 PyJWT>=2.13.0  # JWT handling (replaces python-jose to avoid ecdsa vulnerability)
