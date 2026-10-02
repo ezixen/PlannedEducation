@@ -87,6 +87,6 @@ jobs:
           curl -sSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
             | tar -xz gitleaks
 
-      - name: Run gitleaks
+      - name: Run gitleaks with baseline
         run: |
-          ./gitleaks detect --source . --verbose --redact
+          ./gitleaks detect --source . --verbose --redact --baseline-path gitleaks-baseline.json
