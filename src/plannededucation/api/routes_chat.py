@@ -1,11 +1,12 @@
+import asyncio
 import json
 import os
-import asyncio
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends
-from typing import Dict, List, Optional
+
 import jwt  # PyJWT for JWT encoding/decoding
-from . import auth, database, models
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from sqlalchemy.orm import Session
+
+from . import auth, database, models
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -23,7 +24,7 @@ class RedisPubSubManager:
         self._redis = None
         self._pubsub = None
         self._listener_task = None
-        self._local_connections: Dict[str, List[Dict]] = {}  # exam_id -> [{"ws": ws, "user": user}]
+        self._local_connections: dict[str, list[dict]] = {}  # exam_id -> [{"ws": ws, "user": user}]
         self._running = False
 
     async def _get_redis(self):

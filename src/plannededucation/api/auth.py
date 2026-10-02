@@ -1,9 +1,9 @@
-from datetime import datetime, timedelta, timezone
-from typing import Optional
-import re
 import hashlib
-import secrets
 import os
+import re
+import secrets
+from datetime import datetime, timedelta, timezone
+
 import jwt  # PyJWT for JWT encoding/decoding
 
 # ── JWT Configuration ────────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60
 REFRESH_TOKEN_EXPIRE_DAYS = 30
 
 # ── Token Creation ───────────────────────────────────────────────────────────
-def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
+def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     to_encode = data.copy()
     expire = datetime.now(timezone.utc) + (
         expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
@@ -78,7 +78,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     return encoded_jwt
 
 
-def create_refresh_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
+def create_refresh_token(data: dict, expires_delta: timedelta | None = None) -> str:
     """Create a long-lived refresh token."""
     to_encode = data.copy()
     expire = datetime.now(timezone.utc) + (
@@ -99,7 +99,7 @@ def create_token_pair(data: dict) -> dict:
     }
 
 
-def verify_refresh_token(token: str) -> Optional[dict]:
+def verify_refresh_token(token: str) -> dict | None:
     """Verify a refresh token and return its payload if valid."""
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])

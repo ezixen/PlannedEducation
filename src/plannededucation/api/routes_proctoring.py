@@ -3,12 +3,13 @@ Proctoring Routes for PlannedEducation
 Endpoints for proctoring event pipeline, GDPR consent, and session management.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Request
-from sqlalchemy.orm import Session
-from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field
-from datetime import datetime, timezone
 import json
+from datetime import datetime, timezone
+from typing import Any
+
+from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel, Field
+from sqlalchemy.orm import Session
 
 from . import database, models
 from .routes_auth import get_current_user
@@ -41,7 +42,7 @@ class ProctoringConsentResponse(BaseModel):
     screen_recording_consent: bool
     data_processing_consent: bool
     withdrawn: bool
-    withdrawn_at: Optional[datetime] = None
+    withdrawn_at: datetime | None = None
 
 
 class ProctoringSessionStartRequest(BaseModel):
@@ -60,14 +61,14 @@ class ProctoringSessionResponse(BaseModel):
     student_id: str
     exam_id: str
     consent_given: bool
-    consent_timestamp: Optional[datetime] = None
-    consent_version: Optional[str] = None
+    consent_timestamp: datetime | None = None
+    consent_version: str | None = None
     camera_enabled: bool
     microphone_enabled: bool
     screen_recording_enabled: bool
     started_at: datetime
-    ended_at: Optional[datetime] = None
-    duration_seconds: Optional[int] = None
+    ended_at: datetime | None = None
+    duration_seconds: int | None = None
     total_events: int
     violation_count: int
     max_simultaneous_faces: int
@@ -78,9 +79,9 @@ class ProctoringEventRequest(BaseModel):
     session_id: str = Field(..., description="Proctoring session ID")
     event_type: str = Field(..., description="Event type")
     severity: str = Field(default="info", description="Severity: info, warning, violation")
-    event_data: Optional[Dict[str, Any]] = Field(default=None)
-    screenshot_ref: Optional[str] = Field(default=None)
-    audio_ref: Optional[str] = Field(default=None)
+    event_data: dict[str, Any] | None = Field(default=None)
+    screenshot_ref: str | None = Field(default=None)
+    audio_ref: str | None = Field(default=None)
 
 
 class ProctoringEventResponse(BaseModel):
@@ -90,15 +91,15 @@ class ProctoringEventResponse(BaseModel):
     event_type: str
     timestamp: datetime
     severity: str
-    event_data: Optional[Dict[str, Any]] = None
-    screenshot_ref: Optional[str] = None
-    audio_ref: Optional[str] = None
+    event_data: dict[str, Any] | None = None
+    screenshot_ref: str | None = None
+    audio_ref: str | None = None
 
 
 class ProctoringEventBatchRequest(BaseModel):
     """Request model for batch event recording."""
     session_id: str = Field(..., description="Proctoring session ID")
-    events: List[ProctoringEventRequest] = Field(..., description="List of events")
+    events: list[ProctoringEventRequest] = Field(..., description="List of events")
 
 
 class ProctoringStatsResponse(BaseModel):
@@ -107,8 +108,8 @@ class ProctoringStatsResponse(BaseModel):
     active_sessions: int
     total_events: int
     total_violations: int
-    events_by_type: Dict[str, int]
-    violations_by_type: Dict[str, int]
+    events_by_type: dict[str, int]
+    violations_by_type: dict[str, int]
 
 
 # ── Helper Functions ────────────────────────────────────────────────────────
@@ -129,9 +130,7 @@ def _get_session_and_verify(
     
     # Students can only access their own sessions
     # Teachers can access sessions for their exams
-    if current_user.role == "student" and session.student_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Access denied")
-    elif current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
+    if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
     
     return session
@@ -357,9 +356,7 @@ def get_session_by_submission(
         raise HTTPException(status_code=404, detail="Session not found")
     
     # Verify access
-    if current_user.role == "student" and session.student_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Access denied")
-    elif current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
+    if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
     
     return session
@@ -399,15 +396,14 @@ def record_event(
     # Track max simultaneous faces
     if request.event_type == "multiple_faces" and request.event_data:
         face_count = request.event_data.get("face_count", 1)
-        if face_count > session.max_simultaneous_faces:
-            session.max_simultaneous_faces = face_count
+        session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
     
     db.commit()
     db.refresh(event)
     return event
 
 
-@router.post("/events/batch", response_model=List[ProctoringEventResponse])
+@router.post("/events/batch", response_model=list[ProctoringEventResponse])
 def record_events_batch(
     request: ProctoringEventBatchRequest,
     current_user: models.User = Depends(get_current_user),
@@ -439,8 +435,7 @@ def record_events_batch(
         
         if event_req.event_type == "multiple_faces" and event_req.event_data:
             face_count = event_req.event_data.get("face_count", 1)
-            if face_count > session.max_simultaneous_faces:
-                session.max_simultaneous_faces = face_count
+            session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
     
     db.commit()
     for event in events:
@@ -448,11 +443,11 @@ def record_events_batch(
     return events
 
 
-@router.get("/session/{session_id}/events", response_model=List[ProctoringEventResponse])
+@router.get("/session/{session_id}/events", response_model=list[ProctoringEventResponse])
 def get_session_events(
     session_id: str,
-    event_type: Optional[str] = None,
-    severity: Optional[str] = None,
+    event_type: str | None = None,
+    severity: str | None = None,
     limit: int = 100,
     offset: int = 0,
     current_user: models.User = Depends(get_current_user),
@@ -478,7 +473,7 @@ def get_session_events(
 
 @router.get("/stats", response_model=ProctoringStatsResponse)
 def get_proctoring_stats(
-    exam_id: Optional[str] = None,
+    exam_id: str | None = None,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):

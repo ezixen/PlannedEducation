@@ -3,14 +3,13 @@ Speech-to-Text Routes for PlannedEducation
 Endpoints for audio transcription using faster-whisper.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
-from sqlalchemy.orm import Session
-from typing import Optional, List
+
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from pydantic import BaseModel, Field
 
-from . import database, models
+from . import models
 from .routes_auth import get_current_user
-from .stt_service import get_stt_service, SpeechToTextService, TranscriptionResult
+from .stt_service import SpeechToTextService, get_stt_service
 
 router = APIRouter(prefix="/stt", tags=["speech-to-text"])
 
@@ -18,7 +17,7 @@ router = APIRouter(prefix="/stt", tags=["speech-to-text"])
 class STTRequest(BaseModel):
     """Request model for STT processing."""
     audio_base64: str = Field(..., description="Base64 encoded audio data")
-    language: Optional[str] = Field(default=None, description="Language code (None for auto-detect)")
+    language: str | None = Field(default=None, description="Language code (None for auto-detect)")
     task: str = Field(default="transcribe", description="Task: transcribe or translate")
 
 
@@ -28,20 +27,20 @@ class STTResponse(BaseModel):
     language: str
     language_probability: float
     duration: float
-    segments: Optional[List[dict]] = None
-    error: Optional[str] = None
+    segments: list[dict] | None = None
+    error: str | None = None
 
 
 class STTBatchRequest(BaseModel):
     """Request model for batch STT processing."""
-    audios: List[str] = Field(..., description="List of base64 encoded audio files")
-    language: Optional[str] = Field(default=None, description="Language code")
+    audios: list[str] = Field(..., description="List of base64 encoded audio files")
+    language: str | None = Field(default=None, description="Language code")
     task: str = Field(default="transcribe", description="Task: transcribe or translate")
 
 
 class STTBatchResponse(BaseModel):
     """Response model for batch STT processing."""
-    results: List[STTResponse]
+    results: list[STTResponse]
 
 
 @router.post("/transcribe", response_model=STTResponse)
@@ -79,7 +78,7 @@ async def transcribe_audio(
 @router.post("/transcribe-upload", response_model=STTResponse)
 async def transcribe_audio_upload(
     file: UploadFile = File(...),
-    language: Optional[str] = Form(default=None),
+    language: str | None = Form(default=None),
     task: str = Form(default="transcribe"),
     current_user: models.User = Depends(get_current_user),
     stt_service: SpeechToTextService = Depends(get_stt_service),

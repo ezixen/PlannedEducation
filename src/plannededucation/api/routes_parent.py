@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
 
 from . import database, models
 from .routes_auth import get_current_user
@@ -78,7 +77,6 @@ def request_relationship(
     A parent initiates a link request to a student (by student UUID).
     The student must then approve via /relationships/{id}/approve.
     """
-    from . import schemas
 
     student_id: str = body.get("student_id", "")
     teacher_id: str | None = body.get("teacher_id")

@@ -1,7 +1,6 @@
 import os
-import base64
-from cryptography.fernet import Fernet, InvalidToken
 
+from cryptography.fernet import Fernet, InvalidToken
 
 # ── AI Key Encryption ────────────────────────────────────────────────────────
 # The master key is a URL-safe base64-encoded 32-byte key, stored in environment.

@@ -1,15 +1,14 @@
-from pydantic import BaseModel, EmailStr, ConfigDict, field_validator, Field
-from typing import Optional
 from enum import Enum
 
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 # ── User ──────────────────────────────────────────────────────────────────────
 
 class UserBase(BaseModel):
     email: EmailStr
     username: str = Field(..., min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
-    full_name: Optional[str] = Field(None, max_length=128)
-    phone_number: Optional[str] = Field(None, max_length=32)
+    full_name: str | None = Field(None, max_length=128)
+    phone_number: str | None = Field(None, max_length=32)
 
 
 class UserCreate(UserBase):
@@ -18,11 +17,11 @@ class UserCreate(UserBase):
 
 
 class UserUpdate(BaseModel):
-    full_name: Optional[str] = Field(None, max_length=128)
-    email: Optional[EmailStr] = None
-    phone_number: Optional[str] = Field(None, max_length=32)
+    full_name: str | None = Field(None, max_length=128)
+    email: EmailStr | None = None
+    phone_number: str | None = Field(None, max_length=32)
     # password is optional; server enforces complexity if provided
-    password: Optional[str] = Field(None, min_length=8, max_length=128)
+    password: str | None = Field(None, min_length=8, max_length=128)
 
 
 class UserResponse(UserBase):
@@ -38,7 +37,7 @@ class UserResponse(UserBase):
 
 class Token(BaseModel):
     access_token: str
-    refresh_token: Optional[str] = None
+    refresh_token: str | None = None
     token_type: str
 
 
@@ -53,7 +52,7 @@ class RefreshTokenResponse(BaseModel):
 
 
 class TokenData(BaseModel):
-    email: Optional[str] = None
+    email: str | None = None
 
 
 class GoogleLogin(BaseModel):
@@ -75,9 +74,9 @@ class QuestionTypeEnum(str, Enum):
 class QuestionBase(BaseModel):
     question_type: QuestionTypeEnum
     text: str = Field(..., min_length=1, max_length=4096)
-    options_json: Optional[str] = None  # JSON string
-    correct_answer: Optional[str] = Field(None, max_length=2048)
-    rubric: Optional[str] = Field(None, max_length=4096)
+    options_json: str | None = None  # JSON string
+    correct_answer: str | None = Field(None, max_length=2048)
+    rubric: str | None = Field(None, max_length=4096)
     points: int = Field(1, ge=1, le=100)
 
 
@@ -99,7 +98,7 @@ class StudentQuestionResponse(BaseModel):
     exam_id: str
     question_type: QuestionTypeEnum
     text: str
-    options_json: Optional[str] = None
+    options_json: str | None = None
     points: int
 
 
@@ -107,9 +106,9 @@ class StudentQuestionResponse(BaseModel):
 
 class ExamBase(BaseModel):
     title: str = Field(..., min_length=1, max_length=256)
-    description: Optional[str] = Field(None, max_length=2048)
+    description: str | None = Field(None, max_length=2048)
     duration_minutes: int = Field(60, ge=1, le=600)
-    seb_config_key: Optional[str] = Field(None, max_length=512)
+    seb_config_key: str | None = Field(None, max_length=512)
 
 
 class ExamCreate(ExamBase):
@@ -129,7 +128,7 @@ class ExamListResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: str
     title: str
-    description: Optional[str] = None
+    description: str | None = None
     duration_minutes: int
     teacher_id: str
 
@@ -149,14 +148,14 @@ class ExamSubmitRequest(BaseModel):
 
 class AiGradeRequest(BaseModel):
     feedback: str = Field(..., max_length=8192)
-    score: Optional[float] = Field(None, ge=0.0, le=100.0)
+    score: float | None = Field(None, ge=0.0, le=100.0)
 
 
 # ── Account Relationships ─────────────────────────────────────────────────────
 
 class RelationshipRequest(BaseModel):
     student_id: str
-    teacher_id: Optional[str] = None
+    teacher_id: str | None = None
 
 
 class RelationshipApproval(BaseModel):
@@ -177,8 +176,8 @@ class PasswordResetResponse(BaseModel):
 class PasswordResetConfirm(BaseModel):
     email: EmailStr
     new_password: str = Field(..., min_length=8, max_length=128)
-    otp: Optional[str] = Field(None, pattern=r"^\d{6}$")
-    recovery_code: Optional[str] = Field(None, min_length=8, max_length=16)
+    otp: str | None = Field(None, pattern=r"^\d{6}$")
+    recovery_code: str | None = Field(None, min_length=8, max_length=16)
 
 
 # ── 2FA / TOTP ────────────────────────────────────────────────────────────────
@@ -199,8 +198,8 @@ class TwoFAConfirmResponse(BaseModel):
 
 
 class TwoFADisable(BaseModel):
-    totp_code: Optional[str] = Field(None, pattern=r"^\d{6}$")
-    recovery_code: Optional[str] = Field(None, min_length=8, max_length=16)
+    totp_code: str | None = Field(None, pattern=r"^\d{6}$")
+    recovery_code: str | None = Field(None, min_length=8, max_length=16)
 
 
 class TwoFADisableResponse(BaseModel):
@@ -215,15 +214,15 @@ class RecoveryCodesResponse(BaseModel):
 # ── AI Key Management ────────────────────────────────────────────────────────
 
 class AIKeyUpdate(BaseModel):
-    ai_provider: Optional[str] = Field(None, pattern=r"^(gemini|openrouter|ollama|openai)$")
-    ai_api_key: Optional[str] = Field(None, max_length=512)
-    ai_model_name: Optional[str] = Field(None, max_length=128)
-    ai_base_url: Optional[str] = Field(None, max_length=512)
+    ai_provider: str | None = Field(None, pattern=r"^(gemini|openrouter|ollama|openai)$")
+    ai_api_key: str | None = Field(None, max_length=512)
+    ai_model_name: str | None = Field(None, max_length=128)
+    ai_base_url: str | None = Field(None, max_length=512)
 
 
 class AIKeyResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
-    ai_provider: Optional[str] = None
-    ai_model_name: Optional[str] = None
-    ai_base_url: Optional[str] = None
+    ai_provider: str | None = None
+    ai_model_name: str | None = None
+    ai_base_url: str | None = None
     has_api_key: bool = False

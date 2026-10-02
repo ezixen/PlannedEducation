@@ -1,12 +1,12 @@
-import random
 import json
+import random
 import re
 from datetime import datetime, timezone
-from fastapi import APIRouter, Depends, HTTPException, status, Response
-from sqlalchemy.orm import Session
-from typing import List
 
-from . import models, schemas, database
+from fastapi import APIRouter, Depends, HTTPException, Response, status
+from sqlalchemy.orm import Session
+
+from . import database, models, schemas
 from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/exams", tags=["exams"])
@@ -45,7 +45,7 @@ def create_exam(
     return db_exam
 
 
-@router.get("/", response_model=List[schemas.ExamListResponse])
+@router.get("/", response_model=list[schemas.ExamListResponse])
 def list_exams(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),
@@ -58,7 +58,7 @@ def list_exams(
     return [schemas.ExamListResponse.model_validate(e) for e in exams]
 
 
-@router.get("/mine", response_model=List[schemas.ExamResponse])
+@router.get("/mine", response_model=list[schemas.ExamResponse])
 def list_my_exams(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),

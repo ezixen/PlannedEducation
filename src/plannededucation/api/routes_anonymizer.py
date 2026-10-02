@@ -1,6 +1,6 @@
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from typing import List, Dict, Optional
 
 from . import database, models, schemas
 from .routes_auth import get_current_user
@@ -99,7 +99,7 @@ def _get_submission_and_verify_ownership(
     return submission
 
 
-@router.get("/exams/{exam_id}/submissions", response_model=List[Dict])
+@router.get("/exams/{exam_id}/submissions", response_model=list[dict])
 def get_anonymized_submissions(
     exam_id: str,
     db: Session = Depends(database.get_db),

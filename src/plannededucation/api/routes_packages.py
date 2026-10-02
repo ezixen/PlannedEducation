@@ -3,15 +3,15 @@ Test Package Routes for PlannedEducation
 Endpoints for importing/exporting modular test packages (JSON/YAML)
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
-from sqlalchemy.orm import Session
-from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field
-from datetime import datetime, timezone
-import json
-import yaml
 import hashlib
+import json
 import uuid
+from datetime import datetime, timezone
+
+import yaml
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
 
 from . import database, models
 from .routes_auth import get_current_user
@@ -30,7 +30,7 @@ class PackageMetadata(BaseModel):
     author_id: str
     created_at: datetime
     updated_at: datetime
-    tags: List[str] = []
+    tags: list[str] = []
     subject: str = ""
     grade_level: str = ""
     license: str = "CC-BY-4.0"
@@ -58,23 +58,23 @@ class ExamTemplate(BaseModel):
 class QuestionVariable(BaseModel):
     name: str
     type: str  # integer, float, choice
-    min: Optional[float] = None
-    max: Optional[float] = None
-    step: Optional[float] = None
-    choices: Optional[List[str]] = None
-    formula: Optional[str] = None
+    min: float | None = None
+    max: float | None = None
+    step: float | None = None
+    choices: list[str] | None = None
+    formula: str | None = None
 
 
 class QuestionTemplate(BaseModel):
     id: str
     question_type: str  # multiple_choice, essay, dynamic_math
     text: str
-    options: Optional[List[str]] = None
-    correct_answer: Optional[str] = None
-    rubric: Optional[str] = None
+    options: list[str] | None = None
+    correct_answer: str | None = None
+    rubric: str | None = None
     points: int = 1
-    variables: List[QuestionVariable] = []
-    tags: List[str] = []
+    variables: list[QuestionVariable] = []
+    tags: list[str] = []
     difficulty: str = "medium"
     estimated_time_minutes: int = 5
 
@@ -83,21 +83,21 @@ class RubricCriterion(BaseModel):
     id: str
     description: str
     points: int
-    keywords: List[str] = []
+    keywords: list[str] = []
 
 
 class RubricTemplate(BaseModel):
     id: str
     question_id: str
-    criteria: List[RubricCriterion]
+    criteria: list[RubricCriterion]
     total_points: int
 
 
 class TestPackage(BaseModel):
     metadata: PackageMetadata
     exam: ExamTemplate
-    questions: List[QuestionTemplate]
-    rubrics: List[RubricTemplate] = []
+    questions: list[QuestionTemplate]
+    rubrics: list[RubricTemplate] = []
 
 
 class PackageExportRequest(BaseModel):
@@ -111,22 +111,22 @@ class PackageExportRequest(BaseModel):
 
 class PackageImportResult(BaseModel):
     success: bool
-    package_id: Optional[str] = None
-    exam_id: Optional[str] = None
+    package_id: str | None = None
+    exam_id: str | None = None
     questions_imported: int = 0
     rubrics_imported: int = 0
-    errors: List[str] = []
-    warnings: List[str] = []
+    errors: list[str] = []
+    warnings: list[str] = []
 
 
 class PackageValidationResult(BaseModel):
     valid: bool
-    errors: List[str] = []
-    warnings: List[str] = []
+    errors: list[str] = []
+    warnings: list[str] = []
 
 
 class PackageListResponse(BaseModel):
-    packages: List[PackageMetadata]
+    packages: list[PackageMetadata]
 
 
 # ── Helper Functions ────────────────────────────────────────────────────────
@@ -138,7 +138,7 @@ def _calculate_checksum(data: dict) -> str:
     return hashlib.sha256(content.encode()).hexdigest()
 
 
-def _validate_package_structure(pkg: dict) -> tuple[bool, List[str], List[str]]:
+def _validate_package_structure(pkg: dict) -> tuple[bool, list[str], list[str]]:
     """Validate package structure and return (valid, errors, warnings)."""
     errors = []
     warnings = []
@@ -434,10 +434,10 @@ async def validate_package(
 
 @router.get("", response_model=PackageListResponse)
 async def list_packages(
-    subject: Optional[str] = None,
-    grade_level: Optional[str] = None,
-    tags: Optional[str] = None,
-    author_id: Optional[str] = None,
+    subject: str | None = None,
+    grade_level: str | None = None,
+    tags: str | None = None,
+    author_id: str | None = None,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):

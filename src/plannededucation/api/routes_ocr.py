@@ -3,14 +3,13 @@ OCR Routes for PlannedEducation
 Endpoints for OCR processing of handwritten exam submissions.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
-from sqlalchemy.orm import Session
-from typing import Optional, List
+
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from pydantic import BaseModel, Field
 
-from . import database, models, schemas
+from . import models
+from .ocr_service import OCRService, get_ocr_service
 from .routes_auth import get_current_user
-from .ocr_service import get_ocr_service, OCRService, OCRResult
 
 router = APIRouter(prefix="/ocr", tags=["ocr"])
 
@@ -27,20 +26,20 @@ class OCRResponse(BaseModel):
     text: str
     confidence: float
     language: str
-    bounding_boxes: Optional[List[dict]] = None
-    error: Optional[str] = None
+    bounding_boxes: list[dict] | None = None
+    error: str | None = None
 
 
 class OCRBatchRequest(BaseModel):
     """Request model for batch OCR processing."""
-    images: List[str] = Field(..., description="List of base64 encoded images")
+    images: list[str] = Field(..., description="List of base64 encoded images")
     language: str = Field(default="eng", description="Tesseract language code")
     is_math: bool = Field(default=False, description="Whether to use math-specific OCR")
 
 
 class OCRBatchResponse(BaseModel):
     """Response model for batch OCR processing."""
-    results: List[OCRResponse]
+    results: list[OCRResponse]
 
 
 @router.post("/process", response_model=OCRResponse)

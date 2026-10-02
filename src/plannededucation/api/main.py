@@ -1,18 +1,29 @@
-import os
 import json
 import logging
-from fastapi import FastAPI, Request, Response
+import os
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.responses import JSONResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
 from starlette.middleware.base import BaseHTTPMiddleware
-from contextlib import asynccontextmanager
 
-from .database import engine, Base
-from . import models, routes_auth, routes_exam, routes_chat, routes_anonymizer, routes_parent, routes_ocr, routes_stt, routes_proctoring, routes_packages
+from . import (
+    routes_anonymizer,
+    routes_auth,
+    routes_chat,
+    routes_exam,
+    routes_ocr,
+    routes_packages,
+    routes_parent,
+    routes_proctoring,
+    routes_stt,
+)
+from .database import Base, engine
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────

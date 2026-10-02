@@ -1,8 +1,10 @@
 import hashlib
 import hmac
 import os
-from fastapi import Request, HTTPException, Depends
+
+from fastapi import Depends, HTTPException, Request
 from sqlalchemy.orm import Session
+
 from . import database, models
 
 

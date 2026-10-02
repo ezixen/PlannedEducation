@@ -1,7 +1,7 @@
 import os
+
 from sqlalchemy import create_engine, event
-from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy.pool import QueuePool
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 # DATABASE_URL must always be set explicitly. No implicit defaults — fail loudly.
 _default_url = "postgresql://postgres:postgres@localhost:5433/plannededucation" \

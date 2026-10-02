@@ -2,19 +2,19 @@ import os
 import re
 import secrets
 from datetime import datetime, timedelta, timezone
-from fastapi import APIRouter, Depends, HTTPException, status, Request
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from sqlalchemy.orm import Session
+
+import argon2
 import jwt  # PyJWT for JWT encoding/decoding
-from google.oauth2 import id_token
+import pyotp
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from google.auth.transport import requests as google_requests
-from passlib.context import CryptContext
+from google.oauth2 import id_token
 from slowapi import Limiter
 from slowapi.util import get_remote_address
-import pyotp
-import argon2
+from sqlalchemy.orm import Session
 
-from . import models, schemas, auth, database
+from . import auth, database, models, schemas
 
 # ── Password hashing (Argon2id - OWASP recommended) ──────────────────────────
 # Argon2id is the OWASP recommended password hashing algorithm

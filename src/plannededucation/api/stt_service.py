@@ -4,14 +4,12 @@ Free, open-source speech recognition using faster-whisper (CTranslate2 optimized
 Supports local inference without external API dependencies.
 """
 
-import os
-import io
 import base64
 import logging
+import os
 import tempfile
-from typing import Optional, List, Dict, Any
 from dataclasses import dataclass
-from pathlib import Path
+from typing import Any
 
 try:
     from faster_whisper import WhisperModel
@@ -30,8 +28,8 @@ class TranscriptionResult:
     language: str
     language_probability: float
     duration: float
-    segments: Optional[List[Dict[str, Any]]] = None
-    error: Optional[str] = None
+    segments: list[dict[str, Any]] | None = None
+    error: str | None = None
 
 
 class SpeechToTextService:
@@ -45,7 +43,7 @@ class SpeechToTextService:
         model_size: str = "base",
         device: str = "auto",
         compute_type: str = "auto",
-        download_root: Optional[str] = None
+        download_root: str | None = None
     ):
         self.model_size = model_size
         self.device = device
@@ -93,11 +91,11 @@ class SpeechToTextService:
     def transcribe(
         self,
         audio_data: bytes,
-        language: Optional[str] = None,
+        language: str | None = None,
         task: str = "transcribe",
         beam_size: int = 5,
         vad_filter: bool = True,
-        vad_parameters: Optional[Dict] = None
+        vad_parameters: dict | None = None
     ) -> TranscriptionResult:
         """
         Transcribe audio data to text.
@@ -138,7 +136,7 @@ class SpeechToTextService:
                     task=task,
                     beam_size=beam_size,
                     vad_filter=vad_filter,
-                    vad_parameters=vad_parameters or dict(min_silence_duration_ms=500)
+                    vad_parameters=vad_parameters or {"min_silence_duration_ms": 500}
                 )
                 
                 # Collect segments
@@ -173,8 +171,8 @@ class SpeechToTextService:
                 # Clean up temp file
                 try:
                     os.unlink(tmp_path)
-                except Exception:
-                    pass
+                except OSError:
+                    pass  # Ignore cleanup errors
                     
         except Exception as e:
             logger.error(f"Transcription failed: {e}")
@@ -189,7 +187,7 @@ class SpeechToTextService:
     def transcribe_from_base64(
         self,
         base64_data: str,
-        language: Optional[str] = None,
+        language: str | None = None,
         task: str = "transcribe"
     ) -> TranscriptionResult:
         """Transcribe from base64 encoded audio."""
@@ -210,7 +208,7 @@ class SpeechToTextService:
                 error=f"Invalid base64 data: {e}"
             )
     
-    def get_supported_languages(self) -> List[str]:
+    def get_supported_languages(self) -> list[str]:
         """Get list of supported languages (Whisper supports 99+ languages)."""
         # Whisper supports 99 languages - returning common ones
         return [

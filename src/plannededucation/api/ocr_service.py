@@ -4,12 +4,11 @@ Free, open-source OCR using Tesseract via pytesseract.
 Handles handwritten math and text recognition for AI grading pipeline.
 """
 
-import os
-import io
 import base64
+import io
 import logging
-from typing import Optional, List, Dict, Any
 from dataclasses import dataclass
+from typing import Any
 
 try:
     import pytesseract
@@ -29,8 +28,8 @@ class OCRResult:
     text: str
     confidence: float
     language: str
-    bounding_boxes: Optional[List[Dict[str, Any]]] = None
-    error: Optional[str] = None
+    bounding_boxes: list[dict[str, Any]] | None = None
+    error: str | None = None
 
 
 class OCRService:
@@ -199,7 +198,7 @@ class OCRService:
         
         return self.extract_text(image_data, language, math_config)
     
-    def get_supported_languages(self) -> List[str]:
+    def get_supported_languages(self) -> list[str]:
         """Get list of supported Tesseract languages."""
         if not self.available:
             return []
