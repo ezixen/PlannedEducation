@@ -37,7 +37,7 @@ class SpeechToTextService:
     Service for Speech-to-Text using faster-whisper.
     Supports multiple languages and various audio formats.
     """
-    
+
     def __init__(
         self,
         model_size: str = "base",
@@ -51,29 +51,29 @@ class SpeechToTextService:
         self.download_root = download_root
         self._model = None
         self.available = FASTER_WHISPER_AVAILABLE
-        
+
         if not self.available:
             logger.warning("faster-whisper not available. Install with: pip install faster-whisper")
-    
+
     def _get_model(self) -> WhisperModel:
         """Lazy load the Whisper model."""
         if self._model is None:
             if not self.available:
                 raise RuntimeError("faster-whisper not installed")
-            
+
             # Auto-detect device
             if self.device == "auto":
                 import torch
                 device = "cuda" if torch.cuda.is_available() else "cpu"
             else:
                 device = self.device
-            
+
             # Auto-detect compute type
             if self.compute_type == "auto":
                 compute_type = "float16" if device == "cuda" else "int8"
             else:
                 compute_type = self.compute_type
-            
+
             logger.info(f"Loading Whisper model: {self.model_size} on {device} with {compute_type}")
             self._model = WhisperModel(
                 self.model_size,
@@ -81,13 +81,13 @@ class SpeechToTextService:
                 compute_type=compute_type,
                 download_root=self.download_root
             )
-        
+
         return self._model
-    
+
     def is_available(self) -> bool:
         """Check if STT service is available."""
         return self.available
-    
+
     def transcribe(
         self,
         audio_data: bytes,
@@ -119,15 +119,15 @@ class SpeechToTextService:
                 duration=0.0,
                 error="faster-whisper not available"
             )
-        
+
         try:
             model = self._get_model()
-            
+
             # Write audio to temporary file
             with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
                 tmp.write(audio_data)
                 tmp_path = tmp.name
-            
+
             try:
                 # Transcribe
                 segments, info = model.transcribe(
@@ -138,11 +138,11 @@ class SpeechToTextService:
                     vad_filter=vad_filter,
                     vad_parameters=vad_parameters or {"min_silence_duration_ms": 500}
                 )
-                
+
                 # Collect segments
                 segment_list = []
                 full_text = []
-                
+
                 for segment in segments:
                     segment_dict = {
                         "id": segment.id,
@@ -158,7 +158,7 @@ class SpeechToTextService:
                     }
                     segment_list.append(segment_dict)
                     full_text.append(segment.text)
-                
+
                 return TranscriptionResult(
                     text=" ".join(full_text).strip(),
                     language=info.language,
@@ -166,14 +166,14 @@ class SpeechToTextService:
                     duration=info.duration,
                     segments=segment_list
                 )
-                
+
             finally:
                 # Clean up temp file
                 try:
                     os.unlink(tmp_path)
                 except OSError:
                     pass  # Ignore cleanup errors
-                    
+
         except Exception as e:
             logger.error(f"Transcription failed: {e}")
             return TranscriptionResult(
@@ -183,7 +183,7 @@ class SpeechToTextService:
                 duration=0.0,
                 error=str(e)
             )
-    
+
     def transcribe_from_base64(
         self,
         base64_data: str,
@@ -195,7 +195,7 @@ class SpeechToTextService:
             # Remove data URL prefix if present
             if base64_data.startswith('data:audio'):
                 base64_data = base64_data.split(',', 1)[1]
-            
+
             audio_data = base64.b64decode(base64_data)
             return self.transcribe(audio_data, language, task)
         except Exception as e:
@@ -207,7 +207,7 @@ class SpeechToTextService:
                 duration=0.0,
                 error=f"Invalid base64 data: {e}"
             )
-    
+
     def get_supported_languages(self) -> list[str]:
         """Get list of supported languages (Whisper supports 99+ languages)."""
         # Whisper supports 99 languages - returning common ones

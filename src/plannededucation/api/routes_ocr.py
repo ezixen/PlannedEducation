@@ -57,13 +57,13 @@ async def process_ocr(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="OCR service not available. Tesseract not installed."
         )
-    
+
     result = ocr_service.extract_text_from_base64(
         request.image_base64,
         language=request.language,
         config="--psm 6 --oem 3" if request.is_math else "--psm 6"
     )
-    
+
     return OCRResponse(
         text=result.text,
         confidence=result.confidence,
@@ -90,21 +90,21 @@ async def process_ocr_upload(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="OCR service not available. Tesseract not installed."
         )
-    
+
     # Validate file type
     if not file.content_type or not file.content_type.startswith('image/'):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="File must be an image"
         )
-    
+
     # Read file content
     image_data = await file.read()
-    
+
     # Process with OCR
     config = "--psm 6 --oem 3" if is_math else "--psm 6"
     result = ocr_service.extract_text(image_data, language, config)
-    
+
     return OCRResponse(
         text=result.text,
         confidence=result.confidence,
@@ -129,10 +129,10 @@ async def process_ocr_batch(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="OCR service not available. Tesseract not installed."
         )
-    
+
     results = []
     config = "--psm 6 --oem 3" if request.is_math else "--psm 6"
-    
+
     for image_base64 in request.images:
         result = ocr_service.extract_text_from_base64(
             image_base64,
@@ -146,7 +146,7 @@ async def process_ocr_batch(
             bounding_boxes=result.bounding_boxes,
             error=result.error
         ))
-    
+
     return OCRBatchResponse(results=results)
 
 
@@ -161,7 +161,7 @@ async def get_supported_languages(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="OCR service not available. Tesseract not installed."
         )
-    
+
     languages = ocr_service.get_supported_languages()
     return {"languages": languages}
 

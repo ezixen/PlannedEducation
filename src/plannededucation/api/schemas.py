@@ -59,10 +59,6 @@ class GoogleLogin(BaseModel):
     token: str  # The ID token from Google frontend
 
 
-class RefreshTokenRequest(BaseModel):
-    refresh_token: str
-
-
 # ── Questions ─────────────────────────────────────────────────────────────────
 
 class QuestionTypeEnum(str, Enum):

@@ -104,7 +104,7 @@ class RedisPubSubManager:
     async def broadcast_to_exam(self, message: str, exam_id: str, sender_name: str):
         """Broadcast to all workers via Redis, then locally."""
         payload = json.dumps({"sender": sender_name, "message": message})
-        
+
         # Publish to Redis for other workers
         redis = await self._get_redis()
         if redis:
@@ -115,7 +115,7 @@ class RedisPubSubManager:
                 }))
             except Exception:
                 pass  # Fall through to local broadcast
-        
+
         # Always broadcast locally
         await self._broadcast_local(exam_id, payload)
 

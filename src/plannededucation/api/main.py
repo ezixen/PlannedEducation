@@ -155,7 +155,7 @@ class SecurityAuditMiddleware(BaseHTTPMiddleware):
         # Log security-relevant events
         client_ip = request.client.host if request.client else "unknown"
         user_agent = request.headers.get("User-Agent", "unknown")
-        
+
         # Log authentication attempts
         if request.url.path.startswith("/auth/"):
             logger.info(
@@ -169,7 +169,7 @@ class SecurityAuditMiddleware(BaseHTTPMiddleware):
                     "request_id": getattr(request.state, "request_id", "unknown"),
                 }
             )
-        
+
         # Log exam access attempts
         if request.url.path.startswith("/exams/") and request.method in ("POST", "PUT", "DELETE"):
             logger.info(
@@ -182,9 +182,9 @@ class SecurityAuditMiddleware(BaseHTTPMiddleware):
                     "request_id": getattr(request.state, "request_id", "unknown"),
                 }
             )
-        
+
         response = await call_next(request)
-        
+
         # Log failed auth attempts
         if request.url.path.startswith("/auth/") and response.status_code >= 400:
             logger.warning(
@@ -196,7 +196,7 @@ class SecurityAuditMiddleware(BaseHTTPMiddleware):
                     "request_id": getattr(request.state, "request_id", "unknown"),
                 }
             )
-        
+
         return response
 
 app.add_middleware(SecurityAuditMiddleware)

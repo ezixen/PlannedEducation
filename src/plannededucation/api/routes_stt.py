@@ -58,13 +58,13 @@ async def transcribe_audio(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
-    
+
     result = stt_service.transcribe_from_base64(
         request.audio_base64,
         language=request.language,
         task=request.task
     )
-    
+
     return STTResponse(
         text=result.text,
         language=result.language,
@@ -92,24 +92,24 @@ async def transcribe_audio_upload(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
-    
+
     # Validate file type
     if not file.content_type or not file.content_type.startswith('audio/'):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="File must be an audio file"
         )
-    
+
     # Read file content
     audio_data = await file.read()
-    
+
     # Transcribe
     result = stt_service.transcribe(
         audio_data,
         language=language,
         task=task
     )
-    
+
     return STTResponse(
         text=result.text,
         language=result.language,
@@ -135,9 +135,9 @@ async def transcribe_batch(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
-    
+
     results = []
-    
+
     for audio_base64 in request.audios:
         result = stt_service.transcribe_from_base64(
             audio_base64,
@@ -152,7 +152,7 @@ async def transcribe_batch(
             segments=result.segments,
             error=result.error
         ))
-    
+
     return STTBatchResponse(results=results)
 
 
@@ -167,7 +167,7 @@ async def get_supported_languages(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
-    
+
     languages = stt_service.get_supported_languages()
     return {"languages": languages}
 

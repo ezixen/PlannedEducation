@@ -1,0 +1,47 @@
+[project]
+name = "plannededucation"
+version = "0.1.0"
+description = "PlannedEducation - Free, open-source teacher's aid and grading software"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "C4",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "T20", # flake8-print
+]
+ignore = [
+    "B008",  # Do not perform function call in argument defaults (FastAPI Depends pattern)
+    "S110",  # try-except-pass (intentional in cleanup code)
+    "BLE001", # Do not catch blind exception (intentional in some cases)
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    "artifacts",
+    "tests/conftest.py",  # Test fixtures with placeholder secrets
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["plannededucation"]
+
+[tool.ruff.lint.flake8-bugbear]
+# Allow unused function arguments in FastAPI dependency injection
+extend-immutable-calls = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false

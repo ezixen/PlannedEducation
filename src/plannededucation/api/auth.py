@@ -2,7 +2,7 @@ import hashlib
 import os
 import re
 import secrets
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import jwt  # PyJWT for JWT encoding/decoding
 
@@ -69,7 +69,7 @@ REFRESH_TOKEN_EXPIRE_DAYS = 30
 # ── Token Creation ───────────────────────────────────────────────────────────
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + (
+    expire = datetime.now(UTC) + (
         expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     )
     to_encode["exp"] = expire
@@ -81,7 +81,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
 def create_refresh_token(data: dict, expires_delta: timedelta | None = None) -> str:
     """Create a long-lived refresh token."""
     to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + (
+    expire = datetime.now(UTC) + (
         expires_delta if expires_delta else timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
     )
     to_encode["exp"] = expire

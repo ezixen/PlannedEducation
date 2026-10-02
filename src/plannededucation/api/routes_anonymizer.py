@@ -41,15 +41,15 @@ def scrub_pii(text: str, language: str = "en") -> str:
     """
     if not text or not PRESIDIO_AVAILABLE:
         return text
-    
+
     analyzer, anonymizer = _get_presidio_engines()
     if not analyzer or not anonymizer:
         return text
-    
+
     try:
         # Analyze text for PII entities
         results = analyzer.analyze(text=text, language=language)
-        
+
         # Anonymize found entities
         operators = {
             "PERSON": OperatorConfig("replace", {"new_value": "[PERSON]"}),
@@ -62,7 +62,7 @@ def scrub_pii(text: str, language: str = "en") -> str:
             "IP_ADDRESS": OperatorConfig("replace", {"new_value": "[IP]"}),
             "URL": OperatorConfig("replace", {"new_value": "[URL]"}),
         }
-        
+
         anonymized = anonymizer.anonymize(
             text=text,
             analyzer_results=results,

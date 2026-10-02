@@ -4,7 +4,7 @@ Endpoints for proctoring event pipeline, GDPR consent, and session management.
 """
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -127,12 +127,12 @@ def _get_session_and_verify(
     )
     if not session:
         raise HTTPException(status_code=404, detail="Proctoring session not found")
-    
+
     # Students can only access their own sessions
     # Teachers can access sessions for their exams
     if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
-    
+
     return session
 
 
@@ -152,7 +152,7 @@ def give_consent(
     exam = db.query(models.Exam).filter(models.Exam.id == request.exam_id).first()
     if not exam:
         raise HTTPException(status_code=404, detail="Exam not found")
-    
+
     # Check if consent already exists
     existing = (
         db.query(models.ProctoringConsent)
@@ -162,11 +162,11 @@ def give_consent(
         )
         .first()
     )
-    
+
     if existing:
         # Update existing consent
         existing.consent_given = True
-        existing.consent_timestamp = datetime.now(timezone.utc)
+        existing.consent_timestamp = datetime.now(UTC)
         existing.consent_version = request.consent_version
         existing.camera_consent = request.camera_consent
         existing.microphone_consent = request.microphone_consent
@@ -177,13 +177,13 @@ def give_consent(
         db.commit()
         db.refresh(existing)
         return existing
-    
+
     # Create new consent
     consent = models.ProctoringConsent(
         student_id=current_user.id,
         exam_id=request.exam_id,
         consent_given=True,
-        consent_timestamp=datetime.now(timezone.utc),
+        consent_timestamp=datetime.now(UTC),
         consent_version=request.consent_version,
         camera_consent=request.camera_consent,
         microphone_consent=request.microphone_consent,
@@ -233,9 +233,9 @@ def withdraw_consent(
     )
     if not consent:
         raise HTTPException(status_code=404, detail="Consent not found")
-    
+
     consent.withdrawn = True
-    consent.withdrawn_at = datetime.now(timezone.utc)
+    consent.withdrawn_at = datetime.now(UTC)
     consent.consent_given = False
     db.commit()
     return {"status": "success", "message": "Consent withdrawn"}
@@ -264,11 +264,11 @@ def start_session(
     )
     if not submission:
         raise HTTPException(status_code=404, detail="Submission not found")
-    
+
     # Verify exam matches
     if submission.exam_id != request.exam_id:
         raise HTTPException(status_code=400, detail="Submission exam mismatch")
-    
+
     # Check consent
     consent = (
         db.query(models.ProctoringConsent)
@@ -282,7 +282,7 @@ def start_session(
     )
     if not consent:
         raise HTTPException(status_code=403, detail="Proctoring consent required")
-    
+
     # Check if session already exists
     existing = (
         db.query(models.ProctoringSession)
@@ -291,7 +291,7 @@ def start_session(
     )
     if existing:
         raise HTTPException(status_code=400, detail="Session already exists for this submission")
-    
+
     # Create session
     session = models.ProctoringSession(
         submission_id=request.submission_id,
@@ -318,11 +318,11 @@ def end_session(
 ):
     """End a proctoring session."""
     session = _get_session_and_verify(session_id, current_user, db)
-    
+
     if session.ended_at:
         raise HTTPException(status_code=400, detail="Session already ended")
-    
-    session.ended_at = datetime.now(timezone.utc)
+
+    session.ended_at = datetime.now(UTC)
     session.duration_seconds = int((session.ended_at - session.started_at).total_seconds())
     db.commit()
     db.refresh(session)
@@ -354,11 +354,11 @@ def get_session_by_submission(
     )
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
-    
+
     # Verify access
     if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
-    
+
     return session
 
 
@@ -372,11 +372,11 @@ def record_event(
 ):
     """Record a single proctoring event."""
     session = _get_session_and_verify(request.session_id, current_user, db)
-    
+
     # Verify session is active
     if session.ended_at:
         raise HTTPException(status_code=400, detail="Session has ended")
-    
+
     # Create event
     event = models.ProctoringEvent(
         session_id=request.session_id,
@@ -387,17 +387,17 @@ def record_event(
         audio_ref=request.audio_ref,
     )
     db.add(event)
-    
+
     # Update session stats
     session.total_events += 1
     if request.severity == "violation":
         session.violation_count += 1
-    
+
     # Track max simultaneous faces
     if request.event_type == "multiple_faces" and request.event_data:
         face_count = request.event_data.get("face_count", 1)
         session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
-    
+
     db.commit()
     db.refresh(event)
     return event
@@ -411,10 +411,10 @@ def record_events_batch(
 ):
     """Record multiple proctoring events in batch."""
     session = _get_session_and_verify(request.session_id, current_user, db)
-    
+
     if session.ended_at:
         raise HTTPException(status_code=400, detail="Session has ended")
-    
+
     events = []
     for event_req in request.events:
         event = models.ProctoringEvent(
@@ -427,16 +427,16 @@ def record_events_batch(
         )
         db.add(event)
         events.append(event)
-        
+
         # Update session stats
         session.total_events += 1
         if event_req.severity == "violation":
             session.violation_count += 1
-        
+
         if event_req.event_type == "multiple_faces" and event_req.event_data:
             face_count = event_req.event_data.get("face_count", 1)
             session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
-    
+
     db.commit()
     for event in events:
         db.refresh(event)
@@ -455,16 +455,16 @@ def get_session_events(
 ):
     """Get events for a proctoring session."""
     session = _get_session_and_verify(session_id, current_user, db)
-    
+
     query = db.query(models.ProctoringEvent).filter(
         models.ProctoringEvent.session_id == session_id
     )
-    
+
     if event_type:
         query = query.filter(models.ProctoringEvent.event_type == event_type)
     if severity:
         query = query.filter(models.ProctoringEvent.severity == severity)
-    
+
     events = query.order_by(models.ProctoringEvent.timestamp.desc()).offset(offset).limit(limit).all()
     return events
 
@@ -480,9 +480,9 @@ def get_proctoring_stats(
     """Get proctoring statistics (teacher only)."""
     if current_user.role != "teacher":
         raise HTTPException(status_code=403, detail="Teacher access required")
-    
+
     query = db.query(models.ProctoringSession)
-    
+
     if exam_id:
         # Verify teacher owns exam
         exam = db.query(models.Exam).filter(
@@ -498,25 +498,25 @@ def get_proctoring_stats(
             models.Exam.teacher_id == current_user.id
         ).subquery()
         query = query.filter(models.ProctoringSession.exam_id.in_(teacher_exam_ids))
-    
+
     sessions = query.all()
-    
+
     # Aggregate stats
     total_sessions = len(sessions)
     active_sessions = sum(1 for s in sessions if not s.ended_at)
     total_events = sum(s.total_events for s in sessions)
     total_violations = sum(s.violation_count for s in sessions)
-    
+
     # Events by type
     events_by_type = {}
     violations_by_type = {}
-    
+
     for session in sessions:
         for event in session.events:
             events_by_type[event.event_type] = events_by_type.get(event.event_type, 0) + 1
             if event.severity == "violation":
                 violations_by_type[event.event_type] = violations_by_type.get(event.event_type, 0) + 1
-    
+
     return ProctoringStatsResponse(
         total_sessions=total_sessions,
         active_sessions=active_sessions,

@@ -1,6 +1,6 @@
 import enum
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from sqlalchemy import (
     Boolean,
@@ -25,7 +25,7 @@ def generate_uuid() -> str:
 
 def utcnow() -> datetime:
     """Timezone-aware UTC now (datetime.utcnow() is deprecated in Python 3.12+)."""
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 # ── Enumerations ─────────────────────────────────────────────────────────────
@@ -240,27 +240,27 @@ class ProctoringSession(Base):
     submission_id = Column(String(36), ForeignKey("exam_submissions.id", ondelete="CASCADE"), nullable=False, unique=True)
     student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
-    
+
     # GDPR Consent
     consent_given = Column(Boolean, default=False, nullable=False)
     consent_timestamp = Column(DateTime(timezone=True), nullable=True)
     consent_version = Column(String(32), nullable=True)
-    
+
     # Session tracking
     started_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
     ended_at = Column(DateTime(timezone=True), nullable=True)
     duration_seconds = Column(Integer, nullable=True)
-    
+
     # Configuration
     camera_enabled = Column(Boolean, default=False, nullable=False)
     microphone_enabled = Column(Boolean, default=False, nullable=False)
     screen_recording_enabled = Column(Boolean, default=False, nullable=False)
-    
+
     # Summary statistics
     total_events = Column(Integer, default=0, nullable=False)
     violation_count = Column(Integer, default=0, nullable=False)
     max_simultaneous_faces = Column(Integer, default=1, nullable=False)
-    
+
     # Relationships
     submission = relationship("ExamSubmission")
     student = relationship("User")
@@ -274,19 +274,19 @@ class ProctoringEvent(Base):
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
     session_id = Column(String(36), ForeignKey("proctoring_sessions.id", ondelete="CASCADE"), nullable=False)
-    
+
     # Event details
     event_type = Column(Enum(ProctoringEventType), nullable=False)
     timestamp = Column(DateTime(timezone=True), default=utcnow, nullable=False)
     severity = Column(String(16), default="info", nullable=False)  # info, warning, violation
-    
+
     # Event data (JSON)
     event_data = Column(Text, nullable=True)  # JSON with event-specific data
-    
+
     # Media references (optional)
     screenshot_ref = Column(String(256), nullable=True)  # Reference to stored screenshot
     audio_ref = Column(String(256), nullable=True)  # Reference to stored audio clip
-    
+
     # Relationships
     session = relationship("ProctoringSession", back_populates="events")
 
@@ -298,26 +298,26 @@ class ProctoringConsent(Base):
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
     student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
-    
+
     # Consent details
     consent_given = Column(Boolean, default=False, nullable=False)
     consent_timestamp = Column(DateTime(timezone=True), default=utcnow, nullable=False)
     consent_version = Column(String(32), nullable=False)
-    
+
     # What was consented to
     camera_consent = Column(Boolean, default=False, nullable=False)
     microphone_consent = Column(Boolean, default=False, nullable=False)
     screen_recording_consent = Column(Boolean, default=False, nullable=False)
     data_processing_consent = Column(Boolean, default=False, nullable=False)
-    
+
     # Withdrawal
     withdrawn = Column(Boolean, default=False, nullable=False)
     withdrawn_at = Column(DateTime(timezone=True), nullable=True)
-    
+
     # Relationships
     student = relationship("User")
     exam = relationship("Exam")
-    
+
     __table_args__ = (
         UniqueConstraint("student_id", "exam_id", name="uq_student_exam_consent"),
     )

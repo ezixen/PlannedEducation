@@ -6,7 +6,7 @@ Endpoints for importing/exporting modular test packages (JSON/YAML)
 import hashlib
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import yaml
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
@@ -142,28 +142,28 @@ def _validate_package_structure(pkg: dict) -> tuple[bool, list[str], list[str]]:
     """Validate package structure and return (valid, errors, warnings)."""
     errors = []
     warnings = []
-    
+
     # Required fields
     required_fields = ['metadata', 'exam', 'questions']
     for field in required_fields:
         if field not in pkg:
             errors.append(f"Missing required field: {field}")
-    
+
     if errors:
         return False, errors, warnings
-    
+
     # Validate metadata
     metadata = pkg.get('metadata', {})
     required_metadata = ['id', 'name', 'version', 'author', 'author_id', 'checksum']
     for field in required_metadata:
         if field not in metadata:
             errors.append(f"Missing metadata field: {field}")
-    
+
     # Validate exam
     exam = pkg.get('exam', {})
     if not exam.get('title'):
         errors.append("Exam title is required")
-    
+
     # Validate questions
     questions = pkg.get('questions', [])
     if not isinstance(questions, list):
@@ -178,7 +178,7 @@ def _validate_package_structure(pkg: dict) -> tuple[bool, list[str], list[str]]:
                 errors.append(f"Question {i}: missing text")
             if q.get('question_type') == 'multiple_choice' and not q.get('options'):
                 warnings.append(f"Question {i}: multiple_choice should have options")
-    
+
     # Verify checksum
     pkg_copy = pkg.copy()
     pkg_copy['metadata'] = pkg_copy['metadata'].copy()
@@ -186,7 +186,7 @@ def _validate_package_structure(pkg: dict) -> tuple[bool, list[str], list[str]]:
     calculated = _calculate_checksum(pkg_copy)
     if metadata.get('checksum') != calculated:
         errors.append("Checksum mismatch - package may be corrupted or modified")
-    
+
     return len(errors) == 0, errors, warnings
 
 
@@ -213,14 +213,14 @@ async def export_package(
     )
     if not exam:
         raise HTTPException(status_code=404, detail="Exam not found or access denied")
-    
+
     # Fetch questions
     questions = (
         db.query(models.Question)
         .filter(models.Question.exam_id == exam.id)
         .all()
     )
-    
+
     # Build package
     pkg = {
         "metadata": {
@@ -230,8 +230,8 @@ async def export_package(
             "description": exam.description or "",
             "author": current_user.full_name or current_user.username,
             "author_id": current_user.id,
-            "created_at": datetime.now(timezone.utc).isoformat(),
-            "updated_at": datetime.now(timezone.utc).isoformat(),
+            "created_at": datetime.now(UTC).isoformat(),
+            "updated_at": datetime.now(UTC).isoformat(),
             "tags": [],
             "subject": "",
             "grade_level": "",
@@ -256,7 +256,7 @@ async def export_package(
         "questions": [],
         "rubrics": [],
     }
-    
+
     for q in questions:
         question_data = {
             "id": q.id,
@@ -272,13 +272,13 @@ async def export_package(
             "estimated_time_minutes": 5,
         }
         pkg["questions"].append(question_data)
-    
+
     # Calculate checksum
     pkg_copy = pkg.copy()
     pkg_copy["metadata"] = pkg_copy["metadata"].copy()
     pkg_copy["metadata"]["checksum"] = ""
     pkg["metadata"]["checksum"] = _calculate_checksum(pkg_copy)
-    
+
     # Serialize
     if request.format == "yaml":
         content = yaml.dump(pkg, default_flow_style=False, sort_keys=False)
@@ -286,7 +286,7 @@ async def export_package(
     else:
         content = json.dumps(pkg, indent=2)
         media_type = "application/json"
-    
+
     # Compress if requested
     if request.compress:
         import gzip
@@ -297,7 +297,7 @@ async def export_package(
             "media_type": "application/gzip",
             "filename": f"{exam.title.replace(' ', '_')}_package.yaml.gz" if request.format == "yaml" else f"{exam.title.replace(' ', '_')}_package.json.gz"
         }
-    
+
     return {
         "content": content,
         "media_type": media_type,
@@ -316,7 +316,7 @@ async def import_package(
     """
     # Read file
     content = await file.read()
-    
+
     # Decompress if gzipped
     if file.filename and file.filename.endswith('.gz'):
         import gzip
@@ -324,7 +324,7 @@ async def import_package(
             content = gzip.decompress(content)
         except Exception:
             raise HTTPException(status_code=400, detail="Invalid gzip file")
-    
+
     # Parse content
     try:
         if file.filename and file.filename.endswith(('.yaml', '.yml')):
@@ -333,7 +333,7 @@ async def import_package(
             pkg = json.loads(content.decode())
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid package format: {e}")
-    
+
     # Validate package
     valid, errors, warnings = _validate_package_structure(pkg)
     if not valid:
@@ -342,7 +342,7 @@ async def import_package(
             errors=errors,
             warnings=warnings,
         )
-    
+
     # Create exam
     exam_data = pkg["exam"]
     exam = models.Exam(
@@ -355,7 +355,7 @@ async def import_package(
     )
     db.add(exam)
     db.flush()
-    
+
     # Create questions
     questions_imported = 0
     for q_data in pkg.get("questions", []):
@@ -371,15 +371,15 @@ async def import_package(
         )
         db.add(question)
         questions_imported += 1
-    
+
     # Create rubrics
     rubrics_imported = 0
     for r_data in pkg.get("rubrics", []):
         # Rubrics would be stored separately or linked to questions
         rubrics_imported += 1
-    
+
     db.commit()
-    
+
     return PackageImportResult(
         success=True,
         package_id=pkg["metadata"]["id"],
@@ -400,7 +400,7 @@ async def validate_package(
     Validate a test package without importing.
     """
     content = await file.read()
-    
+
     # Decompress if gzipped
     if file.filename and file.filename.endswith('.gz'):
         import gzip
@@ -411,7 +411,7 @@ async def validate_package(
                 valid=False,
                 errors=["Invalid gzip file"],
             )
-    
+
     # Parse content
     try:
         if file.filename and file.filename.endswith(('.yaml', '.yml')):
@@ -423,7 +423,7 @@ async def validate_package(
             valid=False,
             errors=[f"Invalid package format: {e}"],
         )
-    
+
     valid, errors, warnings = _validate_package_structure(pkg)
     return PackageValidationResult(
         valid=valid,
@@ -447,15 +447,15 @@ async def list_packages(
     """
     # For now, return user's exams as packages
     query = db.query(models.Exam).filter(models.Exam.teacher_id == current_user.id)
-    
+
     exams = query.all()
-    
+
     packages = []
     for exam in exams:
         question_count = db.query(models.Question).filter(
             models.Question.exam_id == exam.id
         ).count()
-        
+
         pkg_meta = PackageMetadata(
             id=exam.id,
             name=exam.title,
@@ -463,8 +463,8 @@ async def list_packages(
             description=exam.description or "",
             author=current_user.full_name or current_user.username,
             author_id=current_user.id,
-            created_at=exam.created_at if hasattr(exam, 'created_at') else datetime.now(timezone.utc),
-            updated_at=datetime.now(timezone.utc),
+            created_at=exam.created_at if hasattr(exam, 'created_at') else datetime.now(UTC),
+            updated_at=datetime.now(UTC),
             tags=[],
             subject="",
             grade_level="",
@@ -472,7 +472,7 @@ async def list_packages(
             checksum="",
         )
         packages.append(pkg_meta)
-    
+
     return PackageListResponse(packages=packages)
 
 
@@ -497,7 +497,7 @@ async def download_package(
     )
     if not exam:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     # Reuse export logic
     request = PackageExportRequest(
         exam_id=package_id,
@@ -505,7 +505,7 @@ async def download_package(
         compress=False,
     )
     result = await export_package(request, current_user, db)
-    
+
     from fastapi.responses import Response
     return Response(
         content=result["content"],
@@ -537,7 +537,7 @@ async def publish_package(
     )
     if not exam:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     # In the future, this would publish to a marketplace
     return {
         "status": "success",

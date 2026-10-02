@@ -1,7 +1,7 @@
 import json
 import random
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy.orm import Session
@@ -218,7 +218,7 @@ def start_exam(
     submission = models.ExamSubmission(
         exam_id=exam.id,
         student_id=current_user.id,
-        started_at=datetime.now(timezone.utc),
+        started_at=datetime.now(UTC),
     )
     db.add(submission)
     db.flush()  # Flush to get submission.id without committing yet
@@ -309,7 +309,7 @@ def submit_exam(
     if submission.completed_at is not None:
         raise HTTPException(status_code=409, detail="Exam has already been submitted")
 
-    submission.completed_at = datetime.now(timezone.utc)
+    submission.completed_at = datetime.now(UTC)
 
     for item in body.answers:
         ans = (
