@@ -182,7 +182,7 @@ jobs:
       - name: Generate Python SBOM
         run: |
           cd src
-          cyclonedx-py -o ../sbom-python.json --format json
+          cyclonedx-py requirements -o ../sbom-python.json --format json
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
