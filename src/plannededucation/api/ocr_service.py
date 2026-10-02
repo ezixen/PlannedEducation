@@ -41,7 +41,9 @@ class OCRService:
     def __init__(self):
         self.available = TESSERACT_AVAILABLE
         if not self.available:
-            logger.warning("Tesseract OCR not available. Install pytesseract and tesseract-ocr binary.")
+            logger.warning(
+                "Tesseract OCR not available. Install pytesseract and tesseract-ocr binary."
+            )
 
     def is_available(self) -> bool:
         """Check if OCR service is available."""
@@ -54,15 +56,14 @@ class OCRService:
         config: str = "--psm 6",
         preprocess: bool = True
     ) -> OCRResult:
-        """
-        Extract text from image data.
-        
+        """Extract text from image data.
+
         Args:
             image_data: Raw image bytes
             language: Tesseract language code (eng, math, etc.)
             config: Tesseract config string
             preprocess: Whether to apply image preprocessing
-            
+
         Returns:
             OCRResult with extracted text and metadata
         """
@@ -194,7 +195,13 @@ class OCRService:
         Uses Tesseract with math-specific configuration.
         """
         # Math-specific config: single block, sparse text
-        math_config = "--psm 6 --oem 3 -c tessedit_char_whitelist=0123456789+-=()[]{}<>^_/\\.,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        math_config = (
+            "--psm 6 --oem 3 "
+            "-c tessedit_char_whitelist="
+            "0123456789+-=()[]{}<>^_/\\.,"
+            "abcdefghijklmnopqrstuvwxyz"
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        )
 
         return self.extract_text(image_data, language, math_config)
 

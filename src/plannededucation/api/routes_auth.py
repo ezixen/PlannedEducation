@@ -1,3 +1,4 @@
+import hashlib
 import os
 import re
 import secrets
@@ -14,7 +15,7 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from sqlalchemy.orm import Session
 
-from . import auth, database, models, schemas
+from . import auth, crypto, database, models, schemas
 
 # ── Password hashing (Argon2id - OWASP recommended) ──────────────────────────
 # Argon2id is the OWASP recommended password hashing algorithm
@@ -73,7 +74,10 @@ def _validate_password(password: str) -> None:
     if not _PASSWORD_PATTERN.match(password):
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail="Password must contain at least one uppercase letter, one lowercase letter, and one digit.",
+            detail=(
+                "Password must contain at least one uppercase letter, "
+                "one lowercase letter, and one digit."
+            ),
         )
 
 
@@ -96,7 +100,7 @@ def get_current_user(
         if email is None:
             raise credentials_exception
     except jwt.exceptions.InvalidTokenError:
-        raise credentials_exception
+        raise credentials_exception from None
 
     user = db.query(models.User).filter(models.User.email == email).first()
     if user is None or not user.is_active:
@@ -178,13 +182,22 @@ def login_for_access_token(
     if not user.hashed_password:
         # User exists but has no password (e.g., Google-only account)
         verify_password(form_data.password, _DUMMY_HASH)
-        raise HTTPException(status_code=401, detail="This account uses Google sign-in. Please use the Google button to log in.")
+        raise HTTPException(
+            status_code=401,
+            detail=(
+                "This account uses Google sign-in. "
+                "Please use the Google button to log in."
+            ),
+        )
 
     if not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(status_code=401, detail="Invalid email/username or password")
 
     if not user.is_active:
-        raise HTTPException(status_code=403, detail="Account is deactivated. Please contact support.")
+        raise HTTPException(
+            status_code=403,
+            detail="Account is deactivated. Please contact support.",
+        )
 
     access_token = auth.create_access_token(
         data={"sub": user.email},
@@ -241,14 +254,20 @@ def google_login(
     db: Session = Depends(database.get_db),
 ):
     if not GOOGLE_CLIENT_ID:
-        raise HTTPException(status_code=503, detail="Google sign-in is not configured on this server")
+        raise HTTPException(
+            status_code=503,
+            detail="Google sign-in is not configured on this server",
+        )
 
     try:
         idinfo = id_token.verify_oauth2_token(
             data.token, google_requests.Request(), GOOGLE_CLIENT_ID
         )
     except ValueError:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid Google token")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid Google token",
+        ) from None
 
     email: str = idinfo["email"].lower()
     google_id: str = idinfo["sub"]
@@ -349,7 +368,11 @@ def request_password_reset(
 
     # In production, send email here. For now, log it (dev only).
     if os.getenv("PLANNED_EDUCATION_ENV") == "development":
-        print(f"[DEV] Password reset OTP for {user.email}: {otp}")
+        import logging
+
+        logging.getLogger(__name__).info(
+            "[DEV] Password reset OTP for %s: %s", user.email, otp
+        )
 
     return schemas.PasswordResetResponse(
         message="If the email exists, a reset OTP has been sent.",
@@ -436,7 +459,10 @@ def setup_2fa(
         secret=secret,
         qr_code_uri=totp_uri,
         recovery_codes=recovery_codes,
-        message="Save your recovery codes! They are the ONLY way to recover access if you lose your 2FA device."
+        message=(
+            "Save your recovery codes! They are the ONLY way to "
+            "recover access if you lose your 2FA device."
+        ),
     )
 
 
@@ -483,9 +509,14 @@ def disable_2fa(
 
     # Or verify recovery code
     elif payload.recovery_code:
-        if not current_user.recovery_codes or payload.recovery_code not in current_user.recovery_codes:
+        if (
+            not current_user.recovery_codes
+            or payload.recovery_code not in current_user.recovery_codes
+        ):
             raise HTTPException(status_code=400, detail="Invalid recovery code")
-        current_user.recovery_codes = [c for c in current_user.recovery_codes if c != payload.recovery_code]
+        current_user.recovery_codes = [
+            c for c in current_user.recovery_codes if c != payload.recovery_code
+        ]
 
     else:
         raise HTTPException(status_code=400, detail="TOTP code or recovery code required")

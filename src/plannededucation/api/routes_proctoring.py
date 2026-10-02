@@ -130,7 +130,9 @@ def _get_session_and_verify(
 
     # Students can only access their own sessions
     # Teachers can access sessions for their exams
-    if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
+    is_student_owner = current_user.role == "student" and session.student_id != current_user.id
+    is_teacher_owner = current_user.role == "teacher" and session.exam.teacher_id != current_user.id
+    if is_student_owner or is_teacher_owner:
         raise HTTPException(status_code=403, detail="Access denied")
 
     return session
@@ -275,8 +277,8 @@ def start_session(
         .filter(
             models.ProctoringConsent.student_id == current_user.id,
             models.ProctoringConsent.exam_id == request.exam_id,
-            models.ProctoringConsent.consent_given == True,
-            models.ProctoringConsent.withdrawn == False
+            models.ProctoringConsent.consent_given,
+            models.ProctoringConsent.withdrawn.is_(False),
         )
         .first()
     )
@@ -356,7 +358,9 @@ def get_session_by_submission(
         raise HTTPException(status_code=404, detail="Session not found")
 
     # Verify access
-    if current_user.role == "student" and session.student_id != current_user.id or current_user.role == "teacher" and session.exam.teacher_id != current_user.id:
+    is_student_owner = current_user.role == "student" and session.student_id != current_user.id
+    is_teacher_owner = current_user.role == "teacher" and session.exam.teacher_id != current_user.id
+    if is_student_owner or is_teacher_owner:
         raise HTTPException(status_code=403, detail="Access denied")
 
     return session
@@ -454,7 +458,7 @@ def get_session_events(
     db: Session = Depends(database.get_db),
 ):
     """Get events for a proctoring session."""
-    session = _get_session_and_verify(session_id, current_user, db)
+    _get_session_and_verify(session_id, current_user, db)
 
     query = db.query(models.ProctoringEvent).filter(
         models.ProctoringEvent.session_id == session_id
@@ -465,7 +469,12 @@ def get_session_events(
     if severity:
         query = query.filter(models.ProctoringEvent.severity == severity)
 
-    events = query.order_by(models.ProctoringEvent.timestamp.desc()).offset(offset).limit(limit).all()
+    events = (
+        query.order_by(models.ProctoringEvent.timestamp.desc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
     return events
 
 
@@ -515,7 +524,9 @@ def get_proctoring_stats(
         for event in session.events:
             events_by_type[event.event_type] = events_by_type.get(event.event_type, 0) + 1
             if event.severity == "violation":
-                violations_by_type[event.event_type] = violations_by_type.get(event.event_type, 0) + 1
+                violations_by_type[event.event_type] = (
+                    violations_by_type.get(event.event_type, 0) + 1
+                )
 
     return ProctoringStatsResponse(
         total_sessions=total_sessions,

@@ -5,6 +5,7 @@ Supports local inference without external API dependencies.
 """
 
 import base64
+import contextlib
 import logging
 import os
 import tempfile
@@ -99,7 +100,7 @@ class SpeechToTextService:
     ) -> TranscriptionResult:
         """
         Transcribe audio data to text.
-        
+
         Args:
             audio_data: Raw audio bytes (WAV, MP3, etc.)
             language: Language code (None for auto-detect)
@@ -107,7 +108,7 @@ class SpeechToTextService:
             beam_size: Beam size for decoding
             vad_filter: Whether to use Voice Activity Detection
             vad_parameters: VAD parameters dict
-            
+
         Returns:
             TranscriptionResult with transcribed text and metadata
         """
@@ -169,10 +170,8 @@ class SpeechToTextService:
 
             finally:
                 # Clean up temp file
-                try:
+                with contextlib.suppress(OSError):
                     os.unlink(tmp_path)
-                except OSError:
-                    pass  # Ignore cleanup errors
 
         except Exception as e:
             logger.error(f"Transcription failed: {e}")

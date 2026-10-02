@@ -290,12 +290,18 @@ async def export_package(
     # Compress if requested
     if request.compress:
         import gzip
+
         content_bytes = content.encode() if isinstance(content, str) else content
         compressed = gzip.compress(content_bytes)
+        filename = (
+            f"{exam.title.replace(' ', '_')}_package.yaml.gz"
+            if request.format == "yaml"
+            else f"{exam.title.replace(' ', '_')}_package.json.gz"
+        )
         return {
             "content": compressed,
             "media_type": "application/gzip",
-            "filename": f"{exam.title.replace(' ', '_')}_package.yaml.gz" if request.format == "yaml" else f"{exam.title.replace(' ', '_')}_package.json.gz"
+            "filename": filename,
         }
 
     return {
@@ -318,21 +324,22 @@ async def import_package(
     content = await file.read()
 
     # Decompress if gzipped
-    if file.filename and file.filename.endswith('.gz'):
+    if file.filename and file.filename.endswith(".gz"):
         import gzip
+
         try:
             content = gzip.decompress(content)
-        except Exception:
-            raise HTTPException(status_code=400, detail="Invalid gzip file")
+        except Exception as e:
+            raise HTTPException(status_code=400, detail="Invalid gzip file") from e
 
     # Parse content
     try:
-        if file.filename and file.filename.endswith(('.yaml', '.yml')):
+        if file.filename and file.filename.endswith((".yaml", ".yml")):
             pkg = yaml.safe_load(content.decode())
         else:
             pkg = json.loads(content.decode())
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid package format: {e}")
+        raise HTTPException(status_code=400, detail=f"Invalid package format: {e}") from e
 
     # Validate package
     valid, errors, warnings = _validate_package_structure(pkg)
@@ -374,7 +381,7 @@ async def import_package(
 
     # Create rubrics
     rubrics_imported = 0
-    for r_data in pkg.get("rubrics", []):
+    for _r_data in pkg.get("rubrics", []):
         # Rubrics would be stored separately or linked to questions
         rubrics_imported += 1
 
@@ -452,10 +459,6 @@ async def list_packages(
 
     packages = []
     for exam in exams:
-        question_count = db.query(models.Question).filter(
-            models.Question.exam_id == exam.id
-        ).count()
-
         pkg_meta = PackageMetadata(
             id=exam.id,
             name=exam.title,

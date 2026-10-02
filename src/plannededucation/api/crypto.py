@@ -4,18 +4,21 @@ from cryptography.fernet import Fernet, InvalidToken
 
 # ── AI Key Encryption ────────────────────────────────────────────────────────
 # The master key is a URL-safe base64-encoded 32-byte key, stored in environment.
-# Generate with: python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+# Generate with:
+# python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
 _AI_KEY_MASTER = os.getenv("AI_KEY_MASTER_SECRET", "")
 _fernet: Fernet | None = None
 
 if _AI_KEY_MASTER:
     try:
         _fernet = Fernet(_AI_KEY_MASTER.encode())
-    except Exception:
+    except Exception as e:
         raise RuntimeError(
             "AI_KEY_MASTER_SECRET is set but is not a valid Fernet key. "
-            "Generate one with: python -c \"from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())\""
-        )
+            "Generate one with: "
+            "python -c \"from cryptography.fernet import Fernet; "
+            "print(Fernet.generate_key().decode())\""
+        ) from e
 elif os.getenv("PLANNED_EDUCATION_ENV") == "development":
     # In dev, generate a per-process ephemeral key (no persistence needed)
     _fernet = Fernet(Fernet.generate_key())

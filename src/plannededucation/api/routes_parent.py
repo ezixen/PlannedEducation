@@ -128,7 +128,9 @@ def approve_relationship(
     Student or teacher approves a pending relationship.
     When all required approvals are collected, status becomes 'active'.
     """
-    rel = db.query(models.AccountRelationship).filter(models.AccountRelationship.id == rel_id).first()
+    rel = db.query(models.AccountRelationship).filter(
+        models.AccountRelationship.id == rel_id
+    ).first()
     if not rel:
         raise HTTPException(status_code=404, detail="Relationship not found")
 
@@ -159,7 +161,9 @@ def reject_relationship(
     current_user: models.User = Depends(get_current_user),
 ):
     """Any party to the relationship can reject it."""
-    rel = db.query(models.AccountRelationship).filter(models.AccountRelationship.id == rel_id).first()
+    rel = db.query(models.AccountRelationship).filter(
+        models.AccountRelationship.id == rel_id
+    ).first()
     if not rel:
         raise HTTPException(status_code=404, detail="Relationship not found")
 

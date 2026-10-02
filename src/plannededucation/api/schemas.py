@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
@@ -61,7 +61,7 @@ class GoogleLogin(BaseModel):
 
 # ── Questions ─────────────────────────────────────────────────────────────────
 
-class QuestionTypeEnum(str, Enum):
+class QuestionTypeEnum(StrEnum):
     multiple_choice = "multiple_choice"
     essay = "essay"
     dynamic_math = "dynamic_math"

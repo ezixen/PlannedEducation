@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from . import database, models, schemas
 from .routes_auth import get_current_user
+from .seb_security import verify_seb_request
 
 router = APIRouter(prefix="/exams", tags=["exams"])
 
@@ -186,8 +187,6 @@ def generate_seb_config(
 
 
 # ── Exam Execution ───────────────────────────────────────────────────────────
-
-from .seb_security import verify_seb_request
 
 
 @router.post("/{exam_id}/start")

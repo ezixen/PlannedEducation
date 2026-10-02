@@ -22,8 +22,6 @@ select = [
 ]
 ignore = [
     "B008",  # Do not perform function call in argument defaults (FastAPI Depends pattern)
-    "S110",  # try-except-pass (intentional in cleanup code)
-    "BLE001", # Do not catch blind exception (intentional in some cases)
 ]
 exclude = [
     ".git",

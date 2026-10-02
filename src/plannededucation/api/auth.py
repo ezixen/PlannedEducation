@@ -53,7 +53,9 @@ def verify_password(plain: str, hashed: str) -> bool:
     return hash_password(plain) == hashed
 
 
-def generate_recovery_codes(count: int = RECOVERY_CODE_COUNT, length: int = RECOVERY_CODE_LENGTH) -> list[str]:
+def generate_recovery_codes(
+    count: int = RECOVERY_CODE_COUNT, length: int = RECOVERY_CODE_LENGTH
+) -> list[str]:
     """Generate a list of one-time recovery codes for 2FA / password reset fallback."""
     codes: list[str] = []
     for _ in range(count):
@@ -106,5 +108,5 @@ def verify_refresh_token(token: str) -> dict | None:
         if payload.get("type") != "refresh":
             return None
         return payload
-    except JWTError:
+    except jwt.exceptions.InvalidTokenError:
         return None

@@ -1,4 +1,5 @@
 import asyncio
+import contextlib
 import json
 import os
 
@@ -53,10 +54,8 @@ class RedisPubSubManager:
         self._running = False
         if self._listener_task:
             self._listener_task.cancel()
-            try:
+            with contextlib.suppress(asyncio.CancelledError):
                 await self._listener_task
-            except asyncio.CancelledError:
-                pass
         if self._pubsub:
             await self._pubsub.unsubscribe("chat:broadcast")
             await self._pubsub.close()
@@ -108,13 +107,11 @@ class RedisPubSubManager:
         # Publish to Redis for other workers
         redis = await self._get_redis()
         if redis:
-            try:
-                await redis.publish("chat:broadcast", json.dumps({
-                    "exam_id": exam_id,
-                    "payload": payload
-                }))
-            except Exception:
-                pass  # Fall through to local broadcast
+            with contextlib.suppress(Exception):
+                await redis.publish(
+                    "chat:broadcast",
+                    json.dumps({"exam_id": exam_id, "payload": payload}),
+                )
 
         # Always broadcast locally
         await self._broadcast_local(exam_id, payload)

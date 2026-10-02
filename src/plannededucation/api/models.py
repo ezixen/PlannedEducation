@@ -30,13 +30,13 @@ def utcnow() -> datetime:
 
 # ── Enumerations ─────────────────────────────────────────────────────────────
 
-class QuestionType(str, enum.Enum):
+class QuestionType(enum.StrEnum):
     multiple_choice = "multiple_choice"
     essay = "essay"
     dynamic_math = "dynamic_math"
 
 
-class RelationshipStatus(str, enum.Enum):
+class RelationshipStatus(enum.StrEnum):
     pending = "pending"
     active = "active"
     rejected = "rejected"
@@ -84,8 +84,12 @@ class User(Base):
         back_populates="student",
         cascade="all, delete-orphan",
     )
-    taught_courses = relationship("Course", back_populates="teacher", cascade="all, delete-orphan")
-    class_groups = relationship("ClassGroup", back_populates="teacher", cascade="all, delete-orphan")
+    taught_courses = relationship(
+        "Course", back_populates="teacher", cascade="all, delete-orphan"
+    )
+    class_groups = relationship(
+        "ClassGroup", back_populates="teacher", cascade="all, delete-orphan"
+    )
 
 
 class AccountRelationship(Base):
@@ -105,7 +109,9 @@ class AccountRelationship(Base):
     teacher_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
 
     student_approved = Column(Boolean, default=False, nullable=False)
-    parent_approved = Column(Boolean, default=True, nullable=False)  # Initiator is implicitly approved
+    parent_approved = Column(
+        Boolean, default=True, nullable=False
+    )  # Initiator is implicitly approved
     teacher_approved = Column(Boolean, default=False, nullable=False)
 
     status = Column(Enum(RelationshipStatus), default=RelationshipStatus.pending, nullable=False)
@@ -128,7 +134,10 @@ class ClassGroup(Base):
 
 
 class StudentRecord(Base):
-    """IEP / accommodation record for a student. Parent linkage is handled via AccountRelationship."""
+    """IEP / accommodation record for a student.
+
+    Parent linkage is handled via AccountRelationship.
+    """
     __tablename__ = "student_records"
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
@@ -150,8 +159,12 @@ class Exam(Base):
     seb_config_key = Column(String(512), nullable=True)
 
     teacher = relationship("User", back_populates="exams")
-    questions = relationship("Question", back_populates="exam", cascade="all, delete-orphan")
-    submissions = relationship("ExamSubmission", back_populates="exam", cascade="all, delete-orphan")
+    questions = relationship(
+        "Question", back_populates="exam", cascade="all, delete-orphan"
+    )
+    submissions = relationship(
+        "ExamSubmission", back_populates="exam", cascade="all, delete-orphan"
+    )
 
 
 class Question(Base):
@@ -161,9 +174,9 @@ class Question(Base):
     exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
     question_type = Column(Enum(QuestionType), nullable=False)
     text = Column(Text, nullable=False)
-    options_json = Column(Text, nullable=True)   # JSON array for multiple choice
+    options_json = Column(Text, nullable=True)  # JSON array for multiple choice
     correct_answer = Column(Text, nullable=True)  # Never returned to students
-    rubric = Column(Text, nullable=True)          # Grading rubric for AI (never returned to students)
+    rubric = Column(Text, nullable=True)  # Grading rubric for AI (never returned to students)
     points = Column(Integer, default=1, nullable=False)
 
     exam = relationship("Exam", back_populates="questions")
@@ -193,8 +206,16 @@ class Answer(Base):
     __tablename__ = "answers"
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    submission_id = Column(String(36), ForeignKey("exam_submissions.id", ondelete="CASCADE"), nullable=False)
-    question_id = Column(String(36), ForeignKey("questions.id", ondelete="CASCADE"), nullable=False)
+    submission_id = Column(
+        String(36),
+        ForeignKey("exam_submissions.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    question_id = Column(
+        String(36),
+        ForeignKey("questions.id", ondelete="CASCADE"),
+        nullable=False,
+    )
     student_response = Column(Text, nullable=True)
     generated_question_text = Column(Text, nullable=True)
     generated_options_json = Column(Text, nullable=True)
@@ -216,7 +237,7 @@ class Course(Base):
 
 # ── Proctoring Models ────────────────────────────────────────────────────────
 
-class ProctoringEventType(str, enum.Enum):
+class ProctoringEventType(enum.StrEnum):
     """Types of proctoring events that can be recorded."""
     face_detected = "face_detected"
     face_lost = "face_lost"
@@ -237,9 +258,18 @@ class ProctoringSession(Base):
     __tablename__ = "proctoring_sessions"
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    submission_id = Column(String(36), ForeignKey("exam_submissions.id", ondelete="CASCADE"), nullable=False, unique=True)
-    student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
+    submission_id = Column(
+        String(36),
+        ForeignKey("exam_submissions.id", ondelete="CASCADE"),
+        nullable=False,
+        unique=True,
+    )
+    student_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False
+    )
+    exam_id = Column(
+        String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False
+    )
 
     # GDPR Consent
     consent_given = Column(Boolean, default=False, nullable=False)
@@ -273,7 +303,11 @@ class ProctoringEvent(Base):
     __tablename__ = "proctoring_events"
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    session_id = Column(String(36), ForeignKey("proctoring_sessions.id", ondelete="CASCADE"), nullable=False)
+    session_id = Column(
+        String(36),
+        ForeignKey("proctoring_sessions.id", ondelete="CASCADE"),
+        nullable=False,
+    )
 
     # Event details
     event_type = Column(Enum(ProctoringEventType), nullable=False)
