@@ -193,12 +193,12 @@ jobs:
 
       - name: Install @cyclonedx/bom (Free OSS)
         run: |
-          npm install -g @cyclonedx/bom
+          cd web/apps/portal
+          npm install @cyclonedx/bom
 
       - name: Generate NPM SBOM
         run: |
-          cyclonedx-bom -o $GITHUB_WORKSPACE/sbom-npm.json --of json
-        working-directory: web/apps/portal
+          cd web/apps/portal && npx cyclonedx-bom -o $GITHUB_WORKSPACE/sbom-npm.json --of json
 
       - name: Merge SBOMs
         run: |
