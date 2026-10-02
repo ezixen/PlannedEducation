@@ -199,21 +199,23 @@ jobs:
       - name: Generate NPM SBOM
         run: |
           cd web/apps/portal
-          npx cyclonedx-bom -o ../../sbom-npm.json --of json
+          npx cyclonedx-bom -o $GITHUB_WORKSPACE/sbom-npm.json --of json
 
       - name: Merge SBOMs
         run: |
           python - <<'PY'
           import json
-          with open("sbom-python.json") as f:
+          import os
+          workspace = os.environ.get("GITHUB_WORKSPACE", ".")
+          with open(os.path.join(workspace, "sbom-python.json")) as f:
               py = json.load(f)
-          with open("sbom-npm.json") as f:
+          with open(os.path.join(workspace, "sbom-npm.json")) as f:
               npm = json.load(f)
           # Merge components
           py.setdefault("components", []).extend(npm.get("components", []))
           py.setdefault("services", []).extend(npm.get("services", []))
           py.setdefault("dependencies", []).extend(npm.get("dependencies", []))
-          with open("sbom-merged.json", "w") as f:
+          with open(os.path.join(workspace, "sbom-merged.json"), "w") as f:
               json.dump(py, f, indent=2)
           PY
 
