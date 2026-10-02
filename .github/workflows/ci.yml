@@ -18,7 +18,7 @@ env:
   ALLOW_DEV_AUTH: "true"
   JWT_SECRET_KEY: "test-secret-key-for-ci-only"
   CORS_ORIGINS: "http://localhost:5173"
-  AI_KEY_MASTER_SECRET: "test-fernet-key-for-ci-only-32-bytes-long!!"
+  AI_KEY_MASTER_SECRET: "EJEtzTWXcAvRD5ZfTZWJ7j5wKfdNdXoSrjGlx1uUrbw="
 
 jobs:
   # Backend Tests
