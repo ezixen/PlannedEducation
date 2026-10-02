@@ -50,7 +50,7 @@ jobs:
       - name: Run type checking (mypy)
         run: |
           pip install mypy
-          mypy src/plannededucation --ignore-missing-imports --namespace-packages
+          mypy src/plannededucation --ignore-missing-imports --namespace-packages --explicit-package-bases
 
       - name: Run security scan (bandit)
         run: |
