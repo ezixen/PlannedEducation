@@ -20,7 +20,7 @@
 ### 1. Check SEB Config Endpoint (5 minutes)
 ```bash
 # Test SEB config generation
-curl -H "Authorization: Bearer TEACHER_TOKEN" \
+curl -H "Authorization: Bearer YOUR_TEACHER_TOKEN" \
   http://localhost:8000/exams/EXAM_ID/seb-config
 # Should return .seb file download
 ```
@@ -28,7 +28,7 @@ curl -H "Authorization: Bearer TEACHER_TOKEN" \
 ### 2. Check Exam Start Endpoint (5 minutes)
 ```bash
 # Test exam start with dev bypass
-curl -X POST -H "Authorization: Bearer STUDENT_TOKEN" \
+curl -X POST -H "Authorization: Bearer YOUR_STUDENT_TOKEN" \
   http://localhost:8000/exams/EXAM_ID/start
 # Should return exam questions
 ```

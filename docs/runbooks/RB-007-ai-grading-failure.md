@@ -20,7 +20,7 @@
 ### 1. Check Anonymizer Endpoints (5 minutes)
 ```bash
 # Test anonymizer submissions endpoint
-curl -H "Authorization: Bearer TEACHER_TOKEN" \
+curl -H "Authorization: Bearer YOUR_TEACHER_TOKEN" \
   http://localhost:8000/anonymizer/exams/EXAM_ID/submissions
 # Should return anonymized submissions
 ```

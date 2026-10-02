@@ -223,7 +223,7 @@
 .\start_student.ps1
 
 # Run unit tests
-$env:PLANNED_EDUCATION_ENV="test"; $env:DATABASE_URL="sqlite:///./test_plannededucation.db"; $env:JWT_SECRET_KEY="test_secret_key_1234567890"; C:\.venv\Scripts\python.exe -m pytest tests/ -v
+$env:PLANNED_EDUCATION_ENV="test"; $env:DATABASE_URL="sqlite:///./test_plannededucation.db"; $env:JWT_SECRET_KEY="YOUR_TEST_JWT_SECRET"; C:\.venv\Scripts\python.exe -m pytest tests/ -v
 
 # Run UI tests
 C:\.venv\Scripts\python.exe test_ui_full.py
