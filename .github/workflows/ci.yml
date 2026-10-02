@@ -203,7 +203,7 @@ jobs:
 
       - name: Copy NPM SBOM to workspace
         run: |
-          cp ${{ github.workspace }}/web/apps/portal/sbom-npm.json ${{ github.workspace }}/sbom-npm.json
+          cp web/apps/portal/sbom-npm.json ${{ github.workspace }}/sbom-npm.json
 
       - name: Merge SBOMs
         run: |
