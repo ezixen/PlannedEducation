@@ -34,7 +34,7 @@ def get_admin_stats(
     total_users = db.query(func.count(models.User.id)).scalar() or 0
     total_exams = db.query(func.count(models.Exam.id)).scalar() or 0
     total_submissions = db.query(func.count(models.ExamSubmission.id)).scalar() or 0
-    
+
     # Active exams = exams that have at least one submission in progress or recently started
     active_exams = (
         db.query(func.count(models.Exam.id))
@@ -43,7 +43,7 @@ def get_admin_stats(
         .filter(models.ExamSubmission.completed_at.is_(None))
         .scalar() or 0
     )
-    
+
     return {
         "totalUsers": total_users,
         "totalExams": total_exams,
@@ -59,7 +59,7 @@ def get_admin_users(
 ):
     """Get all users for admin management."""
     users = db.query(models.User).order_by(models.User.created_at.desc()).all()
-    
+
     return [
         {
             "id": user.id,
@@ -86,11 +86,11 @@ def update_admin_user(
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     # Prevent self-deactivation
     if user.id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot modify your own account")
-    
+
     user.is_active = is_active
     db.commit()
     return {"message": f"User {'activated' if is_active else 'deactivated'} successfully"}
@@ -106,11 +106,11 @@ def delete_admin_user(
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     # Prevent self-deletion
     if user.id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot delete your own account")
-    
+
     db.delete(user)
     db.commit()
     return {"message": "User deleted successfully"}
@@ -139,7 +139,7 @@ def get_admin_exams(
         .order_by(models.Exam.created_at.desc())
         .all()
     )
-    
+
     return [
         {
             "id": exam.id,
@@ -165,7 +165,7 @@ def delete_admin_exam(
     exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
     if not exam:
         raise HTTPException(status_code=404, detail="Exam not found")
-    
+
     db.delete(exam)
     db.commit()
     return {"message": "Exam deleted successfully"}
