@@ -76,7 +76,7 @@ class ProctoringSessionResponse(BaseModel):
 
 class ProctoringEventRequest(BaseModel):
     """Request model for recording a proctoring event."""
-    session_id: str = Field(..., description="Proctoring session ID")
+    session_id: str | None = Field(default=None, description="Proctoring session ID (optional for batch requests)")
     event_type: str = Field(..., description="Event type")
     severity: str = Field(default="info", description="Severity: info, warning, violation")
     event_data: dict[str, Any] | None = Field(default=None)
@@ -94,6 +94,21 @@ class ProctoringEventResponse(BaseModel):
     event_data: dict[str, Any] | None = None
     screenshot_ref: str | None = None
     audio_ref: str | None = None
+
+    @classmethod
+    def from_orm(cls, obj):
+        """Parse JSON string event_data back to dict."""
+        data = {
+            "id": obj.id,
+            "session_id": obj.session_id,
+            "event_type": obj.event_type,
+            "timestamp": obj.timestamp,
+            "severity": obj.severity,
+            "event_data": json.loads(obj.event_data) if obj.event_data else None,
+            "screenshot_ref": obj.screenshot_ref,
+            "audio_ref": obj.audio_ref,
+        }
+        return cls(**data)
 
 
 class ProctoringEventBatchRequest(BaseModel):
@@ -325,7 +340,11 @@ def end_session(
         raise HTTPException(status_code=400, detail="Session already ended")
 
     session.ended_at = datetime.now(UTC)
-    session.duration_seconds = int((session.ended_at - session.started_at).total_seconds())
+    # Ensure both datetimes are timezone-aware for subtraction
+    started_at = session.started_at
+    if started_at.tzinfo is None:
+        started_at = started_at.replace(tzinfo=UTC)
+    session.duration_seconds = int((session.ended_at - started_at).total_seconds())
     db.commit()
     db.refresh(session)
     return session
@@ -375,6 +394,8 @@ def record_event(
     db: Session = Depends(database.get_db),
 ):
     """Record a single proctoring event."""
+    if not request.session_id:
+        raise HTTPException(status_code=400, detail="session_id is required for single event recording")
     session = _get_session_and_verify(request.session_id, current_user, db)
 
     # Verify session is active
@@ -404,7 +425,7 @@ def record_event(
 
     db.commit()
     db.refresh(event)
-    return event
+    return ProctoringEventResponse.from_orm(event)
 
 
 @router.post("/events/batch", response_model=list[ProctoringEventResponse])
@@ -444,7 +465,9 @@ def record_events_batch(
     db.commit()
     for event in events:
         db.refresh(event)
-    return events
+    
+    # Convert to response models with parsed event_data
+    return [ProctoringEventResponse.from_orm(e) for e in events]
 
 
 @router.get("/session/{session_id}/events", response_model=list[ProctoringEventResponse])
@@ -475,7 +498,7 @@ def get_session_events(
         .limit(limit)
         .all()
     )
-    return events
+    return [ProctoringEventResponse.from_orm(e) for e in events]
 
 
 # ── Statistics Endpoints ───────────────────────────────────────────────────
