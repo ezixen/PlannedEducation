@@ -191,13 +191,9 @@ jobs:
           cache: "npm"
           cache-dependency-path: web/apps/portal/package-lock.json
 
-      - name: Install @cyclonedx/bom (Free OSS)
-        run: |
-          npm install @cyclonedx/bom
-        working-directory: web/apps/portal
-
       - name: Generate NPM SBOM
         run: |
+          npm install @cyclonedx/bom
           node -e "
           const { Bom } = require('@cyclonedx/bom');
           const fs = require('fs');
