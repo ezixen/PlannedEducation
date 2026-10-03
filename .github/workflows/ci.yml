@@ -193,12 +193,11 @@ jobs:
 
       - name: Install @cyclonedx/bom (Free OSS)
         run: |
-          cd web/apps/portal
           npm install @cyclonedx/bom
+        working-directory: web/apps/portal
 
       - name: Generate NPM SBOM
         run: |
-          cd web/apps/portal
           node -e "
           const { Bom } = require('@cyclonedx/bom');
           const fs = require('fs');
@@ -218,6 +217,7 @@ jobs:
             process.exit(1);
           });
           "
+        working-directory: web/apps/portal
 
       - name: Merge SBOMs
         run: |
