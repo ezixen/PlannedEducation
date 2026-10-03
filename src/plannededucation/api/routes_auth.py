@@ -430,7 +430,8 @@ def confirm_password_reset(
     if payload.otp:
         if not user.password_reset_otp or user.password_reset_otp != payload.otp:
             raise HTTPException(status_code=400, detail="Invalid or expired OTP")
-        if user.password_reset_otp_expires and _as_utc(user.password_reset_otp_expires) < datetime.now(UTC):
+        if (user.password_reset_otp_expires
+                and _as_utc(user.password_reset_otp_expires) < datetime.now(UTC)):
             raise HTTPException(status_code=400, detail="OTP has expired")
 
     # Check recovery code (for 2FA users)
