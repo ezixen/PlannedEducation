@@ -95,28 +95,6 @@ export function STTProcessor() {
     setResult(null);
   };
 
-  const inputStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '0.625rem',
-    marginTop: '0.25rem',
-    borderRadius: 'var(--radius-md)',
-    border: '1px solid var(--border-color)',
-    backgroundColor: 'var(--bg-color)',
-    color: 'var(--text-color)',
-    fontSize: '0.95rem',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    padding: '0.625rem 1.5rem',
-    backgroundColor: 'var(--primary-color)',
-    color: '#fff',
-    border: 'none',
-    borderRadius: 'var(--radius-md)',
-    cursor: 'pointer',
-    fontWeight: 600,
-    fontSize: '0.95rem',
-  };
-
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
       <h3>Speech-to-Text Processor</h3>
