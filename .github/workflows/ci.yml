@@ -199,7 +199,7 @@ jobs:
       - name: Generate NPM SBOM
         run: |
           npx cyclonedx-bom -o ${{ github.workspace }}/sbom-npm.json --of json
-        working-directory: ${{ github.workspace }}
+        working-directory: web/apps/portal
 
       - name: Merge SBOMs
         run: |
