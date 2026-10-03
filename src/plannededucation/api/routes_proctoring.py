@@ -76,7 +76,10 @@ class ProctoringSessionResponse(BaseModel):
 
 class ProctoringEventRequest(BaseModel):
     """Request model for recording a proctoring event."""
-    session_id: str | None = Field(default=None, description="Proctoring session ID (optional for batch requests)")
+    session_id: str | None = Field(
+        default=None,
+        description="Proctoring session ID (optional for batch requests)",
+    )
     event_type: str = Field(..., description="Event type")
     severity: str = Field(default="info", description="Severity: info, warning, violation")
     event_data: dict[str, Any] | None = Field(default=None)
@@ -395,7 +398,10 @@ def record_event(
 ):
     """Record a single proctoring event."""
     if not request.session_id:
-        raise HTTPException(status_code=400, detail="session_id is required for single event recording")
+        raise HTTPException(
+            status_code=400,
+            detail="session_id is required for single event recording",
+        )
     session = _get_session_and_verify(request.session_id, current_user, db)
 
     # Verify session is active
@@ -465,7 +471,7 @@ def record_events_batch(
     db.commit()
     for event in events:
         db.refresh(event)
-    
+
     # Convert to response models with parsed event_data
     return [ProctoringEventResponse.from_orm(e) for e in events]
 
