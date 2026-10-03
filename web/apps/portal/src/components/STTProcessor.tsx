@@ -2,6 +2,37 @@ import { useState } from 'react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 
+const inputStyle: React.CSSProperties = {
+  width: '100%',
+  padding: '0.625rem',
+  marginTop: '0.25rem',
+  borderRadius: 'var(--radius-md)',
+  border: '1px solid var(--border-color)',
+  backgroundColor: 'var(--bg-color)',
+  color: 'var(--text-color)',
+  fontSize: '0.95rem',
+};
+
+const labelStyle: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.375rem',
+  fontSize: '0.9rem',
+  fontWeight: 500,
+  color: 'var(--text-color)',
+};
+
+const buttonStyle: React.CSSProperties = {
+  padding: '0.625rem 1.5rem',
+  backgroundColor: 'var(--primary-color)',
+  color: '#fff',
+  border: 'none',
+  borderRadius: 'var(--radius-md)',
+  cursor: 'pointer',
+  fontWeight: 600,
+  fontSize: '0.95rem',
+};
+
 export function STTProcessor() {
   const { success: showSuccess, error: showError } = useToast();
   
