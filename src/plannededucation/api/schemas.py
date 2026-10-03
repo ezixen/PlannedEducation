@@ -1,4 +1,3 @@
-import enum
 from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
