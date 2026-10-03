@@ -72,7 +72,7 @@ services:
   # Frontend (free, open-source)
   frontend:
     build:
-      context: ./web/apps/portal
+      context: .
       dockerfile: Dockerfile.frontend
     container_name: plannededucation-frontend
     ports:

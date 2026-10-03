@@ -1,10 +1,13 @@
 # Frontend Dockerfile - Free/Open-Source Only
 # Uses Node.js official image (free) and builds the React app
 
-FROM node:20-alpine AS builder
+FROM node:24.21.0-alpine3.24@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f905ec1c1 AS builder
 
 # Set work directory
 WORKDIR /app
+
+# Replace the bundled npm version with a patched toolchain release.
+RUN npm install --global npm@12.2.0
 
 # Copy package files
 COPY web/apps/portal/package*.json ./
@@ -19,7 +22,7 @@ COPY web/apps/portal/ .
 RUN npm run build
 
 # Production stage - use nginx (free, open-source)
-FROM nginx:alpine
+FROM nginx:stable-alpine3.24-slim@sha256:32463212baf0e7d91aded2e9b843a4f2b9e017804b8c9d5bae7b51dcef64389c
 
 # Copy built assets
 COPY --from=builder /app/dist /usr/share/nginx/html
