@@ -191,16 +191,32 @@ jobs:
           cache: "npm"
           cache-dependency-path: web/apps/portal/package-lock.json
 
-      - name: Install cyclonedx-bom CLI (Free OSS)
+      - name: Install @cyclonedx/bom (Free OSS)
         run: |
           cd web/apps/portal
-          npm install cyclonedx-bom
+          npm install @cyclonedx/bom
 
       - name: Generate NPM SBOM
         run: |
-          npx cyclonedx-bom -o ${{ github.workspace }}/sbom-npm.json --json .
-          echo "=== NPM SBOM content ==="
-          cat ${{ github.workspace }}/sbom-npm.json
+          node -e "
+          const { Bom } = require('@cyclonedx/bom');
+          const fs = require('fs');
+          const path = require('path');
+          
+          async function generateBom() {
+            const bom = new Bom();
+            await bom.load(path.resolve('.'));
+            const jsonOutput = bom.toJSON();
+            fs.writeFileSync(path.resolve('${{ github.workspace }}/sbom-npm.json'), JSON.stringify(jsonOutput, null, 2));
+            console.log('=== NPM SBOM content ===');
+            console.log(JSON.stringify(jsonOutput, null, 2));
+          }
+          
+          generateBom().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          "
         working-directory: web/apps/portal
 
       - name: Merge SBOMs
