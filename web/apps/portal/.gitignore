@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+build-meta.json
+build-meta.properties
 
 # Editor directories and files
 .vscode/*
