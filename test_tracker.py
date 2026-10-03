@@ -21,6 +21,7 @@ class TestResult:
     duration: float
     timestamp: str
     file_hash: str
+    source_hash: str = ""
     error_message: Optional[str] = None
 
 @dataclass
@@ -46,6 +47,7 @@ class TestTracker:
                 with open(self.tracker_file, 'r') as f:
                     data = json.load(f)
                     for key, value in data.get('results', {}).items():
+                        value.setdefault("source_hash", "")
                         self.results[key] = TestResult(**value)
             except Exception as e:
                 print(f"Warning: Could not load test tracker: {e}")
@@ -66,6 +68,33 @@ class TestTracker:
                 return hashlib.sha256(f.read()).hexdigest()
         except:
             return ""
+
+    def get_source_hash(self, test_file: str) -> str:
+        """Fingerprint source areas that can affect a tracked test."""
+        name = Path(test_file).stem
+        api_dir = Path("src/plannededucation/api")
+        if name == "test_auth":
+            patterns = ["auth.py", "routes_auth.py", "crypto.py", "database.py", "models.py", "schemas.py"]
+        elif name.startswith("test_routes_"):
+            patterns = [f"{name.removeprefix('test_')}.py", "auth.py", "routes_auth.py", "database.py", "models.py", "schemas.py"]
+        elif name == "test_exams":
+            patterns = ["routes_exam.py", "seb_security.py", "auth.py", "routes_auth.py", "database.py", "models.py", "schemas.py"]
+        elif name == "test_main":
+            patterns = ["main.py", "database.py"]
+        elif name == "test_ui_full":
+            return self._hash_paths(
+                list(Path("web/apps/portal/src").rglob("*.tsx")) + list(api_dir.glob("*.py"))
+            )
+        else:
+            return ""
+        return self._hash_paths(api_dir / pattern for pattern in patterns)
+
+    def _hash_paths(self, paths) -> str:
+        digest = hashlib.sha256()
+        for path in sorted((Path(path) for path in paths if Path(path).is_file()), key=str):
+            digest.update(str(path).encode())
+            digest.update(path.read_bytes())
+        return digest.hexdigest()
     
     def should_run_test(self, test_file: str, test_name: str) -> bool:
         """Determine if a test should be run based on file changes."""
@@ -79,23 +108,10 @@ class TestTracker:
         current_hash = self.get_file_hash(test_file)
         if current_hash != self.results[key].file_hash:
             return True
-        
-        # Check if any related source files have been modified
-        # For UI tests, check the portal source files
-        if test_file.endswith('test_ui_full.py'):
-            source_files = [
-                'web/apps/portal/src/pages/Login.tsx',
-                'web/apps/portal/src/contexts/AuthContext.tsx',
-                'web/apps/portal/src/contexts/ToastContext.tsx',
-                'web/apps/portal/src/api.ts',
-                'src/plannededucation/api/routes_auth.py',
-            ]
-            for src in source_files:
-                if os.path.exists(src):
-                    src_hash = self.get_file_hash(src)
-                    # We don't track source file hashes in results, so always run if source changed
-                    # This is a simple approach - in production you'd track source hashes too
-                    pass
+
+        current_source_hash = self.get_source_hash(test_file)
+        if current_source_hash and current_source_hash != self.results[key].source_hash:
+            return True
         
         # If test passed before and nothing changed, skip it
         if self.results[key].status == "passed":
@@ -116,6 +132,7 @@ class TestTracker:
             duration=duration,
             timestamp=datetime.now().isoformat(),
             file_hash=file_hash,
+            source_hash=self.get_source_hash(test_file),
             error_message=error_message
         )
         self.save()

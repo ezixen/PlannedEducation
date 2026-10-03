@@ -5,6 +5,8 @@ import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
 export function Login() {
   const { login, loginWithPassword } = useAuth();
   const { error: showError } = useToast();
@@ -40,11 +42,7 @@ export function Login() {
         navigate('/');
       }
     } catch (err: any) {
-      console.error('Login error:', err);
-      console.error('Login error response:', err.response);
-      console.error('Login error response data:', err.response?.data);
       const detail = err.response?.data?.detail || err.message || 'Login failed';
-      console.error('Login error detail:', detail);
       // Provide more specific error messages
       let message = 'Login failed';
       if (detail === 'Invalid email/username or password') {
@@ -68,13 +66,19 @@ export function Login() {
         <h1 style={{ marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary-color)' }}>Planned Education</h1>
         <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>Sign in to continue</p>
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={() => showError('Google Authentication Failed. Please try again or use email login.')}
-            useOneTap
-          />
-        </div>
+        {GOOGLE_CLIENT_ID ? (
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => showError('Google Authentication Failed. Please try again or use email login.')}
+              useOneTap
+            />
+          </div>
+        ) : (
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
+            Google sign-in is not configured. Set <code>VITE_GOOGLE_CLIENT_ID</code> to enable it.
+          </p>
+        )}
 
         {window.location.hostname === 'localhost' && (
           <form onSubmit={handleLocalLogin} style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>

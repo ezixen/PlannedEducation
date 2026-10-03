@@ -4,9 +4,10 @@
       "test_file": "test_ui_full.py",
       "test_name": "test_ui_full",
       "status": "passed",
-      "duration": 30,
-      "timestamp": "2026-10-01T22:19:12.017698",
-      "file_hash": "cb88e8f4c75f028034c112d3736faa5d9f63153d9e67c069736f7ad02c76ed2a",
+      "duration": 0,
+      "timestamp": "2026-10-03T18:15:17.460824",
+      "file_hash": "ba0954c202255b2dc4f27e61408fe7c493c7c5eddb47c89a01ff51843427ce42",
+      "source_hash": "f0a2915e82473c3a0947130bb173e2006eb0f7aa2fed32b880c1204ec8124d6e",
       "error_message": null
     },
     "test_e2e_comprehensive.py::test_e2e_comprehensive": {
@@ -16,8 +17,469 @@
       "duration": 60,
       "timestamp": "2026-10-01T22:16:08.670236",
       "file_hash": "83dab6bb00b74973414a05140257f4a440cbb3d628f88939696b0612bab9a237",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_success": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_success",
+      "status": "passed",
+      "duration": 0.2611737999977777,
+      "timestamp": "2026-10-03T18:09:40.151774",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_duplicate_email": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_duplicate_email",
+      "status": "passed",
+      "duration": 0.21133910000207834,
+      "timestamp": "2026-10-03T18:09:40.369317",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_duplicate_username": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_duplicate_username",
+      "status": "passed",
+      "duration": 0.20296279998729005,
+      "timestamp": "2026-10-03T18:09:40.578504",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_weak_password_rejected[short1A-too short]": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_weak_password_rejected[short1A-too short]",
+      "status": "passed",
+      "duration": 0.01235219999216497,
+      "timestamp": "2026-10-03T18:09:40.597231",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_weak_password_rejected[alllowercase1-no uppercase]": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_weak_password_rejected[alllowercase1-no uppercase]",
+      "status": "passed",
+      "duration": 0.008417399993049912,
+      "timestamp": "2026-10-03T18:09:40.611886",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_weak_password_rejected[ALLUPPERCASE1-no lowercase]": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_weak_password_rejected[ALLUPPERCASE1-no lowercase]",
+      "status": "passed",
+      "duration": 0.008832999999867752,
+      "timestamp": "2026-10-03T18:09:40.627397",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_weak_password_rejected[NoDigitsHere!-no digit]": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_weak_password_rejected[NoDigitsHere!-no digit]",
+      "status": "passed",
+      "duration": 0.008565900003304705,
+      "timestamp": "2026-10-03T18:09:40.642294",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_register_weak_password_rejected[abc-too short + no complexity]": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_register_weak_password_rejected[abc-too short + no complexity]",
+      "status": "passed",
+      "duration": 0.007576700008939952,
+      "timestamp": "2026-10-03T18:09:40.656321",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_login_with_email": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_login_with_email",
+      "status": "passed",
+      "duration": 0.2949963999999454,
+      "timestamp": "2026-10-03T18:09:40.957662",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_login_with_username": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_login_with_username",
+      "status": "passed",
+      "duration": 0.2517587000038475,
+      "timestamp": "2026-10-03T18:09:41.218123",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_login_wrong_password": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_login_wrong_password",
+      "status": "passed",
+      "duration": 0.32753159999265336,
+      "timestamp": "2026-10-03T18:09:41.553410",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_login_nonexistent_user": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_login_nonexistent_user",
+      "status": "passed",
+      "duration": 0.064564899992547,
+      "timestamp": "2026-10-03T18:09:41.624924",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_auth_me_returns_user": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_auth_me_returns_user",
+      "status": "passed",
+      "duration": 0.28704510000534356,
+      "timestamp": "2026-10-03T18:09:41.918633",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_auth_me_unauthenticated": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_auth_me_unauthenticated",
+      "status": "passed",
+      "duration": 0.005895199996302836,
+      "timestamp": "2026-10-03T18:09:41.931893",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_update_settings": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_update_settings",
+      "status": "passed",
+      "duration": 0.3964116999995895,
+      "timestamp": "2026-10-03T18:09:42.334777",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_auth.py::test_change_password_and_login_again": {
+      "test_file": "tests\\test_auth.py",
+      "test_name": "test_change_password_and_login_again",
+      "status": "passed",
+      "duration": 0.6422478999884333,
+      "timestamp": "2026-10-03T18:09:42.983716",
+      "file_hash": "74dc023db96cf22ccd3215606de9073ec1537ae21e862b2540df7c24247d58f8",
+      "source_hash": "efd9f043c53f9f4ba3a0aa91f9f35d922f28e2ac310c196eea9709edf3189d0b",
+      "error_message": null
+    },
+    "tests\\test_chat.py::test_websocket_rejects_invalid_token": {
+      "test_file": "tests\\test_chat.py",
+      "test_name": "test_websocket_rejects_invalid_token",
+      "status": "passed",
+      "duration": 0.0204714999999851,
+      "timestamp": "2026-10-03T18:09:43.011572",
+      "file_hash": "935a024c28990e92d744abdccf8f6546a3d6e3d378954a178d1d6d5a87716075",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_chat.py::test_websocket_rejects_missing_token": {
+      "test_file": "tests\\test_chat.py",
+      "test_name": "test_websocket_rejects_missing_token",
+      "status": "passed",
+      "duration": 0.006183299992699176,
+      "timestamp": "2026-10-03T18:09:43.021741",
+      "file_hash": "935a024c28990e92d744abdccf8f6546a3d6e3d378954a178d1d6d5a87716075",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_chat.py::test_websocket_teacher_can_join_own_exam": {
+      "test_file": "tests\\test_chat.py",
+      "test_name": "test_websocket_teacher_can_join_own_exam",
+      "status": "passed",
+      "duration": 0.8201822999981232,
+      "timestamp": "2026-10-03T18:09:43.846524",
+      "file_hash": "935a024c28990e92d744abdccf8f6546a3d6e3d378954a178d1d6d5a87716075",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_chat.py::test_websocket_student_can_join_with_active_submission": {
+      "test_file": "tests\\test_chat.py",
+      "test_name": "test_websocket_student_can_join_with_active_submission",
+      "status": "passed",
+      "duration": 0.8284558999876026,
+      "timestamp": "2026-10-03T18:09:44.678810",
+      "file_hash": "935a024c28990e92d744abdccf8f6546a3d6e3d378954a178d1d6d5a87716075",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_chat.py::test_websocket_stranger_rejected": {
+      "test_file": "tests\\test_chat.py",
+      "test_name": "test_websocket_stranger_rejected",
+      "status": "passed",
+      "duration": 1.0998946000036085,
+      "timestamp": "2026-10-03T18:09:45.783175",
+      "file_hash": "935a024c28990e92d744abdccf8f6546a3d6e3d378954a178d1d6d5a87716075",
+      "source_hash": "",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_create_exam": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_create_exam",
+      "status": "passed",
+      "duration": 0.41552329999103677,
+      "timestamp": "2026-10-03T18:09:46.203279",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_exam_list_has_no_question_data": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_exam_list_has_no_question_data",
+      "status": "passed",
+      "duration": 0.555451100008213,
+      "timestamp": "2026-10-03T18:09:46.768999",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_my_exams_returns_full_data_for_owner": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_my_exams_returns_full_data_for_owner",
+      "status": "passed",
+      "duration": 0.3883189000043785,
+      "timestamp": "2026-10-03T18:09:47.166674",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_idor_non_owner_cannot_get_exam_detail": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_idor_non_owner_cannot_get_exam_detail",
+      "status": "passed",
+      "duration": 0.7641772000060882,
+      "timestamp": "2026-10-03T18:09:47.939499",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_non_owner_cannot_add_question": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_non_owner_cannot_add_question",
+      "status": "passed",
+      "duration": 0.7757567000080599,
+      "timestamp": "2026-10-03T18:09:48.724270",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_seb_config_requires_ownership": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_seb_config_requires_ownership",
+      "status": "passed",
+      "duration": 0.7400205000012647,
+      "timestamp": "2026-10-03T18:09:49.471629",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_start_exam_seb_rejection_without_key": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_start_exam_seb_rejection_without_key",
+      "status": "passed",
+      "duration": 0.6921803000004729,
+      "timestamp": "2026-10-03T18:09:50.173121",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_start_and_submit_exam_dev_bypass": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_start_and_submit_exam_dev_bypass",
+      "status": "passed",
+      "duration": 1.04814919999626,
+      "timestamp": "2026-10-03T18:09:51.229088",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_exams.py::test_delete_exam": {
+      "test_file": "tests\\test_exams.py",
+      "test_name": "test_delete_exam",
+      "status": "passed",
+      "duration": 0.5990044999925885,
+      "timestamp": "2026-10-03T18:09:51.835448",
+      "file_hash": "0538393630c25befc5a5525fe46ead921726c1bc69a31d1921c6330bc3d4a7a8",
+      "source_hash": "88607c40d6c1cb876d7854d0ca26fb8b041eeb7377f474cae4346c9b6985c650",
+      "error_message": null
+    },
+    "tests\\test_main.py::test_health_check": {
+      "test_file": "tests\\test_main.py",
+      "test_name": "test_health_check",
+      "status": "passed",
+      "duration": 0.05738149999524467,
+      "timestamp": "2026-10-03T18:09:51.902684",
+      "file_hash": "a88bcbb8a3d145f7e2bd83a7c15872e903796ad119ce6bbc8953be074f04c436",
+      "source_hash": "11c2ad0e8daa148a6cfa07e2ac664eabd46aa5de67cc24aa2c4ef6d223af1a1e",
+      "error_message": null
+    },
+    "tests\\test_main.py::test_docs_disabled_outside_dev": {
+      "test_file": "tests\\test_main.py",
+      "test_name": "test_docs_disabled_outside_dev",
+      "status": "passed",
+      "duration": 0.011278799996944144,
+      "timestamp": "2026-10-03T18:09:51.926527",
+      "file_hash": "a88bcbb8a3d145f7e2bd83a7c15872e903796ad119ce6bbc8953be074f04c436",
+      "source_hash": "11c2ad0e8daa148a6cfa07e2ac664eabd46aa5de67cc24aa2c4ef6d223af1a1e",
+      "error_message": null
+    },
+    "tests\\test_routes_anonymizer.py::test_get_anonymized_submissions": {
+      "test_file": "tests\\test_routes_anonymizer.py",
+      "test_name": "test_get_anonymized_submissions",
+      "status": "passed",
+      "duration": 88.25913610000862,
+      "timestamp": "2026-10-03T18:11:20.199021",
+      "file_hash": "f5138217829a6a7f1e0160c984eae29f8a641d77cd9d7fb3906fc19bcc6cf7b4",
+      "source_hash": "22fd00d7172aab426a6424b548af2c2a2159a9e25755435ae943ebb50c40eedb",
+      "error_message": null
+    },
+    "tests\\test_routes_anonymizer.py::test_get_anonymized_submissions_non_owner_forbidden": {
+      "test_file": "tests\\test_routes_anonymizer.py",
+      "test_name": "test_get_anonymized_submissions_non_owner_forbidden",
+      "status": "passed",
+      "duration": 1.4860849999968195,
+      "timestamp": "2026-10-03T18:11:21.692577",
+      "file_hash": "f5138217829a6a7f1e0160c984eae29f8a641d77cd9d7fb3906fc19bcc6cf7b4",
+      "source_hash": "22fd00d7172aab426a6424b548af2c2a2159a9e25755435ae943ebb50c40eedb",
+      "error_message": null
+    },
+    "tests\\test_routes_anonymizer.py::test_post_ai_grades_persists": {
+      "test_file": "tests\\test_routes_anonymizer.py",
+      "test_name": "test_post_ai_grades_persists",
+      "status": "passed",
+      "duration": 1.2198756999860052,
+      "timestamp": "2026-10-03T18:11:22.919707",
+      "file_hash": "f5138217829a6a7f1e0160c984eae29f8a641d77cd9d7fb3906fc19bcc6cf7b4",
+      "source_hash": "22fd00d7172aab426a6424b548af2c2a2159a9e25755435ae943ebb50c40eedb",
+      "error_message": null
+    },
+    "tests\\test_routes_anonymizer.py::test_post_ai_grades_idor_blocked": {
+      "test_file": "tests\\test_routes_anonymizer.py",
+      "test_name": "test_post_ai_grades_idor_blocked",
+      "status": "passed",
+      "duration": 1.4349951000040164,
+      "timestamp": "2026-10-03T18:11:24.362554",
+      "file_hash": "f5138217829a6a7f1e0160c984eae29f8a641d77cd9d7fb3906fc19bcc6cf7b4",
+      "source_hash": "22fd00d7172aab426a6424b548af2c2a2159a9e25755435ae943ebb50c40eedb",
+      "error_message": null
+    },
+    "tests\\test_routes_exam.py::test_create_and_list_exams": {
+      "test_file": "tests\\test_routes_exam.py",
+      "test_name": "test_create_and_list_exams",
+      "status": "passed",
+      "duration": 0.5679687000083504,
+      "timestamp": "2026-10-03T18:11:24.938601",
+      "file_hash": "42497bc1ad5a5937107e734bede55a2d2e0dbddef6ace52ef849ea5cf00add3a",
+      "source_hash": "c56a85a02defc6c60eb3a78f63dfe572cbe0d6eb699a45814f50cc02b9f4afd5",
+      "error_message": null
+    },
+    "tests\\test_routes_exam.py::test_seb_config_generation": {
+      "test_file": "tests\\test_routes_exam.py",
+      "test_name": "test_seb_config_generation",
+      "status": "passed",
+      "duration": 0.4370185000007041,
+      "timestamp": "2026-10-03T18:11:25.382967",
+      "file_hash": "42497bc1ad5a5937107e734bede55a2d2e0dbddef6ace52ef849ea5cf00add3a",
+      "source_hash": "c56a85a02defc6c60eb3a78f63dfe572cbe0d6eb699a45814f50cc02b9f4afd5",
+      "error_message": null
+    },
+    "tests\\test_routes_exam.py::test_start_and_submit_with_multiple_choice": {
+      "test_file": "tests\\test_routes_exam.py",
+      "test_name": "test_start_and_submit_with_multiple_choice",
+      "status": "passed",
+      "duration": 1.0429857999988599,
+      "timestamp": "2026-10-03T18:11:26.434300",
+      "file_hash": "42497bc1ad5a5937107e734bede55a2d2e0dbddef6ace52ef849ea5cf00add3a",
+      "source_hash": "c56a85a02defc6c60eb3a78f63dfe572cbe0d6eb699a45814f50cc02b9f4afd5",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_relationship_request_and_approve": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_relationship_request_and_approve",
+      "status": "passed",
+      "duration": 0.8021906999929342,
+      "timestamp": "2026-10-03T18:11:27.244508",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_relationship_request_self_link_rejected": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_relationship_request_self_link_rejected",
+      "status": "passed",
+      "duration": 0.27975729999889154,
+      "timestamp": "2026-10-03T18:11:27.532189",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_duplicate_relationship_rejected": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_duplicate_relationship_rejected",
+      "status": "passed",
+      "duration": 0.7324372000002768,
+      "timestamp": "2026-10-03T18:11:28.271912",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_relationship_reject": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_relationship_reject",
+      "status": "passed",
+      "duration": 0.8417792999971425,
+      "timestamp": "2026-10-03T18:11:29.121147",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_third_party_cannot_approve": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_third_party_cannot_approve",
+      "status": "passed",
+      "duration": 1.0832770999986678,
+      "timestamp": "2026-10-03T18:11:30.212802",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_children_progress_empty_without_active_relationship": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_children_progress_empty_without_active_relationship",
+      "status": "passed",
+      "duration": 0.30359880000469275,
+      "timestamp": "2026-10-03T18:11:30.525033",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
+      "error_message": null
+    },
+    "tests\\test_routes_parent.py::test_children_progress_shows_data_after_approval": {
+      "test_file": "tests\\test_routes_parent.py",
+      "test_name": "test_children_progress_shows_data_after_approval",
+      "status": "passed",
+      "duration": 1.4141483999992488,
+      "timestamp": "2026-10-03T18:11:31.946799",
+      "file_hash": "cbee23dc4565b6ec0562e0f1515f96f494ea6bac445cd9bee8cda90163b3a3e0",
+      "source_hash": "c95e1fff6d0ee457e1e8e4a0160dc3d6ba80f74121e297393c6456235ebd7838",
       "error_message": null
     }
   },
-  "last_updated": "2026-10-01T22:19:12.017968"
+  "last_updated": "2026-10-03T18:15:17.483891"
 }

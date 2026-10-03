@@ -4,15 +4,26 @@ Smart Test Runner - Runs tests incrementally based on file changes.
 Uses the test tracker to avoid re-running tests for unmodified files.
 """
 
-import subprocess
-import sys
 import os
 import argparse
+import subprocess
+import sys
 from pathlib import Path
 from test_tracker import tracker
 
-# Use the venv python
-VENV_PYTHON = r"C:\.venv\Scripts\python.exe"
+
+def _python_executable() -> str:
+    """Return the configured project interpreter, then fall back safely."""
+    configured = os.environ.get("PLANNED_EDUCATION_PYTHON")
+    candidates = (
+        configured,
+        str(Path(__file__).parent / ".venv" / "Scripts" / "python.exe"),
+        r"C:\.venv\Scripts\python.exe",
+    )
+    for candidate in candidates:
+        if candidate and Path(candidate).is_file():
+            return candidate
+    return sys.executable
 
 def get_modified_files_since_last_run() -> list:
     """Get list of files modified since last successful test run."""
@@ -21,7 +32,7 @@ def get_modified_files_since_last_run() -> list:
 
 def run_pytest_with_tracking(test_path: str = "tests/", incremental: bool = True, extra_args: list = None):
     """Run pytest with incremental tracking."""
-    cmd = [VENV_PYTHON, "-m", "pytest"]
+    cmd = [_python_executable(), "-m", "pytest"]
     
     if incremental:
         cmd.extend(["-p", "conftest_tracker", "--incremental"])
@@ -45,7 +56,7 @@ def run_ui_tests(incremental: bool = True):
         print(f"SKIPPED (unchanged): {test_file}")
         return 0
     
-    cmd = [VENV_PYTHON, test_file]
+    cmd = [_python_executable(), test_file]
     print(f"Running: {' '.join(cmd)}")
     result = subprocess.run(cmd, cwd=os.getcwd())
     

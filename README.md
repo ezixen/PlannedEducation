@@ -16,7 +16,7 @@ Planned Education is a modern, open-source teacher's aid, grading software, and 
 ### 1. The Teacher Portal (React + Vite)
 - **Exam Editor**: Create dynamic exams utilizing `[rand:1-10]` tags to mathematically generate unique variations of questions for every student.
 - **Class Groupings**: Group students into classes, manage rosters, and assign IEP accessibility settings.
-- **AI Integration Hub**: Generate strict grading rubrics and provide anonymized access tokens to external AI grading scripts (compatible with Gemini, OpenAI, Ollama, etc.).
+- **AI Integration Hub**: Generate strict grading rubrics and provide anonymized access tokens for local Ollama or genuinely free-tier providers. Paid AI APIs are not supported.
 
 ### 2. The Secure Student Exam Environment
 - **Dynamic Randomization**: Answers are automatically scrambled and math variables are randomized to prevent screen-peeking.
@@ -32,14 +32,15 @@ Planned Education is a modern, open-source teacher's aid, grading software, and 
 
 ## 🚀 How to Run Locally
 
-We provide clean, localized PowerShell scripts to spin up the entire ecosystem on your machine without needing a cloud database. The local environment safely falls back to a temporary SQLite database.
+The root PowerShell launcher starts the API and portal against the local PostgreSQL service from `docker-compose.yml`.
 
 1. **Start the Environment:**
    Run the background startup script from the root directory:
    ```powershell
-   .\scripts\local\start.ps1
+   docker compose up -d postgres redis
+   .\start.ps1
    ```
-   *The backend will be available at `http://localhost:8000/docs` and the frontend at `http://localhost:5173`.*
+   *The backend will be available at `http://localhost:8001/docs` and the portal at `http://localhost:5175`.*
 
 2. **Verify Health:**
    Run the canary debug script to ensure the local ports are responding correctly:
@@ -50,7 +51,7 @@ We provide clean, localized PowerShell scripts to spin up the entire ecosystem o
 3. **Stop the Environment:**
    When you're finished, forcefully spin down the node and python background processes:
    ```powershell
-   .\scripts\local\stop.ps1
+   Stop-Process -Name python,node -ErrorAction SilentlyContinue
    ```
 
 ---
@@ -64,7 +65,7 @@ We provide clean, localized PowerShell scripts to spin up the entire ecosystem o
 ---
 
 ### Contributing & Questions
-If you have questions about extending the AI integrations, setting up a Safe Exam Browser profile, or contributing to the codebase, please review the architecture guidelines in `AGENTS.md` and `docs/`.
+If you have questions about extending the AI integrations, setting up a Safe Exam Browser profile, or contributing to the codebase, please review the architecture guidelines in `agents.md` and `docs/`.
 
 *Built for the future of equitable education.*
 
