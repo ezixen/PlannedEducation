@@ -26,7 +26,7 @@ updates:
     ignore:
       # Ignore major version updates that might break compatibility
       - dependency-name: "*"
-        update-type: "version-update:semver-major"
+        update-types: ["version-update:semver-major"]
 
   # Node.js dependencies (frontend portal)
   - package-ecosystem: "npm"
@@ -50,7 +50,7 @@ updates:
     ignore:
       # Ignore major version updates that might break compatibility
       - dependency-name: "*"
-        update-type: "version-update:semver-major"
+        update-types: ["version-update:semver-major"]
 
   # GitHub Actions dependencies
   - package-ecosystem: "github-actions"
