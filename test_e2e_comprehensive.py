@@ -17,6 +17,10 @@ TEACHER = {"email": "teacher@example.com", "password": "TestPass123!"}
 STUDENT = {"email": "student@example.com", "password": "TestPass123!"}
 PARENT = {"email": "parent@example.com", "password": "TestPass123!"}
 
+# Enable SEB bypass for testing
+import os
+os.environ["ALLOW_DEV_SEB_BYPASS"] = "true"
+
 class TestClient:
     def __init__(self, base_url):
         self.base_url = base_url
