@@ -14,6 +14,7 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     # Password complexity is validated server-side in routes_auth.py
     password: str = Field(..., min_length=8, max_length=128)
+    role: str = Field(default="student", pattern=r"^(student|teacher|parent)$")
 
 
 class UserUpdate(BaseModel):

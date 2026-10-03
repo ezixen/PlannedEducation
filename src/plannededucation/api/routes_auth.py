@@ -173,6 +173,7 @@ def register_user(
         full_name=user.full_name,
         phone_number=user.phone_number,
         hashed_password=get_password_hash(user.password),
+        role=user.role,
     )
     db.add(db_user)
     db.commit()
