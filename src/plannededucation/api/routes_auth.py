@@ -1,4 +1,5 @@
 import hashlib
+import json
 import os
 import re
 import secrets
@@ -83,6 +84,31 @@ def _validate_password(password: str) -> None:
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 # verify_password and get_password_hash are now defined above using Argon2id
+
+
+def _decode_recovery_codes(value: str | None) -> list[str]:
+    """Read a JSON array stored in the database back into a Python list."""
+    if not value:
+        return []
+    try:
+        decoded = json.loads(value)
+    except (TypeError, ValueError):
+        return []
+    return decoded if isinstance(decoded, list) else []
+
+
+def _encode_recovery_codes(codes: list[str]) -> str:
+    """Persist a list of recovery codes as JSON text in the database."""
+    return json.dumps(list(codes))
+
+
+def _as_utc(dt: datetime | None) -> datetime | None:
+    """Normalize SQLite/DB timestamps to timezone-aware UTC for comparisons."""
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=UTC)
+    return dt.astimezone(UTC)
 
 
 def get_current_user(
@@ -199,15 +225,23 @@ def login_for_access_token(
             detail="Account is deactivated. Please contact support.",
         )
 
-    access_token = auth.create_access_token(
-        data={"sub": user.email},
-        expires_delta=timedelta(minutes=auth.ACCESS_TOKEN_EXPIRE_MINUTES),
+    tokens = {
+        "access_token": auth.create_access_token(
+            data={"sub": user.email},
+            expires_delta=timedelta(minutes=auth.ACCESS_TOKEN_EXPIRE_MINUTES),
+        ),
+        "refresh_token": auth.create_refresh_token(
+            data={"sub": user.email},
+            expires_delta=timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS),
+        ),
+        "token_type": "bearer",
+    }
+    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
+    user.refresh_token_expires = datetime.now(UTC) + timedelta(
+        days=auth.REFRESH_TOKEN_EXPIRE_DAYS
     )
-    refresh_token = auth.create_refresh_token(
-        data={"sub": user.email},
-        expires_delta=timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS),
-    )
-    return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer"}
+    db.commit()
+    return tokens
 
 
 @router.post("/refresh", response_model=schemas.Token)
@@ -235,7 +269,7 @@ def refresh_access_token(
     if not secrets.compare_digest(user.refresh_token_hash, provided_hash):
         raise HTTPException(status_code=401, detail="Invalid refresh token")
 
-    if user.refresh_token_expires < datetime.now(UTC):
+    if _as_utc(user.refresh_token_expires) < datetime.now(UTC):
         raise HTTPException(status_code=401, detail="Refresh token expired")
 
     tokens = auth.create_token_pair({"sub": user.email})
@@ -396,17 +430,20 @@ def confirm_password_reset(
     if payload.otp:
         if not user.password_reset_otp or user.password_reset_otp != payload.otp:
             raise HTTPException(status_code=400, detail="Invalid or expired OTP")
-        if user.password_reset_otp_expires and user.password_reset_otp_expires < datetime.now(UTC):
+        if user.password_reset_otp_expires and _as_utc(user.password_reset_otp_expires) < datetime.now(UTC):
             raise HTTPException(status_code=400, detail="OTP has expired")
 
     # Check recovery code (for 2FA users)
     elif payload.recovery_code:
-        if not user.recovery_codes:
+        codes = _decode_recovery_codes(user.recovery_codes)
+        if not codes:
             raise HTTPException(status_code=400, detail="No recovery codes available")
-        if payload.recovery_code not in user.recovery_codes:
+        provided_hash = hashlib.sha256(payload.recovery_code.encode()).hexdigest()
+        if provided_hash not in codes:
             raise HTTPException(status_code=400, detail="Invalid recovery code")
         # Remove used recovery code
-        user.recovery_codes = [c for c in user.recovery_codes if c != payload.recovery_code]
+        remaining = [c for c in codes if c != provided_hash]
+        user.recovery_codes = _encode_recovery_codes(remaining)
 
     else:
         raise HTTPException(status_code=400, detail="OTP or recovery code required")
@@ -450,9 +487,11 @@ def setup_2fa(
         issuer_name=auth.TOTP_ISSUER
     )
 
-    # Generate recovery codes
+    # Generate recovery codes and store only hashed values in the database
     recovery_codes = auth.generate_recovery_codes()
-    current_user.recovery_codes = recovery_codes
+    current_user.recovery_codes = _encode_recovery_codes(
+        [hashlib.sha256(code.encode()).hexdigest() for code in recovery_codes]
+    )
     db.commit()
 
     return schemas.TwoFASetupResponse(
@@ -509,14 +548,12 @@ def disable_2fa(
 
     # Or verify recovery code
     elif payload.recovery_code:
-        if (
-            not current_user.recovery_codes
-            or payload.recovery_code not in current_user.recovery_codes
-        ):
+        codes = _decode_recovery_codes(current_user.recovery_codes)
+        provided_hash = hashlib.sha256(payload.recovery_code.encode()).hexdigest()
+        if not codes or provided_hash not in codes:
             raise HTTPException(status_code=400, detail="Invalid recovery code")
-        current_user.recovery_codes = [
-            c for c in current_user.recovery_codes if c != payload.recovery_code
-        ]
+        remaining = [c for c in codes if c != provided_hash]
+        current_user.recovery_codes = _encode_recovery_codes(remaining)
 
     else:
         raise HTTPException(status_code=400, detail="TOTP code or recovery code required")
@@ -541,7 +578,9 @@ def regenerate_recovery_codes(
 
     # In a real implementation, require TOTP confirmation here
     recovery_codes = auth.generate_recovery_codes()
-    current_user.recovery_codes = recovery_codes
+    current_user.recovery_codes = _encode_recovery_codes(
+        [hashlib.sha256(code.encode()).hexdigest() for code in recovery_codes]
+    )
     db.commit()
 
     return schemas.RecoveryCodesResponse(

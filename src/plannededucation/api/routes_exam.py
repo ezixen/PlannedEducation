@@ -2,8 +2,10 @@ import json
 import random
 import re
 from datetime import UTC, datetime
+from xml.sax.saxutils import escape as xml_escape
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from . import database, models, schemas
@@ -164,7 +166,7 @@ def generate_seb_config(
     <key>originatorVersion</key>
     <string>SEB_Win_3.7.0</string>
     <key>startURL</key>
-    <string>{start_url}</string>
+    <string>{xml_escape(start_url)}</string>
     <key>hashedQuitPassword</key>
     <string></string>
     <key>enableZoomPage</key>
@@ -172,7 +174,7 @@ def generate_seb_config(
     <key>browserWindowAllowReload</key>
     <false/>
     <key>examKey</key>
-    <string>{exam.seb_config_key or ''}</string>
+    <string>{xml_escape(exam.seb_config_key or '')}</string>
 </dict>
 </plist>"""
 
@@ -220,7 +222,13 @@ def start_exam(
         started_at=datetime.now(UTC),
     )
     db.add(submission)
-    db.flush()  # Flush to get submission.id without committing yet
+    try:
+        db.flush()  # Flush to get submission.id without committing yet
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=409, detail="You have already started this exam"
+        ) from None
 
     questions = (
         db.query(models.Question).filter(models.Question.exam_id == exam_id).all()
