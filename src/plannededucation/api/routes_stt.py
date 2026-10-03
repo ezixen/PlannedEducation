@@ -173,9 +173,7 @@ async def get_supported_languages(
 
 
 @router.get("/models")
-async def get_available_models(
-    current_user: models.User = Depends(get_current_user),
-):
+async def get_available_models():
     """Get list of available Whisper model sizes."""
     return {
         "models": [
