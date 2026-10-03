@@ -49,7 +49,9 @@ jobs:
           ruff check src/
 
       - name: Run type checking (mypy)
-        # Non-blocking: ~99 pre-existing SQLAlchemy Column typing errors; burn down then remove.\n        continue-on-error: true\n        run: |
+        # Non-blocking: ~99 pre-existing SQLAlchemy Column typing errors; burn down then remove.
+        continue-on-error: true
+        run: |
           pip install mypy
           mypy src/plannededucation --ignore-missing-imports --namespace-packages --explicit-package-bases
 
