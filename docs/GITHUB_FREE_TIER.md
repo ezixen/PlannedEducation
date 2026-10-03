@@ -1,7 +1,7 @@
 # GitHub free-tier policy (PlannedEducation)
 
 **Status:** locked — use **free** GitHub features only until explicitly budgeted otherwise.  
-**Repo today:** private (`ezixen/PlannedEducation`). Default branch: `main`.  
+**Repo today:** public (`ezixen/PlannedEducation`). GitHub currently reports `master` as the default branch; active delivery branches are `main` and `dev`.
 **Docs checked:** official GitHub docs (post–1 Apr 2025 Advanced Security split). Same rules as WIWM (`WIWM` repo `docs/GITHUB_FREE_TIER.md`) and EasyLegalAid (`law` repo `docs/GITHUB_FREE_TIER.md`).
 
 Canonical references:
@@ -57,4 +57,4 @@ Code scanning, secret scanning, and dependency review become free on the public 
 
 ## Branches
 
-Security Checks run on **`main`** and **`develop`** (and PRs targeting them) so free OSS audits apply to day-to-day and release branches.
+Security Checks run on **`main`**, **`dev`**, and legacy **`develop`** (and PRs targeting them) so free OSS audits apply to current and transitional branch names.

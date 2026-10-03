@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
@@ -28,19 +28,24 @@ export function useOfflineSync(examId?: string) {
     syncQueueSize: 0,
   });
   const [progress, setProgress] = useState<ExamProgress | null>(null);
+  const wasOnline = useRef(navigator.onLine);
 
-  // Load progress for current exam
-  useEffect(() => {
-    if (examId && user) {
-      loadProgress();
-    }
-  }, [examId, user]);
-
-  const loadProgress = async () => {
+  const loadProgress = useCallback(async () => {
     if (!examId || !user) return;
     const p = await getExamProgress(examId, user.id);
     setProgress(p || null);
-  };
+  }, [examId, user]);
+
+  // Refresh storage stats
+  const refreshStats = useCallback(async () => {
+    const s = await getOfflineStorageStats();
+    setStats(s);
+  }, []);
+
+  // Load progress for current exam
+  useEffect(() => {
+    void loadProgress();
+  }, [loadProgress]);
 
   // Save answer to offline storage
   const saveAnswer = useCallback(async (questionId: string, response: string) => {
@@ -57,11 +62,13 @@ export function useOfflineSync(examId?: string) {
       isComplete: false,
     };
     
-    current.answers[questionId] = response;
-    current.lastUpdated = Date.now();
-    
-    await saveExamProgress(current);
-    setProgress(current);
+    const nextProgress = {
+      ...current,
+      answers: { ...current.answers, [questionId]: response },
+      lastUpdated: Date.now(),
+    };
+    await saveExamProgress(nextProgress);
+    setProgress(nextProgress);
     
     // Queue progress sync
     await queueProgressSync(examId, user.id);
@@ -97,7 +104,7 @@ export function useOfflineSync(examId?: string) {
     showInfo('Exam queued for submission when online');
     
     return { queued: true };
-  }, [examId, user]);
+  }, [examId, user, showInfo]);
 
   // Process sync queue when online
   const sync = useCallback(async () => {
@@ -113,13 +120,7 @@ export function useOfflineSync(examId?: string) {
     } finally {
       setSyncing(false);
     }
-  }, [syncing]);
-
-  // Refresh storage stats
-  const refreshStats = useCallback(async () => {
-    const s = await getOfflineStorageStats();
-    setStats(s);
-  }, []);
+  }, [refreshStats, showError, showSuccess, syncing]);
 
   // Setup online/offline listeners
   useEffect(() => {
@@ -127,7 +128,6 @@ export function useOfflineSync(examId?: string) {
       () => {
         setOnline(true);
         showInfo('Back online - syncing...');
-        sync();
       },
       () => {
         setOnline(false);
@@ -136,17 +136,18 @@ export function useOfflineSync(examId?: string) {
     );
     
     // Initial stats load
-    refreshStats();
+    void refreshStats();
     
     return cleanup;
-  }, [sync, refreshStats]);
+  }, [refreshStats, showInfo]);
 
-  // Auto-sync when coming online
+  // Sync once per offline-to-online transition; avoid a render-loop after syncing.
   useEffect(() => {
-    if (online && !syncing) {
-      sync();
+    if (online && !wasOnline.current) {
+      void sync();
     }
-  }, [online, syncing, sync]);
+    wasOnline.current = online;
+  }, [online, sync]);
 
   return {
     online,

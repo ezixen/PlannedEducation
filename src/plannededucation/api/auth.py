@@ -2,6 +2,7 @@ import hashlib
 import os
 import re
 import secrets
+import uuid
 from datetime import UTC, datetime, timedelta
 
 import jwt  # PyJWT for JWT encoding/decoding
@@ -71,6 +72,7 @@ REFRESH_TOKEN_EXPIRE_DAYS = 30
 # ── Token Creation ───────────────────────────────────────────────────────────
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     to_encode = data.copy()
+    to_encode.setdefault("jti", uuid.uuid4().hex)
     expire = datetime.now(UTC) + (
         expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     )
@@ -83,6 +85,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
 def create_refresh_token(data: dict, expires_delta: timedelta | None = None) -> str:
     """Create a long-lived refresh token."""
     to_encode = data.copy()
+    to_encode.setdefault("jti", uuid.uuid4().hex)
     expire = datetime.now(UTC) + (
         expires_delta if expires_delta else timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
     )

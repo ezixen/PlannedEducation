@@ -56,6 +56,8 @@ class User(Base):
     phone_number = Column(String(32), nullable=True)
     is_active = Column(Boolean, default=True, nullable=False)
     role = Column(String(16), default='student', nullable=False)  # teacher, student, parent
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    last_login = Column(DateTime(timezone=True), nullable=True)
 
     # 2FA
     totp_secret = Column(String(64), nullable=True)
@@ -157,6 +159,7 @@ class Exam(Base):
     duration_minutes = Column(Integer, default=60, nullable=False)
     teacher_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     seb_config_key = Column(String(512), nullable=True)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
 
     teacher = relationship("User", back_populates="exams")
     questions = relationship(

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { apiClient } from '../api';
 
@@ -11,22 +11,26 @@ export function ExamEditor() {
   const [qType, setQType] = useState('multiple_choice');
   const [qText, setQText] = useState('');
 
-  useEffect(() => {
-    fetchExam();
-  }, [id]);
-
-  const fetchExam = async () => {
+  const fetchExam = useCallback(async () => {
+    if (!id) {
+      setExam(null);
+      setLoading(false);
+      return;
+    }
     try {
-      // For now, get all exams and filter. (In a real app, add a GET /exams/{id} endpoint)
-      const response = await apiClient.get('/exams/');
-      const found = response.data.find((e: any) => e.id === Number(id));
-      setExam(found);
+      const response = await apiClient.get(`/exams/${id}`);
+      setExam(response.data);
     } catch (e) {
       console.error(e);
+      setExam(null);
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    void fetchExam();
+  }, [fetchExam]);
 
   const addQuestion = async () => {
     if (!qText) return;
@@ -37,7 +41,7 @@ export function ExamEditor() {
         points: 1
       });
       setQText('');
-      fetchExam();
+      await fetchExam();
     } catch (e) {
       console.error(e);
     }

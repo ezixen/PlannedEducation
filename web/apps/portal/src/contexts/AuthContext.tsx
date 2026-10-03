@@ -34,19 +34,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const refreshUser = useCallback(async () => {
     const token = localStorage.getItem('access_token');
-    console.log('refreshUser called, token:', token ? 'present' : 'missing');
     if (!token) {
       setUser(null);
       setLoading(false);
       return;
     }
     try {
-      console.log('Calling /auth/me...');
       const response = await apiClient.get<User>('/auth/me');
-      console.log('/auth/me response:', response.data);
       setUser(response.data);
-    } catch (error) {
-      console.error('/auth/me error:', error);
+    } catch {
       // Token is invalid or expired — clear it
       localStorage.removeItem('access_token');
       setUser(null);
@@ -74,11 +70,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const response = await apiClient.post<{ access_token: string }>('/auth/token', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
-      console.log('Login response:', response.data);
       localStorage.setItem('access_token', response.data.access_token);
-      console.log('Token stored, calling refreshUser...');
       await refreshUser();
-      console.log('refreshUser completed, user:', JSON.stringify(null));
     } catch (error: any) {
       // Pass through the original error detail from the API
       const detail = error.response?.data?.detail || 'Login failed';

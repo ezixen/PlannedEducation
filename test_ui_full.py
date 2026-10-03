@@ -1,4 +1,6 @@
 import asyncio
+import os
+
 from playwright.async_api import async_playwright
 
 async def fill_login(page, email, password):
@@ -50,6 +52,42 @@ async def test_themes(page):
         print("Border select not found, skipping")
     
     print("Themes updated.")
+
+
+async def smoke_test() -> None:
+    """Validate public portal navigation without manual CDP browser setup."""
+    portal_url = os.getenv("PORTAL_URL", "http://127.0.0.1:5175")
+    executable_path = os.getenv("PLAYWRIGHT_CHROMIUM_EXECUTABLE")
+    if not executable_path and os.name == "nt":
+        chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+        if os.path.exists(chrome_path):
+            executable_path = chrome_path
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(executable_path=executable_path)
+        page = await browser.new_page()
+        console_errors: list[str] = []
+        page.on(
+            "console",
+            lambda message: console_errors.append(message.text)
+            if message.type == "error"
+            else None,
+        )
+        try:
+            await page.goto(f"{portal_url}/login", wait_until="networkidle")
+            assert page.url.endswith("/login")
+            assert await page.get_by_role("heading", name="Planned Education").is_visible()
+            assert await page.get_by_text("Google sign-in is not configured.").is_visible()
+
+            await page.get_by_role("link", name="Register here").click()
+            await page.wait_for_url(f"{portal_url}/register")
+            assert await page.get_by_role("textbox", name="Full Name").is_visible()
+            assert await page.get_by_role("textbox", name="Username").is_visible()
+            assert await page.get_by_role("textbox", name="Email").is_visible()
+            assert await page.get_by_role("button", name="Register").is_visible()
+            assert not console_errors, f"Browser console errors: {console_errors}"
+        finally:
+            await browser.close()
+
 
 async def main():
     async with async_playwright() as p:
@@ -122,5 +160,5 @@ async def main():
         print("--- All visual tests completed ---")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(smoke_test())
 

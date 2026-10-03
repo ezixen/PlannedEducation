@@ -16,38 +16,41 @@ import { TeacherClasses } from './pages/TeacherClasses';
 import { TakeExam } from './pages/TakeExam';
 import { TeacherDashboard } from './pages/TeacherDashboard';
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'dummy-client-id.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+function AppProviders() {
+  return (
+    <AuthProvider>
+      <ThemeProvider>
+        <ToastProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/" element={<ProtectedRoute />}>
+                <Route index element={<Dashboard />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="exam/:id" element={<TakeExam />} />
+                <Route path="teacher-exams" element={<TeacherExams />} />
+                <Route path="teacher-exams/:id" element={<ExamEditor />} />
+                <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
+                <Route path="teacher-classes" element={<TeacherClasses />} />
+                <Route path="parent-dashboard" element={<ParentDashboard />} />
+                <Route path="ai-integrations" element={<AiIntegration />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </ToastProvider>
+      </ThemeProvider>
+    </AuthProvider>
+  );
+}
 
 function App() {
-  return (
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      <AuthProvider>
-        <ThemeProvider>
-          <ToastProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                
-                {/* Protected Routes inside the Layout */}
-                <Route path="/" element={<ProtectedRoute />}>
-                  <Route index element={<Dashboard />} />
-                  <Route path="settings" element={<Settings />} />
-                  <Route path="exam" element={<TakeExam />} />
-                  <Route path="teacher-exams" element={<TeacherExams />} />
-                  <Route path="teacher-exams/:id" element={<ExamEditor />} />
-                  <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
-                  <Route path="teacher-classes" element={<TeacherClasses />} />
-                  <Route path="parent-dashboard" element={<ParentDashboard />} />
-                  <Route path="ai-integrations" element={<AiIntegration />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
-          </ToastProvider>
-        </ThemeProvider>
-      </AuthProvider>
-    </GoogleOAuthProvider>
-  );
+  const app = <AppProviders />;
+  return GOOGLE_CLIENT_ID ? (
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>{app}</GoogleOAuthProvider>
+  ) : app;
 }
 
 export default App;

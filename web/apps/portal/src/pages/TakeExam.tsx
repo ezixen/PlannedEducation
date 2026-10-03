@@ -77,7 +77,7 @@ export function TakeExam() {
     } else if (!online) {
       showInfo('Offline mode - answers saved locally');
     }
-  }, [online, syncing, sync]);
+  }, [online, syncing, showInfo, sync]);
 
   if (submitted) {
     return (
@@ -136,7 +136,7 @@ export function TakeExam() {
                         type="radio" 
                         name={`q_${q.question_id}`} 
                         value={opt}
-                        onChange={(e) => setAnswers({...answers, [q.question_id]: e.target.value})}
+                        onChange={(e) => setAnswers((previous) => ({ ...previous, [q.question_id]: e.target.value }))}
                         required
                         style={{ accentColor: 'var(--primary-color)', width: '18px', height: '18px' }}
                       />
@@ -151,7 +151,7 @@ export function TakeExam() {
                   rows={5}
                   style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', resize: 'vertical', fontSize: '0.95rem', lineHeight: 1.6, fontFamily: 'inherit' }}
                   placeholder="Type your answer here..."
-                  onChange={(e) => setAnswers({...answers, [q.question_id]: e.target.value})}
+                  onChange={(e) => setAnswers((previous) => ({ ...previous, [q.question_id]: e.target.value }))}
                   required
                 />
               )}

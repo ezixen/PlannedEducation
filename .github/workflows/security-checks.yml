@@ -7,9 +7,9 @@ name: Security Checks
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, dev, develop]
   pull_request:
-    branches: [main, develop]
+    branches: [main, dev, develop]
   schedule:
     - cron: "17 3 * * 1"  # Weekly on Monday 03:17 UTC
   workflow_dispatch:
@@ -21,7 +21,6 @@ jobs:
   python-pip-audit:
     name: Python dependency audit
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,7 +48,6 @@ jobs:
     defaults:
       run:
         working-directory: web/apps/portal
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -68,7 +66,6 @@ jobs:
       - name: Run npm audit (high+)
         run: |
           npm audit --audit-level=high
-        continue-on-error: true
 
   # Upstream OSS binary (MIT). Do not use gitleaks/gitleaks-action (wrapper licenses).
   gitleaks:

@@ -1,0 +1,3 @@
+# Throwaway CI-only Fernet test key (not a real secret)
+ca7810a3cd072fe155b89b0060712786e66479a3:.github/workflows/ci.yml:generic-api-key:22
+0f30f5e76ec1a27ae5958f75221696209d8db46f:.github/workflows/ci.yml:generic-api-key:21

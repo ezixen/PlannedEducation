@@ -13,6 +13,7 @@ from slowapi.util import get_remote_address
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import (
+    routes_admin,
     routes_anonymizer,
     routes_auth,
     routes_chat,
@@ -216,6 +217,7 @@ app.include_router(routes_ocr.router)
 app.include_router(routes_stt.router)
 app.include_router(routes_proctoring.router)
 app.include_router(routes_packages.router)
+app.include_router(routes_admin.router)
 
 
 @app.get("/health")

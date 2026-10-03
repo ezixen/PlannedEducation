@@ -7,6 +7,7 @@ import { apiClient } from '../api';
 import { AIKeySettings } from '../components/AIKeySettings';
 import { TwoFASettings } from '../components/TwoFASettings';
 import { OCRProcessor } from '../components/OCRProcessor';
+import { STTProcessor } from '../components/STTProcessor';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -262,6 +263,9 @@ export function Settings() {
 
         {/* OCR Processor */}
         <OCRProcessor />
+
+        {/* Speech-to-Text Processor */}
+        <STTProcessor />
 
       </div>
     </div>
