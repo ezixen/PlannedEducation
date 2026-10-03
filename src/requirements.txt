@@ -10,7 +10,7 @@ sqlalchemy>=2.0.27
 psycopg2-binary>=2.9.9  # PostgreSQL driver (free)
 
 # Validation & Serialization
-pydantic>=2.6.3
+pydantic[email]>=2.6.3
 pydantic-settings>=2.0.0  # For settings management
 
 # Authentication & Security
