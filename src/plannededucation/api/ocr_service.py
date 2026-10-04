@@ -7,10 +7,9 @@ Handles handwritten math and text recognition for AI grading pipeline.
 import base64
 import io
 import logging
-import math
 import re
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from typing import Any
 
 try:
     import cv2
@@ -258,40 +257,40 @@ class OCRService:
         """Deskew image using OpenCV for better OCR accuracy."""
         if not OPENCV_AVAILABLE:
             return image
-        
+
         try:
             # Convert PIL to OpenCV
             cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
-            
+
             # Threshold
             _, thresh = cv2.threshold(cv_image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            
+
             # Find contours
             contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            
+
             if not contours:
                 return image
-            
+
             # Find largest contour (assumed to be text)
             largest_contour = max(contours, key=cv2.contourArea)
-            
+
             # Get minimum area rectangle
             rect = cv2.minAreaRect(largest_contour)
             angle = rect[-1]
-            
+
             # Correct angle
             if angle < -45:
                 angle = 90 + angle
-            
+
             # Rotate if needed
             if abs(angle) > 0.5:
                 (h, w) = image.size
                 center = (w // 2, h // 2)
                 M = cv2.getRotationMatrix2D(center, angle, 1.0)
-                rotated = cv2.warpAffine(np.array(image), M, (w, h), 
+                rotated = cv2.warpAffine(np.array(image), M, (w, h),
                                          flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
                 return Image.fromarray(rotated)
-            
+
             return image
         except Exception as e:
             logger.warning(f"Deskewing failed: {e}")
@@ -301,19 +300,19 @@ class OCRService:
         """Detect lines of mathematical text in the image."""
         if not OPENCV_AVAILABLE:
             return []
-        
+
         try:
             cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
             _, thresh = cv2.threshold(cv_image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            
+
             # Horizontal projection to find lines
             horizontal_proj = np.sum(thresh, axis=1)
-            
+
             # Find line boundaries
             lines = []
             in_line = False
             start = 0
-            
+
             for i, val in enumerate(horizontal_proj):
                 if val > 0 and not in_line:
                     in_line = True
@@ -322,10 +321,11 @@ class OCRService:
                     in_line = False
                     if i - start > 10:  # Minimum line height
                         lines.append({'y_start': start, 'y_end': i, 'height': i - start})
-            
+
             if in_line and len(horizontal_proj) - start > 10:
-                lines.append({'y_start': start, 'y_end': len(horizontal_proj), 'height': len(horizontal_proj) - start})
-            
+                end = len(horizontal_proj)
+                lines.append({'y_start': start, 'y_end': end, 'height': end - start})
+
             return lines
         except Exception as e:
             logger.warning(f"Line detection failed: {e}")
@@ -335,34 +335,32 @@ class OCRService:
         """Detect individual math symbols in a line using contour analysis."""
         if not OPENCV_AVAILABLE:
             return []
-        
+
         try:
             cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
             _, thresh = cv2.threshold(cv_image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            
+
             # Crop to line region
-            y_start = line['y_start']
-            y_end = line['y_end']
             line_img = thresh[line['y_start']:line['y_end'], :]
-            
+
             # Find contours
             contours, _ = cv2.findContours(line_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            
+
             symbols = []
             for contour in contours:
                 x, y, w, h = cv2.boundingRect(contour)
                 if w < 5 or h < 5:  # Filter noise
                     continue
-                
+
                 # Extract symbol region
                 symbol_img = line_img[y:y+h, x:x+w]
-                
+
                 # Classify symbol type based on shape
                 symbol_type = self._classify_symbol(contour, w, h)
-                
+
                 # Get LaTeX representation
                 latex = self._symbol_to_latex(symbol_type, symbol_img)
-                
+
                 symbols.append(MathSymbol(
                     symbol=symbol_type,
                     latex=latex,
@@ -373,7 +371,7 @@ class OCRService:
                     height=h,
                     symbol_type=symbol_type
                 ))
-            
+
             return symbols
         except Exception as e:
             logger.warning(f"Symbol detection failed: {e}")
@@ -383,12 +381,11 @@ class OCRService:
         """Convert detected symbol to LaTeX."""
         # This is a simplified mapping - in production, use a trained classifier
         latex_map = {
-            'operator': '\\times',
+            'operator': '+',
             'bracket': '\\left( \\right)',
             'dot': '\\cdot',
             'number': '0',  # Placeholder
             'variable': 'x',
-            'operator': '+',
         }
         return latex_map.get(symbol_type, 'x')
 
@@ -396,7 +393,7 @@ class OCRService:
         """Convert OCR text and symbols to LaTeX."""
         # Replace common patterns with LaTeX
         latex = text
-        
+
         # Replace common math patterns
         replacements = {
             r'(\d+)\s*/\s*(\d+)': r'\\frac{\1}{\2}',
@@ -428,10 +425,10 @@ class OCRService:
             r'times': r'\\times',
             r'div': r'\\div',
         }
-        
+
         for pattern, replacement in replacements.items():
             latex = re.sub(pattern, replacement, latex, flags=re.IGNORECASE)
-        
+
         return latex
 
     def _validate_math(self, latex: str) -> dict:
@@ -441,7 +438,7 @@ class OCRService:
             'errors': [],
             'warnings': []
         }
-        
+
         # Check balanced brackets
         brackets = {'(': ')', '[': ']', '{': '}', '\\{': '\\}', '\\(': '\\)', '\\[': '\\]'}
         stack = []
@@ -456,16 +453,19 @@ class OCRService:
                     open_bracket, pos = stack.pop()
                     expected = brackets.get(open_bracket)
                     if expected and char != expected:
-                        validation['warnings'].append(f'Mismatched brackets at position {i}: {open_bracket}...{char}')
-        
+                        msg = f'Mismatched brackets at position {i}: {open_bracket}...{char}'
+                        validation['warnings'].append(msg)
+
         if stack:
             validation['valid'] = False
             validation['errors'].append(f'Unclosed brackets: {stack}')
-        
+
         # Check for common LaTeX errors
-        if '\\frac' in latex and '{' not in latex:
+        has_frac = '\\frac' in latex
+        has_brace = '{' in latex
+        if has_frac and not has_brace:
             validation['warnings'].append('\\frac found without braces')
-        
+
         return validation
 
     def extract_math_pipeline(
@@ -491,20 +491,20 @@ class OCRService:
                 language=language,
                 error="Tesseract not available"
             )
-        
+
         try:
             # Load image
             image = Image.open(io.BytesIO(image_data))
-            
+
             # Step 1: Deskew
             image = self._deskew_image(image)
-            
+
             # Step 2: Preprocess
             image = self._preprocess_image(image)
-            
+
             # Step 3: Detect lines
-            lines = self._detect_math_lines(image)
-            
+            self._detect_math_lines(image)
+
             # Step 4: Extract text with Tesseract (math config)
             math_config = (
                 "--psm 6 --oem 3 "
@@ -513,39 +513,33 @@ class OCRService:
                 "abcdefghijklmnopqrstuvwxyz"
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             )
-            
-            result = self.extract_text(
-                io.BytesIO(),
-                language=language,
-                config=math_config
-            )
-            
+
             # Actually extract from image
             image_bytes = io.BytesIO()
             image.save(image_bytes, format='PNG')
             image_bytes = image_bytes.getvalue()
-            
+
             text_result = self.extract_text(image_bytes, language, math_config)
-            
+
             # Step 5: Detect symbols in each line
             all_symbols = []
             for line in self._detect_math_lines(image):
                 symbols = self._detect_math_symbols(image, line)
                 all_symbols.extend(symbols)
-            
+
             # Step 5: Convert to LaTeX
             latex = ""
             if return_latex:
                 latex = self._convert_to_latex(text_result.text, all_symbols)
-            
+
             # Step 6: Validate
             validation = {}
             if validate:
                 validation = self._validate_math(latex)
-            
+
             # Calculate overall confidence
             confidence = text_result.confidence
-            
+
             return MathOCRResult(
                 text=text_result.text,
                 latex=latex,
@@ -556,7 +550,7 @@ class OCRService:
                 structure={'lines': len(self._detect_math_lines(image))},
                 validation=validation
             )
-            
+
         except Exception as e:
             logger.error(f"Math OCR pipeline failed: {e}")
             return MathOCRResult(
