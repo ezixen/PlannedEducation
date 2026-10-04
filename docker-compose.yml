@@ -2,8 +2,6 @@
 # Uses only free, open-source services for local development and self-hosted deployment
 # NO PAID SERVICES
 
-version: '3.8'
-
 services:
   # PostgreSQL Database (free, open-source)
   postgres:
