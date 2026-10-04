@@ -19,6 +19,7 @@ export function AdminLayout() {
     { path: '/admin/users', label: 'Users', icon: '👥' },
     { path: '/admin/exams', label: 'Exams', icon: '📝' },
     { path: '/admin/system', label: 'System', icon: '⚙️' },
+    { path: '/admin/settings', label: 'Settings', icon: '🔧' },
   ];
 
   return (

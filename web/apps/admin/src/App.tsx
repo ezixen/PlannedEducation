@@ -6,6 +6,7 @@ import { AdminDashboard } from './pages/AdminDashboard';
 import { AdminUsers } from './pages/AdminUsers';
 import { AdminExams } from './pages/AdminExams';
 import { AdminSystem } from './pages/AdminSystem';
+import { AdminSettings } from './pages/AdminSettings';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route path="/admin/users" element={<AdminUsers />} />
               <Route path="/admin/exams" element={<AdminExams />} />
               <Route path="/admin/system" element={<AdminSystem />} />
+              <Route path="/admin/settings" element={<AdminSettings />} />
               <Route path="/" element={<AdminDashboard />} />
             </Route>
           </Routes>

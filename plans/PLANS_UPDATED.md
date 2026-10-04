@@ -29,19 +29,27 @@
 - **AI Key Management endpoints** — GET/PUT `/auth/ai-key` for teacher AI provider configuration
 - **Presidio PII scrubber on anonymizer essays** — implemented (MIT licensed)
 - **All 4 anonymizer tests pass**
-- **Remaining**: Full OCR pipeline for handwritten math, speech-to-text integration, teacher dashboard UI for reviewing AI suggestions
+- **Full OCR pipeline for handwritten math** — `ocr_service.py` with deskewing, line detection, symbol detection, LaTeX conversion, validation; 7 route tests pass
+- **Speech-to-text integration** — `stt_service.py` with faster-whisper, base64/upload endpoints, model management, VAD; 8 route tests pass
+- **Teacher dashboard UI for reviewing AI suggestions** — `TeacherDashboard.tsx` with submission review, AI grade generation, mistake grouping, modal review with approve/apply workflow
 
 ### Phase 5: Optional Proctoring 🟡 Incremental
 - **WebRTC/Webcam AI proctoring toggle** with GDPR compliance flags
 - `ProctoringToggle.tsx` UI with camera/mic toggle, GDPR warning badge, video element preview, disable proctoring flow
+- **Backend proctoring routes** — `/proctoring/events`, `/proctoring/sessions`, `/proctoring/stats` with RBAC (22 tests pass)
 - **Remaining**: Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow
 
----
-**Fix Audit**: All 10 critical authorization leaks and workflow gaps identified in the initial audit have been fixed and validated with 46/46 passing tests.
+### Phase 6: Admin Portal ✅ Completed (2026-10-04)
+- **Admin Dashboard** — System stats (users, exams, submissions, active exams)
+- **User Management** — List, search, filter, activate/deactivate, delete users with role badges
+- **Exam Management** — List, search, filter by status, delete exams with teacher info
+- **System Settings** — Environment status, security/compliance overview, maintenance actions
+- **Admin Settings** — 2FA TOTP UI (QR code setup, verification, recovery codes, disable/regenerate)
+- **Admin Context** — React context for state management with stats, users, exams
+- **Admin Layout** — Collapsible sidebar navigation with Dashboard, Users, Exams, System, Settings
+- **Toast Notifications** — Ported from portal for consistent UX
+- **All 12 admin route tests pass**
 
-**OWASP Security Hardening (2026-09-28)**: Applied controls from HOW2 Universal KB (recertified 2026-05-10) aligned with OWASP ASVS 5.0.0, OWASP Top 10:2025, NIST SSDF, NIST 800-63B, NIST CSF 2.0.
-
-### Implemented Security Controls
 
 | OWASP Category | Control | Implementation |
 |---|---|---|
@@ -88,11 +96,6 @@
 **Launch**: `start.ps1` successfully starts API (port 8000) + Portal (port 5173) + Chrome Canary at `http://localhost:5173/login`. Canary debug test confirms both services reachable.
 
 **Remaining Infrastructure Items**:
-- 2FA TOTP UI endpoints (frontend)
-- Admin portal implementation — `web/apps/admin/` still default Vite scaffold
-- Full OCR pipeline for handwritten math
-- Speech-to-text integration
-- Teacher dashboard UI for reviewing AI suggestions
 - Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow
 - PWA IndexedDB sync for offline progress
 - Modular test package sharing

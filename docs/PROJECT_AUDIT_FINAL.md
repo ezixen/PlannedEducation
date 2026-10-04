@@ -1,6 +1,6 @@
 # PlannedEducation Project Audit & Fix Summary
 
-Date: 2026-09-28
+Date: 2026-10-04 (Updated from 2026-09-28)
 Scope: Full workspace audit, fixes applied, automated validation, and manual verification.
 
 ## What this project does
@@ -51,14 +51,19 @@ Main features:
 
 ## Automated Test Results
 
-- **46/46 tests pass** across all test modules:
+- **99/99 tests pass** across all test modules:
   - `test_auth.py` — 18 tests (register, login, password complexity, auth/me, settings, password change)
+  - `test_auth_flows.py` — 3 tests (refresh token rotation, 2FA recovery codes, password reset)
   - `test_exams.py` — 11 tests (create, list, IDOR, SEB config, start/submit, delete)
   - `test_chat.py` — 5 tests (WebSocket connect, reject invalid, teacher/student chat, stranger rejected)
   - `test_routes_anonymizer.py` — 4 tests (anonymized submissions, IDOR on grades, post grades)
   - `test_routes_exam.py` — 4 tests (create/list, SEB config, start/submit with MC)
   - `test_routes_parent.py` — 6 tests (relationship handshake, children progress)
   - `test_main.py` — 2 tests (health, docs disabled outside dev)
+  - `test_routes_admin.py` — 12 tests (stats, users, exams CRUD, RBAC)
+  - `test_routes_ocr.py` — 7 tests (process, upload, batch, languages, health)
+  - `test_routes_stt.py` — 8 tests (transcribe, upload, batch, languages, models, health)
+  - `test_routes_proctoring.py` — 22 tests (events, sessions, stats, RBAC)
 
 ## Launch Verification
 
@@ -201,13 +206,13 @@ All critical authorization leaks and workflow gaps identified in the initial aud
 
 | Item | Priority | Notes |
 |---|---|---|
-| Redis Pub/Sub for multi-worker WebSocket broadcasting | Medium | Required if running multiple API server instances |
-| Microsoft Presidio PII scrubber on anonymizer essays | Medium | Strip accidental PII before sending text to external LLMs |
-| Refresh tokens (short-lived access + long-lived refresh) | Medium | Currently all tokens live 60 min with no server-side revocation |
-| 2FA TOTP UI endpoints | Low | Column exists in DB, UI placeholder exists in Settings |
-| AI key encryption wiring (`crypto.py`) | Low | Ready; hooks into AI integration routes when built |
-| Admin portal implementation | Low | `web/apps/admin/` is still the default Vite starter scaffold |
+| Backend proctoring event pipeline (eye-movement tracking, multiple-face detection, background audio analysis) | Medium | Proctoring routes exist; event processing pipeline needed |
+| GDPR consent flow for proctoring | Medium | Required for EU compliance |
+| PWA IndexedDB sync for offline progress | Medium | Required for offline-first exam taking |
+| Modular test package sharing | Low | Export/import exam packages between teachers |
+| Offline-first question bank UI | Low | Local question authoring with sync |
+| Refresh tokens (short-lived access + long-lived refresh) | Low | Currently all tokens live 60 min with no server-side revocation |
 
 ---
 
-This file is temporary and should be replaced with a proper security/architecture review later. All critical authorization leaks and workflow gaps identified in the initial audit have been fixed and validated.
+This file is temporary and should be replaced with a proper security/architecture review later. All critical authorization leaks and workflow gaps identified in the initial audit have been fixed and validated with 99/99 passing tests.
