@@ -377,7 +377,7 @@ class OCRService:
             logger.warning(f"Symbol detection failed: {e}")
             return []
 
-    def _symbol_to_latex(self, symbol_type: str, symbol_img: np.ndarray) -> str:
+    def _symbol_to_latex(self, symbol_type: str, symbol_img: "np.ndarray") -> str:
         """Convert detected symbol to LaTeX."""
         # This is a simplified mapping - in production, use a trained classifier
         latex_map = {
