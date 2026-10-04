@@ -36,6 +36,7 @@ artifacts/
 dist/
 build/
 *.egg-info/
+ci_log.txt
 
 # OS/IDE
 .DS_Store
