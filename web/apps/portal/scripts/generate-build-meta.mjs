@@ -13,15 +13,15 @@ function pad2(value) {
   return String(value).padStart(2, '0')
 }
 
-/** Local build stamp: hhmmssddmmyyyy. */
+/** Local build stamp: ddmmyyyyhhmmss. */
 function localStamp(date) {
   return [
-    pad2(date.getHours()),
-    pad2(date.getMinutes()),
-    pad2(date.getSeconds()),
     pad2(date.getDate()),
     pad2(date.getMonth() + 1),
     date.getFullYear(),
+    pad2(date.getHours()),
+    pad2(date.getMinutes()),
+    pad2(date.getSeconds()),
   ].join('')
 }
 
