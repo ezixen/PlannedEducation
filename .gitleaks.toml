@@ -4,7 +4,32 @@
 [allowlist]
 description = "Ignore historical CI log files containing test secrets"
 paths = [
-    "ci_log*.txt",
+    "ci_log.txt",
+    "ci_log2.txt",
+    "ci_log3.txt",
+    "ci_log4.txt",
+    "ci_log5.txt",
+    "ci_log6.txt",
+    "ci_log7.txt",
+    "ci_log8.txt",
+    "ci_log9.txt",
+    "ci_log10.txt",
+    "ci_log11.txt",
+    "ci_log12.txt",
+    "ci_log13.txt",
+    "ci_log14.txt",
+    "ci_log15.txt",
+    "ci_log16.txt",
+    "ci_log18.txt",
+    "ci_log19.txt",
+    "ci_log20.txt",
+    "ci_log21.txt",
+    "ci_log22.txt",
+    "ci_log23.txt",
+    "ci_log24.txt",
+    "ci_log25.txt",
+    "ci_log28.txt",
+    "ci_log29.txt",
 ]
 
 # Also allow the throwaway CI-only Fernet test key and historical CI log commits
