@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
+import { PackageManager } from '../components/PackageManager';
 
 interface AnonymizedSubmission {
   anonymous_student_ref: string;
@@ -173,6 +174,15 @@ export function TeacherDashboard() {
           🔍 Group Similar Mistakes
         </button>
       </div>
+
+      {/* Package Manager */}
+      <PackageManager 
+        examId={examId} 
+        onPackageImported={() => {
+          showSuccess('Package imported! New exam created.');
+          // Could navigate to new exam or refresh
+        }}
+      />
 
       {/* Mistake Groups Panel */}
       {Object.keys(groupedMistakes).length > 0 && (
