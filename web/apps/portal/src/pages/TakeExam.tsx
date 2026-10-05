@@ -1,86 +1,48 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { useToast } from '../contexts/ToastContext';
 
 import { SecureChat } from '../components/SecureChat';
 import { ProctoringSession } from '../components/ProctoringSession';
-import { API_URL } from '../api';
-import { useOfflineSync } from '../hooks/useOfflineSync';
-
-interface ExamQuestion {
-  question_id: string;
-  question_type: 'multiple_choice' | 'essay' | 'dynamic_math';
-  text: string;
-  options: string[] | null;
-  points: number;
-}
-
-interface ExamData {
-  submission_id: string;
-  questions: ExamQuestion[];
-}
+import { useOfflineExam } from '../hooks/useOfflineExam';
 
 export function TakeExam() {
   const { id } = useParams<{ id: string }>();
-  const [examData, setExamData] = useState<ExamData | null>(null);
-  // Keys are question UUIDs (strings), not numbers
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const { error: showError, success: showSuccess, info: showInfo } = useToast();
+  const { error: showError, success: showSuccess, warn: showWarn } = useToast();
+  const [submitting] = useState(false);
   
-  // Offline sync integration
-  const { online, syncing, saveAnswer, submitExam, sync } = useOfflineSync(id);
+  // Use the new offline exam engine
+  const {
+    examPackage,
+    examState,
+    loading,
+    initializing,
+    timeRemainingFormatted,
+    isExamRunning,
+    isExamComplete,
+    isExamExpired,
+    progressPercent,
+    currentQuestionIndex,
+    totalQuestions,
+    startExam,
+    saveAnswer,
+    submitExam,
+    sebViolations,
+  } = useOfflineExam({
+    examId: id || '',
+    onExamFailed: (reason) => {
+      showError(`Exam Failed: ${reason}`);
+    },
+    onExamCompleted: () => {
+      showSuccess('Exam completed!');
+    },
+    onTimeWarning: (minutes) => {
+      showWarn(`${minutes} minute${minutes !== 1 ? 's' : ''} remaining!`);
+    },
+  });
 
-  useEffect(() => {
-    if (!id) return;
-    const startExam = async () => {
-      try {
-        const token = localStorage.getItem('access_token');
-        const res = await fetch(`${API_URL}/exams/${id}/start`, {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${token}` },
-        });
-        if (!res.ok) {
-          const data = await res.json();
-          showError('Failed to start exam', data.detail);
-          return;
-        }
-        const data: ExamData = await res.json();
-        setExamData(data);
-      } catch (err: any) {
-        showError('Network error', err.message);
-      }
-    };
-    startExam();
-  }, [id, showError]);
-
-  // Auto-save answers to offline storage
-  useEffect(() => {
-    if (!id || Object.keys(answers).length === 0) return;
-    
-    const saveTimer = setTimeout(async () => {
-      for (const [qId, response] of Object.entries(answers)) {
-        if (response.trim()) {
-          await saveAnswer(qId, response);
-        }
-      }
-    }, 1000); // Debounce saves
-    
-    return () => clearTimeout(saveTimer);
-  }, [answers, id, saveAnswer]);
-
-  // Handle online/offline status changes
-  useEffect(() => {
-    if (online && syncing) {
-      showInfo('Online - syncing progress...');
-      sync();
-    } else if (!online) {
-      showInfo('Offline mode - answers saved locally');
-    }
-  }, [online, syncing, showInfo, sync]);
-
-  if (submitted) {
+  // Handle exam completion
+  if (isExamComplete) {
     return (
       <div style={{ textAlign: 'center', marginTop: '4rem' }}>
         <h1 style={{ color: 'var(--primary-color)', fontSize: '1.75rem', fontWeight: 700 }}>Exam Submitted Successfully</h1>
@@ -89,28 +51,17 @@ export function TakeExam() {
     );
   }
 
-  if (!examData) return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>Loading secure exam payload...</div>;
+  if (loading || initializing) {
+    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>Loading secure exam payload...</div>;
+  }
+
+  if (!examPackage) {
+    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>Failed to load exam. Please try again.</div>;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-
-    try {
-      // Use offline sync submit (handles both online and offline)
-      const result = await submitExam(answers);
-      
-      if (result.queued) {
-        showSuccess('Exam queued for submission when online');
-        // Don't set submitted=true yet - will be submitted when online
-      } else {
-        showSuccess('Exam submitted successfully!');
-        setSubmitted(true);
-      }
-    } catch (err: any) {
-      showError('Failed to submit exam', err.message);
-    } finally {
-      setSubmitting(false);
-    }
+    await submitExam();
   };
 
   return (
@@ -118,10 +69,86 @@ export function TakeExam() {
       
       {/* Exam Content */}
       <div style={{ flex: 1, overflowY: 'auto', paddingRight: '1rem' }}>
-        <h1 style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem', fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-color)' }}>Secure Exam Mode</h1>
+        {/* Timer & Progress Header */}
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          padding: '1rem',
+          backgroundColor: isExamExpired ? '#fef2f2' : isExamRunning ? '#ecfdf5' : 'var(--sidebar-bg)',
+          border: `1px solid ${isExamExpired ? '#fecaca' : isExamRunning ? '#a7f3d0' : 'var(--border-color)'}`,
+          borderRadius: 'var(--radius-lg)',
+          marginBottom: '1rem',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <div style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 700, 
+              fontFamily: 'monospace',
+              color: isExamExpired ? '#dc2626' : isExamRunning ? '#059669' : 'var(--text-color)',
+            }}>
+              {timeRemainingFormatted}
+            </div>
+            <div style={{ 
+              width: '120px', 
+              height: '8px', 
+              backgroundColor: 'var(--border-color)', 
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}>
+              <div style={{ 
+                width: `${progressPercent}%`, 
+                height: '100%', 
+                backgroundColor: isExamExpired ? '#ef4444' : 'var(--primary-color)',
+                transition: 'width 0.3s ease',
+              }} />
+            </div>
+            <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+              {progressPercent}% complete
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+              Question {currentQuestionIndex + 1} of {totalQuestions}
+            </span>
+            {!isExamRunning && !isExamComplete && (
+              <button
+                onClick={startExam}
+                style={{
+                  padding: '0.625rem 1.25rem',
+                  backgroundColor: 'var(--primary-color)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: 'var(--radius-md)',
+                  cursor: 'pointer',
+                  fontWeight: 600,
+                }}
+              >
+                Start Exam
+              </button>
+            )}
+            {isExamRunning && (
+              <button
+                onClick={handleSubmit}
+                disabled={submitting}
+                style={{
+                  padding: '0.625rem 1.25rem',
+                  backgroundColor: '#ef4444',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: 'var(--radius-md)',
+                  cursor: submitting ? 'not-allowed' : 'pointer',
+                  fontWeight: 600,
+                }}
+              >
+                {submitting ? 'Submitting...' : 'Submit Exam'}
+              </button>
+            )}
+          </div>
+        </div>
         
         <form onSubmit={handleSubmit}>
-          {examData.questions.map((q: any, idx: number) => (
+          {examPackage.questions.map((q: any, idx: number) => (
             <div key={q.question_id} style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>Question {idx + 1}</h3>
@@ -137,7 +164,8 @@ export function TakeExam() {
                         type="radio" 
                         name={`q_${q.question_id}`} 
                         value={opt}
-                        onChange={(e) => setAnswers((previous) => ({ ...previous, [q.question_id]: e.target.value }))}
+                        checked={examState?.answers[q.question_id] === opt}
+                        onChange={(e) => saveAnswer(q.question_id, e.target.value)}
                         required
                         style={{ accentColor: 'var(--primary-color)', width: '18px', height: '18px' }}
                       />
@@ -150,9 +178,10 @@ export function TakeExam() {
               {(q.question_type === 'essay' || q.question_type === 'dynamic_math') && (
                 <textarea 
                   rows={5}
+                  value={examState?.answers[q.question_id] || ''}
+                  onChange={(e) => saveAnswer(q.question_id, e.target.value)}
                   style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', resize: 'vertical', fontSize: '0.95rem', lineHeight: 1.6, fontFamily: 'inherit' }}
                   placeholder="Type your answer here..."
-                  onChange={(e) => setAnswers((previous) => ({ ...previous, [q.question_id]: e.target.value }))}
                   required
                 />
               )}
@@ -161,20 +190,65 @@ export function TakeExam() {
 
           <button 
             type="submit" 
-            disabled={submitting}
-            style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-lg)', cursor: submitting ? 'not-allowed' : 'pointer', fontSize: '1.1rem', fontWeight: 600, transition: 'background-color 0.15s, opacity 0.15s' }}>
-            {submitting ? 'Encrypting & Submitting...' : 'Submit Exam'}
+            disabled={submitting || !isExamRunning}
+            style={{ width: '100%', padding: '1rem', backgroundColor: isExamRunning ? 'var(--primary-color)' : '#94a3b8', color: '#fff', border: 'none', borderRadius: 'var(--radius-lg)', cursor: isExamRunning ? (submitting ? 'not-allowed' : 'pointer') : 'not-allowed', fontSize: '1.1rem', fontWeight: 600, transition: 'background-color 0.15s, opacity 0.15s' }}>
+            {submitting ? 'Encrypting & Submitting...' : isExamRunning ? 'Submit Exam' : 'Start Exam to Enable Submit'}
           </button>
         </form>
       </div>
 
       {/* Secure Chat Sidebar for raising hand */}
       <div style={{ width: '320px', minWidth: '300px', maxWidth: '360px', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+        {/* Timer Mini Display */}
+        <div style={{ 
+          padding: '1rem', 
+          backgroundColor: isExamExpired ? '#fef2f2' : isExamRunning ? '#ecfdf5' : 'var(--sidebar-bg)',
+          border: `1px solid ${isExamExpired ? '#fecaca' : isExamRunning ? '#a7f3d0' : 'var(--border-color)'}`,
+          borderRadius: 'var(--radius-lg)',
+          marginBottom: '1.5rem',
+          textAlign: 'center',
+        }}>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
+            Time Remaining
+          </div>
+          <div style={{ 
+            fontSize: '2rem', 
+            fontWeight: 700, 
+            fontFamily: 'monospace',
+            color: isExamExpired ? '#dc2626' : isExamRunning ? '#059669' : 'var(--text-color)',
+          }}>
+            {timeRemainingFormatted}
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+            {isExamExpired ? 'TIME EXPIRED' : isExamRunning ? 'EXAM IN PROGRESS' : 'NOT STARTED'}
+          </div>
+        </div>
+
+        {/* SEB Violations Warning */}
+        {sebViolations.length > 0 && (
+          <div style={{ 
+            padding: '1rem', 
+            backgroundColor: '#fef2f2', 
+            border: '1px solid #fecaca', 
+            borderRadius: 'var(--radius-lg)',
+            marginBottom: '1.5rem',
+          }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#dc2626', fontSize: '0.875rem' }}>
+              ⚠️ Security Violations Detected
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.75rem', color: '#991b1b' }}>
+              {sebViolations.slice(-3).map((v, i) => (
+                <li key={i}>{v.type} at {new Date(v.timestamp).toLocaleTimeString()}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Proctoring Session */}
         <div style={{ marginBottom: '1.5rem' }}>
           <ProctoringSession 
             examId={id ?? ''} 
-            submissionId={examData.submission_id}
+            submissionId={examState?.submissionId || ''}
             onSessionComplete={(stats) => {
               console.log('Proctoring session complete:', stats);
             }}
