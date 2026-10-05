@@ -1,0 +1,582 @@
+gitleaks (OSS CLI)	Set up job	´╗┐2026-10-05T14:43:26.4965213Z Current runner version: '2.337.0'
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4986834Z ##[group]Runner Image Provisioner
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4987617Z Hosted Compute Agent
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4988109Z Version: 20260901.588
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4988499Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4988936Z Build Date: 2026-09-01T19:56:44Z
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4989400Z Worker ID: {4ab69d32-f402-4320-bc71-a7793ab63c4e}
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4989841Z Azure Region: centralus
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4990228Z ##[endgroup]
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4991122Z ##[group]Operating System
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4991505Z Ubuntu
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4991907Z 24.04.5
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4992232Z LTS
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4992606Z ##[endgroup]
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4992959Z ##[group]Runner Image
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4993568Z Image: ubuntu-24.04
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4994097Z Version: 20260927.320.1
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4994826Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4995974Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4996557Z ##[endgroup]
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4997292Z ##[group]GITHUB_TOKEN Permissions
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4998811Z Contents: read
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4999267Z Metadata: read
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.4999618Z ##[endgroup]
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.5001663Z Secret source: Actions
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.5002281Z Cache mode: write
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.5002792Z Prepare workflow directory
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.5229720Z Prepare all required actions
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.5269105Z Getting action download info
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:26.8228239Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+gitleaks (OSS CLI)	Set up job	2026-10-05T14:43:27.1146466Z Complete job name: gitleaks (OSS CLI)
+gitleaks (OSS CLI)	Checkout	´╗┐2026-10-05T14:43:27.1740931Z ##[group]Run actions/checkout@v4
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1741444Z with:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1741701Z   fetch-depth: 0
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1741977Z   repository: ezixen/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1744498Z   token: ***
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1744748Z   ssh-strict: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1745005Z   ssh-user: git
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1745265Z   persist-credentials: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1745550Z   clean: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1745812Z   sparse-checkout-cone-mode: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1746110Z   fetch-tags: false
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1746371Z   show-progress: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1746630Z   lfs: false
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1746872Z   submodules: false
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1747130Z   set-safe-directory: true
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1747419Z   allow-unsafe-pr-checkout: false
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.1747812Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2477085Z Syncing repository: ezixen/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2478364Z ##[group]Getting Git version info
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2478820Z Working directory is '/home/runner/work/PlannedEducation/PlannedEducation'
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2479615Z [command]/usr/bin/git version
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2544557Z git version 2.55.0
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2548148Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2561320Z Temporarily overriding HOME='/home/runner/work/_temp/31901ddc-df90-410d-8234-f0c80d5c9151' before making global git config changes
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2562599Z Adding repository directory to the temporary git global config as a safe directory
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.2565449Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3148498Z Deleting the contents of '/home/runner/work/PlannedEducation/PlannedEducation'
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3152196Z ##[group]Initializing the repository
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3155935Z [command]/usr/bin/git init /home/runner/work/PlannedEducation/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3785267Z hint: Using 'master' as the name for the initial branch. This default branch name
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3786202Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3786759Z hint: to use in all of your new repositories, which will suppress this warning,
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3787684Z hint: call:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3788020Z hint:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3788349Z hint: 	git config --global init.defaultBranch <name>
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3788706Z hint:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3789037Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3789556Z hint: 'development'. The just-created branch can be renamed via this command:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3789968Z hint:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3790214Z hint: 	git branch -m <name>
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3790485Z hint:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3790921Z hint: Disable this message with "git config set advice.defaultBranchName false"
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3791652Z Initialized empty Git repository in /home/runner/work/PlannedEducation/PlannedEducation/.git/
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.3793259Z [command]/usr/bin/git remote add origin https://github.com/ezixen/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.4949533Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.4950124Z ##[group]Disabling automatic garbage collection
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.4954425Z [command]/usr/bin/git config --local gc.auto 0
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5404614Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5405416Z ##[group]Setting up auth
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5410216Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5443892Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5767803Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5795812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.5995851Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.6023782Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.6218269Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.6257967Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.6258846Z ##[group]Fetching the repository
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:27.6265897Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0729489Z From https://github.com/ezixen/PlannedEducation
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0730668Z  * [new branch]      dev                         -> origin/dev
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0731406Z  * [new branch]      main                        -> origin/main
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0732164Z  * [new branch]      master                      -> origin/master
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0733249Z  * [new tag]         backup-dev-20261004-001613  -> backup-dev-20261004-001613
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0734140Z  * [new tag]         backup-main-20261004-001613 -> backup-main-20261004-001613
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0739314Z [command]/usr/bin/git branch --list --remote origin/dev
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0764553Z   origin/dev
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0772384Z [command]/usr/bin/git rev-parse refs/remotes/origin/dev
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0794671Z b2b6773b2b9c0f6353b169047a0a5410d936109a
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0798299Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0798904Z ##[group]Determining the checkout info
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0799616Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.0804558Z [command]/usr/bin/git sparse-checkout disable
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.2107896Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.3301446Z ##[group]Checking out the ref
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.3304071Z [command]/usr/bin/git checkout --progress --force -B dev refs/remotes/origin/dev
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.4524779Z Switched to a new branch 'dev'
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.4533705Z branch 'dev' set up to track 'origin/dev'.
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.4538183Z ##[endgroup]
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.4579958Z [command]/usr/bin/git log -1 --format=%H
+gitleaks (OSS CLI)	Checkout	2026-10-05T14:43:29.4603921Z b2b6773b2b9c0f6353b169047a0a5410d936109a
+gitleaks (OSS CLI)	Download gitleaks	´╗┐2026-10-05T14:43:29.5024590Z ##[group]Run curl -sSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5027876Z ^[[36;1mcurl -sSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \^[[0m
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5029756Z ^[[36;1m  | tar -xz gitleaks^[[0m
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5602933Z shell: /usr/bin/bash -e {0}
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5603844Z env:
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5604593Z   GITLEAKS_VERSION: 8.24.3
+gitleaks (OSS CLI)	Download gitleaks	2026-10-05T14:43:29.5605277Z ##[endgroup]
+gitleaks (OSS CLI)	Run gitleaks with baseline	´╗┐2026-10-05T14:43:29.9891083Z ##[group]Run ./gitleaks detect --source . --verbose --redact --baseline-path gitleaks-baseline.json
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:29.9891580Z ^[[36;1m./gitleaks detect --source . --verbose --redact --baseline-path gitleaks-baseline.json^[[0m
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:29.9946354Z shell: /usr/bin/bash -e {0}
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:29.9946585Z ##[endgroup]
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1913800Z 
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1915174Z     ÔŚő
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1915923Z     ÔöéÔĽ▓
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1916247Z     Ôöé ÔŚő
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1932811Z     ÔŚő ÔľĹ
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1933368Z     ÔľĹ    gitleaks
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1933533Z 
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1934175Z ^[[90m2:43PM^[[0m ^[[31mFTL^[[0m ^[[1munable to load gitleaks config, err: While parsing config: toml: key table already exists as a allowlist,  but should be an array table^[[0m
+gitleaks (OSS CLI)	Run gitleaks with baseline	2026-10-05T14:43:30.1956034Z ##[error]Process completed with exit code 1.
+gitleaks (OSS CLI)	Post Checkout	´╗┐2026-10-05T14:43:30.2049236Z Post job cleanup.
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.2734530Z [command]/usr/bin/git version
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.2765110Z git version 2.55.0
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.2790949Z Temporarily overriding HOME='/home/runner/work/_temp/d06a2230-2330-4932-8110-d0f5fa0b3eae' before making global git config changes
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.2792277Z Adding repository directory to the temporary git global config as a safe directory
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.2795774Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.3239658Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.3274976Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.3464340Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.3516513Z http.https://github.com/.extraheader
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.3528495Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.4498854Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.4717886Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+gitleaks (OSS CLI)	Post Checkout	2026-10-05T14:43:30.4752547Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+gitleaks (OSS CLI)	Complete job	´╗┐2026-10-05T14:43:30.5062094Z Cleaning up orphan processes
+gitleaks (OSS CLI)	Complete job	2026-10-05T14:43:30.5270544Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+NPM audit (portal)	Set up job	´╗┐2026-10-05T14:43:26.6264100Z Current runner version: '2.337.0'
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6288765Z ##[group]Runner Image Provisioner
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6289893Z Hosted Compute Agent
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6290593Z Version: 20260901.588
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6291245Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6292097Z Build Date: 2026-09-01T19:56:44Z
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6292830Z Worker ID: {05391d19-798d-4972-ab81-63ad286ae0c4}
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6293542Z Azure Region: eastus
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6294178Z ##[endgroup]
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6295870Z ##[group]Operating System
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6296630Z Ubuntu
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6297195Z 24.04.5
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6297695Z LTS
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6298271Z ##[endgroup]
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6298832Z ##[group]Runner Image
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6299514Z Image: ubuntu-24.04
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6300124Z Version: 20260927.320.1
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6301221Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6303127Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6304232Z ##[endgroup]
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6305410Z ##[group]GITHUB_TOKEN Permissions
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6308096Z Contents: read
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6308747Z Metadata: read
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6309397Z ##[endgroup]
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6311413Z Secret source: Actions
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6312493Z Cache mode: write
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6313401Z Prepare workflow directory
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6697952Z Prepare all required actions
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.6744686Z Getting action download info
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.8341951Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+NPM audit (portal)	Set up job	2026-10-05T14:43:26.9196093Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+NPM audit (portal)	Set up job	2026-10-05T14:43:27.0996244Z Complete job name: NPM audit (portal)
+NPM audit (portal)	Checkout	´╗┐2026-10-05T14:43:27.1797761Z ##[group]Run actions/checkout@v4
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1798674Z with:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1799139Z   repository: ezixen/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1803095Z   token: ***
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1803538Z   ssh-strict: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1804013Z   ssh-user: git
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1804466Z   persist-credentials: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1804961Z   clean: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1805411Z   sparse-checkout-cone-mode: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1806204Z   fetch-depth: 1
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1806634Z   fetch-tags: false
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1807064Z   show-progress: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1807503Z   lfs: false
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1807920Z   submodules: false
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1808370Z   set-safe-directory: true
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1808875Z   allow-unsafe-pr-checkout: false
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.1809652Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2769044Z Syncing repository: ezixen/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2770880Z ##[group]Getting Git version info
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2771701Z Working directory is '/home/runner/work/PlannedEducation/PlannedEducation'
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2772901Z [command]/usr/bin/git version
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2837012Z git version 2.55.0
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2858135Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2873847Z Temporarily overriding HOME='/home/runner/work/_temp/42e09158-da6c-480d-9684-816fcda63ebb' before making global git config changes
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2876570Z Adding repository directory to the temporary git global config as a safe directory
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2879791Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2922220Z Deleting the contents of '/home/runner/work/PlannedEducation/PlannedEducation'
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2926372Z ##[group]Initializing the repository
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.2930896Z [command]/usr/bin/git init /home/runner/work/PlannedEducation/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3016342Z hint: Using 'master' as the name for the initial branch. This default branch name
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3017687Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3018948Z hint: to use in all of your new repositories, which will suppress this warning,
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3020313Z hint: call:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3020735Z hint:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3021450Z hint: 	git config --global init.defaultBranch <name>
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3022359Z hint:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3022951Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3023900Z hint: 'development'. The just-created branch can be renamed via this command:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3024837Z hint:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3025261Z hint: 	git branch -m <name>
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3025990Z hint:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3026640Z hint: Disable this message with "git config set advice.defaultBranchName false"
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3027785Z Initialized empty Git repository in /home/runner/work/PlannedEducation/PlannedEducation/.git/
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3030232Z [command]/usr/bin/git remote add origin https://github.com/ezixen/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3071588Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3072380Z ##[group]Disabling automatic garbage collection
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3075162Z [command]/usr/bin/git config --local gc.auto 0
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3103220Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3109946Z ##[group]Setting up auth
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3110744Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3139152Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3453255Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3483569Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3697275Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3726633Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3936960Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3969481Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3970377Z ##[group]Fetching the repository
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.3978118Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b2b6773b2b9c0f6353b169047a0a5410d936109a:refs/remotes/origin/dev
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6894385Z From https://github.com/ezixen/PlannedEducation
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6896788Z  * [new ref]         b2b6773b2b9c0f6353b169047a0a5410d936109a -> origin/dev
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6901901Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6904039Z ##[group]Determining the checkout info
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6906724Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6909070Z [command]/usr/bin/git sparse-checkout disable
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6955996Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6982586Z ##[group]Checking out the ref
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.6986452Z [command]/usr/bin/git checkout --progress --force -B dev refs/remotes/origin/dev
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.7132808Z Switched to a new branch 'dev'
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.7138624Z branch 'dev' set up to track 'origin/dev'.
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.7145834Z ##[endgroup]
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.7187178Z [command]/usr/bin/git log -1 --format=%H
+NPM audit (portal)	Checkout	2026-10-05T14:43:27.7208993Z b2b6773b2b9c0f6353b169047a0a5410d936109a
+NPM audit (portal)	Set up Node.js	´╗┐2026-10-05T14:43:27.7494436Z ##[group]Run actions/setup-node@v4
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7495110Z with:
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7495747Z   node-version: 20
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7496231Z   cache: npm
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7496817Z   cache-dependency-path: web/apps/portal/package-lock.json
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7497545Z   always-auth: false
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7498041Z   check-latest: false
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7502208Z   token: ***
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.7502672Z ##[endgroup]
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.8883150Z Attempting to download 20...
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.8987419Z (node:2298) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:27.8990133Z (Use `node --trace-deprecation ...` to show where the warning was created)
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:28.3126390Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:28.6507758Z Extracting ...
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:28.6626180Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/28b0c5a2-f1e3-4565-9675-d4c7bcefad2a -f /home/runner/work/_temp/f7699865-fe0f-4291-b8ba-4145ebd1f1e9
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:29.6744437Z Adding to the cache ...
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.3617550Z ##[group]Environment details
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.5777252Z node: v20.20.2
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.5848169Z npm: 10.8.2
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.5848951Z yarn: 1.22.22
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.5850027Z ##[endgroup]
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.5850814Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.6842322Z /home/runner/.npm
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.7475017Z Cache hit for: node-cache-Linux-x64-npm-5c98105554e2cfd29653b921a5fd723b13176468220c1cba86826fe2f699b99e
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:31.7573471Z (node:2298) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:32.1585330Z Received 41461072 of 41461072 (100.0%), 109.5 MBs/sec
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:32.1586561Z Cache Size: ~40 MB (41461072 B)
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:32.1621390Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b525a3c7-46ee-425c-8dd8-b07083339516/cache.tzst -P -C /home/runner/work/PlannedEducation/PlannedEducation --use-compress-program unzstd
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:32.2973368Z Cache restored successfully
+NPM audit (portal)	Set up Node.js	2026-10-05T14:43:32.3001515Z Cache restored from key: node-cache-Linux-x64-npm-5c98105554e2cfd29653b921a5fd723b13176468220c1cba86826fe2f699b99e
+NPM audit (portal)	Install dependencies	´╗┐2026-10-05T14:43:32.3197325Z ##[group]Run npm ci --ignore-scripts
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:32.3197728Z ^[[36;1mnpm ci --ignore-scripts^[[0m
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:32.3448297Z shell: /usr/bin/bash -e {0}
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:32.3448633Z ##[endgroup]
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:34.7541435Z npm warn deprecated glob@11.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0124681Z 
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0125913Z added 368 packages, and audited 369 packages in 4s
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0126447Z 
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0126894Z 106 packages are looking for funding
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0127420Z   run `npm fund` for details
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0135848Z 
+NPM audit (portal)	Install dependencies	2026-10-05T14:43:36.0136257Z found 0 vulnerabilities
+NPM audit (portal)	Run npm audit (high+)	´╗┐2026-10-05T14:43:36.0430295Z ##[group]Run npm audit --audit-level=high
+NPM audit (portal)	Run npm audit (high+)	2026-10-05T14:43:36.0430691Z ^[[36;1mnpm audit --audit-level=high^[[0m
+NPM audit (portal)	Run npm audit (high+)	2026-10-05T14:43:36.0493510Z shell: /usr/bin/bash -e {0}
+NPM audit (portal)	Run npm audit (high+)	2026-10-05T14:43:36.0493813Z ##[endgroup]
+NPM audit (portal)	Run npm audit (high+)	2026-10-05T14:43:36.5731533Z found 0 vulnerabilities
+NPM audit (portal)	Post Set up Node.js	´╗┐2026-10-05T14:43:36.5885078Z Post job cleanup.
+NPM audit (portal)	Post Set up Node.js	2026-10-05T14:43:36.7064631Z (node:2375) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+NPM audit (portal)	Post Set up Node.js	2026-10-05T14:43:36.7066030Z (Use `node --trace-deprecation ...` to show where the warning was created)
+NPM audit (portal)	Post Set up Node.js	2026-10-05T14:43:36.7069292Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-5c98105554e2cfd29653b921a5fd723b13176468220c1cba86826fe2f699b99e, not saving cache.
+NPM audit (portal)	Post Checkout	´╗┐2026-10-05T14:43:36.7213709Z Post job cleanup.
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8015844Z [command]/usr/bin/git version
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8051797Z git version 2.55.0
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8090320Z Temporarily overriding HOME='/home/runner/work/_temp/ceeb7949-6d0a-4605-baef-bae11f0f4e6e' before making global git config changes
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8092221Z Adding repository directory to the temporary git global config as a safe directory
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8096590Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8131207Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8162833Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8381000Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8405331Z http.https://github.com/.extraheader
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8416872Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8448190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8661385Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+NPM audit (portal)	Post Checkout	2026-10-05T14:43:36.8690962Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+NPM audit (portal)	Complete job	´╗┐2026-10-05T14:43:36.9048575Z Cleaning up orphan processes
+NPM audit (portal)	Complete job	2026-10-05T14:43:36.9351867Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Python dependency audit	Set up job	´╗┐2026-10-05T14:43:27.9600929Z Current runner version: '2.337.0'
+Python dependency audit	Set up job	2026-10-05T14:43:27.9635953Z ##[group]Runner Image Provisioner
+Python dependency audit	Set up job	2026-10-05T14:43:27.9637335Z Hosted Compute Agent
+Python dependency audit	Set up job	2026-10-05T14:43:27.9638684Z Version: 20260901.588
+Python dependency audit	Set up job	2026-10-05T14:43:27.9639804Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Python dependency audit	Set up job	2026-10-05T14:43:27.9641157Z Build Date: 2026-09-01T19:56:44Z
+Python dependency audit	Set up job	2026-10-05T14:43:27.9642312Z Worker ID: {5f828e07-c299-4d92-a929-6018f5913235}
+Python dependency audit	Set up job	2026-10-05T14:43:27.9643521Z Azure Region: eastus
+Python dependency audit	Set up job	2026-10-05T14:43:27.9644598Z ##[endgroup]
+Python dependency audit	Set up job	2026-10-05T14:43:27.9647444Z ##[group]Operating System
+Python dependency audit	Set up job	2026-10-05T14:43:27.9648893Z Ubuntu
+Python dependency audit	Set up job	2026-10-05T14:43:27.9649747Z 24.04.5
+Python dependency audit	Set up job	2026-10-05T14:43:27.9650570Z LTS
+Python dependency audit	Set up job	2026-10-05T14:43:27.9651530Z ##[endgroup]
+Python dependency audit	Set up job	2026-10-05T14:43:27.9652482Z ##[group]Runner Image
+Python dependency audit	Set up job	2026-10-05T14:43:27.9653480Z Image: ubuntu-24.04
+Python dependency audit	Set up job	2026-10-05T14:43:27.9654502Z Version: 20260927.320.1
+Python dependency audit	Set up job	2026-10-05T14:43:27.9656366Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Python dependency audit	Set up job	2026-10-05T14:43:27.9660292Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Python dependency audit	Set up job	2026-10-05T14:43:27.9662043Z ##[endgroup]
+Python dependency audit	Set up job	2026-10-05T14:43:27.9663844Z ##[group]GITHUB_TOKEN Permissions
+Python dependency audit	Set up job	2026-10-05T14:43:27.9666747Z Contents: read
+Python dependency audit	Set up job	2026-10-05T14:43:27.9668136Z Metadata: read
+Python dependency audit	Set up job	2026-10-05T14:43:27.9669130Z ##[endgroup]
+Python dependency audit	Set up job	2026-10-05T14:43:27.9672107Z Secret source: Actions
+Python dependency audit	Set up job	2026-10-05T14:43:27.9673695Z Cache mode: write
+Python dependency audit	Set up job	2026-10-05T14:43:27.9675374Z Prepare workflow directory
+Python dependency audit	Set up job	2026-10-05T14:43:28.0144100Z Prepare all required actions
+Python dependency audit	Set up job	2026-10-05T14:43:28.0214792Z Getting action download info
+Python dependency audit	Set up job	2026-10-05T14:43:28.2469483Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Python dependency audit	Set up job	2026-10-05T14:43:28.3528786Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Python dependency audit	Set up job	2026-10-05T14:43:28.5357399Z Complete job name: Python dependency audit
+Python dependency audit	Checkout	´╗┐2026-10-05T14:43:28.6123861Z ##[group]Run actions/checkout@v4
+Python dependency audit	Checkout	2026-10-05T14:43:28.6124804Z with:
+Python dependency audit	Checkout	2026-10-05T14:43:28.6125280Z   repository: ezixen/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:28.6129849Z   token: ***
+Python dependency audit	Checkout	2026-10-05T14:43:28.6130328Z   ssh-strict: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6130772Z   ssh-user: git
+Python dependency audit	Checkout	2026-10-05T14:43:28.6131227Z   persist-credentials: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6131721Z   clean: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6132174Z   sparse-checkout-cone-mode: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6132705Z   fetch-depth: 1
+Python dependency audit	Checkout	2026-10-05T14:43:28.6133136Z   fetch-tags: false
+Python dependency audit	Checkout	2026-10-05T14:43:28.6133582Z   show-progress: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6134027Z   lfs: false
+Python dependency audit	Checkout	2026-10-05T14:43:28.6134436Z   submodules: false
+Python dependency audit	Checkout	2026-10-05T14:43:28.6134890Z   set-safe-directory: true
+Python dependency audit	Checkout	2026-10-05T14:43:28.6135404Z   allow-unsafe-pr-checkout: false
+Python dependency audit	Checkout	2026-10-05T14:43:28.6136249Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:28.7135697Z Syncing repository: ezixen/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:28.7137919Z ##[group]Getting Git version info
+Python dependency audit	Checkout	2026-10-05T14:43:28.7138832Z Working directory is '/home/runner/work/PlannedEducation/PlannedEducation'
+Python dependency audit	Checkout	2026-10-05T14:43:28.7140296Z [command]/usr/bin/git version
+Python dependency audit	Checkout	2026-10-05T14:43:28.7205746Z git version 2.55.0
+Python dependency audit	Checkout	2026-10-05T14:43:28.7226099Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:28.7240132Z Temporarily overriding HOME='/home/runner/work/_temp/4d516846-30a2-4cfa-81cf-b05bf7443f7f' before making global git config changes
+Python dependency audit	Checkout	2026-10-05T14:43:28.7241738Z Adding repository directory to the temporary git global config as a safe directory
+Python dependency audit	Checkout	2026-10-05T14:43:28.7244692Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:28.7292176Z Deleting the contents of '/home/runner/work/PlannedEducation/PlannedEducation'
+Python dependency audit	Checkout	2026-10-05T14:43:28.7296684Z ##[group]Initializing the repository
+Python dependency audit	Checkout	2026-10-05T14:43:28.7300867Z [command]/usr/bin/git init /home/runner/work/PlannedEducation/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:28.7406081Z hint: Using 'master' as the name for the initial branch. This default branch name
+Python dependency audit	Checkout	2026-10-05T14:43:28.7408313Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Python dependency audit	Checkout	2026-10-05T14:43:28.7410980Z hint: to use in all of your new repositories, which will suppress this warning,
+Python dependency audit	Checkout	2026-10-05T14:43:28.7413142Z hint: call:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7414454Z hint:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7416079Z hint: 	git config --global init.defaultBranch <name>
+Python dependency audit	Checkout	2026-10-05T14:43:28.7418195Z hint:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7419841Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Python dependency audit	Checkout	2026-10-05T14:43:28.7422179Z hint: 'development'. The just-created branch can be renamed via this command:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7423895Z hint:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7424898Z hint: 	git branch -m <name>
+Python dependency audit	Checkout	2026-10-05T14:43:28.7425961Z hint:
+Python dependency audit	Checkout	2026-10-05T14:43:28.7427299Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Python dependency audit	Checkout	2026-10-05T14:43:28.7429625Z Initialized empty Git repository in /home/runner/work/PlannedEducation/PlannedEducation/.git/
+Python dependency audit	Checkout	2026-10-05T14:43:28.7431952Z [command]/usr/bin/git remote add origin https://github.com/ezixen/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:28.7467817Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:28.7468715Z ##[group]Disabling automatic garbage collection
+Python dependency audit	Checkout	2026-10-05T14:43:28.7471066Z [command]/usr/bin/git config --local gc.auto 0
+Python dependency audit	Checkout	2026-10-05T14:43:28.7499706Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:28.7500475Z ##[group]Setting up auth
+Python dependency audit	Checkout	2026-10-05T14:43:28.7507008Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Python dependency audit	Checkout	2026-10-05T14:43:28.7536175Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Python dependency audit	Checkout	2026-10-05T14:43:28.7878001Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Python dependency audit	Checkout	2026-10-05T14:43:28.7908349Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Python dependency audit	Checkout	2026-10-05T14:43:28.8121830Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Python dependency audit	Checkout	2026-10-05T14:43:28.8151953Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Python dependency audit	Checkout	2026-10-05T14:43:28.8366040Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Python dependency audit	Checkout	2026-10-05T14:43:28.8400382Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:28.8401778Z ##[group]Fetching the repository
+Python dependency audit	Checkout	2026-10-05T14:43:28.8410081Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b2b6773b2b9c0f6353b169047a0a5410d936109a:refs/remotes/origin/dev
+Python dependency audit	Checkout	2026-10-05T14:43:29.3068402Z From https://github.com/ezixen/PlannedEducation
+Python dependency audit	Checkout	2026-10-05T14:43:29.3069882Z  * [new ref]         b2b6773b2b9c0f6353b169047a0a5410d936109a -> origin/dev
+Python dependency audit	Checkout	2026-10-05T14:43:29.3073194Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:29.3074262Z ##[group]Determining the checkout info
+Python dependency audit	Checkout	2026-10-05T14:43:29.3075964Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:29.3081735Z [command]/usr/bin/git sparse-checkout disable
+Python dependency audit	Checkout	2026-10-05T14:43:29.3130903Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Python dependency audit	Checkout	2026-10-05T14:43:29.3158250Z ##[group]Checking out the ref
+Python dependency audit	Checkout	2026-10-05T14:43:29.3161896Z [command]/usr/bin/git checkout --progress --force -B dev refs/remotes/origin/dev
+Python dependency audit	Checkout	2026-10-05T14:43:29.3344084Z Switched to a new branch 'dev'
+Python dependency audit	Checkout	2026-10-05T14:43:29.3350885Z branch 'dev' set up to track 'origin/dev'.
+Python dependency audit	Checkout	2026-10-05T14:43:29.3358265Z ##[endgroup]
+Python dependency audit	Checkout	2026-10-05T14:43:29.3398312Z [command]/usr/bin/git log -1 --format=%H
+Python dependency audit	Checkout	2026-10-05T14:43:29.3421649Z b2b6773b2b9c0f6353b169047a0a5410d936109a
+Python dependency audit	Set up Python	´╗┐2026-10-05T14:43:29.3737168Z ##[group]Run actions/setup-python@v5
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3738227Z with:
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3738679Z   python-version: 3.12
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3739205Z   check-latest: false
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3744249Z   token: ***
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3744735Z   update-environment: true
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3745304Z   allow-prereleases: false
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3746095Z   freethreaded: false
+Python dependency audit	Set up Python	2026-10-05T14:43:29.3746588Z ##[endgroup]
+Python dependency audit	Set up Python	2026-10-05T14:43:29.5065005Z ##[group]Installed versions
+Python dependency audit	Set up Python	2026-10-05T14:43:29.5151409Z (node:2291) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Python dependency audit	Set up Python	2026-10-05T14:43:29.5154383Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Python dependency audit	Set up Python	2026-10-05T14:43:29.5156038Z Successfully set up CPython (3.12.14)
+Python dependency audit	Set up Python	2026-10-05T14:43:29.5158007Z ##[endgroup]
+Python dependency audit	Build audit requirements from requirements.txt	´╗┐2026-10-05T14:43:29.5346333Z ##[group]Run cp src/requirements.txt requirements.audit.txt
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5347403Z ^[[36;1mcp src/requirements.txt requirements.audit.txt^[[0m
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5613293Z shell: /usr/bin/bash -e {0}
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5614100Z env:
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5614870Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5616165Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5617231Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5618428Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5619385Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5620333Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Python dependency audit	Build audit requirements from requirements.txt	2026-10-05T14:43:29.5621147Z ##[endgroup]
+Python dependency audit	Install pip-audit	´╗┐2026-10-05T14:43:29.5881488Z ##[group]Run python -m pip install --upgrade pip pip-audit
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5882530Z ^[[36;1mpython -m pip install --upgrade pip pip-audit^[[0m
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5941774Z shell: /usr/bin/bash -e {0}
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5942361Z env:
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5942947Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5943992Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5945022Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5945942Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5946867Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5948141Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Python dependency audit	Install pip-audit	2026-10-05T14:43:29.5948949Z ##[endgroup]
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.3092252Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages (26.2.1)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.4110233Z Collecting pip-audit
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.4609781Z   Downloading pip_audit-2.10.1-py3-none-any.whl.metadata (28 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.4821900Z Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.4860465Z   Downloading cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5153278Z Collecting cyclonedx-python-lib<12,>=5 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5191673Z   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata (6.9 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5364712Z Collecting packaging>=23.0.0 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5397311Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5521680Z Collecting pip-api>=0.0.28 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5569028Z   Downloading pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5693496Z Collecting pip-requirements-parser>=32.0.0 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5726371Z   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5933840Z Collecting requests>=2.31.0 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.5969915Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6252788Z Collecting rich>=12.4 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6293699Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6516571Z Collecting tomli>=2.2.1 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6551168Z   Downloading tomli-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6650599Z Collecting tomli-w>=1.2.0 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6685428Z   Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.6986291Z Collecting platformdirs>=4.2.0 (from pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7019559Z   Downloading platformdirs-4.12.3-py3-none-any.whl.metadata (5.5 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7161461Z Collecting license-expression<31,>=30 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7192890Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7356153Z Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7391432Z   Downloading packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7543782Z Collecting py-serializable<3.0.0,>=2.1.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7581205Z   Downloading py_serializable-2.1.0-py3-none-any.whl.metadata (4.3 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7701448Z Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7732023Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7890548Z Collecting typing_extensions<5.0,>=4.6 (from cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.7921490Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.8047001Z Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.8082270Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.8223329Z Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<3.0.0,>=2.1.0->cyclonedx-python-lib<12,>=5->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.8256303Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9070743Z Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9104646Z   Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9345417Z Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9382579Z   Downloading filelock-4.0.12-py3-none-any.whl.metadata (2.0 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9628947Z Collecting pyparsing (from pip-requirements-parser>=32.0.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:30.9662582Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.0846483Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.0880852Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1047534Z Collecting idna<4,>=2.5 (from requests>=2.31.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1079486Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1292305Z Collecting urllib3<3,>=1.26 (from requests>=2.31.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1326689Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1495268Z Collecting certifi>=2023.5.7 (from requests>=2.31.0->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1531785Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1688778Z Collecting markdown-it-py>=2.2.0 (from rich>=12.4->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1721131Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1910814Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=12.4->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.1943083Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2049583Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.4->pip-audit)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2086495Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2169288Z Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2224807Z Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2312120Z    ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü 529.5/529.5 kB 71.8 MB/s  0:00:00
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2353385Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2410265Z Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2461596Z Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2515948Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2568187Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2618252Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2680209Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2743716Z Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2808992Z Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2896333Z Downloading filelock-4.0.12-py3-none-any.whl (111 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.2963997Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3023811Z Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3082501Z Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3142824Z Downloading platformdirs-4.12.3-py3-none-any.whl (32 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3201866Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3264131Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3331132Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3386495Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3441882Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3504442Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3562481Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3634787Z    ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü 1.3/1.3 MB 203.4 MB/s  0:00:00
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3671987Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3725626Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3784055Z Downloading tomli-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (253 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3847164Z Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.3896083Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Python dependency audit	Install pip-audit	2026-10-05T14:43:31.5384470Z Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli-w, tomli, pyparsing, pygments, platformdirs, pip-api, packaging, packageurl-python, msgpack, mdurl, license-expression, idna, filelock, defusedxml, charset_normalizer, certifi, requests, py-serializable, pip-requirements-parser, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, pip-audit
+Python dependency audit	Install pip-audit	2026-10-05T14:43:33.6248230Z 
+Python dependency audit	Install pip-audit	2026-10-05T14:43:33.6279046Z Successfully installed CacheControl-0.14.4 boolean.py-5.0 certifi-2026.7.22 charset_normalizer-3.5.2 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.0.12 idna-3.20 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.3 packageurl-python-0.17.6 packaging-26.3 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 platformdirs-4.12.3 py-serializable-2.1.0 pygments-2.21.0 pyparsing-3.3.3 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 tomli-2.4.1 tomli-w-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0
+Python dependency audit	Run pip-audit	´╗┐2026-10-05T14:43:33.7023923Z ##[group]Run python -m pip_audit --strict -r requirements.audit.txt
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7024476Z ^[[36;1mpython -m pip_audit --strict -r requirements.audit.txt^[[0m
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7089362Z shell: /usr/bin/bash -e {0}
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7089638Z env:
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7089913Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7090369Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7090818Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7091401Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7091811Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7092223Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Python dependency audit	Run pip-audit	2026-10-05T14:43:33.7092563Z ##[endgroup]
+Python dependency audit	Run pip-audit	2026-10-05T14:43:45.6819389Z No known vulnerabilities found
+Python dependency audit	Post Set up Python	´╗┐2026-10-05T14:43:45.7351459Z Post job cleanup.
+Python dependency audit	Post Set up Python	2026-10-05T14:43:45.8531042Z (node:2410) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Python dependency audit	Post Set up Python	2026-10-05T14:43:45.8532606Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Python dependency audit	Post Checkout	´╗┐2026-10-05T14:43:45.8699887Z Post job cleanup.
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9533682Z [command]/usr/bin/git version
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9570817Z git version 2.55.0
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9607204Z Temporarily overriding HOME='/home/runner/work/_temp/348690a8-0d5b-485c-93c1-f998e12883d2' before making global git config changes
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9609224Z Adding repository directory to the temporary git global config as a safe directory
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9613881Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PlannedEducation/PlannedEducation
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9650718Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9685510Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9915898Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9944249Z http.https://github.com/.extraheader
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9957179Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Python dependency audit	Post Checkout	2026-10-05T14:43:45.9996704Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Python dependency audit	Post Checkout	2026-10-05T14:43:46.0266955Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Python dependency audit	Post Checkout	2026-10-05T14:43:46.0304272Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Python dependency audit	Complete job	´╗┐2026-10-05T14:43:46.0698819Z Cleaning up orphan processes
+Python dependency audit	Complete job	2026-10-05T14:43:46.1027227Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
