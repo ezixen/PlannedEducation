@@ -15,6 +15,7 @@ import { AiIntegration } from './pages/AiIntegration';
 import { TeacherClasses } from './pages/TeacherClasses';
 import { TakeExam } from './pages/TakeExam';
 import { TeacherDashboard } from './pages/TeacherDashboard';
+import { AdminDashboard } from './pages/AdminDashboard';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
@@ -37,6 +38,7 @@ function AppProviders() {
                 <Route path="teacher-classes" element={<TeacherClasses />} />
                 <Route path="parent-dashboard" element={<ParentDashboard />} />
                 <Route path="ai-integrations" element={<AiIntegration />} />
+                <Route path="admin" element={<AdminDashboard />} />
               </Route>
             </Routes>
           </BrowserRouter>

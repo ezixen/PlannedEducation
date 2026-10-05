@@ -23,6 +23,12 @@ export function Dashboard() {
       description: 'View child progress and teacher feedback.',
       action: { label: 'Open Parent Dashboard', onClick: () => navigate('/parent-dashboard'), variant: 'accent' },
     },
+    {
+      title: 'Admin Dashboard',
+      description: 'System oversight: users, exams, statistics (teachers only).',
+      action: { label: 'Open Admin Dashboard', onClick: () => navigate('/admin'), variant: 'primary' },
+      roles: ['teacher'],
+    },
   ];
 
   return (
@@ -39,7 +45,9 @@ export function Dashboard() {
         gap: '1rem',
         maxWidth: '100%'
       }}>
-        {cards.map((card, idx) => (
+        {cards
+          .filter(card => !card.roles || card.roles.includes(user.role))
+          .map((card, idx) => (
           <div key={idx} style={{ 
             padding: '1.5rem', 
             backgroundColor: 'var(--sidebar-bg)', 
