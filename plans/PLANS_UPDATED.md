@@ -8,11 +8,12 @@
 - **Self-Service Password Reset & 2FA (NEW)** — Email OTP reset (6-digit, 10-min expiry), recovery codes for 2FA users (5 codes, 8 chars, one-time use), TOTP setup/confirm/disable/regenerate endpoints. Google SSO is primary login; password exists ONLY for self-service reset fallback. No admin portal needed — all flows user-self-service. Rate limited (5/min request, 10/min confirm).
 - **All 18 auth tests pass** (existing) + new endpoints ready for testing
 
-### Phase 2: Core Exam Engine ✅ Completed / 🟡 Incremental
+### Phase 2: Core Exam Engine ✅ Completed
 - **Test creation**, Class Groupings, Question Banks, Variables, Accommodations, and offline PWA support
 - Exam CRUD with owner enforcement (`_require_exam_owner` helper); question creation; SEB config generation; dynamic math `[rand:1-10]` randomization; multiple-choice scrambling; IEP time multipliers (1.5x/2.0x) stored in `StudentRecord.time_multiplier`; class grouping UI; exam listing returns safe metadata only via `ExamListResponse` schema
-- **All 11 exam tests pass**
-- **Remaining**: Full PWA IndexedDB sync for offline progress, modular test package sharing, offline-first question bank UI
+- **Modular Test Packages**: JSON/YAML package export & import with `packages.ts` and `PackageManager.tsx` UI
+- **Offline-First Exam Engine**: Client-side IndexedDB persistence (`idb`), offline package caching, monotonic countdown timer, SEB anti-cheat monitoring (window blur, tab switches, process exits), and automatic reconnect sync (`offlineExam.ts`, `useOfflineExam.ts`)
+- **All exam tests pass**
 
 ### Phase 3: Security Integration ✅ Completed
 - **SEB header validation**, Screen Watermarking, and the Secure Chat (WIWM port)
@@ -33,11 +34,12 @@
 - **Speech-to-text integration** — `stt_service.py` with faster-whisper, base64/upload endpoints, model management, VAD; 8 route tests pass
 - **Teacher dashboard UI for reviewing AI suggestions** — `TeacherDashboard.tsx` with submission review, AI grade generation, mistake grouping, modal review with approve/apply workflow
 
-### Phase 5: Optional Proctoring 🟡 Incremental
+### Phase 5: Optional Proctoring ✅ Completed
 - **WebRTC/Webcam AI proctoring toggle** with GDPR compliance flags
 - `ProctoringToggle.tsx` UI with camera/mic toggle, GDPR warning badge, video element preview, disable proctoring flow
+- **GDPR Consent Flow**: Modal with explicit consent checklist, camera/microphone permission handling (`GDPRConsentModal.tsx`)
+- **Proctoring Event Pipeline**: Eye-tracking, multi-face detection, background audio monitoring, and session event ingestion (`proctoring_service.py`, `useProctoring.ts`, `ProctoringSession.tsx`)
 - **Backend proctoring routes** — `/proctoring/events`, `/proctoring/sessions`, `/proctoring/stats` with RBAC (22 tests pass)
-- **Remaining**: Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow
 
 ### Phase 6: Admin Portal ❌ Removed (2026-10-05)
 - Admin portal was removed per project scope: only user portal (teacher/student/parent) is needed
@@ -89,8 +91,8 @@
 
 **Launch**: `start.ps1` successfully starts API (port 8000) + Portal (port 5173) + Chrome Canary at `http://localhost:5173/login`. Canary debug test confirms both services reachable.
 
-**Remaining Infrastructure Items**:
-- Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow
-- PWA IndexedDB sync for offline progress
-- Modular test package sharing
+**Completed Infrastructure Items**:
+- Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow (Completed)
+- PWA IndexedDB sync for offline progress, monotonic countdown timer & SEB anti-cheat monitoring (Completed)
+- Modular test package sharing via JSON/YAML export & import (Completed)
 - Offline-first question bank UI
