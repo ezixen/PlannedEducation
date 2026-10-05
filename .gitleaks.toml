@@ -3,7 +3,7 @@
 
 [allowlist]
 description = "Ignore historical CI log files containing test secrets"
-files = [
+paths = [
     "ci_log*.txt",
 ]
 
