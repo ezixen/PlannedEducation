@@ -4,10 +4,6 @@ ca7810a3cd072fe155b89b0060712786e66479a3:.github/workflows/ci.yml:generic-api-ke
 
 # Historical ci_log.txt commits (file was added then removed, but still in git history)
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:57
-b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:776
-b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:809
-b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:1083
-b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:2110
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2110
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2182
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2215
@@ -15,8 +11,6 @@ b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:2110
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2280
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2292
 73761251ba3353c94325bf8ce58091b3b6af7910:ci_log.txt:generic-api-key:2387
-
-# Historical ci_log.txt commits from commit b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3
 b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:776
 b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:809
 b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3:ci_log.txt:generic-api-key:1083
