@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
 
 import { SecureChat } from '../components/SecureChat';
+import { ProctoringSession } from '../components/ProctoringSession';
 import { API_URL } from '../api';
 import { useOfflineSync } from '../hooks/useOfflineSync';
 
@@ -169,6 +170,17 @@ export function TakeExam() {
 
       {/* Secure Chat Sidebar for raising hand */}
       <div style={{ width: '320px', minWidth: '300px', maxWidth: '360px', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+        {/* Proctoring Session */}
+        <div style={{ marginBottom: '1.5rem' }}>
+          <ProctoringSession 
+            examId={id ?? ''} 
+            submissionId={examData.submission_id}
+            onSessionComplete={(stats) => {
+              console.log('Proctoring session complete:', stats);
+            }}
+          />
+        </div>
+
         <div style={{ marginBottom: '1rem' }}>
           <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Digital Hand Raise</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
