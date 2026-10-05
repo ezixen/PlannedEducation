@@ -39,16 +39,10 @@
 - **Backend proctoring routes** — `/proctoring/events`, `/proctoring/sessions`, `/proctoring/stats` with RBAC (22 tests pass)
 - **Remaining**: Backend proctoring event pipeline, eye-movement tracking, multiple-face detection, background audio analysis, GDPR consent flow
 
-### Phase 6: Admin Portal ✅ Completed (2026-10-04)
-- **Admin Dashboard** — System stats (users, exams, submissions, active exams)
-- **User Management** — List, search, filter, activate/deactivate, delete users with role badges
-- **Exam Management** — List, search, filter by status, delete exams with teacher info
-- **System Settings** — Environment status, security/compliance overview, maintenance actions
-- **Admin Settings** — 2FA TOTP UI (QR code setup, verification, recovery codes, disable/regenerate)
-- **Admin Context** — React context for state management with stats, users, exams
-- **Admin Layout** — Collapsible sidebar navigation with Dashboard, Users, Exams, System, Settings
-- **Toast Notifications** — Ported from portal for consistent UX
-- **All 12 admin route tests pass**
+### Phase 6: Admin Portal ❌ Removed (2026-10-05)
+- Admin portal was removed per project scope: only user portal (teacher/student/parent) is needed
+- Admin functions (user management, exam oversight, system settings) will be handled via CLI/scripts or direct DB access
+- 2FA TOTP UI moved to user portal Settings page (already implemented)
 
 
 | OWASP Category | Control | Implementation |
