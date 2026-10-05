@@ -1,7 +1,7 @@
 # Gitleaks configuration for PlannedEducation
 # This config ignores historical CI log files that contain test secrets
 
-[allowlist]
+[[allowlist]]
 description = "Ignore historical CI log files containing test secrets"
 paths = [
     "ci_log*.txt",
