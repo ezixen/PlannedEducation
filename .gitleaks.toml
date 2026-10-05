@@ -7,10 +7,12 @@ paths = [
     "ci_log*.txt",
 ]
 
-# Also allow the throwaway CI-only Fernet test key
+# Also allow the throwaway CI-only Fernet test key and historical CI log commits
 [[allowlist]]
-description = "Throwaway CI-only Fernet test key (not a real secret)"
+description = "Throwaway CI-only Fernet test key and historical CI log commits"
 commits = [
     "0f30f5e76ec1a27ae5958f75221696209d8db46f",
     "ca7810a3cd072fe155b89b0060712786e66479a3",
+    "73761251ba3353c94325bf8ce58091b3b6af7910",
+    "b7bf2fc121c2ce1ddbb7138a24f7b5760614bbe3",
 ]
