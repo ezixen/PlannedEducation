@@ -8,22 +8,22 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.responses import JSONResponse
+
+# ── OpenTelemetry Observability ──────────────────────────────────────────────
+from opentelemetry import metrics, trace
+from opentelemetry.exporter.prometheus import PrometheusMetricReader
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
+from opentelemetry.sdk.metrics import MeterProvider
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
+from prometheus_client import Counter, Gauge, Histogram, start_http_server
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 from starlette.middleware.base import BaseHTTPMiddleware
-
-# ── OpenTelemetry Observability ──────────────────────────────────────────────
-from opentelemetry import trace, metrics
-from opentelemetry.exporter.prometheus import PrometheusMetricReader
-from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
-from opentelemetry.instrumentation.requests import RequestsInstrumentor
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
-from opentelemetry.sdk.metrics import MeterProvider
-from opentelemetry.sdk.resources import Resource
-from prometheus_client import start_http_server, Counter, Histogram, Gauge
 
 from . import (
     routes_admin,
@@ -131,7 +131,7 @@ async def lifespan(app: FastAPI):
     FastAPIInstrumentor.instrument_app(app)
     SQLAlchemyInstrumentor().instrument(engine=engine)
     RequestsInstrumentor().instrument()
-    
+
     Base.metadata.create_all(bind=engine)
     yield
 
@@ -305,20 +305,22 @@ class MetricsMiddleware(BaseHTTPMiddleware):
         start_time = time.time()
         method = request.method
         path = request.url.path
-        
+
         response = await call_next(request)
-        
+
         duration = time.time() - start_time
         status_code = response.status_code
-        
+
         # Prometheus metrics
         REQUEST_COUNT.labels(method=method, endpoint=path, status_code=status_code).inc()
         REQUEST_LATENCY.labels(method=request.method, endpoint=path).observe(duration)
-        
+
         # OpenTelemetry metrics
-        request_counter.add(1, {"method": method, "endpoint": path, "status_code": str(status_code)})
+        request_counter.add(
+            1, {"method": method, "endpoint": path, "status_code": str(status_code)}
+        )
         request_latency.record(duration, {"method": request.method, "endpoint": path})
-        
+
         return response
 
 app.add_middleware(MetricsMiddleware)

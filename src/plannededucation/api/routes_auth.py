@@ -16,7 +16,6 @@ from google.oauth2 import id_token
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 from sqlalchemy.orm import Session
-
 from webauthn import (
     create_webauthn_credentials,
     get_webauthn_credentials,
@@ -24,11 +23,10 @@ from webauthn import (
     verify_get_webauthn_credentials,
 )
 from webauthn.types import (
-    UserVerification,
     AuthenticatorAttachment,
     RelyingParty,
     User,
-    Attestation,
+    UserVerification,
 )
 
 from . import auth, crypto, database, models, schemas
@@ -671,18 +669,16 @@ def _get_webauthn_user(user: models.User) -> dict:
         "displayName": user.full_name or user.username,
     }
 
-def _get_webauthn_credentials(user: models.User) -> list:
-    """Get user's registered WebAuthn credentials."""
+def _get_webauthn_credentials(user: models.User) -> list[bytes]:
+    """Get user's registered WebAuthn credentials as raw byte IDs."""
     if not user.webauthn_credentials:
         return []
     try:
         creds = json.loads(user.webauthn_credentials)
         return [
-            PublicKeyCredentialDescriptor(
-                id=base64.urlsafe_b64decode(cred["credential_id"]),
-                transports=cred.get("transports", []),
-            )
+            base64.urlsafe_b64decode(cred["credential_id"])
             for cred in creds
+            if "credential_id" in cred
         ]
     except (json.JSONDecodeError, KeyError, TypeError):
         return []
@@ -776,7 +772,7 @@ def webauthn_registration_finish(
         # Extract credential data from payload
         client_data_b64 = payload.response.get("clientDataJSON", "")
         attestation_b64 = payload.response.get("attestationObject", "")
-        
+
         rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
         verification = verify_create_webauthn_credentials(
             rp=rp,
@@ -787,7 +783,9 @@ def webauthn_registration_finish(
             user_verification_required=True,
         )
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Registration verification failed: {e}") from None
+        raise HTTPException(
+            status_code=400, detail=f"Registration verification failed: {e}"
+        ) from None
 
     # Save credential
     credential = {
@@ -866,19 +864,23 @@ def webauthn_authentication_finish(
         client_data_b64 = payload.response.get("clientDataJSON", "")
         authenticator_b64 = payload.response.get("authenticatorData", "")
         signature_b64 = payload.response.get("signature", "")
-        
+
         # Get the credential ID to look up the public key
         credential_id = payload.id
-        
+
         # Look up the stored credential to get the public key
-        creds = json.loads(current_user.webauthn_credentials) if current_user.webauthn_credentials else []
+        creds = (
+            json.loads(current_user.webauthn_credentials)
+            if current_user.webauthn_credentials
+            else []
+        )
         stored_cred = next((c for c in creds if c["credential_id"] == credential_id), None)
         if not stored_cred:
             raise HTTPException(status_code=400, detail="Credential not found")
-        
+
         pubkey = base64.b64decode(stored_cred["public_key"])
         sign_count = stored_cred.get("sign_count", 0)
-        
+
         rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
         verification = verify_get_webauthn_credentials(
             rp=rp,
@@ -892,10 +894,14 @@ def webauthn_authentication_finish(
             user_verification_required=True,
         )
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Authentication verification failed: {e}") from None
+        raise HTTPException(
+            status_code=400, detail=f"Authentication verification failed: {e}"
+        ) from None
 
     # Update sign count and last used
-    # In production, look up the specific credential and update its sign_count
+    stored_cred["sign_count"] = verification.sign_count
+    stored_cred["last_used_at"] = datetime.now(UTC).isoformat()
+    current_user.webauthn_credentials = json.dumps(creds)
     current_user.webauthn_challenge = None
     current_user.webauthn_challenge_expires = None
     db.commit()
@@ -945,4 +951,4 @@ def delete_webauthn_credential(
         db.commit()
         return {"message": "Passkey deleted"}
     except (json.JSONDecodeError, TypeError):
-        raise HTTPException(status_code=404, detail="Credential not found")
+        raise HTTPException(status_code=404, detail="Credential not found") from None
