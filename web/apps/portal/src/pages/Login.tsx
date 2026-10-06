@@ -80,7 +80,7 @@ export function Login() {
           </p>
         )}
 
-        {window.location.hostname === 'localhost' && (
+        {(!GOOGLE_CLIENT_ID || ['localhost', '127.0.0.1'].includes(window.location.hostname)) && (
           <form onSubmit={handleLocalLogin} style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>Or sign in with email</p>
             

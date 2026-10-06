@@ -664,15 +664,15 @@ input, select, textarea {
 
   --success-bg: #dcfce7;
   --success-border: #1a8f3c;
-  --success-text: #065f46.
+  --success-text: #065f46;
 
   --warning-bg: #fef3c7;
   --warning-border: #f59e0b;
-  --warning-text: #92400e.
+  --warning-text: #92400e;
 
   --error-bg: #fee2e2;
   --error-border: #ef4444;
-  --error-text: #991b1b.
+  --error-text: #991b1b;
 }
 
 :root[data-theme="comic_stage"] {
@@ -682,33 +682,33 @@ input, select, textarea {
 
   --success-bg: #dcfce7;
   --success-border: #26a69a;
-  --success-text: #065f46.
+  --success-text: #065f46;
 
   --warning-bg: #fef3c7;
   --warning-border: #f59e0b;
-  --warning-text: #92400e.
+  --warning-text: #92400e;
 
   --error-bg: #fee2e2;
   --error-border: #ef4444;
-  --error-text: #991b1b.
+  --error-text: #991b1b;
 }
 
 :root[data-theme="ocean_calm"] {
   --info-bg: #cffafe;
   --info-border: #087e8b;
-  --info-text: #12343c.
+  --info-text: #12343c;
 
   --success-bg: #a7f3d0;
-  --success-border: #0f8a6a.
-  --success-text: #065f46.
+  --success-border: #0f8a6a;
+  --success-text: #065f46;
 
   --warning-bg: #fef3c7.
   --warning-border: #f59e0b.
-  --warning-text: #92400e.
+  --warning-text: #92400e;
 
   --error-bg: #fee2e2.
   --error-border: #ef4444.
-  --error-text: #991b1b.
+  --error-text: #991b1b;
 }
 
 /* Dark mode adjustments */

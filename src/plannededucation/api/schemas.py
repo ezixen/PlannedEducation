@@ -223,3 +223,68 @@ class AIKeyResponse(BaseModel):
     ai_model_name: str | None = None
     ai_base_url: str | None = None
     has_api_key: bool = False
+
+
+# ── WebAuthn / Passkeys ──────────────────────────────────────────────────────
+# Phishing-resistant authentication (OWASP A07:2025)
+
+class WebAuthnRegistrationStart(BaseModel):
+    """Response for starting WebAuthn registration."""
+    challenge: str
+    rp: dict
+    user: dict
+    pubKeyCredParams: list[dict]
+    timeout: int
+    attestation: str
+    authenticatorSelection: dict
+    extensions: dict | None = None
+
+
+class WebAuthnRegistrationFinish(BaseModel):
+    """Request to finish WebAuthn registration."""
+    id: str
+    rawId: str
+    response: dict
+    type: str
+    clientExtensionResults: dict | None = None
+
+
+class WebAuthnAuthenticationStart(BaseModel):
+    """Response for starting WebAuthn authentication."""
+    challenge: str
+    timeout: int
+    rpId: str
+    allowCredentials: list[dict] | None = None
+    userVerification: str
+    extensions: dict | None = None
+
+
+class WebAuthnAuthenticationFinish(BaseModel):
+    """Request to finish WebAuthn authentication."""
+    id: str
+    rawId: str
+    response: dict
+    type: str
+    clientExtensionResults: dict | None = None
+
+
+class WebAuthnCredentialResponse(BaseModel):
+    """Stored credential info for user."""
+    credential_id: str
+    public_key: str
+    sign_count: int
+    transports: list[str] | None = None
+    created_at: str
+    last_used_at: str | None = None
+
+
+class WebAuthnSetupResponse(BaseModel):
+    """Response for WebAuthn setup initiation."""
+    registration_options: WebAuthnRegistrationStart
+    message: str
+
+
+class WebAuthnVerifyResponse(BaseModel):
+    """Response for WebAuthn verification."""
+    verified: bool
+    message: str

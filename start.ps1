@@ -9,7 +9,7 @@ $RepoRoot = $PSScriptRoot
 Set-Location $RepoRoot
 
 $PortalUrl = "http://localhost:5175"
-$ApiUrl = "http://localhost:8001"
+$ApiUrl = "http://localhost:8002"
 $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-canary-profile"
 $PythonExe = "C:\.venv\Scripts\python.exe"
@@ -35,22 +35,22 @@ function Test-LocalPort([int]$Port) {
 }
 
 # 1. Start API if not running
-if (-not (Test-LocalPort 8001)) {
-    Write-Host "Starting API (Port 8001) in new window..." -ForegroundColor Cyan
+if (-not (Test-LocalPort 8002)) {
+    Write-Host "Starting API (Port 8002) in new window..." -ForegroundColor Cyan
     $ApiLauncher = Join-Path $LauncherDir "start_api.ps1"
     Set-Content -Path $ApiLauncher -Encoding utf8 -Value @"
 `$env:DATABASE_URL="postgresql://postgres:postgres@localhost:5432/plannededucation"
 `$env:PLANNED_EDUCATION_ENV="development"
 `$env:ALLOW_DEV_AUTH="true"
 `$env:JWT_SECRET_KEY="$JwtSecret"
-`$env:CORS_ORIGINS="$PortalUrl"
+`$env:CORS_ORIGINS="$PortalUrl,http://127.0.0.1:5175,http://localhost:5173,http://127.0.0.1:5173"
 Set-Location "$RepoRoot"
 Write-Host "Starting FastAPI Backend..." -ForegroundColor Green
-& "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8001
+& "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8002
 "@
     Start-Process pwsh -ArgumentList "-NoExit","-File","`"$ApiLauncher`"" 
 } else {
-    Write-Host "API already listening on 8001." -ForegroundColor Yellow
+    Write-Host "API already listening on 8002." -ForegroundColor Yellow
 }
 
 # 2. Start Portal if not running
@@ -64,7 +64,7 @@ if (-not (Test-LocalPort 5175)) {
     $PortalLauncher = Join-Path $LauncherDir "start_portal.ps1"
     Set-Content -Path $PortalLauncher -Encoding utf8 -Value @"
 `$env:PATH = "$NodeDirectory;" + `$env:PATH
-`$env:VITE_API_URL="http://localhost:8001"
+`$env:VITE_API_URL="http://127.0.0.1:8002"
 Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
 & "$npmCmd" run dev -- --host 127.0.0.1 --port 5175
@@ -77,7 +77,7 @@ Write-Host "Starting React Portal..." -ForegroundColor Green
 # 3. Wait for services
 Write-Host "Waiting for services to become available..."
 $retries = 60
-while (-not (Test-LocalPort 8001) -or -not (Test-LocalPort 5175)) {
+while (-not (Test-LocalPort 8002) -or -not (Test-LocalPort 5175)) {
     Start-Sleep -Seconds 1
     $retries--
     if ($retries -le 0) {

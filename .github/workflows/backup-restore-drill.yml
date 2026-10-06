@@ -1,0 +1,121 @@
+name: Monthly Backup/Restore Drill
+
+on:
+  schedule:
+    - cron: '0 3 * * 6'  # First Saturday at 03:00 UTC
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: read
+
+jobs:
+  backup-restore-drill:
+    name: Backup/Restore Drill
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    
+    env:
+      BACKUP_DIR: /backups
+      STAGING_DB: plannededucation_staging
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+    
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: plannededucation
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up PostgreSQL client
+        run: |
+          sudo apt-get update && sudo apt-get install -y postgresql-client-16
+      
+      - name: Create backup directory
+        run: |
+          sudo mkdir -p ${{ env.BACKUP_DIR }}
+          sudo chown -R runner:runner ${{ env.BACKUP_DIR }}
+      
+      - name: Create test backup (simulate daily backup)
+        run: |
+          pg_dump \
+            --host=${{ env.POSTGRES_HOST }} \
+            --port=${{ env.POSTGRES_PORT }} \
+            --username=${{ env.POSTGRES_USER }} \
+            --dbname=plannededucation \
+            --format=custom \
+            --compress=9 \
+            --no-owner \
+            --no-privileges \
+            --file=${{ env.BACKUP_DIR }}/plannededucation_$(date +%Y%m%d_%H%M%S).dump
+      
+      - name: Run restore drill script
+        run: |
+          chmod +x scripts/backup_restore_drill.sh
+          ./scripts/backup_restore_drill.sh
+      
+      - name: Upload drill logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-restore-drill-logs
+          path: /var/log/backup_restore_drill.log
+          retention-days: 30
+      
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Monthly backup/restore drill failed! Check logs."
+          # Could add Slack/Discord/email notification here
+
+  # Windows version (if needed for Windows runners)
+  backup-restore-drill-windows:
+    name: Backup/Restore Drill (Windows)
+    runs-on: windows-latest
+    timeout-minutes: 120
+    if: false  # Disabled by default; enable if Windows-specific testing needed
+    
+    env:
+      BACKUP_DIR: D:\Backups\PlannedEducation
+      STAGING_DB: plannededucation_staging
+      LOG_FILE: D:\Logs\backup_restore_drill.log
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install PostgreSQL client
+        run: |
+          choco install postgresql --version=16.0 -y
+          refreshenv
+      
+      - name: Create backup directory
+        run: |
+          New-Item -ItemType Directory -Force -Path ${{ env.BACKUP_DIR }}
+          New-Item -ItemType Directory -Force -Path (Split-Path ${{ env.LOG_FILE }})
+      
+      - name: Run restore drill (PowerShell)
+        run: |
+          & .\scripts\backup_restore_drill.ps1
+      
+      - name: Upload drill logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-restore-drill-logs-windows
+          path: ${{ env.LOG_FILE }}
+          retention-days: 30

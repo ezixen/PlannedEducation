@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import time
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -11,6 +12,18 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 from starlette.middleware.base import BaseHTTPMiddleware
+
+# ── OpenTelemetry Observability ──────────────────────────────────────────────
+from opentelemetry import trace, metrics
+from opentelemetry.exporter.prometheus import PrometheusMetricReader
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
+from opentelemetry.sdk.metrics import MeterProvider
+from opentelemetry.sdk.resources import Resource
+from prometheus_client import start_http_server, Counter, Histogram, Gauge
 
 from . import (
     routes_admin,
@@ -57,8 +70,68 @@ logger.handlers = [handler]
 logger.setLevel(logging.INFO)
 
 
+# ── Prometheus Metrics ───────────────────────────────────────────────────────
+# Custom metrics for SLO tracking
+REQUEST_COUNT = Counter(
+    "http_requests_total",
+    "Total HTTP requests",
+    ["method", "endpoint", "status_code"],
+)
+REQUEST_LATENCY = Histogram(
+    "http_request_duration_seconds",
+    "HTTP request latency in seconds",
+    ["method", "endpoint"],
+)
+ACTIVE_USERS = Gauge(
+    "active_users",
+    "Number of active users",
+)
+EXAM_SUBMISSIONS = Counter(
+    "exam_submissions_total",
+    "Total exam submissions",
+    ["status"],
+)
+AI_GRADING_REQUESTS = Counter(
+    "ai_grading_requests_total",
+    "Total AI grading requests",
+    ["provider", "status"],
+)
+
+# Start Prometheus metrics server on port 9090
+start_http_server(9090)
+
+# Configure OpenTelemetry
+resource = Resource.create({"service.name": "plannededucation-api"})
+trace_provider = TracerProvider(resource=resource)
+trace_provider.add_span_processor(BatchSpanProcessor(ConsoleSpanExporter()))
+trace.set_tracer_provider(trace_provider)
+
+metric_reader = PrometheusMetricReader()
+meter_provider = MeterProvider(resource=resource, metric_readers=[metric_reader])
+metrics.set_meter_provider(meter_provider)
+
+# Get tracer and meter
+tracer = trace.get_tracer(__name__)
+meter = metrics.get_meter(__name__)
+
+# Custom metrics instruments
+request_counter = meter.create_counter(
+    "http_requests_total",
+    description="Total HTTP requests",
+)
+request_latency = meter.create_histogram(
+    "http_request_duration_seconds",
+    description="HTTP request latency in seconds",
+    unit="s",
+)
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Initialize OpenTelemetry instrumentation
+    FastAPIInstrumentor.instrument_app(app)
+    SQLAlchemyInstrumentor().instrument(engine=engine)
+    RequestsInstrumentor().instrument()
+    
     Base.metadata.create_all(bind=engine)
     yield
 
@@ -131,15 +204,34 @@ if os.getenv("PLANNED_EDUCATION_ENV") == "production":
 # ── CORS (explicit allow-list, never wildcard) ───────────────────────────────
 cors_origins = [
     origin.strip()
-    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:5174,http://localhost:5175").split(",")
+    for origin in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175",
+    ).split(",")
     if origin.strip()
 ]
+# Ensure both localhost and 127.0.0.1 equivalents are accepted
+expanded_origins = set(cors_origins)
+for origin in list(expanded_origins):
+    if "localhost" in origin:
+        expanded_origins.add(origin.replace("localhost", "127.0.0.1"))
+    elif "127.0.0.1" in origin:
+        expanded_origins.add(origin.replace("127.0.0.1", "localhost"))
+cors_origins = list(expanded_origins)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["Authorization", "Content-Type", "X-SafeExamBrowser-RequestHash"],
+    allow_headers=[
+        "Authorization",
+        "Content-Type",
+        "X-SafeExamBrowser-RequestHash",
+        "Accept",
+        "Origin",
+        "X-Requested-With",
+        "X-Request-ID",
+    ],
     expose_headers=["X-Request-ID"],
     max_age=600,
 )
@@ -206,6 +298,30 @@ class SecurityAuditMiddleware(BaseHTTPMiddleware):
         return response
 
 app.add_middleware(SecurityAuditMiddleware)
+
+# ── Metrics Middleware (Prometheus + OpenTelemetry) ──────────────────────────
+class MetricsMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        start_time = time.time()
+        method = request.method
+        path = request.url.path
+        
+        response = await call_next(request)
+        
+        duration = time.time() - start_time
+        status_code = response.status_code
+        
+        # Prometheus metrics
+        REQUEST_COUNT.labels(method=method, endpoint=path, status_code=status_code).inc()
+        REQUEST_LATENCY.labels(method=request.method, endpoint=path).observe(duration)
+        
+        # OpenTelemetry metrics
+        request_counter.add(1, {"method": method, "endpoint": path, "status_code": str(status_code)})
+        request_latency.record(duration, {"method": request.method, "endpoint": path})
+        
+        return response
+
+app.add_middleware(MetricsMiddleware)
 
 # ── Routers ──────────────────────────────────────────────────────────────────
 app.include_router(routes_auth.router)

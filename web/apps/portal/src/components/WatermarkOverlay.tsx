@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export function WatermarkOverlay() {
   const { user } = useAuth();
+  const location = useLocation();
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -16,7 +18,8 @@ export function WatermarkOverlay() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (!user) return null;
+  // Only display anti-cheating watermark for students currently taking an exam
+  if (!user || user.role !== 'student' || !location.pathname.startsWith('/exam')) return null;
 
   // Calculate how many watermark items we need to fill the screen
   const density = 250; // pixels per watermark
@@ -48,6 +51,7 @@ export function WatermarkOverlay() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            overflow: 'hidden',
             transform: 'rotate(-45deg)', // Diagonal text
             fontSize: '1rem',
             fontWeight: 'bold',
