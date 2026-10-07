@@ -201,11 +201,16 @@
   - Validates: backup integrity, backup age, restore time, data integrity, migrations, smoke tests
   - Artifacts uploaded for audit trail
 
-### Phase 13: Visual Regression Testing CI Integration 🔄 In Progress
-- **Playwright Visual Tests**: Already configured in `web/apps/portal/`
-- **CI Integration**: Add to `.github/workflows/ci.yml`
-- **Baseline Management**: Commit snapshots to repo, PR review for changes
-- **Cross-browser**: Chromium, Firefox, WebKit, Mobile Chrome, Mobile Safari
+### Phase 13: Visual Regression & Multi-Role Simulation Testing ✅ Completed (done-tested-working)
+- **Playwright Visual Tests**: `tests/visual/platform-visual.spec.ts` (17/17 passed across desktop, mobile, tablet viewports, dark/light contrast, no horizontal overflow).
+- **Multi-Role Live Simulation Tests**: `tests/visual/simulation-e2e.spec.ts` (5/5 passed):
+  1. Teacher live proctoring & AI grading dashboard
+  2. Parent student progress tracking with empathetic, supportive feedback
+  3. Teacher class groupings & student roster view
+  4. Destructive Admin user deletion and fresh student account re-registration
+  5. All 10 design themes (`skyward`, `carbon_cyan`, `enterprise_blue`, `blush_silver`, `matrix_green`, `black_orange`, `sunset_cabin`, `aurora_night`, `comic_stage`, `ocean_calm`) across 3 border radii (`square`, `soft`, `round`) with high legibility and zero horizontal overflow
+- **Automated Teardown & Workspace Hygiene**: `global-teardown.ts` guarantees all temporary databases (`test_visual.db`), screenshots, and test run reports are pruned after runs per `AGENTS.md` §6.
+- **Backend Test Cache Tracking**: 99 backend pytest tests passing via `scripts/testing/update_test_cache.py`.
 
 ### Phase 14: Project Kickoff Worksheet Completion 📋 Planned
 - Fill out `PROJECT_KICKOFF_DECISION_WORKSHEET_2026.md` for PlannedEducation
