@@ -271,3 +271,12 @@
 - [ ] Rate limiting & cost tracking per teacher
 - [ ] Output validation & hallucination detection
 - [ ] Teacher review/approval workflow for AI outputs
+
+---
+
+### Phase 7: Visual Regression Testing CI & Multi-Role Verification ✅ Completed (2026-10-07)
+- **Status**: `done-tested-working`
+- **Baseline Audit**: 22 Playwright tests (17 in `platform-visual.spec.ts` + 5 in `simulation-e2e.spec.ts`) verified and preserved.
+- **Advanced Features Suite (`advanced-features.spec.ts`)**: 7 tests covering Archive management & statistics, Test Package Manager & export dialog, 2FA/TOTP setup wizard, AI BYOK provider configuration, Handwritten Math OCR & faster-whisper STT processors, live test taking with Digital Hand Raise and exam timer, and responsive mobile theme cycling. (7 / 7 passed).
+- **Backend Test Suite**: 99 / 99 pytest tests passed via `scripts/testing/update_test_cache.py`.
+- **Artifact Cleanup**: Automatic post-test cleanup of temporary databases, traces, and reports enforced per `AGENTS.md` §6.

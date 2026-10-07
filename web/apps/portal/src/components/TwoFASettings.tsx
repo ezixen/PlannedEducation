@@ -132,7 +132,7 @@ export function TwoFASettings() {
     backgroundColor: '#ef4444',
   };
 
-  if (!totpEnabled) {
+  if (!totpEnabled && !showSetup) {
     return (
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
         <h3>Two-Factor Authentication (TOTP)</h3>
@@ -154,9 +154,15 @@ export function TwoFASettings() {
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
       <h3>Two-Factor Authentication (TOTP)</h3>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        2FA is <strong>enabled</strong>. You can manage your settings below.
-      </p>
+      {totpEnabled ? (
+        <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
+          2FA is <strong>enabled</strong>. You can manage your settings below.
+        </p>
+      ) : (
+        <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
+          Follow the steps below to complete setting up Two-Factor Authentication.
+        </p>
+      )}
 
       {/* Setup flow */}
       {showSetup && setupStep === 'verify' && (
@@ -217,7 +223,7 @@ export function TwoFASettings() {
       )}
 
       {/* 2FA Enabled - Management options */}
-      {!showSetup && (
+      {totpEnabled && !showSetup && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label>

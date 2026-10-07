@@ -152,6 +152,41 @@ q3 = models.Question(
 )
 db.add_all([q1, q2, q3])
 
+# 8b. Second Exam (for live exam taking without pre-existing submission)
+LIVE_EXAM_ID = "f9efa978-a1cd-481c-bd6b-83a1e05d8e01"
+exam_live = models.Exam(
+    id=LIVE_EXAM_ID,
+    title="Biology Live Assessment 2026",
+    description="Cellular Biology and Genetics live assessment.",
+    duration_minutes=45,
+    teacher_id=teacher.id,
+)
+db.add(exam_live)
+
+qlive_1 = models.Question(
+    id="qlive-uuid-001",
+    exam_id=LIVE_EXAM_ID,
+    question_type=models.QuestionType.multiple_choice,
+    text="Which cellular organelle is responsible for generating the majority of cellular ATP?",
+    options_json=json.dumps([
+        "Mitochondria",
+        "Chloroplast",
+        "Golgi apparatus",
+        "Nucleus",
+    ]),
+    correct_answer="Mitochondria",
+    points=2,
+)
+qlive_2 = models.Question(
+    id="qlive-uuid-002",
+    exam_id=LIVE_EXAM_ID,
+    question_type=models.QuestionType.essay,
+    text="Describe the function of ribosomes in protein synthesis.",
+    rubric="Student explains mRNA translation by ribosomes into polypeptide chains.",
+    points=5,
+)
+db.add_all([qlive_1, qlive_2])
+
 # 9. ExamSubmission
 sub = models.ExamSubmission(
     id="sub-uuid-001",
@@ -203,6 +238,33 @@ pe2 = models.ProctoringEvent(
     event_data=json.dumps({"face_count": 1, "confidence": 0.98}),
 )
 db.add_all([pe1, pe2])
+
+# 12. ArchivedSubmission
+archived = models.ArchivedSubmission(
+    id="arch-uuid-001",
+    submission_id=sub.id,
+    exam_id=SAMPLE_EXAM_ID,
+    student_id=student.id,
+    teacher_id=teacher.id,
+    archive_year=2026,
+    archive_month=10,
+    archive_path="2026/10/teacher-uuid-001/student-uuid-001/sub-uuid-001.zst.enc",
+    compressed_data="ZXhhbXBsZV9jb21wcmVzc2VkX2Jsb2I=",
+    original_size=20480,
+    compressed_size=5120,
+    compression_ratio=4.0,
+    compression_algorithm="zstd",
+    encryption_algorithm="AES-GCM",
+    encryption_iv="MDEyMzQ1Njc4OTAxMjM0NQ==",
+    encryption_salt="c2FsdF9leGFtcGxlXzEyMzQ=",
+    key_id="key-001",
+    content_hash="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    archive_hash="ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+    status=models.ArchiveStatus.archived,
+    submitted_at=datetime.now(UTC),
+    archived_at=datetime.now(UTC),
+)
+db.add(archived)
 
 db.commit()
 logger.info("Successfully seeded test_visual.db with complete multi-role records!")

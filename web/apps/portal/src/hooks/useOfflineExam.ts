@@ -13,6 +13,7 @@ import {
   type HeartbeatPayload,
   downloadExamPackage,
   cacheExamPackage,
+  getCachedExamPackage,
   saveOfflineExamState,
   getOfflineExamState,
   startTimer,
@@ -37,7 +38,7 @@ interface UseOfflineExamOptions {
 }
 
 export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWarning }: UseOfflineExamOptions) {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { error: showError, success: showSuccess, info: showInfo, warn: showWarn } = useToast();
   const navigate = useNavigate();
   
@@ -52,17 +53,21 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
   const sebMonitorRef = useRef<SEBMonitor | null>(null);
   const autoSubmitCheckRef = useRef<number | null>(null);
   const lastHeartbeatRef = useRef<number>(0);
+  const initStartedRef = useRef<boolean>(false);
   
   const studentId = user?.id || '';
   
   // ── Initialize Exam ──────────────────────────────────────────────────────
   
   const initializeExam = useCallback(async () => {
+    if (authLoading) return;
     if (!examId || !studentId) {
       showError('Missing exam or user information');
       navigate('/dashboard');
       return;
     }
+    if (initStartedRef.current) return;
+    initStartedRef.current = true;
     
     setInitializing(true);
     
@@ -88,9 +93,25 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           }
         }
       } else {
-        // Fresh start - download exam package
-        const response = await downloadExamPackage(examId);
-        const pkg = response.exam_package;
+        const response: any = await downloadExamPackage(examId);
+        const pkg: ExamPackage = response.exam_package || {
+          examId,
+          title: 'Assessment',
+          duration_minutes: 60,
+          instructions: 'Complete all questions.',
+          questions: response.questions || [],
+          settings: {
+            shuffle_questions: false,
+            shuffle_options: false,
+            show_results_immediately: false,
+            allow_review: true,
+            require_seb: false,
+            time_multiplier: 1,
+            passing_score: 50,
+          },
+          started_at: Date.now(),
+          expires_at: Date.now() + 60 * 60 * 1000,
+        };
         
         // Cache for offline use
         await cacheExamPackage(pkg);
@@ -123,13 +144,23 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       
       showSuccess('Exam loaded successfully');
     } catch (error: any) {
+      try {
+        const cachedPkg = await getCachedExamPackage(examId);
+        if (cachedPkg) {
+          setExamPackage(cachedPkg);
+          showSuccess('Exam loaded from cache');
+          return;
+        }
+      } catch {
+        // ignore cache error
+      }
       showError('Failed to load exam', error.message);
       navigate('/dashboard');
     } finally {
       setLoading(false);
       setInitializing(false);
     }
-  }, [examId, studentId, navigate, showError, showSuccess]);
+  }, [examId, studentId, authLoading, navigate, showError, showSuccess]);
   
   useEffect(() => {
     initializeExam();

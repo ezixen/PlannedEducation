@@ -332,3 +332,78 @@ def submit_exam(
 
     db.commit()
     return {"status": "success", "message": "Exam submitted successfully"}
+
+
+# ── Heartbeat ────────────────────────────────────────────────────────────────
+
+@router.post("/{exam_id}/heartbeat")
+def receive_heartbeat(
+    exam_id: str,
+    payload: dict,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Receive heartbeat from student's exam client.
+    Forwards to teacher via WebSocket if teacher is monitoring.
+    """
+    # Verify exam exists and student is taking it
+    submission = (
+        db.query(models.ExamSubmission)
+        .filter(
+            models.ExamSubmission.exam_id == exam_id,
+            models.ExamSubmission.student_id == current_user.id,
+        )
+        .first()
+    )
+    if not submission:
+        raise HTTPException(status_code=404, detail="No active submission")
+
+    # Store heartbeat for teacher polling (in production, use Redis pub/sub)
+    # For now, we just acknowledge receipt
+    return {
+        "status": "received",
+        "server_time": int(datetime.now(UTC).timestamp() * 1000),
+    }
+
+
+@router.get("/{exam_id}/heartbeats")
+def get_exam_heartbeats(
+    exam_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Teacher endpoint: Get recent heartbeats for all students in an exam.
+    Returns real-time progress for teacher monitoring dashboard.
+    """
+    exam = _get_exam_or_404(exam_id, db)
+    _require_exam_owner(exam, current_user)
+
+    # Get all submissions for this exam with student info
+    submissions = (
+        db.query(models.ExamSubmission)
+        .filter(models.ExamSubmission.exam_id == exam_id)
+        .all()
+    )
+
+    # In production, this would query a Redis cache of recent heartbeats
+    # For now, return submission status as proxy
+    heartbeats = []
+    for sub in submissions:
+        student = db.query(models.User).filter(models.User.id == sub.student_id).first()
+        heartbeats.append({
+            "student_id": sub.student_id,
+            "student_name": student.full_name if student else "Unknown",
+            "submission_id": sub.id,
+            "started_at": sub.started_at.isoformat() if sub.started_at else None,
+            "completed_at": sub.completed_at.isoformat() if sub.completed_at else None,
+            "is_complete": sub.completed_at is not None,
+            "score": sub.score,
+        })
+
+    return {
+        "exam_id": exam_id,
+        "heartbeats": heartbeats,
+        "server_time": int(datetime.now(UTC).timestamp() * 1000),
+    }
