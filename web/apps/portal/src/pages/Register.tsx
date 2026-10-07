@@ -60,7 +60,13 @@ export function Register() {
       });
       navigate('/login');
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Registration failed. Please try again.');
+      const detail = err.response?.data?.detail;
+      const msg = typeof detail === 'string'
+        ? detail
+        : Array.isArray(detail)
+          ? detail.map((d: any) => d.msg || JSON.stringify(d)).join(', ')
+          : (err.message || 'Registration failed. Please try again.');
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -69,20 +75,21 @@ export function Register() {
   return (
     <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)' }}>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center' }}>
-        <h1 style={{ marginBottom: '0.5rem' }}>Planned Education</h1>
-        <p style={{ marginBottom: '2rem', color: 'gray' }}>Create a new account</p>
+        <h1 style={{ marginBottom: '0.5rem', color: 'var(--text-color)' }}>Planned Education</h1>
+        <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>Create a new account</p>
 
         {error && (
-          <div style={{ color: '#ef4444', marginBottom: '1rem', padding: '0.5rem', backgroundColor: '#fee2e2', borderRadius: '4px' }}>
+          <div style={{ color: '#ef4444', marginBottom: '1rem', padding: '0.5rem', backgroundColor: '#fee2e2', borderRadius: 'var(--radius-sm)' }}>
             {error}
           </div>
         )}
 
         <form onSubmit={handleRegister} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
-          <label>
+          <label style={{ color: 'var(--text-color)' }}>
             Full Name
             <input
               type="text"
+              name="full_name"
               value={fullName}
               onChange={e => setFullName(e.target.value)}
               required
@@ -92,10 +99,11 @@ export function Register() {
             />
           </label>
 
-          <label>
+          <label style={{ color: 'var(--text-color)' }}>
             Username
             <input
               type="text"
+              name="username"
               value={username}
               onChange={e => setUsername(e.target.value)}
               required
@@ -108,10 +116,11 @@ export function Register() {
             />
           </label>
 
-          <label>
+          <label style={{ color: 'var(--text-color)' }}>
             Email
             <input
               type="email"
+              name="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
@@ -121,10 +130,11 @@ export function Register() {
             />
           </label>
 
-          <label>
+          <label style={{ color: 'var(--text-color)' }}>
             Password
             <input
               type="password"
+              name="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
@@ -136,10 +146,11 @@ export function Register() {
             <PasswordStrength password={password} />
           </label>
 
-          <label>
+          <label style={{ color: 'var(--text-color)' }}>
             Confirm Password
             <input
               type="password"
+              name="confirm_password"
               value={confirmPassword}
               onChange={e => setConfirmPassword(e.target.value)}
               required

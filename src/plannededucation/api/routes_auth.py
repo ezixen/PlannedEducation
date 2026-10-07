@@ -1,12 +1,16 @@
 import base64
 import hashlib
+import hmac
 import json
 import os
 import re
 import secrets
+import time
 from datetime import UTC, datetime, timedelta
+from typing import Optional
 
 import argon2
+import httpx
 import jwt  # PyJWT for JWT encoding/decoding
 import pyotp
 from fastapi import APIRouter, Depends, HTTPException, Request, status
@@ -17,19 +21,135 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from sqlalchemy.orm import Session
 from webauthn import (
-    create_webauthn_credentials,
-    get_webauthn_credentials,
-    verify_create_webauthn_credentials,
-    verify_get_webauthn_credentials,
+    generate_authentication_options,
+    generate_registration_options,
+    options_to_json,
+    verify_authentication_response,
+    verify_registration_response,
 )
-from webauthn.types import (
+from webauthn.helpers.structs import (
+    AuthenticationCredential,
     AuthenticatorAttachment,
-    RelyingParty,
-    User,
-    UserVerification,
+    AuthenticatorSelectionCriteria,
+    COSEAlgorithmIdentifier,
+    PublicKeyCredentialDescriptor,
+    RegistrationCredential,
+    UserVerificationRequirement,
 )
 
 from . import auth, crypto, database, models, schemas
+
+# ── CAPTCHA / Bot Protection (Free, Self-Hosted Options) ─────────────────────
+# Supports: Turnstile (Cloudflare free), hCaptcha (free tier), or simple self-hosted challenge
+# Configure via environment variables:
+# CAPTCHA_PROVIDER: "turnstile" | "hcaptcha" | "simple" | "none" (default: "none" for dev)
+# CAPTCHA_SECRET_KEY: Secret key from provider
+# CAPTCHA_SITE_KEY: Public site key for frontend
+
+CAPTCHA_PROVIDER = os.getenv("CAPTCHA_PROVIDER", "none").lower()
+CAPTCHA_SECRET_KEY = os.getenv("CAPTCHA_SECRET_KEY", "")
+CAPTCHA_SITE_KEY = os.getenv("CAPTCHA_SITE_KEY", "")
+
+# Simple self-hosted challenge store (in production, use Redis with TTL)
+_simple_challenges: dict[str, tuple[str, float]] = {}  # token -> (answer, expiry)
+
+async def verify_captcha(token: str, remote_ip: str) -> bool:
+    """
+    Verify CAPTCHA token based on configured provider.
+    Returns True if valid, False otherwise.
+    """
+    if CAPTCHA_PROVIDER == "none" or os.getenv("PLANNED_EDUCATION_ENV") == "test":
+        return True  # Skip in dev/test
+    
+    if not token:
+        return False
+    
+    if CAPTCHA_PROVIDER == "turnstile":
+        # Cloudflare Turnstile - free, privacy-friendly
+        async with httpx.AsyncClient() as client:
+            try:
+                resp = await client.post(
+                    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+                    data={
+                        "secret": CAPTCHA_SECRET_KEY,
+                        "response": token,
+                        "remoteip": remote_ip,
+                    },
+                    timeout=10.0,
+                )
+                result = resp.json()
+                return result.get("success", False)
+            except Exception:
+                return False
+    
+    elif CAPTCHA_PROVIDER == "hcaptcha":
+        # hCaptcha - free tier available
+        async with httpx.AsyncClient() as client:
+            try:
+                resp = await client.post(
+                    "https://hcaptcha.com/siteverify",
+                    data={
+                        "secret": CAPTCHA_SECRET_KEY,
+                        "response": token,
+                        "remoteip": remote_ip,
+                    },
+                    timeout=10.0,
+                )
+                result = resp.json()
+                return result.get("success", False)
+            except Exception:
+                return False
+    
+    elif CAPTCHA_PROVIDER == "simple":
+        # Simple self-hosted math challenge (no external dependency)
+        # Token format: "challenge_id:user_answer"
+        try:
+            challenge_id, user_answer = token.split(":", 1)
+            if challenge_id in _simple_challenges:
+                correct_answer, expiry = _simple_challenges[challenge_id]
+                if time.time() < expiry and hmac.compare_digest(correct_answer, user_answer.strip()):
+                    del _simple_challenges[challenge_id]  # One-time use
+                    return True
+        except Exception:
+            pass
+        return False
+    
+    return False
+
+
+def generate_simple_challenge() -> dict:
+    """Generate a simple math challenge for self-hosted CAPTCHA."""
+    import random
+    a = random.randint(1, 20)
+    b = random.randint(1, 20)
+    op = random.choice(["+", "-", "*"])
+    
+    if op == "+":
+        answer = str(a + b)
+        question = f"{a} + {b}"
+    elif op == "-":
+        answer = str(a - b)
+        question = f"{a} - {b}"
+    else:
+        answer = str(a * b)
+        question = f"{a} × {b}"
+    
+    challenge_id = secrets.token_urlsafe(16)
+    expiry = time.time() + 300  # 5 minutes
+    _simple_challenges[challenge_id] = (answer, expiry)
+    
+    # Clean old challenges
+    now = time.time()
+    expired = [k for k, (_, exp) in _simple_challenges.items() if exp < now]
+    for k in expired:
+        del _simple_challenges[k]
+    
+    return {
+        "challenge_id": challenge_id,
+        "question": question,
+        "site_key": CAPTCHA_SITE_KEY,  # Not used for simple, but kept for API consistency
+    }
+
 
 # ── Password hashing (Argon2id - OWASP recommended) ──────────────────────────
 # Argon2id is the OWASP recommended password hashing algorithm
@@ -187,6 +307,7 @@ def register_user(
         phone_number=user.phone_number,
         hashed_password=get_password_hash(user.password),
         role=user.role,
+        is_admin=False,
     )
     db.add(db_user)
     db.commit()
@@ -478,6 +599,64 @@ def confirm_password_reset(
     return {"access_token": access_token, "token_type": "bearer"}
 
 
+# ── CAPTCHA / Bot Protection Endpoints ───────────────────────────────────────
+# Free, self-hosted options: Turnstile (Cloudflare), hCaptcha, or simple math challenge
+# Configure via CAPTCHA_PROVIDER env var: "turnstile" | "hcaptcha" | "simple" | "none"
+
+@router.get("/captcha/challenge", response_model=schemas.CaptchaChallengeResponse)
+async def get_captcha_challenge(request: Request):
+    """Get a CAPTCHA challenge for the frontend."""
+    provider = CAPTCHA_PROVIDER
+    
+    if provider == "simple":
+        challenge = generate_simple_challenge()
+        return schemas.CaptchaChallengeResponse(
+            challenge_id=challenge["challenge_id"],
+            question=challenge["question"],
+            site_key=challenge["site_key"],
+            provider="simple",
+        )
+    elif provider == "turnstile":
+        return schemas.CaptchaChallengeResponse(
+            challenge_id="",
+            question="",
+            site_key=CAPTCHA_SITE_KEY,
+            provider="turnstile",
+        )
+    elif provider == "hcaptcha":
+        return schemas.CaptchaChallengeResponse(
+            challenge_id="",
+            question="",
+            site_key=CAPTCHA_SITE_KEY,
+            provider="hcaptcha",
+        )
+    else:
+        # No CAPTCHA configured
+        return schemas.CaptchaChallengeResponse(
+            challenge_id="",
+            question="",
+            site_key="",
+            provider="none",
+        )
+
+
+@router.post("/captcha/verify")
+async def verify_captcha_endpoint(
+    request: Request,
+    payload: schemas.CaptchaVerifyRequest,
+):
+    """Verify a CAPTCHA token."""
+    client_ip = request.client.host if request.client else "unknown"
+    provider = payload.provider or CAPTCHA_PROVIDER
+    
+    is_valid = await verify_captcha(payload.token, client_ip)
+    
+    if is_valid:
+        return {"valid": True, "message": "CAPTCHA verified successfully"}
+    else:
+        raise HTTPException(status_code=400, detail="Invalid CAPTCHA")
+
+
 # ── 2FA / TOTP Endpoints ─────────────────────────────────────────────────────
 # Users can enable TOTP (Google Authenticator, Authy, etc.) for additional security.
 # Once enabled, recovery codes are the ONLY fallback if they lose their device.
@@ -730,26 +909,19 @@ def webauthn_registration_start(
     current_user.webauthn_challenge_expires = datetime.now(UTC) + timedelta(minutes=5)
     # Note: In production, use a proper session store
 
+    # Convert options to dict for response
+    options_dict = options_to_json(options)
+    options_dict = json.loads(options_dict)
+
     return schemas.WebAuthnSetupResponse(
         registration_options=schemas.WebAuthnRegistrationStart(
-            challenge=base64.urlsafe_b64encode(options.challenge).decode(),
-            rp={"id": options.rp.id, "name": options.rp.name},
-            user={
-                "id": base64.urlsafe_b64encode(options.user.id).decode(),
-                "name": options.user.name,
-                "displayName": options.user.display_name,
-            },
-            pubKeyCredParams=[
-                {"type": "public-key", "alg": param.alg}
-                for param in options.pub_key_cred_params
-            ],
-            timeout=options.timeout,
-            attestation=options.attestation,
-            authenticatorSelection={
-                "authenticatorAttachment": options.authenticator_selection.authenticator_attachment,
-                "residentKey": options.authenticator_selection.resident_key,
-                "userVerification": options.authenticator_selection.user_verification,
-            },
+            challenge=options_dict["challenge"],
+            rp=options_dict["rp"],
+            user=options_dict["user"],
+            pubKeyCredParams=options_dict["pubKeyCredParams"],
+            timeout=options_dict["timeout"],
+            attestation=options_dict["attestation"],
+            authenticatorSelection=options_dict["authenticatorSelection"],
             extensions=options.extensions or {},
         ),
         message="Use your device's biometric/PIN to create a passkey"

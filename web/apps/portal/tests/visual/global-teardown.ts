@@ -1,5 +1,9 @@
 import { existsSync, rmSync, unlinkSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const PROJECT_ROOT = resolve(__dirname, '../../../../');
 const PORTAL_ROOT = resolve(__dirname, '../../');
@@ -18,6 +22,10 @@ const TEMP_FILES = [
 ];
 
 export default async function globalTeardown() {
+  if (process.env.SKIP_TEARDOWN === 'true') {
+    console.log('[Cleanup Rule] SKIP_TEARDOWN=true: Preserving test database and artifacts during active test execution.');
+    return;
+  }
   console.log('[Cleanup Rule] Cleaning up visual test temporary files and artifacts...');
   
   for (const dir of TEMP_DIRS) {

@@ -1,0 +1,359 @@
+# Prometheus Alerting Rules for PlannedEducation
+# SLO Burn Rate Alerting per NIST CSF 2.0 / Google SRE practices
+# Free/Open-Source Only - No paid monitoring services
+
+groups:
+  - name: plannededucation-slo-alerts
+    interval: 30s
+    rules:
+      # ============================================================
+      # API Latency SLO: p95 < 500ms
+      # ============================================================
+      - alert: APILatencySLOBurnRateFast
+        expr: |
+          (
+            sum(rate(http_request_duration_seconds_bucket{le="0.5"}[5m])) by (job)
+            /
+            sum(rate(http_request_duration_seconds_count[5m])) by (job)
+          ) < 0.95
+        for: 5m
+        labels:
+          severity: critical
+          slo: api_latency_p95
+          burn_rate: "fast"
+        annotations:
+          summary: "API Latency SLO burn rate (fast) - p95 > 500ms"
+          description: |
+            API p95 latency has exceeded 500ms for 5 minutes.
+            Current p95: {{ $value | humanizePercentage }}
+            SLO target: 95% of requests < 500ms
+            This is a fast burn rate (5m window) - immediate attention required.
+
+      - alert: APILatencySLOBurnRateSlow
+        expr: |
+          (
+            sum(rate(http_request_duration_seconds_bucket{le="0.5"}[1h])) by (job)
+            /
+            sum(rate(http_request_duration_seconds_count[1h])) by (job)
+          ) < 0.95
+        for: 30m
+        labels:
+          severity: warning
+          slo: api_latency_p95
+          burn_rate: "slow"
+        annotations:
+          summary: "API Latency SLO burn rate (slow) - p95 > 500ms"
+          description: |
+            API p95 latency has exceeded 500ms for 30 minutes.
+            Current p95: {{ $value | humanizePercentage }}
+            SLO target: 95% of requests < 500ms
+            This is a slow burn rate (1h window) - investigate and resolve.
+
+      # ============================================================
+      # API Availability SLO: > 99.9%
+      # ============================================================
+      - alert: APIAvailabilitySLOBurnRateFast
+        expr: |
+          (
+            sum(rate(http_requests_total{status_code=~"5.."}[5m])) by (job)
+            /
+            sum(rate(http_requests_total[5m])) by (job)
+          ) > 0.001
+        for: 5m
+        labels:
+          severity: critical
+          slo: api_availability
+          burn_rate: "fast"
+        annotations:
+          summary: "API Availability SLO burn rate (fast) - error rate > 0.1%"
+          description: |
+            API 5xx error rate has exceeded 0.1% for 5 minutes.
+            Current error rate: {{ $value | humanizePercentage }}
+            SLO target: 99.9% availability (0.1% error budget)
+            This is a fast burn rate (5m window) - immediate attention required.
+
+      - alert: APIAvailabilitySLOBurnRateSlow
+        expr: |
+          (
+            sum(rate(http_requests_total{status_code=~"5.."}[1h])) by (job)
+            /
+            sum(rate(http_requests_total[1h])) by (job)
+          ) > 0.001
+        for: 30m
+        labels:
+          severity: warning
+          slo: api_availability
+          burn_rate: "slow"
+        annotations:
+          summary: "API Availability SLO burn rate (slow) - error rate > 0.1%"
+          description: |
+            API 5xx error rate has exceeded 0.1% for 30 minutes.
+            Current error rate: {{ $value | humanizePercentage }}
+            SLO target: 99.9% availability (0.1% error budget)
+            This is a slow burn rate (1h window) - investigate and resolve.
+
+      # ============================================================
+      # Exam Submission Success Rate SLO: > 99.5%
+      # ============================================================
+      - alert: ExamSubmissionSLOBurnRateFast
+        expr: |
+          (
+            sum(rate(exam_submissions_total{status="failed"}[5m])) by (job)
+            /
+            sum(rate(exam_submissions_total[5m])) by (job)
+          ) > 0.005
+        for: 5m
+        labels:
+          severity: critical
+          slo: exam_submission_success
+          burn_rate: "fast"
+        annotations:
+          summary: "Exam Submission SLO burn rate (fast) - failure rate > 0.5%"
+          description: |
+            Exam submission failure rate has exceeded 0.5% for 5 minutes.
+            Current failure rate: {{ $value | humanizePercentage }}
+            SLO target: 99.5% success rate (0.5% error budget)
+            This is a fast burn rate (5m window) - immediate attention required.
+
+      - alert: ExamSubmissionSLOBurnRateSlow
+        expr: |
+          (
+            sum(rate(exam_submissions_total{status="failed"}[1h])) by (job)
+            /
+            sum(rate(exam_submissions_total[1h])) by (job)
+          ) > 0.005
+        for: 30m
+        labels:
+          severity: warning
+          slo: exam_submission_success
+          burn_rate: "slow"
+        annotations:
+          summary: "Exam Submission SLO burn rate (slow) - failure rate > 0.5%"
+          description: |
+            Exam submission failure rate has exceeded 0.5% for 30 minutes.
+            Current failure rate: {{ $value | humanizePercentage }}
+            SLO target: 99.5% success rate (0.5% error budget)
+            This is a slow burn rate (1h window) - investigate and resolve.
+
+      # ============================================================
+      # AI Grading Response Time SLO: < 30s
+      # ============================================================
+      - alert: AIGradingLatencySLOBurnRateFast
+        expr: |
+          histogram_quantile(0.95, sum(rate(ai_grading_requests_duration_seconds_bucket[5m])) by (le, job)) > 30
+        for: 5m
+        labels:
+          severity: critical
+          slo: ai_grading_latency
+          burn_rate: "fast"
+        annotations:
+          summary: "AI Grading Latency SLO burn rate (fast) - p95 > 30s"
+          description: |
+            AI grading p95 latency has exceeded 30 seconds for 5 minutes.
+            Current p95: {{ $value }}s
+            SLO target: 95% of AI grading requests < 30s
+            This is a fast burn rate (5m window) - immediate attention required.
+
+      - alert: AIGradingLatencySLOBurnRateSlow
+        expr: |
+          histogram_quantile(0.95, sum(rate(ai_grading_requests_duration_seconds_bucket[1h])) by (le, job)) > 30
+        for: 30m
+        labels:
+          severity: warning
+          slo: ai_grading_latency
+          burn_rate: "slow"
+        annotations:
+          summary: "AI Grading Latency SLO burn rate (slow) - p95 > 30s"
+          description: |
+            AI grading p95 latency has exceeded 30 seconds for 30 minutes.
+            Current p95: {{ $value }}s
+            SLO target: 95% of AI grading requests < 30s
+            This is a slow burn rate (1h window) - investigate and resolve.
+
+      # ============================================================
+      # AI Grading Error Rate Alert
+      # ============================================================
+      - alert: AIGradingHighErrorRate
+        expr: |
+          (
+            sum(rate(ai_grading_requests_total{status="error"}[5m])) by (job)
+            /
+            sum(rate(ai_grading_requests_total[5m])) by (job)
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          component: ai_grading
+        annotations:
+          summary: "AI Grading error rate > 5%"
+          description: |
+            AI grading error rate has exceeded 5% for 5 minutes.
+            Current error rate: {{ $value | humanizePercentage }}
+            Check provider status and API key validity.
+
+      # ============================================================
+      # Cost Alerting
+      # ============================================================
+      - alert: AICostBudgetExceeded
+        expr: |
+          sum(ai_cost_usd_total) by (teacher_id) > 10
+        for: 1m
+        labels:
+          severity: warning
+          component: ai_cost
+        annotations:
+          summary: "Teacher AI cost budget exceeded"
+          description: |
+            Teacher {{ $labels.teacher_id }} has exceeded the daily AI cost budget of $10.
+            Current cost: ${{ $value }}
+
+      - alert: AICostBudgetWarning
+        expr: |
+          sum(ai_cost_usd_total) by (teacher_id) > 8
+        for: 1m
+        labels:
+          severity: info
+          component: ai_cost
+        annotations:
+          summary: "Teacher AI cost budget at 80%"
+          description: |
+            Teacher {{ $labels.teacher_id }} has reached 80% of daily AI cost budget ($8/$10).
+            Current cost: ${{ $value }}
+
+      # ============================================================
+      # Infrastructure Alerts
+      # ============================================================
+      - alert: BackendDown
+        expr: up{job="plannededucation-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: backend
+        annotations:
+          summary: "Backend API is down"
+          description: "Backend API has been down for 1 minute."
+
+      - alert: FrontendDown
+        expr: up{job="plannededucation-frontend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: frontend
+        annotations:
+          summary: "Frontend is down"
+          description: "Frontend has been down for 1 minute."
+
+      - alert: DatabaseDown
+        expr: up{job="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: database
+        annotations:
+          summary: "PostgreSQL database is down"
+          description: "PostgreSQL database has been down for 1 minute."
+
+      - alert: RedisDown
+        expr: up{job="redis"} == 0
+        for: 1m
+        labels:
+          severity: warning
+          component: redis
+        annotations:
+          summary: "Redis is down"
+          description: "Redis has been down for 1 minute. WebSocket broadcasting may be affected."
+
+      - alert: HighMemoryUsage
+        expr: |
+          (container_memory_usage_bytes / container_spec_memory_limit_bytes) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          component: infrastructure
+        annotations:
+          summary: "Container memory usage > 90%"
+          description: "Container {{ $labels.container }} memory usage is above 90%."
+
+      - alert: HighCPUUsage
+        expr: |
+          (rate(container_cpu_usage_seconds_total[5m]) / container_spec_cpu_quota / container_spec_cpu_period) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          component: infrastructure
+        annotations:
+          summary: "Container CPU usage > 90%"
+          description: "Container {{ $labels.container }} CPU usage is above 90%."
+
+      - alert: DiskSpaceLow
+        expr: |
+          (node_filesystem_avail_bytes / node_filesystem_size_bytes) < 0.1
+        for: 5m
+        labels:
+          severity: warning
+          component: infrastructure
+        annotations:
+          summary: "Disk space < 10% remaining"
+          description: "Filesystem {{ $labels.mountpoint }} on {{ $labels.instance }} has less than 10% disk space remaining."
+
+      # ============================================================
+      # Security Alerts
+      # ============================================================
+      - alert: HighAuthFailureRate
+        expr: |
+          sum(rate(http_requests_total{endpoint=~"/auth/.*",status_code=~"4.."}[5m])) by (job)
+          /
+          sum(rate(http_requests_total{endpoint=~"/auth/.*"}[5m])) by (job)
+          > 0.5
+        for: 5m
+        labels:
+          severity: warning
+          component: security
+        annotations:
+          summary: "High authentication failure rate > 50%"
+          description: |
+            Authentication endpoints are experiencing > 50% failure rate.
+            Possible brute force attack or configuration issue.
+
+      - alert: GitleaksDetection
+        expr: gitleaks_secrets_detected > 0
+        for: 0m
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "Gitleaks detected secrets in repository"
+          description: "Gitleaks scan found {{ $value }} potential secrets in the codebase."
+
+      # ============================================================
+      # Backup/Restore Alerts
+      # ============================================================
+      - alert: BackupFailed
+        expr: backup_last_success_timestamp < (time() - 86400)
+        for: 0m
+        labels:
+          severity: critical
+          component: backup
+        annotations:
+          summary: "Backup has not succeeded in 24 hours"
+          description: "Last successful backup was {{ $value | humanizeDuration }} ago."
+
+      - alert: BackupAgeWarning
+        expr: backup_last_success_timestamp < (time() - 43200)
+        for: 0m
+        labels:
+          severity: warning
+          component: backup
+        annotations:
+          summary: "Backup is older than 12 hours"
+          description: "Last successful backup was {{ $value | humanizeDuration }} ago."
+
+      - alert: RestoreDrillOverdue
+        expr: restore_drill_last_success_timestamp < (time() - 2592000)
+        for: 0m
+        labels:
+          severity: warning
+          component: backup
+        annotations:
+          summary: "Restore drill overdue (> 30 days)"
+          description: "Last successful restore drill was {{ $value | humanizeDuration }} ago."

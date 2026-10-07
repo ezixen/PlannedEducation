@@ -22,6 +22,11 @@ interface AIGrade {
   score: number;
   feedback: string;
   confidence: number;
+  reasoning?: string;
+  // Teacher can edit these before applying
+  teacher_score?: number;
+  teacher_feedback?: string;
+  teacher_approved?: boolean;
 }
 
 interface SubmissionWithAIGrades extends AnonymizedSubmission {
@@ -39,6 +44,7 @@ export function TeacherDashboard() {
   const [selectedSubmission, setSelectedSubmission] = useState<SubmissionWithAIGrades | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [groupedMistakes, setGroupedMistakes] = useState<Record<string, string[]>>({});
+  const [reviewingQuestionId, setReviewingQuestionId] = useState<string | null>(null);
 
   useEffect(() => {
     if (examId) {
@@ -62,22 +68,29 @@ export function TeacherDashboard() {
   const generateAIGrades = async (submission: SubmissionWithAIGrades) => {
     setGeneratingGrades(submission.submission_id);
     try {
-      // In a real implementation, this would call an external AI service
-      // For now, we'll simulate AI grading
       const aiGrades: Record<string, AIGrade> = {};
       
       for (const answer of submission.answers) {
-        // Simulate AI grading logic
-        const isCorrect = answer.student_response.toLowerCase().trim() === 
-          (answer.correct_answer || '').toLowerCase().trim();
+        // Call real AI grading endpoint
+        const response = await apiClient.post('/ai/grade', {
+          submission_id: submission.submission_id,
+          rubric: answer.rubric || 'Grade based on correctness and completeness.',
+          student_response: answer.student_response || '',
+          question_text: answer.question_text,
+          points_possible: answer.points_possible,
+        });
         
+        const aiGrade = response.data;
         aiGrades[answer.question_id] = {
           question_id: answer.question_id,
-          score: isCorrect ? answer.points_possible : 0,
-          feedback: isCorrect 
-            ? 'Correct answer. Well done!' 
-            : `Incorrect. The correct answer is: ${answer.correct_answer || 'N/A'}. ${answer.rubric ? `Rubric: ${answer.rubric}` : ''}`,
-          confidence: isCorrect ? 0.95 : 0.85,
+          score: aiGrade.score,
+          feedback: aiGrade.feedback,
+          confidence: aiGrade.confidence,
+          reasoning: aiGrade.reasoning,
+          // Initialize teacher fields with AI suggestions
+          teacher_score: aiGrade.score,
+          teacher_feedback: aiGrade.feedback,
+          teacher_approved: false,
         };
       }
       
@@ -99,10 +112,18 @@ export function TeacherDashboard() {
     if (!submission.ai_grades) return;
     
     try {
-      const grades = Object.values(submission.ai_grades).map(g => ({
+      // Only apply teacher-approved grades
+      const approvedGrades = Object.values(submission.ai_grades).filter(g => g.teacher_approved);
+      
+      if (approvedGrades.length === 0) {
+        showError('No grades approved for application.');
+        return;
+      }
+      
+      const grades = approvedGrades.map(g => ({
         question_id: g.question_id,
-        score: g.score,
-        feedback: g.feedback,
+        score: g.teacher_score ?? g.score,
+        feedback: g.teacher_feedback ?? g.feedback,
       }));
       
       await apiClient.post(`/anonymizer/submissions/${submission.submission_id}/grades`, {
@@ -116,10 +137,40 @@ export function TeacherDashboard() {
           : s
       ));
       
-      showSuccess('Grades applied successfully!');
+      showSuccess(`${approvedGrades.length} grade(s) applied successfully!`);
     } catch (err: any) {
       showError('Failed to apply grades.', err.response?.data?.detail || err.message);
     }
+  };
+
+  const toggleGradeApproval = (submissionId: string, questionId: string, approved: boolean) => {
+    setSubmissions(prev => prev.map(s => {
+      if (s.submission_id !== submissionId || !s.ai_grades) return s;
+      const grade = s.ai_grades[questionId];
+      if (!grade) return s;
+      return {
+        ...s,
+        ai_grades: {
+          ...s.ai_grades,
+          [questionId]: { ...grade, teacher_approved: approved }
+        }
+      };
+    }));
+  };
+
+  const updateTeacherGrade = (submissionId: string, questionId: string, field: 'teacher_score' | 'teacher_feedback', value: number | string) => {
+    setSubmissions(prev => prev.map(s => {
+      if (s.submission_id !== submissionId || !s.ai_grades) return s;
+      const grade = s.ai_grades[questionId];
+      if (!grade) return s;
+      return {
+        ...s,
+        ai_grades: {
+          ...s.ai_grades,
+          [questionId]: { ...grade, [field]: value, teacher_approved: true }
+        }
+      };
+    }));
   };
 
   const groupSimilarMistakes = () => {
@@ -302,7 +353,7 @@ export function TeacherDashboard() {
       {/* Review Modal */}
       {showModal && selectedSubmission && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
-          <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '800px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
+          <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '900px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
             <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h2 style={{ margin: 0, fontSize: '1.25rem' }}>Review AI Grades - {selectedSubmission.anonymous_student_ref}</h2>
               <button onClick={handleCloseModal} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
@@ -310,21 +361,43 @@ export function TeacherDashboard() {
             <div style={{ padding: '1.5rem' }}>
               {selectedSubmission.answers.map((answer, idx) => {
                 const aiGrade = selectedSubmission.ai_grades?.[answer.question_id];
+                const isReviewing = reviewingQuestionId === answer.question_id;
                 return (
                   <div key={answer.question_id} style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                       <h4 style={{ margin: 0, fontSize: '1rem' }}>Question {idx + 1} ({answer.points_possible} pts)</h4>
                       {aiGrade && (
-                        <span style={{ 
-                          padding: '0.25rem 0.5rem', 
-                          borderRadius: '9999px', 
-                          fontSize: '0.75rem', 
-                          fontWeight: 600,
-                          backgroundColor: aiGrade.score === answer.points_possible ? '#10b98120' : '#ef444420',
-                          color: aiGrade.score === answer.points_possible ? '#10b981' : '#ef4444'
-                        }}>
-                          AI: {aiGrade.score}/{answer.points_possible} ({Math.round(aiGrade.confidence * 100)}%)
-                        </span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span style={{ 
+                            padding: '0.25rem 0.5rem', 
+                            borderRadius: '9999px', 
+                            fontSize: '0.75rem', 
+                            fontWeight: 600,
+                            backgroundColor: aiGrade.score === answer.points_possible ? '#10b98120' : '#ef444420',
+                            color: aiGrade.score === answer.points_possible ? '#10b981' : '#ef4444'
+                          }}>
+                            AI: {aiGrade.score}/{answer.points_possible} ({Math.round(aiGrade.confidence * 100)}%)
+                          </span>
+                          {aiGrade.teacher_approved ? (
+                            <span style={{ 
+                              padding: '0.25rem 0.5rem', 
+                              borderRadius: '9999px', 
+                              fontSize: '0.75rem', 
+                              fontWeight: 600,
+                              backgroundColor: '#10b98120',
+                              color: '#10b981'
+                            }}>
+                              ✓ Teacher Approved
+                            </span>
+                          ) : (
+                            <button
+                              onClick={() => setReviewingQuestionId(answer.question_id)}
+                              style={{ padding: '0.25rem 0.5rem', backgroundColor: '#3b82f6', color: '#fff', border: 'none', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer' }}
+                            >
+                              Review
+                            </button>
+                          )}
+                        </div>
                       )}
                     </div>
                     <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}>{answer.question_text}</p>
@@ -348,8 +421,74 @@ export function TeacherDashboard() {
                       <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#8b5cf610', borderRadius: 'var(--radius-sm)', border: '1px solid #8b5cf630' }}>
                         <strong>AI Feedback:</strong>
                         <pre style={{ margin: '0.5rem 0 0', whiteSpace: 'pre-wrap', fontFamily: 'inherit' }}>{aiGrade.feedback}</pre>
+                        {aiGrade.reasoning && (
+                          <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                            <strong>Reasoning:</strong> {aiGrade.reasoning}
+                          </div>
+                        )}
                         <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                           Confidence: {Math.round(aiGrade.confidence * 100)}%
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Teacher Review/Edit Section - shown when reviewing this question */}
+                    {isReviewing && aiGrade && (
+                      <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#fffbeb', borderRadius: 'var(--radius-sm)', border: '1px solid #fcd34d' }}>
+                        <h5 style={{ margin: '0 0 0.75rem', color: '#92400e' }}>✏️ Teacher Review & Edit</h5>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                          <div>
+                            <label style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+                              Score (0-{answer.points_possible})
+                            </label>
+                            <input
+                              type="number"
+                              min={0}
+                              max={answer.points_possible}
+                              step={0.5}
+                              value={aiGrade.teacher_score ?? aiGrade.score}
+                              onChange={(e) => updateTeacherGrade(selectedSubmission.submission_id, answer.question_id, 'teacher_score', parseFloat(e.target.value) || 0)}
+                              style={{ width: '100px', padding: '0.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontSize: '1rem' }}
+                            />
+                          </div>
+                          <div>
+                            <label style={{ display: 'block', marginBottom: '0.25rem', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+                              Feedback
+                            </label>
+                            <textarea
+                              value={aiGrade.teacher_feedback ?? aiGrade.feedback}
+                              onChange={(e) => updateTeacherGrade(selectedSubmission.submission_id, answer.question_id, 'teacher_feedback', e.target.value)}
+                              rows={3}
+                              style={{ width: '100%', padding: '0.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontSize: '0.9rem', fontFamily: 'inherit', resize: 'vertical' }}
+                            />
+                          </div>
+                          <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                              <input
+                                type="checkbox"
+                                checked={aiGrade.teacher_approved}
+                                onChange={(e) => toggleGradeApproval(selectedSubmission.submission_id, answer.question_id, e.target.checked)}
+                              />
+                              <span style={{ fontSize: '0.9rem', color: 'var(--text-color)' }}>Approve this grade</span>
+                            </label>
+                          </div>
+                          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+                            <button
+                              onClick={() => setReviewingQuestionId(null)}
+                              style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              onClick={() => {
+                                toggleGradeApproval(selectedSubmission.submission_id, answer.question_id, true);
+                                setReviewingQuestionId(null);
+                              }}
+                              style={{ padding: '0.5rem 1rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}
+                            >
+                              Approve & Save
+                            </button>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -362,9 +501,10 @@ export function TeacherDashboard() {
                 </button>
                 <button 
                   onClick={() => { applyAIGrades(selectedSubmission!); handleCloseModal(); }}
-                  style={{ padding: '0.625rem 1.25rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}
+                  disabled={!selectedSubmission.ai_grades || Object.values(selectedSubmission.ai_grades).filter(g => g.teacher_approved).length === 0}
+                  style={{ padding: '0.625rem 1.25rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, opacity: !selectedSubmission.ai_grades || Object.values(selectedSubmission.ai_grades).filter(g => g.teacher_approved).length === 0 ? 0.5 : 1 }}
                 >
-                  Apply All Grades
+                  Apply Approved Grades
                 </button>
               </div>
             </div>

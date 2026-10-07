@@ -3,11 +3,15 @@
   --bg-secondary: #f7fbfe;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #e5e7eb;
   --primary-color: #1b6ca8;
+  --secondary-color: #4b6584;
   --text-color: #17324d;
+  --text-primary: #17324d;
   --hover-color: #d8ecf8;
   --text-muted: #4d6b82;
+  --text-secondary: #4d6b82;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -16,111 +20,161 @@
 
 :root[data-theme="skyward"] {
   --bg-color: #e8f4fb;
+  --bg-secondary: #f0f8fd;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #1b6ca8;
   --primary-color: #1b6ca8;
+  --secondary-color: #4b6584;
   --text-color: #17324d;
+  --text-primary: #17324d;
   --text-muted: #4d6b82;
+  --text-secondary: #4d6b82;
   --hover-color: #d8ecf8;
 }
 
 :root[data-theme="carbon_cyan"] {
   --bg-color: #e6f7fa;
+  --bg-secondary: #dcf3f7;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #0891a8;
   --primary-color: #0891a8;
+  --secondary-color: #376b7e;
   --text-color: #0a1c22;
+  --text-primary: #0a1c22;
   --text-muted: #3d6570;
+  --text-secondary: #3d6570;
   --hover-color: #c9f0f5;
 }
 
 :root[data-theme="enterprise_blue"] {
   --bg-color: #e8f1fb;
+  --bg-secondary: #deebf9;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #1a7fd4;
   --primary-color: #1a7fd4;
+  --secondary-color: #4a6984;
   --text-color: #0c1e36;
+  --text-primary: #0c1e36;
   --text-muted: #3d5a78;
+  --text-secondary: #3d5a78;
   --hover-color: #d1e5f8;
 }
 
 :root[data-theme="blush_silver"] {
   --bg-color: #fff0f5;
+  --bg-secondary: #fde7ef;
   --sidebar-bg: #fffcfe;
   --header-bg: #fffcfe;
+  --card-bg: #ffffff;
   --border-color: #d4538a;
   --primary-color: #d4538a;
+  --secondary-color: #784a62;
   --text-color: #4a2040;
+  --text-primary: #4a2040;
   --text-muted: #8a4f72;
+  --text-secondary: #8a4f72;
   --hover-color: #fce6ee;
 }
 
 :root[data-theme="matrix_green"] {
   --bg-color: #e8f8ec;
+  --bg-secondary: #ddf5e3;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #1a8f3c;
   --primary-color: #1a8f3c;
+  --secondary-color: #3e6b4e;
   --text-color: #0a2814;
+  --text-primary: #0a2814;
   --text-muted: #3d6b4a;
+  --text-secondary: #3d6b4a;
   --hover-color: #c9ebd3;
 }
 
 :root[data-theme="black_orange"] {
   --bg-color: #fff4eb;
+  --bg-secondary: #fdece0;
   --sidebar-bg: #fffdfa;
   --header-bg: #fffdfa;
+  --card-bg: #ffffff;
   --border-color: #d46500;
   --primary-color: #d46500;
+  --secondary-color: #6e4324;
   --text-color: #2a1608;
+  --text-primary: #2a1608;
   --text-muted: #7a4a28;
+  --text-secondary: #7a4a28;
   --hover-color: #fae4cf;
 }
 
 :root[data-theme="sunset_cabin"] {
   --bg-color: #f8f0ff;
+  --bg-secondary: #f2e4fc;
   --sidebar-bg: #fcf8ff;
   --header-bg: #fcf8ff;
+  --card-bg: #ffffff;
   --border-color: #c084fc;
   --primary-color: #e85d4c;
+  --secondary-color: #79528f;
   --text-color: #2e1a3a;
+  --text-primary: #2e1a3a;
   --text-muted: #7a5588;
+  --text-secondary: #7a5588;
   --hover-color: #f0e6fa;
 }
 
 :root[data-theme="aurora_night"] {
   --bg-color: #e7f7f2;
+  --bg-secondary: #daf2eb;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #0f8a6a;
   --primary-color: #0f8a6a;
+  --secondary-color: #396e62;
   --text-color: #14352f;
+  --text-primary: #14352f;
   --text-muted: #457066;
+  --text-secondary: #457066;
   --hover-color: #d1efe7;
 }
 
 :root[data-theme="comic_stage"] {
   --bg-color: #fff9c4;
+  --bg-secondary: #fdf5b4;
   --sidebar-bg: #fffde6;
   --header-bg: #fffde6;
+  --card-bg: #fffdf2;
   --border-color: #26a69a;
   --primary-color: #26a69a;
+  --secondary-color: #4d7a72;
   --text-color: #1a3d36;
+  --text-primary: #1a3d36;
   --text-muted: #5a7a6a;
+  --text-secondary: #5a7a6a;
   --hover-color: #fff4a3;
 }
 
 :root[data-theme="ocean_calm"] {
   --bg-color: #e4f2f4;
+  --bg-secondary: #d8ecf0;
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
+  --card-bg: #ffffff;
   --border-color: #087e8b;
   --primary-color: #087e8b;
+  --secondary-color: #376c74;
   --text-color: #12343c;
+  --text-primary: #12343c;
   --text-muted: #456870;
+  --text-secondary: #456870;
   --hover-color: #cbe9ec;
 }
 
@@ -379,7 +433,7 @@ input, select, textarea {
 }
 
 .toast-item.is-sticky {
-  /* sticky toasts don't auto-dismiss */
+  animation: none;
 }
 
 .toast-close {

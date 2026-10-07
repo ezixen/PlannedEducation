@@ -288,3 +288,18 @@ class WebAuthnVerifyResponse(BaseModel):
     """Response for WebAuthn verification."""
     verified: bool
     message: str
+
+
+# ── CAPTCHA / Bot Protection ─────────────────────────────────────────────────
+
+class CaptchaChallengeResponse(BaseModel):
+    """Response for CAPTCHA challenge generation."""
+    challenge_id: str
+    question: str
+    site_key: str | None = None
+    provider: str
+
+class CaptchaVerifyRequest(BaseModel):
+    """Request to verify CAPTCHA."""
+    token: str
+    provider: str | None = None

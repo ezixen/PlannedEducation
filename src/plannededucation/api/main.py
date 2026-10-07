@@ -27,7 +27,9 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import (
     routes_admin,
+    routes_ai,
     routes_anonymizer,
+    routes_archive,
     routes_auth,
     routes_chat,
     routes_exam,
@@ -335,6 +337,8 @@ app.include_router(routes_ocr.router)
 app.include_router(routes_stt.router)
 app.include_router(routes_proctoring.router)
 app.include_router(routes_packages.router)
+app.include_router(routes_ai.router)
+app.include_router(routes_archive.router)
 app.include_router(routes_admin.router)
 
 

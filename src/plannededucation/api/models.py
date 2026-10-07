@@ -42,6 +42,19 @@ class RelationshipStatus(enum.StrEnum):
     rejected = "rejected"
 
 
+class UserRole(enum.StrEnum):
+    student = "student"
+    teacher = "teacher"
+    parent = "parent"
+    admin = "admin"
+
+
+class ArchiveStatus(enum.StrEnum):
+    active = "active"           # Currently stored on server
+    archived = "archived"       # Moved to external storage
+    deleted = "deleted"         # Removed from server (only external copy exists)
+
+
 # ── Models ────────────────────────────────────────────────────────────────────
 
 class User(Base):
@@ -77,6 +90,14 @@ class User(Base):
     # Refresh Tokens (for session management)
     refresh_token_hash = Column(String(256), nullable=True)  # Hashed refresh token
     refresh_token_expires = Column(DateTime(timezone=True), nullable=True)  # Expiry timestamp
+
+    # WebAuthn / Passkeys (OWASP A07:2025)
+    webauthn_credentials = Column(Text, nullable=True)  # JSON array of registered credentials
+    webauthn_challenge = Column(String(256), nullable=True)  # Current challenge for registration/auth
+    webauthn_challenge_expires = Column(DateTime(timezone=True), nullable=True)  # Challenge expiry
+
+    # Admin role
+    is_admin = Column(Boolean, default=False, server_default="0", nullable=False)
 
     # Relationships
     exams = relationship("Exam", back_populates="teacher", cascade="all, delete-orphan")
@@ -358,3 +379,98 @@ class ProctoringConsent(Base):
     __table_args__ = (
         UniqueConstraint("student_id", "exam_id", name="uq_student_exam_consent"),
     )
+
+
+# ── Archive Models ───────────────────────────────────────────────────────────
+
+class ArchivedSubmission(Base):
+    """
+    Compressed, encrypted archive of a sealed exam submission.
+    Stored in year/month/teacher/student folder structure.
+    """
+    __tablename__ = "archived_submissions"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    submission_id = Column(String(36), unique=True, index=True, nullable=False)
+    exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), index=True, nullable=False)
+    student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), index=True, nullable=False)
+    teacher_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), index=True, nullable=False)
+    
+    # Archive metadata
+    archive_year = Column(Integer, index=True, nullable=False)
+    archive_month = Column(Integer, index=True, nullable=False)  # 1-12
+    archive_path = Column(String(512), nullable=False)  # Relative path in archive storage
+    
+    # Compressed, encrypted data
+    compressed_data = Column(Text, nullable=False)  # Base64 encoded compressed+encrypted blob
+    original_size = Column(Integer, nullable=False)
+    compressed_size = Column(Integer, nullable=False)
+    compression_ratio = Column(Float, nullable=False)
+    compression_algorithm = Column(String(32), default="zstd", nullable=False)
+    
+    # Encryption metadata
+    encryption_algorithm = Column(String(32), default="AES-GCM", nullable=False)
+    encryption_iv = Column(String(64), nullable=False)
+    encryption_salt = Column(String(64), nullable=False)
+    key_id = Column(String(128), nullable=False)
+    
+    # Integrity
+    content_hash = Column(String(64), nullable=False)  # SHA-256 of original sealed submission
+    archive_hash = Column(String(64), nullable=False)  # SHA-256 of compressed_data
+    
+    # Status
+    status = Column(Enum(ArchiveStatus), default=ArchiveStatus.active, nullable=False)
+    
+    # Timestamps
+    submitted_at = Column(DateTime(timezone=True), nullable=False)
+    archived_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    deleted_from_server_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # External storage reference (for off-site backup)
+    external_storage_ref = Column(String(512), nullable=True)  # e.g., S3 key, USB drive ID
+    
+    # Relationships
+    exam = relationship("Exam")
+    student = relationship("User", foreign_keys=[student_id])
+    teacher = relationship("User", foreign_keys=[teacher_id])
+    
+    __table_args__ = (
+        UniqueConstraint("submission_id", name="uq_archived_submission"),
+    )
+
+
+class ArchiveJob(Base):
+    """Background job for archiving graduated students' tests."""
+    __tablename__ = "archive_jobs"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    job_type = Column(String(32), nullable=False)  # 'archive', 'restore', 'verify', 'cleanup'
+    status = Column(String(32), default="pending", nullable=False)  # pending, running, completed, failed
+    
+    # Filters
+    graduation_year: int = Column(Integer, nullable=True)
+    teacher_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    student_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    
+    # Progress
+    total_items = Column(Integer, default=0, nullable=False)
+    processed_items = Column(Integer, default=0, nullable=False)
+    failed_items = Column(Integer, default=0, nullable=False)
+    
+    # Configuration
+    archive_to_external = Column(Boolean, default=False, nullable=False)
+    external_storage_path = Column(String(512), nullable=True)
+    delete_after_archive = Column(Boolean, default=True, nullable=False)
+    compression_level = Column(Integer, default=3, nullable=False)  # zstd level 1-22
+    
+    # Results
+    result_summary = Column(Text, nullable=True)  # JSON summary
+    error_log = Column(Text, nullable=True)  # JSON array of errors
+    
+    # Timestamps
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    started_at = Column(DateTime(timezone=True), nullable=True)
+    completed_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # Relationships
+    created_by = relationship("User", foreign_keys=[teacher_id])

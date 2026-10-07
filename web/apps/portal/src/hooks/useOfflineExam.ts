@@ -26,6 +26,7 @@ import {
   submitExamOffline,
   formatTimeRemaining,
   getExamProgressPercent,
+  sealExamSubmission,
 } from '../services/offlineExam';
 
 interface UseOfflineExamOptions {
@@ -100,8 +101,10 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           id: `${examId}-${studentId}`,
           examId,
           studentId,
+          studentName: user?.full_name || user?.username || 'Unknown Student',
           package: pkg,
           answers: {},
+          answerTimestamps: {},
           currentQuestionIndex: 0,
           timeRemainingMs: 0,
           timerState: 'paused',
@@ -198,37 +201,49 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       timerIntervalRef.current = null;
     }
     
-    // Submit exam
-    const result = await submitExamOffline(
-      examId,
-      studentId,
-      examState.answers,
-      examState.submissionId || ''
-    );
-    
-    // Update state
-    const completedState = completeExam(examState);
-    setExamState(completedState);
-    await saveOfflineExamState(completedState);
-    
-    // Stop monitoring
-    stopSEBMonitoring();
-    stopHeartbeat();
-    if (autoSubmitCheckRef.current) {
-      clearInterval(autoSubmitCheckRef.current);
+    // Seal the exam submission (cryptographically sign and encrypt)
+    try {
+      const studentName = user?.full_name || user?.username || 'Unknown Student';
+      const sealed = await sealExamSubmission(examState, studentName);
+      
+      // Also submit to server if online
+      const result = await submitExamOffline(
+        examId,
+        studentId,
+        examState.answers,
+        examState.submissionId || ''
+      );
+      
+      // Update state with sealed submission
+      const completedState = {
+        ...completeExam(examState),
+        sealedSubmission: sealed,
+      };
+      setExamState(completedState);
+      await saveOfflineExamState(completedState);
+      
+      // Stop monitoring
+      stopSEBMonitoring();
+      stopHeartbeat();
+      if (autoSubmitCheckRef.current) {
+        clearInterval(autoSubmitCheckRef.current);
+      }
+      
+      if (result.queued) {
+        showInfo('Exam submitted offline. Sealed and queued for sync.');
+      } else {
+        showSuccess('Exam submitted and sealed successfully!');
+      }
+      
+      onExamCompleted?.();
+      
+      // Navigate to results or dashboard after a delay
+      setTimeout(() => navigate('/dashboard'), 3000);
+    } catch (error: any) {
+      showError('Failed to seal exam submission', error.message);
+      console.error('Seal failed:', error);
     }
-    
-    if (result.queued) {
-      showInfo('Exam submitted offline. Will sync when online.');
-    } else {
-      showSuccess('Exam submitted successfully!');
-    }
-    
-    onExamCompleted?.();
-    
-    // Navigate to results or dashboard after a delay
-    setTimeout(() => navigate('/dashboard'), 3000);
-  }, [examState, examId, studentId, navigate, showInfo, showSuccess, onExamCompleted]);
+  }, [examState, examId, studentId, user, navigate, showInfo, showSuccess, showError, onExamCompleted]);
   
   // ── Answer Management ────────────────────────────────────────────────────
   
@@ -238,6 +253,7 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
     const newState = {
       ...examState,
       answers: { ...examState.answers, [questionId]: response },
+      answerTimestamps: { ...examState.answerTimestamps, [questionId]: Date.now() },
       lastUpdated: Date.now(),
     };
     
