@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const PROJECT_ROOT = resolve(__dirname, '../../../../');
+const PROJECT_ROOT = resolve(__dirname, '../../../../../');
 const PORTAL_ROOT = resolve(__dirname, '../../');
 
 const TEMP_DIRS = [
@@ -17,7 +17,6 @@ const TEMP_DIRS = [
 
 const TEMP_FILES = [
   resolve(PROJECT_ROOT, 'artifacts/visual-test-report.json'),
-  resolve(PROJECT_ROOT, 'scratch/test_auth_flow.py'),
   resolve(PROJECT_ROOT, 'test_visual.db'),
 ];
 
