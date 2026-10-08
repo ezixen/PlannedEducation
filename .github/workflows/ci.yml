@@ -60,6 +60,11 @@ jobs:
           pip install bandit
           bandit -r src/ -f json -o bandit-report.json || true
 
+      - name: Run dependency audit (pip-audit)
+        run: |
+          pip install pip-audit
+          pip-audit -r src/requirements.txt --strict
+
       - name: Run tests with coverage
         run: |
           pip install pytest pytest-cov
@@ -138,6 +143,16 @@ jobs:
           npx playwright test --project=chromium
         env:
           VITE_API_URL: "http://localhost:8001"
+
+      - name: Run npm audit (production deps only)
+        run: |
+          cd web/apps/portal
+          npm audit --omit=dev --audit-level=high
+
+      - name: Check license compliance
+        run: |
+          cd web/apps/portal
+          npx license-checker --onlyAllow 'MIT;Apache-2.0;BSD-3-Clause;ISC;MIT-0' --failOnViolation
 
   # Security Scans (Free OSS only - no paid GitHub Advanced Security)
   security-scans:
