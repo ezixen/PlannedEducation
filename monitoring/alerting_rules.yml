@@ -357,3 +357,217 @@ groups:
         annotations:
           summary: "Restore drill overdue (> 30 days)"
           description: "Last successful restore drill was {{ $value | humanizeDuration }} ago."
+
+  # ============================================================
+  # NIST CSF 2.0 Function-Specific Alerts
+  # ============================================================
+  # GOVERN (GV) - Organizational Context & Risk Strategy
+  # IDENTIFY (ID) - Asset & Risk Understanding
+  # PROTECT (PR) - Safeguards
+  # DETECT (DE) - Continuous Monitoring
+  # RESPOND (RS) - Incident Response
+  # RECOVER (RC) - Recovery Planning
+
+  # GOVERN: Policy compliance and risk management
+  - alert: PolicyViolationDetected
+    expr: policy_violations_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: govern
+      csf_category: gv_po
+    annotations:
+      summary: "Policy violation detected"
+      description: "Policy violation detected: {{ $labels.violation_type }}. Review and remediate."
+
+  - alert: RiskAssessmentOverdue
+    expr: risk_assessment_last_completed < (time() - 7776000)  # 90 days
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: govern
+      csf_category: gv_rm
+    annotations:
+      summary: "Risk assessment overdue (> 90 days)"
+      description: "Last risk assessment was {{ $value | humanizeDuration }} ago. Schedule new assessment."
+
+  # IDENTIFY: Asset management and risk assessment
+  - alert: UnmanagedAssetDetected
+    expr: unmanaged_assets_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: identify
+      csf_category: id_am
+    annotations:
+      summary: "Unmanaged asset detected"
+      description: "{{ $value }} unmanaged asset(s) detected. Inventory and assess."
+
+  - alert: VulnerabilityScanOverdue
+    expr: vulnerability_scan_last_completed < (time() - 604800)  # 7 days
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: identify
+      csf_category: id_ra
+    annotations:
+      summary: "Vulnerability scan overdue (> 7 days)"
+      description: "Last vulnerability scan was {{ $value | humanizeDuration }} ago."
+
+  - alert: SupplyChainRiskElevated
+    expr: supply_chain_risk_score > 7
+    for: 5m
+    labels:
+      severity: warning
+      csf_function: identify
+      csf_category: id_sc
+    annotations:
+      summary: "Supply chain risk score elevated"
+      description: "Supply chain risk score is {{ $value }}/10. Review third-party dependencies."
+
+  # PROTECT: Access control, data security, and training
+  - alert: PrivilegeEscalationAttempt
+    expr: rate(privilege_escalation_attempts_total[5m]) > 0
+    for: 0m
+    labels:
+      severity: critical
+      csf_function: protect
+      csf_category: pr_ac
+    annotations:
+      summary: "Privilege escalation attempt detected"
+      description: "User {{ $labels.user_id }} attempted privilege escalation. Investigate immediately."
+
+  - alert: DataExfiltrationAttempt
+    expr: rate(data_exfiltration_attempts_total[5m]) > 0
+    for: 0m
+    labels:
+      severity: critical
+      csf_function: protect
+      csf_category: pr_ds
+    annotations:
+      summary: "Data exfiltration attempt detected"
+      description: "Potential data exfiltration from {{ $labels.source }}. Investigate immediately."
+
+  - alert: EncryptionComplianceViolation
+    expr: unencrypted_sensitive_data_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: protect
+      csf_category: pr_ds
+    annotations:
+      summary: "Unencrypted sensitive data detected"
+      description: "{{ $value }} sensitive data field(s) found unencrypted. Encrypt immediately."
+
+  - alert: MFAComplianceViolation
+    expr: users_without_mfa_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: protect
+      csf_category: pr_aa
+    annotations:
+      summary: "Users without MFA detected"
+      description: "{{ $value }} user(s) without MFA enabled. Enforce MFA policy."
+
+  # DETECT: Continuous monitoring and anomaly detection
+  - alert: AnomalousUserBehavior
+    expr: user_anomaly_score > 80
+    for: 5m
+    labels:
+      severity: warning
+      csf_function: detect
+      csf_category: de_cm
+    annotations:
+      summary: "Anomalous user behavior detected"
+      description: "User {{ $labels.user_id }} anomaly score is {{ $value }}. Review activity."
+
+  - alert: SuspiciousNetworkTraffic
+    expr: network_anomaly_score > 75
+    for: 5m
+    labels:
+      severity: warning
+      csf_function: detect
+      csf_category: de_cm
+    annotations:
+      summary: "Suspicious network traffic detected"
+      description: "Network anomaly score {{ $value }} from {{ $labels.source_ip }}. Investigate."
+
+  - alert: LogIngestionFailure
+    expr: rate(log_ingestion_failures_total[5m]) > 0
+    for: 1m
+    labels:
+      severity: warning
+      csf_function: detect
+      csf_category: de_dp
+    annotations:
+      summary: "Log ingestion failure"
+      description: "Log ingestion pipeline failing. Check log pipeline health."
+
+  # RESPOND: Incident response
+  - alert: IncidentResponseOverdue
+    expr: incident_open_duration_seconds > 3600  # 1 hour
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: respond
+      csf_category: rs_rp
+    annotations:
+      summary: "Incident response overdue (> 1 hour)"
+      description: "Incident {{ $labels.incident_id }} open for {{ $value | humanizeDuration }}. Escalate."
+
+  - alert: ContainmentActionMissing
+    expr: incident_without_containment_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: respond
+      csf_category: rs_mi
+    annotations:
+      summary: "Incident without containment action"
+      description: "{{ $value }} incident(s) without documented containment. Apply containment."
+
+  - alert: CommunicationPlanNotExecuted
+    expr: incident_without_communication_total > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: respond
+      csf_category: rs_co
+    annotations:
+      summary: "Incident communication plan not executed"
+      description: "{{ $value }} incident(s) without stakeholder notification. Execute communication plan."
+
+  # RECOVER: Recovery planning and improvements
+  - alert: RecoveryPlanMissing
+    expr: critical_services_without_recovery_plan > 0
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: recover
+      csf_category: rc_rp
+    annotations:
+      summary: "Critical service missing recovery plan"
+      description: "{{ $value }} critical service(s) lack documented recovery plan. Create plan."
+
+  - alert: BackupRestoreTestOverdue
+    expr: backup_restore_test_last_completed < (time() - 7776000)  # 90 days
+    for: 0m
+    labels:
+      severity: warning
+      csf_function: recover
+      csf_category: rc_rp
+    annotations:
+      summary: "Backup restore test overdue (> 90 days)"
+      description: "Last backup restore test was {{ $value | humanizeDuration }} ago. Schedule test."
+
+  - alert: RecoveryTimeObjectiveBreach
+    expr: actual_recovery_time_seconds > recovery_time_objective_seconds
+    for: 0m
+    labels:
+      severity: critical
+      csf_function: recover
+      csf_category: rc_rp
+    annotations:
+      summary: "Recovery Time Objective (RTO) breached"
+      description: "Service {{ $labels.service }} recovery took {{ $value }}s, exceeding RTO of {{ $labels.rto_seconds }}s."
