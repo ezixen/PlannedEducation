@@ -6,6 +6,7 @@ import type { ThemeColor, ThemeRadius } from '../contexts/ThemeContext';
 import { apiClient } from '../api';
 import { AIKeySettings } from '../components/AIKeySettings';
 import { TwoFASettings } from '../components/TwoFASettings';
+import { PasskeysSettings } from '../components/PasskeysSettings';
 import { OCRProcessor } from '../components/OCRProcessor';
 import { STTProcessor } from '../components/STTProcessor';
 
@@ -257,6 +258,9 @@ export function Settings() {
 
         {/* Security section */}
         <TwoFASettings />
+
+        {/* Passkeys (WebAuthn) */}
+        <PasskeysSettings />
 
         {/* AI Key Management */}
         <AIKeySettings />
