@@ -56,7 +56,7 @@ export function useProctoring(config: ProctoringConfig) {
       if (consent.consent_given && !consent.withdrawn) {
         setState(prev => ({ ...prev, consentGiven: true }));
       }
-    } catch (err) {
+    } catch {
       // No consent found, that's fine
     }
   };

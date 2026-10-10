@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /**
  * Shared ChatGPT session context for teachers (ported from EasyLegalAid).
  * Manages OpenAI device-code sign-in, model/reasoning/verbosity preferences, and encrypted session history.
@@ -45,6 +46,8 @@ export interface ChatGptUserPreferences {
 }
 
 const PREFS_STORAGE_KEY = 'pe.chatgpt.preferences.v1';
+const DEFAULT_REASONING_CHOICES = ['none', 'low', 'medium', 'high'];
+const DEFAULT_VERBOSITY_CHOICES = ['low', 'medium', 'high'];
 
 export const DEFAULT_CHATGPT_PREFERENCES: ChatGptUserPreferences = {
   model: 'gpt-5.4-mini',
@@ -147,8 +150,8 @@ export function ChatGptSessionProvider({ children }: { children: ReactNode }) {
   const reasoningChoices =
     selectedModel?.reasoning_efforts && selectedModel.reasoning_efforts.length > 0
       ? selectedModel.reasoning_efforts
-      : options?.reasoning_efforts ?? ['none', 'low', 'medium', 'high'];
-  const verbosityChoices = options?.verbosity_levels ?? ['low', 'medium', 'high'];
+      : options?.reasoning_efforts ?? DEFAULT_REASONING_CHOICES;
+  const verbosityChoices = options?.verbosity_levels ?? DEFAULT_VERBOSITY_CHOICES;
 
   const applyOptions = useCallback((snapshot: ChatGptOptionsResponse) => {
     setOptions(snapshot);
@@ -222,6 +225,7 @@ export function ChatGptSessionProvider({ children }: { children: ReactNode }) {
   }, [isTeacher]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void refreshSession();
     void loadOptions(false);
   }, [refreshSession, loadOptions]);

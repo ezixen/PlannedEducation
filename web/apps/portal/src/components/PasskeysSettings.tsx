@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
@@ -36,13 +36,7 @@ export function PasskeysSettings() {
   const [registering, setRegistering] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
 
-  useEffect(() => {
-    if (user) {
-      fetchPasskeys();
-    }
-  }, [user]);
-
-  const fetchPasskeys = async () => {
+  const fetchPasskeys = useCallback(async () => {
     setLoading(true);
     try {
       const response = await apiClient.get('/auth/webauthn/credentials');
@@ -52,7 +46,13 @@ export function PasskeysSettings() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      void fetchPasskeys();
+    }
+  }, [user, fetchPasskeys]);
 
   const handleRegisterPasskey = async () => {
     setRegistering(true);

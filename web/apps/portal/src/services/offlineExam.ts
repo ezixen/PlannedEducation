@@ -784,7 +784,7 @@ export async function submitExamOffline(
     });
     
     return { success: true, queued: false, submissionId: response.data.submission_id };
-  } catch (error) {
+  } catch {
     // Queue for offline submission
     const db = await getExamDB();
     await db.put('offlineExams', {

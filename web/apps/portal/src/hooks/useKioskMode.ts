@@ -324,6 +324,7 @@ export function useKioskMode({
     
     // Method 2: Console timing (DevTools open affects performance)
     const start = performance.now();
+    // oxlint-disable-next-line no-debugger
     debugger; // This line causes a pause if DevTools is open
     const end = performance.now();
     

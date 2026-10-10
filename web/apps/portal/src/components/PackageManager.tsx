@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { packagesService, type PackageMetadata, type PackageExportRequest, type PackageImportResult } from '../services/packages';
 import { downloadBlob } from '../services/packages';
 import { useToast } from '../contexts/ToastContext';
@@ -27,13 +27,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
     compress: false,
   });
 
-  useEffect(() => {
-    if (examId) {
-      loadPackages();
-    }
-  }, [examId]);
-
-  const loadPackages = async () => {
+  const loadPackages = useCallback(async () => {
     setLoading(true);
     try {
       const response = await packagesService.listPackages();
@@ -43,7 +37,13 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
     } finally {
       setLoading(false);
     }
-  };
+  }, [showError]);
+
+  useEffect(() => {
+    if (examId) {
+      void loadPackages();
+    }
+  }, [examId, loadPackages]);
 
   const handleExport = async () => {
     if (!examId) {
