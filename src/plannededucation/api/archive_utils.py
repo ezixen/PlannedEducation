@@ -6,6 +6,7 @@ Uses zstd (best free compression) + AES-GCM encryption.
 
 import json
 import os
+import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -124,7 +125,11 @@ class ArchiveManager:
 
     def __init__(self, storage_root: str = "/var/lib/plannededucation/archive"):
         self.storage_root = Path(storage_root)
-        self.storage_root.mkdir(parents=True, exist_ok=True)
+        try:
+            self.storage_root.mkdir(parents=True, exist_ok=True)
+        except OSError:
+            self.storage_root = Path(tempfile.gettempdir()) / "plannededucation_archive"
+            self.storage_root.mkdir(parents=True, exist_ok=True)
 
     def get_archive_file_path(self, archive_path: str) -> Path:
         """Get full filesystem path for archive."""
