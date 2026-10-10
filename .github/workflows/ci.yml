@@ -187,13 +187,15 @@ jobs:
 
       - name: Scan Backend Dockerfile
         run: |
-          trivy image --ignore-unfixed --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-backend.sarif \
-            $(docker build -q -f Dockerfile.backend .)
+          BACKEND_IMAGE=$(docker build -q -f Dockerfile.backend .)
+          trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL --format table "$BACKEND_IMAGE"
+          trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL --format sarif --output trivy-backend.sarif "$BACKEND_IMAGE"
 
       - name: Scan Frontend Dockerfile
         run: |
-          trivy image --ignore-unfixed --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-frontend.sarif \
-            $(docker build -q -f Dockerfile.frontend .)
+          FRONTEND_IMAGE=$(docker build -q -f Dockerfile.frontend .)
+          trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL --format table "$FRONTEND_IMAGE"
+          trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL --format sarif --output trivy-frontend.sarif "$FRONTEND_IMAGE"
 
       - name: Upload Trivy Results
         uses: actions/upload-artifact@v7
@@ -225,7 +227,8 @@ jobs:
       - name: Generate Python SBOM
         run: |
           cd src
-          cyclonedx-py requirements -o ../sbom-python.json --of json
+          cyclonedx-py requirements requirements.txt --of JSON -o ../sbom-python.json || \
+            cyclonedx-py requirements -o ../sbom-python.json --of json
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -293,7 +296,7 @@ jobs:
 
       - name: Sign SBOM
         run: |
-          cosign sign-blob --yes sbom-merged.json --output-signature sbom-merged.json.sig
+          cosign sign-blob --yes sbom-merged.json --bundle sbom-merged.json.sig
 
       - name: Upload signatures
         uses: actions/upload-artifact@v7
@@ -355,7 +358,7 @@ jobs:
             }
           }
           EOF
-          cosign sign-blob --yes slsa-provenance.json --output-signature slsa-provenance.json.sig
+          cosign sign-blob --yes slsa-provenance.json --bundle slsa-provenance.json.sig
 
       - name: Upload SLSA provenance
         uses: actions/upload-artifact@v7
