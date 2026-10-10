@@ -1,16 +1,36 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useToast } from '../contexts/ToastContext';
+import { apiClient } from '../api';
 
 import { SecureChat } from '../components/SecureChat';
 import { ProctoringSession } from '../components/ProctoringSession';
+import {
+  StudentSubmissionReview,
+  type StudentSubmissionDetail,
+} from '../components/StudentSubmissionReview';
 import { useOfflineExam } from '../hooks/useOfflineExam';
 
 export function TakeExam() {
   const { id } = useParams<{ id: string }>();
   const { error: showError, success: showSuccess, warn: showWarn } = useToast();
   const [submitting] = useState(false);
-  
+  const [completedSubmission, setCompletedSubmission] = useState<StudentSubmissionDetail | null>(null);
+  const [loadingReview, setLoadingReview] = useState(false);
+
+  const fetchMySubmission = useCallback(async () => {
+    if (!id) return;
+    setLoadingReview(true);
+    try {
+      const res = await apiClient.get(`/exams/${id}/my-submission`);
+      setCompletedSubmission(res.data);
+    } catch {
+      // Not yet submitted or offline
+    } finally {
+      setLoadingReview(false);
+    }
+  }, [id]);
+
   // Use the new offline exam engine
   const {
     examPackage,
@@ -35,19 +55,35 @@ export function TakeExam() {
     },
     onExamCompleted: () => {
       showSuccess('Exam completed!');
+      fetchMySubmission();
     },
     onTimeWarning: (minutes) => {
       showWarn(`${minutes} minute${minutes !== 1 ? 's' : ''} remaining!`);
     },
   });
 
-  // Handle exam completion
-  if (isExamComplete) {
+  useEffect(() => {
+    if (isExamComplete) {
+      fetchMySubmission();
+    }
+  }, [isExamComplete, fetchMySubmission]);
+
+  // Auto-poll for teacher corrections while completed but not yet graded
+  useEffect(() => {
+    if (!isExamComplete && !completedSubmission) return;
+    if (completedSubmission?.is_graded) return;
+    const timer = window.setInterval(fetchMySubmission, 4000);
+    return () => clearInterval(timer);
+  }, [isExamComplete, completedSubmission, fetchMySubmission]);
+
+  // Handle exam completion & side-by-side student review
+  if (isExamComplete || completedSubmission) {
     return (
-      <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-        <h1 style={{ color: 'var(--primary-color)', fontSize: '1.75rem', fontWeight: 700 }}>Exam Submitted Successfully</h1>
-        <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Your answers have been cryptographically sealed. You may now close Safe Exam Browser.</p>
-      </div>
+      <StudentSubmissionReview
+        submission={completedSubmission}
+        loading={loadingReview}
+        onRefresh={fetchMySubmission}
+      />
     );
   }
 

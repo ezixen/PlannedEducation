@@ -125,10 +125,25 @@ def get_anonymized_submissions(
 
     anonymized_data = []
     for index, sub in enumerate(submissions):
+        parsed_question_grades = {}
+        summary_feedback = sub.feedback
+        if sub.feedback and sub.feedback.startswith("{"):
+            try:
+                import json
+                fb_obj = json.loads(sub.feedback)
+                if isinstance(fb_obj, dict) and "question_grades" in fb_obj:
+                    summary_feedback = fb_obj.get("summary_feedback", "")
+                    for qg in fb_obj.get("question_grades", []):
+                        if isinstance(qg, dict) and "question_id" in qg:
+                            parsed_question_grades[qg["question_id"]] = qg
+            except Exception:
+                pass
+
         anon_answers = []
         for ans in sub.answers:
             # Scrub PII from student response before sending to external AI
             scrubbed_response = scrub_pii(ans.student_response or "")
+            saved_qg = parsed_question_grades.get(ans.question_id, {})
             anon_answers.append(
                 {
                     "question_id": ans.question_id,
@@ -137,6 +152,9 @@ def get_anonymized_submissions(
                     "points_possible": ans.question.points,
                     "correct_answer": ans.question.correct_answer,
                     "rubric": ans.question.rubric,
+                    "saved_score": saved_qg.get("score"),
+                    "saved_feedback": saved_qg.get("feedback"),
+                    "saved_corrected_answer": saved_qg.get("corrected_answer"),
                 }
             )
 
@@ -144,6 +162,9 @@ def get_anonymized_submissions(
             {
                 "anonymous_student_ref": f"Student_{index + 1}",
                 "submission_id": sub.id,  # Kept so AI can POST grades back
+                "score": sub.score,
+                "feedback": summary_feedback,
+                "teacher_approved": sub.score is not None,
                 "answers": anon_answers,
             }
         )
@@ -159,14 +180,26 @@ def post_ai_grades(
     current_user: models.User = Depends(get_current_user),
 ):
     """
-    Endpoint for posting AI-generated grades back to the system.
+    Endpoint for posting AI-generated and teacher-corrected grades back to the system.
     Only the teacher who owns the exam may post grades for its submissions.
     """
+    import json
+
     submission = _get_submission_and_verify_ownership(submission_id, current_user, db)
 
-    submission.feedback = body.feedback
+    if body.question_grades:
+        submission.feedback = json.dumps(
+            {
+                "summary_feedback": body.feedback,
+                "question_grades": [qg.model_dump() for qg in body.question_grades],
+            }
+        )
+    else:
+        submission.feedback = body.feedback
+
     if body.score is not None:
         submission.score = body.score
 
     db.commit()
     return {"status": "success", "message": "Grades and feedback saved"}
+

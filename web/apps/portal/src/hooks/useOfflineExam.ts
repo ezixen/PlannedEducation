@@ -144,6 +144,27 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       
       showSuccess('Exam loaded successfully');
     } catch (error: any) {
+      if (error?.response?.status === 400 && String(error?.response?.data?.detail || '').toLowerCase().includes('completed')) {
+        setExamState({
+          id: `${examId}-${studentId}`,
+          examId,
+          studentId,
+          studentName: user?.full_name || user?.username || 'Student',
+          package: null,
+          answers: {},
+          answerTimestamps: {},
+          currentQuestionIndex: 0,
+          timeRemainingMs: 0,
+          timerState: 'completed',
+          lastTimerTick: Date.now(),
+          startedAt: Date.now(),
+          lastHeartbeat: Date.now(),
+          isComplete: true,
+          sebViolations: [],
+          lastUpdated: Date.now(),
+        });
+        return;
+      }
       try {
         const cachedPkg = await getCachedExamPackage(examId);
         if (cachedPkg) {
@@ -160,7 +181,7 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       setLoading(false);
       setInitializing(false);
     }
-  }, [examId, studentId, authLoading, navigate, showError, showSuccess]);
+  }, [examId, studentId, user, authLoading, navigate, showError, showSuccess]);
   
   useEffect(() => {
     initializeExam();
@@ -267,9 +288,6 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       }
       
       onExamCompleted?.();
-      
-      // Navigate to results or dashboard after a delay
-      setTimeout(() => navigate('/dashboard'), 3000);
     } catch (error: any) {
       showError('Failed to seal exam submission', error.message);
       console.error('Seal failed:', error);

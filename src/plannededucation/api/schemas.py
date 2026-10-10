@@ -143,9 +143,17 @@ class ExamSubmitRequest(BaseModel):
 
 # ── AI ────────────────────────────────────────────────────────────────────────
 
+class QuestionGradeItem(BaseModel):
+    question_id: str
+    score: float = Field(..., ge=0.0, le=100.0)
+    feedback: str = Field("", max_length=4096)
+    corrected_answer: str | None = Field(None, max_length=8192)
+
+
 class AiGradeRequest(BaseModel):
-    feedback: str = Field(..., max_length=8192)
+    feedback: str = Field(..., max_length=16384)
     score: float | None = Field(None, ge=0.0, le=100.0)
+    question_grades: list[QuestionGradeItem] | None = None
 
 
 # ── Account Relationships ─────────────────────────────────────────────────────
@@ -211,7 +219,7 @@ class RecoveryCodesResponse(BaseModel):
 # ── AI Key Management ────────────────────────────────────────────────────────
 
 class AIKeyUpdate(BaseModel):
-    ai_provider: str | None = Field(None, pattern=r"^(gemini|openrouter|ollama|openai)$")
+    ai_provider: str | None = Field(None, pattern=r"^(chatgpt|gemini|openrouter|ollama|openai)$")
     ai_api_key: str | None = Field(None, max_length=512)
     ai_model_name: str | None = Field(None, max_length=128)
     ai_base_url: str | None = Field(None, max_length=512)

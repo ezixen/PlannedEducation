@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
+import { ChatGptPanel } from './ChatGptPanel';
 
 export function AIKeySettings() {
   const { user } = useAuth();
@@ -73,8 +74,14 @@ export function AIKeySettings() {
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
       <h3>AI Provider Settings</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        Configure your AI provider for automated grading. Your API key is encrypted and never exposed.
+        Configure your AI provider for automated grading, or sign in with your ChatGPT account directly below.
       </p>
+
+      {user?.role === 'teacher' && (
+        <div style={{ marginBottom: '1.5rem' }}>
+          <ChatGptPanel compact />
+        </div>
+      )}
 
       <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
         <label>
@@ -84,10 +91,11 @@ export function AIKeySettings() {
             onChange={e => setProvider(e.target.value)}
             style={inputStyle}
           >
+            <option value="chatgpt">ChatGPT Account (Device Sign-In — No API Key)</option>
             <option value="gemini">Google Gemini</option>
             <option value="openrouter">OpenRouter</option>
             <option value="ollama">Ollama (Local)</option>
-            <option value="openai">OpenAI</option>
+            <option value="openai">OpenAI (API Key)</option>
           </select>
         </label>
 

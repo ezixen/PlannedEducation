@@ -356,6 +356,84 @@ def submit_exam(
     return {"status": "success", "message": "Exam submitted successfully"}
 
 
+@router.get("/{exam_id}/my-submission")
+def get_my_submission(
+    exam_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Return the current student's completed submission for this exam, including
+    their original submitted answers alongside the teacher's corrected version,
+    per-question scores, feedback, and model solutions once graded.
+    """
+    exam = _get_exam_or_404(exam_id, db)
+    submission = (
+        db.query(models.ExamSubmission)
+        .filter(
+            models.ExamSubmission.exam_id == exam_id,
+            models.ExamSubmission.student_id == current_user.id,
+        )
+        .first()
+    )
+    if not submission or submission.completed_at is None:
+        raise HTTPException(status_code=404, detail="No completed submission found for this exam")
+
+    parsed_question_grades: dict[str, dict] = {}
+    summary_feedback = submission.feedback or ""
+    if submission.feedback and submission.feedback.startswith("{"):
+        try:
+            fb_obj = json.loads(submission.feedback)
+            if isinstance(fb_obj, dict) and "question_grades" in fb_obj:
+                summary_feedback = fb_obj.get("summary_feedback", "")
+                for qg in fb_obj.get("question_grades", []):
+                    if isinstance(qg, dict) and "question_id" in qg:
+                        parsed_question_grades[qg["question_id"]] = qg
+        except Exception:
+            pass
+
+    is_graded = submission.score is not None
+    items = []
+    total_possible = 0
+    for ans in submission.answers:
+        q = ans.question
+        pts = q.points if q else 1
+        total_possible += pts
+        qg = parsed_question_grades.get(ans.question_id, {})
+        items.append(
+            {
+                "question_id": ans.question_id,
+                "question_type": q.question_type if q else "essay",
+                "question_text": ans.generated_question_text or (q.text if q else ""),
+                "points_possible": pts,
+                "student_response": ans.student_response or "",
+                "score": qg.get("score") if is_graded else None,
+                "teacher_feedback": qg.get("feedback") if is_graded else None,
+                "corrected_answer": (
+                    qg.get("corrected_answer") or (q.correct_answer if q else None)
+                )
+                if is_graded
+                else None,
+                "correct_answer": (q.correct_answer if q else None) if is_graded else None,
+                "rubric": (q.rubric if q else None) if is_graded else None,
+            }
+        )
+
+    return {
+        "submission_id": submission.id,
+        "exam_id": exam.id,
+        "exam_title": exam.title,
+        "started_at": submission.started_at.isoformat() if submission.started_at else None,
+        "completed_at": submission.completed_at.isoformat() if submission.completed_at else None,
+        "is_graded": is_graded,
+        "score": submission.score,
+        "total_possible": total_possible,
+        "summary_feedback": summary_feedback,
+        "questions": items,
+    }
+
+
+
 # ── Heartbeat ────────────────────────────────────────────────────────────────
 
 @router.post("/{exam_id}/heartbeat")

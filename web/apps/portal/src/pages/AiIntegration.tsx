@@ -1,20 +1,18 @@
-
 import { API_URL } from '../api';
+import { ChatGptPanel } from '../components/ChatGptPanel';
 
 export function AiIntegration() {
-  
-  
-  
-
   const systemPrompt = `You are an expert, objective teacher and AI grader working for the Planned Education platform. Your job is to assist teachers in grading exams, grouping mistakes, and transcribing handwritten math or audio feedback. You must be strictly objective, unbiased, and format your output cleanly. You are processing anonymized data to protect student privacy.`;
 
   return (
     <div>
-      <h1>External AI Integrations</h1>
-      <p style={{ color: 'gray', marginBottom: '2rem' }}>
-        Planned Education does not process AI natively to ensure 100% data sovereignty. 
-        Instead, we provide a secure, anonymized API endpoint that you (or an external script/service) can plug into any LLM.
+      <h1>External AI Integrations &amp; Embedded ChatGPT</h1>
+      <p style={{ color: 'gray', marginBottom: '1.5rem' }}>
+        Planned Education does not process AI natively to ensure 100% data sovereignty.
+        Teachers can connect their own ChatGPT account directly below (via OpenAI Device-Code Sign-In, no API key required) or connect an external LLM to our anonymized API endpoint.
       </p>
+
+      <ChatGptPanel defaultInstructions={systemPrompt} />
 
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
         <h3>Your Anonymized API Endpoint</h3>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { apiClient } from '../api';
+import { ChatGptPanel } from '../components/ChatGptPanel';
 
 export function ExamEditor() {
   const { id } = useParams<{ id: string }>();
@@ -75,6 +76,14 @@ export function ExamEditor() {
         </div>
       </div>
 
+      <ChatGptPanel
+        compact
+        quickActionLabel="Draft Questions for This Exam"
+        onBuildQuickPrompt={() =>
+          `Draft 3 new ${qType.replace('_', ' ')} questions with answers and rubrics for the exam "${exam.title}".`
+        }
+      />
+
       <h3>Question Bank ({exam.questions?.length || 0})</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
         {exam.questions?.map((q: any, idx: number) => (
@@ -89,4 +98,5 @@ export function ExamEditor() {
     </div>
   );
 }
+
 

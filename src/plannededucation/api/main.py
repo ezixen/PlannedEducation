@@ -32,6 +32,7 @@ from . import (
     routes_archive,
     routes_auth,
     routes_chat,
+    routes_chatgpt,
     routes_exam,
     routes_ocr,
     routes_packages,
@@ -338,6 +339,7 @@ app.include_router(routes_stt.router)
 app.include_router(routes_proctoring.router)
 app.include_router(routes_packages.router)
 app.include_router(routes_ai.router)
+app.include_router(routes_chatgpt.router)
 app.include_router(routes_archive.router)
 app.include_router(routes_admin.router)
 

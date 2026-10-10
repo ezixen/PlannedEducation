@@ -6,7 +6,6 @@ import json
 import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, Optional
 
 import httpx
 
@@ -21,17 +20,17 @@ class AIProviderConfig:
     provider: str  # gemini, openrouter, ollama, openai
     api_key: str
     model_name: str
-    base_url: Optional[str] = None
+    base_url: str | None = None
 
 
 @dataclass
 class AIResponse:
     """Standardized AI response."""
     content: str
-    usage: Optional[dict] = None
-    model: Optional[str] = None
-    provider: Optional[str] = None
-    error: Optional[str] = None
+    usage: dict | None = None
+    model: str | None = None
+    provider: str | None = None
+    error: str | None = None
 
 
 class AIProvider(ABC):
@@ -42,12 +41,14 @@ class AIProvider(ABC):
         self.client = httpx.AsyncClient(timeout=60.0)
 
     @abstractmethod
-    async def generate(self, prompt: str, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
         """Generate a response from the AI provider."""
         pass
 
     @abstractmethod
-    async def generate_structured(self, prompt: str, schema: dict, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
         """Generate a structured response (JSON) from the AI provider."""
         pass
 
@@ -59,14 +60,16 @@ class AIProvider(ABC):
 class GeminiProvider(AIProvider):
     """Google Gemini API provider."""
 
-    async def generate(self, prompt: str, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
-        url = f"{self.config.base_url or 'https://generativelanguage.googleapis.com'}/v1beta/models/{self.config.model_name}:generateContent"
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
+        base_url = self.config.base_url or "https://generativelanguage.googleapis.com"
+        url = f"{base_url}/v1beta/models/{self.config.model_name}:generateContent"
         params = {"key": self.config.api_key}
 
         contents = []
         if system_prompt:
             contents.append({"role": "user", "parts": [{"text": system_prompt}]})
-            contents.append({"role": "model", "parts": [{"text": "Understood. I'll follow those instructions."}]})
+            ack = "Understood. I'll follow those instructions."
+            contents.append({"role": "model", "parts": [{"text": ack}]})
         contents.append({"role": "user", "parts": [{"text": prompt}]})
 
         payload = {
@@ -94,21 +97,28 @@ class GeminiProvider(AIProvider):
                     provider="gemini"
                 )
             else:
-                return AIResponse(content="", error="No candidates in response", provider="gemini")
+                return AIResponse(
+                    content="", error="No candidates in response", provider="gemini"
+                )
         except Exception as e:
             logger.error(f"Gemini API error: {e}")
             return AIResponse(content="", error=str(e), provider="gemini")
 
-    async def generate_structured(self, prompt: str, schema: dict, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
         # Add JSON schema instruction to prompt
-        structured_prompt = f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{json.dumps(schema, indent=2)}"
+        schema_str = json.dumps(schema, indent=2)
+        structured_prompt = (
+            f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{schema_str}"
+        )
         return await self.generate(structured_prompt, system_prompt, **kwargs)
 
 
 class OpenRouterProvider(AIProvider):
     """OpenRouter API provider (supports multiple models)."""
 
-    async def generate(self, prompt: str, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
         url = f"{self.config.base_url or 'https://openrouter.ai/api'}/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.config.api_key}",
@@ -145,20 +155,27 @@ class OpenRouterProvider(AIProvider):
                     provider="openrouter"
                 )
             else:
-                return AIResponse(content="", error="No choices in response", provider="openrouter")
+                return AIResponse(
+                    content="", error="No choices in response", provider="openrouter"
+                )
         except Exception as e:
             logger.error(f"OpenRouter API error: {e}")
             return AIResponse(content="", error=str(e), provider="openrouter")
 
-    async def generate_structured(self, prompt: str, schema: dict, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
-        structured_prompt = f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{json.dumps(schema, indent=2)}"
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
+        schema_str = json.dumps(schema, indent=2)
+        structured_prompt = (
+            f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{schema_str}"
+        )
         return await self.generate(structured_prompt, system_prompt, **kwargs)
 
 
 class OllamaProvider(AIProvider):
     """Ollama local API provider."""
 
-    async def generate(self, prompt: str, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
         url = f"{self.config.base_url or 'http://localhost:11434'}/api/generate"
 
         full_prompt = prompt
@@ -184,7 +201,10 @@ class OllamaProvider(AIProvider):
             content = data.get("response", "")
             return AIResponse(
                 content=content,
-                usage={"prompt_tokens": data.get("prompt_eval_count", 0), "completion_tokens": data.get("eval_count", 0)},
+                usage={
+                    "prompt_tokens": data.get("prompt_eval_count", 0),
+                    "completion_tokens": data.get("eval_count", 0),
+                },
                 model=self.config.model_name,
                 provider="ollama"
             )
@@ -192,15 +212,20 @@ class OllamaProvider(AIProvider):
             logger.error(f"Ollama API error: {e}")
             return AIResponse(content="", error=str(e), provider="ollama")
 
-    async def generate_structured(self, prompt: str, schema: dict, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
-        structured_prompt = f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{json.dumps(schema, indent=2)}"
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
+        schema_str = json.dumps(schema, indent=2)
+        structured_prompt = (
+            f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{schema_str}"
+        )
         return await self.generate(structured_prompt, system_prompt, **kwargs)
 
 
 class OpenAICompatibleProvider(AIProvider):
     """Generic OpenAI-compatible API provider."""
 
-    async def generate(self, prompt: str, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
         url = f"{self.config.base_url or 'https://api.openai.com'}/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.config.api_key}",
@@ -235,13 +260,83 @@ class OpenAICompatibleProvider(AIProvider):
                     provider="openai-compatible"
                 )
             else:
-                return AIResponse(content="", error="No choices in response", provider="openai-compatible")
+                return AIResponse(
+                    content="",
+                    error="No choices in response",
+                    provider="openai-compatible",
+                )
         except Exception as e:
             logger.error(f"OpenAI-compatible API error: {e}")
             return AIResponse(content="", error=str(e), provider="openai-compatible")
 
-    async def generate_structured(self, prompt: str, schema: dict, system_prompt: Optional[str] = None, **kwargs) -> AIResponse:
-        structured_prompt = f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{json.dumps(schema, indent=2)}"
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
+        schema_str = json.dumps(schema, indent=2)
+        structured_prompt = (
+            f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{schema_str}"
+        )
+        return await self.generate(structured_prompt, system_prompt, **kwargs)
+
+
+class ChatGptSessionProvider(AIProvider):
+    """ChatGPT account session provider via OpenAI device-code OAuth (no API key required)."""
+
+    def __init__(self, config: AIProviderConfig, user_id: str):
+        super().__init__(config)
+        self.user_id = user_id
+
+    async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
+        import time
+
+        from ..chatgpt import client as chatgpt_client
+        from ..chatgpt import models as chatgpt_models
+        from ..chatgpt import oauth as chatgpt_oauth
+        from ..chatgpt.token_store import clear_tokens, get_tokens, put_tokens
+
+        tokens = get_tokens(self.user_id)
+        if tokens is None:
+            return AIResponse(content="", error="ChatGPT session not connected", provider="chatgpt")
+
+        if tokens.expires_at <= time.time() + 60:
+            try:
+                tokens = await chatgpt_oauth.refresh_tokens(tokens.refresh_token)
+                put_tokens(self.user_id, tokens)
+            except Exception as e:
+                clear_tokens(self.user_id)
+                return AIResponse(
+                    content="",
+                    error=f"ChatGPT session expired: {e}",
+                    provider="chatgpt",
+                )
+
+        try:
+            snapshot = await chatgpt_models.get_chatgpt_options(self.user_id, tokens)
+            model_candidates = chatgpt_models.model_fallback_chain(snapshot, self.config.model_name)
+            reply = await chatgpt_client.create_response(
+                tokens,
+                message=prompt,
+                instructions=(system_prompt or "").strip(),
+                model=model_candidates[0],
+                model_candidates=model_candidates,
+            )
+            return AIResponse(
+                content=reply,
+                usage={"prompt_tokens": len(prompt) // 4, "completion_tokens": len(reply) // 4},
+                model=model_candidates[0],
+                provider="chatgpt",
+            )
+        except Exception as e:
+            logger.error(f"ChatGPT session provider error: {e}")
+            return AIResponse(content="", error=str(e), provider="chatgpt")
+
+    async def generate_structured(
+        self, prompt: str, schema: dict, system_prompt: str | None = None, **kwargs
+    ) -> AIResponse:
+        schema_str = json.dumps(schema, indent=2)
+        structured_prompt = (
+            f"{prompt}\n\nRespond ONLY with valid JSON matching this schema:\n{schema_str}"
+        )
         return await self.generate(structured_prompt, system_prompt, **kwargs)
 
 
@@ -261,8 +356,21 @@ def get_ai_provider(config: AIProviderConfig) -> AIProvider:
     return provider_class(config)
 
 
-async def get_teacher_ai_provider(user, db) -> Optional[AIProvider]:
-    """Get AI provider configured for a teacher."""
+async def get_teacher_ai_provider(user, db) -> AIProvider | None:
+    """Get AI provider configured for a teacher (prefers active ChatGPT session)."""
+    from ..chatgpt.token_store import get_tokens
+
+    chatgpt_tokens = get_tokens(user.id)
+    if chatgpt_tokens is not None and (
+        (user.ai_provider or "").lower() == "chatgpt" or not user.ai_api_key_encrypted
+    ):
+        config = AIProviderConfig(
+            provider="chatgpt",
+            api_key="",
+            model_name=user.ai_model_name or "gpt-5.4-mini",
+        )
+        return ChatGptSessionProvider(config, user_id=user.id)
+
     if not user.ai_api_key_encrypted:
         return None
 
@@ -277,4 +385,4 @@ async def get_teacher_ai_provider(user, db) -> Optional[AIProvider]:
         return get_ai_provider(config)
     except Exception as e:
         logger.error(f"Failed to create AI provider for user {user.id}: {e}")
-        return None
+        return None
