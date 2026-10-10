@@ -6,9 +6,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const PROJECT_ROOT = resolve(__dirname, '../../../../');
-const PORTAL_ROOT = resolve(__dirname, '../../');
+const E2E_ROOT = resolve(__dirname, '../../');
+const PLAYWRIGHT_ROOT = resolve(__dirname, '../');
+const PORTAL_ROOT = resolve(PROJECT_ROOT, 'web/apps/portal');
 
 const TEMP_DIRS = [
+  resolve(E2E_ROOT, 'test-results'),
+  resolve(E2E_ROOT, 'playwright-report'),
+  resolve(E2E_ROOT, 'blob-report'),
+  resolve(PLAYWRIGHT_ROOT, 'test-results'),
+  resolve(PLAYWRIGHT_ROOT, 'playwright-report'),
+  resolve(PLAYWRIGHT_ROOT, 'blob-report'),
   resolve(PORTAL_ROOT, 'test-results'),
   resolve(PORTAL_ROOT, 'playwright-report'),
   resolve(PORTAL_ROOT, 'blob-report'),
@@ -18,6 +26,9 @@ const TEMP_DIRS = [
 const TEMP_FILES = [
   resolve(PROJECT_ROOT, 'artifacts/visual-test-report.json'),
   resolve(PROJECT_ROOT, 'test_visual.db'),
+  resolve(PLAYWRIGHT_ROOT, 'frontend-server.out.log'),
+  resolve(PLAYWRIGHT_ROOT, 'frontend-server.err.log'),
+  resolve(PORTAL_ROOT, 'frontend-server.log'),
 ];
 
 export default async function globalTeardown() {

@@ -65,22 +65,24 @@ export function TakeExam() {
   };
 
   return (
-    <div style={{ display: 'flex', gap: '2rem', height: 'calc(100vh - 100px)' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', minHeight: 'calc(100vh - 100px)' }}>
       
       {/* Exam Content */}
-      <div style={{ flex: 1, overflowY: 'auto', paddingRight: '1rem' }}>
+      <div style={{ flex: '1 1 300px', minWidth: 0, overflowY: 'auto' }}>
         {/* Timer & Progress Header */}
         <div style={{ 
           display: 'flex', 
+          flexWrap: 'wrap',
           justifyContent: 'space-between', 
           alignItems: 'center',
+          gap: '0.75rem',
           padding: '1rem',
           backgroundColor: isExamExpired ? '#fef2f2' : isExamRunning ? '#ecfdf5' : 'var(--sidebar-bg)',
           border: `1px solid ${isExamExpired ? '#fecaca' : isExamRunning ? '#a7f3d0' : 'var(--border-color)'}`,
           borderRadius: 'var(--radius-lg)',
           marginBottom: '1rem',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem' }}>
             <div style={{ 
               fontSize: '1.5rem', 
               fontWeight: 700, 
@@ -107,7 +109,7 @@ export function TakeExam() {
               {progressPercent}% complete
             </span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
               Question {currentQuestionIndex + 1} of {totalQuestions}
             </span>
@@ -198,7 +200,7 @@ export function TakeExam() {
       </div>
 
       {/* Secure Chat Sidebar for raising hand */}
-      <div style={{ width: '320px', minWidth: '300px', maxWidth: '360px', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: '1 1 260px', maxWidth: '100%', boxSizing: 'border-box', borderLeft: '1px solid var(--border-color)', paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
         {/* Timer Mini Display */}
         <div style={{ 
           padding: '1rem', 

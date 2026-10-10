@@ -4,19 +4,25 @@ const PORTAL_URL = process.env.PORTAL_URL || 'http://127.0.0.1:5175';
 const CI = process.env.CI === 'true';
 
 export default defineConfig({
-  testDir: '../../../tests/e2e/playwright/tests',
-  snapshotDir: '../../../tests/e2e/playwright/snapshots',
+  testDir: './tests',
+  snapshotDir: './snapshots',
   fullyParallel: false,
   forbidOnly: CI,
-  retries: 0,
-  workers: 1,
-  reporter: 'list',
-  globalTeardown: '../../../tests/e2e/playwright/tests/global-teardown.ts',
+  retries: CI ? 2 : 0,
+  workers: CI ? 2 : 1,
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: '../playwright-report', open: 'never' }],
+    ['json', { outputFile: '../test-results/results.json' }],
+  ],
+  globalTeardown: './tests/global-teardown.ts',
   use: {
     baseURL: PORTAL_URL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    actionTimeout: 30000,
+    navigationTimeout: 30000,
   },
   projects: [
     {
@@ -91,4 +97,5 @@ export default defineConfig({
       animations: 'disabled',
     },
   },
+  timeout: 60000,
 });

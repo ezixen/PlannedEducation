@@ -11,7 +11,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test:visual": "playwright test",
-    "test:visual:clean": "node -e \"import('./tests/visual/global-teardown.ts').then(m => m.default())\""
+    "test:visual:clean": "node -e \"import('../../../tests/e2e/playwright/tests/global-teardown.ts').then(m => m.default())\""
   },
   "dependencies": {
     "@react-oauth/google": "^0.13.5",

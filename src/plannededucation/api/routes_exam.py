@@ -204,7 +204,7 @@ def start_exam(
     """
     exam = _get_exam_or_404(exam_id, db)
 
-    # Prevent duplicate submissions via DB unique constraint + application-level check
+    # Prevent duplicate completed submissions; resume if still in progress
     existing_sub = (
         db.query(models.ExamSubmission)
         .filter(
@@ -214,6 +214,28 @@ def start_exam(
         .first()
     )
     if existing_sub:
+        if existing_sub.completed_at is None:
+            existing_answers = (
+                db.query(models.Answer, models.Question)
+                .join(models.Question, models.Answer.question_id == models.Question.id)
+                .filter(models.Answer.submission_id == existing_sub.id)
+                .all()
+            )
+            return {
+                "submission_id": existing_sub.id,
+                "questions": [
+                    {
+                        "question_id": q.id,
+                        "question_type": q.question_type,
+                        "text": ans.generated_question_text or q.text,
+                        "options": json.loads(ans.generated_options_json)
+                        if ans.generated_options_json
+                        else (json.loads(q.options_json) if q.options_json else None),
+                        "points": q.points,
+                    }
+                    for ans, q in existing_answers
+                ],
+            }
         raise HTTPException(status_code=409, detail="You have already started this exam")
 
     submission = models.ExamSubmission(

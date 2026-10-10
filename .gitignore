@@ -37,13 +37,17 @@ __pycache__/
 htmlcov/
 
 # Build and Artifacts
+node_modules/
 artifacts/
 dist/
 build/
 *.egg-info/
 ci_log*.txt
+test-results/
+playwright-report/
 
 # OS/IDE
 .DS_Store
 .vscode/
 .idea/
+

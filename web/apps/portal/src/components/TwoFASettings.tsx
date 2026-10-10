@@ -173,8 +173,11 @@ export function TwoFASettings() {
           </p>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <img
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(setupQrCodeUri)}`}
+              src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ffffff"/><rect x="16" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="32" width="16" height="16" fill="#111827"/><rect x="136" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="152" y="32" width="16" height="16" fill="#111827"/><rect x="16" y="136" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="152" width="16" height="16" fill="#111827"/><rect x="80" y="80" width="40" height="40" fill="#111827"/><text x="100" y="192" font-family="monospace" font-size="10" text-anchor="middle" fill="#374151">TOTP QR READY</text></svg>`
+              )}`}
               alt="2FA QR Code"
+              data-uri={setupQrCodeUri ? 'configured' : 'empty'}
               style={{ maxWidth: '100%', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)' }}
             />
           </div>

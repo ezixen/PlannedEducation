@@ -3,39 +3,38 @@ import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
 
+interface PasskeyCredential {
+  credential_id: string;
+  public_key: string;
+  sign_count: number;
+  transports: string[] | null;
+  created_at: string;
+  last_used_at: string | null;
+}
+
+interface WebAuthnRegistrationOptions {
+  challenge: string;
+  rp: { id: string; name: string };
+  user: { id: string; name: string; displayName: string };
+  pubKeyCredParams: { type: string; alg: number }[];
+  timeout: number;
+  attestation: string;
+  authenticatorSelection: {
+    authenticatorAttachment: string;
+    residentKey: string;
+    userVerification: string;
+  };
+  extensions: Record<string, any>;
+}
+
 export function PasskeysSettings() {
-  const { user, refreshUser } = useAuth();
+  const { user } = useAuth();
   const { success: showSuccess, error: showError, info: showInfo } = useToast();
 
   const [passkeys, setPasskeys] = useState<PasskeyCredential[]>([]);
   const [loading, setLoading] = useState(false);
   const [registering, setRegistering] = useState(false);
-  const [registrationOptions, setRegistrationOptions] = useState<WebAuthnRegistrationOptions | null>(null);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
-
-  interface PasskeyCredential {
-    credential_id: string;
-    public_key: string;
-    sign_count: number;
-    transports: string[] | null;
-    created_at: string;
-    last_used_at: string | null;
-  }
-
-  interface WebAuthnRegistrationOptions {
-    challenge: string;
-    rp: { id: string; name: string };
-    user: { id: string; name: string; displayName: string };
-    pubKeyCredParams: { type: string; alg: number }[];
-    timeout: number;
-    attestation: string;
-    authenticatorSelection: {
-      authenticatorAttachment: string;
-      residentKey: string;
-      userVerification: string;
-    };
-    extensions: Record<string, any>;
-  }
 
   useEffect(() => {
     if (user) {
@@ -44,57 +43,59 @@ export function PasskeysSettings() {
   }, [user]);
 
   const fetchPasskeys = async () => {
+    setLoading(true);
     try {
       const response = await apiClient.get('/auth/webauthn/credentials');
-      setPasskeys(response.data);
+      setPasskeys(Array.isArray(response.data) ? response.data : response.data?.credentials || []);
     } catch (err: any) {
       console.error('Failed to fetch passkeys:', err);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleRegisterStart = async () => {
+  const handleRegisterPasskey = async () => {
     setRegistering(true);
     try {
-      const response = await apiClient.post('/auth/webauthn/registration/start');
-      setRegistrationOptions(response.data.registration_options);
-      setShowRegisterModal(true);
-      showInfo('Use your device\'s biometric/PIN to create a passkey');
-    } catch (err: any) {
-      showError('Failed to start passkey registration.', err.response?.data?.detail || err.message);
-    } finally {
-      setRegistering(false);
-    }
-  };
+      const startRes = await apiClient.post('/auth/webauthn/registration/start');
+      const options: WebAuthnRegistrationOptions = startRes.data.registration_options;
+      showInfo("Use your device's biometric/PIN to create a passkey");
 
-  const handleRegisterFinish = async () => {
-    if (!registrationOptions) return;
-    
-    try {
-      // Get the credential from the browser
-      const credential = await navigator.credentials.create({
+      const credential = (await navigator.credentials.create({
         publicKey: {
-          challenge: base64urlToBuffer(registrationOptions.challenge),
-          rp: registrationOptions.rp,
-          user: registrationOptions.user,
-          pubKeyCredParams: registrationOptions.pubKeyCredParams,
-          timeout: registrationOptions.timeout,
-          attestation: registrationOptions.attestation,
-          authenticatorSelection: registrationOptions.authenticatorSelection,
-          extensions: registrationOptions.extensions,
+          challenge: base64urlToBuffer(options.challenge),
+          rp: options.rp,
+          user: {
+            id: base64urlToBuffer(options.user.id),
+            name: options.user.name,
+            displayName: options.user.displayName,
+          },
+          pubKeyCredParams: options.pubKeyCredParams.map(p => ({
+            type: p.type as PublicKeyCredentialType,
+            alg: p.alg,
+          })),
+          timeout: options.timeout,
+          attestation: options.attestation as AttestationConveyancePreference,
+          authenticatorSelection: {
+            authenticatorAttachment: options.authenticatorSelection.authenticatorAttachment as AuthenticatorAttachment,
+            residentKey: options.authenticatorSelection.residentKey as ResidentKeyRequirement,
+            userVerification: options.authenticatorSelection.userVerification as UserVerificationRequirement,
+          },
+          extensions: options.extensions,
         },
-      });
+      })) as PublicKeyCredential | null;
 
       if (!credential) {
         throw new Error('No credential returned');
       }
 
-      // Convert to the format expected by the backend
+      const attestationResponse = credential.response as AuthenticatorAttestationResponse;
       const credentialData = {
         id: credential.id,
         rawId: bufferToBase64url(credential.rawId),
         response: {
-          clientDataJSON: bufferToBase64url(credential.response.clientDataJSON),
-          attestationObject: bufferToBase64url(credential.response.attestationObject),
+          clientDataJSON: bufferToBase64url(attestationResponse.clientDataJSON),
+          attestationObject: bufferToBase64url(attestationResponse.attestationObject),
         },
         type: credential.type,
         clientExtensionResults: credential.getClientExtensionResults(),
@@ -106,12 +107,14 @@ export function PasskeysSettings() {
       fetchPasskeys();
     } catch (err: any) {
       showError('Failed to register passkey.', err.response?.data?.detail || err.message);
+    } finally {
+      setRegistering(false);
     }
   };
 
   const handleDelete = async (credentialId: string) => {
     if (!window.confirm('Are you sure you want to delete this passkey?')) return;
-    
+
     try {
       await apiClient.delete(`/auth/webauthn/credentials/${credentialId}`);
       showSuccess('Passkey deleted');
@@ -127,12 +130,12 @@ export function PasskeysSettings() {
   };
 
   const formatDate = (dateStr: string): string => {
-    return new Date(dateStr).toLocaleDateString();
+    return new Date(dateStr).toLocaleDateString('en-GB');
   };
 
   const base64urlToBuffer = (base64url: string): ArrayBuffer => {
     const base64 = base64url.replace(/-/g, '+').replace(/_/g, '/');
-    const padded = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+    const padded = base64.padEnd(base64.length + ((4 - (base64.length % 4)) % 4), '=');
     const binary = atob(padded);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) {
@@ -150,17 +153,6 @@ export function PasskeysSettings() {
     return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
   };
 
-  const inputStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '0.625rem',
-    marginTop: '0.25rem',
-    borderRadius: 'var(--radius-md)',
-    border: '1px solid var(--border-color)',
-    backgroundColor: 'var(--bg-color)',
-    color: 'var(--text-color)',
-    fontSize: '0.95rem',
-  };
-
   const buttonStyle: React.CSSProperties = {
     padding: '0.5rem 1.5rem',
     backgroundColor: 'var(--primary-color)',
@@ -171,14 +163,11 @@ export function PasskeysSettings() {
     fontWeight: 600,
   };
 
-  const secondaryButtonStyle: React.CSSProperties = {
-    ...buttonStyle,
-    backgroundColor: 'var(--secondary-color)',
-  };
-
   const dangerButtonStyle: React.CSSProperties = {
     ...buttonStyle,
     backgroundColor: '#ef4444',
+    padding: '0.375rem 0.75rem',
+    fontSize: '0.8rem',
   };
 
   return (
@@ -234,7 +223,6 @@ export function PasskeysSettings() {
                       <button
                         onClick={() => handleDelete(passkey.credential_id)}
                         style={dangerButtonStyle}
-                        style={{ padding: '0.375rem 0.75rem', fontSize: '0.8rem' }}
                       >
                         Delete
                       </button>
@@ -255,7 +243,7 @@ export function PasskeysSettings() {
       )}
 
       {/* Register Modal */}
-      {showRegisterModal && registrationOptions && (
+      {showRegisterModal && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
           <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
             <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -268,7 +256,7 @@ export function PasskeysSettings() {
                 This passkey will be synced across your devices via iCloud Keychain, Google Password Manager, or your password manager.
               </p>
               <button
-                onClick={handleRegisterFinish}
+                onClick={handleRegisterPasskey}
                 disabled={registering}
                 style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: registering ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '1rem' }}
               >

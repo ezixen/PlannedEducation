@@ -37,12 +37,10 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
     },
   });
 
-  // Check for existing consent on mount
+  // Sync sessionStarted when existing consent is loaded
   useEffect(() => {
     if (proctoring.consentGiven && !sessionStarted) {
       setSessionStarted(true);
-    } else if (!proctoring.consentGiven) {
-      setShowConsentModal(true);
     }
   }, [proctoring.consentGiven, sessionStarted]);
 
@@ -69,15 +67,36 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
 
   if (!proctoring.consentGiven) {
     return (
-      <GDPRConsentModal
-        examId={examId}
-        isOpen={showConsentModal}
-        onClose={() => setShowConsentModal(false)}
-        onConsentGiven={async () => {
-          // The modal handles the API call, we just need to update state
-          // The onConsentGiven callback in useProctoring will be called
-        }}
-      />
+      <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', textAlign: 'center' }}>
+        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', color: 'var(--text-color)' }}>⚪ AI Proctoring</h4>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
+          Review GDPR privacy controls to configure optional proctoring.
+        </p>
+        <button
+          type="button"
+          onClick={() => setShowConsentModal(true)}
+          style={{
+            padding: '0.5rem 1rem',
+            backgroundColor: 'var(--primary-color)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+          }}
+        >
+          Review Proctoring Consent
+        </button>
+        <GDPRConsentModal
+          examId={examId}
+          isOpen={showConsentModal}
+          onClose={() => setShowConsentModal(false)}
+          onConsentGiven={async (consent) => {
+            await proctoring.giveConsent(consent);
+          }}
+        />
+      </div>
     );
   }
 

@@ -70,6 +70,18 @@ disposable = models.User(
 )
 db.add(disposable)
 
+# 4b. Dedicated Admin / Teacher test user
+admin_user = models.User(
+    id="admin-uuid-001",
+    email="admin@yourschool.edu",
+    username="admin",
+    full_name="Principal Jordan Vance",
+    role="teacher",
+    hashed_password=get_password_hash("ChangeMe123!"),
+    is_active=True,
+)
+db.add(admin_user)
+
 # Commit users so foreign keys work
 db.commit()
 
