@@ -100,13 +100,18 @@ AI_GRADING_REQUESTS = Counter(
     ["provider", "status"],
 )
 
-# Start Prometheus metrics server on port 9090
-start_http_server(9090)
+# Start Prometheus metrics server on port 9090 (skip in test mode or if port is busy)
+if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+    try:
+        start_http_server(9090)
+    except OSError:
+        logger.warning("Prometheus metrics port 9090 already in use; skipping start_http_server.")
 
 # Configure OpenTelemetry
 resource = Resource.create({"service.name": "plannededucation-api"})
 trace_provider = TracerProvider(resource=resource)
-trace_provider.add_span_processor(BatchSpanProcessor(ConsoleSpanExporter()))
+if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+    trace_provider.add_span_processor(BatchSpanProcessor(ConsoleSpanExporter()))
 trace.set_tracer_provider(trace_provider)
 
 metric_reader = PrometheusMetricReader()

@@ -15,12 +15,17 @@ jobs:
     timeout-minutes: 120
     
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       BACKUP_DIR: /backups
       STAGING_DB: plannededucation_staging
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
+      PGHOST: localhost
+      PGPORT: 5432
+      PGUSER: postgres
+      PGPASSWORD: postgres
     
     services:
       postgres:
@@ -45,10 +50,22 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client-16
       
-      - name: Create backup directory
+      - name: Create backup directory and log file
         run: |
-          sudo mkdir -p ${{ env.BACKUP_DIR }}
-          sudo chown -R runner:runner ${{ env.BACKUP_DIR }}
+          sudo mkdir -p ${{ env.BACKUP_DIR }} /var/log
+          sudo touch /var/log/backup_restore_drill.log
+          sudo chown -R runner:runner ${{ env.BACKUP_DIR }} /var/log/backup_restore_drill.log
+
+      - name: Initialize schema for drill backup
+        run: |
+          psql -d plannededucation <<'SQL'
+          CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email TEXT, is_active BOOLEAN DEFAULT true);
+          CREATE TABLE IF NOT EXISTS exams (id SERIAL PRIMARY KEY, title TEXT);
+          CREATE TABLE IF NOT EXISTS questions (id SERIAL PRIMARY KEY, exam_id INT, text TEXT);
+          CREATE TABLE IF NOT EXISTS exam_submissions (id SERIAL PRIMARY KEY, exam_id INT, student_id INT);
+          CREATE TABLE IF NOT EXISTS account_relationships (id SERIAL PRIMARY KEY, parent_id INT, student_id INT);
+          INSERT INTO users (email, is_active) VALUES ('drill@plannededucation.org', true);
+          SQL
       
       - name: Create test backup (simulate daily backup)
         run: |

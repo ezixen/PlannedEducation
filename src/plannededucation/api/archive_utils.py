@@ -5,16 +5,11 @@ Uses zstd (best free compression) + AES-GCM encryption.
 """
 
 import json
-import lzma
 import os
-import zlib
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Optional
 
 import zstandard as zstd
-
-from . import crypto
 
 # ── Compression ──────────────────────────────────────────────────────────────
 
@@ -84,11 +79,10 @@ async def encrypt_archive_data(data: bytes, key: bytes) -> tuple[bytes, bytes, b
     Encrypt archive data with AES-GCM.
     Returns: (ciphertext, iv, salt)
     """
-    import hashlib
-    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
     from cryptography.hazmat.primitives import hashes
     from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-    
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
     # Derive key from master key + salt
     salt = os.urandom(ARCHIVE_SALT_LENGTH)
     kdf = PBKDF2HMAC(
@@ -98,21 +92,20 @@ async def encrypt_archive_data(data: bytes, key: bytes) -> tuple[bytes, bytes, b
         iterations=100000,
     )
     derived_key = kdf.derive(key)
-    
+
     # Encrypt
     aesgcm = AESGCM(derived_key)
     iv = os.urandom(ARCHIVE_IV_LENGTH)
     ciphertext = aesgcm.encrypt(iv, data, None)
-    
+
     return ciphertext, iv, salt
 
 async def decrypt_archive_data(ciphertext: bytes, iv: bytes, salt: bytes, key: bytes) -> bytes:
     """Decrypt archive data."""
-    import hashlib
-    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
     from cryptography.hazmat.primitives import hashes
     from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-    
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=ARCHIVE_KEY_LENGTH // 8,
@@ -120,7 +113,7 @@ async def decrypt_archive_data(ciphertext: bytes, iv: bytes, salt: bytes, key: b
         iterations=100000,
     )
     derived_key = kdf.derive(key)
-    
+
     aesgcm = AESGCM(derived_key)
     return aesgcm.decrypt(iv, ciphertext, None)
 
@@ -128,15 +121,15 @@ async def decrypt_archive_data(ciphertext: bytes, iv: bytes, salt: bytes, key: b
 
 class ArchiveManager:
     """Manages archiving of sealed exam submissions."""
-    
+
     def __init__(self, storage_root: str = "/var/lib/plannededucation/archive"):
         self.storage_root = Path(storage_root)
         self.storage_root.mkdir(parents=True, exist_ok=True)
-    
+
     def get_archive_file_path(self, archive_path: str) -> Path:
         """Get full filesystem path for archive."""
         return self.storage_root / archive_path
-    
+
     async def archive_submission(
         self,
         sealed_submission: dict,
@@ -153,23 +146,24 @@ class ArchiveManager:
         now = datetime.now(UTC)
         year = now.year
         month = now.month
-        
+
         archive_rel_path = build_archive_path(
             year, month,
             teacher_username, student_username,
             sealed_submission['submissionId']
         )
-        
+
         # Ensure directory exists
         full_path = self.get_archive_file_path(archive_rel_path)
         full_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         # Serialize and compress
-        json_bytes = json.dumps(sealed_submission, separators=(',', ':'), sort_keys=True).encode('utf-8')
+        json_bytes = json.dumps(
+            sealed_submission, separators=(',', ':'), sort_keys=True
+        ).encode('utf-8')
         original_size = len(json_bytes)
         compressed = compress_data(json_bytes, compression_level)
-        compressed_size = len(compressed)
-        
+
         # Encrypt if master key provided
         if master_key:
             encrypted, iv, salt = await encrypt_archive_data(compressed, master_key)
@@ -180,16 +174,16 @@ class ArchiveManager:
             final_data = compressed
             encryption_iv = ""
             encryption_salt = ""
-        
+
         # Write to file
         final_data_b64 = final_data.hex()  # Store as hex for simplicity
         full_path.write_text(final_data_b64)
-        
+
         # Compute hashes
         import hashlib
         content_hash = hashlib.sha256(json_bytes).hexdigest()
         archive_hash = hashlib.sha256(final_data).hexdigest()
-        
+
         return {
             'archive_path': archive_rel_path,
             'original_size': original_size,
@@ -203,7 +197,7 @@ class ArchiveManager:
             'archive_hash': archive_hash,
             'archived_at': now.isoformat(),
         }
-    
+
     async def restore_submission(
         self,
         archive_path: str,
@@ -213,34 +207,34 @@ class ArchiveManager:
         full_path = self.get_archive_file_path(archive_path)
         if not full_path.exists():
             raise FileNotFoundError(f"Archive not found: {archive_path}")
-        
+
         # Read file
         final_data_b64 = full_path.read_text()
         final_data = bytes.fromhex(final_data_b64)
-        
+
         # Decrypt if needed
         if master_key:
             # Parse path to get IV and salt from metadata (would need to be stored)
             # For now, assume metadata is stored separately
             pass
-        
+
         # Decompress
         json_bytes = decompress_data(final_data)
         return json.loads(json_bytes.decode('utf-8'))
-    
+
     def verify_archive_integrity(self, archive_path: str, expected_hash: str) -> bool:
         """Verify archive file integrity."""
         full_path = self.get_archive_file_path(archive_path)
         if not full_path.exists():
             return False
-        
+
         final_data_b64 = full_path.read_text()
         final_data = bytes.fromhex(final_data_b64)
-        
+
         import hashlib
         actual_hash = hashlib.sha256(final_data).hexdigest()
         return actual_hash == expected_hash
-    
+
     def list_archives(
         self,
         year: int = None,
@@ -250,33 +244,35 @@ class ArchiveManager:
     ) -> list[dict]:
         """List archives with optional filters."""
         results = []
-        
+
         for year_dir in sorted(self.storage_root.iterdir()):
             if not year_dir.is_dir():
                 continue
             if year and int(year_dir.name) != year:
                 continue
-            
+
             for month_dir in sorted(year_dir.iterdir()):
                 if not month_dir.is_dir():
                     continue
                 if month and int(month_dir.name) != month:
                     continue
-                
+
                 for teacher_dir in sorted(month_dir.iterdir()):
                     if not teacher_dir.is_dir():
                         continue
                     if teacher_username and teacher_dir.name != teacher_username:
                         continue
-                    
+
                     for student_dir in sorted(teacher_dir.iterdir()):
                         if not student_dir.is_dir():
                             continue
                         if student_username and student_dir.name != student_username:
                             continue
-                        
+
                         for file in sorted(student_dir.iterdir()):
                             if file.suffix == '.enc':
+                                stat = file.stat()
+                                mod_iso = datetime.fromtimestamp(stat.st_mtime, UTC).isoformat()
                                 results.append({
                                     'path': str(file.relative_to(self.storage_root)),
                                     'year': int(year_dir.name),
@@ -284,25 +280,25 @@ class ArchiveManager:
                                     'teacher': teacher_dir.name,
                                     'student': student_dir.name,
                                     'filename': file.name,
-                                    'size': file.stat().st_size,
-                                    'modified': datetime.fromtimestamp(file.stat().st_mtime, UTC).isoformat(),
+                                    'size': stat.st_size,
+                                    'modified': mod_iso,
                                 })
-        
+
         return results
-    
+
     def get_storage_stats(self) -> dict:
         """Get archive storage statistics."""
         total_files = 0
         total_size = 0
         by_year = {}
-        
+
         for year_dir in sorted(self.storage_root.iterdir()):
             if not year_dir.is_dir():
                 continue
             year = int(year_dir.name)
             year_size = 0
             year_files = 0
-            
+
             for month_dir in year_dir.iterdir():
                 if not month_dir.is_dir():
                     continue
@@ -318,9 +314,9 @@ class ArchiveManager:
                                 total_size += file.stat().st_size
                                 year_files += 1
                                 year_size += file.stat().st_size
-            
+
             by_year[year] = {'files': year_files, 'size': year_size}
-        
+
         return {
             'total_files': total_files,
             'total_size_bytes': total_size,

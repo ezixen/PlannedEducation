@@ -7,20 +7,17 @@ import json
 import logging
 import re
 import time
-from typing import Any, Optional
 from dataclasses import dataclass
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import database, models, schemas
-from .routes_auth import get_current_user
+from . import database, models
 from .ai_providers import (
-    AIProviderConfig,
-    get_ai_provider,
     get_teacher_ai_provider,
 )
+from .routes_auth import get_current_user
 
 logger = logging.getLogger(__name__)
 
@@ -56,9 +53,10 @@ MAX_PROMPT_LENGTH = 50000
 HALLUCINATION_CONSISTENCY_THRESHOLD = 0.85  # Similarity threshold for consistency check
 MIN_CONFIDENCE_THRESHOLD = 0.75  # Minimum confidence for auto-accept
 
-# Rate limiting for AI calls (per teacher per minute)
+# Rate limiting and budget for AI calls (per teacher)
 AI_RATE_LIMIT_PER_MINUTE = 20
 AI_RATE_LIMIT_PER_HOUR = 200
+MAX_DAILY_COST_USD = 5.0
 
 # In-memory rate limiting (in production, use Redis)
 _ai_rate_limits: dict[str, list[float]] = {}
@@ -71,13 +69,13 @@ def check_prompt_injection(prompt: str) -> tuple[bool, list[str]]:
     """
     if len(prompt) > MAX_PROMPT_LENGTH:
         return False, [f"Prompt exceeds maximum length of {MAX_PROMPT_LENGTH} characters"]
-    
+
     detected = []
     for pattern in COMPILED_INJECTION_PATTERNS:
         matches = pattern.findall(prompt)
         if matches:
             detected.append(f"Potential injection: {pattern.pattern}")
-    
+
     return len(detected) == 0, detected
 
 
@@ -127,20 +125,22 @@ def check_hallucination_consistency(
     # Simple word-based similarity (in production, use embeddings)
     words1 = set(response1.lower().split())
     words2 = set(response2.lower().split())
-    
+
     if not words1 and not words2:
         return True, 1.0
     if not words1 or not words2:
         return False, 0.0
-    
+
     intersection = words1.intersection(words2)
     union = words1.union(words2)
     similarity = len(intersection) / len(union) if union else 0.0
-    
+
     return similarity >= threshold, similarity
 
 
-def validate_confidence(confidence: float, min_threshold: float = MIN_CONFIDENCE_THRESHOLD) -> tuple[bool, str]:
+def validate_confidence(
+    confidence: float, min_threshold: float = MIN_CONFIDENCE_THRESHOLD
+) -> tuple[bool, str]:
     """Validate confidence score meets minimum threshold."""
     if confidence < min_threshold:
         return False, f"Confidence {confidence:.2f} below minimum threshold {min_threshold}"
@@ -150,7 +150,7 @@ def validate_confidence(confidence: float, min_threshold: float = MIN_CONFIDENCE
 def validate_output_schema(response: str, schema: dict) -> tuple[bool, str]:
     """Validate AI response against JSON schema."""
     try:
-        data = json.loads(response)
+        json.loads(response)
         # Basic validation - in production use jsonschema library
         return True, ""
     except json.JSONDecodeError as e:
@@ -181,7 +181,7 @@ def record_provider_result(provider: str, success: bool):
     """Record provider call result for health tracking."""
     health = get_provider_health(provider)
     now = time.time()
-    
+
     if success:
         health.consecutive_failures = 0
         health.last_success = now
@@ -200,7 +200,7 @@ def is_provider_healthy(provider: str) -> bool:
     return health.is_healthy
 
 
-def get_fallback_provider(current_provider: str, available_providers: list[str]) -> Optional[str]:
+def get_fallback_provider(current_provider: str, available_providers: list[str]) -> str | None:
     """Get a healthy fallback provider."""
     for provider in available_providers:
         if provider != current_provider and is_provider_healthy(provider):
@@ -219,7 +219,7 @@ class GradingRequest(BaseModel):
     student_response: str = Field(..., max_length=16384)
     question_text: str = Field(..., max_length=4096)
     points_possible: int = Field(..., ge=1, le=100)
-    system_prompt: Optional[str] = None
+    system_prompt: str | None = None
 
 
 class GradingResponse(BaseModel):
@@ -227,7 +227,7 @@ class GradingResponse(BaseModel):
     score: float = Field(..., ge=0.0, le=100.0)
     feedback: str = Field(..., max_length=8192)
     confidence: float = Field(..., ge=0.0, le=1.0)
-    reasoning: Optional[str] = None
+    reasoning: str | None = None
 
 
 class TestCreationRequest(BaseModel):
@@ -237,7 +237,7 @@ class TestCreationRequest(BaseModel):
     num_questions: int = Field(..., ge=1, le=50)
     question_types: list[str] = Field(default=["multiple_choice", "essay", "dynamic_math"])
     difficulty: str = Field(default="medium", pattern=r"^(easy|medium|hard)$")
-    system_prompt: Optional[str] = None
+    system_prompt: str | None = None
 
 
 class TestCreationResponse(BaseModel):
@@ -250,8 +250,8 @@ class ContentGenerationRequest(BaseModel):
     """Request for AI content generation."""
     prompt: str = Field(..., max_length=8192)
     content_type: str = Field(..., pattern=r"^(lesson_plan|worksheet|rubric|explanation|feedback)$")
-    context: Optional[str] = None
-    system_prompt: Optional[str] = None
+    context: str | None = None
+    system_prompt: str | None = None
 
 
 class ContentGenerationResponse(BaseModel):
@@ -278,7 +278,7 @@ _ai_cost_tracking: dict[str, list[AICostTracking]] = {}
 
 def _record_usage(user_id: str, provider: str, model: str, usage: dict, estimated_cost: float):
     """Record AI usage for cost tracking (teacher visibility only)."""
-    from datetime import datetime, UTC
+    from datetime import UTC, datetime
 
     entry = AICostTracking(
         provider=provider,
@@ -314,7 +314,8 @@ def _estimate_cost(provider: str, model: str, usage: dict) -> float:
 
 # ── System Prompts ──────────────────────────────────────────────────────────
 
-GRADING_SYSTEM_PROMPT = """You are an expert teacher grading student work. Your task is to evaluate the student's response against the provided rubric and question.
+GRADING_SYSTEM_PROMPT = """You are an expert teacher grading student work.
+Your task is to evaluate the student's response against the provided rubric and question.
 
 Guidelines:
 1. Be fair, consistent, and constructive
@@ -331,7 +332,8 @@ Output format (JSON):
   "reasoning": "<explanation of grading decision>"
 }"""
 
-TEST_CREATION_SYSTEM_PROMPT = """You are an expert teacher creating educational assessments. Generate high-quality test questions based on the given topic and parameters.
+TEST_CREATION_SYSTEM_PROMPT = """You are an expert teacher creating educational assessments.
+Generate high-quality test questions based on the given topic and parameters.
 
 Guidelines:
 1. Questions should be age-appropriate and aligned with the grade level
@@ -360,7 +362,8 @@ Output format (JSON):
   }
 }"""
 
-CONTENT_GENERATION_SYSTEM_PROMPT = """You are an expert educational content creator. Generate high-quality educational content based on the request.
+CONTENT_GENERATION_SYSTEM_PROMPT = """You are an expert educational content creator.
+Generate high-quality educational content based on the request.
 
 Guidelines:
 1. Content should be pedagogically sound and age-appropriate
@@ -401,7 +404,10 @@ TEST_CREATION_SCHEMA = {
             "items": {
                 "type": "object",
                 "properties": {
-                    "question_type": {"type": "string", "enum": ["multiple_choice", "essay", "dynamic_math"]},
+                    "question_type": {
+                        "type": "string",
+                        "enum": ["multiple_choice", "essay", "dynamic_math"],
+                    },
                     "text": {"type": "string", "maxLength": 4096},
                     "options_json": {"type": "string"},
                     "correct_answer": {"type": "string", "maxLength": 2048},
@@ -455,7 +461,7 @@ def _validate_json_response(response: str, schema: dict) -> dict:
         raise HTTPException(
             status_code=500,
             detail=f"AI returned invalid JSON: {e}"
-        )
+        ) from None
 
 
 # ── Endpoints ────────────────────────────────────────────────────────────────
@@ -488,9 +494,13 @@ async def ai_grade(
 
     # Check provider health
     if not is_provider_healthy(provider.config.provider):
-        fallback = get_fallback_provider(provider.config.provider, ["gemini", "openrouter", "ollama", "openai"])
+        fallback = get_fallback_provider(
+            provider.config.provider, ["gemini", "openrouter", "ollama", "openai"]
+        )
         if fallback:
-            logger.warning(f"Provider {provider.config.provider} unhealthy, falling back to {fallback}")
+            logger.warning(
+                f"Provider {provider.config.provider} unhealthy, falling back to {fallback}"
+            )
             # In a real implementation, we'd switch providers here
         else:
             raise HTTPException(
@@ -523,7 +533,7 @@ Grade this response according to the rubric."""
     # Generate grade with consistency check (hallucination detection)
     max_retries = 2
     last_response = None
-    
+
     for attempt in range(max_retries + 1):
         response = await provider.generate_structured(
             prompt=sanitized_prompt,
@@ -541,7 +551,9 @@ Grade this response according to the rubric."""
         except HTTPException:
             raise
         except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Invalid AI response format: {e}")
+            raise HTTPException(
+                status_code=500, detail=f"Invalid AI response format: {e}"
+            ) from None
 
         # Validate confidence threshold
         confidence_valid, confidence_msg = validate_confidence(result["confidence"])
@@ -564,12 +576,14 @@ Grade this response according to the rubric."""
                 sanitized_prompt, last_response, response.content
             )
             if not is_consistent:
-                logger.warning(f"Hallucination detected for user {current_user.id}: similarity={similarity:.2f}")
+                logger.warning(
+                    f"Hallucination detected for user {current_user.id}: {similarity:.2f}"
+                )
                 if attempt < max_retries:
                     continue  # Retry
 
         last_response = response.content
-        
+
         # Record provider result for health tracking
         record_provider_result(response.provider or "unknown", True)
 
@@ -579,10 +593,14 @@ Grade this response according to the rubric."""
         except HTTPException:
             raise
         except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Invalid AI response format: {e}")
+            raise HTTPException(
+                status_code=500, detail=f"Invalid AI response format: {e}"
+            ) from None
 
         # Track usage for cost visibility (optional)
-        estimated_cost = _estimate_cost(response.provider or "unknown", response.model or "unknown", response.usage or {})
+        estimated_cost = _estimate_cost(
+            response.provider or "unknown", response.model or "unknown", response.usage or {}
+        )
         _record_usage(current_user.id, response.provider or "unknown", response.model or "unknown",
                       response.usage or {}, estimated_cost)
 
@@ -595,7 +613,10 @@ Grade this response according to the rubric."""
 
     # If we exhausted retries
     record_provider_result(response.provider or "unknown", False)
-    raise HTTPException(status_code=500, detail="AI grading failed after retries: low confidence or inconsistent output")
+    raise HTTPException(
+        status_code=500,
+        detail="AI grading failed after retries: low confidence or inconsistent output",
+    )
 
 
 @router.post("/create-test", response_model=TestCreationResponse)
@@ -626,9 +647,13 @@ async def ai_create_test(
 
     # Check provider health
     if not is_provider_healthy(provider.config.provider):
-        fallback = get_fallback_provider(provider.config.provider, ["gemini", "openrouter", "ollama", "openai"])
+        fallback = get_fallback_provider(
+            provider.config.provider, ["gemini", "openrouter", "ollama", "openai"]
+        )
         if fallback:
-            logger.warning(f"Provider {provider.config.provider} unhealthy, falling back to {fallback}")
+            logger.warning(
+                f"Provider {provider.config.provider} unhealthy, falling back to {fallback}"
+            )
         else:
             raise HTTPException(
                 status_code=503,
@@ -663,7 +688,7 @@ Include rubrics for all questions."""
     # Generate test with consistency check
     max_retries = 2
     last_response = None
-    
+
     for attempt in range(max_retries + 1):
         response = await provider.generate_structured(
             prompt=sanitized_prompt,
@@ -673,7 +698,9 @@ Include rubrics for all questions."""
         )
 
         if response.error:
-            raise HTTPException(status_code=500, detail=f"AI test creation failed: {response.error}")
+            raise HTTPException(
+                status_code=500, detail=f"AI test creation failed: {response.error}"
+            )
 
         # Validate response format
         try:
@@ -681,7 +708,9 @@ Include rubrics for all questions."""
         except HTTPException:
             raise
         except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Invalid AI response format: {e}")
+            raise HTTPException(
+                status_code=500, detail=f"Invalid AI response format: {e}"
+            ) from None
 
         # Validate output schema
         schema_valid, schema_msg = validate_output_schema(response.content, TEST_CREATION_SCHEMA)
@@ -696,12 +725,14 @@ Include rubrics for all questions."""
                 sanitized_prompt, last_response, response.content
             )
             if not is_consistent:
-                logger.warning(f"Hallucination detected for user {current_user.id}: similarity={similarity:.2f}")
+                logger.warning(
+                    f"Hallucination detected for user {current_user.id}: {similarity:.2f}"
+                )
                 if attempt < max_retries:
                     continue
 
         last_response = response.content
-        
+
         # Record provider result for health tracking
         record_provider_result(response.provider or "unknown", True)
 
@@ -711,10 +742,14 @@ Include rubrics for all questions."""
         except HTTPException:
             raise
         except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Invalid AI response format: {e}")
+            raise HTTPException(
+                status_code=500, detail=f"Invalid AI response format: {e}"
+            ) from None
 
         # Track usage for cost visibility (optional)
-        estimated_cost = _estimate_cost(response.provider or "unknown", response.model or "unknown", response.usage or {})
+        estimated_cost = _estimate_cost(
+            response.provider or "unknown", response.model or "unknown", response.usage or {}
+        )
         _record_usage(current_user.id, response.provider or "unknown", response.model or "unknown",
                       response.usage or {}, estimated_cost)
 
@@ -725,7 +760,10 @@ Include rubrics for all questions."""
 
     # If we exhausted retries
     record_provider_result(response.provider or "unknown", False)
-    raise HTTPException(status_code=500, detail="AI test creation failed after retries: inconsistent output")
+    raise HTTPException(
+        status_code=500,
+        detail="AI test creation failed after retries: inconsistent output",
+    )
 
 
 @router.post("/generate-content", response_model=ContentGenerationResponse)
@@ -760,7 +798,9 @@ Context: {request.context or 'None provided'}"""
     )
 
     if response.error:
-        raise HTTPException(status_code=500, detail=f"AI content generation failed: {response.error}")
+        raise HTTPException(
+            status_code=500, detail=f"AI content generation failed: {response.error}"
+        )
 
     # Validate response
     try:
@@ -768,10 +808,14 @@ Context: {request.context or 'None provided'}"""
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Invalid AI response format: {e}")
+        raise HTTPException(
+            status_code=500, detail=f"Invalid AI response format: {e}"
+        ) from None
 
     # Track usage for cost visibility (optional)
-    estimated_cost = _estimate_cost(response.provider or "unknown", response.model or "unknown", response.usage or {})
+    estimated_cost = _estimate_cost(
+        response.provider or "unknown", response.model or "unknown", response.usage or {}
+    )
     _record_usage(current_user.id, response.provider or "unknown", response.model or "unknown",
                   response.usage or {}, estimated_cost)
 
@@ -794,7 +838,7 @@ async def get_ai_usage_summary(
     current_user: models.User = Depends(get_current_user),
 ):
     """Get AI usage summary for current teacher."""
-    from datetime import datetime, UTC
+    from datetime import UTC, datetime
 
     today = datetime.now(UTC).date().isoformat()
     entries = _ai_cost_tracking.get(current_user.id, [])

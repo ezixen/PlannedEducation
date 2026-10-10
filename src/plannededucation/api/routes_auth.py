@@ -7,7 +7,6 @@ import re
 import secrets
 import time
 from datetime import UTC, datetime, timedelta
-from typing import Optional
 
 import argon2
 import httpx
@@ -28,12 +27,10 @@ from webauthn import (
     verify_registration_response,
 )
 from webauthn.helpers.structs import (
-    AuthenticationCredential,
     AuthenticatorAttachment,
     AuthenticatorSelectionCriteria,
-    COSEAlgorithmIdentifier,
     PublicKeyCredentialDescriptor,
-    RegistrationCredential,
+    ResidentKeyRequirement,
     UserVerificationRequirement,
 )
 
@@ -60,10 +57,10 @@ async def verify_captcha(token: str, remote_ip: str) -> bool:
     """
     if CAPTCHA_PROVIDER == "none" or os.getenv("PLANNED_EDUCATION_ENV") == "test":
         return True  # Skip in dev/test
-    
+
     if not token:
         return False
-    
+
     if CAPTCHA_PROVIDER == "turnstile":
         # Cloudflare Turnstile - free, privacy-friendly
         async with httpx.AsyncClient() as client:
@@ -81,7 +78,7 @@ async def verify_captcha(token: str, remote_ip: str) -> bool:
                 return result.get("success", False)
             except Exception:
                 return False
-    
+
     elif CAPTCHA_PROVIDER == "hcaptcha":
         # hCaptcha - free tier available
         async with httpx.AsyncClient() as client:
@@ -99,7 +96,7 @@ async def verify_captcha(token: str, remote_ip: str) -> bool:
                 return result.get("success", False)
             except Exception:
                 return False
-    
+
     elif CAPTCHA_PROVIDER == "simple":
         # Simple self-hosted math challenge (no external dependency)
         # Token format: "challenge_id:user_answer"
@@ -107,13 +104,14 @@ async def verify_captcha(token: str, remote_ip: str) -> bool:
             challenge_id, user_answer = token.split(":", 1)
             if challenge_id in _simple_challenges:
                 correct_answer, expiry = _simple_challenges[challenge_id]
-                if time.time() < expiry and hmac.compare_digest(correct_answer, user_answer.strip()):
+                is_match = hmac.compare_digest(correct_answer, user_answer.strip())
+                if time.time() < expiry and is_match:
                     del _simple_challenges[challenge_id]  # One-time use
                     return True
         except Exception:
             pass
         return False
-    
+
     return False
 
 
@@ -123,7 +121,7 @@ def generate_simple_challenge() -> dict:
     a = random.randint(1, 20)
     b = random.randint(1, 20)
     op = random.choice(["+", "-", "*"])
-    
+
     if op == "+":
         answer = str(a + b)
         question = f"{a} + {b}"
@@ -133,17 +131,17 @@ def generate_simple_challenge() -> dict:
     else:
         answer = str(a * b)
         question = f"{a} × {b}"
-    
+
     challenge_id = secrets.token_urlsafe(16)
     expiry = time.time() + 300  # 5 minutes
     _simple_challenges[challenge_id] = (answer, expiry)
-    
+
     # Clean old challenges
     now = time.time()
     expired = [k for k, (_, exp) in _simple_challenges.items() if exp < now]
     for k in expired:
         del _simple_challenges[k]
-    
+
     return {
         "challenge_id": challenge_id,
         "question": question,
@@ -607,7 +605,7 @@ def confirm_password_reset(
 async def get_captcha_challenge(request: Request):
     """Get a CAPTCHA challenge for the frontend."""
     provider = CAPTCHA_PROVIDER
-    
+
     if provider == "simple":
         challenge = generate_simple_challenge()
         return schemas.CaptchaChallengeResponse(
@@ -647,10 +645,9 @@ async def verify_captcha_endpoint(
 ):
     """Verify a CAPTCHA token."""
     client_ip = request.client.host if request.client else "unknown"
-    provider = payload.provider or CAPTCHA_PROVIDER
-    
+
     is_valid = await verify_captcha(payload.token, client_ip)
-    
+
     if is_valid:
         return {"valid": True, "message": "CAPTCHA verified successfully"}
     else:
@@ -887,21 +884,22 @@ def webauthn_registration_start(
     webauthn_user = _get_webauthn_user(current_user)
     existing_credentials = _get_webauthn_credentials(current_user)
 
-    rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
-    user = User(
-        id=webauthn_user["id"],
-        name=webauthn_user["name"],
-        display_name=webauthn_user["displayName"],
-    )
-    existing_keys = [cred.id for cred in existing_credentials]
+    exclude_credentials = [
+        PublicKeyCredentialDescriptor(id=cred_id) for cred_id in existing_credentials
+    ]
 
-    options, challenge = create_webauthn_credentials(
-        rp=rp,
-        user=user,
-        existing_keys=existing_keys,
-        attachment=AuthenticatorAttachment.PLATFORM,
-        require_resident=True,
-        user_verification=UserVerification.REQUIRED,
+    options = generate_registration_options(
+        rp_id=WEBAUTHN_RP_ID,
+        rp_name=WEBAUTHN_RP_NAME,
+        user_id=webauthn_user["id"],
+        user_name=webauthn_user["name"],
+        user_display_name=webauthn_user["displayName"],
+        exclude_credentials=exclude_credentials,
+        authenticator_selection=AuthenticatorSelectionCriteria(
+            authenticator_attachment=AuthenticatorAttachment.PLATFORM,
+            resident_key=ResidentKeyRequirement.REQUIRED,
+            user_verification=UserVerificationRequirement.REQUIRED,
+        ),
     )
 
     # Store challenge in user session (simplified: use user model)
@@ -910,8 +908,7 @@ def webauthn_registration_start(
     # Note: In production, use a proper session store
 
     # Convert options to dict for response
-    options_dict = options_to_json(options)
-    options_dict = json.loads(options_dict)
+    options_dict = json.loads(options_to_json(options))
 
     return schemas.WebAuthnSetupResponse(
         registration_options=schemas.WebAuthnRegistrationStart(
@@ -941,18 +938,15 @@ def webauthn_registration_finish(
         raise HTTPException(status_code=400, detail="Registration challenge expired")
 
     try:
-        # Extract credential data from payload
-        client_data_b64 = payload.response.get("clientDataJSON", "")
-        attestation_b64 = payload.response.get("attestationObject", "")
-
-        rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
-        verification = verify_create_webauthn_credentials(
-            rp=rp,
-            challenge_b64=current_user.webauthn_challenge,
-            client_data_b64=client_data_b64,
-            attestation_b64=attestation_b64,
-            fido_metadata=None,  # Optional FIDO metadata
-            user_verification_required=True,
+        expected_challenge = base64.urlsafe_b64decode(
+            current_user.webauthn_challenge + "==="
+        )
+        verification = verify_registration_response(
+            credential=payload.model_dump(),
+            expected_challenge=expected_challenge,
+            expected_rp_id=WEBAUTHN_RP_ID,
+            expected_origin=WEBAUTHN_ORIGIN,
+            require_user_verification=True,
         )
     except Exception as e:
         raise HTTPException(
@@ -989,14 +983,16 @@ def webauthn_authentication_start(
     if not credentials:
         raise HTTPException(status_code=400, detail="No passkeys registered")
 
-    rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
-    existing_keys = [cred.id for cred in credentials]
+    allow_credentials = [
+        PublicKeyCredentialDescriptor(id=cred_id) for cred_id in credentials
+    ]
 
-    options, challenge = get_webauthn_credentials(
-        rp=rp,
-        existing_keys=existing_keys,
-        user_verification=UserVerification.REQUIRED,
+    options = generate_authentication_options(
+        rp_id=WEBAUTHN_RP_ID,
+        allow_credentials=allow_credentials,
+        user_verification=UserVerificationRequirement.REQUIRED,
     )
+    challenge = base64.urlsafe_b64encode(options.challenge).decode()
 
     # Store challenge
     current_user.webauthn_challenge = challenge
@@ -1032,11 +1028,6 @@ def webauthn_authentication_finish(
         raise HTTPException(status_code=400, detail="Authentication challenge expired")
 
     try:
-        # Extract credential data from payload
-        client_data_b64 = payload.response.get("clientDataJSON", "")
-        authenticator_b64 = payload.response.get("authenticatorData", "")
-        signature_b64 = payload.response.get("signature", "")
-
         # Get the credential ID to look up the public key
         credential_id = payload.id
 
@@ -1052,19 +1043,21 @@ def webauthn_authentication_finish(
 
         pubkey = base64.b64decode(stored_cred["public_key"])
         sign_count = stored_cred.get("sign_count", 0)
-
-        rp = RelyingParty(id=WEBAUTHN_RP_ID, name=WEBAUTHN_RP_NAME)
-        verification = verify_get_webauthn_credentials(
-            rp=rp,
-            challenge_b64=current_user.webauthn_challenge,
-            client_data_b64=client_data_b64,
-            authenticator_b64=authenticator_b64,
-            signature_b64=signature_b64,
-            sign_count=sign_count,
-            pubkey_alg=-7,  # ES256
-            pubkey=pubkey,
-            user_verification_required=True,
+        expected_challenge = base64.urlsafe_b64decode(
+            current_user.webauthn_challenge + "==="
         )
+
+        verification = verify_authentication_response(
+            credential=payload.model_dump(),
+            expected_challenge=expected_challenge,
+            expected_rp_id=WEBAUTHN_RP_ID,
+            expected_origin=WEBAUTHN_ORIGIN,
+            credential_public_key=pubkey,
+            credential_current_sign_count=sign_count,
+            require_user_verification=True,
+        )
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(
             status_code=400, detail=f"Authentication verification failed: {e}"

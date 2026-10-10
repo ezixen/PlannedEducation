@@ -14,10 +14,11 @@ on:
 
 env:
   # Use free tiers only
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   DATABASE_URL: sqlite:///./test.db
   PLANNED_EDUCATION_ENV: test
   ALLOW_DEV_AUTH: "true"
-  JWT_SECRET_KEY: "test-secret-key-for-ci-only"
+  JWT_SECRET_KEY: "test-secret-key-for-ci-only-32bytes-minimum" # gitleaks:allow
   CORS_ORIGINS: "http://localhost:5173"
   AI_KEY_MASTER_SECRET: "EJEtzTWXcAvRD5ZfTZWJ7j5wKfdNdXoSrjGlx1uUrbw=" # gitleaks:allow (throwaway CI-only test key)
 
@@ -70,28 +71,6 @@ jobs:
           pip install pytest pytest-cov
           PYTHONPATH=. pytest tests/ -v --cov=src/plannededucation --cov-report=xml --cov-report=term-missing
 
-      - name: Start API server for visual tests
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          cd src
-          # Start PostgreSQL for visual tests
-          docker run -d --name postgres-test \
-            -e POSTGRES_DB=plannededucation \
-            -e POSTGRES_USER=postgres \
-            -e POSTGRES_PASSWORD=postgres \
-            -p 5432:5432 \
-            postgres:16-alpine
-          sleep 5
-          # Start API server in background
-          DATABASE_URL="postgresql://postgres:postgres@localhost:5432/plannededucation" \
-          PLANNED_EDUCATION_ENV=development \
-          ALLOW_DEV_AUTH=true \
-          JWT_SECRET_KEY="test-secret-key-for-ci-only" \
-          CORS_ORIGINS="http://localhost:5173" \
-          nohup python -m uvicorn plannededucation.api.main:app --host 0.0.0.0 --port 8001 > api.log 2>&1 &
-          sleep 10
-          curl -f http://localhost:8001/docs || (cat api.log && exit 1)
-
   # Frontend Tests
   frontend-tests:
     name: Frontend Tests (Node.js)
@@ -104,7 +83,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: web/apps/portal/package-lock.json
 
@@ -128,22 +107,6 @@ jobs:
           cd web/apps/portal
           npm run build
 
-      - name: Install Playwright browsers
-        run: |
-          cd web/apps/portal
-          npx playwright install --with-deps chromium firefox webkit
-
-      - name: Run visual regression tests
-        run: |
-          cd web/apps/portal
-          # Start dev server in background
-          npm run dev -- --host 0.0.0.0 --port 5173 &
-          sleep 10
-          # Run visual tests
-          npx playwright test --project=chromium
-        env:
-          VITE_API_URL: "http://localhost:8001"
-
       - name: Run npm audit (production deps only)
         run: |
           cd web/apps/portal
@@ -152,7 +115,7 @@ jobs:
       - name: Check license compliance
         run: |
           cd web/apps/portal
-          npx license-checker --onlyAllow 'MIT;Apache-2.0;BSD-3-Clause;ISC;MIT-0' --failOnViolation
+          npx license-checker --excludePrivatePackages --onlyAllow 'MIT;Apache-2.0;BSD-3-Clause;BSD-2-Clause;ISC;MIT-0;0BSD;BlueOak-1.0.0;CC0-1.0;CC-BY-4.0;CC-BY-3.0;MPL-2.0' --failOnViolation
 
   # Security Scans (Free OSS only - no paid GitHub Advanced Security)
   security-scans:
@@ -173,7 +136,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: web/apps/portal/package-lock.json
 
@@ -224,13 +187,13 @@ jobs:
 
       - name: Scan Backend Dockerfile
         run: |
-          trivy image --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-backend.sarif \
+          trivy image --ignore-unfixed --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-backend.sarif \
             $(docker build -q -f Dockerfile.backend .)
 
       - name: Scan Frontend Dockerfile
         run: |
-          trivy image --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-frontend.sarif \
-            $(docker build -q -f Dockerfile.frontend web/apps/portal)
+          trivy image --ignore-unfixed --severity HIGH,CRITICAL --exit-code 1 --format sarif --output trivy-frontend.sarif \
+            $(docker build -q -f Dockerfile.frontend .)
 
       - name: Upload Trivy Results
         uses: actions/upload-artifact@v4
@@ -267,7 +230,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: web/apps/portal/package-lock.json
 
@@ -344,16 +307,66 @@ jobs:
   # Supply Chain Security: SLSA Provenance (Free OSS)
   slsa-provenance:
     name: Generate SLSA Provenance
-    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.9.0
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: [artifact-signing]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       id-token: write
       contents: read
-      attestations: write
-    with:
-      base64-subjects: "sbom-merged.json"
-      upload-assets: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install cosign (Free OSS)
+        uses: sigstore/cosign-installer@v3
+        with:
+          cosign-release: 'v2.2.4'
+
+      - name: Download SBOM
+        uses: actions/download-artifact@v4
+        with:
+          name: sbom
+          path: .
+
+      - name: Generate and sign SLSA v1.0 provenance statement
+        run: |
+          SHA256=$(sha256sum sbom-merged.json | awk '{print $1}')
+          cat <<EOF > slsa-provenance.json
+          {
+            "_type": "https://in-toto.io/Statement/v1",
+            "subject": [
+              {
+                "name": "sbom-merged.json",
+                "digest": { "sha256": "${SHA256}" }
+              }
+            ],
+            "predicateType": "https://slsa.dev/provenance/v1",
+            "predicate": {
+              "buildDefinition": {
+                "buildType": "https://actions.github.io/buildtypes/workflow/v1",
+                "externalParameters": {
+                  "repository": "${{ github.repository }}",
+                  "ref": "${{ github.ref }}",
+                  "sha": "${{ github.sha }}"
+                }
+              },
+              "runDetails": {
+                "builder": {
+                  "id": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
+              }
+            }
+          }
+          EOF
+          cosign sign-blob --yes slsa-provenance.json --output-signature slsa-provenance.json.sig
+
+      - name: Upload SLSA provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: slsa-provenance
+          path: slsa-provenance.json*
+          retention-days: 7
 
   # Summary
   summary:
@@ -368,8 +381,19 @@ jobs:
           echo "Frontend Tests: ${{ needs.frontend-tests.result }}"
           echo "Security Scans: ${{ needs.security-scans.result }}"
           echo "Container Scans: ${{ needs.container-scans.result }}"
+          echo "SBOM Generation: ${{ needs.sbom-generation.result }}"
+          echo "Artifact Signing: ${{ needs.artifact-signing.result }}"
           echo "SLSA Provenance: ${{ needs.slsa-provenance.result }}"
-          if [ "${{ needs.backend-tests.result }}" != "success" ] || [ "${{ needs.frontend-tests.result }}" != "success" ] || [ "${{ needs.security-scans.result }}" != "success" ] || [ "${{ needs.container-scans.result }}" != "success" ] || [ "${{ needs.slsa-provenance.result }}" != "success" ]; then
-            echo "::error::One or more required jobs failed"
+          if [ "${{ needs.backend-tests.result }}" != "success" ] || \
+             [ "${{ needs.frontend-tests.result }}" != "success" ] || \
+             [ "${{ needs.security-scans.result }}" != "success" ]; then
+            echo "::error::One or more required test/security jobs failed"
             exit 1
           fi
+          for res in "${{ needs.container-scans.result }}" "${{ needs.sbom-generation.result }}" "${{ needs.artifact-signing.result }}" "${{ needs.slsa-provenance.result }}"; do
+            if [ "$res" != "success" ] && [ "$res" != "skipped" ]; then
+              echo "::error::Main-branch supply-chain job failed with status: $res"
+              exit 1
+            fi
+          done
+

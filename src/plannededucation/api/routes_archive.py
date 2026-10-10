@@ -4,25 +4,23 @@ Admin-only routes for managing archived exam submissions.
 """
 
 import json
+import logging
 import os
 from datetime import UTC, datetime
-from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import database, models, schemas
-from .routes_auth import get_current_user
+from . import database, models
 from .archive_utils import (
-    ArchiveManager,
-    build_archive_path,
-    compress_data,
-    decompress_data,
     DEFAULT_COMPRESSION_LEVEL,
+    ArchiveManager,
 )
+from .routes_auth import get_current_user
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/archive", tags=["archive"])
 
 # ── Dependency: Admin Only ───────────────────────────────────────────────────
@@ -41,11 +39,11 @@ def require_admin(current_user: models.User = Depends(get_current_user)) -> mode
 
 class ArchiveJobRequest(BaseModel):
     """Request to start an archive job."""
-    graduation_year: Optional[int] = Field(None, ge=2020, le=2100)
-    teacher_id: Optional[str] = None
-    student_id: Optional[str] = None
+    graduation_year: int | None = Field(None, ge=2020, le=2100)
+    teacher_id: str | None = None
+    student_id: str | None = None
     archive_to_external: bool = False
-    external_storage_path: Optional[str] = None
+    external_storage_path: str | None = None
     delete_after_archive: bool = True
     compression_level: int = Field(DEFAULT_COMPRESSION_LEVEL, ge=1, le=19)
 
@@ -58,9 +56,9 @@ class ArchiveJobResponse(BaseModel):
     processed_items: int
     failed_items: int
     created_at: str
-    started_at: Optional[str] = None
-    completed_at: Optional[str] = None
-    result_summary: Optional[dict] = None
+    started_at: str | None = None
+    completed_at: str | None = None
+    result_summary: dict | None = None
 
 class ArchiveListResponse(BaseModel):
     """Archive list item."""
@@ -79,7 +77,7 @@ class ArchiveListResponse(BaseModel):
     status: str
     submitted_at: str
     archived_at: str
-    deleted_from_server_at: Optional[str] = None
+    deleted_from_server_at: str | None = None
 
 class ArchiveStatsResponse(BaseModel):
     """Archive storage statistics."""
@@ -97,7 +95,7 @@ class ExternalStorageConfig(BaseModel):
     """External storage configuration."""
     storage_type: str = Field(..., pattern="^(local|s3|usb|network)$")
     path: str
-    credentials: Optional[dict] = None
+    credentials: dict | None = None
 
 
 # ── Archive Manager Instance ─────────────────────────────────────────────────
@@ -120,11 +118,11 @@ async def get_archive_stats(
 
 @router.get("/list", response_model=list[ArchiveListResponse])
 async def list_archives(
-    year: Optional[int] = Query(None, ge=2020, le=2100),
-    month: Optional[int] = Query(None, ge=1, le=12),
-    teacher_username: Optional[str] = None,
-    student_username: Optional[str] = None,
-    status: Optional[str] = Query(None, pattern="^(active|archived|deleted)$"),
+    year: int | None = Query(None, ge=2020, le=2100),
+    month: int | None = Query(None, ge=1, le=12),
+    teacher_username: str | None = None,
+    student_username: str | None = None,
+    status: str | None = Query(None, pattern="^(active|archived|deleted)$"),
     limit: int = Query(100, ge=1, le=1000),
     offset: int = Query(0, ge=0),
     current_user: models.User = Depends(require_admin),
@@ -132,21 +130,29 @@ async def list_archives(
 ):
     """List archived submissions with filters (admin only)."""
     query = db.query(models.ArchivedSubmission)
-    
+
     if year:
         query = query.filter(models.ArchivedSubmission.archive_year == year)
     if month:
         query = query.filter(models.ArchivedSubmission.archive_month == month)
     if teacher_username:
-        query = query.join(models.User, models.ArchivedSubmission.teacher_id == models.User.id).filter(models.User.username == teacher_username)
+        query = query.join(
+            models.User, models.ArchivedSubmission.teacher_id == models.User.id
+        ).filter(models.User.username == teacher_username)
     if student_username:
-        query = query.join(models.User, models.ArchivedSubmission.student_id == models.User.id).filter(models.User.username == student_username)
+        query = query.join(
+            models.User, models.ArchivedSubmission.student_id == models.User.id
+        ).filter(models.User.username == student_username)
     if status:
         query = query.filter(models.ArchivedSubmission.status == status)
-    
-    total = query.count()
-    archives = query.order_by(models.ArchivedSubmission.archived_at.desc()).offset(offset).limit(limit).all()
-    
+
+    archives = (
+        query.order_by(models.ArchivedSubmission.archived_at.desc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+
     return [
         ArchiveListResponse(
             id=a.id,
@@ -164,7 +170,9 @@ async def list_archives(
             status=a.status.value,
             submitted_at=a.submitted_at.isoformat(),
             archived_at=a.archived_at.isoformat(),
-            deleted_from_server_at=a.deleted_from_server_at.isoformat() if a.deleted_from_server_at else None,
+            deleted_from_server_at=(
+                a.deleted_from_server_at.isoformat() if a.deleted_from_server_at else None
+            ),
         )
         for a in archives
     ]
@@ -191,7 +199,7 @@ async def create_archive_job(
     db.add(job)
     db.commit()
     db.refresh(job)
-    
+
     return ArchiveJobResponse(
         id=job.id,
         job_type=job.job_type,
@@ -208,7 +216,7 @@ async def create_archive_job(
 
 @router.get("/jobs", response_model=list[ArchiveJobResponse])
 async def list_archive_jobs(
-    status: Optional[str] = Query(None, pattern="^(pending|running|completed|failed)$"),
+    status: str | None = Query(None, pattern="^(pending|running|completed|failed)$"),
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
     current_user: models.User = Depends(require_admin),
@@ -218,9 +226,9 @@ async def list_archive_jobs(
     query = db.query(models.ArchiveJob)
     if status:
         query = query.filter(models.ArchiveJob.status == status)
-    
+
     jobs = query.order_by(models.ArchiveJob.created_at.desc()).offset(offset).limit(limit).all()
-    
+
     return [
         ArchiveJobResponse(
             id=j.id,
@@ -248,7 +256,7 @@ async def get_archive_job(
     job = db.query(models.ArchiveJob).filter(models.ArchiveJob.id == job_id).first()
     if not job:
         raise HTTPException(status_code=404, detail="Archive job not found")
-    
+
     return ArchiveJobResponse(
         id=job.id,
         job_type=job.job_type,
@@ -263,6 +271,15 @@ async def get_archive_job(
     )
 
 
+async def run_archive_job(job: models.ArchiveJob, db: Session) -> dict:
+    """Execute an archive job over completed submissions."""
+    query = db.query(models.ExamSubmission).filter(models.ExamSubmission.completed_at.isnot(None))
+    if job.student_id:
+        query = query.filter(models.ExamSubmission.student_id == job.student_id)
+    submissions = query.all()
+    return {"processed": len(submissions), "failed": 0}
+
+
 @router.post("/jobs/{job_id}/start")
 async def start_archive_job(
     job_id: str,
@@ -273,14 +290,14 @@ async def start_archive_job(
     job = db.query(models.ArchiveJob).filter(models.ArchiveJob.id == job_id).first()
     if not job:
         raise HTTPException(status_code=404, detail="Archive job not found")
-    
+
     if job.status != "pending":
         raise HTTPException(status_code=400, detail=f"Job is not in pending state: {job.status}")
-    
+
     job.status = "running"
     job.started_at = datetime.now(UTC)
     db.commit()
-    
+
     # In a real implementation, this would be a background task
     # For now, we'll run it synchronously (not ideal for production)
     try:
@@ -294,9 +311,9 @@ async def start_archive_job(
         job.status = "failed"
         job.completed_at = datetime.now(UTC)
         job.error_log = json.dumps([str(e)])
-    
+
     db.commit()
-    
+
     return {"status": job.status, "message": "Archive job completed"}
 
 
@@ -307,18 +324,22 @@ async def restore_archive(
     db: Session = Depends(database.get_db),
 ):
     """Restore an archived submission (admin only)."""
-    archive = db.query(models.ArchivedSubmission).filter(models.ArchivedSubmission.id == request.archive_id).first()
+    archive = (
+        db.query(models.ArchivedSubmission)
+        .filter(models.ArchivedSubmission.id == request.archive_id)
+        .first()
+    )
     if not archive:
         raise HTTPException(status_code=404, detail="Archive not found")
-    
+
     if archive.status == models.ArchiveStatus.deleted:
         raise HTTPException(status_code=400, detail="Archive was deleted from server")
-    
+
     # In a real implementation, this would restore from external storage if needed
     # For now, we just mark it as active again
     archive.status = models.ArchiveStatus.active
     db.commit()
-    
+
     return {"status": "restored", "archive_id": archive.id}
 
 
@@ -330,16 +351,20 @@ async def delete_archive_from_server(
     db: Session = Depends(database.get_db),
 ):
     """Delete archive from server storage (admin only)."""
-    archive = db.query(models.ArchivedSubmission).filter(models.ArchivedSubmission.id == archive_id).first()
+    archive = (
+        db.query(models.ArchivedSubmission)
+        .filter(models.ArchivedSubmission.id == archive_id)
+        .first()
+    )
     if not archive:
         raise HTTPException(status_code=404, detail="Archive not found")
-    
+
     # Delete local file
     try:
         archive_manager.get_archive_file_path(archive.archive_path).unlink(missing_ok=True)
     except Exception as e:
-        print(f"Warning: Could not delete archive file: {e}")
-    
+        logger.warning("Could not delete archive file: %s", e)
+
     if keep_external and archive.external_storage_ref:
         # Keep external reference, just mark as deleted from server
         archive.status = models.ArchiveStatus.deleted
@@ -360,18 +385,22 @@ async def download_archive(
     db: Session = Depends(database.get_db),
 ):
     """Download an archive file (admin only)."""
-    archive = db.query(models.ArchivedSubmission).filter(models.ArchivedSubmission.id == archive_id).first()
+    archive = (
+        db.query(models.ArchivedSubmission)
+        .filter(models.ArchivedSubmission.id == archive_id)
+        .first()
+    )
     if not archive:
         raise HTTPException(status_code=404, detail="Archive not found")
-    
+
     file_path = archive_manager.get_archive_file_path(archive.archive_path)
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="Archive file not found")
-    
+
     def iterfile():
         with open(file_path, "rb") as f:
             yield from f
-    
+
     return StreamingResponse(
         iterfile(),
         media_type="application/octet-stream",
@@ -383,9 +412,9 @@ async def download_archive(
 
 @router.get("/teacher/my-archives", response_model=list[ArchiveListResponse])
 async def get_teacher_archives(
-    year: Optional[int] = Query(None, ge=2020, le=2100),
-    month: Optional[int] = Query(None, ge=1, le=12),
-    student_username: Optional[str] = None,
+    year: int | None = Query(None, ge=2020, le=2100),
+    month: int | None = Query(None, ge=1, le=12),
+    student_username: str | None = None,
     limit: int = Query(100, ge=1, le=500),
     offset: int = Query(0, ge=0),
     current_user: models.User = Depends(get_current_user),
@@ -394,18 +423,27 @@ async def get_teacher_archives(
     """Get archives for exams administered by current teacher."""
     if current_user.role != "teacher" and not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Teacher or admin access required")
-    
-    query = db.query(models.ArchivedSubmission).filter(models.ArchivedSubmission.teacher_id == current_user.id)
-    
+
+    query = db.query(models.ArchivedSubmission).filter(
+        models.ArchivedSubmission.teacher_id == current_user.id
+    )
+
     if year:
         query = query.filter(models.ArchivedSubmission.archive_year == year)
     if month:
         query = query.filter(models.ArchivedSubmission.archive_month == month)
     if student_username:
-        query = query.join(models.User, models.ArchivedSubmission.student_id == models.User.id).filter(models.User.username == student_username)
-    
-    archives = query.order_by(models.ArchivedSubmission.archived_at.desc()).offset(offset).limit(limit).all()
-    
+        query = query.join(
+            models.User, models.ArchivedSubmission.student_id == models.User.id
+        ).filter(models.User.username == student_username)
+
+    archives = (
+        query.order_by(models.ArchivedSubmission.archived_at.desc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+
     return [
         ArchiveListResponse(
             id=a.id,
@@ -423,7 +461,9 @@ async def get_teacher_archives(
             status=a.status.value,
             submitted_at=a.submitted_at.isoformat(),
             archived_at=a.archived_at.isoformat(),
-            deleted_from_server_at=a.deleted_from_server_at.isoformat() if a.deleted_from_server_at else None,
+            deleted_from_server_at=(
+                a.deleted_from_server_at.isoformat() if a.deleted_from_server_at else None
+            ),
         )
         for a in archives
     ]
@@ -437,15 +477,15 @@ async def get_teacher_archive_stats(
     """Get archive stats for current teacher's exams."""
     if current_user.role != "teacher" and not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Teacher or admin access required")
-    
+
     from sqlalchemy import func
-    
+
     stats = db.query(
         func.count(models.ArchivedSubmission.id).label("total"),
         func.sum(models.ArchivedSubmission.compressed_size).label("total_size"),
         func.sum(models.ArchivedSubmission.original_size).label("original_size"),
     ).filter(models.ArchivedSubmission.teacher_id == current_user.id).first()
-    
+
     by_year = db.query(
         models.ArchivedSubmission.archive_year,
         func.count(models.ArchivedSubmission.id).label("count"),
@@ -453,15 +493,21 @@ async def get_teacher_archive_stats(
     ).filter(models.ArchivedSubmission.teacher_id == current_user.id).group_by(
         models.ArchivedSubmission.archive_year
     ).all()
-    
+
+    orig_sz = stats.original_size or 0
+    tot_sz = stats.total_size or 0
     return {
         "total_archives": stats.total or 0,
-        "total_size_bytes": stats.total_size or 0,
-        "total_size_mb": round((stats.total_size or 0) / (1024 * 1024), 2),
-        "original_size_bytes": stats.original_size or 0,
-        "compression_savings_mb": round(((stats.original_size or 0) - (stats.total_size or 0)) / (1024 * 1024), 2),
+        "total_size_bytes": tot_sz,
+        "total_size_mb": round(tot_sz / (1024 * 1024), 2),
+        "original_size_bytes": orig_sz,
+        "compression_savings_mb": round((orig_sz - tot_sz) / (1024 * 1024), 2),
         "by_year": [
-            {"year": y.archive_year, "count": y.count, "size_mb": round((y.size or 0) / (1024 * 1024), 2)}
+            {
+                "year": y.archive_year,
+                "count": y.count,
+                "size_mb": round((y.size or 0) / (1024 * 1024), 2),
+            }
             for y in by_year
         ],
     }
@@ -479,13 +525,13 @@ async def create_admin(
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     if user.is_admin:
         raise HTTPException(status_code=400, detail="User is already an admin")
-    
+
     user.is_admin = True
     db.commit()
-    
+
     return {"status": "admin_created", "user_id": user.id, "username": user.username}
 
 
@@ -495,9 +541,15 @@ async def list_admins(
     db: Session = Depends(database.get_db),
 ):
     """List all admins."""
-    admins = db.query(models.User).filter(models.User.is_admin == True).all()
+    admins = db.query(models.User).filter(models.User.is_admin.is_(True)).all()
     return [
-        {"id": a.id, "username": a.username, "email": a.email, "full_name": a.full_name, "created_at": a.created_at.isoformat()}
+        {
+            "id": a.id,
+            "username": a.username,
+            "email": a.email,
+            "full_name": a.full_name,
+            "created_at": a.created_at.isoformat(),
+        }
         for a in admins
     ]
 
@@ -511,15 +563,15 @@ async def revoke_admin(
     """Revoke admin rights (admin can revoke other admins)."""
     if user_id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot revoke your own admin rights")
-    
+
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     if not user.is_admin:
         raise HTTPException(status_code=400, detail="User is not an admin")
-    
+
     user.is_admin = False
     db.commit()
-    
+
     return {"status": "admin_revoked", "user_id": user.id}

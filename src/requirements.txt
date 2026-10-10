@@ -47,6 +47,19 @@ presidio-anonymizer>=2.2.355
 # faster-whisper>=1.0.0  # Requires CTranslate2, install separately if needed
 # For now using OpenAI Whisper API compatible endpoints
 
-# Utilities
+# Utilities & HTTP Client
 python-multipart>=0.0.6  # For form data parsing
+httpx>=0.28.0  # Async HTTP client (AI providers, ChatGPT OAuth, Turnstile)
 
+# Passkeys / WebAuthn & Archive Compression (Free, Open-Source)
+webauthn>=2.5.0
+zstandard>=0.23.0
+
+# Observability (OpenTelemetry & Prometheus - Free, Open-Source)
+prometheus-client>=0.20.0
+opentelemetry-api>=1.25.0
+opentelemetry-sdk>=1.25.0
+opentelemetry-exporter-prometheus>=0.46b0
+opentelemetry-instrumentation-fastapi>=0.46b0
+opentelemetry-instrumentation-requests>=0.46b0
+opentelemetry-instrumentation-sqlalchemy>=0.46b0
