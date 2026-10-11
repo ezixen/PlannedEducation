@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
+import { FAQChatbot } from './FAQChatbot';
 
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,6 +66,7 @@ export function Layout() {
           <Outlet />
         </div>
       </main>
+      <FAQChatbot />
     </div>
   );
 }

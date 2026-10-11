@@ -4,6 +4,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ToastProvider } from './contexts/ToastContext';
 import { ChatGptSessionProvider } from './contexts/ChatGptSessionContext';
+import { ExamProvider } from './contexts/ExamContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
@@ -26,24 +27,26 @@ function AppProviders() {
       <ThemeProvider>
         <ToastProvider>
           <ChatGptSessionProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/" element={<ProtectedRoute />}>
-                  <Route index element={<Dashboard />} />
-                  <Route path="settings" element={<Settings />} />
-                  <Route path="exam/:id" element={<TakeExam />} />
-                  <Route path="teacher-exams" element={<TeacherExams />} />
-                  <Route path="teacher-exams/:id" element={<ExamEditor />} />
-                  <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
-                  <Route path="teacher-classes" element={<TeacherClasses />} />
-                  <Route path="parent-dashboard" element={<ParentDashboard />} />
-                  <Route path="ai-integrations" element={<AiIntegration />} />
-                  <Route path="admin" element={<AdminDashboard />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
+            <ExamProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/" element={<ProtectedRoute />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="settings" element={<Settings />} />
+                    <Route path="exam/:id" element={<TakeExam />} />
+                    <Route path="teacher-exams" element={<TeacherExams />} />
+                    <Route path="teacher-exams/:id" element={<ExamEditor />} />
+                    <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
+                    <Route path="teacher-classes" element={<TeacherClasses />} />
+                    <Route path="parent-dashboard" element={<ParentDashboard />} />
+                    <Route path="ai-integrations" element={<AiIntegration />} />
+                    <Route path="admin" element={<AdminDashboard />} />
+                  </Route>
+                </Routes>
+              </BrowserRouter>
+            </ExamProvider>
           </ChatGptSessionProvider>
         </ToastProvider>
       </ThemeProvider>
