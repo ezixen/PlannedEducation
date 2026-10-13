@@ -27,6 +27,16 @@ const FAQ_DATA = [
         id: 3,
         question: "What is the Secure Exam Browser (SEB)?",
         answer: "The Secure Exam Browser is a locked-down browser environment that prevents students from accessing other applications or websites during an exam, ensuring test integrity and preventing cheating."
+      },
+      {
+        id: 13,
+        question: "How do I create a question bank?",
+        answer: "Go to Teacher Dashboard > Question Banks > 'New Bank'. Name it, add subject/tags, then add questions. You can import from existing exams or create new questions."
+      },
+      {
+        id: 14,
+        question: "What are reusable modules?",
+        answer: "Modules are self-contained question sets with shared context (e.g., a reading passage with 5 questions). Create them in the Exam Editor > 'Create Module', add context and questions, then reuse across exams."
       }
     ]
   },
@@ -46,7 +56,12 @@ const FAQ_DATA = [
       {
         id: 6,
         question: "What are Passkeys and how do I use them?",
-        answer: "Passkeys are a passwordless authentication method using biometrics or device PIN. You can set them up in Settings > Passkeys by registering your device's biometric authentication."
+        answer: "Passkeys are a passwordless authentication method using biometrics or device PIN. You can set them up in Settings > Passkeys by registering your device's biometric authentication. Passkeys sync across devices via iCloud Keychain or Google Password Manager."
+      },
+      {
+        id: 15,
+        question: "How do I register a Passkey?",
+        answer: "Go to Settings > Passkeys, click 'Register Passkey', and use your device's biometric (fingerprint, face ID) or PIN to create the passkey. It will sync across your devices automatically."
       }
     ]
   },
@@ -67,6 +82,61 @@ const FAQ_DATA = [
         id: 9,
         question: "How do I view student submissions?",
         answer: "After students submit exams, go to Teacher Dashboard, select the exam, and click 'View Submissions' to see all student answers and AI-generated feedback."
+      },
+      {
+        id: 16,
+        question: "Which AI providers are supported?",
+        answer: "Gemini (Google), OpenRouter (100+ models), Ollama (local), OpenAI-compatible endpoints, and ChatGPT session (device-code OAuth). Configure in Settings > AI Key Management."
+      },
+      {
+        id: 17,
+        question: "How does the AI grading review workflow work?",
+        answer: "AI provides score, feedback, confidence, and reasoning for each question. Teachers can Approve (accept as-is), Edit (modify score/feedback), or Reject (grade manually). Bulk actions: 'Approve All High Confidence' or 'Flag Low Confidence for Review'."
+      },
+      {
+        id: 18,
+        question: "What are the AI safety controls?",
+        answer: "Prompt injection detection (20+ patterns), hallucination detection via consistency checking, output schema validation, confidence threshold (min 0.75), rate limiting (20/min, 200/hour), cost tracking ($5/day budget), provider health monitoring with automatic fallback."
+      }
+    ]
+  },
+  {
+    category: "Test Packages & Sharing",
+    questions: [
+      {
+        id: 19,
+        question: "How do I export a test package?",
+        answer: "Open an exam in the Exam Editor, click 'Export Package', choose JSON or YAML format, select options (include answers, rubrics, variables), and download the .pepkg.json file."
+      },
+      {
+        id: 20,
+        question: "How do I import a test package?",
+        answer: "Go to Teacher Dashboard > 'Import Package', drag the .pepkg.json/.yaml file, preview the contents, choose import options (new exam, add to existing, import modules/questions), and confirm."
+      },
+      {
+        id: 21,
+        question: "What is the pepkg CLI?",
+        answer: "The pepkg CLI is a command-line tool for managing test packages: export/import/validate/list/download packages, publish/unpublish, search, and local validation. Install with 'pip install -e ./pepkg'."
+      },
+      {
+        id: 22,
+        question: "How do I share packages with colleagues?",
+        answer: "Send .pepkg.json via email/shared drive/USB, or use the pepkg CLI to publish to the registry. Recipients import via 'Import Package' or 'pepkg install'."
+      }
+    ]
+  },
+  {
+    category: "Proctoring & Monitoring",
+    questions: [
+      {
+        id: 23,
+        question: "How do I enable proctoring for an exam?",
+        answer: "In exam settings, enable 'Proctoring'. Students will be prompted for camera/microphone permissions and must complete GDPR consent. Events tracked: eye movement, multiple faces, background audio, tab switches, SEB violations."
+      },
+      {
+        id: 24,
+        question: "What proctoring events are tracked?",
+        answer: "Eye movement (gaze tracking), multiple face detection, background audio levels, tab/window switches, SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay."
       }
     ]
   },
@@ -87,6 +157,16 @@ const FAQ_DATA = [
         id: 12,
         question: "How do I get help or report issues?",
         answer: "For technical issues, check the documentation in the docs/ folder. For feature requests or bug reports, visit our GitHub repository and open an issue."
+      },
+      {
+        id: 25,
+        question: "What are the system requirements?",
+        answer: "Backend: Python 3.12+, PostgreSQL 16, Redis 7. Frontend: Node.js 20+. For SEB: Windows/macOS with SEB installed. For proctoring: camera + microphone permissions."
+      },
+      {
+        id: 26,
+        question: "How do I deploy to production?",
+        answer: "Use Docker Compose with docker-compose.yml + docker-compose.prod.yml. Set environment variables (JWT_SECRET_KEY, DATABASE_URL, etc.). Run migrations with alembic. Build frontend with 'npm run build'. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS."
       }
     ]
   }

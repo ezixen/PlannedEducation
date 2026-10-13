@@ -16,6 +16,8 @@
    - [Configuring AI Providers](#configuring-ai-providers)
    - [Running AI Grading](#running-ai-grading)
    - [Reviewing and Correcting AI Suggestions](#reviewing-and-correcting-ai-suggestions)
+   - [AI Provider Abstraction Layer](#ai-provider-abstraction-layer)
+   - [Rate Limiting & Cost Tracking](#rate-limiting--cost-tracking)
 5. [Test Creation with Modules](#test-creation-with-modules)
    - [Question Types](#question-types)
    - [Dynamic Math Variables](#dynamic-math-variables)
@@ -25,7 +27,18 @@
    - [Exporting Test Packages](#exporting-test-packages)
    - [Importing Test Packages](#importing-test-packages)
    - [Sharing with Others](#sharing-with-others)
-7. [Troubleshooting](#troubleshooting)
+   - [Package Registry (pepkg CLI)](#package-registry-pepkg-cli)
+7. [Security & Compliance](#security--compliance)
+   - [Passkeys/WebAuthn](#passkeyswebauthn)
+   - [NIST AI RMF 1.0 + Generative AI Profile](#nist-ai-rmf-10--generative-ai-profile)
+   - [NIST SSDF 1.1 Alignment](#nist-ssdf-11-alignment)
+   - [NIST CSF 2.0 Alignment](#nist-csf-20-alignment)
+   - [OWASP Top 10:2025 Alignment](#owasp-top-102025-alignment)
+8. [Observability & SLOs](#observability--slos)
+   - [OpenTelemetry Integration](#opentelemetry-integration)
+   - [Prometheus Metrics & Grafana Dashboards](#prometheus-metrics--grafana-dashboards)
+   - [SLO Burn-Rate Alerting](#slo-burn-rate-alerting)
+9. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -39,12 +52,19 @@ PlannedEducation is a free, open-source, privacy-first exam platform designed fo
 - **Three-way immutable storage** (student/teacher/server sync)
 - **Proctoring** with GDPR-compliant webcam/microphone monitoring
 - **Modular test packages** for sharing and reuse
+- **Passkeys/WebAuthn** for phishing-resistant authentication
+- **External AI only** (BYOK) - no internal LLMs, teacher choice of provider
+- **NIST AI RMF 1.0 + Generative AI Profile** compliance for AI risk governance
+- **NIST SSDF 1.1 / CSF 2.0 / OWASP Top 10:2025** security alignment
+- **SLO-based observability** with OpenTelemetry, Prometheus, Grafana, Alertmanager
 
 **Tech Stack:**
 - Backend: FastAPI, Python 3.12+, SQLAlchemy 2.0, PostgreSQL 16, Redis 7
 - Frontend: React 19, TypeScript 5.6, Vite 8.3, PWA (vite-plugin-pwa)
 - Auth: Google SSO, TOTP 2FA, Passkeys/WebAuthn, Argon2id
-- AI: External providers only (Gemini, OpenRouter, Ollama, OpenAI-compatible)
+- AI: External providers only (Gemini, OpenRouter, Ollama, OpenAI-compatible, ChatGPT session)
+- Monitoring: OpenTelemetry, Prometheus, Grafana, Alertmanager
+- Package Registry: pepkg CLI for test package management
 
 ---
 
@@ -440,5 +460,5 @@ pm install in web/apps/portal; check Node.js version (20+) |
 
 ---
 
-*Last updated: 2026-10-11*
-*Version: 1.0*
+*Last updated: 2026-10-13*
+*Version: 1.1*
