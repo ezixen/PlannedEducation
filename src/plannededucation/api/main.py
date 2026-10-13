@@ -28,6 +28,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from . import (
     routes_admin,
     routes_ai,
+    routes_alerts,
     routes_anonymizer,
     routes_archive,
     routes_auth,
@@ -347,6 +348,7 @@ app.include_router(routes_ai.router)
 app.include_router(routes_chatgpt.router)
 app.include_router(routes_archive.router)
 app.include_router(routes_admin.router)
+app.include_router(routes_alerts.router)
 
 
 @app.get("/health")

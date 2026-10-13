@@ -1,0 +1,98 @@
+# Alertmanager Configuration - Free/Open-Source Only
+# Routes alerts from Prometheus to receivers
+# Schema: https://prometheus.io/docs/alerting/latest/configuration/
+
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname', 'job', 'severity', 'slo', 'burn_rate', 'csf_function', 'csf_category']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+  receiver: 'default'
+  routes:
+    # Critical SLO burn rate alerts - immediate notification
+    - match:
+        severity: critical
+        burn_rate: "fast"
+      receiver: 'critical-alerts'
+      continue: true
+    
+    # Warning SLO burn rate alerts
+    - match:
+        severity: warning
+        burn_rate: "slow"
+      receiver: 'warning-alerts'
+      continue: true
+    
+    # Security alerts
+    - match:
+        component: security
+      receiver: 'security-alerts'
+      continue: true
+    
+    # Infrastructure alerts
+    - match:
+        component: infrastructure
+      receiver: 'infra-alerts'
+      continue: true
+    
+    # AI cost alerts
+    - match:
+        component: ai_cost
+      receiver: 'cost-alerts'
+      continue: true
+    
+    # NIST CSF 2.0 function alerts
+    - match_re:
+        csf_function: "govern|identify|protect|detect|respond|recover"
+      receiver: 'csf-alerts'
+      continue: true
+
+receivers:
+  - name: 'default'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+  
+  - name: 'critical-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+    # Add email/webhook integrations here when configured
+    # email_configs:
+    #   - to: 'oncall@example.com'
+    #     send_resolved: true
+  
+  - name: 'warning-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+  
+  - name: 'security-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+  
+  - name: 'infra-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+  
+  - name: 'cost-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+  
+  - name: 'csf-alerts'
+    webhook_configs:
+      - url: 'http://backend:8000/api/alerts/webhook'
+        send_resolved: true
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'job']

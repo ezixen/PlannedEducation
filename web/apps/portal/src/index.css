@@ -415,8 +415,8 @@ input, select, textarea {
   pointer-events: auto;
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-lg, 12px);
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
   animation: slideIn 0.3s ease-out;
@@ -424,6 +424,8 @@ input, select, textarea {
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
   max-width: 420px;
+  min-width: 200px;
+  width: fit-content;
 }
 
 .toast-item.exiting {
@@ -438,7 +440,7 @@ input, select, textarea {
 
 .toast-close {
   flex-shrink: 0;
-  margin-left: 0.75rem;
+  margin-right: 0.5rem;
   padding: 0.25rem;
   color: inherit;
   opacity: 0.5;
@@ -448,6 +450,8 @@ input, select, textarea {
   font-size: 1.25rem;
   line-height: 1;
   transition: opacity 0.2s;
+  align-self: flex-start;
+  margin-top: -0.125rem;
 }
 
 .toast-close:hover {
@@ -459,6 +463,7 @@ input, select, textarea {
   min-width: 0;
   word-break: break-word;
   line-height: 1.5;
+  padding-top: 0.125rem;
 }
 
 .toast-item--info {
@@ -483,54 +488,6 @@ input, select, textarea {
   background-color: var(--error-bg, #fef2f2);
   border: 1px solid var(--error-border, #ef4444);
   color: var(--error-text, #991b1b);
-}
-
-.toast-item--info,
-.toast-item--success,
-.toast-item--warn,
-.toast-item--error {
-  border: 1px solid;
-  border-radius: var(--radius-lg, 12px);
-  padding: 1rem 1.25rem;
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-  display: flex;
-  gap: 0.75rem;
-  animation: slideIn 0.3s ease-out;
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  max-width: 420px;
-}
-
-.toast-item.exiting {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.toast-close {
-  flex-shrink: 0;
-  margin-left: 0.75rem;
-  padding: 0.25rem;
-  color: inherit;
-  opacity: 0.5;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.25rem;
-  line-height: 1;
-  transition: opacity 0.2s;
-}
-
-.toast-close:hover {
-  opacity: 1;
-}
-
-.toast-message {
-  flex: 1;
-  min-width: 0;
-  word-break: break-word;
-  line-height: 1.5;
 }
 
 @keyframes slideIn {
