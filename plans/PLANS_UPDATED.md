@@ -51,13 +51,13 @@
 |---|---|---|
 | **A01:2025 Broken Access Control** | Deny by default, RBAC, row-level access | `_require_exam_owner` helper, `AccountRelationship` with status checks, teacher-only exam mutations |
 | **A02:2025 Security Misconfiguration** | Secure headers, no debug in prod, hardened configs | CSP, HSTS, X-Frame-Options, TrustedHostMiddleware, Swagger disabled in prod, secure defaults |
-| **A03:2025 Software Supply Chain Failures** | Dependency scanning, SBOM, signed artifacts, provenance | `pip-audit`/`npm audit` in CI, `sbom-python.json`, pinned dependencies, SLSA provenance (planned) |
+| **A03:2025 Software Supply Chain Failures** | Dependency scanning, SBOM, signed artifacts, provenance | `pip-audit`/`npm audit` in CI, `cyclonedx-bom`/`@cyclonedx/bom` SBOM, pinned deps, **cosign keyless signing**, **SLSA Level 3 provenance** |
 | **A04:2025 Cryptographic Failures** | TLS 1.3, Argon2id, Fernet, JWT HS256, key management | Argon2id (time_cost=3, memory=64MB), Fernet for AI keys, JWT 60-min expiry, HTTPS-only cookies, KMS-ready |
 | **A05:2025 Injection** | Parameterized queries, input validation, output encoding | SQLAlchemy ORM, Pydantic schemas with strict validation, no raw SQL, XSS prevention |
 | **A06:2025 Insecure Design** | Threat modeling, secure defaults, fail-secure | Security audit logging, rate limiting, constant-time comparisons, fail-secure defaults |
-| **A07:2025 Authentication Failures** | MFA, passkeys/WebAuthn, brute force protection | Google SSO primary, TOTP 2FA, recovery codes, rate limiting (5-20/min), Argon2id, **Passkeys planned** |
-| **A08:2025 Software/Data Integrity Failures** | CI/CD integrity, signed artifacts, SBOM verification | Pinned dependencies, CI security gates, artifact signing (planned), supply chain verification |
-| **A09:2025 Security Logging/Monitoring Failures** | Structured JSON logs, security events, alerting | Request ID middleware, auth/exam mutation audit logs, global exception handler, SLO alerting (planned) |
+| **A07:2025 Authentication Failures** | MFA, passkeys/WebAuthn, brute force protection | Google SSO primary, TOTP 2FA, recovery codes, rate limiting (5-20/min), Argon2id, **Passkeys/WebAuthn implemented** |
+| **A08:2025 Software/Data Integrity Failures** | CI/CD integrity, signed artifacts, SBOM verification | Pinned dependencies, CI security gates, **cosign keyless signing**, **SLSA Level 3 provenance**, supply chain verification |
+| **A09:2025 Security Logging/Monitoring Failures** | Structured JSON logs, security events, alerting | Request ID middleware, auth/exam mutation audit logs, global exception handler, **SLO alerting (burn rate planned)** |
 | **A10:2025 Mishandling of Exceptional Conditions** | Error handling, no stack traces, generic errors | No stack traces in production; generic 500 with request_id, structured error responses |
 
 ### Security Headers (OWASP Recommended)
@@ -106,50 +106,61 @@
 #### 7.1 OWASP Top 10:2025 Full Alignment ✅ Updated
 - Updated OWASP mapping table to 2025 categories (A01-A10)
 - **A03 Software Supply Chain Failures**: Added `pip-audit`/`npm audit` in CI, SBOM generation, pinned dependencies
-- **A08 Software/Data Integrity Failures**: CI/CD integrity gates, artifact signing (planned)
-- **A09 Security Logging/Monitoring Failures**: Structured logging, SLO alerting (planned)
-- **A10 Mishandling of Exceptional Conditions**: Generic error responses, no stack traces in prod
+- **A08 Software/Data Integrity Failures**: CI/CD integrity gates, artifact signing ✅ (cosign + SLSA)
+- **A09 Security Logging/Monitoring Failures**: Structured logging ✅, SLO alerting 🔄 (burn rate alerting planned)
+- **A10 Mishandling of Exceptional Conditions**: Generic error responses, no stack traces in prod ✅
 
-#### 7.2 NIST AI RMF 1.0 + Generative AI Profile (NIST-AI-600-1) 🔄 Planned
-- **AI Risk Governance for External AI Grading**: Since AI is external-only via pluggable API system, risk controls focus on:
-  - Prompt injection prevention (input sanitization on teacher prompts)
-  - Model output validation (hallucination detection, format verification)
-  - Data minimization (anonymizer strips PII before sending to AI)
-  - Audit trail for all AI interactions (request/response logging)
-  - Teacher approval workflow for AI-suggested grades
-- **Generative AI Profile Controls**:
-  - Input validation on all teacher-provided prompts
-  - Output schema validation (JSON schema for AI responses)
-  - Rate limiting on AI API calls per teacher
-  - Cost monitoring and budget alerts per teacher
-  - Fallback to manual grading if AI service unavailable
+#### 7.2 NIST AI RMF 1.0 + Generative AI Profile (NIST-AI-600-1) ✅ **IMPLEMENTED** (2026-10-06)
+- **AI Risk Governance for External AI Grading**: Since AI is external-only via pluggable API system, risk controls implemented in `src/plannededucation/api/routes_ai.py`:
+  - ✅ Prompt injection prevention (20+ regex patterns, input sanitization on teacher prompts)
+  - ✅ Model output validation (hallucination detection via consistency checking, format verification)
+  - ✅ Data minimization (anonymizer strips PII before sending to AI)
+  - ✅ Audit trail for all AI interactions (request/response logging with user_id, prompt_hash, response_hash)
+  - ✅ Teacher approval workflow for AI-suggested grades (TeacherDashboard.tsx)
+- **Generative AI Profile Controls** (implemented):
+  - ✅ Input validation on all teacher-provided prompts (`check_prompt_injection`, `sanitize_prompt`)
+  - ✅ Output schema validation (JSON schema for AI responses via Pydantic models)
+  - ✅ Rate limiting on AI API calls per teacher (20/min, 200/hour via `RateLimiter`)
+  - ✅ Cost monitoring and budget alerts per teacher ($5/day budget, tracked in `ai_usage` table)
+  - ✅ Fallback to manual grading if AI service unavailable (teacher review UI)
+  - ✅ Confidence threshold (min 0.75) with automatic flagging for teacher review
+  - ✅ Provider health monitoring with automatic fallback
 
-#### 7.3 NIST SSDF 1.1 Alignment 🔄 Planned
+#### 7.3 NIST SSDF 1.1 Alignment 🔄 **Mostly Implemented**
 - **Secure Development Practices**:
-  - [ ] SAST in CI (bandit for Python, ESLint security rules for TypeScript)
-  - [ ] Dependency scanning (`pip-audit`, `npm audit`) - partially done
-  - [ ] SBOM generation for releases (`sbom-python.json` exists)
-  - [ ] Container image scanning (Trivy/Snyk) for Docker builds
-  - [ ] Signed artifacts and provenance (cosign/SLSA) - planned
-  - [ ] AI-assisted code review requirements (human approval for auth/payment/security)
+  - ✅ SAST in CI (bandit for Python) — `.github/workflows/ci.yml`
+  - ⚠️ ESLint security rules for TypeScript — using `oxlint` instead (faster, built-in security rules)
+  - ✅ Dependency scanning (`pip-audit`, `npm audit`) — CI gates
+  - ✅ SBOM generation for releases (`cyclonedx-bom` Python, `@cyclonedx/bom` Node) — CI
+  - ✅ Container image scanning (Trivy) for Docker builds — CI
+  - ✅ Signed artifacts and provenance (cosign keyless + SLSA Level 3 via slsa-github-generator) — CI
+  - 🔄 AI-assisted code review requirements (human approval for auth/payment/security) — PR template includes AI provenance
 
-#### 7.4 NIST CSF 2.0 Alignment 🔄 Planned
-- **Govern**: Project security policy, risk management strategy
-- **Identify**: Asset inventory (data, models, APIs), supply chain risk
-- **Protect**: Access control, data encryption, awareness training
-- **Detect**: Security monitoring, anomaly detection, logging
-- **Respond**: Incident response plan, communication procedures
-- **Recover**: Backup/restore drills, business continuity
+#### 7.4 NIST CSF 2.0 Alignment 🔄 **Partially Implemented**
+- **Govern**: Project security policy (OWASP ASVS 5.0.0), risk management strategy ✅
+- **Identify**: Asset inventory (data, models, APIs), supply chain risk (SBOM, dependency scanning) ✅
+- **Protect**: Access control (RBAC, row-level), data encryption (Fernet, TLS 1.3, Argon2id), awareness training (docs) ✅
+- **Detect**: Security monitoring (structured JSON logs, request tracing), anomaly detection (rate limiting, auth failures), logging ✅
+- **Respond**: Incident response plan (runbooks in `docs/runbooks/`), communication procedures 🔄
+- **Recover**: Backup/restore drills (automated monthly), business continuity (RPO < 24h, RTO < 4h) ✅
 
-### Phase 8: Passkeys/WebAuthn Implementation 🔄 Planned (OWASP A07:2025)
+### Phase 8: Passkeys/WebAuthn Implementation ✅ **IMPLEMENTED** (2026-10-06) (OWASP A07:2025)
 - **Primary**: Google SSO (OAuth2/OIDC) — remains primary
-- **Passkeys/WebAuthn**: Add as phishing-resistant second factor
-  - WebAuthn/FIDO2 registration during 2FA setup
-  - Platform authenticators (Windows Hello, Touch ID, Android biometrics)
-  - Cross-device sync via iCloud Keychain / Google Password Manager
-  - Fallback to TOTP 2FA for devices without passkey support
-- **Implementation**: `py_webauthn` library, new endpoints `/auth/webauthn/*`
-- **UI**: Settings page integration alongside existing TOTP 2FA
+- **Passkeys/WebAuthn**: Fully implemented as phishing-resistant second factor
+  - ✅ WebAuthn/FIDO2 registration during 2FA setup (requires TOTP 2FA first)
+  - ✅ Platform authenticators (Windows Hello, Touch ID, Android biometrics)
+  - ✅ Cross-device sync via iCloud Keychain / Google Password Manager
+  - ✅ Fallback to TOTP 2FA for devices without passkey support
+- **Implementation**: `py_webauthn` library, endpoints in `src/plannededucation/api/routes_auth.py`:
+  - `POST /auth/webauthn/registration/start` — Start passkey registration
+  - `POST /auth/webauthn/registration/finish` — Complete passkey registration
+  - `POST /auth/webauthn/authentication/start` — Start passkey authentication
+  - `POST /auth/webauthn/authentication/finish` — Complete passkey authentication
+  - `GET /auth/webauthn/credentials` — List registered passkeys
+  - `DELETE /auth/webauthn/credentials/{credential_id}` — Delete passkey
+- **UI**: `web/apps/portal/src/components/PasskeysSettings.tsx` integrated in Settings page
+- **Translations**: All 17 locales have passkeys translations
+- **Documentation**: FAQ, MANUAL_TESTING.md, ARCHITECTURE.md
 
 ### Phase 9: Enhanced Supply Chain Security ✅ Completed (2026-10-06)
 - **CI/CD Gates** (`.github/workflows/ci.yml`): ✅ All implemented
@@ -162,12 +173,24 @@
 - **Artifact Signing**: ✅ cosign for SBOMs, SLSA provenance via slsa-github-generator
 - **SLSA Provenance**: ✅ slsa-github-generator workflow for SLSA Level 3
 
-### Phase 10: Internationalization (i18n) Foundation 🔄 Planned
-- **ICU MessageFormat** for all user-facing strings
-- **Externalized strings** in React components (`useTranslation` hook)
-- **Locale-safe formatting**: dates, numbers, currencies via `Intl` API
-- **RTL support** preparation (CSS logical properties)
-- **Supported locales**: en-US (default), es-ES, de-DE, fr-FR, ja-JP, zh-CN
+### Phase 10: Internationalization (i18n) Foundation ✅ **IMPLEMENTED** (2026-10-14)
+- **Custom i18n System** (not ICU MessageFormat - simpler page.element.key format):
+  - ✅ Externalized strings in React components via `useI18n()` hook and `t(key)` function
+  - ✅ Locale-safe formatting: dates (dd/mm/yyyy), numbers, time display via `Intl` API
+  - ✅ RTL support preparation (CSS logical properties in themes)
+  - ✅ **17 Supported locales**: en, hu, es, de, fr, ja, zh, pt, uk, it, pl, nl, sv, no, da, fi, pt-BR
+  - ✅ All 455 keys per locale matching English source
+- **Components**:
+  - `I18nContext.tsx` — Locale management, number display toggle, jump-to-element, localStorage persistence
+  - `I18nNumber.tsx` — Visual badges, tooltips with context, jump-to, keyboard navigation
+  - `I18nSettings.tsx` — Locale selector, number toggle, help, translator guide, contribute links
+  - `I18nNumber.css` — Styles for badges, tooltips, jump animation, settings panel
+- **Integration**:
+  - `I18nProvider` in `main.tsx` wrapping entire app
+  - `I18nSettings` in Settings page
+  - Login page updated to use `t()` function
+  - `CONTEXT.md` — Detailed context for every translation key
+  - `docs/I18N_GUIDE.md` — Comprehensive guide with file structure, translation rules, adding languages, workflows
 
 ### Phase 11: Observability & SLOs ✅ Completed (2026-10-06)
 - **OpenTelemetry Integration**: ✅ Implemented in `src/plannededucation/api/main.py`
