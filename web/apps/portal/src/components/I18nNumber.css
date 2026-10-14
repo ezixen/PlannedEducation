@@ -1,0 +1,341 @@
+/* I18n Number System Styles */
+
+/* Number badge on elements */
+.i18n-number-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.i18n-numbered-element {
+  position: relative;
+  outline: none;
+}
+
+.i18n-numbered-element:focus {
+  outline: 2px solid var(--primary-color, #3b82f6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.i18n-number-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 20px;
+  height: 20px;
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  font-family: monospace;
+  border: 2px solid white;
+  animation: i18n-pulse 2s ease-in-out infinite;
+}
+
+@keyframes i18n-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.i18n-number-display {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 4px;
+  font-family: monospace;
+  border: 2px solid white;
+  margin-left: 4px;
+}
+
+/* Tooltip styles */
+.i18n-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: 12px;
+  min-width: 280px;
+  max-width: 400px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: i18n-tooltip-fade 0.2s ease-out;
+}
+
+@keyframes i18n-tooltip-fade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.i18n-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--card-bg, #ffffff);
+}
+
+.i18n-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  font-size: 12px;
+}
+
+.i18n-tooltip-header strong {
+  color: var(--text-color, #17324d);
+}
+
+.i18n-jump-btn {
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.i18n-jump-btn:hover {
+  background: var(--primary-hover, #2563eb);
+}
+
+.i18n-tooltip-text {
+  color: var(--text-color, #17324d);
+  font-size: 13px;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.i18n-tooltip-context {
+  background: var(--bg-secondary, #f7fbfe);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  padding: 8px;
+  font-size: 11px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.i18n-tooltip-context strong {
+  color: var(--text-color, #17324d);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.i18n-tooltip-context pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted, #4d6b82);
+}
+
+/* Highlight animation when jumping */
+.i18n-highlight {
+  animation: i18n-highlight-flash 2s ease-out;
+  box-shadow: 0 0 0 3px var(--primary-color, #3b82f6) !important;
+  border-radius: 4px;
+}
+
+@keyframes i18n-highlight-flash {
+  0% { box-shadow: 0 0 0 3px var(--primary-color, #3b82f6); }
+  50% { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.4); }
+  100% { box-shadow: 0 0 0 3px var(--primary-color, #3b82f6); }
+}
+
+/* Settings panel integration */
+.i18n-settings-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  transition: all 0.2s;
+}
+
+.i18n-settings-toggle:hover {
+  background: var(--hover-color, #d8ecf8);
+}
+
+.i18n-settings-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-color, #17324d);
+}
+
+.i18n-settings-toggle input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-color, #3b82f6);
+}
+
+.i18n-settings-toggle .i18n-settings-desc {
+  font-size: 13px;
+  color: var(--text-muted, #4d6b82);
+  margin-left: 28px;
+}
+
+/* Locale selector in settings */
+.i18n-locale-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.i18n-locale-selector label {
+  font-weight: 500;
+  color: var(--text-color, #17324d);
+}
+
+.i18n-locale-selector select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  background: var(--card-bg, #ffffff);
+  color: var(--text-color, #17324d);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.i18n-locale-selector select:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* FAQ bot integration */
+.faq-chatbot-message .i18n-key-ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.faq-chatbot-message .i18n-key-ref:hover {
+  background: var(--primary-hover, #2563eb);
+}
+
+/* Jump button in FAQ */
+.faq-jump-btn {
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+
+.faq-jump-btn:hover {
+  background: var(--primary-hover, #2563eb);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .i18n-tooltip {
+    left: 0;
+    right: 0;
+    transform: none;
+    max-width: calc(100vw - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  
+  .i18n-tooltip::after {
+    left: 20px;
+    transform: none;
+  }
+  
+  .i18n-number-badge {
+    min-width: 16px;
+    height: 16px;
+    font-size: 9px;
+    top: -6px;
+    right: -6px;
+  }
+}
+
+/* Print styles - hide numbers */
+@media print {
+  .i18n-number-badge,
+  .i18n-number-display,
+  .i18n-number-container::after {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .i18n-number-badge {
+    border: 2px solid currentColor;
+  }
+  
+  .i18n-tooltip {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .i18n-number-badge {
+    animation: none;
+  }
+  
+  .i18n-tooltip {
+    animation: none;
+  }
+  
+  .i18n-highlight {
+    animation: none;
+  }
+}
