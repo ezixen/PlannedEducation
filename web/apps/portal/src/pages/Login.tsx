@@ -4,12 +4,14 @@ import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 export function Login() {
   const { login, loginWithPassword } = useAuth();
   const { error: showError } = useToast();
+  const { t } = useI18n();
   const navigate = useNavigate();
   
   const [email, setEmail] = useState('');
@@ -64,7 +66,9 @@ export function Login() {
     <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)' }}>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
         <h1 style={{ marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary-color)' }}>Planned Education</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>Sign in to continue</p>
+        <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
+          {t('login.1')}
+        </p>
 
         {GOOGLE_CLIENT_ID ? (
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
@@ -82,11 +86,13 @@ export function Login() {
 
         {(!GOOGLE_CLIENT_ID || ['localhost', '127.0.0.1'].includes(window.location.hostname)) && (
           <form onSubmit={handleLocalLogin} style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>Or sign in with email</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>
+              {t('login.10')}
+            </p>
             
             <input 
               type="email" 
-              placeholder="Email address" 
+              placeholder={t('login.2')}
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
@@ -95,7 +101,7 @@ export function Login() {
             
             <input 
               type="password" 
-              placeholder="Password" 
+              placeholder={t('login.3')}
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
@@ -106,13 +112,13 @@ export function Login() {
               type="submit"
               style={{ width: '100%', padding: '0.75rem 1rem', background: 'var(--primary-color)', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem' }}
             >
-              Sign In
+              {t('login.6')}
             </button>
           </form>
         )}
 
         <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
-          Don't have an account? <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 500 }}>Register here</Link>
+          {t('login.7')} <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 500 }}>{t('login.8')}</Link>
         </p>
       </div>
     </div>

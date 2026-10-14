@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 
-export type Locale = 'en' | 'hu' | 'es' | 'de' | 'fr' | 'ja' | 'zh';
+export type Locale = 'en' | 'hu' | 'es' | 'de' | 'fr' | 'ja' | 'zh' | 'pt' | 'uk' | 'it' | 'pl' | 'nl' | 'sv' | 'no' | 'da' | 'fi' | 'pt-BR';
 
 export interface TranslationEntry {
   en: string;
@@ -26,7 +26,7 @@ export interface I18nContextType {
 const I18nContext = createContext<I18nContextType | null>(null);
 
 const DEFAULT_LOCALE: Locale = 'en';
-const AVAILABLE_LOCALES: Locale[] = ['en', 'hu', 'es', 'de', 'fr', 'ja', 'zh'];
+const AVAILABLE_LOCALES: Locale[] = ['en', 'hu', 'es', 'de', 'fr', 'ja', 'zh', 'pt', 'uk', 'it', 'pl', 'nl', 'sv', 'no', 'da', 'fi', 'pt-BR'];
 
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'EN - United Kingdom / United States (English)',
@@ -36,6 +36,16 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   fr: 'FR - France (Français)',
   ja: 'JA - Japan (日本語)',
   zh: 'ZH - China (中文)',
+  pt: 'PT - Portugal (Português)',
+  uk: 'UK - Ukraine (Українська)',
+  it: 'IT - Italy (Italiano)',
+  pl: 'PL - Poland (Polski)',
+  nl: 'NL - Netherlands (Nederlands)',
+  sv: 'SV - Sweden (Svenska)',
+  no: 'NO - Norway (Norsk)',
+  da: 'DA - Denmark (Dansk)',
+  fi: 'FI - Finland (Suomi)',
+  'pt-BR': 'PT-BR - Brazil (Português do Brasil)',
 };
 
 let messagesCache: Record<Locale, LocaleMessages> = {} as Record<Locale, LocaleMessages>;
