@@ -142,7 +142,7 @@ We welcome contributions! Whether it's:
 - 🧪 Tests
 - 💡 Ideas for reducing teacher workload
 
-Please read `agents.md` for our coding standards and `docs/` for architecture guides.
+Please see `docs/` for coding standards, guidelines, and architecture guides.
 
 **Our promise**: No paid dependencies. Ever. If it can't run free, it doesn't go in.
 

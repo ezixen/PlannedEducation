@@ -4,14 +4,14 @@ const PORTAL_URL = process.env.PORTAL_URL || 'http://127.0.0.1:5175';
 const CI = process.env.CI === 'true';
 
 export default defineConfig({
-  testDir: './tests',
-  snapshotDir: './snapshots',
+  testDir: '../../../tests/e2e/playwright/tests',
+  snapshotDir: '../../../tests/e2e/playwright/snapshots',
   fullyParallel: false,
   forbidOnly: CI,
   retries: 0,
   workers: 1,
   reporter: 'list',
-  globalTeardown: './tests/global-teardown.ts',
+  globalTeardown: '../../../tests/e2e/playwright/tests/global-teardown.ts',
   use: {
     baseURL: PORTAL_URL,
     trace: 'on-first-retry',

@@ -1,11 +1,12 @@
+import type React from 'react';
+import { useState, useEffect, useRef, type ElementType, type ReactNode } from 'react';
 import { useI18n } from '../contexts/I18nContext';
-import { useState, useEffect, useRef } from 'react';
 
 interface I18nNumberProps {
   key: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof React.JSX.IntrinsicElements;
 }
 
 export function I18nNumber({ key, children, className = '', tag = 'span' }: I18nNumberProps) {
@@ -31,7 +32,7 @@ export function I18nNumber({ key, children, className = '', tag = 'span' }: I18n
     return <>{children}</>;
   }
 
-  const Tag = tag;
+  const Tag = (tag || 'span') as ElementType;
   const number = key.split('.').pop() || key;
 
   return (

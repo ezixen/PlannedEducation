@@ -1,10 +1,8 @@
 import { useI18n } from '../contexts/I18nContext';
-import { useState } from 'react';
 import './I18nSettings.css';
 
 export function I18nSettings() {
   const { locale, setLocale, showNumbers, setShowNumbers, availableLocales, t } = useI18n();
-  const [showLocaleSelector, setShowLocaleSelector] = useState(false);
 
   const localeNames: Record<string, string> = {
     en: 'English',

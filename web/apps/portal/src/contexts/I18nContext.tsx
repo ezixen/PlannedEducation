@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 
 export type Locale = 'en' | 'hu' | 'es' | 'de' | 'fr' | 'ja' | 'zh';
 
