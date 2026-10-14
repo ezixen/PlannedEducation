@@ -9,6 +9,7 @@ import {
   type AIGrade,
   type SubmissionWithAIGrades,
 } from '../components/TeacherCorrectionModal';
+import { TeacherHandRaiseMonitor } from '../components/TeacherHandRaiseMonitor';
 
 interface StudentHeartbeat {
   student_id: string;
@@ -461,6 +462,9 @@ export function TeacherDashboard() {
           )}`
         }
       />
+
+      {/* Digital Hand Raise Live Monitor (with sound chime & toast notifications) */}
+      {examId && <TeacherHandRaiseMonitor examId={examId} />}
 
       {/* Real-time Student Monitoring Panel */}
       <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>

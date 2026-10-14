@@ -9,6 +9,7 @@ import { TwoFASettings } from '../components/TwoFASettings';
 import { PasskeysSettings } from '../components/PasskeysSettings';
 import { OCRProcessor } from '../components/OCRProcessor';
 import { STTProcessor } from '../components/STTProcessor';
+import { I18nSettings } from '../components/I18nSettings';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -254,6 +255,11 @@ export function Settings() {
               </select>
             </label>
           </div>
+        </div>
+
+        {/* Language & Regional Settings */}
+        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+          <I18nSettings />
         </div>
 
         {/* Security section */}

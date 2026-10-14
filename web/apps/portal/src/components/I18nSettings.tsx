@@ -1,18 +1,8 @@
-import { useI18n } from '../contexts/I18nContext';
+import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import './I18nSettings.css';
 
 export function I18nSettings() {
   const { locale, setLocale, showNumbers, setShowNumbers, availableLocales, t } = useI18n();
-
-  const localeNames: Record<string, string> = {
-    en: 'English',
-    hu: 'Magyar',
-    es: 'Español',
-    de: 'Deutsch',
-    fr: 'Français',
-    ja: '日本語',
-    zh: '中文',
-  };
 
   return (
     <div className="i18n-settings-panel">
@@ -32,7 +22,7 @@ export function I18nSettings() {
         >
           {availableLocales.map((loc) => (
             <option key={loc} value={loc}>
-              {localeNames[loc] || loc}
+              {LOCALE_NAMES[loc] || loc}
             </option>
           ))}
         </select>

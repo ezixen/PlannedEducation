@@ -28,14 +28,14 @@ const I18nContext = createContext<I18nContextType | null>(null);
 const DEFAULT_LOCALE: Locale = 'en';
 const AVAILABLE_LOCALES: Locale[] = ['en', 'hu', 'es', 'de', 'fr', 'ja', 'zh'];
 
-const LOCALE_NAMES: Record<Locale, string> = {
-  en: 'English',
-  hu: 'Magyar',
-  es: 'Español',
-  de: 'Deutsch',
-  fr: 'Français',
-  ja: '日本語',
-  zh: '中文',
+export const LOCALE_NAMES: Record<Locale, string> = {
+  en: 'EN - United Kingdom / United States (English)',
+  hu: 'HU - Hungary (Magyar)',
+  es: 'ES - Spain (Español)',
+  de: 'DE - Germany (Deutsch)',
+  fr: 'FR - France (Français)',
+  ja: 'JA - Japan (日本語)',
+  zh: 'ZH - China (中文)',
 };
 
 let messagesCache: Record<Locale, LocaleMessages> = {} as Record<Locale, LocaleMessages>;

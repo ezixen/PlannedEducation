@@ -45,6 +45,8 @@ class ExamSettings(BaseModel):
     require_seb: bool = False
     time_multiplier: float = 1.0
     passing_score: int = 60
+    delivery_mode: str = "classroom"  # "classroom" (in-person) or "different_location" (remote)
+    allow_digital_hand_raise: bool = False
 
 
 class ExamTemplate(BaseModel):
@@ -251,6 +253,8 @@ async def export_package(
                 "require_seb": bool(exam.seb_config_key),
                 "time_multiplier": 1.0,
                 "passing_score": 60,
+                "delivery_mode": "classroom",
+                "allow_digital_hand_raise": False,
             },
         },
         "questions": [],

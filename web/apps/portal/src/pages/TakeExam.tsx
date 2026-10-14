@@ -293,13 +293,23 @@ export function TakeExam() {
           />
         </div>
 
-        <div style={{ marginBottom: '1rem' }}>
-          <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Digital Hand Raise</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
-        </div>
-        <div style={{ flex: 1, minHeight: 0 }}>
-          <SecureChat examId={id ?? ''} />
-        </div>
+        {/* Digital Hand Raise: Enabled for different_location test packages; disabled for in-classroom exams */}
+        {(examPackage?.settings?.allow_digital_hand_raise || examPackage?.settings?.delivery_mode === 'different_location') ? (
+          <>
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Digital Hand Raise</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
+            </div>
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <SecureChat examId={id ?? ''} />
+            </div>
+          </>
+        ) : (
+          <div style={{ padding: '0.875rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
+            <strong style={{ display: 'block', color: 'var(--text-color)', marginBottom: '0.25rem' }}>🏫 In-Person Classroom Exam</strong>
+            Digital hand-raising is not needed for in-room exams. Please raise your hand directly in class if you need help.
+          </div>
+        )}
       </div>
     </div>
   );

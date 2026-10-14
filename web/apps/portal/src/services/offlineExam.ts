@@ -55,6 +55,8 @@ export interface ExamSettings {
   require_seb: boolean;
   time_multiplier: number;
   passing_score: number;
+  delivery_mode?: 'classroom' | 'different_location';
+  allow_digital_hand_raise?: boolean;
 }
 
 /**
