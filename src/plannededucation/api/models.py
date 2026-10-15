@@ -381,6 +381,58 @@ class ProctoringConsent(Base):
     )
 
 
+# ── Alert Models ─────────────────────────────────────────────────────────────
+
+class AlertSeverity(enum.StrEnum):
+    critical = "critical"
+    warning = "warning"
+    info = "info"
+
+
+class AlertStatus(enum.StrEnum):
+    firing = "firing"
+    resolved = "resolved"
+
+
+class Alert(Base):
+    """Alert records from Alertmanager for audit trail and notification forwarding."""
+    __tablename__ = "alerts"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    fingerprint = Column(String(64), index=True, nullable=False)  # Alertmanager fingerprint
+    alertname = Column(String(128), index=True, nullable=False)
+    status = Column(Enum(AlertStatus), default=AlertStatus.firing, nullable=False)
+    severity = Column(Enum(AlertSeverity), default=AlertSeverity.info, nullable=False)
+
+    # Labels (JSON)
+    labels_json = Column(Text, nullable=False)  # All labels as JSON
+
+    # Annotations (JSON)
+    annotations_json = Column(Text, nullable=True)  # All annotations as JSON
+
+    # Timing
+    starts_at = Column(DateTime(timezone=True), nullable=False)
+    ends_at = Column(DateTime(timezone=True), nullable=True)
+    resolved_at = Column(DateTime(timezone=True), nullable=True)
+
+    # Metadata
+    generator_url = Column(String(512), nullable=True)
+    receiver = Column(String(64), nullable=True)
+    group_key = Column(String(128), nullable=True)
+
+    # Notification tracking
+    notifications_sent = Column(Integer, default=0, nullable=False)
+    last_notification_at = Column(DateTime(timezone=True), nullable=True)
+
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    __table_args__ = (
+        # Unique constraint on fingerprint + status to prevent duplicates
+        UniqueConstraint("fingerprint", "status", name="uq_alert_fingerprint_status"),
+    )
+
+
 # ── Archive Models ───────────────────────────────────────────────────────────
 
 class ArchivedSubmission(Base):

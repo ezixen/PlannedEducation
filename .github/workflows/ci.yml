@@ -97,6 +97,11 @@ jobs:
           cd web/apps/portal
           npm run lint
 
+      - name: Run security linting (oxlint security rules)
+        run: |
+          cd web/apps/portal
+          npx oxlint -A security
+
       - name: Type check
         run: |
           cd web/apps/portal

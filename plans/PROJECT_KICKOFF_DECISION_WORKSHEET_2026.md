@@ -146,11 +146,24 @@
 
 ## 9. Internationalization and Accessibility Baseline
 
-- **ICU MessageFormat enabled**: 📋 Planned (react-i18next + ICU)
-- **RTL support required**: 📋 Planned (CSS logical properties)
-- **Locale fallback strategy**: en-US → browser locale → explicit user preference
+- **Custom i18n System** (page.element.key format, not ICU MessageFormat):
+  - ✅ Externalized strings in React components via `useI18n()` hook and `t(key)` function
+  - ✅ Locale-safe formatting: dates (dd/mm/yyyy), numbers, time display via `Intl` API
+  - ✅ RTL support preparation (CSS logical properties in themes)
+  - ✅ **17 Supported locales**: en, hu, es, de, fr, ja, zh, pt, uk, it, pl, nl, sv, no, da, fi, pt-BR
+  - ✅ All 455 keys per locale matching English source
+- **Components**:
+  - `I18nContext.tsx` — Locale management, number display toggle, jump-to-element, localStorage persistence
+  - `I18nNumber.tsx` — Visual badges, tooltips with context, jump-to, keyboard navigation
+  - `I18nSettings.tsx` — Locale selector, number toggle, help, translator guide, contribute links
+  - `I18nNumber.css` — Styles for badges, tooltips, jump animation, settings panel
+- **Integration**:
+  - `I18nProvider` in `main.tsx` wrapping entire app
+  - `I18nSettings` in Settings page
+  - Login page updated to use `t()` function
+  - `CONTEXT.md` — Detailed context for every translation key
+  - `docs/I18N_GUIDE.md` — Comprehensive guide with file structure, translation rules, adding languages, workflows
 - **Accessibility target**: WCAG 2.1 AA
-- **Languages included in MVP**: en-US only; i18n infrastructure in Phase 10 (deferred)
 
 ---
 
@@ -170,6 +183,21 @@
 - **Human review required for security/auth/payment code**: ✅ Yes (mandatory)
 - **Prompt data policy (no secrets/PII)**: ✅ Yes (enforced in `AI_RISK_GOVERNANCE.md`)
 - **AI-generated code provenance noted in PRs**: ✅ Yes (PR template includes AI provenance)
+
+### AI Cost Tracking (External AI Providers) — ⚠️ **IMPORTANT WARNING**
+
+**The AI cost tracking feature is OPTIONAL and APPROXIMATE ONLY.**
+
+- **Why**: AI provider pricing changes frequently (per-token costs, model pricing, regional differences). We CANNOT and SHALL NOT try to track ever-changing AI costs per supplier accurately.
+- **Implementation**: Optional module in `src/plannededucation/api/routes_ai.py` with in-memory tracking (`_ai_cost_tracking` dict) and per-teacher daily budget ($5/day default).
+- **Limitations**:
+  - Cost estimates are based on static pricing tables that may be outdated
+  - Only tracks token counts from API responses (when available)
+  - Does NOT account for: cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes
+  - Should NOT be relied upon for billing, budgeting, or financial decisions
+- **Teacher responsibility**: Teachers MUST monitor their own AI provider dashboards for actual costs
+- **Configuration**: `MAX_DAILY_COST_USD` env var (default 5.0), `AI_COST_PER_1K_TOKENS` per provider (approximate)
+- **Recommendation**: Treat as a rough guardrail only; disable if not needed
 
 ---
 

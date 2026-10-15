@@ -25,7 +25,7 @@
 ### Getting Help
 - **On-call**: Check `docs/ONCALL.md` for current rotation
 - **Escalation**: See `docs/ESCALATION.md`
-- **Communication**: Use `#incidents` channel (Slack/Discord/Matrix)
+- **Communication**: Use `#incidents` channel (Slack/Discord/Matrix) or GitHub Issues
 
 ### Common Commands
 ```bash

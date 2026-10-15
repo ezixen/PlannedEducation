@@ -113,6 +113,28 @@ PlannedEducation **does not host or run any AI models internally**. The platform
 - **Hard Limits**: API calls blocked when budget exceeded
 - **Alerts**: Email at 80%, 95%, 100% of budget
 
+### ⚠️ **IMPORTANT: AI Cost Tracking Limitations**
+
+**The AI cost tracking feature is OPTIONAL and APPROXIMATE ONLY.**
+
+**Why**: AI provider pricing changes frequently (per-token costs, model pricing, regional differences, enterprise discounts, cached tokens, batch pricing). We **CANNOT and SHALL NOT** try to track ever-changing AI costs per supplier accurately.
+
+**Implementation**: Optional module in `src/plannededucation/api/routes_ai.py` with in-memory tracking (`_ai_cost_tracking` dict) and per-teacher daily budget ($5/day default).
+
+**Limitations**:
+- Cost estimates are based on static pricing tables that may be outdated
+- Only tracks token counts from API responses (when available)
+- Does NOT account for: cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes, provider-specific pricing tiers
+- Should NOT be relied upon for billing, budgeting, or financial decisions
+
+**Teacher Responsibility**: Teachers **MUST** monitor their own AI provider dashboards for actual costs.
+
+**Configuration**: 
+- `MAX_DAILY_COST_USD` env var (default 5.0)
+- `AI_COST_PER_1K_TOKENS` per provider (approximate, static values)
+
+**Recommendation**: Treat as a rough guardrail only; disable if not needed.
+
 ### R-06: Provider Outage
 - **Multi-Provider Support**: Teacher can configure fallback providers
 - **Graceful Degradation**: Queue requests, notify teacher, allow manual grading

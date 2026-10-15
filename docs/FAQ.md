@@ -59,6 +59,25 @@ AI provides score, feedback, confidence, and reasoning for each question. Teache
 ### What are the AI safety controls?
 Prompt injection detection (20+ patterns), hallucination detection via consistency checking, output schema validation, confidence threshold (min 0.75), rate limiting (20/min, 200/hour), cost tracking ($5/day budget), provider health monitoring with automatic fallback.
 
+### ⚠️ Important: AI Cost Tracking is Approximate Only
+**The AI cost tracking feature is OPTIONAL and provides ROUGH ESTIMATES ONLY.**
+
+**Why**: AI provider pricing changes frequently (per-token costs, model pricing, regional differences, enterprise discounts, cached tokens, batch pricing). We **CANNOT and SHALL NOT** try to track ever-changing AI costs per supplier accurately.
+
+**Limitations**:
+- Cost estimates are based on static pricing tables that may be outdated
+- Only tracks token counts from API responses (when available)
+- Does NOT account for: cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes, provider-specific pricing tiers
+- Should NOT be relied upon for billing, budgeting, or financial decisions
+
+**Teacher Responsibility**: Teachers **MUST** monitor their own AI provider dashboards for actual costs.
+
+**Configuration**: 
+- `MAX_DAILY_COST_USD` env var (default 5.0)
+- `AI_COST_PER_1K_TOKENS` per provider (approximate, static values)
+
+**Recommendation**: Treat as a rough guardrail only; disable if not needed.
+
 ---
 
 ## Test Packages & Sharing

@@ -97,6 +97,11 @@ const FAQ_DATA = [
         id: 18,
         question: "What are the AI safety controls?",
         answer: "Prompt injection detection (20+ patterns), hallucination detection via consistency checking, output schema validation, confidence threshold (min 0.75), rate limiting (20/min, 200/hour), cost tracking ($5/day budget), provider health monitoring with automatic fallback."
+      },
+      {
+        id: 19,
+        question: "Is AI cost tracking accurate?",
+        answer: "⚠️ IMPORTANT: AI cost tracking is OPTIONAL and provides ROUGH ESTIMATES ONLY. AI provider pricing changes frequently (per-token costs, model pricing, regional differences, enterprise discounts, cached tokens, batch pricing). We CANNOT and SHALL NOT track ever-changing AI costs per supplier accurately. Limitations: estimates based on static pricing tables that may be outdated; only tracks token counts from API responses; does NOT account for cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes. Should NOT be relied upon for billing, budgeting, or financial decisions. Teachers MUST monitor their own AI provider dashboards for actual costs. Treat as a rough guardrail only; disable if not needed."
       }
     ]
   },
