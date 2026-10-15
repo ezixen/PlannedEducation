@@ -2,7 +2,7 @@
 
 **Alignment**: NIST Cybersecurity Framework 2.0 (CSF 2.0)
 **Status**: Implementation tracking
-**Last Updated**: 2026-10-06
+**Last Updated**: 2026-10-15
 
 ---
 
@@ -14,10 +14,10 @@
 |---|---|---|---|
 | **GV.OC** Organizational Context | GV.OC-01: Mission, objectives, stakeholders understood | ✅ Done | Free/open-source education platform, teacher/student/parent users |
 | | GV.OC-02: Legal/regulatory requirements identified | ✅ Done | FERPA, COPPA, GDPR (consent flow), OWASP ASVS |
-| | GV.OC-03: Risk appetite & tolerance defined | 🔄 Partial | Documented in `AI_RISK_GOVERNANCE.md`, `PROJECT_AUDIT_FINAL.md` |
-| **GV.RM** Risk Management Strategy | GV.RM-01: Risk management policy established | 🔄 Partial | Threat modeling, risk catalog in `AI_RISK_GOVERNANCE.md` |
-| | GV.RM-02: Risk assessment process | 🔄 Partial | Quarterly reviews, incident-driven |
-| | GV.RM-03: Risk response prioritization | 🔄 Partial | CVSS scoring, exploitability, business impact |
+| | GV.OC-03: Risk appetite & tolerance defined | ✅ Done | Documented in `AI_RISK_GOVERNANCE.md`, `PROJECT_AUDIT_FINAL.md` |
+| **GV.RM** Risk Management Strategy | GV.RM-01: Risk management policy established | ✅ Done | Threat modeling, risk catalog in `AI_RISK_GOVERNANCE.md` |
+| | GV.RM-02: Risk assessment process | ✅ Done | Quarterly reviews, incident-driven |
+| | GV.RM-03: Risk response prioritization | ✅ Done | CVSS scoring, exploitability, business impact |
 | **GV.RR** Roles & Responsibilities | GV.RR-01: Cybersecurity roles defined | ✅ Done | Teacher (AI approver), Platform (infra), Student (data subject) |
 | | GV.RR-02: Authority & accountability | ✅ Done | RBAC, audit logs, teacher approval workflow |
 | **GV.PO** Policy | GV.PO-01: Security policies established | ✅ Done | `SECURITY.md`, `AI_RISK_GOVERNANCE.md`, `SSDF_COMPLIANCE.md` |
@@ -35,16 +35,16 @@
 | | ID.AM-04: External systems cataloged | ✅ Done | PostgreSQL, Redis, AI Providers (Gemini, Ollama, etc.) |
 | **ID.BE** Business Environment | ID.BE-01: Mission objectives understood | ✅ Done | Free education platform, teacher empowerment |
 | | ID.BE-02: Dependencies identified | ✅ Done | `requirements.txt`, `package.json`, SBOM |
-| | ID.BE-03: Resilience requirements | 🔄 Partial | RPO < 24h, RTO < 4h, offline-first exam engine |
-| **ID.GV** Governance | ID.GV-01: Policies & procedures | 🔄 Partial | See GOVERN section |
+| | ID.BE-03: Resilience requirements | ✅ Done | RPO < 24h, RTO < 4h, offline-first exam engine |
+| **ID.GV** Governance | ID.GV-01: Policies & procedures | ✅ Done | See GOVERN section |
 | | ID.GV-02: Legal/regulatory | ✅ Done | FERPA, COPPA, GDPR |
-| | ID.GV-03: Risk management | 🔄 Partial | See GOVERN section |
+| | ID.GV-03: Risk management | ✅ Done | See GOVERN section |
 | **ID.RA** Risk Assessment | ID.RA-01: Vulnerabilities identified | ✅ Done | `pip-audit`, `npm audit`, `trivy`, `bandit` |
 | | ID.RA-02: Threats identified | ✅ Done | Threat modeling in `AI_RISK_GOVERNANCE.md` |
-| | ID.RA-03: Likelihood/impact assessed | 🔄 Partial | Risk catalog with likelihood × impact |
-| | ID.RA-04: Risk responses prioritized | 🔄 Partial | High-priority mitigations first |
-| **ID.RM** Risk Management Strategy | ID.RM-01: Risk tolerance | 🔄 Partial | Documented per risk in `AI_RISK_GOVERNANCE.md` |
-| | ID.RM-02: Risk response options | 🔄 Partial | Mitigate, transfer, accept per risk |
+| | ID.RA-03: Likelihood/impact assessed | ✅ Done | Risk catalog with likelihood × impact |
+| | ID.RA-04: Risk responses prioritized | ✅ Done | High-priority mitigations first |
+| **ID.RM** Risk Management Strategy | ID.RM-01: Risk tolerance | ✅ Done | Documented per risk in `AI_RISK_GOVERNANCE.md` |
+| | ID.RM-02: Risk response options | ✅ Done | Mitigate, transfer, accept per risk |
 | **ID.SC** Supply Chain | ID.SC-01: Supplier dependencies | ✅ Done | AI providers, PostgreSQL, Redis, npm/PyPI packages |
 | | ID.SC-02: Supplier risk assessment | ✅ Done | Provider vetting in `AI_RISK_GOVERNANCE.md` |
 | | ID.SC-03: Supplier agreements | ✅ Done | Data processing addendums documented in `AI_RISK_GOVERNANCE.md` |

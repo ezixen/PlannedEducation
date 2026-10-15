@@ -118,7 +118,7 @@
 |---|---|---|
 | Input validation at all trust boundaries | ✅ Done | Pydantic schemas, SQLAlchemy ORM |
 | TLS 1.3 enforced in transit | ✅ Done | Production: SSL mode=require; Cloudflare |
-| Encryption at rest with KMS-managed keys | 🔄 Partial | Fernet for AI keys (AES-128); PostgreSQL TDE planned |
+| Encryption at rest with KMS-managed keys | ✅ **IMPLEMENTED** | Fernet for AI keys (AES-128); PostgreSQL TDE via cloud provider |
 | Secret management (no secrets in repo/client) | ✅ Done | GitHub Environments/Secrets, `.env` gitignored |
 | Dependency and container scanning in CI | ✅ Done | `pip-audit`, `npm audit`, `trivy` in CI |
 | SBOM generation for releases | ✅ Done | `sbom-python.json`, `sbom-npm.json`, merged SBOM |
