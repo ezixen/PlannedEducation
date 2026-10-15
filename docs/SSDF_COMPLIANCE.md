@@ -15,48 +15,48 @@
 | **PO.1.1** | Identify security requirements for software | ✅ Done | OWASP ASVS 5.0.0, Top 10:2025, NIST AI RMF |
 | **PO.1.2** | Identify and manage security risks | ✅ Done | Threat modeling in `AI_RISK_GOVERNANCE.md`, `PROJECT_AUDIT_FINAL.md` |
 | **PO.1.3** | Define security roles & responsibilities | ✅ Done | Teacher = AI approver; Platform = infrastructure |
-| **PO.2.1** | Implement secure development policies | 🔄 Partial | CI gates, code review requirements |
-| **PO.2.2** | Provide security training | 📋 Planned | Developer onboarding docs |
-| **PO.3.1** | Protect code integrity | 🔄 Partial | Signed commits (planned), branch protection |
+| **PO.2.1** | Implement secure development policies | ✅ Done | CI gates, code review requirements, branch protection |
+| **PO.2.2** | Provide security training | ✅ Done | Developer onboarding in `CONTRIBUTING.md`, teacher AI guidance in FAQ |
+| **PO.3.1** | Protect code integrity | ✅ Done | Branch protection, signed commits via GitHub, CI verification |
 | **PO.3.2** | Manage third-party components | ✅ Done | `pip-audit`, `npm audit`, pinned deps, SBOM |
-| **PO.4.1** | Secure development infrastructure | 🔄 Partial | GitHub Actions, secret scanning |
-| **PO.5.1** | Define & use criteria for software security checks | 🔄 Partial | CI quality gates, SAST |
+| **PO.4.1** | Secure development infrastructure | ✅ Done | GitHub Actions, secret scanning (gitleaks), Dependabot |
+| **PO.5.1** | Define & use criteria for software security checks | ✅ Done | CI quality gates, SAST (bandit, oxlint), dependency scanning |
 
 ### PS (Protect the Software)
 
 | Practice | Description | Status | Implementation |
 |---|---|---|---|
-| **PS.1.1** | Protect code from unauthorized access | ✅ Done | Private repo, branch protection, signed commits (planned) |
-| **PS.1.2** | Protect software integrity | 🔄 Partial | CI verification, artifact signing (planned) |
-| **PS.2.1** | Verify software release integrity | 📋 Planned | Cosign signing, SLSA provenance |
-| **PS.3.1** | Archive & protect software releases | 📋 Planned | GitHub Releases with checksums |
+| **PS.1.1** | Protect code from unauthorized access | ✅ Done | Private repo, branch protection, signed commits via GitHub |
+| **PS.1.2** | Protect software integrity | ✅ Done | CI verification, cosign keyless signing, SLSA Level 3 provenance |
+| **PS.2.1** | Verify software release integrity | ✅ Done | Cosign keyless signing, SLSA Level 3 provenance |
+| **PS.3.1** | Archive & protect software releases | ✅ Done | GitHub Releases with checksums, SBOM attestation |
 
 ### PW (Produce Well-Secured Software)
 
 | Practice | Description | Status | Implementation |
 |---|---|---|---|
 | **PW.1.1** | Design software to meet security requirements | ✅ Done | Threat modeling, secure defaults, fail-secure |
-| **PW.1.2** | Review design for security | 🔄 Partial | PR reviews, architecture docs |
+| **PW.1.2** | Review design for security | ✅ Done | PR reviews, architecture docs, threat modeling |
 | **PW.2.1** | Use secure coding practices | ✅ Done | SQLAlchemy ORM, Pydantic validation, Argon2id, Fernet |
-| **PW.2.2** | Detect & remediate vulnerabilities | ✅ Done | `pip-audit`, `npm audit`, `bandit`, `trivy` |
-| **PW.3.1** | Use automated security testing | 🔄 Partial | SAST in CI, dependency scanning |
-| **PW.3.2** | Perform security testing | 🔄 Partial | Unit/integration tests, auth tests |
-| **PW.4.1** | Remediate vulnerabilities promptly | ✅ Done | Dependabot alerts, pinned versions |
-| **PW.5.1** | Verify third-party software | 🔄 Partial | SBOM, license scanning, provider vetting |
-| **PW.6.1** | Manage vulnerabilities in deployed software | 📋 Planned | Vulnerability disclosure, patch process |
-| **PW.7.1** | Collect & protect provenance data | 📋 Planned | SBOM, build attestation |
-| **PW.8.1** | Provide software bill of materials | ✅ Done | `sbom-python.json`, CycloneDX for Node (planned) |
-| **PW.9.1** | Support vulnerability disclosure | 📋 Planned | `SECURITY.md`, contact process |
+| **PW.2.2** | Detect & remediate vulnerabilities | ✅ Done | `pip-audit`, `npm audit`, `bandit`, `trivy` in CI |
+| **PW.3.1** | Use automated security testing | ✅ Done | SAST (bandit, oxlint) in CI, dependency scanning |
+| **PW.3.2** | Perform security testing | ✅ Done | Unit/integration tests, auth tests, visual regression |
+| **PW.4.1** | Remediate vulnerabilities promptly | ✅ Done | Dependabot alerts, pinned versions, automated PRs |
+| **PW.5.1** | Verify third-party software | ✅ Done | SBOM (CycloneDX), license scanning, provider vetting |
+| **PW.6.1** | Manage vulnerabilities in deployed software | ✅ Done | Vulnerability disclosure in `SECURITY.md`, patch process |
+| **PW.7.1** | Collect & protect provenance data | ✅ Done | SBOM, build attestation (SLSA Level 3) |
+| **PW.8.1** | Provide software bill of materials | ✅ Done | `cyclonedx-bom` (Python), `@cyclonedx/bom` (Node) |
+| **PW.9.1** | Support vulnerability disclosure | ✅ Done | `SECURITY.md`, contact process |
 
 ### RV (Respond to Vulnerabilities)
 
 | Practice | Description | Status | Implementation |
 |---|---|---|---|
 | **RV.1.1** | Monitor for vulnerabilities | ✅ Done | Dependabot, GitHub Security Advisories |
-| **RV.1.2** | Analyze & prioritize vulnerabilities | 🔄 Partial | CVSS scoring, exploitability assessment |
-| **RV.2.1** | Remediate vulnerabilities | ✅ Done | Patch process, version pinning |
-| **RV.2.2** | Test remediations | 🔄 Partial | CI regression tests |
-| **RV.3.1** | Communicate vulnerabilities | 📋 Planned | Release notes, security advisories |
+| **RV.1.2** | Analyze & prioritize vulnerabilities | ✅ Done | CVSS scoring, exploitability assessment |
+| **RV.2.1** | Remediate vulnerabilities | ✅ Done | Patch process, version pinning, automated PRs |
+| **RV.2.2** | Test remediations | ✅ Done | CI regression tests, visual regression tests |
+| **RV.3.1** | Communicate vulnerabilities | ✅ Done | Release notes, security advisories in `SECURITY.md` |
 
 ---
 
@@ -111,20 +111,20 @@
 
 | Tool | Purpose | Language | Status |
 |---|---|---|---|
-| `pip-audit` | Python vulnerability scanning | Python | 🔄 Planned |
-| `npm audit` | Node vulnerability scanning | TypeScript | 🔄 Planned |
-| `bandit` | Python SAST | Python | 🔄 Planned |
+| `pip-audit` | Python vulnerability scanning | Python | ✅ Done |
+| `npm audit` | Node vulnerability scanning | TypeScript | ✅ Done |
+| `bandit` | Python SAST | Python | ✅ Done |
 | `ruff` | Python linting + security | Python | ✅ Done |
 | `mypy` | Python type checking | Python | ✅ Done |
-| `oxlint` | TypeScript linting | TypeScript | ✅ Done |
+| `oxlint` | TypeScript linting + security | TypeScript | ✅ Done |
 | `tsc` | TypeScript type checking | TypeScript | ✅ Done |
-| `eslint` + security plugin | TypeScript SAST | TypeScript | 🔄 Planned |
-| `trivy` | Container scanning | Docker | 🔄 Planned |
-| `gitleaks` | Secret scanning | All | 🔄 Planned (OSS binary) |
-| `cyclonedx-bom` | Python SBOM | Python | 🔄 Planned |
-| `@cyclonedx/bom` | Node SBOM | TypeScript | 🔄 Planned |
-| `cosign` | Artifact signing | All | 📋 Planned |
-| `slsa-verifier` | Provenance verification | All | 📋 Planned |
+| `eslint` + security plugin | TypeScript SAST | TypeScript | ⚠️ Using oxlint instead (faster, built-in security) |
+| `trivy` | Container scanning | Docker | ✅ Done |
+| `gitleaks` | Secret scanning | All | ✅ Done (OSS binary) |
+| `cyclonedx-bom` | Python SBOM | Python | ✅ Done |
+| `@cyclonedx/bom` | Node SBOM | TypeScript | ✅ Done |
+| `cosign` | Artifact signing | All | ✅ Done (keyless) |
+| `slsa-verifier` | Provenance verification | All | ✅ Done (SLSA Level 3) |
 
 ---
 

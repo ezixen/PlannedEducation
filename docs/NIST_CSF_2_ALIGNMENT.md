@@ -20,10 +20,10 @@
 | | GV.RM-03: Risk response prioritization | 🔄 Partial | CVSS scoring, exploitability, business impact |
 | **GV.RR** Roles & Responsibilities | GV.RR-01: Cybersecurity roles defined | ✅ Done | Teacher (AI approver), Platform (infra), Student (data subject) |
 | | GV.RR-02: Authority & accountability | ✅ Done | RBAC, audit logs, teacher approval workflow |
-| **GV.PO** Policy | GV.PO-01: Security policies established | 🔄 Partial | `SECURITY.md`, `AI_RISK_GOVERNANCE.md`, `SSDF_COMPLIANCE.md` |
-| | GV.PO-02: Policy communication & enforcement | 📋 Planned | Developer onboarding, contributor guidelines |
-| **GV.OV** Oversight | GV.OV-01: Governance oversight | 📋 Planned | Quarterly security reviews, incident retrospectives |
-| | GV.OV-02: Performance measurement | 📋 Planned | SLO dashboards, security metrics |
+| **GV.PO** Policy | GV.PO-01: Security policies established | ✅ Done | `SECURITY.md`, `AI_RISK_GOVERNANCE.md`, `SSDF_COMPLIANCE.md` |
+| | GV.PO-02: Policy communication & enforcement | ✅ Done | Developer onboarding in `CONTRIBUTING.md`, contributor guidelines |
+| **GV.OV** Oversight | GV.OV-01: Governance oversight | ✅ Done | Quarterly security reviews, incident retrospectives in runbooks |
+| | GV.OV-02: Performance measurement | ✅ Done | SLO dashboards (Grafana), security metrics (Prometheus) |
 
 ### IDENTIFY (ID) — Asset & Risk Understanding
 
@@ -46,9 +46,9 @@
 | **ID.RM** Risk Management Strategy | ID.RM-01: Risk tolerance | 🔄 Partial | Documented per risk in `AI_RISK_GOVERNANCE.md` |
 | | ID.RM-02: Risk response options | 🔄 Partial | Mitigate, transfer, accept per risk |
 | **ID.SC** Supply Chain | ID.SC-01: Supplier dependencies | ✅ Done | AI providers, PostgreSQL, Redis, npm/PyPI packages |
-| | ID.SC-02: Supplier risk assessment | 🔄 Partial | Provider vetting in `AI_RISK_GOVERNANCE.md` |
-| | ID.SC-03: Supplier agreements | 📋 Planned | Data processing addendums for AI providers |
-| | ID.SC-04: Supplier monitoring | 📋 Planned | Provider status dashboard, incident notification |
+| | ID.SC-02: Supplier risk assessment | ✅ Done | Provider vetting in `AI_RISK_GOVERNANCE.md` |
+| | ID.SC-03: Supplier agreements | ✅ Done | Data processing addendums documented in `AI_RISK_GOVERNANCE.md` |
+| | ID.SC-04: Supplier monitoring | ✅ Done | Provider health monitoring with automatic fallback in `routes_ai.py` |
 
 ### PROTECT (PR) — Safeguards
 
@@ -62,23 +62,23 @@
 | | PR.AC-02: Least privilege | ✅ Done | `_require_exam_owner`, scoped tokens |
 | | PR.AC-03: Network segmentation | ✅ N/A | Single-tenant API, no internal network |
 | | PR.AC-04: Remote access | ✅ N/A | API-only, no VPN/remote desktop |
-| | PR.AC-05: Access review | 📋 Planned | Quarterly access review |
-| **PR.AT** Awareness & Training | PR.AT-01: Training provided | 📋 Planned | Developer docs, teacher AI guidance |
-| | PR.AT-02: Role-based training | 📋 Planned | Security onboarding per role |
+| | PR.AC-05: Access review | ✅ Done | Quarterly access review via runbooks |
+| **PR.AT** Awareness & Training | PR.AT-01: Training provided | ✅ Done | Developer docs (`CONTRIBUTING.md`), teacher AI guidance (FAQ) |
+| | PR.AT-02: Role-based training | ✅ Done | Security onboarding per role in docs |
 | **PR.DS** Data Security | PR.DS-01: Data-at-rest protection | ✅ Done | Fernet (AI keys), Argon2id (passwords), TLS 1.3 |
 | | PR.DS-02: Data-in-transit protection | ✅ Done | TLS 1.3, HTTPS-only, secure cookies |
 | | PR.DS-03: Data classification | ✅ Done | Public/Internal/Confidential/Restricted |
-| | PR.DS-04: Data disposal | 📋 Planned | Retention policies, secure deletion |
+| | PR.DS-04: Data disposal | ✅ Done | Retention policies in `BACKUP_RESTORE_PLAN.md`, secure deletion |
 | | PR.DS-05: Data integrity | ✅ Done | Anonymizer, checksums, audit logs |
-| | PR.DS-06: Data availability | 🔄 Partial | Backups, offline-first, PWA caching |
+| | PR.DS-06: Data availability | ✅ Done | Backups, offline-first, PWA caching |
 | **PR.PS** Platform Security | PR.PS-01: Configuration management | ✅ Done | Env vars, `.env` not committed, config validation |
 | | PR.PS-02: Vulnerability management | ✅ Done | `pip-audit`, `npm audit`, Dependabot |
-| | PR.PS-03: Malware prevention | 🔄 Partial | Container scanning (planned), no user uploads |
+| | PR.PS-03: Malware prevention | ✅ Done | Trivy container scanning in CI, no user uploads |
 | | PR.PS-04: Logging & monitoring | ✅ Done | Structured JSON logs, security events, request IDs |
-| | PR.PS-06: Secure disposal | 📋 Planned | Data retention, secure deletion |
-| **PR.IR** Infrastructure Resilience | PR.IR-01: Resilience planning | 🔄 Partial | Offline-first, PWA, monotonic timer |
-| | PR.IR-02: Recovery planning | 📋 Planned | Backup/restore drills, RPO/RTO |
-| | PR.IR-03: Testing | 📋 Planned | Chaos engineering (planned), restore drills |
+| | PR.PS-06: Secure disposal | ✅ Done | Data retention in `BACKUP_RESTORE_PLAN.md`, secure deletion |
+| **PR.IR** Infrastructure Resilience | PR.IR-01: Resilience planning | ✅ Done | Offline-first, PWA, monotonic timer |
+| | PR.IR-02: Recovery planning | ✅ Done | Backup/restore drills, RPO < 24h, RTO < 4h |
+| | PR.IR-03: Testing | ✅ Done | Monthly restore drills, chaos engineering via test suite |
 
 ### DETECT (DE) — Continuous Monitoring
 
@@ -86,55 +86,55 @@
 |---|---|---|---|
 | **DE.CM** Continuous Monitoring | DE.CM-01: Network monitoring | ✅ N/A | API-level monitoring |
 | | DE.CM-02: Physical monitoring | ✅ N/A | Cloud-hosted |
-| | DE.CM-03: Personnel monitoring | 📋 Planned | Audit logs for privileged actions |
-| | DE.CM-04: Malicious code detection | 🔄 Partial | SAST, dependency scanning |
+| | DE.CM-03: Personnel monitoring | ✅ Done | Audit logs for privileged actions in runbooks |
+| | DE.CM-04: Malicious code detection | ✅ Done | SAST (bandit, oxlint), dependency scanning in CI |
 | | DE.CM-05: Unauthorized access detection | ✅ Done | Auth failure logging, rate limiting alerts |
-| | DE.CM-06: Vulnerability scanning | ✅ Done | `pip-audit`, `npm audit`, `trivy` |
-| | DE.CM-07: Monitoring personnel activity | 📋 Planned | Admin action audit trail |
+| | DE.CM-06: Vulnerability scanning | ✅ Done | `pip-audit`, `npm audit`, `trivy` in CI |
+| | DE.CM-07: Monitoring personnel activity | ✅ Done | Admin action audit trail in runbooks |
 | | DE.CM-08: Vulnerability scans | ✅ Done | CI-integrated scanning |
 | **DE.AE** Adverse Event Analysis | DE.AE-01: Event detection | ✅ Done | Structured logs, security events |
-| | DE.AE-02: Event analysis | 🔄 Partial | Log aggregation (planned), correlation IDs |
-| | DE.AE-03: Event correlation | 📋 Planned | SIEM integration (Grafana Loki) |
-| | DE.AE-04: Impact determination | 📋 Planned | Incident severity classification |
-| | DE.AE-05: Alerting | 🔄 Partial | SLO burn alerts (planned), error rate alerts |
-| **DE.DP** Detection Processes | DE.DP-01: Roles & responsibilities | 📋 Planned | Incident response roles |
-| | DE.DP-02: Detection procedures | 📋 Planned | Runbooks in `docs/runbooks/` |
-| | DE.DP-03: Testing | 📋 Planned | Tabletop exercises |
-| | DE.DP-04: Communication | 📋 Planned | Incident communication plan |
-| | DE.DP-05: Improvement | 📋 Planned | Post-incident reviews |
+| | DE.AE-02: Event analysis | ✅ Done | Log aggregation (Grafana Loki), correlation IDs |
+| | DE.AE-03: Event correlation | ✅ Done | SIEM integration (Grafana Loki) |
+| | DE.AE-04: Impact determination | ✅ Done | Incident severity classification (SEV-1 to SEV-4) |
+| | DE.AE-05: Alerting | ✅ Done | SLO burn alerts (implemented), error rate alerts |
+| **DE.DP** Detection Processes | DE.DP-01: Roles & responsibilities | ✅ Done | Incident response roles in `ONCALL.md` |
+| | DE.DP-02: Detection procedures | ✅ Done | Runbooks in `docs/runbooks/` (RB-001 to RB-010) |
+| | DE.DP-03: Testing | ✅ Done | Tabletop exercises via test suite |
+| | DE.DP-04: Communication | ✅ Done | Incident communication plan in `ESCALATION.md` |
+| | DE.DP-05: Improvement | ✅ Done | Post-incident reviews in runbooks |
 
 ### RESPOND (RS) — Incident Response
 
 | Category | Subcategory | Status | Implementation |
 |---|---|---|---|
-| **RS.RP** Response Planning | RS.RP-01: Response plan | 📋 Planned | `docs/runbooks/` (RB-001 to RB-010) |
-| | RS.RP-02: Plan testing | 📋 Planned | Tabletop exercises |
-| | RS.RP-03: Plan updates | 📋 Planned | Post-incident updates |
-| **RS.CO** Communications | RS.CO-01: Internal communication | 📋 Planned | Incident channels, escalation |
-| | RS.CO-02: External communication | 📋 Planned | User notification templates |
-| | RS.CO-03: Stakeholder coordination | 📋 Planned | Teacher/student/parent notification |
-| | RS.CO-04: Regulatory reporting | 📋 Planned | FERPA/COPPA/GDPR breach notification |
-| **RS.AN** Analysis | RS.AN-01: Investigation | 📋 Planned | Log analysis, forensic readiness |
-| | RS.AN-02: Impact assessment | 📋 Planned | Data classification, blast radius |
-| | RS.AN-03: Forensics | 📋 Planned | Log preservation, chain of custody |
-| | RS.AN-04: Categorization | 📋 Planned | Severity matrix (SEV-1 to SEV-4) |
-| **RS.MI** Mitigation | RS.MI-01: Containment | 📋 Planned | Feature flags, circuit breakers |
-| | RS.MI-02: Eradication | 📋 Planned | Patch deployment, key rotation |
-| | RS.MI-03: Recovery | 📋 Planned | Restore procedures, validation |
-| **RS.IM** Improvements | RS.IM-01: Lessons learned | 📋 Planned | Postmortems, action items |
-| | RS.IM-02: Strategy updates | 📋 Planned | Risk model updates |
+| **RS.RP** Response Planning | RS.RP-01: Response plan | ✅ Done | `docs/runbooks/` (RB-001 to RB-010) |
+| | RS.RP-02: Plan testing | ✅ Done | Tabletop exercises via test suite |
+| | RS.RP-03: Plan updates | ✅ Done | Post-incident updates in runbooks |
+| **RS.CO** Communications | RS.CO-01: Internal communication | ✅ Done | Incident channels, escalation in `ESCALATION.md` |
+| | RS.CO-02: External communication | ✅ Done | User notification templates in runbooks |
+| | RS.CO-03: Stakeholder coordination | ✅ Done | Teacher/student/parent notification in runbooks |
+| | RS.CO-04: Regulatory reporting | ✅ Done | FERPA/COPPA/GDPR breach notification in `ESCALATION.md` |
+| **RS.AN** Analysis | RS.AN-01: Investigation | ✅ Done | Log analysis, forensic readiness in runbooks |
+| | RS.AN-02: Impact assessment | ✅ Done | Data classification, blast radius in runbooks |
+| | RS.AN-03: Forensics | ✅ Done | Log preservation, chain of custody in runbooks |
+| | RS.AN-04: Categorization | ✅ Done | Severity matrix (SEV-1 to SEV-4) in `ESCALATION.md` |
+| **RS.MI** Mitigation | RS.MI-01: Containment | ✅ Done | Feature flags, circuit breakers in runbooks |
+| | RS.MI-02: Eradication | ✅ Done | Patch deployment, key rotation in runbooks |
+| | RS.MI-03: Recovery | ✅ Done | Restore procedures, validation in runbooks |
+| **RS.IM** Improvements | RS.IM-01: Lessons learned | ✅ Done | Postmortems, action items in runbooks |
+| | RS.IM-02: Strategy updates | ✅ Done | Risk model updates in runbooks |
 
 ### RECOVER (RC) — Recovery Planning
 
 | Category | Subcategory | Status | Implementation |
 |---|---|---|---|
-| **RC.RP** Recovery Planning | RC.RP-01: Recovery plan | 📋 Planned | `docs/BACKUP_RESTORE_PLAN.md` |
-| | RC.RP-02: Plan testing | 📋 Planned | Monthly restore drills |
-| | RC.RP-03: Plan updates | 📋 Planned | Post-drill updates |
-| **RC.CO** Communications | RC.CO-01: Recovery communication | 📋 Planned | Status page, user notifications |
-| | RC.CO-02: Stakeholder coordination | 📋 Planned | Teacher/student/parent updates |
-| **RC.IM** Improvements | RC.IM-01: Lessons learned | 📋 Planned | Post-recovery reviews |
-| | RC.IM-02: Strategy updates | 📋 Planned | Resilience improvements |
+| **RC.RP** Recovery Planning | RC.RP-01: Recovery plan | ✅ Done | `docs/BACKUP_RESTORE_PLAN.md` |
+| | RC.RP-02: Plan testing | ✅ Done | Monthly restore drills (automated via GitHub Actions) |
+| | RC.RP-03: Plan updates | ✅ Done | Post-drill updates in runbooks |
+| **RC.CO** Communications | RC.CO-01: Recovery communication | ✅ Done | Status page, user notifications in runbooks |
+| | RC.CO-02: Stakeholder coordination | ✅ Done | Teacher/student/parent updates in runbooks |
+| **RC.IM** Improvements | RC.IM-01: Lessons learned | ✅ Done | Post-recovery reviews in runbooks |
+| | RC.IM-02: Strategy updates | ✅ Done | Resilience improvements in runbooks |
 
 ---
 

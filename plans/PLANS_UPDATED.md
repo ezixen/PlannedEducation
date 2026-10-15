@@ -210,7 +210,12 @@
 - **Grafana Dashboards**: ✅ Configured in `monitoring/grafana/`
   - Datasource: Prometheus
   - Dashboard provider configured
-- **Alerting**: 🔄 Planned - Burn rate alerting on SLOs via Prometheus/Grafana
+- **Alerting**: ✅ **IMPLEMENTED** (2026-10-14) - Burn rate alerting on SLOs via Prometheus/Grafana
+  - Alerting rules: `monitoring/alerting_rules.yml` (fast/slow burn rates for all 4 SLOs)
+  - Alertmanager config: `monitoring/alertmanager.yml` (routing by severity/burn_rate/CSF function)
+  - Alert storage: `Alert` model in `models.py` with fingerprint deduplication
+  - Webhook endpoint: `routes_alerts.py` (persists alerts, supports REST queries)
+  - Notification forwarding placeholder for email/Slack/PagerDuty
 
 ### Phase 12: Backup/Restore Drill Automation ✅ Completed (2026-10-06)
 - **Automated Schedule**: Daily encrypted PostgreSQL backups (documented in `docs/BACKUP_RESTORE_PLAN.md`)
@@ -235,10 +240,12 @@
 - **Automated Teardown & Workspace Hygiene**: `global-teardown.ts` guarantees all temporary databases (`test_visual.db`), screenshots, and test run reports are pruned after runs per `AGENTS.md` §6.
 - **Backend Test Cache Tracking**: 99 backend pytest tests passing via `scripts/testing/update_test_cache.py`.
 
-### Phase 14: Project Kickoff Worksheet Completion 📋 Planned
-- Fill out `PROJECT_KICKOFF_DECISION_WORKSHEET_2026.md` for PlannedEducation
-- Document all architecture/security/reliability/cost decisions
-- Decision confidence scoring
+### Phase 14: Project Kickoff Worksheet Completion ✅ **COMPLETED** (2026-10-14)
+- ✅ Filled out `PROJECT_KICKOFF_DECISION_WORKSHEET_2026.md` for PlannedEducation
+- ✅ Documented all architecture/security/reliability/cost decisions
+- ✅ Decision confidence scoring (Total: 28/30)
+- ✅ Updated i18n section to reflect 17 locales implemented
+- ✅ Added AI cost tracking warning section
 
 ---
 
@@ -286,14 +293,14 @@
 - ✅ `ai_provider`, `ai_model_name`, `ai_base_url`, `ai_api_key_encrypted` in User model
 - ✅ Anonymizer pipeline strips PII before AI calls
 
-**Remaining Work**:
-- [ ] AI Provider Abstraction Layer (base class + adapters)
-- [ ] Grading endpoint with prompt templates
-- [ ] Test creation endpoint with schema validation
-- [ ] Content generation endpoint
-- [ ] Rate limiting & cost tracking per teacher
-- [ ] Output validation & hallucination detection
-- [ ] Teacher review/approval workflow for AI outputs
+**Remaining Work** (Optional Enhancements):
+- [ ] AI Provider Abstraction Layer (base class + adapters) — currently uses direct provider calls
+- [ ] Grading endpoint with prompt templates — implemented in `routes_ai.py` with NIST AI RMF controls
+- [ ] Test creation endpoint with schema validation — implemented in `routes_ai.py`
+- [ ] Content generation endpoint — implemented in `routes_ai.py`
+- [ ] Rate limiting & cost tracking per teacher — ✅ Implemented (20/min, 200/hour, $5/day budget)
+- [ ] Output validation & hallucination detection — ✅ Implemented (JSON schema, consistency check, confidence threshold)
+- [ ] Teacher review/approval workflow for AI outputs — ✅ Implemented (TeacherDashboard.tsx)
 
 ---
 

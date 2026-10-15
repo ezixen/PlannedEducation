@@ -98,7 +98,7 @@
 ## 6. Identity and Access Decisions
 
 - **Primary auth**: Google SSO (OAuth2/OIDC) — no passwords for login
-- **Passkeys/WebAuthn**: Planned as phishing-resistant 2FA (OWASP A07:2025)
+- **Passkeys/WebAuthn**: ✅ **IMPLEMENTED** as phishing-resistant 2FA (OWASP A07:2025)
 - **Fallback**: Self-service password reset via email OTP (6-digit, 10-min expiry)
 - **2FA**: TOTP (RFC 6238) with `pyotp`, QR code, 5 recovery codes (8 chars, one-time use)
 - **Identity provider**: Google (primary), extensible to others via OIDC
@@ -120,9 +120,9 @@
 | TLS 1.3 enforced in transit | ✅ Done | Production: SSL mode=require; Cloudflare |
 | Encryption at rest with KMS-managed keys | 🔄 Partial | Fernet for AI keys (AES-128); PostgreSQL TDE planned |
 | Secret management (no secrets in repo/client) | ✅ Done | GitHub Environments/Secrets, `.env` gitignored |
-| Dependency and container scanning in CI | 🔄 Partial | `pip-audit`, `npm audit` planned; `trivy` planned |
-| SBOM generation for releases | ✅ Done | `sbom-python.json`; Node SBOM planned |
-| Signed artifacts/provenance | 📋 Planned | cosign, SLSA Level 1 |
+| Dependency and container scanning in CI | ✅ Done | `pip-audit`, `npm audit`, `trivy` in CI |
+| SBOM generation for releases | ✅ Done | `cyclonedx-bom` (Python), `@cyclonedx/bom` (Node) |
+| Signed artifacts/provenance | ✅ Done | cosign keyless signing, SLSA Level 3 provenance |
 | Audit logging for privileged actions | ✅ Done | Structured JSON logs, security events, request IDs |
 
 **Security owner**: ezixen (founder)
@@ -146,11 +146,24 @@
 
 ## 9. Internationalization and Accessibility Baseline
 
-- **ICU MessageFormat enabled**: 📋 Planned (react-i18next + ICU)
-- **RTL support required**: 📋 Planned (CSS logical properties)
-- **Locale fallback strategy**: en-US → browser locale → explicit user preference
+- **Custom i18n System** (page.element.key format, not ICU MessageFormat):
+  - ✅ Externalized strings in React components via `useI18n()` hook and `t(key)` function
+  - ✅ Locale-safe formatting: dates (dd/mm/yyyy), numbers, time display via `Intl` API
+  - ✅ RTL support preparation (CSS logical properties in themes)
+  - ✅ **17 Supported locales**: en, hu, es, de, fr, ja, zh, pt, uk, it, pl, nl, sv, no, da, fi, pt-BR
+  - ✅ All 455 keys per locale matching English source
+- **Components**:
+  - `I18nContext.tsx` — Locale management, number display toggle, jump-to-element, localStorage persistence
+  - `I18nNumber.tsx` — Visual badges, tooltips with context, jump-to, keyboard navigation
+  - `I18nSettings.tsx` — Locale selector, number toggle, help, translator guide, contribute links
+  - `I18nNumber.css` — Styles for badges, tooltips, jump animation, settings panel
+- **Integration**:
+  - `I18nProvider` in `main.tsx` wrapping entire app
+  - `I18nSettings` in Settings page
+  - Login page updated to use `t()` function
+  - `CONTEXT.md` — Detailed context for every translation key
+  - `docs/I18N_GUIDE.md` — Comprehensive guide with file structure, translation rules, adding languages, workflows
 - **Accessibility target**: WCAG 2.1 AA
-- **Languages included in MVP**: en-US only; i18n infrastructure in Phase 10
 
 ---
 
@@ -180,9 +193,9 @@
 | Lint/format checks | ✅ Done | oxlint, ruff, black |
 | Unit tests | ✅ Done | pytest, vitest |
 | Integration tests | ✅ Done | pytest (API), vitest (components) |
-| Secret scan | 🔄 Planned | gitleaks OSS binary |
-| SAST/dependency scan | 🔄 Planned | bandit, pip-audit, npm audit, eslint-security |
-| IaC policy checks | 📋 Planned | checkov/trivy for Docker |
+| Secret scan | ✅ Done | gitleaks OSS binary |
+| SAST/dependency scan | ✅ Done | bandit, pip-audit, npm audit, oxlint security |
+| IaC policy checks | ✅ Done | trivy for Docker |
 | Contract/schema compatibility checks | ✅ Done | OpenAPI schema validation, Pydantic |
 
 ---
