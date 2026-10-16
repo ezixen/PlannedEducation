@@ -310,3 +310,39 @@
 - **Advanced Features Suite (`advanced-features.spec.ts`)**: 7 tests covering Archive management & statistics, Test Package Manager & export dialog, 2FA/TOTP setup wizard, AI BYOK provider configuration, Handwritten Math OCR & faster-whisper STT processors, live test taking with Digital Hand Raise and exam timer, and responsive mobile theme cycling. (7 / 7 passed).
 - **Backend Test Suite**: 99 / 99 pytest tests passed via `scripts/testing/update_test_cache.py`.
 - **Artifact Cleanup**: Automatic post-test cleanup of temporary databases, traces, and reports enforced per `AGENTS.md` §6.
+
+---
+
+### Phase 15: Cross-Platform School Deployment, Test Administration & Module Federation ✅ Completed (2026-10-16)
+- **Status**: `done-tested-working`
+- **Unified Installer Systems**:
+  - `install.ps1`: Interactive PowerShell installer for Windows Server (2016/2019/2022) and Windows 10/11 Pro with Dual-Mode architecture:
+    1. **Native Deployment (No Docker)**: Direct host execution using Python + PostgreSQL/Redis/SQLite, automatic Windows Scheduled Task background service creation.
+    2. **Docker Compose Deployment**: Full containerized isolation.
+    - Uses native .NET cryptographically secure random string generation (eliminating external `openssl` binary dependency on Windows).
+  - `install.sh`: Interactive Bash installer for Linux (Ubuntu 22.04+/Debian 12+) with Dual-Mode Native (Systemd) and Docker Compose options.
+  - `deploy_wizard.py`: Cross-platform guided deployment wizard in Python with automatic binary path resolution (`shutil.which`), modern `docker compose` plugin support, and Native SQLite/PostgreSQL deployment.
+- **Dependency Compatibility & Forward-Compatibility Architecture**:
+  - Permissive lower-bound (`>=`) requirements defined in `src/requirements.txt` to enable upstream security patches while preserving forward-compatibility assumptions.
+  - Complete `install.log` exported at root with full compatibility matrix, tested versions, and explicit downgrade target guidelines.
+- **Live School Deployment & End-to-End Test (`d:\Dev\PEserver`)**:
+  - Live deployment to `d:\Dev\PEserver` executing as background server on port 8000 (`plannededucation.db`).
+  - Automated integration test `test_school_e2e.py` executed with 100% pass across all 7 stages:
+    1. **Health Verification**: `/health` and `/packages/health` operational.
+    2. **Admin Auth**: Superuser authentication and profile checks.
+    3. **Teacher Workflow**: Registration, exam creation ("Physics 101: Energy & Mechanics") with 3 question types (multiple choice, dynamic math formula randomization, and essay with grading rubrics).
+    4. **Student Workflow**: Public exam listing verified for zero answer leakage; session started with SEB bypass header; dynamic math formula randomized for student; heartbeats sent; exam submitted; idempotency re-submission rejected with HTTP 409 Conflict.
+    5. **Teacher Dashboard**: Verified completion status in teacher heartbeat monitor.
+    6. **Module / Package System**: Exported exam to portable `.pepkg.json` with SHA-256 integrity checksum; validated package structure; imported into clean exam instance; published module to catalog; searched and downloaded package file.
+    7. **Custom School Federation**: Configured external school source URL (`http://127.0.0.1:8000/packages`), browsed configured sources, and executed synchronization.
+- **Bug Fixes in Package & Schema Engine**:
+  - Resolved Python 3.14 / Pydantic v2 `datetime` forward reference in `schemas.py`.
+  - Added JSON stringification and coercion validators on package models.
+  - Corrected `Alert` class inheritance in `models.py` preventing table column collision in `PackageSource`.
+  - Fixed FastAPI route precedence ordering in `routes_packages.py` for `/sources` and `/health`.
+  - Replaced legacy stub route definitions with real SQLAlchemy operations and HTTP synchronization via `httpx.AsyncClient`.
+- **Verification**:
+  - `pip check`: 0 broken requirements.
+  - `npm run build`: Vite frontend production build passed in 5.09s (0 errors).
+  - Backend pytest suites: 102/102 passing clean via `scripts/testing/update_test_cache.py`.
+  - Live deployment test `test_school_e2e.py`: 7/7 stages passed (100% clean).

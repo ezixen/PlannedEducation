@@ -9,13 +9,13 @@ import json
 import time
 
 # Configuration
-API_URL = "http://localhost:8001"
+API_URL = "http://localhost:8002"
 PORTAL_URL = "http://localhost:5175"
 
 # Test users
-TEACHER = {"email": "teacher@example.com", "password": "TestPass123!"}
-STUDENT = {"email": "student@example.com", "password": "TestPass123!"}
-PARENT = {"email": "parent@example.com", "password": "TestPass123!"}
+TEACHER = {"email": "teacher@example.com", "password": "password123"}
+STUDENT = {"email": "student@example.com", "password": "password123"}
+PARENT = {"email": "parent@example.com", "password": "password123"}
 
 # Enable SEB bypass for testing
 import os
@@ -101,7 +101,10 @@ class TestClient:
         response = requests.post(
             f"{self.base_url}/exams/{exam_id}/submit",
             json={"answers": answers_list},
-            headers=self.get_headers()
+            headers={
+                **self.get_headers(),
+                "X-SafeExamBrowser-RequestHash": "dev-bypass"
+            }
         )
         return response
     

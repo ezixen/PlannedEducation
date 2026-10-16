@@ -1,8 +1,8 @@
 # PlannedEducation - Simple Deploy Guide for Schools
 
 **Target**: IT teachers with basic computer skills  
-**Time**: ~15 minutes  
-**Requirements**: Windows 10/11, 8GB RAM, 20GB free space
+**Time**: ~15 minutes (Docker) / ~20 minutes (Native)  
+**Requirements**: Windows 10/11 or Linux, 8GB RAM, 20GB free space
 
 ---
 
@@ -23,9 +23,20 @@ A complete exam platform running on your school server with:
 - **CPU**: 2 cores (Intel i3 / AMD Ryzen 3 or better)
 - **RAM**: 8 GB (4 GB absolute minimum)
 - **Storage**: 20 GB free SSD space
-- **OS**: Windows 10/11 Pro (for Docker)
+- **OS**: Windows 10/11 Pro/Enterprise, Windows Server 2019+, or Ubuntu 22.04+/Debian 12+
 
-### Required Software (Install These First)
+### Choose Your Deployment Mode
+
+| Mode | Best For | Pros | Cons |
+|------|----------|------|------|
+| **Docker** (default) | Quick setup, isolation | Easy updates, consistent env | Requires Docker Desktop |
+| **Native** | No Docker, direct control | Lower overhead, standard admin | Manual service management |
+
+---
+
+### Option A: Docker Deployment (Recommended for Most)
+
+#### Required Software
 1. **Docker Desktop** - https://www.docker.com/products/docker-desktop/
    - Download → Install → Restart computer
    - Open Docker Desktop once to accept license
@@ -33,8 +44,33 @@ A complete exam platform running on your school server with:
    - Default options are fine
 3. **Text Editor** - Notepad++ or VS Code (optional but helpful)
 
-### Network
+#### Network
 - Port 80, 443, 5173, 8000 open on firewall
+- Internet access for AI providers, updates, Let's Encrypt SSL
+
+---
+
+### Option B: Native Deployment (No Docker)
+
+#### Required Software (Windows)
+1. **PostgreSQL 16** - https://www.postgresql.org/download/windows/
+   - Install → Remember superuser password
+2. **Redis** - https://github.com/microsoftarchive/redis/releases
+   - Install as service
+3. **Node.js 20+** - https://nodejs.org/
+   - LTS version recommended
+4. **Python 3.12+** - https://www.python.org/downloads/
+   - Check "Add to PATH" during install
+5. **Git** - https://git-scm.com/download/win
+
+#### Required Software (Linux - Ubuntu/Debian)
+```bash
+sudo apt update && sudo apt install -y postgresql-16 redis-server nginx git python3 python3-venv python3-pip nodejs npm
+sudo systemctl enable --now postgresql redis-server nginx
+```
+
+#### Network
+- Port 80, 443, 8000 open on firewall
 - Internet access for AI providers, updates, Let's Encrypt SSL
 
 ---
@@ -43,13 +79,39 @@ A complete exam platform running on your school server with:
 
 ### Step 1: Get the Code
 ```powershell
-# Open PowerShell as Administrator
+# Open PowerShell as Administrator (Windows) or terminal (Linux)
 cd D:\dev
 git clone https://github.com/ezixen/PlannedEducation.git PEserver
 cd PEserver
 ```
 
-### Step 2: Configure (Run Once)
+### Step 2: Run the Installer (Automatic)
+
+**Windows:**
+```powershell
+# Run the interactive installer - it will ask for deployment mode
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
+
+**Linux:**
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+The installer will:
+1. Ask for deployment mode (Docker or Native)
+2. Check requirements
+3. Clone/update repository
+4. Configure environment (.env with secure keys)
+5. Build frontend and setup backend
+6. Initialize database
+7. Create admin user
+8. Verify deployment
+
+### Step 3: Manual Configuration (If Not Using Installer)
+
+**Docker:**
 ```powershell
 # Copy config template
 copy .env.example .env
@@ -83,24 +145,59 @@ EMAIL_FROM=noreply@yourschool.edu
 
 > **Tip**: For testing without Google OAuth, leave `GOOGLE_CLIENT_ID` blank - email/password login will work.
 
-### Step 3: Start Platform
+**Docker - Start Platform:**
 ```powershell
 # Build and start (first time takes 3-5 minutes)
-docker-compose up -d --build
+docker compose up -d --build
 
 # Wait 15 seconds for containers to start
 Start-Sleep 15
 
 # Initialize database
-docker-compose exec backend python -c "
+docker compose exec backend python -c "
+from src.plannededucation.api.database import Base, engine
+from src.plannededucation.api import models
+Base.metadata.create_all(bind=engine)
+print('Database initialized')
+"
+```
+
+**Native - Start Platform:**
+```powershell
+# The installer handles this automatically, but manually:
+# 1. Python venv and dependencies
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r src\requirements.txt
+
+# 2. Build frontend
+cd web\apps\portal
+npm ci
+npm run build
+cd ..\..\..
+
+# 3. Database setup (run as postgres user)
+# CREATE USER plannededucation WITH PASSWORD 'secure-password';
+# CREATE DATABASE plannededucation OWNER plannededucation;
+
+# 4. Update .env with DATABASE_URL
+# DATABASE_URL=postgresql+psycopg://plannededucation:password@localhost:5432/plannededucation
+
+# 5. Initialize database
+.\.venv\Scripts\Activate.ps1
+python -c "
 from src.plannededucation.api.database import Base, engine
 from src.plannededucation.api import models
 Base.metadata.create_all(bind=engine)
 print('Database initialized')
 "
 
+# 6. Start backend (as service/scheduled task)
+# See install.ps1 for Windows service creation
+```
+
 # Create admin user (CHANGE PASSWORD!)
-docker-compose exec backend python -c "
+docker compose exec backend python -c "
 from src.plannededucation.api.database import SessionLocal
 from src.plannededucation.api.models import User
 from src.plannededucation.api.routes_auth import get_password_hash
@@ -149,13 +246,13 @@ print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
    WEBAUTHN_RP_ID=192.168.1.50
    WEBAUTHN_ORIGIN=http://192.168.1.50:5173
    ```
-3. Restart: `docker-compose restart`
+3. Restart: `docker compose restart`
 4. Access from any school computer: `http://192.168.1.50:5173`
 
 ### Option B: With Domain + HTTPS (Recommended)
 1. Point domain `yourschool.edu` to server IP
 2. Edit `.env` with your domain
-3. Run: `docker-compose up -d certbot` (gets Let's Encrypt SSL)
+3. Run: `docker compose up -d certbot` (gets Let's Encrypt SSL)
 4. Access: `https://yourschool.edu`
 
 ---
@@ -215,31 +312,31 @@ When admin logs in first time, a guided wizard appears:
 ```powershell
 cd D:\dev\PEserver
 git pull origin main
-docker-compose build --no-cache
-docker-compose up -d
+docker compose build --no-cache
+docker compose up -d
 ```
 
 ### Backup (Run Daily via Task Scheduler)
 ```powershell
 # Save as backup.ps1 and schedule daily at 2 AM
 cd D:\dev\PEserver
-docker-compose exec -T postgres pg_dump -U postgres plannededucation | gzip > "D:\backups\plannededucation_$(Get-Date -Format 'yyyyMMdd').sql.gz"
+docker compose exec -T postgres pg_dump -U postgres plannededucation | gzip > "D:\backups\plannededucation_$(Get-Date -Format 'yyyyMMdd').sql.gz"
 # Keep last 30 days
 Get-ChildItem D:\backups\plannededucation_*.sql.gz | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-30)} | Remove-Item
 ```
 
 ### Restore from Backup
 ```powershell
-docker-compose stop backend frontend
-gunzip -c D:\backups\plannededucation_20260115.sql.gz | docker-compose exec -T postgres psql -U postgres -d plannededucation
-docker-compose up -d backend frontend
+docker compose stop backend frontend
+gunzip -c D:\backups\plannededucation_20260115.sql.gz | docker compose exec -T postgres psql -U postgres -d plannededucation
+docker compose up -d backend frontend
 ```
 
 ### View Logs
 ```powershell
-docker-compose logs -f backend    # Backend API
-docker-compose logs -f frontend   # Frontend
-docker-compose logs -f postgres   # Database
+docker compose logs -f backend    # Backend API
+docker compose logs -f frontend   # Frontend
+docker compose logs -f postgres   # Database
 ```
 
 ---
@@ -250,8 +347,8 @@ docker-compose logs -f postgres   # Database
 |---------|----------|
 | **Docker won't start** | Enable Hyper-V / WSL2 in Windows Features; restart |
 | **Port 5173/8000 in use** | Close other apps; or change ports in `docker-compose.yml` |
-| **Database connection failed** | Check `docker-compose logs postgres`; verify `.env` DATABASE_URL |
-| **Frontend blank page** | Clear browser cache; check `docker-compose logs frontend` |
+| **Database connection failed** | Check `docker compose logs postgres`; verify `.env` DATABASE_URL |
+| **Frontend blank page** | Clear browser cache; check `docker compose logs frontend` |
 | **AI grading fails** | Teacher: Settings → AI Keys → verify API key; check provider status |
 | **SEB won't launch** | Install SEB 3.4+; verify `.seb` file association |
 | **Passkeys not working** | Must use HTTPS; check `WEBAUTHN_RP_ID` matches domain |
@@ -260,8 +357,8 @@ docker-compose logs -f postgres   # Database
 ```powershell
 curl http://localhost:8000/health
 curl http://localhost:5173
-docker-compose exec postgres pg_isready -U postgres
-docker-compose exec redis redis-cli ping
+docker compose exec postgres pg_isready -U postgres
+docker compose exec redis redis-cli ping
 ```
 
 ---

@@ -113,6 +113,7 @@ class User(Base):
     class_groups = relationship(
         "ClassGroup", back_populates="teacher", cascade="all, delete-orphan"
     )
+    packages = relationship("Package", back_populates="author", cascade="all, delete-orphan")
 
 
 class AccountRelationship(Base):
@@ -394,8 +395,170 @@ class AlertStatus(enum.StrEnum):
     resolved = "resolved"
 
 
+# ── Package/Module Models ────────────────────────────────────────────────────
+
+class PackageCategory(enum.StrEnum):
+    """Standard module categories for the central repository."""
+    mathematics = "mathematics"
+    chemistry = "chemistry"
+    biology = "biology"
+    physics = "physics"
+    computer_science = "computer_science"
+    languages = "languages"
+    history = "history"
+    geography = "geography"
+    literature = "literature"
+    arts = "arts"
+    health_pe = "health_pe"
+    economics = "economics"
+    philosophy = "philosophy"
+    other = "other"
+
+
+class PackageStatus(enum.StrEnum):
+    draft = "draft"
+    published = "published"
+    archived = "archived"
+
+
+class Package(Base):
+    """Module package - a shareable, versioned exam package with metadata."""
+    __tablename__ = "packages"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    name = Column(String(256), index=True, nullable=False)
+    version = Column(String(32), default="1.0.0", nullable=False)
+    description = Column(Text, nullable=True)
+    
+    # Categorization
+    category = Column(Enum(PackageCategory), default=PackageCategory.other, index=True, nullable=False)
+    subject = Column(String(128), index=True, nullable=True)  # e.g., "Algebra I", "Organic Chemistry"
+    grade_level = Column(String(32), index=True, nullable=True)  # e.g., "9", "10-12", "university"
+    tags = Column(Text, nullable=True)  # JSON array of tags
+    
+    # Licensing
+    license = Column(String(64), default="CC-BY-4.0", nullable=False)
+    
+    # Package content (JSON)
+    package_data = Column(Text, nullable=False)  # Full package JSON
+    checksum = Column(String(64), nullable=False)  # SHA-256 of package_data
+    
+    # Versioning
+    version = Column(String(32), default="1.0.0", nullable=False)
+    parent_package_id = Column(String(36), ForeignKey("packages.id"), nullable=True)  # For forks/updates
+    
+    # Ownership & Status
+    author_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
+    status = Column(Enum(PackageStatus), default=PackageStatus.draft, index=True, nullable=False)
+    is_public = Column(Boolean, default=False, nullable=False)  # Published to central repo
+    
+    # Source tracking
+    source_url = Column(String(512), nullable=True)  # Original source (central repo, custom site, etc.)
+    source_type = Column(String(32), nullable=True)  # "central", "custom", "local", "fork"
+    
+    # Statistics
+    download_count = Column(Integer, default=0, nullable=False)
+    rating_avg = Column(Float, nullable=True)
+    rating_count = Column(Integer, default=0, nullable=False)
+    
+    # Timestamps
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+    published_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # Relationships
+    author = relationship("User", back_populates="packages")
+    ratings = relationship("PackageRating", back_populates="package", cascade="all, delete-orphan")
+    downloads = relationship("PackageDownload", back_populates="package", cascade="all, delete-orphan")
+    parent = relationship("Package", remote_side=[id], backref="forks")
+
+
+class PackageRating(Base):
+    """User ratings for packages."""
+    __tablename__ = "package_ratings"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    package_id = Column(String(36), ForeignKey("packages.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    rating = Column(Integer, nullable=False)  # 1-5
+    review = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Relationships
+    package = relationship("Package", back_populates="ratings")
+    user = relationship("User")
+
+
+class PackageDownload(Base):
+    """Track package downloads for statistics."""
+    __tablename__ = "package_downloads"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    package_id = Column(String(36), ForeignKey("packages.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
+    source_type = Column(String(32), nullable=True)  # "central", "custom", "direct"
+    downloaded_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    ip_hash = Column(String(64), nullable=True)  # Hashed IP for privacy
+
+    # Relationships
+    package = relationship("Package", back_populates="downloads")
+    user = relationship("User")
+
+
+class School(Base):
+    """School/organization for multi-tenant support."""
+    __tablename__ = "schools"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    name = Column(String(256), nullable=False)
+    domain = Column(String(256), unique=True, index=True, nullable=True)  # School domain
+    address = Column(Text, nullable=True)
+    contact_email = Column(String(256), nullable=True)
+    is_active = Column(Boolean, default=True, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Relationships
+    package_sources = relationship("PackageSource", back_populates="school")
+
+
+class PackageSource(Base):
+    """Custom module sources configured by schools."""
+    __tablename__ = "package_sources"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    name = Column(String(128), nullable=False)
+    url = Column(String(512), nullable=False)  # Base URL of the source
+    api_key = Column(String(256), nullable=True)  # Optional API key for private sources
+    source_type = Column(String(32), default="custom", nullable=False)  # "central", "custom", "github"
+    is_enabled = Column(Boolean, default=True, nullable=False)
+    is_default = Column(Boolean, default=False, nullable=False)  # Show in default browse
+    priority = Column(Integer, default=0, nullable=False)  # Display order
+    
+    # Sync settings
+    auto_sync = Column(Boolean, default=False, nullable=False)
+    sync_interval_hours = Column(Integer, default=24, nullable=False)
+    last_synced_at = Column(DateTime(timezone=True), nullable=True)
+    last_sync_status = Column(String(32), nullable=True)  # "success", "error", "partial"
+    last_sync_error = Column(Text, nullable=True)
+    
+    # Filtering
+    allowed_categories = Column(Text, nullable=True)  # JSON array of categories to sync
+    allowed_tags = Column(Text, nullable=True)  # JSON array of tags to sync
+    
+    # School ownership (for multi-tenant)
+    school_id = Column(String(36), ForeignKey("schools.id"), nullable=True, index=True)
+    
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+    
+    # Relationships
+    school = relationship("School", back_populates="package_sources")
+
+
 class Alert(Base):
-    """Alert records from Alertmanager for audit trail and notification forwarding."""
+    """Alerts from Alertmanager."""
     __tablename__ = "alerts"
 
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)

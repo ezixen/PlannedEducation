@@ -4,15 +4,23 @@ from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 # DATABASE_URL must always be set explicitly. No implicit defaults — fail loudly.
-_default_url = "postgresql://postgres:postgres@localhost:5433/plannededucation" \
-    if os.getenv("PLANNED_EDUCATION_ENV") == "development" else ""
+# For tests, use SQLite in-memory. For development, use PostgreSQL.
+# Check for test environment FIRST, before any other logic
+_is_test = os.getenv("PLANNED_EDUCATION_ENV") == "test" or os.getenv("DATABASE_URL", "").startswith("sqlite")
 
-SQLALCHEMY_DATABASE_URL: str = os.getenv("DATABASE_URL", _default_url)
+if os.getenv("PLANNED_EDUCATION_ENV") == "test":
+    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test_plannededucation.db")
+elif os.getenv("DATABASE_URL", "").startswith("sqlite"):
+    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+else:
+    _default_url = "postgresql+psycopg://postgres:postgres@localhost:5433/plannededucation" \
+        if os.getenv("PLANNED_EDUCATION_ENV") == "development" else ""
+    SQLALCHEMY_DATABASE_URL: str = os.getenv("DATABASE_URL", _default_url)
 
 if not SQLALCHEMY_DATABASE_URL:
     raise RuntimeError(
         "DATABASE_URL environment variable is not set. "
-        "Example: postgresql://user:pass@host:5432/dbname"
+        "Example: postgresql+psycopg://user:pass@host:5432/dbname"
     )
 
 is_sqlite = SQLALCHEMY_DATABASE_URL.startswith("sqlite")

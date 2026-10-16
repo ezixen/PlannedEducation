@@ -1,5 +1,7 @@
 # Planned Education 🎓
 
+![Planned Education Logo](PElogo_128x128.png)
+
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
 Planned Education exists for a simple reason: **teachers shouldn't have to spend their evenings and weekends buried in grading.** When educators are well-rested and supported, they can show up with more patience, creativity, and heart for the children who need them most. **Children are our future. Let's give them teachers who are rested, supported, and ready to inspire.** 🌱

@@ -1,5 +1,6 @@
 test_plannededucation.db
 *.log
+!install.log
 agents.md
 AGENTS.md
 __pycache__/
@@ -13,7 +14,8 @@ Dev/Save/skills/how2/
 local-secrets/
 secrets/
 .env
-.env.*
+.env.local
+.env.production
 *.pem
 *.key
 credentials.json
@@ -51,3 +53,5 @@ playwright-report/
 .vscode/
 .idea/
 
+# External / Unrelated Projects
+EasyLegalAid/

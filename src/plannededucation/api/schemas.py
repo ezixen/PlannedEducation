@@ -1,6 +1,8 @@
+import json
+from datetime import datetime
 from enum import StrEnum
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
 # ── User ──────────────────────────────────────────────────────────────────────
 
@@ -311,3 +313,264 @@ class CaptchaVerifyRequest(BaseModel):
     """Request to verify CAPTCHA."""
     token: str
     provider: str | None = None
+
+
+# ── Packages / Modules ────────────────────────────────────────────────────────
+
+class PackageCategoryEnum(StrEnum):
+    mathematics = "mathematics"
+    chemistry = "chemistry"
+    biology = "biology"
+    physics = "physics"
+    computer_science = "computer_science"
+    languages = "languages"
+    history = "history"
+    geography = "geography"
+    literature = "literature"
+    arts = "arts"
+    health_pe = "health_pe"
+    economics = "economics"
+    philosophy = "philosophy"
+    other = "other"
+
+
+class PackageStatusEnum(StrEnum):
+    draft = "draft"
+    published = "published"
+    archived = "archived"
+
+
+class PackageSourceTypeEnum(StrEnum):
+    central = "central"
+    custom = "custom"
+    github = "github"
+    local = "local"
+    fork = "fork"
+
+
+class PackageMetadataBase(BaseModel):
+    name: str = Field(..., min_length=1, max_length=256)
+    version: str = Field("1.0.0", pattern=r"^\d+\.\d+\.\d+$")
+    description: str | None = Field(None, max_length=2048)
+    category: PackageCategoryEnum = PackageCategoryEnum.other
+    subject: str | None = Field(None, max_length=128)
+    grade_level: str | None = Field(None, max_length=32)
+    tags: list[str] = Field(default_factory=list)
+    license: str = Field("CC-BY-4.0", max_length=64)
+
+
+class PackageMetadataResponse(PackageMetadataBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    version: str
+    description: str | None = None
+    author: str
+    author_id: str
+    created_at: datetime
+    updated_at: datetime
+    published_at: datetime | None = None
+    checksum: str
+    status: str
+    is_public: bool
+    source_type: str | None = None
+    source_url: str | None = None
+    download_count: int = 0
+    rating_avg: float | None = None
+    rating_count: int = 0
+    parent_package_id: str | None = None
+
+    @field_validator("tags", mode="before")
+    @classmethod
+    def _parse_tags(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except Exception:
+                return [v] if v else []
+        return v or []
+
+    @field_validator("author", mode="before")
+    @classmethod
+    def _parse_author(cls, v):
+        if hasattr(v, "full_name") or hasattr(v, "username"):
+            return getattr(v, "full_name") or getattr(v, "username") or ""
+        return str(v) if v is not None else ""
+
+    @field_validator("status", mode="before")
+    @classmethod
+    def _parse_status(cls, v):
+        if hasattr(v, "value"):
+            return v.value
+        return str(v) if v is not None else "draft"
+
+
+class PackageCreate(PackageMetadataBase):
+    package_data: dict  # Full TestPackage JSON
+    is_public: bool = False
+    source_type: PackageSourceTypeEnum = PackageSourceTypeEnum.local
+    source_url: str | None = None
+
+
+class PackageUpdate(BaseModel):
+    name: str | None = Field(None, min_length=1, max_length=256)
+    version: str | None = Field(None, pattern=r"^\d+\.\d+\.\d+$")
+    description: str | None = Field(None, max_length=2048)
+    category: PackageCategoryEnum | None = None
+    subject: str | None = Field(None, max_length=128)
+    grade_level: str | None = Field(None, max_length=32)
+    tags: list[str] | None = None
+    license: str | None = Field(None, max_length=64)
+    is_public: bool | None = None
+    status: str | None = None
+
+
+class PackageResponse(PackageMetadataResponse):
+    package_data: dict  # Full TestPackage JSON
+    parent_package_id: str | None = None
+    rating_avg: float | None = None
+    rating_count: int = 0
+    download_count: int = 0
+
+    @field_validator("package_data", mode="before")
+    @classmethod
+    def _parse_package_data(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except Exception:
+                return {}
+        return v or {}
+
+
+class PackageListResponse(BaseModel):
+    packages: list[PackageMetadataResponse]
+    total: int
+    page: int
+    page_size: int
+
+
+class PackageExportRequest(BaseModel):
+    exam_id: str
+    include_answers: bool = True
+    include_rubrics: bool = True
+    include_variables: bool = True
+    format: str = Field("json", pattern=r"^(json|yaml)$")
+    compress: bool = False
+
+
+class PackageImportResult(BaseModel):
+    success: bool
+    package_id: str | None = None
+    exam_id: str | None = None
+    questions_imported: int = 0
+    rubrics_imported: int = 0
+    errors: list[str] = []
+    warnings: list[str] = []
+
+
+class PackageValidationResult(BaseModel):
+    valid: bool
+    errors: list[str] = []
+    warnings: list[str] = []
+
+
+class PackageListFilters(BaseModel):
+    subject: str | None = None
+    grade_level: str | None = None
+    tags: str | None = None
+    author_id: str | None = None
+    category: PackageCategoryEnum | None = None
+    status: str | None = None
+    is_public: bool | None = None
+    search: str | None = None
+    page: int = Field(1, ge=1)
+    page_size: int = Field(20, ge=1, le=100)
+
+
+class PackageDownloadResponse(BaseModel):
+    content: str
+    media_type: str
+    filename: str
+
+
+class PackageRatingCreate(BaseModel):
+    rating: int = Field(..., ge=1, le=5)
+    review: str | None = Field(None, max_length=2048)
+
+
+class PackageRatingResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    package_id: str
+    user_id: str
+    rating: int
+    review: str | None = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class PackageSourceTypeEnum(StrEnum):
+    central = "central"
+    custom = "custom"
+    github = "github"
+
+
+class PackageSourceBase(BaseModel):
+    name: str = Field(..., min_length=1, max_length=128)
+    url: str = Field(..., max_length=512)
+    api_key: str | None = Field(None, max_length=256)
+    source_type: PackageSourceTypeEnum = PackageSourceTypeEnum.custom
+    is_enabled: bool = True
+    is_default: bool = False
+    priority: int = Field(0, ge=0)
+    auto_sync: bool = False
+    sync_interval_hours: int = Field(24, ge=1, le=168)
+    allowed_categories: list[str] = Field(default_factory=list)
+    allowed_tags: list[str] = Field(default_factory=list)
+
+
+class PackageSourceCreate(PackageSourceBase):
+    pass
+
+
+class PackageSourceUpdate(BaseModel):
+    name: str | None = Field(None, min_length=1, max_length=128)
+    url: str | None = Field(None, max_length=512)
+    api_key: str | None = Field(None, max_length=256)
+    is_enabled: bool | None = None
+    is_default: bool | None = None
+    priority: int | None = Field(None, ge=0)
+    auto_sync: bool | None = None
+    sync_interval_hours: int | None = Field(None, ge=1, le=168)
+    allowed_categories: list[str] | None = None
+    allowed_tags: list[str] | None = None
+
+
+class PackageSourceResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    name: str
+    url: str
+    source_type: str
+    is_enabled: bool
+    is_default: bool
+    priority: int
+    auto_sync: bool
+    sync_interval_hours: int
+    allowed_categories: list[str] = Field(default_factory=list)
+    allowed_tags: list[str] = Field(default_factory=list)
+    last_synced_at: datetime | None = None
+    last_sync_status: str | None = None
+    last_sync_error: str | None = None
+    created_at: datetime
+    updated_at: datetime
+
+    @field_validator("allowed_categories", "allowed_tags", mode="before")
+    @classmethod
+    def _parse_lists(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except Exception:
+                return [v] if v else []
+        return v or []

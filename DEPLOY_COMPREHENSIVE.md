@@ -6,6 +6,7 @@ PlannedEducation is a free, open-source exam platform designed for schools. It r
 
 ## Architecture
 
+### Docker Deployment (Default)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    School Network                             │
@@ -27,7 +28,38 @@ PlannedEducation is a free, open-source exam platform designed for schools. It r
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Quick Start (Linux Server)
+### Native Deployment (No Docker)
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    School Network                             │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │   Nginx     │  │  Backend    │  │   PostgreSQL        │  │
+│  │  (Port 80)  │──│  (Port 8000)│──│   (Port 5432)       │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+│         │              │                   │                 │
+│         │         ┌────┴────┐             │                 │
+│         │         │  Redis  │             │                 │
+│         │         │(Port 6379)            │                 │
+│         │         └─────────┘             │                 │
+│         │                                 │                 │
+│  ┌──────┴──────────────────────────────────────────────┐   │
+│  │              Frontend (Nginx + React)                │   │
+│  │                    Port 80/443                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Choose Your Deployment Mode
+
+| Mode | Best For | Pros | Cons |
+|------|----------|------|------|
+| **Docker** (default) | Quick setup, isolation | Easy updates, consistent env | Requires Docker Desktop |
+| **Native** | No Docker, direct control | Lower overhead, standard admin | Manual service management |
+
+---
+
+## Quick Start - Docker Deployment (Linux Server)
 
 ### Prerequisites
 - Ubuntu 22.04+ / Debian 12+ / RHEL 9+
@@ -140,6 +172,200 @@ sudo certbot --nginx -d yourschool.edu -d www.yourschool.edu
 # Auto-renewal
 sudo systemctl enable certbot.timer
 ```
+
+---
+
+## Quick Start - Native Deployment (No Docker)
+
+### Prerequisites (Linux - Ubuntu/Debian)
+```bash
+sudo apt update && sudo apt install -y postgresql-16 redis-server nginx git python3 python3-venv python3-pip nodejs npm
+sudo systemctl enable --now postgresql redis-server nginx
+```
+
+### Prerequisites (Windows)
+1. **PostgreSQL 16** - https://www.postgresql.org/download/windows/
+2. **Redis** - https://github.com/microsoftarchive/redis/releases (install as service)
+3. **Node.js 20+** - https://nodejs.org/
+4. **Python 3.12+** - https://www.python.org/downloads/ (check "Add to PATH")
+5. **Git** - https://git-scm.com/download/win
+
+### 1. Clone & Configure
+```bash
+git clone https://github.com/ezixen/PlannedEducation.git
+cd PlannedEducation
+
+# Copy environment template
+cp .env.example .env
+
+# Generate secure keys
+python3 -c "import secrets; print('JWT_SECRET_KEY=' + secrets.token_hex(64))"
+python3 -c "from cryptography.fernet import Fernet; print('AI_KEY_MASTER_SECRET=' + Fernet.generate_key().decode())"
+
+# Edit .env with your values
+nano .env
+```
+
+### 2. Required .env Configuration (Native)
+```env
+# REQUIRED - Change these!
+JWT_SECRET_KEY=your-64-char-key
+AI_KEY_MASTER_SECRET=your-44-char-fernet-key
+
+# Database (native PostgreSQL)
+DATABASE_URL=postgresql+psycopg://plannededucation:secure-password@localhost:5432/plannededucation
+
+# Your school domain
+CORS_ORIGINS=https://yourschool.edu
+ALLOWED_HOSTS=yourschool.edu
+WEBAUTHN_RP_ID=yourschool.edu
+WEBAUTHN_ORIGIN=https://yourschool.edu
+
+# Optional: Google OAuth
+GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_SECRET=your-client-secret
+```
+
+### 3. Setup Database
+```bash
+# Create database and user (run as postgres user)
+sudo -u postgres psql -c "CREATE USER plannededucation WITH PASSWORD 'secure-password';"
+sudo -u postgres psql -c "CREATE DATABASE plannededucation OWNER plannededucation;"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE plannededucation TO plannededucation;"
+```
+
+### 4. Build & Deploy
+```bash
+# Python environment
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools wheel
+pip install -r src/requirements.txt
+
+# Build frontend
+cd web/apps/portal
+npm ci
+npm run build
+cd ../../..
+
+# Initialize database
+source .venv/bin/activate
+python -c "
+from src.plannededucation.api.database import Base, engine
+from src.plannededucation.api import models
+Base.metadata.create_all(bind=engine)
+print('Database initialized')
+"
+
+# Create systemd service for backend
+sudo tee /etc/systemd/system/plannededucation-backend.service > /dev/null <<EOF
+[Unit]
+Description=PlannedEducation Backend
+After=network.target postgresql.service redis.service
+Requires=postgresql.service redis.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=$(pwd)
+Environment=PATH=$(pwd)/.venv/bin
+EnvironmentFile=$(pwd)/.env
+ExecStart=$(pwd)/.venv/bin/uvicorn src.plannededucation.api.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable plannededucation-backend
+sudo systemctl start plannededucation-backend
+```
+
+### 5. Configure Nginx
+```bash
+sudo tee /etc/nginx/sites-available/plannededucation > /dev/null <<EOF
+server {
+    listen 80;
+    server_name ${DOMAIN:-localhost};
+    
+    # Frontend static files
+    location / {
+        root $(pwd)/web/apps/portal/dist;
+        try_files \$uri \$uri/ /index.html;
+        index index.html;
+    }
+    
+    # Backend API
+    location /api/ {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+    
+    # WebSocket support
+    location /ws/ {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade \$http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+    }
+    
+    # Health checks
+    location /health {
+        proxy_pass http://localhost:8000/health;
+        access_log off;
+    }
+}
+EOF
+
+sudo ln -sf /etc/nginx/sites-available/plannededucation /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+### 6. Create Admin User
+```bash
+source .venv/bin/activate
+python -c "
+from src.plannededucation.api.database import SessionLocal
+from src.plannededucation.api.models import User
+from src.plannededucation.api.routes_auth import get_password_hash
+db = SessionLocal()
+admin = User(
+    email='admin@yourschool.edu',
+    username='admin',
+    full_name='School Admin',
+    hashed_password=get_password_hash('ChangeMe123!'),
+    role='admin', is_admin=True, is_active=True
+)
+db.add(admin); db.commit()
+print('Admin created: admin@yourschool.edu / ChangeMe123!')
+"
+```
+
+### 7. Verify
+```bash
+# Check services
+systemctl status plannededucation-backend nginx postgresql redis
+
+# Test endpoints
+curl http://localhost:8000/health
+curl http://localhost/health
+```
+
+### 8. SSL with Let's Encrypt (Production)
+```bash
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d yourschool.edu -d www.yourschool.edu
+sudo systemctl enable certbot.timer
+```
+
+---
 
 ## Windows Development Deployment
 

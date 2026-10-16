@@ -6,10 +6,10 @@ import os
 import pytest
 
 # Must be set BEFORE any application modules are imported
-os.environ.setdefault("DATABASE_URL", "sqlite:///./test_plannededucation.db")
-os.environ.setdefault("PLANNED_EDUCATION_ENV", "test")
-os.environ.setdefault("ALLOW_DEV_SEB_BYPASS", "true")
-os.environ.setdefault("JWT_SECRET_KEY", "test_secret_key_1234567890")
+os.environ["DATABASE_URL"] = "sqlite:///./test_plannededucation.db"
+os.environ["PLANNED_EDUCATION_ENV"] = "test"
+os.environ["ALLOW_DEV_SEB_BYPASS"] = "true"
+os.environ["JWT_SECRET_KEY"] = "test_secret_key_1234567890"
 
 from fastapi.testclient import TestClient
 from src.plannededucation.api.main import app
