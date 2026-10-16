@@ -393,7 +393,7 @@ class PackageMetadataResponse(PackageMetadataBase):
     @classmethod
     def _parse_author(cls, v):
         if hasattr(v, "full_name") or hasattr(v, "username"):
-            return getattr(v, "full_name") or getattr(v, "username") or ""
+            return v.full_name or v.username or ""
         return str(v) if v is not None else ""
 
     @field_validator("status", mode="before")

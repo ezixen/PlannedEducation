@@ -32,6 +32,8 @@ select = [
 ]
 ignore = [
     "B008",  # Do not perform function call in argument defaults (FastAPI Depends pattern)
+    "E501",  # Line length
+    "E712",  # Allow boolean column comparisons in SQLAlchemy queries (e.g. is_public == True)
 ]
 
 [tool.ruff.lint.isort]

@@ -8,42 +8,29 @@ import hashlib
 import json
 import uuid
 from datetime import UTC, datetime
-from typing import Optional
 
 import yaml
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
-from pydantic import BaseModel
-from sqlalchemy import desc, func, or_
+from sqlalchemy import desc, or_
 from sqlalchemy.orm import Session
 
 from . import database, models
 from .routes_auth import get_current_user
 from .schemas import (
-    PackageCategoryEnum,
     PackageCreate,
+    PackageDownloadResponse,
     PackageExportRequest,
     PackageImportResult,
     PackageListFilters,
     PackageListResponse,
-    PackageMetadataResponse,
     PackageRatingCreate,
     PackageRatingResponse,
     PackageResponse,
     PackageSourceCreate,
     PackageSourceResponse,
     PackageSourceUpdate,
-    PackageStatusEnum,
     PackageUpdate,
     PackageValidationResult,
-    PackageExportRequest,
-    PackageImportResult,
-    PackageValidationResult,
-    PackageDownloadResponse,
-    PackageRatingCreate,
-    PackageRatingResponse,
-    PackageSourceCreate,
-    PackageSourceResponse,
-    PackageSourceUpdate,
 )
 
 router = APIRouter(prefix="/packages", tags=["packages"])
@@ -379,13 +366,13 @@ async def create_package(
         ).first()
         if not exam:
             raise HTTPException(status_code=404, detail="Exam not found or access denied")
-    
+
     # Calculate checksum
     pkg_data = package.package_data.copy()
     pkg_data["metadata"] = pkg_data.get("metadata", {}).copy()
     pkg_data["metadata"]["checksum"] = ""
     checksum = hashlib.sha256(json.dumps(pkg_data, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
-    
+
     # Create package
     category_val = package.category.value if hasattr(package.category, "value") else package.category
     source_val = package.source_type.value if hasattr(package.source_type, "value") else str(package.source_type)
@@ -413,7 +400,7 @@ async def create_package(
     db.add(pkg)
     db.commit()
     db.refresh(pkg)
-    
+
     return pkg
 
 
@@ -425,7 +412,7 @@ async def list_packages(
 ):
     """List packages with filtering, pagination, and search."""
     query = db.query(models.Package)
-    
+
     # Apply filters
     if filters.subject:
         query = query.filter(models.Package.subject.ilike(f"%{filters.subject}%"))
@@ -447,7 +434,7 @@ async def list_packages(
                 models.Package.tags.ilike(f"%{filters.search}%"),
             )
         )
-    
+
     # Default: show public packages + user's own packages
     query = query.filter(
         or_(
@@ -455,16 +442,16 @@ async def list_packages(
             models.Package.author_id == current_user.id
         )
     )
-    
+
     # Order by relevance: public first, then by updated_at
     query = query.order_by(
         models.Package.is_public.desc(),
         models.Package.updated_at.desc()
     )
-    
+
     total = query.count()
     packages = query.offset((filters.page - 1) * filters.page_size).limit(filters.page_size).all()
-    
+
     return PackageListResponse(
         packages=packages,
         total=total,
@@ -507,7 +494,7 @@ async def create_package_source(
     """Add a custom package source (school admin only)."""
     if not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Only admins can add package sources")
-    
+
     source_type_val = source.source_type.value if hasattr(source.source_type, "value") else str(source.source_type)
     cats_str = json.dumps(source.allowed_categories) if isinstance(source.allowed_categories, list) else str(source.allowed_categories or "[]")
     tags_str = json.dumps(source.allowed_tags) if isinstance(source.allowed_tags, list) else str(source.allowed_tags or "[]")
@@ -560,17 +547,17 @@ async def update_package_source(
     """Update a package source (admin only)."""
     if not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Only admins can update package sources")
-    
+
     source = db.query(models.PackageSource).filter(models.PackageSource.id == source_id).first()
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
-    
+
     update_data = update.model_dump(exclude_unset=True)
     for field, value in update_data.items():
         if field in ("allowed_categories", "allowed_tags") and isinstance(value, list):
             value = json.dumps(value)
         setattr(source, field, value)
-    
+
     source.updated_at = datetime.now(UTC)
     db.commit()
     db.refresh(source)
@@ -586,11 +573,11 @@ async def delete_package_source(
     """Delete a package source (admin only)."""
     if not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Only admins can delete package sources")
-    
+
     source = db.query(models.PackageSource).filter(models.PackageSource.id == source_id).first()
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
-    
+
     db.delete(source)
     db.commit()
 
@@ -606,11 +593,11 @@ async def sync_package_source(
     """Manually trigger sync from a package source (admin only)."""
     if not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Only admins can trigger sync")
-    
+
     source = db.query(models.PackageSource).filter(models.PackageSource.id == source_id).first()
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
-    
+
     synced_count = 0
     try:
         import httpx
@@ -673,7 +660,7 @@ async def sync_package_source(
         source.last_sync_error = str(exc)
         db.commit()
         return {"status": "sync_failed", "source_id": source_id, "error": str(exc)}
-    
+
     return {"status": "success", "source_id": source_id, "synced_packages": synced_count}
 
 
@@ -687,11 +674,11 @@ async def get_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     # Check access: public packages or owner
     if not package.is_public and package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
-    
+
     return package
 
 
@@ -706,18 +693,18 @@ async def update_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Only the author can update this package")
-    
+
     update_data = update.model_dump(exclude_unset=True)
     for field, value in update_data.items():
         setattr(package, field, value)
-    
+
     package.updated_at = datetime.now(UTC)
     db.commit()
     db.refresh(package)
-    
+
     return package
 
 
@@ -731,10 +718,10 @@ async def delete_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Only the author can delete this package")
-    
+
     db.delete(package)
     db.commit()
 
@@ -752,10 +739,10 @@ async def publish_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Only the author can publish this package")
-    
+
     package.is_public = is_public
     package.status = models.PackageStatus.published if is_public else models.PackageStatus.draft
     if is_public and not package.published_at:
@@ -763,7 +750,7 @@ async def publish_package(
     package.updated_at = datetime.now(UTC)
     db.commit()
     db.refresh(package)
-    
+
     return package
 
 
@@ -777,10 +764,10 @@ async def fork_package(
     original = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not original:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if not original.is_public and original.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Cannot fork private package")
-    
+
     # Create fork
     fork = models.Package(
         id=str(uuid.uuid4()),
@@ -803,7 +790,7 @@ async def fork_package(
     db.add(fork)
     db.commit()
     db.refresh(fork)
-    
+
     return fork
 
 
@@ -820,16 +807,16 @@ async def rate_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if not package.is_public:
         raise HTTPException(status_code=403, detail="Cannot rate private package")
-    
+
     # Check if user already rated
     existing = db.query(models.PackageRating).filter(
         models.PackageRating.package_id == package_id,
         models.PackageRating.user_id == current_user.id
     ).first()
-    
+
     if existing:
         existing.rating = rating.rating
         existing.review = rating.review
@@ -843,14 +830,14 @@ async def rate_package(
             review=rating.review,
         )
         db.add(new_rating)
-    
+
     # Update package rating stats
     ratings = db.query(models.PackageRating).filter(models.PackageRating.package_id == package_id).all()
     package.rating_avg = sum(r.rating for r in ratings) / len(ratings)
     package.rating_count = len(ratings)
-    
+
     db.commit()
-    
+
     # Return the rating
     rating_obj = db.query(models.PackageRating).filter(
         models.PackageRating.package_id == package_id,
@@ -885,10 +872,10 @@ async def download_package(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if not package.is_public and package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
-    
+
     # Track download
     download = models.PackageDownload(
         id=str(uuid.uuid4()),
@@ -899,7 +886,7 @@ async def download_package(
     db.add(download)
     package.download_count += 1
     db.commit()
-    
+
     # Return package data
     pkg_data = json.loads(package.package_data)
     if format == "yaml":
@@ -910,7 +897,7 @@ async def download_package(
         content = json.dumps(pkg_data, indent=2)
         media_type = "application/json"
         filename = f"{package.name.replace(' ', '_')}_package.json"
-    
+
     return PackageDownloadResponse(
         content=content,
         media_type=media_type,
@@ -932,10 +919,10 @@ async def track_package_download(
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
-    
+
     if not package.is_public and package.author_id != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied")
-    
+
     download = models.PackageDownload(
         id=str(uuid.uuid4()),
         package_id=package_id,
@@ -945,5 +932,5 @@ async def track_package_download(
     db.add(download)
     package.download_count += 1
     db.commit()
-    
+
     return {"status": "tracked", "download_count": package.download_count}
