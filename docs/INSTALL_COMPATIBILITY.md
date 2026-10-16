@@ -56,7 +56,7 @@ npm install "react@19.2.8" "react-dom@19.2.8"
 | `PyJWT` | `>=2.8.0` | `2.15.1` | Cryptographic JWT token encoding & verification |
 | `argon2-cffi` | `>=23.1.0` | `25.1.0` | Argon2id password hashing (OWASP ASVS recommended) |
 | `pyotp` | `>=2.9.0` | `2.10.0` | RFC 6238 TOTP two-factor authentication |
-| `cryptography` | `>=42.0.0` | `48.0.1` | Fernet AES encryption for teacher AI keys |
+| `cryptography` | `>=50.0.0` | `50.0.0` | Fernet AES encryption for teacher AI keys (CVE patched) |
 | `google-auth` | `>=2.28.0` | `2.62.0` | Google OAuth2 identity authentication |
 | `google-auth-oauthlib` | `>=1.2.0` | `1.5.0` | OAuth client consent flow |
 | `slowapi` | `>=0.1.9` | `0.1.10` | Endpoint rate limiting protection |

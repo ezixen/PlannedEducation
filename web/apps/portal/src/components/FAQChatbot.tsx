@@ -8,8 +8,20 @@ interface ChatMessage {
   timestamp: Date;
 }
 
+interface FAQItem {
+  id: number;
+  question: string;
+  answer: string;
+  keywords?: string[];
+}
+
+interface FAQCategory {
+  category: string;
+  questions: FAQItem[];
+}
+
 // FAQ data with categories and common questions
-const FAQ_DATA = [
+const FAQ_DATA: FAQCategory[] = [
   {
     category: "Getting Started",
     questions: [
@@ -174,6 +186,41 @@ const FAQ_DATA = [
         answer: "Use Docker Compose with docker-compose.yml + docker-compose.prod.yml. Set environment variables (JWT_SECRET_KEY, DATABASE_URL, etc.). Run migrations with alembic. Build frontend with 'npm run build'. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS."
       }
     ]
+  },
+  {
+    category: "Installation & Deployment",
+    questions: [
+      {
+        id: 27,
+        question: "How do I install PlannedEducation on Windows?",
+        keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup"],
+        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. See docs/INSTALL_WINDOWS.md."
+      },
+      {
+        id: 28,
+        question: "How do I install PlannedEducation on Linux?",
+        keywords: ["linux", "install", "ubuntu", "debian", "install.sh", "bash", "server"],
+        answer: "To install on Linux (Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL): Run `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash` or clone the repo and run `./install.sh`. It automatically creates a virtual environment, configures SQLite/PostgreSQL, and sets up a background Systemd service. See docs/INSTALL_LINUX.md."
+      },
+      {
+        id: 29,
+        question: "Can I run without Docker?",
+        keywords: ["docker", "native", "sqlite", "nodocker", "lightweight", "without"],
+        answer: "Yes! Both Windows (install.ps1) and Linux (install.sh) installers provide a Native Mode. PlannedEducation runs directly on host Python 3.12+ with SQLite (zero-config standalone file database) or local PostgreSQL and Redis. This provides fast, lightweight performance for schools without Docker."
+      },
+      {
+        id: 30,
+        question: "How do I use the deployment wizard?",
+        keywords: ["wizard", "deploy_wizard", "setup", "guided", "interactive"],
+        answer: "Run `python deploy_wizard.py` (or `python3 deploy_wizard.py`). This cross-platform CLI wizard detects your environment, generates cryptographically secure JWT and Fernet encryption keys, configures .env, builds frontend assets, and initializes database tables."
+      },
+      {
+        id: 31,
+        question: "How do students and teachers connect over school Wi-Fi or LAN?",
+        keywords: ["wifi", "lan", "network", "connect", "ip", "school", "firewall", "students", "teachers"],
+        answer: "1. Find your server's local IPv4 (e.g., 192.168.1.150). 2. Open port 8000 in your firewall (or port 80 if using Nginx). 3. In .env, set ALLOWED_HOSTS and CORS_ORIGINS to include the server IP. 4. Teachers and students connect by browsing to http://<SERVER_IP>:8000 in any browser or Safe Exam Browser (SEB)."
+      }
+    ]
   }
 ];
 
@@ -201,11 +248,26 @@ export function FAQChatbot() {
 
   // Find answer based on user input
   const findAnswer = (query: string) => {
-    const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
     
-    // Simple keyword matching
+    // Direct matches or keyword-based matches
     for (const category of FAQ_DATA) {
       for (const faq of category.questions) {
+        // Direct question match
+        if (lowerQuery.includes(faq.question.toLowerCase()) || faq.question.toLowerCase().includes(lowerQuery)) {
+          return faq.answer;
+        }
+
+        // Targeted keywords check
+        if (faq.keywords) {
+          const matchedKeywords = faq.keywords.filter(keyword => 
+            lowerQuery.includes(keyword.toLowerCase())
+          );
+          if (matchedKeywords.length >= 2 || (matchedKeywords.length === 1 && (matchedKeywords[0] === 'windows' || matchedKeywords[0] === 'linux' || matchedKeywords[0] === 'wizard' || matchedKeywords[0] === 'wifi' || matchedKeywords[0] === 'lan'))) {
+            return faq.answer;
+          }
+        }
+
         const questionWords = faq.question.toLowerCase().split(' ');
         const queryWords = lowerQuery.split(' ');
         
@@ -214,19 +276,14 @@ export function FAQChatbot() {
           word.length > 3 && queryWords.includes(word)
         );
         
-        if (matches.length >= 2) { // At least 2 matching words
-          return faq.answer;
-        }
-        
-        // Direct question match
-        if (lowerQuery.includes(faq.question.toLowerCase())) {
+        if (matches.length >= 2) {
           return faq.answer;
         }
       }
     }
     
     // Default response if no match found
-    return "I'm sorry, I don't have an answer for that question. Please try rephrasing or contact support for further assistance.";
+    return "I'm sorry, I don't have an answer for that question. Please try rephrasing or check our documentation in the docs/ folder (e.g., docs/INSTALL_WINDOWS.md or docs/INSTALL_LINUX.md).";
   };
 
   // Handle sending message

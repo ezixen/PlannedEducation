@@ -78,8 +78,13 @@ PlannedEducation is a free, open-source, privacy-first exam platform designed fo
 - PostgreSQL 16 (or SQLite for quick testing)
 - Redis 7
 
+**Installation & Deployment Guides:**
+- 🪟 [Windows Installation Guide (install.ps1)](INSTALL_WINDOWS.md)
+- 🐧 [Linux Installation Guide (install.sh)](INSTALL_LINUX.md)
+- 📋 [Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
+
 **Quick Start:**
-`powershell
+```powershell
 # 1. Clone and navigate
 cd D:\Dev\PlannedEducation
 

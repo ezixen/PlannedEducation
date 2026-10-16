@@ -125,10 +125,41 @@ Use Docker Compose with docker-compose.yml + docker-compose.prod.yml. Set enviro
 
 ---
 
+## Installation & Deployment
+
+### How do I install PlannedEducation on Windows?
+Open PowerShell as Administrator and run:
+`Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`
+The installer supports both **Native Mode** (running directly via Python with SQLite or PostgreSQL, requiring no Docker) and **Docker Compose Mode**. See [Windows Installation Guide](INSTALL_WINDOWS.md) for full details.
+
+### How do I install PlannedEducation on Linux?
+Run the one-line bash installer:
+`curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash`
+Or clone the repository and run `./install.sh`. The installer supports Ubuntu 22.04/24.04, Debian 12, and CentOS/RHEL with Native Systemd service setup or Docker Compose. See [Linux Installation Guide](INSTALL_LINUX.md).
+
+### Can I run PlannedEducation without Docker (Native Mode)?
+Yes! Both `install.ps1` and `install.sh` support **Native Mode**. It runs directly on the host using Python 3.12+ and can use SQLite (zero-configuration standalone database) or local PostgreSQL and Redis. This reduces memory usage and eliminates Docker overhead for small school servers.
+
+### How do I use the Cross-Platform Deployment Wizard?
+Run `python deploy_wizard.py` (or `python3 deploy_wizard.py`). It works on Windows, Linux, and macOS, automatically verifies dependencies, generates secure encryption secrets (JWT and Fernet keys), and guides you through setting up either Native or Docker deployment.
+
+### How do teachers and students connect over the local school network (Wi-Fi/LAN)?
+1. Find the server's local IPv4 address (e.g., `192.168.1.150`).
+2. Open port 8000 (or 80) in the host firewall (`New-NetFirewallRule` on Windows or `sudo ufw allow 8000/tcp` on Linux).
+3. In `.env`, add the server IP to `ALLOWED_HOSTS` and `CORS_ORIGINS`.
+4. Teacher and student devices simply navigate to `http://<SERVER_IP>:8000` in any web browser or Safe Exam Browser (SEB).
+
+---
+
 ## Quick Keyword Index
 
 | Keyword | FAQ IDs |
 |---------|---------|
+| install windows | 27, 29, 30 |
+| install linux | 28, 29, 30 |
+| deployment wizard | 30 |
+| native mode / no docker | 27, 28, 29 |
+| school LAN / wifi | 31 |
 | exam | 1, 2, 3, 7, 8, 9, 16, 17, 18 |
 | student | 2, 8, 9, 23, 24 |
 | teacher | 1, 7, 9, 16, 17, 18, 23 |

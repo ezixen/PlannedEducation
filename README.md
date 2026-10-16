@@ -8,6 +8,20 @@ Planned Education exists for a simple reason: **teachers shouldn't have to spend
 
 ---
 
+## ⚡ Quick Installation & Deployment
+
+Deploy PlannedEducation on your school or personal server in minutes:
+
+| Platform | Quick Command | Full Step-by-Step Guide |
+|:---|:---|:---:|
+| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File install.ps1` | [📖 **Windows Installation Guide**](docs/INSTALL_WINDOWS.md) |
+| 🐧 **Linux** (Ubuntu, Debian, RHEL) | `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh \| bash` | [📖 **Linux Installation Guide**](docs/INSTALL_LINUX.md) |
+| 🧙 **Cross-Platform Wizard** | `python deploy_wizard.py` | [📋 **Requirements & Compatibility**](docs/INSTALL_COMPATIBILITY.md) |
+
+> 💡 **No Docker? No problem!** The installer supports **Native Mode** (runs directly on host Python with zero-config SQLite or PostgreSQL) as well as **Docker Compose Mode**.
+
+---
+
 ## 🌟 What Makes Planned Education Special
 
 ### For Teachers — Your Time Matters
@@ -51,7 +65,9 @@ Planned Education exists for a simple reason: **teachers shouldn't have to spend
 
 ## 🚀 Quick Start (Local Development)
 
-> **Prerequisites**: Docker Desktop, Node.js 20+, Python 3.12+
+> For production or school server deployment, refer directly to our [Windows Installation Guide](docs/INSTALL_WINDOWS.md) or [Linux Installation Guide](docs/INSTALL_LINUX.md).
+>
+> **Dev Prerequisites**: Docker Desktop, Node.js 20+, Python 3.12+
 
 ```powershell
 # 1. Start the database & cache
