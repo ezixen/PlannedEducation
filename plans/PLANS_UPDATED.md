@@ -345,4 +345,10 @@
   - `pip check`: 0 broken requirements.
   - `npm run build`: Vite frontend production build passed in 5.09s (0 errors).
   - Backend pytest suites: 102/102 passing clean via `scripts/testing/update_test_cache.py`.
-  - Live deployment test `test_school_e2e.py`: 7/7 stages passed (100% clean).
+  - Live deployment test `test_school_e2e.py`: 7/7 stages passed (100% clean).
+- **GitHub Actions CI/CD & Security Audits**:
+  - Bumped `cryptography>=50.0.0` in `src/requirements.txt` to eliminate 6 CVEs (`PYSEC-2026-3552`, `PYSEC-2026-3553`, `PYSEC-2026-3554`).
+  - Resolved `ruff` lint errors on model attributes and added safe SQLAlchemy filter ignore rules in `pyproject.toml`.
+  - Removed obsolete snapshot `requirements_latest.txt` to resolve all phantom Dependabot alerts.
+  - Verified 100% green status on GitHub Actions (`Security Checks`, `CI/CD Pipeline`, `Container Scans`, `CycloneDX SBOM`, `Cosign Signatures`, and `SLSA Provenance`) across both `main` and `dev` branches.
+  - Zero open Dependabot alerts across the entire repository.
