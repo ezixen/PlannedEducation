@@ -7,7 +7,7 @@
 # refer to install.log for exact tested versions.
 
 # Web Framework
-fastapi>=0.110.0  # Tested: 0.143.2
+fastapi>=0.143.0  # Tested: 0.143.2
 uvicorn>=0.28.0   # Tested: 0.54.0
 
 # Database
