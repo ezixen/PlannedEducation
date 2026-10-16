@@ -173,9 +173,10 @@ def test_non_admin_cannot_reset_passwords(clean_db):
     assert resp.status_code == 403
 
 
-@pytest.mark.asyncio
-async def test_email_service_fallback_and_status(monkeypatch):
+def test_email_service_fallback_and_status(monkeypatch):
     """Email service status and mock fallback functionality."""
+    import asyncio
+
     # When no keys configured
     monkeypatch.delenv("BREVO_API_KEY", raising=False)
     monkeypatch.delenv("SMTP_HOST", raising=False)
@@ -186,7 +187,7 @@ async def test_email_service_fallback_and_status(monkeypatch):
     assert status["provider"] == "console_mock"
 
     # Send should succeed (logged safely without exceptions)
-    success = await email_service.send_password_reset_email("test@school.edu", "123456", "teststudent")
+    success = asyncio.run(email_service.send_password_reset_email("test@school.edu", "123456", "teststudent"))
     assert success is True
 
     # When Brevo is configured
@@ -194,4 +195,5 @@ async def test_email_service_fallback_and_status(monkeypatch):
     assert email_service.is_email_configured() is True
     status_brevo = email_service.get_email_status()
     assert status_brevo["provider"] == "brevo"
+
 
