@@ -65,5 +65,5 @@ opentelemetry-api>=1.25.0  # Tested: 1.45.1
 opentelemetry-sdk>=1.25.0  # Tested: 1.45.1
 opentelemetry-exporter-prometheus>=0.46b0      # Tested: 0.66b1
 opentelemetry-instrumentation-fastapi>=0.46b0  # Tested: 0.66b1
-opentelemetry-instrumentation-requests>=0.46b0 # Tested: 0.66b1
+opentelemetry-instrumentation-requests>=0.66b1 # Tested: 0.66b1
 opentelemetry-instrumentation-sqlalchemy>=0.46b0 # Tested: 0.66b1
