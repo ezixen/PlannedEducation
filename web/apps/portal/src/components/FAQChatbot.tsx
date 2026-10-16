@@ -58,7 +58,20 @@ const FAQ_DATA: FAQCategory[] = [
       {
         id: 4,
         question: "How do I reset my password?",
-        answer: "Click 'Forgot Password' on the login page, enter your email address, and follow the instructions sent to your email to reset your password."
+        keywords: ["password", "reset", "forgot", "login"],
+        answer: "Click 'Forgot Password' on the login page and enter your email. If your school runs offline or without email, an administrator can directly reset your password from the Admin Panel > Users tab."
+      },
+      {
+        id: 32,
+        question: "Can an admin reset user passwords without email?",
+        keywords: ["admin", "reset", "password", "without", "email", "lost", "panel"],
+        answer: "Yes! Administrators can reset any user's password directly from the Admin Panel > Users tab by clicking '🔑 Reset Password'. They can specify a new password or let the system auto-generate a temporary password, and optionally reset 2FA/Passkeys if the user lost their authenticator device."
+      },
+      {
+        id: 33,
+        question: "How does the optional email service work?",
+        keywords: ["email", "smtp", "brevo", "sendinblue", "mail", "server"],
+        answer: "Email is completely optional. If unconfigured, PlannedEducation logs OTP codes safely for offline school use. To enable email, add BREVO_API_KEY (free 300 emails/day) or your school SMTP settings (SMTP_HOST, SMTP_PORT, etc.) to .env."
       },
       {
         id: 5,

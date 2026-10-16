@@ -86,6 +86,14 @@ export function AdminDashboard() {
   const [userRoleFilter, setUserRoleFilter] = useState<'all' | 'teacher' | 'student' | 'parent'>('all');
   const [examStatusFilter, setExamStatusFilter] = useState<'all' | 'published' | 'draft'>('all');
   
+  // Admin Direct Password Reset State
+  const [resetPwdUser, setResetPwdUser] = useState<AdminUser | null>(null);
+  const [customPassword, setCustomPassword] = useState('');
+  const [reset2FA, setReset2FA] = useState(false);
+  const [resetResult, setResetResult] = useState<{ username: string; email: string; tempPass: string; reset2fa: boolean } | null>(null);
+  const [resetSubmitting, setResetSubmitting] = useState(false);
+  const [copiedPass, setCopiedPass] = useState(false);
+
   // Archive System State
   const [archives, setArchives] = useState<ArchiveItem[]>([]);
   const [archiveJobs, setArchiveJobs] = useState<ArchiveJob[]>([]);
@@ -263,6 +271,33 @@ export function AdminDashboard() {
       fetchUsers();
     } catch (err: any) {
       showError('Failed to delete user', err.response?.data?.detail || err.message);
+    }
+  };
+
+  const handleAdminResetPassword = async () => {
+    if (!resetPwdUser) return;
+    setResetSubmitting(true);
+    try {
+      const response = await apiClient.post(`/admin/users/${resetPwdUser.id}/reset-password`, {
+        new_password: customPassword.trim() || null,
+        reset_2fa: reset2FA,
+      });
+      setResetResult({
+        username: response.data.username,
+        email: response.data.email,
+        tempPass: response.data.temporary_password,
+        reset2fa: response.data.reset_2fa,
+      });
+      setResetPwdUser(null);
+      setCustomPassword('');
+      setReset2FA(false);
+      setCopiedPass(false);
+      showSuccess(`Password reset successfully for ${response.data.username}`);
+      fetchUsers();
+    } catch (err: any) {
+      showError('Failed to reset password', err.response?.data?.detail || err.message);
+    } finally {
+      setResetSubmitting(false);
     }
   };
 
@@ -475,6 +510,29 @@ export function AdminDashboard() {
                       <td style={{ padding: '1rem', textAlign: 'right' }}>
                         <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
                           <button
+                            onClick={() => {
+                              setResetPwdUser(user);
+                              setCustomPassword('');
+                              setReset2FA(false);
+                            }}
+                            disabled={loading}
+                            style={{
+                              padding: '0.5rem 0.85rem',
+                              backgroundColor: '#2563eb',
+                              color: '#fff',
+                              border: 'none',
+                              borderRadius: 'var(--radius-md)',
+                              cursor: loading ? 'not-allowed' : 'pointer',
+                              fontSize: '0.85rem',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.25rem',
+                            }}
+                            title="Directly reset this user's password without needing an email"
+                          >
+                            🔑 Reset Password
+                          </button>
+                          <button
                             onClick={() => handleToggleUserActive(user)}
                             disabled={loading}
                             style={{
@@ -510,6 +568,120 @@ export function AdminDashboard() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          )}
+
+          {/* Admin Reset Password Modal */}
+          {resetPwdUser && (
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
+              <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.15rem' }}>🔑 Direct Password Reset</h3>
+                  <button onClick={() => setResetPwdUser(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
+                </div>
+
+                <div style={{ marginBottom: '1rem', padding: '0.75rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
+                  <div><strong>User:</strong> {resetPwdUser.username}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>Email:</strong> {resetPwdUser.email}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>Role:</strong> {resetPwdUser.role}</div>
+                </div>
+
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, fontSize: '0.9rem' }}>
+                    New Password (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Leave blank to auto-generate temporary password"
+                    value={customPassword}
+                    onChange={e => setCustomPassword(e.target.value)}
+                    style={{ width: '100%', padding: '0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontFamily: 'monospace' }}
+                  />
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                    If left blank, the system creates a random password (e.g., <code>TempPass#...</code>).
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9rem' }}>
+                    <input
+                      type="checkbox"
+                      checked={reset2FA}
+                      onChange={e => setReset2FA(e.target.checked)}
+                    />
+                    <span>Reset & Disable 2FA / Passkeys (if user lost device)</span>
+                  </label>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+                  <button
+                    onClick={() => setResetPwdUser(null)}
+                    disabled={resetSubmitting}
+                    style={{ padding: '0.5rem 1rem', backgroundColor: 'transparent', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: 'var(--text-color)', cursor: 'pointer' }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleAdminResetPassword}
+                    disabled={resetSubmitting}
+                    style={{ padding: '0.5rem 1.25rem', backgroundColor: '#2563eb', border: 'none', borderRadius: 'var(--radius-md)', color: '#fff', fontWeight: 600, cursor: resetSubmitting ? 'not-allowed' : 'pointer' }}
+                  >
+                    {resetSubmitting ? 'Resetting...' : 'Confirm Reset'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Reset Result Dialog */}
+          {resetResult && (
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
+              <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
+                  <h3 style={{ margin: 0, color: '#10b981', fontSize: '1.15rem' }}>✅ Password Reset Successful</h3>
+                  <button onClick={() => setResetResult(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
+                </div>
+
+                <p style={{ margin: '0 0 1rem 0', fontSize: '0.95rem' }}>
+                  The password for <strong>{resetResult.username}</strong> has been updated.
+                </p>
+
+                <div style={{ backgroundColor: 'var(--bg-color)', border: '1px solid #10b981', borderRadius: 'var(--radius-md)', padding: '1rem', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>Temporary Password:</div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+                    <code style={{ fontSize: '1.15rem', fontWeight: 'bold', color: '#10b981', letterSpacing: '0.5px' }}>{resetResult.tempPass}</code>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(resetResult.tempPass);
+                        setCopiedPass(true);
+                        setTimeout(() => setCopiedPass(false), 2000);
+                      }}
+                      style={{ padding: '0.35rem 0.75rem', backgroundColor: copiedPass ? '#10b981' : 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: copiedPass ? '#fff' : 'var(--text-color)', cursor: 'pointer', fontSize: '0.8rem' }}
+                    >
+                      {copiedPass ? '✓ Copied' : '📋 Copy'}
+                    </button>
+                  </div>
+                </div>
+
+                {resetResult.reset2fa && (
+                  <div style={{ fontSize: '0.85rem', color: '#f59e0b', marginBottom: '1rem' }}>
+                    ⚠️ Two-factor authentication (2FA) and Passkeys have also been disabled for this user.
+                  </div>
+                )}
+
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
+                  Provide this password directly to the student or teacher so they can log in immediately.
+                </p>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <button
+                    onClick={() => setResetResult(null)}
+                    style={{ padding: '0.5rem 1.25rem', backgroundColor: '#10b981', border: 'none', borderRadius: 'var(--radius-md)', color: '#fff', fontWeight: 600, cursor: 'pointer' }}
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>

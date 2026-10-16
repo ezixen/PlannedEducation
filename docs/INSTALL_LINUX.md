@@ -291,3 +291,4 @@ sudo nginx -t && sudo systemctl reload nginx
 - [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
 - [Module System & School Federation](MODULE_SYSTEM.md)
 - [Frequently Asked Questions (FAQ)](FAQ.md)
+

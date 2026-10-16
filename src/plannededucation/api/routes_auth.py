@@ -12,7 +12,7 @@ import argon2
 import httpx
 import jwt  # PyJWT for JWT encoding/decoding
 import pyotp
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from google.auth.transport import requests as google_requests
 from google.oauth2 import id_token
@@ -34,7 +34,7 @@ from webauthn.helpers.structs import (
     UserVerificationRequirement,
 )
 
-from . import auth, crypto, database, models, schemas
+from . import auth, crypto, database, email_service, models, schemas
 
 # ── CAPTCHA / Bot Protection (Free, Self-Hosted Options) ─────────────────────
 # Supports: Turnstile (Cloudflare free), hCaptcha (free tier), or simple self-hosted challenge
@@ -516,6 +516,7 @@ def update_settings(
 def request_password_reset(
     request: Request,
     payload: schemas.PasswordResetRequest,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(database.get_db),
 ):
     """Request a password reset OTP sent to the user's registered email."""
@@ -533,13 +534,8 @@ def request_password_reset(
     user.password_reset_otp_expires = datetime.now(UTC) + timedelta(minutes=10)
     db.commit()
 
-    # In production, send email here. For now, log it (dev only).
-    if os.getenv("PLANNED_EDUCATION_ENV") == "development":
-        import logging
-
-        logging.getLogger(__name__).info(
-            "[DEV] Password reset OTP for %s: %s", user.email, otp
-        )
+    # Dispatch email asynchronously in background (Brevo, SMTP, or local mock logger)
+    background_tasks.add_task(email_service.send_password_reset_email, user.email, otp, user.username)
 
     return schemas.PasswordResetResponse(
         message="If the email exists, a reset OTP has been sent.",

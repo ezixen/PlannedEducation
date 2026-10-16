@@ -351,4 +351,32 @@
   - Resolved `ruff` lint errors on model attributes and added safe SQLAlchemy filter ignore rules in `pyproject.toml`.
   - Removed obsolete snapshot `requirements_latest.txt` to resolve all phantom Dependabot alerts.
   - Verified 100% green status on GitHub Actions (`Security Checks`, `CI/CD Pipeline`, `Container Scans`, `CycloneDX SBOM`, `Cosign Signatures`, and `SLSA Provenance`) across both `main` and `dev` branches.
-  - Zero open Dependabot alerts across the entire repository.
+  - Zero open Dependabot alerts across the entire repository.
+
+---
+
+### Phase 16: Modular Email Service, Admin Direct Password Reset & 2FA Recovery ✅ Completed (2026-10-16)
+- **Status**: `done-tested-working`
+- **Modular Email Service (`src/plannededucation/api/email_service.py`)**:
+  - Zero-configuration, 100% offline-first architecture by default: logs OTP and reset codes safely when no provider is set.
+  - Optional **Brevo (Sendinblue)** transactional REST API integration via `httpx.AsyncClient` (`BREVO_API_KEY`, free tier 300 emails/day).
+  - Optional **Campus / School SMTP** integration via `aiosmtplib` with background-thread `smtplib` fallback.
+  - Asynchronous background dispatch in `routes_auth.py` via FastAPI `BackgroundTasks`.
+- **Direct Admin Password Reset (Without Email Dependency)**:
+  - Added `POST /admin/users/{user_id}/reset-password` in `routes_admin.py` accepting custom password or generating secure temporary password (`TempPass#<random8>!`).
+  - Added option to reset and disable 2FA/Passkeys (`reset_2fa=True`) for students/teachers who lost their authenticator device.
+  - Automatically invalidates existing session refresh tokens and pending OTPs upon reset.
+  - Fixed `require_admin` dependency to accept dedicated administrators (`is_admin=True` or `role in ("admin", "teacher")`).
+- **Admin Dashboard UI (`AdminDashboard.tsx`)**:
+  - Added "🔑 Reset Password" action button in the Users management table.
+  - Modal with custom password input, auto-generate helper button, and "Reset & Disable 2FA / Passkeys" checkbox.
+  - Temporary password confirmation dialog with one-click clipboard copy.
+- **Documentation & FAQ Updates**:
+  - Updated `.env.example` with Brevo and Campus SMTP configuration templates.
+  - Updated `docs/FAQ.md` with password reset, admin reset without email, and email configuration guides.
+  - Updated in-app `FAQChatbot.tsx` with dedicated responses and keyword triggers.
+- **Verification**:
+  - Full backend test suite: 107/107 passing clean via `scripts/testing/update_test_cache.py`.
+  - Focused test suite `tests/test_admin_password_reset.py`: 5/5 passing clean.
+  - Frontend production build (`npm run build`): verified clean bundle in 4.39s.
+

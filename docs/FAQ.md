@@ -26,10 +26,16 @@ Modules are self-contained question sets with shared context (e.g., a reading pa
 ## Account & Security
 
 ### How do I reset my password?
-Click 'Forgot Password' on the login page, enter your email address, and follow the instructions sent to your email to reset your password.
+Click 'Forgot Password' on the login page, enter your email address, and follow the instructions sent to your email to reset your password. If your school runs offline without email, an administrator can reset your password directly from the Admin Panel.
+
+### Can administrators reset passwords directly without email?
+Yes! In school and classroom deployments without an active email server, administrators can reset any user's password directly from the **Admin Panel > Users** tab. Simply click the **🔑 Reset Password** button next to the user. You can type a custom password or let the system auto-generate a temporary password. You can also check 'Reset 2FA & Passkeys' to instantly recover an account if the user lost their authenticator device.
+
+### How do I configure email for password resets?
+Email is 100% optional. If unconfigured, PlannedEducation operates in self-contained offline mode and logs OTP codes safely. If you wish to enable outgoing email, configure either **Brevo (Sendinblue)** with `BREVO_API_KEY` (free tier: 300 emails/day) or your **School / Campus SMTP Server** (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`) in `.env`.
 
 ### How do I enable two-factor authentication?
-Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup.
+Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 10 recovery codes in case you lose your phone. If you ever lose your phone and recovery codes, a school administrator can reset your 2FA from the Admin Panel.
 
 ### What are Passkeys and how do I use them?
 Passkeys are a passwordless authentication method using biometrics or device PIN. You can set them up in Settings > Passkeys by registering your device's biometric authentication. Passkeys sync across devices via iCloud Keychain or Google Password Manager.

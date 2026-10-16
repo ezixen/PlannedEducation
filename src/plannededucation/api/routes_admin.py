@@ -3,26 +3,34 @@ Admin Routes for PlannedEducation
 Endpoints for administrative operations (user management, exam oversight, system stats).
 """
 
+import secrets
+import string
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
-from . import database, models
-from .routes_auth import get_current_user
+from . import database, models, schemas
+from .routes_auth import _validate_password, get_current_user, get_password_hash
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
 
 def require_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
-    """Dependency to ensure the current user is an admin/teacher with admin privileges."""
-    # For now, allow any teacher to access admin endpoints
-    # In production, you might want a separate admin role
-    if current_user.role != "teacher":
+    """Dependency to ensure the current user is an admin or teacher with admin privileges."""
+    if not (current_user.is_admin or current_user.role in ("admin", "teacher")):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Admin access required"
         )
     return current_user
+
+
+def generate_temporary_password() -> str:
+    """Generate a secure temporary password meeting complexity requirements (uppercase, lowercase, digit, special)."""
+    chars = string.ascii_letters + string.digits
+    rand_chars = "".join(secrets.choice(chars) for _ in range(8))
+    return f"TempPass#{rand_chars}!"
 
 
 @router.get("/stats")
@@ -114,6 +122,62 @@ def delete_admin_user(
     db.delete(user)
     db.commit()
     return {"message": "User deleted successfully"}
+
+
+@router.post("/users/{user_id}/reset-password", response_model=schemas.AdminResetPasswordResponse)
+def admin_reset_user_password(
+    user_id: str,
+    payload: schemas.AdminResetPasswordRequest,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Directly reset a user's password from the Admin Panel without needing an email.
+    If no new_password is provided in payload, a secure temporary password is auto-generated.
+    Optionally clears 2FA / Passkeys if the user lost their authenticator device.
+    """
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    # Set custom or generated password
+    if payload.new_password and payload.new_password.strip():
+        new_pwd = payload.new_password.strip()
+        _validate_password(new_pwd)
+    else:
+        new_pwd = generate_temporary_password()
+
+    # Hash and update password
+    user.hashed_password = get_password_hash(new_pwd)
+
+    # Invalidate pending reset OTPs
+    user.password_reset_otp = None
+    user.password_reset_otp_expires = None
+
+    # Invalidate existing refresh tokens for security
+    user.refresh_token_hash = None
+    user.refresh_token_expires = None
+
+    # Optionally reset 2FA / TOTP / WebAuthn
+    if payload.reset_2fa:
+        user.totp_enabled = False
+        user.totp_secret = None
+        user.recovery_codes = None
+        user.webauthn_credentials = None
+        user.webauthn_challenge = None
+        user.webauthn_challenge_expires = None
+
+    db.commit()
+
+    return schemas.AdminResetPasswordResponse(
+        status="success",
+        user_id=user.id,
+        username=user.username,
+        email=user.email,
+        temporary_password=new_pwd,
+        reset_2fa=payload.reset_2fa,
+        message=f"Password for {user.username} was reset successfully.",
+    )
 
 
 @router.get("/exams")

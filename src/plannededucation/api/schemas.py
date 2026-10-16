@@ -187,6 +187,21 @@ class PasswordResetConfirm(BaseModel):
     recovery_code: str | None = Field(None, min_length=8, max_length=16)
 
 
+class AdminResetPasswordRequest(BaseModel):
+    new_password: str | None = Field(None, min_length=8, max_length=128)
+    reset_2fa: bool = Field(False, description="Reset and disable 2FA/Passkeys for the user")
+
+
+class AdminResetPasswordResponse(BaseModel):
+    status: str
+    user_id: str
+    username: str
+    email: str
+    temporary_password: str
+    reset_2fa: bool
+    message: str
+
+
 # ── 2FA / TOTP ────────────────────────────────────────────────────────────────
 
 class TwoFASetupResponse(BaseModel):
