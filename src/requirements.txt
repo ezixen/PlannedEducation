@@ -15,7 +15,7 @@ sqlalchemy>=2.0.27       # Tested: 2.1.4
 psycopg2-binary>=2.9.9   # Tested: 2.9.13 (PostgreSQL driver, free)
 
 # Validation & Serialization
-pydantic[email]>=2.6.3   # Tested: 2.14.1 (EmailStr validation)
+pydantic[email]>=2.14.1   # Tested: 2.14.1 (EmailStr validation)
 pydantic-settings>=2.0.0 # Tested: 2.16.0 (Settings management)
 
 # Authentication & Security
