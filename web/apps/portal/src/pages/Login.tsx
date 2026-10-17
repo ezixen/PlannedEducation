@@ -4,21 +4,21 @@ import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
-import { useI18n } from '../contexts/I18nContext';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 export function Login() {
   const { login, loginWithPassword } = useAuth();
   const { error: showError } = useToast();
-  const { t } = useI18n();
   const navigate = useNavigate();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
     if (!credentialResponse.credential) return;
+    setLoading(true);
     try {
       await login(credentialResponse.credential);
       navigate('/');
@@ -33,24 +33,24 @@ export function Login() {
         message = detail;
       }
       showError(message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleLocalLogin = async (e: React.FormEvent) => {
     e.preventDefault(); 
+    setLoading(true);
     try {
-      if (loginWithPassword) {
-        await loginWithPassword(email, password);
-        navigate('/');
-      }
+      await loginWithPassword(email, password);
+      navigate('/');
     } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
-      // Provide more specific error messages
       let message = 'Login failed';
       if (detail === 'Invalid email/username or password') {
-        message = 'Invalid email/username or password. Please check your credentials and try again.';
+        message = 'Invalid email or password. Please check your credentials and try again.';
       } else if (detail === 'This account uses Google sign-in. Please use the Google button to log in.') {
-        message = 'This account uses Google sign-in. Please use the Google button to log in.';
+        message = 'This account uses Google sign-in. Please use the Google button above.';
       } else if (detail === 'Account is deactivated. Please contact support.') {
         message = 'This account has been deactivated. Please contact support.';
       } else if (detail.includes('rate limit') || detail.includes('too many')) {
@@ -59,66 +59,70 @@ export function Login() {
         message = detail;
       }
       showError(message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)' }}>
-      <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
-        <h1 style={{ marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary-color)' }}>Planned Education</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>
-          {t('login.1')}
-        </p>
+    <div style={{ display: 'flex', minHeight: '100dvh', padding: '1rem', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', boxSizing: 'border-box' }}>
+      <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center', boxSizing: 'border-box' }}>
+        <div style={{ marginBottom: '1.5rem' }}>
+          <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary-color)' }}>Planned Education</h1>
+          <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Secure exam platform for schools</p>
+        </div>
 
         {GOOGLE_CLIENT_ID ? (
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
               onError={() => showError('Google Authentication Failed. Please try again or use email login.')}
               useOneTap
             />
           </div>
-        ) : (
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
-            Google sign-in is not configured. Set <code>VITE_GOOGLE_CLIENT_ID</code> to enable it.
-          </p>
-        )}
+        ) : null}
 
-        {(!GOOGLE_CLIENT_ID || ['localhost', '127.0.0.1'].includes(window.location.hostname)) && (
-          <form onSubmit={handleLocalLogin} style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '1rem' }}>
-              {t('login.10')}
-            </p>
+        {!GOOGLE_CLIENT_ID || ['localhost', '127.0.0.1'].includes(window.location.hostname) ? (
+          <form onSubmit={handleLocalLogin} style={{ margin: 0 }}>
+            <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
+              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>Email address</label>
+              <input 
+                type="email" 
+                placeholder="you@school.edu"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                required
+                autoComplete="email"
+                style={{ width: '100%', padding: '0.75rem', marginBottom: '0', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box' }}
+              />
+            </div>
             
-            <input 
-              type="email" 
-              placeholder={t('login.2')}
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              style={{ width: '100%', padding: '0.625rem', marginBottom: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem' }}
-            />
-            
-            <input 
-              type="password" 
-              placeholder={t('login.3')}
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              required
-              style={{ width: '100%', padding: '0.625rem', marginBottom: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem' }}
-            />
+            <div style={{ marginBottom: '1.5rem', textAlign: 'left' }}>
+              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>Password</label>
+              <input 
+                type="password" 
+                placeholder="••••••••"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+                style={{ width: '100%', padding: '0.75rem', marginBottom: '0', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box' }}
+              />
+            </div>
 
             <button 
               type="submit"
-              style={{ width: '100%', padding: '0.75rem 1rem', background: 'var(--primary-color)', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem' }}
+              disabled={loading}
+              style={{ width: '100%', padding: '0.75rem 1rem', background: loading ? '#94a3b8' : 'var(--primary-color)', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: loading ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '0.95rem', boxSizing: 'border-box' }}
             >
-              {t('login.6')}
+              {loading ? 'Signing in…' : 'Sign in'}
             </button>
           </form>
-        )}
+        ) : null}
 
-        <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
-          {t('login.7')} <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 500 }}>{t('login.8')}</Link>
+        <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+          Don't have an account?{' '}
+          <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'none' }}>Create account</Link>
         </p>
       </div>
     </div>

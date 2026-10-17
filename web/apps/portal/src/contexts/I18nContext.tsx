@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 
+import enMessages from '../locales/en/messages.json';
+
 export type Locale = 'en' | 'hu' | 'es' | 'de' | 'fr' | 'ja' | 'zh' | 'pt' | 'uk' | 'it' | 'pl' | 'nl' | 'sv' | 'no' | 'da' | 'fi' | 'pt-BR';
 
 export interface TranslationEntry {
@@ -9,7 +11,7 @@ export interface TranslationEntry {
 }
 
 export interface LocaleMessages {
-  [key: string]: TranslationEntry;
+  [key: string]: TranslationEntry | string;
 }
 
 export interface I18nContextType {
@@ -48,65 +50,35 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   'pt-BR': 'PT-BR - Brazil (Português do Brasil)',
 };
 
-let messagesCache: Record<Locale, LocaleMessages> = {} as Record<Locale, LocaleMessages>;
-let contextCache: Record<string, string> = {};
+const localeModules = import.meta.glob<LocaleMessages>(['../locales/*/messages.json', '!../locales/en/messages.json'], { import: 'default' });
+
+const messagesCache: Partial<Record<Locale, LocaleMessages>> = {
+  en: enMessages as LocaleMessages,
+};
+const contextCache: Record<string, string> = {};
 
 async function loadMessages(locale: Locale): Promise<LocaleMessages> {
   if (messagesCache[locale]) {
-    return messagesCache[locale];
+    return messagesCache[locale]!;
   }
-  try {
-    const response = await fetch(`/locales/${locale}/messages.json`);
-    if (response.ok) {
-      const data = await response.json();
+  const modulePath = `../locales/${locale}/messages.json`;
+  const loader = localeModules[modulePath];
+  if (loader) {
+    try {
+      const data = await loader();
       messagesCache[locale] = data;
       return data;
-    }
-  } catch (e) {
-    console.warn(`Failed to load messages for ${locale}:`, e);
-  }
-  return {};
-}
-
-async function loadContext(): Promise<void> {
-  if (Object.keys(contextCache).length > 0) return;
-  try {
-    const response = await fetch('/locales/en/CONTEXT.md');
-    if (response.ok) {
-      const text = await response.text();
-      parseContextMarkdown(text);
-    }
-  } catch (e) {
-    console.warn('Failed to load context:', e);
-  }
-}
-
-function parseContextMarkdown(markdown: string): void {
-  const lines = markdown.split('\n');
-  let currentKey = '';
-  let currentContext = '';
-  
-  for (const line of lines) {
-    const keyMatch = line.match(/^###\s+(\S+)/);
-    if (keyMatch) {
-      if (currentKey && currentContext) {
-        contextCache[currentKey] = currentContext.trim();
-      }
-      currentKey = keyMatch[1];
-      currentContext = '';
-    } else if (currentKey) {
-      currentContext += line + '\n';
+    } catch (e) {
+      console.warn(`Failed to load bundled messages for ${locale}:`, e);
     }
   }
-  if (currentKey && currentContext) {
-    contextCache[currentKey] = currentContext.trim();
-  }
+  return enMessages as LocaleMessages;
 }
 
 export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { children: ReactNode; initialLocale?: Locale }) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
   const [showNumbers, setShowNumbers] = useState(false);
-  const [messages, setMessages] = useState<LocaleMessages>({});
+  const [messages, setMessages] = useState<LocaleMessages>(enMessages as LocaleMessages);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -118,7 +90,6 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
     }
     setShowNumbers(savedShowNumbers);
     loadMessages(savedLocale || initialLocale).then(setMessages);
-    loadContext();
   }, [initialLocale]);
 
   useEffect(() => {
@@ -141,15 +112,14 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
   }, []);
 
   const t = useCallback((key: string, params?: Record<string, string>): string => {
-    const entry = messages[key];
+    const entry = messages[key] ?? (enMessages as LocaleMessages)[key];
     if (!entry) {
-      console.warn(`Missing translation key: ${key}`);
       return key;
     }
-    let text = entry[locale] || entry.en || key;
+    let text = typeof entry === 'string' ? entry : (entry[locale] || entry.en || key);
     if (params) {
-      Object.entries(params).forEach(([key, value]) => {
-        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
+      Object.entries(params).forEach(([paramKey, value]) => {
+        text = text.replace(new RegExp(`\\{${paramKey}\\}`, 'g'), value);
       });
     }
     return text;
@@ -178,10 +148,6 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
     jumpToElement,
     availableLocales: AVAILABLE_LOCALES,
   }), [locale, showNumbers, messages]);
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <I18nContext.Provider value={value}>

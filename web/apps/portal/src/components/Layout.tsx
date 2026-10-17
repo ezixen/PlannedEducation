@@ -36,13 +36,14 @@ export function Layout() {
           <Menu size={24} />
         </button>
         <div className="brand-title">Planned Education</div>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--sidebar-bg)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-            <Globe size={16} style={{ color: 'var(--text-muted)' }} />
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--sidebar-bg)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', minWidth: 0, maxWidth: '100%' }}>
+            <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select
               value={locale}
               onChange={(e) => setLocale(e.target.value as any)}
               aria-label="Select Language"
+              className="header-lang-select"
               style={{
                 background: 'transparent',
                 border: 'none',
@@ -51,6 +52,9 @@ export function Layout() {
                 fontWeight: 600,
                 cursor: 'pointer',
                 outline: 'none',
+                maxWidth: '130px',
+                minWidth: 0,
+                textOverflow: 'ellipsis',
               }}
             >
               {availableLocales.map((loc) => (

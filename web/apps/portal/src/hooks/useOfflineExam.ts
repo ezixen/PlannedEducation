@@ -144,7 +144,12 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       
       showSuccess('Exam loaded successfully');
     } catch (error: any) {
-      if (error?.response?.status === 400 && String(error?.response?.data?.detail || '').toLowerCase().includes('completed')) {
+      const errStatus = error?.response?.status;
+      const errDetail = String(error?.response?.data?.detail || '').toLowerCase();
+      if (
+        (errStatus === 409 || errStatus === 400) &&
+        (errDetail.includes('completed') || errDetail.includes('already'))
+      ) {
         setExamState({
           id: `${examId}-${studentId}`,
           examId,

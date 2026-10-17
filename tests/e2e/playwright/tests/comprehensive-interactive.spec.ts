@@ -298,23 +298,24 @@ test.describe('Teacher Dashboard - Interactive', () => {
     const reviewButton = page.locator('button:has-text("Review")').first();
     await reviewButton.click();
 
-    // Should show review modal with AI: badge
-    await expect(page.locator('h2:has-text("Review AI Grades")')).toBeVisible({ timeout: 5000 });
-    await expect(page.locator('text=AI:').first()).toBeVisible();
+    // Should show review modal with AI confidence badge
+    await expect(page.locator('h2:has-text("Review & Correct Exam")')).toBeVisible({ timeout: 5000 });
+    await expect(page.locator('text=AI Conf:').first()).toBeVisible();
 
     // Open question-level review form inside modal
-    const questionReviewBtn = page.locator('button:has-text("Review")').last();
+    const questionReviewBtn = page.locator('[data-testid="teacher-correction-modal"] button:has-text("Review")').first();
     if (await questionReviewBtn.isVisible()) {
       await questionReviewBtn.click();
-      const approveButton = page.locator('button:has-text("Approve & Save")').first();
-      await expect(approveButton).toBeVisible();
-      await approveButton.click();
+      const approveCheckbox = page.locator('input[type="checkbox"]').first();
+      if (await approveCheckbox.isVisible()) {
+        await approveCheckbox.check();
+      }
       await expect(page.locator('text=✓ Teacher Approved').first()).toBeVisible();
     }
 
     // Close modal cleanly
-    await page.locator('button:has-text("Close")').click();
-    await expect(page.locator('h2:has-text("Review AI Grades")')).toBeHidden();
+    await page.locator('[data-testid="teacher-correction-modal"] button:has-text("Close")').click();
+    await expect(page.locator('h2:has-text("Review & Correct Exam")')).toBeHidden();
   });
 });
 
@@ -400,5 +401,17 @@ test.describe('Exam Editor - Interactive', () => {
 
     // Verify question appears in Question Bank
     await expect(page.locator('strong:has-text("1. What is 2+2?")')).toBeVisible({ timeout: 5000 });
+
+    // Clean up created exam so subsequent visual snapshot tests see deterministic state
+    const createdExamId = page.url().split('/teacher-exams/')[1]?.split(/[?#]/)[0];
+    if (createdExamId) {
+      const apiUrl = process.env.API_URL || 'http://127.0.0.1:8002';
+      const token = await page.evaluate(() => localStorage.getItem('access_token'));
+      if (token) {
+        await page.request.delete(`${apiUrl}/exams/${createdExamId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      }
+    }
   });
 });

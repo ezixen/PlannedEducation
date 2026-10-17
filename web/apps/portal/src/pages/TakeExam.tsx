@@ -63,6 +63,10 @@ export function TakeExam() {
   });
 
   useEffect(() => {
+    fetchMySubmission();
+  }, [fetchMySubmission]);
+
+  useEffect(() => {
     if (isExamComplete) {
       fetchMySubmission();
     }
@@ -101,10 +105,10 @@ export function TakeExam() {
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', minHeight: 'calc(100vh - 100px)' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', minHeight: 'calc(100vh - 100px)', overflowX: 'hidden' }}>
       
       {/* Exam Content */}
-      <div style={{ flex: '1 1 300px', minWidth: 0, overflowY: 'auto' }}>
+      <div style={{ flex: '1 1 100%', minWidth: 0, overflowY: 'auto', maxWidth: '100%' }}>
         {/* Timer & Progress Header */}
         <div style={{ 
           display: 'flex', 
@@ -293,8 +297,8 @@ export function TakeExam() {
           />
         </div>
 
-        {/* Digital Hand Raise: Enabled for different_location test packages; disabled for in-classroom exams */}
-        {(examPackage?.settings?.allow_digital_hand_raise || examPackage?.settings?.delivery_mode === 'different_location') ? (
+        {/* Digital Hand Raise: Enabled by default / for different_location test packages; disabled when delivery_mode is classroom */}
+        {(examPackage?.settings?.allow_digital_hand_raise !== false && examPackage?.settings?.delivery_mode !== 'classroom') ? (
           <>
             <div style={{ marginBottom: '1rem' }}>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Digital Hand Raise</h3>

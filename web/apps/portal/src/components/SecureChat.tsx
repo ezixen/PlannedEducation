@@ -28,7 +28,15 @@ export function SecureChat({ examId }: { examId: string }) {
     const socket = new WebSocket(wsUrl);
     ws.current = socket;
 
+    let unmounted = false;
+
+    let opened = false;
     socket.onopen = () => {
+      if (unmounted) {
+        socket.close();
+        return;
+      }
+      opened = true;
       // Send auth token in first frame — never in URL query params
       socket.send(JSON.stringify({ token }));
       setConnected(true);
@@ -43,20 +51,29 @@ export function SecureChat({ examId }: { examId: string }) {
       }
     };
 
-    socket.onclose = () => setConnected(false);
+    socket.onclose = () => {
+      if (!unmounted) setConnected(false);
+    };
     socket.onerror = () => {
-      setConnected(false);
-      showError('Chat connection lost. Attempting to reconnect...');
+      if (!unmounted) {
+        setConnected(false);
+        if (opened) {
+          showError('Chat connection lost. Attempting to reconnect...');
+        }
+      }
     };
 
     return () => {
+      unmounted = true;
       socket.close();
     };
   }, [examId, showError]);
 
   // Auto-scroll to latest message
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > 0) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   }, [messages]);
 
   const sendMessage = useCallback(() => {

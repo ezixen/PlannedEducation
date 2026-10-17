@@ -1,6 +1,6 @@
 # Planned Education 🎓
 
-![Planned Education Logo](PElogo_128x128.png)
+![Planned Education Logo](PElogo_128x128.jpg)
 
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
@@ -168,15 +168,13 @@ Please see `docs/` for coding standards, guidelines, and architecture guides.
 
 ## 📜 License
 
-MIT License — use it, modify it, share it. Just keep it free for educators.
+MIT License — use it, modify it, share it. Just keep it free forever.
 
 ---
 
 ## 💬 A Personal Note
 
-This project started because a teacher friend said: *"I love teaching. I hate grading. I miss my evenings."*
-
-If Planned Education gives even one teacher an extra hour with their family, or one student a fairer exam experience, it's worth every line of code.💡
+If Planned Education gives even one teacher an extra hour with their family, or one student a fairer exam experience, it's worth every line of code, i think.💡
 
 ---
 

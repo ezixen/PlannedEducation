@@ -431,17 +431,17 @@ export function TeacherDashboard() {
   }
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+    <div style={{ overflowX: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem', overflowWrap: 'break-word' }}>
             AI Grading Dashboard
           </h1>
           <p style={{ color: 'var(--text-muted)' }}>Review and approve AI-generated grades for exam submissions</p>
         </div>
         <button
           onClick={groupSimilarMistakes}
-          style={{ padding: '0.625rem 1.25rem', backgroundColor: '#8b5cf6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}
+          style={{ padding: '0.625rem 1.25rem', backgroundColor: '#8b5cf6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, whiteSpace: 'normal', overflowWrap: 'break-word', maxWidth: '100%' }}
         >
           🔍 Group Similar Mistakes
         </button>

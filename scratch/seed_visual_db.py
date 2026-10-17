@@ -103,7 +103,12 @@ cls = models.ClassGroup(
     name="Grade 10 Biology - Period 3",
     teacher_id=teacher.id,
 )
-db.add(cls)
+cls2 = models.ClassGroup(
+    id="class-uuid-002",
+    name="Calculus 101",
+    teacher_id=teacher.id,
+)
+db.add_all([cls, cls2])
 
 # 7. Exam
 SAMPLE_EXAM_ID = "e8efa978-a1cd-481c-bd6b-83a1e05d8e00"

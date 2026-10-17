@@ -60,11 +60,17 @@ def log_ddl(conn, clauseelement, multiparams, params, execution_options):
     ):
         import logging
         logger = logging.getLogger("plannededucation.db")
-        logger.warning(
-            f"DDL operation: {clauseelement.__visit_name__}",
+        op = clauseelement.__visit_name__
+        log_fn = (
+            logger.debug
+            if (_is_test or op in ("create_table", "create_index"))
+            else logger.warning
+        )
+        log_fn(
+            f"DDL operation: {op}",
             extra={
                 "security_event": "ddl_operation",
-                "operation": clauseelement.__visit_name__,
+                "operation": op,
                 "sql": str(clauseelement),
             }
         )

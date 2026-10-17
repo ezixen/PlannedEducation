@@ -20,6 +20,113 @@
   --radius-lg: 12px;
 }
 
+/* Responsive layout and overflow prevention */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-inline-size: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    position: relative;
+    inline-size: 100%;
+    max-inline-size: 100vw;
+    overflow-x: hidden !important;
+  }
+
+  .main-content {
+    padding-top: 4rem !important;
+    min-inline-size: 0 !important;
+    max-inline-size: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .page-content {
+    padding: 1rem !important;
+    min-inline-size: 0 !important;
+    max-inline-size: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .floating-header {
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    max-inline-size: calc(100vw - 1.5rem) !important;
+    gap: 0.5rem !important;
+  }
+
+  .brand-title {
+    font-size: 1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-lang-select {
+    max-inline-size: 88px !important;
+  }
+
+  .nav-item span {
+    font-size: 0.85rem !important;
+  }
+
+  .nav-item {
+    padding: 0.6rem 0.75rem !important;
+  }
+
+  /* Allow buttons to wrap text on mobile instead of overflowing */
+  button {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    max-inline-size: 100% !important;
+  }
+
+  /* Stack multi-column inline CSS grids into a single bounded track on mobile */
+  [style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    max-inline-size: 100% !important;
+  }
+
+  /* Ensure flex rows wrap gracefully without forcing every flex row into a column */
+  [style*="display: flex"], [style*="display:flex"] {
+    flex-wrap: wrap !important;
+    max-inline-size: 100% !important;
+  }
+
+  [style*="display: flex"] > *, [style*="display:flex"] > * {
+    min-inline-size: 0 !important;
+    max-inline-size: 100% !important;
+  }
+
+  /* Reduce large inline card paddings on mobile */
+  .card, [style*="padding: 1.5rem"], [style*="padding: 2rem"], [style*="padding: 2.5rem"] {
+    padding: 1rem !important;
+    max-inline-size: 100% !important;
+  }
+
+  /* Prevent long text or URLs/IDs from causing horizontal overflow */
+  h1, h2, h3, h4, h5, h6, p, span, div, td, th, code, pre {
+    overflow-wrap: break-word !important;
+    word-break: break-word;
+  }
+
+  /* Ensure inputs and selects don't exceed container width */
+  input, select, textarea {
+    max-inline-size: 100% !important;
+  }
+
+  /* Allow wide data tables to scroll horizontally within their container */
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    max-inline-size: 100% !important;
+  }
+}
+
 :root[data-theme="skyward"] {
   --bg-color: #e8f4fb;
   --bg-secondary: #f0f8fd;
@@ -205,7 +312,10 @@ body {
 }
 
 .app-container {
+  position: relative;
   display: flex;
+  inline-size: 100%;
+  max-inline-size: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -295,6 +405,8 @@ body {
   padding: 2rem;
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  min-inline-size: 0;
 }
 
 button {
@@ -316,6 +428,8 @@ input, select, textarea {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  right: 1rem;
+  max-inline-size: calc(100% - 2rem);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -715,12 +829,12 @@ input, select, textarea {
   --success-border: #0f8a6a;
   --success-text: #065f46;
 
-  --warning-bg: #fef3c7.
-  --warning-border: #f59e0b.
+  --warning-bg: #fef3c7;
+  --warning-border: #f59e0b;
   --warning-text: #92400e;
 
-  --error-bg: #fee2e2.
-  --error-border: #ef4444.
+  --error-bg: #fee2e2;
+  --error-border: #ef4444;
   --error-text: #991b1b;
 }
 

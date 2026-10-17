@@ -136,10 +136,10 @@ request_latency = meter.create_histogram(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Initialize OpenTelemetry instrumentation
+    # Initialize OpenTelemetry instrumentation (skip_dep_check=True supports SQLAlchemy 2.1+)
     FastAPIInstrumentor.instrument_app(app)
-    SQLAlchemyInstrumentor().instrument(engine=engine)
-    RequestsInstrumentor().instrument()
+    SQLAlchemyInstrumentor().instrument(engine=engine, skip_dep_check=True)
+    RequestsInstrumentor().instrument(skip_dep_check=True)
 
     Base.metadata.create_all(bind=engine)
     yield

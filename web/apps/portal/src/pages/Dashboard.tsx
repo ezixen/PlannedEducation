@@ -77,9 +77,8 @@ export function Dashboard() {
                 transition: 'background-color 0.15s, opacity 0.15s',
                 width: '100%',
                 boxSizing: 'border-box',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis'
+                whiteSpace: 'normal',
+                overflowWrap: 'break-word'
               }}>
               {card.action.label}
             </button>
