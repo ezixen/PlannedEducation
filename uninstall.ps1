@@ -14,11 +14,17 @@
 
 .NOTES
     Run as Administrator for best results.
+
+    AI AGENT CONTRACT: before running with -AutoConfirm, the agent MUST STOP AND ASK the
+    human to confirm (1) the exact -InstallDir to delete (data loss!) and (2) whether any
+    external dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) should be removed.
+    There is NO "remove all dependencies" option; with -AutoConfirm all dependencies are kept.
+    Logs of the installation being removed live in <InstallDir>\logs\ (deleted with it) -
+    copy them first if they are needed for diagnosis.
 #>
 
 param(
     [string]$InstallDir = "d:\Dev\PEserver",
-    [switch]$RemoveAllDeps,
     [switch]$AutoConfirm
 )
 
@@ -88,38 +94,36 @@ Write-Success "Found PlannedEducation at: $InstallDir"
 # Step 1: Stop running processes
 Write-Header "Step 1: Stopping Running Processes"
 
-# Stop backend API processes
-$apiProcesses = Get-Process -Name "python" -ErrorAction SilentlyContinue | Where-Object {
-    $_.Path -like "*$InstallDir*"
-}
-if ($apiProcesses) {
-    Write-Info "Stopping backend API processes..."
-    $apiProcesses | Stop-Process -Force -ErrorAction SilentlyContinue
-    Write-Success "Stopped backend API processes"
-} else {
-    Write-Info "No backend API processes running"
+$escapedDir = [Regex]::Escape($InstallDir)
+$allProcs = Get-CimInstance Win32_Process -ErrorAction SilentlyContinue
+
+# Never kill ourselves or any ancestor (the shell/agent that launched this uninstaller
+# usually has the install dir in its own command line).
+$protectedPids = New-Object System.Collections.Generic.HashSet[int]
+$cursor = $PID
+while ($cursor -and $protectedPids.Add([int]$cursor)) {
+    $parent = $allProcs | Where-Object { $_.ProcessId -eq $cursor } | Select-Object -First 1
+    $cursor = if ($parent) { $parent.ParentProcessId } else { 0 }
 }
 
-# Stop frontend processes
-$nodeProcesses = Get-Process -Name "node" -ErrorAction SilentlyContinue | Where-Object {
-    $_.Path -like "*$InstallDir*"
-}
-if ($nodeProcesses) {
-    Write-Info "Stopping frontend processes..."
-    $nodeProcesses | Stop-Process -Force -ErrorAction SilentlyContinue
-    Write-Success "Stopped frontend processes"
-} else {
-    Write-Info "No frontend processes running"
+# Only stop platform runtimes (backend/frontend/helpers), not arbitrary shells or editors.
+$runtimeNames = @('python.exe', 'pythonw.exe', 'uvicorn.exe', 'node.exe', 'npm.cmd', 'cmd.exe')
+$matchingCimProcs = $allProcs | Where-Object {
+    $runtimeNames -contains $_.Name.ToLower() -and
+    -not $protectedPids.Contains([int]$_.ProcessId) -and
+    (($_.ExecutablePath -and $_.ExecutablePath -match $escapedDir) -or
+     ($_.CommandLine -and $_.CommandLine -match $escapedDir))
 }
 
-# Stop any uvicorn processes inside the installation directory
-$uvicornProcesses = Get-Process -Name "uvicorn" -ErrorAction SilentlyContinue | Where-Object {
-    $_.Path -like "*$InstallDir*"
-}
-if ($uvicornProcesses) {
-    Write-Info "Stopping uvicorn processes..."
-    $uvicornProcesses | Stop-Process -Force -ErrorAction SilentlyContinue
-    Write-Success "Stopped uvicorn processes"
+if ($matchingCimProcs) {
+    Write-Info "Stopping processes associated with $InstallDir..."
+    foreach ($proc in $matchingCimProcs) {
+        Stop-Process -Id $proc.ProcessId -Force -ErrorAction SilentlyContinue
+    }
+    Start-Sleep -Seconds 1
+    Write-Success "Stopped all platform processes"
+} else {
+    Write-Info "No platform processes running from $InstallDir"
 }
 
 # Step 2: Remove Windows services and scheduled tasks
@@ -136,61 +140,55 @@ if ($task) {
 }
 
 # Remove service scripts
-$serviceScript = Join-Path $InstallDir "start_backend.bat"
-if (Test-Path $serviceScript) {
-    Remove-Item $serviceScript -Force -ErrorAction SilentlyContinue
-    Write-Success "Removed service script: start_backend.bat"
-}
-
-# Step 3: Ask about external dependencies
-Write-Header "Step 3: External Dependencies"
-
-$removeDeps = $RemoveAllDeps
-if (-not $removeDeps -and -not $AutoConfirm) {
-    $removeAll = Confirm-Action "Do you want to remove all external dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git)?"
-    if ($removeAll) {
-        $removeDeps = $true
+foreach ($scriptName in @("start_backend.bat", "start_frontend.bat")) {
+    $serviceScript = Join-Path $InstallDir $scriptName
+    if (Test-Path $serviceScript) {
+        Remove-Item $serviceScript -Force -ErrorAction SilentlyContinue
+        Write-Success "Removed launcher script: $scriptName"
     }
 }
 
+# Step 3: Ask about external dependencies (one-by-one only, no remove-all)
+Write-Header "Step 3: External Dependencies"
+
+$externalDeps = @(
+    @{Name="Python"; Check="python --version"; UninstallCmd="winget uninstall Python.Python.3.12"},
+    @{Name="Node.js"; Check="node --version"; UninstallCmd="winget uninstall OpenJS.NodeJS.LTS"},
+    @{Name="PostgreSQL"; Check="psql --version"; UninstallCmd="winget uninstall PostgreSQL.PostgreSQL"},
+    @{Name="Redis"; Check="redis-cli --version"; UninstallCmd="winget uninstall Redis.Redis"},
+    @{Name="Docker Desktop"; Check="docker --version"; UninstallCmd="winget uninstall Docker.DockerDesktop"},
+    @{Name="Git"; Check="git --version"; UninstallCmd="winget uninstall Git.Git"}
+)
+
+Write-Info "The following external dependencies may be used by PlannedEducation or other applications:"
+$installedDeps = @()
+foreach ($dep in $externalDeps) {
+    $cmdName = ($dep.Check -split ' ')[0]
+    if (Get-Command $cmdName -ErrorAction SilentlyContinue) {
+        Write-Host "  - $($dep.Name) [INSTALLED]" -ForegroundColor $GREEN
+        $installedDeps += $dep
+    } else {
+        Write-Host "  - $($dep.Name) [Not installed]" -ForegroundColor $YELLOW
+    }
+}
+Write-Host ""
+Write-Info "Note: There is NO 'remove all' option. If you choose Yes below, you will be asked ONE BY ONE for each installed dependency whether to remove or keep it."
+
 $depsToRemove = @()
 
-if ($removeDeps) {
-    $removeOneByOne = if ($AutoConfirm) { $false } else { Confirm-Action "Do you want to decide for each dependency one by one (keep/remove)?" }
-    
-    $externalDeps = @(
-        @{Name="Python"; Check="python --version"; UninstallCmd="winget uninstall Python.Python.3.14"},
-        @{Name="Node.js"; Check="node --version"; UninstallCmd="winget uninstall OpenJS.NodeJS"},
-        @{Name="PostgreSQL"; Check="psql --version"; UninstallCmd="winget uninstall PostgreSQL.PostgreSQL"},
-        @{Name="Redis"; Check="redis-cli --version"; UninstallCmd="winget uninstall Redis.Redis"},
-        @{Name="Docker Desktop"; Check="docker --version"; UninstallCmd="winget uninstall Docker.DockerDesktop"},
-        @{Name="Git"; Check="git --version"; UninstallCmd="winget uninstall Git.Git"}
-    )
-    
-    foreach ($dep in $externalDeps) {
-        $isInstalled = $false
-        try {
-            $cmdName = ($dep.Check -split ' ')[0]
-            if (Get-Command $cmdName -ErrorAction SilentlyContinue) {
-                $isInstalled = $true
-            }
-        } catch {}
-        
-        if (-not $isInstalled) {
-            Write-Info "$($dep.Name): Not installed, skipping"
-            continue
-        }
-        
-        if ($removeOneByOne) {
-            $keep = Confirm-Action "Keep $($dep.Name)? (y=keep, n=remove)"
-            if (-not $keep) {
+if (-not $AutoConfirm -and $installedDeps.Count -gt 0) {
+    $reviewOneByOne = Confirm-Action "Do you want to review these external dependencies one by one to choose whether to remove any of them?"
+    if ($reviewOneByOne) {
+        foreach ($dep in $installedDeps) {
+            $removeThis = Confirm-Action "Remove $($dep.Name)? (y=remove, N=keep)"
+            if ($removeThis) {
                 $depsToRemove += $dep
             } else {
                 Write-Info "Keeping $($dep.Name)"
             }
-        } else {
-            $depsToRemove += $dep
         }
+    } else {
+        Write-Info "Keeping all external dependencies"
     }
 } else {
     Write-Info "Keeping all external dependencies"

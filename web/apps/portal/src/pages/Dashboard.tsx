@@ -25,9 +25,9 @@ export function Dashboard() {
     },
     {
       title: 'Admin Dashboard',
-      description: 'System oversight: users, exams, statistics (teachers only).',
+      description: 'System oversight: users, exams, statistics, and password resets.',
       action: { label: 'Open Admin Dashboard', onClick: () => navigate('/admin'), variant: 'primary' },
-      roles: ['teacher'],
+      roles: ['teacher', 'admin'],
     },
   ];
 

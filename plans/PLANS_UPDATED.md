@@ -379,4 +379,36 @@
   - Full backend test suite: 107/107 passing clean via `scripts/testing/update_test_cache.py`.
   - Focused test suite `tests/test_admin_password_reset.py`: 5/5 passing clean.
   - Frontend production build (`npm run build`): verified clean bundle in 4.39s.
+
+---
+
+### Phase 17: Automated Deployment & Undeployment (Windows & Linux/WSL), AI Agent Contract & Separated Diagnostic Logs ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **AI Agent Deployment Contract & Human-in-the-Loop Safeguards**:
+  - Established contract in `install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`, `README.md`, `docs/INSTALL_WINDOWS.md`, and `docs/INSTALL_LINUX.md`.
+  - AI agents can run automated headless deployments with `AUTO_CONFIRM=true` / `-AutoConfirm`, but MUST stop and ask the human operator for key decisions: target folder, deployment mode (1=SQLite, 2=PostgreSQL+Redis, 3=Docker), School & Superadmin identity, and port preferences.
+  - Uninstallers explicitly offer NO "remove all dependencies" option; with auto-confirm, all external dependencies are kept. When reviewing interactively, users choose one by one whether to keep or remove each installed dependency (`Python`, `Node.js`, `PostgreSQL`, `Redis`, `Docker`, `Git`).
+- **Port Flexibility & Automatic Fallback**:
+  - Default ports: `8000` (API) and `5173` (Frontend).
+  - Automatically probes and falls back to free alternative ports (`8002/8001/8080` and `5175/5174/5176`) when default ports are occupied.
+- **Separated Diagnostic & Error Logging**:
+  - Gated OpenTelemetry `ConsoleSpanExporter` in `src/plannededucation/api/main.py` behind `OTEL_CONSOLE_EXPORT=true` (reduced backend log volume from 32,652 lines down to concise runtime logs).
+  - Configured structured file logging in `<InstallDir>/logs/`:
+    - `logs/install.log` & `logs/install_error.log` (installation progress and verify tests)
+    - `logs/backend.log` (INFO+) & `logs/backend_error.log` (WARNING/ERROR+ with tracebacks)
+    - `logs/backend_stdout.log` & `logs/backend_stderr.log` (raw console captures)
+    - `logs/frontend.log` & `logs/frontend_error.log` (frontend stdout and stderr)
+- **Robust Installation & Uninstallation Engine**:
+  - Clones into temporary sibling directory (`.clone-tmp`) to prevent git errors when target folder contains `logs/`.
+  - Syncs workspace changes using `rsync` (Linux) and `robocopy` (Windows), excluding `.env*` to prevent port mismatch overrides.
+  - Cleans override environment files (`.env.local`) and synchronizes `VITE_API_URL` across `.env` and `.env.local`.
+  - Added `greenlet>=3.1.1` to `src/requirements.txt` and wrapped OpenTelemetry lifespan instrumentation safely with try/except blocks.
+  - Implemented ancestor PID protection in uninstallers so running shells and agent wrappers are never killed.
+  - Fixed syntax error in `uninstall.sh` summary `if` block.
+- **Comprehensive Verification**:
+  - Full Windows lifecycle automated and verified (`install.ps1` -> start -> E2E pass -> `uninstall.ps1` -> 0 ports).
+  - Full Linux / WSL lifecycle verified (`install.sh` -> 4/4 verification tests pass -> start -> E2E pass -> `uninstall.sh` -> clean removal, 0 ports).
+  - Full deployed multi-role classroom E2E simulation (`tests/e2e/playwright/tests/deployed-classroom-e2e.spec.ts`) passed in 22.4s against deployed platform (Admin, Teacher, 3 Students with dynamic IEP and mistake variations, Grading, Student review, Parent portal).
+  - Full backend pytest suite: 107/107 passing in 102.10s via `scripts/testing/update_test_cache.py`.
+  - Zero orphaned processes remaining.
 

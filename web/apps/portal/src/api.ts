@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Base API URL for FastAPI backend (defaults to port 8001 in dev)
-let baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8001';
+// Base API URL for FastAPI backend (defaults to port 8000 in dev)
+let baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 if (typeof window !== 'undefined') {
   if (window.location.hostname === '127.0.0.1' && baseApiUrl.includes('localhost')) {
     baseApiUrl = baseApiUrl.replace('localhost', '127.0.0.1');

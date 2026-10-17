@@ -147,6 +147,7 @@ def get_anonymized_submissions(
             anon_answers.append(
                 {
                     "question_id": ans.question_id,
+                    "question_type": ans.question.question_type,
                     "question_text": ans.generated_question_text or ans.question.text,
                     "student_response": scrubbed_response,
                     "points_possible": ans.question.points,

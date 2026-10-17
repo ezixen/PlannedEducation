@@ -41,12 +41,48 @@ Or specify a custom installation directory:
 
 ### Step 3: Choose Your Deployment Mode
 When prompted by the installer:
-1. **Option 1: Native (No Docker)** *(Fastest, low memory overhead)*
-   - Uses Python directly on your Windows host.
-   - Automatically supports **SQLite** for zero-configuration standalone classroom use, or local **PostgreSQL** / **Redis** for large campus rollouts.
-   - Sets up an automatic Windows Scheduled Task / Background Service to start on boot.
-2. **Option 2: Docker Compose** *(Full containerized isolation)*
-   - Spins up PostgreSQL, Redis, backend FastAPI API, and frontend Nginx portal in isolated Docker containers.
+1. **Mode 1: Single-Server / Local (SQLite + In-Memory Cache)** *(Fastest, zero external database setup)*
+2. **Mode 2: Production Server (PostgreSQL + Redis)** *(High-concurrency campus deployment)*
+3. **Mode 3: Docker Compose** *(Full containerized isolation)*
+
+---
+
+## 🤖 AI Agent Deployment & Uninstallation (Windows)
+
+You can ask any AI coding agent (GitHub Copilot, Antigravity, Claude Code, Cursor) to deploy or uninstall PlannedEducation on Windows using `install.ps1` and `uninstall.ps1`.
+
+### Mandatory Human-in-the-Loop Questions for AI Agents
+Before an AI agent runs `install.ps1 -AutoConfirm`, it **must stop and ask you** to confirm:
+1. **Target Installation Directory** (`-InstallDir`, e.g. `C:\PlannedEducation` or `D:\dev\PEtest`)
+2. **Deployment Mode** (`-DeployMode`: `1` = SQLite, `2` = PostgreSQL + Redis, `3` = Docker)
+3. **School & Superadmin Identity** (`-SchoolName`, `-AdminEmail`, `-AdminName`, `-AdminPassword`)
+4. **Ports** (`-ApiPort` default `8000`, `-FrontendPort` default `5173`, with automatic fallback if in use)
+
+Example command after human confirmation:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1 `
+  -InstallDir "D:\dev\PEtest" `
+  -DeployMode "1" `
+  -SchoolName "Springfield High School" `
+  -AdminEmail "admin@springfield.edu" `
+  -AdminName "Principal Skinner" `
+  -AdminPassword "<your-strong-password>" `
+  -AutoConfirm
+```
+
+### Diagnostic & Error Logs (`<InstallDir>\logs\`)
+Both human operators and AI agents can inspect separated standard and error logs under `<InstallDir>\logs\`:
+- `logs\install.log` & `logs\install_error.log` — installation progress and any errors/warnings
+- `logs\backend.log` & `logs\backend_error.log` — structured JSON API logs and isolated error/warning logs (with tracebacks)
+- `logs\backend_stdout.log` & `logs\backend_stderr.log` — raw console capture; check these if the backend fails to start
+- `logs\frontend.log` & `logs\frontend_error.log` — frontend server output and error logs
+
+### Uninstalling (`uninstall.ps1`)
+```powershell
+powershell -ExecutionPolicy Bypass -File .\uninstall.ps1 -InstallDir "C:\PlannedEducation"
+```
+- Stops running PlannedEducation processes/services and removes the installation directory.
+- Lists all external dependencies (`Python`, `Node.js`, `PostgreSQL`, `Redis`, `Docker`, `Git`) with their status and asks whether you want to review them **one by one** (there is intentionally **no "remove all dependencies"** option).
 
 ---
 

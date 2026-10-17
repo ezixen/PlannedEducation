@@ -45,15 +45,38 @@ def get_children_progress(
             .all()
         )
 
-        exam_history = [
-            {
-                "exam_title": sub.exam.title,
-                "completed_at": sub.completed_at.isoformat() if sub.completed_at else None,
-                "score": sub.score,
-                "feedback": sub.feedback,
-            }
-            for sub in submissions
-        ]
+        exam_history = []
+        for sub in submissions:
+            total_points = sum((q.points or 0) for q in (sub.exam.questions or []))
+            score_pct = (
+                round((sub.score / total_points) * 100)
+                if sub.score is not None and total_points > 0
+                else None
+            )
+            display_feedback = sub.feedback
+            question_grades = []
+            if sub.feedback and sub.feedback.strip().startswith("{"):
+                try:
+                    import json
+
+                    fb_obj = json.loads(sub.feedback)
+                    if isinstance(fb_obj, dict) and "question_grades" in fb_obj:
+                        display_feedback = fb_obj.get("summary_feedback") or ""
+                        question_grades = fb_obj.get("question_grades") or []
+                except Exception:
+                    pass
+
+            exam_history.append(
+                {
+                    "exam_title": sub.exam.title,
+                    "completed_at": sub.completed_at.isoformat() if sub.completed_at else None,
+                    "score": sub.score,
+                    "points_possible": total_points,
+                    "score_percentage": score_pct,
+                    "feedback": display_feedback,
+                    "question_grades": question_grades,
+                }
+            )
 
         result.append(
             {

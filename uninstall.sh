@@ -4,6 +4,13 @@
 # Carefully removes only the PlannedEducation platform from the server.
 # Does NOT touch other system files or unrelated applications.
 #
+# AI AGENT CONTRACT: before running with AUTO_CONFIRM=true, the agent MUST STOP AND ASK
+# the human to confirm (1) the exact INSTALL_DIR to delete (data loss!) and (2) whether any
+# external dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) should be removed.
+# There is NO "remove all dependencies" option; with AUTO_CONFIRM all dependencies are kept.
+# Logs of the installation live in $INSTALL_DIR/logs/ and are deleted with it - copy them
+# first if they are needed for diagnosis.
+#
 
 set -euo pipefail
 
@@ -15,8 +22,7 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-INSTALL_DIR="${INSTALL_DIR:-/opt/plannededucation}"
-REMOVE_ALL_DEPS="${REMOVE_ALL_DEPS:-false}"
+INSTALL_DIR="${INSTALL_DIR:-${1:-/opt/plannededucation}}"
 AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
 
 write_header() {
@@ -48,7 +54,7 @@ confirm_action() {
     if [[ "$AUTO_CONFIRM" == "true" ]]; then
         return 0
     fi
-    read -p "$message (y/N): " response
+    read -r -p "$message (y/N): " response
     [[ "$response" =~ ^[Yy]$ ]]
 }
 
@@ -56,7 +62,7 @@ confirm_action() {
 if [[ $EUID -ne 0 ]]; then
     write_warning "Not running as root. Some operations may fail."
     if [[ "$AUTO_CONFIRM" != "true" ]]; then
-        read -p "Continue anyway? (y/N): " confirm
+        read -r -p "Continue anyway? (y/N): " confirm
         [[ "$confirm" =~ ^[Yy]$ ]] || exit 1
     fi
 fi
@@ -75,32 +81,40 @@ write_success "Found PlannedEducation at: $INSTALL_DIR"
 # Step 1: Stop running processes
 write_header "Step 1: Stopping Running Processes"
 
-# Stop backend API processes
-API_PIDS=$(pgrep -f "python.*uvicorn.*$INSTALL_DIR" 2>/dev/null || true)
-if [[ -n "$API_PIDS" ]]; then
-    write_info "Stopping backend API processes..."
-    echo "$API_PIDS" | xargs kill -9 2>/dev/null || true
-    write_success "Stopped backend API processes"
-else
-    write_info "No backend API processes running"
-fi
+# Protect ourselves and every ancestor (the invoking shell / agent wrapper usually has
+# INSTALL_DIR in its own command line and must not be killed).
+PROTECTED_PIDS=" "
+cur=$$
+while [[ -n "$cur" && "$cur" -gt 1 ]]; do
+    PROTECTED_PIDS="$PROTECTED_PIDS$cur "
+    cur=$(awk '/^PPid:/ {print $2}' "/proc/$cur/status" 2>/dev/null || true)
+done
 
-# Stop frontend processes
-NODE_PIDS=$(pgrep -f "vite.*$INSTALL_DIR" 2>/dev/null || true)
-if [[ -n "$NODE_PIDS" ]]; then
-    write_info "Stopping frontend processes..."
-    echo "$NODE_PIDS" | xargs kill -9 2>/dev/null || true
-    write_success "Stopped frontend processes"
-else
-    write_info "No frontend processes running"
-fi
+# Stop only platform runtimes whose cmdline or cwd is inside INSTALL_DIR
+PIDS_TO_KILL=""
+for pid_dir in /proc/[0-9]*; do
+    pid="${pid_dir#/proc/}"
+    [[ "$PROTECTED_PIDS" == *" $pid "* ]] && continue
+    comm=$(cat "$pid_dir/comm" 2>/dev/null || true)
+    case "$comm" in
+        python*|uvicorn*|node|npm*|vite*|esbuild) ;;
+        *) continue ;;
+    esac
+    cwd_target=$(readlink -f "$pid_dir/cwd" 2>/dev/null || true)
+    cmdline=$(tr '\0' ' ' < "$pid_dir/cmdline" 2>/dev/null || true)
+    if [[ ( -n "$cwd_target" && "$cwd_target" == "$INSTALL_DIR"* ) || "$cmdline" == *"$INSTALL_DIR"* ]]; then
+        PIDS_TO_KILL="$PIDS_TO_KILL $pid"
+    fi
+done
 
-# Stop any remaining python processes related to the install
-PY_PIDS=$(pgrep -f "python.*$INSTALL_DIR" 2>/dev/null || true)
-if [[ -n "$PY_PIDS" ]]; then
-    write_info "Stopping remaining Python processes..."
-    echo "$PY_PIDS" | xargs kill -9 2>/dev/null || true
-    write_success "Stopped remaining Python processes"
+PIDS_TO_KILL=$(echo "$PIDS_TO_KILL" | xargs || true)
+if [[ -n "$PIDS_TO_KILL" ]]; then
+    write_info "Stopping platform processes ($PIDS_TO_KILL)..."
+    # shellcheck disable=SC2086
+    kill -9 $PIDS_TO_KILL 2>/dev/null || true
+    write_success "Stopped platform processes"
+else
+    write_info "No platform processes running from $INSTALL_DIR"
 fi
 
 # Step 2: Remove systemd services
@@ -109,77 +123,75 @@ write_header "Step 2: Removing Systemd Services"
 SERVICE_NAME="plannededucation-backend"
 if systemctl list-unit-files 2>/dev/null | grep -q "$SERVICE_NAME"; then
     write_info "Removing systemd service: $SERVICE_NAME"
-    systemctl stop "$SERVICE_NAME" 2>/dev/null || true
-    systemctl disable "$SERVICE_NAME" 2>/dev/null || true
-    rm -f "/etc/systemd/system/$SERVICE_NAME.service"
-    systemctl daemon-reload 2>/dev/null || true
+    sudo systemctl stop "$SERVICE_NAME" 2>/dev/null || true
+    sudo systemctl disable "$SERVICE_NAME" 2>/dev/null || true
+    sudo rm -f "/etc/systemd/system/$SERVICE_NAME.service" 2>/dev/null || true
+    sudo systemctl daemon-reload 2>/dev/null || true
     write_success "Removed systemd service: $SERVICE_NAME"
 else
     write_info "No systemd service found: $SERVICE_NAME"
 fi
 
-# Remove service scripts
-SERVICE_SCRIPT="$INSTALL_DIR/start_backend.sh"
-if [[ -f "$SERVICE_SCRIPT" ]]; then
-    rm -f "$SERVICE_SCRIPT"
-    write_success "Removed service script: start_backend.sh"
-fi
+# Remove launcher scripts
+for script_name in "start_backend.sh" "start_frontend.sh"; do
+    SERVICE_SCRIPT="$INSTALL_DIR/$script_name"
+    if [[ -f "$SERVICE_SCRIPT" ]]; then
+        rm -f "$SERVICE_SCRIPT"
+        write_success "Removed service script: $script_name"
+    fi
+done
 
-# Step 3: Ask about external dependencies
+# Step 3: Ask about external dependencies (one-by-one only, no remove-all)
 write_header "Step 3: External Dependencies"
 
-REMOVE_DEPS=false
-if [[ "$REMOVE_ALL_DEPS" == "true" ]]; then
-    REMOVE_DEPS=true
-elif [[ "$AUTO_CONFIRM" != "true" ]]; then
-    if confirm_action "Do you want to remove all external dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git)?"; then
-        REMOVE_DEPS=true
+DEP_ORDER=("Python" "Node.js" "PostgreSQL" "Redis" "Docker" "Git")
+
+declare -A DEP_CHECKS=(
+    ["Python"]="python3 --version"
+    ["Node.js"]="node --version"
+    ["PostgreSQL"]="psql --version"
+    ["Redis"]="redis-cli --version"
+    ["Docker"]="docker --version"
+    ["Git"]="git --version"
+)
+
+declare -A DEP_REMOVE_CMDS=(
+    ["Python"]="sudo apt-get remove -y python3 python3-pip 2>/dev/null || sudo yum remove -y python3 python3-pip 2>/dev/null || true"
+    ["Node.js"]="sudo apt-get remove -y nodejs npm 2>/dev/null || sudo yum remove -y nodejs npm 2>/dev/null || true"
+    ["PostgreSQL"]="sudo apt-get remove -y postgresql postgresql-contrib 2>/dev/null || sudo yum remove -y postgresql postgresql-contrib 2>/dev/null || true"
+    ["Redis"]="sudo apt-get remove -y redis-server 2>/dev/null || sudo yum remove -y redis 2>/dev/null || true"
+    ["Docker"]="sudo apt-get remove -y docker.io docker-compose 2>/dev/null || sudo yum remove -y docker docker-compose 2>/dev/null || true"
+    ["Git"]="sudo apt-get remove -y git 2>/dev/null || sudo yum remove -y git 2>/dev/null || true"
+)
+
+write_info "The following external dependencies may be used by PlannedEducation or other applications:"
+INSTALLED_DEPS=()
+for dep_name in "${DEP_ORDER[@]}"; do
+    cmd_bin="${DEP_CHECKS[$dep_name]%% *}"
+    if command -v "$cmd_bin" &>/dev/null; then
+        echo -e "  - ${GREEN}${dep_name} [INSTALLED]${NC}"
+        INSTALLED_DEPS+=("$dep_name")
+    else
+        echo -e "  - ${YELLOW}${dep_name} [Not installed]${NC}"
     fi
-fi
+done
+echo ""
+write_info "Note: There is NO 'remove all' option. If you choose Yes below, you will be asked ONE BY ONE for each installed dependency whether to remove or keep it."
 
 DEPS_TO_REMOVE=()
 
-if [[ "$REMOVE_DEPS" == "true" ]]; then
-    REMOVE_ONE_BY_ONE=false
-    if [[ "$AUTO_CONFIRM" != "true" ]] && confirm_action "Do you want to decide for each dependency one by one (keep/remove)?"; then
-        REMOVE_ONE_BY_ONE=true
-    fi
-
-    # Check which external dependencies are installed
-    declare -A DEP_CHECKS=(
-        ["Python"]="python3 --version"
-        ["Node.js"]="node --version"
-        ["PostgreSQL"]="psql --version"
-        ["Redis"]="redis-cli --version"
-        ["Docker"]="docker --version"
-        ["Git"]="git --version"
-    )
-
-    declare -A DEP_REMOVE_CMDS=(
-        ["Python"]="apt-get remove -y python3 python3-pip 2>/dev/null || yum remove -y python3 python3-pip 2>/dev/null || true"
-        ["Node.js"]="apt-get remove -y nodejs npm 2>/dev/null || yum remove -y nodejs npm 2>/dev/null || true"
-        ["PostgreSQL"]="apt-get remove -y postgresql postgresql-contrib 2>/dev/null || yum remove -y postgresql postgresql-contrib 2>/dev/null || true"
-        ["Redis"]="apt-get remove -y redis-server 2>/dev/null || yum remove -y redis 2>/dev/null || true"
-        ["Docker"]="apt-get remove -y docker.io docker-compose 2>/dev/null || yum remove -y docker docker-compose 2>/dev/null || true"
-        ["Git"]="apt-get remove -y git 2>/dev/null || yum remove -y git 2>/dev/null || true"
-    )
-
-    for dep_name in "${!DEP_CHECKS[@]}"; do
-        if command -v "${DEP_CHECKS[$dep_name]%% *}" &>/dev/null; then
-            if [[ "$REMOVE_ONE_BY_ONE" == "true" ]]; then
-                read -p "Keep $dep_name? (y=keep, n=remove): " keep_dep
-                if [[ ! "$keep_dep" =~ ^[Yy]$ ]]; then
-                    DEPS_TO_REMOVE+=("$dep_name")
-                else
-                    write_info "Keeping $dep_name"
-                fi
-            else
+if [[ "$AUTO_CONFIRM" != "true" && ${#INSTALLED_DEPS[@]} -gt 0 ]]; then
+    if confirm_action "Do you want to review these external dependencies one by one to choose whether to remove any of them?"; then
+        for dep_name in "${INSTALLED_DEPS[@]}"; do
+            if confirm_action "Remove $dep_name? (y=remove, N=keep)"; then
                 DEPS_TO_REMOVE+=("$dep_name")
+            else
+                write_info "Keeping $dep_name"
             fi
-        else
-            write_info "$dep_name: Not installed, skipping"
-        fi
-    done
+        done
+    else
+        write_info "Keeping all external dependencies"
+    fi
 else
     write_info "Keeping all external dependencies"
 fi
@@ -207,7 +219,7 @@ write_header "Step 5: Removing PlannedEducation Platform"
 fuser -k "$INSTALL_DIR" 2>/dev/null || true
 
 # Remove the directory
-if rm -rf "$INSTALL_DIR" 2>/dev/null; then
+if rm -rf "$INSTALL_DIR" 2>/dev/null || sudo -n rm -rf "$INSTALL_DIR" 2>/dev/null; then
     write_success "Successfully removed: $INSTALL_DIR"
 else
     write_error "Failed to remove $INSTALL_DIR"
@@ -239,7 +251,7 @@ if [[ ${#DEPS_TO_REMOVE[@]} -gt 0 ]]; then
     write_success "Removed ${#DEPS_TO_REMOVE[@]} external dependency(ies)"
 else
     write_info "All external dependencies were kept"
-}
+fi
 
 echo ""
 write_info "To reinstall PlannedEducation, run: install.sh"

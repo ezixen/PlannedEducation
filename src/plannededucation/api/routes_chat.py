@@ -208,8 +208,13 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
         if not token:
             await websocket.close(code=1008, reason="Missing token")
             return
+    except WebSocketDisconnect:
+        return
     except Exception:
-        await websocket.close(code=1008, reason="Invalid auth frame")
+        try:
+            await websocket.close(code=1008, reason="Invalid auth frame")
+        except Exception:
+            pass
         return
 
     # ── Step 2: Validate token ───────────────────────────────────────────────

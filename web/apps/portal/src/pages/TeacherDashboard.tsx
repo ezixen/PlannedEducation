@@ -252,16 +252,28 @@ export function TeacherDashboard() {
           // Deterministic local rubric/answer evaluation fallback (local-first mode)
           const respNorm = (answer.student_response || '').trim().toLowerCase();
           const corrNorm = (answer.correct_answer || '').trim().toLowerCase();
+          const hasRubric = Boolean((answer.rubric || '').trim());
           const isExactMatch = Boolean(corrNorm && respNorm === corrNorm);
           const hasContent = respNorm.length > 0;
+          const isObjectiveMismatch = Boolean(
+            corrNorm && (answer.question_type === 'multiple_choice' || !hasRubric) && !isExactMatch
+          );
           aiGrade = {
-            score: isExactMatch ? answer.points_possible : hasContent ? Math.round(answer.points_possible * 0.8 * 10) / 10 : 0,
+            score: isExactMatch
+              ? answer.points_possible
+              : isObjectiveMismatch
+                ? 0
+                : hasContent
+                  ? Math.round(answer.points_possible * 0.8 * 10) / 10
+                  : 0,
             feedback: isExactMatch
               ? 'Correct response matching expected answer.'
-              : hasContent
-                ? 'Evaluated via local rubric matcher. Teacher review recommended.'
-                : 'No response provided.',
-            confidence: isExactMatch ? 0.98 : 0.85,
+              : isObjectiveMismatch
+                ? `Incorrect response. Expected: ${answer.correct_answer}`
+                : hasContent
+                  ? 'Evaluated via local rubric matcher. Teacher review recommended.'
+                  : 'No response provided.',
+            confidence: isExactMatch || isObjectiveMismatch ? 0.98 : 0.85,
             reasoning: 'Deterministic local rubric evaluation.',
           };
         }

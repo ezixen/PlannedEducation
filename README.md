@@ -8,17 +8,35 @@ Planned Education exists for a simple reason: **teachers shouldn't have to spend
 
 ---
 
-## ⚡ Quick Installation & Deployment
+## ⚡ Quick Installation & Deployment (Human or AI Agent)
 
-Deploy PlannedEducation on your school or personal server in minutes:
+Deploy PlannedEducation on your school or personal server in minutes — either **interactively yourself** or by **asking your AI coding agent** (GitHub Copilot, Antigravity, Claude Code, Cursor, etc.) to run the installer for you!
 
-| Platform | Quick Command | Full Step-by-Step Guide |
-|:---|:---|:---:|
-| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File install.ps1` | [📖 **Windows Installation Guide**](docs/INSTALL_WINDOWS.md) |
-| 🐧 **Linux** (Ubuntu, Debian, RHEL) | `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh \| bash` | [📖 **Linux Installation Guide**](docs/INSTALL_LINUX.md) |
-| 🧙 **Cross-Platform Wizard** | `python deploy_wizard.py` | [📋 **Requirements & Compatibility**](docs/INSTALL_COMPATIBILITY.md) |
+| Platform | Interactive Human Command | Uninstaller | Full Step-by-Step Guide |
+|:---|:---|:---|:---:|
+| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/INSTALL_WINDOWS.md) |
+| 🐧 **Linux / WSL** (Ubuntu, Debian, RHEL, Arch) | `bash ./install.sh` | `bash ./uninstall.sh` | [📖 **Linux Installation Guide**](docs/INSTALL_LINUX.md) |
+| 🧙 **Cross-Platform Wizard** | `python deploy_wizard.py` | — | [📋 **Requirements & Compatibility**](docs/INSTALL_COMPATIBILITY.md) |
 
-> 💡 **No Docker? No problem!** The installer supports **Native Mode** (runs directly on host Python with zero-config SQLite or PostgreSQL) as well as **Docker Compose Mode**.
+> 💡 **No Docker? No problem!** The installer supports **Mode 1: Single-Server SQLite** (zero external DB setup), **Mode 2: Production PostgreSQL + Redis**, and **Mode 3: Docker Compose**. Default ports are `8000` (API) and `5173` (Frontend), with automatic fallback to free ports if already in use.
+
+### 🤖 AI Agent Deployment & Undeployment Support
+
+You can tell your AI agent: *"Deploy PlannedEducation for me"* or *"Uninstall PlannedEducation from `<folder>`"*.
+Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are purpose-built for both human operators and AI agents:
+
+1. **Mandatory Questions AI Agents Must Ask You First**:
+   Before running `install.ps1 -AutoConfirm` or `AUTO_CONFIRM=true ./install.sh`, the AI agent **must stop and ask you** for your key decisions:
+   - **Target Installation Folder** (`-InstallDir` / `INSTALL_DIR`, e.g. `C:\PlannedEducation`, `D:\dev\PEtest`, or `/opt/plannededucation`)
+   - **Deployment Mode** (`1` = Local/Single-Server SQLite, `2` = Production PostgreSQL + Redis, `3` = Docker Compose)
+   - **School & Superadmin Identity** (`-SchoolName` / `SCHOOL_NAME`, `-AdminEmail` / `ADMIN_EMAIL`, `-AdminName` / `ADMIN_NAME`, and `-AdminPassword` / `ADMIN_PASSWORD`)
+   - **Port Preferences** (confirm default ports `8000` / `5173` with auto-fallback, or custom `-ApiPort` / `-FrontendPort`)
+   - **When Uninstalling (`uninstall.ps1` / `uninstall.sh`)**: Confirm the target directory to remove, and review external dependencies (`Python`, `Node.js`, `PostgreSQL`, `Redis`, `Docker`, `Git`) **one by one** (there is intentionally **no "remove all dependencies"** option).
+2. **Separated Diagnostic & Error Logs (`<InstallDir>/logs/`)**:
+   Every deployment automatically writes separated standard and error logs so humans and AI agents can diagnose any issue immediately without digging through noisy output:
+   - `logs/install.log` & `logs/install_error.log` — step-by-step installation & verification results
+   - `logs/backend.log` & `logs/backend_error.log` — structured JSON API logs & isolated warning/exception logs (tracebacks included), plus `logs/backend_stdout.log` / `logs/backend_stderr.log` raw console capture for start-up crashes
+   - `logs/frontend.log` & `logs/frontend_error.log` — frontend server stdout & error logs
 
 ---
 

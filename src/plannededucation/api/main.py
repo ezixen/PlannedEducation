@@ -63,14 +63,37 @@ class JSONFormatter(logging.Formatter):
             log_obj["user_id"] = record.user_id
         if hasattr(record, "ip"):
             log_obj["ip"] = record.ip
+        if record.exc_info:
+            log_obj["exception"] = self.formatException(record.exc_info)
         return json.dumps(log_obj)
 
-# Configure root logger
+# Configure root & application loggers with separated info and error log files
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("plannededucation")
 handler = logging.StreamHandler()
 handler.setFormatter(JSONFormatter())
 logger.handlers = [handler]
+logger.propagate = False  # avoid duplicate plain-text lines from the root logger
+
+if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+    try:
+        log_dir = os.getenv("PLANNED_EDUCATION_LOG_DIR", os.path.join(os.getcwd(), "logs"))
+        os.makedirs(log_dir, exist_ok=True)
+        info_file_handler = logging.FileHandler(os.path.join(log_dir, "backend.log"), encoding="utf-8")
+        info_file_handler.setLevel(logging.INFO)
+        info_file_handler.setFormatter(JSONFormatter())
+
+        err_file_handler = logging.FileHandler(os.path.join(log_dir, "backend_error.log"), encoding="utf-8")
+        err_file_handler.setLevel(logging.WARNING)
+        err_file_handler.setFormatter(JSONFormatter())
+
+        logger.addHandler(info_file_handler)
+        logger.addHandler(err_file_handler)
+        logging.getLogger("uvicorn.error").addHandler(err_file_handler)
+        logging.getLogger("uvicorn.access").addHandler(info_file_handler)
+    except OSError:
+        pass
+
 logger.setLevel(logging.INFO)
 
 
@@ -111,7 +134,7 @@ if os.getenv("PLANNED_EDUCATION_ENV") != "test":
 # Configure OpenTelemetry
 resource = Resource.create({"service.name": "plannededucation-api"})
 trace_provider = TracerProvider(resource=resource)
-if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+if os.getenv("OTEL_CONSOLE_EXPORT", "").lower() == "true":
     trace_provider.add_span_processor(BatchSpanProcessor(ConsoleSpanExporter()))
 trace.set_tracer_provider(trace_provider)
 
@@ -137,9 +160,18 @@ request_latency = meter.create_histogram(
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Initialize OpenTelemetry instrumentation (skip_dep_check=True supports SQLAlchemy 2.1+)
-    FastAPIInstrumentor.instrument_app(app)
-    SQLAlchemyInstrumentor().instrument(engine=engine, skip_dep_check=True)
-    RequestsInstrumentor().instrument(skip_dep_check=True)
+    try:
+        FastAPIInstrumentor.instrument_app(app)
+    except Exception as exc:
+        logger.warning(f"FastAPI OpenTelemetry instrumentation skipped: {exc}")
+    try:
+        SQLAlchemyInstrumentor().instrument(engine=engine, skip_dep_check=True)
+    except Exception as exc:
+        logger.warning(f"SQLAlchemy OpenTelemetry instrumentation skipped: {exc}")
+    try:
+        RequestsInstrumentor().instrument(skip_dep_check=True)
+    except Exception as exc:
+        logger.warning(f"Requests OpenTelemetry instrumentation skipped: {exc}")
 
     Base.metadata.create_all(bind=engine)
     yield

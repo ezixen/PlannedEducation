@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface AnonymizedAnswer {
   question_id: string;
+  question_type?: string;
   question_text: string;
   student_response: string;
   points_possible: number;
@@ -48,7 +49,7 @@ interface TeacherCorrectionModalProps {
   ) => void;
   onToggleApproval: (submissionId: string, questionId: string, approved: boolean) => void;
   onApproveAllQuestions: (submissionId: string) => void;
-  onSaveGrades: (submission: SubmissionWithAIGrades, approveAll?: boolean) => void;
+  onSaveGrades: (submission: SubmissionWithAIGrades, approveAll?: boolean) => Promise<void> | void;
 }
 
 const FEEDBACK_CHIPS = [
@@ -741,8 +742,8 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
             <button
               type="button"
               data-testid="apply-approved-grades-btn"
-              onClick={() => {
-                onSaveGrades(submission, true);
+              onClick={async () => {
+                await onSaveGrades(submission, true);
                 onClose();
               }}
               style={{

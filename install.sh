@@ -1,487 +1,671 @@
-#!/bin/bash
-# PlannedEducation Linux Installer
-# Run with: curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash
-# Or download and run: chmod +x install.sh && ./install.sh
+#!/usr/bin/env bash
+# ==============================================================================
+# PlannedEducation - Complete Automated Installation Script (Linux / WSL)
+# ==============================================================================
+# Supports: Ubuntu/Debian, CentOS/RHEL/Fedora, Arch Linux, WSL2
+# Designed for both human operators and AI coding/deployment agents.
+#
+# AI AGENT DEPLOYMENT CONTRACT (MANDATORY FOR AI AGENTS):
+# AI agents can run this script non-interactively with `AUTO_CONFIRM=true`, BUT
+# before invoking this installer, the AI agent MUST STOP AND ASK the human
+# operator to confirm:
+#   1. Target installation directory (`INSTALL_DIR`, e.g., /opt/plannededucation)
+#   2. Deployment mode (`DEPLOY_MODE`: 1=SQLite Single-Server, 2=PostgreSQL+Redis, 3=Docker)
+#   3. Initial Superadmin / School Admin identity (`ADMIN_EMAIL`, `ADMIN_NAME`, `ADMIN_PASS`, `SCHOOL_NAME`)
+#   4. Domain and preferred ports (`DOMAIN`, `API_PORT` default 8000, `FRONTEND_PORT` default 5173)
+#
+# DIAGNOSTIC LOGS (for humans & AI agents):
+# All installation and runtime logs are written to `<INSTALL_DIR>/logs/`:
+#   - `logs/install.log`        (full installation log)
+#   - `logs/install_error.log`  (installation warnings & errors only)
+#   - `logs/backend.log`        (backend structured JSON log, INFO and above)
+#   - `logs/backend_error.log`  (backend warnings/exceptions only, with tracebacks)
+#   - `logs/backend_stdout.log` / `logs/backend_stderr.log` (raw console capture - check if the backend fails to start)
+#   - `logs/frontend.log`       (frontend runtime stdout log)
+#   - `logs/frontend_error.log` (frontend runtime stderr/errors only)
+# ==============================================================================
 
 set -euo pipefail
 
-# Colors
+# Colors for output
+RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-RED='\033[0;31m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 BOLD='\033[1m'
 RESET='\033[0m'
 
-print_header() {
-    echo -e "\n${CYAN}${BOLD}============================================================${RESET}"
-    echo -e "${CYAN}${BOLD}$1${RESET}"
-    echo -e "${CYAN}${BOLD}============================================================${RESET}\n"
+INSTALL_DIR="${INSTALL_DIR:-${1:-/opt/plannededucation}}"
+DEPLOY_MODE="${DEPLOY_MODE:-1}"
+DOMAIN="${DOMAIN:-localhost}"
+API_PORT="${API_PORT:-8000}"
+FRONTEND_PORT="${FRONTEND_PORT:-5173}"
+ADMIN_EMAIL="${ADMIN_EMAIL:-admin@yourschool.edu}"
+ADMIN_PASS="${ADMIN_PASSWORD:-${ADMIN_PASS:-AdminPassword123!}}"
+ADMIN_NAME="${ADMIN_NAME:-School Administrator}"
+SCHOOL_NAME="${SCHOOL_NAME:-PlannedEducation School}"
+AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
+SHARED_VENV="${SHARED_VENV:-}"
+
+LOG_DIR="$INSTALL_DIR/logs"
+INSTALL_LOG="$LOG_DIR/install.log"
+INSTALL_ERR_LOG="$LOG_DIR/install_error.log"
+
+write_install_log() {
+    local level="$1"
+    local msg="$2"
+    local is_err="${3:-false}"
+    if [[ -d "$INSTALL_DIR" ]]; then
+        mkdir -p "$LOG_DIR" 2>/dev/null || true
+        local ts
+        ts=$(date +"%Y-%m-%d %H:%M:%S")
+        echo "[$ts] [$level] $msg" >> "$INSTALL_LOG" 2>/dev/null || true
+        if [[ "$is_err" == "true" ]]; then
+            echo "[$ts] [$level] $msg" >> "$INSTALL_ERR_LOG" 2>/dev/null || true
+        fi
+    fi
 }
 
-print_step() {
-    echo -e "${BLUE}${BOLD}[Step $1/$2] $3${RESET}"
+get_available_port() {
+    local preferred="$1"
+    shift
+    local candidates=("$preferred" "$@")
+    for p in "${candidates[@]}"; do
+        if ! ss -ltn 2>/dev/null | grep -q -E ":${p}[[:space:]]" && ! netstat -ltn 2>/dev/null | grep -q -E ":${p}[[:space:]]"; then
+            echo "$p"
+            return 0
+        fi
+    done
+    echo "$preferred"
+}
+
+print_header() {
+    echo ""
+    echo -e "${CYAN}============================================================${RESET}"
+    echo -e "${BOLD}${CYAN}$1${RESET}"
+    echo -e "${CYAN}============================================================${RESET}"
+    echo ""
+    write_install_log "STEP" "$1" "false"
 }
 
 print_success() {
     echo -e "${GREEN}[OK] $1${RESET}"
+    write_install_log "OK" "$1" "false"
 }
 
 print_warning() {
     echo -e "${YELLOW}[WARN] $1${RESET}"
+    write_install_log "WARN" "$1" "true"
 }
 
 print_error() {
     echo -e "${RED}[ERROR] $1${RESET}"
+    write_install_log "ERROR" "$1" "true"
 }
 
-# Check if running as root
-if [[ $EUID -eq 0 ]]; then
-    print_warning "Running as root. This is not recommended for production."
-    read -p "Continue anyway? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        exit 1
+print_info() {
+    echo -e "${BLUE}[INFO] $1${RESET}"
+    write_install_log "INFO" "$1" "false"
+}
+
+confirm_action() {
+    local message="$1"
+    if [[ "$AUTO_CONFIRM" == "true" ]]; then
+        return 0
     fi
-fi
-
-print_header "PlannedEducation Linux Installer"
-
-# Detect OS
-if [[ -f /etc/os-release ]]; then
-    . /etc/os-release
-    print_success "Detected OS: $PRETTY_NAME"
-else
-    print_warning "Could not detect OS version"
-fi
-
-# Choose deployment mode
-print_header "Deployment Mode Selection"
-echo -e "${BOLD}Choose deployment mode:${RESET}"
-echo -e "  ${GREEN}1)${RESET} Native (no Docker) - PostgreSQL, Redis, and app run directly on host"
-echo -e "  ${GREEN}2)${RESET} Docker Compose - All services in containers (current default)"
-echo
-read -p "Select mode [1/2] [1]: " DEPLOY_MODE
-DEPLOY_MODE="${DEPLOY_MODE:-1}"
-
-if [[ "$DEPLOY_MODE" == "1" ]]; then
-    DEPLOY_NATIVE=true
-    print_success "Native deployment selected"
-else
-    DEPLOY_NATIVE=false
-    print_success "Docker Compose deployment selected"
-fi
-
-# Check requirements
-print_step 1 8 "Checking requirements..."
+    read -r -p "$message (y/N): " response
+    [[ "$response" =~ ^[Yy]$ ]]
+}
 
 check_command() {
-    if command -v "$1" &> /dev/null; then
-        version=$($1 --version 2>&1 | head -n1)
-        print_success "$1: $version"
+    local name="$1"
+    local cmd="$2"
+    echo -n "Checking for $name... "
+    if command -v "$cmd" &>/dev/null; then
+        local ver
+        ver=$("$cmd" --version 2>&1 | head -n 1 || true)
+        echo -e "${GREEN}FOUND ($ver)${RESET}"
         return 0
     else
-        print_error "$1: NOT FOUND"
+        echo -e "${RED}NOT FOUND${RESET}"
         return 1
     fi
 }
 
-checks_passed=true
-USE_SQLITE=false
-
-if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-    # Native deployment requirements
-    # Python and Git are mandatory
-    for cmd in git python3; do
-        if ! check_command "$cmd"; then
-            checks_passed=false
-        fi
-    done
-    
-    # Optional services
-    if ! command -v psql &> /dev/null || ! command -v redis-cli &> /dev/null; then
-        print_warning "PostgreSQL or Redis CLI not found. Falling back to Native SQLite mode (zero-configuration standalone mode)."
-        USE_SQLITE=true
-    else
-        # Check PostgreSQL service
-        if systemctl is-active --quiet postgresql 2>/dev/null || service postgresql status 2>/dev/null | grep -q "active"; then
-            print_success "PostgreSQL: running"
-        else
-            print_warning "PostgreSQL: not running (will attempt to start or fall back to SQLite)"
-        fi
-        
-        # Check Redis service
-        if systemctl is-active --quiet redis 2>/dev/null || service redis status 2>/dev/null | grep -q "active"; then
-            print_success "Redis: running"
-        else
-            print_warning "Redis: not running (will attempt to start)"
-        fi
+load_dotenv() {
+    local env_file="$1"
+    if [[ -f "$env_file" ]]; then
+        set -a
+        # shellcheck disable=SC1090
+        source "$env_file"
+        set +a
     fi
+}
+
+print_header "PlannedEducation Automated Installer (Linux)"
+
+# Detect OS
+if [[ -f /etc/os-release ]]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    OS=$ID
+    VER=${VERSION_ID:-unknown}
 else
-    # Docker deployment requirements
-    for cmd in docker git python3; do
-        if ! check_command "$cmd"; then
-            checks_passed=false
-        fi
-    done
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+print_info "Detected OS: $OS $VER"
 
-    # Check Docker Compose
-    if docker compose version &> /dev/null; then
-        version=$(docker compose version --short)
-        print_success "Docker Compose: $version"
-    elif command -v docker-compose &> /dev/null; then
-        version=$(docker-compose --version | head -n1)
-        print_success "Docker Compose: $version"
-    else
-        print_error "Docker Compose: NOT FOUND"
-        checks_passed=false
-    fi
+HAS_SUDO=false
+if [[ $EUID -eq 0 ]]; then
+    HAS_SUDO=true
+elif sudo -n true 2>/dev/null; then
+    HAS_SUDO=true
 fi
 
-if [[ "$checks_passed" != "true" ]]; then
-    print_error "Please install missing requirements and try again."
-    if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-        echo "Ubuntu/Debian: sudo apt update && sudo apt install -y git python3 python3-venv python3-pip"
-    else
-        echo "Install Docker: https://docs.docker.com/engine/install/"
-        echo "Install Docker Compose: https://docs.docker.com/compose/install/"
-    fi
-    exit 1
+# ==============================================================================
+# Step 1: Check Prerequisites
+# ==============================================================================
+print_header "Step 1: Checking Prerequisites"
+
+HAS_GIT=false; check_command "Git" "git" && HAS_GIT=true || true
+HAS_PYTHON=false; check_command "Python 3.11+" "python3" && HAS_PYTHON=true || true
+HAS_NODE=false; check_command "Node.js 20+" "node" && HAS_NODE=true || true
+HAS_NPM=false; check_command "npm" "npm" && HAS_NPM=true || true
+HAS_DOCKER=false; check_command "Docker" "docker" && HAS_DOCKER=true || true
+HAS_POSTGRES=false; check_command "PostgreSQL" "psql" && HAS_POSTGRES=true || true
+HAS_REDIS=false; check_command "Redis" "redis-cli" && HAS_REDIS=true || true
+
+# ==============================================================================
+# Step 2: Choose Deployment Mode
+# ==============================================================================
+print_header "Step 2: Choose Deployment Mode"
+
+if [[ "$AUTO_CONFIRM" != "true" ]]; then
+    echo "How would you like to deploy PlannedEducation?"
+    echo ""
+    echo "  1) Local Development / Single-Server (SQLite + In-Memory Cache) - Fastest setup"
+    echo "  2) Production Server (PostgreSQL + Redis + Systemd + Nginx) - Recommended for schools"
+    echo "  3) Docker Compose (All-in-One Containers) - Easiest management"
+    echo ""
+    read -r -p "Select mode [1-3] (default: $DEPLOY_MODE): " input_mode
+    DEPLOY_MODE=${input_mode:-$DEPLOY_MODE}
 fi
 
-# Get installation directory
-print_step 2 8 "Setting up installation directory..."
-INSTALL_DIR="${1:-/opt/plannededucation}"
-read -p "Installation directory [$INSTALL_DIR]: " input_dir
-INSTALL_DIR="${input_dir:-$INSTALL_DIR}"
+USE_SQLITE="false"
+USE_DOCKER="false"
 
-if [[ -d "$INSTALL_DIR" ]]; then
-    print_warning "Directory $INSTALL_DIR already exists"
-    read -p "Continue anyway? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+case "$DEPLOY_MODE" in
+    1)
+        print_info "Selected: Local Development / Single-Server Mode (SQLite)"
+        USE_SQLITE="true"
+        ;;
+    2)
+        print_info "Selected: Production Server Mode (PostgreSQL + Redis)"
+        USE_SQLITE="false"
+        ;;
+    3)
+        print_info "Selected: Docker Compose Mode"
+        USE_DOCKER="true"
+        ;;
+    *)
+        print_warning "Invalid selection. Defaulting to Mode 1 (SQLite)."
+        DEPLOY_MODE="1"
+        USE_SQLITE="true"
+        ;;
+esac
+
+# ==============================================================================
+# Step 3: Check & Install Required Dependencies
+# ==============================================================================
+print_header "Step 3: Checking & Installing Required Dependencies"
+
+MISSING_REQUIRED=()
+[[ "$HAS_GIT" == "false" ]] && MISSING_REQUIRED+=("git")
+if [[ "$USE_DOCKER" == "false" ]]; then
+    [[ "$HAS_PYTHON" == "false" ]] && MISSING_REQUIRED+=("python3")
+    [[ "$HAS_NODE" == "false" ]] && MISSING_REQUIRED+=("nodejs")
+    [[ "$HAS_NPM" == "false" ]] && MISSING_REQUIRED+=("npm")
+fi
+if [[ "$USE_SQLITE" == "false" && "$USE_DOCKER" == "false" ]]; then
+    [[ "$HAS_POSTGRES" == "false" ]] && MISSING_REQUIRED+=("postgresql")
+    [[ "$HAS_REDIS" == "false" ]] && MISSING_REQUIRED+=("redis")
+fi
+if [[ "$USE_DOCKER" == "true" && "$HAS_DOCKER" == "false" ]]; then
+    MISSING_REQUIRED+=("docker")
+fi
+
+if [[ ${#MISSING_REQUIRED[@]} -gt 0 ]]; then
+    print_warning "Missing required dependencies for Mode $DEPLOY_MODE: ${MISSING_REQUIRED[*]}"
+    if confirm_action "Install missing dependencies using system package manager?"; then
+        case "$OS" in
+            ubuntu|debian|pop|linuxmint)
+                sudo apt-get update
+                sudo apt-get install -y curl wget gnupg2 software-properties-common build-essential libpq-dev python3 python3-venv python3-pip git
+                if [[ "$HAS_NODE" == "false" || "$HAS_NPM" == "false" ]]; then
+                    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+                    sudo apt-get install -y nodejs
+                fi
+                if [[ "$USE_SQLITE" == "false" && "$USE_DOCKER" == "false" ]]; then
+                    sudo apt-get install -y postgresql postgresql-contrib redis-server nginx certbot python3-certbot-nginx
+                fi
+                ;;
+            centos|rhel|fedora|rocky|almalinux)
+                sudo dnf install -y curl wget git gcc gcc-c++ make postgresql-devel python3 python3-pip nodejs npm
+                ;;
+            arch|manjaro)
+                sudo pacman -Sy --noconfirm base-devel git python python-pip nodejs npm
+                ;;
+            *)
+                print_error "Unsupported OS for automatic dependency installation: $OS"
+                exit 1
+                ;;
+        esac
+        print_success "Required dependencies installed!"
+    else
+        print_error "Cannot proceed without required dependencies."
         exit 1
     fi
-fi
-
-# Clone repository
-print_step 3 8 "Cloning repository..."
-if [[ -d "$INSTALL_DIR/.git" ]]; then
-    print_warning "Repository already exists, pulling latest changes..."
-    cd "$INSTALL_DIR"
-    git pull origin main
 else
-    git clone https://github.com/ezixen/PlannedEducation.git "$INSTALL_DIR"
-    cd "$INSTALL_DIR"
+    print_success "All required dependencies for Mode $DEPLOY_MODE are installed!"
 fi
 
-# Configure environment
-print_step 4 8 "Configuring environment..."
-if [[ ! -f .env ]]; then
-    cp .env.example .env
-    
-    # Generate secure keys
-    JWT_KEY=$(python3 -c "import secrets; print(secrets.token_hex(64))")
-    FERNET_KEY=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
-    
-    # Get domain
-    read -p "School domain (e.g., yourschool.edu) [localhost]: " DOMAIN
-    DOMAIN="${DOMAIN:-localhost}"
-    
-    # Update .env
-    sed -i "s|JWT_SECRET_KEY=.*|JWT_SECRET_KEY=$JWT_KEY|" .env
-    sed -i "s|AI_KEY_MASTER_SECRET=.*|AI_KEY_MASTER_SECRET=$FERNET_KEY|" .env
-    sed -i "s|POSTGRES_PASSWORD=.*|POSTGRES_PASSWORD=$(openssl rand -base64 32)|" .env
-    
-    if [[ "$DOMAIN" != "localhost" ]]; then
-        sed -i "s|CORS_ORIGINS=.*|CORS_ORIGINS=https://$DOMAIN|" .env
-        sed -i "s|ALLOWED_HOSTS=.*|ALLOWED_HOSTS=$DOMAIN|" .env
-        sed -i "s|WEBAUTHN_RP_ID=.*|WEBAUTHN_RP_ID=$DOMAIN|" .env
-        sed -i "s|WEBAUTHN_ORIGIN=.*|WEBAUTHN_ORIGIN=https://$DOMAIN|" .env
+# ==============================================================================
+# Step 4: Clone Repository & Setup Directory
+# ==============================================================================
+print_header "Step 4: Setting Up Application Directory"
+
+if [[ "$AUTO_CONFIRM" != "true" ]]; then
+    read -r -p "Installation directory (default: $INSTALL_DIR): " input_dir
+    INSTALL_DIR=${input_dir:-$INSTALL_DIR}
+fi
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ ! -d "$INSTALL_DIR" ]]; then
+    mkdir -p "$INSTALL_DIR" 2>/dev/null || {
+        sudo mkdir -p "$INSTALL_DIR"
+        sudo chown -R "$USER:$USER" "$INSTALL_DIR"
+    }
+    print_success "Created directory: $INSTALL_DIR"
+fi
+
+if [[ ! -d "$INSTALL_DIR/.git" ]]; then
+    print_info "Cloning PlannedEducation repository into $INSTALL_DIR..."
+    CLONE_TMP="$INSTALL_DIR.clone-tmp"
+    rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
+    if git clone --quiet https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP"; then
+        cp -a "$CLONE_TMP/." "$INSTALL_DIR/"
+        rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
+        print_success "Repository cloned successfully"
+    else
+        print_error "git clone failed"
+        exit 1
     fi
-    
-    print_success "Environment configured"
 else
-    print_warning ".env already exists, skipping configuration"
+    print_info "Repository already exists in $INSTALL_DIR, pulling latest changes..."
+    (cd "$INSTALL_DIR" && git pull origin dev 2>/dev/null || true)
+    print_success "Repository ready"
 fi
 
-# Build and start
-print_step 5 8 "Building and starting platform..."
+# Sync local workspace files if running from a local repository checkout
+if [[ -d "$SCRIPT_DIR/src/plannededucation" && "$SCRIPT_DIR" != "$INSTALL_DIR" ]]; then
+    print_info "Syncing latest workspace source files from $SCRIPT_DIR to $INSTALL_DIR..."
+    mkdir -p "$INSTALL_DIR/src" "$INSTALL_DIR/web/apps/portal/src"
+    if command -v rsync &>/dev/null; then
+        rsync -a --exclude '__pycache__' --exclude '*.pyc' "$SCRIPT_DIR/src/" "$INSTALL_DIR/src/"
+        rsync -a --exclude 'node_modules' --exclude 'dist' --exclude '.mypy_cache' --exclude '.env*' "$SCRIPT_DIR/web/apps/portal/" "$INSTALL_DIR/web/apps/portal/"
+    else
+        cp -r "$SCRIPT_DIR/src/"* "$INSTALL_DIR/src/"
+        cp -r "$SCRIPT_DIR/web/apps/portal/src/"* "$INSTALL_DIR/web/apps/portal/src/"
+        [[ -f "$SCRIPT_DIR/web/apps/portal/package.json" ]] && cp -f "$SCRIPT_DIR/web/apps/portal/package.json" "$INSTALL_DIR/web/apps/portal/package.json"
+        [[ -f "$SCRIPT_DIR/web/apps/portal/vite.config.ts" ]] && cp -f "$SCRIPT_DIR/web/apps/portal/vite.config.ts" "$INSTALL_DIR/web/apps/portal/vite.config.ts"
+        [[ -f "$SCRIPT_DIR/web/apps/portal/index.html" ]] && cp -f "$SCRIPT_DIR/web/apps/portal/index.html" "$INSTALL_DIR/web/apps/portal/index.html"
+    fi
+    cp -f "$SCRIPT_DIR/install.sh" "$INSTALL_DIR/install.sh"
+    cp -f "$SCRIPT_DIR/uninstall.sh" "$INSTALL_DIR/uninstall.sh"
+    cp -f "$SCRIPT_DIR/install.ps1" "$INSTALL_DIR/install.ps1"
+    cp -f "$SCRIPT_DIR/uninstall.ps1" "$INSTALL_DIR/uninstall.ps1"
+fi
 
-if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-    # Native deployment
-    print_step 5 8 "Setting up Python environment..."
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip setuptools wheel
-    pip install -r src/requirements.txt
-    
-    # Build frontend
-    print_step 5 8 "Building frontend..."
-    cd web/apps/portal
-    npm ci
+cd "$INSTALL_DIR"
+
+# ==============================================================================
+# Step 5: Configure Environment Variables & Secrets
+# ==============================================================================
+print_header "Step 5: Configuring Environment & Secrets"
+
+ENV_FILE="$INSTALL_DIR/.env"
+if [[ ! -f "$ENV_FILE" ]] || confirm_action "Overwrite existing .env configuration?"; then
+    print_info "Generating cryptographically secure secrets..."
+
+    JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))")
+    FERNET_KEY=$(python3 -c "import secrets, base64; print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())")
+
+    if [[ "$AUTO_CONFIRM" != "true" ]]; then
+        read -r -p "Enter your domain or IP address (default: $DOMAIN): " input_domain
+        DOMAIN=${input_domain:-$DOMAIN}
+    fi
+
+    API_PORT=$(get_available_port "$API_PORT" 8002 8001 8080)
+    FRONTEND_PORT=$(get_available_port "$FRONTEND_PORT" 5175 5174 5176)
+
+    if [[ "$USE_SQLITE" == "true" ]]; then
+        DB_URL="sqlite:///$INSTALL_DIR/plannededucation.db"
+        REDIS_URL="memory://"
+        ENV_MODE="development"
+        SEB_BYPASS="true"
+    else
+        DB_PASS=$(python3 -c "import secrets; print(secrets.token_hex(16))")
+        DB_URL="postgresql://pe_user:${DB_PASS}@localhost:5432/plannededucation"
+        REDIS_URL="redis://localhost:6379/0"
+        ENV_MODE="production"
+        SEB_BYPASS="false"
+    fi
+
+    cat > "$ENV_FILE" <<EOF
+# PlannedEducation Environment Configuration
+# Generated on $(date +"%d/%m/%Y %H:%M:%S")
+
+# Database
+DATABASE_URL=${DB_URL}
+
+# Redis
+REDIS_URL=${REDIS_URL}
+
+# Security Secrets (NEVER SHARE THESE!)
+JWT_SECRET_KEY=${JWT_SECRET}
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+ENCRYPTION_KEY=${FERNET_KEY}
+AI_KEY_MASTER_SECRET=${FERNET_KEY}
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=${API_PORT}
+FRONTEND_PORT=${FRONTEND_PORT}
+CORS_ORIGINS=http://${DOMAIN}:${FRONTEND_PORT},http://${DOMAIN}:5173,http://${DOMAIN}:5175,http://localhost:${FRONTEND_PORT},http://localhost:5173,http://localhost:5175,http://127.0.0.1:${FRONTEND_PORT},http://127.0.0.1:5173,http://127.0.0.1:5175,https://${DOMAIN}
+
+# Anonymizer / Presidio
+ANONYMIZER_ENABLED=true
+ANONYMIZER_LANGUAGE=en
+
+# Environment & SEB
+ENVIRONMENT=${ENV_MODE}
+PLANNED_EDUCATION_ENV=${ENV_MODE}
+ALLOW_DEV_SEB_BYPASS=${SEB_BYPASS}
+EOF
+    chmod 600 "$ENV_FILE"
+    print_success "Created .env file with secure random secrets (API port: $API_PORT, Frontend port: $FRONTEND_PORT)"
+else
+    print_info "Keeping existing .env file"
+fi
+
+load_dotenv "$ENV_FILE"
+API_PORT="${PORT:-$API_PORT}"
+FRONTEND_PORT="${FRONTEND_PORT:-5173}"
+
+# ==============================================================================
+# Step 6: Setup Application & Databases
+# ==============================================================================
+if [[ "$USE_DOCKER" == "true" ]]; then
+    print_header "Step 6: Starting Docker Containers"
+    print_info "Building and starting containers via Docker Compose..."
+    docker compose up -d --build
+    print_success "Docker containers started!"
+else
+    print_header "Step 6: Setting Up Databases & Application"
+
+    if [[ "$USE_SQLITE" == "false" && "$HAS_SUDO" == "true" ]]; then
+        print_info "Setting up PostgreSQL database..."
+        sudo -u postgres psql -c "CREATE USER pe_user WITH PASSWORD '${DB_PASS:-}';" 2>/dev/null || true
+        sudo -u postgres psql -c "CREATE DATABASE plannededucation OWNER pe_user;" 2>/dev/null || true
+        sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE plannededucation TO pe_user;" 2>/dev/null || true
+        print_success "PostgreSQL database configured"
+    fi
+
+    # Setup Python Virtual Environment
+    if [[ -n "$SHARED_VENV" && -x "$SHARED_VENV/bin/python" ]]; then
+        PYTHON_EXE="$SHARED_VENV/bin/python"
+        print_info "Using shared Python virtual environment at $SHARED_VENV..."
+    else
+        print_info "Creating Python virtual environment at $INSTALL_DIR/.venv..."
+        python3 -m venv "$INSTALL_DIR/.venv" || {
+            python3 -m venv --without-pip "$INSTALL_DIR/.venv"
+            curl -fsSL https://bootstrap.pypa.io/get-pip.py | "$INSTALL_DIR/.venv/bin/python"
+        }
+        PYTHON_EXE="$INSTALL_DIR/.venv/bin/python"
+    fi
+
+    print_info "Installing Python dependencies..."
+    "$PYTHON_EXE" -m pip install -q --upgrade pip
+    "$PYTHON_EXE" -m pip install -q -r "$INSTALL_DIR/src/requirements.txt"
+    print_success "Python dependencies installed"
+
+    # Initialize Database Tables
+    print_info "Initializing database tables..."
+    export PYTHONPATH="$INSTALL_DIR/src"
+    "$PYTHON_EXE" -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; Base.metadata.create_all(bind=engine); print('Database tables initialized successfully!')"
+    print_success "Database tables created"
+
+    # Setup Frontend
+    print_info "Building React frontend..."
+    cd "$INSTALL_DIR/web/apps/portal"
+    rm -f .env.local .env.development .env.production 2>/dev/null || true
+    echo "VITE_API_URL=http://127.0.0.1:${API_PORT}" > .env
+    echo "VITE_API_URL=http://127.0.0.1:${API_PORT}" > .env.local
+    npm install --silent --no-audit --no-fund
     npm run build
     cd "$INSTALL_DIR"
-    
-    # Setup database
-    if [[ "$USE_SQLITE" == "true" ]]; then
-        print_step 5 8 "Setting up SQLite database..."
-        sed -i "s|DATABASE_URL=.*|DATABASE_URL=sqlite:///$INSTALL_DIR/plannededucation.db|" .env
-        print_success "Configured SQLite: sqlite:///$INSTALL_DIR/plannededucation.db"
-    else
-        # Setup PostgreSQL database
-        print_step 5 8 "Setting up PostgreSQL database..."
-        DB_NAME="plannededucation"
-        DB_USER="plannededucation"
-        DB_PASS=$(openssl rand -base64 32 2>/dev/null || python3 -c "import secrets; print(secrets.token_urlsafe(24))")
-        
-        sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';" 2>/dev/null || true
-        sudo -u postgres psql -c "CREATE DATABASE $DB_NAME OWNER $DB_USER;" 2>/dev/null || true
-        sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;" 2>/dev/null || true
-        
-        # Update .env with database URL
-        sed -i "s|DATABASE_URL=.*|DATABASE_URL=postgresql+psycopg://$DB_USER:$DB_PASS@localhost:5432/$DB_NAME|" .env
-        
-        # Start Redis
-        sudo systemctl start redis 2>/dev/null || sudo service redis start 2>/dev/null || true
-    fi
-    
-    # Initialize database
-    print_step 6 8 "Initializing database..."
-    source .venv/bin/activate
-    python -c "
-from src.plannededucation.api.database import Base, engine
-from src.plannededucation.api import models
-Base.metadata.create_all(bind=engine)
-print('Database initialized')
-"
-    
-    # Create systemd services
-    print_step 6 8 "Creating systemd services..."
-    cat > /tmp/plannededucation-backend.service << EOF
+    print_success "Frontend built successfully"
+
+    mkdir -p "$LOG_DIR"
+
+    # Create Launcher Scripts with separated stdout and error logs
+    cat > "$INSTALL_DIR/start_backend.sh" <<EOF
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$INSTALL_DIR"
+mkdir -p "$INSTALL_DIR/logs"
+set -a
+source "$INSTALL_DIR/.env"
+set +a
+export PYTHONPATH="$INSTALL_DIR/src"
+export PLANNED_EDUCATION_LOG_DIR="$INSTALL_DIR/logs"
+echo "Starting PlannedEducation Backend on port \${API_PORT:-${API_PORT}} (structured logs: logs/backend.log / logs/backend_error.log, raw console: logs/backend_stdout.log / logs/backend_stderr.log)..."
+exec "$PYTHON_EXE" -m uvicorn plannededucation.api.main:app --host 0.0.0.0 --port "\${API_PORT:-${API_PORT}}" >> "$INSTALL_DIR/logs/backend_stdout.log" 2>> "$INSTALL_DIR/logs/backend_stderr.log"
+EOF
+    chmod +x "$INSTALL_DIR/start_backend.sh"
+
+    cat > "$INSTALL_DIR/start_frontend.sh" <<EOF
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$INSTALL_DIR/web/apps/portal"
+mkdir -p "$INSTALL_DIR/logs"
+echo "Starting PlannedEducation Frontend on port \${FRONTEND_PORT:-${FRONTEND_PORT}} (Logs: logs/frontend.log, Error Logs: logs/frontend_error.log)..."
+exec npm run preview -- --host 0.0.0.0 --port "\${FRONTEND_PORT:-${FRONTEND_PORT}}" >> "$INSTALL_DIR/logs/frontend.log" 2>> "$INSTALL_DIR/logs/frontend_error.log"
+EOF
+    chmod +x "$INSTALL_DIR/start_frontend.sh"
+    print_success "Created launcher scripts: start_backend.sh, start_frontend.sh (with logs/backend.log & logs/backend_error.log)"
+
+    # Setup Systemd & Nginx if in Mode 2 and root/sudo with active systemd
+    if [[ "$USE_SQLITE" == "false" && "$HAS_SUDO" == "true" ]] && pidof systemd &>/dev/null; then
+        print_info "Creating Systemd service for Backend..."
+        cat > /tmp/plannededucation-backend.service <<EOF
 [Unit]
-Description=PlannedEducation Backend
-After=network.target postgresql.service redis.service
-Requires=postgresql.service redis.service
+Description=PlannedEducation FastAPI Backend
+After=network.target
 
 [Service]
-Type=simple
-User=www-data
+User=$USER
+Group=$USER
 WorkingDirectory=$INSTALL_DIR
-Environment=PATH=$INSTALL_DIR/.venv/bin
+Environment="PYTHONPATH=$INSTALL_DIR/src"
+Environment="PLANNED_EDUCATION_LOG_DIR=$INSTALL_DIR/logs"
 EnvironmentFile=$INSTALL_DIR/.env
-ExecStart=$INSTALL_DIR/.venv/bin/uvicorn src.plannededucation.api.main:app --host 0.0.0.0 --port 8000
-Restart=on-failure
+ExecStart=$PYTHON_EXE -m uvicorn plannededucation.api.main:app --host 0.0.0.0 --port ${API_PORT} --workers 4
+Restart=always
 RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
 EOF
-    
-    sudo mv /tmp/plannededucation-backend.service /etc/systemd/system/
-    sudo systemctl daemon-reload
-    sudo systemctl enable plannededucation-backend
-    sudo systemctl start plannededucation-backend
-    
-    # Configure nginx
-    print_step 6 8 "Configuring nginx..."
-    cat > /tmp/plannededucation-nginx << EOF
-server {
-    listen 80;
-    server_name ${DOMAIN:-localhost};
-    
-    # Frontend static files
-    location / {
-        root $INSTALL_DIR/web/apps/portal/dist;
-        try_files \$uri \$uri/ /index.html;
-        index index.html;
-    }
-    
-    # Backend API
-    location /api/ {
-        proxy_pass http://localhost:8000;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
-    
-    # WebSocket support
-    location /ws/ {
-        proxy_pass http://localhost:8000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade \$http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-    }
-    
-    # Health checks
-    location /health {
-        proxy_pass http://localhost:8000/health;
-        access_log off;
-    }
-}
-EOF
-    
-    sudo mv /tmp/plannededucation-nginx /etc/nginx/sites-available/plannededucation
-    sudo ln -sf /etc/nginx/sites-available/plannededucation /etc/nginx/sites-enabled/
-    sudo nginx -t && sudo systemctl reload nginx
-    
-else
-    # Docker deployment
-    docker compose up -d --build
+        sudo mv /tmp/plannededucation-backend.service /etc/systemd/system/plannededucation-backend.service
+        sudo systemctl daemon-reload
+        sudo systemctl enable plannededucation-backend
+        sudo systemctl restart plannededucation-backend
+        print_success "Systemd service 'plannededucation-backend' started"
+    fi
+fi
 
-    # Wait for services
-    print_step 6 8 "Waiting for services to start..."
-    sleep 20
+# ==============================================================================
+# Step 7: Create Initial Superadmin & School
+# ==============================================================================
+print_header "Step 7: Creating Initial Superadmin & School"
 
-    # Initialize database
-    print_step 7 8 "Initializing database..."
-    docker compose exec -T backend python -c "
-from src.plannededucation.api.database import Base, engine
-from src.plannededucation.api import models
+if [[ "$AUTO_CONFIRM" != "true" ]]; then
+    read -r -p "Enter School / Institution Name (default: $SCHOOL_NAME): " input_school
+    SCHOOL_NAME=${input_school:-$SCHOOL_NAME}
+    read -r -p "Enter Superadmin Email (default: $ADMIN_EMAIL): " input_email
+    ADMIN_EMAIL=${input_email:-$ADMIN_EMAIL}
+    read -r -s -p "Enter Superadmin Password (default: $ADMIN_PASS): " input_pass
+    echo ""
+    ADMIN_PASS=${input_pass:-$ADMIN_PASS}
+    read -r -p "Enter Superadmin Full Name (default: $ADMIN_NAME): " input_name
+    ADMIN_NAME=${input_name:-$ADMIN_NAME}
+fi
+
+if [[ "$USE_DOCKER" == "false" ]]; then
+    export PYTHONPATH="$INSTALL_DIR/src"
+    export PE_ADMIN_EMAIL="$ADMIN_EMAIL"
+    export PE_ADMIN_PASS="$ADMIN_PASS"
+    export PE_ADMIN_NAME="$ADMIN_NAME"
+    export PE_SCHOOL_NAME="$SCHOOL_NAME"
+    "$PYTHON_EXE" - <<'PYEOF'
+import os
+from plannededucation.api.database import Base, SessionLocal, engine
+from plannededucation.api.models import School, User, UserRole
+from plannededucation.api.routes_auth import get_password_hash
+
 Base.metadata.create_all(bind=engine)
-print('Database initialized')
-"
-fi
-
-# Create admin user
-print_step 7 8 "Creating admin user..."
-read -p "Admin email [admin@yourschool.edu]: " ADMIN_EMAIL
-ADMIN_EMAIL="${ADMIN_EMAIL:-admin@yourschool.edu}"
-
-read -p "Admin username [admin]: " ADMIN_USER
-ADMIN_USER="${ADMIN_USER:-admin}"
-
-read -p "Admin full name [School Administrator]: " ADMIN_NAME
-ADMIN_NAME="${ADMIN_NAME:-School Administrator}"
-
-read -s -p "Admin password (min 8 chars) [ChangeMe123!]: " ADMIN_PASS
-echo
-ADMIN_PASS="${ADMIN_PASS:-ChangeMe123!}"
-
-if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-    source .venv/bin/activate
-    python -c "
-from src.plannededucation.api.database import SessionLocal
-from src.plannededucation.api.models import User
-from src.plannededucation.api.routes_auth import get_password_hash
 db = SessionLocal()
-admin = User(
-    email='$ADMIN_EMAIL',
-    username='$ADMIN_USER',
-    full_name='$ADMIN_NAME',
-    hashed_password=get_password_hash('$ADMIN_PASS'),
-    role='admin',
-    is_admin=True,
-    is_active=True
-)
-db.add(admin)
-db.commit()
-print('Admin created: $ADMIN_EMAIL')
-print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
-"
-else
-    docker compose exec -T backend python -c "
-from src.plannededucation.api.database import SessionLocal
-from src.plannededucation.api.models import User
-from src.plannededucation.api.routes_auth import get_password_hash
-db = SessionLocal()
-admin = User(
-    email='$ADMIN_EMAIL',
-    username='$ADMIN_USER',
-    full_name='$ADMIN_NAME',
-    hashed_password=get_password_hash('$ADMIN_PASS'),
-    role='admin',
-    is_admin=True,
-    is_active=True
-)
-db.add(admin)
-db.commit()
-print('Admin created: $ADMIN_EMAIL')
-print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
-"
+try:
+    school_name = os.environ.get("PE_SCHOOL_NAME", "PlannedEducation School")
+    if not db.query(School).first():
+        db.add(School(name=school_name, address="Local Campus"))
+        db.commit()
+
+    email = os.environ["PE_ADMIN_EMAIL"]
+    pwd = os.environ["PE_ADMIN_PASS"]
+    name = os.environ["PE_ADMIN_NAME"]
+    uname = email.split("@")[0] or "admin"
+    existing = db.query(User).filter((User.email == email) | (User.username == uname)).first()
+    if existing:
+        existing.email = email
+        existing.hashed_password = get_password_hash(pwd)
+        existing.full_name = name
+        existing.role = UserRole.admin.value
+        existing.is_admin = True
+        existing.is_active = True
+        db.commit()
+        print(f"Updated existing Admin user: {email}")
+    else:
+        admin = User(
+            username=uname,
+            email=email,
+            hashed_password=get_password_hash(pwd),
+            full_name=name,
+            role=UserRole.admin.value,
+            is_admin=True,
+            is_active=True,
+        )
+        db.add(admin)
+        db.commit()
+        print(f"Created initial Admin user: {email}")
+finally:
+    db.close()
+PYEOF
+    cat > "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" <<EOF
+PlannedEducation Superadmin Credentials
+=======================================
+School Name:    $SCHOOL_NAME
+Admin Email:    $ADMIN_EMAIL
+Admin Password: $ADMIN_PASS
+Admin Name:     $ADMIN_NAME
+Backend API:    http://$DOMAIN:$API_PORT
+Frontend URL:   http://$DOMAIN:$FRONTEND_PORT
+EOF
+    chmod 600 "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" 2>/dev/null || true
+    print_success "Superadmin account ready: $ADMIN_EMAIL (saved to ADMIN_CREDENTIALS.txt)"
 fi
 
-# Verify deployment
-print_step 8 8 "Verifying deployment..."
+# ==============================================================================
+# Step 8: Run Verification Tests
+# ==============================================================================
+print_header "Step 8: Running Verification Tests"
 
-if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-    checks=(
-        "Backend API:curl -f http://localhost:8000/health"
-        "Frontend:curl -f http://localhost/health"
-        "Database:sudo -u postgres psql -c 'SELECT 1' >/dev/null 2>&1"
-        "Redis:redis-cli ping"
-        "Nginx:systemctl is-active --quiet nginx"
-        "Backend Service:systemctl is-active --quiet plannededucation-backend"
-    )
-else
-    checks=(
-        "Backend API:curl -f http://localhost:8000/health"
-        "Frontend:curl -f http://localhost/health"
-        "Database:docker compose exec -T postgres pg_isready -U postgres"
-        "Redis:docker compose exec -T redis redis-cli ping"
-    )
+TESTS_PASSED=0
+TESTS_FAILED=0
+
+run_verify() {
+    local name="$1"
+    local cmd="$2"
+    echo -n "Testing $name... "
+    if eval "$cmd" &>/dev/null; then
+        echo -e "${GREEN}PASSED${RESET}"
+        write_install_log "VERIFY_PASS" "$name" "false"
+        TESTS_PASSED=$((TESTS_PASSED + 1))
+    else
+        echo -e "${RED}FAILED${RESET}"
+        write_install_log "VERIFY_FAIL" "$name" "true"
+        TESTS_FAILED=$((TESTS_FAILED + 1))
+    fi
+}
+
+run_verify "Environment configuration (.env)" "test -s '$INSTALL_DIR/.env'"
+
+if [[ "$USE_SQLITE" == "true" ]]; then
+    run_verify "SQLite database initialized" "test -f '$INSTALL_DIR/plannededucation.db'"
+elif [[ "$USE_DOCKER" == "false" ]]; then
+    run_verify "PostgreSQL connection" "sudo -u postgres psql -c '\l'"
+    run_verify "Redis connection" "redis-cli ping | grep -q PONG"
 fi
 
-all_ok=true
-for check in "${checks[@]}"; do
-    name="${check%%:*}"
-    cmd="${check#*:}"
-    if eval "$cmd" &> /dev/null; then
-        echo -e "\033[0;32m[OK]\033[0m $name: OK"
-    else
-        echo -e "\033[0;31m[ERROR]\033[0m $name: FAILED"
-        all_ok=false
-    fi
-done
-
-# Show results
-if [[ "$all_ok" == "true" ]]; then
-    PROTOCOL="http"
-    PORT=""
-    if [[ "$DOMAIN" != "localhost" ]]; then
-        PROTOCOL="https"
-    fi
-    URL="${PROTOCOL}://${DOMAIN}${PORT}"
-    
-    echo -e "\n\033[0;32m\033[1m╔══════════════════════════════════════════════════════════╗"
-    echo -e "║                    DEPLOYMENT SUCCESSFUL!                    ║"
-    echo -e "╚══════════════════════════════════════════════════════════╝\033[0m"
-    echo -e "\n\033[1mAccess your platform:\033[0m"
-    echo -e "  🌐 Frontend:  ${URL}"
-    echo -e "  📚 API Docs:  ${PROTOCOL}://${DOMAIN}:8000/docs"
-    echo -e "  ❤️  Health:    ${PROTOCOL}://${DOMAIN}:8000/health"
-    echo -e "\n\033[1mFirst Login:\033[0m"
-    echo -e "  1. Open ${URL} in your browser"
-    echo -e "  2. Login with your admin credentials"
-    echo -e "  3. \033[0;31mIMMEDIATELY change your password\033[0m in Settings → Security"
-    echo -e "\n\033[1mUseful Commands:\033[0m"
-    if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-        echo -e "  View logs:     sudo journalctl -u plannededucation-backend -f"
-        echo -e "  Update:        cd $INSTALL_DIR && git pull && source .venv/bin/activate && pip install -r src/requirements.txt && cd web/apps/portal && npm ci && npm run build && sudo systemctl restart plannededucation-backend"
-        echo -e "  Backup:        sudo -u postgres pg_dump plannededucation | gzip > backup_\$(date +%Y%m%d).sql.gz"
-        echo -e "  Restart:       sudo systemctl restart plannededucation-backend nginx"
-    else
-        echo -e "  View logs:     docker compose logs -f backend"
-        echo -e "  Update:        git pull && docker compose build --no-cache && docker compose up -d"
-        echo -e "  Backup:        docker compose exec -T postgres pg_dump -U postgres plannededucation | gzip > backup_\$(date +%Y%m%d).sql.gz"
-        echo -e "  Restart:       docker compose restart"
-    fi
-    echo -e "\n\033[1mNext Steps:\033[0m"
-    echo -e "  1. Change admin password immediately"
-    echo -e "  2. Configure Google OAuth (optional) in Settings"
-    echo -e "  3. Add AI API keys in Settings → AI Keys"
-    echo -e "  4. Download SEB config for secure exams"
-    echo -e "  4. Set up daily backups (see DEPLOY_SIMPLE.md)"
-    echo -e "\n\033[0;36mNeed help? Check DEPLOY_SIMPLE.md or GitHub Issues\033[0m"
-else
-    echo -e "\n\033[0;31mSome services failed to start."
-    if [[ "$DEPLOY_NATIVE" == "true" ]]; then
-        echo -e "Check logs with: sudo journalctl -u plannededucation-backend -f\033[0m"
-    else
-        echo -e "Check logs with: docker compose logs -f\033[0m"
-    fi
+if [[ "$USE_DOCKER" == "false" ]]; then
+    run_verify "Frontend production build (dist/index.html)" "test -f '$INSTALL_DIR/web/apps/portal/dist/index.html'"
+    run_verify "Backend FastAPI health endpoint (TestClient)" "PYTHONPATH='$INSTALL_DIR/src' '$PYTHON_EXE' -c \"from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get('/health'); assert r.status_code == 200\""
 fi
+
+# ==============================================================================
+# Final Summary
+# ==============================================================================
+print_header "Installation Complete!"
+
+echo -e "${BOLD}Verification Results:${RESET} ${GREEN}$TESTS_PASSED passed${RESET}, ${RED}$TESTS_FAILED failed${RESET}"
+echo ""
+echo -e "${CYAN}============================================================${RESET}"
+echo -e "${BOLD}${GREEN}  PlannedEducation is installed and ready!${RESET}"
+echo -e "${CYAN}============================================================${RESET}"
+echo -e "  ${BOLD}Install Dir:${RESET}    $INSTALL_DIR"
+echo -e "  ${BOLD}School Name:${RESET}    $SCHOOL_NAME"
+echo -e "  ${BOLD}Backend API:${RESET}    http://$DOMAIN:$API_PORT"
+echo -e "  ${BOLD}API Docs:${RESET}       http://$DOMAIN:$API_PORT/docs"
+echo -e "  ${BOLD}Frontend App:${RESET}   http://$DOMAIN:$FRONTEND_PORT"
+echo -e "  ${BOLD}Admin Email:${RESET}    $ADMIN_EMAIL"
+echo -e "  ${BOLD}Admin Password:${RESET} $ADMIN_PASS"
+echo -e "  ${BOLD}Diagnostic Logs:${RESET}"
+echo -e "    - Install Log:        $INSTALL_DIR/logs/install.log"
+echo -e "    - Install Error Log:  $INSTALL_DIR/logs/install_error.log"
+echo -e "    - Backend Log:        $INSTALL_DIR/logs/backend.log"
+echo -e "    - Backend Error Log:  $INSTALL_DIR/logs/backend_error.log"
+echo -e "    - Frontend Log:       $INSTALL_DIR/logs/frontend.log"
+echo -e "    - Frontend Error Log: $INSTALL_DIR/logs/frontend_error.log"
+echo -e "${CYAN}============================================================${RESET}"
+echo ""
+print_info "Important Next Steps:"
+echo "  1. Start Backend:  $INSTALL_DIR/start_backend.sh"
+echo "  2. Start Frontend: $INSTALL_DIR/start_frontend.sh"
+echo "  3. Log in with your Superadmin credentials and change your password."
+echo ""
+print_success "Thank you for using PlannedEducation!"
