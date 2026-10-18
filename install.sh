@@ -516,26 +516,36 @@ echo "   Starting PlannedEducation Platform"
 echo "============================================================"
 
 echo "1. Starting Backend on port $API_PORT..."
-nohup "$INSTALL_DIR/start_backend.sh" >/dev/null 2>&1 &
+nohup "$INSTALL_DIR/start_backend.sh" </dev/null >> "$LOGS_DIR/backend_stdout.log" 2>> "$LOGS_DIR/backend_stderr.log" &
 echo $! > "$LOGS_DIR/backend.pid"
 
 echo "2. Starting Frontend on port $FRONTEND_PORT..."
-nohup "$INSTALL_DIR/start_frontend.sh" >/dev/null 2>&1 &
+nohup "$INSTALL_DIR/start_frontend.sh" </dev/null >> "$LOGS_DIR/frontend.log" 2>> "$LOGS_DIR/frontend_error.log" &
 echo $! > "$LOGS_DIR/frontend.pid"
 
 echo "3. Waiting for services to become ready..."
-HEALTHY=false
+BACKEND_HEALTHY=false
+FRONTEND_HEALTHY=false
 for i in {1..30}; do
     sleep 1
-    if curl -s "http://127.0.0.1:$API_PORT/health" 2>/dev/null | grep -q '"status":"ok"'; then
-        HEALTHY=true
+    if [[ "$BACKEND_HEALTHY" != "true" ]]; then
+        if curl -s "http://127.0.0.1:$API_PORT/health" 2>/dev/null | grep -q '"status":"ok"'; then
+            BACKEND_HEALTHY=true
+        fi
+    fi
+    if [[ "$FRONTEND_HEALTHY" != "true" ]]; then
+        if curl -s -I "http://127.0.0.1:$FRONTEND_PORT" 2>/dev/null | grep -q 'HTTP'; then
+            FRONTEND_HEALTHY=true
+        fi
+    fi
+    if [[ "$BACKEND_HEALTHY" == "true" && "$FRONTEND_HEALTHY" == "true" ]]; then
         break
     fi
 done
 
 echo ""
 echo "============================================================"
-if [[ "$HEALTHY" == "true" ]]; then
+if [[ "$BACKEND_HEALTHY" == "true" && "$FRONTEND_HEALTHY" == "true" ]]; then
     echo "  [OK] PlannedEducation is LIVE and HEALTHY!"
     echo "============================================================"
     echo "  Frontend Portal: http://$DOMAIN:$FRONTEND_PORT"
@@ -544,8 +554,14 @@ if [[ "$HEALTHY" == "true" ]]; then
     echo "  To stop:         Run ./stop_all.sh"
     echo "============================================================"
 else
-    echo "  [WARN] Backend health check timed out."
-    echo "  Check diagnostic logs in: $LOGS_DIR/backend_error.log"
+    if [[ "$BACKEND_HEALTHY" != "true" ]]; then
+        echo "  [WARN] Backend health check timed out."
+        echo "  Check diagnostic logs in: $LOGS_DIR/backend_error.log and $LOGS_DIR/backend_stderr.log"
+    fi
+    if [[ "$FRONTEND_HEALTHY" != "true" ]]; then
+        echo "  [WARN] Frontend preview check timed out."
+        echo "  Check diagnostic logs in: $LOGS_DIR/frontend_error.log"
+    fi
     echo "============================================================"
 fi
 EOF
@@ -576,6 +592,7 @@ if [[ -f "$LOGS_DIR/frontend.pid" ]]; then
 fi
 
 pkill -f "uvicorn plannededucation.api.main:app" 2>/dev/null || true
+pkill -f "vite preview" 2>/dev/null || true
 pkill -f "npm run preview" 2>/dev/null || true
 echo "[OK] PlannedEducation processes stopped."
 EOF
@@ -620,7 +637,7 @@ else
 fi
 
 echo -n "Checking Package Engine (http://127.0.0.1:$API_PORT/packages/health)... "
-if curl -s "http://127.0.0.1:$API_PORT/packages/health" 2>/dev/null | grep -q '"status":"ok"'; then
+if curl -s "http://127.0.0.1:$API_PORT/packages/health" 2>/dev/null | grep -E -q '"status":"ok"|"available":true'; then
     echo "OK"
 else
     echo "NOT RESPONDING"
@@ -682,7 +699,7 @@ if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
     FRONTEND_PORT="\$(grep -o '"frontend_port":[ ]*[0-9]*' "\$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo \${FRONTEND_PORT})"
 fi
 echo "Starting PlannedEducation Frontend on port \${FRONTEND_PORT}..."
-exec npm run preview -- --host 0.0.0.0 --port "\${FRONTEND_PORT}"
+exec npx vite preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
 EOF
     chmod +x "$INSTALL_DIR/start_frontend.sh"
     print_success "Created launcher & management suite: start_all.sh, stop_all.sh, verify.sh, start_backend.sh, start_frontend.sh"

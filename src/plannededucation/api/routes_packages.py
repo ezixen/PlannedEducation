@@ -464,6 +464,7 @@ async def list_packages(
 async def packages_health_check():
     """Health check for packages service."""
     return {
+        "status": "ok",
         "available": True,
         "service": "packages",
         "features": [
