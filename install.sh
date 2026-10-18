@@ -594,6 +594,7 @@ if [[ -f "$LOGS_DIR/frontend.pid" ]]; then
 fi
 
 pkill -f "uvicorn plannededucation.api.main:app" 2>/dev/null || true
+pkill -f "preview-server.mjs" 2>/dev/null || true
 pkill -f "vite preview" 2>/dev/null || true
 pkill -f "npm run preview" 2>/dev/null || true
 echo "[OK] PlannedEducation processes stopped."
@@ -701,9 +702,9 @@ FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
     FRONTEND_PORT="\$(grep -o '"frontend_port":[ ]*[0-9]*' "\$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo \${FRONTEND_PORT})"
 fi
-VITE_BIN="\$INSTALL_DIR/web/apps/portal/node_modules/vite/bin/vite.js"
-if [[ -f "\$VITE_BIN" ]]; then
-    exec node -e "process.on('SIGHUP', () => {}); import(process.argv[1]);" "\$VITE_BIN" preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
+PREVIEW_SCRIPT="\$INSTALL_DIR/web/apps/portal/scripts/preview-server.mjs"
+if [[ -f "\$PREVIEW_SCRIPT" ]]; then
+    exec node "\$PREVIEW_SCRIPT" "\${FRONTEND_PORT}" </dev/null
 else
     exec npx vite preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
 fi

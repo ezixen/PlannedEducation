@@ -10,6 +10,7 @@
     "build": "npm run build:prepare && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
+    "preview:server": "node ./scripts/preview-server.mjs",
     "test:visual": "playwright test",
     "test:visual:clean": "node -e \"import('../../../tests/e2e/playwright/tests/global-teardown.ts').then(m => m.default())\""
   },
