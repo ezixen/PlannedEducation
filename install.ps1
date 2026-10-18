@@ -404,9 +404,9 @@ if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededuca
 
 Set-Location $InstallDir
 
-# Read existing deployment.json defaults if available
+# Read existing deployment.json defaults if available (on existing installations)
 $existingDepJson = Join-Path $InstallDir "config\deployment.json"
-if (Test-Path $existingDepJson) {
+if ((Test-Path (Join-Path $InstallDir ".env")) -and (Test-Path $existingDepJson)) {
     try {
         $parsedDep = Get-Content $existingDepJson -Raw | ConvertFrom-Json
         if ($parsedDep.domain) { $Domain = $parsedDep.domain }
@@ -643,14 +643,14 @@ Write-Host "============================================================" -Foreg
 if (`$healthy) {
     Write-Host "  [OK] PlannedEducation is LIVE and HEALTHY!" -ForegroundColor Green
     Write-Host "============================================================" -ForegroundColor Cyan
-    Write-Host "  Frontend Portal: http://`$domain:`$frontendPort" -ForegroundColor Green
-    Write-Host "  Backend API:     http://`$domain:`$apiPort"
-    Write-Host "  API Docs:        http://`$domain:`$apiPort/docs"
+    Write-Host "  Frontend Portal: http://`${domain}:${frontendPort}" -ForegroundColor Green
+    Write-Host "  Backend API:     http://`${domain}:${apiPort}"
+    Write-Host "  API Docs:        http://`${domain}:${apiPort}/docs"
     Write-Host "  Backend PID:     `$(`$backendProc.Id) | Frontend PID: `$(`$frontendProc.Id)"
     Write-Host "  To stop:         Run .\stop_all.bat (or .\stop_all.ps1)"
     Write-Host "============================================================" -ForegroundColor Cyan
     if (-not `$NoBrowser) {
-        try { Start-Process "http://`$domain:`$frontendPort" } catch {}
+        try { Start-Process "http://`${domain}:${frontendPort}" } catch {}
     }
 } else {
     Write-Host "  [WARN] Backend health check timed out." -ForegroundColor Yellow
@@ -886,8 +886,8 @@ try {
 Write-Host "============================================================" -ForegroundColor Cyan
 if (`$allOk) {
     Write-Host "  Result: ALL SYSTEMS OPERATIONAL [OK]" -ForegroundColor Green
-    Write-Host "  Portal URL:  http://`$domain:`$frontendPort" -ForegroundColor Green
-    Write-Host "  Backend API: http://`$domain:`$apiPort" -ForegroundColor Green
+    Write-Host "  Portal URL:  http://`${domain}:${frontendPort}" -ForegroundColor Green
+    Write-Host "  Backend API: http://`${domain}:${apiPort}" -ForegroundColor Green
 } else {
     Write-Host "  Result: SOME SERVICES NOT RUNNING OR FAILED [WARN]" -ForegroundColor Yellow
     Write-Host "  To start: Run .\start_all.bat (or .\start_all.ps1)" -ForegroundColor Cyan
@@ -1012,6 +1012,7 @@ if (-not $useDocker) {
         exit 1
     }
 
+    $credFile = Join-Path $InstallDir "ADMIN_CREDENTIALS.txt"
     $codesText = ""
     $tmpCodes = Join-Path $InstallDir "admin_recovery_codes.tmp"
     if (Test-Path $tmpCodes) {
@@ -1041,7 +1042,6 @@ if (-not $useDocker) {
         Write-Host ""
     }
 
-    $credFile = Join-Path $InstallDir "ADMIN_CREDENTIALS.txt"
     $credLines = @(
         "PlannedEducation Superadmin Credentials",
         "=======================================",
@@ -1107,9 +1107,27 @@ if (-not $useDocker) {
     } | Out-Null
 
     Run-Verify "Backend FastAPI health endpoint (TestClient)" {
-        $env:PYTHONPATH = Join-Path $InstallDir "src"
-        $out = & $pythonExe -c 'from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get("/health"); assert r.status_code == 200, r.text; print("OK")'
-        $out -match "OK"
+        $envPath = Join-Path $InstallDir ".env"
+        $srcPath = Join-Path $InstallDir "src"
+        $verifyScript = @"
+import os, sys
+from pathlib import Path
+env_file = Path(r'$envPath')
+if env_file.exists():
+    for line in env_file.read_text(encoding='utf-8').splitlines():
+        if '=' in line and not line.strip().startswith('#'):
+            k, v = line.strip().split('=', 1)
+            os.environ.setdefault(k.strip(), v.strip())
+sys.path.insert(0, r'$srcPath')
+from fastapi.testclient import TestClient
+from plannededucation.api.main import app
+c = TestClient(app)
+r = c.get('/health')
+assert r.status_code == 200, r.text
+print('HEALTH_OK')
+"@
+        $out = $verifyScript | & $pythonExe -
+        $out -match "HEALTH_OK"
     } | Out-Null
 }
 

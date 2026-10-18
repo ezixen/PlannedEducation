@@ -12,6 +12,13 @@ Planned Education exists for a simple reason: **teachers shouldn't have to spend
 
 Deploy PlannedEducation on your school or personal server in minutes — either **interactively yourself** or by **asking your AI coding agent** (GitHub Copilot, Antigravity, Claude Code, Cursor, etc.) to run the installer for you!
 
+```powershell
+# Clone from GitHub and run the automated installer:
+git clone https://github.com/ezixen/PlannedEducation.git C:\PlannedEducation
+cd C:\PlannedEducation
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
 | Platform | Interactive Human Command | Uninstaller | Full Step-by-Step Guide |
 |:---|:---|:---|:---:|
 | 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/admin/INSTALL_WINDOWS.md) |

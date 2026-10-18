@@ -26,20 +26,30 @@ PlannedEducation includes a native PowerShell deployment script (`install.ps1`) 
 ### Step 1: Open PowerShell as Administrator
 Right-click on the Windows Start menu button and select **Terminal (Admin)** or **Windows PowerShell (Admin)**.
 
-### Step 2: Run the Installer Script
-Execute the following command in PowerShell:
+### Step 2: Clone or Download from GitHub
+In PowerShell, clone the PlannedEducation repository:
+
+```powershell
+git clone https://github.com/ezixen/PlannedEducation.git C:\PlannedEducation
+cd C:\PlannedEducation
+```
+
+*(Or download and extract the repository ZIP file, then `cd` into the extracted folder).*
+
+### Step 3: Run the Installer Script
+Execute the installer with execution policy bypass:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
 ```
 
-Or specify a custom installation directory:
+Or specify non-interactive mode with custom directory:
 ```powershell
-.\install.ps1 -InstallDir "C:\PlannedEducation"
+.\install.ps1 -InstallDir "C:\PlannedEducation" -AutoConfirm
 ```
 
-### Step 3: Choose Your Deployment Mode
+### Step 4: Choose Your Deployment Mode
 When prompted by the installer:
 1. **Mode 1: Single-Server / Local (SQLite + In-Memory Cache)** *(Fastest, zero external database setup)*
 2. **Mode 2: Production Server (PostgreSQL + Redis)** *(High-concurrency campus deployment)*
