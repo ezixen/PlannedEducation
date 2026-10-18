@@ -23,6 +23,8 @@ This guide provides complete, step-by-step instructions for installing and runni
 
 PlannedEducation includes a native PowerShell deployment script (`install.ps1`) that automatically checks prerequisites, clones or updates the repository, generates cryptographically secure keys, and configures the environment.
 
+> 🪟 **Built for Standard Windows PowerShell:** `install.ps1`, `uninstall.ps1`, and all platform scripts (`start_all.ps1`, `verify.ps1`, `stop_all.ps1`) are specifically built and tested for standard, preinstalled **Windows PowerShell 5.1** (`powershell.exe`, preinstalled on Windows 10, Windows 11, and Windows Server 2016–2025). No separate PowerShell 7 install is required, though modern **PowerShell 7+** (`pwsh`) is fully supported as well.
+
 ### Step 1: Open PowerShell as Administrator
 Right-click on the Windows Start menu button and select **Terminal (Admin)** or **Windows PowerShell (Admin)**.
 

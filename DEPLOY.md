@@ -9,7 +9,7 @@ For the complete, detailed deployment manual, see the **[Master Deployment Guide
 ## ⚡ Quick Start: Automated Installers
 
 ### Windows
-Run from PowerShell (as Administrator):
+Run from standard Windows PowerShell (Windows PowerShell 5.1+ / `powershell.exe`, or PowerShell 7+) as Administrator:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```

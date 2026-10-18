@@ -14,6 +14,7 @@ Deploy PlannedEducation on your school or personal server in minutes — either 
 
 ```powershell
 # Clone from GitHub and run the automated installer:
+# (Tested on standard built-in Windows PowerShell 5.1 / powershell.exe and modern PowerShell 7+)
 git clone https://github.com/ezixen/PlannedEducation.git C:\PlannedEducation
 cd C:\PlannedEducation
 powershell -ExecutionPolicy Bypass -File .\install.ps1
@@ -21,9 +22,11 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 | Platform | Interactive Human Command | Uninstaller | Full Step-by-Step Guide |
 |:---|:---|:---|:---:|
-| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/admin/INSTALL_WINDOWS.md) |
+| 🪟 **Windows** (10, 11, Server)<br>*(Standard Windows PowerShell 5.1 & PS 7+)* | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/admin/INSTALL_WINDOWS.md) |
 | 🐧 **Linux / WSL** (Ubuntu, Debian, RHEL, Arch) | `bash ./install.sh` | `bash ./uninstall.sh` | [📖 **Linux Installation Guide**](docs/admin/INSTALL_LINUX.md) |
 | 🧙 **Cross-Platform Wizard** | `python scripts/deploy/deploy_wizard.py` | — | [📋 **Requirements & Compatibility**](docs/admin/INSTALL_COMPATIBILITY.md) |
+
+> 🪟 **Standard Windows PowerShell Compatibility:** `install.ps1`, `uninstall.ps1`, and all launcher scripts (`start_all.ps1`, `verify.ps1`, `stop_all.ps1`) are specifically built and tested for standard built-in **Windows PowerShell 5.1** (`powershell.exe`, included out-of-the-box with Windows 10, Windows 11, and Windows Server 2016–2025). No separate PowerShell 7 install is required, though PowerShell 7 (`pwsh`) is fully supported as well.
 
 > 💡 **No Docker? No problem!** The installer supports **Mode 1: Single-Server SQLite** (zero external DB setup), **Mode 2: Production PostgreSQL + Redis**, and **Mode 3: Docker Compose**. Default ports are `8000` (API) and `5173` (Frontend), with automatic fallback to free ports if already in use.
 

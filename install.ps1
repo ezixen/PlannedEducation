@@ -1,6 +1,8 @@
 <#
 .SYNOPSIS
     PlannedEducation - Complete Automated Installation Script for Windows
+    Engineered and verified for standard built-in Windows PowerShell 5.1 (powershell.exe,
+    preinstalled on Windows 10, 11, and Windows Server 2016-2025) and modern PowerShell 7+.
     Designed for both human operators and AI coding/deployment agents.
 
 .DESCRIPTION
