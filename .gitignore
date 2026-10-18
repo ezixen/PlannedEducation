@@ -1,10 +1,6 @@
 test_plannededucation.db
 *.log
 !install.log
-agents.md
-AGENTS.md
-__pycache__/
-AGENTS.md
 
 # Internal development knowledge base (not for public upload)
 how2/
@@ -31,6 +27,8 @@ serviceAccountKey.json
 venv/
 env/
 __pycache__/
+.mypy_cache/
+.ruff_cache/
 *.pyc
 *.pyo
 *.pyd
