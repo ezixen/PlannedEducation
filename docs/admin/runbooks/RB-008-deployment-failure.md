@@ -79,7 +79,7 @@ docker-compose exec backend alembic downgrade REVISION_ID
 ### Full Rollback (last resort)
 ```bash
 # Restore database from backup
-./scripts/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
+./scripts/backup/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
 
 # Deploy previous known good commit
 git checkout PREVIOUS_GOOD_COMMIT

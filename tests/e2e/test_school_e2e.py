@@ -11,10 +11,10 @@ Tests the native school server deployment on http://127.0.0.1:8000:
 7. Custom school module repository source registration, browsing, and synchronization
 """
 
-import hashlib
 import json
 import sys
 import time
+
 import httpx
 
 BASE_URL = "http://127.0.0.1:8000"

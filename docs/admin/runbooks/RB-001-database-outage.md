@@ -63,8 +63,8 @@ curl -f http://localhost:8000/health
 
 ### Restore from Backup (if data corrupted)
 ```bash
-# See scripts/backup_restore.sh restore
-./scripts/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
+# See scripts/backup/backup_restore.sh restore
+./scripts/backup/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
 ```
 
 ### Full Recreate (last resort)

@@ -74,7 +74,7 @@ docker-compose down
 # Test restore in isolated environment first
 
 # PostgreSQL
-./scripts/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
+./scripts/backup/backup_restore.sh restore ./backups/plannededucation_pg_20260928_120000.sql.gz
 
 # Redis
 # Restore from RDB/AOF if available

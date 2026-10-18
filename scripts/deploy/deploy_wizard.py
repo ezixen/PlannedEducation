@@ -404,14 +404,22 @@ def show_next_steps(project_dir: Path, domain: str, mode: str):
   Update:        git pull && pip install -r src/requirements.txt && cd web/apps/portal && npm run build""")
 
     print(f"""
-{Colors.CYAN}Need guidance? Refer to DEPLOY_SIMPLE.md or docs/INSTALL_COMPATIBILITY.md{Colors.RESET}
+{Colors.CYAN}Need guidance? Refer to docs/admin/DEPLOYMENT_GUIDE.md or docs/admin/INSTALL_COMPATIBILITY.md{Colors.RESET}
 """)
 
 def main():
     print_header("PlannedEducation - Guided Deployment Wizard")
     print("Welcome! This wizard deploys PlannedEducation for your school or organization.\n")
     
+    # Detect project root whether run from repo root or scripts/deploy/
+    script_dir = Path(__file__).resolve().parent
+    candidates = [Path.cwd(), script_dir.parent.parent, script_dir.parent]
     project_dir = Path.cwd()
+    for c in candidates:
+        if (c / "src" / "plannededucation").exists():
+            project_dir = c
+            break
+
     if not (project_dir / "src" / "plannededucation").exists():
         print_error("PlannedEducation source directory not found!")
         print("Please run this script from the root directory of PlannedEducation.")

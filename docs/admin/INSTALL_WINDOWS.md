@@ -91,7 +91,7 @@ powershell -ExecutionPolicy Bypass -File .\uninstall.ps1 -InstallDir "C:\Planned
 If you already have Python installed, you can use the cross-platform interactive wizard:
 
 ```powershell
-python deploy_wizard.py
+python scripts\deploy\deploy_wizard.py
 ```
 
 The wizard will:
@@ -270,6 +270,7 @@ Start-ScheduledTask -TaskName "PlannedEducationServer"
 ## 📚 Related Documentation
 - [Linux Installation Guide](INSTALL_LINUX.md)
 - [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Module System & School Federation](MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](FAQ.md)
+- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
 

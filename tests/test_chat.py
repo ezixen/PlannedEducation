@@ -3,10 +3,12 @@ test_chat.py — WebSocket auth, message broadcast, and rejection of invalid tok
 Updated to use first-frame token auth (not URL query params).
 """
 import json
+
 import pytest
 from fastapi.testclient import TestClient
-from src.plannededucation.api.main import app
+
 from src.plannededucation.api import database, models
+from src.plannededucation.api.main import app
 
 client = TestClient(app)
 

@@ -1,11 +1,12 @@
 """
 test_routes_parent.py — parent/student relationship handshake and children progress.
 """
-import pytest
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+
 from fastapi.testclient import TestClient
-from src.plannededucation.api.main import app
+
 from src.plannededucation.api import database, models
+from src.plannededucation.api.main import app
 
 client = TestClient(app)
 
@@ -122,8 +123,8 @@ def test_children_progress_shows_data_after_approval():
     sub = models.ExamSubmission(
         exam_id=exam.id,
         student_id=student.id,
-        started_at=datetime.now(timezone.utc),
-        completed_at=datetime.now(timezone.utc),
+        started_at=datetime.now(UTC),
+        completed_at=datetime.now(UTC),
         score=88.5,
         feedback="Good job!",
     )

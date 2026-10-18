@@ -4,7 +4,6 @@ Endpoints for administrative operations (user management, exam oversight, system
 """
 
 import hashlib
-import json
 import secrets
 import string
 

@@ -21,12 +21,21 @@
 
 ## Backup Strategy
 
+### 0. Native Midnight Auto-Backup Scheduler (Built-In)
+PlannedEducation includes a native background backup scheduler (`backup_service.py`):
+- **Automated Schedule:** Runs daily at **00:00 UTC** while the server is active.
+- **Automated Retention:** Automatically prunes backup archives older than **30 days**.
+- **Admin Dashboard Control:** Administrators can create an instant snapshot anytime via **Admin Dashboard → 💾 Database Backups** and download archives directly from the browser.
+- **Engine Support:**
+  - SQLite: Uses atomic `sqlite3.connect().backup()` to prevent table locks.
+  - PostgreSQL: Uses `pg_dump` with gzip compression.
+
 ### 1. PostgreSQL Database
 
-#### Automated Daily Backups
+#### External / Scripted Backups
 ```bash
-# Script: scripts/backup_restore.sh (PostgreSQL section)
-# Schedule: Daily at 02:00 UTC via cron/GitHub Actions
+# Script: scripts/backup/backup_restore.sh (PostgreSQL section)
+# Schedule: Daily via cron or systemd timer
 # Retention: 30 daily + 12 monthly + 7 yearly
 
 pg_dump \

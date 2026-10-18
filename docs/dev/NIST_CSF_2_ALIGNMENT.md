@@ -97,27 +97,27 @@
 | | DE.AE-03: Event correlation | ✅ Done | SIEM integration (Grafana Loki) |
 | | DE.AE-04: Impact determination | ✅ Done | Incident severity classification (SEV-1 to SEV-4) |
 | | DE.AE-05: Alerting | ✅ Done | SLO burn alerts (implemented), error rate alerts |
-| **DE.DP** Detection Processes | DE.DP-01: Roles & responsibilities | ✅ Done | Incident response roles in `ONCALL.md` |
-| | DE.DP-02: Detection procedures | ✅ Done | Runbooks in `docs/runbooks/` (RB-001 to RB-010) |
+| **DE.DP** Detection Processes | DE.DP-01: Roles & responsibilities | ✅ Done | Incident response roles in `docs/admin/runbooks/ONCALL.md` |
+| | DE.DP-02: Detection procedures | ✅ Done | Runbooks in `docs/admin/runbooks/` (RB-001 to RB-010) |
 | | DE.DP-03: Testing | ✅ Done | Tabletop exercises via test suite |
-| | DE.DP-04: Communication | ✅ Done | Incident communication plan in `ESCALATION.md` |
+| | DE.DP-04: Communication | ✅ Done | Incident communication plan in `docs/admin/runbooks/ESCALATION.md` |
 | | DE.DP-05: Improvement | ✅ Done | Post-incident reviews in runbooks |
 
 ### RESPOND (RS) — Incident Response
 
 | Category | Subcategory | Status | Implementation |
 |---|---|---|---|
-| **RS.RP** Response Planning | RS.RP-01: Response plan | ✅ Done | `docs/runbooks/` (RB-001 to RB-010) |
+| **RS.RP** Response Planning | RS.RP-01: Response plan | ✅ Done | `docs/admin/runbooks/` (RB-001 to RB-010) |
 | | RS.RP-02: Plan testing | ✅ Done | Tabletop exercises via test suite |
 | | RS.RP-03: Plan updates | ✅ Done | Post-incident updates in runbooks |
-| **RS.CO** Communications | RS.CO-01: Internal communication | ✅ Done | Incident channels, escalation in `ESCALATION.md` |
+| **RS.CO** Communications | RS.CO-01: Internal communication | ✅ Done | Incident channels, escalation in `docs/admin/runbooks/ESCALATION.md` |
 | | RS.CO-02: External communication | ✅ Done | User notification templates in runbooks |
 | | RS.CO-03: Stakeholder coordination | ✅ Done | Teacher/student/parent notification in runbooks |
-| | RS.CO-04: Regulatory reporting | ✅ Done | FERPA/COPPA/GDPR breach notification in `ESCALATION.md` |
+| | RS.CO-04: Regulatory reporting | ✅ Done | FERPA/COPPA/GDPR breach notification in `docs/admin/runbooks/ESCALATION.md` |
 | **RS.AN** Analysis | RS.AN-01: Investigation | ✅ Done | Log analysis, forensic readiness in runbooks |
 | | RS.AN-02: Impact assessment | ✅ Done | Data classification, blast radius in runbooks |
 | | RS.AN-03: Forensics | ✅ Done | Log preservation, chain of custody in runbooks |
-| | RS.AN-04: Categorization | ✅ Done | Severity matrix (SEV-1 to SEV-4) in `ESCALATION.md` |
+| | RS.AN-04: Categorization | ✅ Done | Severity matrix (SEV-1 to SEV-4) in `docs/admin/runbooks/ESCALATION.md` |
 | **RS.MI** Mitigation | RS.MI-01: Containment | ✅ Done | Feature flags, circuit breakers in runbooks |
 | | RS.MI-02: Eradication | ✅ Done | Patch deployment, key rotation in runbooks |
 | | RS.MI-03: Recovery | ✅ Done | Restore procedures, validation in runbooks |
@@ -128,7 +128,7 @@
 
 | Category | Subcategory | Status | Implementation |
 |---|---|---|---|
-| **RC.RP** Recovery Planning | RC.RP-01: Recovery plan | ✅ Done | `docs/BACKUP_RESTORE_PLAN.md` |
+| **RC.RP** Recovery Planning | RC.RP-01: Recovery plan | ✅ Done | `docs/admin/BACKUP_RESTORE.md` |
 | | RC.RP-02: Plan testing | ✅ Done | Monthly restore drills (automated via GitHub Actions) |
 | | RC.RP-03: Plan updates | ✅ Done | Post-drill updates in runbooks |
 | **RC.CO** Communications | RC.CO-01: Recovery communication | ✅ Done | Status page, user notifications in runbooks |

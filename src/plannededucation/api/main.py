@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -19,7 +20,7 @@ from opentelemetry.sdk.metrics import MeterProvider
 from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
-from prometheus_client import Counter, Gauge, Histogram, start_http_server
+from prometheus_client import REGISTRY, Counter, Gauge, Histogram, start_http_server
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
@@ -100,7 +101,6 @@ logger.setLevel(logging.INFO)
 
 # ── Prometheus Metrics ───────────────────────────────────────────────────────
 # Custom metrics for SLO tracking (guarded against duplicate registration in test/reload environments)
-from prometheus_client import REGISTRY
 
 try:
     REQUEST_COUNT = Counter(

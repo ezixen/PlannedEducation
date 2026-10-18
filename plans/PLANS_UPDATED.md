@@ -474,4 +474,32 @@
   - Frontend production build (`npm run build`) verified clean in 1.94s with 0 errors.
   - Zero orphaned background processes remaining.
 
+---
+
+### Phase 20: Repository Root Cleanup, Documentation Consolidation & Script Reorganization ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **Pre-Cleanup Safeguard**:
+  - Full local repository pre-cleanup backup archive generated at `D:\Dev\PlannedEducation_precleanup_backup_20261018.zip` (36.70 MB, 2,820 files).
+- **Repository Root Cleanup**:
+  - Preserved only essential root files (`README.md`, `DEPLOY.md`, `LICENSE`, `THANKS.md`, `docker-compose.yml`, `Dockerfile.*`, `install.*`, `uninstall.*`, `pyproject.toml`, `pytest.ini`, `run_tests.py`, `test_tracker.py`, `conftest_tracker.py`, config/lint files).
+  - Relocated branding assets (`PElogo*.jpg`, `favicon.ico`) to `docs/assets/branding/`.
+  - Relocated all i18n tooling (`add_i18n_keys*.py`, `missing_keys.json`, `translate_*.py`) to `scripts/i18n/`.
+  - Relocated developer multi-role launchers (`start_all.ps1`, `start_student.ps1`, `stop_student.ps1`, `start.ps1`, `stop.ps1`) to `scripts/dev/` with updated `$RepoRoot` paths.
+  - Relocated deploy tools (`deploy.sh`, `deploy_wizard.py`) to `scripts/deploy/` with dynamic repo root resolution.
+  - Relocated standalone test runners (`test_ui_full.py`, `test_e2e_comprehensive.py`, `smoke_test.py`) to `scripts/testing/`.
+  - Removed duplicate and obsolete files (`test_school_e2e.py` duplicate, `rewrite_scripts.py`, `update_agents*.py`, obsolete test outputs and databases).
+- **3-Tier Consolidated Documentation Hierarchy**:
+  - `docs/admin/`: Master `DEPLOYMENT_GUIDE.md` (consolidating DEPLOY.md, DEPLOY_COMPREHENSIVE.md, DEPLOY_SIMPLE.md into a unified deployment guide for Modes 1, 2, 3), `INSTALL_WINDOWS.md`, `INSTALL_LINUX.md`, `INSTALL_COMPATIBILITY.md` (subsuming INSTALL_LOG.md), `BACKUP_RESTORE.md` (moved from docs root), and incident runbooks `runbooks/RB-001` through `RB-010`.
+  - `docs/user/`: `TEACHER_GUIDE.md`, `STUDENT_GUIDE.md`, `PARENT_GUIDE.md`, and consolidated `FAQ.md`.
+  - `docs/dev/`: `ARCHITECTURE.md`, `TESTING_GUIDE.md` (consolidating TEST_PLAN.md, MANUAL_TESTING.md, FEATURE_INVENTORY.md into a single 36KB authoritative testing handbook), `I18N_GUIDE.md`, `I18N_CONTEXT.md` (relocated from root CONTEXT.md), `MODULE_SYSTEM.md`, `SECURITY_COMPLIANCE.md`, `AI_RISK_GOVERNANCE.md`, `GITHUB_FREE_TIER.md`, `AUDIT_HISTORY.md`, `ORIGIN.md`, `LARGE_TEXT_METHODOLOGY.md`.
+  - Root `README.md` updated with complete documentation index.
+  - Root `DEPLOY.md` streamlined as quick-reference redirect to `docs/admin/DEPLOYMENT_GUIDE.md`.
+- **Reference & Script Updates**:
+  - Cross-references updated across `README.md`, `docs/admin/INSTALL_LINUX.md`, `INSTALL_WINDOWS.md`, `BACKUP_RESTORE.md`, `docs/user/FAQ.md`, `runbooks/`, and `scripts/deploy/deploy_wizard.py`.
+- **Verification**:
+  - Full backend pytest suite passing clean via `scripts/testing/update_test_cache.py` (122/122 passed in 122.61s).
+  - Frontend production build (`npm run build`) passing clean in 11.31s with 0 errors.
+  - Frontend lint (`oxlint`): 0 errors, 0 warnings across 61 files.
+  - Zero orphaned background processes remaining.
+
 

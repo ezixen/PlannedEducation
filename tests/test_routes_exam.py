@@ -3,8 +3,8 @@ test_routes_exam.py — legacy exam route tests, now updated to match new API.
 Kept as a separate file to preserve historical test intent while using correct schema.
 """
 from fastapi.testclient import TestClient
+
 from src.plannededucation.api.main import app
-from src.plannededucation.api import database, models, auth
 
 client = TestClient(app)
 

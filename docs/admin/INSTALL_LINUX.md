@@ -90,7 +90,7 @@ INSTALL_DIR="/opt/plannededucation" bash ./uninstall.sh
 If Python 3.12+ is already installed on your Linux machine, you can run the interactive wizard:
 
 ```bash
-python3 deploy_wizard.py
+python3 scripts/deploy/deploy_wizard.py
 ```
 
 The wizard guides you through:
@@ -323,6 +323,7 @@ sudo nginx -t && sudo systemctl reload nginx
 ## 📚 Related Documentation
 - [Windows Installation Guide](INSTALL_WINDOWS.md)
 - [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Module System & School Federation](MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](FAQ.md)
+- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
 

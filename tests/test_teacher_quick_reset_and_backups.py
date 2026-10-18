@@ -3,11 +3,10 @@ Tests for Teacher Classroom Quick Password Reset, Brute-Force Lockout,
 and Admin Database Backup Services.
 """
 
-from datetime import UTC, datetime, timedelta
 import pytest
 from fastapi.testclient import TestClient
 
-from plannededucation.api import backup_service, database, models
+from plannededucation.api import database, models
 from plannededucation.api.main import app
 from plannededucation.api.routes_auth import get_password_hash
 

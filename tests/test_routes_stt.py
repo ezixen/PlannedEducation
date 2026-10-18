@@ -3,7 +3,6 @@ Tests for STT routes.
 """
 
 import base64
-import io
 from unittest.mock import MagicMock
 
 import pytest
@@ -67,7 +66,7 @@ class TestSTTRoutes:
             duration=1.5,
             segments=[{"id": 0, "start": 0.0, "end": 1.5, "text": "Hello world"}]
         )
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             response = client.post(
@@ -75,7 +74,7 @@ class TestSTTRoutes:
                 json={"audio_base64": sample_audio_base64, "language": "en", "task": "transcribe"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "Hello world"
@@ -93,7 +92,7 @@ class TestSTTRoutes:
             duration=2.0,
             segments=[{"id": 0, "start": 0.0, "end": 2.0, "text": "Hello world"}]
         )
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             response = client.post(
@@ -101,7 +100,7 @@ class TestSTTRoutes:
                 json={"audio_base64": sample_audio_base64, "language": "es", "task": "translate"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "Hello world"
@@ -112,7 +111,7 @@ class TestSTTRoutes:
         """Test STT when service is unavailable."""
         mock_stt = MagicMock()
         mock_stt.is_available.return_value = False
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt
         try:
             response = client.post(
@@ -120,7 +119,7 @@ class TestSTTRoutes:
                 json={"audio_base64": sample_audio_base64, "language": "en", "task": "transcribe"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 503
             assert "STT service not available" in response.json()["detail"]
         finally:
@@ -135,7 +134,7 @@ class TestSTTRoutes:
             duration=3.0,
             segments=[{"id": 0, "start": 0.0, "end": 3.0, "text": "Uploaded audio text"}]
         )
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             # Create a minimal WAV file
@@ -143,14 +142,14 @@ class TestSTTRoutes:
                 b'RIFF\x24\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00'
                 b'\x40\x1f\x00\x00\x40\x1f\x00\x00\x01\x00\x08\x00data\x00\x00\x00\x00'
             )
-            
+
             response = client.post(
                 "/stt/transcribe-upload",
                 files={"file": ("test.wav", wav_data, "audio/wav")},
                 data={"language": "en", "task": "transcribe"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "Uploaded audio text"
@@ -166,7 +165,7 @@ class TestSTTRoutes:
             duration=1.0,
             segments=[]
         )
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             response = client.post(
@@ -174,7 +173,7 @@ class TestSTTRoutes:
                 json={"audios": [sample_audio_base64, sample_audio_base64], "language": "en", "task": "transcribe"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert len(data["results"]) == 2
@@ -185,11 +184,11 @@ class TestSTTRoutes:
     def test_get_languages(self, client, auth_headers, mock_stt_service):
         """Test getting supported languages."""
         mock_stt_service.get_supported_languages.return_value = ["en", "es", "fr", "de", "zh"]
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             response = client.get("/stt/languages", headers=auth_headers)
-            
+
             assert response.status_code == 200
             data = response.json()
             assert "languages" in data
@@ -200,7 +199,7 @@ class TestSTTRoutes:
     def test_get_models(self, client):
         """Test getting available models (no auth required)."""
         response = client.get("/stt/models")
-        
+
         assert response.status_code == 200
         data = response.json()
         assert "models" in data
@@ -210,11 +209,11 @@ class TestSTTRoutes:
     def test_health_check(self, client, mock_stt_service):
         """Test STT health check (no auth required)."""
         mock_stt_service.model_size = "base"
-        
+
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
             response = client.get("/stt/health")
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["available"] is True

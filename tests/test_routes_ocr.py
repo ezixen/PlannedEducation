@@ -45,7 +45,7 @@ def sample_image_base64():
     from PIL import ImageDraw
     draw = ImageDraw.Draw(img)
     draw.text((10, 10), "Test 123", fill='black')
-    
+
     buffer = io.BytesIO()
     img.save(buffer, format='PNG')
     return base64.b64encode(buffer.getvalue()).decode()
@@ -70,7 +70,7 @@ class TestOCRRoutes:
             language="eng",
             bounding_boxes=[{'text': 'Test', 'confidence': 95, 'x': 10, 'y': 10, 'width': 30, 'height': 20}]
         )
-        
+
         # Override the dependency
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
@@ -79,7 +79,7 @@ class TestOCRRoutes:
                 json={"image_base64": sample_image_base64, "language": "eng", "is_math": False},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "Test 123"
@@ -96,7 +96,7 @@ class TestOCRRoutes:
             language="eng",
             bounding_boxes=[]
         )
-        
+
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
             response = client.post(
@@ -104,7 +104,7 @@ class TestOCRRoutes:
                 json={"image_base64": sample_image_base64, "language": "eng", "is_math": True},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "2x + 4 = 10"
@@ -115,7 +115,7 @@ class TestOCRRoutes:
         """Test OCR when service is unavailable."""
         mock_ocr = MagicMock()
         mock_ocr.is_available.return_value = False
-        
+
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr
         try:
             response = client.post(
@@ -123,7 +123,7 @@ class TestOCRRoutes:
                 json={"image_base64": sample_image_base64, "language": "eng", "is_math": False},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 503
             assert "OCR service not available" in response.json()["detail"]
         finally:
@@ -137,7 +137,7 @@ class TestOCRRoutes:
             language="eng",
             bounding_boxes=[]
         )
-        
+
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
             # Create a simple image file
@@ -145,14 +145,14 @@ class TestOCRRoutes:
             buffer = io.BytesIO()
             img.save(buffer, format='PNG')
             buffer.seek(0)
-            
+
             response = client.post(
                 "/ocr/process-upload",
                 files={"file": ("test.png", buffer, "image/png")},
                 data={"language": "eng", "is_math": "false"},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["text"] == "Uploaded text"
@@ -167,7 +167,7 @@ class TestOCRRoutes:
             language="eng",
             bounding_boxes=[]
         )
-        
+
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
             response = client.post(
@@ -175,7 +175,7 @@ class TestOCRRoutes:
                 json={"images": [sample_image_base64, sample_image_base64], "language": "eng", "is_math": False},
                 headers=auth_headers
             )
-            
+
             assert response.status_code == 200
             data = response.json()
             assert len(data["results"]) == 2
@@ -186,11 +186,11 @@ class TestOCRRoutes:
     def test_get_languages(self, client, auth_headers, mock_ocr_service):
         """Test getting supported languages."""
         mock_ocr_service.get_supported_languages.return_value = ["eng", "fra", "deu", "spa"]
-        
+
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
             response = client.get("/ocr/languages", headers=auth_headers)
-            
+
             assert response.status_code == 200
             data = response.json()
             assert "languages" in data
@@ -203,7 +203,7 @@ class TestOCRRoutes:
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
             response = client.get("/ocr/health")
-            
+
             assert response.status_code == 200
             data = response.json()
             assert data["available"] is True

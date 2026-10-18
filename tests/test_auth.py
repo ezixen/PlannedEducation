@@ -3,6 +3,7 @@ test_auth.py — registration, login, /auth/me, settings, password policy.
 """
 import pytest
 from fastapi.testclient import TestClient
+
 from src.plannededucation.api.main import app
 
 client = TestClient(app)

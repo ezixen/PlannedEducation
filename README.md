@@ -1,6 +1,6 @@
 # Planned Education 🎓
 
-![Planned Education Logo](PElogo_128x128.jpg)
+![Planned Education Logo](docs/assets/branding/PElogo_128x128.jpg)
 
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
@@ -14,9 +14,9 @@ Deploy PlannedEducation on your school or personal server in minutes — either 
 
 | Platform | Interactive Human Command | Uninstaller | Full Step-by-Step Guide |
 |:---|:---|:---|:---:|
-| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/INSTALL_WINDOWS.md) |
-| 🐧 **Linux / WSL** (Ubuntu, Debian, RHEL, Arch) | `bash ./install.sh` | `bash ./uninstall.sh` | [📖 **Linux Installation Guide**](docs/INSTALL_LINUX.md) |
-| 🧙 **Cross-Platform Wizard** | `python deploy_wizard.py` | — | [📋 **Requirements & Compatibility**](docs/INSTALL_COMPATIBILITY.md) |
+| 🪟 **Windows** (10, 11, Server) | `powershell -ExecutionPolicy Bypass -File .\install.ps1` | `powershell -ExecutionPolicy Bypass -File .\uninstall.ps1` | [📖 **Windows Installation Guide**](docs/admin/INSTALL_WINDOWS.md) |
+| 🐧 **Linux / WSL** (Ubuntu, Debian, RHEL, Arch) | `bash ./install.sh` | `bash ./uninstall.sh` | [📖 **Linux Installation Guide**](docs/admin/INSTALL_LINUX.md) |
+| 🧙 **Cross-Platform Wizard** | `python scripts/deploy/deploy_wizard.py` | — | [📋 **Requirements & Compatibility**](docs/admin/INSTALL_COMPATIBILITY.md) |
 
 > 💡 **No Docker? No problem!** The installer supports **Mode 1: Single-Server SQLite** (zero external DB setup), **Mode 2: Production PostgreSQL + Redis**, and **Mode 3: Docker Compose**. Default ports are `8000` (API) and `5173` (Frontend), with automatic fallback to free ports if already in use.
 
@@ -86,7 +86,7 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 
 ## 🚀 Quick Start (Local Development)
 
-> For production or school server deployment, refer directly to our [Windows Installation Guide](docs/INSTALL_WINDOWS.md) or [Linux Installation Guide](docs/INSTALL_LINUX.md).
+> For production or school server deployment, refer directly to our [Windows Installation Guide](docs/admin/INSTALL_WINDOWS.md), [Linux Installation Guide](docs/admin/INSTALL_LINUX.md), or [Master Deployment Guide](docs/admin/DEPLOYMENT_GUIDE.md).
 >
 > **Dev Prerequisites**: Docker Desktop, Node.js 20+, Python 3.12+
 
@@ -95,7 +95,7 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 docker compose up -d postgres redis
 
 # 2. Launch the backend API + frontend portal
-.\start.ps1
+.\scripts\dev\start.ps1
 ```
 
 - **Backend API docs**: http://localhost:8001/docs
@@ -181,7 +181,23 @@ We welcome contributions! Whether it's:
 - 🧪 Tests
 - 💡 Ideas for reducing teacher workload
 
-Please see `docs/` for coding standards, guidelines, and architecture guides.
+### 📖 Documentation Directory
+- **User Guides**:
+  - [Teacher Guide](docs/user/TEACHER_GUIDE.md) — Exam authoring, question banks, AI grading, and emergency classroom student unlocks.
+  - [Student Guide](docs/user/STUDENT_GUIDE.md) — Registration, 5 one-time recovery codes, SEB lockdown mode, and password resets.
+  - [Parent Guide](docs/user/PARENT_GUIDE.md) — Student progress monitoring and reset approvals.
+  - [Frequently Asked Questions (FAQ)](docs/user/FAQ.md) — General and operational FAQ.
+- **Administrator & Operations**:
+  - [Master Deployment Guide](docs/admin/DEPLOYMENT_GUIDE.md) — Complete production deployment reference.
+  - [Windows Installation](docs/admin/INSTALL_WINDOWS.md) & [Linux Installation](docs/admin/INSTALL_LINUX.md).
+  - [Database Backups & Disaster Recovery](docs/admin/BACKUP_RESTORE.md).
+  - [Operational Runbooks](docs/admin/runbooks/README.md).
+- **Developer & Architecture**:
+  - [System Architecture](docs/dev/ARCHITECTURE.md) — Data models, schemas, and API design.
+  - [Comprehensive Testing Guide](docs/dev/TESTING_GUIDE.md) — Automated pytest suites, Playwright E2E, and manual verification.
+  - [Module & Package Specification](docs/dev/MODULE_SYSTEM.md).
+  - [Security & Compliance](docs/dev/SECURITY_COMPLIANCE.md) & [AI Risk Governance](docs/dev/AI_RISK_GOVERNANCE.md).
+  - [Internationalization (i18n) Guide](docs/dev/I18N_GUIDE.md) & [Key Context Guide](docs/dev/I18N_CONTEXT.md).
 
 **Our promise**: No paid dependencies. Ever. If it can't run free, it doesn't go in.
 

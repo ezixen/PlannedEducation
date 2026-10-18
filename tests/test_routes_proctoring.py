@@ -2,14 +2,11 @@
 Tests for Proctoring routes.
 """
 
-import json
-from unittest.mock import MagicMock, patch
 
 import pytest
 from fastapi.testclient import TestClient
 
 from src.plannededucation.api.main import app
-from src.plannededucation.api.models import ProctoringConsent, ProctoringEvent, ProctoringSession
 
 
 @pytest.fixture
@@ -75,7 +72,7 @@ def submission_id(client, student_headers, exam_id):
         headers=student_headers
     )
     assert start_response.status_code == 200
-    
+
     # Submit exam
     submit_response = client.post(
         f"/exams/{exam_id}/submit",
@@ -105,7 +102,7 @@ class TestProctoringConsent:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 201
         data = response.json()
         assert data["student_id"] == data["student_id"]
@@ -131,7 +128,7 @@ class TestProctoringConsent:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 201
         data = response.json()
         assert data["camera_consent"] is True
@@ -152,10 +149,10 @@ class TestProctoringConsent:
             },
             headers=student_headers
         )
-        
+
         # Get consent
         response = client.get(f"/proctoring/consent/{exam_id}", headers=student_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert data["exam_id"] == exam_id
@@ -164,7 +161,7 @@ class TestProctoringConsent:
     def test_get_consent_not_found(self, client, student_headers, exam_id):
         """Test getting consent when none exists."""
         response = client.get(f"/proctoring/consent/{exam_id}", headers=student_headers)
-        
+
         assert response.status_code == 404
         assert "Consent not found" in response.json()["detail"]
 
@@ -183,13 +180,13 @@ class TestProctoringConsent:
             },
             headers=student_headers
         )
-        
+
         # Withdraw consent
         response = client.delete(f"/proctoring/consent/{exam_id}", headers=student_headers)
-        
+
         assert response.status_code == 200
         assert "withdrawn" in response.json()["message"]
-        
+
         # Verify consent is withdrawn
         get_response = client.get(f"/proctoring/consent/{exam_id}", headers=student_headers)
         assert get_response.status_code == 200
@@ -200,7 +197,7 @@ class TestProctoringConsent:
     def test_withdraw_consent_not_found(self, client, student_headers, exam_id):
         """Test withdrawing consent when none exists."""
         response = client.delete(f"/proctoring/consent/{exam_id}", headers=student_headers)
-        
+
         assert response.status_code == 404
         assert "Consent not found" in response.json()["detail"]
 
@@ -223,7 +220,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         # Start session
         response = client.post(
             "/proctoring/session/start",
@@ -236,7 +233,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 201
         data = response.json()
         assert data["submission_id"] == submission_id
@@ -262,7 +259,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 403
         assert "Proctoring consent required" in response.json()["detail"]
 
@@ -281,7 +278,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         # Start first session
         client.post(
             "/proctoring/session/start",
@@ -294,7 +291,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         # Try to start second session
         response = client.post(
             "/proctoring/session/start",
@@ -307,7 +304,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 400
         assert "Session already exists" in response.json()["detail"]
 
@@ -326,7 +323,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -339,10 +336,10 @@ class TestProctoringSession:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # End session
         response = client.post(f"/proctoring/session/{session_id}/end", headers=student_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert data["ended_at"] is not None
@@ -364,7 +361,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -377,13 +374,13 @@ class TestProctoringSession:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # End session once
         client.post(f"/proctoring/session/{session_id}/end", headers=student_headers)
-        
+
         # Try to end again
         response = client.post(f"/proctoring/session/{session_id}/end", headers=student_headers)
-        
+
         assert response.status_code == 400
         assert "Session already ended" in response.json()["detail"]
 
@@ -402,7 +399,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -415,10 +412,10 @@ class TestProctoringSession:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Get session
         response = client.get(f"/proctoring/session/{session_id}", headers=student_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert data["id"] == session_id
@@ -439,7 +436,7 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -451,10 +448,10 @@ class TestProctoringSession:
             },
             headers=student_headers
         )
-        
+
         # Get session by submission
         response = client.get(f"/proctoring/session/submission/{submission_id}", headers=student_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert data["submission_id"] == submission_id
@@ -478,7 +475,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -491,7 +488,7 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Record event
         response = client.post(
             "/proctoring/event",
@@ -503,7 +500,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 201
         data = response.json()
         assert data["session_id"] == session_id
@@ -526,7 +523,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -539,7 +536,7 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Record violation event
         response = client.post(
             "/proctoring/event",
@@ -551,12 +548,12 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 201
         data = response.json()
         assert data["event_type"] == "multiple_faces"
         assert data["severity"] == "violation"
-        
+
         # Verify session stats updated
         session_response = client.get(f"/proctoring/session/{session_id}", headers=student_headers)
         session_data = session_response.json()
@@ -578,7 +575,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -591,10 +588,10 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # End session
         client.post(f"/proctoring/session/{session_id}/end", headers=student_headers)
-        
+
         # Try to record event
         response = client.post(
             "/proctoring/event",
@@ -605,7 +602,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 400
         assert "Session has ended" in response.json()["detail"]
 
@@ -624,7 +621,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -637,7 +634,7 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Record batch events
         response = client.post(
             "/proctoring/events/batch",
@@ -651,7 +648,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         assert response.status_code == 200
         data = response.json()
         assert len(data) == 3
@@ -675,7 +672,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -688,7 +685,7 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Record some events
         client.post(
             "/proctoring/event",
@@ -700,10 +697,10 @@ class TestProctoringEvents:
             json={"session_id": session_id, "event_type": "tab_switch", "severity": "warning"},
             headers=student_headers
         )
-        
+
         # Get events
         response = client.get(f"/proctoring/session/{session_id}/events", headers=student_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert len(data) >= 2
@@ -726,7 +723,7 @@ class TestProctoringEvents:
             },
             headers=student_headers
         )
-        
+
         start_response = client.post(
             "/proctoring/session/start",
             json={
@@ -739,7 +736,7 @@ class TestProctoringEvents:
             headers=student_headers
         )
         session_id = start_response.json()["id"]
-        
+
         # Record events
         client.post(
             "/proctoring/event",
@@ -751,13 +748,13 @@ class TestProctoringEvents:
             json={"session_id": session_id, "event_type": "tab_switch", "severity": "warning"},
             headers=student_headers
         )
-        
+
         # Get only warning events
         response = client.get(
             f"/proctoring/session/{session_id}/events?severity=warning",
             headers=student_headers
         )
-        
+
         assert response.status_code == 200
         data = response.json()
         assert len(data) == 1
@@ -771,7 +768,7 @@ class TestProctoringStats:
     def test_get_stats_teacher(self, client, teacher_headers, exam_id):
         """Test getting proctoring stats as teacher."""
         response = client.get(f"/proctoring/stats?exam_id={exam_id}", headers=teacher_headers)
-        
+
         assert response.status_code == 200
         data = response.json()
         assert "total_sessions" in data
@@ -784,14 +781,14 @@ class TestProctoringStats:
     def test_get_stats_student_forbidden(self, client, student_headers, exam_id):
         """Test getting proctoring stats as student fails."""
         response = client.get(f"/proctoring/stats?exam_id={exam_id}", headers=student_headers)
-        
+
         assert response.status_code == 403
         assert "Teacher access required" in response.json()["detail"]
 
     def test_get_stats_unauthorized(self, client, exam_id):
         """Test getting proctoring stats without auth fails."""
         response = client.get(f"/proctoring/stats?exam_id={exam_id}")
-        
+
         assert response.status_code == 401
 
 
@@ -801,7 +798,7 @@ class TestProctoringHealth:
     def test_health_check(self, client):
         """Test proctoring health check."""
         response = client.get("/proctoring/health")
-        
+
         assert response.status_code == 200
         data = response.json()
         assert data["available"] is True

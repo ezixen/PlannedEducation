@@ -6,13 +6,12 @@ and student-to-teacher/parent password reset requests.
 
 import json
 import logging
-from datetime import UTC, datetime
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import auth, database, models, schemas
+from . import database, models, schemas
 from .email_service import send_email
 from .routes_admin import generate_temporary_password
 from .routes_auth import get_current_user, get_password_hash
@@ -236,7 +235,7 @@ async def approve_password_reset_request(
         action_data = json.loads(notif.action_payload)
         requester_id = action_data.get("requester_id")
     except Exception:
-        raise HTTPException(status_code=400, detail="Invalid action payload")
+        raise HTTPException(status_code=400, detail="Invalid action payload") from None
 
     target_user = db.query(models.User).filter(models.User.id == requester_id).first()
     if not target_user:

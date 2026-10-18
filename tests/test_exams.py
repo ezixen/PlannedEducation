@@ -1,11 +1,9 @@
 """
 test_exams.py — exam CRUD, question creation, access control, and SEB config.
 """
-import pytest
 from fastapi.testclient import TestClient
+
 from src.plannededucation.api.main import app
-from src.plannededucation.api import database, models
-from src.plannededucation.api.seb_security import verify_seb_request
 
 client = TestClient(app)
 

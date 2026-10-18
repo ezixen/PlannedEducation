@@ -1,11 +1,12 @@
 """
 test_routes_anonymizer.py — anonymized submission access and AI grade posting.
 """
-import pytest
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+
 from fastapi.testclient import TestClient
-from src.plannededucation.api.main import app
+
 from src.plannededucation.api import database, models
+from src.plannededucation.api.main import app
 
 client = TestClient(app)
 
@@ -38,7 +39,7 @@ def _setup_exam_with_submission(db, teacher: models.User, student: models.User) 
         sub = models.ExamSubmission(
             exam_id=exam.id,
             student_id=student.id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.now(UTC),
         )
         db.add(sub)
         db.commit()
