@@ -331,8 +331,8 @@ fi
 
 cd "$INSTALL_DIR"
 
-# Read existing deployment.json defaults if available
-if [[ -f "$INSTALL_DIR/config/deployment.json" ]]; then
+# Read existing deployment.json defaults if available (on existing installations)
+if [[ -f "$INSTALL_DIR/.env" && -f "$INSTALL_DIR/config/deployment.json" ]]; then
     DEP_DOMAIN=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('domain', ''))" 2>/dev/null || true)
     DEP_API_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('api_port', ''))" 2>/dev/null || true)
     DEP_FRONTEND_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('frontend_port', ''))" 2>/dev/null || true)
@@ -868,7 +868,7 @@ fi
 
 if [[ "$USE_DOCKER" == "false" ]]; then
     run_verify "Frontend production build (dist/index.html)" "test -f '$INSTALL_DIR/web/apps/portal/dist/index.html'"
-    run_verify "Backend FastAPI health endpoint (TestClient)" "PYTHONPATH='$INSTALL_DIR/src' '$PYTHON_EXE' -c \"from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get('/health'); assert r.status_code == 200\""
+    run_verify "Backend FastAPI health endpoint (TestClient)" "set -a; [ -f '$INSTALL_DIR/.env' ] && source '$INSTALL_DIR/.env'; set +a; PYTHONPATH='$INSTALL_DIR/src' '$PYTHON_EXE' -c \"from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get('/health'); assert r.status_code == 200\""
 fi
 
 # ==============================================================================
