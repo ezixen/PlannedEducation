@@ -587,6 +587,26 @@
   - `uninstall.ps1`: Complete directory removal with 0 residual files, preserving all external system dependencies.
   - 0 orphaned background processes remaining.
 
+---
+
+### Phase 25: Linux & WSL GitHub Remote Deploy & Uninstall Drill (Complete Lifecycle Verification) ✅ Completed (2026-10-19)
+- **Status**: `done-tested-working`
+- **End-to-End Simulation**:
+  - Tested complete remote install, startup, health verification, and uninstallation workflow in WSL (Ubuntu 24.04) from clean GitHub clone to `/opt/plannededucation`.
+- **Issues Identified & Fixed**:
+  - **POSIX File Modes in Git**: Marked all 7 shell scripts (`install.sh`, `uninstall.sh`, backup, deploy, and test scripts) with executable bit (`chmod +x` / mode `100755`) in the git index to prevent `Permission denied` on Linux/WSL.
+  - **Package Engine Health Endpoint**: Updated `src/plannededucation/api/routes_packages.py` `/packages/health` check to return `"status": "ok"` alongside `"available": True`, and updated `verify.sh` to accept both indicators. Added test coverage in `tests/test_main.py`.
+  - **Headless Vite Preview Daemon (`web/apps/portal/scripts/preview-server.mjs`)**: Vite CLI (`vite preview`) binds to stdin for CLI shortcuts and terminates on stdin EOF unless configured programmatically. Implemented headless preview daemon using Vite's first-class JavaScript API (`preview()`), ignoring SIGHUP and running cleanly as an independent background daemon.
+  - **Background Service Detachment**: Added `disown` for backend and frontend processes in `start_all.sh`, and enhanced startup readiness loop to poll and verify both Backend API (`/health`) and Frontend Portal (`5173`) before declaring the system live.
+  - **Process Termination in `stop_all.sh`**: Added `pkill -f "preview-server.mjs"` to ensure frontend preview server processes are cleanly terminated when stopping platform.
+- **Verification Results in WSL (Ubuntu 24.04)**:
+  - `install.sh`: **5 passed, 0 failed** (all automated verification checks passed).
+  - `start_all.sh`: Started both backend (`:8000`) and frontend (`:5173`) with live health confirmation.
+  - `verify.sh`: **ALL SYSTEMS OPERATIONAL ✅** (Directory, database file, Backend API, Package Engine, Frontend Portal).
+  - `stop_all.sh`: Stopped all platform processes cleanly.
+  - `uninstall.sh`: Completely removed `/opt/plannededucation` with 0 residual files, self-cleaned, and kept all external system dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) intact.
+  - 0 orphaned background processes remaining.
+
 
 
 

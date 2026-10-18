@@ -139,4 +139,18 @@ All 5 reported deployment and startup issues have been resolved across both Wind
       - `install.ps1`: **5 passed, 0 failed** (all verification checks green).
       - `verify.ps1`: Runs cleanly with 0 syntax or parser errors.
       - `uninstall.ps1`: Successfully removed `C:\PlannedEducation` with 0 residual files, self-cleaned the uninstaller, and preserved all external system dependencies (Python, Node.js, PostgreSQL, Docker, Git).
+
+12. **Linux & WSL GitHub Remote Deployment & Uninstallation Drill (Verified Complete ✅)**:
+    - **Simulation**: Tested full deployment workflow in WSL (Ubuntu 24.04) from clean GitHub clone to default `/opt/plannededucation`, executed `./install.sh /opt/plannededucation`, verified runtime launcher suite (`start_all.sh`, `verify.sh`, `stop_all.sh`), and executed uninstallation via `./uninstall.sh`.
+    - **Issues Identified & Resolved**:
+      1. *POSIX Executable File Modes in Git*: Shell scripts checked into git had mode `100644` (non-executable). Updated index permissions with `git update-index --chmod=+x` across all 7 shell scripts (`install.sh`, `uninstall.sh`, backup, deploy, and test scripts).
+      2. *Package Engine Health Route Response Shape*: Backend package router `/packages/health` previously only returned `{"available": true, ...}` without `"status": "ok"`, causing `grep -q '"status":"ok"'` in `verify.sh` to report not responding. Added `"status": "ok"` to `routes_packages.py` and updated `verify.sh` to accept both `"status":"ok"` and `"available":true`.
+      3. *Headless Vite Preview Daemon*: Vite CLI (`vite preview`) binds interactive keyboard shortcuts to stdin and terminates on stdin `end` unless running in CI mode or programmatically. Resolved by creating `web/apps/portal/scripts/preview-server.mjs` using Vite's first-class programmatic `preview()` API, ignoring SIGHUP, and running as an independent daemon.
+      4. *Background Service Detachment*: Added `disown` in `start_all.sh` for both backend and frontend processes, and updated `start_all.sh` to verify both backend API and frontend portal HTTP responses before declaring the platform live.
+    - **Final Verification Result in WSL**:
+      - `install.sh`: **5 passed, 0 failed** (environment, deployment.json, SQLite, frontend build, and FastAPI TestClient).
+      - `start_all.sh`: Started both backend (`:8000`) and frontend (`:5173`) in background.
+      - `verify.sh`: **ALL SYSTEMS OPERATIONAL ✅** (Installation directory, database size, Backend API `/health`, Package Engine `/packages/health`, and Frontend Portal `http://127.0.0.1:5173`).
+      - `stop_all.sh`: Terminated both backend and frontend processes cleanly.
+      - `uninstall.sh`: Completely removed `/opt/plannededucation` with 0 residual files, self-cleaned uninstaller, and kept all external system dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) intact.
 
