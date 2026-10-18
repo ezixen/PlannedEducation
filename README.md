@@ -196,7 +196,7 @@ We welcome contributions! Whether it's:
   - [System Architecture](docs/dev/ARCHITECTURE.md) — Data models, schemas, and API design.
   - [Comprehensive Testing Guide](docs/dev/TESTING_GUIDE.md) — Automated pytest suites, Playwright E2E, and manual verification.
   - [Module & Package Specification](docs/dev/MODULE_SYSTEM.md).
-  - [Security & Compliance](docs/dev/SECURITY_COMPLIANCE.md) & [AI Risk Governance](docs/dev/AI_RISK_GOVERNANCE.md).
+  - [NIST SSDF Compliance](docs/dev/SSDF_COMPLIANCE.md), [NIST CSF 2.0 Alignment](docs/dev/NIST_CSF_2_ALIGNMENT.md), and [AI Risk Governance](docs/dev/AI_RISK_GOVERNANCE.md).
   - [Internationalization (i18n) Guide](docs/dev/I18N_GUIDE.md) & [Key Context Guide](docs/dev/I18N_CONTEXT.md).
 
 **Our promise**: No paid dependencies. Ever. If it can't run free, it doesn't go in.

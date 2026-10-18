@@ -1,5 +1,7 @@
 # Planned Education - Technical Implementation Plan
 
+> **Canonical Roadmap & Active Status:** This document contains the original architectural kickoff plan. For the authoritative, multi-phase roadmap and current completed status, see **[PLANS_UPDATED.md](PLANS_UPDATED.md)**.
+
 ## 1. Project Goal & Overview
 Planned Education aims to revolutionize test-taking and grading by providing a secure, open-source framework for schools. The system combines a secure kiosk test-taking environment (preventing cheating) with powerful, **privacy-first AI grading tools** to save teachers hours of work.
 

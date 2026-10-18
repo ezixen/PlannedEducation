@@ -151,7 +151,7 @@ PlannedEducation exists because of the incredible work of thousands of developer
 ## 🙏 Special Thanks — Individuals & Communities
 
 ### **Core Contributors**
-- **George 'ezixen' Lawrence** — Founder, lead architect, and tireless advocate for free education tools
+
 - **All GitHub Contributors** — Every PR, issue, review, and discussion makes this better
 
 ### **Open Source Communities**
@@ -270,4 +270,4 @@ October 2026
 
 ---
 
-*P.S. If you're reading this and your project helped us but isn't listed — please open an issue or PR. We want to thank you!*
+*P.S. If you're reading this and your project helped us but isn't listed, please forgive me, i thank You too! :) *

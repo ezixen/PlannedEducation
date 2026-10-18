@@ -26,10 +26,20 @@ Modules are self-contained question sets with shared context (e.g., a reading pa
 ## Account & Security
 
 ### How do I reset my password?
-Click 'Forgot Password' on the login page, enter your email address, and follow the instructions sent to your email to reset your password. If your school runs offline without email, an administrator can reset your password directly from the Admin Panel.
+PlannedEducation offers 3 easy ways to recover access:
+1. **Self-Reset with Recovery Codes (Fastest & Independent)**: Upon registration, all users (students, teachers, administrators) receive **5 one-time recovery codes**. On the login screen, click 'Forgot Password?', enter your email and any one of your recovery codes, and set a new password instantly without needing assistance or waiting for emails.
+2. **Pre-Exam Quick Reset by Teacher (Classroom Emergency)**: If a student forgets their password right before a test, the teacher can click the yellow **"⚡ Reset Pwd for Test"** button next to the student's name in the classroom roster. The student simply goes to `/login`, enters their school email, and is prompted to type a new password right in the login form to start the exam immediately.
+3. **Supervisor Request or Admin Reset**: Users who run out of recovery codes can request a reset from their assigned teacher or parent, or a school administrator can reset their password directly from the Admin Panel.
 
 ### Can administrators reset passwords directly without email?
 Yes! In school and classroom deployments without an active email server, administrators can reset any user's password directly from the **Admin Panel > Users** tab. Simply click the **🔑 Reset Password** button next to the user. You can type a custom password or let the system auto-generate a temporary password. You can also check 'Reset 2FA & Passkeys' to instantly recover an account if the user lost their authenticator device.
+
+### How do database backups work?
+PlannedEducation includes a native automated backup service:
+- **Automated Midnight Backups**: Every day at **00:00 UTC**, an atomic snapshot of the database is automatically created and stored in the `backups/` directory.
+- **Automated Retention**: Archives older than 30 days are automatically pruned to conserve disk space.
+- **Instant Admin Backups**: Administrators can click the **💾 Create Backup Now** button in the Admin Panel anytime to create an immediate on-demand snapshot and download it directly.
+- **Engines Supported**: Full support for both SQLite (using atomic non-locking online backups) and PostgreSQL (using compressed `pg_dump`).
 
 ### How do I configure email for password resets?
 Email is 100% optional. If unconfigured, PlannedEducation operates in self-contained offline mode and logs OTP codes safely. If you wish to enable outgoing email, configure either **Brevo (Sendinblue)** with `BREVO_API_KEY` (free tier: 300 emails/day) or your **School / Campus SMTP Server** (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`) in `.env`.
