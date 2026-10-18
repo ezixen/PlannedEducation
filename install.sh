@@ -693,6 +693,7 @@ EOF
     cat > "$INSTALL_DIR/start_frontend.sh" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
+export CI=true
 INSTALL_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
 cd "\$INSTALL_DIR/web/apps/portal"
 mkdir -p "\$INSTALL_DIR/logs"
@@ -702,7 +703,7 @@ if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
 fi
 VITE_BIN="\$INSTALL_DIR/web/apps/portal/node_modules/vite/bin/vite.js"
 if [[ -f "\$VITE_BIN" ]]; then
-    exec node "\$VITE_BIN" preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
+    exec node -e "process.on('SIGHUP', () => {}); import(process.argv[1]);" "\$VITE_BIN" preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
 else
     exec npx vite preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
 fi
