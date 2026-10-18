@@ -51,5 +51,11 @@ playwright-report/
 .vscode/
 .idea/
 
-# External / Unrelated Projects
+# External / Unrelated Projects & Sideprojects
 EasyLegalAid/
+MASTERPLAN_FACT_CHECK_REPORT.md
+find_issues.py
+*United Earth*
+*united_earth*
+*masterplan*
+*Masterplan*
