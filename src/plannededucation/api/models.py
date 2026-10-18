@@ -98,6 +98,16 @@ class User(Base):
 
     # Admin role
     is_admin = Column(Boolean, default=False, server_default="0", nullable=False)
+    # Teacher approval (teachers who self-register require admin approval before accessing exams/modules)
+    teacher_approved = Column(Boolean, default=True, server_default="1", nullable=False)
+
+    # Classroom Emergency Password Reset (teachers can unlock student account right before tests)
+    force_password_reset = Column(Boolean, default=False, server_default="0", nullable=False)
+    reset_by_teacher_id = Column(String(36), nullable=True)
+
+    # Cybersecurity & Brute-Force Safeguards
+    failed_login_attempts = Column(Integer, default=0, server_default="0", nullable=False)
+    locked_until = Column(DateTime(timezone=True), nullable=True)
 
     # Relationships
     exams = relationship("Exam", back_populates="teacher", cascade="all, delete-orphan")
@@ -695,3 +705,25 @@ class ArchiveJob(Base):
 
     # Relationships
     created_by = relationship("User", foreign_keys=[teacher_id])
+
+
+# ── In-App Notifications ─────────────────────────────────────────────────────
+
+class InAppNotification(Base):
+    """
+    In-platform notification for user alerts, teacher status approvals,
+    and password reset requests.
+    """
+    __tablename__ = "in_app_notifications"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    title = Column(String(128), nullable=False)
+    message = Column(Text, nullable=False)
+    type = Column(String(32), default="info", nullable=False)  # teacher_approval, password_reset_request, system, info
+    is_read = Column(Boolean, default=False, nullable=False, index=True)
+    link = Column(String(256), nullable=True)  # Frontend navigation route/tab
+    action_payload = Column(Text, nullable=True)  # JSON metadata (e.g. requester_id, request_id)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+
+    recipient = relationship("User", foreign_keys=[user_id])

@@ -394,6 +394,60 @@ print('Database initialized')
 # Access at http://localhost:5173 (frontend) or http://localhost:8000/docs (API)
 ```
 
+## Post-Deployment Configuration & Network Layout (`config/deployment.json`)
+
+PlannedEducation stores post-deployment network configurations in a server-side JSON file:
+`config/deployment.json`
+
+### Key Operational Capabilities
+- **No Need to Redeploy:** If your school's domain, hostname, IP address, frontend/backend ports, or network topology changes after deployment, you **do not** need to redeploy the platform or rebuild containers.
+- **Direct Server Editing:** Server administrators with shell access can edit `config/deployment.json` directly using `nano`, `vim`, or any text editor.
+- **Admin Dashboard UI Editing:** Administrators can also log in, navigate to **Admin Dashboard → ⚙️ Deployment & Network**, and adjust settings directly in the browser.
+- **Applying Changes:** After modifying `config/deployment.json` (or saving in the Admin Panel), simply restart the platform services to apply the new settings:
+  ```bash
+  # Docker deployment:
+  docker compose restart
+  # Systemd / Bare-metal deployment:
+  sudo systemctl restart plannededucation-backend
+  ```
+- **Backup Config File:** The Admin Panel includes a **"📁 Backup Config File"** button allowing administrators to export and save their configuration to a custom folder or local backup location at any time.
+
+---
+
+## User Self-Registration, Roles & Security Safeguards
+
+### Self-Registration Rules
+1. **Students, Teachers, and Parents** can self-register directly through the web portal (`/register`).
+2. **Administrators CANNOT self-register.** Administrator accounts can only be created by an existing administrator via the Admin Panel or during initial deployment using the CLI creation command.
+
+### Teacher Approval & Exam Security
+To prevent students from prank-registering as teachers and gaining access to tomorrow's test questions or exam modules:
+- Any self-registered teacher account is created with `teacher_approved = False`.
+- While pending approval, the user **cannot create, publish, or view exams, questions, or curriculum modules**.
+- When a teacher registers, an **instant In-Platform Notification** is dispatched to all system administrators.
+- Administrators can review and approve or deny teacher privileges with **one click** from the Notification Bell or the Admin Dashboard under **🎓 Teacher Approvals**.
+- Once approved, the teacher receives an in-app confirmation and full access is granted immediately.
+
+### One-Time Password Reset Recovery Codes (Self-Service)
+- Every user is presented with **5 single-use recovery codes** immediately upon registration.
+- Users are instructed to print or securely save these codes.
+- **Immediate Self-Reset:** If a user forgets their password, the platform prompts them: *"Unless you ran out of codes, you can reset your password immediately without waiting for anyone's help!"* Entering their email and one unused recovery code resets their password instantly.
+- **Admin Emergency Backup Codes:** System administrators must print or save emergency backup codes (available in Admin Dashboard → 🛡️ Emergency Backup Codes). This guarantees that administrators never lose access to system oversight even if they lose their password or 2FA authenticator.
+
+### In-Platform Password Reset Requests (No Email Required)
+If a user runs out of recovery codes:
+- **Students** can submit an in-platform password reset request to their linked **Teacher** or **Parent**.
+- **Teachers** can submit an in-platform password reset request to a school **Administrator**.
+- The designated supervisor receives a notification in their **Notification Bell** with a one-click button to approve the request and generate a secure temporary password.
+- **Optional Outgoing Email (SMTP):** If the school configures SMTP settings, an email notification is also sent. If SMTP is not configured, the platform operates 100% locally with internal notifications.
+
+### In-App Notification Bell
+- Every authenticated page includes a floating Notification Bell icon with an unread badge counter.
+- Automatically polls for updates every **60 seconds (1 minute)**.
+- Provides immediate notifications for teacher registration requests, password reset requests, and system alerts.
+
+---
+
 ## Module System
 
 ### Creating Modules (Teachers)
@@ -459,11 +513,20 @@ docker compose build --no-cache
 docker compose up -d
 ```
 
-## Maintenance
+## Maintenance & Backups
 
-### Daily (Automated via cron)
+### Built-in Automated Midnight Database Backups
+PlannedEducation includes a native automated midnight background backup scheduler:
+- **Schedule:** Runs every midnight (00:00 UTC) automatically while the backend is running.
+- **Retention:** Automatically purges backup archives older than 30 days.
+- **Transactional Consistency:**
+  - SQLite: Uses atomic `sqlite3.connect().backup()` (no lock contention).
+  - PostgreSQL: Uses `pg_dump` with gzip compression.
+- **Web Admin Management:** Go to **Admin Dashboard → 💾 Database Backups** to create an immediate backup snapshot, download archives directly, or inspect backup history.
+
+### Daily (Manual / External cron fallback)
 ```bash
-# Backup database
+# External manual backup command (if desired alongside built-in scheduler)
 docker compose exec -T postgres pg_dump -U postgres plannededucation | gzip > /backups/pe_$(date +%Y%m%d).sql.gz
 
 # Cleanup old backups (keep 30 days)

@@ -3,15 +3,30 @@ Admin Routes for PlannedEducation
 Endpoints for administrative operations (user management, exam oversight, system stats).
 """
 
+import hashlib
+import json
 import secrets
 import string
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import FileResponse
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
-from . import database, models, schemas
-from .routes_auth import _validate_password, get_current_user, get_password_hash
+from . import auth, backup_service, database, models, schemas
+from .deployment_config import (
+    DeploymentConfigResponse,
+    DeploymentConfigSchema,
+    load_deployment_config,
+    save_deployment_config,
+)
+from .routes_auth import (
+    _decode_recovery_codes,
+    _encode_recovery_codes,
+    _validate_password,
+    get_current_user,
+    get_password_hash,
+)
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -99,6 +114,10 @@ def update_admin_user(
     if user.id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot modify your own account")
 
+    # Cybersecurity safeguard: non-superadmin cannot deactivate an administrator
+    if (user.is_admin or user.role == "admin") and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Superadmin privilege required to modify administrator accounts")
+
     user.is_active = is_active
     db.commit()
     return {"message": f"User {'activated' if is_active else 'deactivated'} successfully"}
@@ -118,6 +137,10 @@ def delete_admin_user(
     # Prevent self-deletion
     if user.id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot delete your own account")
+
+    # Cybersecurity safeguard: non-superadmin cannot delete an administrator
+    if (user.is_admin or user.role == "admin") and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Superadmin privilege required to delete administrator accounts")
 
     db.delete(user)
     db.commit()
@@ -140,6 +163,10 @@ def admin_reset_user_password(
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
+    # Cybersecurity safeguard: non-superadmin cannot reset an administrator's password
+    if (user.is_admin or user.role == "admin") and user.id != current_user.id and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Superadmin privilege required to reset administrator accounts")
+
     # Set custom or generated password
     if payload.new_password and payload.new_password.strip():
         new_pwd = payload.new_password.strip()
@@ -157,6 +184,12 @@ def admin_reset_user_password(
     # Invalidate existing refresh tokens for security
     user.refresh_token_hash = None
     user.refresh_token_expires = None
+
+    # Clear brute-force lockout and quick-reset flags
+    user.failed_login_attempts = 0
+    user.locked_until = None
+    user.force_password_reset = False
+    user.reset_by_teacher_id = None
 
     # Optionally reset 2FA / TOTP / WebAuthn
     if payload.reset_2fa:
@@ -233,3 +266,257 @@ def delete_admin_exam(
     db.delete(exam)
     db.commit()
     return {"message": "Exam deleted successfully"}
+
+
+@router.post("/users", response_model=schemas.AdminCreateUserResponse, status_code=status.HTTP_201_CREATED)
+def create_admin_user(
+    payload: schemas.AdminCreateUserRequest,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Create a new user (admin, teacher, student, or parent) directly from the admin dashboard."""
+    # Check if username or email exists
+    existing_user = db.query(models.User).filter(
+        (models.User.username == payload.username) | (models.User.email == payload.email)
+    ).first()
+    if existing_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="A user with this username or email already exists."
+        )
+
+    # Validate or generate password
+    temp_pwd = None
+    if payload.password and payload.password.strip():
+        pwd = payload.password.strip()
+        _validate_password(pwd)
+    else:
+        pwd = generate_temporary_password()
+        temp_pwd = pwd
+
+    hashed_pwd = get_password_hash(pwd)
+    is_admin = (payload.role == "admin")
+
+    new_user = models.User(
+        username=payload.username,
+        email=payload.email,
+        full_name=payload.full_name,
+        role=payload.role,
+        hashed_password=hashed_pwd,
+        is_admin=is_admin,
+        is_active=True,
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return schemas.AdminCreateUserResponse(
+        status="success",
+        user_id=new_user.id,
+        username=new_user.username,
+        email=new_user.email,
+        full_name=new_user.full_name,
+        role=new_user.role,
+        temporary_password=temp_pwd,
+        message=f"User {new_user.username} created successfully.",
+    )
+
+
+@router.get("/config", response_model=DeploymentConfigResponse)
+def get_admin_deployment_config(
+    current_user: models.User = Depends(require_admin),
+):
+    """Get current deployment and network configuration."""
+    cfg = load_deployment_config()
+    cfg["config_file_path"] = "config/deployment.json"
+    cfg["restart_required"] = False
+    return cfg
+
+
+@router.put("/config")
+def update_admin_deployment_config(
+    payload: DeploymentConfigSchema,
+    current_user: models.User = Depends(require_admin),
+):
+    """Update deployment configuration and synchronize config/deployment.json and .env."""
+    result = save_deployment_config(payload)
+    return {
+        "status": "success",
+        "message": "Deployment configuration saved successfully. A platform restart is required to apply network changes.",
+        "restart_required": True,
+        "config": result,
+    }
+
+
+# ── Teacher Approval Management ───────────────────────────────────────────────
+
+@router.get("/pending-teachers")
+def get_pending_teachers(
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Retrieve all teachers awaiting administrative approval."""
+    pending = (
+        db.query(models.User)
+        .filter(models.User.role == "teacher", models.User.teacher_approved.is_(False))
+        .order_by(models.User.created_at.desc())
+        .all()
+    )
+    return [
+        {
+            "id": u.id,
+            "username": u.username,
+            "email": u.email,
+            "full_name": u.full_name,
+            "created_at": u.created_at.isoformat() if u.created_at else None,
+            "is_active": u.is_active,
+        }
+        for u in pending
+    ]
+
+
+@router.post("/teachers/{user_id}/approve")
+def approve_teacher(
+    user_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Approve a self-registered teacher, granting them full exam creation rights."""
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    if user.role != "teacher":
+        raise HTTPException(status_code=400, detail="User is not a teacher")
+
+    user.teacher_approved = True
+    user.is_active = True
+
+    # Send in-app notification to the teacher
+    notif = models.InAppNotification(
+        user_id=user.id,
+        title="Teacher Account Approved",
+        message="Your teacher status has been verified and approved by an administrator! You can now publish exams, manage classes, and access curriculum modules.",
+        type="system",
+        link="/teacher-exams",
+    )
+    db.add(notif)
+    db.commit()
+
+    return {"status": "success", "message": f"Teacher {user.username} approved successfully."}
+
+
+@router.post("/teachers/{user_id}/deny")
+def deny_teacher(
+    user_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Deny a self-registered teacher's request and convert their account to a student role."""
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    user.role = "student"
+    user.teacher_approved = True
+
+    notif = models.InAppNotification(
+        user_id=user.id,
+        title="Teacher Registration Update",
+        message="Your request for teacher privileges was declined by the administrator. Your account has been designated as a student account.",
+        type="system",
+        link="/exam",
+    )
+    db.add(notif)
+    db.commit()
+
+    return {"status": "success", "message": f"Teacher request for {user.username} denied; role set to student."}
+
+
+# ── Admin Emergency Backup Codes ──────────────────────────────────────────────
+
+@router.get("/backup-codes")
+def get_admin_backup_codes_status(
+    current_user: models.User = Depends(require_admin),
+):
+    """Check how many emergency backup codes the administrator has active."""
+    codes = _decode_recovery_codes(current_user.recovery_codes)
+    return {
+        "has_backup_codes": len(codes) > 0,
+        "active_codes_count": len(codes),
+        "username": current_user.username,
+    }
+
+
+@router.post("/backup-codes/generate")
+def generate_admin_backup_codes(
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Generate 5 fresh one-time emergency backup codes for the administrator.
+    Admins MUST print or save these codes to ensure system access cannot be lost.
+    """
+    fresh_codes = auth.generate_recovery_codes(count=5)
+    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in fresh_codes]
+
+    current_user.recovery_codes = _encode_recovery_codes(hashed_codes)
+    db.commit()
+
+    return {
+        "status": "success",
+        "recovery_codes": fresh_codes,
+        "message": (
+            "5 emergency backup codes generated! PRINT OR SAVE THESE CODES IMMEDIATELY in a secure location. "
+            "If you lose access to your password or 2FA, these one-time codes are the only way to recover administrator access."
+        ),
+    }
+
+
+# ── Database Backup Operations ────────────────────────────────────────────────
+
+@router.post("/database/backup")
+def trigger_database_backup(
+    current_user: models.User = Depends(require_admin),
+):
+    """Trigger an immediate manual database backup."""
+    result = backup_service.create_database_backup(is_auto=False)
+    return result
+
+
+@router.get("/database/backups")
+def get_database_backups(
+    current_user: models.User = Depends(require_admin),
+):
+    """List all available database backups."""
+    return backup_service.list_database_backups()
+
+
+@router.get("/database/backups/{filename}/download")
+def download_database_backup(
+    filename: str,
+    current_user: models.User = Depends(require_admin),
+):
+    """Download a database backup snapshot with path-traversal protection."""
+    target_path = backup_service.get_backup_file_path(filename)
+    if not target_path or not target_path.exists():
+        raise HTTPException(status_code=404, detail="Backup file not found")
+
+    return FileResponse(
+        path=str(target_path),
+        filename=filename,
+        media_type="application/octet-stream",
+    )
+
+
+@router.delete("/database/backups/{filename}")
+def delete_database_backup(
+    filename: str,
+    current_user: models.User = Depends(require_admin),
+):
+    """Delete an old database backup."""
+    success = backup_service.delete_backup_file(filename)
+    if not success:
+        raise HTTPException(status_code=404, detail="Backup file not found or could not be deleted")
+    return {"status": "success", "message": f"Backup {filename} deleted successfully."}
+
+

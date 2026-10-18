@@ -24,8 +24,17 @@ def _get_exam_or_404(exam_id: str, db: Session) -> models.Exam:
     return exam
 
 
+def _require_approved_teacher(user: models.User) -> None:
+    if user.role == "teacher" and not getattr(user, "teacher_approved", True):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Your teacher account is pending administrator approval before you can create or manage exams.",
+        )
+
+
 def _require_exam_owner(exam: models.Exam, user: models.User) -> None:
-    """Raise 403 if the user is not the exam's owner."""
+    """Raise 403 if the user is not the exam's owner or not approved."""
+    _require_approved_teacher(user)
     if exam.teacher_id != user.id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
@@ -41,6 +50,7 @@ def create_exam(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),
 ):
+    _require_approved_teacher(current_user)
     db_exam = models.Exam(**exam.model_dump(), teacher_id=current_user.id)
     db.add(db_exam)
     db.commit()

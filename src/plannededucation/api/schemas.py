@@ -33,7 +33,13 @@ class UserResponse(UserBase):
     is_active: bool
     role: str
     totp_enabled: bool
+    teacher_approved: bool = True
     # hashed_password, totp_secret, ai_api_key_encrypted NEVER included here
+
+
+class UserRegistrationResponse(UserResponse):
+    recovery_codes: list[str] | None = None
+    message: str | None = None
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -200,6 +206,71 @@ class AdminResetPasswordResponse(BaseModel):
     temporary_password: str
     reset_2fa: bool
     message: str
+
+
+class AdminCreateUserRequest(BaseModel):
+    email: EmailStr
+    username: str = Field(..., min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
+    full_name: str | None = Field(None, max_length=128)
+    role: str = Field(default="admin", pattern=r"^(admin|teacher|student|parent)$")
+    password: str | None = Field(None, min_length=8, max_length=128)
+
+
+class AdminCreateUserResponse(BaseModel):
+    status: str
+    user_id: str
+    username: str
+    email: str
+    full_name: str | None
+    role: str
+    temporary_password: str | None = None
+    message: str
+
+
+# ── In-App Notifications ─────────────────────────────────────────────────────
+
+class InAppNotificationResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    user_id: str
+    title: str
+    message: str
+    type: str
+    is_read: bool
+    link: str | None = None
+    action_payload: str | None = None
+    created_at: datetime
+
+
+class UnreadCountResponse(BaseModel):
+    unread_count: int
+
+
+class TeacherResetCheckRequest(BaseModel):
+    identifier: str = Field(..., min_length=3, max_length=255)
+
+
+class TeacherResetCheckResponse(BaseModel):
+    teacher_reset_active: bool
+    email: str | None = None
+    username: str | None = None
+    full_name: str | None = None
+    message: str | None = None
+
+
+class TeacherResetCompleteRequest(BaseModel):
+    identifier: str = Field(..., min_length=3, max_length=255)
+    new_password: str = Field(..., min_length=8, max_length=128)
+
+
+class InternalPasswordResetRequest(BaseModel):
+    target_role: str = Field(..., pattern=r"^(teacher|parent|admin)$")
+    target_user_id: str | None = None
+    note: str | None = Field(None, max_length=256)
+
+
+class InternalPasswordResetApprove(BaseModel):
+    new_password: str | None = Field(None, min_length=8, max_length=128)
 
 
 # ── 2FA / TOTP ────────────────────────────────────────────────────────────────

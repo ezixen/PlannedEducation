@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
 import { FAQChatbot } from './FAQChatbot';
+import { NotificationBell } from './NotificationBell';
 
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,6 +38,7 @@ export function Layout() {
         </button>
         <div className="brand-title">Planned Education</div>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
+          <NotificationBell />
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--sidebar-bg)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', minWidth: 0, maxWidth: '100%' }}>
             <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select

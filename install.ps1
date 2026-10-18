@@ -352,6 +352,18 @@ if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededuca
 
 Set-Location $InstallDir
 
+# Read existing deployment.json defaults if available
+$existingDepJson = Join-Path $InstallDir "config\deployment.json"
+if (Test-Path $existingDepJson) {
+    try {
+        $parsedDep = Get-Content $existingDepJson -Raw | ConvertFrom-Json
+        if ($parsedDep.domain) { $Domain = $parsedDep.domain }
+        if ($parsedDep.api_port) { $ApiPort = [int]$parsedDep.api_port }
+        if ($parsedDep.frontend_port) { $FrontendPort = [int]$parsedDep.frontend_port }
+        if ($parsedDep.school_name) { $SchoolName = $parsedDep.school_name }
+    } catch {}
+}
+
 # Step 5: Configure Environment Variables & Secrets
 Write-Header "Step 5: Configuring Environment & Secrets"
 
@@ -428,6 +440,26 @@ ALLOW_DEV_SEB_BYPASS=$sebBypass
 
     [System.IO.File]::WriteAllText($envFile, $envContent, (New-Object System.Text.UTF8Encoding($false)))
     Write-Success "Created .env file with secure random secrets (API port: $ApiPort, Frontend port: $FrontendPort)"
+
+    $configDir = Join-Path $InstallDir "config"
+    if (-not (Test-Path $configDir)) { New-Item -ItemType Directory -Path $configDir -Force | Out-Null }
+    $deploymentJsonFile = Join-Path $configDir "deployment.json"
+    $corsList = "http://${Domain}:${FrontendPort},http://${Domain}:5173,http://${Domain}:5175,http://localhost:${FrontendPort},http://localhost:5173,http://localhost:5175,http://127.0.0.1:${FrontendPort},http://127.0.0.1:5173,http://127.0.0.1:5175,https://$Domain"
+    $depConfigObj = [PSCustomObject]@{
+        school_name = $SchoolName
+        domain = $Domain
+        api_port = $ApiPort
+        frontend_port = $FrontendPort
+        cors_origins = $corsList
+        allowed_hosts = "$Domain,localhost,127.0.0.1"
+        environment = $envMode
+        allow_dev_seb_bypass = ($sebBypass -eq "true")
+        anonymizer_enabled = $true
+        anonymizer_language = "en"
+        updated_at = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+    }
+    $depConfigObj | ConvertTo-Json -Depth 4 | Set-Content -Path $deploymentJsonFile -Encoding UTF8
+    Write-Success "Created config/deployment.json (domain: $Domain, API port: $ApiPort, Frontend port: $FrontendPort)"
 } else {
     Write-Info "Keeping existing .env file"
 }
@@ -557,6 +589,25 @@ if (-not $AutoConfirm) {
     if ($inputPass) { $AdminPassword = $inputPass }
     $inputName = Read-Host "Enter Superadmin Full Name (default: $AdminName)"
     if ($inputName) { $AdminName = $inputName }
+} else {
+    # Even in AutoConfirm mode, ask for admin password if it's the default or prompt administrator
+    if ($AdminPassword -eq "AdminPassword123!") {
+        Write-Host ""
+        Write-Host "[SECURITY REQUIREMENT] Superadmin Password Configuration" -ForegroundColor $YELLOW
+        Write-Host "For security, you must set a secure administrator password." -ForegroundColor $WHITE
+        try {
+            $inputPass = Read-Host "Enter Superadmin Password (press Enter to generate a secure random password)"
+            if ($inputPass) {
+                $AdminPassword = $inputPass
+            } else {
+                $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
+                $AdminPassword = -join ((1..16) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+                Write-Info "Generated secure Superadmin Password: $AdminPassword"
+            }
+        } catch {
+            Write-Info "Non-interactive environment detected; using configured administrator password."
+        }
+    }
 }
 
 if (-not $useDocker) {
@@ -567,10 +618,13 @@ if (-not $useDocker) {
     $env:PE_SCHOOL_NAME = $SchoolName
 
     $adminScript = @"
+import hashlib
+import json
 import os
+from plannededucation.api import auth
 from plannededucation.api.database import Base, SessionLocal, engine
 from plannededucation.api.models import School, User, UserRole
-from plannededucation.api.routes_auth import get_password_hash
+from plannededucation.api.routes_auth import get_password_hash, _encode_recovery_codes
 
 Base.metadata.create_all(bind=engine)
 db = SessionLocal()
@@ -584,6 +638,10 @@ try:
     pwd = os.environ['PE_ADMIN_PASSWORD']
     name = os.environ['PE_ADMIN_NAME']
     uname = email.split('@')[0] or 'admin'
+
+    plain_recovery_codes = auth.generate_recovery_codes(count=5)
+    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]
+
     existing = db.query(User).filter((User.email == email) | (User.username == uname)).first()
     if existing:
         existing.email = email
@@ -592,6 +650,7 @@ try:
         existing.role = UserRole.admin.value
         existing.is_admin = True
         existing.is_active = True
+        existing.recovery_codes = _encode_recovery_codes(hashed_codes)
         db.commit()
         print(f'Updated existing Admin user: {email}')
     else:
@@ -602,11 +661,29 @@ try:
             full_name=name,
             role=UserRole.admin.value,
             is_admin=True,
-            is_active=True
+            is_active=True,
+            recovery_codes=_encode_recovery_codes(hashed_codes)
         )
         db.add(admin)
         db.commit()
         print(f'Created initial Admin user: {email}')
+
+    print('\n' + '=' * 68)
+    print('  🔑 SUPERADMIN EMERGENCY RECOVERY CODES')
+    print('=' * 68)
+    for i, code in enumerate(plain_recovery_codes, 1):
+        print(f'    Code {i}: {code}')
+    print('=' * 68)
+    print('  ⚠️  CRITICAL NOTICE FOR ADMINISTRATOR:')
+    print('  Store these 5 one-time recovery codes safely (print or write them down).')
+    print('  If you lose your administrator password and recovery codes, you will')
+    print('  be locked out and may need to redeploy the whole system, as database')
+    print('  injection is blocked for security.')
+    print('=' * 68 + '\n')
+
+    # Save codes to file for installer to read
+    with open('admin_recovery_codes.tmp', 'w') as f:
+        f.write('\n'.join(plain_recovery_codes))
 finally:
     db.close()
 "@
@@ -615,6 +692,15 @@ finally:
         Write-ErrorMsg "Admin creation failed!"
         exit 1
     }
+
+    $codesText = ""
+    $tmpCodes = Join-Path $InstallDir "admin_recovery_codes.tmp"
+    if (Test-Path $tmpCodes) {
+        $codesList = Get-Content $tmpCodes
+        $codesText = ($codesList | ForEach-Object { "  - $_" }) -join "`r`n"
+        Remove-Item $tmpCodes -Force -ErrorAction SilentlyContinue
+    }
+
     $credFile = Join-Path $InstallDir "ADMIN_CREDENTIALS.txt"
     $credContent = @"
 PlannedEducation Superadmin Credentials
@@ -625,9 +711,18 @@ Admin Password: $AdminPassword
 Admin Name:     $AdminName
 Backend API:    http://${Domain}:${ApiPort}
 Frontend URL:   http://${Domain}:${FrontendPort}
+
+============================================================
+EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):
+$codesText
+
+WARNING: If you lose both your administrator password and these
+recovery codes, you will be permanently locked out and will need
+to redeploy the entire platform, as database injection is not an option.
+============================================================
 "@
     [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
-    Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt)"
+    Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
 }
 
 # Step 8: Run Verification Tests
@@ -656,6 +751,7 @@ function Run-Verify {
 }
 
 Run-Verify "Environment configuration (.env)" { Test-Path (Join-Path $InstallDir ".env") } | Out-Null
+Run-Verify "Deployment configuration (config/deployment.json)" { Test-Path (Join-Path $InstallDir "config\deployment.json") } | Out-Null
 
 if ($useSqlite) {
     Run-Verify "SQLite database initialized" { Test-Path (Join-Path $InstallDir "plannededucation.db") } | Out-Null

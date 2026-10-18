@@ -123,6 +123,16 @@ export function TeacherDashboard() {
     };
   }, [examId]);
 
+  const handleQuickResetStudent = async (studentId: string, studentName: string) => {
+    if (!window.confirm(`Unlock and reset password for ${studentName}?\n\nThe student can immediately type their email at login and choose a new password to take the exam.`)) return;
+    try {
+      const res = await apiClient.post(`/auth/teacher/quick-reset/${studentId}`);
+      showSuccess(res.data?.message || `Password reset initiated for ${studentName}`);
+    } catch (err: any) {
+      showError('Reset failed', err.response?.data?.detail || err.message);
+    }
+  };
+
   const fetchSubmissions = async () => {
     if (!examId) return;
     setLoading(true);
@@ -510,6 +520,7 @@ export function TeacherDashboard() {
                   <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Time Remaining</th>
                   <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Violations</th>
                   <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Score</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -554,6 +565,27 @@ export function TeacherDashboard() {
                     </td>
                     <td style={{ padding: '0.75rem', fontWeight: 500, color: 'var(--text-color)' }}>
                       {hb.score !== null ? `${hb.score}%` : '—'}
+                    </td>
+                    <td style={{ padding: '0.75rem', textAlign: 'right' }}>
+                      <button
+                        onClick={() => handleQuickResetStudent(hb.student_id, hb.student_name)}
+                        style={{
+                          padding: '0.35rem 0.65rem',
+                          backgroundColor: '#10b98115',
+                          color: '#10b981',
+                          border: '1px solid #10b98140',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          cursor: 'pointer',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.25rem',
+                        }}
+                        title="Unlock student account and reset password before test"
+                      >
+                        ⚡ Reset Pwd for Test
+                      </button>
                     </td>
                   </tr>
                 ))}

@@ -76,7 +76,10 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 | **Secure Exam Mode** | SEB cryptographic lock, digital hand raise, offline PWA support |
 | **Proctoring (Opt-In)** | GDPR consent flow → Face detection → Eye-gaze tracking → Multi-face alerts → Audio anomaly detection → All events timestamped & auditable |
 | **OCR & STT** | Tesseract math OCR + faster-whisper speech-to-text |
-| **Auth** | Google OAuth primary, TOTP 2FA, recovery codes, email OTP password reset |
+| **Auth & Recovery** | Google SSO + email login, TOTP 2FA, 5 printable single-use recovery codes, offline in-platform supervisor reset |
+| **Teacher Verification** | Self-registration for students/teachers/parents; teacher verification required by admin before exam creation |
+| **In-App Notifications** | Floating notification bell (60s polling) with 1-click teacher & password reset approvals |
+| **Deployment Config** | Post-deploy editable `config/deployment.json` via file or Admin Panel (no redeploy needed) + backup button |
 | **Database** | PostgreSQL (prod) / SQLite (dev) via SQLAlchemy |
 
 ---

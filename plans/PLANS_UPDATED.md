@@ -411,4 +411,67 @@
   - Full deployed multi-role classroom E2E simulation (`tests/e2e/playwright/tests/deployed-classroom-e2e.spec.ts`) passed in 22.4s against deployed platform (Admin, Teacher, 3 Students with dynamic IEP and mistake variations, Grading, Student review, Parent portal).
   - Full backend pytest suite: 107/107 passing in 102.10s via `scripts/testing/update_test_cache.py`.
   - Zero orphaned processes remaining.
+
+---
+
+### Phase 18: Server-Side Editable Deployment Config, Teacher Verification & Approval, In-App Notifications & Recovery Codes ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **Server-Side Editable Deployment Configuration (`config/deployment.json` & `deployment_config.py`)**:
+  - Post-deployment domain, port, network layout, CORS, and optional SMTP email settings stored in `config/deployment.json`.
+  - Accessible and editable on the server via text editor or via web in **Admin Dashboard → ⚙️ Deployment & Network**.
+  - Platform restart applies changes with zero redeployment or rebuild required.
+  - Browser-based "📁 Backup Config File" button using File System Access API with blob download fallback.
+  - Documented in `README.md`, `DEPLOY.md`, `DEPLOY_SIMPLE.md`, and `DEPLOY_COMPREHENSIVE.md`.
+- **Role Self-Registration & Security Restrictions**:
+  - Users can self-register as `student`, `teacher`, or `parent`.
+  - Admin accounts cannot self-register (restricted to existing admins or CLI commands).
+  - Self-registered teachers default to `teacher_approved = False` to prevent students from prank-registering and viewing exam questions or curriculum modules.
+  - Instant in-platform notification sent to administrators upon teacher registration.
+  - Admin approval/denial endpoints (`/admin/pending-teachers`, `/admin/teachers/{id}/approve`, `/admin/teachers/{id}/deny`) and UI in Admin Dashboard.
+- **One-Time Password Reset Recovery Codes & Self-Service**:
+  - 5 single-use recovery codes generated upon registration for all users; printable and copyable.
+  - Users can reset their password immediately without waiting for anyone using their recovery code.
+  - Forgot password modal clearly reminds users to check their 5 recovery codes before requesting supervisor help.
+  - Emergency backup codes for administrators (modal in Admin Dashboard) so admins never lose platform control.
+- **In-Platform Offline-First Password Reset Requests**:
+  - Students can request password reset from linked teachers or parents.
+  - Teachers can request password reset from administrators.
+  - Supervisors receive notifications and approve with one click, generating a secure temporary password.
+  - 100% offline-first; SMTP email is completely optional and configurable.
+- **Floating In-App Notification Bell**:
+  - Mounted in application header on every page (`Layout.tsx`).
+  - Automatic 60-second polling for unread notifications.
+  - One-click actions for teacher approval and password reset requests.
+- **Verification**:
+  - Full backend pytest suite passing clean via `scripts/testing/update_test_cache.py` (118/118 tests passed).
+  - Frontend production build (`npm run build`) passing clean in ~1.8s with 0 errors.
+  - Zero orphaned background processes remaining.
+
+---
+
+### Phase 19: Classroom Pre-Exam Quick Reset, Midnight Database Auto-Backup, Brute-Force Lockout & Installer Admin Safeguards ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **Teacher Classroom Emergency Student Password Reset**:
+  - Right before an exam, students who forgot their password can be unlocked by their teacher with a single click.
+  - "⚡ Reset Pwd for Test" button available in teacher student rosters (`TeacherClasses.tsx`) and exam monitoring (`TeacherDashboard.tsx`).
+  - Next time student enters their email on `/login`, system intercepts with `TEACHER_RESET_ACTIVE` and prompts for their new password directly. Student types new password and is immediately signed in to take the exam.
+- **Database Backup Engine & Midnight Auto-Backup (`backup_service.py` & `DatabaseBackupPanel.tsx`)**:
+  - Immediate manual database backup snapshot button in Admin Dashboard.
+  - Automated midnight background scheduler (runs daily at 00:00 UTC) with automatic 30-day retention pruning.
+  - Safe transactional backups: SQLite atomic `sqlite3.connect().backup()` and PostgreSQL `pg_dump` with gzip compression.
+  - Secure backup management UI: download with blob authentication, path traversal guards, and deletion controls.
+- **Administrator Security & Brute-Force Protection**:
+  - Administrator accounts protected against non-superadmin resets, deactivations, and deletions.
+  - Brute-force safeguard: 5 consecutive failed login attempts automatically locks the account for 15 minutes.
+  - Timezone-safe naive/aware comparisons across SQLite and PostgreSQL backends.
+- **Installer AutoConfirm Admin Safeguard & Recovery Warnings (`install.ps1`, `install.sh`)**:
+  - Even with `-AutoConfirm` / `AUTO_CONFIRM=true`, installer pauses and prompts to securely set administrator password if default.
+  - Generates 5 one-time recovery codes and writes to `ADMIN_CREDENTIALS.txt`.
+  - Displays prominent terminal warning banner: *"Keep these safe (print or write them down). If you lose both your password and recovery codes, you will be locked out and will need to redeploy the whole system, as database injection is not an option."*
+- **Verification**:
+  - Dedicated test suite `tests/test_teacher_quick_reset_and_backups.py` (4/4 passed).
+  - Full backend pytest suite passing clean via `scripts/testing/update_test_cache.py` (122/122 tests passed in 96.79s).
+  - Frontend production build (`npm run build`) verified clean in 1.94s with 0 errors.
+  - Zero orphaned background processes remaining.
+
 

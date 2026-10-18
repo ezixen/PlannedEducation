@@ -35,6 +35,7 @@ from . import (
     routes_chat,
     routes_chatgpt,
     routes_exam,
+    routes_notifications,
     routes_ocr,
     routes_packages,
     routes_parent,
@@ -98,31 +99,40 @@ logger.setLevel(logging.INFO)
 
 
 # ── Prometheus Metrics ───────────────────────────────────────────────────────
-# Custom metrics for SLO tracking
-REQUEST_COUNT = Counter(
-    "http_requests_total",
-    "Total HTTP requests",
-    ["method", "endpoint", "status_code"],
-)
-REQUEST_LATENCY = Histogram(
-    "http_request_duration_seconds",
-    "HTTP request latency in seconds",
-    ["method", "endpoint"],
-)
-ACTIVE_USERS = Gauge(
-    "active_users",
-    "Number of active users",
-)
-EXAM_SUBMISSIONS = Counter(
-    "exam_submissions_total",
-    "Total exam submissions",
-    ["status"],
-)
-AI_GRADING_REQUESTS = Counter(
-    "ai_grading_requests_total",
-    "Total AI grading requests",
-    ["provider", "status"],
-)
+# Custom metrics for SLO tracking (guarded against duplicate registration in test/reload environments)
+from prometheus_client import REGISTRY
+
+try:
+    REQUEST_COUNT = Counter(
+        "http_requests_total",
+        "Total HTTP requests",
+        ["method", "endpoint", "status_code"],
+    )
+    REQUEST_LATENCY = Histogram(
+        "http_request_duration_seconds",
+        "HTTP request latency in seconds",
+        ["method", "endpoint"],
+    )
+    ACTIVE_USERS = Gauge(
+        "active_users",
+        "Number of active users",
+    )
+    EXAM_SUBMISSIONS = Counter(
+        "exam_submissions_total",
+        "Total exam submissions",
+        ["status"],
+    )
+    AI_GRADING_REQUESTS = Counter(
+        "ai_grading_requests_total",
+        "Total AI grading requests",
+        ["provider", "status"],
+    )
+except Exception:
+    REQUEST_COUNT = REGISTRY._names_to_collectors.get("http_requests_total")
+    REQUEST_LATENCY = REGISTRY._names_to_collectors.get("http_request_duration_seconds")
+    ACTIVE_USERS = REGISTRY._names_to_collectors.get("active_users")
+    EXAM_SUBMISSIONS = REGISTRY._names_to_collectors.get("exam_submissions_total")
+    AI_GRADING_REQUESTS = REGISTRY._names_to_collectors.get("ai_grading_requests_total")
 
 # Start Prometheus metrics server on port 9090 (skip in test mode or if port is busy)
 if os.getenv("PLANNED_EDUCATION_ENV") != "test":
@@ -174,7 +184,21 @@ async def lifespan(app: FastAPI):
         logger.warning(f"Requests OpenTelemetry instrumentation skipped: {exc}")
 
     Base.metadata.create_all(bind=engine)
+
+    # Start background midnight autobackup task (when not in test mode)
+    backup_task = None
+    if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+        from . import backup_service
+        backup_task = asyncio.create_task(backup_service.run_midnight_autobackup_scheduler())
+
     yield
+
+    if backup_task:
+        backup_task.cancel()
+        try:
+            await backup_task
+        except asyncio.CancelledError:
+            pass
 
 
 # ── Rate Limiter (shared instance) ──────────────────────────────────────────
@@ -243,12 +267,24 @@ if os.getenv("PLANNED_EDUCATION_ENV") == "production":
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
 
 # ── CORS (explicit allow-list, never wildcard) ───────────────────────────────
+_raw_cors = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175",
+)
+# If config/deployment.json exists, ensure its cors_origins are also merged
+try:
+    _dep_json = os.path.join(os.getcwd(), "config", "deployment.json")
+    if os.path.isfile(_dep_json):
+        with open(_dep_json, encoding="utf-8") as _f:
+            _ddata = json.load(_f)
+            if isinstance(_ddata, dict) and _ddata.get("cors_origins"):
+                _raw_cors += f",{_ddata['cors_origins']}"
+except Exception:
+    pass
+
 cors_origins = [
     origin.strip()
-    for origin in os.getenv(
-        "CORS_ORIGINS",
-        "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175",
-    ).split(",")
+    for origin in _raw_cors.split(",")
     if origin.strip()
 ]
 # Ensure both localhost and 127.0.0.1 equivalents are accepted
@@ -263,7 +299,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=[
         "Authorization",
         "Content-Type",
@@ -381,6 +417,7 @@ app.include_router(routes_chatgpt.router)
 app.include_router(routes_archive.router)
 app.include_router(routes_admin.router)
 app.include_router(routes_alerts.router)
+app.include_router(routes_notifications.router)
 
 
 @app.get("/health")

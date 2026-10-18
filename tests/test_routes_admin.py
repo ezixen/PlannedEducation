@@ -5,6 +5,7 @@ Tests for Admin routes.
 import pytest
 from fastapi.testclient import TestClient
 
+from src.plannededucation.api import models
 from src.plannededucation.api.main import app
 from src.plannededucation.api.routes_admin import require_admin
 
@@ -15,7 +16,7 @@ def client():
 
 
 @pytest.fixture
-def admin_headers(client):
+def admin_headers(client, db):
     """Create a test admin user and return auth headers."""
     # Register a test admin user (teacher role)
     client.post("/auth/register", json={
@@ -25,6 +26,11 @@ def admin_headers(client):
         "full_name": "Admin Test User",
         "role": "teacher",
     })
+    user = db.query(models.User).filter(models.User.email == "admin_test@test.com").first()
+    if user:
+        user.is_admin = True
+        user.teacher_approved = True
+        db.commit()
     # Login to get token
     token = client.post("/auth/token", data={
         "username": "admin_test@test.com",
@@ -259,6 +265,99 @@ class TestAdminRoutes:
         exams = exams_response.json()
         deleted_exam = next((e for e in exams if e["id"] == exam_id), None)
         assert deleted_exam is None
+
+    def test_create_admin_user_with_generated_password(self, client, admin_headers):
+        """Test creating a new administrator user with auto-generated temporary password."""
+        import uuid
+        uname = f"subadmin_{uuid.uuid4().hex[:6]}"
+        response = client.post(
+            "/admin/users",
+            json={
+                "username": uname,
+                "email": f"{uname}@school.edu",
+                "full_name": "Vice Principal Admin",
+                "role": "admin",
+            },
+            headers=admin_headers,
+        )
+        assert response.status_code == 201
+        data = response.json()
+        assert data["status"] == "success"
+        assert data["username"] == uname
+        assert data["role"] == "admin"
+        assert data["temporary_password"] is not None
+        assert len(data["temporary_password"]) >= 8
+
+    def test_create_admin_user_duplicate_error(self, client, admin_headers):
+        """Test creating a user with already existing username fails with 400."""
+        response = client.post(
+            "/admin/users",
+            json={
+                "username": "admin_test",
+                "email": "another_admin@school.edu",
+                "role": "admin",
+            },
+            headers=admin_headers,
+        )
+        assert response.status_code == 400
+        assert "already exists" in response.json()["detail"]
+
+    def test_create_admin_user_forbidden_for_student(self, client, student_headers):
+        """Test students cannot create admin users."""
+        response = client.post(
+            "/admin/users",
+            json={
+                "username": "rogue_admin",
+                "email": "rogue@school.edu",
+                "role": "admin",
+            },
+            headers=student_headers,
+        )
+        assert response.status_code == 403
+
+    def test_get_deployment_config(self, client, admin_headers):
+        """Test retrieving deployment and network configuration."""
+        response = client.get("/admin/config", headers=admin_headers)
+        assert response.status_code == 200
+        data = response.json()
+        assert "domain" in data
+        assert "api_port" in data
+        assert "frontend_port" in data
+        assert "school_name" in data
+        assert "cors_origins" in data
+
+    def test_get_deployment_config_forbidden_for_student(self, client, student_headers):
+        """Test students cannot access deployment configuration."""
+        response = client.get("/admin/config", headers=student_headers)
+        assert response.status_code == 403
+
+    def test_update_deployment_config(self, client, admin_headers):
+        """Test updating deployment configuration."""
+        payload = {
+            "school_name": "Oakridge High School",
+            "domain": "portal.oakridge.edu",
+            "api_port": 8000,
+            "frontend_port": 5173,
+            "cors_origins": "http://localhost:5173,https://portal.oakridge.edu",
+            "allowed_hosts": "portal.oakridge.edu,localhost,127.0.0.1",
+            "environment": "development",
+            "allow_dev_seb_bypass": True,
+            "anonymizer_enabled": True,
+            "anonymizer_language": "en",
+        }
+        response = client.put("/admin/config", json=payload, headers=admin_headers)
+        assert response.status_code == 200
+        data = response.json()
+        assert data["status"] == "success"
+        assert data["restart_required"] is True
+        assert data["config"]["school_name"] == "Oakridge High School"
+        assert data["config"]["domain"] == "portal.oakridge.edu"
+
+        # Verify get reflects the changes
+        get_res = client.get("/admin/config", headers=admin_headers)
+        assert get_res.status_code == 200
+        assert get_res.json()["school_name"] == "Oakridge High School"
+
 
 
 if __name__ == "__main__":

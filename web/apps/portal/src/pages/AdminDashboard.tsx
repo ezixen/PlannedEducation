@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
+import { DeploymentConfigPanel } from '../components/DeploymentConfigPanel';
+import { CreateUserModal } from '../components/CreateUserModal';
+import { TeacherApprovalPanel } from '../components/TeacherApprovalPanel';
+import { AdminBackupCodesModal } from '../components/AdminBackupCodesModal';
+import { DatabaseBackupPanel } from '../components/DatabaseBackupPanel';
 
 interface AdminStats {
   totalUsers: number;
@@ -76,15 +81,17 @@ interface ArchiveStats {
 
 export function AdminDashboard() {
   const { success: showSuccess, error: showError } = useToast();
-  const [activeTab, setActiveTab] = useState<'stats' | 'users' | 'exams' | 'archives'>('stats');
+  const [activeTab, setActiveTab] = useState<'stats' | 'users' | 'teachers' | 'exams' | 'archives' | 'backups' | 'config'>('stats');
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [exams, setExams] = useState<AdminExam[]>([]);
   const [userSearch, setUserSearch] = useState('');
   const [examSearch, setExamSearch] = useState('');
-  const [userRoleFilter, setUserRoleFilter] = useState<'all' | 'teacher' | 'student' | 'parent'>('all');
+  const [userRoleFilter, setUserRoleFilter] = useState<'all' | 'admin' | 'teacher' | 'student' | 'parent'>('all');
   const [examStatusFilter, setExamStatusFilter] = useState<'all' | 'published' | 'draft'>('all');
+  const [showCreateUserModal, setShowCreateUserModal] = useState(false);
+  const [showBackupCodesModal, setShowBackupCodesModal] = useState(false);
   
   // Admin Direct Password Reset State
   const [resetPwdUser, setResetPwdUser] = useState<AdminUser | null>(null);
@@ -347,6 +354,7 @@ export function AdminDashboard() {
 
   const roleBadgeStyle = (role: string) => {
     const colors: Record<string, string> = {
+      admin: '#ef4444',
       teacher: '#3b82f6',
       student: '#10b981',
       parent: '#8b5cf6',
@@ -356,22 +364,45 @@ export function AdminDashboard() {
 
   return (
     <div style={{ padding: '1.5rem' }}>
-      <div style={{ marginBottom: '1.5rem' }}>
-        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-          Teacher Admin Dashboard
-        </h1>
-        <p style={{ color: 'var(--text-muted)' }}>
-          System oversight tools for teachers. Manage users, monitor exams, and view platform statistics.
-        </p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+        <div>
+          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
+            System Administration Dashboard
+          </h1>
+          <p style={{ color: 'var(--text-muted)' }}>
+            System oversight tools. Manage users, verify teachers, monitor exams, and configure deployment settings.
+          </p>
+        </div>
+        <button
+          onClick={() => setShowBackupCodesModal(true)}
+          style={{
+            padding: '0.6rem 1.1rem',
+            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+            color: '#ef4444',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontWeight: 600,
+            fontSize: '0.85rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+          }}
+        >
+          🛡️ Emergency Backup Codes
+        </button>
       </div>
 
       {/* Tab Navigation */}
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', flexWrap: 'wrap' }}>
         {[
           { id: 'stats', label: '📊 Statistics', count: null },
           { id: 'users', label: '👥 Users', count: users.length },
+          { id: 'teachers', label: '🎓 Teacher Approvals', count: null },
           { id: 'exams', label: '📝 Exams', count: exams.length },
           { id: 'archives', label: '📦 Archives', count: archives.length },
+          { id: 'backups', label: '💾 Database Backups', count: null },
+          { id: 'config', label: '⚙️ Deployment & Network', count: null },
         ].map(tab => (
           <button
             key={tab.id}
@@ -432,7 +463,7 @@ export function AdminDashboard() {
       {/* Users Tab */}
       {activeTab === 'users' && (
         <div>
-          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
             <input
               type="text"
               placeholder="Search users..."
@@ -446,10 +477,28 @@ export function AdminDashboard() {
               style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
             >
               <option value="all">All Roles</option>
+              <option value="admin">Administrators</option>
               <option value="teacher">Teachers</option>
               <option value="student">Students</option>
               <option value="parent">Parents</option>
             </select>
+            <button
+              onClick={() => setShowCreateUserModal(true)}
+              style={{
+                padding: '0.55rem 1.15rem',
+                backgroundColor: 'var(--primary-color)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 'var(--radius-md)',
+                cursor: 'pointer',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+              }}
+            >
+              ➕ Add User / Admin
+            </button>
           </div>
 
           {loading ? (
@@ -1126,6 +1175,34 @@ export function AdminDashboard() {
           </div>
         </div>
       )}
+
+      {/* Database Backups & Snapshots Tab */}
+      {activeTab === 'backups' && (
+        <DatabaseBackupPanel />
+      )}
+
+      {/* Deployment & Network Configuration Tab */}
+      {activeTab === 'config' && (
+        <DeploymentConfigPanel />
+      )}
+
+      {/* Teacher Approvals Tab */}
+      {activeTab === 'teachers' && (
+        <TeacherApprovalPanel />
+      )}
+
+      {/* Create User / Administrator Modal */}
+      <CreateUserModal
+        isOpen={showCreateUserModal}
+        onClose={() => setShowCreateUserModal(false)}
+        onUserCreated={fetchUsers}
+      />
+
+      {/* Admin Emergency Recovery Codes Modal */}
+      <AdminBackupCodesModal
+        isOpen={showBackupCodesModal}
+        onClose={() => setShowBackupCodesModal(false)}
+      />
     </div>
   );
-}
+}

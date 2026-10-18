@@ -257,6 +257,26 @@ print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
 
 ---
 
+## ⚙️ Post-Deployment Network Changes (`config/deployment.json`)
+
+If your school's domain, hostname, IP address, or port assignments change after deployment, **you do NOT need to redeploy or rebuild containers**:
+1. **Server-Side Configuration File**: All deployed network settings are stored in `config/deployment.json`. Server administrators can edit this file directly with any text editor.
+2. **Admin Dashboard UI**: Administrators can also change domains, ports, CORS origins, and optional SMTP email settings in **Admin Dashboard → ⚙️ Deployment & Network**.
+3. **Backup Config File**: Use the **"📁 Backup Config File"** button in the Admin Dashboard to save a copy of your configuration to a custom folder.
+4. **Apply Changes**: Simply restart the platform services (`docker compose restart` or `sudo systemctl restart plannededucation-backend`).
+
+---
+
+## 👥 Self-Registration, Teacher Approvals & Password Recovery
+
+- **Self-Registration**: Students, Teachers, and Parents can create accounts on `/register`. Administrators **cannot** self-register and must be created by existing admins or via CLI.
+- **Teacher Verification**: To prevent students from prank-registering as teachers and viewing exam questions or curriculum modules, self-registered teachers default to pending approval (`teacher_approved = False`). School administrators receive an in-app notification with a 1-click approval button.
+- **5 One-Time Recovery Codes**: Every user receives 5 single-use recovery codes upon registration. If you ever forget your password, you can reset it instantly by yourself using a recovery code without needing anyone's help!
+- **In-App Password Reset Requests**: If a user runs out of recovery codes, students can request a password reset directly inside the platform from their teacher or parent. Teachers can request a reset from an admin. Supervisors approve the request with one click in their floating **Notification Bell**.
+- **Optional Emailing**: Outgoing SMTP email is completely optional and can be enabled or adjusted at any time from the Admin Dashboard.
+
+---
+
 ## 📦 Module System - How It Works
 
 ### For Teachers: Create & Share Modules

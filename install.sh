@@ -331,6 +331,18 @@ fi
 
 cd "$INSTALL_DIR"
 
+# Read existing deployment.json defaults if available
+if [[ -f "$INSTALL_DIR/config/deployment.json" ]]; then
+    DEP_DOMAIN=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('domain', ''))" 2>/dev/null || true)
+    DEP_API_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('api_port', ''))" 2>/dev/null || true)
+    DEP_FRONTEND_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('frontend_port', ''))" 2>/dev/null || true)
+    DEP_SCHOOL=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('school_name', ''))" 2>/dev/null || true)
+    [[ -n "$DEP_DOMAIN" ]] && DOMAIN="$DEP_DOMAIN"
+    [[ -n "$DEP_API_PORT" ]] && API_PORT="$DEP_API_PORT"
+    [[ -n "$DEP_FRONTEND_PORT" ]] && FRONTEND_PORT="$DEP_FRONTEND_PORT"
+    [[ -n "$DEP_SCHOOL" ]] && SCHOOL_NAME="$DEP_SCHOOL"
+fi
+
 # ==============================================================================
 # Step 5: Configure Environment Variables & Secrets
 # ==============================================================================
@@ -398,6 +410,26 @@ ALLOW_DEV_SEB_BYPASS=${SEB_BYPASS}
 EOF
     chmod 600 "$ENV_FILE"
     print_success "Created .env file with secure random secrets (API port: $API_PORT, Frontend port: $FRONTEND_PORT)"
+
+    mkdir -p "$INSTALL_DIR/config"
+    CORS_LIST="http://${DOMAIN}:${FRONTEND_PORT},http://${DOMAIN}:5173,http://${DOMAIN}:5175,http://localhost:${FRONTEND_PORT},http://localhost:5173,http://localhost:5175,http://127.0.0.1:${FRONTEND_PORT},http://127.0.0.1:5173,http://127.0.0.1:5175,https://${DOMAIN}"
+    cat > "$INSTALL_DIR/config/deployment.json" <<EOF
+{
+  "school_name": "${SCHOOL_NAME}",
+  "domain": "${DOMAIN}",
+  "api_port": ${API_PORT},
+  "frontend_port": ${FRONTEND_PORT},
+  "cors_origins": "${CORS_LIST}",
+  "allowed_hosts": "${DOMAIN},localhost,127.0.0.1",
+  "environment": "${ENV_MODE}",
+  "allow_dev_seb_bypass": $( [ "$SEB_BYPASS" = "true" ] && echo "true" || echo "false" ),
+  "anonymizer_enabled": true,
+  "anonymizer_language": "en",
+  "updated_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+}
+EOF
+    chmod 600 "$INSTALL_DIR/config/deployment.json"
+    print_success "Created config/deployment.json configuration file"
 else
     print_info "Keeping existing .env file"
 fi
@@ -534,6 +566,25 @@ if [[ "$AUTO_CONFIRM" != "true" ]]; then
     ADMIN_PASS=${input_pass:-$ADMIN_PASS}
     read -r -p "Enter Superadmin Full Name (default: $ADMIN_NAME): " input_name
     ADMIN_NAME=${input_name:-$ADMIN_NAME}
+else
+    # Even in AutoConfirm mode, ask for admin password if default or prompt administrator
+    if [[ "$ADMIN_PASS" == "AdminPassword123!" ]]; then
+        echo ""
+        print_warning "[SECURITY REQUIREMENT] Superadmin Password Configuration"
+        echo "For security, you must set a secure administrator password."
+        if [ -t 0 ]; then
+            read -r -s -p "Enter Superadmin Password (press Enter to generate a secure random password): " input_pass
+            echo ""
+            if [[ -n "$input_pass" ]]; then
+                ADMIN_PASS="$input_pass"
+            else
+                ADMIN_PASS=$(openssl rand -base64 12 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 16)
+                print_info "Generated secure Superadmin Password: $ADMIN_PASS"
+            fi
+        else
+            print_info "Non-interactive environment detected; using configured administrator password."
+        fi
+    fi
 fi
 
 if [[ "$USE_DOCKER" == "false" ]]; then
@@ -543,10 +594,13 @@ if [[ "$USE_DOCKER" == "false" ]]; then
     export PE_ADMIN_NAME="$ADMIN_NAME"
     export PE_SCHOOL_NAME="$SCHOOL_NAME"
     "$PYTHON_EXE" - <<'PYEOF'
+import hashlib
+import json
 import os
+from plannededucation.api import auth
 from plannededucation.api.database import Base, SessionLocal, engine
 from plannededucation.api.models import School, User, UserRole
-from plannededucation.api.routes_auth import get_password_hash
+from plannededucation.api.routes_auth import get_password_hash, _encode_recovery_codes
 
 Base.metadata.create_all(bind=engine)
 db = SessionLocal()
@@ -560,6 +614,10 @@ try:
     pwd = os.environ["PE_ADMIN_PASS"]
     name = os.environ["PE_ADMIN_NAME"]
     uname = email.split("@")[0] or "admin"
+
+    plain_recovery_codes = auth.generate_recovery_codes(count=5)
+    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]
+
     existing = db.query(User).filter((User.email == email) | (User.username == uname)).first()
     if existing:
         existing.email = email
@@ -568,6 +626,7 @@ try:
         existing.role = UserRole.admin.value
         existing.is_admin = True
         existing.is_active = True
+        existing.recovery_codes = _encode_recovery_codes(hashed_codes)
         db.commit()
         print(f"Updated existing Admin user: {email}")
     else:
@@ -579,13 +638,39 @@ try:
             role=UserRole.admin.value,
             is_admin=True,
             is_active=True,
+            recovery_codes=_encode_recovery_codes(hashed_codes)
         )
         db.add(admin)
         db.commit()
         print(f"Created initial Admin user: {email}")
+
+    print("\n" + "=" * 68)
+    print("  🔑 SUPERADMIN EMERGENCY RECOVERY CODES")
+    print("=" * 68)
+    for i, code in enumerate(plain_recovery_codes, 1):
+        print(f"    Code {i}: {code}")
+    print("=" * 68)
+    print("  ⚠️  CRITICAL NOTICE FOR ADMINISTRATOR:")
+    print("  Store these 5 one-time recovery codes safely (print or write them down).")
+    print("  If you lose your administrator password and recovery codes, you will")
+    print("  be locked out and may need to redeploy the whole system, as database")
+    print("  injection is blocked for security.")
+    print("=" * 68 + "\n")
+
+    with open("admin_recovery_codes.tmp", "w") as f:
+        f.write("\n".join(plain_recovery_codes))
 finally:
     db.close()
 PYEOF
+
+    CODES_TEXT=""
+    if [[ -f "$INSTALL_DIR/admin_recovery_codes.tmp" ]]; then
+        while IFS= read -r line; do
+            CODES_TEXT="${CODES_TEXT}  - $line\n"
+        done < "$INSTALL_DIR/admin_recovery_codes.tmp"
+        rm -f "$INSTALL_DIR/admin_recovery_codes.tmp"
+    fi
+
     cat > "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" <<EOF
 PlannedEducation Superadmin Credentials
 =======================================
@@ -595,9 +680,17 @@ Admin Password: $ADMIN_PASS
 Admin Name:     $ADMIN_NAME
 Backend API:    http://$DOMAIN:$API_PORT
 Frontend URL:   http://$DOMAIN:$FRONTEND_PORT
+
+============================================================
+EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):
+$(echo -e "$CODES_TEXT")
+WARNING: If you lose both your administrator password and these
+recovery codes, you will be permanently locked out and will need
+to redeploy the entire platform, as database injection is not an option.
+============================================================
 EOF
     chmod 600 "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" 2>/dev/null || true
-    print_success "Superadmin account ready: $ADMIN_EMAIL (saved to ADMIN_CREDENTIALS.txt)"
+    print_success "Superadmin account ready: $ADMIN_EMAIL (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
 fi
 
 # ==============================================================================
@@ -624,6 +717,7 @@ run_verify() {
 }
 
 run_verify "Environment configuration (.env)" "test -s '$INSTALL_DIR/.env'"
+run_verify "Deployment configuration (config/deployment.json)" "test -s '$INSTALL_DIR/config/deployment.json'"
 
 if [[ "$USE_SQLITE" == "true" ]]; then
     run_verify "SQLite database initialized" "test -f '$INSTALL_DIR/plannededucation.db'"

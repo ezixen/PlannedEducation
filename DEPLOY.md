@@ -96,6 +96,75 @@ print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
 
 ---
 
+## Post-Deployment Configuration & Network Layout (`config/deployment.json`)
+
+PlannedEducation stores post-deployment network configurations in a server-side JSON file:
+`config/deployment.json`
+
+### Why This Matters for Administrators
+- **No Need to Redeploy:** If your school's domain, hostname, IP address, frontend/backend ports, or network topology changes after deployment, you **do not** need to redeploy the platform or rebuild containers.
+- **Direct Server Editing:** Server administrators with shell access can edit `config/deployment.json` directly using `nano`, `vim`, or any text editor.
+- **Admin Panel UI Editing:** Administrators can also log in, navigate to **Admin Dashboard → ⚙️ Deployment & Network**, and adjust settings directly in the browser.
+- **Applying Changes:** After modifying `config/deployment.json` (or saving in the Admin Panel), simply restart the platform services to apply the new settings:
+  ```bash
+  # Docker deployment:
+  docker-compose restart
+  # Systemd / Bare-metal deployment:
+  sudo systemctl restart plannededucation-backend
+  ```
+- **Backup Config File:** The Admin Panel includes a **"📁 Backup Config File"** button allowing administrators to export and save their configuration to a custom folder or local backup location at any time.
+
+---
+
+## User Self-Registration, Roles & Security Safeguards
+
+### Self-Registration Rules
+1. **Students, Teachers, and Parents** can self-register directly through the web portal (`/register`).
+2. **Administrators CANNOT self-register.** Administrator accounts can only be created by an existing administrator via the Admin Panel or during initial deployment using the CLI creation command.
+
+### Teacher Approval & Exam Security
+To prevent students from prank-registering as teachers and gaining access to tomorrow's test questions or exam modules:
+- Any self-registered teacher account is created with `teacher_approved = False`.
+- While pending approval, the user **cannot create, publish, or view exams, questions, or curriculum modules**.
+- When a teacher registers, an **instant In-Platform Notification** is dispatched to all system administrators.
+- Administrators can review and approve or deny teacher privileges with **one click** from the Notification Bell or the Admin Dashboard under **🎓 Teacher Approvals**.
+- Once approved, the teacher receives an in-app confirmation and full access is granted immediately.
+
+### One-Time Password Reset Recovery Codes (Self-Service)
+- Every user is presented with **5 single-use recovery codes** immediately upon registration.
+- Users are instructed to print or securely save these codes.
+- **Immediate Self-Reset:** If a user forgets their password, the platform prompts them: *"Unless you ran out of codes, you can reset your password immediately without waiting for anyone's help!"* Entering their email and one unused recovery code resets their password instantly.
+- **Admin Emergency Backup Codes:** System administrators must print or save emergency backup codes (available in Admin Dashboard → 🛡️ Emergency Backup Codes). This guarantees that administrators never lose access to system oversight even if they lose their password or 2FA authenticator.
+
+### In-Platform Password Reset Requests (No Email Required)
+If a user runs out of recovery codes:
+- **Students** can submit an in-platform password reset request to their linked **Teacher** or **Parent**.
+- **Teachers** can submit an in-platform password reset request to a school **Administrator**.
+- The designated supervisor receives a notification in their **Notification Bell** with a one-click button to approve the request and generate a secure temporary password.
+- **Optional Outgoing Email (SMTP):** If the school configures SMTP settings, an email notification is also sent. If SMTP is not configured, the platform operates 100% locally with internal notifications.
+
+### Teacher Classroom Emergency Password Reset ("⚡ Reset Pwd for Test")
+Right before an exam, students often forget their credentials and cannot log in under time pressure:
+- Teachers can unlock the student with a single click: click **"⚡ Reset Pwd for Test"** in the student roster (**Teacher Dashboard → Real-time Monitoring** or **Classes → Manage Students**).
+- When the student enters their email on the login screen (`/login`), the system automatically detects the teacher reset (`TEACHER_RESET_ACTIVE`), highlights the form in green, and prompts for a new password right in the login card.
+- Upon typing their new password and clicking **"Set Password & Sign In"**, the student is immediately authenticated and admitted directly into the test session without needing to wait for emails or recovery codes.
+
+### Database Backups & Midnight Auto-Backup
+- **Immediate Manual Snapshot:** Administrators can trigger an instant database backup snapshot from **Admin Dashboard → 💾 Database Backups**.
+- **Automated Midnight Auto-Backup:** The background scheduler runs daily at **00:00 UTC**, taking an atomic snapshot of the database and applying an automatic 30-day retention pruning policy.
+- **Safe Transactional Backups:**
+  - SQLite mode uses atomic `sqlite3.connect().backup()` to eliminate lock contention.
+  - PostgreSQL mode uses compressed `pg_dump` with gzip.
+- **Secure File Management:** Backups are protected against path traversal, stored in the server's backup directory, and can be downloaded or purged by authorized administrators with full audit logging.
+
+### Cybersecurity Safeguards & Brute-Force Lockout
+- **Brute-Force Account Protection:** 5 consecutive failed login attempts automatically locks the account for 15 minutes to defeat automated password cracking and brute-force attacks.
+- **Protected Administrator Accounts:** Administrator accounts cannot be modified, deactivated, or reset by non-superadmins.
+- **Installer Admin Password & Recovery Warning:** During installation (`install.ps1` / `install.sh`), even with `-AutoConfirm` / `AUTO_CONFIRM=true`, the installer stops and prompts to set a secure administrator password if default. The installer generates 5 one-time recovery codes, displays them on the console, and writes them with a critical warning banner into `ADMIN_CREDENTIALS.txt`:
+  > *"Keep these safe (print or write them down). If you lose both your password and recovery codes, you will be locked out and will need to redeploy the whole system, as database injection is not an option."*
+
+---
+
 ## Configuration
 
 ### Environment Variables (`.env`)
