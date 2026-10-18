@@ -32,9 +32,10 @@ param(
 # 1. If running inside an installation folder (contains plannededucation.db, .env, or src\plannededucation), use $PSScriptRoot
 # 2. Otherwise default to "C:\PlannedEducation" (matching install.ps1 default)
 if ([string]::IsNullOrWhiteSpace($InstallDir)) {
-    if (Test-Path (Join-Path $PSScriptRoot "plannededucation.db") -or 
-        Test-Path (Join-Path $PSScriptRoot "src\plannededucation") -or 
-        Test-Path (Join-Path $PSScriptRoot ".env")) {
+    $hasDb = Test-Path (Join-Path $PSScriptRoot "plannededucation.db")
+    $hasSrc = Test-Path (Join-Path $PSScriptRoot "src\plannededucation")
+    $hasEnv = Test-Path (Join-Path $PSScriptRoot ".env")
+    if ($hasDb -or $hasSrc -or $hasEnv) {
         $InstallDir = $PSScriptRoot
     } else {
         $InstallDir = "C:\PlannedEducation"

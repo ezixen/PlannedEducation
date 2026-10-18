@@ -14,6 +14,7 @@ $CanaryUserData = Join-Path $env:TEMP "plannededucation-student-profile"
 $PythonExe = "C:\.venv\Scripts\python.exe"
 $NodeDirectory = "C:\Program Files\nodejs"
 $JwtSecret = "plannededucation-local-development-secret-only"
+$PowerShellExe = if (Get-Command pwsh -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell.exe" }
 
 if (-not (Test-Path $LauncherDir)) { New-Item -ItemType Directory -Path $LauncherDir | Out-Null }
 if (-not (Test-Path $PythonExe)) {
@@ -47,7 +48,7 @@ Set-Location "$RepoRoot"
 Write-Host "Starting FastAPI Backend..." -ForegroundColor Green
 & "$PythonExe" -m uvicorn src.plannededucation.api.main:app --reload --host 127.0.0.1 --port 8001
 "@
-    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$ApiLauncher`"" 
+    Start-Process $PowerShellExe -ArgumentList "-NoExit","-File","`"$ApiLauncher`"" 
 } else {
     Write-Host "API already listening on 8001." -ForegroundColor Yellow
 }
@@ -68,7 +69,7 @@ Set-Location "$RepoRoot\web\apps\portal"
 Write-Host "Starting React Portal..." -ForegroundColor Green
 & "$npmCmd" run dev -- --host 127.0.0.1 --port 5175
 "@
-    Start-Process pwsh -ArgumentList "-NoExit","-File","`"$PortalLauncher`"" 
+    Start-Process $PowerShellExe -ArgumentList "-NoExit","-File","`"$PortalLauncher`"" 
 } else {
     Write-Host "Portal already listening on 5175." -ForegroundColor Yellow
 }

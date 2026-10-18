@@ -526,5 +526,29 @@
   - Frontend oxlint passing with 0 warnings, 0 errors.
   - Zero orphaned background processes remaining.
 
+---
+
+### Phase 22: Windows PowerShell 5.1 Native Compatibility, Admin Elevation & Installer Hardening ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **Windows PowerShell 5.1 Native Compatibility**:
+  - Full syntax and parser verification using Windows default PowerShell engine (`powershell.exe` / PS 5.1 built into Windows 10/11 and Windows Server 2016-2025).
+  - Eliminated all PS7-only operators (`??`, ternary `? :`, `&&`, `||`) across all scripts.
+  - Replaced multi-byte Unicode emojis with clean ASCII indicators (`[KEY]`, `[!]`, `[OK]`, `[WARN]`), resolving the Windows CP1252 character mapping escape trap where the 4th UTF-8 byte (`0x91`) was parsed as a backtick escape character causing string quote syntax failures.
+  - Updated developer launchers (`scripts/dev/*.ps1`) to automatically fall back from `pwsh` to `powershell.exe`.
+- **Early Target Directory Prompt**:
+  - `install.ps1` prompts for the target installation directory right at Step 1 before initializing logs or downloading dependencies.
+  - Defaults to `C:\PlannedEducation` while naturally accepting custom folder paths; logs are immediately directed to the selected directory.
+- **Administrator Privileges Pre-check & Self-Elevation**:
+  - Early check informs the user of why elevated rights are needed on Windows (system folder creation, scheduled tasks, package installs, firewall rules).
+  - Provides interactive menu: (1) Auto-elevate via UAC (`powershell.exe -Verb RunAs`), (2) Continue in User-mode, (3) Exit installer.
+- **Superadmin Password Retention & Recovery Codes Confirmation Pause**:
+  - Generates strong 20-character random passwords when requested or when default passwords are used.
+  - Requires explicit `[Enter]` keypress after displaying passwords and emergency recovery codes before continuing, preventing terminal clear or scroll-away.
+  - Dedicated deployment admin setup script (`scripts/deploy/setup_admin.py`) for clean database initialization and admin account creation across Windows and Linux.
+- **Verification**:
+  - All PowerShell scripts parse with 0 errors in Windows PowerShell 5.1.
+  - `setup_admin.py` verified with SQLite and clean ASCII terminal rendering.
+  - Zero orphaned background processes remaining.
+
 
 

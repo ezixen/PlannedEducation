@@ -182,25 +182,77 @@ function Load-DotEnv {
 # Check for Administrator privileges
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
-    Write-Warning "Not running as Administrator. System-wide package installation and Windows Scheduled Task registration will be skipped."
+    Write-Host ""
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host "  [!] NOTICE: ADMINISTRATOR PRIVILEGES RECOMMENDED" -ForegroundColor $YELLOW
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host "  PlannedEducation deployment on Windows performs operations that"
+    Write-Host "  typically require elevated (Administrator) rights:"
+    Write-Host "    1. Creating/writing to the system folder (e.g. C:\PlannedEducation)"
+    Write-Host "    2. Installing missing prerequisites system-wide (Python, Node.js, Git)"
+    Write-Host "    3. Registering the Windows Scheduled Task for 24/7 background service"
+    Write-Host "    4. Setting Windows Firewall inbound rules if serving to LAN or WAN"
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host ""
     if (-not $AutoConfirm) {
-        $confirm = Read-Host "Continue in user-mode installation? (y/N)"
-        if ($confirm -notmatch '^[Yy]$') { exit 1 }
+        Write-Host "Options:"
+        Write-Host "  1) Relaunch as Administrator (prompts for UAC elevation) [RECOMMENDED]"
+        Write-Host "  2) Continue in User-mode (scheduled task will be skipped)"
+        Write-Host "  3) Exit installer"
+        Write-Host ""
+        $elevChoice = Read-Host "Select option [1-3] (default: 1)"
+        if (-not $elevChoice -or $elevChoice -eq "1") {
+            Write-Info "Relaunching installer with Administrator elevation..."
+            try {
+                $myArgs = "-ExecutionPolicy Bypass -NoProfile -File `"$PSCommandPath`""
+                Start-Process powershell.exe -Verb RunAs -ArgumentList $myArgs
+                exit 0
+            } catch {
+                Write-Warning "Elevation cancelled or failed. Continuing in current session."
+            }
+        } elseif ($elevChoice -eq "3") {
+            Write-Info "Installation cancelled by user."
+            exit 0
+        } else {
+            Write-Warning "Continuing in user-mode. Background scheduled task and system-wide package installs will be skipped."
+        }
+    } else {
+        Write-Warning "Running non-interactively without Administrator privileges. System-level steps will be skipped."
     }
+} else {
+    Write-Success "Running with Administrator privileges."
 }
 
 Write-Header "PlannedEducation Automated Installer (Windows)"
 
-# Step 1: Check Prerequisites
-Write-Header "Step 1: Checking Prerequisites"
+# Step 1: Choose Installation Directory
+Write-Header "Step 1: Choose Installation Directory"
 
-$hasGit = Check-Command "Git" "git" "--version"
-$hasPython = Check-Command "Python 3.11+" "python" "--version"
-$hasNode = Check-Command "Node.js 20+" "node" "--version"
-$hasNpm = Check-Command "npm" "npm" "--version"
-$hasDocker = Check-Command "Docker Desktop" "docker" "--version"
-$hasPostgres = Check-Command "PostgreSQL" "psql" "--version"
-$hasRedis = Check-Command "Redis" "redis-cli" "--version"
+Write-Host "PlannedEducation requires a target directory for application files, database, and logs."
+Write-Host "Default recommended path: C:\PlannedEducation"
+Write-Host ""
+if (-not $AutoConfirm) {
+    $inputDir = Read-Host "Installation directory (press Enter for default '$InstallDir')"
+    if ($inputDir -and $inputDir.Trim() -ne "") {
+        $InstallDir = $inputDir.Trim()
+    }
+}
+$InstallDir = [System.IO.Path]::GetFullPath($InstallDir)
+$script:LogDir = Join-Path $InstallDir "logs"
+$script:InstallLog = Join-Path $script:LogDir "install.log"
+$script:InstallErrLog = Join-Path $script:LogDir "install_error.log"
+
+if (-not (Test-Path $InstallDir)) {
+    try {
+        New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
+        Write-Success "Created directory: $InstallDir"
+    } catch {
+        Write-ErrorMsg "Cannot create directory '$InstallDir': $_. Please ensure you have sufficient permissions or run as Administrator."
+        exit 1
+    }
+} else {
+    Write-Success "Using directory: $InstallDir"
+}
 
 # Step 2: Choose Deployment Mode
 Write-Header "Step 2: Choose Deployment Mode"
@@ -239,8 +291,19 @@ switch ($DeployMode) {
     }
 }
 
-# Step 3: Install Missing Required Dependencies
-Write-Header "Step 3: Checking & Installing Required Dependencies"
+# Step 3: Check Prerequisites
+Write-Header "Step 3: Checking Prerequisites"
+
+$hasGit = Check-Command "Git" "git" "--version"
+$hasPython = Check-Command "Python 3.11+" "python" "--version"
+$hasNode = Check-Command "Node.js 20+" "node" "--version"
+$hasNpm = Check-Command "npm" "npm" "--version"
+$hasDocker = Check-Command "Docker Desktop" "docker" "--version"
+$hasPostgres = Check-Command "PostgreSQL" "psql" "--version"
+$hasRedis = Check-Command "Redis" "redis-cli" "--version"
+
+# Step 4: Install Missing Required Dependencies
+Write-Header "Step 4: Checking & Installing Required Dependencies"
 
 $missingRequired = @()
 if (-not $hasGit) { $missingRequired += "Git" }
@@ -280,20 +343,8 @@ if ($missingRequired.Count -gt 0) {
     Write-Success "All required dependencies for Mode $DeployMode are installed!"
 }
 
-# Step 4: Clone Repository & Setup Directory
-Write-Header "Step 4: Setting Up Application Directory"
-
-if (-not $AutoConfirm) {
-    $inputDir = Read-Host "Installation directory (default: $InstallDir)"
-    if ($inputDir) { $InstallDir = $inputDir }
-}
-
-$InstallDir = [System.IO.Path]::GetFullPath($InstallDir)
-
-if (-not (Test-Path $InstallDir)) {
-    New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
-    Write-Success "Created directory: $InstallDir"
-}
+# Step 5: Setting Up Application Directory
+Write-Header "Step 5: Setting Up Application Directory"
 
 $scriptRepoRoot = $PSScriptRoot
 if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
@@ -332,7 +383,8 @@ if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededuca
     Write-Info "Syncing latest workspace source files from $scriptRepoRoot to $InstallDir..."
     $syncPairs = @(
         @{ From = "src";                  To = "src" },
-        @{ From = "web\apps\portal\src";  To = "web\apps\portal\src" }
+        @{ From = "web\apps\portal\src";  To = "web\apps\portal\src" },
+        @{ From = "scripts";              To = "scripts" }
     )
     foreach ($pair in $syncPairs) {
         $dest = Join-Path $InstallDir $pair.To
@@ -364,8 +416,8 @@ if (Test-Path $existingDepJson) {
     } catch {}
 }
 
-# Step 5: Configure Environment Variables & Secrets
-Write-Header "Step 5: Configuring Environment & Secrets"
+# Step 6: Configure Environment Variables & Secrets
+Write-Header "Step 6: Configuring Environment & Secrets"
 
 $envFile = Join-Path $InstallDir ".env"
 if (-not (Test-Path $envFile) -or (Confirm-Action "Overwrite existing .env configuration?")) {
@@ -468,14 +520,14 @@ Load-DotEnv $envFile
 if ($env:PORT) { $ApiPort = [int]$env:PORT }
 if ($env:FRONTEND_PORT) { $FrontendPort = [int]$env:FRONTEND_PORT }
 
-# Step 6: Setup Application & Databases
+# Step 7: Setup Application & Databases
 if ($useDocker) {
-    Write-Header "Step 6: Starting Docker Containers"
+    Write-Header "Step 7: Starting Docker Containers"
     Write-Info "Building and starting containers via Docker Compose..."
     docker compose up -d --build
     Write-Success "Docker containers started!"
 } else {
-    Write-Header "Step 6: Setting Up Databases & Application"
+    Write-Header "Step 7: Setting Up Databases & Application"
 
     if (-not $useSqlite) {
         Write-Info "Setting up PostgreSQL database..."
@@ -833,11 +885,11 @@ try {
 
 Write-Host "============================================================" -ForegroundColor Cyan
 if (`$allOk) {
-    Write-Host "  Result: ALL SYSTEMS OPERATIONAL ✅" -ForegroundColor Green
+    Write-Host "  Result: ALL SYSTEMS OPERATIONAL [OK]" -ForegroundColor Green
     Write-Host "  Portal URL:  http://`$domain:`$frontendPort" -ForegroundColor Green
     Write-Host "  Backend API: http://`$domain:`$apiPort" -ForegroundColor Green
 } else {
-    Write-Host "  Result: SOME SERVICES NOT RUNNING OR FAILED ⚠️" -ForegroundColor Yellow
+    Write-Host "  Result: SOME SERVICES NOT RUNNING OR FAILED [WARN]" -ForegroundColor Yellow
     Write-Host "  To start: Run .\start_all.bat (or .\start_all.ps1)" -ForegroundColor Cyan
     Write-Host "  To stop:  Run .\stop_all.bat (or .\stop_all.ps1)" -ForegroundColor Cyan
 }
@@ -875,37 +927,72 @@ pause
     }
 }
 
-# Step 7: Create Initial Admin Account & School
-Write-Header "Step 7: Creating Initial Superadmin & School"
+# Step 8: Create Initial Admin Account & School
+Write-Header "Step 8: Creating Initial Superadmin & School"
+
+$generatedRandom = $false
 
 if (-not $AutoConfirm) {
     $inputSchool = Read-Host "Enter School / Institution Name (default: $SchoolName)"
-    if ($inputSchool) { $SchoolName = $inputSchool }
+    if ($inputSchool -and $inputSchool.Trim() -ne "") { $SchoolName = $inputSchool.Trim() }
     $inputEmail = Read-Host "Enter Superadmin Email (default: $AdminEmail)"
-    if ($inputEmail) { $AdminEmail = $inputEmail }
-    $inputPass = Read-Host "Enter Superadmin Password (default: $AdminPassword)"
-    if ($inputPass) { $AdminPassword = $inputPass }
+    if ($inputEmail -and $inputEmail.Trim() -ne "") { $AdminEmail = $inputEmail.Trim() }
     $inputName = Read-Host "Enter Superadmin Full Name (default: $AdminName)"
-    if ($inputName) { $AdminName = $inputName }
+    if ($inputName -and $inputName.Trim() -ne "") { $AdminName = $inputName.Trim() }
+
+    Write-Host ""
+    Write-Host "Set Superadmin Password:" -ForegroundColor $CYAN
+    Write-Host "  - Enter your desired password, OR"
+    Write-Host "  - Press [Enter] to generate a secure random password"
+    $inputPass = Read-Host "Superadmin Password"
+    if ($inputPass -and $inputPass.Trim() -ne "") {
+        $AdminPassword = $inputPass.Trim()
+    } else {
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
+        $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+        $generatedRandom = $true
+    }
 } else {
     # Even in AutoConfirm mode, ask for admin password if it's the default or prompt administrator
     if ($AdminPassword -eq "AdminPassword123!") {
         Write-Host ""
-        Write-Host "[SECURITY REQUIREMENT] Superadmin Password Configuration" -ForegroundColor $YELLOW
+        Write-Host "============================================================" -ForegroundColor $YELLOW
+        Write-Host "  [SECURITY REQUIREMENT] Superadmin Password Configuration" -ForegroundColor $YELLOW
+        Write-Host "============================================================" -ForegroundColor $YELLOW
         Write-Host "For security, you must set a secure administrator password." -ForegroundColor $WHITE
         try {
             $inputPass = Read-Host "Enter Superadmin Password (press Enter to generate a secure random password)"
-            if ($inputPass) {
-                $AdminPassword = $inputPass
+            if ($inputPass -and $inputPass.Trim() -ne "") {
+                $AdminPassword = $inputPass.Trim()
             } else {
-                $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
-                $AdminPassword = -join ((1..16) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
-                Write-Info "Generated secure Superadmin Password: $AdminPassword"
+                $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
+                $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+                $generatedRandom = $true
             }
         } catch {
-            Write-Info "Non-interactive environment detected; using configured administrator password."
+            Write-Info "Non-interactive environment detected; generating secure random password."
+            $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
+            $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+            $generatedRandom = $true
         }
     }
+}
+
+if ($generatedRandom) {
+    Write-Host ""
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host "  [KEY] GENERATED SUPERADMIN PASSWORD" -ForegroundColor $GREEN
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host "  Email / Username:   $AdminEmail" -ForegroundColor $WHITE
+    Write-Host "  Generated Password: $AdminPassword" -ForegroundColor $GREEN
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    Write-Host "  [IMPORTANT] Please copy or write down this password now!" -ForegroundColor $YELLOW
+    Write-Host "  It will NOT be shown again in plaintext on screen." -ForegroundColor $YELLOW
+    Write-Host "============================================================" -ForegroundColor $YELLOW
+    try {
+        Read-Host "  Press [Enter] once you have copied/noted down the password to continue"
+    } catch {}
+    Write-Host ""
 }
 
 if (-not $useDocker) {
@@ -915,77 +1002,11 @@ if (-not $useDocker) {
     $env:PE_ADMIN_NAME = $AdminName
     $env:PE_SCHOOL_NAME = $SchoolName
 
-    $adminScript = @"
-import hashlib
-import json
-import os
-from plannededucation.api import auth
-from plannededucation.api.database import Base, SessionLocal, engine
-from plannededucation.api.models import School, User, UserRole
-from plannededucation.api.routes_auth import get_password_hash, _encode_recovery_codes
-
-Base.metadata.create_all(bind=engine)
-db = SessionLocal()
-try:
-    school_name = os.environ.get('PE_SCHOOL_NAME', 'PlannedEducation School')
-    if not db.query(School).first():
-        db.add(School(name=school_name, address='Local Campus'))
-        db.commit()
-
-    email = os.environ['PE_ADMIN_EMAIL']
-    pwd = os.environ['PE_ADMIN_PASSWORD']
-    name = os.environ['PE_ADMIN_NAME']
-    uname = email.split('@')[0] or 'admin'
-
-    plain_recovery_codes = auth.generate_recovery_codes(count=5)
-    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]
-
-    existing = db.query(User).filter((User.email == email) | (User.username == uname)).first()
-    if existing:
-        existing.email = email
-        existing.hashed_password = get_password_hash(pwd)
-        existing.full_name = name
-        existing.role = UserRole.admin.value
-        existing.is_admin = True
-        existing.is_active = True
-        existing.recovery_codes = _encode_recovery_codes(hashed_codes)
-        db.commit()
-        print(f'Updated existing Admin user: {email}')
-    else:
-        admin = User(
-            username=uname,
-            email=email,
-            hashed_password=get_password_hash(pwd),
-            full_name=name,
-            role=UserRole.admin.value,
-            is_admin=True,
-            is_active=True,
-            recovery_codes=_encode_recovery_codes(hashed_codes)
-        )
-        db.add(admin)
-        db.commit()
-        print(f'Created initial Admin user: {email}')
-
-    print('\n' + '=' * 68)
-    print('  🔑 SUPERADMIN EMERGENCY RECOVERY CODES')
-    print('=' * 68)
-    for i, code in enumerate(plain_recovery_codes, 1):
-        print(f'    Code {i}: {code}')
-    print('=' * 68)
-    print('  ⚠️  CRITICAL NOTICE FOR ADMINISTRATOR:')
-    print('  Store these 5 one-time recovery codes safely (print or write them down).')
-    print('  If you lose your administrator password and recovery codes, you will')
-    print('  be locked out and may need to redeploy the whole system, as database')
-    print('  injection is blocked for security.')
-    print('=' * 68 + '\n')
-
-    # Save codes to file for installer to read
-    with open('admin_recovery_codes.tmp', 'w') as f:
-        f.write('\n'.join(plain_recovery_codes))
-finally:
-    db.close()
-"@
-    & $pythonExe -c $adminScript
+    $setupAdminScript = Join-Path $InstallDir "scripts\deploy\setup_admin.py"
+    if (-not (Test-Path $setupAdminScript)) {
+        $setupAdminScript = Join-Path $PSScriptRoot "scripts\deploy\setup_admin.py"
+    }
+    & $pythonExe "$setupAdminScript"
     if ($LASTEXITCODE -ne 0) {
         Write-ErrorMsg "Admin creation failed!"
         exit 1
@@ -997,34 +1018,56 @@ finally:
         $codesList = Get-Content $tmpCodes
         $codesText = ($codesList | ForEach-Object { "  - $_" }) -join "`r`n"
         Remove-Item $tmpCodes -Force -ErrorAction SilentlyContinue
+
+        Write-Host ""
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        Write-Host "  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES" -ForegroundColor $YELLOW
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        foreach ($c in $codesList) {
+            Write-Host "    $c" -ForegroundColor $GREEN
+        }
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        Write-Host "  [!] CRITICAL NOTICE FOR ADMINISTRATOR:" -ForegroundColor $YELLOW
+        Write-Host "  1. Store these 5 one-time recovery codes safely (print or write them down)." -ForegroundColor $WHITE
+        Write-Host "  2. If you lose your administrator password and recovery codes, you will" -ForegroundColor $WHITE
+        Write-Host "     be permanently locked out and may need to redeploy the whole system," -ForegroundColor $WHITE
+        Write-Host "     as direct database injection is blocked for security." -ForegroundColor $WHITE
+        Write-Host "  3. These credentials and recovery codes are also saved to:" -ForegroundColor $WHITE
+        Write-Host "     $credFile" -ForegroundColor $CYAN
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        try {
+            Read-Host "  Press [Enter] once you have safely copied or noted these codes to continue"
+        } catch {}
+        Write-Host ""
     }
 
     $credFile = Join-Path $InstallDir "ADMIN_CREDENTIALS.txt"
-    $credContent = @"
-PlannedEducation Superadmin Credentials
-=======================================
-School Name:    $SchoolName
-Admin Email:    $AdminEmail
-Admin Password: $AdminPassword
-Admin Name:     $AdminName
-Backend API:    http://${Domain}:${ApiPort}
-Frontend URL:   http://${Domain}:${FrontendPort}
-
-============================================================
-EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):
-$codesText
-
-WARNING: If you lose both your administrator password and these
-recovery codes, you will be permanently locked out and will need
-to redeploy the entire platform, as database injection is not an option.
-============================================================
-"@
+    $credLines = @(
+        "PlannedEducation Superadmin Credentials",
+        "=======================================",
+        "School Name:    $SchoolName",
+        "Admin Email:    $AdminEmail",
+        "Admin Password: $AdminPassword",
+        "Admin Name:     $AdminName",
+        ("Backend API:    http://" + $Domain + ":" + $ApiPort),
+        ("Frontend URL:   http://" + $Domain + ":" + $FrontendPort),
+        "",
+        "============================================================",
+        "EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):",
+        $codesText,
+        "",
+        "WARNING: If you lose both your administrator password and these",
+        "recovery codes, you will be permanently locked out and will need",
+        "to redeploy the entire platform, as database injection is not an option.",
+        "============================================================"
+    )
+    $credContent = $credLines -join "`r`n"
     [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
     Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
 }
 
-# Step 8: Run Verification Tests
-Write-Header "Step 8: Running Verification Tests"
+# Step 9: Run Verification Tests
+Write-Header "Step 9: Running Verification Tests"
 
 $testsPassed = 0
 $testsFailed = 0
@@ -1065,13 +1108,13 @@ if (-not $useDocker) {
 
     Run-Verify "Backend FastAPI health endpoint (TestClient)" {
         $env:PYTHONPATH = Join-Path $InstallDir "src"
-        $out = & $pythonExe -c "from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get('/health'); assert r.status_code == 200, r.text; print('OK')"
+        $out = & $pythonExe -c 'from fastapi.testclient import TestClient; from plannededucation.api.main import app; c = TestClient(app); r = c.get("/health"); assert r.status_code == 200, r.text; print("OK")'
         $out -match "OK"
     } | Out-Null
 }
 
-# Final Summary
-Write-Header "Installation Complete!"
+# Step 10: Final Summary
+Write-Header "Step 10: Installation Complete!"
 
 Write-Host "Verification Results: $testsPassed passed, $testsFailed failed" -ForegroundColor $GREEN
 Write-Host ""

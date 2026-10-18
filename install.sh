@@ -746,7 +746,7 @@ else
                 ADMIN_PASS="$input_pass"
             else
                 ADMIN_PASS=$(openssl rand -base64 12 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 16)
-                print_info "Generated secure Superadmin Password: $ADMIN_PASS"
+                GENERATED_RANDOM="true"
             fi
         else
             print_info "Non-interactive environment detected; using configured administrator password."
@@ -754,87 +754,60 @@ else
     fi
 fi
 
+if [[ "${GENERATED_RANDOM:-false}" == "true" ]]; then
+    echo ""
+    echo -e "${YELLOW}============================================================${RESET}"
+    echo -e "${GREEN}  [KEY] GENERATED SUPERADMIN PASSWORD${RESET}"
+    echo -e "${YELLOW}============================================================${RESET}"
+    echo -e "  Email / Username:   $ADMIN_EMAIL"
+    echo -e "  Generated Password: ${GREEN}$ADMIN_PASS${RESET}"
+    echo -e "${YELLOW}============================================================${RESET}"
+    echo -e "${YELLOW}  [IMPORTANT] Please copy or write down this password now!${RESET}"
+    echo -e "${YELLOW}  It will NOT be shown again in plaintext on screen.${RESET}"
+    echo -e "${YELLOW}============================================================${RESET}"
+    if [ -t 0 ] && [[ "$AUTO_CONFIRM" != "true" ]]; then
+        read -r -p "  Press [Enter] once you have copied/noted down the password to continue: " _
+    fi
+    echo ""
+fi
+
 if [[ "$USE_DOCKER" == "false" ]]; then
     export PYTHONPATH="$INSTALL_DIR/src"
     export PE_ADMIN_EMAIL="$ADMIN_EMAIL"
+    export PE_ADMIN_PASSWORD="$ADMIN_PASS"
     export PE_ADMIN_PASS="$ADMIN_PASS"
     export PE_ADMIN_NAME="$ADMIN_NAME"
     export PE_SCHOOL_NAME="$SCHOOL_NAME"
-    "$PYTHON_EXE" - <<'PYEOF'
-import hashlib
-import json
-import os
-from plannededucation.api import auth
-from plannededucation.api.database import Base, SessionLocal, engine
-from plannededucation.api.models import School, User, UserRole
-from plannededucation.api.routes_auth import get_password_hash, _encode_recovery_codes
 
-Base.metadata.create_all(bind=engine)
-db = SessionLocal()
-try:
-    school_name = os.environ.get("PE_SCHOOL_NAME", "PlannedEducation School")
-    if not db.query(School).first():
-        db.add(School(name=school_name, address="Local Campus"))
-        db.commit()
-
-    email = os.environ["PE_ADMIN_EMAIL"]
-    pwd = os.environ["PE_ADMIN_PASS"]
-    name = os.environ["PE_ADMIN_NAME"]
-    uname = email.split("@")[0] or "admin"
-
-    plain_recovery_codes = auth.generate_recovery_codes(count=5)
-    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]
-
-    existing = db.query(User).filter((User.email == email) | (User.username == uname)).first()
-    if existing:
-        existing.email = email
-        existing.hashed_password = get_password_hash(pwd)
-        existing.full_name = name
-        existing.role = UserRole.admin.value
-        existing.is_admin = True
-        existing.is_active = True
-        existing.recovery_codes = _encode_recovery_codes(hashed_codes)
-        db.commit()
-        print(f"Updated existing Admin user: {email}")
-    else:
-        admin = User(
-            username=uname,
-            email=email,
-            hashed_password=get_password_hash(pwd),
-            full_name=name,
-            role=UserRole.admin.value,
-            is_admin=True,
-            is_active=True,
-            recovery_codes=_encode_recovery_codes(hashed_codes)
-        )
-        db.add(admin)
-        db.commit()
-        print(f"Created initial Admin user: {email}")
-
-    print("\n" + "=" * 68)
-    print("  🔑 SUPERADMIN EMERGENCY RECOVERY CODES")
-    print("=" * 68)
-    for i, code in enumerate(plain_recovery_codes, 1):
-        print(f"    Code {i}: {code}")
-    print("=" * 68)
-    print("  ⚠️  CRITICAL NOTICE FOR ADMINISTRATOR:")
-    print("  Store these 5 one-time recovery codes safely (print or write them down).")
-    print("  If you lose your administrator password and recovery codes, you will")
-    print("  be locked out and may need to redeploy the whole system, as database")
-    print("  injection is blocked for security.")
-    print("=" * 68 + "\n")
-
-    with open("admin_recovery_codes.tmp", "w") as f:
-        f.write("\n".join(plain_recovery_codes))
-finally:
-    db.close()
-PYEOF
+    SETUP_ADMIN_SCRIPT="$INSTALL_DIR/scripts/deploy/setup_admin.py"
+    if [[ ! -f "$SETUP_ADMIN_SCRIPT" ]]; then
+        SETUP_ADMIN_SCRIPT="${BASH_SOURCE[0]%/*}/scripts/deploy/setup_admin.py"
+    fi
+    "$PYTHON_EXE" "$SETUP_ADMIN_SCRIPT"
 
     CODES_TEXT=""
     if [[ -f "$INSTALL_DIR/admin_recovery_codes.tmp" ]]; then
+        echo ""
+        echo -e "${CYAN}============================================================${RESET}"
+        echo -e "${YELLOW}  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES${RESET}"
+        echo -e "${CYAN}============================================================${RESET}"
         while IFS= read -r line; do
+            echo -e "${GREEN}    $line${RESET}"
             CODES_TEXT="${CODES_TEXT}  - $line\n"
         done < "$INSTALL_DIR/admin_recovery_codes.tmp"
+        echo -e "${CYAN}============================================================${RESET}"
+        echo -e "${YELLOW}  [!] CRITICAL NOTICE FOR ADMINISTRATOR:${RESET}"
+        echo -e "  1. Store these 5 one-time recovery codes safely (print or write them down)."
+        echo -e "  2. If you lose your administrator password and recovery codes, you will"
+        echo -e "     be permanently locked out and may need to redeploy the whole system,"
+        echo -e "     as direct database injection is blocked for security."
+        echo -e "  3. These credentials and recovery codes are also saved to:"
+        echo -e "     ${CYAN}$INSTALL_DIR/ADMIN_CREDENTIALS.txt${RESET}"
+        echo -e "${CYAN}============================================================${RESET}"
+        if [ -t 0 ] && [[ "$AUTO_CONFIRM" != "true" ]]; then
+            read -r -p "  Press [Enter] once you have safely copied or noted these codes to continue: " _
+        fi
+        echo ""
         rm -f "$INSTALL_DIR/admin_recovery_codes.tmp"
     fi
 

@@ -105,4 +105,25 @@ All 5 reported deployment and startup issues have been resolved across both Wind
 6. **Uninstaller Path Auto-Detection (`uninstall.ps1` & `uninstall.sh`)**:
    - `uninstall.ps1` and `uninstall.sh` now automatically detect if they are running inside an installation directory (`$PSScriptRoot` containing `plannededucation.db`, `.env`, or `src/plannededucation`).
    - If detected, defaults to uninstalling that directory without requiring manual `-InstallDir` input.
-   - Defaults to standard `C:\PlannedEducation` (Windows) and `/opt/plannededucation` (Linux) matching the installer defaults.
+   - Defaults to standard `C:\PlannedEducation` (Windows) and `/opt/plannededucation` (Linux) matching the installer defaults.
+
+7. **Windows PowerShell 5.1 Native Compatibility & Character Encoding Safeguards**:
+   - Verified 100% compatibility with Windows default PowerShell engine (`powershell.exe` / PS 5.1 built into Windows 10/11 and Windows Server 2016-2025).
+   - Eliminated all PS7-only operators (`??`, ternary `? :`, `&&`, `||`).
+   - Replaced multi-byte Unicode emojis (`🔑`, `⚠️`, `✅`) with clean, universal ASCII indicators (`[KEY]`, `[!]`, `[OK]`, `[WARN]`). This eliminates the Windows CP1252 codepage hazard where the 4th UTF-8 byte `0x91` maps to a backtick escape character `` ` `` that inadvertently escaped subsequent string quotes.
+   - Refactored `scripts/dev/*.ps1` launchers to detect `pwsh` and automatically fall back to `powershell.exe` when PowerShell 7 is not installed.
+
+8. **Early Target Installation Directory Prompt**:
+   - `install.ps1` prompts for the target installation directory right at Step 1 before initializing logs or downloading prerequisites.
+   - Defaults to `C:\PlannedEducation` while naturally accepting any custom directory path. Log file paths (`logs\install.log`) immediately attach to the chosen target directory.
+
+9. **Administrator Rights Notification & Self-Elevation**:
+   - Early check for elevated Administrator privileges.
+   - Clearly notifies user of why Administrator rights are needed on Windows (system directory access, scheduled tasks, package managers, firewall rules).
+   - In interactive mode, offers 3 clear options: (1) Elevate now via UAC (`powershell.exe -Verb RunAs`), (2) Continue in User-mode, or (3) Exit installer.
+
+10. **Superadmin Password Retention & Emergency Recovery Codes Pause**:
+    - Generates strong 20-character random passwords when requested or when default credentials are used.
+    - Requires explicit `[Enter]` confirmation from the operator after displaying generated passwords and emergency recovery codes so credentials are never cleared or scrolled away before being copied.
+    - Modularized database initialization and admin account creation into dedicated script `scripts/deploy/setup_admin.py`, called consistently by both `install.ps1` and `install.sh`.
+
