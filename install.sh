@@ -518,10 +518,12 @@ echo "============================================================"
 echo "1. Starting Backend on port $API_PORT..."
 nohup "$INSTALL_DIR/start_backend.sh" </dev/null >> "$LOGS_DIR/backend_stdout.log" 2>> "$LOGS_DIR/backend_stderr.log" &
 echo $! > "$LOGS_DIR/backend.pid"
+disown $! 2>/dev/null || true
 
 echo "2. Starting Frontend on port $FRONTEND_PORT..."
 nohup "$INSTALL_DIR/start_frontend.sh" </dev/null >> "$LOGS_DIR/frontend.log" 2>> "$LOGS_DIR/frontend_error.log" &
 echo $! > "$LOGS_DIR/frontend.pid"
+disown $! 2>/dev/null || true
 
 echo "3. Waiting for services to become ready..."
 BACKEND_HEALTHY=false
@@ -698,8 +700,12 @@ FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
     FRONTEND_PORT="\$(grep -o '"frontend_port":[ ]*[0-9]*' "\$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo \${FRONTEND_PORT})"
 fi
-echo "Starting PlannedEducation Frontend on port \${FRONTEND_PORT}..."
-exec npx vite preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
+VITE_BIN="\$INSTALL_DIR/web/apps/portal/node_modules/vite/bin/vite.js"
+if [[ -f "\$VITE_BIN" ]]; then
+    exec node "\$VITE_BIN" preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
+else
+    exec npx vite preview --host 0.0.0.0 --port "\${FRONTEND_PORT}" </dev/null
+fi
 EOF
     chmod +x "$INSTALL_DIR/start_frontend.sh"
     print_success "Created launcher & management suite: start_all.sh, stop_all.sh, verify.sh, start_backend.sh, start_frontend.sh"
