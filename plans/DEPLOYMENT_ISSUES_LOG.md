@@ -126,4 +126,17 @@ All 5 reported deployment and startup issues have been resolved across both Wind
     - Generates strong 20-character random passwords when requested or when default credentials are used.
     - Requires explicit `[Enter]` confirmation from the operator after displaying generated passwords and emergency recovery codes so credentials are never cleared or scrolled away before being copied.
     - Modularized database initialization and admin account creation into dedicated script `scripts/deploy/setup_admin.py`, called consistently by both `install.ps1` and `install.sh`.
+
+11. **External AI GitHub Remote Deployment & Uninstallation Drill (Verified First-Try Clean)**:
+    - **Simulation**: Acted as an external AI following instructions directly from GitHub remote (`https://github.com/ezixen/PlannedEducation.git`), cloning to default `C:\PlannedEducation`, executing `install.ps1 -AutoConfirm`, verifying all checks, running `verify.ps1`, and executing `uninstall.ps1 -AutoConfirm`.
+    - **Bugs Identified & Fixed in First Pass**:
+      1. *Step 9 FastAPI Health Verification Test*: The single-quoted `python -c` argument unquoted `/health` under Windows PowerShell parameter parsing, causing `r = c.get(/health) SyntaxError`. Fixed by piping the script via standard input (`$verifyScript | & $pythonExe -`) with explicit `.env` and `src` path injection.
+      2. *Step 8 Credential File Output*: `$credFile` was defined after the recovery codes console banner, leaving the printed path blank. Moved definition prior to banner rendering so `C:\PlannedEducation\ADMIN_CREDENTIALS.txt` displays cleanly.
+      3. *PowerShell 5.1 Drive Colon Collision in Generated Scripts*: In `verify.ps1` and `start_all.ps1`, `http://$domain:$port` was interpreted by PowerShell 5.1 as a drive variable name (`domain:`). Resolved by using delimited variable syntax `http://${domain}:${port}`.
+      4. *Clean Repository Deployment Defaults*: Set `config/deployment.json` defaults to `PlannedEducation School` and `localhost`. Restricted reading existing `deployment.json` in `install.ps1` to re-install/upgrade scenarios where `.env` already exists.
+      5. *Documentation Clarity*: Added explicit `git clone` commands to `README.md` and `docs/admin/INSTALL_WINDOWS.md`.
+    - **Final Verification Result**:
+      - `install.ps1`: **5 passed, 0 failed** (all verification checks green).
+      - `verify.ps1`: Runs cleanly with 0 syntax or parser errors.
+      - `uninstall.ps1`: Successfully removed `C:\PlannedEducation` with 0 residual files, self-cleaned the uninstaller, and preserved all external system dependencies (Python, Node.js, PostgreSQL, Docker, Git).
 

@@ -568,6 +568,26 @@
   - Backend test suite: 122/122 passed clean.
   - Frontend portal build & oxlint: 0 errors, 0 warnings.
 
+---
+
+### Phase 24: External AI GitHub Remote Deploy & Uninstall Drill (First-Try Clean) ✅ Completed (2026-10-19)
+- **Status**: `done-tested-working`
+- **End-to-End Simulation**:
+  - Simulated a clean-machine external AI installer reading directly from GitHub remote (`https://github.com/ezixen/PlannedEducation.git`).
+  - Executed git clone into default `C:\PlannedEducation`, automated setup via `install.ps1 -AutoConfirm`, health verification via `verify.ps1`, and cleanup via `uninstall.ps1 -AutoConfirm`.
+- **Issues Caught & Fixed**:
+  - Step 9 FastAPI test runner unquoted string issue resolved via piped script with explicit `.env` environment loading.
+  - Resolved `$credFile` print timing in Step 8 so credentials file path is displayed in console banner.
+  - Resolved PowerShell 5.1 drive colon syntax collision in `verify.ps1` and `start_all.ps1` by adopting `${domain}:${port}`.
+  - Reset `config/deployment.json` repository defaults and prevented sample template values from overriding fresh install parameters.
+  - Added copy-paste `git clone` steps to `README.md` and `docs/admin/INSTALL_WINDOWS.md`.
+- **Verification Results**:
+  - `install.ps1`: 5/5 verification tests passed on clean first run.
+  - `verify.ps1`: 0 parser/syntax errors.
+  - `uninstall.ps1`: Complete directory removal with 0 residual files, preserving all external system dependencies.
+  - 0 orphaned background processes remaining.
+
+
 
 
 
