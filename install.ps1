@@ -535,31 +535,329 @@ if ($useDocker) {
         New-Item -ItemType Directory -Path $script:LogDir -Force | Out-Null
     }
 
-    # Create Launcher Scripts with separated stdout and error logs
+    # Create Complete Launcher & Management Script Suite (.ps1 native + .bat wrappers)
+    $startAllPs1 = Join-Path $InstallDir "start_all.ps1"
+    $startAllPs1Content = @"
+# PlannedEducation - Unified Platform Launcher (PowerShell)
+param([switch]`$NoBrowser)
+
+`$InstallDir = "`$PSScriptRoot"
+`$logsDir = Join-Path `$InstallDir "logs"
+if (-not (Test-Path `$logsDir)) { New-Item -ItemType Directory -Path `$logsDir -Force | Out-Null }
+
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host "   Starting PlannedEducation Platform" -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
+
+`$apiPort = $ApiPort
+`$frontendPort = $FrontendPort
+`$domain = "$Domain"
+
+`$depCfg = Join-Path `$InstallDir "config\deployment.json"
+if (Test-Path `$depCfg) {
+    try {
+        `$cfg = Get-Content `$depCfg -Raw | ConvertFrom-Json
+        if (`$cfg.api_port) { `$apiPort = `$cfg.api_port }
+        if (`$cfg.frontend_port) { `$frontendPort = `$cfg.frontend_port }
+        if (`$cfg.domain) { `$domain = `$cfg.domain }
+    } catch {}
+}
+
+`$env:PYTHONPATH = "`$InstallDir\src"
+`$env:PLANNED_EDUCATION_LOG_DIR = "`$logsDir"
+
+Write-Host "1. Starting Backend API on port `$apiPort..." -ForegroundColor Green
+`$backendProc = Start-Process -FilePath "$pythonExe" -ArgumentList "-m uvicorn plannededucation.api.main:app --env-file `"`$InstallDir\.env`" --host 0.0.0.0 --port `$apiPort" -WorkingDirectory `$InstallDir -PassThru
+
+Write-Host "2. Starting Frontend Portal on port `$frontendPort..." -ForegroundColor Green
+`$frontendProc = Start-Process -FilePath "cmd.exe" -ArgumentList "/c npm run preview -- --host 127.0.0.1 --port `$frontendPort" -WorkingDirectory (Join-Path `$InstallDir "web\apps\portal") -PassThru
+
+Write-Host "3. Verifying platform health..." -ForegroundColor Yellow
+`$healthy = `$false
+for (`$i = 0; `$i -lt 30; `$i++) {
+    Start-Sleep -Seconds 1
+    try {
+        `$res = Invoke-RestMethod -Uri "http://127.0.0.1:`$apiPort/health" -TimeoutSec 2 -ErrorAction SilentlyContinue
+        if (`$res -and `$res.status -eq "ok") {
+            `$healthy = `$true
+            break
+        }
+    } catch {}
+}
+
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor Cyan
+if (`$healthy) {
+    Write-Host "  [OK] PlannedEducation is LIVE and HEALTHY!" -ForegroundColor Green
+    Write-Host "============================================================" -ForegroundColor Cyan
+    Write-Host "  Frontend Portal: http://`$domain:`$frontendPort" -ForegroundColor Green
+    Write-Host "  Backend API:     http://`$domain:`$apiPort"
+    Write-Host "  API Docs:        http://`$domain:`$apiPort/docs"
+    Write-Host "  Backend PID:     `$(`$backendProc.Id) | Frontend PID: `$(`$frontendProc.Id)"
+    Write-Host "  To stop:         Run .\stop_all.bat (or .\stop_all.ps1)"
+    Write-Host "============================================================" -ForegroundColor Cyan
+    if (-not `$NoBrowser) {
+        try { Start-Process "http://`$domain:`$frontendPort" } catch {}
+    }
+} else {
+    Write-Host "  [WARN] Backend health check timed out." -ForegroundColor Yellow
+    Write-Host "  Check diagnostic logs in: `$logsDir\backend_error.log" -ForegroundColor Yellow
+    Write-Host "============================================================" -ForegroundColor Cyan
+}
+"@
+    Set-Content -Path $startAllPs1 -Value $startAllPs1Content -Encoding UTF8
+
+    $startAllBat = Join-Path $InstallDir "start_all.bat"
+    $startAllBatContent = @"
+@echo off
+setlocal
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0start_all.ps1" %*
+if errorlevel 1 (
+    echo.
+    echo [ERROR] Launcher failed. See message above.
+    pause
+)
+"@
+    Set-Content -Path $startAllBat -Value $startAllBatContent -Encoding ASCII
+
+    $startBackendPs1 = Join-Path $InstallDir "start_backend.ps1"
+    $backendPs1Content = @"
+# PlannedEducation - Backend Launcher (PowerShell)
+`$InstallDir = "`$PSScriptRoot"
+`$logsDir = Join-Path `$InstallDir "logs"
+if (-not (Test-Path `$logsDir)) { New-Item -ItemType Directory -Path `$logsDir -Force | Out-Null }
+`$env:PYTHONPATH = "`$InstallDir\src"
+`$env:PLANNED_EDUCATION_LOG_DIR = "`$logsDir"
+`$apiPort = $ApiPort
+`$depCfg = Join-Path `$InstallDir "config\deployment.json"
+if (Test-Path `$depCfg) {
+    try {
+        `$cfg = Get-Content `$depCfg -Raw | ConvertFrom-Json
+        if (`$cfg.api_port) { `$apiPort = `$cfg.api_port }
+    } catch {}
+}
+Write-Host "Starting PlannedEducation Backend on port `$apiPort..." -ForegroundColor Green
+Write-Host "Press Ctrl+C to stop." -ForegroundColor Yellow
+& "$pythonExe" -m uvicorn plannededucation.api.main:app --env-file "`$InstallDir\.env" --host 0.0.0.0 --port `$apiPort
+"@
+    Set-Content -Path $startBackendPs1 -Value $backendPs1Content -Encoding UTF8
+
     $startBackendBat = Join-Path $InstallDir "start_backend.bat"
     $backendBatContent = @"
 @echo off
-cd /d "$InstallDir"
-if not exist "$InstallDir\logs" mkdir "$InstallDir\logs"
-set PYTHONPATH=$InstallDir\src
-set PLANNED_EDUCATION_LOG_DIR=$InstallDir\logs
-if "%API_PORT%"=="" set API_PORT=$ApiPort
-echo Starting PlannedEducation Backend on port %API_PORT% (structured logs: logs\backend.log / logs\backend_error.log, raw console: logs\backend_stdout.log / logs\backend_stderr.log)...
-"$pythonExe" -m uvicorn plannededucation.api.main:app --env-file "$InstallDir\.env" --host 0.0.0.0 --port %API_PORT% >> "$InstallDir\logs\backend_stdout.log" 2>> "$InstallDir\logs\backend_stderr.log"
+setlocal
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0start_backend.ps1" %*
+if errorlevel 1 (
+    echo.
+    echo [ERROR] Backend stopped unexpectedly or failed to start.
+    echo Check logs in logs\backend_error.log
+    pause
+)
 "@
     Set-Content -Path $startBackendBat -Value $backendBatContent -Encoding ASCII
+
+    $startFrontendPs1 = Join-Path $InstallDir "start_frontend.ps1"
+    $frontendPs1Content = @"
+# PlannedEducation - Frontend Launcher (PowerShell)
+`$InstallDir = "`$PSScriptRoot"
+`$portalDir = Join-Path `$InstallDir "web\apps\portal"
+`$logsDir = Join-Path `$InstallDir "logs"
+if (-not (Test-Path `$logsDir)) { New-Item -ItemType Directory -Path `$logsDir -Force | Out-Null }
+`$frontendPort = $FrontendPort
+`$depCfg = Join-Path `$InstallDir "config\deployment.json"
+if (Test-Path `$depCfg) {
+    try {
+        `$cfg = Get-Content `$depCfg -Raw | ConvertFrom-Json
+        if (`$cfg.frontend_port) { `$frontendPort = `$cfg.frontend_port }
+    } catch {}
+}
+Set-Location `$portalDir
+Write-Host "Starting PlannedEducation Frontend on port `$frontendPort..." -ForegroundColor Green
+Write-Host "Press Ctrl+C to stop." -ForegroundColor Yellow
+npm run preview -- --host 127.0.0.1 --port `$frontendPort
+"@
+    Set-Content -Path $startFrontendPs1 -Value $frontendPs1Content -Encoding UTF8
 
     $startFrontendBat = Join-Path $InstallDir "start_frontend.bat"
     $frontendBatContent = @"
 @echo off
-cd /d "$InstallDir\web\apps\portal"
-if not exist "$InstallDir\logs" mkdir "$InstallDir\logs"
-if "%FRONTEND_PORT%"=="" set FRONTEND_PORT=$FrontendPort
-echo Starting PlannedEducation Frontend on port %FRONTEND_PORT% (Logs: logs\frontend.log, Error Logs: logs\frontend_error.log)...
-npm run preview -- --host 127.0.0.1 --port %FRONTEND_PORT% >> "$InstallDir\logs\frontend.log" 2>> "$InstallDir\logs\frontend_error.log"
+setlocal
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0start_frontend.ps1" %*
+if errorlevel 1 (
+    echo.
+    echo [ERROR] Frontend stopped unexpectedly or failed to start.
+    echo Check logs in logs\frontend_error.log
+    pause
+)
 "@
     Set-Content -Path $startFrontendBat -Value $frontendBatContent -Encoding ASCII
-    Write-Success "Created launcher scripts: start_backend.bat, start_frontend.bat (with logs\backend.log & logs\backend_error.log)"
+
+    $stopAllPs1 = Join-Path $InstallDir "stop_all.ps1"
+    $stopAllPs1Content = @"
+# PlannedEducation - Process Terminator (PowerShell)
+`$InstallDir = "`$PSScriptRoot"
+`$apiPort = $ApiPort
+`$frontendPort = $FrontendPort
+`$depCfg = Join-Path `$InstallDir "config\deployment.json"
+if (Test-Path `$depCfg) {
+    try {
+        `$cfg = Get-Content `$depCfg -Raw | ConvertFrom-Json
+        if (`$cfg.api_port) { `$apiPort = `$cfg.api_port }
+        if (`$cfg.frontend_port) { `$frontendPort = `$cfg.frontend_port }
+    } catch {}
+}
+
+Write-Host "Stopping PlannedEducation processes on ports `$apiPort and `$frontendPort..." -ForegroundColor Yellow
+`$stopped = 0
+foreach (`$port in @(`$apiPort, `$frontendPort)) {
+    try {
+        `$conns = Get-NetTCPConnection -LocalPort `$port -State Listen -ErrorAction SilentlyContinue
+        foreach (`$c in `$conns) {
+            `$p = Get-Process -Id `$c.OwningProcess -ErrorAction SilentlyContinue
+            if (`$p -and `$p.Id -ne `$PID) {
+                Write-Host "  Stopping `$(`$p.ProcessName) (PID: `$(`$p.Id)) on port `$port..." -ForegroundColor Cyan
+                Stop-Process -Id `$p.Id -Force -ErrorAction SilentlyContinue
+                `$stopped++
+            }
+        }
+    } catch {}
+}
+if (`$stopped -gt 0) {
+    Write-Host "[OK] Stopped `$stopped PlannedEducation processes." -ForegroundColor Green
+} else {
+    Write-Host "[INFO] No active listeners found on ports `$apiPort or `$frontendPort." -ForegroundColor Blue
+}
+"@
+    Set-Content -Path $stopAllPs1 -Value $stopAllPs1Content -Encoding UTF8
+
+    $stopAllBat = Join-Path $InstallDir "stop_all.bat"
+    $stopAllBatContent = @"
+@echo off
+setlocal
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0stop_all.ps1"
+"@
+    Set-Content -Path $stopAllBat -Value $stopAllBatContent -Encoding ASCII
+
+    $verifyPs1 = Join-Path $InstallDir "verify.ps1"
+    $verifyPs1Content = @"
+<#
+.SYNOPSIS
+    PlannedEducation - Deployment & Health Verification Tool
+#>
+param([string]`$InstallDir = "`$PSScriptRoot")
+
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host "  PlannedEducation Deployment Health Verification" -ForegroundColor Cyan
+Write-Host "============================================================" -ForegroundColor Cyan
+
+`$allOk = `$true
+
+# 1. Directory & Config Check
+Write-Host -NoNewline "Checking installation directory (`$InstallDir)... "
+if (Test-Path `$InstallDir) { Write-Host "OK" -ForegroundColor Green } else { Write-Host "FAIL (not found)" -ForegroundColor Red; `$allOk = `$false }
+
+`$apiPort = $ApiPort
+`$frontendPort = $FrontendPort
+`$domain = "$Domain"
+`$depCfg = Join-Path `$InstallDir "config\deployment.json"
+Write-Host -NoNewline "Checking deployment config (`$depCfg)... "
+if (Test-Path `$depCfg) {
+    Write-Host "OK" -ForegroundColor Green
+    try {
+        `$cfg = Get-Content `$depCfg -Raw | ConvertFrom-Json
+        if (`$cfg.api_port) { `$apiPort = `$cfg.api_port }
+        if (`$cfg.frontend_port) { `$frontendPort = `$cfg.frontend_port }
+        if (`$cfg.domain) { `$domain = `$cfg.domain }
+    } catch {}
+} else {
+    Write-Host "WARN (deployment.json not found, using default ports)" -ForegroundColor Yellow
+}
+
+# 2. Database Check
+`$dbFile = Join-Path `$InstallDir "plannededucation.db"
+Write-Host -NoNewline "Checking database (`$dbFile)... "
+if (Test-Path `$dbFile) {
+    Write-Host "OK (`$((Get-Item `$dbFile).Length) bytes)" -ForegroundColor Green
+} else {
+    Write-Host "WARN (SQLite file not present, or using external PostgreSQL)" -ForegroundColor Yellow
+}
+
+# 3. Backend Health Check
+Write-Host -NoNewline "Checking Backend API (http://127.0.0.1:`$apiPort/health)... "
+try {
+    `$res = Invoke-RestMethod -Uri "http://127.0.0.1:`$apiPort/health" -TimeoutSec 3 -ErrorAction Stop
+    if (`$res.status -eq "ok") {
+        Write-Host "OK (status: `$(`$res.status), version: `$(`$res.version))" -ForegroundColor Green
+    } else {
+        Write-Host "WARN (`$(`$res | ConvertTo-Json -Compress))" -ForegroundColor Yellow
+        `$allOk = `$false
+    }
+} catch {
+    Write-Host "NOT RESPONDING (Backend is not running)" -ForegroundColor Red
+    `$allOk = `$false
+}
+
+# 4. Package Engine Check
+Write-Host -NoNewline "Checking Package Engine (http://127.0.0.1:`$apiPort/packages/health)... "
+try {
+    `$res = Invoke-RestMethod -Uri "http://127.0.0.1:`$apiPort/packages/health" -TimeoutSec 3 -ErrorAction Stop
+    Write-Host "OK (status: `$(`$res.status))" -ForegroundColor Green
+} catch {
+    Write-Host "NOT RESPONDING" -ForegroundColor Red
+}
+
+# 5. Frontend Check
+Write-Host -NoNewline "Checking Frontend Portal (http://127.0.0.1:`$frontendPort)... "
+try {
+    `$client = New-Object System.Net.Sockets.TcpClient
+    `$iar = `$client.BeginConnect("127.0.0.1", `$frontendPort, `$null, `$null)
+    `$ok = `$iar.AsyncWaitHandle.WaitOne(1000)
+    if (`$ok -and `$client.Connected) {
+        `$client.Close()
+        Write-Host "OK (listening on port `$frontendPort)" -ForegroundColor Green
+    } else {
+        `$client.Close()
+        Write-Host "NOT LISTENING (Frontend is not running)" -ForegroundColor Red
+        `$allOk = `$false
+    }
+} catch {
+    Write-Host "NOT LISTENING" -ForegroundColor Red
+    `$allOk = `$false
+}
+
+Write-Host "============================================================" -ForegroundColor Cyan
+if (`$allOk) {
+    Write-Host "  Result: ALL SYSTEMS OPERATIONAL ✅" -ForegroundColor Green
+    Write-Host "  Portal URL:  http://`$domain:`$frontendPort" -ForegroundColor Green
+    Write-Host "  Backend API: http://`$domain:`$apiPort" -ForegroundColor Green
+} else {
+    Write-Host "  Result: SOME SERVICES NOT RUNNING OR FAILED ⚠️" -ForegroundColor Yellow
+    Write-Host "  To start: Run .\start_all.bat (or .\start_all.ps1)" -ForegroundColor Cyan
+    Write-Host "  To stop:  Run .\stop_all.bat (or .\stop_all.ps1)" -ForegroundColor Cyan
+}
+Write-Host "============================================================" -ForegroundColor Cyan
+Write-Host ""
+"@
+    Set-Content -Path $verifyPs1 -Value $verifyPs1Content -Encoding UTF8
+
+    $verifyBat = Join-Path $InstallDir "verify.bat"
+    $verifyBatContent = @"
+@echo off
+setlocal
+cd /d "%~dp0"
+powershell.exe -ExecutionPolicy Bypass -NoProfile -File "%~dp0verify.ps1"
+pause
+"@
+    Set-Content -Path $verifyBat -Value $verifyBatContent -Encoding ASCII
+
+    Write-Success "Created launcher & management suite: start_all (.ps1/.bat), stop_all (.ps1/.bat), verify (.ps1/.bat), start_backend (.ps1/.bat), start_frontend (.ps1/.bat)"
+
 
     # Register Windows Scheduled Task if running as Administrator
     if ($isAdmin) {
@@ -796,9 +1094,12 @@ Write-Host "    - Frontend Log:       $InstallDir\logs\frontend.log"
 Write-Host "    - Frontend Error Log: $InstallDir\logs\frontend_error.log"
 Write-Host "============================================================" -ForegroundColor $CYAN
 Write-Host ""
-Write-Info "Important Next Steps:"
-Write-Host "  1. Start Backend:  $InstallDir\start_backend.bat"
-Write-Host "  2. Start Frontend: $InstallDir\start_frontend.bat"
-Write-Host "  3. Log in with your Superadmin credentials and change your password."
+Write-Info "Important Management Commands:"
+Write-Host "  1. Start Platform: $InstallDir\start_all.bat   (or .\start_all.ps1)" -ForegroundColor $GREEN
+Write-Host "  2. Verify Status:  $InstallDir\verify.bat      (or .\verify.ps1)" -ForegroundColor $CYAN
+Write-Host "  3. Stop Platform:  $InstallDir\stop_all.bat    (or .\stop_all.ps1)" -ForegroundColor $YELLOW
+Write-Host "  4. Uninstaller:    $InstallDir\uninstall.ps1" -ForegroundColor $WHITE
 Write-Host ""
-Write-Success "Thank you for using PlannedEducation!"
+Write-Host "  Log in with your Superadmin credentials and change your password."
+Write-Host ""
+Write-Success "Thank you for using PlannedEducation!"

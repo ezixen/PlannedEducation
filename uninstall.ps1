@@ -24,9 +24,22 @@
 #>
 
 param(
-    [string]$InstallDir = "d:\Dev\PEserver",
+    [string]$InstallDir = "",
     [switch]$AutoConfirm
 )
+
+# Auto-detect installation directory if not explicitly provided:
+# 1. If running inside an installation folder (contains plannededucation.db, .env, or src\plannededucation), use $PSScriptRoot
+# 2. Otherwise default to "C:\PlannedEducation" (matching install.ps1 default)
+if ([string]::IsNullOrWhiteSpace($InstallDir)) {
+    if (Test-Path (Join-Path $PSScriptRoot "plannededucation.db") -or 
+        Test-Path (Join-Path $PSScriptRoot "src\plannededucation") -or 
+        Test-Path (Join-Path $PSScriptRoot ".env")) {
+        $InstallDir = $PSScriptRoot
+    } else {
+        $InstallDir = "C:\PlannedEducation"
+    }
+}
 
 $GREEN = "Green"
 $YELLOW = "Yellow"

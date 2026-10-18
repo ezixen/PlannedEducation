@@ -494,32 +494,199 @@ else
 
     mkdir -p "$LOG_DIR"
 
-    # Create Launcher Scripts with separated stdout and error logs
+    # Create Complete Launcher & Management Script Suite
+    cat > "$INSTALL_DIR/start_all.sh" << 'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOGS_DIR="$INSTALL_DIR/logs"
+mkdir -p "$LOGS_DIR"
+
+API_PORT=8000
+FRONTEND_PORT=5173
+DOMAIN="localhost"
+
+if [[ -f "$INSTALL_DIR/config/deployment.json" ]]; then
+    API_PORT="$(grep -o '"api_port":[ ]*[0-9]*' "$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo 8000)"
+    FRONTEND_PORT="$(grep -o '"frontend_port":[ ]*[0-9]*' "$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo 5173)"
+fi
+
+echo "============================================================"
+echo "   Starting PlannedEducation Platform"
+echo "============================================================"
+
+echo "1. Starting Backend on port $API_PORT..."
+nohup "$INSTALL_DIR/start_backend.sh" >/dev/null 2>&1 &
+echo $! > "$LOGS_DIR/backend.pid"
+
+echo "2. Starting Frontend on port $FRONTEND_PORT..."
+nohup "$INSTALL_DIR/start_frontend.sh" >/dev/null 2>&1 &
+echo $! > "$LOGS_DIR/frontend.pid"
+
+echo "3. Waiting for services to become ready..."
+HEALTHY=false
+for i in {1..30}; do
+    sleep 1
+    if curl -s "http://127.0.0.1:$API_PORT/health" 2>/dev/null | grep -q '"status":"ok"'; then
+        HEALTHY=true
+        break
+    fi
+done
+
+echo ""
+echo "============================================================"
+if [[ "$HEALTHY" == "true" ]]; then
+    echo "  [OK] PlannedEducation is LIVE and HEALTHY!"
+    echo "============================================================"
+    echo "  Frontend Portal: http://$DOMAIN:$FRONTEND_PORT"
+    echo "  Backend API:     http://$DOMAIN:$API_PORT"
+    echo "  API Docs:        http://$DOMAIN:$API_PORT/docs"
+    echo "  To stop:         Run ./stop_all.sh"
+    echo "============================================================"
+else
+    echo "  [WARN] Backend health check timed out."
+    echo "  Check diagnostic logs in: $LOGS_DIR/backend_error.log"
+    echo "============================================================"
+fi
+EOF
+    chmod +x "$INSTALL_DIR/start_all.sh"
+
+    cat > "$INSTALL_DIR/stop_all.sh" << 'EOF'
+#!/usr/bin/env bash
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOGS_DIR="$INSTALL_DIR/logs"
+
+echo "Stopping PlannedEducation services..."
+if [[ -f "$LOGS_DIR/backend.pid" ]]; then
+    PID="$(cat "$LOGS_DIR/backend.pid")"
+    if kill -0 "$PID" 2>/dev/null; then
+        echo "  Stopping Backend (PID: $PID)..."
+        kill "$PID" 2>/dev/null || true
+    fi
+    rm -f "$LOGS_DIR/backend.pid"
+fi
+
+if [[ -f "$LOGS_DIR/frontend.pid" ]]; then
+    PID="$(cat "$LOGS_DIR/frontend.pid")"
+    if kill -0 "$PID" 2>/dev/null; then
+        echo "  Stopping Frontend (PID: $PID)..."
+        kill "$PID" 2>/dev/null || true
+    fi
+    rm -f "$LOGS_DIR/frontend.pid"
+fi
+
+pkill -f "uvicorn plannededucation.api.main:app" 2>/dev/null || true
+pkill -f "npm run preview" 2>/dev/null || true
+echo "[OK] PlannedEducation processes stopped."
+EOF
+    chmod +x "$INSTALL_DIR/stop_all.sh"
+
+    cat > "$INSTALL_DIR/verify.sh" << 'EOF'
+#!/usr/bin/env bash
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+API_PORT=8000
+FRONTEND_PORT=5173
+DOMAIN="localhost"
+
+if [[ -f "$INSTALL_DIR/config/deployment.json" ]]; then
+    API_PORT="$(grep -o '"api_port":[ ]*[0-9]*' "$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo 8000)"
+    FRONTEND_PORT="$(grep -o '"frontend_port":[ ]*[0-9]*' "$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo 5173)"
+fi
+
+echo ""
+echo "============================================================"
+echo "  PlannedEducation Deployment Health Verification"
+echo "============================================================"
+
+ALL_OK=true
+
+echo -n "Checking installation directory ($INSTALL_DIR)... "
+if [[ -d "$INSTALL_DIR" ]]; then echo "OK"; else echo "FAIL"; ALL_OK=false; fi
+
+echo -n "Checking database ($INSTALL_DIR/plannededucation.db)... "
+if [[ -f "$INSTALL_DIR/plannededucation.db" ]]; then
+    echo "OK ($(stat -c%s "$INSTALL_DIR/plannededucation.db" 2>/dev/null || wc -c < "$INSTALL_DIR/plannededucation.db") bytes)"
+else
+    echo "WARN (SQLite file not present, or using external PostgreSQL)"
+fi
+
+echo -n "Checking Backend API (http://127.0.0.1:$API_PORT/health)... "
+if curl -s "http://127.0.0.1:$API_PORT/health" 2>/dev/null | grep -q '"status":"ok"'; then
+    echo "OK"
+else
+    echo "NOT RESPONDING (Backend is not running)"
+    ALL_OK=false
+fi
+
+echo -n "Checking Package Engine (http://127.0.0.1:$API_PORT/packages/health)... "
+if curl -s "http://127.0.0.1:$API_PORT/packages/health" 2>/dev/null | grep -q '"status":"ok"'; then
+    echo "OK"
+else
+    echo "NOT RESPONDING"
+fi
+
+echo -n "Checking Frontend Portal (http://127.0.0.1:$FRONTEND_PORT)... "
+if curl -s -I "http://127.0.0.1:$FRONTEND_PORT" 2>/dev/null | grep -q 'HTTP'; then
+    echo "OK"
+else
+    echo "NOT LISTENING (Frontend is not running)"
+    ALL_OK=false
+fi
+
+echo "============================================================"
+if [[ "$ALL_OK" == "true" ]]; then
+    echo "  Result: ALL SYSTEMS OPERATIONAL ✅"
+    echo "  Portal URL:  http://$DOMAIN:$FRONTEND_PORT"
+    echo "  Backend API: http://$DOMAIN:$API_PORT"
+else
+    echo "  Result: SOME SERVICES NOT RUNNING OR FAILED ⚠️"
+    echo "  To start: Run ./start_all.sh"
+    echo "  To stop:  Run ./stop_all.sh"
+fi
+echo "============================================================"
+echo ""
+EOF
+    chmod +x "$INSTALL_DIR/verify.sh"
+
     cat > "$INSTALL_DIR/start_backend.sh" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$INSTALL_DIR"
-mkdir -p "$INSTALL_DIR/logs"
-set -a
-source "$INSTALL_DIR/.env"
-set +a
-export PYTHONPATH="$INSTALL_DIR/src"
-export PLANNED_EDUCATION_LOG_DIR="$INSTALL_DIR/logs"
-echo "Starting PlannedEducation Backend on port \${API_PORT:-${API_PORT}} (structured logs: logs/backend.log / logs/backend_error.log, raw console: logs/backend_stdout.log / logs/backend_stderr.log)..."
-exec "$PYTHON_EXE" -m uvicorn plannededucation.api.main:app --host 0.0.0.0 --port "\${API_PORT:-${API_PORT}}" >> "$INSTALL_DIR/logs/backend_stdout.log" 2>> "$INSTALL_DIR/logs/backend_stderr.log"
+INSTALL_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
+mkdir -p "\$INSTALL_DIR/logs"
+if [[ -f "\$INSTALL_DIR/.env" ]]; then
+    set -a
+    source "\$INSTALL_DIR/.env"
+    set +a
+fi
+export PYTHONPATH="\$INSTALL_DIR/src"
+export PLANNED_EDUCATION_LOG_DIR="\$INSTALL_DIR/logs"
+API_PORT="${API_PORT:-8000}"
+if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
+    API_PORT="\$(grep -o '"api_port":[ ]*[0-9]*' "\$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo \${API_PORT})"
+fi
+echo "Starting PlannedEducation Backend on port \${API_PORT}..."
+echo "Structured logs: logs/backend.log, logs/backend_error.log"
+exec "$PYTHON_EXE" -m uvicorn plannededucation.api.main:app --host 0.0.0.0 --port "\${API_PORT}"
 EOF
     chmod +x "$INSTALL_DIR/start_backend.sh"
 
     cat > "$INSTALL_DIR/start_frontend.sh" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$INSTALL_DIR/web/apps/portal"
-mkdir -p "$INSTALL_DIR/logs"
-echo "Starting PlannedEducation Frontend on port \${FRONTEND_PORT:-${FRONTEND_PORT}} (Logs: logs/frontend.log, Error Logs: logs/frontend_error.log)..."
-exec npm run preview -- --host 0.0.0.0 --port "\${FRONTEND_PORT:-${FRONTEND_PORT}}" >> "$INSTALL_DIR/logs/frontend.log" 2>> "$INSTALL_DIR/logs/frontend_error.log"
+INSTALL_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
+cd "\$INSTALL_DIR/web/apps/portal"
+mkdir -p "\$INSTALL_DIR/logs"
+FRONTEND_PORT="${FRONTEND_PORT:-5173}"
+if [[ -f "\$INSTALL_DIR/config/deployment.json" ]]; then
+    FRONTEND_PORT="\$(grep -o '"frontend_port":[ ]*[0-9]*' "\$INSTALL_DIR/config/deployment.json" | grep -o '[0-9]*' || echo \${FRONTEND_PORT})"
+fi
+echo "Starting PlannedEducation Frontend on port \${FRONTEND_PORT}..."
+exec npm run preview -- --host 0.0.0.0 --port "\${FRONTEND_PORT}"
 EOF
     chmod +x "$INSTALL_DIR/start_frontend.sh"
-    print_success "Created launcher scripts: start_backend.sh, start_frontend.sh (with logs/backend.log & logs/backend_error.log)"
+    print_success "Created launcher & management suite: start_all.sh, stop_all.sh, verify.sh, start_backend.sh, start_frontend.sh"
+
 
     # Setup Systemd & Nginx if in Mode 2 and root/sudo with active systemd
     if [[ "$USE_SQLITE" == "false" && "$HAS_SUDO" == "true" ]] && pidof systemd &>/dev/null; then
@@ -757,9 +924,12 @@ echo -e "    - Frontend Log:       $INSTALL_DIR/logs/frontend.log"
 echo -e "    - Frontend Error Log: $INSTALL_DIR/logs/frontend_error.log"
 echo -e "${CYAN}============================================================${RESET}"
 echo ""
-print_info "Important Next Steps:"
-echo "  1. Start Backend:  $INSTALL_DIR/start_backend.sh"
-echo "  2. Start Frontend: $INSTALL_DIR/start_frontend.sh"
-echo "  3. Log in with your Superadmin credentials and change your password."
+print_info "Important Management Commands:"
+echo "  1. Start Platform: $INSTALL_DIR/start_all.sh"
+echo "  2. Verify Status:  $INSTALL_DIR/verify.sh"
+echo "  3. Stop Platform:  $INSTALL_DIR/stop_all.sh"
+echo "  4. Uninstaller:    $INSTALL_DIR/uninstall.sh"
+echo ""
+echo "  Log in with your Superadmin credentials and change your password."
 echo ""
 print_success "Thank you for using PlannedEducation!"

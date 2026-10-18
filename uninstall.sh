@@ -22,7 +22,16 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-INSTALL_DIR="${INSTALL_DIR:-${1:-/opt/plannededucation}}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -z "${INSTALL_DIR:-}" && -z "${1:-}" ]]; then
+    if [[ -f "$SCRIPT_DIR/plannededucation.db" || -d "$SCRIPT_DIR/src/plannededucation" || -f "$SCRIPT_DIR/.env" ]]; then
+        INSTALL_DIR="$SCRIPT_DIR"
+    else
+        INSTALL_DIR="/opt/plannededucation"
+    fi
+else
+    INSTALL_DIR="${INSTALL_DIR:-${1:-/opt/plannededucation}}"
+fi
 AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
 
 write_header() {

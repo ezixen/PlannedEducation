@@ -502,4 +502,29 @@
   - Frontend lint (`oxlint`): 0 errors, 0 warnings across 61 files.
   - Zero orphaned background processes remaining.
 
+---
+
+### Phase 21: Cross-Platform Launcher Suite, Startup Hardening & Deployment Verifier ✅ Completed (2026-10-18)
+- **Status**: `done-tested-working`
+- **Native PowerShell Start Scripts & Resilient Batch Wrappers**:
+  - Created native `start_backend.ps1` and `start_frontend.ps1` avoiding PowerShell `-m` flag parsing issues.
+  - Paired with batch wrappers (`start_backend.bat`, `start_frontend.bat`) that run via PowerShell with execution policy bypass.
+  - Preserved console output and added `pause` on exit/error so terminal windows never flash and close unexpectedly.
+- **Unified Single-Click Platform Launcher (`start_all.ps1` / `start_all.bat` / `start_all.sh`)**:
+  - Starts backend and frontend in parallel with dynamic port resolution.
+  - Automatically polls `/health` until the platform is ready.
+  - Displays summary banner with PIDs, URLs, and opens the default browser once healthy.
+  - Clean process terminator (`stop_all.ps1` / `stop_all.bat` / `stop_all.sh`) for stopping services cleanly.
+- **Dedicated Health & Deployment Verifier (`verify.ps1` / `verify.bat` / `verify.sh`)**:
+  - Automated diagnosis checking directory integrity, `config/deployment.json`, SQLite database file size, Backend API health (`/health`), Package Engine health (`/packages/health`), and Frontend Portal port connectivity.
+- **Uninstaller Auto-Detection (`uninstall.ps1` / `uninstall.sh`)**:
+  - Intelligently detects if executed from within an installation directory (`$PSScriptRoot` containing `.env`, `plannededucation.db`, or `src/plannededucation`), eliminating manual path specification.
+  - Defaults to installer standard paths (`C:\PlannedEducation` / `/opt/plannededucation`).
+- **Verification**:
+  - Full backend pytest suite passing clean (122/122 passed).
+  - Frontend production build verified clean in 4.49s.
+  - Frontend oxlint passing with 0 warnings, 0 errors.
+  - Zero orphaned background processes remaining.
+
+
 
