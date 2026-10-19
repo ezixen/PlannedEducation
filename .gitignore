@@ -39,6 +39,7 @@ htmlcov/
 # Build and Artifacts
 node_modules/
 artifacts/
+scratch/
 dist/
 build/
 *.egg-info/
@@ -61,4 +62,13 @@ united_earth/
 
 # Local dev agent instructions & PC-specific configurations (local PC only, not for GitHub or deployments)
 AGENTS.md
+AGENTS.local.md
 .github/copilot-instructions.md
+
+# Test runner scripts, trackers, and E2E tools (local PC only, not for GitHub or deployments)
+run_tests.py
+test_tracker.py
+conftest_tracker.py
+test_results.json
+scripts/testing/
+tests/e2e/
