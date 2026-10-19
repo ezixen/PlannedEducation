@@ -5,6 +5,7 @@ import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { ForgotPasswordModal } from '../components/ForgotPasswordModal';
+import { apiClient } from '../api';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
@@ -20,6 +21,26 @@ export function Login() {
   const [loading, setLoading] = useState(false);
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [teacherResetActive, setTeacherResetActive] = useState(false);
+  const [teacherResetChecking, setTeacherResetChecking] = useState(false);
+
+  const handleCheckTeacherReset = async () => {
+    setTeacherResetChecking(true);
+    try {
+      const res = await apiClient.post('/auth/teacher-reset/check', {
+        identifier: email.trim(),
+      });
+      if (res.data?.teacher_reset_active) {
+        setTeacherResetActive(true);
+        showSuccess(res.data.message || 'Your account has been unlocked! Set your new password to enter.');
+      } else {
+        showError(res.data.message || 'No active password reset found for this account. Please contact your teacher, parent, or administrator.');
+      }
+    } catch (err: any) {
+      showError('Failed to verify password reset status. Please try again.');
+    } finally {
+      setTeacherResetChecking(false);
+    }
+  };
 
   const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
     if (!credentialResponse.credential) return;
@@ -52,7 +73,7 @@ export function Login() {
     } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
       let message = 'Login failed';
-      if (typeof detail === 'string' && detail.includes('TEACHER_RESET_ACTIVE')) {
+      if (typeof detail === 'string' && (detail.includes('RESET_ACTIVE') || detail.includes('PASSWORD_RESET_ACTIVE'))) {
         setTeacherResetActive(true);
         showSuccess('Your teacher has unlocked your account! Set your new password to enter.');
         setLoading(false);
@@ -132,8 +153,8 @@ export function Login() {
                   lineHeight: 1.4,
                 }}
               >
-                🎓 <strong>Your teacher has unlocked your account for today's test!</strong><br />
-                Enter your email and choose your new password below to enter your exam session immediately:
+                🎓 <strong>Your account has been unlocked for password reset!</strong><br />
+                Enter your email and choose your new password below to enter your session immediately:
               </div>
 
               <div style={{ marginBottom: '1rem' }}>
@@ -242,10 +263,11 @@ export function Login() {
                 <div style={{ marginTop: '0.4rem', textAlign: 'right' }}>
                   <button
                     type="button"
-                    onClick={() => setTeacherResetActive(true)}
+                    onClick={handleCheckTeacherReset}
+                    disabled={teacherResetChecking}
                     style={{ background: 'none', border: 'none', padding: 0, color: '#10b981', fontSize: '0.775rem', cursor: 'pointer' }}
                   >
-                    ⚡ Teacher unlocked your account for test?
+                    {teacherResetChecking ? 'Checking…' : '⚡ Account unlocked for password reset?'}
                   </button>
                 </div>
               </div>

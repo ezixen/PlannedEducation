@@ -59,6 +59,7 @@ export function Settings() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -80,6 +81,12 @@ export function Settings() {
       return;
     }
 
+    // Require current password when changing password
+    if (newPassword && !currentPassword) {
+      showError('Current password is required to change your password.');
+      return;
+    }
+
     const payload: Record<string, string> = {
       full_name: fullName,
       email,
@@ -87,6 +94,7 @@ export function Settings() {
     };
     if (newPassword) {
       payload.password = newPassword;
+      payload.current_password = currentPassword;
     }
 
     setLoading(true);
@@ -167,6 +175,19 @@ export function Settings() {
             
             <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Change Password</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>Leave blank to keep your current password.</p>
+
+            <label style={labelStyle}>
+              Current Password
+              <input
+                type="password"
+                value={currentPassword}
+                onChange={e => setCurrentPassword(e.target.value)}
+                minLength={8}
+                maxLength={128}
+                autoComplete="current-password"
+                style={inputStyle}
+              />
+            </label>
 
             <label style={labelStyle}>
               New Password

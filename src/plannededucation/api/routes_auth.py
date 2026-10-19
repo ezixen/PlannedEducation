@@ -414,11 +414,18 @@ def login_for_access_token(
             ),
         )
 
-    # Classroom quick reset intercept: student can set new password immediately
-    if user.force_password_reset and user.role == "student":
+    # Classroom quick reset intercept: user can set new password immediately
+    if user.force_password_reset:
+        initiator = "an administrator"
+        if user.reset_by_teacher_id:
+            initiator = "your teacher"
+        elif user.reset_by_parent_id:
+            initiator = "your parent"
+        elif user.reset_by_admin_id:
+            initiator = "an administrator"
         raise HTTPException(
             status_code=403,
-            detail="TEACHER_RESET_ACTIVE: Your teacher has unlocked your account for today's exam. Please enter your new password to sign in immediately."
+            detail=f"PASSWORD_RESET_ACTIVE: {initiator.capitalize()} has unlocked your account. Please enter your new password to sign in immediately."
         )
 
     # Cybersecurity safeguard: brute-force account lockout check
@@ -601,6 +608,17 @@ def update_settings(
 
     if settings.password:
         _validate_password(settings.password)
+        # Verify current password before allowing change
+        if not settings.current_password:
+            raise HTTPException(
+                status_code=400,
+                detail="Current password is required to change your password."
+            )
+        if not verify_password(settings.current_password, current_user.hashed_password):
+            raise HTTPException(
+                status_code=400,
+                detail="Current password is incorrect."
+            )
         current_user.hashed_password = get_password_hash(settings.password)
 
     db.commit()
@@ -632,7 +650,7 @@ def request_password_reset(
     # Generate a 6-digit OTP
     otp = str(secrets.randbelow(900000) + 100000)
     user.password_reset_otp = otp
-    user.password_reset_otp_expires = datetime.now(UTC) + timedelta(minutes=10)
+    user.password_reset_otp_expires = datetime.now(UTC) + timedelta(hours=24)
     db.commit()
 
     # Dispatch email asynchronously in background (Brevo, SMTP, or local mock logger)
@@ -722,6 +740,7 @@ def teacher_quick_reset_student(
 
     student.force_password_reset = True
     student.reset_by_teacher_id = current_user.id
+    student.reset_expires = datetime.now(UTC) + timedelta(hours=24)
     student.failed_login_attempts = 0
     student.locked_until = None
     student.refresh_token_hash = None
@@ -731,7 +750,7 @@ def teacher_quick_reset_student(
     notif = models.InAppNotification(
         user_id=student.id,
         title="Password Reset by Teacher",
-        message=f"Teacher {current_user.full_name or current_user.username} has unlocked your account for the exam. You can set a new password right when you log in.",
+        message=f"Teacher {current_user.full_name or current_user.username} has unlocked your account for the exam. You can set a new password right when you log in. This reset link expires in 24 hours.",
         type="system",
         link="/login",
     )
@@ -747,29 +766,186 @@ def teacher_quick_reset_student(
     }
 
 
+@router.post("/parent/quick-reset/{student_id}")
+def parent_quick_reset_student(
+    student_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Parent unlocks their child's account if they lost recovery codes or 2FA device.
+    Requires an ACTIVE parent-student relationship.
+    """
+    if current_user.role != "parent":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Parent status required"
+        )
+
+    # Verify active parent-student relationship
+    relationship = (
+        db.query(models.AccountRelationship)
+        .filter(
+            models.AccountRelationship.parent_id == current_user.id,
+            models.AccountRelationship.student_id == student_id,
+            models.AccountRelationship.status == models.RelationshipStatus.active,
+            models.AccountRelationship.student_approved == True,
+        )
+        .first()
+    )
+    if not relationship:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="No active parent-child relationship found for this student"
+        )
+
+    student = db.query(models.User).filter(models.User.id == student_id).first()
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found")
+
+    if student.role != "student":
+        raise HTTPException(status_code=400, detail="Parents can only quick-reset student accounts")
+
+    student.force_password_reset = True
+    student.reset_by_parent_id = current_user.id
+    student.reset_by_teacher_id = None
+    student.reset_by_admin_id = None
+    student.reset_expires = datetime.now(UTC) + timedelta(hours=24)
+    student.failed_login_attempts = 0
+    student.locked_until = None
+    student.refresh_token_hash = None
+    student.is_active = True
+
+    # In-app notification for the student
+    notif = models.InAppNotification(
+        user_id=student.id,
+        title="Password Reset by Parent",
+        message=f"Parent {current_user.full_name or current_user.username} has unlocked your account. You can set a new password right when you log in. This reset link expires in 24 hours.",
+        type="system",
+        link="/login",
+    )
+    db.add(notif)
+    db.commit()
+
+    return {
+        "status": "success",
+        "student_id": student.id,
+        "student_name": student.full_name or student.username,
+        "email": student.email,
+        "message": f"Password reset initiated for {student.full_name or student.username}. They can now enter their email address on the login page and set their new password.",
+    }
+
+
+@router.post("/admin/quick-reset/{user_id}")
+def admin_quick_reset_user(
+    user_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Admin unlocks a teacher's account if they lost recovery codes or 2FA device.
+    Superadmin can also reset admin accounts.
+    """
+    if not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin privilege required"
+        )
+
+    target_user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not target_user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    # Regular admins can only reset teacher accounts
+    # Superadmins can reset both teacher and admin accounts
+    if target_user.role not in ("teacher", "admin"):
+        raise HTTPException(status_code=400, detail="Admins can only quick-reset teacher or admin accounts")
+
+    # Only superadmin can reset another admin account
+    if target_user.is_admin and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Only superadmin can reset administrator accounts")
+
+    # Prevent self-reset
+    if target_user.id == current_user.id:
+        raise HTTPException(status_code=400, detail="Cannot reset your own account")
+
+    target_user.force_password_reset = True
+    target_user.reset_by_admin_id = current_user.id
+    target_user.reset_by_teacher_id = None
+    target_user.reset_by_parent_id = None
+    target_user.reset_expires = datetime.now(UTC) + timedelta(hours=24)
+    target_user.failed_login_attempts = 0
+    target_user.locked_until = None
+    target_user.refresh_token_hash = None
+    target_user.is_active = True
+
+    # In-app notification for the user
+    notif = models.InAppNotification(
+        user_id=target_user.id,
+        title="Password Reset by Administrator",
+        message=f"Administrator {current_user.full_name or current_user.username} has unlocked your account. You can set a new password right when you log in. This reset link expires in 24 hours.",
+        type="system",
+        link="/login",
+    )
+    db.add(notif)
+    db.commit()
+
+    return {
+        "status": "success",
+        "user_id": target_user.id,
+        "user_name": target_user.full_name or target_user.username,
+        "email": target_user.email,
+        "role": target_user.role,
+        "message": f"Password reset initiated for {target_user.full_name or target_user.username}. They can now enter their email address on the login page and set their new password.",
+    }
+
+
 @router.post("/teacher-reset/check", response_model=schemas.TeacherResetCheckResponse)
 def check_teacher_reset_status(
     payload: schemas.TeacherResetCheckRequest,
     db: Session = Depends(database.get_db),
 ):
-    """Check if a student has a pending teacher quick-reset active."""
+    """Check if a user has a pending password reset active (teacher, parent, or admin initiated)."""
     lookup = payload.identifier.strip().lower()
     user = db.query(models.User).filter(
         (models.User.email == lookup) | (models.User.username == lookup)
     ).first()
 
-    if not user or not user.force_password_reset or user.role != "student":
+    if not user or not user.force_password_reset:
         return schemas.TeacherResetCheckResponse(
             teacher_reset_active=False,
-            message="No active teacher password reset found."
+            message="No active password reset found."
         )
+
+    # Check expiration (24 hours)
+    if user.reset_expires and _as_utc(user.reset_expires) < datetime.now(UTC):
+        # Reset expired - clear it
+        user.force_password_reset = False
+        user.reset_by_teacher_id = None
+        user.reset_by_parent_id = None
+        user.reset_by_admin_id = None
+        user.reset_expires = None
+        db.commit()
+        return schemas.TeacherResetCheckResponse(
+            teacher_reset_active=False,
+            message="Password reset has expired. Please request a new reset."
+        )
+
+    # Determine who initiated the reset for appropriate messaging
+    initiator = "an administrator"
+    if user.reset_by_teacher_id:
+        initiator = "your teacher"
+    elif user.reset_by_parent_id:
+        initiator = "your parent"
+    elif user.reset_by_admin_id:
+        initiator = "an administrator"
 
     return schemas.TeacherResetCheckResponse(
         teacher_reset_active=True,
         email=user.email,
         username=user.username,
         full_name=user.full_name,
-        message="Teacher password reset active! You may set your new password now."
+        message=f"Password reset active! {initiator.capitalize()} has unlocked your account. You may set your new password now. This reset link expires in 24 hours.",
     )
 
 
@@ -781,7 +957,8 @@ def complete_teacher_reset(
     db: Session = Depends(database.get_db),
 ):
     """
-    Student completes teacher quick-reset by entering new password and receives tokens immediately.
+    User completes password reset by entering new password and receives tokens immediately.
+    Can be initiated by teacher, parent, or administrator.
     """
     lookup = payload.identifier.strip().lower()
     user = db.query(models.User).filter(
@@ -789,12 +966,18 @@ def complete_teacher_reset(
     ).first()
 
     if not user or not user.force_password_reset:
-        raise HTTPException(status_code=400, detail="No active teacher reset found for this account")
+        raise HTTPException(status_code=400, detail="No active password reset found for this account")
+
+    # Check expiration (24 hours)
+    if user.reset_expires and _as_utc(user.reset_expires) < datetime.now(UTC):
+        raise HTTPException(status_code=400, detail="Password reset has expired. Please request a new reset.")
 
     _validate_password(payload.new_password)
     user.hashed_password = get_password_hash(payload.new_password)
     user.force_password_reset = False
     user.reset_by_teacher_id = None
+    user.reset_by_parent_id = None
+    user.reset_by_admin_id = None
     user.failed_login_attempts = 0
     user.locked_until = None
     user.is_active = True

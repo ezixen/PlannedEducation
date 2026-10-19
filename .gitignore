@@ -74,3 +74,10 @@ scripts/testing/
 tests/e2e/
 web/apps/portal/playwright.config.ts
 
+# Development documentation (local PC only, not for public upload)
+docs/dev/
+docs/admin/runbooks/
+
+# Scratch and temporary files (local PC only)
+scratch/
+
