@@ -60,7 +60,7 @@ class Config(BaseModel):
         """Get HTTP headers for API requests."""
         headers = {
             "Content-Type": "application/json",
-            "User-Agent": f"pepkg/0.1.0",
+            "User-Agent": f"pepkg/1.0.0",
         }
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"

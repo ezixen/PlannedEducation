@@ -21,8 +21,9 @@ load_dotenv()
 
 
 @click.group()
-@click.version_option(version="0.1.0", prog_name="pepkg")
+@click.version_option(version="1.0.0", prog_name="pepkg")
 @click.option(
+
     "--config",
     "-c",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),

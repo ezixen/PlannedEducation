@@ -35,16 +35,18 @@ function localIsoWithOffset(date) {
 }
 
 const buildStamp = localStamp(now)
-const appVersion = String(process.env.VITE_APP_VERSION || packageJson.version || '0.1.2').trim()
+const appVersion = String(process.env.VITE_APP_VERSION || packageJson.version || '1.0.0').trim()
 const buildNumber = String(process.env.BUILD_NUMBER || `${appVersion}.${buildStamp}`).trim()
 
 const buildMeta = {
   appVersion,
   buildNumber,
-  channel: 'beta',
+  channel: 'release',
+
   generatedAt: localIsoWithOffset(now),
   generatedAtUtc: now.toISOString(),
 }
 
 writeFileSync(jsonOutputPath, `${JSON.stringify(buildMeta, null, 2)}\n`, 'utf-8')
-console.log(`Generated PlannedEducation build metadata: beta ${buildNumber}`)
+console.log(`Generated PlannedEducation build metadata: ${buildMeta.channel} ${buildNumber}`)
+

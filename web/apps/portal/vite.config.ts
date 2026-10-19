@@ -25,7 +25,7 @@ function localStamp(date: Date) {
   ].join('')
 }
 
-let appVersion = pkg.version || '0.1.2'
+let appVersion = pkg.version || '1.0.0'
 let buildNumber = `${appVersion}.${localStamp(new Date())}`
 if (existsSync(metaPath)) {
   try {
