@@ -134,7 +134,7 @@ def test_change_password_and_login_again():
         "email": "chpwd@test.com", "username": "chpwduser", "password": "OldPass1!",
     })
     token = client.post("/auth/token", data={"username": "chpwd@test.com", "password": "OldPass1!"}).json()["access_token"]
-    client.put("/auth/settings", json={"password": "NewPass1!"}, headers={"Authorization": f"Bearer {token}"})
+    client.put("/auth/settings", json={"password": "NewPass1!", "current_password": "OldPass1!"}, headers={"Authorization": f"Bearer {token}"})
 
     # Old password no longer works
     r = client.post("/auth/token", data={"username": "chpwd@test.com", "password": "OldPass1!"})

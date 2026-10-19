@@ -104,6 +104,9 @@ class User(Base):
     # Classroom Emergency Password Reset (teachers can unlock student account right before tests)
     force_password_reset = Column(Boolean, default=False, server_default="0", nullable=False)
     reset_by_teacher_id = Column(String(36), nullable=True)
+    reset_by_parent_id = Column(String(36), nullable=True)
+    reset_by_admin_id = Column(String(36), nullable=True)
+    reset_expires = Column(DateTime(timezone=True), nullable=True)
 
     # Cybersecurity & Brute-Force Safeguards
     failed_login_attempts = Column(Integer, default=0, server_default="0", nullable=False)
@@ -528,6 +531,11 @@ class School(Base):
     is_active = Column(Boolean, default=True, nullable=False)
     created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
     updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Header customization for school branding
+    header_image_url = Column(String(512), nullable=True)  # URL to custom header image
+    header_text = Column(String(256), nullable=True)  # Custom text shown instead of image
+    header_display_mode = Column(String(32), default="text", nullable=False)  # "text", "image", "none"
 
     # Relationships
     package_sources = relationship("PackageSource", back_populates="school")

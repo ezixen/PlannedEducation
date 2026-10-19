@@ -59,24 +59,42 @@ const FAQ_DATA: FAQCategory[] = [
         id: 4,
         question: "How do I reset my password?",
         keywords: ["password", "reset", "forgot", "login"],
-        answer: "Click 'Forgot Password' on the login page and enter your email. If your school runs offline or without email, an administrator can directly reset your password from the Admin Panel > Users tab."
+        answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time recovery codes on the login screen under 'Forgot Password?' — fastest and independent. (2) Ask your teacher or parent for a quick reset if you're right before an exam — they click '⚡ Reset Pwd for Test' next to your name, then you set a new password on the login page. (3) Ask an administrator to reset it from the Admin Panel. Reset links expire in 24 hours."
       },
       {
         id: 32,
         question: "Can an admin reset user passwords without email?",
         keywords: ["admin", "reset", "password", "without", "email", "lost", "panel"],
-        answer: "Yes! Administrators can reset any user's password directly from the Admin Panel > Users tab by clicking '🔑 Reset Password'. They can specify a new password or let the system auto-generate a temporary password, and optionally reset 2FA/Passkeys if the user lost their authenticator device."
+        answer: "Yes! Administrators can reset any user's password directly from the Admin Panel > Users tab by clicking '🔑 Reset Password'. They can specify a new password or let the system auto-generate a temporary password, and optionally reset 2FA/Passkeys if the user lost their authenticator device. Teachers can reset student passwords; admins can reset teacher passwords; superadmins can reset admin passwords."
       },
       {
         id: 33,
         question: "How does the optional email service work?",
-        keywords: ["email", "smtp", "brevo", "sendinblue", "mail", "server"],
-        answer: "Email is completely optional. If unconfigured, PlannedEducation logs OTP codes safely for offline school use. To enable email, add BREVO_API_KEY (free 300 emails/day) or your school SMTP settings (SMTP_HOST, SMTP_PORT, etc.) to .env."
+        keywords: ["email", "smtp", "brevo", "hcaptcha", "mail", "server"],
+        answer: "Email is completely optional. If unconfigured, PlannedEducation logs OTP codes safely for offline school use. To enable email, add BREVO_API_KEY (free 300 emails/day) or your school SMTP settings (SMTP_HOST, SMTP_PORT, etc.) to .env. Email OTP reset links expire in 24 hours."
       },
       {
         id: 5,
         question: "How do I enable two-factor authentication?",
-        answer: "Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup."
+        answer: "Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 10 recovery codes in case you lose your phone."
+      },
+      {
+        id: 34,
+        question: "How do I change my own password?",
+        keywords: ["change", "my", "password", "settings", "profile"],
+        answer: "Go to Settings > Personal Details. Enter your current password, then type your new password twice and click 'Save Changes'. The server verifies your current password before accepting the change."
+      },
+      {
+        id: 35,
+        question: "How do I customize my school's header?",
+        keywords: ["header", "logo", "branding", "school", "name", "image", "customize"],
+        answer: "Admins and superadmins can customize the platform header via Admin Dashboard → School Settings → Header. Choose from three modes: 'text' (shows school name), 'image' (shows a custom header image URL), or 'none' (no header). This makes the platform feel like your own school's system."
+      },
+      {
+        id: 36,
+        question: "What is the difference between admin and superadmin?",
+        keywords: ["superadmin", "admin", "difference", "roles", "create", "user"],
+        answer: "Admins can create users (teachers, students, parents, other admins), manage exams, reset teacher passwords, and configure deployment. Superadmins have all admin capabilities PLUS the ability to create other superadmins. Superadmin creation is restricted to existing superadmins only."
       },
       {
         id: 6,

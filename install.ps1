@@ -296,6 +296,32 @@ switch ($DeployMode) {
 # Step 3: Check Prerequisites
 Write-Header "Step 3: Checking Prerequisites"
 
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor $CYAN
+Write-Host "  DEPENDENCY GUIDE - What You Need vs What Is Optional" -ForegroundColor $CYAN
+Write-Host "============================================================" -ForegroundColor $CYAN
+Write-Host ""
+Write-Host "  REQUIRED (must be installed for any mode):"
+Write-Host "    - Git          : Source control (used to clone the repository)"
+Write-Host "    - Python 3.12+ : Backend runtime (FastAPI, SQLAlchemy, etc.)"
+Write-Host "    - Node.js 20+  : Frontend build tooling (Vite, npm)"
+Write-Host "    - npm          : Node.js package manager (bundled with Node.js)"
+Write-Host ""
+Write-Host "  OPTIONAL (only needed for specific deployment modes):"
+Write-Host "    - PostgreSQL   : Required ONLY for Mode 2 (Production Server)."
+Write-Host "                     Mode 1 (SQLite) works without it."
+Write-Host "    - Redis        : Required ONLY for Mode 2 (Production Server)."
+Write-Host "                     Mode 1 uses in-memory cache instead."
+Write-Host "    - Docker       : Required ONLY for Mode 3 (Docker Compose)."
+Write-Host "                     Provides all-in-one containerized deployment."
+Write-Host ""
+Write-Host "  NOTE: PlannedEducation runs fully in Mode 1 (SQLite) with just"
+Write-Host "        Git, Python, and Node.js. Redis and PostgreSQL are only"
+Write-Host "        needed if you choose Mode 2 for production-scale use."
+Write-Host ""
+Write-Host "============================================================" -ForegroundColor $CYAN
+Write-Host ""
+
 $hasGit = Check-Command "Git" "git" "--version"
 $hasPython = Check-Command "Python 3.11+" "python" "--version"
 $hasNode = Check-Command "Node.js 20+" "node" "--version"
@@ -1025,51 +1051,73 @@ if (-not $useDocker) {
         $codesText = ($codesList | ForEach-Object { "  - $_" }) -join "`r`n"
         Remove-Item $tmpCodes -Force -ErrorAction SilentlyContinue
 
-        Write-Host ""
-        Write-Host "============================================================" -ForegroundColor $CYAN
-        Write-Host "  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES" -ForegroundColor $YELLOW
-        Write-Host "============================================================" -ForegroundColor $CYAN
-        foreach ($c in $codesList) {
-            Write-Host "    $c" -ForegroundColor $GREEN
-        }
-        Write-Host "============================================================" -ForegroundColor $CYAN
-        Write-Host "  [!] CRITICAL NOTICE FOR ADMINISTRATOR:" -ForegroundColor $YELLOW
-        Write-Host "  1. Store these 5 one-time recovery codes safely (print or write them down)." -ForegroundColor $WHITE
-        Write-Host "  2. If you lose your administrator password and recovery codes, you will" -ForegroundColor $WHITE
-        Write-Host "     be permanently locked out and may need to redeploy the whole system," -ForegroundColor $WHITE
-        Write-Host "     as direct database injection is blocked for security." -ForegroundColor $WHITE
-        Write-Host "  3. These credentials and recovery codes are also saved to:" -ForegroundColor $WHITE
-        Write-Host "     $credFile" -ForegroundColor $CYAN
-        Write-Host "============================================================" -ForegroundColor $CYAN
+        # Build credential text for clipboard (NOT saved to disk)
+        $credLines = @(
+            "PlannedEducation Superadmin Credentials",
+            "=======================================",
+            "School Name:    $SchoolName",
+            "Admin Email:    $AdminEmail",
+            "Admin Password: $AdminPassword",
+            "Admin Name:     $AdminName",
+            ("Backend API:    http://" + $Domain + ":" + $ApiPort),
+            ("Frontend URL:   http://" + $Domain + ":" + $FrontendPort),
+            "",
+            "============================================================",
+            "EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):",
+            $codesText,
+            "",
+            "WARNING: If you lose both your administrator password and these",
+            "recovery codes, you will be permanently locked out and will need",
+            "to redeploy the entire platform, as database injection is not an option.",
+            "============================================================"
+        )
+        $credContent = $credLines -join "`r`n"
+
+        # Copy credentials to clipboard instead of saving to plain text file
         try {
-            Read-Host "  Press [Enter] once you have safely copied or noted these codes to continue"
-        } catch {}
-        Write-Host ""
+            $credContent | Set-Clipboard
+            Write-Host ""
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            Write-Host "  [KEY] SUPERADMIN CREDENTIALS COPIED TO CLIPBOARD" -ForegroundColor $YELLOW
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            Write-Host ""
+            Write-Host "  The following credentials have been copied to your clipboard:" -ForegroundColor $WHITE
+            Write-Host "    - Admin Email:    $AdminEmail" -ForegroundColor $WHITE
+            Write-Host "    - Admin Password: $AdminPassword" -ForegroundColor $WHITE
+            Write-Host "    - Recovery Codes: $($codesList.Count) one-time codes" -ForegroundColor $WHITE
+            Write-Host ""
+            Write-Host "  Please paste these into a secure location (password manager, printed" -ForegroundColor $WHITE
+            Write-Host "  document, or encrypted note) and save them NOW." -ForegroundColor $WHITE
+            Write-Host ""
+            Write-Host "  These credentials are NOT saved to any file on disk for security." -ForegroundColor $YELLOW
+            Write-Host "  If you lose them, you will be permanently locked out." -ForegroundColor $YELLOW
+            Write-Host ""
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            Write-Host ""
+            Write-Host "  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES" -ForegroundColor $YELLOW
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            foreach ($c in $codesList) {
+                Write-Host "    $c" -ForegroundColor $GREEN
+            }
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            Write-Host "  [!] CRITICAL NOTICE FOR ADMINISTRATOR:" -ForegroundColor $YELLOW
+            Write-Host "  1. Store these 5 one-time recovery codes safely (print or write them down)." -ForegroundColor $WHITE
+            Write-Host "  2. If you lose your administrator password and recovery codes, you will" -ForegroundColor $WHITE
+            Write-Host "     be permanently locked out and may need to redeploy the whole system," -ForegroundColor $WHITE
+            Write-Host "     as direct database injection is blocked for security." -ForegroundColor $WHITE
+            Write-Host "============================================================" -ForegroundColor $CYAN
+            try {
+                Read-Host "  Press [Enter] once you have safely saved these credentials to continue"
+            } catch {}
+            Write-Host ""
+        } catch {
+            Write-Warning "Could not copy to clipboard. Saving to $credFile instead."
+            [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
+            Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
+        }
     }
 
-    $credLines = @(
-        "PlannedEducation Superadmin Credentials",
-        "=======================================",
-        "School Name:    $SchoolName",
-        "Admin Email:    $AdminEmail",
-        "Admin Password: $AdminPassword",
-        "Admin Name:     $AdminName",
-        ("Backend API:    http://" + $Domain + ":" + $ApiPort),
-        ("Frontend URL:   http://" + $Domain + ":" + $FrontendPort),
-        "",
-        "============================================================",
-        "EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):",
-        $codesText,
-        "",
-        "WARNING: If you lose both your administrator password and these",
-        "recovery codes, you will be permanently locked out and will need",
-        "to redeploy the entire platform, as database injection is not an option.",
-        "============================================================"
-    )
-    $credContent = $credLines -join "`r`n"
-    [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
-    Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
-}
+    Write-Success "Superadmin account ready: $AdminEmail"
 
 # Step 9: Run Verification Tests
 Write-Header "Step 9: Running Verification Tests"
@@ -1168,4 +1216,4 @@ Write-Host "  4. Uninstaller:    $InstallDir\uninstall.ps1" -ForegroundColor $WH
 Write-Host ""
 Write-Host "  Log in with your Superadmin credentials and change your password."
 Write-Host ""
-Write-Success "Thank you for using PlannedEducation!"
+Write-Success "Thank you for using PlannedEducation!"

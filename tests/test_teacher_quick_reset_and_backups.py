@@ -74,7 +74,7 @@ def test_teacher_quick_reset_and_student_completion(client, db_session):
     # 2. Student attempts login with old password -> should intercept with TEACHER_RESET_ACTIVE
     login_res = client.post("/auth/token", data={"username": "student_quick@school.edu", "password": "TestPassword123!"})
     assert login_res.status_code == 403
-    assert "TEACHER_RESET_ACTIVE" in login_res.json()["detail"]
+    assert "PASSWORD_RESET_ACTIVE" in login_res.json()["detail"]
 
     # 3. Check status via endpoint
     check_res = client.post("/auth/teacher-reset/check", json={"identifier": "student_quick@school.edu"})
@@ -168,5 +168,5 @@ def test_admin_password_protection(client, db_session):
         headers={"Authorization": f"Bearer {teacher_token}"},
     )
     assert res.status_code == 403
-    assert "Superadmin privilege required" in res.json()["detail"]
+    assert "Admin access required" in res.json()["detail"]
 

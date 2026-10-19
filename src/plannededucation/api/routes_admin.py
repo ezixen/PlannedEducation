@@ -31,11 +31,21 @@ router = APIRouter(prefix="/admin", tags=["admin"])
 
 
 def require_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
-    """Dependency to ensure the current user is an admin or teacher with admin privileges."""
-    if not (current_user.is_admin or current_user.role in ("admin", "teacher")):
+    """Dependency to ensure the current user is a superadmin (is_admin=True)."""
+    if not current_user.is_admin:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Admin access required"
+        )
+    return current_user
+
+
+def require_teacher_or_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
+    """Dependency to ensure the current user is an approved teacher or admin."""
+    if not (current_user.is_admin or (current_user.role in ("admin", "teacher") and current_user.teacher_approved)):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Teacher or admin access required"
         )
     return current_user
 
@@ -321,6 +331,69 @@ def create_admin_user(
     )
 
 
+@router.post("/users/superadmin", response_model=schemas.AdminCreateUserResponse, status_code=status.HTTP_201_CREATED)
+def create_superadmin_user(
+    payload: schemas.AdminCreateUserRequest,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Create a new superadmin user.
+    Only existing superadmins can create other superadmins.
+    """
+    # Only superadmins can create superadmins
+    if not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Superadmin privilege required to create superadmin accounts"
+        )
+
+    # Check if username or email exists
+    existing_user = db.query(models.User).filter(
+        (models.User.username == payload.username) | (models.User.email == payload.email)
+    ).first()
+    if existing_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="A user with this username or email already exists."
+        )
+
+    # Validate or generate password
+    temp_pwd = None
+    if payload.password and payload.password.strip():
+        pwd = payload.password.strip()
+        _validate_password(pwd)
+    else:
+        pwd = generate_temporary_password()
+        temp_pwd = pwd
+
+    hashed_pwd = get_password_hash(pwd)
+
+    new_user = models.User(
+        username=payload.username,
+        email=payload.email,
+        full_name=payload.full_name,
+        role=payload.role,
+        hashed_password=hashed_pwd,
+        is_admin=True,  # Superadmin flag
+        is_active=True,
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return schemas.AdminCreateUserResponse(
+        status="success",
+        user_id=new_user.id,
+        username=new_user.username,
+        email=new_user.email,
+        full_name=new_user.full_name,
+        role=new_user.role,
+        temporary_password=temp_pwd,
+        message=f"Superadmin {new_user.username} created successfully.",
+    )
+
+
 @router.get("/config", response_model=DeploymentConfigResponse)
 def get_admin_deployment_config(
     current_user: models.User = Depends(require_admin),
@@ -517,5 +590,47 @@ def delete_database_backup(
     if not success:
         raise HTTPException(status_code=404, detail="Backup file not found or could not be deleted")
     return {"status": "success", "message": f"Backup {filename} deleted successfully."}
+
+
+# ── School Header Customization ──────────────────────────────────────────────
+
+@router.get("/school/header", response_model=schemas.SchoolHeaderResponse)
+def get_school_header(
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Get the school's header customization settings."""
+    school = db.query(models.School).first()
+    if not school:
+        raise HTTPException(status_code=404, detail="School not found")
+    return schemas.SchoolHeaderResponse(
+        header_display_mode=school.header_display_mode,
+        header_text=school.header_text,
+        header_image_url=school.header_image_url,
+    )
+
+
+@router.put("/school/header", response_model=schemas.SchoolHeaderResponse)
+def update_school_header(
+    payload: schemas.SchoolHeaderUpdate,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """Update the school's header customization settings (admin/superadmin only)."""
+    school = db.query(models.School).first()
+    if not school:
+        raise HTTPException(status_code=404, detail="School not found")
+
+    school.header_display_mode = payload.header_display_mode
+    school.header_text = payload.header_text
+    school.header_image_url = payload.header_image_url
+    db.commit()
+    db.refresh(school)
+
+    return schemas.SchoolHeaderResponse(
+        header_display_mode=school.header_display_mode,
+        header_text=school.header_text,
+        header_image_url=school.header_image_url,
+    )
 
 

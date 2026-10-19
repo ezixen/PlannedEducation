@@ -25,6 +25,8 @@ class UserUpdate(BaseModel):
     phone_number: str | None = Field(None, max_length=32)
     # password is optional; server enforces complexity if provided
     password: str | None = Field(None, min_length=8, max_length=128)
+    # current_password is required when changing password
+    current_password: str | None = Field(None, min_length=1, max_length=128)
 
 
 class UserResponse(UserBase):
@@ -302,6 +304,21 @@ class TwoFADisableResponse(BaseModel):
 class RecoveryCodesResponse(BaseModel):
     recovery_codes: list[str]
     message: str
+
+
+# ── School Header Customization ──────────────────────────────────────────────
+
+class SchoolHeaderUpdate(BaseModel):
+    header_display_mode: str = Field(..., pattern=r"^(text|image|none)$")
+    header_text: str | None = Field(None, max_length=256)
+    header_image_url: str | None = Field(None, max_length=512)
+
+
+class SchoolHeaderResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    header_display_mode: str
+    header_text: str | None
+    header_image_url: str | None
 
 
 # ── AI Key Management ────────────────────────────────────────────────────────
