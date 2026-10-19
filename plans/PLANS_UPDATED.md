@@ -607,6 +607,27 @@
   - `uninstall.sh`: Completely removed `/opt/plannededucation` with 0 residual files, self-cleaned, and kept all external system dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) intact.
   - 0 orphaned background processes remaining.
 
+---
+
+### Phase 26: Local Dev Isolation, Uninstaller Custom Directory Prompt & Multi-Path Install Documentation ✅ Completed (2026-10-19)
+- **Status**: `done-tested-working`
+- **Local Dev Isolation (`AGENTS.md` & `.gitignore`)**:
+  - Untracked `AGENTS.md` from the git index (`git rm --cached AGENTS.md`) and added it to `.gitignore` along with `.github/copilot-instructions.md`.
+  - Local PC-specific developer rules, paths, and instructions remain safe and persistent on this machine only, preventing them from being pushed to GitHub or confusing downstream users and AI agents.
+- **Install & Uninstall Directory Parity & Interactive Prompting**:
+  - Parity established: both `install.ps1` and `uninstall.ps1` default to `C:\PlannedEducation`; both `install.sh` and `uninstall.sh` default to `/opt/plannededucation`.
+  - `uninstall.ps1` and `uninstall.sh` now explicitly prompt for custom installation directories when run interactively, with validation and clean retry loops.
+- **Dynamic Virtual Environment Resolution**:
+  - Removed all shared `C:\.venv` fallbacks from `install.ps1` and generated launchers (`start_all.ps1`, `start_backend.ps1`). Every deployment now strictly creates and runs within `$InstallDir\.venv`.
+  - Updated dev launcher scripts (`start.ps1`, `start_all.ps1`, `start_student.ps1`) to dynamically search for `C:\.venv`, `.venv`, and PATH `python`.
+  - Replaced machine-specific `D:\` paths in `backup_restore_drill.ps1`, `.github/workflows/backup-restore-drill.yml`, and `TESTING_GUIDE.md` with standard paths.
+- **Multi-Path Installation Documentation**:
+  - Updated `README.md`, `DEPLOY.md`, `docs/admin/INSTALL_WINDOWS.md`, `docs/admin/INSTALL_LINUX.md`, and `docs/admin/DEPLOYMENT_GUIDE.md` with kind, welcoming, and accessible guidance:
+    1. **School IT Administrators**: Clean, fast, zero-telemetry native scripts.
+    2. **Hands-Off AI Coding Agents**: One-prompt automated deployment for VS Code, Cursor, Devin, Claude Code, Antigravity, etc.
+    3. **Friendly Free Chat AI Companions**: Plain-language step-by-step guidance for non-technical educators and parents using ChatGPT, Claude, Gemini, or Copilot.
+
+
 
 
 

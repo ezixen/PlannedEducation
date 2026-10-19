@@ -23,15 +23,12 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-if [[ -z "${INSTALL_DIR:-}" && -z "${1:-}" ]]; then
-    if [[ -f "$SCRIPT_DIR/plannededucation.db" || -d "$SCRIPT_DIR/src/plannededucation" || -f "$SCRIPT_DIR/.env" ]]; then
-        INSTALL_DIR="$SCRIPT_DIR"
-    else
-        INSTALL_DIR="/opt/plannededucation"
-    fi
-else
-    INSTALL_DIR="${INSTALL_DIR:-${1:-/opt/plannededucation}}"
+DEFAULT_INSTALL_DIR="/opt/plannededucation"
+if [[ -f "$SCRIPT_DIR/plannededucation.db" || -d "$SCRIPT_DIR/src/plannededucation" || -f "$SCRIPT_DIR/.env" ]]; then
+    DEFAULT_INSTALL_DIR="$SCRIPT_DIR"
 fi
+
+INSTALL_DIR="${INSTALL_DIR:-${1:-}}"
 AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
 
 write_header() {
@@ -78,11 +75,37 @@ fi
 
 write_header "PlannedEducation Uninstaller (Linux)"
 
-# Verify installation directory exists
+# Verify or prompt for installation directory
+if [[ -z "$INSTALL_DIR" ]]; then
+    if [[ "$AUTO_CONFIRM" != "true" ]]; then
+        echo -e "${CYAN}Default installation directory: $DEFAULT_INSTALL_DIR${NC}"
+        read -r -p "Enter installation directory to remove (press Enter for default '$DEFAULT_INSTALL_DIR'): " user_dir
+        if [[ -n "$user_dir" ]]; then
+            INSTALL_DIR="$user_dir"
+        else
+            INSTALL_DIR="$DEFAULT_INSTALL_DIR"
+        fi
+    else
+        INSTALL_DIR="$DEFAULT_INSTALL_DIR"
+    fi
+fi
+
 if [[ ! -d "$INSTALL_DIR" ]]; then
-    write_error "Installation directory not found: $INSTALL_DIR"
-    write_info "Please specify the correct path with INSTALL_DIR environment variable"
-    exit 1
+    if [[ "$AUTO_CONFIRM" != "true" ]]; then
+        while [[ ! -d "$INSTALL_DIR" ]]; do
+            write_warning "Installation directory not found: $INSTALL_DIR"
+            read -r -p "Enter a valid installation directory to remove (or type 'exit' to cancel): " user_dir
+            if [[ -z "$user_dir" || "$user_dir" == "exit" ]]; then
+                write_error "Uninstallation aborted."
+                exit 1
+            fi
+            INSTALL_DIR="$user_dir"
+        done
+    else
+        write_error "Installation directory not found: $INSTALL_DIR"
+        write_info "Please specify the correct path with INSTALL_DIR environment variable or parameter"
+        exit 1
+    fi
 fi
 
 write_success "Found PlannedEducation at: $INSTALL_DIR"

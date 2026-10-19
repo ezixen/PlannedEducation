@@ -116,7 +116,7 @@ const LOCALE_NAMES: Record<Locale, string> = {
 cd web/apps/portal && npm run build
 
 # Run tests
-cd ../../.. && C:/.venv/Scripts/python.exe -m pytest tests/ -v
+cd ../../.. && python -m pytest tests/ -v
 ```
 
 ## Translation Workflow for Contributors

@@ -5,7 +5,7 @@
     Does NOT touch other system files or unrelated applications.
 
 .DESCRIPTION
-    This script removes the PlannedEducation platform from d:\Dev\PEserver.
+    This script removes the PlannedEducation platform from the installation directory (default: C:\PlannedEducation).
     It will:
     1. Stop any running services/processes
     2. Ask about external dependencies one by one
@@ -28,19 +28,31 @@ param(
     [switch]$AutoConfirm
 )
 
-# Auto-detect installation directory if not explicitly provided:
+# Determine default installation directory:
 # 1. If running inside an installation folder (contains plannededucation.db, .env, or src\plannededucation), use $PSScriptRoot
 # 2. Otherwise default to "C:\PlannedEducation" (matching install.ps1 default)
+$defaultDir = "C:\PlannedEducation"
+$hasDb = Test-Path (Join-Path $PSScriptRoot "plannededucation.db")
+$hasSrc = Test-Path (Join-Path $PSScriptRoot "src\plannededucation")
+$hasEnv = Test-Path (Join-Path $PSScriptRoot ".env")
+if ($hasDb -or $hasSrc -or $hasEnv) {
+    $defaultDir = $PSScriptRoot
+}
+
 if ([string]::IsNullOrWhiteSpace($InstallDir)) {
-    $hasDb = Test-Path (Join-Path $PSScriptRoot "plannededucation.db")
-    $hasSrc = Test-Path (Join-Path $PSScriptRoot "src\plannededucation")
-    $hasEnv = Test-Path (Join-Path $PSScriptRoot ".env")
-    if ($hasDb -or $hasSrc -or $hasEnv) {
-        $InstallDir = $PSScriptRoot
+    if (-not $AutoConfirm) {
+        Write-Host "Default installation directory: $defaultDir" -ForegroundColor Cyan
+        $inputDir = Read-Host "Enter installation directory to remove (press Enter for default '$defaultDir')"
+        if (-not [string]::IsNullOrWhiteSpace($inputDir)) {
+            $InstallDir = $inputDir.Trim().Trim('"').Trim("'")
+        } else {
+            $InstallDir = $defaultDir
+        }
     } else {
-        $InstallDir = "C:\PlannedEducation"
+        $InstallDir = $defaultDir
     }
 }
+$InstallDir = [System.IO.Path]::GetFullPath($InstallDir)
 
 $GREEN = "Green"
 $YELLOW = "Yellow"
@@ -98,9 +110,21 @@ Write-Header "PlannedEducation Uninstaller (Windows)"
 
 # Verify installation directory exists
 if (-not (Test-Path $InstallDir)) {
-    Write-Error "Installation directory not found: $InstallDir"
-    Write-Info "Please specify the correct path with -InstallDir parameter"
-    exit 1
+    if (-not $AutoConfirm) {
+        while (-not (Test-Path $InstallDir)) {
+            Write-Warning "Installation directory not found: $InstallDir"
+            $retryDir = Read-Host "Enter a valid installation directory to remove (or type 'exit' to cancel)"
+            if ([string]::IsNullOrWhiteSpace($retryDir) -or $retryDir.Trim().ToLower() -eq "exit") {
+                Write-Error "Uninstallation aborted."
+                exit 1
+            }
+            $InstallDir = [System.IO.Path]::GetFullPath($retryDir.Trim().Trim('"').Trim("'"))
+        }
+    } else {
+        Write-Error "Installation directory not found: $InstallDir"
+        Write-Info "Please specify the correct path with -InstallDir parameter"
+        exit 1
+    }
 }
 
 Write-Success "Found PlannedEducation at: $InstallDir"

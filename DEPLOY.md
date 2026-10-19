@@ -8,6 +8,12 @@ For the complete, detailed deployment manual, see the **[Master Deployment Guide
 
 ## ⚡ Quick Start: Automated Installers
 
+> [!TIP]
+> **Three Friendly Ways to Deploy:**
+> - **School IT Administrators**: Run the automated commands below for a clean install in under 5 minutes.
+> - **AI Coding Tools (Hands-Off)**: Use any free coding assistant with terminal access (**VS Code**, **Cursor**, **Devin**, **Claude Code**, etc.) and tell it: *"Deploy PlannedEducation for me."*
+> - **Free Chat AI Companions (Step-by-Step Guide)**: Share this repository link (`https://github.com/ezixen/PlannedEducation`) with **ChatGPT**, **Claude**, or **Gemini** — it will walk you through every step in gentle, plain English!
+
 ### Windows
 Run from standard Windows PowerShell (Windows PowerShell 5.1+ / `powershell.exe`, or PowerShell 7+) as Administrator:
 ```powershell

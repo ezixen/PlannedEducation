@@ -21,6 +21,11 @@ This guide provides complete, step-by-step instructions for installing and runni
 
 ## ⚡ Quick Start: Automated PowerShell Installer (Recommended)
 
+> 💡 **Need a Helping Hand?**
+> - **School IT Administrators**: Any school IT admin can run the PowerShell commands below directly; they configure everything cleanly in minutes.
+> - **Hands-off AI Coding Agent**: Any free coding tool with terminal access (**VS Code**, **Cursor**, **Devin**, **Claude Code**, etc.) can run `install.ps1` for you.
+> - **Chat AI Companion**: If you're unfamiliar with PowerShell or terminals, open **ChatGPT**, **Claude**, or **Gemini**, give it this link (`https://github.com/ezixen/PlannedEducation`), and ask it to walk you through each step in plain, gentle language!
+
 PlannedEducation includes a native PowerShell deployment script (`install.ps1`) that automatically checks prerequisites, clones or updates the repository, generates cryptographically secure keys, and configures the environment.
 
 > 🪟 **Built for Standard Windows PowerShell:** `install.ps1`, `uninstall.ps1`, and all platform scripts (`start_all.ps1`, `verify.ps1`, `stop_all.ps1`) are specifically built and tested for standard, preinstalled **Windows PowerShell 5.1** (`powershell.exe`, preinstalled on Windows 10, Windows 11, and Windows Server 2016–2025). No separate PowerShell 7 install is required, though modern **PowerShell 7+** (`pwsh`) is fully supported as well.
@@ -65,7 +70,7 @@ You can ask any AI coding agent (GitHub Copilot, Antigravity, Claude Code, Curso
 
 ### Mandatory Human-in-the-Loop Questions for AI Agents
 Before an AI agent runs `install.ps1 -AutoConfirm`, it **must stop and ask you** to confirm:
-1. **Target Installation Directory** (`-InstallDir`, e.g. `C:\PlannedEducation` or `D:\dev\PEtest`)
+1. **Target Installation Directory** (`-InstallDir`, default: `C:\PlannedEducation`, or your custom directory)
 2. **Deployment Mode** (`-DeployMode`: `1` = SQLite, `2` = PostgreSQL + Redis, `3` = Docker)
 3. **School & Superadmin Identity** (`-SchoolName`, `-AdminEmail`, `-AdminName`, `-AdminPassword`)
 4. **Ports** (`-ApiPort` default `8000`, `-FrontendPort` default `5173`, with automatic fallback if in use)
@@ -73,7 +78,7 @@ Before an AI agent runs `install.ps1 -AutoConfirm`, it **must stop and ask you**
 Example command after human confirmation:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1 `
-  -InstallDir "D:\dev\PEtest" `
+  -InstallDir "C:\PlannedEducation" `
   -DeployMode "1" `
   -SchoolName "Springfield High School" `
   -AdminEmail "admin@springfield.edu" `

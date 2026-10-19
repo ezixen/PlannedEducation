@@ -35,6 +35,11 @@ PlannedEducation is a 100% free, open-source, local-first assessment platform. I
 
 PlannedEducation features smart, automated installers that automatically detect dependencies, probe available network ports, configure services, and verify system health.
 
+> 💡 **Deployment Options for Every Operator:**
+> - **School IT Administrators**: Run the native PowerShell or Bash commands below for an automated deployment in minutes.
+> - **Hands-off AI Coding Tools**: Free coding software (**VS Code** with Copilot/Cline/Roo, **Cursor**, **Devin**, **Claude Code**, etc.) can run the automated commands for you.
+> - **Free Chat AI Guidance**: Anyone can share this repository link (`https://github.com/ezixen/PlannedEducation`) with **ChatGPT**, **Claude**, or **Gemini** to receive step-by-step guidance in plain English.
+
 ### Windows Installation
 Run from PowerShell (as Administrator):
 ```powershell

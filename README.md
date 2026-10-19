@@ -30,6 +30,21 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 > 💡 **No Docker? No problem!** The installer supports **Mode 1: Single-Server SQLite** (zero external DB setup), **Mode 2: Production PostgreSQL + Redis**, and **Mode 3: Docker Compose**. Default ports are `8000` (API) and `5173` (Frontend), with automatic fallback to free ports if already in use.
 
+### 🤝 Three Easy Ways to Install & Deploy
+
+PlannedEducation is built to be accessible to everyone—from experienced system administrators to educators who have never opened a terminal before:
+
+1. 🏫 **School IT Administrators & Sysadmins**  
+   Any school IT administrator can deploy PlannedEducation in minutes with ease. The platform is completely self-contained, respects existing school infrastructure, requires no paid subscriptions or proprietary cloud components, and runs cleanly on native Windows PowerShell or Linux Bash. Detailed guides are available for both [Windows](docs/admin/INSTALL_WINDOWS.md) and [Linux/WSL](docs/admin/INSTALL_LINUX.md).
+2. 🤖 **Hands-Off Automated Installation via AI Coding Assistants**  
+   If you use any free coding software or agent tool that can control your terminal—such as **VS Code** (with GitHub Copilot, Cline, or Roo Code), **Cursor**, **Devin**, **Claude Code**, or **Google Antigravity**—the agent can handle the entire installation and verification for you! Just point your tool to this repository and ask:  
+   > *"Deploy PlannedEducation on my machine following the installation instructions."*
+3. 💬 **Friendly Step-by-Step Guidance via Free Chat AI Models (No Coding Background Needed!)**  
+   If you are an educator, parent, or administrator and running commands manually feels unfamiliar or intimidating, **you don't have to navigate it alone!**  
+   Simply open any free conversational AI—such as **ChatGPT**, **Claude**, **Google Gemini**, or **Microsoft Copilot**—and share the link to this GitHub repository (`https://github.com/ezixen/PlannedEducation`), then ask:  
+   > *"Can you explain how to install PlannedEducation on my computer step-by-step?"*  
+   The chat model will read the repository documentation, explain every single step in gentle, plain English, tell you exactly where to click or paste, and help troubleshoot anything that comes up at your own pace.
+
 ### 🤖 AI Agent Deployment & Undeployment Support
 
 You can tell your AI agent: *"Deploy PlannedEducation for me"* or *"Uninstall PlannedEducation from `<folder>`"*.
@@ -37,7 +52,7 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 
 1. **Mandatory Questions AI Agents Must Ask You First**:
    Before running `install.ps1 -AutoConfirm` or `AUTO_CONFIRM=true ./install.sh`, the AI agent **must stop and ask you** for your key decisions:
-   - **Target Installation Folder** (`-InstallDir` / `INSTALL_DIR`, e.g. `C:\PlannedEducation`, `D:\dev\PEtest`, or `/opt/plannededucation`)
+   - **Target Installation Folder** (`-InstallDir` / `INSTALL_DIR`, default: `C:\PlannedEducation` or `/opt/plannededucation`, or your preferred custom folder)
    - **Deployment Mode** (`1` = Local/Single-Server SQLite, `2` = Production PostgreSQL + Redis, `3` = Docker Compose)
    - **School & Superadmin Identity** (`-SchoolName` / `SCHOOL_NAME`, `-AdminEmail` / `ADMIN_EMAIL`, `-AdminName` / `ADMIN_NAME`, and `-AdminPassword` / `ADMIN_PASSWORD`)
    - **Port Preferences** (confirm default ports `8000` / `5173` with auto-fallback, or custom `-ApiPort` / `-FrontendPort`)

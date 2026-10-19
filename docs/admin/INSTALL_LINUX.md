@@ -21,6 +21,11 @@ This guide provides complete instructions for installing and running PlannedEduc
 
 ## ⚡ Quick Start: Automated Bash Installer (Recommended)
 
+> 💡 **Need a Helping Hand?**
+> - **School IT Administrators / Linux Users**: Run the one-line or local Bash commands below; they configure directories, virtual environments, and services cleanly.
+> - **Hands-off AI Coding Agent**: Any free coding assistant with shell access (**VS Code**, **Cursor**, **Devin**, **Claude Code**, etc.) can run `install.sh` for you.
+> - **Chat AI Companion**: If you're newer to Linux, open **ChatGPT**, **Claude**, or **Gemini**, paste this link (`https://github.com/ezixen/PlannedEducation`), and ask for step-by-step guidance tailored to your specific Linux distribution!
+
 PlannedEducation includes a production-ready Bash installer (`install.sh`) that checks system requirements, sets up directories, creates isolated virtual environments, generates cryptographically strong secrets, and optionally configures Systemd services.
 
 ### Option 1: One-Line Installer

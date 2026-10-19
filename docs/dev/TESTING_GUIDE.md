@@ -48,8 +48,8 @@ This document describes the automated test strategy for PlannedEducation, coveri
 
 **Run Command**:
 ```bash
-cd D:\Dev\PlannedEducation
-C:\.venv\Scripts\python -m pytest tests/ -v --tb=short
+cd PlannedEducation
+python -m pytest tests/ -v --tb=short
 ```
 
 ### 2. Unit Tests (Frontend) - vitest
@@ -65,7 +65,7 @@ C:\.venv\Scripts\python -m pytest tests/ -v --tb=short
 
 **Run Command**:
 ```bash
-cd D:\Dev\PlannedEducation\web\apps\portal
+cd web/apps/portal
 npm test
 ```
 
@@ -85,7 +85,7 @@ npm test
 **Location**: `web/apps/portal/tests/visual/`
 **Run**: `cd web/apps/portal && npm run test:visual`
 
-| Test Suite | Scenarios |
+| Test Area | Coverage |
 |------------|-----------|
 | Public Pages | Login, Register pages (desktop, mobile, tablet) |
 | Student Dashboard | Dashboard, exam list, exam taking |
@@ -97,7 +97,7 @@ npm test
 
 **Run Command**:
 ```bash
-cd D:\Dev\PlannedEducation\web\apps\portal
+cd web/apps/portal
 npm run test:visual
 ```
 
@@ -222,12 +222,11 @@ jobs:
 ### Prerequisites
 ```bash
 # Backend
-cd D:\Dev\PlannedEducation
-C:\.venv\Scripts\python -m pip install -r src/requirements.txt
-C:\.venv\Scripts\python -m pip install pytest pytest-cov pytest-asyncio httpx
+python -m pip install -r src/requirements.txt
+python -m pip install pytest pytest-cov pytest-asyncio httpx
 
 # Frontend
-cd D:\Dev\PlannedEducation\web\apps\portal
+cd web/apps/portal
 npm ci
 npx playwright install --with-deps chromium
 ```
@@ -235,18 +234,17 @@ npx playwright install --with-deps chromium
 ### Run All Tests
 ```bash
 # Backend tests
-cd D:\Dev\PlannedEducation
-C:\.venv\Scripts\python -m pytest tests/ -v --tb=short
+python -m pytest tests/ -v --tb=short
 
 # Frontend tests
-cd D:\Dev\PlannedEducation\web\apps\portal
+cd web/apps/portal
 npm test
 
 # Visual regression tests
 npm run test:visual
 
 # All tests with coverage
-C:\.venv\Scripts\python -m pytest tests/ -v --cov=src/plannededucation --cov-report=html
+python -m pytest tests/ -v --cov=src/plannededucation --cov-report=html
 ```
 
 ### Test Coverage Targets
@@ -305,10 +303,10 @@ rm -rf web/apps/portal/tests/visual/snapshots/*.png
 ### Debug Commands
 ```bash
 # Run single test with verbose output
-C:\.venv\Scripts\python -m pytest tests/test_auth.py::test_login_with_email -v -s
+python -m pytest tests/test_auth.py::test_login_with_email -v -s
 
 # Run with pdb on failure
-C:\.venv\Scripts\python -m pytest tests/test_auth.py::test_login_with_email --pdb
+python -m pytest tests/test_auth.py::test_login_with_email --pdb
 
 # Run visual test headed (see browser)
 cd web/apps/portal && npx playwright test --headed --project=chromium
@@ -541,10 +539,10 @@ cd web/apps/portal && npx playwright test --headed --project=chromium
 .\start_student.ps1
 
 # Run unit tests
-$env:PLANNED_EDUCATION_ENV="test"; $env:DATABASE_URL="sqlite:///./test_plannededucation.db"; $env:JWT_SECRET_KEY="YOUR_TEST_JWT_SECRET"; C:\.venv\Scripts\python.exe -m pytest tests/ -v
+$env:PLANNED_EDUCATION_ENV="test"; $env:DATABASE_URL="sqlite:///./test_plannededucation.db"; $env:JWT_SECRET_KEY="YOUR_TEST_JWT_SECRET"; python -m pytest tests/ -v
 
 # Run UI tests
-C:\.venv\Scripts\python.exe test_ui_full.py
+python test_ui_full.py
 
 # Run with tracking
 python run_tests.py --unit-only --no-incremental

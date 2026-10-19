@@ -107,9 +107,9 @@ jobs:
     if: false  # Disabled by default; enable if Windows-specific testing needed
     
     env:
-      BACKUP_DIR: D:\Backups\PlannedEducation
+      BACKUP_DIR: C:\Backups\PlannedEducation
       STAGING_DB: plannededucation_staging
-      LOG_FILE: D:\Logs\backup_restore_drill.log
+      LOG_FILE: C:\Logs\backup_restore_drill.log
     
     steps:
       - name: Checkout code

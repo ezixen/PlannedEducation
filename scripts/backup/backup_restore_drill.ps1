@@ -10,9 +10,9 @@
 #>
 
 param(
-    [string]$BackupDir = "D:\Backups\PlannedEducation",
+    [string]$BackupDir = "C:\Backups\PlannedEducation",
     [string]$StagingDb = "plannededucation_staging",
-    [string]$LogFile = "D:\Logs\backup_restore_drill.log",
+    [string]$LogFile = "C:\Logs\backup_restore_drill.log",
     [int]$RtoThresholdSeconds = 14400  # 4 hours
 )
 
@@ -101,7 +101,7 @@ Write-Success "Restore completed in ${restoreDuration}s"
 
 # 6. Run migrations (if alembic available)
 Write-Log "Running database migrations..."
-$appPaths = @("D:\Dev\PlannedEducation", "C:\PlannedEducation", "D:\PlannedEducation")
+$appPaths = @("C:\PlannedEducation", (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path)
 $alembicFound = $false
 
 foreach ($path in $appPaths) {

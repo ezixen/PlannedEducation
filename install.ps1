@@ -543,17 +543,16 @@ if ($useDocker) {
         }
     }
 
-    # Setup Python Virtual Environment (prefer shared C:/.venv if present per workspace standards, else local .venv)
-    $sharedVenvPython = "C:\.venv\Scripts\python.exe"
-    $localVenvPython = Join-Path $InstallDir ".venv\Scripts\python.exe"
-    if (Test-Path $sharedVenvPython) {
-        $pythonExe = $sharedVenvPython
-        Write-Info "Using shared Python virtual environment at C:\.venv..."
+    # Setup Python Virtual Environment in $InstallDir\.venv
+    $localVenvDir = Join-Path $InstallDir ".venv"
+    $localVenvPython = Join-Path $localVenvDir "Scripts\python.exe"
+    if (-not (Test-Path $localVenvPython)) {
+        Write-Info "Creating Python virtual environment at $localVenvDir..."
+        python -m venv $localVenvDir
     } else {
-        Write-Info "Creating Python virtual environment at $InstallDir\.venv..."
-        python -m venv (Join-Path $InstallDir ".venv")
-        $pythonExe = $localVenvPython
+        Write-Info "Using existing Python virtual environment at $localVenvDir..."
     }
+    $pythonExe = $localVenvPython
 
     Write-Info "Verifying Python dependencies..."
     & $pythonExe -m pip install -q -r (Join-Path $InstallDir "src\requirements.txt")
@@ -622,7 +621,9 @@ if (Test-Path `$depCfg) {
 `$env:PLANNED_EDUCATION_LOG_DIR = "`$logsDir"
 
 Write-Host "1. Starting Backend API on port `$apiPort..." -ForegroundColor Green
-`$backendProc = Start-Process -FilePath "$pythonExe" -ArgumentList "-m uvicorn plannededucation.api.main:app --env-file `"`$InstallDir\.env`" --host 0.0.0.0 --port `$apiPort" -WorkingDirectory `$InstallDir -PassThru
+`$pythonExe = Join-Path `$InstallDir ".venv\Scripts\python.exe"
+if (-not (Test-Path `$pythonExe)) { `$pythonExe = "python.exe" }
+`$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList "-m uvicorn plannededucation.api.main:app --env-file `"`$InstallDir\.env`" --host 0.0.0.0 --port `$apiPort" -WorkingDirectory `$InstallDir -PassThru
 
 Write-Host "2. Starting Frontend Portal on port `$frontendPort..." -ForegroundColor Green
 `$frontendProc = Start-Process -FilePath "cmd.exe" -ArgumentList "/c npm run preview -- --host 127.0.0.1 --port `$frontendPort" -WorkingDirectory (Join-Path `$InstallDir "web\apps\portal") -PassThru
@@ -694,7 +695,9 @@ if (Test-Path `$depCfg) {
 }
 Write-Host "Starting PlannedEducation Backend on port `$apiPort..." -ForegroundColor Green
 Write-Host "Press Ctrl+C to stop." -ForegroundColor Yellow
-& "$pythonExe" -m uvicorn plannededucation.api.main:app --env-file "`$InstallDir\.env" --host 0.0.0.0 --port `$apiPort
+`$pythonExe = Join-Path `$InstallDir ".venv\Scripts\python.exe"
+if (-not (Test-Path `$pythonExe)) { `$pythonExe = "python.exe" }
+& `$pythonExe -m uvicorn plannededucation.api.main:app --env-file "`$InstallDir\.env" --host 0.0.0.0 --port `$apiPort
 "@
     Set-Content -Path $startBackendPs1 -Value $backendPs1Content -Encoding UTF8
 

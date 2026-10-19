@@ -11,14 +11,22 @@ Set-Location $RepoRoot
 $PortalUrl = "http://localhost:5175"
 $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-student-profile"
-$PythonExe = "C:\.venv\Scripts\python.exe"
+$PythonExe = if (Test-Path "C:\.venv\Scripts\python.exe") {
+    "C:\.venv\Scripts\python.exe"
+} elseif (Test-Path (Join-Path $RepoRoot ".venv\Scripts\python.exe")) {
+    Join-Path $RepoRoot ".venv\Scripts\python.exe"
+} elseif (Get-Command python -ErrorAction SilentlyContinue) {
+    (Get-Command python).Source
+} else {
+    "C:\.venv\Scripts\python.exe"
+}
 $NodeDirectory = "C:\Program Files\nodejs"
 $JwtSecret = "plannededucation-local-development-secret-only"
 $PowerShellExe = if (Get-Command pwsh -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell.exe" }
 
 if (-not (Test-Path $LauncherDir)) { New-Item -ItemType Directory -Path $LauncherDir | Out-Null }
 if (-not (Test-Path $PythonExe)) {
-    throw "Required project Python environment was not found at $PythonExe."
+    throw "Required project Python environment was not found. Looked in C:\.venv, .venv, and PATH."
 }
 if (-not (Test-Path (Join-Path $RepoRoot "web\apps\portal\package.json"))) {
     throw "Portal package.json was not found. Run this script from the repository root."

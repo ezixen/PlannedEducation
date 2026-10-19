@@ -50,7 +50,7 @@
 3. No scheduled tasks or Windows services were found to remove (clean install)
 4. Process cleanup correctly protected the calling shell/agent
 
-**Note:** The uninstaller defaults to `d:\Dev\PEserver` - must specify `-InstallDir C:\dev\PE` for this deployment.
+**Note:** The uninstaller defaults to `C:\PlannedEducation` (matching `install.ps1`) and prompts for a custom directory in interactive mode; with `-AutoConfirm` specify `-InstallDir <path>`.
 
 ---
 
