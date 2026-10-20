@@ -8,7 +8,13 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-21T00:00:00+00:00",
-    "tags": ["englisch", "phonetik", "lesen", "klasse-1", "deutschland"],
+    "tags": [
+      "englisch",
+      "phonetik",
+      "lesen",
+      "klasse-1",
+      "deutschland"
+    ],
     "subject": "englisch",
     "grade_level": "grade-01",
     "license": "CC-BY-4.0",
@@ -50,12 +56,20 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Welcher Buchstabe macht den 'a'-Laut in dem englischen Wort 'cat'?",
-      "options": ["c", "a", "t"],
+      "options": [
+        "c",
+        "a",
+        "t"
+      ],
       "correct_answer": "a",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonetik", "vokal-laute", "a-laut"],
+      "tags": [
+        "phonetik",
+        "vokal-laute",
+        "a-laut"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Phonetik",
@@ -65,12 +79,21 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Welches englische Wort beginnt mit dem 'b'-Laut?",
-      "options": ["cat", "ball", "dog", "sun"],
+      "options": [
+        "cat",
+        "ball",
+        "dog",
+        "sun"
+      ],
       "correct_answer": "ball",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonetik", "anfangslaute", "b-laut"],
+      "tags": [
+        "phonetik",
+        "anfangslaute",
+        "b-laut"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Phonetik",
@@ -80,12 +103,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Welches englische Wort reimt sich auf 'cat'?",
-      "options": ["hat", "dog", "sun", "tree"],
+      "options": [
+        "hat",
+        "dog",
+        "sun",
+        "tree"
+      ],
       "correct_answer": "hat",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["reime", "phonetik"],
+      "tags": [
+        "reime",
+        "phonetik"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Phonetik",
@@ -95,12 +126,21 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Welcher Laut steht am Anfang von dem englischen Wort 'sun'?",
-      "options": ["s", "u", "n", "m"],
+      "options": [
+        "s",
+        "u",
+        "n",
+        "m"
+      ],
       "correct_answer": "s",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonetik", "anfangslaute", "s-laut"],
+      "tags": [
+        "phonetik",
+        "anfangslaute",
+        "s-laut"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Phonetik",
@@ -110,12 +150,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Vervollständige den englischen Satz: The cat ____ on the mat.",
-      "options": ["sits", "sit", "sitting", "sat"],
+      "options": [
+        "sits",
+        "sit",
+        "sitting",
+        "sat"
+      ],
       "correct_answer": "sits",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "praesens"],
+      "tags": [
+        "grammatik",
+        "praesens"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-01-Englisch-Grammatik",
@@ -125,12 +173,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Welches englische Wort bedeutet 'Hund'?",
-      "options": ["cat", "dog", "bird", "fish"],
+      "options": [
+        "cat",
+        "dog",
+        "bird",
+        "fish"
+      ],
       "correct_answer": "dog",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["wortschatz", "tiere"],
+      "tags": [
+        "wortschatz",
+        "tiere"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Wortschatz",
@@ -140,12 +196,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Was ist der Plural von dem englischen Wort 'cat'?",
-      "options": ["cats", "cates", "caties", "cat"],
+      "options": [
+        "cats",
+        "cates",
+        "caties",
+        "cat"
+      ],
       "correct_answer": "cats",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "plural"],
+      "tags": [
+        "grammatik",
+        "plural"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-01-Englisch-Grammatik",
@@ -155,12 +219,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Welcher englische Satz ist grammatikalisch richtig?",
-      "options": ["The dog runs fast.", "The dog run fast.", "The dog running fast.", "The dog is run fast."],
+      "options": [
+        "The dog runs fast.",
+        "The dog run fast.",
+        "The dog running fast.",
+        "The dog is run fast."
+      ],
       "correct_answer": "The dog runs fast.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "subjekt-verb-kongruenz"],
+      "tags": [
+        "grammatik",
+        "subjekt-verb-kongruenz"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-01-Englisch-Grammatik",
@@ -175,7 +247,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["schreiben", "sätze", "englisch"],
+      "tags": [
+        "schreiben",
+        "sätze",
+        "englisch"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-01-Englisch-Schreiben",
@@ -185,12 +261,21 @@
       "id": "q-010",
       "question_type": "multiple_choice",
       "text": "Lies den englischen Satz: 'The big red ball.' Welches Wort ist ein Substantiv (noun)?",
-      "options": ["The", "big", "red", "ball"],
+      "options": [
+        "The",
+        "big",
+        "red",
+        "ball"
+      ],
       "correct_answer": "ball",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "wortarten", "substantiv"],
+      "tags": [
+        "grammatik",
+        "wortarten",
+        "substantiv"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 5,
       "curriculum_topic": "DE-01-Englisch-Grammatik",
@@ -206,19 +291,29 @@
           "id": "c-009-1",
           "description": "Schreibt 3 einfache Sätze auf Englisch",
           "points": 4,
-          "keywords": ["sentences", "three", "english"]
+          "keywords": [
+            "sentences",
+            "three",
+            "english"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Verwendet Großbuchstaben am Satzanfang",
           "points": 3,
-          "keywords": ["capital", "großbuchstabe"]
+          "keywords": [
+            "capital",
+            "großbuchstabe"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Verwendet Punkte am Satzende",
           "points": 3,
-          "keywords": ["period", "punkt"]
+          "keywords": [
+            "period",
+            "punkt"
+          ]
         }
       ],
       "total_points": 10
