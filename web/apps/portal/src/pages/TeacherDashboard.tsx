@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 import { PackageManager } from '../components/PackageManager';
 import { ChatGptPanel } from '../components/ChatGptPanel';
@@ -51,6 +52,7 @@ interface ArchiveStats {
 }
 
 export function TeacherDashboard() {
+  const { t } = useI18n();
   const { examId } = useParams<{ examId: string }>();
   const { success: showSuccess, error: showError, info: showInfo } = useToast();
 
@@ -447,7 +449,7 @@ export function TeacherDashboard() {
   if (loading) {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
-        <div style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>Loading submissions...</div>
+        <div style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>{t('common.loading')}</div>
       </div>
     );
   }
@@ -457,15 +459,15 @@ export function TeacherDashboard() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
         <div>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem', overflowWrap: 'break-word' }}>
-            AI Grading Dashboard
+            {t('teacher_dashboard.ai_grading_title')}
           </h1>
-          <p style={{ color: 'var(--text-muted)' }}>Review and approve AI-generated grades for exam submissions</p>
+          <p style={{ color: 'var(--text-muted)' }}>{t('teacher_dashboard.ai_grading_subtitle')}</p>
         </div>
         <button
           onClick={groupSimilarMistakes}
           style={{ padding: '0.625rem 1.25rem', backgroundColor: '#8b5cf6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, whiteSpace: 'normal', overflowWrap: 'break-word', maxWidth: '100%' }}
         >
-          🔍 Group Similar Mistakes
+          🔍 {t('teacher_dashboard.group_mistakes')}
         </button>
       </div>
 
@@ -488,14 +490,14 @@ export function TeacherDashboard() {
       {/* Digital Hand Raise Live Monitor (with sound chime & toast notifications) */}
       {examId && <TeacherHandRaiseMonitor examId={examId} />}
 
-      {/* Real-time Student Monitoring Panel */}
+      {/* {t('teacher_dashboard.real_time_monitoring')} Panel */}
       <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
           <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-            📡 Real-time Student Monitoring
+            📡 {t('teacher_dashboard.real_time_monitoring')}
           </h3>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            Auto-refreshes every 10s
+            {t('teacher_dashboard.auto_refresh')}
           </span>
         </div>
         
@@ -507,20 +509,20 @@ export function TeacherDashboard() {
         
         {heartbeats.length === 0 && !heartbeatError && !heartbeatLoading ? (
           <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
-            No students have started this exam yet.
+            {t('teacher_dashboard.no_students')}
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Student</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Status</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Progress</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Time Remaining</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Violations</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Score</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Actions</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_progress')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_time_remaining')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_violations')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_score')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -599,7 +601,7 @@ export function TeacherDashboard() {
       <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
           <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-            📦 Archived Submissions
+            📦 {t('teacher_dashboard.archive_title')}
           </h3>
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <select
@@ -607,7 +609,7 @@ export function TeacherDashboard() {
               onChange={e => { setArchiveYearFilter(e.target.value === 'all' ? 'all' : parseInt(e.target.value)); fetchArchives(); }}
               style={{ padding: '0.375rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.85rem' }}
             >
-              <option value="all">All Years</option>
+              <option value="all">{t('teacher_dashboard.filter_all_years')}</option>
               {Array.from({length: 10}, (_, i) => new Date().getFullYear() - i).map(y => (
                 <option key={y} value={y}>{y}</option>
               ))}
@@ -617,7 +619,7 @@ export function TeacherDashboard() {
               onChange={e => { setArchiveMonthFilter(e.target.value === 'all' ? 'all' : parseInt(e.target.value)); fetchArchives(); }}
               style={{ padding: '0.375rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.85rem' }}
             >
-              <option value="all">All Months</option>
+              <option value="all">{t('teacher_dashboard.filter_all_months')}</option>
               {Array.from({length: 12}, (_, i) => i + 1).map(m => (
                 <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>
               ))}
@@ -627,10 +629,10 @@ export function TeacherDashboard() {
               onChange={e => { setArchiveStatusFilter(e.target.value as any); fetchArchives(); }}
               style={{ padding: '0.375rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.85rem' }}
             >
-              <option value="all">All Statuses</option>
-              <option value="active">Active</option>
-              <option value="archived">Archived</option>
-              <option value="deleted">Deleted from Server</option>
+              <option value="all">{t('teacher_dashboard.filter_all_statuses')}</option>
+              <option value="active">{t('common.34')}</option>
+              <option value="archived">{t('common.39')}</option>
+              <option value="deleted">{t('teacher_dashboard.filter_deleted')}</option>
             </select>
           </div>
         </div>
@@ -638,9 +640,9 @@ export function TeacherDashboard() {
         {archiveStats && (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
             {[
-              { label: 'Total Archives', value: archiveStats.total_archives, color: '#8b5cf6', icon: '📦' },
-              { label: 'Total Size', value: `${archiveStats.total_size_mb} MB`, color: '#3b82f6', icon: '💾' },
-              { label: 'Space Saved', value: `${archiveStats.compression_savings_mb} MB`, color: '#10b981', icon: '✨' },
+              { label: t('teacher_dashboard.stat_total_archives'), value: archiveStats.total_archives, color: '#8b5cf6', icon: '📦' },
+              { label: t('teacher_dashboard.stat_total_size'), value: `${archiveStats.total_size_mb} MB`, color: '#3b82f6', icon: '💾' },
+              { label: t('teacher_dashboard.stat_space_saved'), value: `${archiveStats.compression_savings_mb} MB`, color: '#10b981', icon: '✨' },
             ].map((stat, i) => (
               <div key={i} style={{ padding: '0.75rem', backgroundColor: 'var(--bg-color)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
                 <div style={{ fontSize: '1.5rem', fontWeight: 700, color: stat.color }}>{stat.value}</div>
@@ -651,25 +653,25 @@ export function TeacherDashboard() {
         )}
 
         {archiveLoading ? (
-          <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading archives...</div>
+          <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>{t('common.14')}</div>
         ) : archives.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
-            No archived submissions found for this exam.
+            {t('teacher_dashboard.no_archives')}
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Submission ID</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Student</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Year/Month</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Original Size</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Compressed</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Ratio</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Status</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Archived</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Actions</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_submission_id')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_year_month')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_orig_size')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_compressed')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_ratio')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('common.39')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -789,11 +791,11 @@ export function TeacherDashboard() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Student</th>
+                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Questions</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Grades</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Status</th>
-                <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Actions</th>
+                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
+                <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
               </tr>
             </thead>
             <tbody>

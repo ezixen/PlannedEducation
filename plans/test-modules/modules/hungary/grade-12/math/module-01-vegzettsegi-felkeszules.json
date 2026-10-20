@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-12-math-vegzettsegi-felkeszules-1.0.0",
+    "name": "Végzettségi felkészülés - Grade 12 Math",
+    "version": "1.0.0",
+    "description": "45-minute test on végzettségi felkészülés for Grade 12 students. Covers: Függvények, Analízis, Alkalmazott matematika.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.415210+00:00",
+    "updated_at": "2026-10-20T13:20:17.415210+00:00",
+    "tags": [
+      "math",
+      "végzettségi-felkészülés",
+      "grade-12"
+    ],
+    "subject": "math",
+    "grade_level": "grade-12",
+    "license": "CC-BY-4.0",
+    "checksum": "190c8c109f01d09e64b00da66bb82d704aeb5c7e7044fcdcc0495097b6af0010",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Függvények",
+      "Analízis",
+      "Alkalmazott matematika"
+    ]
+  },
+  "exam": {
+    "title": "Grade 12 Math - Végzettségi felkészülés",
+    "description": "Test on végzettségi felkészülés including függvények, analízis, alkalmazott matematika",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Végzettségi felkészülés - Kérdés 1: Analízis",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Analízis"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Végzettségi felkészülés - Kérdés 2: Alkalmazott matematika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Alkalmazott matematika"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Végzettségi felkészülés - Kérdés 3: Függvények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[math] Végzettségi felkészülés - Kérdés 4: Analízis",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Analízis"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[math] Végzettségi felkészülés - Kérdés 5: Alkalmazott matematika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Alkalmazott matematika"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[math] Végzettségi felkészülés - Kérdés 6: Függvények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Végzettségi felkészülés témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[math] Végzettségi felkészülés - Kérdés 7: Analízis",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Végzettségi felkészülés témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Analízis"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[math] Végzettségi felkészülés - Kérdés 8: Alkalmazott matematika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Végzettségi felkészülés témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Alkalmazott matematika"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[math] Végzettségi felkészülés - Kérdés 9: Függvények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Végzettségi felkészülés témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[math] Végzettségi felkészülés - Kérdés 10: Analízis",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Végzettségi felkészülés témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "végzettségi-felkészülés"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-12-MATH-Végzettségi felkészü",
+      "learning_objective": "Analízis"
+    }
+  ],
+  "rubrics": []
+}

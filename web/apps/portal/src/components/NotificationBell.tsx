@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Bell, Check, Trash2, UserCheck, KeyRound, CheckCheck, RefreshCw } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 export interface InAppNotification {
   id: string;
@@ -17,6 +18,7 @@ export interface InAppNotification {
 
 export function NotificationBell() {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState<number>(0);
   const [notifications, setNotifications] = useState<InAppNotification[]>([]);
@@ -162,7 +164,7 @@ export function NotificationBell() {
     <div ref={dropdownRef} style={{ position: 'relative', display: 'inline-block' }}>
       <button
         onClick={handleToggle}
-        aria-label="In-Platform Notifications"
+        aria-label={t("notifications.title")}
         title="Notifications (updates every minute)"
         style={{
           position: 'relative',
@@ -270,7 +272,7 @@ export function NotificationBell() {
               {unreadCount > 0 && (
                 <button
                   onClick={handleMarkAllRead}
-                  title="Mark all as read"
+                  title={t("notifications.mark_all_read")}
                   style={{
                     background: 'none',
                     border: 'none',
@@ -283,7 +285,7 @@ export function NotificationBell() {
                     gap: '0.2rem',
                   }}
                 >
-                  <CheckCheck size={14} /> Mark all read
+                  <CheckCheck size={14} /> {t("notifications.mark_all_read")}
                 </button>
               )}
             </div>
@@ -344,12 +346,12 @@ export function NotificationBell() {
           <div style={{ overflowY: 'auto', flex: 1, padding: '0.25rem 0' }}>
             {loading && notifications.length === 0 ? (
               <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                Checking notifications...
+                {t("common.14")}
               </div>
             ) : notifications.length === 0 ? (
               <div style={{ padding: '2.5rem 1rem', textAlign: 'center', color: 'var(--text-muted)' }}>
                 <Bell size={28} style={{ opacity: 0.3, marginBottom: '0.5rem' }} />
-                <p style={{ margin: 0, fontSize: '0.85rem' }}>No notifications right now.</p>
+                <p style={{ margin: 0, fontSize: '0.85rem' }}>{t("notifications.empty")}</p>
                 <p style={{ margin: '0.25rem 0 0', fontSize: '0.75rem', opacity: 0.8 }}>
                   Updates poll every minute automatically.
                 </p>
@@ -484,7 +486,7 @@ export function NotificationBell() {
                           }}
                         >
                           <KeyRound size={13} />
-                          {actionLoadingId === notif.id ? 'Processing...' : 'Approve & Reset Password'}
+                          {actionLoadingId === notif.id ? t("common.14") : t("notifications.reset_approve_btn")}
                         </button>
                       </div>
                     )}

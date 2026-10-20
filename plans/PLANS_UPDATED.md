@@ -627,8 +627,42 @@
     2. **Hands-Off AI Coding Agents**: One-prompt automated deployment for VS Code, Cursor, Devin, Claude Code, Antigravity, etc.
     3. **Friendly Free Chat AI Companions**: Plain-language step-by-step guidance for non-technical educators and parents using ChatGPT, Claude, Gemini, or Copilot.
 
+---
+
+### Phase 27: i18n Migration & Visual Testing ✅ **IN PROGRESS** (2026-10-20)
+
+#### 27.1 i18n Migration — Move All Hardcoded User-Facing Text to `t()` ✅ **AGENTS.md UPDATED**
+- **AGENTS.md §5.2 added**: Mandatory i18n rules for all user-facing text in React frontend
+- **Rule**: No hardcoded English text in JSX, component files, or page files — ALL must use `t()` from `../contexts/I18nContext`
+- **Translation files**: `web/apps/portal/src/locales/en/messages.json` (source of truth) + 16 other locales
+- **Key format**: `domain.number` (e.g., `exam_editor.1`, `login.7`, `teacher_dashboard.3`)
+- **Translators edit only `messages.json`** — no code changes needed for new languages
+- **Next step**: Audit all `.tsx`/`.ts` files for hardcoded strings and convert to `t()` calls, adding missing keys to `en/messages.json`
+
+#### 27.2 Visual Testing — Deployed System Verification ✅ **IN PROGRESS** (2026-10-20)
+- **Backend running**: `http://127.0.0.1:8000` (SQLite dev mode)
+- **Frontend running**: `http://127.0.0.1:5173` (Vite preview)
+- **Test users created**:
+  - Superadmin: `superadmin@school.edu` / `SuperPass123!` (credentials saved to `local-secrets/test_users.json`)
+  - Teacher: `testadmin@school.edu` / `TestPass123!` (approved by superadmin)
+- **Teacher logged in**: Exam created "High School Math - Multiplication Test" (45 min, 0 questions)
+- **Exam Editor UI verified**: Question creation works (Multiple Choice, Essay, Dynamic Math)
+- **UI text fix**: Changed "Edit Editor" → "Edit Questions" in `TeacherExams.tsx`
+- **Next steps**:
+  1. Add questions manually via Exam Editor UI
+  2. Export package (.pepkg) and verify download
+  3. Register test students, have them take the exam
+  4. Teacher reviews submissions
+  5. Verify other teachers can see/download published modules
+  6. Full visual regression check for glitches/misfits/errors
+
+#### 27.3 Post-Testing Cleanup (PENDING)
+- Uninstall `d:\Dev\Peserver` and `c:\dev\PE` after all testing complete
+- Keep `d:\Dev\PlannedEducation` as the canonical repo
+- Ensure all credentials saved to `local-secrets/` before cleanup
 
 
 
 
-
+
+

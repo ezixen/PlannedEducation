@@ -6,10 +6,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { ForgotPasswordModal } from '../components/ForgotPasswordModal';
 import { apiClient } from '../api';
+import { useI18n } from '../contexts/I18nContext';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 export function Login() {
+  const { t } = useI18n();
   const { login, loginWithPassword, refreshUser } = useAuth();
   const { error: showError, success: showSuccess } = useToast();
   const navigate = useNavigate();
@@ -31,12 +33,12 @@ export function Login() {
       });
       if (res.data?.teacher_reset_active) {
         setTeacherResetActive(true);
-        showSuccess(res.data.message || 'Your account has been unlocked! Set your new password to enter.');
+        showSuccess(res.data.message || t('login.teacher_reset_title'));
       } else {
-        showError(res.data.message || 'No active password reset found for this account. Please contact your teacher, parent, or administrator.');
+        showError(res.data.message || t('login.no_reset_found'));
       }
     } catch (err: any) {
-      showError('Failed to verify password reset status. Please try again.');
+      showError(t('errors.9'));
     } finally {
       setTeacherResetChecking(false);
     }
@@ -50,11 +52,11 @@ export function Login() {
       navigate('/');
     } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
-      let message = 'Google login failed';
+      let message = t('login.google_login_failed');
       if (detail === 'Google sign-in is not configured on this server') {
-        message = 'Google sign-in is not configured. Please use email login instead.';
+        message = t('login.google_not_configured');
       } else if (detail === 'Invalid Google token') {
-        message = 'Invalid Google token. Please try again.';
+        message = t('login.invalid_google_token');
       } else {
         message = detail;
       }
@@ -75,7 +77,7 @@ export function Login() {
       let message = 'Login failed';
       if (typeof detail === 'string' && (detail.includes('RESET_ACTIVE') || detail.includes('PASSWORD_RESET_ACTIVE'))) {
         setTeacherResetActive(true);
-        showSuccess('Your teacher has unlocked your account! Set your new password to enter.');
+        showSuccess(t('login.account_unlocked'));
         setLoading(false);
         return;
       } else if (detail === 'Invalid email/username or password') {
@@ -98,7 +100,7 @@ export function Login() {
   const handleTeacherResetComplete = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      showError('Passwords do not match');
+      showError(t('errors.7.4'));
       return;
     }
     setLoading(true);
@@ -110,7 +112,7 @@ export function Login() {
       if (res.data?.access_token) {
         localStorage.setItem('access_token', res.data.access_token);
         await refreshUser();
-        showSuccess('Password updated successfully! Welcome to your exam session.');
+        showSuccess(t('toast.22'));
         navigate('/');
       }
     } catch (err: any) {
@@ -124,15 +126,15 @@ export function Login() {
     <div style={{ display: 'flex', minHeight: '100dvh', padding: '1rem', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', boxSizing: 'border-box' }}>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center', boxSizing: 'border-box' }}>
         <div style={{ marginBottom: '1.5rem' }}>
-          <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary-color)' }}>Planned Education</h1>
-          <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Secure exam platform for schools</p>
+          <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary-color)' }}>{t('login.title')}</h1>
+          <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{t('login.subtitle')}</p>
         </div>
 
         {GOOGLE_CLIENT_ID ? (
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
-              onError={() => showError('Google Authentication Failed. Please try again or use email login.')}
+              onError={() => showError(t('login.google_auth_failed'))}
               useOneTap
             />
           </div>
@@ -153,27 +155,27 @@ export function Login() {
                   lineHeight: 1.4,
                 }}
               >
-                🎓 <strong>Your account has been unlocked for password reset!</strong><br />
-                Enter your email and choose your new password below to enter your session immediately:
+                🎓 <strong>{t('login.teacher_reset_title')}</strong><br />
+                {t('login.teacher_reset_subtitle')}
               </div>
 
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>
-                  Email address
+                  {t('login.email_label')}
                 </label>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder="you@school.edu"
+                  placeholder={t('login.email_placeholder')}
                   style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box' }}
                 />
               </div>
 
               <div style={{ marginBottom: '1rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>
-                  New Password
+                  {t('settings.8')}
                 </label>
                 <input
                   type="password"
@@ -188,7 +190,7 @@ export function Login() {
 
               <div style={{ marginBottom: '1.25rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>
-                  Confirm New Password
+                  {t('settings.8.1')}
                 </label>
                 <input
                   type="password"
@@ -206,7 +208,7 @@ export function Login() {
                 disabled={loading}
                 style={{ width: '100%', padding: '0.75rem 1rem', background: loading ? '#94a3b8' : '#10b981', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: loading ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '0.95rem', boxSizing: 'border-box' }}
               >
-                {loading ? 'Setting Password & Entering…' : 'Set Password & Enter Exam ⚡'}
+                {loading ? t('login.setting_password') : t('login.set_password')}
               </button>
 
               <button
@@ -214,16 +216,16 @@ export function Login() {
                 onClick={() => setTeacherResetActive(false)}
                 style={{ width: '100%', marginTop: '0.75rem', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '0.85rem' }}
               >
-                ← Back to standard login
+                {t('login.back_to_login')}
               </button>
             </form>
           ) : (
             <form onSubmit={handleLocalLogin} style={{ margin: 0 }}>
               <div style={{ marginBottom: '1rem', textAlign: 'left' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>Email address</label>
+                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>{t('login.email_label')}</label>
                 <input 
                   type="email" 
-                  placeholder="you@school.edu"
+                  placeholder={t('login.email_placeholder')}
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   required
@@ -234,7 +236,7 @@ export function Login() {
               
               <div style={{ marginBottom: '1.25rem', textAlign: 'left' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                  <label style={{ margin: 0, color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>Password</label>
+                  <label style={{ margin: 0, color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>{t('login.password_label')}</label>
                   <button
                     type="button"
                     onClick={() => setShowForgotModal(true)}
@@ -248,7 +250,7 @@ export function Login() {
                       fontWeight: 500,
                     }}
                   >
-                    Forgot password?
+                    {t('login.forgot_password')}
                   </button>
                 </div>
                 <input 
@@ -267,7 +269,7 @@ export function Login() {
                     disabled={teacherResetChecking}
                     style={{ background: 'none', border: 'none', padding: 0, color: '#10b981', fontSize: '0.775rem', cursor: 'pointer' }}
                   >
-                    {teacherResetChecking ? 'Checking…' : '⚡ Account unlocked for password reset?'}
+                    {teacherResetChecking ? t('common.loading') : t('login.account_unlocked_btn')}
                   </button>
                 </div>
               </div>
@@ -277,15 +279,15 @@ export function Login() {
                 disabled={loading}
                 style={{ width: '100%', padding: '0.75rem 1rem', background: loading ? '#94a3b8' : 'var(--primary-color)', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: loading ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '0.95rem', boxSizing: 'border-box' }}
               >
-                {loading ? 'Signing in…' : 'Sign in'}
+                {loading ? t('login.signing_in') : t('login.signin')}
               </button>
             </form>
           )
         ) : null}
 
         <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-          Don't have an account?{' '}
-          <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'none' }}>Create account</Link>
+          {t('login.no_account')}{' '}
+          <Link to="/register" style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'none' }}>{t('login.create_account')}</Link>
         </p>
 
         <ForgotPasswordModal

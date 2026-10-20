@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 export function OCRProcessor() {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -84,7 +86,7 @@ export function OCRProcessor() {
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-      <h3>OCR Processor</h3>
+      <h3>{t('ocr.1')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
         Extract text from handwritten exam images using Tesseract OCR.
         Supports math expressions and multiple languages.
@@ -94,7 +96,7 @@ export function OCRProcessor() {
         {/* File Upload */}
         <div>
           <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
-            Upload Image
+            {t('ocr.2')}
           </label>
           <input
             type="file"
@@ -126,10 +128,10 @@ export function OCRProcessor() {
               style={inputStyle}
               disabled={loading}
             >
-              <option value="eng">English</option>
-              <option value="eng+math">English + Math</option>
-              <option value="math">Math Only</option>
-              <option value="osd">Auto-detect (OSD)</option>
+              <option value="eng">{t('ocr.lang_en')}</option>
+              <option value="eng+math">{t('ocr.lang_en_math')}</option>
+              <option value="math">{t('ocr.lang_math_only')}</option>
+              <option value="osd">{t('ocr.lang_auto')}</option>
             </select>
           </div>
 
@@ -140,7 +142,7 @@ export function OCRProcessor() {
               onChange={e => setIsMath(e.target.checked)}
               disabled={loading}
             />
-            <span>Math-specific OCR (optimized for equations)</span>
+            <span>{t('ocr.math_ocr_desc')}</span>
           </label>
         </div>
 
@@ -151,7 +153,7 @@ export function OCRProcessor() {
             disabled={loading || !imageFile}
             style={{ ...buttonStyle, opacity: loading || !imageFile ? 0.6 : 1 }}
           >
-            {loading ? 'Processing...' : 'Process OCR'}
+            {loading ? t('ocr.8') : t('ocr.3')}
           </button>
           {imageFile && (
             <button
@@ -159,7 +161,7 @@ export function OCRProcessor() {
               disabled={loading}
               style={{ ...buttonStyle, backgroundColor: 'var(--secondary-color)' }}
             >
-              Clear
+              {t('ocr.7')}
             </button>
           )}
         </div>
@@ -168,7 +170,7 @@ export function OCRProcessor() {
         {result && (
           <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h4 style={{ margin: 0 }}>Result</h4>
+              <h4 style={{ margin: 0 }}>{t('ocr.result_title')}</h4>
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                 Confidence: {Math.round(result.confidence * 100)}%
               </span>

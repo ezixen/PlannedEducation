@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "id": "usa-grade-01-english-phonics-1.0.0",
+    "name": "Grade 1 English - Phonics and Reading",
+    "version": "1.0.0",
+    "description": "45-minute English test on phonics and reading for Grade 1 (USA NGSS curriculum).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["english", "phonics", "reading", "grade-1", "ngss", "usa"],
+    "subject": "english",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "usa-ngss",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Identify letter sounds",
+      "Read simple words",
+      "Understand basic sentences"
+    ]
+  },
+  "exam": {
+    "title": "Grade 1 English - Phonics and Reading",
+    "description": "Test on phonics, reading, and basic comprehension for Grade 1",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Which letter makes the 'a' sound in 'cat'?",
+      "options": ["c", "a", "t", "ct"],
+      "correct_answer": "a",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonics", "vowel-sounds", "a-sound"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Phonics",
+      "learning_objective": "Identify vowel sounds"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Which word starts with the 'b' sound?",
+      "options": ["cat", "bat", "rat", "mat"],
+      "correct_answer": "bat",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonics", "initial-sounds", "b-sound"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Phonics",
+      "learning_objective": "Identify initial consonant sounds"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Which word rhymes with 'cat'?",
+      "options": ["dog", "hat", "sun", "fish"],
+      "correct_answer": "hat",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["rhyming", "phonics"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Phonics",
+      "learning_objective": "Identify rhyming words"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "What sound does 'sh' make in 'ship'?",
+      "options": ["s", "h", "sh", "p"],
+      "correct_answer": "sh",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonics", "digraphs", "sh"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Phonics",
+      "learning_objective": "Identify digraph sounds"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Complete the sentence: The cat ___ on the mat.",
+      "options": ["sit", "sits", "sitting", "sat"],
+      "correct_answer": "sat",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "past-tense"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-01-English-Grammar",
+      "learning_objective": "Use correct past tense"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Which word is a noun?",
+      "options": ["run", "jump", "ball", "fast"],
+      "correct_answer": "ball",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "parts-of-speech", "noun"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Grammar",
+      "learning_objective": "Identify nouns"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "What is the plural of 'dog'?",
+      "options": ["dogs", "doges", "dogen", "dog"],
+      "correct_answer": "dogs",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "plurals"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "USA-01-English-Grammar",
+      "learning_objective": "Form regular plurals"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Which sentence is correct?",
+      "options": ["The cat run fast.", "The cat runs fast.", "The cat running fast.", "The cat runned fast."],
+      "correct_answer": "The cat runs fast.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "subject-verb-agreement"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-01-English-Grammar",
+      "learning_objective": "Use correct subject-verb agreement"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Write 3 sentences about your favorite animal. Use capital letters and full stops.",
+      "rubric": "Student writes 3 complete sentences with capital letters at the start and full stops at the end. Content about an animal.",
+      "correct_answer": "Three sentences about an animal with correct punctuation",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["writing", "sentences", "punctuation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "USA-01-English-Writing",
+      "learning_objective": "Write simple sentences with correct punctuation"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Read: 'The big red ball bounced high.' Circle the nouns and underline the verbs.",
+      "rubric": "Student identifies nouns: ball; verbs: bounced. May also identify 'The' as article, 'big' and 'red' as adjectives, 'high' as adverb.",
+      "correct_answer": "Nouns: ball; Verbs: bounced",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["grammar", "parts-of-speech", "identification"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "USA-01-English-Grammar",
+      "learning_objective": "Identify nouns and verbs in a sentence"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Writes 3 complete sentences",
+          "points": 4,
+          "keywords": ["sentences", "three", "complete"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Uses capital letters at start of sentences",
+          "points": 3,
+          "keywords": ["capital", "letters", "start"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Uses full stops at end of sentences",
+          "points": 3,
+          "keywords": ["full", "stops", "periods", "end"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Identifies 'ball' as noun",
+          "points": 5,
+          "keywords": ["ball", "noun"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Identifies 'bounced' as verb",
+          "points": 5,
+          "keywords": ["bounced", "verb"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

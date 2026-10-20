@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-05-science-energia-es-ero-1.0.0",
+    "name": "Energia és erő - Grade 05 Science",
+    "version": "1.0.0",
+    "description": "45-minute test on energia és erő for Grade 05 students. Covers: Munka, Energiafajták, Egyszerű gépek.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.277722+00:00",
+    "updated_at": "2026-10-20T13:20:17.277722+00:00",
+    "tags": [
+      "science",
+      "energia-és-erő",
+      "grade-05"
+    ],
+    "subject": "science",
+    "grade_level": "grade-05",
+    "license": "CC-BY-4.0",
+    "checksum": "0e6a50d95c5430415a2999b2905f48ec05dd85c441f765ea209d608ed96408c2",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Munka",
+      "Energiafajták",
+      "Egyszerű gépek"
+    ]
+  },
+  "exam": {
+    "title": "Grade 05 Science - Energia és erő",
+    "description": "Test on energia és erő including munka, energiafajták, egyszerű gépek",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[science] Energia és erő - Kérdés 1: Energiafajták",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Energiafajták"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[science] Energia és erő - Kérdés 2: Egyszerű gépek",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Egyszerű gépek"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[science] Energia és erő - Kérdés 3: Munka",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Munka"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[science] Energia és erő - Kérdés 4: Energiafajták",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Energiafajták"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[science] Energia és erő - Kérdés 5: Egyszerű gépek",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Egyszerű gépek"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[science] Energia és erő - Kérdés 6: Munka",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Munka"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[science] Energia és erő - Kérdés 7: Energiafajták",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Energiafajták"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[science] Energia és erő - Kérdés 8: Egyszerű gépek",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Egyszerű gépek"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[science] Energia és erő - Kérdés 9: Munka",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Munka"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[science] Energia és erő - Kérdés 10: Energiafajták",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "energia-és-erő"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-SCIE-Energia és erő",
+      "learning_objective": "Energiafajták"
+    }
+  ],
+  "rubrics": []
+}

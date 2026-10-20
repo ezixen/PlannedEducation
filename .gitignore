@@ -16,6 +16,9 @@ secrets/
 *.key
 credentials.json
 serviceAccountKey.json
+admin_recovery_codes.tmp
+*.tmp
+ADMIN_CREDENTIALS.txt
 
 # Databases
 *.db

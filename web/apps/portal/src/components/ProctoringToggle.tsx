@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
+import { useI18n } from '../contexts/I18nContext';
 
 export function ProctoringToggle() {
+  const { t } = useI18n();
   const [enabled, setEnabled] = useState(false);
   const [error, setError] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -30,7 +32,7 @@ export function ProctoringToggle() {
         setError('');
       } catch (err) {
         console.error(err);
-        setError('Camera/Microphone access denied. Cannot enable proctoring.');
+        setError(t('proctoring.access_denied'));
       }
     }
   };
@@ -38,13 +40,14 @@ export function ProctoringToggle() {
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
       <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0 0 1rem 0' }}>
-        Optional AI Proctoring
-        <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', backgroundColor: '#ef4444', color: '#fff', borderRadius: '12px' }}>GDPR Warning</span>
+        {t('proctoring.ai_proctoring')}
+        <span style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem', backgroundColor: '#ef4444', color: '#fff', borderRadius: '12px' }}>
+          {t('proctoring.gdpr_warning')}
+        </span>
       </h3>
       
       <p style={{ fontSize: '0.9rem', color: 'gray', marginBottom: '1rem' }}>
-        When enabled, this exam will use your webcam and microphone to track eye movement, flag if a second person enters the frame, and monitor background audio. 
-        <strong> This is optional and only recommended for remote, take-home exams.</strong>
+        <strong>{t('proctoring.optional_warning')}</strong>
       </p>
 
       {error && <div style={{ color: '#ef4444', marginBottom: '1rem' }}>{error}</div>}
@@ -63,7 +66,7 @@ export function ProctoringToggle() {
               fontWeight: 'bold'
             }}
           >
-            {enabled ? 'Disable Proctoring' : 'Enable Proctoring'}
+            {enabled ? t('proctoring.disable_btn') : t('proctoring.2')}
           </button>
         </div>
         
@@ -82,4 +85,3 @@ export function ProctoringToggle() {
     </div>
   );
 }
-

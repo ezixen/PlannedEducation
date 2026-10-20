@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "id": "uk-grade-07-english-grammar-1.0.0",
+    "name": "Year 7 English - Grammar and Writing",
+    "version": "1.0.0",
+    "description": "45-minute English test on grammar and writing for Year 7 (UK National Curriculum).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["english", "grammar", "writing", "year-7", "uk", "ks3"],
+    "subject": "english",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "uk-national-curriculum",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Use correct verb tenses",
+      "Apply subject-verb agreement",
+      "Use proper punctuation",
+      "Write coherent paragraphs"
+    ]
+  },
+  "exam": {
+    "title": "Year 7 English - Grammar and Writing",
+    "description": "Test on grammar, punctuation, and writing for Year 7",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Write clearly and use proper grammar.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Choose the correct verb form: 'She ____ to school every day.'",
+      "options": ["go", "goes", "going", "went"],
+      "correct_answer": "goes",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "present-tense", "third-person"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct present tense for third person singular"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Choose the correct past tense: 'Yesterday, I ____ to the park.'",
+      "options": ["go", "goes", "went", "going"],
+      "correct_answer": "went",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "past-tense", "irregular-verbs"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct past tense of irregular verbs"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Choose the correct form: 'If it ____ tomorrow, we will stay home.'",
+      "options": ["rain", "rains", "rained", "raining"],
+      "correct_answer": "rains",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "conditional", "first-conditional"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use first conditional correctly"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Which sentence uses the correct article?",
+      "options": ["She is a teacher.", "She is an teacher.", "She is the teacher.", "She is teacher."],
+      "correct_answer": "She is a teacher.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "articles"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct indefinite articles"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Choose the correct preposition: 'We will meet ____ 3 o'clock.'",
+      "options": ["in", "on", "at", "by"],
+      "correct_answer": "at",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "prepositions", "time"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct prepositions of time"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Which sentence uses the correct comparative form?",
+      "options": ["This book is more better than that one.", "This book is better than that one.", "This book is gooder than that one.", "This book is more good than that one."],
+      "correct_answer": "This book is better than that one.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "comparatives", "irregular-comparatives"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct comparative forms"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Choose the correct relative pronoun: 'The book ____ I read was interesting.'",
+      "options": ["who", "which", "where", "when"],
+      "correct_answer": "which",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammar", "relative-pronouns"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-07-English-Grammar",
+      "learning_objective": "Use correct relative pronouns"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Which sentence uses the correct punctuation?",
+      "options": ["Lets go to the park.", "Let's go to the park.", "Lets' go to the park.", "Let,s go to the park."],
+      "correct_answer": "Let's go to the park.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["punctuation", "apostrophe", "contractions"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-English-Punctuation",
+      "learning_objective": "Use apostrophes correctly in contractions"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Write a short paragraph (5-7 sentences) about your favorite hobby. Use at least 3 different tenses.",
+      "rubric": "Student writes 5-7 sentences about a hobby. Uses at least 3 different tenses (e.g., present, past, future). Correct grammar and vocabulary.",
+      "correct_answer": "Paragraph about hobby with 3+ tenses",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["writing", "composition", "tenses"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "UK-07-English-Writing",
+      "learning_objective": "Write coherent paragraph using multiple tenses"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Write a short email to a friend inviting them to your birthday party. Include date, time, and location.",
+      "rubric": "Student writes email format with greeting, body, closing. Includes date, time, location. Proper email format with greeting and closing.",
+      "correct_answer": "Email with greeting, body (date/time/location), closing",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["writing", "email", "format"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "UK-07-English-Writing",
+      "learning_objective": "Write informal email with proper format"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Writes 5-7 sentences",
+          "points": 3,
+          "keywords": ["sentences", "five", "seven"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Uses at least 3 different tenses",
+          "points": 4,
+          "keywords": ["tenses", "present", "past", "future"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Correct grammar and vocabulary",
+          "points": 3,
+          "keywords": ["grammar", "vocabulary", "correct"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Uses proper email format (greeting, body, closing)",
+          "points": 3,
+          "keywords": ["greeting", "body", "closing", "format"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Includes date, time, and location",
+          "points": 4,
+          "keywords": ["date", "time", "location", "details"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Proper email format with greeting and closing",
+          "points": 3,
+          "keywords": ["format", "email", "structure"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

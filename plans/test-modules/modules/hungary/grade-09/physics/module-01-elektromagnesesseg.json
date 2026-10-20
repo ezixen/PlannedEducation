@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-09-physics-elektromagnesesseg-1.0.0",
+    "name": "Elektromágnesesség - Grade 09 Physics",
+    "version": "1.0.0",
+    "description": "45-minute test on elektromágnesesség for Grade 09 students. Covers: Elektrostatikus, Áramkörök, Mágneses mező.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.348524+00:00",
+    "updated_at": "2026-10-20T13:20:17.348524+00:00",
+    "tags": [
+      "physics",
+      "elektromágnesesség",
+      "grade-09"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-09",
+    "license": "CC-BY-4.0",
+    "checksum": "5ee6d0031497447254213a61c03c9450eed377e19e3261164329832b20f8225a",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Elektrostatikus",
+      "Áramkörök",
+      "Mágneses mező"
+    ]
+  },
+  "exam": {
+    "title": "Grade 09 Physics - Elektromágnesesség",
+    "description": "Test on elektromágnesesség including elektrostatikus, áramkörök, mágneses mező",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Elektromágnesesség - Kérdés 1: Áramkörök",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Áramkörök"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Elektromágnesesség - Kérdés 2: Mágneses mező",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Mágneses mező"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[physics] Elektromágnesesség - Kérdés 3: Elektrostatikus",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Elektrostatikus"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[physics] Elektromágnesesség - Kérdés 4: Áramkörök",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Áramkörök"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Elektromágnesesség - Kérdés 5: Mágneses mező",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Mágneses mező"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[physics] Elektromágnesesség - Kérdés 6: Elektrostatikus",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Elektrostatikus"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[physics] Elektromágnesesség - Kérdés 7: Áramkörök",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Áramkörök"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[physics] Elektromágnesesség - Kérdés 8: Mágneses mező",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Mágneses mező"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[physics] Elektromágnesesség - Kérdés 9: Elektrostatikus",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Elektrostatikus"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[physics] Elektromágnesesség - Kérdés 10: Áramkörök",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "elektromágnesesség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-09-PHYS-Elektromágnesesség",
+      "learning_objective": "Áramkörök"
+    }
+  ],
+  "rubrics": []
+}

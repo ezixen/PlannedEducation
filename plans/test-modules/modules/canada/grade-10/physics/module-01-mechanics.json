@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "id": "canada-grade-10-physics-mechanics-1.0.0",
+    "name": "Grade 10 Physics - Mechanics and Forces",
+    "version": "1.0.0",
+    "description": "45-minute physics test on mechanics and forces for Grade 10 (Ontario Curriculum).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["physics", "mechanics", "forces", "newton-laws", "grade-10", "ontario", "canada"],
+    "subject": "physics",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "canada-ontario",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Apply Newton's laws of motion",
+      "Calculate force using F = ma",
+      "Distinguish between mass and weight",
+      "Solve problems involving pressure and density"
+    ]
+  },
+  "exam": {
+    "title": "Grade 10 Physics - Mechanics and Forces",
+    "description": "Test on mechanics including forces, Newton's laws, mass, weight, and pressure",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. For dynamic math questions, values are randomized per student. Show your working for calculation questions.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Which of Newton's laws states that an object at rest stays at rest unless acted upon by an unbalanced force?",
+      "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravitation"],
+      "correct_answer": "Newton's First Law",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["newton-laws", "first-law", "inertia"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CAN-10-Physics-Dynamics",
+      "learning_objective": "Identify Newton's First Law of Motion"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "The formula F = ma represents:",
+      "options": ["Force = mass × acceleration", "Force = mass ÷ acceleration", "Force = mass + acceleration", "Force = mass - acceleration"],
+      "correct_answer": "Force = mass × acceleration",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["newton-laws", "second-law", "formula"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-10-Physics-Dynamics",
+      "learning_objective": "Recall Newton's Second Law formula"
+    },
+    {
+      "id": "q-003",
+      "question_type": "dynamic_math",
+      "text": "A [rand:1-100] kg object accelerates at [rand:1-20] m/s². Calculate the force applied.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Student calculates F = mass × acceleration using the randomized values. Full credit for correct numerical answer with units (N).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "mass",
+          "type": "integer",
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "acceleration",
+          "type": "integer",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "tags": ["newton-laws", "calculation", "force"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "CAN-10-Physics-Dynamics",
+      "learning_objective": "Calculate force using F = ma with given values"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Mass is measured in:",
+      "options": ["Newtons", "Kilograms", "Meters", "Seconds"],
+      "correct_answer": "Kilograms",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["mass", "units"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-10-Physics-MassWeight",
+      "learning_objective": "Identify SI unit of mass"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Weight is measured in:",
+      "options": ["Kilograms", "Newtons", "Meters", "Seconds"],
+      "correct_answer": "Newtons",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["weight", "units"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-10-Physics-MassWeight",
+      "learning_objective": "Identify SI unit of weight"
+    },
+    {
+      "id": "q-006",
+      "question_type": "dynamic_math",
+      "text": "An object with mass [rand:1-50] kg is on Earth where gravitational field strength is 10 N/kg. Calculate its weight.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Student calculates W = m × g using randomized mass and g = 10 N/kg. Full credit for correct numerical answer with units (N).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "mass",
+          "type": "integer",
+          "min": 1,
+          "max": 50,
+          "step": 1
+        }
+      ],
+      "tags": ["weight", "calculation", "gravity"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "CAN-10-Physics-MassWeight",
+      "learning_objective": "Calculate weight using W = mg"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Pressure is defined as:",
+      "options": ["Force ÷ Area", "Force × Area", "Force + Area", "Force - Area"],
+      "correct_answer": "Force ÷ Area",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["pressure", "definition"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CAN-10-Physics-Pressure",
+      "learning_objective": "Recall definition of pressure"
+    },
+    {
+      "id": "q-008",
+      "question_type": "dynamic_math",
+      "text": "A force of [rand:10-100] N is applied over an area of [rand:1-10] m². Calculate the pressure.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Student calculates P = F ÷ A using randomized force and area values. Full credit for correct numerical answer with units (Pa or N/m²).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "force",
+          "type": "integer",
+          "min": 10,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "area",
+          "type": "integer",
+          "min": 1,
+          "max": 10,
+          "step": 1
+        }
+      ],
+      "tags": ["pressure", "calculation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "CAN-10-Physics-Pressure",
+      "learning_objective": "Calculate pressure using P = F ÷ A"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Explain the difference between mass and weight. Include how each is measured and whether they change when an object is taken to the Moon.",
+      "rubric": "Student explains: (1) Mass is amount of matter, measured in kg, stays the same everywhere. (2) Weight is force of gravity, measured in N, changes on Moon (1/6 of Earth). Includes correct units and clear distinction.",
+      "correct_answer": "Mass is amount of matter (kg, constant). Weight is force of gravity (N, varies with gravity).",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["mass", "weight", "difference", "moon"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "CAN-10-Physics-MassWeight",
+      "learning_objective": "Distinguish mass from weight and explain lunar differences"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "A car of mass [rand:500-2000] kg accelerates from rest to [rand:10-30] m/s in [rand:5-15] seconds. Calculate: (a) the acceleration, (b) the force required. Show all working.",
+      "rubric": "Student calculates: (a) a = (v - u) / t using randomized values, (b) F = m × a using mass and calculated acceleration. Full credit for correct formulas, substitutions, and answers with units.",
+      "correct_answer": "Variable answers based on randomized mass, final velocity, and time",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [
+        {
+          "name": "mass",
+          "type": "integer",
+          "min": 500,
+          "max": 2000,
+          "step": 100
+        },
+        {
+          "name": "final_velocity",
+          "type": "integer",
+          "min": 10,
+          "max": 30,
+          "step": 5
+        },
+        {
+          "name": "time",
+          "type": "integer",
+          "min": 5,
+          "max": 15,
+          "step": 1
+        }
+      ],
+      "tags": ["acceleration", "force", "calculation", "newton-laws"],
+      "difficulty": "hard",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "CAN-10-Physics-Dynamics",
+      "learning_objective": "Calculate acceleration and force in multi-step problem"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Defines mass as amount of matter, measured in kg",
+          "points": 3,
+          "keywords": ["mass", "matter", "kilogram", "kg"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Defines weight as gravitational force, measured in N",
+          "points": 3,
+          "keywords": ["weight", "force", "gravity", "newton", "N"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "States mass stays same on Moon, weight changes (1/6 of Earth)",
+          "points": 4,
+          "keywords": ["moon", "same", "changes", "1/6", "less"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Correctly calculates acceleration: a = (v - u) / t",
+          "points": 4,
+          "keywords": ["acceleration", "formula", "substitution", "m/s²"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Correctly calculates force: F = m × a",
+          "points": 4,
+          "keywords": ["force", "formula", "substitution", "N"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Correct units and significant figures",
+          "points": 2,
+          "keywords": ["m/s²", "N", "units"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

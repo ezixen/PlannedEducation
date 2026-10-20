@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useExam } from '../contexts/ExamContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface ChatMessage {
   id: number;
@@ -76,7 +77,7 @@ const FAQ_DATA: FAQCategory[] = [
       {
         id: 5,
         question: "How do I enable two-factor authentication?",
-        answer: "Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 10 recovery codes in case you lose your phone."
+        answer: "Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 5 recovery codes in case you lose your phone."
       },
       {
         id: 34,
@@ -256,6 +257,7 @@ const FAQ_DATA: FAQCategory[] = [
 ];
 
 export function FAQChatbot() {
+  const { t } = useI18n();
   const { isExamActive } = useExam();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -360,21 +362,21 @@ export function FAQChatbot() {
       <button 
         className="faq-chatbot-button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open FAQ Chatbot"
+        aria-label={t("faq.open_aria")}
       >
         <span className="faq-chatbot-icon">❓</span>
-        <span className="faq-chatbot-label">Help</span>
+        <span className="faq-chatbot-label">{t("faq.help_btn")}</span>
       </button>
 
       {/* Chat Window */}
       {isOpen && (
         <div className="faq-chatbot-window">
           <div className="faq-chatbot-header">
-            <h3>PlannedEducation Help</h3>
+            <h3>{t("faq.title")}</h3>
             <button 
               className="faq-chatbot-close"
               onClick={() => setIsOpen(false)}
-              aria-label="Close chat"
+              aria-label={t("faq.close_aria")}
             >
               ×
             </button>
@@ -401,7 +403,7 @@ export function FAQChatbot() {
                   <span className="typing-dot"></span>
                   <span className="typing-dot"></span>
                   <span className="typing-dot"></span>
-                  Typing...
+                  {t("faq.typing")}
                 </div>
               </div>
             )}
@@ -413,7 +415,7 @@ export function FAQChatbot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Type your question..."
+              placeholder={t("faq.placeholder")}
               className="faq-chatbot-input"
             />
             <button 
@@ -421,7 +423,7 @@ export function FAQChatbot() {
               disabled={!input.trim() || isTyping}
               className="faq-chatbot-send-button"
             >
-              Send
+              {t("faq.send")}
             </button>
           </div>
         </div>

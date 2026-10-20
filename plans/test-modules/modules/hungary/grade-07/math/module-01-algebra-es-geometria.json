@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-07-math-algebra-es-geometria-1.0.0",
+    "name": "Algebra és geometria - Grade 07 Math",
+    "version": "1.0.0",
+    "description": "45-minute test on algebra és geometria for Grade 07 students. Covers: Egyenletek, Síkidomok, Függvények.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.308822+00:00",
+    "updated_at": "2026-10-20T13:20:17.308822+00:00",
+    "tags": [
+      "math",
+      "algebra-és-geometria",
+      "grade-07"
+    ],
+    "subject": "math",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "45e76167080103e210e37a54665fa0fb347b791cd32a67df767c46f0a95d4fb0",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Egyenletek",
+      "Síkidomok",
+      "Függvények"
+    ]
+  },
+  "exam": {
+    "title": "Grade 07 Math - Algebra és geometria",
+    "description": "Test on algebra és geometria including egyenletek, síkidomok, függvények",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Algebra és geometria - Kérdés 1: Síkidomok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Síkidomok"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Algebra és geometria - Kérdés 2: Függvények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Algebra és geometria - Kérdés 3: Egyenletek",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Egyenletek"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[math] Algebra és geometria - Kérdés 4: Síkidomok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Síkidomok"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[math] Algebra és geometria - Kérdés 5: Függvények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[math] Algebra és geometria - Kérdés 6: Egyenletek",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Algebra és geometria témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Egyenletek"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[math] Algebra és geometria - Kérdés 7: Síkidomok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Algebra és geometria témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Síkidomok"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[math] Algebra és geometria - Kérdés 8: Függvények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Algebra és geometria témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Függvények"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[math] Algebra és geometria - Kérdés 9: Egyenletek",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Algebra és geometria témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Egyenletek"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[math] Algebra és geometria - Kérdés 10: Síkidomok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Algebra és geometria témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "algebra-és-geometria"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-07-MATH-Algebra és geometria",
+      "learning_objective": "Síkidomok"
+    }
+  ],
+  "rubrics": []
+}

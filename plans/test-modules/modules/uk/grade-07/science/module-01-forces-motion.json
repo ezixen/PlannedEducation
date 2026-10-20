@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "id": "uk-grade-07-science-forces-1.0.0",
+    "name": "Year 7 Science - Forces and Motion",
+    "version": "1.0.0",
+    "description": "45-minute science test on forces and motion for Year 7 (UK National Curriculum).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["science", "forces", "motion", "year-7", "uk", "ks3"],
+    "subject": "science",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "uk-national-curriculum",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Identify different types of forces",
+      "Calculate resultant force",
+      "Explain effects of forces on motion",
+      "Understand friction and its effects"
+    ]
+  },
+  "exam": {
+    "title": "Year 7 Science - Forces and Motion",
+    "description": "Test on forces, motion, friction, and Newton's laws for Year 7",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. For dynamic math questions, values are randomized per student.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Which of these is a contact force?",
+      "options": ["Gravity", "Magnetism", "Friction", "Electrostatic force"],
+      "correct_answer": "Friction",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["forces", "contact-force", "friction"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Identify contact forces"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Which force pulls objects towards the centre of the Earth?",
+      "options": ["Friction", "Magnetism", "Gravity", "Air resistance"],
+      "correct_answer": "Gravity",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["gravity", "forces"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Identify gravity as a force"
+    },
+    {
+      "id": "q-003",
+      "question_type": "dynamic_math",
+      "text": "Two forces act on an object: [rand:5-50] N to the right and [rand:1-30] N to the left. Calculate the resultant force.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Student calculates resultant force = larger force - smaller force, in direction of larger force.",
+      "points": 5,
+      "variables": [
+        {
+          "name": "force1",
+          "type": "integer",
+          "min": 5,
+          "max": 50,
+          "step": 1
+        },
+        {
+          "name": "force2",
+          "type": "integer",
+          "min": 1,
+          "max": 30,
+          "step": 1
+        }
+      ],
+      "tags": ["resultant-force", "calculation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Calculate resultant force"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Friction always acts:",
+      "options": ["In the direction of motion", "Opposite to the direction of motion", "Perpendicular to motion", "At 45 degrees to motion"],
+      "correct_answer": "Opposite to the direction of motion",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["friction", "direction"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Understand friction direction"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Which surface produces the most friction?",
+      "options": ["Ice", "Glass", "Sandpaper", "Polished wood"],
+      "correct_answer": "Sandpaper",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["friction", "surfaces"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Identify surfaces with high friction"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "If forces are balanced, the object:",
+      "options": ["Always moves", "Always accelerates", "Stays at rest or moves at constant speed", "Always changes direction"],
+      "correct_answer": "Stays at rest or moves at constant speed",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["balanced-forces", "motion"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Understand balanced forces"
+    },
+    {
+      "id": "q-007",
+      "question_type": "dynamic_math",
+      "text": "A [rand:1-100] kg object is pushed with a force of [rand:10-200] N. Calculate its acceleration.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Student calculates a = F ÷ m using randomized values.",
+      "points": 5,
+      "variables": [
+        {
+          "name": "mass",
+          "type": "integer",
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "force",
+          "type": "integer",
+          "min": 10,
+          "max": 200,
+          "step": 1
+        }
+      ],
+      "tags": ["acceleration", "calculation", "newton-laws"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Calculate acceleration using a = F ÷ m"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Which unit is used to measure force?",
+      "options": ["Kilograms", "Newtons", "Meters", "Seconds"],
+      "correct_answer": "Newtons",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["force", "units", "newtons"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Identify SI unit of force"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Explain how friction affects a moving car. Include both advantages and disadvantages of friction in this context.",
+      "rubric": "Student explains: (1) Friction between tyres and road allows car to move and stop (advantage), (2) Friction between moving parts causes wear and heat (disadvantage), (3) Air resistance affects fuel efficiency.",
+      "correct_answer": "Friction helps tyres grip road but causes wear and air resistance",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["friction", "car", "advantages", "disadvantages"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Explain friction effects in real-world context"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Describe an experiment to investigate how surface area affects friction. Include equipment, method, and what you would measure.",
+      "rubric": "Student describes: (1) Equipment: block, different surfaces, force meter, weights, (2) Method: pull block across surfaces, measure force, (3) Measure: force needed to move block, (4) Control variables: same block, same pulling speed.",
+      "correct_answer": "Experiment design with equipment, method, and measurements",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["friction", "experiment", "investigation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "UK-07-Science-Forces",
+      "learning_objective": "Design experiment to investigate friction"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Explains friction helps tyres grip road (advantage)",
+          "points": 4,
+          "keywords": ["tyres", "grip", "road", "advantage", "move", "stop"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Explains friction causes wear and heat (disadvantage)",
+          "points": 3,
+          "keywords": ["wear", "heat", "disadvantage", "moving-parts"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Mentions air resistance affects fuel efficiency",
+          "points": 3,
+          "keywords": ["air-resistance", "fuel", "efficiency"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Lists appropriate equipment (block, surfaces, force meter, weights)",
+          "points": 3,
+          "keywords": ["block", "surfaces", "force-meter", "weights", "equipment"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Describes method clearly (pull block, measure force)",
+          "points": 4,
+          "keywords": ["pull", "measure", "force", "method", "steps"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Identifies what to measure (force needed to move block)",
+          "points": 3,
+          "keywords": ["measure", "force", "move", "block"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

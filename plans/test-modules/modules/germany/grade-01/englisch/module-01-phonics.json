@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "id": "germany-grade-01-englisch-phonics-1.0.0",
+    "name": "Klasse 1 Englisch - Phonetik und Lesen",
+    "version": "1.0.0",
+    "description": "45-minütiger Englischtest zu Phonetik und Lesen für Klasse 1 (deutscher Bildungsplan).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["englisch", "phonetik", "lesen", "klasse-1", "deutschland"],
+    "subject": "englisch",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "deutschland-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Buchstabenlaute erkennen",
+      "Einfache Wörter lesen",
+      "Einfache Sätze verstehen"
+    ]
+  },
+  "exam": {
+    "title": "Klasse 1 Englisch - Phonetik und Lesen",
+    "description": "Test zu Phonetik, Lesen und grundlegendem Verständnis für Klasse 1",
+    "duration_minutes": 45,
+    "instructions": "Beantworten Sie alle Fragen. Kreuzen Sie die richtige Antwort an.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Welcher Buchstabe macht den 'a'-Laut in 'Katze'?",
+      "options": ["K", "a", "t", "z", "e"],
+      "correct_answer": "a",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonetik", "vokal-laute", "a-laut"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Vokallaute identifizieren"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Welches Wort beginnt mit dem 'b'-Laut?",
+      "options": ["Katze", "Ball", "Ratte", "Maus"],
+      "correct_answer": "Ball",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonetik", "anfangslaute", "b-laut"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Anfangskonsonanten identifizieren"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Welches Wort reimt sich auf 'Haus'?",
+      "options": ["Maus", "Baum", "Auto", "Tisch"],
+      "correct_answer": "Maus",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["reime", "phonetik"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Reimwörter identifizieren"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Welchen Laut macht 'sch' in 'Schule'?",
+      "options": ["s", "ch", "sch", "u"],
+      "correct_answer": "sch",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["phonetik", "digraphen", "sch"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Digraph-Laute identifizieren"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Vervollständigen Sie den Satz: Der Ball ____ auf dem Tisch.",
+      "options": ["liegen", "liegt", "liegend", "lag"],
+      "correct_answer": "liegt",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "praesens"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Korrektes Präsens verwenden"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Welches Wort ist ein Substantiv?",
+      "options": ["laufen", "springen", "Ball", "schnell"],
+      "correct_answer": "Ball",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "wortarten", "substantiv"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Substantive identifizieren"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Was ist der Plural von 'Hund'?",
+      "options": ["Hunde", "Hunds", "Hund", "Hunden"],
+      "correct_answer": "Hunde",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "plural"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Regelmäßige Plurale bilden"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Welcher Satz ist richtig?",
+      "options": ["Der Hund laufen schnell.", "Der Hund läuft schnell.", "Der Hund laufend schnell.", "Der Hund gelaufen schnell."],
+      "correct_answer": "Der Hund läuft schnell.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "subjekt-verb-kongruenz"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Korrekte Subjekt-Verb-Kongruenz verwenden"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Schreibe 3 Sätze über dein Lieblingstier. Benutze Großbuchstaben und Punkte.",
+      "rubric": "Schülerin/Schüler schreibt 3 vollständige Sätze mit Großbuchstaben am Anfang und Punkten am Ende. Inhalt über ein Tier.",
+      "correct_answer": "Drei Sätze über ein Tier mit korrekter Zeichensetzung",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["schreiben", "sätze", "zeichensetzung"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-01-Englisch-Schreiben",
+      "learning_objective": "Einfache Sätze mit korrekter Zeichensetzung schreiben"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Lies: 'Der große rote Ball hüpfte hoch.' Kreise die Substantive ein und unterstreiche die Verben.",
+      "rubric": "Schülerin/Schüler identifiziert Substantive: Ball; Verben: hüpfte. Kann auch 'Der' als Artikel, 'groß' und 'rot' als Adjektive, 'hoch' als Adverb identifizieren.",
+      "correct_answer": "Substantive: Ball; Verben: hüpfte",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["grammatik", "wortarten", "identifikation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Substantive und Verben im Satz identifizieren"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Schreibt 3 vollständige Sätze",
+          "points": 4,
+          "keywords": ["sätze", "drei", "vollständig"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Verwendet Großbuchstaben am Satzanfang",
+          "points": 3,
+          "keywords": ["großbuchstaben", "anfang"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Verwendet Punkte am Satzende",
+          "points": 3,
+          "keywords": ["punkte", "ende"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Identifiziert 'Ball' als Substantiv",
+          "points": 5,
+          "keywords": ["ball", "substantiv"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Identifiziert 'rollte' als Verb",
+          "points": 5,
+          "keywords": ["rollte", "verb"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

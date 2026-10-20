@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "id": "germany-grade-07-science-forces-1.0.0",
+    "name": "Klasse 7 Naturwissenschaften - Kräfte und Bewegung",
+    "version": "1.0.0",
+    "description": "45-minütiger Naturwissenschaftstest zu Kräften und Bewegung für Klasse 7 (deutscher Bildungsplan).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["naturwissenschaften", "kraefte", "bewegung", "klasse-7", "deutschland"],
+    "subject": "science",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "deutschland-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Verschiedene Arten von Kräften identifizieren",
+      "Resultierende Kraft berechnen",
+      "Auswirkungen von Kräften auf Bewegung erklären",
+      "Reibung und ihre Auswirkungen verstehen"
+    ]
+  },
+  "exam": {
+    "title": "Klasse 7 Naturwissenschaften - Kräfte und Bewegung",
+    "description": "Test zu Kräften, Bewegung, Reibung und Newtonschen Gesetzen für Klasse 7",
+    "duration_minutes": 45,
+    "instructions": "Beantworten Sie alle Fragen. Bei dynamischen Matheaufgaben sind die Werte pro Schüler randomisiert.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Welche der folgenden Kräfte ist eine Berührungskraft?",
+      "options": ["Schwerkraft", "Magnetismus", "Reibung", "Elektrostatische Kraft"],
+      "correct_answer": "Reibung",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["kraefte", "beruehrungskraft", "reibung"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Berührungskräfte identifizieren"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Welche Kraft zieht Gegenstände zum Erdmittelpunkt?",
+      "options": ["Reibung", "Magnetismus", "Schwerkraft", "Luftwiderstand"],
+      "correct_answer": "Schwerkraft",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["schwerkraft", "kraefte"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Schwerkraft als Kraft identifizieren"
+    },
+    {
+      "id": "q-003",
+      "question_type": "dynamic_math",
+      "text": "Zwei Kräfte wirken auf einen Gegenstand: [rand:5-50] N nach rechts und [rand:1-30] N nach links. Berechnen Sie die resultierende Kraft.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Schülerin/Schüler berechnet resultierende Kraft = größere Kraft - kleinere Kraft, in Richtung der größeren Kraft.",
+      "points": 5,
+      "variables": [
+        {
+          "name": "kraft1",
+          "type": "integer",
+          "min": 5,
+          "max": 50,
+          "step": 1
+        },
+        {
+          "name": "kraft2",
+          "type": "integer",
+          "min": 1,
+          "max": 30,
+          "step": 1
+        }
+      ],
+      "tags": ["resultierende-kraft", "berechnung"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Resultierende Kraft berechnen"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Reibung wirkt immer:",
+      "options": ["In Bewegungsrichtung", "Entgegen der Bewegungsrichtung", "Senkrecht zur Bewegung", "Im 45-Grad-Winkel zur Bewegung"],
+      "correct_answer": "Entgegen der Bewegungsrichtung",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["reibung", "richtung"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Richtung der Reibungskraft verstehen"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Welche Oberfläche erzeugt die meiste Reibung?",
+      "options": ["Eis", "Glas", "Schmirgelpapier", "Poliertes Holz"],
+      "correct_answer": "Schmirgelpapier",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["reibung", "oberflaechen"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Oberflächen mit hoher Reibung identifizieren"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Wenn Kräfte im Gleichgewicht sind, dann:",
+      "options": ["Bewegt sich der Körper immer", "Beschleunigt der Körper immer", "Bleibt der Körper in Ruhe oder bewegt sich gleichförmig", "Ändert der Körper immer die Richtung"],
+      "correct_answer": "Bleibt der Körper in Ruhe oder bewegt sich gleichförmig",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["gleichgewicht", "kraefte", "bewegung"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Auswirkungen ausgeglichener Kräfte verstehen"
+    },
+    {
+      "id": "q-007",
+      "question_type": "dynamic_math",
+      "text": "Ein [rand:1-100] kg schwerer Gegenstand wird mit einer Kraft von [rand:10-200] N geschoben. Berechnen Sie die Beschleunigung.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Schülerin/Schüler berechnet a = F ÷ m mit den randomisierten Werten.",
+      "points": 5,
+      "variables": [
+        {
+          "name": "masse",
+          "type": "integer",
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "kraft",
+          "type": "integer",
+          "min": 10,
+          "max": 200,
+          "step": 1
+        }
+      ],
+      "tags": ["beschleunigung", "berechnung", "newton"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Beschleunigung berechnen mit a = F ÷ m"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "In welcher Einheit wird Kraft gemessen?",
+      "options": ["Kilogramm", "Newton", "Meter", "Sekunde"],
+      "correct_answer": "Newton",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["kraft", "einheiten", "newton"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "SI-Einheit der Kraft identifizieren"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Erklären Sie, wie Reibung ein fahrendes Auto beeinflusst. Nennen Sie sowohl Vorteile als auch Nachteile der Reibung in diesem Zusammenhang.",
+      "rubric": "Schülerin/Schüler erklärt: (1) Reibung zwischen Reifen und Straße ermöglicht Fahren und Bremsen (Vorteil), (2) Reibung zwischen beweglichen Teilen verursacht Verschleiß und Wärme (Nachteil), (3) Luftwiderstand beeinflusst Kraftstoffverbrauch.",
+      "correct_answer": "Reibung hilft Reifen auf Straße zu greifen, verursacht aber Verschleiß und Luftwiderstand",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["reibung", "auto", "vorteile", "nachteile"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Auswirkungen von Reibung im Alltag erklären"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Beschreiben Sie ein Experiment, um zu untersuchen, wie die Oberfläche die Reibung beeinflusst. Nennen Sie Geräte, Vorgehen und was Sie messen würden.",
+      "rubric": "Schülerin/Schüler beschreibt: (1) Geräte: Block, verschiedene Oberflächen, Kraftmesser, Gewichte, (2) Vorgehen: Block über Oberflächen ziehen, Kraft messen, (3) Messen: Kraft zum Bewegen des Blocks, (4) Kontrollvariablen: gleicher Block, gleiche Zuggeschwindigkeit.",
+      "correct_answer": "Experimentdesign mit Geräten, Vorgehen und Messungen",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["reibung", "experiment", "untersuchung"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
+      "learning_objective": "Experiment zur Reibungsuntersuchung planen"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Erklärt, dass Reibung Reifen auf Straße greifen lässt (Vorteil)",
+          "points": 4,
+          "keywords": ["reifen", "greifen", "straße", "vorteil", "fahren", "bremsen"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Erklärt, dass Reibung Verschleiß und Wärme verursacht (Nachteil)",
+          "points": 3,
+          "keywords": ["verschleiß", "wärme", "nachteil", "bewegliche-teile"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Erwähnt, dass Luftwiderstand Kraftstoffverbrauch beeinflusst",
+          "points": 3,
+          "keywords": ["luftwiderstand", "kraftstoff", "verbrauch"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Listet geeignete Geräte auf (Block, Oberflächen, Kraftmesser, Gewichte)",
+          "points": 3,
+          "keywords": ["block", "oberflächen", "kraftmesser", "gewichte", "geräte"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Beschreibt Vorgehen klar (Block ziehen, Kraft messen)",
+          "points": 4,
+          "keywords": ["ziehen", "messen", "kraft", "vorgehen", "schritte"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Identifiziert was gemessen wird (Kraft zum Bewegen des Blocks)",
+          "points": 3,
+          "keywords": ["messen", "kraft", "bewegen", "block"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

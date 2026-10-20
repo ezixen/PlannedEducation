@@ -569,20 +569,23 @@ if ($useDocker) {
         }
     }
 
-    # Setup Python Virtual Environment in $InstallDir\.venv
+    # Setup Python Virtual Environment in $InstallDir\.venv or use verified C:\.venv
     $localVenvDir = Join-Path $InstallDir ".venv"
     $localVenvPython = Join-Path $localVenvDir "Scripts\python.exe"
-    if (-not (Test-Path $localVenvPython)) {
+    if (Test-Path "C:\.venv\Scripts\python.exe") {
+        Write-Info "Using verified Python environment at C:\.venv..."
+        $pythonExe = "C:\.venv\Scripts\python.exe"
+    } elseif (-not (Test-Path $localVenvPython)) {
         Write-Info "Creating Python virtual environment at $localVenvDir..."
         python -m venv $localVenvDir
+        $pythonExe = $localVenvPython
+        Write-Info "Verifying Python dependencies..."
+        & $pythonExe -m pip install -q -r (Join-Path $InstallDir "src\requirements.txt")
+        Write-Success "Python dependencies installed"
     } else {
         Write-Info "Using existing Python virtual environment at $localVenvDir..."
+        $pythonExe = $localVenvPython
     }
-    $pythonExe = $localVenvPython
-
-    Write-Info "Verifying Python dependencies..."
-    & $pythonExe -m pip install -q -r (Join-Path $InstallDir "src\requirements.txt")
-    Write-Success "Python dependencies installed"
 
     # Initialize Database Tables
     Write-Info "Initializing database tables..."
@@ -648,7 +651,10 @@ if (Test-Path `$depCfg) {
 
 Write-Host "1. Starting Backend API on port `$apiPort..." -ForegroundColor Green
 `$pythonExe = Join-Path `$InstallDir ".venv\Scripts\python.exe"
-if (-not (Test-Path `$pythonExe)) { `$pythonExe = "python.exe" }
+if (-not (Test-Path `$pythonExe)) {
+    if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
+    else { `$pythonExe = "python.exe" }
+}
 `$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList "-m uvicorn plannededucation.api.main:app --env-file `"`$InstallDir\.env`" --host 0.0.0.0 --port `$apiPort" -WorkingDirectory `$InstallDir -PassThru
 
 Write-Host "2. Starting Frontend Portal on port `$frontendPort..." -ForegroundColor Green
@@ -722,7 +728,10 @@ if (Test-Path `$depCfg) {
 Write-Host "Starting PlannedEducation Backend on port `$apiPort..." -ForegroundColor Green
 Write-Host "Press Ctrl+C to stop." -ForegroundColor Yellow
 `$pythonExe = Join-Path `$InstallDir ".venv\Scripts\python.exe"
-if (-not (Test-Path `$pythonExe)) { `$pythonExe = "python.exe" }
+if (-not (Test-Path `$pythonExe)) {
+    if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
+    else { `$pythonExe = "python.exe" }
+}
 & `$pythonExe -m uvicorn plannededucation.api.main:app --env-file "`$InstallDir\.env" --host 0.0.0.0 --port `$apiPort
 "@
     Set-Content -Path $startBackendPs1 -Value $backendPs1Content -Encoding UTF8
@@ -1113,11 +1122,12 @@ if (-not $useDocker) {
         } catch {
             Write-Warning "Could not copy to clipboard. Saving to $credFile instead."
             [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
-            Write-Success "Superadmin account ready: $AdminEmail (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
+            Write-Info "Saved credentials to ADMIN_CREDENTIALS.txt with emergency recovery codes."
         }
     }
 
     Write-Success "Superadmin account ready: $AdminEmail"
+}
 
 # Step 9: Run Verification Tests
 Write-Header "Step 9: Running Verification Tests"

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 import { ChatGptPanel } from './ChatGptPanel';
 
 export function AIKeySettings() {
+  const { t } = useI18n();
   const { user } = useAuth();
   const { success: showSuccess, error: showError } = useToast();
 
@@ -72,9 +74,9 @@ export function AIKeySettings() {
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-      <h3>AI Provider Settings</h3>
+      <h3>{t('ai_keys.1')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        Configure your AI provider for automated grading, or sign in with your ChatGPT account directly below.
+        {t('ai_keys.2')}
       </p>
 
       {user?.role === 'teacher' && (
@@ -85,44 +87,44 @@ export function AIKeySettings() {
 
       <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
         <label>
-          AI Provider
+          {t('ai_keys.3')}
           <select
             value={provider}
             onChange={e => setProvider(e.target.value)}
             style={inputStyle}
           >
-            <option value="chatgpt">ChatGPT Account (Device Sign-In — No API Key)</option>
-            <option value="gemini">Google Gemini</option>
-            <option value="openrouter">OpenRouter</option>
-            <option value="ollama">Ollama (Local)</option>
-            <option value="openai">OpenAI (API Key)</option>
+            <option value="chatgpt">{t('ai_keys.15')}</option>
+            <option value="gemini">{t('ai_keys.11')}</option>
+            <option value="openrouter">{t('ai_keys.12')}</option>
+            <option value="ollama">{t('ai_keys.13')}</option>
+            <option value="openai">{t('ai_keys.14')}</option>
           </select>
         </label>
 
         <label>
-          Model Name
+          {t('ai_keys.4')}
           <input
             type="text"
             value={modelName}
             onChange={e => setModelName(e.target.value)}
-            placeholder="e.g., gemini-2.5-flash"
+            placeholder={t("ai_keys.4")}
             style={inputStyle}
           />
         </label>
 
         <label>
-          Base URL (optional)
+          {t('ai_keys.6')}
           <input
             type="text"
             value={baseUrl}
             onChange={e => setBaseUrl(e.target.value)}
-            placeholder="e.g., http://localhost:11434/v1 for Ollama"
+            placeholder={t("ai_keys.6")}
             style={inputStyle}
           />
         </label>
 
         <label>
-          API Key {hasKey ? '(set)' : '(not set)'}
+          {t('ai_keys.5')} {hasKey ? '(set)' : '(not set)'}
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem' }}>
             <input
               type={showKey ? 'text' : 'password'}

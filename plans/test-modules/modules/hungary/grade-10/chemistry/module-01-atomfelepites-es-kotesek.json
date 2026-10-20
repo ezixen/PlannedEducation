@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-10-chemistry-atomfelepites-es-kotesek-1.0.0",
+    "name": "Atomfelépítés és kötések - Grade 10 Chemistry",
+    "version": "1.0.0",
+    "description": "45-minute test on atomfelépítés és kötések for Grade 10 students. Covers: Kvantummechanika, Kötéselmélet, Reakciókinetika.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.367254+00:00",
+    "updated_at": "2026-10-20T13:20:17.367254+00:00",
+    "tags": [
+      "chemistry",
+      "atomfelépítés-és-kötések",
+      "grade-10"
+    ],
+    "subject": "chemistry",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "3a3a64a50a6981369cb949b6ecd6263fd653aa675450f9d8050ef76b228a580c",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Kvantummechanika",
+      "Kötéselmélet",
+      "Reakciókinetika"
+    ]
+  },
+  "exam": {
+    "title": "Grade 10 Chemistry - Atomfelépítés és kötések",
+    "description": "Test on atomfelépítés és kötések including kvantummechanika, kötéselmélet, reakciókinetika",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 1: Kötéselmélet",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kötéselmélet"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 2: Reakciókinetika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Reakciókinetika"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 3: Kvantummechanika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kvantummechanika"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 4: Kötéselmélet",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kötéselmélet"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 5: Reakciókinetika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Reakciókinetika"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 6: Kvantummechanika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Atomfelépítés és kötések témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kvantummechanika"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 7: Kötéselmélet",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Atomfelépítés és kötések témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kötéselmélet"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 8: Reakciókinetika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Atomfelépítés és kötések témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Reakciókinetika"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 9: Kvantummechanika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Atomfelépítés és kötések témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kvantummechanika"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[chemistry] Atomfelépítés és kötések - Kérdés 10: Kötéselmélet",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Atomfelépítés és kötések témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "atomfelépítés-és-kötések"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-CHEM-Atomfelépítés és köt",
+      "learning_objective": "Kötéselmélet"
+    }
+  ],
+  "rubrics": []
+}

@@ -45,7 +45,7 @@ PlannedEducation includes a native automated backup service:
 Email is 100% optional. If unconfigured, PlannedEducation operates in self-contained offline mode and logs OTP codes safely. If you wish to enable outgoing email, configure either **Brevo (Sendinblue)** with `BREVO_API_KEY` (free tier: 300 emails/day) or your **School / Campus SMTP Server** (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`) in `.env`.
 
 ### How do I enable two-factor authentication?
-Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 10 recovery codes in case you lose your phone. If you ever lose your phone and recovery codes, a school administrator can reset your 2FA from the Admin Panel.
+Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 5 recovery codes in case you lose your phone. If you ever lose your phone and recovery codes, a school administrator can reset your 2FA from the Admin Panel.
 
 ### What are Passkeys and how do I use them?
 Passkeys are a passwordless authentication method using biometrics or device PIN. You can set them up in Settings > Passkeys by registering your device's biometric authentication. Passkeys sync across devices via iCloud Keychain or Google Password Manager.

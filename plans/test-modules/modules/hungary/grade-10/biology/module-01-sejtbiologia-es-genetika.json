@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-10-biology-sejtbiologia-es-genetika-1.0.0",
+    "name": "Sejtbiológia és genetika - Grade 10 Biology",
+    "version": "1.0.0",
+    "description": "45-minute test on sejtbiológia és genetika for Grade 10 students. Covers: Sejtciklus, Mendel-törvények, Génterápia.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.365106+00:00",
+    "updated_at": "2026-10-20T13:20:17.365106+00:00",
+    "tags": [
+      "biology",
+      "sejtbiológia-és-genetika",
+      "grade-10"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "81e91c52e76e56f9073ecdc3a5ee918dcf27e1434259bd87e03145527dd44098",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Sejtciklus",
+      "Mendel-törvények",
+      "Génterápia"
+    ]
+  },
+  "exam": {
+    "title": "Grade 10 Biology - Sejtbiológia és genetika",
+    "description": "Test on sejtbiológia és genetika including sejtciklus, mendel-törvények, génterápia",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Mendel-törvények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Mendel-törvények"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Génterápia",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Génterápia"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Sejtciklus",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Sejtciklus"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Mendel-törvények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Mendel-törvények"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Génterápia",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Génterápia"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 6: Sejtciklus",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Sejtciklus"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 7: Mendel-törvények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Mendel-törvények"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 8: Génterápia",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Génterápia"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 9: Sejtciklus",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Sejtciklus"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 10: Mendel-törvények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-BIOL-Sejtbiológia és gene",
+      "learning_objective": "Mendel-törvények"
+    }
+  ],
+  "rubrics": []
+}

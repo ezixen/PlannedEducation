@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-08-physics-hotan-es-hullamok-1.0.0",
+    "name": "Hőtan és hullámok - Grade 08 Physics",
+    "version": "1.0.0",
+    "description": "45-minute test on hőtan és hullámok for Grade 08 students. Covers: Hőenergia, Hang, Fény.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.321774+00:00",
+    "updated_at": "2026-10-20T13:20:17.321774+00:00",
+    "tags": [
+      "physics",
+      "hőtan-és-hullámok",
+      "grade-08"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "ef6798e61c46998e2297147e32bbe8a28c4581411fd9a1fc7bfd278f028bf046",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Hőenergia",
+      "Hang",
+      "Fény"
+    ]
+  },
+  "exam": {
+    "title": "Grade 08 Physics - Hőtan és hullámok",
+    "description": "Test on hőtan és hullámok including hőenergia, hang, fény",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hőtan és hullámok - Kérdés 1: Hang",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hang"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hőtan és hullámok - Kérdés 2: Fény",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Fény"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hőtan és hullámok - Kérdés 3: Hőenergia",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hőenergia"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hőtan és hullámok - Kérdés 4: Hang",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hang"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hőtan és hullámok - Kérdés 5: Fény",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Fény"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[physics] Hőtan és hullámok - Kérdés 6: Hőenergia",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hőtan és hullámok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hőenergia"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[physics] Hőtan és hullámok - Kérdés 7: Hang",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hőtan és hullámok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hang"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[physics] Hőtan és hullámok - Kérdés 8: Fény",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hőtan és hullámok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Fény"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[physics] Hőtan és hullámok - Kérdés 9: Hőenergia",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hőtan és hullámok témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hőenergia"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[physics] Hőtan és hullámok - Kérdés 10: Hang",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hőtan és hullámok témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hőtan-és-hullámok"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-PHYS-Hőtan és hullámok",
+      "learning_objective": "Hang"
+    }
+  ],
+  "rubrics": []
+}

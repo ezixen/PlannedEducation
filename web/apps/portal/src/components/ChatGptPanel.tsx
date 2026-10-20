@@ -8,6 +8,7 @@ import {
   useChatGptSession,
   type ChatGptModelOption,
 } from '../contexts/ChatGptSessionContext';
+import { useI18n } from '../contexts/I18nContext';
 
 export interface ChatGptPanelProps {
   compact?: boolean;
@@ -22,6 +23,7 @@ export function ChatGptPanel({
   quickActionLabel,
   onBuildQuickPrompt,
 }: ChatGptPanelProps) {
+  const { t } = useI18n();
   const {
     connected,
     accountId,
@@ -135,7 +137,7 @@ export function ChatGptPanel({
       >
         <div>
           <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>ChatGPT Teacher Assistant</span>
+            <span>{t('chatgpt.title')}</span>
             <span
               style={{
                 fontSize: '0.75rem',
@@ -146,13 +148,12 @@ export function ChatGptPanel({
                 fontWeight: 600,
               }}
             >
-              {connected ? 'Connected' : 'Not Connected'}
+              {connected ? t('chatgpt.connected') : t('chatgpt.not_connected')}
             </span>
           </h3>
           {!compact && (
             <p style={{ margin: '0.35rem 0 0 0', fontSize: '0.9rem', color: 'var(--text-muted, gray)' }}>
-              Sign in directly with your existing ChatGPT account (via OpenAI Device Code) to grade anonymized
-              submissions, draft questions, and chat inside PlannedEducation — no API key required.
+              {t('chatgpt.subtitle')}
             </p>
           )}
         </div>
@@ -164,7 +165,7 @@ export function ChatGptPanel({
               disabled={loading || history.length === 0}
               style={buttonSecondary}
             >
-              New Session / Clear
+              {t('chatgpt.new_session')}
             </button>
             <button
               type="button"
@@ -172,7 +173,7 @@ export function ChatGptPanel({
               disabled={loading}
               style={{ ...buttonSecondary, color: '#ef4444', borderColor: '#ef4444' }}
             >
-              Disconnect ChatGPT
+              {t('chatgpt.disconnect')}
             </button>
           </div>
         )}
@@ -206,7 +207,7 @@ export function ChatGptPanel({
               fontWeight: 700,
             }}
           >
-            Dismiss
+            {t('chatgpt.dismiss')}
           </button>
         </div>
       )}
@@ -214,9 +215,7 @@ export function ChatGptPanel({
       {!connected ? (
         <div>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted, gray)', margin: '0 0 0.75rem 0' }}>
-            In your ChatGPT Security Settings, make sure{' '}
-            <strong>&ldquo;Enable device code authentication for Codex&rdquo;</strong> is turned on, then click{' '}
-            <strong>Sign in with ChatGPT</strong> below.
+            {t('chatgpt.setup_notice')}
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <button
@@ -228,7 +227,7 @@ export function ChatGptPanel({
                 opacity: loading || Boolean(userCode) ? 0.7 : 1,
               }}
             >
-              {userCode ? 'Sign-in in progress…' : 'Sign in with ChatGPT'}
+              {userCode ? t('chatgpt.signing_in') : t('chatgpt.sign_in')}
             </button>
           </div>
 
@@ -246,9 +245,9 @@ export function ChatGptPanel({
                 backgroundColor: 'rgba(16, 185, 129, 0.08)',
               }}
             >
-              <p style={{ margin: '0 0 0.35rem 0', fontWeight: 700 }}>Your ChatGPT Device Code</p>
+              <p style={{ margin: '0 0 0.35rem 0', fontWeight: 700 }}>{t('chatgpt.device_code_title')}</p>
               <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.9rem', color: 'var(--text-muted, gray)' }}>
-                Copy this code, open the ChatGPT device page, paste it there, and return here.
+                {t('chatgpt.device_code_instructions')}
               </p>
               <p
                 data-testid="chatgpt-user-code"
@@ -265,7 +264,7 @@ export function ChatGptPanel({
               </p>
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <button type="button" onClick={() => void copyUserCode()} style={buttonPrimary}>
-                  {codeCopied ? 'Copied!' : 'Copy Code'}
+                  {codeCopied ? t('chatgpt.copied') : t('chatgpt.copy_code')}
                 </button>
                 <button
                   type="button"
@@ -273,18 +272,18 @@ export function ChatGptPanel({
                   disabled={!verificationUri}
                   style={buttonSecondary}
                 >
-                  Open ChatGPT Device Page
+                  {t('chatgpt.open_device_page')}
                 </button>
               </div>
               {loginId && (
                 <p style={{ margin: '0.75rem 0 0 0', fontSize: '0.85rem', color: 'var(--text-muted, gray)' }}>
-                  Waiting for ChatGPT sign-in… Keep this page open after pasting your code.
+                  {t('chatgpt.waiting')}
                 </p>
               )}
             </div>
           ) : showDeviceLogin && loading ? (
             <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', color: 'var(--text-muted, gray)' }}>
-              Requesting device code from OpenAI…
+              {t('chatgpt.requesting_code')}
             </p>
           ) : null}
         </div>
@@ -304,9 +303,9 @@ export function ChatGptPanel({
             }}
           >
             <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-              Model
+              {t('chatgpt.model_label')}
               <select
-                aria-label="Model"
+                aria-label={t('chatgpt.model_label')}
                 value={prefs.model || options?.default_model || ''}
                 disabled={loading || !options?.models.length}
                 onChange={(e) => {
@@ -331,9 +330,9 @@ export function ChatGptPanel({
             </label>
 
             <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-              Thinking Effort
+              {t('chatgpt.thinking_effort_label')}
               <select
-                aria-label="Thinking Effort"
+                aria-label={t('chatgpt.thinking_effort_label')}
                 value={prefs.reasoningEffort}
                 disabled={loading}
                 onChange={(e) => updatePrefs({ reasoningEffort: e.target.value })}
@@ -348,9 +347,9 @@ export function ChatGptPanel({
             </label>
 
             <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-              Answer Length
+              {t('chatgpt.answer_length_label')}
               <select
-                aria-label="Answer Length"
+                aria-label={t('chatgpt.answer_length_label')}
                 value={prefs.verbosity}
                 disabled={loading}
                 onChange={(e) => updatePrefs({ verbosity: e.target.value })}
@@ -378,10 +377,10 @@ export function ChatGptPanel({
             }}
           >
             <span>
-              {accountId ? `Account: ${accountId.slice(0, 12)}… • ` : ''}
+              {accountId ? t('chatgpt.account', { id: accountId.slice(0, 12) }) : ''}
               {selectedModel?.context_window
-                ? `Context window: ${Math.round(selectedModel.context_window / 1000)}k tokens`
-                : 'Ready to chat'}
+                ? t('chatgpt.context_window', { k: String(Math.round(selectedModel.context_window / 1000)) })
+                : t('chatgpt.ready_to_chat')}
             </span>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
               {quickActionLabel && onBuildQuickPrompt && (
@@ -395,7 +394,7 @@ export function ChatGptPanel({
                 disabled={loading}
                 style={buttonSecondary}
               >
-                Refresh Models
+                {t('chatgpt.refresh_models')}
               </button>
             </div>
           </div>
@@ -418,8 +417,7 @@ export function ChatGptPanel({
           >
             {history.length === 0 ? (
               <p style={{ margin: 0, color: 'var(--text-muted, gray)', fontSize: '0.9rem' }}>
-                Ask ChatGPT anything you type here — grade anonymized answers, summarize class mistakes, or draft
-                new exam questions. Only what you send here is shared with ChatGPT.
+                {t('chatgpt.empty_history')}
               </p>
             ) : (
               history.map((line, index) => (
@@ -438,7 +436,7 @@ export function ChatGptPanel({
                   }}
                 >
                   <strong style={{ color: line.role === 'assistant' ? '#3b82f6' : '#10b981' }}>
-                    {line.role === 'assistant' ? 'ChatGPT' : 'You'}:{' '}
+                    {line.role === 'assistant' ? 'ChatGPT' : t('chatgpt.you')}:{' '}
                   </strong>
                   <span>{line.content}</span>
                 </div>
@@ -451,7 +449,7 @@ export function ChatGptPanel({
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask ChatGPT to grade anonymized responses, explain rubrics, or draft exam questions…"
+              placeholder={t('chatgpt.placeholder')}
               rows={compact ? 2 : 3}
               required
               disabled={loading}
@@ -477,7 +475,7 @@ export function ChatGptPanel({
                 opacity: loading || !input.trim() ? 0.65 : 1,
               }}
             >
-              {loading ? 'Sending…' : 'Send to ChatGPT'}
+              {loading ? t('chatgpt.sending') : t('chatgpt.send')}
             </button>
           </form>
         </div>
@@ -485,4 +483,3 @@ export function ChatGptPanel({
     </div>
   );
 }
-

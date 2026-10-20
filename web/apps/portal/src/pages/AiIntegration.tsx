@@ -1,60 +1,61 @@
 import { API_URL } from '../api';
 import { ChatGptPanel } from '../components/ChatGptPanel';
+import { useI18n } from '../contexts/I18nContext';
 
 export function AiIntegration() {
+  const { t } = useI18n();
   const systemPrompt = `You are an expert, objective teacher and AI grader working for the Planned Education platform. Your job is to assist teachers in grading exams, grouping mistakes, and transcribing handwritten math or audio feedback. You must be strictly objective, unbiased, and format your output cleanly. You are processing anonymized data to protect student privacy.`;
 
   return (
     <div>
-      <h1>External AI Integrations &amp; Embedded ChatGPT</h1>
+      <h1>{t('ai_keys.16')}</h1>
       <p style={{ color: 'gray', marginBottom: '1.5rem' }}>
-        Planned Education does not process AI natively to ensure 100% data sovereignty.
-        Teachers can connect their own ChatGPT account directly below (via OpenAI Device-Code Sign-In, no API key required) or connect an external LLM to our anonymized API endpoint.
+        {t('ai_keys.17')}
       </p>
 
       <ChatGptPanel defaultInstructions={systemPrompt} />
 
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
-        <h3>Your Anonymized API Endpoint</h3>
-        <p>Use this endpoint to pull student submissions. <strong>All names, emails, and IDs are automatically stripped.</strong></p>
+        <h3>{t('ai_keys.18')}</h3>
+        <p>{t('ai_keys.19')}</p>
         <code style={{ display: 'block', padding: '1rem', backgroundColor: '#000', color: '#10b981', borderRadius: '4px', marginBottom: '1rem' }}>
           GET {API_URL}/anonymizer/exams/&#123;exam_id&#125;/submissions
         </code>
-        <p>Use this endpoint for the AI to push graded results back:</p>
+        <p>{t('ai_keys.20')}</p>
         <code style={{ display: 'block', padding: '1rem', backgroundColor: '#000', color: '#10b981', borderRadius: '4px' }}>
           POST {API_URL}/anonymizer/submissions/&#123;submission_id&#125;/grades
         </code>
       </div>
 
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
-        <h3>Required System Prompt</h3>
-        <p>When hooking our API up to an external LLM, you must supply this exact System Prompt so the AI understands its job, what to expect, and why it is receiving anonymized data:</p>
+        <h3>{t('ai_keys.21')}</h3>
+        <p>{t('ai_keys.22')}</p>
         <blockquote style={{ borderLeft: '4px solid var(--primary-color)', paddingLeft: '1rem', fontStyle: 'italic', color: 'gray' }}>
           "{systemPrompt}"
         </blockquote>
       </div>
 
-      <h3>Recommended External AI Providers</h3>
+      <h3>{t('ai_keys.10')}</h3>
       <div style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
         
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#3b82f6' }}>1. Google Gemini (Recommended Free Tier)</h4>
-          <p style={{ fontSize: '0.9rem', margin: 0 }}>Offers extremely generous free tiers for `gemini-2.5-flash`. Highly recommended for large batches of text or image OCR.</p>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#3b82f6' }}>1. {t('ai_keys.11')}</h4>
+          <p style={{ fontSize: '0.9rem', margin: 0 }}>{t('ai_keys.23')}</p>
         </div>
 
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#10b981' }}>2. Ollama (100% Free & Local)</h4>
-          <p style={{ fontSize: '0.9rem', margin: 0 }}>Run models like Llama-3 or Mistral directly on your own computer. Zero cost, infinite usage, and maximum privacy.</p>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#10b981' }}>2. {t('ai_keys.13')}</h4>
+          <p style={{ fontSize: '0.9rem', margin: 0 }}>{t('ai_keys.24')}</p>
         </div>
 
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#f59e0b' }}>3. OpenRouter (Free & Paid Models)</h4>
-          <p style={{ fontSize: '0.9rem', margin: 0 }}>A unified API that gives you access to hundreds of models. They offer completely free limited tiers for certain models (like Meta Llama 3 8B), as well as paid access to GPT-4o or Claude 3.5 Sonnet.</p>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#f59e0b' }}>3. {t('ai_keys.12')}</h4>
+          <p style={{ fontSize: '0.9rem', margin: 0 }}>{t('ai_keys.25')}</p>
         </div>
 
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#ef4444' }}>4. OpenAI (Paid)</h4>
-          <p style={{ fontSize: '0.9rem', margin: 0 }}>Industry standard, but strictly pay-per-token. Best for complex reasoning tasks if you have budget.</p>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#ef4444' }}>4. {t('ai_keys.14')}</h4>
+          <p style={{ fontSize: '0.9rem', margin: 0 }}>{t('ai_keys.26')}</p>
         </div>
 
       </div>

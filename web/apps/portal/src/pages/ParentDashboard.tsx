@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { apiClient } from '../api';
+import { useI18n } from '../contexts/I18nContext';
 
 export function ParentDashboard() {
+  const { t } = useI18n();
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [childrenData, setChildrenData] = useState<any[]>([]);
@@ -22,11 +24,11 @@ export function ParentDashboard() {
     void fetchProgress();
   }, [user]);
 
-  if (loading) return <div>Loading child progress...</div>;
+  if (loading) return <div>{t('common.loading')}</div>;
 
   return (
     <div>
-      <h1 style={{ color: 'var(--text-color)', marginBottom: '0.5rem' }}>Parent Portal</h1>
+      <h1 style={{ color: 'var(--text-color)', marginBottom: '0.5rem' }}>{t('parent.1')}</h1>
       <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
         Track your child&apos;s academic progress and encouraging teacher feedback securely.
       </p>
@@ -45,7 +47,7 @@ export function ParentDashboard() {
 
           <div style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
             {child.recent_exams.length === 0 && (
-              <p style={{ color: 'var(--text-muted)' }}>No completed exams yet.</p>
+              <p style={{ color: 'var(--text-muted)' }}>{t('parent.7')}</p>
             )}
             {child.recent_exams.map((exam: any, idx: number) => (
               <div
@@ -93,7 +95,7 @@ export function ParentDashboard() {
                     whiteSpace: 'pre-wrap',
                   }}
                 >
-                  <strong style={{ color: 'var(--text-color)' }}>Teacher/AI Feedback:</strong>
+                  <strong style={{ color: 'var(--text-color)' }}>{t('parent.6')}:</strong>
                   <br />
                   <span style={{ color: 'var(--text-muted)' }}>
                     {exam.feedback || 'No feedback recorded yet.'}

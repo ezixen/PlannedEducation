@@ -10,8 +10,10 @@ import {
   type StudentSubmissionDetail,
 } from '../components/StudentSubmissionReview';
 import { useOfflineExam } from '../hooks/useOfflineExam';
+import { useI18n } from '../contexts/I18nContext';
 
 export function TakeExam() {
+  const { t } = useI18n();
   const { id } = useParams<{ id: string }>();
   const { error: showError, success: showSuccess, warn: showWarn } = useToast();
   const [submitting] = useState(false);
@@ -92,11 +94,11 @@ export function TakeExam() {
   }
 
   if (loading || initializing) {
-    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>Loading secure exam payload...</div>;
+    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>{t('common.loading')}</div>;
   }
 
   if (!examPackage) {
-    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>Failed to load exam. Please try again.</div>;
+    return <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)' }}>{t('errors.5')}</div>;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -223,7 +225,7 @@ export function TakeExam() {
                   value={examState?.answers[q.question_id] || ''}
                   onChange={(e) => saveAnswer(q.question_id, e.target.value)}
                   style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', resize: 'vertical', fontSize: '0.95rem', lineHeight: 1.6, fontFamily: 'inherit' }}
-                  placeholder="Type your answer here..."
+                  placeholder={t('take_exam.19')}
                   required
                 />
               )}
@@ -301,8 +303,8 @@ export function TakeExam() {
         {(examPackage?.settings?.allow_digital_hand_raise !== false && examPackage?.settings?.delivery_mode !== 'classroom') ? (
           <>
             <div style={{ marginBottom: '1rem' }}>
-              <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Digital Hand Raise</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '1rem' }}>Need clarification? Message the teacher without leaving the locked browser.</p>
+              <h3 style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('take_exam.20')}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '1rem' }}>{t('take_exam.21')}</p>
             </div>
             <div style={{ flex: 1, minHeight: 0 }}>
               <SecureChat examId={id ?? ''} />
@@ -310,7 +312,7 @@ export function TakeExam() {
           </>
         ) : (
           <div style={{ padding: '0.875rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-            <strong style={{ display: 'block', color: 'var(--text-color)', marginBottom: '0.25rem' }}>🏫 In-Person Classroom Exam</strong>
+            <strong style={{ display: 'block', color: 'var(--text-color)', marginBottom: '0.25rem' }}>🏫 {t('take_exam.in_person_label')}</strong>
             Digital hand-raising is not needed for in-room exams. Please raise your hand directly in class if you need help.
           </div>
         )}

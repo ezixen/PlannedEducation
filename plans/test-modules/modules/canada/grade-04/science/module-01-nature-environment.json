@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "id": "canada-grade-04-science-nature-1.0.0",
+    "name": "Grade 4 Science - Nature and Environment",
+    "version": "1.0.0",
+    "description": "45-minute science test on nature and environment for Grade 4 (Ontario Curriculum).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["science", "nature", "environment", "grade-4", "ontario", "canada"],
+    "subject": "science",
+    "grade_level": "grade-04",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "canada-ontario",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Identify living things in nature",
+      "Understand seasons and weather",
+      "Recognize plants and animals",
+      "Understand environmental protection"
+    ]
+  },
+  "exam": {
+    "title": "Grade 4 Science - Nature and Environment",
+    "description": "Test on nature, environment, plants, animals, and weather for Grade 4",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Which of these is a living thing?",
+      "options": ["A stone", "A tree", "A car", "A pencil"],
+      "correct_answer": "A tree",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["living-things", "classification"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-LivingThings",
+      "learning_objective": "Identify living things"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "What do plants need to grow?",
+      "options": ["Only water", "Only sunlight", "Water and sunlight", "Only soil"],
+      "correct_answer": "Water and sunlight",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["plants", "needs"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-Plants",
+      "learning_objective": "State basic needs of plants"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Which season has the coldest weather?",
+      "options": ["Spring", "Summer", "Autumn", "Winter"],
+      "correct_answer": "Winter",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["seasons", "weather"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-Seasons",
+      "learning_objective": "Identify seasons and weather"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Which animal hibernates in winter?",
+      "options": ["Eagle", "Bear", "Dolphin", "Eagle"],
+      "correct_answer": "Bear",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["animals", "hibernation"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-Animals",
+      "learning_objective": "Identify animals that hibernate"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Which part of the plant absorbs water from soil?",
+      "options": ["Leaves", "Flowers", "Roots", "Stem"],
+      "correct_answer": "Roots",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["plants", "parts"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-PlantParts",
+      "learning_objective": "Identify plant parts and functions"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Which of these is NOT a living thing?",
+      "options": ["Dog", "Tree", "Rock", "Bird"],
+      "correct_answer": "Rock",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["living-things", "classification"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-LivingThings",
+      "learning_objective": "Classify living and non-living things"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Plants make their own food using:",
+      "options": ["Soil only", "Sunlight", "Rocks", "Wind"],
+      "correct_answer": "Sunlight",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["plants", "photosynthesis"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CAN-04-Science-PlantFood",
+      "learning_objective": "Understand plants need sunlight for food"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Which of these does NOT need water?",
+      "options": ["Fish", "Plant", "Human", "Rock"],
+      "correct_answer": "Rock",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["water", "needs"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "CAN-04-Science-Water",
+      "learning_objective": "Identify things that need water"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Draw and label the parts of a plant. Write one sentence about what each part does.",
+      "rubric": "Student draws a plant with at least 3 labeled parts (roots, stem, leaves, flowers). Each label includes a correct function.",
+      "correct_answer": "Student drawing with labeled plant parts and functions",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["plants", "drawing", "labeling"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "CAN-04-Science-PlantParts",
+      "learning_objective": "Identify and describe plant parts"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Name 3 living things and 3 non-living things. Explain why the living things are alive.",
+      "rubric": "Student names 3 living things (e.g., dog, tree, human) and 3 non-living things (e.g., rock, car, pencil). Explanation includes: living things grow, need food/water, and can reproduce.",
+      "correct_answer": "3 living things with explanation, 3 non-living things",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["classification", "living-things"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "CAN-04-Science-LivingThings",
+      "learning_objective": "Distinguish living from non-living things"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Drawing shows a plant with recognizable parts",
+          "points": 4,
+          "keywords": ["plant", "drawing", "parts"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "At least 3 parts labeled correctly",
+          "points": 3,
+          "keywords": ["roots", "stem", "leaves", "flowers", "labels"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Each label includes correct function",
+          "points": 3,
+          "keywords": ["function", "absorb", "support", "make food"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Names 3 living things correctly",
+          "points": 3,
+          "keywords": ["dog", "tree", "human", "cat", "bird"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Names 3 non-living things correctly",
+          "points": 3,
+          "keywords": ["rock", "car", "pencil", "book", "table"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Explains why living things are alive (grow, need food/water)",
+          "points": 4,
+          "keywords": ["grow", "food", "water", "alive", "breathe"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}
