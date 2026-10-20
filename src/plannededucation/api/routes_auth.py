@@ -975,6 +975,7 @@ def complete_teacher_reset(
     _validate_password(payload.new_password)
     user.hashed_password = get_password_hash(payload.new_password)
     user.force_password_reset = False
+    user.reset_expires = None
     user.reset_by_teacher_id = None
     user.reset_by_parent_id = None
     user.reset_by_admin_id = None

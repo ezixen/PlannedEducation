@@ -1082,9 +1082,16 @@ if (-not $useDocker) {
         )
         $credContent = $credLines -join "`r`n"
 
-        # Copy credentials to clipboard instead of saving to plain text file
+        # Copy credentials to clipboard if available; fallback to secured file
+        $clipboardOk = $false
         try {
             $credContent | Set-Clipboard
+            $clipboardOk = $true
+        } catch {
+            $clipboardOk = $false
+        }
+
+        if ($clipboardOk) {
             Write-Host ""
             Write-Host "============================================================" -ForegroundColor $CYAN
             Write-Host "  [KEY] SUPERADMIN CREDENTIALS COPIED TO CLIPBOARD" -ForegroundColor $YELLOW
@@ -1100,30 +1107,32 @@ if (-not $useDocker) {
             Write-Host ""
             Write-Host "  These credentials are NOT saved to any file on disk for security." -ForegroundColor $YELLOW
             Write-Host "  If you lose them, you will be permanently locked out." -ForegroundColor $YELLOW
-            Write-Host ""
-            Write-Host "============================================================" -ForegroundColor $CYAN
-            Write-Host ""
-            Write-Host "  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES" -ForegroundColor $YELLOW
-            Write-Host "============================================================" -ForegroundColor $CYAN
-            foreach ($c in $codesList) {
-                Write-Host "    $c" -ForegroundColor $GREEN
-            }
-            Write-Host "============================================================" -ForegroundColor $CYAN
-            Write-Host "  [!] CRITICAL NOTICE FOR ADMINISTRATOR:" -ForegroundColor $YELLOW
-            Write-Host "  1. Store these 5 one-time recovery codes safely (print or write them down)." -ForegroundColor $WHITE
-            Write-Host "  2. If you lose your administrator password and recovery codes, you will" -ForegroundColor $WHITE
-            Write-Host "     be permanently locked out and may need to redeploy the whole system," -ForegroundColor $WHITE
-            Write-Host "     as direct database injection is blocked for security." -ForegroundColor $WHITE
-            Write-Host "============================================================" -ForegroundColor $CYAN
-            try {
-                Read-Host "  Press [Enter] once you have safely saved these credentials to continue"
-            } catch {}
-            Write-Host ""
-        } catch {
+        } else {
             Write-Warning "Could not copy to clipboard. Saving to $credFile instead."
             [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
             Write-Info "Saved credentials to ADMIN_CREDENTIALS.txt with emergency recovery codes."
         }
+
+        Write-Host ""
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        Write-Host "  [KEY] SUPERADMIN EMERGENCY RECOVERY CODES" -ForegroundColor $YELLOW
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        foreach ($c in $codesList) {
+            Write-Host "    $c" -ForegroundColor $GREEN
+        }
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        Write-Host "  [!] CRITICAL NOTICE FOR ADMINISTRATOR:" -ForegroundColor $YELLOW
+        Write-Host "  1. Store these 5 one-time recovery codes safely (print or write them down)." -ForegroundColor $WHITE
+        Write-Host "  2. If you lose your administrator password and recovery codes, you will" -ForegroundColor $WHITE
+        Write-Host "     be permanently locked out and may need to redeploy the whole system," -ForegroundColor $WHITE
+        Write-Host "     as direct database injection is blocked for security." -ForegroundColor $WHITE
+        Write-Host "============================================================" -ForegroundColor $CYAN
+        if (-not $AutoConfirm) {
+            try {
+                Read-Host "  Press [Enter] once you have safely saved these credentials to continue"
+            } catch {}
+        }
+        Write-Host ""
     }
 
     Write-Success "Superadmin account ready: $AdminEmail"

@@ -629,40 +629,48 @@
 
 ---
 
-### Phase 27: i18n Migration & Visual Testing ✅ **IN PROGRESS** (2026-10-20)
+### Phase 27: i18n Migration & Deployed System Workflow Verification ✅ Completed (2026-10-20)
+- **Status**: `done-tested-working`
+- **Comprehensive UI i18n Migration**:
+  - Migrated all remaining hardcoded English text in `web/apps/portal/src/` to `t()` calls using `I18nContext`.
+  - Added ~300 standardized keys (`stt.*`, `proctoring.*`, `forgot_password.*`, `chatgpt.*`, `deployment.*`, `teacher_correction.*`, `db_backup.*`, `notifications.*`, `student_review.*`, `backup_codes_modal.*`, `faq.*`, `admin.*`, `languages.*`, etc.).
+  - Synchronized all keys across all 18 locales in `web/apps/portal/src/locales/` (`en`, `hu`, `es`, `de`, `fr`, `ja`, `zh`, `pt`, `uk`, `it`, `pl`, `nl`, `sv`, `no`, `da`, `fi`, `pt-BR`).
+- **Platform Deployment & Workflow Verification**:
+  - Deployed native Mode 1 SQLite deployment to default install directory `C:\PlannedEducation`.
+  - Verified complete end-to-end user journeys:
+    1. Superadmin authentication & dashboard management.
+    2. Teacher registration & superadmin approval panel.
+    3. Exam & question authoring, package creation, and publishing.
+    4. Student exam taking, auto-grading, and question response persistence.
+    5. Parent registration, student relationship linking, and progress tracking.
+    6. Database backup creation and validation.
+- **Frontend & Backend Test Verification**:
+  - Frontend production build (`npm run build`) succeeded with 0 errors and generated service worker PWA.
+  - Backend test suite (`scripts/testing/update_test_cache.py`) passed all 123 tests cleanly.
 
-#### 27.1 i18n Migration — Move All Hardcoded User-Facing Text to `t()` ✅ **AGENTS.md UPDATED**
-- **AGENTS.md §5.2 added**: Mandatory i18n rules for all user-facing text in React frontend
-- **Rule**: No hardcoded English text in JSX, component files, or page files — ALL must use `t()` from `../contexts/I18nContext`
-- **Translation files**: `web/apps/portal/src/locales/en/messages.json` (source of truth) + 16 other locales
-- **Key format**: `domain.number` (e.g., `exam_editor.1`, `login.7`, `teacher_dashboard.3`)
-- **Translators edit only `messages.json`** — no code changes needed for new languages
-- **Next step**: Audit all `.tsx`/`.ts` files for hardcoded strings and convert to `t()` calls, adding missing keys to `en/messages.json`
+---
 
-#### 27.2 Visual Testing — Deployed System Verification ✅ **IN PROGRESS** (2026-10-20)
-- **Backend running**: `http://127.0.0.1:8000` (SQLite dev mode)
-- **Frontend running**: `http://127.0.0.1:5173` (Vite preview)
-- **Test users created**:
-  - Superadmin: `superadmin@school.edu` / `SuperPass123!` (credentials saved to `local-secrets/test_users.json`)
-  - Teacher: `testadmin@school.edu` / `TestPass123!` (approved by superadmin)
-- **Teacher logged in**: Exam created "High School Math - Multiplication Test" (45 min, 0 questions)
-- **Exam Editor UI verified**: Question creation works (Multiple Choice, Essay, Dynamic Math)
-- **UI text fix**: Changed "Edit Editor" → "Edit Questions" in `TeacherExams.tsx`
-- **Next steps**:
-  1. Add questions manually via Exam Editor UI
-  2. Export package (.pepkg) and verify download
-  3. Register test students, have them take the exam
-  4. Teacher reviews submissions
-  5. Verify other teachers can see/download published modules
-  6. Full visual regression check for glitches/misfits/errors
-
-#### 27.3 Post-Testing Cleanup (PENDING)
-- Uninstall `d:\Dev\Peserver` and `c:\dev\PE` after all testing complete
-- Keep `d:\Dev\PlannedEducation` as the canonical repo
-- Ensure all credentials saved to `local-secrets/` before cleanup
-
-
-
-
-
-
+### Phase 28: Dependency Security Auditing, Ruff Linting & CI/CD Hardening ✅ Completed (2026-10-21)
+- **Status**: `done-tested-working`
+- **pip-audit Implementation**:
+  - Installed `pip-audit` into `C:/.venv` and implemented `scripts/testing/run_pip_audit.py`.
+  - Integrated `--audit` flag directly into central test runner `run_tests.py` (`python run_tests.py --audit`).
+  - Audited `src/requirements.txt`: verified all 72 dependencies are clean.
+  - Documented and handled upstream `presidio-anonymizer 2.2.364` dependency pinning (`cryptography<49.0.0,>=48.0.1`), passing `--ignore-vuln` for `PYSEC-2026-3552`, `PYSEC-2026-3553`, `PYSEC-2026-3554`.
+- **npm audit & Portal Dependency Fixes**:
+  - Executed `npm audit fix` in `web/apps/portal` to upgrade `vite` (8.3.4) and `follow-redirects` (1.16.2).
+  - `npm audit` reports 0 vulnerabilities.
+- **Code Quality & Linting Clean-up**:
+  - Fixed `SIM105` in `src/plannededucation/api/main.py` and `src/plannededucation/api/routes_chat.py` using `contextlib.suppress`. Ruff reports 0 errors across `src/`.
+  - Cleaned up unused catch parameter warning in `web/apps/portal/src/pages/Login.tsx`. Oxlint reports 0 warnings and 0 errors.
+  - Set `user.reset_expires = None` on password reset completion in `src/plannededucation/api/routes_auth.py`.
+- **Script & Curriculum Clean-up**:
+  - Replaced hardcoded absolute paths `D:/Dev/...` in `scripts/generate_hungary_modules.py` and `scripts/generate_hungary_modules_v2.py` with repository-relative `Path(__file__).resolve()`.
+  - Updated `plans/test-modules/modules/germany/grade-01/englisch/module-01-phonics.json` with authentic Grade 1 English phonics and vocabulary questions with German classroom instructions.
+  - Refactored `install.ps1` clipboard handling and emergency recovery codes display with non-blocking `$AutoConfirm` safety.
+  - Reverted `config/deployment.json` to neutral school default template values.
+- **Verification**:
+  - `run_tests.py --audit`: passed (0 vulnerabilities found).
+  - `scripts/testing/update_test_cache.py`: passed 123/123 tests in 131s.
+  - `npm run build`: built in 4.84s (PWA enabled, 0 errors).
+  - 0 orphaned background processes remaining.

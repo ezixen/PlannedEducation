@@ -11,7 +11,7 @@ import hashlib
 from datetime import datetime, UTC
 from pathlib import Path
 
-BASE_PATH = Path("D:/Dev/PlannedEducation/plans/test-modules/modules/hungary")
+BASE_PATH = Path(__file__).resolve().parents[1] / "plans" / "test-modules" / "modules" / "hungary"
 
 # Hungary NAT Curriculum - Subjects by Grade
 # Based on official curriculum from oktatas.hu

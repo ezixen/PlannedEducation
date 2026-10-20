@@ -10,7 +10,7 @@ from datetime import datetime, UTC
 from pathlib import Path
 
 # Base path for modules
-BASE_PATH = Path("D:/Dev/PlannedEducation/plans/test-modules/modules/hungary")
+BASE_PATH = Path(__file__).resolve().parents[1] / "plans" / "test-modules" / "modules" / "hungary"
 
 # Hungary NAT Curriculum mapping by grade and subject
 HUNGARY_CURRICULUM = {
