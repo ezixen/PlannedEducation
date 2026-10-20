@@ -50,7 +50,7 @@ export function Login() {
     try {
       await login(credentialResponse.credential);
       navigate('/');
-    } catch {
+    } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
       let message = t('login.google_login_failed');
       if (detail === 'Google sign-in is not configured on this server') {
@@ -72,7 +72,7 @@ export function Login() {
     try {
       await loginWithPassword(email, password);
       navigate('/');
-    } catch {
+    } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
       let message = 'Login failed';
       if (typeof detail === 'string' && (detail.includes('RESET_ACTIVE') || detail.includes('PASSWORD_RESET_ACTIVE'))) {
@@ -115,7 +115,7 @@ export function Login() {
         showSuccess(t('toast.22'));
         navigate('/');
       }
-    } catch {
+    } catch (err: any) {
       showError('Password reset failed', err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
