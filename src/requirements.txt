@@ -8,24 +8,24 @@
 # All versions below are set to the latest tested minimums for long-term compatibility.
 
 # Web Framework
-fastapi>=0.143.2    # Tested: 0.143.2
+fastapi>=0.156.4    # Tested: 0.156.4
 uvicorn>=0.54.0     # Tested: 0.54.0
-websockets>=17.2    # Tested: 17.2 (Required for uvicorn WebSocket endpoints)
+websockets>=17.3    # Tested: 17.3 (Required for uvicorn WebSocket endpoints)
 
 # Database
-sqlalchemy>=2.1.4       # Tested: 2.1.4
-greenlet>=3.1.1         # Tested: 3.1.1 (Required for SQLAlchemy async & instrumentation)
+sqlalchemy>=2.1.5       # Tested: 2.1.5
+greenlet>=3.5.6         # Tested: 3.5.6 (Required for SQLAlchemy async & instrumentation)
 psycopg2-binary>=2.9.13   # Tested: 2.9.13 (PostgreSQL driver, free)
 
 # Validation & Serialization
 pydantic[email]>=2.14.1   # Tested: 2.14.1 (EmailStr validation)
-pydantic-settings>=2.16.0 # Tested: 2.16.0 (Settings management)
+pydantic-settings>=2.16.1 # Tested: 2.16.1 (Settings management)
 
 # Authentication & Security
 PyJWT>=2.15.1             # Tested: 2.15.1 (JWT handling)
 argon2-cffi>=25.1.0       # Tested: 25.1.0 (Argon2id password hashing, OWASP recommended)
 pyotp>=2.10.0             # Tested: 2.10.0 (TOTP 2FA RFC 6238)
-cryptography>=48.0.1      # Fernet encryption, TLS (fixed PYSEC-2026-3552, PYSEC-2026-3553, PYSEC-2026-3554)
+cryptography>=50.0.2      # Tested: 50.0.2 (Fernet encryption, TLS; eliminates PYSEC-2026-3552/3/4)
 
 # Google OAuth (free)
 google-auth>=2.62.0        # Tested: 2.62.0
@@ -42,12 +42,11 @@ redis>=8.1.0               # Tested: 8.1.0
 
 # OCR (Free, Open-Source)
 pytesseract>=0.3.13        # Tested: 0.3.13 (Python wrapper for Tesseract OCR)
-pillow>=12.3.0             # Tested: 12.3.0 (Image processing for OCR)
+pillow>=13.0.0             # Tested: 13.0.0 (Image processing for OCR; eliminated OSV CVEs)
 # Note: Tesseract binary must be installed separately (apt-get install tesseract-ocr)
 
 # Presidio PII Scrubber (Free, Open-Source - MIT License)
-presidio-analyzer>=2.2.364  # Tested: 2.2.364
-presidio-anonymizer>=2.2.364 # Tested: 2.2.364
+presidio-analyzer>=2.2.364  # Tested: 2.2.364 (Native span redaction, zero cryptography conflict)
 
 # Speech-to-Text (Free, Open-Source)
 # Note: whisper.cpp or faster-whisper for local inference
@@ -59,7 +58,7 @@ python-multipart>=0.0.32    # Tested: 0.0.32 (For form data parsing)
 httpx>=0.28.1              # Tested: 0.28.1 (Async HTTP client: AI providers, OAuth)
 
 # Passkeys / WebAuthn & Archive Compression (Free, Open-Source)
-webauthn>=2.8.0            # Tested: 2.8.0
+webauthn>=3.0.1            # Tested: 3.0.1
 zstandard>=0.25.0          # Tested: 0.25.0
 
 # Observability (OpenTelemetry & Prometheus - Free, Open-Source)

@@ -1,4 +1,13 @@
-# Planned Education - Plans Updated 2026-09-28
+# Planned Education - Plans Updated 2026-10-21
+
+## Latest Architecture & Security Updates (2026-10-21)
+- **Full Dependency Modernization & Zero Vulnerability Posture**:
+  - Python: Upgraded cryptography>=50.0.2 (eliminates PYSEC-2026-3552, PYSEC-2026-3553, PYSEC-2026-3554), pillow>=13.0.0 (eliminates OSV CVEs), astapi>=0.156.4, sqlalchemy>=2.1.5, greenlet>=3.5.6, pydantic-settings>=2.16.1, websockets>=17.3, webauthn>=3.0.1.
+  - PII Scrubber Architecture: Replaced presidio-anonymizer with clean native span redaction while retaining presidio-analyzer for NLP entity recognition. Solved the pip dependency conflict and unblocked cryptography>=50.0.2.
+  - Frontend: Upgraded all npm packages to latest releases (
+eact 19.3.1, 	ypescript 7.0.2, ite-plugin-pwa 2.0.0, ite 8.3.4, oxlint 1.89.0, idb 8.0.4, lucide-react 1.60.0). Zero npm vulnerabilities.
+  - Verification: 100% test pass rate across 123 backend pytest tests (1m 46s), pip check (0 broken requirements), pip_audit (0 known vulnerabilities), 
+pm audit (0 vulnerabilities).
 
 ## Execution Order (The Roadmap) — Updated Status
 
