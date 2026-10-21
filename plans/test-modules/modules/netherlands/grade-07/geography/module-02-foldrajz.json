@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-07-geography-földrajz-1.0.0",
+    "name": "Földrajz - Netherlands grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Földrajz for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:24.992577+00:00",
+    "updated_at": "2026-10-21T11:02:24.992590+00:00",
+    "tags": [
+      "geography",
+      "földrajz",
+      "grade-07",
+      "netherlands"
+    ],
+    "subject": "geography",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "09235c70ec7e217ba9fd8b9b98e1d1fbb1aa1d13587ec5ce0454ec81ab88cfa9",
+    "curriculum": "netherlands-slo-kerndoelen",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Geographic skills",
+      "Geography",
+      "Geographic skills",
+      "Geographic knowledge",
+      "Geographic tools"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Geography - Földrajz",
+    "description": "Test on Földrajz including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-07-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-07-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-07-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-07-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-07-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    }
+  ],
+  "rubrics": []
+}

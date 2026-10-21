@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-07-geography-földrajzi-eszközök-1.0.0",
+    "name": "Földrajzi eszközök - United Kingdom grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Földrajzi eszközök for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:17.094813+00:00",
+    "updated_at": "2026-10-21T11:02:17.094835+00:00",
+    "tags": [
+      "geography",
+      "földrajzi-eszközök",
+      "grade-07",
+      "uk"
+    ],
+    "subject": "geography",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "75e4980dd5f53a7095c5ae41b023c92023b367f8ebdd14d985687e38d1e6d5a1",
+    "curriculum": "uk-national",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Geographic skills",
+      "Geography",
+      "Geographic skills",
+      "Geographic knowledge",
+      "Geographic tools"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Geography - Földrajzi eszközök",
+    "description": "Test on Földrajzi eszközök including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajzi-eszközök",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "learning_objective": "Geographic tools"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajzi-eszközök",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "learning_objective": "Geographic tools"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajzi-eszközök",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "learning_objective": "Geographic tools"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajzi-eszközök",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "learning_objective": "Geographic tools"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajzi-eszközök",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "learning_objective": "Geographic tools"
+    }
+  ],
+  "rubrics": []
+}

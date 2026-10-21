@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-07-math-egyenletek-1.0.0",
+    "name": "Egyenletek - Norway grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Egyenletek for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:26.416460+00:00",
+    "updated_at": "2026-10-21T11:02:26.416483+00:00",
+    "tags": [
+      "math",
+      "egyenletek",
+      "grade-07",
+      "norway"
+    ],
+    "subject": "math",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "f0c76cd03d8ecdd6d0e7812c8d2348fd4f49ab4ba5c6adbfbab18c1e8964dcd8",
+    "curriculum": "norway-udir-lareplanverket",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Rational numbers",
+      "Algebraic expressions",
+      "Equations",
+      "Geometry basics",
+      "Statistics basics"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Math - Egyenletek",
+    "description": "Test on Egyenletek including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Egyenletek - Kérdés 1: Equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "egyenletek",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Egyenletek",
+      "learning_objective": "Equations"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Egyenletek - Kérdés 2: Equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "egyenletek",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Egyenletek",
+      "learning_objective": "Equations"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Egyenletek - Kérdés 3: Equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "egyenletek",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Egyenletek",
+      "learning_objective": "Equations"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Egyenletek - Kérdés 4: Equations",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Egyenletek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "egyenletek",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Egyenletek",
+      "learning_objective": "Equations"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Egyenletek - Question 5: Equations [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "egyenletek",
+        "grade-07",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Egyenletek",
+      "learning_objective": "Equations"
+    }
+  ],
+  "rubrics": []
+}

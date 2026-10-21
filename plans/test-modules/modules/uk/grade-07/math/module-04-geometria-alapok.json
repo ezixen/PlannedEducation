@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-07-math-geometria-alapok-1.0.0",
+    "name": "Geometria alapok - United Kingdom grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Geometria alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:17.121256+00:00",
+    "updated_at": "2026-10-21T11:02:17.121269+00:00",
+    "tags": [
+      "math",
+      "geometria-alapok",
+      "grade-07",
+      "uk"
+    ],
+    "subject": "math",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "5d9aebf5701641f09a56af771c001a1de733e9d335a82ec159bb7e6d08a693b2",
+    "curriculum": "uk-national",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Rational numbers",
+      "Algebraic expressions",
+      "Equations",
+      "Geometry basics",
+      "Statistics basics"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Math - Geometria alapok",
+    "description": "Test on Geometria alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Geometria alapok - Kérdés 1: Geometry basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "geometria-alapok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-MATH-Geometria alapok",
+      "learning_objective": "Geometry basics"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Geometria alapok - Kérdés 2: Geometry basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "geometria-alapok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-MATH-Geometria alapok",
+      "learning_objective": "Geometry basics"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Geometria alapok - Kérdés 3: Geometry basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "geometria-alapok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-MATH-Geometria alapok",
+      "learning_objective": "Geometry basics"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Geometria alapok - Kérdés 4: Geometry basics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Geometria alapok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "geometria-alapok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-MATH-Geometria alapok",
+      "learning_objective": "Geometry basics"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Geometria alapok - Question 5: Geometry basics [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "geometria-alapok",
+        "grade-07",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "UK-GRADE-07-MATH-Geometria alapok",
+      "learning_objective": "Geometry basics"
+    }
+  ],
+  "rubrics": []
+}

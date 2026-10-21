@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-11-history-európa-és-világ-története-1.0.0",
+    "name": "Európa és világ története - Finland grade-11",
+    "version": "1.0.0",
+    "description": "45-minute test on Európa és világ története for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:24.670150+00:00",
+    "updated_at": "2026-10-21T11:02:24.670172+00:00",
+    "tags": [
+      "history",
+      "európa-és-világ-története",
+      "grade-11",
+      "finland"
+    ],
+    "subject": "history",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "1eabd733468dd6cd32ad1ede29206b20c34de54a71e1d0029d8b94ed45a55a52",
+    "curriculum": "finland-national-core-curriculum-2016",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "History of Europe and the world",
+      "Europe",
+      "World",
+      "History",
+      "Historical events"
+    ]
+  },
+  "exam": {
+    "title": "grade-11 History - Európa és világ története",
+    "description": "Test on Európa és világ története including History of Europe and the world, Europe, World, History, Historical events",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[history] Európa és világ története - Kérdés 1: History of Europe and the world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "európa-és-világ-története",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-11-HISTORY-Európa és világ története",
+      "learning_objective": "History of Europe and the world"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[history] Európa és világ története - Kérdés 2: History of Europe and the world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "európa-és-világ-története",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-11-HISTORY-Európa és világ története",
+      "learning_objective": "History of Europe and the world"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[history] Európa és világ története - Kérdés 3: History of Europe and the world",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Európa és világ története témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "history",
+        "európa-és-világ-története",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-11-HISTORY-Európa és világ története",
+      "learning_objective": "History of Europe and the world"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[history] Európa és világ története - Kérdés 4: History of Europe and the world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "európa-és-világ-története",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-11-HISTORY-Európa és világ története",
+      "learning_objective": "History of Europe and the world"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[history] Európa és világ története - Kérdés 5: History of Europe and the world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "európa-és-világ-története",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-11-HISTORY-Európa és világ története",
+      "learning_objective": "History of Europe and the world"
+    }
+  ],
+  "rubrics": []
+}

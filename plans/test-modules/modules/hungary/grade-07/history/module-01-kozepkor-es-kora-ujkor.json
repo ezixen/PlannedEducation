@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-07-history-kozepkor-es-kora-ujkor-1.0.0",
-    "name": "Középkor és kora újkor - Grade 07 History",
+    "id": "grade-07-history-középkor-és-kora-újkor-1.0.0",
+    "name": "Középkor és kora újkor - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on középkor és kora újkor for Grade 07 students. Covers: Feudalizmus, Felfedezések, Vallási háborúk.",
+    "description": "45-minute test on Középkor és kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.297626+00:00",
-    "updated_at": "2026-10-20T13:20:17.297626+00:00",
+    "created_at": "2026-10-21T11:02:35.192844+00:00",
+    "updated_at": "2026-10-21T11:02:35.192861+00:00",
     "tags": [
       "history",
       "középkor-és-kora-újkor",
-      "grade-07"
+      "grade-07",
+      "hungary"
     ],
     "subject": "history",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "d53907963d801a230a257fcc0a1cd0a0460774e5d0e1be8e6de896a70ec39fcb",
+    "checksum": "24b024ae168e3cb3ee000ce8a9215cb165c30599e0dd35cf5c5e836bd1d84b4f",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Feudalizmus",
-      "Felfedezések",
-      "Vallási háborúk"
+      "Middle Ages and early modern period",
+      "Middle Ages",
+      "Early modern period",
+      "History",
+      "Historical events"
     ]
   },
   "exam": {
-    "title": "Grade 07 History - Középkor és kora újkor",
-    "description": "Test on középkor és kora újkor including feudalizmus, felfedezések, vallási háborúk",
+    "title": "grade-07 History - Középkor és kora újkor",
+    "description": "Test on Középkor és kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 1: Felfedezések",
+      "text": "[history] Középkor és kora újkor - Kérdés 1: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor"
+        "középkor-és-kora-újkor",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Felfedezések"
+      "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
+      "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 2: Vallási háborúk",
+      "text": "[history] Középkor és kora újkor - Kérdés 2: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor"
+        "középkor-és-kora-újkor",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Vallási háborúk"
+      "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
+      "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 3: Feudalizmus",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[history] Középkor és kora újkor - Kérdés 3: Middle Ages and early modern period",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor"
+        "középkor-és-kora-újkor",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Feudalizmus"
+      "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
+      "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 4: Felfedezések",
+      "text": "[history] Középkor és kora újkor - Kérdés 4: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor"
+        "középkor-és-kora-újkor",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Felfedezések"
+      "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
+      "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 5: Vallási háborúk",
+      "text": "[history] Középkor és kora újkor - Kérdés 5: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor"
+        "középkor-és-kora-újkor",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Vallási háborúk"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[history] Középkor és kora újkor - Kérdés 6: Feudalizmus",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "középkor-és-kora-újkor"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Feudalizmus"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[history] Középkor és kora újkor - Kérdés 7: Felfedezések",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "középkor-és-kora-újkor"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Felfedezések"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[history] Középkor és kora újkor - Kérdés 8: Vallási háborúk",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "középkor-és-kora-újkor"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Vallási háborúk"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[history] Középkor és kora újkor - Kérdés 9: Feudalizmus",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "középkor-és-kora-újkor"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Feudalizmus"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[history] Középkor és kora újkor - Kérdés 10: Felfedezések",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "középkor-és-kora-újkor"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-HIST-Középkor és kora újk",
-      "learning_objective": "Felfedezések"
+      "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
+      "learning_objective": "Middle Ages and early modern period"
     }
   ],
   "rubrics": []

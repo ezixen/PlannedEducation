@@ -78,6 +78,11 @@ export function TeacherDashboard() {
   const [archiveStatusFilter, setArchiveStatusFilter] = useState<'all' | 'active' | 'archived' | 'deleted'>('all');
   const [showArchiveModal, setShowArchiveModal] = useState(false);
   const [selectedArchive, setSelectedArchive] = useState<ArchiveItem | null>(null);
+  
+  // Test Module Preview State
+  const [showTestModuleModal, setShowTestModuleModal] = useState(false);
+  const [testModuleCount, setTestModuleCount] = useState(5);
+  const [testModuleLoading, setTestModuleLoading] = useState(false);
 
   useEffect(() => {
     if (examId) {
@@ -126,7 +131,7 @@ export function TeacherDashboard() {
   }, [examId]);
 
   const handleQuickResetStudent = async (studentId: string, studentName: string) => {
-    if (!window.confirm(`Unlock and reset password for ${studentName}?\n\nThe student can immediately type their email at login and choose a new password to take the exam.`)) return;
+    if (!window.confirm(t('teacher_dashboard.quick_reset_confirm', { name: studentName }))) return;
     try {
       const res = await apiClient.post(`/auth/teacher/quick-reset/${studentId}`);
       showSuccess(res.data?.message || `Password reset initiated for ${studentName}`);
@@ -167,7 +172,7 @@ export function TeacherDashboard() {
         })
       );
     } catch (err: any) {
-      showError('Failed to fetch submissions.', err.response?.data?.detail || err.message);
+      showError(t('teacher_dashboard.fetch_submissions_error'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -241,6 +246,44 @@ export function TeacherDashboard() {
   const handleViewArchive = (archive: ArchiveItem) => {
     setSelectedArchive(archive);
     setShowArchiveModal(true);
+  };
+
+  // Test Module Preview Functions
+  const handleOpenTestModuleModal = () => {
+    setTestModuleCount(5);
+    setShowTestModuleModal(true);
+  };
+
+  const handleCloseTestModuleModal = () => {
+    setShowTestModuleModal(false);
+  };
+
+  const handleOpenTestModules = async () => {
+    if (!examId) return;
+    if (testModuleCount < 1 || testModuleCount > 25) {
+      showError('Please enter a number between 1 and 25');
+      return;
+    }
+    
+    setTestModuleLoading(true);
+    try {
+      // Open multiple tabs with randomized tests
+      for (let i = 0; i < testModuleCount; i++) {
+        // Open a new tab with the exam in test mode
+        const testUrl = `${window.location.origin}/exam/${examId}?test_mode=true&random_seed=${Date.now() + i}`;
+        window.open(testUrl, `_blank`);
+        
+        // Small delay to prevent popup blocking
+        if (i < testModuleCount - 1) {
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
+      }
+      showSuccess(`Opened ${testModuleCount} randomized test tabs`);
+    } catch (err: any) {
+      showError('Failed to open test tabs', err.message);
+    } finally {
+      setTestModuleLoading(false);
+    }
   };
 
   const generateAIGrades = async (submission: SubmissionWithAIGrades) => {
@@ -360,9 +403,9 @@ export function TeacherDashboard() {
         return { ...s, ai_grades: updatedGrades, teacher_approved: true };
       }));
       
-      showSuccess(`${questionGrades.length} grade(s) and corrected solutions saved!`);
+      showSuccess(t('teacher_dashboard.grades_saved', { count: String(questionGrades.length) }));
     } catch (err: any) {
-      showError('Failed to apply grades.', err.response?.data?.detail || err.message);
+      showError(t('teacher_dashboard.apply_grades_error'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -433,7 +476,7 @@ export function TeacherDashboard() {
     });
     
     setGroupedMistakes(groups);
-    showInfo(`Found ${Object.keys(groups).length} mistake groups`);
+    showInfo(t('teacher_dashboard.mistake_groups_found', { count: String(Object.keys(groups).length) }));
   };
 
   const handleViewSubmission = (submission: SubmissionWithAIGrades) => {
@@ -469,6 +512,12 @@ export function TeacherDashboard() {
         >
           🔍 {t('teacher_dashboard.group_mistakes')}
         </button>
+        <button
+          onClick={handleOpenTestModuleModal}
+          style={{ padding: '0.625rem 1.25rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, whiteSpace: 'normal', overflowWrap: 'break-word', maxWidth: '100%' }}
+        >
+          🧪 {t('teacher_dashboard.test_module')}
+        </button>
       </div>
 
       {/* Embedded ChatGPT Teacher Assistant */}
@@ -503,7 +552,7 @@ export function TeacherDashboard() {
         
         {heartbeatError && (
           <div style={{ marginBottom: '1rem', padding: '0.75rem', backgroundColor: '#fef2f2', border: '1px solid #fecaca', borderRadius: 'var(--radius-md)', color: '#dc2626' }}>
-            ⚠️ Failed to load heartbeats: {heartbeatError}
+            ⚠️ {t('teacher_dashboard.heartbeat_error', { error: heartbeatError })}
           </div>
         )}
         
@@ -710,20 +759,20 @@ export function TeacherDashboard() {
                           onClick={() => handleViewArchive(archive)}
                           style={{ padding: '0.375rem 0.75rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontSize: '0.8rem' }}
                         >
-                          Details
+                          {t('teacher_dashboard.btn_details')}
                         </button>
                         <button
                           onClick={() => handleDownloadArchive(archive.id)}
                           style={{ padding: '0.375rem 0.75rem', backgroundColor: '#3b82f6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontSize: '0.8rem' }}
                         >
-                          Download
+                          {t('teacher_dashboard.btn_download')}
                         </button>
                         {archive.status === 'archived' && (
                           <button
                             onClick={() => handleRestoreArchive(archive.id)}
                             style={{ padding: '0.375rem 0.75rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontSize: '0.8rem' }}
                           >
-                            Restore
+                            {t('teacher_dashboard.btn_restore')}
                           </button>
                         )}
                         {archive.status === 'active' && (
@@ -731,7 +780,7 @@ export function TeacherDashboard() {
                             onClick={() => handleDeleteArchive(archive.id)}
                             style={{ padding: '0.375rem 0.75rem', backgroundColor: '#ef4444', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontSize: '0.8rem' }}
                           >
-                            Archive
+                            {t('teacher_dashboard.btn_archive')}
                           </button>
                         )}
                       </div>
@@ -748,14 +797,14 @@ export function TeacherDashboard() {
           <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
             <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', padding: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <h3 style={{ margin: 0, color: 'var(--text-color)' }}>Archive Details</h3>
+                <h3 style={{ margin: 0, color: 'var(--text-color)' }}>{t('teacher_dashboard.archive_details')}</h3>
                 <button onClick={() => setShowArchiveModal(false)} style={{ background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
               </div>
-              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>Submission:</strong> {selectedArchive.submission_id}</p>
-              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>Compression:</strong> {selectedArchive.compression_algorithm} ({selectedArchive.compression_ratio.toFixed(1)}x ratio)</p>
-              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>Path:</strong> <code>{selectedArchive.archive_path}</code></p>
+              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>{t('teacher_dashboard.lbl_submission')}:</strong> {selectedArchive.submission_id}</p>
+              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>{t('teacher_dashboard.lbl_compression')}:</strong> {selectedArchive.compression_algorithm} ({selectedArchive.compression_ratio.toFixed(1)}x ratio)</p>
+              <p style={{ margin: '0.5rem 0', color: 'var(--text-color)' }}><strong>{t('teacher_dashboard.lbl_path')}:</strong> <code>{selectedArchive.archive_path}</code></p>
               <div style={{ textAlign: 'right', marginTop: '1rem' }}>
-                <button onClick={() => setShowArchiveModal(false)} style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-md)', border: 'none', backgroundColor: 'var(--primary-color)', color: '#fff', cursor: 'pointer' }}>Close</button>
+                <button onClick={() => setShowArchiveModal(false)} style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-md)', border: 'none', backgroundColor: 'var(--primary-color)', color: '#fff', cursor: 'pointer' }}>{t('common.6')}</button>
               </div>
             </div>
           </div>
@@ -792,8 +841,8 @@ export function TeacherDashboard() {
             <thead>
               <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Questions</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Grades</th>
+                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_questions')}</th>
+                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_ai_grades')}</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
                 <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
               </tr>
@@ -802,7 +851,7 @@ export function TeacherDashboard() {
               {submissions.length === 0 ? (
                 <tr>
                   <td colSpan={5} style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-                    No submissions found for this exam.
+                    {t('teacher_dashboard.no_submissions')}
                   </td>
                 </tr>
               ) : (
@@ -812,7 +861,7 @@ export function TeacherDashboard() {
                       {submission.anonymous_student_ref}
                     </td>
                     <td style={{ padding: '1rem', color: 'var(--text-muted)' }}>
-                      {submission.answers.length} questions
+                      {submission.answers.length} {t('teacher_dashboard.col_questions')}
                     </td>
                     <td style={{ padding: '1rem' }}>
                       {submission.ai_grades && Object.keys(submission.ai_grades).length > 0 ? (
@@ -830,7 +879,7 @@ export function TeacherDashboard() {
                           ))}
                         </div>
                       ) : (
-                        <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Not generated</span>
+                        <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t('teacher_dashboard.not_generated')}</span>
                       )}
                     </td>
                     <td style={{ padding: '1rem' }}>
@@ -856,7 +905,7 @@ export function TeacherDashboard() {
                             disabled={generatingGrades === submission.submission_id}
                             style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: generatingGrades === submission.submission_id ? 'not-allowed' : 'pointer', fontWeight: 500, fontSize: '0.85rem' }}
                           >
-                            {generatingGrades === submission.submission_id ? 'Generating...' : 'Generate AI Grades'}
+                            {generatingGrades === submission.submission_id ? t('teacher_dashboard.generating') : t('teacher_dashboard.generate_ai_grades')}
                           </button>
                         ) : !submission.teacher_approved ? (
                           <>
@@ -875,7 +924,7 @@ export function TeacherDashboard() {
                           </>
                         ) : (
                           <>
-                            <span style={{ color: '#10b981', fontSize: '0.85rem', fontWeight: 600, alignSelf: 'center' }}>Completed</span>
+                            <span style={{ color: '#10b981', fontSize: '0.85rem', fontWeight: 600, alignSelf: 'center' }}>{t('teacher_dashboard.completed')}</span>
                             <button
                               onClick={() => handleViewSubmission(submission)}
                               style={{ padding: '0.4rem 0.85rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, fontSize: '0.8rem' }}
@@ -906,6 +955,47 @@ export function TeacherDashboard() {
           onApproveAllQuestions={approveAllQuestions}
           onSaveGrades={applyAIGrades}
         />
+      )}
+
+      {/* Test Module Preview Modal */}
+      {showTestModuleModal && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
+          <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
+            <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 style={{ margin: 0, fontSize: '1.25rem' }}>{t('teacher_dashboard.test_module_title')}</h2>
+              <button onClick={handleCloseTestModuleModal} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <p style={{ margin: '0 0 1rem', color: 'var(--text-muted)' }}>{t('teacher_dashboard.test_module_description')}</p>
+              
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, fontSize: '0.85rem' }}>{t('teacher_dashboard.test_count_label')}</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="25"
+                  value={testModuleCount}
+                  onChange={e => setTestModuleCount(Math.min(25, Math.max(1, parseInt(e.target.value) || 1)))}
+                  style={{ width: '100%', padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.85rem' }}
+                />
+                <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{t('teacher_dashboard.test_count_hint')}</p>
+              </div>
+              
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
+                <button onClick={handleCloseTestModuleModal} style={{ padding: '0.625rem 1.25rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}>
+                  {t('common.2')}
+                </button>
+                <button 
+                  onClick={handleOpenTestModules}
+                  disabled={testModuleLoading}
+                  style={{ padding: '0.625rem 1.25rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: testModuleLoading ? 'not-allowed' : 'pointer', fontWeight: 500 }}
+                >
+                  {testModuleLoading ? t('teacher_dashboard.opening_tests') : t('teacher_dashboard.open_tests')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

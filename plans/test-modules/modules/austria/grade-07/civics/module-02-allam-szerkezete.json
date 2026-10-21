@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-07-civics-állam-szerkezete-1.0.0",
+    "name": "Állam szerkezete - Austria grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Állam szerkezete for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:28.939090+00:00",
+    "updated_at": "2026-10-21T11:02:28.939103+00:00",
+    "tags": [
+      "civics",
+      "állam-szerkezete",
+      "grade-07",
+      "austria"
+    ],
+    "subject": "civics",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "b4aa561713562c03110e395b92e4965549666a44eb8a8db5ac9c0a085d512b87",
+    "curriculum": "austria-lehrplaene",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "State and law",
+      "State structure",
+      "Law basics",
+      "Civil law",
+      "Civil law"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Civics - Állam szerkezete",
+    "description": "Test on Állam szerkezete including State and law, State structure, Law basics, Civil law, Civil law",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    }
+  ],
+  "rubrics": []
+}

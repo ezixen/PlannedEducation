@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-12-history-történelem-erettségi-1.0.0",
+    "name": "Történelem-erettségi - New Zealand grade-12",
+    "version": "1.0.0",
+    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:34.942125+00:00",
+    "updated_at": "2026-10-21T11:02:34.942137+00:00",
+    "tags": [
+      "history",
+      "történelem-erettségi",
+      "grade-12",
+      "new_zealand"
+    ],
+    "subject": "history",
+    "grade_level": "grade-12",
+    "license": "CC-BY-4.0",
+    "checksum": "15d3be52807b3c7903d53bed97a60779fa6723b0354e3577643cde06baf677a9",
+    "curriculum": "new-zealand-nzc-te-mataiaho",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "History-maturity",
+      "History",
+      "Historical events",
+      "World history",
+      "Europe and world"
+    ]
+  },
+  "exam": {
+    "title": "grade-12 History - Történelem-erettségi",
+    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "történelem-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "történelem-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "history",
+        "történelem-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "történelem-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "történelem-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
+    }
+  ],
+  "rubrics": []
+}

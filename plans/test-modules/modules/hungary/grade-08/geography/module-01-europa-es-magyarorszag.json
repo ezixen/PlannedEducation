@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-08-geography-europa-es-magyarorszag-1.0.0",
-    "name": "Európa és Magyarország - Grade 08 Geography",
+    "id": "grade-08-geography-európa-és-magyarország-1.0.0",
+    "name": "Európa és Magyarország - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on európa és magyarország for Grade 08 students. Covers: Tájak, Népesség, Gazdaság.",
+    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.326300+00:00",
-    "updated_at": "2026-10-20T13:20:17.326300+00:00",
+    "created_at": "2026-10-21T11:02:35.295282+00:00",
+    "updated_at": "2026-10-21T11:02:35.295300+00:00",
     "tags": [
       "geography",
       "európa-és-magyarország",
-      "grade-08"
+      "grade-08",
+      "hungary"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "e8ba3b92fb2676a7962ee83650a994d433b81ee44d8409a3de2605fc166221c0",
+    "checksum": "baa0bd892fdbe3d4e1e8ec3851eaad023b8814516cb888a26f8d691af2172e1e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Tájak",
-      "Népesség",
-      "Gazdaság"
+      "Europe and Hungary",
+      "Europe",
+      "Hungary",
+      "Geography",
+      "Geographic knowledge"
     ]
   },
   "exam": {
-    "title": "Grade 08 Geography - Európa és Magyarország",
-    "description": "Test on európa és magyarország including tájak, népesség, gazdaság",
+    "title": "grade-08 Geography - Európa és Magyarország",
+    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Népesség",
+      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország"
+        "európa-és-magyarország",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Népesség"
+      "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Gazdaság",
+      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország"
+        "európa-és-magyarország",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Gazdaság"
+      "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Tájak",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország"
+        "európa-és-magyarország",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Tájak"
+      "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Népesség",
+      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország"
+        "európa-és-magyarország",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Népesség"
+      "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Gazdaság",
+      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország"
+        "európa-és-magyarország",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Gazdaság"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 6: Tájak",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "európa-és-magyarország"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Tájak"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 7: Népesség",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "európa-és-magyarország"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Népesség"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 8: Gazdaság",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "európa-és-magyarország"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Gazdaság"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[geography] Európa és Magyarország - Kérdés 9: Tájak",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "európa-és-magyarország"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Tájak"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[geography] Európa és Magyarország - Kérdés 10: Népesség",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "európa-és-magyarország"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-GEOG-Európa és Magyarorsz",
-      "learning_objective": "Népesség"
+      "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "learning_objective": "Europe and Hungary"
     }
   ],
   "rubrics": []

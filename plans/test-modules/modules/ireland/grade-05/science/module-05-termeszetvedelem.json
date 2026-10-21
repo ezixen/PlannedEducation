@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-05-science-természetvédelem-1.0.0",
+    "name": "Természetvédelem - Ireland grade-05",
+    "version": "1.0.0",
+    "description": "45-minute test on Természetvédelem for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:30.301125+00:00",
+    "updated_at": "2026-10-21T11:02:30.301138+00:00",
+    "tags": [
+      "science",
+      "természetvédelem",
+      "grade-05",
+      "ireland"
+    ],
+    "subject": "science",
+    "grade_level": "grade-05",
+    "license": "CC-BY-4.0",
+    "checksum": "69a3c2a7570bf3f6c45c21cc9be7e5277ebdbd014868d6550d872f8d47fbc57a",
+    "curriculum": "ireland-ncca-curriculum",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Nature and environment",
+      "Plants and animals",
+      "Nature",
+      "Environment",
+      "Nature conservation"
+    ]
+  },
+  "exam": {
+    "title": "grade-05 Science - Természetvédelem",
+    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "természetvédelem",
+        "grade-05"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-05-SCIENCE-Természetvédelem",
+      "learning_objective": "Nature conservation"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "természetvédelem",
+        "grade-05"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-05-SCIENCE-Természetvédelem",
+      "learning_objective": "Nature conservation"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "science",
+        "természetvédelem",
+        "grade-05"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-05-SCIENCE-Természetvédelem",
+      "learning_objective": "Nature conservation"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "természetvédelem",
+        "grade-05"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-05-SCIENCE-Természetvédelem",
+      "learning_objective": "Nature conservation"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "természetvédelem",
+        "grade-05"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-05-SCIENCE-Természetvédelem",
+      "learning_objective": "Nature conservation"
+    }
+  ],
+  "rubrics": []
+}

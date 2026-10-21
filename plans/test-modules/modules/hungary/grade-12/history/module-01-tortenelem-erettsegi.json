@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-12-history-tortenelem-erettsegi-1.0.0",
-    "name": "Történelem érettségi - Grade 12 History",
+    "id": "grade-12-history-történelem-erettségi-1.0.0",
+    "name": "Történelem-erettségi - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on történelem érettségi for Grade 12 students. Covers: Korszakok, Forráskritika, Érvelés.",
+    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.419435+00:00",
-    "updated_at": "2026-10-20T13:20:17.419435+00:00",
+    "created_at": "2026-10-21T11:02:35.685305+00:00",
+    "updated_at": "2026-10-21T11:02:35.685321+00:00",
     "tags": [
       "history",
-      "történelem-érettségi",
-      "grade-12"
+      "történelem-erettségi",
+      "grade-12",
+      "hungary"
     ],
     "subject": "history",
     "grade_level": "grade-12",
     "license": "CC-BY-4.0",
-    "checksum": "83c320e9f3a610a045a529b8b5edbf793ebe7be18ece1b86c67c0ba4e8186bca",
+    "checksum": "883e13078a5108b38c0accbb4e045141efd57c19f3b2207f2ab69ec266b3179c",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Korszakok",
-      "Forráskritika",
-      "Érvelés"
+      "History-maturity",
+      "History",
+      "Historical events",
+      "World history",
+      "Europe and world"
     ]
   },
   "exam": {
-    "title": "Grade 12 History - Történelem érettségi",
-    "description": "Test on történelem érettségi including korszakok, forráskritika, érvelés",
+    "title": "grade-12 History - Történelem-erettségi",
+    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem érettségi - Kérdés 1: Forráskritika",
+      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-érettségi"
+        "történelem-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Forráskritika"
+      "curriculum_topic": "HUNGARY-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem érettségi - Kérdés 2: Érvelés",
+      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-érettségi"
+        "történelem-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Érvelés"
+      "curriculum_topic": "HUNGARY-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[history] Történelem érettségi - Kérdés 3: Korszakok",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem-érettségi"
+        "történelem-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Korszakok"
+      "curriculum_topic": "HUNGARY-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem érettségi - Kérdés 4: Forráskritika",
+      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-érettségi"
+        "történelem-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Forráskritika"
+      "curriculum_topic": "HUNGARY-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem érettségi - Kérdés 5: Érvelés",
+      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-érettségi"
+        "történelem-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Érvelés"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[history] Történelem érettségi - Kérdés 6: Korszakok",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "történelem-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Korszakok"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[history] Történelem érettségi - Kérdés 7: Forráskritika",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "történelem-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Forráskritika"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[history] Történelem érettségi - Kérdés 8: Érvelés",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "történelem-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Érvelés"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[history] Történelem érettségi - Kérdés 9: Korszakok",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem érettségi témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "történelem-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Korszakok"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[history] Történelem érettségi - Kérdés 10: Forráskritika",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem érettségi témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "történelem-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-HIST-Történelem érettségi",
-      "learning_objective": "Forráskritika"
+      "curriculum_topic": "HUNGARY-GRADE-12-HISTORY-Történelem-erettségi",
+      "learning_objective": "History-maturity"
     }
   ],
   "rubrics": []

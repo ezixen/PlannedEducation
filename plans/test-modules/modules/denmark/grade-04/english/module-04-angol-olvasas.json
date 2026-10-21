@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-04-english-angol-olvasás-1.0.0",
+    "name": "Angol olvasás - Denmark grade-04",
+    "version": "1.0.0",
+    "description": "45-minute test on Angol olvasás for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:27.169852+00:00",
+    "updated_at": "2026-10-21T11:02:27.169873+00:00",
+    "tags": [
+      "english",
+      "angol-olvasás",
+      "grade-04",
+      "denmark"
+    ],
+    "subject": "english",
+    "grade_level": "grade-04",
+    "license": "CC-BY-4.0",
+    "checksum": "3ee10bc1d1dce7f50d59a079686a66529ab2351e993928ebdb9949b8c0de9b47",
+    "curriculum": "denmark-emu-faelles-maal",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "English language A2",
+      "English grammar",
+      "English vocabulary",
+      "English reading",
+      "English writing"
+    ]
+  },
+  "exam": {
+    "title": "grade-04 English - Angol olvasás",
+    "description": "Test on Angol olvasás including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-olvasás",
+        "grade-04"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-04-ENGLISH-Angol olvasás",
+      "learning_objective": "English reading"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-olvasás",
+        "grade-04"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-04-ENGLISH-Angol olvasás",
+      "learning_objective": "English reading"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-olvasás",
+        "grade-04"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-04-ENGLISH-Angol olvasás",
+      "learning_objective": "English reading"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-olvasás",
+        "grade-04"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-04-ENGLISH-Angol olvasás",
+      "learning_objective": "English reading"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-olvasás",
+        "grade-04"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-04-ENGLISH-Angol olvasás",
+      "learning_objective": "English reading"
+    }
+  ],
+  "rubrics": []
+}

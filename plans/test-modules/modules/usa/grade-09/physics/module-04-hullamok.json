@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-09-physics-hullamok-1.0.0",
+    "name": "Hullamok - USA grade-09",
+    "version": "1.0.0",
+    "description": "45-minute test on Hullamok for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:18.055396+00:00",
+    "updated_at": "2026-10-21T11:02:18.055435+00:00",
+    "tags": [
+      "physics",
+      "hullamok",
+      "grade-09",
+      "usa"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-09",
+    "license": "CC-BY-4.0",
+    "checksum": "04a4154f4ebb7a2d92be3cc0077beaf1b497f3999edb5549db5e7100c05669bc",
+    "curriculum": "usa-common-core",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Mechanics",
+      "Forces and motion",
+      "Energy",
+      "Waves",
+      "Optics"
+    ]
+  },
+  "exam": {
+    "title": "grade-09 Physics - Hullamok",
+    "description": "Test on Hullamok including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullamok - Kérdés 1: Waves",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullamok",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-GRADE-09-PHYSICS-Hullamok",
+      "learning_objective": "Waves"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullamok - Kérdés 2: Waves",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullamok",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-GRADE-09-PHYSICS-Hullamok",
+      "learning_objective": "Waves"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[physics] Hullamok - Kérdés 3: Waves",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullamok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullamok",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-GRADE-09-PHYSICS-Hullamok",
+      "learning_objective": "Waves"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[physics] Hullamok - Question 4: Waves [rand:1-1000]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "physics",
+        "hullamok",
+        "grade-09",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-GRADE-09-PHYSICS-Hullamok",
+      "learning_objective": "Waves"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullamok - Kérdés 5: Waves",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullamok",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "USA-GRADE-09-PHYSICS-Hullamok",
+      "learning_objective": "Waves"
+    }
+  ],
+  "rubrics": []
+}

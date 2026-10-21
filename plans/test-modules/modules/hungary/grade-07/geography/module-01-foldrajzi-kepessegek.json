@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-07-geography-foldrajzi-kepessegek-1.0.0",
-    "name": "Földrajzi képességek - Grade 07 Geography",
+    "id": "grade-07-geography-földrajzi-képességek-1.0.0",
+    "name": "Földrajzi képességek - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on földrajzi képességek for Grade 07 students. Covers: Térképek, Klíma, Gazdaság.",
+    "description": "45-minute test on Földrajzi képességek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.299849+00:00",
-    "updated_at": "2026-10-20T13:20:17.299849+00:00",
+    "created_at": "2026-10-21T11:02:35.177069+00:00",
+    "updated_at": "2026-10-21T11:02:35.177085+00:00",
     "tags": [
       "geography",
       "földrajzi-képességek",
-      "grade-07"
+      "grade-07",
+      "hungary"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "238eb11947b8c7f41495bf5ca74a3a87a375480070eee6682270d35b00f8d60d",
+    "checksum": "2309c77f91fed36e6c3a263dfb0e4261c6143d722fb877099e4a3c3241bc554c",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Térképek",
-      "Klíma",
-      "Gazdaság"
+      "Geographic skills",
+      "Geography",
+      "Geographic skills",
+      "Geographic knowledge",
+      "Geographic tools"
     ]
   },
   "exam": {
-    "title": "Grade 07 Geography - Földrajzi képességek",
-    "description": "Test on földrajzi képességek including térképek, klíma, gazdaság",
+    "title": "grade-07 Geography - Földrajzi képességek",
+    "description": "Test on Földrajzi képességek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 1: Klíma",
+      "text": "[geography] Földrajzi képességek - Kérdés 1: Geographic skills",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek"
+        "földrajzi-képességek",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Klíma"
+      "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "learning_objective": "Geographic skills"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 2: Gazdaság",
+      "text": "[geography] Földrajzi képességek - Kérdés 2: Geographic skills",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek"
+        "földrajzi-képességek",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Gazdaság"
+      "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "learning_objective": "Geographic skills"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 3: Térképek",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[geography] Földrajzi képességek - Kérdés 3: Geographic skills",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek"
+        "földrajzi-képességek",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Térképek"
+      "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "learning_objective": "Geographic skills"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 4: Klíma",
+      "text": "[geography] Földrajzi képességek - Kérdés 4: Geographic skills",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek"
+        "földrajzi-képességek",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Klíma"
+      "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "learning_objective": "Geographic skills"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 5: Gazdaság",
+      "text": "[geography] Földrajzi képességek - Kérdés 5: Geographic skills",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek"
+        "földrajzi-képességek",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Gazdaság"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 6: Térképek",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajzi-képességek"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Térképek"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 7: Klíma",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajzi-képességek"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Klíma"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 8: Gazdaság",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajzi-képességek"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Gazdaság"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[geography] Földrajzi képességek - Kérdés 9: Térképek",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajzi-képességek"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Térképek"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[geography] Földrajzi képességek - Kérdés 10: Klíma",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajzi-képességek"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-GEOG-Földrajzi képességek",
-      "learning_objective": "Klíma"
+      "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "learning_objective": "Geographic skills"
     }
   ],
   "rubrics": []

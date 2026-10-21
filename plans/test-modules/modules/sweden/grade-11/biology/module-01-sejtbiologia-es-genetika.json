@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "id": "grade-11-biology-sejtbiológia-és-genetika-1.0.0",
+    "name": "Sejtbiológia és genetika - Sweden grade-11",
+    "version": "1.0.0",
+    "description": "45-minute test on Sejtbiológia és genetika for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:26.039596+00:00",
+    "updated_at": "2026-10-21T11:02:26.039617+00:00",
+    "tags": [
+      "biology",
+      "sejtbiológia-és-genetika",
+      "grade-11",
+      "sweden"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "f3f344168aeadf7b63605d95ea1e12c50d184996d45ce6563878f70b9dd0cc0d",
+    "curriculum": "sweden-skolverket-laroplan",
+    "duration_minutes": 45,
+    "total_points": 27,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Cell biology and genetics",
+      "Cell structure",
+      "Genetics",
+      "Ecology",
+      "Ecological systems"
+    ]
+  },
+  "exam": {
+    "title": "grade-11 Biology - Sejtbiológia és genetika",
+    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWEDEN-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWEDEN-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWEDEN-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWEDEN-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
+    },
+    {
+      "id": "q-005",
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejtbiológia-és-genetika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWEDEN-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
+    }
+  ],
+  "rubrics": []
+}

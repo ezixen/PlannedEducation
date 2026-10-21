@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-08-physics-mozgás-1.0.0",
+    "name": "Mozgás - Canada grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Mozgás for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:15.773473+00:00",
+    "updated_at": "2026-10-21T11:02:15.773501+00:00",
+    "tags": [
+      "physics",
+      "mozgás",
+      "grade-08",
+      "canada"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "c5aad916822572993178f042692d69376b5fa9572f4af28fa282721fcdecf00f",
+    "curriculum": "canada-ontario",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Mechanics basics",
+      "Forces",
+      "Motion",
+      "Energy",
+      "Work"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Physics - Mozgás",
+    "description": "Test on Mozgás including Mechanics basics, Forces, Motion, Energy, Work",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Mozgás - Kérdés 1: Motion",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "mozgás",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-08-PHYSICS-Mozgás",
+      "learning_objective": "Motion"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Mozgás - Kérdés 2: Motion",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "mozgás",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-08-PHYSICS-Mozgás",
+      "learning_objective": "Motion"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[physics] Mozgás - Kérdés 3: Motion",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Mozgás témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "physics",
+        "mozgás",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-08-PHYSICS-Mozgás",
+      "learning_objective": "Motion"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[physics] Mozgás - Question 4: Motion [rand:1-1000]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "physics",
+        "mozgás",
+        "grade-08",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-08-PHYSICS-Mozgás",
+      "learning_objective": "Motion"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Mozgás - Kérdés 5: Motion",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "mozgás",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-08-PHYSICS-Mozgás",
+      "learning_objective": "Motion"
+    }
+  ],
+  "rubrics": []
+}

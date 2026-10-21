@@ -90,16 +90,16 @@ export function TeacherClasses() {
     <div>
       <div style={{ marginBottom: '1.5rem' }}>
         <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-color)' }}>
-          Class Groupings & Student Rosters
+          {t('teacher_classes.title')}
         </h1>
         <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)' }}>
-          Manage your classes, enroll students, and provide instant classroom password unlocks right before exams.
+          {t('teacher_classes.subtitle')}
         </p>
       </div>
 
       <div style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', marginBottom: '1.5rem' }}>
         <h3 style={{ margin: '0 0 0.75rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-          Create New Class
+          {t('teacher_classes.create_new_class')}
         </h3>
         <form onSubmit={handleCreateClass} style={{ display: 'flex', gap: '0.75rem' }}>
           <input 
@@ -110,7 +110,7 @@ export function TeacherClasses() {
             style={{ flex: 1, padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
           />
           <button type="submit" style={{ padding: '0.65rem 1.25rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600 }}>
-            Create Class
+            {t('teacher_classes.create_class')}
           </button>
         </form>
       </div>
@@ -120,14 +120,14 @@ export function TeacherClasses() {
           <div key={cls.id} style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <h3 style={{ margin: '0 0 0.25rem 0', fontSize: '1.05rem', color: 'var(--text-color)' }}>{cls.name}</h3>
-              <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{cls.students.length} Enrolled Students</p>
+              <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{cls.students.length} {t('teacher_classes.enrolled_students')}</p>
             </div>
             <div>
               <button
                 onClick={() => handleOpenRoster(cls)}
                 style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--bg-color)', color: 'var(--primary-color)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}
               >
-                👥 Manage Roster & Passwords
+                👥 {t('teacher_classes.manage_roster')}
               </button>
             </div>
           </div>
@@ -267,7 +267,7 @@ export function TeacherClasses() {
                           }}
                         >
                           <KeyRound size={14} />
-                          {resettingId === student.id ? 'Unlocking...' : '⚡ Reset Pwd for Test'}
+                          {resettingId === student.id ? t('teacher_classes.unlocking') : t('teacher_classes.reset_pwd_for_test')}
                         </button>
                       </div>
                     </div>

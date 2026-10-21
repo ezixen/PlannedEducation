@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-02-math-osztás-alapok-1.0.0",
+    "name": "Osztás alapok - European Union grade-02",
+    "version": "1.0.0",
+    "description": "45-minute test on Osztás alapok for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:18.967996+00:00",
+    "updated_at": "2026-10-21T11:02:18.968011+00:00",
+    "tags": [
+      "math",
+      "osztás-alapok",
+      "grade-02",
+      "eu"
+    ],
+    "subject": "math",
+    "grade_level": "grade-02",
+    "license": "CC-BY-4.0",
+    "checksum": "d61588ffa83d1b8bea643638a1879d6b32df59260d1e08b8a2f9a2cd8ae8b471",
+    "curriculum": "eu-key-competences",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Counting to 100",
+      "Addition to 100",
+      "Subtraction to 100",
+      "Multiplication basics",
+      "Division basics"
+    ]
+  },
+  "exam": {
+    "title": "grade-02 Math - Osztás alapok",
+    "description": "Test on Osztás alapok including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Osztás alapok - Kérdés 1: Division basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "osztás-alapok",
+        "grade-02"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "EU-GRADE-02-MATH-Osztás alapok",
+      "learning_objective": "Division basics"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Osztás alapok - Kérdés 2: Division basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "osztás-alapok",
+        "grade-02"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "EU-GRADE-02-MATH-Osztás alapok",
+      "learning_objective": "Division basics"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Osztás alapok - Kérdés 3: Division basics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "osztás-alapok",
+        "grade-02"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "EU-GRADE-02-MATH-Osztás alapok",
+      "learning_objective": "Division basics"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Osztás alapok - Kérdés 4: Division basics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Osztás alapok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "osztás-alapok",
+        "grade-02"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "EU-GRADE-02-MATH-Osztás alapok",
+      "learning_objective": "Division basics"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Osztás alapok - Question 5: Division basics [rand:1-20]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "integer",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        },
+        {
+          "name": "y",
+          "type": "integer",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "tags": [
+        "math",
+        "osztás-alapok",
+        "grade-02",
+        "integer"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "EU-GRADE-02-MATH-Osztás alapok",
+      "learning_objective": "Division basics"
+    }
+  ],
+  "rubrics": []
+}

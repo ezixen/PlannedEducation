@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "id": "grade-08-biology-embri-test-és-egészség-1.0.0",
+    "name": "Embri test és egészség - Ireland grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Embri test és egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:30.488922+00:00",
+    "updated_at": "2026-10-21T11:02:30.488935+00:00",
+    "tags": [
+      "biology",
+      "embri-test-és-egészség",
+      "grade-08",
+      "ireland"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "d0a98b84b204ffa66918779291d3f4af111a496c6573e002c913997d296768d8",
+    "curriculum": "ireland-ncca-curriculum",
+    "duration_minutes": 45,
+    "total_points": 27,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Human body and health",
+      "Human body structure",
+      "Senses",
+      "Perception",
+      "Health"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Biology - Embri test és egészség",
+    "description": "Test on Embri test és egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Embri test és egészség - Kérdés 1: Human body and health",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "embri-test-és-egészség",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-BIOLOGY-Embri test és egészség",
+      "learning_objective": "Human body and health"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Embri test és egészség - Kérdés 2: Human body and health",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "embri-test-és-egészség",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-BIOLOGY-Embri test és egészség",
+      "learning_objective": "Human body and health"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[biology] Embri test és egészség - Kérdés 3: Human body and health",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "embri-test-és-egészség",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-BIOLOGY-Embri test és egészség",
+      "learning_objective": "Human body and health"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Embri test és egészség - Kérdés 4: Human body and health",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "embri-test-és-egészség",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-BIOLOGY-Embri test és egészség",
+      "learning_objective": "Human body and health"
+    },
+    {
+      "id": "q-005",
+      "question_type": "essay",
+      "text": "[biology] Embri test és egészség - Kérdés 5: Human body and health",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "embri-test-és-egészség",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-BIOLOGY-Embri test és egészség",
+      "learning_objective": "Human body and health"
+    }
+  ],
+  "rubrics": []
+}

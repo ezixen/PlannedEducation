@@ -142,6 +142,7 @@ Located at [**`chrome-devtools/`**](./chrome-devtools):
 ## ⚡ Antigravity Agent Core (`antigravity-core/`)
 
 Located at [**`antigravity-core/`**](./antigravity-core):
+- **`antigravity-cli`**: Operational manual and execution guide for the Antigravity CLI (`agy`), model steering (`gemini-3.8-flash-high` on high reasoning), account management, slash commands, and rate limit evasion.
 - **`generative_ui`**: Guidelines for rendering rich, interactive HTML/CSS widgets inline in chat or as standalone artifacts.
 - **`agy-customizations`**: Full reference for Antigravity skills, plugins, operational rules, sidecars, and MCP server discovery.
 - **`antigravity_guide`**: Complete guide to Antigravity IDE, CLI (`agy`), slash commands (`/goal`, `/plan`), and keybindings.

@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-11-physics-modern-fizika-1.0.0",
+    "name": "Modern fizika - Canada grade-11",
+    "version": "1.0.0",
+    "description": "45-minute test on Modern fizika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:16.010601+00:00",
+    "updated_at": "2026-10-21T11:02:16.010613+00:00",
+    "tags": [
+      "physics",
+      "modern-fizika",
+      "grade-11",
+      "canada"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "4223b4dec120d3e3089045f6fc2ee7d3374c5038f8369c2e4492a95a2603939c",
+    "curriculum": "canada-ontario",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Mechanics",
+      "Waves",
+      "Optics",
+      "Electromagnetism",
+      "Modern physics"
+    ]
+  },
+  "exam": {
+    "title": "grade-11 Physics - Modern fizika",
+    "description": "Test on Modern fizika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Modern fizika - Kérdés 1: Modern physics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "modern-fizika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Modern fizika",
+      "learning_objective": "Modern physics"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Modern fizika - Kérdés 2: Modern physics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "modern-fizika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Modern fizika",
+      "learning_objective": "Modern physics"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[physics] Modern fizika - Kérdés 3: Modern physics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Modern fizika témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "physics",
+        "modern-fizika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Modern fizika",
+      "learning_objective": "Modern physics"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[physics] Modern fizika - Question 4: Modern physics [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "physics",
+        "modern-fizika",
+        "grade-11",
+        "fraction"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Modern fizika",
+      "learning_objective": "Modern physics"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Modern fizika - Kérdés 5: Modern physics",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "modern-fizika",
+        "grade-11"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Modern fizika",
+      "learning_objective": "Modern physics"
+    }
+  ],
+  "rubrics": []
+}

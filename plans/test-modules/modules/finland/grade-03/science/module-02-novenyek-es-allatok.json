@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-03-science-növények-és-állatok-1.0.0",
+    "name": "Növények és állatok - Finland grade-03",
+    "version": "1.0.0",
+    "description": "45-minute test on Növények és állatok for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:24.055547+00:00",
+    "updated_at": "2026-10-21T11:02:24.055560+00:00",
+    "tags": [
+      "science",
+      "növények-és-állatok",
+      "grade-03",
+      "finland"
+    ],
+    "subject": "science",
+    "grade_level": "grade-03",
+    "license": "CC-BY-4.0",
+    "checksum": "29c1315c61c10d5e952582ea44eb8d8c7013dc794581a4826cb18a6eee16b145",
+    "curriculum": "finland-national-core-curriculum-2016",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Nature and environment",
+      "Plants and animals",
+      "Nature",
+      "Environment",
+      "Nature conservation"
+    ]
+  },
+  "exam": {
+    "title": "grade-03 Science - Növények és állatok",
+    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "növények-és-állatok",
+        "grade-03"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Növények és állatok",
+      "learning_objective": "Plants and animals"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "növények-és-állatok",
+        "grade-03"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Növények és állatok",
+      "learning_objective": "Plants and animals"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "science",
+        "növények-és-állatok",
+        "grade-03"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Növények és állatok",
+      "learning_objective": "Plants and animals"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "növények-és-állatok",
+        "grade-03"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Növények és állatok",
+      "learning_objective": "Plants and animals"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "növények-és-állatok",
+        "grade-03"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Növények és állatok",
+      "learning_objective": "Plants and animals"
+    }
+  ],
+  "rubrics": []
+}

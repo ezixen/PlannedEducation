@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-10-physics-fizika-felkészülés-1.0.0",
+    "name": "Fizika felkészülés - Netherlands grade-10",
+    "version": "1.0.0",
+    "description": "45-minute test on Fizika felkészülés for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:25.371021+00:00",
+    "updated_at": "2026-10-21T11:02:25.371040+00:00",
+    "tags": [
+      "physics",
+      "fizika-felkészülés",
+      "grade-10",
+      "netherlands"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "414f5ccce6e5d246f747753a08beab790230d8e60c1191535d43f0f8fb7dc379",
+    "curriculum": "netherlands-slo-kerndoelen",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Mechanics",
+      "Waves and optics",
+      "Electromagnetism",
+      "Modern physics",
+      "Physics preparation"
+    ]
+  },
+  "exam": {
+    "title": "grade-10 Physics - Fizika felkészülés",
+    "description": "Test on Fizika felkészülés including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Fizika felkészülés - Kérdés 1: Physics preparation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "fizika-felkészülés",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Fizika felkészülés",
+      "learning_objective": "Physics preparation"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Fizika felkészülés - Kérdés 2: Physics preparation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "fizika-felkészülés",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Fizika felkészülés",
+      "learning_objective": "Physics preparation"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[physics] Fizika felkészülés - Kérdés 3: Physics preparation",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Fizika felkészülés témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "physics",
+        "fizika-felkészülés",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Fizika felkészülés",
+      "learning_objective": "Physics preparation"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[physics] Fizika felkészülés - Question 4: Physics preparation [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "physics",
+        "fizika-felkészülés",
+        "grade-10",
+        "fraction"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Fizika felkészülés",
+      "learning_objective": "Physics preparation"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Fizika felkészülés - Kérdés 5: Physics preparation",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "fizika-felkészülés",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Fizika felkészülés",
+      "learning_objective": "Physics preparation"
+    }
+  ],
+  "rubrics": []
+}

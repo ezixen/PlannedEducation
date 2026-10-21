@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "id": "grade-08-biology-észek-1.0.0",
+    "name": "Észek - Finland grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Észek for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:24.273956+00:00",
+    "updated_at": "2026-10-21T11:02:24.273968+00:00",
+    "tags": [
+      "biology",
+      "észek",
+      "grade-08",
+      "finland"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "da323d154ca2796e6c932a477390158e550058771636a0ebc6e38d66f33435a5",
+    "curriculum": "finland-national-core-curriculum-2016",
+    "duration_minutes": 45,
+    "total_points": 27,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Human body and health",
+      "Human body structure",
+      "Senses",
+      "Perception",
+      "Health"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Biology - Észek",
+    "description": "Test on Észek including Human body and health, Human body structure, Senses, Perception, Health",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Észek - Kérdés 1: Senses",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "észek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észek",
+      "learning_objective": "Senses"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Észek - Kérdés 2: Senses",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "észek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észek",
+      "learning_objective": "Senses"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[biology] Észek - Kérdés 3: Senses",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "észek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észek",
+      "learning_objective": "Senses"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Észek - Kérdés 4: Senses",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "észek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észek",
+      "learning_objective": "Senses"
+    },
+    {
+      "id": "q-005",
+      "question_type": "essay",
+      "text": "[biology] Észek - Kérdés 5: Senses",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "észek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észek",
+      "learning_objective": "Senses"
+    }
+  ],
+  "rubrics": []
+}

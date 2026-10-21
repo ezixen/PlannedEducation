@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-08-geography-magyarország-1.0.0",
+    "name": "Magyarország - Ireland grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:30.537427+00:00",
+    "updated_at": "2026-10-21T11:02:30.537438+00:00",
+    "tags": [
+      "geography",
+      "magyarország",
+      "grade-08",
+      "ireland"
+    ],
+    "subject": "geography",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "99b4dd1d8afb4ae7ba13751a2c8f38e42103aa26ac34d1409e88222f8ed47438",
+    "curriculum": "ireland-ncca-curriculum",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Europe and Hungary",
+      "Europe",
+      "Hungary",
+      "Geography",
+      "Geographic knowledge"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Geography - Magyarország",
+    "description": "Test on Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[geography] Magyarország - Kérdés 1: Hungary",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "magyarország",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "learning_objective": "Hungary"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[geography] Magyarország - Kérdés 2: Hungary",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "magyarország",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "learning_objective": "Hungary"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[geography] Magyarország - Kérdés 3: Hungary",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "geography",
+        "magyarország",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "learning_objective": "Hungary"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[geography] Magyarország - Kérdés 4: Hungary",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "magyarország",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "learning_objective": "Hungary"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[geography] Magyarország - Kérdés 5: Hungary",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "magyarország",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "learning_objective": "Hungary"
+    }
+  ],
+  "rubrics": []
+}

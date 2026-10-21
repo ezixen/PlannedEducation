@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-09-civics-demokracia-1.0.0",
+    "name": "Demokracia - New Zealand grade-09",
+    "version": "1.0.0",
+    "description": "45-minute test on Demokracia for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:34.665888+00:00",
+    "updated_at": "2026-10-21T11:02:34.665901+00:00",
+    "tags": [
+      "civics",
+      "demokracia",
+      "grade-09",
+      "new_zealand"
+    ],
+    "subject": "civics",
+    "grade_level": "grade-09",
+    "license": "CC-BY-4.0",
+    "checksum": "d836b39488f603f3f6aec7b36ab46a106a181c1e1b960aa4e07d68883552911b",
+    "curriculum": "new-zealand-nzc-te-mataiaho",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Democracy and market economy",
+      "Democracy",
+      "Market economy",
+      "Civil law",
+      "State structure"
+    ]
+  },
+  "exam": {
+    "title": "grade-09 Civics - Demokracia",
+    "description": "Test on Demokracia including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[civics] Demokracia - Kérdés 1: Democracy",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "demokracia",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-CIVICS-Demokracia",
+      "learning_objective": "Democracy"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[civics] Demokracia - Kérdés 2: Democracy",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "demokracia",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-CIVICS-Demokracia",
+      "learning_objective": "Democracy"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[civics] Demokracia - Kérdés 3: Democracy",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Demokracia témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "civics",
+        "demokracia",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-CIVICS-Demokracia",
+      "learning_objective": "Democracy"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[civics] Demokracia - Kérdés 4: Democracy",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "demokracia",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-CIVICS-Demokracia",
+      "learning_objective": "Democracy"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[civics] Demokracia - Kérdés 5: Democracy",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "demokracia",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-CIVICS-Demokracia",
+      "learning_objective": "Democracy"
+    }
+  ],
+  "rubrics": []
+}

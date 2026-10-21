@@ -1,7 +1,9 @@
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useI18n } from '../contexts/I18nContext';
 
 export function Dashboard() {
+  const { t } = useI18n();
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -9,24 +11,24 @@ export function Dashboard() {
 
   const cards = [
     {
-      title: 'Teacher Settings',
-      description: 'Manage exams, classes, and AI integrations.',
-      action: { label: 'Open Teacher Settings', onClick: () => navigate('/teacher-exams'), variant: 'primary' },
+      title: t('dashboard.teacher_settings'),
+      description: t('dashboard.teacher_settings_desc'),
+      action: { label: t('dashboard.open_teacher'), onClick: () => navigate('/teacher-exams'), variant: 'primary' },
     },
     {
-      title: 'Student Settings',
-      description: 'View upcoming exams and take tests.',
-      action: { label: 'Open Student Settings', onClick: () => navigate('/exam'), variant: 'secondary' },
+      title: t('dashboard.student_settings'),
+      description: t('dashboard.student_settings_desc'),
+      action: { label: t('dashboard.open_student'), onClick: () => navigate('/exam'), variant: 'secondary' },
     },
     {
-      title: 'Parent Dashboard',
-      description: 'View child progress and teacher feedback.',
-      action: { label: 'Open Parent Dashboard', onClick: () => navigate('/parent-dashboard'), variant: 'accent' },
+      title: t('dashboard.parent_dashboard'),
+      description: t('dashboard.parent_dashboard_desc'),
+      action: { label: t('dashboard.open_parent'), onClick: () => navigate('/parent-dashboard'), variant: 'accent' },
     },
     {
-      title: 'Admin Dashboard',
-      description: 'System oversight: users, exams, statistics, and password resets.',
-      action: { label: 'Open Admin Dashboard', onClick: () => navigate('/admin'), variant: 'primary' },
+      title: t('dashboard.admin_dashboard'),
+      description: t('dashboard.admin_dashboard_desc'),
+      action: { label: t('dashboard.open_admin'), onClick: () => navigate('/admin'), variant: 'primary' },
       roles: ['teacher', 'admin'],
     },
   ];
@@ -35,7 +37,7 @@ export function Dashboard() {
     <div style={{ padding: '1rem' }}>
       <div style={{ marginBottom: '2rem' }}>
         <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.5rem' }}>
-          Welcome, {user.full_name}
+          {t('dashboard.welcome', { name: user.full_name || 'User' })}
         </h1>
       </div>
       

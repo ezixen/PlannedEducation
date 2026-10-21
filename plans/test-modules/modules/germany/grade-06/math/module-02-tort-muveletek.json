@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-06-math-tört-műveletek-1.0.0",
+    "name": "Tört műveletek - Germany grade-06",
+    "version": "1.0.0",
+    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:16.253154+00:00",
+    "updated_at": "2026-10-21T11:02:16.253167+00:00",
+    "tags": [
+      "math",
+      "tört-műveletek",
+      "grade-06",
+      "germany"
+    ],
+    "subject": "math",
+    "grade_level": "grade-06",
+    "license": "CC-BY-4.0",
+    "checksum": "d2edbf4ba9093b393f579b43597c0580589c64d3034c5dea12ad187a0f2181d2",
+    "curriculum": "germany-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "General fractions",
+      "Fraction operations",
+      "Percentage basics",
+      "Percentage calculation",
+      "Proportional ratio"
+    ]
+  },
+  "exam": {
+    "title": "grade-06 Math - Tört műveletek",
+    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "tört-műveletek",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Tört műveletek",
+      "learning_objective": "Fraction operations"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "tört-műveletek",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Tört műveletek",
+      "learning_objective": "Fraction operations"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "tört-műveletek",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Tört műveletek",
+      "learning_objective": "Fraction operations"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "tört-műveletek",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Tört műveletek",
+      "learning_objective": "Fraction operations"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "tört-műveletek",
+        "grade-06",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Tört műveletek",
+      "learning_objective": "Fraction operations"
+    }
+  ],
+  "rubrics": []
+}

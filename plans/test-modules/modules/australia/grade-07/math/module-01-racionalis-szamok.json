@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-07-math-racionális-számok-1.0.0",
+    "name": "Racionális számok - Australia grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Racionális számok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:18.531754+00:00",
+    "updated_at": "2026-10-21T11:02:18.531766+00:00",
+    "tags": [
+      "math",
+      "racionális-számok",
+      "grade-07",
+      "australia"
+    ],
+    "subject": "math",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "1b1c8a778dfc1526cfd58dd2c0ebdaf2ffec12e5a40b6e1be372c26cca1c5bd4",
+    "curriculum": "australia-curriculum",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Rational numbers",
+      "Algebraic expressions",
+      "Equations",
+      "Geometry basics",
+      "Statistics basics"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Math - Racionális számok",
+    "description": "Test on Racionális számok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 1: Rational numbers",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-07-MATH-Racionális számok",
+      "learning_objective": "Rational numbers"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 2: Rational numbers",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-07-MATH-Racionális számok",
+      "learning_objective": "Rational numbers"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 3: Rational numbers",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-07-MATH-Racionális számok",
+      "learning_objective": "Rational numbers"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Racionális számok - Kérdés 4: Rational numbers",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-07-MATH-Racionális számok",
+      "learning_objective": "Rational numbers"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Racionális számok - Question 5: Rational numbers [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "racionális-számok",
+        "grade-07",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-07-MATH-Racionális számok",
+      "learning_objective": "Rational numbers"
+    }
+  ],
+  "rubrics": []
+}

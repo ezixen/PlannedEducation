@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-01-english-angol-mondatok-1.0.0",
+    "name": "Angol mondatok - Finland grade-01",
+    "version": "1.0.0",
+    "description": "45-minute test on Angol mondatok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:23.920202+00:00",
+    "updated_at": "2026-10-21T11:02:23.920214+00:00",
+    "tags": [
+      "english",
+      "angol-mondatok",
+      "grade-01",
+      "finland"
+    ],
+    "subject": "english",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "ff4a5bb4273278fb7e3a25a59dc2d570895aa485bfd298223bf21956d263f166",
+    "curriculum": "finland-national-core-curriculum-2016",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Phonics basics",
+      "English words",
+      "English sentences",
+      "English reading",
+      "English writing"
+    ]
+  },
+  "exam": {
+    "title": "grade-01 English - Angol mondatok",
+    "description": "Test on Angol mondatok including Phonics basics, English words, English sentences, English reading, English writing",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol mondatok - Kérdés 1: English sentences",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-mondatok",
+        "grade-01"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "learning_objective": "English sentences"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol mondatok - Kérdés 2: English sentences",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-mondatok",
+        "grade-01"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "learning_objective": "English sentences"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[english] Angol mondatok - Kérdés 3: English sentences",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol mondatok témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-mondatok",
+        "grade-01"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "learning_objective": "English sentences"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol mondatok - Kérdés 4: English sentences",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-mondatok",
+        "grade-01"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "learning_objective": "English sentences"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol mondatok - Kérdés 5: English sentences",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-mondatok",
+        "grade-01"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "learning_objective": "English sentences"
+    }
+  ],
+  "rubrics": []
+}

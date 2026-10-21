@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-08-civics-állam-szerkezete-1.0.0",
+    "name": "Állam szerkezete - Netherlands grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Állam szerkezete for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:25.086502+00:00",
+    "updated_at": "2026-10-21T11:02:25.086515+00:00",
+    "tags": [
+      "civics",
+      "állam-szerkezete",
+      "grade-08",
+      "netherlands"
+    ],
+    "subject": "civics",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "41b4a959674cd2a76d6795c0b08d38f117510dfe33f12d48d083ee34bff2dd24",
+    "curriculum": "netherlands-slo-kerndoelen",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "State and law",
+      "State structure",
+      "Law basics",
+      "Civil law",
+      "Civil law"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Civics - Állam szerkezete",
+    "description": "Test on Állam szerkezete including State and law, State structure, Law basics, Civil law, Civil law",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-08-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-08-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-08-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-08-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "állam-szerkezete",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "NETHERLANDS-GRADE-08-CIVICS-Állam szerkezete",
+      "learning_objective": "State structure"
+    }
+  ],
+  "rubrics": []
+}

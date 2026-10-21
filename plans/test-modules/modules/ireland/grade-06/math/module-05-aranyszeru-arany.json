@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-06-math-aranyszerű-arány-1.0.0",
+    "name": "Aranyszerű arány - Ireland grade-06",
+    "version": "1.0.0",
+    "description": "45-minute test on Aranyszerű arány for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:30.312074+00:00",
+    "updated_at": "2026-10-21T11:02:30.312085+00:00",
+    "tags": [
+      "math",
+      "aranyszerű-arány",
+      "grade-06",
+      "ireland"
+    ],
+    "subject": "math",
+    "grade_level": "grade-06",
+    "license": "CC-BY-4.0",
+    "checksum": "b55b4ff65c0f8bc632a7c0d7a7ec17879451d8df61fb0f81f570cfd152b9dba6",
+    "curriculum": "ireland-ncca-curriculum",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "General fractions",
+      "Fraction operations",
+      "Percentage basics",
+      "Percentage calculation",
+      "Proportional ratio"
+    ]
+  },
+  "exam": {
+    "title": "grade-06 Math - Aranyszerű arány",
+    "description": "Test on Aranyszerű arány including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Aranyszerű arány - Kérdés 1: Proportional ratio",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "aranyszerű-arány",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-06-MATH-Aranyszerű arány",
+      "learning_objective": "Proportional ratio"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Aranyszerű arány - Kérdés 2: Proportional ratio",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "aranyszerű-arány",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-06-MATH-Aranyszerű arány",
+      "learning_objective": "Proportional ratio"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Aranyszerű arány - Kérdés 3: Proportional ratio",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "aranyszerű-arány",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-06-MATH-Aranyszerű arány",
+      "learning_objective": "Proportional ratio"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Aranyszerű arány - Kérdés 4: Proportional ratio",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Aranyszerű arány témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "aranyszerű-arány",
+        "grade-06"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-06-MATH-Aranyszerű arány",
+      "learning_objective": "Proportional ratio"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Aranyszerű arány - Question 5: Proportional ratio [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "aranyszerű-arány",
+        "grade-06",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "IRELAND-GRADE-06-MATH-Aranyszerű arány",
+      "learning_objective": "Proportional ratio"
+    }
+  ],
+  "rubrics": []
+}

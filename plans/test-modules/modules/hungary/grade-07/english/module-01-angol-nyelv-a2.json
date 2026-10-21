@@ -1,38 +1,41 @@
 {
   "metadata": {
     "id": "grade-07-english-angol-nyelv-a2-1.0.0",
-    "name": "Angol nyelv A2 - Grade 07 English",
+    "name": "Angol nyelv A2 - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on angol nyelv a2 for Grade 07 students. Covers: Nyelvtan, Szókincs, Kommunikáció.",
+    "description": "45-minute test on Angol nyelv A2 for grade-07 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.311880+00:00",
-    "updated_at": "2026-10-20T13:20:17.311880+00:00",
+    "created_at": "2026-10-21T11:02:35.165007+00:00",
+    "updated_at": "2026-10-21T11:02:35.165027+00:00",
     "tags": [
       "english",
       "angol-nyelv-a2",
-      "grade-07"
+      "grade-07",
+      "hungary"
     ],
     "subject": "english",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "b5f5f29050cc264ec386390703c84984e3e3d1c05763052fee13d0533bf2757e",
+    "checksum": "9d7f577ee12b94df2519e47927acf824620babb228ef64b85c870b3ce57544c7",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nyelvtan",
-      "Szókincs",
-      "Kommunikáció"
+      "English language A2",
+      "English grammar",
+      "English vocabulary",
+      "English reading",
+      "English writing"
     ]
   },
   "exam": {
-    "title": "Grade 07 English - Angol nyelv A2",
-    "description": "Test on angol nyelv a2 including nyelvtan, szókincs, kommunikáció",
+    "title": "grade-07 English - Angol nyelv A2",
+    "description": "Test on Angol nyelv A2 including English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 1: Szókincs",
+      "text": "[english] Angol nyelv A2 - Kérdés 1: English language A2",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2"
+        "angol-nyelv-a2",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Szókincs"
+      "curriculum_topic": "HUNGARY-GRADE-07-ENGLISH-Angol nyelv A2",
+      "learning_objective": "English language A2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 2: Kommunikáció",
+      "text": "[english] Angol nyelv A2 - Kérdés 2: English language A2",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2"
+        "angol-nyelv-a2",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Kommunikáció"
+      "curriculum_topic": "HUNGARY-GRADE-07-ENGLISH-Angol nyelv A2",
+      "learning_objective": "English language A2"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 3: Nyelvtan",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[english] Angol nyelv A2 - Kérdés 3: English language A2",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2"
+        "angol-nyelv-a2",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Nyelvtan"
+      "curriculum_topic": "HUNGARY-GRADE-07-ENGLISH-Angol nyelv A2",
+      "learning_objective": "English language A2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 4: Szókincs",
+      "text": "[english] Angol nyelv A2 - Kérdés 4: English language A2",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2"
+        "angol-nyelv-a2",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Szókincs"
+      "curriculum_topic": "HUNGARY-GRADE-07-ENGLISH-Angol nyelv A2",
+      "learning_objective": "English language A2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 5: Kommunikáció",
+      "text": "[english] Angol nyelv A2 - Kérdés 5: English language A2",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2"
+        "angol-nyelv-a2",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Kommunikáció"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[english] Angol nyelv A2 - Kérdés 6: Nyelvtan",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "english",
-        "angol-nyelv-a2"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Nyelvtan"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[english] Angol nyelv A2 - Kérdés 7: Szókincs",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "english",
-        "angol-nyelv-a2"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Szókincs"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[english] Angol nyelv A2 - Kérdés 8: Kommunikáció",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "english",
-        "angol-nyelv-a2"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Kommunikáció"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[english] Angol nyelv A2 - Kérdés 9: Nyelvtan",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "english",
-        "angol-nyelv-a2"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Nyelvtan"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[english] Angol nyelv A2 - Kérdés 10: Szókincs",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "english",
-        "angol-nyelv-a2"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-ENGL-Angol nyelv A2",
-      "learning_objective": "Szókincs"
+      "curriculum_topic": "HUNGARY-GRADE-07-ENGLISH-Angol nyelv A2",
+      "learning_objective": "English language A2"
     }
   ],
   "rubrics": []

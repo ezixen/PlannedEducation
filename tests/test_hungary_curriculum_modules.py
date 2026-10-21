@@ -13,8 +13,8 @@ import time
 import httpx
 
 BASE_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "admin@testschool.edu")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "TestAdmin123!")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "superadmin@school.edu")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "SuperPass123!")
 
 # Path to Hungary test modules
 HUNGARY_MODULES_PATH = os.getenv(

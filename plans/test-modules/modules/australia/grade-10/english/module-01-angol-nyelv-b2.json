@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-10-english-angol-nyelv-b2-1.0.0",
+    "name": "Angol nyelv B2 - Australia grade-10",
+    "version": "1.0.0",
+    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:18.761383+00:00",
+    "updated_at": "2026-10-21T11:02:18.761392+00:00",
+    "tags": [
+      "english",
+      "angol-nyelv-b2",
+      "grade-10",
+      "australia"
+    ],
+    "subject": "english",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "9c72b9cba20cf78a766b5519f0098f94b5f8314717290b8c8df334e09045c4d4",
+    "curriculum": "australia-curriculum",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "English language B2",
+      "English grammar",
+      "English vocabulary",
+      "English reading",
+      "English writing"
+    ]
+  },
+  "exam": {
+    "title": "grade-10 English - Angol nyelv B2",
+    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-10-ENGLISH-Angol nyelv B2",
+      "learning_objective": "English language B2"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-10-ENGLISH-Angol nyelv B2",
+      "learning_objective": "English language B2"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-10-ENGLISH-Angol nyelv B2",
+      "learning_objective": "English language B2"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-10-ENGLISH-Angol nyelv B2",
+      "learning_objective": "English language B2"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRALIA-GRADE-10-ENGLISH-Angol nyelv B2",
+      "learning_objective": "English language B2"
+    }
+  ],
+  "rubrics": []
+}

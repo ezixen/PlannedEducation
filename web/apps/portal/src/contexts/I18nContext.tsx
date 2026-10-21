@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, useCallback, useMemo, t
 
 import enMessages from '../locales/en/messages.json';
 
-export type Locale = 'en' | 'hu' | 'es' | 'de' | 'fr' | 'ja' | 'zh' | 'pt' | 'uk' | 'it' | 'pl' | 'nl' | 'sv' | 'no' | 'da' | 'fi' | 'pt-BR';
+export type Locale = 'en' | 'ar' | 'cn' | 'cs' | 'da' | 'de' | 'el' | 'es' | 'fi' | 'fr' | 'he' | 'hu' | 'id' | 'it' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ru' | 'sv' | 'th' | 'tr' | 'uk' | 'vi';
 
 export interface TranslationEntry {
   en: string;
@@ -28,26 +28,36 @@ export interface I18nContextType {
 const I18nContext = createContext<I18nContextType | null>(null);
 
 const DEFAULT_LOCALE: Locale = 'en';
-const AVAILABLE_LOCALES: Locale[] = ['en', 'hu', 'es', 'de', 'fr', 'ja', 'zh', 'pt', 'uk', 'it', 'pl', 'nl', 'sv', 'no', 'da', 'fi', 'pt-BR'];
+const AVAILABLE_LOCALES: Locale[] = ['en', 'ar', 'cn', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ru', 'sv', 'th', 'tr', 'uk', 'vi'];
 
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'EN - United Kingdom / United States (English)',
-  hu: 'HU - Hungary (Magyar)',
-  es: 'ES - Spain (Español)',
-  de: 'DE - Germany (Deutsch)',
-  fr: 'FR - France (Français)',
-  ja: 'JA - Japan (日本語)',
-  zh: 'ZH - China (中文)',
-  pt: 'PT - Portugal (Português)',
-  uk: 'UK - Ukraine (Українська)',
-  it: 'IT - Italy (Italiano)',
-  pl: 'PL - Poland (Polski)',
-  nl: 'NL - Netherlands (Nederlands)',
-  sv: 'SV - Sweden (Svenska)',
-  no: 'NO - Norway (Norsk)',
+  ar: 'AR - Arabic (العربية)',
+  cn: 'CN - China (中文)',
+  cs: 'CS - Czech (Čeština)',
   da: 'DA - Denmark (Dansk)',
+  de: 'DE - Germany (Deutsch)',
+  el: 'EL - Greece (Ελληνικά)',
+  es: 'ES - Spain (Español)',
   fi: 'FI - Finland (Suomi)',
+  fr: 'FR - France (Français)',
+  he: 'HE - Israel (עברית)',
+  hu: 'HU - Hungary (Magyar)',
+  id: 'ID - Indonesia (Bahasa Indonesia)',
+  it: 'IT - Italy (Italiano)',
+  ja: 'JA - Japan (日本語)',
+  ko: 'KO - Korea (한국어)',
+  nl: 'NL - Netherlands (Nederlands)',
+  no: 'NO - Norway (Norsk)',
+  pl: 'PL - Poland (Polski)',
+  pt: 'PT - Portugal (Português)',
   'pt-BR': 'PT-BR - Brazil (Português do Brasil)',
+  ru: 'RU - Russia (Русский)',
+  sv: 'SV - Sweden (Svenska)',
+  th: 'TH - Thailand (ไทย)',
+  tr: 'TR - Turkey (Türkçe)',
+  uk: 'UK - Ukraine (Українська)',
+  vi: 'VI - Vietnam (Tiếng Việt)',
 };
 
 const localeModules = import.meta.glob<LocaleMessages>(['../locales/*/messages.json', '!../locales/en/messages.json'], { import: 'default' });

@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-07-physics-energia-és-erő-1.0.0",
+    "name": "Energia és erő - Switzerland grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Energia és erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:28.373373+00:00",
+    "updated_at": "2026-10-21T11:02:28.373385+00:00",
+    "tags": [
+      "physics",
+      "energia-és-erő",
+      "grade-07",
+      "switzerland"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "cc4c4e1ec2475af2089a58784acda3d457907e11da5fa7250628a23940b62ccc",
+    "curriculum": "switzerland-lehrplan-21",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Energy and force",
+      "Forces and motion",
+      "Motion",
+      "Energy",
+      "Force"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Physics - Energia és erő",
+    "description": "Test on Energia és erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Energia és erő - Kérdés 1: Energy and force",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "energia-és-erő",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Energia és erő",
+      "learning_objective": "Energy and force"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Energia és erő - Kérdés 2: Energy and force",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "energia-és-erő",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Energia és erő",
+      "learning_objective": "Energy and force"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[physics] Energia és erő - Kérdés 3: Energy and force",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "physics",
+        "energia-és-erő",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Energia és erő",
+      "learning_objective": "Energy and force"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[physics] Energia és erő - Question 4: Energy and force [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "physics",
+        "energia-és-erő",
+        "grade-07",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Energia és erő",
+      "learning_objective": "Energy and force"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Energia és erő - Kérdés 5: Energy and force",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "energia-és-erő",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Energia és erő",
+      "learning_objective": "Energy and force"
+    }
+  ],
+  "rubrics": []
+}

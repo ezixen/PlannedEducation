@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-08-history-ujkor---19.-szazad-1.0.0",
-    "name": "Újkor - 19. század - Grade 08 History",
+    "id": "grade-08-history-újkor---19.-század-1.0.0",
+    "name": "Újkor - 19. század - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on újkor - 19. század for Grade 08 students. Covers: Ipari forradalom, Nemzetállamok, Kolonizáció.",
+    "description": "45-minute test on Újkor - 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.324071+00:00",
-    "updated_at": "2026-10-20T13:20:17.324071+00:00",
+    "created_at": "2026-10-21T11:02:35.306610+00:00",
+    "updated_at": "2026-10-21T11:02:35.306621+00:00",
     "tags": [
       "history",
       "újkor---19.-század",
-      "grade-08"
+      "grade-08",
+      "hungary"
     ],
     "subject": "history",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "d94bbafcd1e06c7268f49f3948157d4a0a660011862d41cecf8706ca101bcbfd",
+    "checksum": "46bdd236f35a225dc81907b236e30d6b59ae473535b6aebe72bbc174958ba6e5",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Ipari forradalom",
-      "Nemzetállamok",
-      "Kolonizáció"
+      "Modern period - 19th century",
+      "Modern period",
+      "19th century",
+      "History",
+      "Historical events"
     ]
   },
   "exam": {
-    "title": "Grade 08 History - Újkor - 19. század",
-    "description": "Test on újkor - 19. század including ipari forradalom, nemzetállamok, kolonizáció",
+    "title": "grade-08 History - Újkor - 19. század",
+    "description": "Test on Újkor - 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 1: Nemzetállamok",
+      "text": "[history] Újkor - 19. század - Kérdés 1: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század"
+        "újkor---19.-század",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Nemzetállamok"
+      "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor - 19. század",
+      "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 2: Kolonizáció",
+      "text": "[history] Újkor - 19. század - Kérdés 2: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század"
+        "újkor---19.-század",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Kolonizáció"
+      "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor - 19. század",
+      "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 3: Ipari forradalom",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[history] Újkor - 19. század - Kérdés 3: Modern period - 19th century",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század"
+        "újkor---19.-század",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Ipari forradalom"
+      "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor - 19. század",
+      "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 4: Nemzetállamok",
+      "text": "[history] Újkor - 19. század - Kérdés 4: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század"
+        "újkor---19.-század",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Nemzetállamok"
+      "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor - 19. század",
+      "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 5: Kolonizáció",
+      "text": "[history] Újkor - 19. század - Kérdés 5: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század"
+        "újkor---19.-század",
+        "grade-08"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Kolonizáció"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[history] Újkor - 19. század - Kérdés 6: Ipari forradalom",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "újkor---19.-század"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Ipari forradalom"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[history] Újkor - 19. század - Kérdés 7: Nemzetállamok",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "újkor---19.-század"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Nemzetállamok"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[history] Újkor - 19. század - Kérdés 8: Kolonizáció",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "history",
-        "újkor---19.-század"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Kolonizáció"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[history] Újkor - 19. század - Kérdés 9: Ipari forradalom",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "újkor---19.-század"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Ipari forradalom"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[history] Újkor - 19. század - Kérdés 10: Nemzetállamok",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "history",
-        "újkor---19.-század"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-08-HIST-Újkor - 19. század",
-      "learning_objective": "Nemzetállamok"
+      "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor - 19. század",
+      "learning_objective": "Modern period - 19th century"
     }
   ],
   "rubrics": []

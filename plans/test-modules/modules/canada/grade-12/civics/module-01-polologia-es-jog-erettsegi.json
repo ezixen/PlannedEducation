@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-12-civics-polológia-és-jog-erettségi-1.0.0",
+    "name": "Polológia és jog-erettségi - Canada grade-12",
+    "version": "1.0.0",
+    "description": "45-minute test on Polológia és jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:16.026506+00:00",
+    "updated_at": "2026-10-21T11:02:16.026524+00:00",
+    "tags": [
+      "civics",
+      "polológia-és-jog-erettségi",
+      "grade-12",
+      "canada"
+    ],
+    "subject": "civics",
+    "grade_level": "grade-12",
+    "license": "CC-BY-4.0",
+    "checksum": "11debe9f51b9fb2c1ab75b52c324c01ad02893f07ff6950152326844ec92c9da",
+    "curriculum": "canada-ontario",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Politology and law-maturity",
+      "Politology",
+      "Law-maturity",
+      "Civil law",
+      "State structure"
+    ]
+  },
+  "exam": {
+    "title": "grade-12 Civics - Polológia és jog-erettségi",
+    "description": "Test on Polológia és jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[civics] Polológia és jog-erettségi - Kérdés 1: Politology and law-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "polológia-és-jog-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "learning_objective": "Politology and law-maturity"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[civics] Polológia és jog-erettségi - Kérdés 2: Politology and law-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "polológia-és-jog-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "learning_objective": "Politology and law-maturity"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[civics] Polológia és jog-erettségi - Kérdés 3: Politology and law-maturity",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Polológia és jog-erettségi témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "civics",
+        "polológia-és-jog-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "learning_objective": "Politology and law-maturity"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[civics] Polológia és jog-erettségi - Kérdés 4: Politology and law-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "polológia-és-jog-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "learning_objective": "Politology and law-maturity"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[civics] Polológia és jog-erettségi - Kérdés 5: Politology and law-maturity",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "polológia-és-jog-erettségi",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "learning_objective": "Politology and law-maturity"
+    }
+  ],
+  "rubrics": []
+}

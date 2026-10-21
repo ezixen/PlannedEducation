@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-12-geography-foldrajz-erettsegi-1.0.0",
-    "name": "Földrajz érettségi - Grade 12 Geography",
+    "id": "grade-12-geography-földrajz-erettségi-1.0.0",
+    "name": "Földrajz-erettségi - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on földrajz érettségi for Grade 12 students. Covers: Térkép, Statisztika, Elemzés.",
+    "description": "45-minute test on Földrajz-erettségi for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.421514+00:00",
-    "updated_at": "2026-10-20T13:20:17.421514+00:00",
+    "created_at": "2026-10-21T11:02:35.671525+00:00",
+    "updated_at": "2026-10-21T11:02:35.671537+00:00",
     "tags": [
       "geography",
-      "földrajz-érettségi",
-      "grade-12"
+      "földrajz-erettségi",
+      "grade-12",
+      "hungary"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
     "license": "CC-BY-4.0",
-    "checksum": "1853d35fd2d59f2264dd5c84f0c9be40bd57643ad43f334f0a2349d5ffad7639",
+    "checksum": "b392d6921b22270f1cc00d709228bdbdf55cc3414242b45b31bcee61c5105fc4",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 26,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Térkép",
-      "Statisztika",
-      "Elemzés"
+      "Geography-maturity",
+      "Geography",
+      "Geographic knowledge",
+      "Europe and world",
+      "Geographic tools"
     ]
   },
   "exam": {
-    "title": "Grade 12 Geography - Földrajz érettségi",
-    "description": "Test on földrajz érettségi including térkép, statisztika, elemzés",
+    "title": "grade-12 Geography - Földrajz-erettségi",
+    "description": "Test on Földrajz-erettségi including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz érettségi - Kérdés 1: Statisztika",
+      "text": "[geography] Földrajz-erettségi - Kérdés 1: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-érettségi"
+        "földrajz-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Statisztika"
+      "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz érettségi - Kérdés 2: Elemzés",
+      "text": "[geography] Földrajz-erettségi - Kérdés 2: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-érettségi"
+        "földrajz-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Elemzés"
+      "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[geography] Földrajz érettségi - Kérdés 3: Térkép",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[geography] Földrajz-erettségi - Kérdés 3: Geography-maturity",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Földrajz-erettségi témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-érettségi"
+        "földrajz-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Térkép"
+      "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz érettségi - Kérdés 4: Statisztika",
+      "text": "[geography] Földrajz-erettségi - Kérdés 4: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -135,17 +136,18 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-érettségi"
+        "földrajz-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Statisztika"
+      "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz érettségi - Kérdés 5: Elemzés",
+      "text": "[geography] Földrajz-erettségi - Kérdés 5: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -158,102 +160,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-érettségi"
+        "földrajz-erettségi",
+        "grade-12"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Elemzés"
-    },
-    {
-      "id": "q-006",
-      "question_type": "essay",
-      "text": "[geography] Földrajz érettségi - Kérdés 6: Térkép",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajz-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Térkép"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[geography] Földrajz érettségi - Kérdés 7: Statisztika",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajz-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Statisztika"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[geography] Földrajz érettségi - Kérdés 8: Elemzés",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz érettségi témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajz-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Elemzés"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[geography] Földrajz érettségi - Kérdés 9: Térkép",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz érettségi témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajz-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Térkép"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[geography] Földrajz érettségi - Kérdés 10: Statisztika",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz érettségi témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "geography",
-        "földrajz-érettségi"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-12-GEOG-Földrajz érettségi",
-      "learning_objective": "Statisztika"
+      "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "learning_objective": "Geography-maturity"
     }
   ],
   "rubrics": []

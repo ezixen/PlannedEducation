@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "id": "grade-07-biology-sejt-szerkezete-1.0.0",
+    "name": "Sejt szerkezete - Finland grade-07",
+    "version": "1.0.0",
+    "description": "45-minute test on Sejt szerkezete for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:24.156032+00:00",
+    "updated_at": "2026-10-21T11:02:24.156046+00:00",
+    "tags": [
+      "biology",
+      "sejt-szerkezete",
+      "grade-07",
+      "finland"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "240d533ee6c4fbf7b1263726d6b5c30196603b8c842229081e1a00e2826bee1c",
+    "curriculum": "finland-national-core-curriculum-2016",
+    "duration_minutes": 45,
+    "total_points": 27,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Cell biology and genetics",
+      "Cell structure",
+      "Genetics basics",
+      "Ecology",
+      "Ecological systems"
+    ]
+  },
+  "exam": {
+    "title": "grade-07 Biology - Sejt szerkezete",
+    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejt-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "learning_objective": "Cell structure"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejt-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "learning_objective": "Cell structure"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejt-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "learning_objective": "Cell structure"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejt-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "learning_objective": "Cell structure"
+    },
+    {
+      "id": "q-005",
+      "question_type": "essay",
+      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "biology",
+        "sejt-szerkezete",
+        "grade-07"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "learning_objective": "Cell structure"
+    }
+  ],
+  "rubrics": []
+}

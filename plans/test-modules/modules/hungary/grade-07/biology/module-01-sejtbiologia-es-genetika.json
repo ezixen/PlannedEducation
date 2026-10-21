@@ -1,38 +1,41 @@
 {
   "metadata": {
-    "id": "grade-07-biology-sejtbiologia-es-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Grade 07 Biology",
+    "id": "grade-07-biology-sejtbiológia-és-genetika-1.0.0",
+    "name": "Sejtbiológia és genetika - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on sejtbiológia és genetika for Grade 07 students. Covers: Sejtfelépítés, Osztódás, Öröklődés.",
+    "description": "45-minute test on Sejtbiológia és genetika for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-20T13:20:17.291386+00:00",
-    "updated_at": "2026-10-20T13:20:17.291386+00:00",
+    "created_at": "2026-10-21T11:02:35.143134+00:00",
+    "updated_at": "2026-10-21T11:02:35.143152+00:00",
     "tags": [
       "biology",
       "sejtbiológia-és-genetika",
-      "grade-07"
+      "grade-07",
+      "hungary"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "d33c5b377e3e2a256d93855863355e0cf51be182eb214d2c9da53cb0b3b744f8",
+    "checksum": "504de945ebf0730cf5e9bd2be4d691b3fca1b16bffd71fcc0cc7a5bc7bc92ff4",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
-    "total_points": 65,
-    "question_count": 10,
+    "total_points": 27,
+    "question_count": 5,
     "randomizer_enabled": false,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Sejtfelépítés",
-      "Osztódás",
-      "Öröklődés"
+      "Cell biology and genetics",
+      "Cell structure",
+      "Genetics basics",
+      "Ecology",
+      "Ecological systems"
     ]
   },
   "exam": {
-    "title": "Grade 07 Biology - Sejtbiológia és genetika",
-    "description": "Test on sejtbiológia és genetika including sejtfelépítés, osztódás, öröklődés",
+    "title": "grade-07 Biology - Sejtbiológia és genetika",
+    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
     "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
     "settings": {
@@ -53,7 +56,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Osztódás",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -66,17 +69,18 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika"
+        "sejtbiológia-és-genetika",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Osztódás"
+      "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Öröklődés",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -89,40 +93,37 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika"
+        "sejtbiológia-és-genetika",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Öröklődés"
+      "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
-      "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Sejtfelépítés",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
+      "question_type": "essay",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika"
+        "sejtbiológia-és-genetika",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Sejtfelépítés"
+      "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Osztódás",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -135,125 +136,32 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika"
+        "sejtbiológia-és-genetika",
+        "grade-07"
       ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Osztódás"
+      "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
-      "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Öröklődés",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correct_answer": "A",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "biology",
-        "sejtbiológia-és-genetika"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Öröklődés"
-    },
-    {
-      "id": "q-006",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 6: Sejtfelépítés",
+      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
       "options": null,
       "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika"
+        "sejtbiológia-és-genetika",
+        "grade-07"
       ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Sejtfelépítés"
-    },
-    {
-      "id": "q-007",
-      "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 7: Osztódás",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "biology",
-        "sejtbiológia-és-genetika"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Osztódás"
-    },
-    {
-      "id": "q-008",
-      "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 8: Öröklődés",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
-      "points": 10,
-      "variables": [],
-      "tags": [
-        "biology",
-        "sejtbiológia-és-genetika"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 5,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Öröklődés"
-    },
-    {
-      "id": "q-009",
-      "question_type": "dynamic_math",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 9: Sejtfelépítés",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "biology",
-        "sejtbiológia-és-genetika"
-      ],
-      "difficulty": "medium",
+      "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Sejtfelépítés"
-    },
-    {
-      "id": "q-010",
-      "question_type": "dynamic_math",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 10: Osztódás",
-      "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": null,
-      "points": 5,
-      "variables": [],
-      "tags": [
-        "biology",
-        "sejtbiológia-és-genetika"
-      ],
-      "difficulty": "medium",
-      "estimated_time_minutes": 3,
-      "curriculum_topic": "HU-07-BIOL-Sejtbiológia és gene",
-      "learning_objective": "Osztódás"
+      "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "learning_objective": "Cell biology and genetics"
     }
   ],
   "rubrics": []

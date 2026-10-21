@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-10-chemistry-szerkezeti-kémia-1.0.0",
+    "name": "Szerkezeti kémia - Austria grade-10",
+    "version": "1.0.0",
+    "description": "45-minute test on Szerkezeti kémia for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:29.272089+00:00",
+    "updated_at": "2026-10-21T11:02:29.272127+00:00",
+    "tags": [
+      "chemistry",
+      "szerkezeti-kémia",
+      "grade-10",
+      "austria"
+    ],
+    "subject": "chemistry",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "f472c05195215ce061feae9baa888aeeb31e25217c5f9f7422319acf16756ad8",
+    "curriculum": "austria-lehrplaene",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Structural chemistry",
+      "Organic chemistry basics",
+      "Chemical reactions",
+      "Acids and bases",
+      "Chemical equilibrium"
+    ]
+  },
+  "exam": {
+    "title": "grade-10 Chemistry - Szerkezeti kémia",
+    "description": "Test on Szerkezeti kémia including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Szerkezeti kémia - Kérdés 1: Structural chemistry",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "szerkezeti-kémia",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "learning_objective": "Structural chemistry"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Szerkezeti kémia - Kérdés 2: Structural chemistry",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "szerkezeti-kémia",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "learning_objective": "Structural chemistry"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[chemistry] Szerkezeti kémia - Kérdés 3: Structural chemistry",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Szerkezeti kémia témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "szerkezeti-kémia",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "learning_objective": "Structural chemistry"
+    },
+    {
+      "id": "q-004",
+      "question_type": "dynamic_math",
+      "text": "[chemistry] Szerkezeti kémia - Question 4: Structural chemistry [rand:1-100]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "fraction",
+          "min": 1,
+          "max": 100,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "chemistry",
+        "szerkezeti-kémia",
+        "grade-10",
+        "fraction"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "learning_objective": "Structural chemistry"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[chemistry] Szerkezeti kémia - Kérdés 5: Structural chemistry",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "chemistry",
+        "szerkezeti-kémia",
+        "grade-10"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "learning_objective": "Structural chemistry"
+    }
+  ],
+  "rubrics": []
+}

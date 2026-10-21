@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-12-geography-földrajz-1.0.0",
+    "name": "Földrajz - Switzerland grade-12",
+    "version": "1.0.0",
+    "description": "45-minute test on Földrajz for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:28.734727+00:00",
+    "updated_at": "2026-10-21T11:02:28.734741+00:00",
+    "tags": [
+      "geography",
+      "földrajz",
+      "grade-12",
+      "switzerland"
+    ],
+    "subject": "geography",
+    "grade_level": "grade-12",
+    "license": "CC-BY-4.0",
+    "checksum": "c3f6e72de2dee178e9cfb04d0c150bee69d5b565b28ce2dd6acbb6503fe9e831",
+    "curriculum": "switzerland-lehrplan-21",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Geography-maturity",
+      "Geography",
+      "Geographic knowledge",
+      "Europe and world",
+      "Geographic tools"
+    ]
+  },
+  "exam": {
+    "title": "grade-12 Geography - Földrajz",
+    "description": "Test on Földrajz including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "földrajz",
+        "grade-12"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "learning_objective": "Geography"
+    }
+  ],
+  "rubrics": []
+}

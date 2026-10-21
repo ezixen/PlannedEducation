@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": "grade-08-math-lineáris-egyenletek-1.0.0",
+    "name": "Lineáris egyenletek - Denmark grade-08",
+    "version": "1.0.0",
+    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:27.486277+00:00",
+    "updated_at": "2026-10-21T11:02:27.486290+00:00",
+    "tags": [
+      "math",
+      "lineáris-egyenletek",
+      "grade-08",
+      "denmark"
+    ],
+    "subject": "math",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "09fad8b61d352c6a150b884a3e0e7d343fd588da7f05f473ba09d742a99cab98",
+    "curriculum": "denmark-emu-faelles-maal",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Real numbers",
+      "Functions",
+      "Linear equations",
+      "Geometry",
+      "Statistics"
+    ]
+  },
+  "exam": {
+    "title": "grade-08 Math - Lineáris egyenletek",
+    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "lineáris-egyenletek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-08-MATH-Lineáris egyenletek",
+      "learning_objective": "Linear equations"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "lineáris-egyenletek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-08-MATH-Lineáris egyenletek",
+      "learning_objective": "Linear equations"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "lineáris-egyenletek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-08-MATH-Lineáris egyenletek",
+      "learning_objective": "Linear equations"
+    },
+    {
+      "id": "q-004",
+      "question_type": "essay",
+      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "math",
+        "lineáris-egyenletek",
+        "grade-08"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-08-MATH-Lineáris egyenletek",
+      "learning_objective": "Linear equations"
+    },
+    {
+      "id": "q-005",
+      "question_type": "dynamic_math",
+      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "options": null,
+      "correct_answer": "calculated",
+      "rubric": null,
+      "points": 5,
+      "variables": [
+        {
+          "name": "x",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        },
+        {
+          "name": "y",
+          "type": "decimal",
+          "min": 1,
+          "max": 1000,
+          "step": 0.1
+        }
+      ],
+      "tags": [
+        "math",
+        "lineáris-egyenletek",
+        "grade-08",
+        "decimal"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DENMARK-GRADE-08-MATH-Lineáris egyenletek",
+      "learning_objective": "Linear equations"
+    }
+  ],
+  "rubrics": []
+}

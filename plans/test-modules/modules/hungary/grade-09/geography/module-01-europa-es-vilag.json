@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "id": "grade-09-geography-európa-és-világ-1.0.0",
+    "name": "Európa és világ - Hungary grade-09",
+    "version": "1.0.0",
+    "description": "45-minute test on Európa és világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-21T11:02:35.411481+00:00",
+    "updated_at": "2026-10-21T11:02:35.411504+00:00",
+    "tags": [
+      "geography",
+      "európa-és-világ",
+      "grade-09",
+      "hungary"
+    ],
+    "subject": "geography",
+    "grade_level": "grade-09",
+    "license": "CC-BY-4.0",
+    "checksum": "65d6c2a99728918a88edc49a1fa74168b38ea69156aab68d5ff0fe3caa0d8f92",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 26,
+    "question_count": 5,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Europe and world",
+      "Europe",
+      "World",
+      "Geography",
+      "Geographic knowledge"
+    ]
+  },
+  "exam": {
+    "title": "grade-09 Geography - Európa és világ",
+    "description": "Test on Európa és világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[geography] Európa és világ - Kérdés 1: Europe and world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "európa-és-világ",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Európa és világ",
+      "learning_objective": "Europe and world"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[geography] Európa és világ - Kérdés 2: Europe and world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "európa-és-világ",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Európa és világ",
+      "learning_objective": "Europe and world"
+    },
+    {
+      "id": "q-003",
+      "question_type": "essay",
+      "text": "[geography] Európa és világ - Kérdés 3: Europe and world",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
+      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 6,
+      "variables": [],
+      "tags": [
+        "geography",
+        "európa-és-világ",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Európa és világ",
+      "learning_objective": "Europe and world"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[geography] Európa és világ - Kérdés 4: Europe and world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "európa-és-világ",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Európa és világ",
+      "learning_objective": "Europe and world"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[geography] Európa és világ - Kérdés 5: Europe and world",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "geography",
+        "európa-és-világ",
+        "grade-09"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Európa és világ",
+      "learning_objective": "Europe and world"
+    }
+  ],
+  "rubrics": []
+}
