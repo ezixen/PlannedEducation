@@ -153,4 +153,51 @@ All 5 reported deployment and startup issues have been resolved across both Wind
       - `verify.sh`: **ALL SYSTEMS OPERATIONAL ✅** (Installation directory, database size, Backend API `/health`, Package Engine `/packages/health`, and Frontend Portal `http://127.0.0.1:5173`).
       - `stop_all.sh`: Terminated both backend and frontend processes cleanly.
       - `uninstall.sh`: Completely removed `/opt/plannededucation` with 0 residual files, self-cleaned uninstaller, and kept all external system dependencies (Python, Node.js, PostgreSQL, Redis, Docker, Git) intact.
-
+
+---
+
+## Fixes Applied 2026-10-21 (Current Session)
+
+### 1. Backend Start Script PowerShell Quoting Bug (FIXED)
+**File:** `start_all.ps1`, `start_backend.ps1`, `install.ps1`
+**Error:** `Start-Process : A positional parameter cannot be found that accepts argument 'C:\PlannedEducation\.env --host 0.0.0.0 --port 8000'`
+**Root Cause:** Nested quotes in `--env-file "$InstallDir\.env"` broke PowerShell's `Start-Process -ArgumentList` parsing.
+**Fix:** Changed to array-style arguments: `@("-m", "uvicorn", "plannededucation.api.main:app", "--env-file", "$InstallDir\.env", "--host", "0.0.0.0", "--port", $apiPort)`
+
+### 2. DATABASE_URL Not Loaded from .env (FIXED)
+**File:** `start_all.ps1`, `start_backend.ps1`, `install.ps1`
+**Error:** Backend failed to start with `psycopg.OperationalError: failed to resolve host 'postgres'` because `DATABASE_URL` from `.env` wasn't being loaded into the Python process environment.
+**Fix:** Added explicit `.env` file parsing in launcher scripts to load `DATABASE_URL` before starting uvicorn.
+
+### 3. Duplicate i18n Keys in English Messages (FIXED)
+**File:** `web/apps/portal/src/locales/en/messages.json`
+**Issue:** Duplicate keys for `teacher_dashboard.test_module_description`, `teacher_dashboard.test_module_title`, `teacher_dashboard.test_count_label`, `teacher_dashboard.test_count_hint`, `teacher_dashboard.btn_open_tests`, `teacher_dashboard.opening_tests`
+**Fix:** Removed duplicates, kept single entries, added missing `teacher_dashboard.open_tests` key.
+
+### 4. Missing Locale Keys (FIXED)
+**File:** All locale files under `web/apps/portal/src/locales/`
+**Fix:** Ran `scratch/fill_locales.py` to add missing keys to all 25 locale files. All locales now have 1089 keys matching English source.
+
+### 5. 25 Test Opening Exam Module Function (VERIFIED - ALREADY IMPLEMENTED)
+**File:** `web/apps/portal/src/pages/TeacherDashboard.tsx`
+**Status:** The `handleOpenTestModules` function is fully implemented with:
+- Input validation (1-25 tests)
+- Randomized test tabs with unique seeds
+- 100ms delay between tabs to prevent popup blocking
+- Success/error toast notifications
+- Loading state management
+- i18n support for all UI strings
+
+### 6. Module Compression/Unpacking (VERIFIED - ALL 4564 MODULES PASSED)
+**Test:** `scripts/testing/test_module_compression.py`
+**Result:** 4564/4564 modules passed compression/decompression with zstd
+**Compression ratio:** min=2.95x, max=6.60x, avg=3.50x
+
+### 7. Visual Tests on All Pages and Modules (VERIFIED - ALL PASSED)
+**Test:** `scripts/testing/visual_test_all_pages.py`
+**Result:** 9/9 pages passed, 4564/4564 modules passed
+
+### 8. Backend Tests (VERIFIED - ALL PASSED)
+**Test:** `pytest tests/ -q` via `update_test_cache.py`
+**Result:** 123 passed, 0 failed
+

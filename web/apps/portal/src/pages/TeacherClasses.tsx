@@ -68,7 +68,7 @@ export function TeacherClasses() {
   };
 
   const handleQuickReset = async (student: StudentRosterItem) => {
-    if (!window.confirm(`Unlock and reset password for ${student.name}?\n\nThe student can immediately type their email at login and set a new password to take the test.`)) {
+    if (!window.confirm(`Reset password for ${student.name}?\n\nThe student can immediately type their email at login and set a new password.`)) {
       return;
     }
 

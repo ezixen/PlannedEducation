@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Upload } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
@@ -63,6 +64,9 @@ export function TeacherDashboard() {
   const [showModal, setShowModal] = useState(false);
   const [groupedMistakes, setGroupedMistakes] = useState<Record<string, string[]>>({});
   const [reviewingQuestionId, setReviewingQuestionId] = useState<string | null>(null);
+  const [selectedSubmissions, setSelectedSubmissions] = useState<string[]>([]);
+  const [statusFilter, setStatusFilter] = useState<'all' | 'ungraded' | 'pending_approval' | 'graded'>('all');
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   
   // Heartbeat monitoring state
   const [heartbeats, setHeartbeats] = useState<StudentHeartbeat[]>([]);
@@ -85,11 +89,9 @@ export function TeacherDashboard() {
   const [testModuleLoading, setTestModuleLoading] = useState(false);
 
   useEffect(() => {
-    if (examId) {
-      fetchSubmissions();
-      fetchArchives();
-      fetchArchiveStats();
-    }
+    fetchSubmissions();
+    fetchArchives();
+    fetchArchiveStats();
   }, [examId]);
 
   // Heartbeat polling for real-time monitoring
@@ -141,15 +143,17 @@ export function TeacherDashboard() {
   };
 
   const fetchSubmissions = async () => {
-    if (!examId) return;
     setLoading(true);
     try {
-      const response = await apiClient.get(`/anonymizer/exams/${examId}/submissions`);
+      const response = await apiClient.get('/archive/teacher/class-submissions', {
+        params: examId ? { exam_id: examId } : {},
+      });
+      const rawData = response.data || [];
       setSubmissions(
-        response.data.map((s: SubmissionWithAIGrades) => {
+        rawData.map((s: any) => {
           const initialGrades: Record<string, AIGrade> = {};
           let hasSavedGrades = false;
-          for (const ans of s.answers) {
+          for (const ans of s.answers || []) {
             if (ans.saved_score !== undefined && ans.saved_score !== null) {
               hasSavedGrades = true;
               initialGrades[ans.question_id] = {
@@ -166,15 +170,92 @@ export function TeacherDashboard() {
           }
           return {
             ...s,
+            anonymous_student_ref: s.anonymous_ref || `Student (${s.student_name || 'Anonymous'})`,
+            student_name: s.student_name,
+            exam_title: s.exam_title,
+            status: s.status,
+            archive_id: s.archive_id,
+            archive_path: s.archive_path,
+            total_possible: s.total_possible,
             ai_grades: initialGrades,
-            teacher_approved: Boolean(s.is_graded && hasSavedGrades),
+            teacher_approved: Boolean(s.status === 'graded' || (s.score !== null && hasSavedGrades)),
           };
         })
       );
     } catch (err: any) {
-      showError(t('teacher_dashboard.fetch_submissions_error'), err.response?.data?.detail || err.message);
+      console.error('Failed to fetch class submissions:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleAIGradeSelected = async () => {
+    if (selectedSubmissions.length === 0) {
+      showError('Please select at least one submission.');
+      return;
+    }
+    setGeneratingGrades('batch');
+    try {
+      const res = await apiClient.post('/archive/teacher/ai-grade', {
+        submission_ids: selectedSubmissions,
+      });
+      showSuccess(res.data.message || `AI graded ${selectedSubmissions.length} submissions into staging.`);
+      fetchSubmissions();
+      setSelectedSubmissions([]);
+    } catch (err: any) {
+      showError('AI grading failed', err.response?.data?.detail || err.message);
+    } finally {
+      setGeneratingGrades(null);
+    }
+  };
+
+  const handleApproveSelected = async () => {
+    if (selectedSubmissions.length === 0) {
+      showError('Please select at least one submission to approve.');
+      return;
+    }
+    try {
+      const res = await apiClient.post('/archive/teacher/approve', {
+        submission_ids: selectedSubmissions,
+      });
+      showSuccess(res.data.message || `Approved & archived ${selectedSubmissions.length} submissions.`);
+      fetchSubmissions();
+      fetchArchives();
+      fetchArchiveStats();
+      setSelectedSubmissions([]);
+    } catch (err: any) {
+      showError('Approval failed', err.response?.data?.detail || err.message);
+    }
+  };
+
+  const handleReopenSubmission = async (subId: string) => {
+    try {
+      const res = await apiClient.post('/archive/teacher/reopen', {
+        submission_id: subId,
+      });
+      showSuccess(res.data.message || 'Submission reopened for review and re-correction.');
+      fetchSubmissions();
+    } catch (err: any) {
+      showError('Failed to reopen', err.response?.data?.detail || err.message);
+    }
+  };
+
+  const handleUploadOfflineTest = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append('file', file);
+    if (examId) formData.append('exam_id', examId);
+    try {
+      const res = await apiClient.post('/archive/teacher/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      showSuccess(res.data.message || 'Test package uploaded to Archive Browser.');
+      fetchSubmissions();
+    } catch (err: any) {
+      showError('Upload failed', err.response?.data?.detail || err.message);
+    } finally {
+      if (fileInputRef.current) fileInputRef.current.value = '';
     }
   };
 
@@ -386,11 +467,21 @@ export function TeacherDashboard() {
         };
       });
       
-      await apiClient.post(`/anonymizer/submissions/${submission.submission_id}/grades`, {
-        feedback: questionGrades.map(g => g.feedback).join('\n\n'),
-        score: questionGrades.reduce((sum, g) => sum + g.score, 0),
-        question_grades: questionGrades,
+      const totalScore = questionGrades.reduce((sum, g) => sum + g.score, 0);
+      await apiClient.post('/archive/teacher/approve', {
+        submission_ids: [submission.submission_id],
+        overrides: {
+          [submission.submission_id]: {
+            score: totalScore,
+            feedback: JSON.stringify({
+              summary_feedback: questionGrades.map(g => g.feedback).join(' | '),
+              question_grades: questionGrades,
+            }),
+          },
+        },
       });
+      fetchArchives();
+      fetchArchiveStats();
       
       setSubmissions(prev => prev.map(s => {
         if (s.submission_id !== submission.submission_id) return s;
@@ -633,9 +724,9 @@ export function TeacherDashboard() {
                           alignItems: 'center',
                           gap: '0.25rem',
                         }}
-                        title="Unlock student account and reset password before test"
+                        title="Reset student password"
                       >
-                        ⚡ Reset Pwd for Test
+                        ⚡ Reset Password
                       </button>
                     </td>
                   </tr>
@@ -834,115 +925,357 @@ export function TeacherDashboard() {
         </div>
       )}
 
-      {/* Submissions List */}
-      <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', overflow: 'hidden' }}>
+      {/* Submissions List / Class Test Archive Browser */}
+      <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', overflow: 'hidden', marginBottom: '1.5rem' }}>
+        {/* Archive Browser Action Header */}
+        <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
+              📑 {t('teacher_dashboard.archived_submissions')}
+            </h3>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              ({submissions.length} total)
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            {/* Filter Buttons */}
+            <div style={{ display: 'flex', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+              {(['all', 'ungraded', 'pending_approval', 'graded'] as const).map(f => (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setStatusFilter(f)}
+                  style={{
+                    padding: '0.35rem 0.75rem',
+                    fontSize: '0.75rem',
+                    border: 'none',
+                    backgroundColor: statusFilter === f ? 'var(--primary-color)' : 'var(--bg-color)',
+                    color: statusFilter === f ? '#fff' : 'var(--text-muted)',
+                    cursor: 'pointer',
+                    fontWeight: statusFilter === f ? 600 : 400,
+                  }}
+                >
+                  {f === 'all' ? t('teacher_dashboard.filter_all_statuses') :
+                   f === 'ungraded' ? t('teacher_dashboard.status_ungraded') :
+                   f === 'pending_approval' ? t('teacher_dashboard.status_pending_approval') :
+                   t('teacher_dashboard.status_graded')}
+                </button>
+              ))}
+            </div>
+
+            {/* Batch AI Correction */}
+            {selectedSubmissions.length > 0 && (
+              <>
+                <button
+                  type="button"
+                  onClick={handleAIGradeSelected}
+                  disabled={generatingGrades === 'batch'}
+                  style={{
+                    padding: '0.4rem 0.85rem',
+                    backgroundColor: 'var(--primary-color)',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-md)',
+                    cursor: generatingGrades === 'batch' ? 'not-allowed' : 'pointer',
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                  }}
+                >
+                  🤖 {t('teacher_dashboard.btn_ai_correct_selected')} ({selectedSubmissions.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={handleApproveSelected}
+                  style={{
+                    padding: '0.4rem 0.85rem',
+                    backgroundColor: '#10b981',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-md)',
+                    cursor: 'pointer',
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                  }}
+                >
+                  ✓ {t('teacher_dashboard.btn_approve_selected')} ({selectedSubmissions.length})
+                </button>
+              </>
+            )}
+
+            {/* Upload Test Paper */}
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleUploadOfflineTest}
+              style={{ display: 'none' }}
+              accept=".json,.txt,.pdf,.zip"
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              style={{
+                padding: '0.4rem 0.85rem',
+                backgroundColor: 'var(--secondary-color)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 'var(--radius-md)',
+                cursor: 'pointer',
+                fontSize: '0.8rem',
+                fontWeight: 500,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+              }}
+            >
+              <Upload size={14} />
+              {t('teacher_dashboard.upload_offline_test')}
+            </button>
+          </div>
+        </div>
+
+        {/* Submissions Table */}
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_questions')}</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_ai_grades')}</th>
-                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
-                <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
+              <tr style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)' }}>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'left', width: '40px' }}>
+                  <input
+                    type="checkbox"
+                    checked={submissions.length > 0 && selectedSubmissions.length === submissions.length}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setSelectedSubmissions(submissions.map(s => s.submission_id));
+                      } else {
+                        setSelectedSubmissions([]);
+                      }
+                    }}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </th>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_student')}</th>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_questions')}</th>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_score')}</th>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_status')}</th>
+                <th style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('teacher_dashboard.col_actions')}</th>
               </tr>
             </thead>
             <tbody>
-              {submissions.length === 0 ? (
+              {submissions.filter(s => statusFilter === 'all' || s.status === statusFilter).length === 0 ? (
                 <tr>
-                  <td colSpan={5} style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+                  <td colSpan={6} style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
                     {t('teacher_dashboard.no_submissions')}
                   </td>
                 </tr>
               ) : (
-                submissions.map(submission => (
-                  <tr key={submission.submission_id} style={{ borderBottom: '1px solid var(--border-color)' }}>
-                    <td style={{ padding: '1rem', fontWeight: 500, color: 'var(--text-color)' }}>
-                      {submission.anonymous_student_ref}
-                    </td>
-                    <td style={{ padding: '1rem', color: 'var(--text-muted)' }}>
-                      {submission.answers.length} {t('teacher_dashboard.col_questions')}
-                    </td>
-                    <td style={{ padding: '1rem' }}>
-                      {submission.ai_grades && Object.keys(submission.ai_grades).length > 0 ? (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                          {Object.values(submission.ai_grades).map(grade => (
-                            <span key={grade.question_id} style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                              <span style={{ 
-                                width: '8px', 
-                                height: '8px', 
-                                borderRadius: '50%', 
-                                backgroundColor: grade.confidence > 0.9 ? '#10b981' : grade.confidence > 0.7 ? '#f59e0b' : '#ef4444' 
-                              }} />
-                              Q{submission.answers.findIndex(a => a.question_id === grade.question_id) + 1}: {grade.score}/{submission.answers.find(a => a.question_id === grade.question_id)?.points_possible || 0} ({Math.round(grade.confidence * 100)}%)
+                submissions
+                  .filter(s => statusFilter === 'all' || s.status === statusFilter)
+                  .map(submission => {
+                    const isSelected = selectedSubmissions.includes(submission.submission_id);
+                    const subStatus = submission.status || (submission.score !== null ? 'graded' : (submission.ai_grades && Object.keys(submission.ai_grades).length > 0 ? 'pending_approval' : 'ungraded'));
+                    
+                    return (
+                      <tr
+                        key={submission.submission_id}
+                        style={{
+                          borderBottom: '1px solid var(--border-color)',
+                          backgroundColor: isSelected ? 'var(--primary-color)10' : undefined,
+                        }}
+                      >
+                        <td style={{ padding: '0.75rem 1rem' }}>
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={(e) => {
+                              if (e.target.checked) {
+                                setSelectedSubmissions(prev => [...prev, submission.submission_id]);
+                              } else {
+                                setSelectedSubmissions(prev => prev.filter(id => id !== submission.submission_id));
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          />
+                        </td>
+                        <td style={{ padding: '0.75rem 1rem' }}>
+                          <div style={{ fontWeight: 600, color: 'var(--text-color)' }}>
+                            {submission.student_name || submission.anonymous_student_ref}
+                          </div>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                            {submission.anonymous_student_ref} {submission.exam_title ? `• ${submission.exam_title}` : ''}
+                          </div>
+                        </td>
+                        <td style={{ padding: '0.75rem 1rem', color: 'var(--text-muted)' }}>
+                          {submission.answers.length} {t('teacher_dashboard.col_questions')}
+                        </td>
+                        <td style={{ padding: '0.75rem 1rem', fontWeight: 600, color: 'var(--text-color)' }}>
+                          {submission.score !== null ? `${submission.score} pts` : '—'}
+                          {submission.total_possible ? ` / ${submission.total_possible} pts` : ''}
+                        </td>
+                        <td style={{ padding: '0.75rem 1rem' }}>
+                          {subStatus === 'graded' ? (
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#10b98120', color: '#10b981' }}>
+                              ✓ {t('teacher_dashboard.status_graded')}
                             </span>
-                          ))}
-                        </div>
-                      ) : (
-                        <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t('teacher_dashboard.not_generated')}</span>
-                      )}
-                    </td>
-                    <td style={{ padding: '1rem' }}>
-                      {submission.teacher_approved ? (
-                        <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#10b98120', color: '#10b981' }}>
-                          ✓ Approved
-                        </span>
-                      ) : submission.ai_grades && Object.keys(submission.ai_grades).length > 0 ? (
-                        <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#f59e0b20', color: '#f59e0b' }}>
-                          Pending Review
-                        </span>
-                      ) : (
-                        <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#6b728020', color: '#6b7280' }}>
-                          Not Graded
-                        </span>
-                      )}
-                    </td>
-                    <td style={{ padding: '1rem', textAlign: 'right' }}>
-                      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
-                        {!submission.ai_grades || Object.keys(submission.ai_grades).length === 0 ? (
-                          <button
-                            onClick={() => generateAIGrades(submission)}
-                            disabled={generatingGrades === submission.submission_id}
-                            style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: generatingGrades === submission.submission_id ? 'not-allowed' : 'pointer', fontWeight: 500, fontSize: '0.85rem' }}
-                          >
-                            {generatingGrades === submission.submission_id ? t('teacher_dashboard.generating') : t('teacher_dashboard.generate_ai_grades')}
-                          </button>
-                        ) : !submission.teacher_approved ? (
-                          <>
-                            <button
-                              onClick={() => handleViewSubmission(submission)}
-                              style={{ padding: '0.5rem 1rem', backgroundColor: '#3b82f6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, fontSize: '0.85rem' }}
-                            >
-                              Review
-                            </button>
-                            <button
-                              onClick={() => applyAIGrades(submission, true)}
-                              style={{ padding: '0.5rem 1rem', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, fontSize: '0.85rem' }}
-                            >
-                              Apply All
-                            </button>
-                          </>
-                        ) : (
-                          <>
-                            <span style={{ color: '#10b981', fontSize: '0.85rem', fontWeight: 600, alignSelf: 'center' }}>{t('teacher_dashboard.completed')}</span>
-                            <button
-                              onClick={() => handleViewSubmission(submission)}
-                              style={{ padding: '0.4rem 0.85rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500, fontSize: '0.8rem' }}
-                            >
-                              Edit Correction
-                            </button>
-                          </>
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                ))
+                          ) : subStatus === 'pending_approval' ? (
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#f59e0b20', color: '#d97706' }}>
+                              ⚡ {t('teacher_dashboard.status_pending_approval')}
+                            </span>
+                          ) : (
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#6b728020', color: '#6b7280' }}>
+                              ⏳ {t('teacher_dashboard.status_ungraded')}
+                            </span>
+                          )}
+                        </td>
+                        <td style={{ padding: '0.75rem 1rem', textAlign: 'right' }}>
+                          <div style={{ display: 'flex', gap: '0.4rem', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                            {subStatus === 'ungraded' && (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => generateAIGrades(submission)}
+                                  disabled={generatingGrades === submission.submission_id}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: 'var(--primary-color)',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: generatingGrades === submission.submission_id ? 'not-allowed' : 'pointer',
+                                    fontWeight: 500,
+                                    fontSize: '0.8rem',
+                                  }}
+                                >
+                                  {generatingGrades === submission.submission_id ? t('teacher_dashboard.generating') : '🤖 AI Correct'}
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => handleViewSubmission(submission)}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: '#3b82f6',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: 'pointer',
+                                    fontWeight: 500,
+                                    fontSize: '0.8rem',
+                                  }}
+                                >
+                                  ✏️ Manual Grade
+                                </button>
+                              </>
+                            )}
+
+                            {subStatus === 'pending_approval' && (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => handleViewSubmission(submission)}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: '#3b82f6',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '0.8rem',
+                                  }}
+                                >
+                                  ✏️ Review &amp; Correct
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => applyAIGrades(submission, true)}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: '#10b981',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '0.8rem',
+                                  }}
+                                >
+                                  ✓ Approve &amp; Seal
+                                </button>
+                              </>
+                            )}
+
+                            {subStatus === 'graded' && (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => handleViewSubmission(submission)}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: 'var(--secondary-color)',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: 'pointer',
+                                    fontWeight: 500,
+                                    fontSize: '0.8rem',
+                                  }}
+                                >
+                                  👁️ View
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => handleReopenSubmission(submission.submission_id)}
+                                  style={{
+                                    padding: '0.35rem 0.75rem',
+                                    backgroundColor: '#f59e0b',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: 'var(--radius-md)',
+                                    cursor: 'pointer',
+                                    fontWeight: 500,
+                                    fontSize: '0.8rem',
+                                  }}
+                                  title="Reopen test to edit and re-correct"
+                                >
+                                  🔄 Re-correct
+                                </button>
+                                {submission.archive_id && (
+                                  <button
+                                    type="button"
+                                    onClick={() => handleDownloadArchive(submission.archive_id!)}
+                                    style={{
+                                      padding: '0.35rem 0.75rem',
+                                      backgroundColor: '#6366f1',
+                                      color: '#fff',
+                                      border: 'none',
+                                      borderRadius: 'var(--radius-md)',
+                                      cursor: 'pointer',
+                                      fontWeight: 500,
+                                      fontSize: '0.8rem',
+                                    }}
+                                    title="Download sealed .zst.enc archive"
+                                  >
+                                    📦 Download
+                                  </button>
+                                )}
+                              </>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })
               )}
             </tbody>
           </table>
         </div>
       </div>
-
+      
       {/* Comfy Teacher Review & Correction Modal */}
       {showModal && selectedSubmission && (
         <TeacherCorrectionModal

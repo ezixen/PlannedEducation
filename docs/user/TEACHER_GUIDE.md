@@ -69,17 +69,48 @@ PlannedEducation natively supports **Safe Exam Browser (SEB)** to guarantee a se
 
 ---
 
-## 5. AI-Assisted Grading & Teacher Oversight
+## 5. Archive Browser & AI-Assisted Grading Workflow
 
-### Deterministic & Privacy-First Philosophy
-PlannedEducation operates on a **100% privacy-preserving and deterministic grading model**:
-- **No Student PII to AI**: Student names, IDs, and demographics are stripped and scrubbed by the Presidio anonymizer before any text analysis.
-- **Bring-Your-Own-Key (BYOK)**: Teachers or schools provide their own free/open-source or preferred AI API key in **Settings → AI Keys** (stored using AES-256 Fernet server encryption).
-- **Teacher Holds Final Authority**: AI provides score suggestions, rationale, and draft feedback based on your custom rubric. **No grade is finalized or published until the teacher reviews and clicks Approve.**
+PlannedEducation provides a comprehensive **Archive Browser & AI Grading Pipeline** built directly into the Teacher Dashboard:
 
-### Reviewing Submissions
-1. In **Teacher Dashboard**, open the completed exam and click **Submissions**.
-2. Inspect student answers alongside the automated rubrics and AI suggestions.
-3. Adjust scores with one click, add personalized encouragement or feedback, and click **Finalize and Release Grades**.
-4. Grades and constructive feedback sync immediately to student and parent dashboards.
+### 1. The Archive Browser
+- View all completed class exam submissions and offline uploaded test packages in one centralized table.
+- Filter by Exam, Year, Month, or Status:
+  - `ungraded` (Gray: *Submitted / Needs Grading*)
+  - `pending_approval` (Amber: *AI Corrected — Staged in Temp Folder, Pending Teacher Review*)
+  - `graded` (Green: *Graded & Sealed in Archive*)
+- Multi-select checkboxes allow batch operations across multiple student submissions.
 
+### 2. Privacy-Preserving AI Grading (Zero PII Exposure)
+- Select one or more tests and click **"🤖 AI Correct Selected"**.
+- **Microsoft Presidio PII Scrubber**: Automatically sanitizes all student personal identifying information (names, email addresses, phone numbers, locations, dates, IDs) from responses and prompts before external evaluation.
+- The AI evaluates each answer against your rubric or correct answer, provides constructive feedback, explains mistakes, suggests step-by-step solutions, and proposes scores.
+- **Local Fallback**: If no external AI key is configured, PlannedEducation uses a deterministic local rubric matcher so the system works 100% offline.
+
+### 3. Temporary Staging in Temp Folder (`pending_approval`)
+- Returned AI suggestions and grades are placed in a secure temporary staging folder on disk: `data/staging_archive/{teacher_id}/{submission_id}.json`.
+- The submission status moves to **"AI Corrected (Pending Approval)"**.
+- Student identities remain safely mapped in the local database for teacher-only view, while remaining completely hidden from external models.
+
+### 4. Teacher Review & Correction Modal
+- Click **"✏️ Review & Correct"** to open the interactive **TeacherCorrectionModal**.
+- Side-by-side comparison:
+  - **Left**: Original student submission and rubric points.
+  - **Right**: AI evaluation, confidence indicator, and step-by-step suggestions.
+  - **Bottom/Editor**: Quick feedback chips ("Excellent step-by-step work!", "Correct method, minor arithmetic error", etc.), score adjustments, and solution overrides.
+- Teachers can approve questions individually or click **"✓ Approve All & Save Corrected Exam"**.
+
+### 5. Sealing & Encrypted Archiving
+- When approved, final scores and feedback are written to the database.
+- The test is compressed using **zstandard (zstd)** and encrypted using **AES-GCM**.
+- SHA-256 integrity hashes are computed and recorded in `ArchivedSubmission`.
+- The temporary staging file is safely cleaned up, and the test is marked **"Graded & Sealed"** (`graded`).
+- Sealed archives can be downloaded directly as encrypted `.zst.enc` files.
+
+### 6. Reviewable & Re-correctable Any Time
+- Archived tests are never locked permanently away from educators.
+- Teachers can click **"🔄 Re-open & Re-correct"** at any time to return a graded test to staging, adjust points or comments if a mistake was made, and re-seal it into the archive.
+
+### 7. Offline Test Package Uploads
+- Teachers can upload offline test submissions or student responses (`.json`, `.txt`, `.zip`) directly via the **"📤 Upload Test Paper"** button in the Archive Browser.
+- Uploaded tests are registered immediately, ready for AI or manual grading.

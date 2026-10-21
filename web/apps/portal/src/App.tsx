@@ -18,6 +18,7 @@ import { TeacherClasses } from './pages/TeacherClasses';
 import { TakeExam } from './pages/TakeExam';
 import { TeacherDashboard } from './pages/TeacherDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
+import { AIGradingUpload } from './pages/AIGradingUpload';
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
@@ -37,6 +38,7 @@ function AppProviders() {
                     <Route path="settings" element={<Settings />} />
                     <Route path="exam/:id" element={<TakeExam />} />
                     <Route path="teacher-exams" element={<TeacherExams />} />
+                    <Route path="ai-grading" element={<AIGradingUpload />} />
                     <Route path="teacher-exams/:id" element={<ExamEditor />} />
                     <Route path="teacher-dashboard/:examId" element={<TeacherDashboard />} />
                     <Route path="teacher-classes" element={<TeacherClasses />} />

@@ -649,13 +649,27 @@ if (Test-Path `$depCfg) {
 `$env:PYTHONPATH = "`$InstallDir\src"
 `$env:PLANNED_EDUCATION_LOG_DIR = "`$logsDir"
 
+# Load DATABASE_URL from .env file explicitly
+`$envFile = Join-Path `$InstallDir ".env"
+if (Test-Path `$envFile) {
+    Get-Content `$envFile | ForEach-Object {
+        `$line = $_.Trim()
+        if (`$line -and -not `$line.StartsWith("#") -and `$line.Contains("=")) {
+            `$parts = `$line.Split("=", 2)
+            `$key = `$parts[0].Trim()
+            `$val = `$parts[1].Trim()
+            if (`$key -eq "DATABASE_URL") { `$env:DATABASE_URL = `$val }
+        }
+    }
+}
+
 Write-Host "1. Starting Backend API on port `$apiPort..." -ForegroundColor Green
 `$pythonExe = Join-Path `$InstallDir ".venv\Scripts\python.exe"
 if (-not (Test-Path `$pythonExe)) {
     if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
     else { `$pythonExe = "python.exe" }
 }
-`$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList "-m uvicorn plannededucation.api.main:app --env-file `"`$InstallDir\.env`" --host 0.0.0.0 --port `$apiPort" -WorkingDirectory `$InstallDir -PassThru
+`$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList @("-m", "uvicorn", "plannededucation.api.main:app", "--env-file", "`$InstallDir\.env", "--host", "0.0.0.0", "--port", `$apiPort) -WorkingDirectory `$InstallDir -PassThru
 
 Write-Host "2. Starting Frontend Portal on port `$frontendPort..." -ForegroundColor Green
 `$frontendProc = Start-Process -FilePath "cmd.exe" -ArgumentList "/c npm run preview -- --host 127.0.0.1 --port `$frontendPort" -WorkingDirectory (Join-Path `$InstallDir "web\apps\portal") -PassThru
@@ -717,6 +731,20 @@ if errorlevel 1 (
 if (-not (Test-Path `$logsDir)) { New-Item -ItemType Directory -Path `$logsDir -Force | Out-Null }
 `$env:PYTHONPATH = "`$InstallDir\src"
 `$env:PLANNED_EDUCATION_LOG_DIR = "`$logsDir"
+
+# Load DATABASE_URL from .env file explicitly
+`$envFile = Join-Path `$InstallDir ".env"
+if (Test-Path `$envFile) {
+    Get-Content `$envFile | ForEach-Object {
+        `$line = $_.Trim()
+        if (`$line -and -not `$line.StartsWith("#") -and `$line.Contains("=")) {
+            `$parts = `$line.Split("=", 2)
+            `$key = `$parts[0].Trim()
+            `$val = `$parts[1].Trim()
+            if (`$key -eq "DATABASE_URL") { `$env:DATABASE_URL = `$val }
+        }
+    }
+}
 `$apiPort = $ApiPort
 `$depCfg = Join-Path `$InstallDir "config\deployment.json"
 if (Test-Path `$depCfg) {
@@ -732,7 +760,7 @@ if (-not (Test-Path `$pythonExe)) {
     if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
     else { `$pythonExe = "python.exe" }
 }
-& `$pythonExe -m uvicorn plannededucation.api.main:app --env-file "`$InstallDir\.env" --host 0.0.0.0 --port `$apiPort
+& `$pythonExe -m uvicorn plannededucation.api.main:app --env-file `$InstallDir\.env --host 0.0.0.0 --port `$apiPort
 "@
     Set-Content -Path $startBackendPs1 -Value $backendPs1Content -Encoding UTF8
 

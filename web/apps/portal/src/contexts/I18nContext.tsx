@@ -124,7 +124,7 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
   const t = useCallback((key: string, params?: Record<string, string>): string => {
     const entry = messages[key] ?? (enMessages as LocaleMessages)[key];
     if (!entry) {
-      return key;
+      return showNumbers ? `[${key}] ${key}` : key;
     }
     let text = typeof entry === 'string' ? entry : (entry[locale] || entry.en || key);
     if (params) {
@@ -132,8 +132,8 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
         text = text.replace(new RegExp(`\\{${paramKey}\\}`, 'g'), value);
       });
     }
-    return text;
-  }, [messages, locale]);
+    return showNumbers ? `[${key}] ${text}` : text;
+  }, [messages, locale, showNumbers]);
 
   const getContext = useCallback((key: string): string | undefined => {
     return contextCache[key];

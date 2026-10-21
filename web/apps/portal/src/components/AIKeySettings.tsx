@@ -98,6 +98,12 @@ export function AIKeySettings() {
             <option value="openrouter">{t('ai_keys.12')}</option>
             <option value="ollama">{t('ai_keys.13')}</option>
             <option value="openai">{t('ai_keys.14')}</option>
+            <option value="anthropic">{t('ai_keys.anthropic')}</option>
+            <option value="deepseek">{t('ai_keys.deepseek')}</option>
+            <option value="groq">{t('ai_keys.groq')}</option>
+            <option value="cohere">{t('ai_keys.cohere')}</option>
+            <option value="mistral">{t('ai_keys.mistral')}</option>
+            <option value="custom">{t('ai_keys.custom')}</option>
           </select>
         </label>
 

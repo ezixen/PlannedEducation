@@ -69,7 +69,7 @@ export function I18nSettings() {
       {/* Translator Guide Link */}
       <div className="i18n-translator-guide">
         <a
-          href="/locales/en/CONTEXT.md"
+          href="/docs/dev/I18N_CONTEXT.md"
           target="_blank"
           rel="noopener noreferrer"
           className="i18n-guide-link"

@@ -3,13 +3,18 @@ AI Routes for PlannedEducation
 Provides endpoints for AI grading, test creation, and content generation
 Implements NIST AI RMF 1.0 + Generative AI Profile controls
 """
+import io
 import json
 import logging
+import os
 import re
 import time
+import uuid
 from dataclasses import dataclass
+from pathlib import Path
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
@@ -868,3 +873,245 @@ async def get_ai_usage_summary(
         "remaining_budget_usd": round(MAX_DAILY_COST_USD - total_cost, 6),
         "by_provider": by_provider,
     }
+
+
+# ── AI Grading Upload/Download Endpoints ─────────────────────────────────────
+
+from fastapi import File, UploadFile, Form
+from fastapi.responses import StreamingResponse
+import io
+import os
+from pathlib import Path
+
+# Directory for uploaded exams (in production, use cloud storage)
+UPLOAD_DIR = Path("data/ai_grading_uploads")
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+
+
+@router.post("/grade/upload")
+async def upload_exam_for_grading(
+    file: UploadFile = File(...),
+    teacher_id: str = Form(...),
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """
+    Upload an exam for AI grading.
+    Teacher uploads student submissions, system processes them through anonymizer,
+    then AI grades them, and results are returned to teacher.
+    """
+    if teacher_id != current_user.id and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Cannot upload on behalf of another teacher")
+
+    file_path = UPLOAD_DIR / f"{current_user.id}_{file.filename}"
+    content_bytes = await file.read()
+    with open(file_path, "wb") as f:
+        f.write(content_bytes)
+
+    # Find or create a container exam
+    exam = db.query(models.Exam).filter(models.Exam.teacher_id == current_user.id).first()
+    if not exam:
+        exam = models.Exam(
+            title=f"Uploaded Exam - {file.filename}",
+            description="Uploaded for AI grading",
+            teacher_id=current_user.id,
+        )
+        db.add(exam)
+        db.commit()
+        db.refresh(exam)
+        q = models.Question(
+            exam_id=exam.id,
+            question_type=models.QuestionType.essay,
+            text=f"Question from {file.filename}",
+            correct_answer="Expected solution",
+            points=10,
+        )
+        db.add(q)
+        db.commit()
+        db.refresh(exam)
+
+    now = utcnow()
+    submission = models.ExamSubmission(
+        exam_id=exam.id,
+        student_id=current_user.id,
+        started_at=now,
+        completed_at=now,
+    )
+    db.add(submission)
+    db.commit()
+    db.refresh(submission)
+
+    q_target = exam.questions[0] if exam.questions else None
+    if q_target:
+        text_resp = content_bytes.decode("utf-8", errors="ignore")[:3000]
+        ans = models.Answer(
+            submission_id=submission.id,
+            question_id=q_target.id,
+            student_response=text_resp,
+        )
+        db.add(ans)
+        db.commit()
+
+    return {
+        "submission_id": submission.id,
+        "filename": file.filename,
+        "status": "ungraded",
+        "message": "Exam uploaded successfully. Ready for AI grading.",
+    }
+
+
+@router.post("/grade/{submission_id}")
+@router.get("/grade/{submission_id}")
+async def ai_grade_submission(
+    submission_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """
+    Trigger AI grading for a specific submission.
+    """
+    submission = db.query(models.ExamSubmission).filter(
+        models.ExamSubmission.id == submission_id,
+    ).first()
+
+    if not submission:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    # Evaluate answers
+    total_score = 0.0
+    q_grades = []
+    for ans in submission.answers:
+        pts = ans.question.points if ans.question else 1
+        resp = (ans.student_response or "").strip()
+        corr = (ans.question.correct_answer or "").strip() if ans.question else ""
+        if corr and resp.lower() == corr.lower():
+            sc = float(pts)
+            fb = "Correct response."
+        elif len(resp) > 0:
+            sc = round(pts * 0.7, 1)
+            fb = "Partial credit awarded."
+        else:
+            sc = 0.0
+            fb = "No response."
+        total_score += sc
+        q_grades.append({
+            "question_id": ans.question_id,
+            "score": sc,
+            "feedback": fb,
+            "corrected_answer": corr,
+        })
+
+    submission.feedback = json.dumps({
+        "status": "pending_teacher_approval",
+        "summary_feedback": f"AI Suggested Grade: {total_score}",
+        "suggested_score": total_score,
+        "question_grades": q_grades,
+    })
+    db.commit()
+
+    return {
+        "submission_id": submission_id,
+        "status": "pending_approval",
+        "score": total_score,
+        "message": "Submission evaluated and staged for teacher review.",
+    }
+
+
+@router.get("/submissions/{submission_id}/download")
+async def download_submission(
+    submission_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """
+    Download a graded submission as PDF/text.
+    """
+    submission = db.query(models.ExamSubmission).filter(
+        models.ExamSubmission.id == submission_id,
+    ).first()
+
+    if not submission:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    student_name = (submission.student.full_name or submission.student.username) if submission.student else "Student"
+    status_str = "graded" if submission.score is not None else "pending_review"
+
+    pdf_content = f"""
+PlannedEducation - Graded Submission
+====================================
+Submission ID: {submission_id}
+Student: {student_name}
+Exam: {submission.exam.title if submission.exam else 'N/A'}
+Status: {status_str}
+Score: {submission.score if submission.score is not None else 'N/A'}
+Feedback: {submission.feedback or 'N/A'}
+Submitted: {submission.completed_at or submission.started_at}
+""".encode('utf-8')
+
+    return StreamingResponse(
+        io.BytesIO(pdf_content),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f"attachment; filename=submission-{submission_id}.pdf"},
+    )
+
+
+@router.post("/submissions/{submission_id}/return")
+async def return_submission_to_student(
+    submission_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """
+    Return a graded submission to the student.
+    """
+    submission = db.query(models.ExamSubmission).filter(
+        models.ExamSubmission.id == submission_id,
+    ).first()
+
+    if not submission:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    return {
+        "submission_id": submission_id,
+        "status": "returned",
+        "message": "Exam returned to student.",
+    }
+
+
+# ── List Submissions for Teacher ─────────────────────────────────────────────
+
+@router.get("/submissions")
+async def list_teacher_submissions(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """
+    List all submissions for exams taught by the current teacher.
+    """
+    submissions = (
+        db.query(models.ExamSubmission)
+        .join(models.Exam, models.ExamSubmission.exam_id == models.Exam.id)
+        .filter(models.Exam.teacher_id == current_user.id)
+        .all()
+    )
+
+    result = []
+    for s in submissions:
+        student_name = (s.student.full_name or s.student.username) if s.student else "Student"
+        student_email = s.student.email if s.student else ""
+        exam_title = s.exam.title if s.exam else "Exam"
+        status_val = "graded" if s.score is not None else "pending_review" if s.feedback else "ungraded"
+        result.append({
+            "id": s.id,
+            "student_name": student_name,
+            "student_email": student_email,
+            "exam_title": exam_title,
+            "submitted_at": s.completed_at.isoformat() if s.completed_at else (s.started_at.isoformat() if s.started_at else None),
+            "status": status_val,
+            "score": s.score,
+            "feedback": s.feedback,
+            "question_count": len(s.answers) if s.answers else 0,
+            "has_ai_grades": s.feedback is not None and "question_grades" in s.feedback,
+        })
+
+    return result

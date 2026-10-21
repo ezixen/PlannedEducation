@@ -89,6 +89,30 @@ This document provides context for each translation key to help translators unde
 **English:** ChatGPT Session
 **Context:** Used in ai_keys page/feature
 
+### ai_keys.anthropic
+**English:** Anthropic Claude
+**Context:** Used in ai_keys page/feature
+
+### ai_keys.deepseek
+**English:** DeepSeek
+**Context:** Used in ai_keys page/feature
+
+### ai_keys.groq
+**English:** Groq
+**Context:** Used in ai_keys page/feature
+
+### ai_keys.cohere
+**English:** Cohere
+**Context:** Used in ai_keys page/feature
+
+### ai_keys.mistral
+**English:** Mistral AI
+**Context:** Used in ai_keys page/feature
+
+### ai_keys.custom
+**English:** Custom / Other
+**Context:** Used in ai_keys page/feature
+
 ### ai_keys.2
 **English:** Configure your AI provider for grading and content generation
 **Context:** Used in ai_keys page/feature

@@ -8,8 +8,6 @@ import { apiClient } from '../api';
 import { AIKeySettings } from '../components/AIKeySettings';
 import { TwoFASettings } from '../components/TwoFASettings';
 import { PasskeysSettings } from '../components/PasskeysSettings';
-import { OCRProcessor } from '../components/OCRProcessor';
-import { STTProcessor } from '../components/STTProcessor';
 import { I18nSettings } from '../components/I18nSettings';
 
 const inputStyle: React.CSSProperties = {
@@ -280,11 +278,6 @@ export function Settings() {
           </div>
         </div>
 
-        {/* Language & Regional Settings */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <I18nSettings />
-        </div>
-
         {/* Security section */}
         <TwoFASettings />
 
@@ -294,11 +287,10 @@ export function Settings() {
         {/* AI Key Management */}
         <AIKeySettings />
 
-        {/* OCR Processor */}
-        <OCRProcessor />
-
-        {/* Speech-to-Text Processor */}
-        <STTProcessor />
+        {/* Language & Regional Settings (moved to bottom) */}
+        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+          <I18nSettings />
+        </div>
 
       </div>
     </div>

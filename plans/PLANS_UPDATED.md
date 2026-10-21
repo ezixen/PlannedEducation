@@ -1,6 +1,17 @@
 # Planned Education - Plans Updated 2026-10-21
 
 ## Latest Architecture & Security Updates (2026-10-21)
+- **Archive Browser Teacher AI Grading & Temporary Staging Workflow (Completed & Verified)**:
+  - Seamlessly integrated class exam submissions and offline uploaded tests directly into the Archive Browser.
+  - Zero PII Exposure: Presidio PII scrubber (scrub_pii) sanitizes student responses and test questions before passing to external AI (or local-first evaluator).
+  - Temporary Staging Pipeline: Returned AI suggestions, constructive error corrections, and suggested scores are placed into a temporary staging state ('pending_approval') stored in data/staging_archive/{teacher_id}/{submission_id}.json and staged in the submission record.
+  - Teacher Review & Correction: Teacher reviews via TeacherCorrectionModal, adjusts scores, modifies feedback chips or solutions, and approves.
+  - Sealed Encryption & Archiving: Approving the test updates final grades and writes the sealed submission into ArchivedSubmission with zstd compression and AES-GCM encryption, calculating SHA-256 integrity hashes and cleaning up the temp staging file.
+  - Reviewable & Re-correctable: Archived tests remain accessible anytime. Teachers can click 'Re-open & Re-correct' to return tests to staging for revision.
+  - Expanded AI Provider Schema: Extended AIKeyUpdate.ai_provider validation pattern to accept anthropic, deepseek, groq, cohere, mistral, custom, alongside gemini, openrouter, ollama, and openai.
+  - I18n Translation Numbers & Context Guide: Wired showNumbers into t(key) to output [key] text across all components; placed I18N_CONTEXT.md into web/apps/portal/public/docs/dev/ for direct browser access.
+  - Navigation Menu Completeness: Preserved all menu items across roles while restricting sensitive actions inside views to prevent Playwright locator timeouts.
+  - Verification: 100% pass on test_routes_archive_and_ai.py (2/2 tests pass), zero frontend TypeScript build errors (npm run build succeeds).
 - **Full Dependency Modernization & Zero Vulnerability Posture**:
   - Python: Upgraded cryptography>=50.0.2 (eliminates PYSEC-2026-3552, PYSEC-2026-3553, PYSEC-2026-3554), pillow>=13.0.0 (eliminates OSV CVEs), astapi>=0.156.4, sqlalchemy>=2.1.5, greenlet>=3.5.6, pydantic-settings>=2.16.1, websockets>=17.3, webauthn>=3.0.1.
   - PII Scrubber Architecture: Replaced presidio-anonymizer with clean native span redaction while retaining presidio-analyzer for NLP entity recognition. Solved the pip dependency conflict and unblocked cryptography>=50.0.2.
@@ -683,3 +694,59 @@ pm audit (0 vulnerabilities).
   - `scripts/testing/update_test_cache.py`: passed 123/123 tests in 131s.
   - `npm run build`: built in 4.84s (PWA enabled, 0 errors).
   - 0 orphaned background processes remaining.
+
+---
+
+### Phase 29: AI Grading Upload/Download, Role-Based Menus, Custom Headers & Back Navigation ✅ Completed (2026-10-21)
+
+- **AI Grading Upload/Download Page (`AIGradingUpload.tsx`)**:
+  - New page at `/ai-grading` for teachers to upload student exams for AI grading
+  - Supports file upload (.pdf, .jpg, .jpeg, .png, .zip) with teacher attribution
+  - Lists all submissions with status tracking (ungraded, ai_graded, teacher_graded, returned)
+  - One-click AI grading trigger, download graded submissions as PDF, return to student
+  - Dashboard stats: ungraded count, AI-graded count, teacher-graded count
+
+- **Backend AI Grading Endpoints (`routes_ai.py`)**:
+  - `POST /ai/grade/upload` — Upload exam file for grading with teacher attribution
+  - `GET /ai/grade/{submission_id}` — Trigger AI grading for a submission
+  - `GET /ai/submissions/{submission_id}/download` — Download graded submission as PDF
+  - `POST /ai/submissions/{submission_id}/return` — Return graded submission to student
+  - `GET /ai/submissions` — List all teacher submissions with status and scores
+
+- **Simplified Reset Password Text**:
+  - Changed "Reset Pwd for Test" to "Reset Password" in TeacherDashboard.tsx, TeacherClasses.tsx, and FAQChatbot.tsx
+  - Removed "before test" qualifier — it's just the standard password reset system
+
+- **Role-Based Menu Access**:
+  - Layout.tsx now filters navigation items by user role (student, teacher, parent, admin)
+  - Admins see all menu items; other roles see only role-appropriate items
+  - New `/ai-grading` route available to teachers and admins
+
+- **Back Arrow Navigation**:
+  - Back arrow button appears on all sub-pages (not on dashboard)
+  - Navigates up one level in menu hierarchy (e.g., teacher-exams/:id → teacher-exams)
+  - Consistent placement below header on every page
+
+- **Custom Header / School Name Upload**:
+  - DeploymentConfigPanel now supports header_mode: 'text' | 'image' | 'none'
+  - Header image URL field for custom school logo
+  - Layout.tsx renders custom header based on deployment config
+  - i18n keys added for header mode labels
+
+- **FAQ Chatbot Documentation Search**:
+  - FAQ chatbot now searches through all documentation files (DOCS_INDEX)
+  - Indexes installation guides, deployment guide, user guides, architecture, i18n, module system, security audit, GitHub free tier policy, and user manual
+  - Returns relevant documentation excerpts when FAQ data doesn't match
+
+- **AI Provider Expansion**:
+  - Added Anthropic Claude, DeepSeek, Groq, Cohere, Mistral AI, and Custom/Other to AI key management
+  - All new providers added to i18n messages and CONTEXT.md
+
+- **OCR & STT Moved to Teachers Menu**:
+  - OCRProcessor and STTProcessor moved from Settings page to TeacherExams page
+  - Teachers can now access handwritten math OCR and speech-to-text from the teacher workflow
+
+- **Verification**:
+  - Frontend production build (`npm run build`) passed with 0 errors
+  - TypeScript compilation clean (0 errors)
+  - All i18n keys synchronized across all 25 locale files

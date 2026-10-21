@@ -5,6 +5,8 @@ import { apiClient } from '../api';
 
 export interface DeploymentConfig {
   school_name: string;
+  header_mode: 'text' | 'image' | 'none';
+  header_image_url: string | null;
   domain: string;
   api_port: number;
   frontend_port: number;
@@ -33,6 +35,8 @@ export function DeploymentConfigPanel() {
   const [restartNotice, setRestartNotice] = useState(false);
   const [config, setConfig] = useState<DeploymentConfig>({
     school_name: 'PlannedEducation School',
+    header_mode: 'text',
+    header_image_url: null,
     domain: 'localhost',
     api_port: 8000,
     frontend_port: 5173,
@@ -226,6 +230,52 @@ export function DeploymentConfigPanel() {
               }}
             />
           </div>
+
+          {/* Custom Header Mode Selector */}
+          <div>
+            <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
+              {t('deployment.header_mode_label')}
+            </label>
+            <select
+              value={config.header_mode || 'text'}
+              onChange={(e) => setConfig({ ...config, header_mode: e.target.value as 'text' | 'image' | 'none' })}
+              style={{
+                width: '100%',
+                padding: '0.6rem',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-color)',
+                backgroundColor: 'var(--bg-color)',
+                color: 'var(--text-color)',
+              }}
+            >
+              <option value="text">{t('deployment.header_mode_text')}</option>
+              <option value="image">{t('deployment.header_mode_image')}</option>
+              <option value="none">{t('deployment.header_mode_none')}</option>
+            </select>
+          </div>
+
+          {/* Header Image URL (only shown when mode is image) */}
+          {(config.header_mode || 'text') === 'image' && (
+            <div>
+              <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
+                {t('deployment.header_image_url_label')}
+              </label>
+              <input
+                type="text"
+                placeholder="https://example.com/school-logo.png"
+                value={config.header_image_url || ''}
+                onChange={(e) => setConfig({ ...config, header_image_url: e.target.value })}
+                style={{
+                  width: '100%',
+                  padding: '0.6rem',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--border-color)',
+                  backgroundColor: 'var(--bg-color)',
+                  color: 'var(--text-color)',
+                }}
+              />
+            </div>
+          )}
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>

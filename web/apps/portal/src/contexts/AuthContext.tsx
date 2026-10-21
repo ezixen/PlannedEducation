@@ -10,6 +10,7 @@ export interface User {
   phone_number: string | null;
   is_active: boolean;
   role: 'teacher' | 'student' | 'parent';
+  is_admin: boolean;
   totp_enabled: boolean;
   ai_provider?: string | null;
   ai_model_name?: string | null;

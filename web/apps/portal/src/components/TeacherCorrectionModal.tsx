@@ -29,8 +29,15 @@ export interface AIGrade {
 export interface SubmissionWithAIGrades {
   anonymous_student_ref: string;
   submission_id: string;
+  student_name?: string;
+  exam_title?: string;
   is_graded?: boolean;
+  score?: number | null;
   total_score?: number | null;
+  total_possible?: number | null;
+  status?: string;
+  archive_id?: string | null;
+  archive_path?: string | null;
   summary_feedback?: string | null;
   answers: AnonymizedAnswer[];
   ai_grades?: Record<string, AIGrade>;

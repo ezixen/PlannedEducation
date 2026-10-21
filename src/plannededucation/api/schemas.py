@@ -324,7 +324,7 @@ class SchoolHeaderResponse(BaseModel):
 # ── AI Key Management ────────────────────────────────────────────────────────
 
 class AIKeyUpdate(BaseModel):
-    ai_provider: str | None = Field(None, pattern=r"^(chatgpt|gemini|openrouter|ollama|openai)$")
+    ai_provider: str | None = Field(None, pattern=r"^(chatgpt|gemini|openrouter|ollama|openai|anthropic|deepseek|groq|cohere|mistral|custom)$")
     ai_api_key: str | None = Field(None, max_length=512)
     ai_model_name: str | None = Field(None, max_length=128)
     ai_base_url: str | None = Field(None, max_length=512)

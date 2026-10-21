@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
+import { OCRProcessor } from '../components/OCRProcessor';
+import { STTProcessor } from '../components/STTProcessor';
 
 export function TeacherExams() {
   const { t } = useI18n();
@@ -78,6 +80,19 @@ export function TeacherExams() {
           ))
         )}
       </div>
+
+      {/* OCR Processor - Handwritten Math OCR */}
+      <div style={{ marginTop: '3rem', padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+        <h3 style={{ margin: '0 0 1rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('ocr.1')}</h3>
+        <OCRProcessor />
+      </div>
+
+      {/* Speech-to-Text Processor */}
+      <div style={{ marginTop: '1.5rem', padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+        <h3 style={{ margin: '0 0 1rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('stt.processor_title')}</h3>
+        <STTProcessor />
+      </div>
+
     </div>
   );
 }
