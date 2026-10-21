@@ -1,6 +1,20 @@
 # Planned Education - Plans Updated 2026-10-21
 
 ## Latest Architecture & Security Updates (2026-10-21)
+- **Full End-to-End Visual Verification & Deployment (Completed & 100% Passed)**:
+  - Verified in Chrome Canary using Playwright CDP automation (`scratch/visual_e2e_walkthrough.py`):
+    1. Superadmin login, Admin Dashboard, system metrics, deployment config panel, and database backups.
+    2. Teacher registration (Prof. Euler & Prof. Gauss) and Superadmin approval workflow.
+    3. Teacher 1 math class & exam creation ("High School Math Final Exam") with multiple choice and algebraic essay with formulas.
+    4. Test module creation and discovery: Teacher 1 uploads math module; Teacher 2 discovers and downloads.
+    5. Student registration and test-taking: Student joins exam, answers Q1 correctly, answers Q2 with deliberate factoring mistake and PII email in answer body, submits exam.
+    6. Teacher Archive Browser & Presidio PII Scrubbing: Student submission appears as `ungraded`. Teacher triggers AI grading; Presidio scrubs student email/PII; external AI suggests correction & score, placed into temporary staging (`data/staging_archive/`) with state `pending_approval`.
+    7. Teacher Review & Correction Modal: Teacher approves grades; submission permanently sealed into zstd-compressed and AES-GCM encrypted archive (`.zst.enc`), integrity hash computed, status set to `graded`, temp staging cleaned.
+    8. Teacher tests "Re-open" button: submission reopened back to `pending_approval` for re-correction.
+    9. In-app FAQ Chatbot (`FAQChatbot.tsx`) verified with searchable docs index (Architecture, Teacher Guide, Backup, i18n, Presidio PII, Archive Workflow).
+    10. Internationalization Translation Numbers: `showNumbers` toggle enabled; `[key]` appears in buttons and headings globally.
+  - GitHub CI/CD: Both `dev` and `main` branches pass 100% green (Backend tests, Frontend tests, Security scans, gitleaks OSS, pip-audit, npm audit).
+  - Production Deployment: Synced and built in default location (`C:\PlannedEducation`), all background processes terminated cleanly.
 - **Archive Browser Teacher AI Grading & Temporary Staging Workflow (Completed & Verified)**:
   - Seamlessly integrated class exam submissions and offline uploaded tests directly into the Archive Browser.
   - Zero PII Exposure: Presidio PII scrubber (scrub_pii) sanitizes student responses and test questions before passing to external AI (or local-first evaluator).
