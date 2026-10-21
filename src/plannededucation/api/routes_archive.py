@@ -3,13 +3,14 @@ Archive Routes for PlannedEducation
 Admin-only routes for managing archived exam submissions.
 """
 
+import contextlib
 import json
 import logging
 import os
 from datetime import UTC, datetime
-
-from fastapi import APIRouter, Depends, HTTPException, Query, status, File, UploadFile, Form
 from pathlib import Path
+
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile, status
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
@@ -948,10 +949,8 @@ async def approve_and_archive_submissions(
 
         staged_file = teacher_staging / f"{sub.id}.json"
         if staged_file.exists():
-            try:
+            with contextlib.suppress(Exception):
                 staged_file.unlink()
-            except Exception:
-                pass
 
         approved_count += 1
 

@@ -6,11 +6,10 @@ Implements NIST AI RMF 1.0 + Generative AI Profile controls
 import io
 import json
 import logging
-import os
 import re
 import time
-import uuid
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
@@ -877,11 +876,6 @@ async def get_ai_usage_summary(
 
 # ── AI Grading Upload/Download Endpoints ─────────────────────────────────────
 
-from fastapi import File, UploadFile, Form
-from fastapi.responses import StreamingResponse
-import io
-import os
-from pathlib import Path
 
 # Directory for uploaded exams (in production, use cloud storage)
 UPLOAD_DIR = Path("data/ai_grading_uploads")
@@ -930,7 +924,7 @@ async def upload_exam_for_grading(
         db.commit()
         db.refresh(exam)
 
-    now = utcnow()
+    now = datetime.now(UTC)
     submission = models.ExamSubmission(
         exam_id=exam.id,
         student_id=current_user.id,
@@ -1046,7 +1040,7 @@ Status: {status_str}
 Score: {submission.score if submission.score is not None else 'N/A'}
 Feedback: {submission.feedback or 'N/A'}
 Submitted: {submission.completed_at or submission.started_at}
-""".encode('utf-8')
+""".encode()
 
     return StreamingResponse(
         io.BytesIO(pdf_content),
