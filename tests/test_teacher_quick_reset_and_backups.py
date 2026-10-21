@@ -6,9 +6,9 @@ and Admin Database Backup Services.
 import pytest
 from fastapi.testclient import TestClient
 
-from plannededucation.api import database, models
-from plannededucation.api.main import app
-from plannededucation.api.routes_auth import get_password_hash
+from src.plannededucation.api import database, models
+from src.plannededucation.api.main import app
+from src.plannededucation.api.routes_auth import get_password_hash
 
 
 @pytest.fixture
