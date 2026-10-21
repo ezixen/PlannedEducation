@@ -211,10 +211,8 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
     except WebSocketDisconnect:
         return
     except Exception:
-        try:
+        with contextlib.suppress(Exception):
             await websocket.close(code=1008, reason="Invalid auth frame")
-        except Exception:
-            pass
         return
 
     # ── Step 2: Validate token ───────────────────────────────────────────────

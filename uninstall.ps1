@@ -210,13 +210,11 @@ foreach ($dep in $externalDeps) {
     }
 }
 Write-Host ""
-Write-Info "Note: There is NO 'remove all' option. If you choose Yes below, you will be asked ONE BY ONE for each installed dependency whether to remove or keep it."
-
 $depsToRemove = @()
 
 if (-not $AutoConfirm -and $installedDeps.Count -gt 0) {
-    $reviewOneByOne = Confirm-Action "Do you want to review these external dependencies one by one to choose whether to remove any of them?"
-    if ($reviewOneByOne) {
+    $removeDeps = Confirm-Action "Do you want to remove any external dependencies?"
+    if ($removeDeps) {
         foreach ($dep in $installedDeps) {
             $removeThis = Confirm-Action "Remove $($dep.Name)? (y=remove, N=keep)"
             if ($removeThis) {

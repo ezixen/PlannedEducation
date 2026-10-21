@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useI18n } from '../contexts/I18nContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
 
@@ -9,6 +10,7 @@ interface CreateUserModalProps {
 }
 
 export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserModalProps) {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [username, setUsername] = useState('');
@@ -107,7 +109,7 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
             <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🎉</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>
-                {createdUser.role === 'admin' ? 'Administrator Created' : 'User Account Created'}
+                {createdUser.role === 'admin' ? t('admin.admin_created') : t('admin.user_created')}
               </h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
                 Account for <strong>{createdUser.username}</strong> ({createdUser.email}) is now active.
@@ -125,7 +127,7 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
                 }}
               >
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.35rem' }}>
-                  Temporary Password:
+                  {t('admin.temp_password_label')}
                 </div>
                 <div
                   style={{
@@ -153,15 +155,15 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
                     fontWeight: 500,
                   }}
                 >
-                  {copied ? '✓ Copied to Clipboard!' : '📋 Copy Temporary Password'}
+                  {copied ? t('admin.password_copied') : t('admin.copy_password')}
                 </button>
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', marginBottom: 0 }}>
-                  Share this temporary password securely with the user. They can change it in their Profile settings.
+                  {t('admin.share_password')}
                 </p>
               </div>
             ) : (
               <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '1.5rem' }}>
-                The user can log in immediately using the chosen password.
+                {t('admin.login_immediately')}
               </p>
             )}
 
@@ -179,14 +181,14 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
                 fontWeight: 600,
               }}
             >
-              Done
+              {t('admin.done_button')}
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>
-                ➕ Add New User / Administrator
+                ➕ {t('admin.create_user_title')}
               </h3>
               <button
                 type="button"
@@ -206,7 +208,7 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  Role <span style={{ color: '#ef4444' }}>*</span>
+                  {t('admin.role')} <span style={{ color: '#ef4444' }}>*</span>
                 </label>
                 <select
                   value={role}
@@ -221,21 +223,21 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
                     fontWeight: 500,
                   }}
                 >
-                  <option value="admin">Administrator (Superadmin / System Oversight)</option>
-                  <option value="teacher">Teacher (Exam Creation & Grading)</option>
-                  <option value="student">Student (Exam Taking)</option>
-                  <option value="parent">Parent (Student Progress Oversight)</option>
+                  <option value="admin">{t('admin.administrators')}</option>
+                  <option value="teacher">{t('admin.teachers')}</option>
+                  <option value="student">{t('admin.students')}</option>
+                  <option value="parent">{t('admin.parents')}</option>
                 </select>
               </div>
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  Username <span style={{ color: '#ef4444' }}>*</span>
+                  {t('admin.username')} <span style={{ color: '#ef4444' }}>*</span>
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. principal_smith"
+                  placeholder={t("create_user.username_placeholder")}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   style={{
@@ -251,12 +253,12 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  Email Address <span style={{ color: '#ef4444' }}>*</span>
+                  {t('admin.email')} <span style={{ color: '#ef4444' }}>*</span>
                 </label>
                 <input
                   type="email"
                   required
-                  placeholder="e.g. admin@school.edu"
+                  placeholder={t("create_user.email_placeholder")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   style={{
@@ -272,11 +274,11 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  Full Name (Optional)
+                  {t("admin.full_name")} {t("settings.optional_tag")}
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Dr. John Smith"
+                  placeholder={t("create_user.fullname_placeholder")}
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   style={{
@@ -292,11 +294,11 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  Password (Optional)
+                  {t("login.password_label")} {t("settings.optional_tag")}
                 </label>
                 <input
                   type="password"
-                  placeholder="Leave empty to auto-generate temporary password"
+                  placeholder={t("create_user.password_placeholder")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   style={{
@@ -329,7 +331,7 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
                   fontWeight: 500,
                 }}
               >
-                Cancel
+                {t('common.2')}
               </button>
               <button
                 type="submit"

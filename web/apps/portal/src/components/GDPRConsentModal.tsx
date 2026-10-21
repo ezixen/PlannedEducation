@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ProctoringConsentRequest } from '../services/proctoring';
+import { useI18n } from '../contexts/I18nContext';
 
 interface GDPRConsentModalProps {
   examId: string;
@@ -9,6 +10,7 @@ interface GDPRConsentModalProps {
 }
 
 export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GDPRConsentModalProps) {
+  const { t } = useI18n();
   const [consentData, setConsentData] = useState({
     camera_consent: false,
     microphone_consent: false,
@@ -27,7 +29,7 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
 
     // Validate required consents
     if (!consentData.data_processing_consent) {
-      setError('Data processing consent is required to proceed.');
+      setError(t('proctoring.consent_required'));
       setLoading(false);
       return;
     }
@@ -80,11 +82,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
         onClick={e => e.stopPropagation()}
       >
         <h2 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-primary)' }}>
-          GDPR Consent for AI Proctoring
+          {t('proctoring.gdpr_title')}
         </h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          This exam uses optional AI proctoring to ensure academic integrity. 
-          Please review and consent to the following data processing activities.
+          {t('proctoring.gdpr_desc')}
         </p>
 
         {error && (
@@ -105,7 +106,7 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1.5rem' }}>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '1rem', color: 'var(--text-primary)' }}>
-              Data Processing Activities
+              {t('proctoring.activities_title')}
             </h3>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -118,12 +119,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 />
                 <div>
                   <strong style={{ display: 'block', marginBottom: '0.25rem' }}>
-                    Camera Access (Face Detection & Eye Tracking)
+                    {t('proctoring.camera_title')}
                   </strong>
                   <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    Uses webcam to detect face presence, track eye movements, and identify 
-                    if multiple people are in frame. Video is processed locally and only 
-                    event metadata is sent to the server.
+                    {t('proctoring.camera_desc')}
                   </span>
                 </div>
               </label>
@@ -137,11 +136,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 />
                 <div>
                   <strong style={{ display: 'block', marginBottom: '0.25rem' }}>
-                    Microphone Access (Background Audio Monitoring)
+                    {t('proctoring.mic_title')}
                   </strong>
                   <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    Monitors ambient audio levels to detect unusual sounds or conversations. 
-                    Audio is analyzed in real-time locally; only anomaly events are recorded.
+                    {t('proctoring.mic_desc')}
                   </span>
                 </div>
               </label>
@@ -155,11 +153,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 />
                 <div>
                   <strong style={{ display: 'block', marginBottom: '0.25rem' }}>
-                    Screen Recording (Tab/Window Monitoring)
+                    {t('proctoring.screen_title')}
                   </strong>
                   <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    Detects tab switches, window blur, and fullscreen exits. 
-                    No actual screen content is recorded or transmitted.
+                    {t('proctoring.screen_desc')}
                   </span>
                 </div>
               </label>
@@ -174,12 +171,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 />
                 <div>
                   <strong style={{ display: 'block', marginBottom: '0.25rem' }}>
-                    Data Processing & Storage (Required)
+                    {t('proctoring.storage_title')}
                   </strong>
                   <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    Consent to process and store proctoring event data (timestamps, event types, 
-                    severity levels, face counts, gaze coordinates) for the duration of the exam 
-                    and 30 days after for review purposes.
+                    {t('proctoring.storage_desc')}
                   </span>
                 </div>
               </label>
@@ -187,13 +182,13 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
           </div>
 
           <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px' }}>
-            <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem' }}>Your Rights (GDPR)</h4>
+            <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem' }}>{t('proctoring.rights_title')}</h4>
             <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-              <li>Right to withdraw consent at any time</li>
-              <li>Right to access your proctoring data</li>
-              <li>Right to request data deletion after exam review period</li>
-              <li>Right to data portability</li>
-              <li>Right to object to automated decision-making</li>
+              <li>{t('proctoring.right_withdraw')}</li>
+              <li>{t('proctoring.right_access')}</li>
+              <li>{t('proctoring.right_delete')}</li>
+              <li>{t('proctoring.right_portability')}</li>
+              <li>{t('proctoring.right_automated')}</li>
             </ul>
           </div>
 
@@ -211,7 +206,7 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 cursor: 'pointer',
               }}
             >
-              Cancel
+              {t('common.2')}
             </button>
             <button
               type="submit"
@@ -226,7 +221,7 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
                 fontWeight: '600',
               }}
             >
-              {loading ? 'Submitting...' : 'Give Consent & Continue'}
+              {loading ? t('proctoring.submitting') : t('proctoring.submit_consent')}
             </button>
           </div>
         </form>

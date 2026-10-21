@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-05-math-racionalis-szamok-1.0.0",
+    "name": "Racionális számok - Grade 05 Math",
+    "version": "1.0.0",
+    "description": "45-minute test on racionális számok for Grade 05 students. Covers: Törtök, Százalékos számítás, Algebra alapok.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.275474+00:00",
+    "updated_at": "2026-10-20T13:20:17.275474+00:00",
+    "tags": [
+      "math",
+      "racionális-számok",
+      "grade-05"
+    ],
+    "subject": "math",
+    "grade_level": "grade-05",
+    "license": "CC-BY-4.0",
+    "checksum": "1fb5a0a1fe53a9d4b33fff96914d5fbcaaae2c629646ab9915d42a07934ac8e7",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Törtök",
+      "Százalékos számítás",
+      "Algebra alapok"
+    ]
+  },
+  "exam": {
+    "title": "Grade 05 Math - Racionális számok",
+    "description": "Test on racionális számok including törtök, százalékos számítás, algebra alapok",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 1: Százalékos számítás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Százalékos számítás"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 2: Algebra alapok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Algebra alapok"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 3: Törtök",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Törtök"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 4: Százalékos számítás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Százalékos számítás"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[math] Racionális számok - Kérdés 5: Algebra alapok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Algebra alapok"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[math] Racionális számok - Kérdés 6: Törtök",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Törtök"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[math] Racionális számok - Kérdés 7: Százalékos számítás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Százalékos számítás"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[math] Racionális számok - Kérdés 8: Algebra alapok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Algebra alapok"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[math] Racionális számok - Kérdés 9: Törtök",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Törtök"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[math] Racionális számok - Kérdés 10: Százalékos számítás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "racionális-számok"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-05-MATH-Racionális számok",
+      "learning_objective": "Százalékos számítás"
+    }
+  ],
+  "rubrics": []
+}

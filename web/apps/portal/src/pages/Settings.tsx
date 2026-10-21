@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useI18n } from '../contexts/I18nContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { useToast } from '../contexts/ToastContext';
@@ -52,6 +53,7 @@ const RADIUS_OPTIONS: { value: ThemeRadius; label: string }[] = [
 ];
 
 export function Settings() {
+  const { t } = useI18n();
   const { user, refreshUser } = useAuth();
   const { color, setColor, radius, setRadius } = useTheme();
   const { success: showSuccess, error: showError } = useToast();
@@ -129,12 +131,12 @@ export function Settings() {
 
         {/* Personal Details section */}
         <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>Personal Details</h2>
+          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.2')}</h2>
           
           <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
               <label style={labelStyle}>
-                Full Name
+                {t('settings.3')}
                 <input
                   type="text"
                   value={fullName}
@@ -146,7 +148,7 @@ export function Settings() {
               </label>
               
               <label style={labelStyle}>
-                Email Address
+                {t('settings.4')}
                 <input
                   type="email"
                   value={email}
@@ -160,7 +162,7 @@ export function Settings() {
             </div>
 
             <label style={labelStyle}>
-              Phone Number <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 400 }}>(optional)</span>
+              {t('settings.5')} <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 400 }}>{t('settings.optional_tag')}</span>
               <input
                 type="tel"
                 value={phone}
@@ -173,11 +175,11 @@ export function Settings() {
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
             
-            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>Change Password</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>Leave blank to keep your current password.</p>
+            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.6')}</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>{t('settings.leave_blank_pwd')}</p>
 
             <label style={labelStyle}>
-              Current Password
+              {t('login.password_label')}
               <input
                 type="password"
                 value={currentPassword}
@@ -190,7 +192,7 @@ export function Settings() {
             </label>
 
             <label style={labelStyle}>
-              New Password
+              {t('login.new_password_label')}
               <input
                 type="password"
                 value={newPassword}
@@ -203,7 +205,7 @@ export function Settings() {
             </label>
 
             <label style={labelStyle}>
-              Confirm New Password
+              {t('login.confirm_password_label')}
               <input
                 type="password"
                 value={confirmNewPassword}
@@ -217,7 +219,7 @@ export function Settings() {
                 }}
               />
               {confirmNewPassword && confirmNewPassword !== newPassword && (
-                <small style={{ color: '#ef4444', fontSize: '0.8rem' }}>Passwords do not match</small>
+                <small style={{ color: '#ef4444', fontSize: '0.8rem' }}>{t('settings.passwords_not_match')}</small>
               )}
             </label>
 
@@ -237,21 +239,21 @@ export function Settings() {
                 marginTop: '0.5rem',
               }}
             >
-              {loading ? 'Saving…' : 'Save Changes'}
+              {loading ? 'Saving…' : t('settings.17')}
             </button>
           </form>
         </div>
 
         {/* Appearance section */}
         <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>Appearance</h2>
+          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.13')}</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
             Customize your app theme and UI style.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
             <label style={labelStyle}>
-              Theme Color
+              {t('settings.13.1')}
               <select
                 value={color}
                 onChange={e => setColor(e.target.value as ThemeColor)}

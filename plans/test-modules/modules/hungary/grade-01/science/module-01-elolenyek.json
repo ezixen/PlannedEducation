@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-01-science-elolenyek-1.0.0",
+    "name": "Élőlények - Grade 01 Science",
+    "version": "1.0.0",
+    "description": "45-minute test on élőlények for Grade 01 students. Covers: Növények, Állatok, Ember.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.241882+00:00",
+    "updated_at": "2026-10-20T13:20:17.241882+00:00",
+    "tags": [
+      "science",
+      "élőlények",
+      "grade-01"
+    ],
+    "subject": "science",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "8e78a6c0fd53f209f6cc788a285a0a17aa4cd9ca0994a26a982ec93163a14c13",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Növények",
+      "Állatok",
+      "Ember"
+    ]
+  },
+  "exam": {
+    "title": "Grade 01 Science - Élőlények",
+    "description": "Test on élőlények including növények, állatok, ember",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[science] Élőlények - Kérdés 1: Állatok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Állatok"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[science] Élőlények - Kérdés 2: Ember",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Ember"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[science] Élőlények - Kérdés 3: Növények",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Növények"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[science] Élőlények - Kérdés 4: Állatok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Állatok"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[science] Élőlények - Kérdés 5: Ember",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Ember"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[science] Élőlények - Kérdés 6: Növények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Élőlények témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Növények"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[science] Élőlények - Kérdés 7: Állatok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Élőlények témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Állatok"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[science] Élőlények - Kérdés 8: Ember",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Élőlények témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Ember"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[science] Élőlények - Kérdés 9: Növények",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Élőlények témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Növények"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[science] Élőlények - Kérdés 10: Állatok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Élőlények témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "élőlények"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-SCIE-Élőlények",
+      "learning_objective": "Állatok"
+    }
+  ],
+  "rubrics": []
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { apiClient } from '../api';
+import { useI18n } from '../contexts/I18nContext';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -13,11 +14,13 @@ const inputStyle: React.CSSProperties = {
 };
 
 function PasswordStrength({ password }: { password: string }) {
+  const { t } = useI18n();
   const checks = [
-    { label: 'At least 8 characters', ok: password.length >= 8 },
-    { label: 'Uppercase letter', ok: /[A-Z]/.test(password) },
-    { label: 'Lowercase letter', ok: /[a-z]/.test(password) },
-    { label: 'Number', ok: /\d/.test(password) },
+    { label: t('register.9.1'), ok: password.length >= 8 },
+    { label: t('register.9.2'), ok: /[A-Z]/.test(password) },
+    { label: t('register.9.3'), ok: /[a-z]/.test(password) },
+    { label: t('register.9.4'), ok: /\d/.test(password) },
+    { label: t('register.9.5'), ok: /[!@#$%^&*(),.?":{}|<>]/.test(password) },
   ];
   if (!password) return null;
   return (
@@ -32,6 +35,7 @@ function PasswordStrength({ password }: { password: string }) {
 }
 
 export function Register() {
+  const { t } = useI18n();
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
@@ -53,7 +57,7 @@ export function Register() {
     setError('');
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match.');
+      setError(t('errors.7.4'));
       return;
     }
 
@@ -82,7 +86,7 @@ export function Register() {
         ? detail
         : Array.isArray(detail)
           ? detail.map((d: any) => d.msg || JSON.stringify(d)).join(', ')
-          : (err.message || 'Registration failed. Please try again.');
+          : (err.message || t('errors.9'));
       setError(msg);
     } finally {
       setLoading(false);
@@ -126,8 +130,7 @@ export function Register() {
               lineHeight: 1.4,
             }}
           >
-            <strong>⚠️ CRITICAL — DO NOT SKIP:</strong> Store these 5 one-time recovery codes in a safe place (or print them now).
-            If you ever forget your password, you can use one of these single-use codes to reset your password immediately by yourself without waiting for anyone!
+            <strong>⚠️ {t('register.critical_codes_title')}:</strong> {t('register.critical_codes_body')}
           </div>
 
           <div
@@ -177,7 +180,7 @@ export function Register() {
                 fontSize: '0.85rem',
               }}
             >
-              {copiedCodes ? '✓ Copied to Clipboard!' : '📋 Copy All Codes'}
+              {copiedCodes ? t('register.copied') : t('register.copy_codes')}
             </button>
             <button
               type="button"
@@ -193,7 +196,7 @@ export function Register() {
                 fontSize: '0.85rem',
               }}
             >
-              🖨️ Print Codes
+              {t('register.print_codes')}
             </button>
           </div>
 
@@ -212,7 +215,7 @@ export function Register() {
               fontSize: '0.95rem',
             }}
           >
-            I Have Saved My Codes — Proceed to Login
+            {t('register.proceed_login')}
           </button>
         </div>
       </div>
@@ -222,8 +225,8 @@ export function Register() {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', padding: '1rem' }}>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center' }}>
-        <h1 style={{ marginBottom: '0.5rem', color: 'var(--text-color)' }}>Planned Education</h1>
-        <p style={{ marginBottom: '1.5rem', color: 'var(--text-muted)' }}>Create a new account</p>
+        <h1 style={{ marginBottom: '0.5rem', color: 'var(--text-color)' }}>{t('login.title')}</h1>
+        <p style={{ marginBottom: '1.5rem', color: 'var(--text-muted)' }}>{t('register.subtitle')}</p>
 
         {error && (
           <div style={{ color: '#ef4444', marginBottom: '1rem', padding: '0.5rem', backgroundColor: '#fee2e2', borderRadius: 'var(--radius-sm)' }}>
@@ -233,15 +236,15 @@ export function Register() {
 
         <form onSubmit={handleRegister} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
           <label style={{ color: 'var(--text-color)' }}>
-            Account Role
+            {t('register.account_role')}
             <select
               value={role}
               onChange={(e) => setRole(e.target.value as any)}
               style={inputStyle}
             >
-              <option value="student">Student (Take exams, view grades)</option>
-              <option value="teacher">Teacher (Create & manage exams, grade submissions)</option>
-              <option value="parent">Parent (View child progress and reports)</option>
+              <option value="student">{t('register.role_student')}</option>
+              <option value="teacher">{t('register.role_teacher')}</option>
+              <option value="parent">{t('register.role_parent')}</option>
             </select>
           </label>
 
@@ -257,12 +260,12 @@ export function Register() {
                 lineHeight: 1.4,
               }}
             >
-              ℹ️ <strong>Teacher Verification:</strong> To protect exam security, self-registered teachers require one-time approval by a school administrator before publishing tests or accessing curriculum modules.
+              ℹ️ <strong>{t('register.teacher_verification_title')}:</strong> {t('register.teacher_verification_body')}
             </div>
           )}
 
           <label style={{ color: 'var(--text-color)' }}>
-            Full Name
+            {t('register.full_name_label')}
             <input
               type="text"
               name="full_name"
@@ -276,7 +279,7 @@ export function Register() {
           </label>
 
           <label style={{ color: 'var(--text-color)' }}>
-            Username
+            {t('register.username_label')}
             <input
               type="text"
               name="username"
@@ -293,7 +296,7 @@ export function Register() {
           </label>
 
           <label style={{ color: 'var(--text-color)' }}>
-            Email
+            {t('register.email_label')}
             <input
               type="email"
               name="email"
@@ -307,7 +310,7 @@ export function Register() {
           </label>
 
           <label style={{ color: 'var(--text-color)' }}>
-            Password
+            {t('register.password_label')}
             <input
               type="password"
               name="password"
@@ -323,7 +326,7 @@ export function Register() {
           </label>
 
           <label style={{ color: 'var(--text-color)' }}>
-            Confirm Password
+            {t('register.confirm_password_label')}
             <input
               type="password"
               name="confirm_password"
@@ -339,7 +342,7 @@ export function Register() {
               }}
             />
             {confirmPassword && confirmPassword !== password && (
-              <small style={{ color: '#ef4444' }}>Passwords do not match</small>
+              <small style={{ color: '#ef4444' }}>{t('errors.7.4')}</small>
             )}
           </label>
 
@@ -358,13 +361,13 @@ export function Register() {
               fontWeight: 600,
             }}
           >
-            {loading ? 'Creating account…' : 'Register'}
+            {loading ? t('register.creating') : t('register.register_button')}
           </button>
         </form>
 
         <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
-          Already have an account?{' '}
-          <Link to="/login" style={{ color: 'var(--primary-color)' }}>Sign in here</Link>
+          {t('register.already_have')}{' '}
+          <Link to="/login" style={{ color: 'var(--primary-color)' }}>{t('register.sign_in')}</Link>
         </p>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { packagesService, type PackageMetadata, type PackageExportRequest, type PackageImportResult } from '../services/packages';
 import { downloadBlob } from '../services/packages';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface PackageManagerProps {
   examId?: string;
@@ -9,6 +10,7 @@ interface PackageManagerProps {
 }
 
 export function PackageManager({ examId, onPackageImported }: PackageManagerProps) {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [packages, setPackages] = useState<PackageMetadata[]>([]);
   const [loading, setLoading] = useState(false);
@@ -157,7 +159,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
   return (
     <div style={{ padding: '1.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h2 style={{ margin: 0 }}>Test Package Manager</h2>
+        <h2 style={{ margin: 0 }}>{t('packages.manager_title')}</h2>
         {examId && (
           <button
             onClick={() => setShowExportModal(true)}
@@ -171,7 +173,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
               cursor: exporting ? 'not-allowed' : 'pointer',
             }}
           >
-            {exporting ? 'Exporting...' : 'Export Current Exam'}
+            {exporting ? 'Exporting...' : t('packages.2')}
           </button>
         )}
       </div>
@@ -204,7 +206,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
             }}
             onClick={e => e.stopPropagation()}
           >
-            <h3 style={{ margin: '0 0 1.5rem 0' }}>Export Exam as Package</h3>
+            <h3 style={{ margin: '0 0 1.5rem 0' }}>{t('packages.5')}</h3>
             
             <div style={{ marginBottom: '1rem' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
@@ -213,7 +215,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
                   checked={exportOptions.include_answers}
                   onChange={(e) => setExportOptions(prev => ({ ...prev, include_answers: e.target.checked }))}
                 />
-                Include correct answers
+                {t('packages.5.1')}
               </label>
             </div>
             
@@ -224,7 +226,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
                   checked={exportOptions.include_rubrics}
                   onChange={(e) => setExportOptions(prev => ({ ...prev, include_rubrics: e.target.checked }))}
                 />
-                Include rubrics
+                {t('packages.5.2')}
               </label>
             </div>
             
@@ -235,12 +237,12 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
                   checked={exportOptions.include_variables}
                   onChange={(e) => setExportOptions(prev => ({ ...prev, include_variables: e.target.checked }))}
                 />
-                Include question variables
+                {t('packages.5.3')}
               </label>
             </div>
             
             <div style={{ marginBottom: '1rem' }}>
-              <label style={{ display: 'block', marginBottom: '0.5rem' }}>Format</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem' }}>{t('packages.5.4')}</label>
               <select
                 value={exportOptions.format}
                 onChange={(e) => setExportOptions(prev => ({ ...prev, format: e.target.value as 'json' | 'yaml' }))}
@@ -258,7 +260,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
                   checked={exportOptions.compress}
                   onChange={(e) => setExportOptions(prev => ({ ...prev, compress: e.target.checked }))}
                 />
-                Compress (gzip)
+                {t('packages.5.7')}
               </label>
             </div>
 
@@ -275,7 +277,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
                   cursor: 'pointer',
                 }}
               >
-                Cancel
+                {t('common.2')}
               </button>
               <button
                 onClick={handleExport}
@@ -299,7 +301,7 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
 
       {/* Import Section */}
       <div style={{ marginBottom: '2rem', padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-        <h3 style={{ margin: '0 0 1rem 0' }}>Import Package</h3>
+        <h3 style={{ margin: '0 0 1rem 0' }}>{t('packages.import_btn')}</h3>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '0.875rem' }}>
           Upload a test package (JSON or YAML) to create a new exam with questions and rubrics.
         </p>
@@ -372,14 +374,14 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
 
       {/* Packages List */}
       <div>
-        <h3 style={{ margin: '0 0 1rem 0' }}>Available Packages</h3>
+        <h3 style={{ margin: '0 0 1rem 0' }}>{t('packages.available_title')}</h3>
         {loading ? (
           <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)' }}>
             Loading packages...
           </div>
         ) : packages.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)' }}>
-            No packages found. Import a package or export an exam to get started.
+            {t('packages.11')}
           </div>
         ) : (
           <div style={{ display: 'grid', gap: '1rem' }}>

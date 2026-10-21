@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useProctoring } from '../hooks/useProctoring';
 import { GDPRConsentModal } from './GDPRConsentModal';
+import { useI18n } from '../contexts/I18nContext';
 
 interface ProctoringSessionProps {
   examId: string;
@@ -9,6 +10,7 @@ interface ProctoringSessionProps {
 }
 
 export function ProctoringSession({ examId, submissionId, onSessionComplete }: ProctoringSessionProps) {
+  const { t } = useI18n();
   const [showConsentModal, setShowConsentModal] = useState(false);
   const [sessionStarted, setSessionStarted] = useState(false);
 
@@ -68,9 +70,9 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
   if (!proctoring.consentGiven) {
     return (
       <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', textAlign: 'center' }}>
-        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', color: 'var(--text-color)' }}>⚪ AI Proctoring</h4>
+        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', color: 'var(--text-color)' }}>{t('proctoring.ai_proctoring')}</h4>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
-          Review GDPR privacy controls to configure optional proctoring.
+          {t('proctoring.gdpr_notice')}
         </p>
         <button
           type="button"
@@ -86,7 +88,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
             fontSize: '0.85rem',
           }}
         >
-          Review Proctoring Consent
+          {t('proctoring.review_consent')}
         </button>
         <GDPRConsentModal
           examId={examId}
@@ -103,9 +105,9 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
   if (!sessionStarted) {
     return (
       <div style={{ padding: '1.5rem', textAlign: 'center' }}>
-        <h3 style={{ marginBottom: '1rem' }}>Proctoring Ready</h3>
+        <h3 style={{ marginBottom: '1rem' }}>{t('proctoring.ready')}</h3>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          Consent has been given. Click below to start the proctoring session.
+          {t('proctoring.consent_given_desc')}
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
@@ -115,7 +117,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
               onChange={(e) => proctoring.startSession({ ...proctoring, cameraEnabled: e.target.checked })}
               disabled={proctoring.sessionActive}
             />
-            Camera
+            {t('proctoring.3')}
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
@@ -124,7 +126,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
               onChange={(e) => proctoring.startSession({ ...proctoring, microphoneEnabled: e.target.checked })}
               disabled={proctoring.sessionActive}
             />
-            Microphone
+            {t('proctoring.3.1')}
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
@@ -133,7 +135,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
               onChange={(e) => proctoring.startSession({ ...proctoring, screenRecordingEnabled: e.target.checked })}
               disabled={proctoring.sessionActive}
             />
-            Screen Monitoring
+            {t('proctoring.screen_monitoring')}
           </label>
         </div>
         <button
@@ -151,7 +153,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
             opacity: proctoring.sessionActive ? 0.6 : 1,
           }}
         >
-          Start Proctoring Session
+          {t('proctoring.start_session_btn')}
         </button>
       </div>
     );
@@ -161,7 +163,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
     <div style={{ padding: '1.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
         <h3 style={{ margin: 0 }}>
-          {proctoring.sessionActive ? '🔴 Proctoring Active' : '⚪ Proctoring Inactive'}
+          {proctoring.sessionActive ? t('proctoring.active_title') : t('proctoring.inactive_title')}
         </h3>
         {proctoring.sessionActive && (
           <button
@@ -175,7 +177,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
               cursor: 'pointer',
             }}
           >
-            End Session
+            {t('proctoring.10')}
           </button>
         )}
       </div>
@@ -191,21 +193,21 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           <div style={{ fontSize: '2rem', fontWeight: 'bold', color: proctoring.violationCount > 0 ? '#ef4444' : '#10b981' }}>
             {proctoring.violationCount}
           </div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Violations</div>
+          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{t('proctoring.violations')}</div>
         </div>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>{proctoring.maxFaces}</div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Max Faces Detected</div>
+          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{t('proctoring.max_faces')}</div>
         </div>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>{proctoring.events.length}</div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Events Recorded</div>
+          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{t('proctoring.events_recorded')}</div>
         </div>
       </div>
 
       {proctoring.cameraEnabled && proctoring.videoRef.current && (
         <div style={{ marginBottom: '1.5rem' }}>
-          <h4 style={{ marginBottom: '0.5rem' }}>Camera Preview</h4>
+          <h4 style={{ marginBottom: '0.5rem' }}>{t('proctoring.camera_preview')}</h4>
           <div style={{ width: '100%', maxWidth: '400px', aspectRatio: '4/3', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
             <video
               ref={proctoring.videoRef}
@@ -219,7 +221,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
       )}
 
       <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '1rem' }}>
-        <h4 style={{ marginBottom: '0.5rem' }}>Recent Events</h4>
+        <h4 style={{ marginBottom: '0.5rem' }}>{t('proctoring.recent_events')}</h4>
         <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
           {proctoring.events.slice(-20).reverse().map((event, index) => (
             <div
@@ -257,7 +259,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           ))}
           {proctoring.events.length === 0 && (
             <div style={{ textAlign: 'center', color: 'var(--text-secondary)', padding: '2rem' }}>
-              No events recorded yet
+              {t('proctoring.no_events')}
             </div>
           )}
         </div>

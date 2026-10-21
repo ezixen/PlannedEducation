@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "id": "germany-grade-10-physik-mechanik-1.0.0",
+    "name": "Klasse 10 Physik - Mechanik und Kräfte",
+    "version": "1.0.0",
+    "description": "45-minütiger Physiktest zu Mechanik und Kräften für Klasse 10 (deutscher Bildungsplan).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["physik", "mechanik", "kraefte", "klasse-10", "deutschland"],
+    "subject": "physik",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "deutschland-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Newton'sche Gesetze anwenden",
+      "Kraft berechnen mit F = m·a",
+      "Masse und Gewicht unterscheiden",
+      "Druck und Dichte berechnen"
+    ]
+  },
+  "exam": {
+    "title": "Klasse 10 Physik - Mechanik und Kräfte",
+    "description": "Test zu Mechanik einschließlich Kräften, Newtonschen Gesetzen, Masse, Gewicht und Druck",
+    "duration_minutes": 45,
+    "instructions": "Beantworten Sie alle Fragen. Bei dynamischen Matheaufgaben sind die Werte pro Schüler randomisiert. Zeigen Sie Ihre Rechenwege bei Berechnungsaufgaben.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Welches Newtonsche Gesetz besagt, dass ein Körper in Ruhe ruht, solange keine äußere Kraft auf ihn einwirkt?",
+      "options": ["Newtonsches 1. Gesetz", "Newtonsches 2. Gesetz", "Newtonsches 3. Gesetz", "Newtonsches Gravitationsgesetz"],
+      "correct_answer": "Newtonsches 1. Gesetz",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["newton", "1-gesetz", "trägheit"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-10-Physik-Dynamik",
+      "learning_objective": "Newtonsches 1. Gesetz identifizieren"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Die Formel F = m·a bedeutet:",
+      "options": ["Kraft = Masse × Beschleunigung", "Kraft = Masse ÷ Beschleunigung", "Kraft = Masse + Beschleunigung", "Kraft = Masse - Beschleunigung"],
+      "correct_answer": "Kraft = Masse × Beschleunigung",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["newton", "2-gesetz", "formel"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-10-Physik-Dynamik",
+      "learning_objective": "Newtonsches 2. Gesetz Formel wiedergeben"
+    },
+    {
+      "id": "q-003",
+      "question_type": "dynamic_math",
+      "text": "Ein Körper mit der Masse [rand:1-100] kg beschleunigt mit [rand:1-20] m/s². Berechnen Sie die aufgebrachte Kraft.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Schülerin/Schüler berechnet F = m·a mit den randomisierten Werten. Volle Punktzahl für korrekte numerische Antwort mit Einheit (N).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "masse",
+          "type": "integer",
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "beschleunigung",
+          "type": "integer",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "tags": ["newton", "berechnung", "kraft"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-10-Physik-Dynamik",
+      "learning_objective": "Kraft berechnen mit F = m·a bei gegebenen Werten"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Masse wird gemessen in:",
+      "options": ["Newton", "Kilogramm", "Meter", "Sekunde"],
+      "correct_answer": "Kilogramm",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["masse", "einheiten"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-10-Physik-MasseGewicht",
+      "learning_objective": "SI-Einheit der Masse identifizieren"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Gewicht wird gemessen in:",
+      "options": ["Kilogramm", "Newton", "Meter", "Sekunde"],
+      "correct_answer": "Newton",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["gewicht", "einheiten"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-10-Physik-MasseGewicht",
+      "learning_objective": "SI-Einheit des Gewichts identifizieren"
+    },
+    {
+      "id": "q-006",
+      "question_type": "dynamic_math",
+      "text": "Ein Körper mit der Masse [rand:1-50] kg ist auf der Erde, wo das Schwerefeld 10 N/kg beträgt. Berechnen Sie sein Gewicht.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Schülerin/Schüler berechnet G = m·g mit der randomisierten Masse und g = 10 N/kg. Volle Punktzahl für korrekte numerische Antwort mit Einheit (N).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "masse",
+          "type": "integer",
+          "min": 1,
+          "max": 50,
+          "step": 1
+        }
+      ],
+      "tags": ["gewicht", "berechnung", "schwere"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-10-Physik-MasseGewicht",
+      "learning_objective": "Gewicht berechnen mit G = m·g"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Druck ist definiert als:",
+      "options": ["Kraft ÷ Fläche", "Kraft × Fläche", "Kraft + Fläche", "Kraft - Fläche"],
+      "correct_answer": "Kraft ÷ Fläche",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["druck", "definition"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-10-Physik-Druck",
+      "learning_objective": "Druckdefinition wiedergeben"
+    },
+    {
+      "id": "q-008",
+      "question_type": "dynamic_math",
+      "text": "Eine Kraft von [rand:10-100] N wirkt auf eine Fläche von [rand:1-10] m². Berechnen Sie den Druck.",
+      "options": null,
+      "correct_answer": "variable",
+      "rubric": "Schülerin/Schüler berechnet p = F ÷ A mit den randomisierten Kraft- und Flächenwerten. Volle Punktzahl für korrekte numerische Antwort mit Einheit (Pa oder N/m²).",
+      "points": 5,
+      "variables": [
+        {
+          "name": "kraft",
+          "type": "integer",
+          "min": 10,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "name": "flaeche",
+          "type": "integer",
+          "min": 1,
+          "max": 10,
+          "step": 1
+        }
+      ],
+      "tags": ["druck", "berechnung"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-10-Physik-Druck",
+      "learning_objective": "Druck berechnen mit p = F ÷ A"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Erklären Sie den Unterschied zwischen Masse und Gewicht. Geben Sie an, wie jede gemessen wird und ob sie sich ändern, wenn ein Gegenstand zum Mond gebracht wird.",
+      "rubric": "Schülerin/Schüler erklärt: (1) Masse ist Stoffmenge, gemessen in kg, bleibt überall gleich. (2) Gewicht ist Gewichtskraft, gemessen in N, ändert sich auf dem Mond (1/6 der Erde). Enthält korrekte Einheiten und klare Unterscheidung.",
+      "correct_answer": "Masse ist Stoffmenge (kg, konstant). Gewicht ist Gewichtskraft (N, variiert mit Schwerkraft).",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["masse", "gewicht", "unterschied", "mond"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-10-Physik-MasseGewicht",
+      "learning_objective": "Masse von Gewicht unterscheiden und Mond-Unterschied erklären"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Ein Auto mit der Masse [rand:500-2000] kg beschleunigt von Ruhe auf [rand:10-30] m/s in [rand:5-15] Sekunden. Berechnen Sie: (a) die Beschleunigung, (b) die erforderliche Kraft. Zeigen Sie alle Rechenschritte.",
+      "rubric": "Schülerin/Schüler berechnet: (a) a = (v - u) / t mit randomisierten Werten, (b) F = m · a mit Masse und berechneter Beschleunigung. Volle Punktzahl für korrekte Formeln, Einsetzungen und Antworten mit Einheiten.",
+      "correct_answer": "Variable Antworten basierend auf randomisierter Masse, Endgeschwindigkeit und Zeit",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [
+        {
+          "name": "masse",
+          "type": "integer",
+          "min": 500,
+          "max": 2000,
+          "step": 100
+        },
+        {
+          "name": "endgeschwindigkeit",
+          "type": "integer",
+          "min": 10,
+          "max": 30,
+          "step": 5
+        },
+        {
+          "name": "zeit",
+          "type": "integer",
+          "min": 5,
+          "max": 15,
+          "step": 1
+        }
+      ],
+      "tags": ["beschleunigung", "kraft", "berechnung", "newton"],
+      "difficulty": "hard",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "DE-10-Physik-Dynamik",
+      "learning_objective": "Beschleunigung und Kraft in mehrstufiger Aufgabe berechnen"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Masse als Stoffmenge definiert, gemessen in kg",
+          "points": 3,
+          "keywords": ["masse", "stoffmenge", "kilogramm", "kg"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Gewicht als Gewichtskraft definiert, gemessen in N",
+          "points": 3,
+          "keywords": ["gewicht", "gewichtskraft", "schwere", "newton", "N"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Masse bleibt gleich auf dem Mond, Gewicht ändert sich (1/6 der Erde)",
+          "points": 4,
+          "keywords": ["mond", "gleich", "aendert", "1/6", "weniger"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Beschleunigung korrekt berechnet: a = (v - u) / t",
+          "points": 4,
+          "keywords": ["beschleunigung", "formel", "einsetzung", "m/s²"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Kraft korrekt berechnet: F = m · a",
+          "points": 4,
+          "keywords": ["kraft", "formel", "einsetzung", "N"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Korrekte Einheiten und signifikante Stellen",
+          "points": 2,
+          "keywords": ["m/s²", "N", "einheiten"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

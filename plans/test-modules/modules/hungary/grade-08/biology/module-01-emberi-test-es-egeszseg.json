@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-08-biology-emberi-test-es-egeszseg-1.0.0",
+    "name": "Emberi test és egészség - Grade 08 Biology",
+    "version": "1.0.0",
+    "description": "45-minute test on emberi test és egészség for Grade 08 students. Covers: Rendszerek, Egészség, Prevenció.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.317443+00:00",
+    "updated_at": "2026-10-20T13:20:17.317443+00:00",
+    "tags": [
+      "biology",
+      "emberi-test-és-egészség",
+      "grade-08"
+    ],
+    "subject": "biology",
+    "grade_level": "grade-08",
+    "license": "CC-BY-4.0",
+    "checksum": "703211aad71310b207c396a1c825956f62a4d14565826c2dc4346d7a19b105d2",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Rendszerek",
+      "Egészség",
+      "Prevenció"
+    ]
+  },
+  "exam": {
+    "title": "Grade 08 Biology - Emberi test és egészség",
+    "description": "Test on emberi test és egészség including rendszerek, egészség, prevenció",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[biology] Emberi test és egészség - Kérdés 1: Egészség",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Egészség"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[biology] Emberi test és egészség - Kérdés 2: Prevenció",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Prevenció"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[biology] Emberi test és egészség - Kérdés 3: Rendszerek",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Rendszerek"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[biology] Emberi test és egészség - Kérdés 4: Egészség",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Egészség"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[biology] Emberi test és egészség - Kérdés 5: Prevenció",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Prevenció"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[biology] Emberi test és egészség - Kérdés 6: Rendszerek",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Emberi test és egészség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Rendszerek"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[biology] Emberi test és egészség - Kérdés 7: Egészség",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Emberi test és egészség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Egészség"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[biology] Emberi test és egészség - Kérdés 8: Prevenció",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Emberi test és egészség témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Prevenció"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[biology] Emberi test és egészség - Kérdés 9: Rendszerek",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Emberi test és egészség témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Rendszerek"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[biology] Emberi test és egészség - Kérdés 10: Egészség",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Emberi test és egészség témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "biology",
+        "emberi-test-és-egészség"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-08-BIOL-Emberi test és egész",
+      "learning_objective": "Egészség"
+    }
+  ],
+  "rubrics": []
+}

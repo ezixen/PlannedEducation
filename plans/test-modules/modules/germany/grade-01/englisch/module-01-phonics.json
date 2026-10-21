@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "id": "germany-grade-01-englisch-phonics-1.0.0",
+    "name": "Klasse 1 Englisch - Phonetik und Lesen",
+    "version": "1.0.0",
+    "description": "45-minütiger Englischtest zu Phonetik und Lesen für Klasse 1 (deutscher Bildungsplan).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-21T00:00:00+00:00",
+    "tags": [
+      "englisch",
+      "phonetik",
+      "lesen",
+      "klasse-1",
+      "deutschland"
+    ],
+    "subject": "englisch",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "deutschland-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Englische Buchstabenlaute erkennen",
+      "Einfache englische Wörter lesen",
+      "Einfache englische Sätze verstehen"
+    ]
+  },
+  "exam": {
+    "title": "Klasse 1 Englisch - Phonetik und Lesen",
+    "description": "Test zu Phonetik, Lesen und grundlegendem englischen Verständnis für Klasse 1",
+    "duration_minutes": 45,
+    "instructions": "Beantworten Sie alle Fragen. Kreuzen Sie die richtige Antwort an.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Welcher Buchstabe macht den 'a'-Laut in dem englischen Wort 'cat'?",
+      "options": [
+        "c",
+        "a",
+        "t"
+      ],
+      "correct_answer": "a",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "phonetik",
+        "vokal-laute",
+        "a-laut"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Englische Vokallaute identifizieren"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Welches englische Wort beginnt mit dem 'b'-Laut?",
+      "options": [
+        "cat",
+        "ball",
+        "dog",
+        "sun"
+      ],
+      "correct_answer": "ball",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "phonetik",
+        "anfangslaute",
+        "b-laut"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Anfangskonsonanten identifizieren"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Welches englische Wort reimt sich auf 'cat'?",
+      "options": [
+        "hat",
+        "dog",
+        "sun",
+        "tree"
+      ],
+      "correct_answer": "hat",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "reime",
+        "phonetik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Reimwörter identifizieren"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Welcher Laut steht am Anfang von dem englischen Wort 'sun'?",
+      "options": [
+        "s",
+        "u",
+        "n",
+        "m"
+      ],
+      "correct_answer": "s",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "phonetik",
+        "anfangslaute",
+        "s-laut"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Phonetik",
+      "learning_objective": "Anfangskonsonanten identifizieren"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Vervollständige den englischen Satz: The cat ____ on the mat.",
+      "options": [
+        "sits",
+        "sit",
+        "sitting",
+        "sat"
+      ],
+      "correct_answer": "sits",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "grammatik",
+        "praesens"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Einfaches englisches Präsens verwenden"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Welches englische Wort bedeutet 'Hund'?",
+      "options": [
+        "cat",
+        "dog",
+        "bird",
+        "fish"
+      ],
+      "correct_answer": "dog",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "wortschatz",
+        "tiere"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Wortschatz",
+      "learning_objective": "Englischen Grundwortschatz für Tiere anwenden"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Was ist der Plural von dem englischen Wort 'cat'?",
+      "options": [
+        "cats",
+        "cates",
+        "caties",
+        "cat"
+      ],
+      "correct_answer": "cats",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "grammatik",
+        "plural"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Regelmäßige englische Plurale bilden"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Welcher englische Satz ist grammatikalisch richtig?",
+      "options": [
+        "The dog runs fast.",
+        "The dog run fast.",
+        "The dog running fast.",
+        "The dog is run fast."
+      ],
+      "correct_answer": "The dog runs fast.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "grammatik",
+        "subjekt-verb-kongruenz"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Korrekte Subjekt-Verb-Kongruenz im Englischen"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Schreibe 3 einfache englische Sätze über dein Lieblingstier (z.B. 'I like dogs. A dog is friendly. Dogs can run fast.').",
+      "rubric": "Schülerin/Schüler schreibt 3 einfache Sätze auf Englisch mit Großbuchstaben und Punkt.",
+      "correct_answer": "Three simple sentences in English about an animal",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "schreiben",
+        "sätze",
+        "englisch"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 8,
+      "curriculum_topic": "DE-01-Englisch-Schreiben",
+      "learning_objective": "Einfache englische Sätze schreiben"
+    },
+    {
+      "id": "q-010",
+      "question_type": "multiple_choice",
+      "text": "Lies den englischen Satz: 'The big red ball.' Welches Wort ist ein Substantiv (noun)?",
+      "options": [
+        "The",
+        "big",
+        "red",
+        "ball"
+      ],
+      "correct_answer": "ball",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "grammatik",
+        "wortarten",
+        "substantiv"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "DE-01-Englisch-Grammatik",
+      "learning_objective": "Englische Substantive im Satz identifizieren"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Schreibt 3 einfache Sätze auf Englisch",
+          "points": 4,
+          "keywords": [
+            "sentences",
+            "three",
+            "english"
+          ]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Verwendet Großbuchstaben am Satzanfang",
+          "points": 3,
+          "keywords": [
+            "capital",
+            "großbuchstabe"
+          ]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Verwendet Punkte am Satzende",
+          "points": 3,
+          "keywords": [
+            "period",
+            "punkt"
+          ]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-02-science-anyagok-es-tulajdonsagaik-1.0.0",
+    "name": "Anyagok és tulajdonságaik - Grade 02 Science",
+    "version": "1.0.0",
+    "description": "45-minute test on anyagok és tulajdonságaik for Grade 02 students. Covers: Anyagok, Állapotváltozások, Anyagok használata.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.250991+00:00",
+    "updated_at": "2026-10-20T13:20:17.250991+00:00",
+    "tags": [
+      "science",
+      "anyagok-és-tulajdonságaik",
+      "grade-02"
+    ],
+    "subject": "science",
+    "grade_level": "grade-02",
+    "license": "CC-BY-4.0",
+    "checksum": "126f4982f6da194653213adcb62fd491d11a5e507a5ea8fd30a816bca347c175",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Anyagok",
+      "Állapotváltozások",
+      "Anyagok használata"
+    ]
+  },
+  "exam": {
+    "title": "Grade 02 Science - Anyagok és tulajdonságaik",
+    "description": "Test on anyagok és tulajdonságaik including anyagok, állapotváltozások, anyagok használata",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 1: Állapotváltozások",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Állapotváltozások"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 2: Anyagok használata",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok használata"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 3: Anyagok",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 4: Állapotváltozások",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Állapotváltozások"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 5: Anyagok használata",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok használata"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 6: Anyagok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 7: Állapotváltozások",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Állapotváltozások"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 8: Anyagok használata",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok használata"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 9: Anyagok",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Anyagok"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[science] Anyagok és tulajdonságaik - Kérdés 10: Állapotváltozások",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "science",
+        "anyagok-és-tulajdonságaik"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-02-SCIE-Anyagok és tulajdons",
+      "learning_objective": "Állapotváltozások"
+    }
+  ],
+  "rubrics": []
+}

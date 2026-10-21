@@ -180,10 +180,38 @@ Administrators can trigger an instant backup snapshot anytime from **Admin Dashb
 ## 9. Pre-Exam Emergency Classroom Password Reset
 
 Right before an exam, students who forget their credentials can be unlocked immediately by their teacher:
-1. Teacher clicks **"⚡ Reset Pwd for Test"** in their classroom roster or live exam monitoring.
-2. Student types their email on `/login`.
-3. System detects the teacher reset (`TEACHER_RESET_ACTIVE`), highlights the login card in green, and prompts the student to enter their new password.
-4. The student sets their new password, receives authentication tokens instantly, and enters the test without delay.
+
+### Reset Hierarchy (No Email System Required)
+
+| Initiator | Can Reset | Required | Use Case |
+|-----------|-----------|----------|----------|
+| **Teacher** | Students only | Approved teacher status | Student forgot password right before test |
+| **Parent** | Their children only | Active parent-child relationship | Child lost recovery codes or 2FA device |
+| **Admin** | Teachers only | Admin privilege | Teacher lost recovery codes or 2FA device |
+| **Superadmin** | Teachers + Admins | Superadmin privilege | Admin lost recovery codes or 2FA device |
+
+### How It Works
+
+1. **Initiator** clicks **"⚡ Reset Pwd for Test"** next to the target user's name
+2. **Target user** types their email on `/login`
+3. System detects the active reset (`PASSWORD_RESET_ACTIVE`), highlights the login card in green, and prompts for a new password
+4. **Target user** sets their new password, receives authentication tokens instantly, and enters the test without delay
+
+### Expiration
+
+All password reset links expire **24 hours** after initiation:
+- **Email OTP reset**: OTP valid for 24 hours from request time (stated in the email)
+- **Teacher/Parent/Admin quick reset**: Reset flag valid for 24 hours from initiation
+- After expiration, the reset flag is automatically cleared and a new reset must be requested
+
+### Email-Based Password Reset (When Email System Configured)
+
+If an SMTP email service is configured, users can also use self-service password reset:
+1. User clicks **"Forgot password?"** on `/login`
+2. Enters their registered email address
+3. Receives a 6-digit OTP via email (valid for 24 hours)
+4. Enters the OTP on `/login` and sets a new password
+5. If email is slow or unavailable, teachers/parents/admins can use the instant quick-reset above as a backup measure
 
 ---
 
@@ -229,4 +257,77 @@ Obtain free TLS certificate:
 ```bash
 sudo certbot --nginx -d exam.yourschool.edu
 ```
+
+---
+
+## 11. School Header Customization (Admin/Superadmin)
+
+Schools can customize the platform header to match their branding. Admins and superadmins can configure:
+
+### Header Display Modes
+
+| Mode | Description |
+|------|-------------|
+| **text** | Shows the school name as text in the header |
+| **image** | Shows a custom header image (URL required) |
+| **none** | No header displayed (clean dashboard) |
+
+### API Endpoints
+
+- `GET /admin/school/header` — Get current header settings
+- `PUT /admin/school/header` — Update header settings (admin/superadmin only)
+
+### Request Body
+
+```json
+{
+  "header_display_mode": "text",
+  "header_text": "Lincoln High School",
+  "header_image_url": null
+}
+```
+
+or for image mode:
+
+```json
+{
+  "header_display_mode": "image",
+  "header_text": null,
+  "header_image_url": "https://school.edu/logo.png"
+}
+```
+
+---
+
+## 12. Superadmin User Management
+
+Superadmins have one additional function over regular admins: **creating other admins and superadmins**.
+
+### Admin Creation
+
+- **Admins** can create: teachers, students, parents, and other admins
+- **Superadmins** can create: everything admins can, plus **other superadmins**
+
+### API Endpoints
+
+- `POST /admin/users` — Create a user (admin or below)
+- `POST /admin/users/superadmin` — Create a superadmin (superadmin only)
+
+### Security
+
+Superadmin creation is restricted to existing superadmins only. This prevents privilege escalation by regular admins.
+
+---
+
+## 13. User Password Change (Settings Page)
+
+All users can change their own password from the **Settings** page:
+
+1. Go to **Settings → Personal Details**
+2. Enter your **current password**
+3. Enter your **new password** twice
+4. Click **Save Changes**
+
+The server verifies the current password before accepting the change. This prevents unauthorized password changes if a session is left open.
+
 

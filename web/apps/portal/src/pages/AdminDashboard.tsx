@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 import { DeploymentConfigPanel } from '../components/DeploymentConfigPanel';
 import { CreateUserModal } from '../components/CreateUserModal';
@@ -80,6 +81,7 @@ interface ArchiveStats {
 }
 
 export function AdminDashboard() {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [activeTab, setActiveTab] = useState<'stats' | 'users' | 'teachers' | 'exams' | 'archives' | 'backups' | 'config'>('stats');
   const [loading, setLoading] = useState(false);
@@ -367,10 +369,10 @@ export function AdminDashboard() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
         <div>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-            System Administration Dashboard
+            {t('admin.system_admin')}
           </h1>
           <p style={{ color: 'var(--text-muted)' }}>
-            System oversight tools. Manage users, verify teachers, monitor exams, and configure deployment settings.
+            {t('admin.system_subtitle')}
           </p>
         </div>
         <button
@@ -389,20 +391,20 @@ export function AdminDashboard() {
             gap: '0.4rem',
           }}
         >
-          🛡️ Emergency Backup Codes
+          🛡️ {t('admin.backup_codes')}
         </button>
       </div>
 
       {/* Tab Navigation */}
       <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', flexWrap: 'wrap' }}>
         {[
-          { id: 'stats', label: '📊 Statistics', count: null },
-          { id: 'users', label: '👥 Users', count: users.length },
-          { id: 'teachers', label: '🎓 Teacher Approvals', count: null },
-          { id: 'exams', label: '📝 Exams', count: exams.length },
-          { id: 'archives', label: '📦 Archives', count: archives.length },
-          { id: 'backups', label: '💾 Database Backups', count: null },
-          { id: 'config', label: '⚙️ Deployment & Network', count: null },
+          { id: 'stats', label: `📊 ${t('admin.statistics')}`, count: null },
+          { id: 'users', label: `👥 ${t('admin.users')}`, count: users.length },
+          { id: 'teachers', label: `🎓 ${t('admin.teacher_approvals')}`, count: null },
+          { id: 'exams', label: `📝 ${t('admin.exams')}`, count: exams.length },
+          { id: 'archives', label: `📦 ${t('admin.archives')}`, count: archives.length },
+          { id: 'backups', label: `💾 ${t('admin.backups')}`, count: null },
+          { id: 'config', label: `⚙️ ${t('admin.config')}`, count: null },
         ].map(tab => (
           <button
             key={tab.id}
@@ -439,14 +441,14 @@ export function AdminDashboard() {
       {activeTab === 'stats' && (
         <div>
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading statistics...</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('admin.loading_stats')}</div>
           ) : stats ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
               {[
-                { label: 'Total Users', value: stats.totalUsers, color: '#3b82f6', icon: '👥' },
-                { label: 'Total Exams', value: stats.totalExams, color: '#8b5cf6', icon: '📝' },
-                { label: 'Total Submissions', value: stats.totalSubmissions, color: '#10b981', icon: '📄' },
-                { label: 'Active Exams', value: stats.activeExams, color: '#f59e0b', icon: '🟢' },
+                { label: t('admin.total_users'), value: stats.totalUsers, color: '#3b82f6', icon: '👥' },
+                { label: t('admin.total_exams'), value: stats.totalExams, color: '#8b5cf6', icon: '📝' },
+                { label: t('admin.total_submissions'), value: stats.totalSubmissions, color: '#10b981', icon: '📄' },
+                { label: t('admin.active_exams'), value: stats.activeExams, color: '#f59e0b', icon: '🟢' },
               ].map((stat, i) => (
                 <div key={i} style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
                   <div style={{ fontSize: '2.5rem', fontWeight: 700, color: stat.color }}>{stat.value}</div>
@@ -455,7 +457,7 @@ export function AdminDashboard() {
               ))}
             </div>
           ) : (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>No statistics available</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('admin.no_stats')}</div>
           )}
         </div>
       )}
@@ -466,7 +468,7 @@ export function AdminDashboard() {
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
             <input
               type="text"
-              placeholder="Search users..."
+              placeholder={t('admin.search_users')}
               value={userSearch}
               onChange={e => setUserSearch(e.target.value)}
               style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', flex: 1, minWidth: '200px' }}
@@ -476,11 +478,11 @@ export function AdminDashboard() {
               onChange={e => setUserRoleFilter(e.target.value as any)}
               style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
             >
-              <option value="all">All Roles</option>
-              <option value="admin">Administrators</option>
-              <option value="teacher">Teachers</option>
-              <option value="student">Students</option>
-              <option value="parent">Parents</option>
+              <option value="all">{t('admin.all_roles')}</option>
+              <option value="admin">{t('admin.administrators')}</option>
+              <option value="teacher">{t('admin.teachers')}</option>
+              <option value="student">{t('admin.students')}</option>
+              <option value="parent">{t('admin.parents')}</option>
             </select>
             <button
               onClick={() => setShowCreateUserModal(true)}
@@ -497,25 +499,25 @@ export function AdminDashboard() {
                 gap: '0.4rem',
               }}
             >
-              ➕ Add User / Admin
+              ➕ {t('admin.add_user')}
             </button>
           </div>
 
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading users...</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('admin.loading_users')}</div>
           ) : filteredUsers.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>No users found</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('admin.no_users')}</div>
           ) : (
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>User</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Role</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Status</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Created</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Last Login</th>
-                    <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Actions</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_user')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.role')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.created')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.last_login')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.actions')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -579,7 +581,7 @@ export function AdminDashboard() {
                             }}
                             title="Directly reset this user's password without needing an email"
                           >
-                            🔑 Reset Password
+                            🔑 {t('admin.reset_password')}
                           </button>
                           <button
                             onClick={() => handleToggleUserActive(user)}
@@ -594,7 +596,7 @@ export function AdminDashboard() {
                               fontSize: '0.85rem',
                             }}
                           >
-                            {user.is_active ? 'Deactivate' : 'Activate'}
+                            {user.is_active ? t('admin.deactivate') : t('admin.activate')}
                           </button>
                           <button
                             onClick={() => handleDeleteUser(user)}
@@ -625,29 +627,29 @@ export function AdminDashboard() {
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
               <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.15rem' }}>🔑 Direct Password Reset</h3>
+                  <h3 style={{ margin: 0, fontSize: '1.15rem' }}>🔑 {t('admin.password_reset_title')}</h3>
                   <button onClick={() => setResetPwdUser(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
                 </div>
 
                 <div style={{ marginBottom: '1rem', padding: '0.75rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-                  <div><strong>User:</strong> {resetPwdUser.username}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>Email:</strong> {resetPwdUser.email}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>Role:</strong> {resetPwdUser.role}</div>
+                  <div><strong>{t('admin.label_user')}</strong> {resetPwdUser.username}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>{t('admin.label_email')}</strong> {resetPwdUser.email}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}><strong>{t('admin.label_role')}</strong> {resetPwdUser.role}</div>
                 </div>
 
                 <div style={{ marginBottom: '1.25rem' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, fontSize: '0.9rem' }}>
-                    New Password (Optional)
+                    {t('admin.new_password')}
                   </label>
                   <input
                     type="text"
-                    placeholder="Leave blank to auto-generate temporary password"
+                    placeholder={t("admin.password_placeholder")}
                     value={customPassword}
                     onChange={e => setCustomPassword(e.target.value)}
                     style={{ width: '100%', padding: '0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontFamily: 'monospace' }}
                   />
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                    If left blank, the system creates a random password (e.g., <code>TempPass#...</code>).
+                    {t('admin.password_hint')}
                   </div>
                 </div>
 
@@ -658,7 +660,7 @@ export function AdminDashboard() {
                       checked={reset2FA}
                       onChange={e => setReset2FA(e.target.checked)}
                     />
-                    <span>Reset & Disable 2FA / Passkeys (if user lost device)</span>
+                    <span>{t('admin.reset_2fa_label')}</span>
                   </label>
                 </div>
 
@@ -675,7 +677,7 @@ export function AdminDashboard() {
                     disabled={resetSubmitting}
                     style={{ padding: '0.5rem 1.25rem', backgroundColor: '#2563eb', border: 'none', borderRadius: 'var(--radius-md)', color: '#fff', fontWeight: 600, cursor: resetSubmitting ? 'not-allowed' : 'pointer' }}
                   >
-                    {resetSubmitting ? 'Resetting...' : 'Confirm Reset'}
+                    {resetSubmitting ? t('admin.resetting') : t('admin.confirm_reset')}
                   </button>
                 </div>
               </div>
@@ -687,7 +689,7 @@ export function AdminDashboard() {
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
               <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
-                  <h3 style={{ margin: 0, color: '#10b981', fontSize: '1.15rem' }}>✅ Password Reset Successful</h3>
+                  <h3 style={{ margin: 0, color: '#10b981', fontSize: '1.15rem' }}>✅ {t('admin.reset_successful')}</h3>
                   <button onClick={() => setResetResult(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
                 </div>
 
@@ -696,7 +698,7 @@ export function AdminDashboard() {
                 </p>
 
                 <div style={{ backgroundColor: 'var(--bg-color)', border: '1px solid #10b981', borderRadius: 'var(--radius-md)', padding: '1rem', marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>Temporary Password:</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>{t('admin.temp_password_label')}</div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
                     <code style={{ fontSize: '1.15rem', fontWeight: 'bold', color: '#10b981', letterSpacing: '0.5px' }}>{resetResult.tempPass}</code>
                     <button
@@ -707,7 +709,7 @@ export function AdminDashboard() {
                       }}
                       style={{ padding: '0.35rem 0.75rem', backgroundColor: copiedPass ? '#10b981' : 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: copiedPass ? '#fff' : 'var(--text-color)', cursor: 'pointer', fontSize: '0.8rem' }}
                     >
-                      {copiedPass ? '✓ Copied' : '📋 Copy'}
+                      {copiedPass ? t('admin.password_copied') : t('admin.copy_password')}
                     </button>
                   </div>
                 </div>
@@ -719,7 +721,7 @@ export function AdminDashboard() {
                 )}
 
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
-                  Provide this password directly to the student or teacher so they can log in immediately.
+                  {t('admin.provide_password')}
                 </p>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -742,7 +744,7 @@ export function AdminDashboard() {
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             <input
               type="text"
-              placeholder="Search exams..."
+              placeholder={t('common.21')}
               value={examSearch}
               onChange={e => setExamSearch(e.target.value)}
               style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', flex: 1, minWidth: '200px' }}
@@ -752,28 +754,28 @@ export function AdminDashboard() {
               onChange={e => setExamStatusFilter(e.target.value as any)}
               style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
             >
-              <option value="all">All Exams</option>
-              <option value="published">Published (has submissions)</option>
-              <option value="draft">Drafts (no submissions)</option>
+              <option value="all">{t('teacher_dashboard.2')}</option>
+              <option value="published">{t('admin.status_published_submissions')}</option>
+              <option value="draft">{t('admin.status_drafts_no_submissions')}</option>
             </select>
           </div>
 
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading exams...</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('common.loading')}</div>
           ) : filteredExams.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>No exams found</div>
+            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t('common.no_exams_yet')}</div>
           ) : (
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Exam</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Teacher</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Questions</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Submissions</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Status</th>
-                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Created</th>
-                    <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Actions</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('take_exam.1')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('chat.4')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('take_exam.4')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('teacher_dashboard.16')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.created')}</th>
+                    <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.actions')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -795,7 +797,7 @@ export function AdminDashboard() {
                           backgroundColor: exam.is_published ? '#10b98120' : '#f59e0b20',
                           color: exam.is_published ? '#10b981' : '#f59e0b',
                         }}>
-                          {exam.is_published ? 'Published' : 'Draft'}
+                          {exam.is_published ? t('common.40') : t('admin.status_draft')}
                         </span>
                       </td>
                       <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
@@ -850,32 +852,32 @@ export function AdminDashboard() {
           {/* Archive Jobs */}
           <div style={{ marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>📋 Archive Jobs</h3>
+              <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>📋 {t('admin.archive_jobs_title')}</h3>
               <button
                 onClick={() => setShowCreateJobModal(true)}
                 style={{ padding: '0.5rem 1rem', backgroundColor: '#8b5cf6', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 500 }}
               >
-                + Create Archive Job
+                + {t('admin.create_archive_job_btn')}
               </button>
             </div>
 
             {archiveJobLoading ? (
-              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>Loading jobs...</div>
+              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>{t('common.14')}</div>
             ) : archiveJobs.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>No archive jobs yet. Create one to archive graduated students' tests.</div>
+              <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>{t('admin.no_archive_jobs')}</div>
             ) : (
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Job Type</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Status</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Graduation Year</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_job_type')}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_grad_year')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Progress</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Created</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Started</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Completed</th>
-                      <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Actions</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.created')}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_started')}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_completed')}</th>
+                      <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.actions')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1098,16 +1100,16 @@ export function AdminDashboard() {
                   <thead>
                     <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Submission ID</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Exam</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('take_exam.1')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Student</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Teacher</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('chat.4')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Year/Month</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Original Size</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Compressed</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Ratio</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Status</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Archived</th>
-                      <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Actions</th>
+                      <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.actions')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1205,4 +1207,4 @@ export function AdminDashboard() {
       />
     </div>
   );
-}
+}

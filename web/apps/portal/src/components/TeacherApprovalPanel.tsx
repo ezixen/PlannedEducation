@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { UserCheck, UserX, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 export interface PendingTeacher {
   id: string;
@@ -13,6 +14,7 @@ export interface PendingTeacher {
 }
 
 export function TeacherApprovalPanel() {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [teachers, setTeachers] = useState<PendingTeacher[]>([]);
   const [loading, setLoading] = useState(false);
@@ -38,10 +40,10 @@ export function TeacherApprovalPanel() {
     setProcessingId(id);
     try {
       await apiClient.post(`/admin/teachers/${id}/approve`);
-      showSuccess(`Approved teacher status for ${username}`);
-      setTeachers((prev) => prev.filter((t) => t.id !== id));
+      showSuccess(t('admin.approve_success', { username }) || `Approved teacher status for ${username}`);
+      setTeachers((prev) => prev.filter((item) => item.id !== id));
     } catch (err: any) {
-      showError('Approval failed', err.response?.data?.detail || err.message);
+      showError(t('admin.approval_failed') || 'Approval failed', err.response?.data?.detail || err.message);
     } finally {
       setProcessingId(null);
     }
@@ -51,10 +53,10 @@ export function TeacherApprovalPanel() {
     setProcessingId(id);
     try {
       await apiClient.post(`/admin/teachers/${id}/deny`);
-      showSuccess(`Declined teacher privileges for ${username} (role set to student)`);
-      setTeachers((prev) => prev.filter((t) => t.id !== id));
+      showSuccess(t('admin.deny_success', { username }) || `Declined teacher privileges for ${username} (role set to student)`);
+      setTeachers((prev) => prev.filter((item) => item.id !== id));
     } catch (err: any) {
-      showError('Denial failed', err.response?.data?.detail || err.message);
+      showError(t('admin.denial_failed') || 'Denial failed', err.response?.data?.detail || err.message);
     } finally {
       setProcessingId(null);
     }
@@ -74,7 +76,7 @@ export function TeacherApprovalPanel() {
       >
         <div>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)', margin: 0 }}>
-            🎓 Pending Teacher Approvals
+            🎓 {t('admin.teacher_approvals')}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>
             Verify self-registered teachers to protect exam and module integrity. Pending teachers cannot create or publish exams.
@@ -96,13 +98,13 @@ export function TeacherApprovalPanel() {
             gap: '0.4rem',
           }}
         >
-          <RefreshCw size={14} className={loading ? 'spin' : ''} /> Refresh
+          <RefreshCw size={14} className={loading ? 'spin' : ''} /> {t('common.28')}
         </button>
       </div>
 
       {loading && teachers.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-          Loading pending teachers...
+          {t('admin.loading_teachers')}
         </div>
       ) : teachers.length === 0 ? (
         <div
@@ -117,17 +119,17 @@ export function TeacherApprovalPanel() {
         >
           <CheckCircle2 size={36} style={{ color: '#10b981', margin: '0 auto 0.75rem' }} />
           <h3 style={{ margin: '0 0 0.25rem', color: 'var(--text-color)', fontSize: '1.1rem' }}>
-            All Teachers Verified
+            {t('admin.all_teachers_verified')}
           </h3>
           <p style={{ margin: 0, fontSize: '0.85rem' }}>
-            There are currently no self-registered teachers awaiting approval.
+            {t('admin.no_pending')}
           </p>
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          {teachers.map((t) => (
+          {teachers.map((teacher) => (
             <div
-              key={t.id}
+              key={teacher.id}
               style={{
                 padding: '1rem 1.25rem',
                 backgroundColor: 'var(--sidebar-bg)',
@@ -143,7 +145,7 @@ export function TeacherApprovalPanel() {
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-color)' }}>
-                    {t.full_name || t.username}
+                    {teacher.full_name || teacher.username}
                   </span>
                   <span
                     style={{
@@ -155,29 +157,29 @@ export function TeacherApprovalPanel() {
                       fontWeight: 600,
                     }}
                   >
-                    Pending Verification
+                    {t('admin.pending_verification')}
                   </span>
                 </div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                  Username: <strong>{t.username}</strong> • Email: <strong>{t.email}</strong>
+                  {t('admin.username')} <strong>{teacher.username}</strong> • {t('admin.email')} <strong>{teacher.email}</strong>
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
-                  Registered on: {new Date(t.created_at).toLocaleDateString()} at{' '}
-                  {new Date(t.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  {t('admin.registered_on')} {new Date(teacher.created_at).toLocaleDateString()} at{' '}
+                  {new Date(teacher.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                 <button
-                  onClick={() => handleDeny(t.id, t.username)}
-                  disabled={processingId === t.id}
+                  onClick={() => handleDeny(teacher.id, teacher.username)}
+                  disabled={processingId === teacher.id}
                   style={{
                     padding: '0.5rem 0.9rem',
                     backgroundColor: 'rgba(239, 68, 68, 0.1)',
                     color: '#ef4444',
                     border: '1px solid rgba(239, 68, 68, 0.3)',
                     borderRadius: 'var(--radius-md)',
-                    cursor: processingId === t.id ? 'not-allowed' : 'pointer',
+                    cursor: processingId === teacher.id ? 'not-allowed' : 'pointer',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     display: 'flex',
@@ -186,18 +188,18 @@ export function TeacherApprovalPanel() {
                   }}
                 >
                   <UserX size={15} />
-                  Deny
+                  {t('admin.deny')}
                 </button>
                 <button
-                  onClick={() => handleApprove(t.id, t.username)}
-                  disabled={processingId === t.id}
+                  onClick={() => handleApprove(teacher.id, teacher.username)}
+                  disabled={processingId === teacher.id}
                   style={{
                     padding: '0.5rem 1rem',
                     backgroundColor: '#10b981',
                     color: '#ffffff',
                     border: 'none',
                     borderRadius: 'var(--radius-md)',
-                    cursor: processingId === t.id ? 'not-allowed' : 'pointer',
+                    cursor: processingId === teacher.id ? 'not-allowed' : 'pointer',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     display: 'flex',
@@ -206,7 +208,7 @@ export function TeacherApprovalPanel() {
                   }}
                 >
                   <UserCheck size={15} />
-                  {processingId === t.id ? 'Approving...' : 'Approve Teacher'}
+                  {processingId === teacher.id ? 'Approving...' : t('admin.approve')}
                 </button>
               </div>
             </div>

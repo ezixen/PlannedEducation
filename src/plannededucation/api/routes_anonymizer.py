@@ -9,66 +9,72 @@ from .routes_auth import get_current_user
 # Microsoft Presidio (MIT License) - scrubs PII from text before sending to external AI
 try:
     from presidio_analyzer import AnalyzerEngine
-    from presidio_anonymizer import AnonymizerEngine
-    from presidio_anonymizer.entities import OperatorConfig
     PRESIDIO_AVAILABLE = True
 except ImportError:
     PRESIDIO_AVAILABLE = False
     AnalyzerEngine = None
-    AnonymizerEngine = None
-    OperatorConfig = None
 
-# Initialize Presidio engines (lazy initialization)
+# Initialize Presidio engine (lazy initialization)
 _analyzer = None
-_anonymizer = None
 
-def _get_presidio_engines():
-    """Lazy initialization of Presidio engines."""
-    global _analyzer, _anonymizer
+def _get_presidio_analyzer():
+    """Lazy initialization of Presidio Analyzer engine."""
+    global _analyzer
     if not PRESIDIO_AVAILABLE:
-        return None, None
+        return None
     if _analyzer is None:
         _analyzer = AnalyzerEngine()
-    if _anonymizer is None:
-        _anonymizer = AnonymizerEngine()
-    return _analyzer, _anonymizer
+    return _analyzer
 
+ENTITY_MAPPING = {
+    "PERSON": "[PERSON]",
+    "EMAIL_ADDRESS": "[EMAIL]",
+    "PHONE_NUMBER": "[PHONE]",
+    "LOCATION": "[LOCATION]",
+    "DATE_TIME": "[DATE]",
+    "NRP": "[ID]",
+    "CREDIT_CARD": "[CREDIT_CARD]",
+    "IP_ADDRESS": "[IP]",
+    "URL": "[URL]",
+}
+
+def _anonymize_spans(text: str, results) -> str:
+    """
+    Replace PII spans identified by AnalyzerEngine with clean privacy placeholders.
+    Handles overlapping spans by prioritizing higher confidence scores.
+    """
+    if not text or not results:
+        return text
+
+    sorted_by_score = sorted(results, key=lambda r: (r.score, r.end - r.start), reverse=True)
+    kept_spans = []
+    for r in sorted_by_score:
+        if not any(max(r.start, k.start) < min(r.end, k.end) for k in kept_spans):
+            kept_spans.append(r)
+
+    kept_spans.sort(key=lambda r: r.start, reverse=True)
+    chars = list(text)
+    for r in kept_spans:
+        replacement = ENTITY_MAPPING.get(r.entity_type, f"[{r.entity_type}]")
+        chars[r.start:r.end] = list(replacement)
+    return "".join(chars)
 
 def scrub_pii(text: str, language: str = "en") -> str:
     """
-    Scrub PII from text using Microsoft Presidio.
+    Scrub PII from text using Microsoft Presidio Analyzer and native span redaction.
     Returns text with PII replaced by entity type placeholders.
     """
     if not text or not PRESIDIO_AVAILABLE:
         return text
 
-    analyzer, anonymizer = _get_presidio_engines()
-    if not analyzer or not anonymizer:
+    analyzer = _get_presidio_analyzer()
+    if not analyzer:
         return text
 
     try:
         # Analyze text for PII entities
         results = analyzer.analyze(text=text, language=language)
-
-        # Anonymize found entities
-        operators = {
-            "PERSON": OperatorConfig("replace", {"new_value": "[PERSON]"}),
-            "EMAIL_ADDRESS": OperatorConfig("replace", {"new_value": "[EMAIL]"}),
-            "PHONE_NUMBER": OperatorConfig("replace", {"new_value": "[PHONE]"}),
-            "LOCATION": OperatorConfig("replace", {"new_value": "[LOCATION]"}),
-            "DATE_TIME": OperatorConfig("replace", {"new_value": "[DATE]"}),
-            "NRP": OperatorConfig("replace", {"new_value": "[ID]"}),
-            "CREDIT_CARD": OperatorConfig("replace", {"new_value": "[CREDIT_CARD]"}),
-            "IP_ADDRESS": OperatorConfig("replace", {"new_value": "[IP]"}),
-            "URL": OperatorConfig("replace", {"new_value": "[URL]"}),
-        }
-
-        anonymized = anonymizer.anonymize(
-            text=text,
-            analyzer_results=results,
-            operators=operators
-        )
-        return anonymized.text
+        return _anonymize_spans(text, results)
     except Exception:
         # Fail open - return original text if scrubbing fails
         return text

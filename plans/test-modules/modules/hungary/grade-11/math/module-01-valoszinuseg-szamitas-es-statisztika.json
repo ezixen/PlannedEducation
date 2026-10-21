@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-11-math-valoszinuseg-szamitas-es-statisztika-1.0.0",
+    "name": "Valószínűség-számítás és statisztika - Grade 11 Math",
+    "version": "1.0.0",
+    "description": "45-minute test on valószínűség-számítás és statisztika for Grade 11 students. Covers: Kombinatorika, Eloszlások, Statisztikai következtetés.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.394269+00:00",
+    "updated_at": "2026-10-20T13:20:17.394269+00:00",
+    "tags": [
+      "math",
+      "valószínűség-számítás-és-statisztika",
+      "grade-11"
+    ],
+    "subject": "math",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "b6d86e41c0961bac5ae5331e2fb0ce1a27b3dcdc2e01d970759958c1df4bc848",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Kombinatorika",
+      "Eloszlások",
+      "Statisztikai következtetés"
+    ]
+  },
+  "exam": {
+    "title": "Grade 11 Math - Valószínűség-számítás és statisztika",
+    "description": "Test on valószínűség-számítás és statisztika including kombinatorika, eloszlások, statisztikai következtetés",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 1: Eloszlások",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Eloszlások"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 2: Statisztikai következtetés",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Statisztikai következtetés"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 3: Kombinatorika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Kombinatorika"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 4: Eloszlások",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Eloszlások"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 5: Statisztikai következtetés",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Statisztikai következtetés"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 6: Kombinatorika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Valószínűség-számítás és statisztika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Kombinatorika"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 7: Eloszlások",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Valószínűség-számítás és statisztika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Eloszlások"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 8: Statisztikai következtetés",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Valószínűség-számítás és statisztika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Statisztikai következtetés"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 9: Kombinatorika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Valószínűség-számítás és statisztika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Kombinatorika"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[math] Valószínűség-számítás és statisztika - Kérdés 10: Eloszlások",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Valószínűség-számítás és statisztika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "valószínűség-számítás-és-statisztika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-MATH-Valószínűség-számítá",
+      "learning_objective": "Eloszlások"
+    }
+  ],
+  "rubrics": []
+}

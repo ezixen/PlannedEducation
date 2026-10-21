@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from '../contexts/I18nContext';
 
 export interface AnonymizedAnswer {
   question_id: string;
@@ -70,6 +71,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
   onApproveAllQuestions,
   onSaveGrades,
 }) => {
+  const { t } = useI18n();
   const totalPossible = submission.answers.reduce((acc, a) => acc + (a.points_possible || 0), 0);
   const currentTotalScore = submission.answers.reduce((acc, a) => {
     const g = submission.ai_grades?.[a.question_id];
@@ -166,7 +168,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close modal"
+              aria-label={t("common.6")}
               style={{
                 background: 'none',
                 border: 'none',
@@ -470,7 +472,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                         )
                       }
                       rows={4}
-                      placeholder="Write the corrected step-by-step math solution or corrected answer here..."
+                      placeholder={t("teacher_correction.solution_placeholder")}
                       style={{
                         width: '100%',
                         padding: '0.6rem',
@@ -647,7 +649,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           )
                         }
                         rows={2}
-                        placeholder="Add constructive feedback explaining where the student went right or wrong..."
+                        placeholder={t("teacher_correction.feedback_placeholder")}
                         style={{
                           width: '100%',
                           padding: '0.5rem',

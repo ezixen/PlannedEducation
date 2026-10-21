@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { KeyRound, Send, CheckCircle2, X } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface ForgotPasswordModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface ForgotPasswordModalProps {
 
 export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: ForgotPasswordModalProps) {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   const [activeTab, setActiveTab] = useState<'recovery_code' | 'request_supervisor'>('recovery_code');
 
   // Recovery code tab state
@@ -33,7 +35,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
   const handleSelfReset = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      showError('Passwords do not match');
+      showError(t('forgot_password.passwords_do_not_match'));
       return;
     }
     setRecSubmitting(true);
@@ -44,9 +46,9 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
         new_password: newPassword,
       });
       setRecSuccess(true);
-      showSuccess('Password reset successfully! You can now log in.');
+      showSuccess(t('forgot_password.reset_success_toast'));
     } catch (err: any) {
-      showError('Reset failed', err.response?.data?.detail || err.message);
+      showError(t('forgot_password.reset_failed_toast'), err.response?.data?.detail || err.message);
     } finally {
       setRecSubmitting(false);
     }
@@ -62,9 +64,9 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
         note: supNote.trim() || undefined,
       });
       setSupSuccess(true);
-      showSuccess('Request sent to supervisor!');
+      showSuccess(t('forgot_password.request_sent_toast'));
     } catch (err: any) {
-      showError('Request failed', err.response?.data?.detail || err.message);
+      showError(t('forgot_password.request_failed_toast'), err.response?.data?.detail || err.message);
     } finally {
       setSupSubmitting(false);
     }
@@ -110,11 +112,12 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <KeyRound size={20} style={{ color: 'var(--primary-color)' }} />
             <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-              Password Recovery & Reset
+              {t('forgot_password.title')}
             </h3>
           </div>
           <button
             onClick={onClose}
+            aria-label={t('common.6')}
             style={{
               background: 'none',
               border: 'none',
@@ -140,8 +143,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
             lineHeight: 1.4,
           }}
         >
-          <strong>💡 Saved your recovery codes?</strong> You received 5 one-time recovery codes at registration.
-          Unless you have run out of codes, you can reset your password immediately by yourself without waiting for anyone!
+          {t('forgot_password.saved_codes_notice')}
         </div>
 
         {/* Tab Switcher */}
@@ -161,7 +163,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
               cursor: 'pointer',
             }}
           >
-            🔑 Use Recovery Code (Instant)
+            {t('forgot_password.tab_recovery')}
           </button>
           <button
             type="button"
@@ -178,7 +180,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
               cursor: 'pointer',
             }}
           >
-            🙋 Ask Teacher / Parent
+            {t('forgot_password.tab_supervisor')}
           </button>
         </div>
 
@@ -188,9 +190,9 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
             {recSuccess ? (
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
                 <CheckCircle2 size={40} style={{ color: '#10b981', marginBottom: '0.75rem' }} />
-                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--text-color)' }}>Password Reset Complete!</h4>
+                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--text-color)' }}>{t('forgot_password.reset_success_title')}</h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                  Your password has been successfully updated. You may now log in with your new password.
+                  {t('forgot_password.reset_success_desc')}
                 </p>
                 <button
                   type="button"
@@ -205,21 +207,21 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                     fontWeight: 600,
                   }}
                 >
-                  Proceed to Login
+                  {t('login.login_button')}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSelfReset} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                    Registered Email
+                    {t('forgot_password.email_label')}
                   </label>
                   <input
                     type="email"
                     required
                     value={recEmail}
                     onChange={(e) => setRecEmail(e.target.value)}
-                    placeholder="you@school.edu"
+                    placeholder={t('forgot_password.email_placeholder')}
                     style={{
                       width: '100%',
                       padding: '0.6rem',
@@ -235,14 +237,14 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                    One-Time Recovery Code
+                    {t('forgot_password.recovery_code_label')}
                   </label>
                   <input
                     type="text"
                     required
                     value={recoveryCode}
                     onChange={(e) => setRecoveryCode(e.target.value)}
-                    placeholder="e.g. a1b2c3d4"
+                    placeholder={t('forgot_password.recovery_code_placeholder')}
                     style={{
                       width: '100%',
                       padding: '0.6rem',
@@ -255,15 +257,12 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                       boxSizing: 'border-box',
                     }}
                   />
-                  <small style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
-                    Each code can only be used once.
-                  </small>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                      New Password
+                      {t('forgot_password.new_password_label')}
                     </label>
                     <input
                       type="password"
@@ -286,7 +285,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                   </div>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                      Confirm Password
+                      {t('forgot_password.confirm_password_label')}
                     </label>
                     <input
                       type="password"
@@ -324,7 +323,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                     marginTop: '0.5rem',
                   }}
                 >
-                  {recSubmitting ? 'Resetting...' : 'Reset Password Immediately'}
+                  {recSubmitting ? t('forgot_password.resetting') : t('forgot_password.reset_button')}
                 </button>
               </form>
             )}
@@ -337,9 +336,9 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
             {supSuccess ? (
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
                 <CheckCircle2 size={40} style={{ color: '#10b981', marginBottom: '0.75rem' }} />
-                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--text-color)' }}>Request Sent to Supervisor!</h4>
+                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--text-color)' }}>{t('forgot_password.request_success_title')}</h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.5rem', lineHeight: 1.4 }}>
-                  Your request has been dispatched. Your teacher, parent, or administrator will receive an in-platform notification with a one-click button to reset your password and provide you with a temporary password.
+                  {t('forgot_password.request_success_desc')}
                 </p>
                 <button
                   type="button"
@@ -354,7 +353,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                     fontWeight: 600,
                   }}
                 >
-                  Done
+                  {t('admin.done')}
                 </button>
               </div>
             ) : (
@@ -370,18 +369,18 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                     lineHeight: 1.4,
                   }}
                 >
-                  <strong>⚠️ Before requesting assistance:</strong> Did you check your 5 one-time recovery codes from registration? If you still have them, switch to the <em>🔑 Use Recovery Code</em> tab to reset your password immediately without needing to wait for a teacher or parent!
+                  {t('forgot_password.saved_codes_notice')}
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                    Your Username or Registered Email
+                    {t('forgot_password.identifier_label')}
                   </label>
                   <input
                     type="text"
                     required
                     value={supIdentifier}
                     onChange={(e) => setSupIdentifier(e.target.value)}
-                    placeholder="username or email@school.edu"
+                    placeholder={t('forgot_password.identifier_placeholder')}
                     style={{
                       width: '100%',
                       padding: '0.6rem',
@@ -397,7 +396,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                    Who would you like to request help from?
+                    {t('forgot_password.target_role_label')}
                   </label>
                   <select
                     value={targetRole}
@@ -413,21 +412,21 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                       boxSizing: 'border-box',
                     }}
                   >
-                    <option value="teacher">My Teacher (Recommended for students)</option>
-                    <option value="parent">My Parent (For students with linked parents)</option>
-                    <option value="admin">School Administrator (For teachers or general staff)</option>
+                    <option value="teacher">{t('forgot_password.role_teacher')}</option>
+                    <option value="parent">{t('forgot_password.role_parent')}</option>
+                    <option value="admin">{t('forgot_password.role_admin')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-                    Optional Message / Note to Supervisor
+                    {t('forgot_password.note_label')}
                   </label>
                   <textarea
                     rows={2}
                     value={supNote}
                     onChange={(e) => setSupNote(e.target.value)}
-                    placeholder="e.g. I ran out of recovery codes and cannot access my account for 4th period math."
+                    placeholder={t('forgot_password.note_placeholder')}
                     style={{
                       width: '100%',
                       padding: '0.6rem',
@@ -461,7 +460,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
                   }}
                 >
                   <Send size={16} />
-                  {supSubmitting ? 'Dispatching Request...' : 'Send Request Inside Platform'}
+                  {supSubmitting ? t('forgot_password.sending_request') : t('forgot_password.send_request_button')}
                 </button>
               </form>
             )}

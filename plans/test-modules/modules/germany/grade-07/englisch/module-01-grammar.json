@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "id": "germany-grade-07-englisch-grammar-1.0.0",
+    "name": "Klasse 7 Englisch - Grammatik und Schreiben",
+    "version": "1.0.0",
+    "description": "45-minütiger Englischtest zu Grammatik und Schreiben für Klasse 7 (deutscher Bildungsplan).",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-19T00:00:00+00:00",
+    "updated_at": "2026-10-19T00:00:00+00:00",
+    "tags": ["englisch", "grammatik", "schreiben", "klasse-7", "deutschland"],
+    "subject": "englisch",
+    "grade_level": "grade-07",
+    "license": "CC-BY-4.0",
+    "checksum": "",
+    "curriculum": "deutschland-bildungsplaene",
+    "duration_minutes": 45,
+    "total_points": 50,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Korrekte Verbzeiten verwenden",
+      "Subjekt-Verb-Kongruenz anwenden",
+      "Richtige Zeichensetzung verwenden",
+      "Kohärente Absätze schreiben"
+    ]
+  },
+  "exam": {
+    "title": "Klasse 7 Englisch - Grammatik und Schreiben",
+    "description": "Test zu Grammatik, Zeichensetzung und Schreiben für Klasse 7",
+    "duration_minutes": 45,
+    "instructions": "Beantworten Sie alle Fragen. Schreiben Sie deutlich und verwenden Sie korrekte Grammatik.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "Wählen Sie die korrekte Verbform: 'She ____ to school every day.'",
+      "options": ["go", "goes", "going", "went"],
+      "correct_answer": "goes",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "praesens", "dritte-person"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrektes Präsens für dritte Person Singular verwenden"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "Wählen Sie die korrekte Vergangenheit: 'Yesterday, I ____ to the park.'",
+      "options": ["go", "goes", "went", "going"],
+      "correct_answer": "went",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "praeteritum", "unregelmaessige-verben"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrektes Präteritum unregelmäßiger Verben verwenden"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "Wählen Sie die korrekte Form: 'If it ____ tomorrow, we will stay home.'",
+      "options": ["rain", "rains", "rained", "raining"],
+      "correct_answer": "rains",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "konditional", "first-conditional"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "First Conditional korrekt verwenden"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "Welcher Satz verwendet den richtigen Artikel?",
+      "options": ["She is a teacher.", "She is an teacher.", "She is the teacher.", "She is teacher."],
+      "correct_answer": "She is a teacher.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "artikel"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrekte unbestimmte Artikel verwenden"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "Wählen Sie die richtige Präposition: 'We will meet ____ 3 o'clock.'",
+      "options": ["in", "on", "at", "by"],
+      "correct_answer": "at",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "praepositionen", "zeit"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrekte Präpositionen der Zeit verwenden"
+    },
+    {
+      "id": "q-006",
+      "question_type": "multiple_choice",
+      "text": "Welcher Satz verwendet die korrekte Komparativform?",
+      "options": ["This book is more better than that one.", "This book is better than that one.", "This book is gooder than that one.", "This book is more good than that one."],
+      "correct_answer": "This book is better than that one.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "komparativ", "unregelmaessige-komparative"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrekte Komparativformen verwenden"
+    },
+    {
+      "id": "q-007",
+      "question_type": "multiple_choice",
+      "text": "Wählen Sie das richtige Relativpronomen: 'The book ____ I read was interesting.'",
+      "options": ["who", "which", "where", "when"],
+      "correct_answer": "which",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["grammatik", "relativpronomen"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "DE-07-Englisch-Grammatik",
+      "learning_objective": "Korrekte Relativpronomen verwenden"
+    },
+    {
+      "id": "q-008",
+      "question_type": "multiple_choice",
+      "text": "Welcher Satz verwendet die korrekte Zeichensetzung?",
+      "options": ["Lets go to the park.", "Let's go to the park.", "Lets' go to the park.", "Let,s go to the park."],
+      "correct_answer": "Let's go to the park.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": ["zeichensetzung", "apostroph", "kontraktionen"],
+      "difficulty": "easy",
+      "estimated_time_minutes": 2,
+      "curriculum_topic": "DE-07-Englisch-Zeichensetzung",
+      "learning_objective": "Apostrophe in Kontraktionen korrekt verwenden"
+    },
+    {
+      "id": "q-009",
+      "question_type": "essay",
+      "text": "Schreiben Sie einen kurzen Absatz (5-7 Sätze) über Ihr Lieblingshobby. Verwenden Sie mindestens 3 verschiedene Zeiten.",
+      "rubric": "Schülerin/Schüler schreibt 5-7 Sätze über ein Hobby. Verwendet mindestens 3 verschiedene Zeiten (z.B. Präsens, Präteritum, Futur). Korrekte Grammatik und Vokabular.",
+      "correct_answer": "Absatz über Hobby mit 3+ Zeiten",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["schreiben", "komposition", "zeiten"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "DE-07-Englisch-Schreiben",
+      "learning_objective": "Kohärenten Absatz mit mehreren Zeiten schreiben"
+    },
+    {
+      "id": "q-010",
+      "question_type": "essay",
+      "text": "Schreiben Sie eine kurze E-Mail an einen Freund und laden Sie ihn zu Ihrer Geburtstagsfeier ein. Nennen Sie Datum, Uhrzeit und Ort.",
+      "rubric": "Schülerin/Schüler schreibt E-Mail-Format mit Gruß, Text, Schluss. Enthält Datum, Uhrzeit, Ort. Korrektes E-Mail-Format mit Gruß und Schluss.",
+      "correct_answer": "E-Mail mit Gruß, Text (Datum/Uhrzeit/Ort), Schluss",
+      "rubric_points": 10,
+      "points": 10,
+      "variables": [],
+      "tags": ["schreiben", "e-mail", "format"],
+      "difficulty": "medium",
+      "estimated_time_minutes": 10,
+      "curriculum_topic": "DE-07-Englisch-Schreiben",
+      "learning_objective": "Informelle E-Mail mit korrektem Format schreiben"
+    }
+  ],
+  "rubrics": [
+    {
+      "id": "rubric-009",
+      "question_id": "q-009",
+      "criteria": [
+        {
+          "id": "c-009-1",
+          "description": "Schreibt 5-7 Sätze",
+          "points": 3,
+          "keywords": ["sätze", "fünf", "sieben"]
+        },
+        {
+          "id": "c-009-2",
+          "description": "Verwendet mindestens 3 verschiedene Zeiten",
+          "points": 4,
+          "keywords": ["zeiten", "präsens", "präteritum", "futur"]
+        },
+        {
+          "id": "c-009-3",
+          "description": "Korrekte Grammatik und Vokabular",
+          "points": 3,
+          "keywords": ["grammatik", "vokabular", "korrekt"]
+        }
+      ],
+      "total_points": 10
+    },
+    {
+      "id": "rubric-010",
+      "question_id": "q-010",
+      "criteria": [
+        {
+          "id": "c-010-1",
+          "description": "Verwendet korrektes E-Mail-Format (Gruß, Text, Schluss)",
+          "points": 3,
+          "keywords": ["gruß", "text", "schluss", "format"]
+        },
+        {
+          "id": "c-010-2",
+          "description": "Enthält Datum, Uhrzeit und Ort",
+          "points": 4,
+          "keywords": ["datum", "uhrzeit", "ort", "details"]
+        },
+        {
+          "id": "c-010-3",
+          "description": "Korrektes E-Mail-Format mit Gruß und Schluss",
+          "points": 3,
+          "keywords": ["format", "e-mail", "struktur"]
+        }
+      ],
+      "total_points": 10
+    }
+  ]
+}

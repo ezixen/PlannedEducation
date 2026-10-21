@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from '../contexts/I18nContext';
 
 export interface StudentReviewedQuestion {
   question_id: string;
@@ -37,6 +38,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
   loading,
   onRefresh,
 }) => {
+  const { t } = useI18n();
   const pct =
     submission && submission.is_graded && submission.total_possible > 0 && submission.score !== null
       ? Math.round((submission.score / submission.total_possible) * 100)
@@ -72,7 +74,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                 margin: 0,
               }}
             >
-              Exam Submitted Successfully
+              {t('student_review.title')}
             </h1>
             {submission?.is_graded ? (
               <span
@@ -87,7 +89,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                   border: '1px solid #10b98140',
                 }}
               >
-                ✓ Graded &amp; Corrected by Teacher
+                {t('student_review.status_graded')}
               </span>
             ) : (
               <span
@@ -102,7 +104,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                   border: '1px solid #f59e0b40',
                 }}
               >
-                ⏳ Submitted — Awaiting Teacher Correction
+                {t('student_review.status_pending')}
               </span>
             )}
           </div>
@@ -126,7 +128,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
               }}
             >
               <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: '#059669', fontWeight: 700 }}>
-                Final Score
+                {t('student_review.final_score')}
               </div>
               <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#047857' }}>
                 {submission.score} / {submission.total_possible} pts {pct !== null ? `(${pct}%)` : ''}
@@ -342,13 +344,13 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                               fontSize: '0.88rem',
                             }}
                           >
-                            <strong>💬 Teacher Feedback:</strong> {q.teacher_feedback}
+                            <strong>💬 {t('student_review.teacher_feedback')}</strong> {q.teacher_feedback}
                           </div>
                         )}
                       </>
                     ) : (
                       <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic' }}>
-                        Your teacher is currently reviewing your exam. Once graded, the step-by-step corrected solution and feedback will appear right here next to your answer.
+                        {t('student_review.under_review_desc')}
                       </p>
                     )}
                   </div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Database, Download, Trash2, Clock, ShieldCheck, RefreshCw, PlusCircle } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface BackupItem {
   filename: string;
@@ -13,6 +14,7 @@ interface BackupItem {
 
 export function DatabaseBackupPanel() {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   const [backups, setBackups] = useState<BackupItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [creating, setCreating] = useState(false);
@@ -128,10 +130,10 @@ export function DatabaseBackupPanel() {
           </div>
           <div>
             <h4 style={{ margin: '0 0 0.25rem', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-color)' }}>
-              Midnight Auto-Backup
+              {t('db_backup.title')}
             </h4>
             <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-              Active background scheduler generates a full snapshot every night at <strong>00:00 UTC</strong>.
+              {t('db_backup.auto_notice')}
             </p>
           </div>
         </div>
@@ -159,10 +161,10 @@ export function DatabaseBackupPanel() {
           </div>
           <div>
             <h4 style={{ margin: '0 0 0.25rem', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-color)' }}>
-              30-Day Retention Policy
+              {t('db_backup.subtitle')}
             </h4>
             <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-              Daily backups are retained for 30 days and purged automatically. Manual snapshots are preserved indefinitely.
+              {t('db_backup.auto_notice')}
             </p>
           </div>
         </div>
@@ -190,7 +192,7 @@ export function DatabaseBackupPanel() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Database size={20} style={{ color: 'var(--primary-color)' }} />
             <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-              Database Snapshots ({backups.length})
+              {t('db_backup.title')} ({backups.length})
             </h3>
           </div>
 
@@ -213,7 +215,7 @@ export function DatabaseBackupPanel() {
               }}
             >
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
-              Refresh
+              {t('db_backup.refresh')}
             </button>
 
             <button
@@ -234,21 +236,18 @@ export function DatabaseBackupPanel() {
               }}
             >
               <PlusCircle size={16} />
-              {creating ? 'Creating Snapshot...' : 'Create Backup Now'}
+              {creating ? t('db_backup.creating') : t('db_backup.create_btn')}
             </button>
           </div>
         </div>
 
         {loading && backups.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '2.5rem', color: 'var(--text-muted)' }}>
-            Loading backup files...
+            {t('common.14')}
           </div>
         ) : backups.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)' }}>
-            <p style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>No database backups created yet.</p>
-            <p style={{ fontSize: '0.85rem', margin: 0 }}>
-              Click <strong>Create Backup Now</strong> above or wait for the automatic midnight run.
-            </p>
+            <p style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{t('db_backup.empty')}</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
@@ -256,19 +255,19 @@ export function DatabaseBackupPanel() {
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--border-color)', textAlign: 'left' }}>
                   <th style={{ padding: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                    Snapshot Filename
+                    {t('db_backup.col_name')}
                   </th>
                   <th style={{ padding: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                    Type
+                    {t('db_backup.col_type')}
                   </th>
                   <th style={{ padding: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                    Created (dd/mm/yyyy)
+                    {t('db_backup.col_created')}
                   </th>
                   <th style={{ padding: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                    Size
+                    {t('db_backup.col_size')}
                   </th>
                   <th style={{ padding: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', textAlign: 'right' }}>
-                    Actions
+                    {t('db_backup.col_actions')}
                   </th>
                 </tr>
               </thead>
@@ -290,7 +289,7 @@ export function DatabaseBackupPanel() {
                             fontWeight: 600,
                           }}
                         >
-                          🕒 Midnight Auto
+                          🕒 {t('db_backup.auto')}
                         </span>
                       ) : (
                         <span
@@ -303,7 +302,7 @@ export function DatabaseBackupPanel() {
                             fontWeight: 600,
                           }}
                         >
-                          👤 Manual Snapshot
+                          👤 {t('db_backup.manual')}
                         </span>
                       )}
                     </td>
@@ -330,9 +329,9 @@ export function DatabaseBackupPanel() {
                             fontWeight: 600,
                             cursor: 'pointer',
                           }}
-                          title="Download database snapshot"
+                          title={t('db_backup.download')}
                         >
-                          <Download size={14} /> Download
+                          <Download size={14} /> {t('db_backup.download')}
                         </button>
                         <button
                           onClick={() => handleDelete(b.filename)}
@@ -349,9 +348,9 @@ export function DatabaseBackupPanel() {
                             fontWeight: 600,
                             cursor: 'pointer',
                           }}
-                          title="Delete snapshot"
+                          title={t('db_backup.delete')}
                         >
-                          <Trash2 size={14} /> Delete
+                          <Trash2 size={14} /> {t('db_backup.delete')}
                         </button>
                       </div>
                     </td>
@@ -365,4 +364,3 @@ export function DatabaseBackupPanel() {
     </div>
   );
 }
-

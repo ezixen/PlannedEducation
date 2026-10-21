@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ShieldAlert, Printer, Copy, Check, X } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface AdminBackupCodesModalProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface AdminBackupCodesModalProps {
 
 export function AdminBackupCodesModal({ isOpen, onClose }: AdminBackupCodesModalProps) {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   const [activeCodesCount, setActiveCodesCount] = useState<number>(0);
   const [hasCodes, setHasCodes] = useState<boolean>(false);
   const [freshCodes, setFreshCodes] = useState<string[] | null>(null);
@@ -133,7 +135,7 @@ export function AdminBackupCodesModal({ isOpen, onClose }: AdminBackupCodesModal
               marginBottom: '1.25rem',
             }}
           >
-            <strong>⚠️ CRITICAL OVERSIGHT WARNING:</strong> Administrators must always maintain saved or printed
+            <strong>⚠️ {t('backup_codes_modal.warning_title')}</strong> Administrators must always maintain saved or printed
             emergency backup codes. If an administrator loses access to their credentials or 2FA authenticator, no one
             can approve teachers, reset student passwords, or maintain system oversight!
           </div>
@@ -175,7 +177,7 @@ export function AdminBackupCodesModal({ isOpen, onClose }: AdminBackupCodesModal
                 fontSize: '0.8rem',
               }}
             >
-              {generating ? 'Generating...' : hasCodes ? 'Regenerate Fresh Codes' : 'Generate Codes Now'}
+              {generating ? t('backup_codes_modal.generating') : t('backup_codes_modal.generate_btn')}
             </button>
           </div>
 

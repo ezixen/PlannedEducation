@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-11-civics-gazdasagjog-es-munkaeropiac-1.0.0",
+    "name": "Gazdaságjog és munkaerőpiac - Grade 11 Civics",
+    "version": "1.0.0",
+    "description": "45-minute test on gazdaságjog és munkaerőpiac for Grade 11 students. Covers: Munkajog, Vállalkozás, Társadalombiztosítás.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.404122+00:00",
+    "updated_at": "2026-10-20T13:20:17.404122+00:00",
+    "tags": [
+      "civics",
+      "gazdaságjog-és-munkaerőpiac",
+      "grade-11"
+    ],
+    "subject": "civics",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "e2ac8598c0a435fa314a2cd494d4f3ab15f97c3a7353c0fe8f06f7fa82dc64e1",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Munkajog",
+      "Vállalkozás",
+      "Társadalombiztosítás"
+    ]
+  },
+  "exam": {
+    "title": "Grade 11 Civics - Gazdaságjog és munkaerőpiac",
+    "description": "Test on gazdaságjog és munkaerőpiac including munkajog, vállalkozás, társadalombiztosítás",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 1: Vállalkozás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Vállalkozás"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 2: Társadalombiztosítás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Társadalombiztosítás"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 3: Munkajog",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Munkajog"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 4: Vállalkozás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Vállalkozás"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 5: Társadalombiztosítás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Társadalombiztosítás"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 6: Munkajog",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Gazdaságjog és munkaerőpiac témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Munkajog"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 7: Vállalkozás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Gazdaságjog és munkaerőpiac témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Vállalkozás"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 8: Társadalombiztosítás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Gazdaságjog és munkaerőpiac témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Társadalombiztosítás"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 9: Munkajog",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Gazdaságjog és munkaerőpiac témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Munkajog"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[civics] Gazdaságjog és munkaerőpiac - Kérdés 10: Vállalkozás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Gazdaságjog és munkaerőpiac témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "civics",
+        "gazdaságjog-és-munkaerőpiac"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-CIVI-Gazdaságjog és munka",
+      "learning_objective": "Vállalkozás"
+    }
+  ],
+  "rubrics": []
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 
 export interface DeploymentConfig {
@@ -26,6 +27,7 @@ export interface DeploymentConfig {
 
 export function DeploymentConfigPanel() {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [restartNotice, setRestartNotice] = useState(false);
@@ -71,7 +73,7 @@ export function DeploymentConfigPanel() {
     setRestartNotice(false);
     try {
       const res = await apiClient.put('/admin/config', config);
-      showSuccess('Configuration saved to config/deployment.json and .env');
+      showSuccess(t('deployment.saved_notice'));
       if (res.data?.config) {
         setConfig((prev) => ({ ...prev, ...res.data.config }));
       }
@@ -103,59 +105,52 @@ export function DeploymentConfigPanel() {
         const writable = await fileHandle.createWritable();
         await writable.write(backupJson);
         await writable.close();
-        showSuccess(`Configuration successfully saved as ${fileName}`);
+        showSuccess(`Configuration backup saved to ${fileHandle.name || fileName}`);
         return;
       } catch (err: any) {
-        // User aborted the file picker or error occurred; if user aborted, don't fallback
-        if (err.name === 'AbortError') {
-          return;
-        }
+        if (err.name === 'AbortError') return; // User cancelled
       }
     }
 
-    // Standard download fallback
-    try {
-      const blob = new Blob([backupJson], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-      showSuccess(`Saved ${fileName} to your downloads folder`);
-    } catch (err: any) {
-      showError(err.message || 'Could not export configuration');
-    }
+    // Fallback: standard browser download
+    const blob = new Blob([backupJson], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSuccess(`Configuration backup downloaded as ${fileName}`);
   };
 
   if (loading) {
     return (
-      <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-        Loading deployment configuration...
+      <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+        {t('common.14')}
       </div>
     );
   }
 
   return (
-    <div style={{ maxWidth: '900px' }}>
+    <div style={{ maxWidth: '960px', margin: '0 auto' }}>
       <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          marginBottom: '1.5rem',
           flexWrap: 'wrap',
+          marginBottom: '1.5rem',
           gap: '1rem',
         }}
       >
         <div>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)', margin: 0 }}>
-            ⚙️ Deployment & Network Configuration
+            {t('deployment.title')}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
-            Manage server domain, ports, network layout, and institutional parameters. Config file is stored at{' '}
+            {t('deployment.subtitle')}{' '}
             <code style={{ background: 'var(--bg-color)', padding: '0.15rem 0.4rem', borderRadius: '4px' }}>
               {config.config_file_path || 'config/deployment.json'}
             </code>
@@ -178,7 +173,7 @@ export function DeploymentConfigPanel() {
             gap: '0.5rem',
           }}
         >
-          📁 Backup Config File
+          {t('deployment.backup_btn')}
         </button>
       </div>
 
@@ -194,13 +189,8 @@ export function DeploymentConfigPanel() {
           }}
         >
           <div style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>⚠️</span> Restart Required to Apply Changes
+            <span>⚠️</span> {t('deployment.restart_notice')}
           </div>
-          <p style={{ fontSize: '0.875rem', margin: '0.5rem 0 0 0' }}>
-            Changes were saved to <code style={{ fontWeight: 600 }}>config/deployment.json</code> and <code style={{ fontWeight: 600 }}>.env</code>.
-            Please restart the platform services (e.g. restart backend & frontend launcher scripts or run{' '}
-            <code>systemctl restart plannededucation-backend</code>) for the new domain and port settings to take effect.
-          </p>
         </div>
       )}
 
@@ -219,7 +209,7 @@ export function DeploymentConfigPanel() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              School / Institution Name
+              {t('deployment.school_name_label')}
             </label>
             <input
               type="text"
@@ -239,14 +229,14 @@ export function DeploymentConfigPanel() {
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              Domain / Server Hostname / IP
+              {t('deployment.domain_label')}
             </label>
             <input
               type="text"
               required
               value={config.domain}
               onChange={(e) => setConfig({ ...config, domain: e.target.value })}
-              placeholder="e.g. school.example.com or 192.168.1.100"
+              placeholder={t('deployment.domain_placeholder')}
               style={{
                 width: '100%',
                 padding: '0.6rem',
@@ -260,7 +250,7 @@ export function DeploymentConfigPanel() {
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              Backend API Port
+              {t('deployment.api_port_label')}
             </label>
             <input
               type="number"
@@ -278,12 +268,12 @@ export function DeploymentConfigPanel() {
                 color: 'var(--text-color)',
               }}
             />
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Default: 8000 (dev) / 8002 (fallback)</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('deployment.api_port_hint')}</span>
           </div>
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              Frontend Web Port
+              {t('deployment.frontend_port_label')}
             </label>
             <input
               type="number"
@@ -301,12 +291,12 @@ export function DeploymentConfigPanel() {
                 color: 'var(--text-color)',
               }}
             />
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Default: 5173 (dev) / 5175 (fallback)</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('deployment.frontend_port_hint')}</span>
           </div>
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              Environment Mode
+              {t('deployment.environment_label')}
             </label>
             <select
               value={config.environment}
@@ -320,9 +310,9 @@ export function DeploymentConfigPanel() {
                 color: 'var(--text-color)',
               }}
             >
-              <option value="development">Development (Local SQLite, test tooling)</option>
-              <option value="production">Production (PostgreSQL, hardened security)</option>
-              <option value="staging">Staging</option>
+              <option value="development">{t('deployment.env_dev')}</option>
+              <option value="production">{t('deployment.env_prod')}</option>
+              <option value="staging">{t('deployment.env_staging')}</option>
             </select>
           </div>
 
@@ -378,7 +368,7 @@ export function DeploymentConfigPanel() {
               checked={config.allow_dev_seb_bypass}
               onChange={(e) => setConfig({ ...config, allow_dev_seb_bypass: e.target.checked })}
             />
-            Allow Dev SEB Bypass (for testing without Safe Exam Browser)
+            {t('deployment.seb_bypass_label')}
           </label>
 
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.875rem', color: 'var(--text-color)' }}>
@@ -387,7 +377,7 @@ export function DeploymentConfigPanel() {
               checked={config.anonymizer_enabled}
               onChange={(e) => setConfig({ ...config, anonymizer_enabled: e.target.checked })}
             />
-            Enable PII Anonymizer (Presidio)
+            {t('deployment.anonymizer_label')}
           </label>
         </div>
 
@@ -395,20 +385,20 @@ export function DeploymentConfigPanel() {
         <div style={{ marginTop: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
             <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: 0 }}>
-              ✉️ Outgoing Email / SMTP Service (Optional)
+              {t('deployment.section_email')}
             </h3>
             <span style={{ fontSize: '0.75rem', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', padding: '0.15rem 0.5rem', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
               100% Optional
             </span>
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '1rem', lineHeight: 1.4 }}>
-            Sending emails is completely optional. PlannedEducation operates locally and dispatches all password resets and alerts using instant In-Platform Notifications without any email configuration. You can configure or update your school's SMTP credentials here at any time.
+            {t('deployment.email_desc')}
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
-                SMTP Host / Relay
+                {t('deployment.smtp_host_label')}
               </label>
               <input
                 type="text"
@@ -421,7 +411,7 @@ export function DeploymentConfigPanel() {
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
-                SMTP Port
+                {t('deployment.smtp_port_label')}
               </label>
               <input
                 type="number"
@@ -434,7 +424,7 @@ export function DeploymentConfigPanel() {
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
-                SMTP Username
+                {t('deployment.smtp_user_label')}
               </label>
               <input
                 type="text"
@@ -447,7 +437,7 @@ export function DeploymentConfigPanel() {
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
-                SMTP Password / App Password
+                {t('deployment.smtp_pass_label')}
               </label>
               <input
                 type="password"
@@ -460,7 +450,7 @@ export function DeploymentConfigPanel() {
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
-                From Sender Email
+                {t('deployment.email_from_label')}
               </label>
               <input
                 type="text"
@@ -478,7 +468,7 @@ export function DeploymentConfigPanel() {
                   checked={config.smtp_use_tls ?? true}
                   onChange={(e) => setConfig({ ...config, smtp_use_tls: e.target.checked })}
                 />
-                Use STARTTLS (Port 587)
+                {t('deployment.use_tls_label')}
               </label>
               <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer', fontSize: '0.85rem', color: 'var(--text-color)' }}>
                 <input
@@ -486,7 +476,7 @@ export function DeploymentConfigPanel() {
                   checked={config.smtp_use_ssl ?? false}
                   onChange={(e) => setConfig({ ...config, smtp_use_ssl: e.target.checked })}
                 />
-                Use SSL (Port 465)
+                {t('deployment.use_ssl_label')}
               </label>
             </div>
           </div>
@@ -507,7 +497,7 @@ export function DeploymentConfigPanel() {
               fontWeight: 500,
             }}
           >
-            Reset Form
+            {t('common.29')}
           </button>
           <button
             type="submit"
@@ -522,7 +512,7 @@ export function DeploymentConfigPanel() {
               fontWeight: 600,
             }}
           >
-            {saving ? 'Saving...' : '💾 Save Configuration'}
+            {saving ? t('deployment.saving') : t('deployment.save_btn')}
           </button>
         </div>
       </form>

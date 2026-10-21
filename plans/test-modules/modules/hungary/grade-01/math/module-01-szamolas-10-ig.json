@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-01-math-szamolas-10-ig-1.0.0",
+    "name": "Számolás 10-ig - Grade 01 Math",
+    "version": "1.0.0",
+    "description": "45-minute test on számolás 10-ig for Grade 01 students. Covers: Számlálás, Összeadás, Kivonás.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.239154+00:00",
+    "updated_at": "2026-10-20T13:20:17.239154+00:00",
+    "tags": [
+      "math",
+      "számolás-10-ig",
+      "grade-01"
+    ],
+    "subject": "math",
+    "grade_level": "grade-01",
+    "license": "CC-BY-4.0",
+    "checksum": "da554739f07fbcda00829d6b74882c921d24fc8e8f2e6e81640b36ccd9b3b8f3",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "easy",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Számlálás",
+      "Összeadás",
+      "Kivonás"
+    ]
+  },
+  "exam": {
+    "title": "Grade 01 Math - Számolás 10-ig",
+    "description": "Test on számolás 10-ig including számlálás, összeadás, kivonás",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[math] Számolás 10-ig - Kérdés 1: Összeadás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Összeadás"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[math] Számolás 10-ig - Kérdés 2: Kivonás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Kivonás"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[math] Számolás 10-ig - Kérdés 3: Számlálás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Számlálás"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[math] Számolás 10-ig - Kérdés 4: Összeadás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Összeadás"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[math] Számolás 10-ig - Kérdés 5: Kivonás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Kivonás"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[math] Számolás 10-ig - Kérdés 6: Számlálás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Számolás 10-ig témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Számlálás"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[math] Számolás 10-ig - Kérdés 7: Összeadás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Számolás 10-ig témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Összeadás"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[math] Számolás 10-ig - Kérdés 8: Kivonás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Számolás 10-ig témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Kivonás"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[math] Számolás 10-ig - Kérdés 9: Számlálás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Számolás 10-ig témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Számlálás"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[math] Számolás 10-ig - Kérdés 10: Összeadás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Számolás 10-ig témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "math",
+        "számolás-10-ig"
+      ],
+      "difficulty": "easy",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-01-MATH-Számolás 10-ig",
+      "learning_objective": "Összeadás"
+    }
+  ],
+  "rubrics": []
+}

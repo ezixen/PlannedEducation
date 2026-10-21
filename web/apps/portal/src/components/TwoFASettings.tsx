@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 
 export function TwoFASettings() {
+  const { t } = useI18n();
   const { user, refreshUser } = useAuth();
   const { success: showSuccess, error: showError, info: showInfo } = useToast();
 
@@ -135,7 +137,7 @@ export function TwoFASettings() {
   if (!totpEnabled && !showSetup) {
     return (
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-        <h3>Two-Factor Authentication (TOTP)</h3>
+        <h3>{t('twofa.1')}</h3>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
           Add an extra layer of security to your account using an authenticator app
           (Google Authenticator, Authy, Microsoft Authenticator, etc.).
@@ -145,7 +147,7 @@ export function TwoFASettings() {
           disabled={loading}
           style={{ ...buttonStyle, opacity: loading ? 0.7 : 1 }}
         >
-          {loading ? 'Setting up…' : 'Enable 2FA'}
+          {loading ? 'Setting up…' : t('twofa.1')}
         </button>
       </div>
     );
@@ -153,10 +155,10 @@ export function TwoFASettings() {
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-      <h3>Two-Factor Authentication (TOTP)</h3>
+      <h3>{t('twofa.1')}</h3>
       {totpEnabled ? (
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          2FA is <strong>enabled</strong>. You can manage your settings below.
+          2FA is <strong>{t('common.42')}</strong>. You can manage your settings below.
         </p>
       ) : (
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
@@ -167,7 +169,7 @@ export function TwoFASettings() {
       {/* Setup flow */}
       {showSetup && setupStep === 'verify' && (
         <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-          <h4>Step 1: Scan QR Code</h4>
+          <h4>{t('twofa.2')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
             Open your authenticator app and scan this QR code:
           </p>
@@ -185,9 +187,9 @@ export function TwoFASettings() {
             Or enter this secret manually: <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
           </p>
 
-          <h4>Step 2: Verify Code</h4>
+          <h4>{t('twofa.step2_title')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-            Enter the 6-digit code from your authenticator app:
+            {t('twofa.3')}
           </p>
           <input
             type="text"
@@ -200,17 +202,17 @@ export function TwoFASettings() {
           />
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
             <button onClick={handleConfirm} disabled={loading} style={buttonStyle}>
-              {loading ? 'Verifying…' : 'Verify & Enable'}
+              {loading ? 'Verifying…' : t('twofa.4')}
             </button>
             <button onClick={() => setShowSetup(false)} style={secondaryButtonStyle}>
-              Cancel
+              {t('common.2')}
             </button>
           </div>
 
           <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
-          <h4>Step 3: Save Recovery Codes</h4>
+          <h4>{t('twofa.6')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-            <strong>IMPORTANT:</strong> Save these recovery codes in a safe place. They are the ONLY way to recover access if you lose your 2FA device.
+            <strong>{t('twofa.important_notice')}</strong> {t('twofa.7')} They are the ONLY way to recover access if you lose your 2FA device.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
             {setupRecoveryCodes.map((code, i) => (
@@ -220,7 +222,7 @@ export function TwoFASettings() {
             ))}
           </div>
           <button onClick={() => setSetupStep('complete')} style={buttonStyle}>
-            I've Saved My Recovery Codes
+            {t('twofa.8')}
           </button>
         </div>
       )}
@@ -247,7 +249,7 @@ export function TwoFASettings() {
                 type="text"
                 value={recoveryCode}
                 onChange={e => setRecoveryCode(e.target.value.toUpperCase())}
-                placeholder="ABCD-EFGH"
+                placeholder={t("twofa.code_placeholder")}
                 style={{ ...inputStyle, textTransform: 'uppercase', maxWidth: '200px' }}
               />
             </label>
@@ -259,22 +261,22 @@ export function TwoFASettings() {
               disabled={loading}
               style={dangerButtonStyle}
             >
-              {loading ? 'Disabling…' : 'Disable 2FA'}
+              {loading ? 'Disabling…' : t('twofa.9')}
             </button>
             <button
               onClick={handleRegenerateRecoveryCodes}
               disabled={loading}
               style={secondaryButtonStyle}
             >
-              {loading ? 'Generating…' : 'Regenerate Recovery Codes'}
+              {loading ? 'Generating…' : t('twofa.10')}
             </button>
           </div>
 
           {showRecoveryCodes && recoveryCodes.length > 0 && (
             <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-              <h4>New Recovery Codes</h4>
+              <h4>{t('twofa.new_codes_title')}</h4>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-                <strong>IMPORTANT:</strong> Save these recovery codes in a safe place. Old codes are now invalid.
+                <strong>{t('twofa.important_notice')}</strong> {t('twofa.7')} Old codes are now invalid.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
                 {recoveryCodes.map((code, i) => (
@@ -284,7 +286,7 @@ export function TwoFASettings() {
                 ))}
               </div>
               <button onClick={() => setShowRecoveryCodes(false)} style={secondaryButtonStyle}>
-                Done
+                {t('admin.done')}
               </button>
             </div>
           )}

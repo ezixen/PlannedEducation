@@ -208,12 +208,10 @@ for dep_name in "${DEP_ORDER[@]}"; do
     fi
 done
 echo ""
-write_info "Note: There is NO 'remove all' option. If you choose Yes below, you will be asked ONE BY ONE for each installed dependency whether to remove or keep it."
-
 DEPS_TO_REMOVE=()
 
 if [[ "$AUTO_CONFIRM" != "true" && ${#INSTALLED_DEPS[@]} -gt 0 ]]; then
-    if confirm_action "Do you want to review these external dependencies one by one to choose whether to remove any of them?"; then
+    if confirm_action "Do you want to remove any external dependencies?"; then
         for dep_name in "${INSTALLED_DEPS[@]}"; do
             if confirm_action "Remove $dep_name? (y=remove, N=keep)"; then
                 DEPS_TO_REMOVE+=("$dep_name")

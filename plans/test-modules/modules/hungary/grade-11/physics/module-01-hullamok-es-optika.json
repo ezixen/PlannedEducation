@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-11-physics-hullamok-es-optika-1.0.0",
+    "name": "Hullámok és optika - Grade 11 Physics",
+    "version": "1.0.0",
+    "description": "45-minute test on hullámok és optika for Grade 11 students. Covers: Hullámmechanika, Geometriai optika, Fizikai optika.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.392057+00:00",
+    "updated_at": "2026-10-20T13:20:17.392057+00:00",
+    "tags": [
+      "physics",
+      "hullámok-és-optika",
+      "grade-11"
+    ],
+    "subject": "physics",
+    "grade_level": "grade-11",
+    "license": "CC-BY-4.0",
+    "checksum": "b26ca969720bbb9f037dc9958a682bdd420ef5fc813664f2f0e4c8fbda19b1d9",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Hullámmechanika",
+      "Geometriai optika",
+      "Fizikai optika"
+    ]
+  },
+  "exam": {
+    "title": "Grade 11 Physics - Hullámok és optika",
+    "description": "Test on hullámok és optika including hullámmechanika, geometriai optika, fizikai optika",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": true,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullámok és optika - Kérdés 1: Geometriai optika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Geometriai optika"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullámok és optika - Kérdés 2: Fizikai optika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Fizikai optika"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullámok és optika - Kérdés 3: Hullámmechanika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Hullámmechanika"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullámok és optika - Kérdés 4: Geometriai optika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Geometriai optika"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[physics] Hullámok és optika - Kérdés 5: Fizikai optika",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Fizikai optika"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[physics] Hullámok és optika - Kérdés 6: Hullámmechanika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullámok és optika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Hullámmechanika"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[physics] Hullámok és optika - Kérdés 7: Geometriai optika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullámok és optika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Geometriai optika"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[physics] Hullámok és optika - Kérdés 8: Fizikai optika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullámok és optika témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Fizikai optika"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[physics] Hullámok és optika - Kérdés 9: Hullámmechanika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullámok és optika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Hullámmechanika"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[physics] Hullámok és optika - Kérdés 10: Geometriai optika",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Hullámok és optika témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "physics",
+        "hullámok-és-optika"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-11-PHYS-Hullámok és optika",
+      "learning_objective": "Geometriai optika"
+    }
+  ],
+  "rubrics": []
+}

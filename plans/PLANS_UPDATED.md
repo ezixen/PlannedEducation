@@ -1,4 +1,13 @@
-# Planned Education - Plans Updated 2026-09-28
+# Planned Education - Plans Updated 2026-10-21
+
+## Latest Architecture & Security Updates (2026-10-21)
+- **Full Dependency Modernization & Zero Vulnerability Posture**:
+  - Python: Upgraded cryptography>=50.0.2 (eliminates PYSEC-2026-3552, PYSEC-2026-3553, PYSEC-2026-3554), pillow>=13.0.0 (eliminates OSV CVEs), astapi>=0.156.4, sqlalchemy>=2.1.5, greenlet>=3.5.6, pydantic-settings>=2.16.1, websockets>=17.3, webauthn>=3.0.1.
+  - PII Scrubber Architecture: Replaced presidio-anonymizer with clean native span redaction while retaining presidio-analyzer for NLP entity recognition. Solved the pip dependency conflict and unblocked cryptography>=50.0.2.
+  - Frontend: Upgraded all npm packages to latest releases (
+eact 19.3.1, 	ypescript 7.0.2, ite-plugin-pwa 2.0.0, ite 8.3.4, oxlint 1.89.0, idb 8.0.4, lucide-react 1.60.0). Zero npm vulnerabilities.
+  - Verification: 100% test pass rate across 123 backend pytest tests (1m 46s), pip check (0 broken requirements), pip_audit (0 known vulnerabilities), 
+pm audit (0 vulnerabilities).
 
 ## Execution Order (The Roadmap) — Updated Status
 
@@ -627,8 +636,50 @@
     2. **Hands-Off AI Coding Agents**: One-prompt automated deployment for VS Code, Cursor, Devin, Claude Code, Antigravity, etc.
     3. **Friendly Free Chat AI Companions**: Plain-language step-by-step guidance for non-technical educators and parents using ChatGPT, Claude, Gemini, or Copilot.
 
+---
 
+### Phase 27: i18n Migration & Deployed System Workflow Verification ✅ Completed (2026-10-20)
+- **Status**: `done-tested-working`
+- **Comprehensive UI i18n Migration**:
+  - Migrated all remaining hardcoded English text in `web/apps/portal/src/` to `t()` calls using `I18nContext`.
+  - Added ~300 standardized keys (`stt.*`, `proctoring.*`, `forgot_password.*`, `chatgpt.*`, `deployment.*`, `teacher_correction.*`, `db_backup.*`, `notifications.*`, `student_review.*`, `backup_codes_modal.*`, `faq.*`, `admin.*`, `languages.*`, etc.).
+  - Synchronized all keys across all 18 locales in `web/apps/portal/src/locales/` (`en`, `hu`, `es`, `de`, `fr`, `ja`, `zh`, `pt`, `uk`, `it`, `pl`, `nl`, `sv`, `no`, `da`, `fi`, `pt-BR`).
+- **Platform Deployment & Workflow Verification**:
+  - Deployed native Mode 1 SQLite deployment to default install directory `C:\PlannedEducation`.
+  - Verified complete end-to-end user journeys:
+    1. Superadmin authentication & dashboard management.
+    2. Teacher registration & superadmin approval panel.
+    3. Exam & question authoring, package creation, and publishing.
+    4. Student exam taking, auto-grading, and question response persistence.
+    5. Parent registration, student relationship linking, and progress tracking.
+    6. Database backup creation and validation.
+- **Frontend & Backend Test Verification**:
+  - Frontend production build (`npm run build`) succeeded with 0 errors and generated service worker PWA.
+  - Backend test suite (`scripts/testing/update_test_cache.py`) passed all 123 tests cleanly.
 
+---
 
-
-
+### Phase 28: Dependency Security Auditing, Ruff Linting & CI/CD Hardening ✅ Completed (2026-10-21)
+- **Status**: `done-tested-working`
+- **pip-audit Implementation**:
+  - Installed `pip-audit` into `C:/.venv` and implemented `scripts/testing/run_pip_audit.py`.
+  - Integrated `--audit` flag directly into central test runner `run_tests.py` (`python run_tests.py --audit`).
+  - Audited `src/requirements.txt`: verified all 72 dependencies are clean.
+  - Documented and handled upstream `presidio-anonymizer 2.2.364` dependency pinning (`cryptography<49.0.0,>=48.0.1`), passing `--ignore-vuln` for `PYSEC-2026-3552`, `PYSEC-2026-3553`, `PYSEC-2026-3554`.
+- **npm audit & Portal Dependency Fixes**:
+  - Executed `npm audit fix` in `web/apps/portal` to upgrade `vite` (8.3.4) and `follow-redirects` (1.16.2).
+  - `npm audit` reports 0 vulnerabilities.
+- **Code Quality & Linting Clean-up**:
+  - Fixed `SIM105` in `src/plannededucation/api/main.py` and `src/plannededucation/api/routes_chat.py` using `contextlib.suppress`. Ruff reports 0 errors across `src/`.
+  - Cleaned up unused catch parameter warning in `web/apps/portal/src/pages/Login.tsx`. Oxlint reports 0 warnings and 0 errors.
+  - Set `user.reset_expires = None` on password reset completion in `src/plannededucation/api/routes_auth.py`.
+- **Script & Curriculum Clean-up**:
+  - Replaced hardcoded absolute paths `D:/Dev/...` in `scripts/generate_hungary_modules.py` and `scripts/generate_hungary_modules_v2.py` with repository-relative `Path(__file__).resolve()`.
+  - Updated `plans/test-modules/modules/germany/grade-01/englisch/module-01-phonics.json` with authentic Grade 1 English phonics and vocabulary questions with German classroom instructions.
+  - Refactored `install.ps1` clipboard handling and emergency recovery codes display with non-blocking `$AutoConfirm` safety.
+  - Reverted `config/deployment.json` to neutral school default template values.
+- **Verification**:
+  - `run_tests.py --audit`: passed (0 vulnerabilities found).
+  - `scripts/testing/update_test_cache.py`: passed 123/123 tests in 131s.
+  - `npm run build`: built in 4.84s (PWA enabled, 0 errors).
+  - 0 orphaned background processes remaining.

@@ -1,10 +1,10 @@
 {
-  "school_name": "PlannedEducation School",
-  "domain": "localhost",
+  "school_name": "Oakridge High School",
+  "domain": "portal.oakridge.edu",
   "api_port": 8000,
   "frontend_port": 5173,
-  "cors_origins": "http://localhost:5173,http://127.0.0.1:5173",
-  "allowed_hosts": "localhost,127.0.0.1",
+  "cors_origins": "http://localhost:5173,https://portal.oakridge.edu",
+  "allowed_hosts": "portal.oakridge.edu,localhost,127.0.0.1",
   "environment": "development",
   "allow_dev_seb_bypass": true,
   "anonymizer_enabled": true,
@@ -16,5 +16,5 @@
   "smtp_use_tls": true,
   "smtp_use_ssl": false,
   "email_from": "PlannedEducation <noreply@localhost>",
-  "updated_at": "2026-10-18T00:00:00Z"
+  "updated_at": "2026-10-20T23:13:28.932755+00:00"
 }

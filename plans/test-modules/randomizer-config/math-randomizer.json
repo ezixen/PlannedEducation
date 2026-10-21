@@ -1,0 +1,35 @@
+{
+  "subject": "math",
+  "variable_pattern": "[rand:min-max]",
+  "variable_types": {
+    "integer": {
+      "description": "Whole number between min and max (inclusive)",
+      "example": "[rand:1-100]",
+      "usage": "Use for counting, simple arithmetic, grade levels"
+    },
+    "float": {
+      "description": "Decimal number between min and max with specified step",
+      "example": "[rand:1.0-10.0:0.1]",
+      "usage": "Use for measurements, money, averages"
+    },
+    "choice": {
+      "description": "Random choice from comma-separated list",
+      "example": "[rand:choice:red,blue,green]",
+      "usage": "Use for categorical variables, colors, names"
+    }
+  },
+  "default_ranges": {
+    "elementary": { "min": 1, "max": 20 },
+    "middle": { "min": 1, "max": 100 },
+    "high": { "min": 1, "max": 1000 }
+  },
+  "formula_support": true,
+  "example_question": "Calculate: [rand:1-10] + [rand:1-10] = ?",
+  "example_answer": "Variable sum of two random integers",
+  "implementation_notes": [
+    "Variables are replaced when student starts exam",
+    "Same variable name used consistently across questions in a submission",
+    "Each student gets unique values when randomizer_seed is null",
+    "Fixed randomizer_seed gives all students same values (useful for practice)"
+  ]
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Users, KeyRound, X, CheckCircle2 } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 interface StudentRosterItem {
   id: string;
@@ -13,6 +14,7 @@ interface StudentRosterItem {
 }
 
 export function TeacherClasses() {
+  const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [classes, setClasses] = useState<any[]>([]);
   const [newClassName, setNewClassName] = useState('');
@@ -104,7 +106,7 @@ export function TeacherClasses() {
             type="text" 
             value={newClassName}
             onChange={(e) => setNewClassName(e.target.value)}
-            placeholder="e.g., Biology 101 - Period 3" 
+            placeholder={t("teacher_classes.class_name_placeholder")} 
             style={{ flex: 1, padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
           />
           <button type="submit" style={{ padding: '0.65rem 1.25rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600 }}>
@@ -197,12 +199,12 @@ export function TeacherClasses() {
                   lineHeight: 1.4,
                 }}
               >
-                ⚡ <strong>Emergency Test-Day Reset:</strong> If a student forgot their password right before an exam, click <em>Reset Pwd</em>. The student can then simply type their email at login and set a new password immediately!
+                ⚡ <strong>{t('teacher_classes.emergency_reset_title')}</strong> {t('teacher_classes.emergency_reset_desc')} <em>{t('admin.reset_password')}</em>. The student can then simply type their email at login and set a new password immediately!
               </div>
 
               {rosterStudents.length === 0 ? (
                 <p style={{ textAlign: 'center', color: 'var(--text-muted)', margin: '2rem 0' }}>
-                  No students currently enrolled in this class.
+                  {t('teacher_dashboard.no_students')}
                 </p>
               ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>

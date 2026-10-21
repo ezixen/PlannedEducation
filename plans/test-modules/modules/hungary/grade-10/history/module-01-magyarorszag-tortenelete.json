@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-10-history-magyarorszag-tortenelete-1.0.0",
+    "name": "Magyarország történelete - Grade 10 History",
+    "version": "1.0.0",
+    "description": "45-minute test on magyarország történelete for Grade 10 students. Covers: Honfoglalás, Történelem, Mai Magyarország.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.380067+00:00",
+    "updated_at": "2026-10-20T13:20:17.380067+00:00",
+    "tags": [
+      "history",
+      "magyarország-történelete",
+      "grade-10"
+    ],
+    "subject": "history",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "4c32b2d5f545f1b0aaee3091fcd5f18ffe77fc7d5a495beb0daf2c91cb961d4c",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Honfoglalás",
+      "Történelem",
+      "Mai Magyarország"
+    ]
+  },
+  "exam": {
+    "title": "Grade 10 History - Magyarország történelete",
+    "description": "Test on magyarország történelete including honfoglalás, történelem, mai magyarország",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[history] Magyarország történelete - Kérdés 1: Történelem",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Történelem"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[history] Magyarország történelete - Kérdés 2: Mai Magyarország",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Mai Magyarország"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[history] Magyarország történelete - Kérdés 3: Honfoglalás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Honfoglalás"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[history] Magyarország történelete - Kérdés 4: Történelem",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Történelem"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[history] Magyarország történelete - Kérdés 5: Mai Magyarország",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Mai Magyarország"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[history] Magyarország történelete - Kérdés 6: Honfoglalás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország történelete témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Honfoglalás"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[history] Magyarország történelete - Kérdés 7: Történelem",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország történelete témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Történelem"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[history] Magyarország történelete - Kérdés 8: Mai Magyarország",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország történelete témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Mai Magyarország"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[history] Magyarország történelete - Kérdés 9: Honfoglalás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország történelete témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Honfoglalás"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[history] Magyarország történelete - Kérdés 10: Történelem",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Magyarország történelete témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "history",
+        "magyarország-történelete"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-HIST-Magyarország történe",
+      "learning_objective": "Történelem"
+    }
+  ],
+  "rubrics": []
+}

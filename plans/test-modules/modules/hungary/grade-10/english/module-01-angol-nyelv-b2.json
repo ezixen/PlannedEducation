@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "id": "grade-10-english-angol-nyelv-b2-1.0.0",
+    "name": "Angol nyelv B2 - Grade 10 English",
+    "version": "1.0.0",
+    "description": "45-minute test on angol nyelv b2 for Grade 10 students. Covers: Komplex nyelvtan, Akadémiai írás, Előadás.",
+    "author": "PlannedEducation Curriculum Team",
+    "author_id": "system",
+    "created_at": "2026-10-20T13:20:17.377500+00:00",
+    "updated_at": "2026-10-20T13:20:17.377500+00:00",
+    "tags": [
+      "english",
+      "angol-nyelv-b2",
+      "grade-10"
+    ],
+    "subject": "english",
+    "grade_level": "grade-10",
+    "license": "CC-BY-4.0",
+    "checksum": "13c401bcb4bf019e3225773d697692a9e055f1d4ea867cd89bd8efd66e77f990",
+    "curriculum": "hungary-nat",
+    "duration_minutes": 45,
+    "total_points": 65,
+    "question_count": 10,
+    "randomizer_enabled": false,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Komplex nyelvtan",
+      "Akadémiai írás",
+      "Előadás"
+    ]
+  },
+  "exam": {
+    "title": "Grade 10 English - Angol nyelv B2",
+    "description": "Test on angol nyelv b2 including komplex nyelvtan, akadémiai írás, előadás",
+    "duration_minutes": 45,
+    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "time_multiplier": 1.0,
+      "passing_score": 60,
+      "delivery_mode": "classroom",
+      "allow_digital_hand_raise": false,
+      "randomizer_enabled": false,
+      "randomizer_seed": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-001",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 1: Akadémiai írás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Akadémiai írás"
+    },
+    {
+      "id": "q-002",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 2: Előadás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Előadás"
+    },
+    {
+      "id": "q-003",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 3: Komplex nyelvtan",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Komplex nyelvtan"
+    },
+    {
+      "id": "q-004",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 4: Akadémiai írás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Akadémiai írás"
+    },
+    {
+      "id": "q-005",
+      "question_type": "multiple_choice",
+      "text": "[english] Angol nyelv B2 - Kérdés 5: Előadás",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": "A",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Előadás"
+    },
+    {
+      "id": "q-006",
+      "question_type": "essay",
+      "text": "[english] Angol nyelv B2 - Kérdés 6: Komplex nyelvtan",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Komplex nyelvtan"
+    },
+    {
+      "id": "q-007",
+      "question_type": "essay",
+      "text": "[english] Angol nyelv B2 - Kérdés 7: Akadémiai írás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Akadémiai írás"
+    },
+    {
+      "id": "q-008",
+      "question_type": "essay",
+      "text": "[english] Angol nyelv B2 - Kérdés 8: Előadás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": "Pontszámítás: 10 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "points": 10,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 5,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Előadás"
+    },
+    {
+      "id": "q-009",
+      "question_type": "dynamic_math",
+      "text": "[english] Angol nyelv B2 - Kérdés 9: Komplex nyelvtan",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Komplex nyelvtan"
+    },
+    {
+      "id": "q-010",
+      "question_type": "dynamic_math",
+      "text": "[english] Angol nyelv B2 - Kérdés 10: Akadémiai írás",
+      "options": null,
+      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
+      "rubric": null,
+      "points": 5,
+      "variables": [],
+      "tags": [
+        "english",
+        "angol-nyelv-b2"
+      ],
+      "difficulty": "medium",
+      "estimated_time_minutes": 3,
+      "curriculum_topic": "HU-10-ENGL-Angol nyelv B2",
+      "learning_objective": "Akadémiai írás"
+    }
+  ],
+  "rubrics": []
+}

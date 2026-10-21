@@ -3,7 +3,7 @@ import json
 import logging
 import os
 import time
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, suppress
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -195,10 +195,8 @@ async def lifespan(app: FastAPI):
 
     if backup_task:
         backup_task.cancel()
-        try:
+        with suppress(asyncio.CancelledError):
             await backup_task
-        except asyncio.CancelledError:
-            pass
 
 
 # ── Rate Limiter (shared instance) ──────────────────────────────────────────

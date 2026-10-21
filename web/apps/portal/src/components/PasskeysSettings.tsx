@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 
 interface PasskeyCredential {
@@ -28,6 +29,7 @@ interface WebAuthnRegistrationOptions {
 }
 
 export function PasskeysSettings() {
+  const { t } = useI18n();
   const { user } = useAuth();
   const { success: showSuccess, error: showError, info: showInfo } = useToast();
 
@@ -172,7 +174,7 @@ export function PasskeysSettings() {
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-      <h3>Passkeys (WebAuthn)</h3>
+      <h3>{t('passkeys.1')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
         Passkeys are a phishing-resistant alternative to passwords. Use your device's biometric
         (fingerprint, face ID) or PIN to sign in securely. Passkeys sync across your devices
@@ -181,27 +183,27 @@ export function PasskeysSettings() {
 
       {passkeys.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
-          <p style={{ marginBottom: '1rem' }}>No passkeys registered yet.</p>
+          <p style={{ marginBottom: '1rem' }}>{t('passkeys.8')}</p>
           <button
             onClick={() => setShowRegisterModal(true)}
             disabled={loading}
             style={{ ...buttonStyle, opacity: loading ? 0.7 : 1 }}
           >
-            {loading ? 'Loading…' : 'Register Passkey'}
+            {loading ? 'Loading…' : t('passkeys.2')}
           </button>
         </div>
       ) : (
         <div>
-          <h4 style={{ marginBottom: '1rem' }}>Registered Passkeys ({passkeys.length})</h4>
+          <h4 style={{ marginBottom: '1rem' }}>{t('passkeys.4')} ({passkeys.length})</h4>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Created</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Last Used</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Transports</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sign Count</th>
-                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Actions</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('passkeys.5')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('passkeys.6')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('passkeys.col_transports')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('passkeys.col_sign_count')}</th>
+                  <th style={{ padding: '0.75rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('admin.actions')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -237,7 +239,7 @@ export function PasskeysSettings() {
             disabled={loading}
             style={{ ...buttonStyle, marginTop: '1rem' }}
           >
-            {loading ? 'Loading…' : 'Add Another Passkey'}
+            {loading ? 'Loading…' : t('passkeys.2')}
           </button>
         </div>
       )}
@@ -247,7 +249,7 @@ export function PasskeysSettings() {
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
           <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
             <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h2 style={{ margin: 0, fontSize: '1.25rem' }}>Register Passkey</h2>
+              <h2 style={{ margin: 0, fontSize: '1.25rem' }}>{t('passkeys.register_btn')}</h2>
               <button onClick={() => setShowRegisterModal(false)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
             </div>
             <div style={{ padding: '1.5rem' }}>

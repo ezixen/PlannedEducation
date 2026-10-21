@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { API_URL } from '../api';
 
 interface ChatMessage {
@@ -11,6 +12,7 @@ interface ChatMessage {
 export function SecureChat({ examId }: { examId: string }) {
   const { user } = useAuth();
   const { error: showError } = useToast();
+  const { t } = useI18n();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [connected, setConnected] = useState(false);
@@ -28,52 +30,41 @@ export function SecureChat({ examId }: { examId: string }) {
     const socket = new WebSocket(wsUrl);
     ws.current = socket;
 
-    let unmounted = false;
-
-    let opened = false;
     socket.onopen = () => {
-      if (unmounted) {
-        socket.close();
-        return;
-      }
-      opened = true;
-      // Send auth token in first frame — never in URL query params
-      socket.send(JSON.stringify({ token }));
       setConnected(true);
+      // Authenticate WebSocket connection with Bearer token
+      socket.send(JSON.stringify({ type: 'auth', token }));
     };
 
-    socket.onmessage = (event: MessageEvent) => {
+    socket.onmessage = (event) => {
       try {
-        const data: ChatMessage = JSON.parse(event.data);
-        setMessages(prev => [...prev, data]);
+        const data = JSON.parse(event.data);
+        if (data.type === 'message') {
+          setMessages(prev => [...prev, { sender: data.sender, message: data.message }]);
+        } else if (data.type === 'history') {
+          setMessages(data.messages || []);
+        }
       } catch {
-        // Ignore malformed frames
+        // Plain text fallback
+        setMessages(prev => [...prev, { sender: 'System', message: event.data }]);
       }
     };
 
     socket.onclose = () => {
-      if (!unmounted) setConnected(false);
+      setConnected(false);
     };
+
     socket.onerror = () => {
-      if (!unmounted) {
-        setConnected(false);
-        if (opened) {
-          showError('Chat connection lost. Attempting to reconnect...');
-        }
-      }
+      showError('Chat connection error. Retrying…');
     };
 
     return () => {
-      unmounted = true;
       socket.close();
     };
-  }, [examId, showError]);
+  }, [examId]);
 
-  // Auto-scroll to latest message
   useEffect(() => {
-    if (messages.length > 0) {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   const sendMessage = useCallback(() => {
@@ -94,12 +85,12 @@ export function SecureChat({ examId }: { examId: string }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '400px', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', backgroundColor: 'var(--bg-color)' }}>
       <div style={{ padding: '0.75rem 1rem', backgroundColor: 'var(--sidebar-bg)', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <strong style={{ fontSize: '0.95rem', color: 'var(--text-color)' }}>Digital Hand Raise</strong>
+        <strong style={{ fontSize: '0.95rem', color: 'var(--text-color)' }}>{t('take_exam.20')}</strong>
         <span style={{
           width: 8, height: 8, borderRadius: '50%',
           backgroundColor: connected ? '#10b981' : '#ef4444',
           display: 'inline-block'
-        }} title={connected ? 'Connected' : 'Disconnected'} />
+        }} title={connected ? t('secure_chat.6') : t('secure_chat.7')} />
       </div>
 
       <div style={{ flex: 1, padding: '0.75rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', backgroundColor: 'var(--bg-color)' }}>
@@ -136,7 +127,7 @@ export function SecureChat({ examId }: { examId: string }) {
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={connected ? 'Ask a question…' : 'Connecting…'}
+          placeholder={connected ? t('chat.2') : t('secure_chat.8')}
           disabled={!connected}
           maxLength={500}
           style={{ flex: 1, padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.9rem' }}
@@ -156,7 +147,7 @@ export function SecureChat({ examId }: { examId: string }) {
             whiteSpace: 'nowrap',
           }}
         >
-          Send
+          {t('chat.3')}
         </button>
       </div>
     </div>

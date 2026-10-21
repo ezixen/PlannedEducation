@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -35,6 +36,7 @@ const buttonStyle: React.CSSProperties = {
 
 export function STTProcessor() {
   const { success: showSuccess, error: showError } = useToast();
+  const { t } = useI18n();
   
   const [audioFile, setAudioFile] = useState<File | null>(null);
   const [result, setResult] = useState<{
@@ -59,7 +61,7 @@ export function STTProcessor() {
 
   const handleProcess = async () => {
     if (!audioFile) {
-      showError('Please select an audio file first.');
+      showError(t('stt.select_file_first'));
       return;
     }
 
@@ -75,9 +77,9 @@ export function STTProcessor() {
       });
 
       setResult(response.data);
-      showSuccess(`Transcription completed (${response.data.language}, ${response.data.duration.toFixed(1)}s)`);
+      showSuccess(`${t('stt.transcription_completed')} (${response.data.language}, ${response.data.duration.toFixed(1)}s)`);
     } catch (err: any) {
-      showError('Transcription failed.', err.response?.data?.detail || err.message);
+      showError(t('stt.transcription_failed'), err.response?.data?.detail || err.message);
       setResult({ 
         text: '', 
         language: '', 
@@ -97,17 +99,16 @@ export function STTProcessor() {
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-      <h3>Speech-to-Text Processor</h3>
+      <h3>{t('stt.processor_title')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        Transcribe audio recordings using faster-whisper (local inference).
-        Supports multiple languages and translation to English.
+        {t('stt.processor_desc')}
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '600px' }}>
         {/* File Upload */}
         <div>
           <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
-            Upload Audio File
+            {t('stt.upload_label')}
           </label>
           <input
             type="file"
@@ -126,34 +127,34 @@ export function STTProcessor() {
         {/* Options */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           <label style={labelStyle}>
-            Language
+            {t('stt.language_label')}
             <select
               value={language}
               onChange={e => setLanguage(e.target.value)}
               style={inputStyle}
               disabled={loading}
             >
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
-              <option value="fr">French</option>
-              <option value="de">German</option>
-              <option value="zh">Chinese</option>
-              <option value="ja">Japanese</option>
-              <option value="ko">Korean</option>
-              <option value="auto">Auto-detect</option>
+              <option value="en">{t('languages.en')}</option>
+              <option value="es">{t('languages.es')}</option>
+              <option value="fr">{t('languages.fr')}</option>
+              <option value="de">{t('languages.de')}</option>
+              <option value="zh">{t('languages.zh')}</option>
+              <option value="ja">{t('languages.ja')}</option>
+              <option value="ko">{t('languages.ko')}</option>
+              <option value="auto">{t('languages.auto')}</option>
             </select>
           </label>
 
           <label style={labelStyle}>
-            Task
+            {t('stt.task_label')}
             <select
               value={task}
               onChange={e => setTask(e.target.value as 'transcribe' | 'translate')}
               style={inputStyle}
               disabled={loading}
             >
-              <option value="transcribe">Transcribe (same language)</option>
-              <option value="translate">Translate to English</option>
+              <option value="transcribe">{t('stt.task_transcribe')}</option>
+              <option value="translate">{t('stt.task_translate')}</option>
             </select>
           </label>
         </div>
@@ -169,7 +170,7 @@ export function STTProcessor() {
               cursor: loading || !audioFile ? 'not-allowed' : 'pointer',
             }}
           >
-            {loading ? 'Transcribing…' : 'Transcribe Audio'}
+            {loading ? t('stt.transcribing') : t('stt.transcribe_btn')}
           </button>
           {audioFile && (
             <button
@@ -180,7 +181,7 @@ export function STTProcessor() {
                 backgroundColor: 'var(--secondary-color)',
               }}
             >
-              Clear
+              {t('common.30')}
             </button>
           )}
         </div>
@@ -189,15 +190,15 @@ export function STTProcessor() {
         {result && (
           <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-              <h4 style={{ margin: 0 }}>Result</h4>
+              <h4 style={{ margin: 0 }}>{t('stt.result_title')}</h4>
               <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                <span>Language: {result.language} ({Math.round(result.language_probability * 100)}%)</span>
-                <span>Duration: {result.duration.toFixed(1)}s</span>
+                <span>{t('stt.language_label')}: {result.language} ({Math.round(result.language_probability * 100)}%)</span>
+                <span>{t('stt.duration')}: {result.duration.toFixed(1)}s</span>
               </div>
             </div>
             {result.error ? (
               <div style={{ color: '#ef4444', fontSize: '0.9rem' }}>
-                Error: {result.error}
+                {t('common.15')}: {result.error}
               </div>
             ) : (
               <div style={{ 
@@ -208,13 +209,13 @@ export function STTProcessor() {
                 maxHeight: '300px',
                 overflowY: 'auto',
               }}>
-                {result.text || '(no speech detected)'}
+                {result.text || t('stt.no_speech')}
               </div>
             )}
             {result.segments && result.segments.length > 0 && (
               <details style={{ marginTop: '1rem' }}>
                 <summary style={{ cursor: 'pointer', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                  Show segments ({result.segments.length})
+                  {t('stt.show_segments', { count: String(result.segments.length) })}
                 </summary>
                 <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   {result.segments.map((seg: any, i: number) => (
