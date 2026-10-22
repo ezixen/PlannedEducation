@@ -1312,6 +1312,11 @@ export function TeacherDashboard() {
                   style={{ width: '100%', padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.85rem' }}
                 />
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{t('teacher_dashboard.test_count_hint')}</p>
+                <div style={{ marginTop: '0.75rem', padding: '0.75rem', backgroundColor: 'rgba(245, 158, 11, 0.1)', border: '1px solid #f59e0b', borderRadius: 'var(--radius-md)', color: '#92400e', fontSize: '0.75rem' }}>
+                  <strong>⚠️ Performance Warning:</strong> Opening many test tabs simultaneously consumes significant RAM and CPU resources. Each tab runs a full exam instance with randomization. 
+                  <br/><br/>
+                  <strong>Recommendation:</strong> Start with 5-10 tabs to test your computer's limits. Only increase to 25 if your system handles 10 smoothly. Monitor your system resources (Task Manager / Activity Monitor) while testing.
+                </div>
               </div>
               
               <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>

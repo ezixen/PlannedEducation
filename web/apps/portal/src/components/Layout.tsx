@@ -149,13 +149,14 @@ export function Layout() {
 
       {/* Back arrow navigation - shows on sub-pages */}
       {location.pathname !== '/' && location.pathname !== '/dashboard' && (
-        <div style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--sidebar-bg)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="back-nav-bar">
           <button
             onClick={handleBack}
-            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'none', border: 'none', color: 'var(--text-color)', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 500 }}
+            className="back-nav-btn"
+            aria-label={t('nav.back')}
           >
             <ArrowLeft size={16} />
-            <span>{t('layout.back')}</span>
+            <span>{t('nav.back')}</span>
           </button>
         </div>
       )}

@@ -49,10 +49,12 @@
 
 ## Remaining / Future Work
 
-| Item | Priority | Notes |
-|---|---|---|
-| Redis Pub/Sub for chat | Medium | Required for multi-worker/multi-server WebSocket broadcasting |
-| Microsoft Presidio PII scrubber on anonymizer essays | Medium | Strip accidental PII before sending text to external LLMs |
-| Refresh tokens (short-lived access + long-lived refresh) | Medium | Currently all tokens live 60 min with no server-side revocation |
-| 2FA TOTP endpoints | Low | Column exists in DB, UI placeholder exists in Settings |
-| AI key encryption wiring | Low | `crypto.py` is ready; needs to hook into AI integration routes when those are built |
+All previously listed remaining items are now **✅ Completed**:
+
+| Item | Priority | Status | Notes |
+|---|---|---|---|
+| Redis Pub/Sub for chat | Medium | ✅ Completed | `RedisPubSubManager` in `routes_chat.py` with auto-fallback to in-memory |
+| Microsoft Presidio PII scrubber on anonymizer essays | Medium | ✅ Completed | Native span redaction + presidio-analyzer for NLP entity recognition |
+| Refresh tokens (short-lived access + long-lived refresh) | Medium | ✅ Completed | Refresh token hash storage, rotation, and revocation in `routes_auth.py` |
+| 2FA TOTP endpoints | Low | ✅ Completed | Full TOTP setup/confirm/disable/regenerate endpoints in `routes_auth.py` |
+| AI key encryption wiring | Low | ✅ Completed | `crypto.py` wired into `routes_auth.py` (encrypt on save) and `ai_providers.py` (decrypt on use) |

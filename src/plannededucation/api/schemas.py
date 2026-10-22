@@ -70,6 +70,12 @@ class GoogleLogin(BaseModel):
     token: str  # The ID token from Google frontend
 
 
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+    remember_me: bool = False
+
+
 # ── Questions ─────────────────────────────────────────────────────────────────
 
 class QuestionTypeEnum(StrEnum):

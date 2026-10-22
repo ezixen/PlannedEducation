@@ -62,16 +62,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await refreshUser();
   };
 
-  const loginWithPassword = async (emailOrUsername: string, password: string) => {
+  const loginWithPassword = async (emailOrUsername: string, password: string, rememberMe: boolean = false) => {
     const formData = new URLSearchParams();
     formData.append('username', emailOrUsername);
     formData.append('password', password);
+    formData.append('remember_me', rememberMe.toString());
 
     try {
       const response = await apiClient.post<{ access_token: string }>('/auth/token', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       localStorage.setItem('access_token', response.data.access_token);
+      if (response.data.refresh_token) {
+        localStorage.setItem('refresh_token', response.data.refresh_token);
+      }
       await refreshUser();
     } catch (error: any) {
       // Pass through the original error detail from the API

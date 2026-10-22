@@ -1,6 +1,10 @@
+import base64
 import enum
+import hashlib
+import hmac
+import secrets
 import uuid
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from sqlalchemy import (
     Boolean,
@@ -127,6 +131,27 @@ class User(Base):
         "ClassGroup", back_populates="teacher", cascade="all, delete-orphan"
     )
     packages = relationship("Package", back_populates="author", cascade="all, delete-orphan")
+# User Sessions (for device tracking and "Remember Me")
+    sessions = relationship("UserSession", back_populates="user", cascade="all, delete-orphan")
+
+
+class UserSession(Base):
+    """User session with device tracking for 'Remember Me' functionality."""
+    __tablename__ = "user_sessions"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    token_hash = Column(String(256), nullable=False, index=True)
+    token_encrypted = Column(Text, nullable=True)  # Encrypted session token
+    device_id_hash = Column(String(256), nullable=True, index=True)  # Hashed device fingerprint
+    device_info = Column(Text, nullable=True)  # JSON: browser, OS, IP, etc.
+    expires_at = Column(DateTime(timezone=True), nullable=False)
+    is_active = Column(Boolean, default=True, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    last_used_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    remember_me = Column(Boolean, default=False, nullable=False)
+
+    user = relationship("User", back_populates="sessions")
 
 
 class AccountRelationship(Base):

@@ -385,11 +385,11 @@ _DUMMY_HASH = get_password_hash("dummy_password_for_timing_check")
 @limiter.limit("20/minute")
 def login_for_access_token(
     request: Request,
-    form_data: OAuth2PasswordRequestForm = Depends(),
+    login_data: schemas.LoginRequest = Depends(),
     db: Session = Depends(database.get_db),
 ):
     # Allow login by email OR username (case-insensitive)
-    lookup = form_data.username.lower()
+    lookup = login_data.username.lower()
     user = (
         db.query(models.User)
         .filter(
@@ -466,21 +466,13 @@ def login_for_access_token(
     user.locked_until = None
     user.last_login = datetime.now(UTC)
 
-    tokens = {
-        "access_token": auth.create_access_token(
-            data={"sub": user.email},
-            expires_delta=timedelta(minutes=auth.ACCESS_TOKEN_EXPIRE_MINUTES),
-        ),
-        "refresh_token": auth.create_refresh_token(
-            data={"sub": user.email},
-            expires_delta=timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS),
-        ),
-        "token_type": "bearer",
-    }
+    remember_me = login_data.remember_me
+    tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    user.refresh_token_expires = datetime.now(UTC) + timedelta(
-        days=auth.REFRESH_TOKEN_EXPIRE_DAYS
-    )
+    if remember_me:
+        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REMEMBER_ME_REFRESH_TOKEN_EXPIRE_DAYS)
+    else:
+        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
     db.commit()
     return tokens
 
@@ -513,10 +505,17 @@ def refresh_access_token(
     if _as_utc(user.refresh_token_expires) < datetime.now(UTC):
         raise HTTPException(status_code=401, detail="Refresh token expired")
 
-    tokens = auth.create_token_pair({"sub": user.email})
+    # Check if the refresh token has remember_me flag
+    payload_data = auth.verify_refresh_token(payload.refresh_token)
+    remember_me = payload_data.get("remember_me", False) if payload_data else False
+    
+    tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
     # Update refresh token hash in database (rotate)
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
+    if remember_me:
+        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REMEMBER_ME_REFRESH_TOKEN_EXPIRE_DAYS)
+    else:
+        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
     db.commit()
     return tokens
 
@@ -576,7 +575,7 @@ def google_login(
     if not user.is_active:
         raise HTTPException(status_code=403, detail="Account is deactivated")
 
-    tokens = auth.create_token_pair({"sub": user.email})
+    tokens = auth.create_token_pair({"sub": user.email}, remember_me=False)
     # Store refresh token hash in database
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
     user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
