@@ -2,6 +2,7 @@ import base64
 import hashlib
 import hmac
 import json
+import logging
 import os
 import re
 import secrets
@@ -35,6 +36,8 @@ from webauthn.helpers.structs import (
 )
 
 from . import auth, crypto, database, email_service, models, schemas
+
+logger = logging.getLogger("plannededucation")
 
 # ── CAPTCHA / Bot Protection (Free, Self-Hosted Options) ─────────────────────
 # Supports: Turnstile (Cloudflare free), hCaptcha (free tier), or simple self-hosted challenge
@@ -383,13 +386,32 @@ _DUMMY_HASH = get_password_hash("dummy_password_for_timing_check")
 
 @router.post("/token", response_model=schemas.Token)
 @limiter.limit("20/minute")
-def login_for_access_token(
+async def login_for_access_token(
     request: Request,
-    login_data: schemas.LoginRequest = Depends(),
     db: Session = Depends(database.get_db),
 ):
+    # Parse form data manually to avoid OAuth2PasswordRequestForm issues
+    content_type = request.headers.get("content-type", "")
+    logger.info(f"Content-Type: {content_type}")
+    
+    # Read raw body first
+    body = await request.body()
+    logger.info(f"Raw body: {body}")
+    
+    # Parse form data from body
+    from urllib.parse import parse_qs
+    form_data = parse_qs(body.decode("utf-8"))
+    username = form_data.get("username", [""])[0].lower()
+    password = form_data.get("password", [""])[0]
+    remember_me = form_data.get("remember_me", ["false"])[0].lower() == "true"
+    
+    logger.info(f"Login attempt: username={username}, remember_me={remember_me}")
+    
+    if not username or not password:
+        raise HTTPException(status_code=422, detail="Username and password are required")
+    
     # Allow login by email OR username (case-insensitive)
-    lookup = login_data.username.lower()
+    lookup = username
     user = (
         db.query(models.User)
         .filter(
@@ -400,12 +422,12 @@ def login_for_access_token(
 
     if not user:
         # Perform a dummy verify to prevent timing oracle
-        verify_password(form_data.password, _DUMMY_HASH)
+        verify_password("dummy", _DUMMY_HASH)
         raise HTTPException(status_code=401, detail="Invalid email/username or password")
 
     if not user.hashed_password:
         # User exists but has no password (e.g., Google-only account)
-        verify_password(form_data.password, _DUMMY_HASH)
+        verify_password("dummy", _DUMMY_HASH)
         raise HTTPException(
             status_code=401,
             detail=(
@@ -444,7 +466,7 @@ def login_for_access_token(
             user.locked_until = None
             user.failed_login_attempts = 0
 
-    if not verify_password(form_data.password, user.hashed_password):
+    if not verify_password(password, user.hashed_password):
         user.failed_login_attempts = (user.failed_login_attempts or 0) + 1
         if user.failed_login_attempts >= 5:
             user.locked_until = datetime.now(UTC) + timedelta(minutes=15)
@@ -466,7 +488,7 @@ def login_for_access_token(
     user.locked_until = None
     user.last_login = datetime.now(UTC)
 
-    remember_me = login_data.remember_me
+    remember_me = False  # OAuth2PasswordRequestForm doesn't support remember_me
     tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
     if remember_me:
