@@ -1,5 +1,5 @@
 {
-  "school_name": "Oakridge High School",
+  "school_name": "xct",
   "domain": "portal.oakridge.edu",
   "api_port": 8000,
   "frontend_port": 5173,
@@ -16,5 +16,5 @@
   "smtp_use_tls": true,
   "smtp_use_ssl": false,
   "email_from": "PlannedEducation <noreply@localhost>",
-  "updated_at": "2026-10-22T13:24:03.053462+00:00"
+  "updated_at": "2026-10-23T20:51:39.502126+00:00"
 }
