@@ -63,6 +63,7 @@ export function Settings() {
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [activeSection, setActiveSection] = useState<'personal' | 'appearance' | 'security' | 'passkeys' | 'ai' | 'language'>('personal');
 
   // Populate fields from context when user loads
   useEffect(() => {
@@ -115,182 +116,310 @@ export function Settings() {
     <div style={{ padding: '1rem', maxWidth: '800px', margin: '0 auto' }}>
       <div style={{ marginBottom: '2rem' }}>
         <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.5rem' }}>
-          Settings
+          {t('settings.title', 'Settings')}
         </h1>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          Manage your account preferences and security.
+          {t('settings.subtitle', 'Manage your account preferences and security.')}
         </p>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-          UUID: <code style={{ backgroundColor: 'var(--bg-color)', padding: '0.125rem 0.375rem', borderRadius: 'var(--radius-sm)', fontSize: '0.8rem' }}>{user?.id}</code>
+          {t('settings.uuid_label', 'UUID:')} <code style={{ backgroundColor: 'var(--bg-color)', padding: '0.125rem 0.375rem', borderRadius: 'var(--radius-sm)', fontSize: '0.8rem' }}>{user?.id}</code>
         </p>
+      </div>
+
+      {/* Submenu Navigation */}
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', overflowX: 'auto', paddingBottom: '0.5rem' }}>
+        <button
+          onClick={() => setActiveSection('personal')}
+          className={`submenu-btn ${activeSection === 'personal' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'personal' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'personal' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_personal', 'Personal Details')}
+        </button>
+        <button
+          onClick={() => setActiveSection('appearance')}
+          className={`submenu-btn ${activeSection === 'appearance' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'appearance' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'appearance' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_appearance', 'Appearance')}
+        </button>
+        <button
+          onClick={() => setActiveSection('security')}
+          className={`submenu-btn ${activeSection === 'security' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'security' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'security' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_security', 'Security')}
+        </button>
+        <button
+          onClick={() => setActiveSection('passkeys')}
+          className={`submenu-btn ${activeSection === 'passkeys' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'passkeys' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'passkeys' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_passkeys', 'Passkeys')}
+        </button>
+        <button
+          onClick={() => setActiveSection('ai')}
+          className={`submenu-btn ${activeSection === 'ai' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'ai' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'ai' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_ai', 'AI Keys')}
+        </button>
+        <button
+          onClick={() => setActiveSection('language')}
+          className={`submenu-btn ${activeSection === 'language' ? 'active' : ''}`}
+          style={{
+            padding: '0.625rem 1rem',
+            backgroundColor: activeSection === 'language' ? 'var(--primary-color)' : 'var(--bg-color)',
+            color: activeSection === 'language' ? '#fff' : 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-md)',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t('settings.section_language', 'Language')}
+        </button>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
         {/* Personal Details section */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.2')}</h2>
-          
-          <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-              <label style={labelStyle}>
-                {t('settings.3')}
-                <input
-                  type="text"
-                  value={fullName}
-                  onChange={e => setFullName(e.target.value)}
-                  maxLength={128}
-                  autoComplete="name"
-                  style={inputStyle}
-                />
-              </label>
-              
-              <label style={labelStyle}>
-                {t('settings.4')}
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  required
-                  maxLength={255}
-                  autoComplete="email"
-                  style={inputStyle}
-                />
-              </label>
-            </div>
-
-            <label style={labelStyle}>
-              {t('settings.5')} <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 400 }}>{t('settings.optional_tag')}</span>
-              <input
-                type="tel"
-                value={phone}
-                onChange={e => setPhone(e.target.value)}
-                maxLength={32}
-                autoComplete="tel"
-                style={inputStyle}
-              />
-            </label>
-
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
+        {activeSection === 'personal' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.2')}</h2>
             
-            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.6')}</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>{t('settings.leave_blank_pwd')}</p>
+            <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                <label style={labelStyle}>
+                  {t('settings.3')}
+                  <input
+                    type="text"
+                    value={fullName}
+                    onChange={e => setFullName(e.target.value)}
+                    maxLength={128}
+                    autoComplete="name"
+                    style={inputStyle}
+                  />
+                </label>
+                
+                <label style={labelStyle}>
+                  {t('settings.4')}
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    maxLength={255}
+                    autoComplete="email"
+                    style={inputStyle}
+                  />
+                </label>
+              </div>
 
-            <label style={labelStyle}>
-              {t('login.password_label')}
-              <input
-                type="password"
-                value={currentPassword}
-                onChange={e => setCurrentPassword(e.target.value)}
-                minLength={8}
-                maxLength={128}
-                autoComplete="current-password"
-                style={inputStyle}
-              />
-            </label>
+              <label style={labelStyle}>
+                {t('settings.5')} <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 400 }}>{t('settings.optional_tag')}</span>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  maxLength={32}
+                  autoComplete="tel"
+                  style={inputStyle}
+                />
+              </label>
 
-            <label style={labelStyle}>
-              {t('login.new_password_label')}
-              <input
-                type="password"
-                value={newPassword}
-                onChange={e => setNewPassword(e.target.value)}
-                minLength={8}
-                maxLength={128}
-                autoComplete="new-password"
-                style={inputStyle}
-              />
-            </label>
+              <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
+              
+              <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.6')}</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>{t('settings.leave_blank_pwd')}</p>
 
-            <label style={labelStyle}>
-              {t('login.confirm_password_label')}
-              <input
-                type="password"
-                value={confirmNewPassword}
-                onChange={e => setConfirmNewPassword(e.target.value)}
-                minLength={8}
-                maxLength={128}
-                autoComplete="new-password"
+              <label style={labelStyle}>
+                {t('login.password_label')}
+                <input
+                  type="password"
+                  value={currentPassword}
+                  onChange={e => setCurrentPassword(e.target.value)}
+                  minLength={8}
+                  maxLength={128}
+                  autoComplete="current-password"
+                  style={inputStyle}
+                />
+              </label>
+
+              <label style={labelStyle}>
+                {t('login.new_password_label')}
+                <input
+                  type="password"
+                  value={newPassword}
+                  onChange={e => setNewPassword(e.target.value)}
+                  minLength={8}
+                  maxLength={128}
+                  autoComplete="new-password"
+                  style={inputStyle}
+                />
+              </label>
+
+              <label style={labelStyle}>
+                {t('login.confirm_password_label')}
+                <input
+                  type="password"
+                  value={confirmNewPassword}
+                  onChange={e => setConfirmNewPassword(e.target.value)}
+                  minLength={8}
+                  maxLength={128}
+                  autoComplete="new-password"
+                  style={{
+                    ...inputStyle,
+                    borderColor: confirmNewPassword && confirmNewPassword !== newPassword ? '#ef4444' : 'var(--border-color)',
+                  }}
+                />
+                {confirmNewPassword && confirmNewPassword !== newPassword && (
+                  <small style={{ color: '#ef4444', fontSize: '0.8rem' }}>{t('settings.passwords_not_match')}</small>
+                )}
+              </label>
+
+              <button
+                type="submit"
+                disabled={loading}
                 style={{
-                  ...inputStyle,
-                  borderColor: confirmNewPassword && confirmNewPassword !== newPassword ? '#ef4444' : 'var(--border-color)',
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: loading ? '#94a3b8' : 'var(--primary-color)',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: 'var(--radius-md)',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  alignSelf: 'flex-start',
+                  marginTop: '0.5rem',
                 }}
-              />
-              {confirmNewPassword && confirmNewPassword !== newPassword && (
-                <small style={{ color: '#ef4444', fontSize: '0.8rem' }}>{t('settings.passwords_not_match')}</small>
-              )}
-            </label>
-
-            <button
-              type="submit"
-              disabled={loading}
-              style={{
-                padding: '0.75rem 1.5rem',
-                backgroundColor: loading ? '#94a3b8' : 'var(--primary-color)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 'var(--radius-md)',
-                cursor: loading ? 'not-allowed' : 'pointer',
-                fontWeight: 600,
-                fontSize: '0.95rem',
-                alignSelf: 'flex-start',
-                marginTop: '0.5rem',
-              }}
-            >
-              {loading ? 'Saving…' : t('settings.17')}
-            </button>
-          </form>
-        </div>
+              >
+                {loading ? 'Saving…' : t('settings.17')}
+              </button>
+            </form>
+          </div>
+        )}
 
         {/* Appearance section */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.13')}</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-            Customize your app theme and UI style.
-          </p>
+        {activeSection === 'appearance' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.13')}</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+              {t('settings.appearance_desc', 'Customize your app theme and UI style.')}
+            </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
-            <label style={labelStyle}>
-              {t('settings.13.1')}
-              <select
-                value={color}
-                onChange={e => setColor(e.target.value as ThemeColor)}
-                style={inputStyle}
-              >
-                {THEME_OPTIONS.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '420px' }}>
+              <label style={labelStyle}>
+                {t('settings.13.1')}
+                <select
+                  value={color}
+                  onChange={e => setColor(e.target.value as ThemeColor)}
+                  style={inputStyle}
+                >
+                  {THEME_OPTIONS.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </label>
 
-            <label style={labelStyle}>
-              Border Style
-              <select
-                value={radius}
-                onChange={e => setRadius(e.target.value as ThemeRadius)}
-                style={inputStyle}
-              >
-                {RADIUS_OPTIONS.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </label>
+              <label style={labelStyle}>
+                {t('settings.border_style', 'Border Style')}
+                <select
+                  value={radius}
+                  onChange={e => setRadius(e.target.value as ThemeRadius)}
+                  style={inputStyle}
+                >
+                  {RADIUS_OPTIONS.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Security section */}
-        <TwoFASettings />
+        {activeSection === 'security' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_security', 'Security')}</h2>
+            <TwoFASettings />
+          </div>
+        )}
 
         {/* Passkeys (WebAuthn) */}
-        <PasskeysSettings />
+        {activeSection === 'passkeys' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_passkeys', 'Passkeys')}</h2>
+            <PasskeysSettings />
+          </div>
+        )}
 
         {/* AI Key Management */}
-        <AIKeySettings />
+        {activeSection === 'ai' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_ai', 'AI Keys')}</h2>
+            <AIKeySettings />
+          </div>
+        )}
 
-        {/* Language & Regional Settings (moved to bottom) */}
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-          <I18nSettings />
-        </div>
+        {/* Language & Regional Settings */}
+        {activeSection === 'language' && (
+          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_language', 'Language')}</h2>
+            <I18nSettings />
+          </div>
+        )}
 
       </div>
     </div>

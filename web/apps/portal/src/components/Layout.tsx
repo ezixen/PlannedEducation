@@ -147,20 +147,6 @@ export function Layout() {
         </div>
       </header>
 
-      {/* Back arrow navigation - shows on sub-pages */}
-      {location.pathname !== '/' && location.pathname !== '/dashboard' && (
-        <div className="back-nav-bar">
-          <button
-            onClick={handleBack}
-            className="back-nav-btn"
-            aria-label={t('nav.back')}
-          >
-            <ArrowLeft size={16} />
-            <span>{t('nav.back')}</span>
-          </button>
-        </div>
-      )}
-
       {menuOpen && (
         <>
           <div className="menu-backdrop" onClick={() => setMenuOpen(false)}></div>
@@ -204,6 +190,17 @@ export function Layout() {
                 </select>
               </div>
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
+              {location.pathname !== '/' && location.pathname !== '/dashboard' && (
+                <button
+                  onClick={handleBack}
+                  className="nav-item"
+                  style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                >
+                  <ArrowLeft size={16} />
+                  <span>{t('nav.back')}</span>
+                </button>
+              )}
+              <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
               <button onClick={logout} className="nav-item text-danger" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}>
                 <LogOut size={20} />
                 <span>{t('layout.logout')}</span>
@@ -213,12 +210,12 @@ export function Layout() {
         </>
       )}
 
-      <main className="main-content">
-        <div className="page-content">
-          <Outlet />
-        </div>
-      </main>
-      <FAQChatbot />
+  <main className="main-content">
+    <div className="page-content">
+      <Outlet />
+    </div>
+  </main>
+  <FAQChatbot />
     </div>
   );
 }
