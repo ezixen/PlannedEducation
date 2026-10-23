@@ -1,9 +1,9 @@
 {
-  "school_name": "xct",
+  "school_name": "Oakridge High School",
   "domain": "portal.oakridge.edu",
   "api_port": 8000,
-  "frontend_port": 5173,
-  "cors_origins": "http://localhost:5173,http://localhost:5174,https://portal.oakridge.edu",
+  "frontend_port": 5176,
+  "cors_origins": "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:5176,https://portal.oakridge.edu",
   "allowed_hosts": "portal.oakridge.edu,localhost,127.0.0.1",
   "environment": "development",
   "allow_dev_seb_bypass": true,

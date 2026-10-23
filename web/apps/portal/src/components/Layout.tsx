@@ -114,7 +114,37 @@ export function Layout() {
         <button onClick={() => setMenuOpen(!menuOpen)} className="icon-btn hamburger-btn" aria-label={t('layout.toggle_menu')}>
           <Menu size={24} />
         </button>
-        {renderHeader()}
+        <div className="brand-title">{t('layout.brand_title')}</div>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
+          <NotificationBell />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--sidebar-bg)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', minWidth: 0, maxWidth: '100%' }}>
+            <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
+            <select
+              value={locale}
+              onChange={(e) => setLocale(e.target.value as any)}
+              aria-label={t('layout.select_language')}
+              className="header-lang-select"
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: 'var(--text-color)',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                outline: 'none',
+                maxWidth: '130px',
+                minWidth: 0,
+                textOverflow: 'ellipsis',
+              }}
+            >
+              {availableLocales.map((loc) => (
+                <option key={loc} value={loc} style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
+                  {LOCALE_NAMES[loc] || loc.toUpperCase()}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </header>
 
       {menuOpen && (
