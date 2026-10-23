@@ -1032,6 +1032,7 @@
   "teacher_dashboard.not_generated": "Not generated",
   "teacher_dashboard.open_tests": "Open Tests",
   "teacher_dashboard.opening_tests": "Opening tests...",
+  "teacher_dashboard.chat_title": "Obrolan dengan siswa",
   "teacher_dashboard.package_exported": "Package exported successfully!",
   "teacher_dashboard.package_manager": "Test Package Manager",
   "teacher_dashboard.quick_reset_confirm": "Unlock and reset password for {name}?\n\nThe student can immediately type their email at login and choose a new password to take the exam.",
