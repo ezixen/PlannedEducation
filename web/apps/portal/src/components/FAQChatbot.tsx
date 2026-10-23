@@ -21,82 +21,57 @@ interface FAQCategory {
   questions: FAQItem[];
 }
 
-// Documentation file index for full-text search
+// Documentation file index for full-text search (user-facing docs only)
 const DOCS_INDEX: Record<string, { title: string; path: string; content: string }> = {
-  'install-windows': {
-    title: 'Windows Installation Guide',
-    path: 'docs/INSTALL_WINDOWS.md',
-    content: `Install PlannedEducation on Windows using PowerShell. Run install.ps1 as Administrator. Choose Native Mode (SQLite/PostgreSQL, no Docker) or Docker Compose Mode. Set ExecutionPolicy Bypass. Configure .env with JWT_SECRET_KEY, DATABASE_URL. Build frontend with npm run build. Start with start_all.bat.`,
-  },
-  'install-linux': {
-    title: 'Linux Installation Guide',
-    path: 'docs/INSTALL_LINUX.md',
-    content: `Install PlannedEducation on Linux using install.sh. Creates virtual environment, configures SQLite/PostgreSQL, sets up Systemd service. Supports Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL. Run curl or clone repo and execute ./install.sh.`,
-  },
-  'deployment-guide': {
-    title: 'Deployment Guide',
-    path: 'docs/DEPLOYMENT.md',
-    content: `Deploy PlannedEducation to production. Use Docker Compose with docker-compose.yml. Set environment variables: JWT_SECRET_KEY, DATABASE_URL, REDIS_URL. Run alembic migrations. Build frontend. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS. Configure CORS_ORIGINS and ALLOWED_HOSTS.`,
+  'user-manual': {
+    title: 'User Manual',
+    path: 'docs/USER_MANUAL.md',
+    content: `Complete user manual for PlannedEducation. Covers all features for teachers, students, parents, and administrators. Getting started, roles & account types, teacher guide, student guide, parent guide, admin & superadmin guide, password recovery & reset, exams & grading, security & privacy, FAQ.`,
   },
   'teacher-guide': {
     title: 'Teacher Guide',
     path: 'docs/user/TEACHER_GUIDE.md',
-    content: `Teacher guide for PlannedEducation. Create exams, manage classes, grade submissions, use AI grading, configure Safe Exam Browser, handle student password resets, use proctoring features, export/import test packages (.pepkg).`,
+    content: `Teacher guide for PlannedEducation. Self-registration and administrator approval. Classroom and student management. Exam authoring with dynamic math variables. Curriculum modules and question banks. Secure Exam Browser (SEB) lockdown mode. Archive Browser and AI-assisted grading workflow with Presidio PII scrubbing. Teacher review and correction modal. Sealing into encrypted zstd archive. Reviewable and re-correctable anytime.`,
   },
   'student-guide': {
     title: 'Student Guide',
     path: 'docs/user/STUDENT_GUIDE.md',
-    content: `Student guide for PlannedEducation. Join exams with exam code, take exams securely, use Safe Exam Browser, view grades and feedback, reset password, use recovery codes, understand proctoring rules.`,
+    content: `Student guide for PlannedEducation. Registration and the 5 recovery codes. Taking exams with Safe Exam Browser (SEB). Offline resilience and auto-save. Password recovery: 3 ways (self-reset with recovery codes, emergency classroom unlock by teacher, in-app password reset request). Reviewing grades and feedback.`,
   },
   'parent-guide': {
     title: 'Parent Guide',
     path: 'docs/user/PARENT_GUIDE.md',
-    content: `Parent guide for PlannedEducation. View child progress, approve accounts, track exam results, communicate with teachers, manage parent dashboard settings.`,
+    content: `Parent guide for PlannedEducation. Registration and account linking to child's account. Viewing grades, progress and teacher feedback. Privacy and FERPA compliance. Helping your child recover their password.`,
+  },
+  'faq': {
+    title: 'FAQ - Frequently Asked Questions',
+    path: 'docs/user/FAQ.md',
+    content: `PlannedEducation FAQ. Getting started: create exam, students join exam, Secure Exam Browser, question bank, reusable modules. Account & security: reset password, admin reset without email, database backups, configure email SMTP, enable 2FA, passkeys. Exams & grading: AI-assisted grading, offline grading, view submissions, AI providers, AI grading review workflow, AI safety controls, AI cost tracking warning. Test packages & sharing.`,
+  },
+  'install-windows': {
+    title: 'Windows Installation Guide',
+    path: 'docs/admin/INSTALL_WINDOWS.md',
+    content: `Install PlannedEducation on Windows using PowerShell. Run install.ps1 as Administrator. Choose Native Mode (SQLite/PostgreSQL, no Docker) or Docker Compose Mode. Set ExecutionPolicy Bypass. Configure .env with JWT_SECRET_KEY, DATABASE_URL. Build frontend with npm run build. Start with start_all.bat.`,
+  },
+  'install-linux': {
+    title: 'Linux Installation Guide',
+    path: 'docs/admin/INSTALL_LINUX.md',
+    content: `Install PlannedEducation on Linux using install.sh. Creates virtual environment, configures SQLite/PostgreSQL, sets up Systemd service. Supports Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL. Run curl or clone repo and execute ./install.sh.`,
+  },
+  'deployment-guide': {
+    title: 'Deployment Guide',
+    path: 'docs/admin/DEPLOYMENT_GUIDE.md',
+    content: `Deploy PlannedEducation to production. Use Docker Compose with docker-compose.yml. Set environment variables: JWT_SECRET_KEY, DATABASE_URL, REDIS_URL. Run alembic migrations. Build frontend. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS. Configure CORS_ORIGINS and ALLOWED_HOSTS.`,
   },
   'backup-restore': {
     title: 'Backup & Restore',
     path: 'docs/admin/BACKUP_RESTORE.md',
     content: `Database backups and disaster recovery. Midnight auto-backup, snapshot management, restore procedures, backup verification, offsite storage options.`,
   },
-  'architecture': {
-    title: 'System Architecture',
-    path: 'docs/dev/ARCHITECTURE.md',
-    content: `PlannedEducation system architecture. Frontend React + Vite, Backend FastAPI + SQLAlchemy, Database SQLite/PostgreSQL, Cache Redis, Authentication JWT + Google SSO + TOTP 2FA, AI grading with multiple providers, PII anonymization with Presidio.`,
-  },
-  'i18n-guide': {
-    title: 'Internationalization Guide',
-    path: 'docs/dev/I18N_GUIDE.md',
-    content: `Internationalization (i18n) guide. Translation files in web/apps/portal/src/locales/. Use t() function for all user-facing text. Add new locales by copying en/messages.json. Translation numbers system for translators.`,
-  },
-  'i18n-context': {
-    title: 'Translation Context Guide',
-    path: 'docs/dev/I18N_CONTEXT.md',
-    content: `Translation context for every translation key. Key format: page.element.number. Context helps translators understand where and how each string is used. All keys documented with English text and context description.`,
-  },
-  'module-system': {
-    title: 'Module System',
-    path: 'docs/dev/MODULE_SYSTEM.md',
-    content: `Test module system for PlannedEducation. Create reusable question sets with shared context. Module format: metadata, exam, questions. Export/import as .pepkg.json or .pepkg.yaml. Randomizer support for dynamic question generation.`,
-  },
-  'security-audit': {
-    title: 'Security Audit',
-    path: 'docs/dev/security_audit_2026.md',
-    content: `Security audit for PlannedEducation. OWASP ASVS 5.0 compliance, penetration testing results, vulnerability assessments, security recommendations, encryption standards, access control review.`,
-  },
-  'github-free-tier': {
-    title: 'GitHub Free Tier Policy',
-    path: 'docs/GITHUB_FREE_TIER.md',
-    content: `GitHub free tier usage policy. Allowed: GitHub Actions (2000 min/mo), Dependabot, pip-audit, npm audit, gitleaks OSS CLI. Forbidden on private repos: Secret Protection, CodeQL, Copilot Autofix. Project must remain 100% free to operate.`,
-  },
-    'archive-workflow': {
-    title: 'Archive Browser & AI Grading Workflow',
-    path: 'docs/user/TEACHER_GUIDE.md',
-    content: `Archive Browser and AI grading pipeline. View class submissions and offline test uploads. AI corrections with Microsoft Presidio PII scrubbing (zero student PII sent to AI). Staging in temporary folder ('pending_approval') in data/staging_archive/. Teacher reviews in TeacherCorrectionModal, overrides scores/feedback/solutions, and approves. Sealing into encrypted zstd archive (AES-GCM + SHA-256 integrity hash). Reviewable and re-correctable anytime via Re-open. Offline test upload support.`,
-  },
-  'user-manual': {
-    title: 'User Manual',
-    path: 'docs/USER_MANUAL.md',
-    content: `Complete user manual for PlannedEducation. Covers all features for teachers, students, parents, and administrators. Getting started, exam creation, grading, settings, troubleshooting, FAQ.`,
+  'smtp-email': {
+    title: 'SMTP & Email Configuration',
+    path: 'docs/admin/DEPLOYMENT_GUIDE.md',
+    content: `SMTP and email setup for PlannedEducation. Configure BREVO_API_KEY (free 300 emails/day) or school SMTP settings (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM) in .env file. Email OTP reset links expire in 24 hours. Admin can configure email in Admin Dashboard > Deployment & Network. Email is optional - if unconfigured, OTP codes are logged safely for offline school use.`,
   },
 };
 

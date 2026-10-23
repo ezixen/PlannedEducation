@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { MessageSquare, Send } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { API_URL } from '../api';
 
 interface ChatMessage {
@@ -20,6 +21,7 @@ interface TeacherChatMonitorProps {
 export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProps) {
   const { user } = useAuth();
   const { info: showInfo } = useToast();
+  const { t } = useI18n();
 
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [connected, setConnected] = useState(false);

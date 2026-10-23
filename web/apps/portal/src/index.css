@@ -425,7 +425,7 @@ input, select, textarea {
 }
 /* Floating Bubble Menu */
 .floating-header {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   left: 1rem;
   right: 1rem;
