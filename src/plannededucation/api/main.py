@@ -21,7 +21,6 @@ from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
 from prometheus_client import REGISTRY, Counter, Gauge, Histogram, start_http_server
-from .limiter import limiter, RateLimitExceeded, _rate_limit_exceeded_handler
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import (
@@ -42,6 +41,7 @@ from . import (
     routes_stt,
 )
 from .database import Base, engine
+from .limiter import RateLimitExceeded, _rate_limit_exceeded_handler, limiter
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────

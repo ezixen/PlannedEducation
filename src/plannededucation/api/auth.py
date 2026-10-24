@@ -220,27 +220,6 @@ def create_session_token(
     Returns (raw_token, expires_in_seconds).
     """
     raw_token = secrets.token_urlsafe(36)
-    now = datetime.now(UTC)
-    
-    if remember_me:
-        token_ttl_hours = 365 * 24  # 1 year for "remember me"
-    else:
-        token_ttl_hours = 7 * 24 if is_admin else 30 * 24
-    
-    expires_at = datetime.now(UTC) + timedelta(hours=token_ttl_hours)
-    preferred_hash = _preferred_secret_hash(raw_token)
-    device_id_hash = _hash_device_id(device_id)
-    
-    # The actual session storage is handled by the caller (routes_auth.py)
-    # This function just generates the token and returns it with expiry
+    token_ttl_hours = 365 * 24 if remember_me else (7 * 24 if is_admin else 30 * 24)
     expires_in = int(token_ttl_hours * 3600)
     return raw_token, expires_in
-
-
-def _hash_device_id(device_id: str | None) -> str | None:
-    if not device_id:
-        return None
-    normalized = device_id.strip()
-    if not normalized:
-        return None
-    return _preferred_secret_hash(f"device:{normalized}")

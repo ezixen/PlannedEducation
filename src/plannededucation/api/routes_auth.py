@@ -14,8 +14,7 @@ import httpx
 import jwt  # PyJWT for JWT encoding/decoding
 import pyotp
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from .limiter import limiter
+from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from webauthn import (
     generate_authentication_options,
@@ -33,6 +32,7 @@ from webauthn.helpers.structs import (
 )
 
 from . import auth, crypto, database, email_service, models, schemas
+from .limiter import limiter
 
 logger = logging.getLogger("plannededucation")
 
@@ -382,23 +382,23 @@ async def login_for_access_token(
     # Parse form data manually to avoid OAuth2PasswordRequestForm issues
     content_type = request.headers.get("content-type", "")
     logger.info(f"Content-Type: {content_type}")
-    
+
     # Read raw body first
     body = await request.body()
     logger.info(f"Raw body: {body}")
-    
+
     # Parse form data from body
     from urllib.parse import parse_qs
     form_data = parse_qs(body.decode("utf-8"))
     username = form_data.get("username", [""])[0].lower()
     password = form_data.get("password", [""])[0]
     remember_me = form_data.get("remember_me", ["false"])[0].lower() == "true"
-    
+
     logger.info(f"Login attempt: username={username}, remember_me={remember_me}")
-    
+
     if not username or not password:
         raise HTTPException(status_code=422, detail="Username and password are required")
-    
+
     # Allow login by email OR username (case-insensitive)
     lookup = username
     user = (
@@ -519,7 +519,7 @@ def refresh_access_token(
     # Check if the refresh token has remember_me flag
     payload_data = auth.verify_refresh_token(payload.refresh_token)
     remember_me = payload_data.get("remember_me", False) if payload_data else False
-    
+
     tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
     # Update refresh token hash in database (rotate)
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
