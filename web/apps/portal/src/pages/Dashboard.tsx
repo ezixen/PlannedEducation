@@ -1,6 +1,7 @@
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useI18n } from '../contexts/I18nContext';
+import { getFirstName } from '../utils/nameHelper';
 
 export function Dashboard() {
   const { t } = useI18n();
@@ -37,7 +38,7 @@ export function Dashboard() {
     <div style={{ padding: '1rem' }}>
       <div style={{ marginBottom: '2rem' }}>
         <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.5rem' }}>
-          {t('dashboard.welcome', { name: user.full_name || 'User' })}
+          {t('dashboard.welcome', { name: getFirstName(user.full_name) })}
         </h1>
       </div>
       

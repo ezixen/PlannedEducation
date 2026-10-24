@@ -86,21 +86,97 @@ export function ParentDashboard() {
                       : 'Awaiting Teacher Grading'}
                   </span>
                 </div>
-                <div
-                  style={{
-                    padding: '1rem',
-                    backgroundColor: 'var(--bg-color)',
-                    borderRadius: 'var(--radius-sm)',
-                    fontSize: '0.95rem',
-                    whiteSpace: 'pre-wrap',
-                  }}
-                >
-                  <strong style={{ color: 'var(--text-color)' }}>{t('parent.6')}:</strong>
-                  <br />
-                  <span style={{ color: 'var(--text-muted)' }}>
-                    {exam.feedback || 'No feedback recorded yet.'}
-                  </span>
-                </div>
+                {(() => {
+                  let parsedImageUrl = null;
+                  let parsedCorrected = null;
+                  let displayFb = exam.feedback || 'No feedback recorded yet.';
+
+                  if (exam.feedback && exam.feedback.startsWith('{')) {
+                    try {
+                      const d = JSON.parse(exam.feedback);
+                      parsedImageUrl = d.image_url;
+                      parsedCorrected = d.corrected_solution;
+                      displayFb = d.summary_feedback || displayFb;
+                    } catch (e) {}
+                  }
+
+                  return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                      <div
+                        style={{
+                          padding: '0.85rem 1rem',
+                          backgroundColor: 'var(--bg-color)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.9rem',
+                        }}
+                      >
+                        <strong style={{ color: 'var(--text-color)' }}>{t('parent.6')}:</strong>{' '}
+                        <span style={{ color: 'var(--text-muted)' }}>{displayFb}</span>
+                      </div>
+
+                      {/* Side-by-side Handwritten & Digitized Solution */}
+                      {(parsedImageUrl || parsedCorrected) && (
+                        <div
+                          style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                            gap: '0.75rem',
+                            marginTop: '0.25rem',
+                          }}
+                        >
+                          {parsedImageUrl && (
+                            <div
+                              style={{
+                                padding: '0.75rem',
+                                backgroundColor: 'var(--bg-color)',
+                                borderRadius: 'var(--radius-sm)',
+                                border: '1px solid var(--border-color)',
+                              }}
+                            >
+                              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
+                                📸 {t('student_dashboard.handwritten_original')}
+                              </div>
+                              <img
+                                src={parsedImageUrl}
+                                alt="Handwritten test"
+                                style={{ width: '100%', maxHeight: '200px', objectFit: 'contain', borderRadius: '4px', backgroundColor: '#0f172a' }}
+                              />
+                            </div>
+                          )}
+
+                          {parsedCorrected && (
+                            <div
+                              style={{
+                                padding: '0.75rem',
+                                backgroundColor: 'var(--bg-color)',
+                                borderRadius: 'var(--radius-sm)',
+                                border: '1px solid rgba(16, 185, 129, 0.3)',
+                              }}
+                            >
+                              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#059669', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
+                                ✍️ {t('student_dashboard.digitized_correction')}
+                              </div>
+                              <pre
+                                style={{
+                                  margin: 0,
+                                  whiteSpace: 'pre-wrap',
+                                  fontFamily: 'monospace',
+                                  fontSize: '0.82rem',
+                                  lineHeight: 1.5,
+                                  color: 'var(--text-color)',
+                                  maxHeight: '180px',
+                                  overflowY: 'auto',
+                                }}
+                              >
+                                {parsedCorrected}
+                              </pre>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
             ))}
           </div>

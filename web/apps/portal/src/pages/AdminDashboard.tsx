@@ -510,9 +510,8 @@ export function AdminDashboard() {
                   {filteredUsers.map(user => (
                     <tr key={user.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
                       <td style={{ padding: '1rem' }}>
-                        <div style={{ fontWeight: 500, color: 'var(--text-color)' }}>{user.username}</div>
+                        <div style={{ fontWeight: 600, color: 'var(--text-color)' }}>{user.full_name || user.email}</div>
                         <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{user.email}</div>
-                        {user.full_name && <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{user.full_name}</div>}
                       </td>
                       <td style={{ padding: '1rem' }}>
                         <span style={{

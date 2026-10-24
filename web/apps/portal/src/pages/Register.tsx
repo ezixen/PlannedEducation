@@ -38,7 +38,6 @@ export function Register() {
   const { t } = useI18n();
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -64,9 +63,8 @@ export function Register() {
     setLoading(true);
     try {
       const res = await apiClient.post('/auth/register', {
-        full_name: fullName,
-        username,
-        email,
+        full_name: fullName.trim(),
+        email: email.trim(),
         password,
         role,
       });
@@ -274,23 +272,6 @@ export function Register() {
               required
               maxLength={128}
               autoComplete="name"
-              style={inputStyle}
-            />
-          </label>
-
-          <label style={{ color: 'var(--text-color)' }}>
-            {t('register.username_label')}
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={e => setUsername(e.target.value)}
-              required
-              minLength={3}
-              maxLength={64}
-              pattern="[a-zA-Z0-9_.-]+"
-              title={t("register.username_rules")}
-              autoComplete="username"
               style={inputStyle}
             />
           </label>

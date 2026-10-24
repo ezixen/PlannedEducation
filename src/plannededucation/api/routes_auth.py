@@ -288,9 +288,23 @@ def register_user(
     if existing_email:
         raise HTTPException(status_code=400, detail="Email already registered")
 
+    # Auto-derive username from email if not provided
+    chosen_username = user.username
+    if not chosen_username:
+        base_username = re.sub(r"[^a-zA-Z0-9_.-]", "_", user.email.split("@")[0].lower())
+        if len(base_username) < 3:
+            base_username = f"user_{base_username}"
+        cand = base_username[:50]
+        suffix = 1
+        while db.query(models.User).filter(models.User.username == cand.lower()).first():
+            cand = f"{base_username[:45]}_{suffix}"
+            suffix += 1
+        chosen_username = cand
+    chosen_username = chosen_username.lower()
+
     existing_username = (
         db.query(models.User)
-        .filter(models.User.username == user.username.lower())
+        .filter(models.User.username == chosen_username)
         .first()
     )
     if existing_username:
@@ -306,13 +320,13 @@ def register_user(
     # In production and development environments, self-registered teachers ALWAYS require administrator approval.
     is_teacher = (user.role == "teacher")
     if os.getenv("PLANNED_EDUCATION_ENV") == "test":
-        teacher_approved = not ("pending" in user.username or "pending" in user.email) if is_teacher else True
+        teacher_approved = not ("pending" in chosen_username or "pending" in user.email) if is_teacher else True
     else:
         teacher_approved = not is_teacher
 
     db_user = models.User(
         email=user.email.lower(),
-        username=user.username.lower(),
+        username=chosen_username,
         full_name=user.full_name,
         phone_number=user.phone_number,
         hashed_password=get_password_hash(user.password),

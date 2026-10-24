@@ -52,10 +52,22 @@ def sample_image_base64():
 
 
 @pytest.fixture
+def sample_image_bytes(sample_image_base64):
+    """Return raw bytes of the test image."""
+    return base64.b64decode(sample_image_base64)
+
+
+@pytest.fixture
 def mock_ocr_service():
     """Create a mock OCR service."""
     mock_ocr = MagicMock()
     mock_ocr.is_available.return_value = True
+    mock_ocr.extract_text.return_value = OCRResult(
+        text="Alex Johnson solution 6x + 5",
+        confidence=0.95,
+        language="eng",
+        bounding_boxes=[],
+    )
     return mock_ocr
 
 
@@ -195,6 +207,68 @@ class TestOCRRoutes:
             data = response.json()
             assert "languages" in data
             assert "eng" in data["languages"]
+        finally:
+            app.dependency_overrides.clear()
+
+    def test_bulk_upload_ocr(self, client, auth_headers, mock_ocr_service, sample_image_bytes):
+        """Test bulk upload of multiple exam images."""
+        app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
+        try:
+            files = [
+                ("files", ("page1.png", io.BytesIO(sample_image_bytes), "image/png")),
+                ("files", ("page2.png", io.BytesIO(sample_image_bytes), "image/png")),
+            ]
+            data = {
+                "language": "eng",
+                "subject": "math",
+                "is_math": "true",
+            }
+            response = client.post("/ocr/bulk-upload", files=files, data=data, headers=auth_headers)
+
+            assert response.status_code == 200
+            res = response.json()
+            assert res["total"] == 2
+            assert len(res["results"]) == 2
+            assert res["results"][0]["page_index"] == 1
+            assert res["results"][1]["page_index"] == 2
+        finally:
+            app.dependency_overrides.clear()
+
+    def test_ai_grade_bulk_upload_with_privacy_filter(self, client, auth_headers, mock_ocr_service, sample_image_bytes):
+        """Test bulk upload with FERPA class roster privacy filter."""
+        app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
+        try:
+            # Get teacher ID
+            me_res = client.get("/auth/me", headers=auth_headers)
+            teacher_id = me_res.json()["id"]
+
+            import json
+            roster = [
+                {"id": "s1", "name": "Alex Johnson", "email": "alex@test.com"},
+                {"id": "s2", "name": "Emma Watson", "email": "emma@test.com"},
+            ]
+
+            files = [
+                ("files", ("test_alex.png", io.BytesIO(sample_image_bytes), "image/png")),
+            ]
+            data = {
+                "teacher_id": teacher_id,
+                "class_name": "Calculus 101",
+                "subject": "math",
+                "ai_correction_enabled": "true",
+                "class_roster_json": json.dumps(roster),
+            }
+
+            response = client.post("/ai/grade/bulk-upload", files=files, data=data, headers=auth_headers)
+            assert response.status_code == 200
+            res = response.json()
+            assert res["status"] == "success"
+            assert res["processed_count"] == 1
+            sub = res["submissions"][0]
+            assert sub["subject"] == "math"
+            assert "Alex Johnson" in sub["student_name"] or "Student" in sub["student_name"]
+            assert sub["suggested_score"] is not None
+            assert sub["image_url"] is not None
         finally:
             app.dependency_overrides.clear()
 

@@ -46,11 +46,13 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
     setSubmitting(true);
     try {
       const payload: any = {
-        username: username.trim(),
         email: email.trim(),
         full_name: fullName.trim() || undefined,
         role,
       };
+      if (username.trim()) {
+        payload.username = username.trim();
+      }
       if (password.trim()) {
         payload.password = password.trim();
       }
@@ -232,11 +234,10 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem' }}>
-                  {t('admin.username')} <span style={{ color: '#ef4444' }}>*</span>
+                  {t('admin.username')} <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>({t('common.optional') || 'Optional'})</span>
                 </label>
                 <input
                   type="text"
-                  required
                   placeholder={t("create_user.username_placeholder")}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}

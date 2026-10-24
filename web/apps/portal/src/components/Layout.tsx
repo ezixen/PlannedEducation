@@ -76,11 +76,25 @@ export function Layout() {
 
   const navItems = getNavItems();
 
+  const ROOT_MENU_PATHS = new Set([
+    '/',
+    '/dashboard',
+    '/settings',
+    '/exam',
+    '/teacher-exams',
+    '/ai-grading',
+    '/teacher-classes',
+    '/parent-dashboard',
+    '/ai-integrations',
+    '/admin',
+    '/login',
+    '/register',
+    '/reset-password',
+  ]);
+
   const handleBack = () => {
     const path = location.pathname;
-    if (path === '/' || path === '/dashboard') {
-      navigate('/');
-    } else if (path.startsWith('/teacher-exams/')) {
+    if (path.startsWith('/teacher-exams/')) {
       navigate('/teacher-exams');
     } else if (path.startsWith('/teacher-dashboard/')) {
       navigate('/teacher-exams');
@@ -91,7 +105,12 @@ export function Layout() {
     }
   };
 
-  const isBackAvailable = location.pathname !== '/' && location.pathname !== '/dashboard';
+  const isBackAvailable = !ROOT_MENU_PATHS.has(location.pathname) && (
+    location.pathname.startsWith('/teacher-exams/') ||
+    location.pathname.startsWith('/teacher-dashboard/') ||
+    location.pathname.startsWith('/exam/') ||
+    location.pathname.split('/').filter(Boolean).length > 1
+  );
 
   return (
     <div className="app-container">

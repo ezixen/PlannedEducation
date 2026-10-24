@@ -284,9 +284,23 @@ def create_admin_user(
     current_user: models.User = Depends(require_admin),
 ):
     """Create a new user (admin, teacher, student, or parent) directly from the admin dashboard."""
+    # Auto-derive username if omitted
+    chosen_username = payload.username
+    if not chosen_username:
+        base_username = re.sub(r"[^a-zA-Z0-9_.-]", "_", payload.email.split("@")[0].lower())
+        if len(base_username) < 3:
+            base_username = f"user_{base_username}"
+        cand = base_username[:50]
+        suffix = 1
+        while db.query(models.User).filter(models.User.username == cand.lower()).first():
+            cand = f"{base_username[:45]}_{suffix}"
+            suffix += 1
+        chosen_username = cand
+    chosen_username = chosen_username.lower()
+
     # Check if username or email exists
     existing_user = db.query(models.User).filter(
-        (models.User.username == payload.username) | (models.User.email == payload.email)
+        (models.User.username == chosen_username) | (models.User.email == payload.email)
     ).first()
     if existing_user:
         raise HTTPException(
@@ -307,7 +321,7 @@ def create_admin_user(
     is_admin = (payload.role == "admin")
 
     new_user = models.User(
-        username=payload.username,
+        username=chosen_username,
         email=payload.email,
         full_name=payload.full_name,
         role=payload.role,

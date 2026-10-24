@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
 class UserBase(BaseModel):
     email: EmailStr
-    username: str = Field(..., min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
+    username: str | None = Field(default=None, min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
     full_name: str | None = Field(None, max_length=128)
     phone_number: str | None = Field(None, max_length=32)
 
@@ -217,7 +217,7 @@ class AdminResetPasswordResponse(BaseModel):
 
 class AdminCreateUserRequest(BaseModel):
     email: EmailStr
-    username: str = Field(..., min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
+    username: str | None = Field(default=None, min_length=3, max_length=64, pattern=r"^[a-zA-Z0-9_.-]+$")
     full_name: str | None = Field(None, max_length=128)
     role: str = Field(default="admin", pattern=r"^(admin|teacher|student|parent)$")
     password: str | None = Field(None, min_length=8, max_length=128)
