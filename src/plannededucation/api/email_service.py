@@ -157,30 +157,42 @@ async def send_email(
 
 async def send_password_reset_email(
     to_email: str,
-    otp_code: str,
+    reset_link_or_token: str,
     username: str | None = None,
 ) -> bool:
-    """Convenience helper to format and send a password reset OTP."""
+    """Format and send a 24-hour secure password reset link to the user."""
+    if reset_link_or_token.startswith("http://") or reset_link_or_token.startswith("https://"):
+        reset_link = reset_link_or_token
+    else:
+        frontend_base = os.getenv("FRONTEND_URL", "http://localhost:5173").rstrip("/")
+        reset_link = f"{frontend_base}/reset-password?token={reset_link_or_token}&email={to_email}"
+
     user_greeting = f"Hello {username or 'there'},"
-    subject = "PlannedEducation — Password Reset Verification Code"
+    subject = "PlannedEducation — Password Reset Request"
     text_content = (
         f"{user_greeting}\n\n"
-        f"Your verification code to reset your PlannedEducation password is:\n\n"
-        f"    {otp_code}\n\n"
-        f"This code will expire in 10 minutes.\n"
-        f"If you did not request a password reset, you can safely ignore this email.\n\n"
+        f"A password reset was requested for your PlannedEducation account.\n\n"
+        f"To set a new password, open this secure link in your browser:\n\n"
+        f"    {reset_link}\n\n"
+        f"This link is valid for 24 hours and can only be used once.\n\n"
+        f"If you did not request a password reset, you can safely ignore this email. Your password will remain unchanged.\n\n"
         f"— The PlannedEducation System"
     )
     html_content = f"""
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px;">
         <h2 style="color: #2563eb; margin-top: 0;">PlannedEducation</h2>
         <p>{user_greeting}</p>
-        <p>Your verification code to reset your password is:</p>
-        <div style="background-color: #f1f5f9; padding: 16px; border-radius: 6px; font-size: 24px; font-weight: bold; letter-spacing: 4px; text-align: center; color: #1e293b;">
-            {otp_code}
+        <p>A password reset was requested for your PlannedEducation account.</p>
+        <p>Click the button below to reset your password. <strong>This link is valid for 24 hours</strong> and can only be used once:</p>
+        <div style="text-align: center; margin: 28px 0;">
+            <a href="{reset_link}" style="background-color: #2563eb; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
+                Reset Password
+            </a>
         </div>
-        <p style="color: #64748b; font-size: 14px; margin-top: 16px;">This code will expire in 10 minutes.</p>
-        <p style="color: #64748b; font-size: 14px;">If you did not request a password reset, you can safely ignore this message.</p>
+        <p style="color: #64748b; font-size: 13px;">Or copy and paste this link into your browser:</p>
+        <p style="color: #64748b; font-size: 12px; word-break: break-all;"><a href="{reset_link}">{reset_link}</a></p>
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
+        <p style="color: #94a3b8; font-size: 12px; margin: 0;">If you did not request this password reset, please ignore this email. Your password will remain unchanged.</p>
     </div>
     """
     return await send_email(to_email, subject, text_content, html_content)

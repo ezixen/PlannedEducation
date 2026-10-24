@@ -74,3 +74,66 @@ def test_recovery_code_is_single_use_for_password_reset():
     assert r.status_code == 200, r.text
     r = client.post("/auth/password-reset/confirm", json=body)
     assert r.status_code == 400
+
+
+def test_24h_token_password_reset_flow():
+    from src.plannededucation.api import database, models
+    from datetime import UTC, datetime, timedelta
+
+    _register_and_login("tokenreset@test.com", "tokenuser")
+
+    # 1. Request reset link
+    r = client.post("/auth/password-reset/request", json={"email": "tokenreset@test.com"})
+    assert r.status_code == 200, r.text
+    data = r.json()
+    assert data["reset_link_sent"] is True
+
+    # 2. Check token in DB
+    db = next(database.get_db())
+    user = db.query(models.User).filter(models.User.email == "tokenreset@test.com").first()
+    assert user is not None
+    assert user.password_reset_otp is not None
+    assert len(user.password_reset_otp) >= 32  # High entropy token
+    expires_utc = user.password_reset_otp_expires if user.password_reset_otp_expires.tzinfo else user.password_reset_otp_expires.replace(tzinfo=UTC)
+    assert expires_utc > datetime.now(UTC) + timedelta(hours=23)
+    reset_token = user.password_reset_otp
+
+    # 3. Confirm with wrong token fails
+    r_bad = client.post("/auth/password-reset/confirm", json={
+        "email": "tokenreset@test.com",
+        "token": "wrong-token-value",
+        "new_password": "NewSecurePass123!",
+    })
+    assert r_bad.status_code == 400
+
+    # 4. Confirm with valid token succeeds
+    r_good = client.post("/auth/password-reset/confirm", json={
+        "email": "tokenreset@test.com",
+        "token": reset_token,
+        "new_password": "NewSecurePass123!",
+    })
+    assert r_good.status_code == 200, r_good.text
+    assert "access_token" in r_good.json()
+
+    # 5. Token is single use - replay fails
+    r_replay = client.post("/auth/password-reset/confirm", json={
+        "email": "tokenreset@test.com",
+        "token": reset_token,
+        "new_password": "AnotherPass123!",
+    })
+    assert r_replay.status_code == 400
+
+    # 6. Login with new password works
+    login_new = client.post("/auth/token", data={
+        "username": "tokenreset@test.com",
+        "password": "NewSecurePass123!",
+    })
+    assert login_new.status_code == 200
+    assert "access_token" in login_new.json()
+
+    # 7. Old password no longer works
+    login_old = client.post("/auth/token", data={
+        "username": "tokenreset@test.com",
+        "password": "Secure1234!",
+    })
+    assert login_old.status_code == 401

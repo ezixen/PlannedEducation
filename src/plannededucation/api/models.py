@@ -81,7 +81,7 @@ class User(Base):
     totp_enabled = Column(Boolean, default=False, nullable=False)
 
     # Password Reset (self-service, email OTP or recovery codes)
-    password_reset_otp = Column(String(6), nullable=True)
+    password_reset_otp = Column(String(128), nullable=True)
     password_reset_otp_expires = Column(DateTime(timezone=True), nullable=True)
     recovery_codes = Column(Text, nullable=True)  # JSON array of one-time recovery codes
 

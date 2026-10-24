@@ -21,9 +21,7 @@ from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
 from prometheus_client import REGISTRY, Counter, Gauge, Histogram, start_http_server
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.errors import RateLimitExceeded
-from slowapi.util import get_remote_address
+from .limiter import limiter, RateLimitExceeded, _rate_limit_exceeded_handler
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import (
@@ -199,10 +197,7 @@ async def lifespan(app: FastAPI):
             await backup_task
 
 
-# ── Rate Limiter (shared instance) ──────────────────────────────────────────
-limiter = Limiter(key_func=get_remote_address)
-if os.getenv("PLANNED_EDUCATION_ENV") == "test":
-    limiter.enabled = False
+# ── Rate Limiter (shared instance imported from .limiter) ───────────────────
 
 app = FastAPI(
     title="Planned Education API",

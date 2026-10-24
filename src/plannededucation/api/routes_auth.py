@@ -15,10 +15,7 @@ import jwt  # PyJWT for JWT encoding/decoding
 import pyotp
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from google.auth.transport import requests as google_requests
-from google.oauth2 import id_token
-from slowapi import Limiter
-from slowapi.util import get_remote_address
+from .limiter import limiter
 from sqlalchemy.orm import Session
 from webauthn import (
     generate_authentication_options,
@@ -178,20 +175,12 @@ def get_password_hash(password: str) -> str:
     return ph.hash(password)
 
 
-# ── Rate limiter ─────────────────────────────────────────────────────────────
-limiter = Limiter(key_func=get_remote_address)
-if os.getenv("PLANNED_EDUCATION_ENV") == "test":
-    def _noop_limit(*args, **kwargs):
-        def _decorator(func):
-            return func
-        return _decorator
-    limiter.limit = _noop_limit
+# ── Rate limiter (shared instance imported from .limiter) ───────────────────
 
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
-GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 
 # ── Password policy ──────────────────────────────────────────────────────────
 _PASSWORD_MIN_LEN = 8
@@ -276,7 +265,7 @@ def read_users_me(current_user: models.User = Depends(get_current_user)):
 
 
 @router.post("/register", response_model=schemas.UserRegistrationResponse, status_code=201)
-@limiter.limit("10/minute")
+@limiter.limit("500/minute")
 def register_user(
     request: Request,
     user: schemas.UserCreate,
@@ -385,7 +374,7 @@ def register_user(
 _DUMMY_HASH = get_password_hash("dummy_password_for_timing_check")
 
 @router.post("/token", response_model=schemas.Token)
-@limiter.limit("20/minute")
+@limiter.limit("500/minute")
 async def login_for_access_token(
     request: Request,
     db: Session = Depends(database.get_db),
@@ -500,7 +489,7 @@ async def login_for_access_token(
 
 
 @router.post("/refresh", response_model=schemas.Token)
-@limiter.limit("20/minute")
+@limiter.limit("200/minute")
 def refresh_access_token(
     request: Request,
     payload: schemas.RefreshTokenRequest,
@@ -541,68 +530,6 @@ def refresh_access_token(
     db.commit()
     return tokens
 
-
-@router.post("/google", response_model=schemas.Token)
-@limiter.limit("20/minute")
-def google_login(
-    request: Request,
-    data: schemas.GoogleLogin,
-    db: Session = Depends(database.get_db),
-):
-    if not GOOGLE_CLIENT_ID:
-        raise HTTPException(
-            status_code=503,
-            detail="Google sign-in is not configured on this server",
-        )
-
-    try:
-        idinfo = id_token.verify_oauth2_token(
-            data.token, google_requests.Request(), GOOGLE_CLIENT_ID
-        )
-    except ValueError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid Google token",
-        ) from None
-
-    email: str = idinfo["email"].lower()
-    google_id: str = idinfo["sub"]
-    name: str = idinfo.get("name", "")
-
-    user = db.query(models.User).filter(models.User.email == email).first()
-    if not user:
-        # Build a unique username from the email prefix, avoiding collisions
-        base = email.split("@")[0]
-        username = base
-        suffix = 1
-        while db.query(models.User).filter(models.User.username == username).first():
-            username = f"{base}{suffix}"
-            suffix += 1
-
-        user = models.User(
-            email=email,
-            username=username,
-            google_id=google_id,
-            full_name=name,
-        )
-        db.add(user)
-        db.commit()
-        db.refresh(user)
-    else:
-        # Link Google ID if this account was created with password
-        if not user.google_id:
-            user.google_id = google_id
-            db.commit()
-
-    if not user.is_active:
-        raise HTTPException(status_code=403, detail="Account is deactivated")
-
-    tokens = auth.create_token_pair({"sub": user.email}, remember_me=False)
-    # Store refresh token hash in database
-    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
-    db.commit()
-    return tokens
 
 
 @router.put("/settings", response_model=schemas.UserResponse)
@@ -668,17 +595,30 @@ def request_password_reset(
             otp_sent=True
         )
 
-    # Generate a 6-digit OTP
-    otp = str(secrets.randbelow(900000) + 100000)
-    user.password_reset_otp = otp
+    # Generate high-entropy 32-byte cryptographic token
+    reset_token = secrets.token_urlsafe(32)
+    user.password_reset_otp = reset_token
     user.password_reset_otp_expires = datetime.now(UTC) + timedelta(hours=24)
     db.commit()
 
-    # Dispatch email asynchronously in background (Brevo, SMTP, or local mock logger)
-    background_tasks.add_task(email_service.send_password_reset_email, user.email, otp, user.username)
+    # Determine base URL for one-click reset link
+    origin = request.headers.get("origin") or request.headers.get("referer")
+    if origin:
+        base_url = origin.split("/#")[0].rstrip("/")
+        for path_suffix in ("/login", "/register", "/dashboard"):
+            if path_suffix in base_url:
+                base_url = base_url.split(path_suffix)[0]
+    else:
+        base_url = os.getenv("FRONTEND_URL", "http://localhost:5173").rstrip("/")
+
+    reset_link = f"{base_url}/reset-password?token={reset_token}&email={user.email}"
+
+    # Dispatch email asynchronously in background
+    background_tasks.add_task(email_service.send_password_reset_email, user.email, reset_link, user.username)
 
     return schemas.PasswordResetResponse(
-        message="If the email exists, a reset OTP has been sent.",
+        message="If the email exists, a 24-hour password reset link has been sent.",
+        reset_link_sent=True,
         otp_sent=True
     )
 
@@ -695,13 +635,14 @@ def confirm_password_reset(
     if not user:
         raise HTTPException(status_code=400, detail="Invalid email or OTP")
 
-    # Check OTP
-    if payload.otp:
-        if not user.password_reset_otp or user.password_reset_otp != payload.otp:
-            raise HTTPException(status_code=400, detail="Invalid or expired OTP")
+    # Check reset token or legacy OTP
+    token_candidate = payload.token or payload.otp
+    if token_candidate:
+        if not user.password_reset_otp or user.password_reset_otp != token_candidate:
+            raise HTTPException(status_code=400, detail="Invalid or expired reset link")
         if (user.password_reset_otp_expires
                 and _as_utc(user.password_reset_otp_expires) < datetime.now(UTC)):
-            raise HTTPException(status_code=400, detail="OTP has expired")
+            raise HTTPException(status_code=400, detail="Reset link has expired")
 
     # Check recovery code (for 2FA users)
     elif payload.recovery_code:
@@ -716,7 +657,7 @@ def confirm_password_reset(
         user.recovery_codes = _encode_recovery_codes(remaining)
 
     else:
-        raise HTTPException(status_code=400, detail="OTP or recovery code required")
+        raise HTTPException(status_code=400, detail="Reset token or recovery code required")
 
     # Validate new password
     _validate_password(payload.new_password)

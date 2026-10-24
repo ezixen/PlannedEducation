@@ -396,7 +396,7 @@ export function AdminDashboard() {
       </div>
 
       {/* Tab Navigation */}
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', flexWrap: 'wrap' }}>
+      <div className="submenus-bar" role="tablist" aria-label="Admin Sections">
         {[
           { id: 'stats', label: `📊 ${t('admin.statistics')}`, count: null },
           { id: 'users', label: `👥 ${t('admin.users')}`, count: users.length },
@@ -408,28 +408,14 @@ export function AdminDashboard() {
         ].map(tab => (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
             onClick={() => setActiveTab(tab.id as any)}
-            style={{
-              padding: '0.75rem 1.5rem',
-              backgroundColor: activeTab === tab.id ? 'var(--primary-color)' : 'transparent',
-              color: activeTab === tab.id ? '#fff' : 'var(--text-color)',
-              border: 'none',
-              borderRadius: 'var(--radius-md)',
-              cursor: 'pointer',
-              fontWeight: 500,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
+            className={`submenus-tab-btn ${activeTab === tab.id ? 'active' : ''}`}
           >
-            {tab.label}
+            <span>{tab.label}</span>
             {tab.count !== null && (
-              <span style={{
-                backgroundColor: activeTab === tab.id ? 'rgba(255,255,255,0.2)' : 'var(--bg-color)',
-                padding: '0.125rem 0.5rem',
-                borderRadius: '9999px',
-                fontSize: '0.75rem',
-              }}>
+              <span className="submenus-tab-count">
                 {tab.count}
               </span>
             )}

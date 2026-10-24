@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useExam } from '../contexts/ExamContext';
 import { useI18n } from '../contexts/I18nContext';
@@ -23,10 +24,36 @@ interface FAQCategory {
 
 // Documentation file index for full-text search (user-facing docs only)
 const DOCS_INDEX: Record<string, { title: string; path: string; content: string }> = {
-  'user-manual': {
-    title: 'User Manual',
-    path: 'docs/USER_MANUAL.md',
-    content: `Complete user manual for PlannedEducation. Covers all features for teachers, students, parents, and administrators. Getting started, roles & account types, teacher guide, student guide, parent guide, admin & superadmin guide, password recovery & reset, exams & grading, security & privacy, FAQ.`,
+  'email-smtp': {
+    title: 'SMTP & Email Configuration',
+    path: 'docs/admin/EMAIL_SMTP.md',
+    content: `Configure school email in Admin Dashboard -> School Settings -> Email/SMTP or in .env with SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, SMTP_TLS, or BREVO_API_KEY. Supports test email delivery and sending 24-hour secure password reset links. See [Admin Dashboard](/admin) or [Settings](/settings).`,
+  },
+  'seb-config': {
+    title: 'Safe Exam Browser (SEB) Setup',
+    path: 'docs/user/TEACHER_GUIDE.md',
+    content: `Configure Safe Exam Browser (SEB) in [Exam Editor](/teacher-exams). Require Browser Exam Key (BEK) or Configuration Key (CK), disable Wi-Fi/Bluetooth, lock down clipboard, and prevent tab switches. Ensure students launch exams with SEB config (.seb).`,
+  },
+  'admin-guide': {
+    title: 'Administrator Guide',
+    path: 'docs/admin/ADMIN_GUIDE.md',
+    content: `Administrator guide for PlannedEducation. Manage school users, approve teachers, reset student and teacher passwords with 24-hour reset links, configure deployment, manage midnight backups, and configure SMTP email. See [Admin Dashboard](/admin).`,
+  },
+
+  'install-windows': {
+    title: 'Windows Installation Guide',
+    path: 'docs/INSTALL_WINDOWS.md',
+    content: `Install PlannedEducation on Windows using PowerShell. Run install.ps1 as Administrator. Choose Native Mode (SQLite/PostgreSQL, no Docker) or Docker Compose Mode. Set ExecutionPolicy Bypass. Configure .env with JWT_SECRET_KEY, DATABASE_URL. Build frontend with npm run build. Start with start_all.bat.`,
+  },
+  'install-linux': {
+    title: 'Linux Installation Guide',
+    path: 'docs/INSTALL_LINUX.md',
+    content: `Install PlannedEducation on Linux using install.sh. Creates virtual environment, configures SQLite/PostgreSQL, sets up Systemd service. Supports Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL. Run curl or clone repo and execute ./install.sh.`,
+  },
+  'deployment-guide': {
+    title: 'Deployment Guide',
+    path: 'docs/DEPLOYMENT.md',
+    content: `Deploy PlannedEducation to production. Use Docker Compose with docker-compose.yml. Set environment variables: JWT_SECRET_KEY, DATABASE_URL, REDIS_URL. Run alembic migrations. Build frontend. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS. Configure CORS_ORIGINS and ALLOWED_HOSTS.`,
   },
   'teacher-guide': {
     title: 'Teacher Guide',
@@ -369,12 +396,14 @@ export function FAQChatbot() {
           return faq.answer;
         }
 
-        // Targeted keywords check
+        // Targeted keywords check (supports single-word matches for specific topics)
         if (faq.keywords) {
-          const matchedKeywords = faq.keywords.filter(keyword => 
-            lowerQuery.includes(keyword.toLowerCase())
-          );
-          if (matchedKeywords.length >= 2 || (matchedKeywords.length === 1 && (matchedKeywords[0] === 'windows' || matchedKeywords[0] === 'linux' || matchedKeywords[0] === 'wizard' || matchedKeywords[0] === 'wifi' || matchedKeywords[0] === 'lan'))) {
+          const queryWords = lowerQuery.split(/\s+/);
+          const matchedKeywords = faq.keywords.filter(keyword => {
+            const kw = keyword.toLowerCase();
+            return lowerQuery.includes(kw) || queryWords.includes(kw);
+          });
+          if (matchedKeywords.length >= 1) {
             return faq.answer;
           }
         }
@@ -440,6 +469,52 @@ export function FAQChatbot() {
   };
 
   // Handle key press
+  // Helper to render text with clickable in-app links
+  const renderMessageContent = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      const [, label, url] = match;
+      if (url.startsWith('/')) {
+        parts.push(
+          <Link
+            key={match.index}
+            to={url}
+            onClick={() => setIsOpen(false)}
+            style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'underline' }}
+          >
+            {label}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a
+            key={match.index}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'underline' }}
+          >
+            {label}
+          </a>
+        );
+      }
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -480,7 +555,7 @@ export function FAQChatbot() {
                 className={`faq-chatbot-message ${message.sender === 'user' ? 'user' : 'bot'}`}
               >
                 <div className="faq-chatbot-message-content">
-                  {message.text}
+                  {renderMessageContent(message.text)}
                 </div>
                 <div className="faq-chatbot-message-time">
                   {message.timestamp.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}

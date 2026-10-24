@@ -7,23 +7,23 @@ from .routes_auth import get_current_user
 
 # ── Presidio PII Scrubber (Free, Open-Source) ────────────────────────────────
 # Microsoft Presidio (MIT License) - scrubs PII from text before sending to external AI
-try:
-    from presidio_analyzer import AnalyzerEngine
-    PRESIDIO_AVAILABLE = True
-except ImportError:
-    PRESIDIO_AVAILABLE = False
-    AnalyzerEngine = None
-
-# Initialize Presidio engine (lazy initialization)
+# Loaded lazily on first actual call to prevent importing heavy NLP frameworks during startup
 _analyzer = None
+_presidio_checked = False
+PRESIDIO_AVAILABLE = False
 
 def _get_presidio_analyzer():
     """Lazy initialization of Presidio Analyzer engine."""
-    global _analyzer
-    if not PRESIDIO_AVAILABLE:
-        return None
-    if _analyzer is None:
-        _analyzer = AnalyzerEngine()
+    global _analyzer, _presidio_checked, PRESIDIO_AVAILABLE
+    if not _presidio_checked:
+        try:
+            from presidio_analyzer import AnalyzerEngine
+            _analyzer = AnalyzerEngine()
+            PRESIDIO_AVAILABLE = True
+        except ImportError:
+            PRESIDIO_AVAILABLE = False
+            _analyzer = None
+        _presidio_checked = True
     return _analyzer
 
 ENTITY_MAPPING = {

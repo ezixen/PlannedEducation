@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ToastProvider } from './contexts/ToastContext';
@@ -8,6 +7,7 @@ import { ExamProvider } from './contexts/ExamContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { ResetPassword } from './pages/ResetPassword';
 import { Dashboard } from './pages/Dashboard';
 import { Settings } from './pages/Settings';
 import { TeacherExams } from './pages/TeacherExams';
@@ -20,7 +20,6 @@ import { TeacherDashboard } from './pages/TeacherDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { AIGradingUpload } from './pages/AIGradingUpload';
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 function AppProviders() {
   return (
@@ -33,6 +32,7 @@ function AppProviders() {
                 <Routes>
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
                   <Route path="/" element={<ProtectedRoute />}>
                     <Route index element={<Dashboard />} />
                     <Route path="settings" element={<Settings />} />
@@ -57,10 +57,7 @@ function AppProviders() {
 }
 
 function App() {
-  const app = <AppProviders />;
-  return GOOGLE_CLIENT_ID ? (
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>{app}</GoogleOAuthProvider>
-  ) : app;
+  return <AppProviders />;
 }
 
 export default App;
