@@ -273,13 +273,22 @@ try {
         } catch {}
     }
 
-    # Remove the directory
+    # Remove all contents inside the directory first, then the directory itself
+    Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue | ForEach-Object {
+        Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction SilentlyContinue
+    }
     Remove-Item -Path $InstallDir -Recurse -Force -ErrorAction SilentlyContinue
     if (Test-Path $InstallDir) {
         cmd.exe /c "rmdir /s /q `"$InstallDir`"" 2>$null
     }
     if (Test-Path $InstallDir) {
-        throw "Directory still exists after removal attempt: $InstallDir"
+        $remaining = @(Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue)
+        if ($remaining.Count -eq 0) {
+            # Current PowerShell host was launched from inside $InstallDir and holds the empty folder handle until exit
+            Start-Process -FilePath "cmd.exe" -ArgumentList "/c ping 127.0.0.1 -n 2 >nul & rmdir /s /q `"$InstallDir`"" -WorkingDirectory $env:TEMP -WindowStyle Hidden
+        } else {
+            throw "Directory still contains $($remaining.Count) locked item(s) after removal attempt: $InstallDir"
+        }
     }
     Write-Success "Successfully removed: $InstallDir"
 } catch {
