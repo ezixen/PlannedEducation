@@ -471,7 +471,7 @@ export function FAQChatbot() {
   // Handle key press
   // Helper to render text with clickable in-app links
   const renderMessageContent = (text: string) => {
-    const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
     const parts = [];
     let lastIndex = 0;
     let match;
