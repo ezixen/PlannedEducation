@@ -21,7 +21,7 @@ load_dotenv()
 
 
 @click.group()
-@click.version_option(version="1.0.0", prog_name="pepkg")
+@click.version_option(version="0.8.7", prog_name="pepkg")
 @click.option(
 
     "--config",

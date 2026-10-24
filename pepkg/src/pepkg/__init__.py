@@ -1,4 +1,4 @@
 """pepkg - PlannedEducation Package Registry CLI."""
 
-__version__ = "1.0.0"
+__version__ = "0.8.7"
 __author__ = "PlannedEducation Team"

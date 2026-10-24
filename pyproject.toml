@@ -1,6 +1,6 @@
 [project]
 name = "plannededucation"
-version = "1.1.0"
+version = "0.8.7"
 description = "PlannedEducation - Free, open-source teacher's aid and grading software"
 
 readme = "README.md"
