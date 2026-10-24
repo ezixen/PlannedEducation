@@ -13,7 +13,12 @@ interface ForgotPasswordModalProps {
 export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: ForgotPasswordModalProps) {
   const { success: showSuccess, error: showError } = useToast();
   const { t } = useI18n();
-  const [activeTab, setActiveTab] = useState<'recovery_code' | 'request_supervisor'>('recovery_code');
+  const [activeTab, setActiveTab] = useState<'email_link' | 'recovery_code' | 'request_supervisor'>('email_link');
+
+  // Email reset link tab state
+  const [emailLink, setEmailLink] = useState(defaultEmail);
+  const [emailLinkSubmitting, setEmailLinkSubmitting] = useState(false);
+  const [emailLinkSuccess, setEmailLinkSuccess] = useState(false);
 
   // Recovery code tab state
   const [recEmail, setRecEmail] = useState(defaultEmail);
@@ -29,6 +34,22 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
   const [supNote, setSupNote] = useState('');
   const [supSubmitting, setSupSubmitting] = useState(false);
   const [supSuccess, setSupSuccess] = useState(false);
+
+  const handleSendEmailLink = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmailLinkSubmitting(true);
+    try {
+      await apiClient.post('/auth/password-reset/request', {
+        email: emailLink.trim().toLowerCase(),
+      });
+      setEmailLinkSuccess(true);
+      showSuccess(t('forgot_password.link_sent_title'));
+    } catch (err: any) {
+      showError(t('forgot_password.reset_failed_toast'), err.response?.data?.detail || err.message);
+    } finally {
+      setEmailLinkSubmitting(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -147,20 +168,39 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
         </div>
 
         {/* Tab Switcher */}
-        <div style={{ display: 'flex', borderBottom: '1px solid var(--border-color)', margin: '0.5rem 1.25rem 0' }}>
+        <div style={{ display: 'flex', borderBottom: '1px solid var(--border-color)', margin: '0.5rem 1.25rem 0', gap: '0.25rem' }}>
+          <button
+            type="button"
+            onClick={() => setActiveTab('email_link')}
+            style={{
+              flex: 1,
+              padding: '0.65rem 0.25rem',
+              backgroundColor: 'transparent',
+              border: 'none',
+              borderBottom: activeTab === 'email_link' ? '2px solid var(--primary-color)' : '2px solid transparent',
+              color: activeTab === 'email_link' ? 'var(--primary-color)' : 'var(--text-muted)',
+              fontWeight: 600,
+              fontSize: '0.825rem',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {t('forgot_password.tab_email_link')}
+          </button>
           <button
             type="button"
             onClick={() => setActiveTab('recovery_code')}
             style={{
               flex: 1,
-              padding: '0.65rem',
+              padding: '0.65rem 0.25rem',
               backgroundColor: 'transparent',
               border: 'none',
               borderBottom: activeTab === 'recovery_code' ? '2px solid var(--primary-color)' : '2px solid transparent',
               color: activeTab === 'recovery_code' ? 'var(--primary-color)' : 'var(--text-muted)',
               fontWeight: 600,
-              fontSize: '0.875rem',
+              fontSize: '0.825rem',
               cursor: 'pointer',
+              whiteSpace: 'nowrap',
             }}
           >
             {t('forgot_password.tab_recovery')}
@@ -170,19 +210,97 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
             onClick={() => setActiveTab('request_supervisor')}
             style={{
               flex: 1,
-              padding: '0.65rem',
+              padding: '0.65rem 0.25rem',
               backgroundColor: 'transparent',
               border: 'none',
               borderBottom: activeTab === 'request_supervisor' ? '2px solid var(--primary-color)' : '2px solid transparent',
               color: activeTab === 'request_supervisor' ? 'var(--primary-color)' : 'var(--text-muted)',
               fontWeight: 600,
-              fontSize: '0.875rem',
+              fontSize: '0.825rem',
               cursor: 'pointer',
+              whiteSpace: 'nowrap',
             }}
           >
             {t('forgot_password.tab_supervisor')}
           </button>
         </div>
+
+        {/* Tab 0: 24h Email Reset Link */}
+        {activeTab === 'email_link' && (
+          <div style={{ padding: '1.25rem' }}>
+            {emailLinkSuccess ? (
+              <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
+                <CheckCircle2 size={40} style={{ color: '#10b981', marginBottom: '0.75rem' }} />
+                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--text-color)' }}>
+                  {t('forgot_password.link_sent_title')}
+                </h4>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.4 }}>
+                  {t('forgot_password.link_sent_desc')}
+                </p>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  style={{
+                    padding: '0.65rem 1.5rem',
+                    backgroundColor: 'var(--primary-color)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-md)',
+                    cursor: 'pointer',
+                    fontWeight: 600,
+                  }}
+                >
+                  {t('admin.done')}
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSendEmailLink} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.4 }}>
+                  {t('forgot_password.email_link_desc')}
+                </p>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
+                    {t('forgot_password.email_label')}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={emailLink}
+                    onChange={(e) => setEmailLink(e.target.value)}
+                    placeholder={t('forgot_password.email_placeholder')}
+                    style={{
+                      width: '100%',
+                      padding: '0.6rem',
+                      borderRadius: 'var(--radius-md)',
+                      border: '1px solid var(--border-color)',
+                      backgroundColor: 'var(--bg-color)',
+                      color: 'var(--text-color)',
+                      fontSize: '0.9rem',
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={emailLinkSubmitting}
+                  style={{
+                    width: '100%',
+                    padding: '0.7rem',
+                    backgroundColor: 'var(--primary-color)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-md)',
+                    cursor: emailLinkSubmitting ? 'not-allowed' : 'pointer',
+                    fontWeight: 600,
+                    marginTop: '0.5rem',
+                  }}
+                >
+                  {emailLinkSubmitting ? t('forgot_password.resetting') : t('forgot_password.send_link_button')}
+                </button>
+              </form>
+            )}
+          </div>
+        )}
 
         {/* Tab 1: Instant Reset with Recovery Code */}
         {activeTab === 'recovery_code' && (

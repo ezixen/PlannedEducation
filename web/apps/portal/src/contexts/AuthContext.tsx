@@ -21,8 +21,7 @@ export interface User {
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (googleToken: string) => Promise<void>;
-  loginWithPassword: (emailOrUsername: string, password: string) => Promise<void>;
+  loginWithPassword: (emailOrUsername: string, password: string, rememberMe?: boolean) => Promise<void>;
   logout: () => void;
   refreshUser: () => Promise<void>;
 }
@@ -56,12 +55,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     refreshUser();
   }, [refreshUser]);
 
-  const login = async (googleToken: string) => {
-    const response = await apiClient.post<{ access_token: string }>('/auth/google', { token: googleToken });
-    localStorage.setItem('access_token', response.data.access_token);
-    await refreshUser();
-  };
-
   const loginWithPassword = async (emailOrUsername: string, password: string, rememberMe: boolean = false) => {
     const formData = new URLSearchParams();
     formData.append('username', emailOrUsername);
@@ -69,7 +62,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     formData.append('remember_me', rememberMe.toString());
 
     try {
-      const response = await apiClient.post<{ access_token: string }>('/auth/token', formData, {
+      const response = await apiClient.post<{ access_token: string; refresh_token?: string }>('/auth/token', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       localStorage.setItem('access_token', response.data.access_token);
@@ -90,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, loginWithPassword, logout, refreshUser }}>
+    <AuthContext.Provider value={{ user, loading, loginWithPassword, logout, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

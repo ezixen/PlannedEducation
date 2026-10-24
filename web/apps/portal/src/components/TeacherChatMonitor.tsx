@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { MessageSquare, Send } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
+import { useI18n } from '../contexts/I18nContext';
 import { API_URL } from '../api';
 
 interface ChatMessage {
@@ -20,6 +21,7 @@ interface TeacherChatMonitorProps {
 export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProps) {
   const { user } = useAuth();
   const { info: showInfo } = useToast();
+  const { t } = useI18n();
 
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [connected, setConnected] = useState(false);
@@ -105,8 +107,6 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
     setReplyText('');
   }, [replyText]);
 
-  const unreadCount = messages.filter(m => !m.isOwn).length;
-
   return (
     <div style={{
       padding: '1.25rem',
@@ -128,11 +128,11 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
           </div>
           <div>
             <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              {t('teacher_dashboard.chat_title', 'Chat with Students')}
+              {t('teacher_dashboard.chat_title')}
               {examTitle && <span style={{ fontSize: '0.85rem', fontWeight: 400, color: 'var(--text-muted)' }}>({examTitle})</span>}
             </h3>
             <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              End-to-end encrypted chat with students
+              {t('chat.encrypted_subtitle')}
             </span>
           </div>
         </div>
@@ -149,7 +149,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
               backgroundColor: connected ? '#10b981' : '#ef4444',
               display: 'inline-block',
             }} />
-            {connected ? 'Connected' : 'Connecting'}
+            {connected ? t('chat.connected') : t('chat.connecting')}
           </span>
         </div>
       </div>
@@ -165,7 +165,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
           color: 'var(--text-muted)',
           fontSize: '0.9rem',
         }}>
-          No messages yet. Students can send messages from their exam view.
+          {t('chat.no_messages')}
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxHeight: '380px', overflowY: 'auto' }}>
@@ -175,12 +175,11 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
               style={{
                 padding: '0.875rem 1rem',
                 backgroundColor: msg.isOwn ? 'var(--primary-color)' : 'var(--bg-color)',
-                borderRadius: 'var(--radius-md)',
+                borderRadius: msg.isOwn ? 'var(--radius-lg) var(--radius-lg) 0 var(--radius-lg)' : 'var(--radius-lg) var(--radius-lg) var(--radius-lg) 0',
                 border: '1px solid var(--border-color)',
                 marginLeft: msg.isOwn ? 'auto' : 0,
                 marginRight: msg.isOwn ? 0 : 'auto',
                 maxWidth: '80%',
-                borderRadius: msg.isOwn ? 'var(--radius-lg) var(--radius-lg) 0 var(--radius-lg)' : 'var(--radius-lg) var(--radius-lg) var(--radius-lg) 0',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.375rem' }}>
@@ -204,7 +203,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
       <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
         <input
           type="text"
-          placeholder="Type a message..."
+          placeholder={t('chat.type_message')}
           value={replyText}
           onChange={(e) => setReplyText(e.target.value)}
           onKeyDown={(e) => {
@@ -240,7 +239,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
             gap: '0.25rem',
           }}
         >
-          <Send size={16} /> Send
+          <Send size={16} /> {t('chat.send')}
         </button>
       </div>
     </div>

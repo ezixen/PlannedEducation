@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield } from 'lucide-react';
+import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
@@ -16,30 +16,44 @@ interface DeploymentConfig {
 
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
   const { locale, setLocale, availableLocales, t } = useI18n();
   const location = useLocation();
   const navigate = useNavigate();
   const [headerConfig, setHeaderConfig] = useState<DeploymentConfig>({});
 
+  // Close menu on route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // Load header config for custom school branding
+  // Close menu on Escape key
   useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [menuOpen]);
+
+  // Load custom header branding
+  useEffect(() => {
+    let isMounted = true;
     const loadHeaderConfig = async () => {
       try {
         const res = await apiClient.get<DeploymentConfig>('/admin/config');
-        setHeaderConfig(res.data);
+        if (isMounted) setHeaderConfig(res.data);
       } catch {
-        // Config may not be accessible, use defaults
+        // Fall back to defaults
       }
     };
     loadHeaderConfig();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  // Role-based navigation: admins can access everything, others get role-appropriate menus
   const getNavItems = () => {
     const baseItems = [
       { path: '/', label: t('nav.dashboard'), icon: <Home size={20} />, roles: ['student', 'teacher', 'parent', 'admin'] },
@@ -53,21 +67,15 @@ export function Layout() {
       { path: '/settings', label: t('nav.settings'), icon: <Settings size={20} />, roles: ['student', 'teacher', 'parent', 'admin'] },
     ];
 
-    /* Admins see everything
     if (user?.is_admin) {
       return baseItems;
     }
-
-    // Filter by user role
     const userRole = user?.role;
     return baseItems.filter(item => !item.roles || !userRole || item.roles.includes(userRole));
-    */
-    return baseItems;
   };
 
   const navItems = getNavItems();
 
-  // Back navigation: go up one level in menu hierarchy
   const handleBack = () => {
     const path = location.pathname;
     if (path === '/' || path === '/dashboard') {
@@ -79,63 +87,63 @@ export function Layout() {
     } else if (path.startsWith('/exam/')) {
       navigate('/exam');
     } else {
-      navigate('/');
+      navigate(-1);
     }
   };
 
-  // Render custom header
-  const renderHeader = () => {
-    const mode = headerConfig.header_mode || 'text';
-    const schoolName = headerConfig.school_name || t('layout.brand_title');
-    const imageUrl = headerConfig.header_image_url;
-
-    if (mode === 'none') return null;
-
-    if (mode === 'image' && imageUrl) {
-      return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <img src={imageUrl} alt="School Logo" style={{ width: '32px', height: '32px', borderRadius: '4px' }} />
-          <span style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--text-color)' }}>{schoolName}</span>
-        </div>
-      );
-    }
-
-    // Text mode (default)
-    return (
-      <div className="brand-title">{schoolName}</div>
-    );
-  };
+  const isBackAvailable = location.pathname !== '/' && location.pathname !== '/dashboard';
 
   return (
     <div className="app-container">
       <WatermarkOverlay />
 
-      <header className="floating-header">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="icon-btn hamburger-btn" aria-label={t('layout.toggle_menu')}>
-          <Menu size={24} />
+      {/* Floating Navigation Controls (Hamburger Menu & Back Button) */}
+      <div className="floating-nav-controls">
+        <button
+          type="button"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className={`floating-nav-btn floating-hamburger-btn ${menuOpen ? 'active' : ''}`}
+          aria-expanded={menuOpen}
+          aria-label={t('layout.toggle_menu')}
+          title={t('layout.toggle_menu')}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
-        <div className="brand-title">{t('layout.brand_title')}</div>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
+
+        {isBackAvailable && !menuOpen && (
+          <button
+            type="button"
+            onClick={handleBack}
+            className="floating-nav-btn floating-back-btn"
+            aria-label={t('nav.back')}
+            title={t('nav.back')}
+          >
+            <ArrowLeft size={18} />
+          </button>
+        )}
+      </div>
+
+      {/* Top Header - In Document Flow, Scrolls Away Naturally */}
+      <header className="site-header">
+        <div className="site-header-spacer" aria-hidden="true" />
+        <div className="site-header-branding">
+          {headerConfig.header_mode === 'image' && headerConfig.header_image_url ? (
+            <img src={headerConfig.header_image_url} alt="School Logo" className="site-header-logo" />
+          ) : (
+            <span className="site-header-title">
+              {headerConfig.school_name || t('layout.brand_title')}
+            </span>
+          )}
+        </div>
+        <div className="site-header-actions">
           <NotificationBell />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', backgroundColor: 'var(--sidebar-bg)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', minWidth: 0, maxWidth: '100%' }}>
+          <div className="header-lang-pill">
             <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select
               value={locale}
               onChange={(e) => setLocale(e.target.value as any)}
               aria-label={t('layout.select_language')}
               className="header-lang-select"
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: 'var(--text-color)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                outline: 'none',
-                maxWidth: '130px',
-                minWidth: 0,
-                textOverflow: 'ellipsis',
-              }}
             >
               {availableLocales.map((loc) => (
                 <option key={loc} value={loc} style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
@@ -147,16 +155,18 @@ export function Layout() {
         </div>
       </header>
 
+      {/* Floating Navigation Panel / Drawer */}
       {menuOpen && (
         <>
-          <div className="menu-backdrop" onClick={() => setMenuOpen(false)}></div>
-          <div className="floating-menu">
-            <nav className="bubble-nav">
+          <div className="menu-backdrop" onClick={() => setMenuOpen(false)} />
+          <nav className="floating-nav-panel" aria-label={t('layout.toggle_menu')}>
+            <div className="bubble-nav">
               {navItems.map((item) => (
-                <Link 
+                <Link
                   key={item.path}
-                  to={item.path} 
+                  to={item.path}
                   className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -165,7 +175,7 @@ export function Layout() {
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
               <div style={{ padding: '0.5rem 0.75rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <Globe size={14} /> Language
+                  <Globe size={14} /> {t('settings.section_language')}
                 </span>
                 <select
                   value={locale}
@@ -190,32 +200,29 @@ export function Layout() {
                 </select>
               </div>
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
-              {location.pathname !== '/' && location.pathname !== '/dashboard' && (
-                <button
-                  onClick={handleBack}
-                  className="nav-item"
-                  style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
-                >
-                  <ArrowLeft size={16} />
-                  <span>{t('nav.back')}</span>
-                </button>
-              )}
-              <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
-              <button onClick={logout} className="nav-item text-danger" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  logout();
+                }}
+                className="nav-item text-danger"
+                style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}
+              >
                 <LogOut size={20} />
                 <span>{t('layout.logout')}</span>
               </button>
-            </nav>
-          </div>
+            </div>
+          </nav>
         </>
       )}
 
-  <main className="main-content">
-    <div className="page-content">
-      <Outlet />
-    </div>
-  </main>
-  <FAQChatbot />
+      <main className="main-content">
+        <div className="page-content">
+          <Outlet />
+        </div>
+      </main>
+      <FAQChatbot />
     </div>
   );
 }

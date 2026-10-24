@@ -313,7 +313,7 @@ export function TakeExam() {
         ) : (
           <div style={{ padding: '0.875rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
             <strong style={{ display: 'block', color: 'var(--text-color)', marginBottom: '0.25rem' }}>🏫 {t('take_exam.in_person_label')}</strong>
-            Digital hand-raising is not needed for in-room exams. Please raise your hand directly in class if you need help.
+            {t('take_exam.in_person_desc')}
           </div>
         )}
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useExam } from '../contexts/ExamContext';
 import { useI18n } from '../contexts/I18nContext';
@@ -23,6 +24,22 @@ interface FAQCategory {
 
 // Documentation file index for full-text search
 const DOCS_INDEX: Record<string, { title: string; path: string; content: string }> = {
+  'email-smtp': {
+    title: 'SMTP & Email Configuration',
+    path: 'docs/admin/EMAIL_SMTP.md',
+    content: `Configure school email in Admin Dashboard -> School Settings -> Email/SMTP or in .env with SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, SMTP_TLS, or BREVO_API_KEY. Supports test email delivery and sending 24-hour secure password reset links. See [Admin Dashboard](/admin) or [Settings](/settings).`,
+  },
+  'seb-config': {
+    title: 'Safe Exam Browser (SEB) Setup',
+    path: 'docs/user/TEACHER_GUIDE.md',
+    content: `Configure Safe Exam Browser (SEB) in [Exam Editor](/teacher-exams). Require Browser Exam Key (BEK) or Configuration Key (CK), disable Wi-Fi/Bluetooth, lock down clipboard, and prevent tab switches. Ensure students launch exams with SEB config (.seb).`,
+  },
+  'admin-guide': {
+    title: 'Administrator Guide',
+    path: 'docs/admin/ADMIN_GUIDE.md',
+    content: `Administrator guide for PlannedEducation. Manage school users, approve teachers, reset student and teacher passwords with 24-hour reset links, configure deployment, manage midnight backups, and configure SMTP email. See [Admin Dashboard](/admin).`,
+  },
+
   'install-windows': {
     title: 'Windows Installation Guide',
     path: 'docs/INSTALL_WINDOWS.md',
@@ -394,12 +411,14 @@ export function FAQChatbot() {
           return faq.answer;
         }
 
-        // Targeted keywords check
+        // Targeted keywords check (supports single-word matches for specific topics)
         if (faq.keywords) {
-          const matchedKeywords = faq.keywords.filter(keyword => 
-            lowerQuery.includes(keyword.toLowerCase())
-          );
-          if (matchedKeywords.length >= 2 || (matchedKeywords.length === 1 && (matchedKeywords[0] === 'windows' || matchedKeywords[0] === 'linux' || matchedKeywords[0] === 'wizard' || matchedKeywords[0] === 'wifi' || matchedKeywords[0] === 'lan'))) {
+          const queryWords = lowerQuery.split(/\s+/);
+          const matchedKeywords = faq.keywords.filter(keyword => {
+            const kw = keyword.toLowerCase();
+            return lowerQuery.includes(kw) || queryWords.includes(kw);
+          });
+          if (matchedKeywords.length >= 1) {
             return faq.answer;
           }
         }
@@ -465,6 +484,52 @@ export function FAQChatbot() {
   };
 
   // Handle key press
+  // Helper to render text with clickable in-app links
+  const renderMessageContent = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      const [, label, url] = match;
+      if (url.startsWith('/')) {
+        parts.push(
+          <Link
+            key={match.index}
+            to={url}
+            onClick={() => setIsOpen(false)}
+            style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'underline' }}
+          >
+            {label}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a
+            key={match.index}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--primary-color)', fontWeight: 600, textDecoration: 'underline' }}
+          >
+            {label}
+          </a>
+        );
+      }
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -505,7 +570,7 @@ export function FAQChatbot() {
                 className={`faq-chatbot-message ${message.sender === 'user' ? 'user' : 'bot'}`}
               >
                 <div className="faq-chatbot-message-content">
-                  {message.text}
+                  {renderMessageContent(message.text)}
                 </div>
                 <div className="faq-chatbot-message-time">
                   {message.timestamp.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}

@@ -66,9 +66,6 @@ class TokenData(BaseModel):
     email: str | None = None
 
 
-class GoogleLogin(BaseModel):
-    token: str  # The ID token from Google frontend
-
 
 class LoginRequest(BaseModel):
     username: str
@@ -191,13 +188,15 @@ class PasswordResetRequest(BaseModel):
 
 class PasswordResetResponse(BaseModel):
     message: str
-    otp_sent: bool
+    reset_link_sent: bool = True
+    otp_sent: bool = True
 
 
 class PasswordResetConfirm(BaseModel):
     email: EmailStr
     new_password: str = Field(..., min_length=8, max_length=128)
-    otp: str | None = Field(None, pattern=r"^\d{6}$")
+    token: str | None = Field(None, max_length=128)
+    otp: str | None = Field(None)
     recovery_code: str | None = Field(None, min_length=8, max_length=16)
 
 

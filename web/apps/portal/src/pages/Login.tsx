@@ -1,18 +1,15 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { GoogleLogin } from '@react-oauth/google';
-import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { ForgotPasswordModal } from '../components/ForgotPasswordModal';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 export function Login() {
   const { t } = useI18n();
-  const { login, loginWithPassword, refreshUser } = useAuth();
+  const { loginWithPassword, refreshUser } = useAuth();
   const { error: showError, success: showSuccess } = useToast();
   const navigate = useNavigate();
   
@@ -25,8 +22,6 @@ export function Login() {
   const [teacherResetActive, setTeacherResetActive] = useState(false);
   const [teacherResetChecking, setTeacherResetChecking] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [showNewPassword, setShowNewPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleCheckTeacherReset = async () => {
@@ -48,27 +43,6 @@ export function Login() {
     }
   };
 
-  const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
-    if (!credentialResponse.credential) return;
-    setLoading(true);
-    try {
-      await login(credentialResponse.credential);
-      navigate('/');
-    } catch (err: any) {
-      const detail = err.response?.data?.detail || err.message || 'Login failed';
-      let message = t('login.google_login_failed');
-      if (detail === 'Google sign-in is not configured on this server') {
-        message = t('login.google_not_configured');
-      } else if (detail === 'Invalid Google token') {
-        message = t('login.invalid_google_token');
-      } else {
-        message = detail;
-      }
-      showError(message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleLocalLogin = async (e: React.FormEvent) => {
     e.preventDefault(); 
@@ -86,8 +60,6 @@ export function Login() {
         return;
       } else if (detail === 'Invalid email/username or password') {
         message = 'Invalid email or password. Please check your credentials and try again.';
-      } else if (detail === 'This account uses Google sign-in. Please use the Google button to log in.') {
-        message = 'This account uses Google sign-in. Please use the Google button above.';
       } else if (detail === 'Account is deactivated. Please contact support.') {
         message = 'This account has been deactivated. Please contact support.';
       } else if (typeof detail === 'string' && (detail.includes('rate limit') || detail.includes('too many') || detail.includes('temporarily locked'))) {
@@ -134,17 +106,7 @@ export function Login() {
           <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{t('login.subtitle')}</p>
         </div>
 
-        {GOOGLE_CLIENT_ID ? (
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess}
-              onError={() => showError(t('login.google_auth_failed'))}
-              useOneTap
-            />
-          </div>
-        ) : null}
-
-        {!GOOGLE_CLIENT_ID || ['localhost', '127.0.0.1'].includes(window.location.hostname) ? (
+        {
           teacherResetActive ? (
             <form onSubmit={handleTeacherResetComplete} style={{ margin: 0, textAlign: 'left' }}>
               <div
@@ -328,8 +290,7 @@ export function Login() {
                 {loading ? t('login.signing_in') : t('login.signin')}
               </button>
             </form>
-          )
-        ) : null}
+          )}
 
         <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
           {t('login.no_account')}{' '}
