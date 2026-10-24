@@ -18,7 +18,7 @@ export function Dashboard() {
     {
       title: t('dashboard.student_settings'),
       description: t('dashboard.student_settings_desc'),
-      action: { label: t('dashboard.open_student'), onClick: () => navigate('/settings'), variant: 'secondary' },
+      action: { label: t('dashboard.open_student'), onClick: () => navigate('/exam'), variant: 'secondary' },
     },
     {
       title: t('dashboard.parent_dashboard'),
