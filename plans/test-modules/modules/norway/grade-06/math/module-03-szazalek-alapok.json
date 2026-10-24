@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-alapok-1.0.0",
-    "name": "Százalék alapok - Norway grade-06",
+    "name": "Percentage basics - Norway grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék alapok for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minutters prøve i Percentage basics (grade-06). Emner: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.334194+00:00",
-    "updated_at": "2026-10-21T11:02:26.334209+00:00",
+    "created_at": "2026-10-24T17:53:48.895865+00:00",
+    "updated_at": "2026-10-24T17:53:48.895872+00:00",
     "tags": [
       "math",
-      "százalék-alapok",
+      "percentage-basics",
       "grade-06",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "001dc937c21756f8def76f1be22ca31d1982d9dec5159d105da6b36af51e0f50",
+    "checksum": "8da338d0686998f909d6cd8fa47b3a94634b6cc9a27b64a7668e940e2741cfa8",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék alapok",
-    "description": "Test on Százalék alapok including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage basics",
+    "description": "Prøve i Percentage basics: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 1: Percentage basics",
+      "text": "[math] Percentage basics - Spørsmål 1: Percentage basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 2: Percentage basics",
+      "text": "[math] Percentage basics - Spørsmål 2: Percentage basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 3: Percentage basics",
+      "text": "[math] Percentage basics - Spørsmål 3: Percentage basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék alapok - Kérdés 4: Percentage basics",
+      "text": "[math] Percentage basics - Spørsmål 4: Percentage basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Percentage basics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék alapok - Question 5: Percentage basics [rand:1-100]",
+      "text": "[math] Percentage basics - Spørsmål 5: Percentage basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-alapok",
+        "percentage-basics",
         "grade-06",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     }
   ],

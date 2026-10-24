@@ -3,21 +3,25 @@
     "id": "grade-04-math-osztás-tizedes-1.0.0",
     "name": "Osztás tizedes - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 perces felmérő: Osztás tizedes (grade-04). Témakörök: Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.072031+00:00",
-    "updated_at": "2026-10-21T11:02:35.072044+00:00",
+    "created_at": "2026-10-24T17:53:52.105735+00:00",
+    "updated_at": "2026-10-24T17:53:52.105747+00:00",
     "tags": [
       "math",
       "osztás-tizedes",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "1997ae06c736ff993ad2cad38983e72bb8285ee700d5b9fe14061dc161f22213",
+    "checksum": "e33d788c0b30fe4aac19d6bfa6e4f62489db819a1eea9dad0e73b5096f16572f",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Tizedes számok",
+      "Összeadás tizedes",
+      "Kivonás tizedes",
+      "Szorzás tizedes",
+      "Osztás tizedes"
     ]
   },
   "exam": {
     "title": "grade-04 Math - Osztás tizedes",
-    "description": "Test on Osztás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Felmérő a(z) Osztás tizedes témakörből (Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 1: Decimal division",
+      "text": "[math] Osztás tizedes - Kérdés 1: Osztás tizedes",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "osztás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "learning_objective": "Osztás tizedes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 2: Decimal division",
+      "text": "[math] Osztás tizedes - Kérdés 2: Osztás tizedes",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "osztás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "learning_objective": "Osztás tizedes"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 3: Decimal division",
+      "text": "[math] Osztás tizedes - Kérdés 3: Osztás tizedes",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "osztás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "learning_objective": "Osztás tizedes"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás tizedes - Kérdés 4: Decimal division",
+      "text": "[math] Osztás tizedes - Kérdés 4: Osztás tizedes",
       "options": null,
       "correct_answer": "Minta válasz a(z) Osztás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "osztás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "learning_objective": "Osztás tizedes"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás tizedes - Question 5: Decimal division [rand:1-100]",
+      "text": "[math] Osztás tizedes - Kérdés 5: Osztás tizedes [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "osztás-tizedes",
         "grade-04",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "learning_objective": "Osztás tizedes"
     }
   ],
   "rubrics": []

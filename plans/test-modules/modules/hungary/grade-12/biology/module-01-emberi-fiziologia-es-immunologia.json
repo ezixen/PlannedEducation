@@ -11,12 +11,13 @@
     "tags": [
       "biology",
       "emberi-fiziólogia-és-immunológia",
-      "grade-12"
+      "grade-12",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
     "license": "CC-BY-4.0",
-    "checksum": "9ce6eea384a07f80648b62b5244a16eb9b4ca80b5b0bfd0cd75cd8c9d79cedb3",
+    "checksum": "cf425009206c1b5b2ea50de45292988620072afc7cc9f28da66bdc3df9f7df4b",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Rendszerek",
       "Immunrendszer",
       "Betegségek"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 12 Biology - Emberi fiziólogia és immunológia",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-erők-1.0.0",
-    "name": "Erők - Sweden grade-08",
+    "name": "Forces - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minuters prov i Forces (grade-08). Omfattar: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.847054+00:00",
-    "updated_at": "2026-10-21T11:02:25.847070+00:00",
+    "created_at": "2026-10-24T17:53:48.543617+00:00",
+    "updated_at": "2026-10-24T17:53:48.543628+00:00",
     "tags": [
       "physics",
-      "erők",
+      "forces",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "306a4842151a231ee8bec7e436b76e83d16d3c235d6497712d049f0fbb22c562",
+    "checksum": "d2feb0555c0f87b623690a84cad7bc698f3fd33936f7e1799df2e70b93fe3a19",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Forces",
+    "description": "Prov i Forces: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Forces - Fråga 1: Forces",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Forces - Fråga 2: Forces",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Forces - Fråga 3: Forces",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Forces.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Forces - Fråga 4: Forces [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők",
+        "forces",
         "grade-08",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Forces - Fråga 5: Forces",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "SWEDEN-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-ökológia-1.0.0",
-    "name": "Ökológia - European Union grade-10",
+    "name": "Ecology - European Union grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Ecology for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.857996+00:00",
-    "updated_at": "2026-10-21T11:02:19.858016+00:00",
+    "created_at": "2026-10-24T17:53:47.342691+00:00",
+    "updated_at": "2026-10-24T17:53:47.342700+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ecology",
       "grade-10",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "723affb2f48e2f39f5eace686f4885e5f03f7af854a0f5d11f66ee1706782183",
+    "checksum": "e31c40be116ba28d86916078acf241a6a440244a295193b48a9359fe7a8b6373",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Ökológia",
-    "description": "Test on Ökológia including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Ecology",
+    "description": "Assessment on Ecology including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ecology - Question 1: Ecology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-10"
+        "ecology",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ökológia",
+      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ecology - Question 2: Ecology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-10"
+        "ecology",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ökológia",
+      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ecology - Question 3: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-10"
+        "ecology",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ökológia",
+      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ecology - Question 4: Ecology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-10"
+        "ecology",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ökológia",
+      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ecology - Question 5: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-10"
+        "ecology",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ökológia",
+      "curriculum_topic": "EU-GRADE-10-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     }
   ],

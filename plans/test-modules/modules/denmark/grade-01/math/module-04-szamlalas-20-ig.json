@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-20-ig-1.0.0",
-    "name": "Számlálás 20-ig - Denmark grade-01",
+    "name": "Counting to 20 - Denmark grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minutters prøve i Counting to 20 (grade-01). Emner: Tælle til 10, Addition til 10, Subtraktion til 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.014854+00:00",
-    "updated_at": "2026-10-21T11:02:27.014874+00:00",
+    "created_at": "2026-10-24T17:53:49.277060+00:00",
+    "updated_at": "2026-10-24T17:53:49.277068+00:00",
     "tags": [
       "math",
-      "számlálás-20-ig",
+      "counting-to-20",
       "grade-01",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "bc58a37af548a40a87918f22868133fe2d4774dc020fe8f11f5ca56a3179be36",
+    "checksum": "34f412b98b60487529daef41938bc175b02661751d068ba8ab8aa8efb097a6fc",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Tælle til 10",
+      "Addition til 10",
+      "Subtraktion til 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 20-ig",
-    "description": "Test on Számlálás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Counting to 20",
+    "description": "Prøve i Counting to 20: Tælle til 10, Addition til 10, Subtraktion til 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 1: Counting to 20",
+      "text": "[math] Counting to 20 - Spørgsmål 1: Counting to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 2: Counting to 20",
+      "text": "[math] Counting to 20 - Spørgsmål 2: Counting to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 3: Counting to 20",
+      "text": "[math] Counting to 20 - Spørgsmål 3: Counting to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 20-ig - Kérdés 4: Counting to 20",
+      "text": "[math] Counting to 20 - Spørgsmål 4: Counting to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Counting to 20.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 20-ig - Question 5: Counting to 20 [rand:1-20]",
+      "text": "[math] Counting to 20 - Spørgsmål 5: Counting to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "számlálás-20-ig",
+        "counting-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     }
   ],

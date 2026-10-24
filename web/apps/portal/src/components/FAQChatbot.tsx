@@ -42,17 +42,17 @@ const DOCS_INDEX: Record<string, { title: string; path: string; content: string 
 
   'install-windows': {
     title: 'Windows Installation Guide',
-    path: 'docs/INSTALL_WINDOWS.md',
+    path: 'docs/admin/INSTALL_WINDOWS.md',
     content: `Install PlannedEducation on Windows using PowerShell. Run install.ps1 as Administrator. Choose Native Mode (SQLite/PostgreSQL, no Docker) or Docker Compose Mode. Set ExecutionPolicy Bypass. Configure .env with JWT_SECRET_KEY, DATABASE_URL. Build frontend with npm run build. Start with start_all.bat.`,
   },
   'install-linux': {
     title: 'Linux Installation Guide',
-    path: 'docs/INSTALL_LINUX.md',
+    path: 'docs/admin/INSTALL_LINUX.md',
     content: `Install PlannedEducation on Linux using install.sh. Creates virtual environment, configures SQLite/PostgreSQL, sets up Systemd service. Supports Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL. Run curl or clone repo and execute ./install.sh.`,
   },
   'deployment-guide': {
     title: 'Deployment Guide',
-    path: 'docs/DEPLOYMENT.md',
+    path: 'docs/admin/DEPLOYMENT_GUIDE.md',
     content: `Deploy PlannedEducation to production. Use Docker Compose with docker-compose.yml. Set environment variables: JWT_SECRET_KEY, DATABASE_URL, REDIS_URL. Run alembic migrations. Build frontend. Use Nginx/Caddy reverse proxy with Let's Encrypt TLS. Configure CORS_ORIGINS and ALLOWED_HOSTS.`,
   },
   'teacher-guide': {
@@ -97,7 +97,7 @@ const DOCS_INDEX: Record<string, { title: string; path: string; content: string 
   },
   'security-audit': {
     title: 'Security Audit',
-    path: 'docs/dev/security_audit_2026.md',
+    path: 'plans/security_audit_2026.md',
     content: `Security audit for PlannedEducation. OWASP ASVS 5.0 compliance, penetration testing results, vulnerability assessments, security recommendations, encryption standards, access control review.`,
   },
   'github-free-tier': {
@@ -226,6 +226,24 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 15,
         question: "How do I register a Passkey?",
         answer: "Go to Settings > Passkeys, click 'Register Passkey', and use your device's biometric (fingerprint, face ID) or PIN to create the passkey. It will sync across your devices automatically."
+      },
+      {
+        id: 44,
+        question: "How does teacher account approval work?",
+        keywords: ["teacher", "approve", "approval", "pending", "superadmin", "admin", "verify"],
+        answer: "When a teacher registers, their account starts in a pending approval state so unauthorized users cannot create classes or exams. A Superadmin or Admin can approve the teacher in Admin Dashboard > Teachers (or via POST /admin/teachers/{id}/approve), immediately unlocking class creation, exam authoring, and grading."
+      },
+      {
+        id: 47,
+        question: "How does the 3-way parent-student-teacher account linking work?",
+        keywords: ["parent", "student", "link", "linking", "handshake", "approve", "child"],
+        answer: "Parents request a link to their child's student account from the Parent Dashboard. For student privacy and safety, the link uses a multi-party verification workflow where the student and/or teacher approves the connection before the parent can view exam scores and progress."
+      },
+      {
+        id: 48,
+        question: "How do superadmin emergency backup recovery codes work?",
+        keywords: ["superadmin", "emergency", "backup", "recovery", "codes", "lockout"],
+        answer: "During initial setup (setup_admin.py) or in Admin Dashboard > Security, 5 single-use emergency backup codes are generated and hashed with Argon2id. If the Superadmin loses their password or 2FA device, any unused recovery code can be used once to regain access."
       }
     ]
   },
@@ -263,7 +281,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         answer: "Prompt injection detection (20+ patterns), hallucination detection via consistency checking, output schema validation, confidence threshold (min 0.75), rate limiting (20/min, 200/hour), cost tracking ($5/day budget), provider health monitoring with automatic fallback."
       },
       {
-        id: 19,
+        id: 37,
         question: "Is AI cost tracking accurate?",
         answer: "⚠️ IMPORTANT: AI cost tracking is OPTIONAL and provides ROUGH ESTIMATES ONLY. AI provider pricing changes frequently (per-token costs, model pricing, regional differences, enterprise discounts, cached tokens, batch pricing). We CANNOT and SHALL NOT track ever-changing AI costs per supplier accurately. Limitations: estimates based on static pricing tables that may be outdated; only tracks token counts from API responses; does NOT account for cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes. Should NOT be relied upon for billing, budgeting, or financial decisions. Teachers MUST monitor their own AI provider dashboards for actual costs. Treat as a rough guardrail only; disable if not needed."
       }
@@ -291,6 +309,18 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 22,
         question: "How do I share packages with colleagues?",
         answer: "Send .pepkg.json via email/shared drive/USB, or use the pepkg CLI to publish to the registry. Recipients import via 'Import Package' or 'pepkg install'."
+      },
+      {
+        id: 45,
+        question: "How do I test an exam module with the 25x randomizer preview?",
+        keywords: ["randomizer", "25", "test module", "preview", "seed", "variation", "rand"],
+        answer: "In the Exam Editor (/teacher-exams/:id), set the Test Module count (e.g. 25, up to 50) next to the '🧪 Test Module' button and click it. PlannedEducation opens ephemeral preview tabs with unique random_seed values in test_mode=true so you can inspect and submit 25 different randomized variations ([rand:min-max] tokens, shuffled options, and question pools) without creating permanent student submissions."
+      },
+      {
+        id: 46,
+        question: "How do multi-language modules and country folder uploads work?",
+        keywords: ["language", "country", "folder", "module", "upload", "hungary", "germany", "finland", "localization", "badge"],
+        answer: "When creating, exporting, or importing an exam module, teachers can choose any language (e.g. English, Magyar, Deutsch, Suomi, Nederlands, Svenska, Norsk, Dansk, Español, Français, etc.) and specify the target country folder. The server automatically creates the country/grade/subject folder under plans/test-modules/modules/<country>/ if it does not exist yet, and marks the module with language and country badges so other teachers immediately see what language the test is written in—even if the portal UI does not have a full translation for that country yet."
       }
     ]
   },
@@ -346,13 +376,13 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 27,
         question: "How do I install PlannedEducation on Windows?",
         keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup"],
-        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. See docs/INSTALL_WINDOWS.md."
+        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. See docs/admin/INSTALL_WINDOWS.md."
       },
       {
         id: 28,
         question: "How do I install PlannedEducation on Linux?",
         keywords: ["linux", "install", "ubuntu", "debian", "install.sh", "bash", "server"],
-        answer: "To install on Linux (Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL): Run `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash` or clone the repo and run `./install.sh`. It automatically creates a virtual environment, configures SQLite/PostgreSQL, and sets up a background Systemd service. See docs/INSTALL_LINUX.md."
+        answer: "To install on Linux (Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL): Run `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash` or clone the repo and run `./install.sh`. It automatically creates a virtual environment, configures SQLite/PostgreSQL, and sets up a background Systemd service. See docs/admin/INSTALL_LINUX.md."
       },
       {
         id: 29,
@@ -364,7 +394,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 30,
         question: "How do I use the deployment wizard?",
         keywords: ["wizard", "deploy_wizard", "setup", "guided", "interactive"],
-        answer: "Run `python deploy_wizard.py` (or `python3 deploy_wizard.py`). This cross-platform CLI wizard detects your environment, generates cryptographically secure JWT and Fernet encryption keys, configures .env, builds frontend assets, and initializes database tables."
+        answer: "Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_wizard.py`). This cross-platform CLI wizard detects your environment, generates cryptographically secure JWT and Fernet encryption keys, configures .env, builds frontend assets, and initializes database tables."
       },
       {
         id: 31,

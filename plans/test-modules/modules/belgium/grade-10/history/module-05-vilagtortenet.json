@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Belgium grade-10",
+    "name": "World history - Belgium grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "Toets van 45 minuten over World history (grade-10). Onderwerpen: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.033830+00:00",
-    "updated_at": "2026-10-21T11:02:30.033846+00:00",
+    "created_at": "2026-10-24T17:53:51.003221+00:00",
+    "updated_at": "2026-10-24T17:53:51.003231+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-10",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "199468daf9cbfd432220c7c0433b5c3598e1a138bb135bfeaef9373740bebea7",
+    "checksum": "40844e93488653d15ff48f2a31bc77f6f8c9b61ca3a0540af4912b8b57d6b1b7",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Világtörténet",
-    "description": "Test on Világtörténet including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - World history",
+    "description": "Toets over World history: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Vraag 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Vraag 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Vraag 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor World history.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Vraag 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Vraag 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

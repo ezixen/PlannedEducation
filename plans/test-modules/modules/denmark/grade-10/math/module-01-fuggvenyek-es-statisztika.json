@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-függvények-és-statisztika-1.0.0",
-    "name": "Függvények és statisztika - Denmark grade-10",
+    "name": "Functions and statistics - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és statisztika for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minutters prøve i Functions and statistics (grade-10). Emner: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.654808+00:00",
-    "updated_at": "2026-10-21T11:02:27.654822+00:00",
+    "created_at": "2026-10-24T17:53:49.712794+00:00",
+    "updated_at": "2026-10-24T17:53:49.712808+00:00",
     "tags": [
       "math",
-      "függvények-és-statisztika",
+      "functions-and-statistics",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "8cc1abb7b5cfa49f843b8cb94f3285e035bec1ae2cfa93ade29de4ed203034bb",
+    "checksum": "239a1746019162957eecd3b2467dd9274e40935cd2fc0abf5cb9afe497e14223",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Függvények és statisztika",
-    "description": "Test on Függvények és statisztika including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Functions and statistics",
+    "description": "Prøve i Functions and statistics: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 1: Functions and statistics",
+      "text": "[math] Functions and statistics - Spørgsmål 1: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 2: Functions and statistics",
+      "text": "[math] Functions and statistics - Spørgsmål 2: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 3: Functions and statistics",
+      "text": "[math] Functions and statistics - Spørgsmål 3: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és statisztika - Kérdés 4: Functions and statistics",
+      "text": "[math] Functions and statistics - Spørgsmål 4: Functions and statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Functions and statistics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és statisztika - Question 5: Functions and statistics [rand:1-100]",
+      "text": "[math] Functions and statistics - Spørgsmål 5: Functions and statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-statisztika",
+        "functions-and-statistics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     }
   ],

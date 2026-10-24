@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-sejt-szerkezete-1.0.0",
-    "name": "Sejt szerkezete - European Union grade-11",
+    "name": "Cell structure - European Union grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Cell structure for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.797674+00:00",
-    "updated_at": "2026-10-21T11:02:23.797684+00:00",
+    "created_at": "2026-10-24T17:53:47.396804+00:00",
+    "updated_at": "2026-10-24T17:53:47.396812+00:00",
     "tags": [
       "biology",
-      "sejt-szerkezete",
+      "cell-structure",
       "grade-11",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "ef920f9fecc2e6c8b0b3c13a480bf3226773b5571e27f5d7fac19bd2a2d3d1c1",
+    "checksum": "e046c1ceaf57d48a4603feb06e9eefb0c0eeaeb08c96d2c8f491ad8075d2d8b1",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Cell structure",
+    "description": "Assessment on Cell structure including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Cell structure - Question 1: Cell structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Cell structure - Question 2: Cell structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Cell structure - Question 3: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell structure.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Cell structure - Question 4: Cell structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Cell structure - Question 5: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell structure.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "EU-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     }
   ],

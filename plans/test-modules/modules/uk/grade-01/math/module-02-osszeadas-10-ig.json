@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-10-ig-1.0.0",
-    "name": "Összeadás 10-ig - United Kingdom grade-01",
+    "name": "Addition to 10 - United Kingdom grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minute assessment on Addition to 10 for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.845046+00:00",
-    "updated_at": "2026-10-21T11:02:16.845065+00:00",
+    "created_at": "2026-10-24T17:53:45.665951+00:00",
+    "updated_at": "2026-10-24T17:53:45.665958+00:00",
     "tags": [
       "math",
-      "összeadás-10-ig",
+      "addition-to-10",
       "grade-01",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "eebf47e0cdfd054764ffd3581832059df6de4ea84657963711c1f20c45492812",
+    "checksum": "a4d4e21db40c4c858414313d6ceedd72c7acd2cdfe8668861bb60f6e0013a896",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 10-ig",
-    "description": "Test on Összeadás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition to 10",
+    "description": "Assessment on Addition to 10 including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 1: Addition to 10",
+      "text": "[math] Addition to 10 - Question 1: Addition to 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Összeadás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Addition to 10",
       "learning_objective": "Addition to 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 2: Addition to 10",
+      "text": "[math] Addition to 10 - Question 2: Addition to 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Összeadás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Addition to 10",
       "learning_objective": "Addition to 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 3: Addition to 10",
+      "text": "[math] Addition to 10 - Question 3: Addition to 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Összeadás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Addition to 10",
       "learning_objective": "Addition to 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 10-ig - Kérdés 4: Addition to 10",
+      "text": "[math] Addition to 10 - Question 4: Addition to 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Addition to 10.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Összeadás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Addition to 10",
       "learning_objective": "Addition to 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 10-ig - Question 5: Addition to 10 [rand:1-20]",
+      "text": "[math] Addition to 10 - Question 5: Addition to 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-10-ig",
+        "addition-to-10",
         "grade-01",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Összeadás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Addition to 10",
       "learning_objective": "Addition to 10"
     }
   ],

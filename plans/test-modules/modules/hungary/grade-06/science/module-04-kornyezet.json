@@ -3,21 +3,25 @@
     "id": "grade-06-science-környezet-1.0.0",
     "name": "Környezet - Hungary grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 perces felmérő: Környezet (grade-06). Témakörök: Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.138414+00:00",
-    "updated_at": "2026-10-21T11:02:35.138426+00:00",
+    "created_at": "2026-10-24T17:53:52.167073+00:00",
+    "updated_at": "2026-10-24T17:53:52.167091+00:00",
     "tags": [
       "science",
       "környezet",
       "grade-06",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-06",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "34a8929575f448f5a912fc6788c0bad1630502b0459c6a29bf658807b62ef3ba",
+    "checksum": "3b5fa41ba30d0b25762b1dcd551ab24b919498cf95d7780c79f639573131f774",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Természet és környezet",
+      "Növények és állatok",
+      "Természet",
+      "Környezet",
+      "Természetvédelem"
     ]
   },
   "exam": {
     "title": "grade-06 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Felmérő a(z) Környezet témakörből (Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Környezet - Kérdés 1: Környezet",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "science",
         "környezet",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "learning_objective": "Környezet"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Környezet - Kérdés 2: Környezet",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "science",
         "környezet",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "learning_objective": "Környezet"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Környezet - Kérdés 3: Környezet",
       "options": null,
       "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
         "környezet",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "learning_objective": "Környezet"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Környezet - Kérdés 4: Környezet",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "science",
         "környezet",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "learning_objective": "Környezet"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Környezet - Kérdés 5: Környezet",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "science",
         "környezet",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "learning_objective": "Környezet"
     }
   ],
   "rubrics": []

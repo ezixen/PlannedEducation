@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-genetika-1.0.0",
-    "name": "Genetika - Denmark grade-11",
+    "name": "Genetics - Denmark grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Genetics (grade-11). Emner: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.690902+00:00",
-    "updated_at": "2026-10-21T11:02:27.690922+00:00",
+    "created_at": "2026-10-24T17:53:49.738614+00:00",
+    "updated_at": "2026-10-24T17:53:49.738624+00:00",
     "tags": [
       "biology",
-      "genetika",
+      "genetics",
       "grade-11",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "abf1cf4a29cce2dcc432190c19fb93c3e8ee14c7457afb336411a05461c1842e",
+    "checksum": "cd3f0a7a6982f0cf612cb663c7087981946e2af682f55c2534939db737c442ca",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Genetika",
-    "description": "Test on Genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Genetics",
+    "description": "Prøve i Genetics: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 1: Genetics",
+      "text": "[biology] Genetics - Spørgsmål 1: Genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-11"
+        "genetics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetika",
+      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 2: Genetics",
+      "text": "[biology] Genetics - Spørgsmål 2: Genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-11"
+        "genetics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetika",
+      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 3: Genetics",
+      "text": "[biology] Genetics - Spørgsmål 3: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Genetics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-11"
+        "genetics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetika",
+      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 4: Genetics",
+      "text": "[biology] Genetics - Spørgsmål 4: Genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-11"
+        "genetics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetika",
+      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 5: Genetics",
+      "text": "[biology] Genetics - Spørgsmål 5: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Genetics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-11"
+        "genetics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetika",
+      "curriculum_topic": "DENMARK-GRADE-11-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     }
   ],

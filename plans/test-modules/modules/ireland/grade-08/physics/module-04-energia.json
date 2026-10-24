@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-energia-1.0.0",
-    "name": "Energia - Ireland grade-08",
+    "name": "Energy - Ireland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Energy for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.574510+00:00",
-    "updated_at": "2026-10-21T11:02:30.574528+00:00",
+    "created_at": "2026-10-24T17:53:51.352470+00:00",
+    "updated_at": "2026-10-24T17:53:51.352479+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-08",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "220c48229e6cc543e299303fbab970abd262847b68095b5cf0950e4a10d2f0a5",
+    "checksum": "e05e408b550d047dd2afb62a67b0ddcd866453a74b370b47d1cd6874005927e9",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Energia",
-    "description": "Test on Energia including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Energy",
+    "description": "Assessment on Energy including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Question 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Question 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Question 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Energy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energy - Question 4: Energy [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Question 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

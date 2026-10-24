@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-energia-1.0.0",
-    "name": "Energia - Australia grade-09",
+    "name": "Energy - Australia grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minute assessment on Energy for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.723082+00:00",
-    "updated_at": "2026-10-21T11:02:18.723104+00:00",
+    "created_at": "2026-10-24T17:53:46.803064+00:00",
+    "updated_at": "2026-10-24T17:53:46.803073+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-09",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "5c6e7171ecd0c29be6994137e61cc507d99bdaa973d87746fb7a65a3937385d1",
+    "checksum": "c92191ed9340e5673520826469a68874589b56360bd15b035d24507f910f078a",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Energia",
-    "description": "Test on Energia including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Energy",
+    "description": "Assessment on Energy including Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Question 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Question 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Question 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Energy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energy - Question 4: Energy [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-09",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Question 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "AUSTRALIA-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

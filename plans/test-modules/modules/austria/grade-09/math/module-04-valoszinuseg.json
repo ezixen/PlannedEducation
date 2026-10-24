@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-valószínűség-1.0.0",
-    "name": "Valószínűség - Austria grade-09",
+    "name": "Wahrscheinlichkeitsrechnung - Austria grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Wahrscheinlichkeitsrechnung (grade-09). Themen: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.238504+00:00",
-    "updated_at": "2026-10-21T11:02:29.238516+00:00",
+    "created_at": "2026-10-24T17:53:50.534604+00:00",
+    "updated_at": "2026-10-24T17:53:50.534610+00:00",
     "tags": [
       "math",
-      "valószínűség",
+      "wahrscheinlichkeitsrechnung",
       "grade-09",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "a2cc78ad35d36e3765b76daa8ee2ee44ab14d03e4a89ee661cc8bebdd33897ad",
+    "checksum": "d11f18017f4da448c6072cf9b87439f8473b568e19881e756ad08d20132323bb",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen und Grenzwerte",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Valószínűség",
-    "description": "Test on Valószínűség including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Wahrscheinlichkeitsrechnung",
+    "description": "Prüfung zum Thema Wahrscheinlichkeitsrechnung: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 1: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 1: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "wahrscheinlichkeitsrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 2: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 2: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "wahrscheinlichkeitsrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 3: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 3: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "wahrscheinlichkeitsrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség - Kérdés 4: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 4: Wahrscheinlichkeitsrechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Wahrscheinlichkeitsrechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "wahrscheinlichkeitsrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség - Question 5: Probability [rand:1-1000]",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 5: Wahrscheinlichkeitsrechnung [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "valószínűség",
+        "wahrscheinlichkeitsrechnung",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     }
   ],
   "rubrics": []

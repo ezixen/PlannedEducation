@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Belgium grade-02",
+    "name": "Planten en dieren - Belgium grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Toets van 45 minuten over Planten en dieren (grade-02). Onderwerpen: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.504197+00:00",
-    "updated_at": "2026-10-21T11:02:29.504209+00:00",
+    "created_at": "2026-10-24T17:53:50.699506+00:00",
+    "updated_at": "2026-10-24T17:53:50.699512+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "planten-en-dieren",
       "grade-02",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "a5006527acab6c2b18f29626b2148095506e6793b8675e26e37104f61b63cb14",
+    "checksum": "ff32ad0f326821b2069d952e14238accd14ec0b613417e5130f611ac616418e9",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natuur en milieu",
+      "Planten en dieren",
+      "Natuur",
+      "Milieu",
+      "Natuurbehoud"
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Planten en dieren",
+    "description": "Toets over Planten en dieren: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 1: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "planten-en-dieren",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 2: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "planten-en-dieren",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 3: Planten en dieren",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Planten en dieren.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "planten-en-dieren",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 4: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "planten-en-dieren",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 5: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "planten-en-dieren",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "BELGIUM-GRADE-02-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     }
   ],
   "rubrics": []

@@ -110,6 +110,18 @@ The pepkg CLI is a command-line tool for managing test packages: export/import/v
 ### How do I share packages with colleagues?
 Send .pepkg.json via email/shared drive/USB, or use the pepkg CLI to publish to the registry. Recipients import via 'Import Package' or 'pepkg install'.
 
+### How do I test an exam module with the 25x randomizer preview?
+In the Exam Editor (`/teacher-exams/:id`), set the Test Module count (e.g. `25`, up to `50`) next to the **🧪 Test Module** button and click it. PlannedEducation opens ephemeral preview tabs with unique `random_seed` values in `test_mode=true` so you can inspect and submit 25 different randomized variations (`[rand:min-max]` tokens, shuffled options, and question pools) without creating permanent student submissions.
+
+### How do multi-language modules and country folder uploads work?
+When creating, exporting, or importing an exam module, teachers can choose any language (e.g., English, Magyar, Deutsch, Suomi, Nederlands, Svenska, Norsk, Dansk, Español, Français, etc.) and specify the target country folder. The server automatically creates the country/grade/subject folder under `plans/test-modules/modules/<country>/` if it does not exist yet, and marks the module with language and country badges so other teachers immediately see what language the test is written in—even if the portal UI does not have a full translation for that country yet.
+
+### How does teacher account approval work?
+When a teacher registers, their account starts in a pending approval state so unauthorized users cannot create classes or exams. A Superadmin or Admin can approve the teacher in **Admin Dashboard > Teachers** (or via `POST /admin/teachers/{id}/approve`), immediately unlocking class creation, exam authoring, and grading.
+
+### How does the 3-way parent-student-teacher account linking work?
+Parents request a link to their child's student account from the Parent Dashboard. For student privacy and safety, the link uses a multi-party verification workflow where the student and/or teacher approves the connection before the parent can view exam scores and progress.
+
 ---
 
 ## Proctoring & Monitoring

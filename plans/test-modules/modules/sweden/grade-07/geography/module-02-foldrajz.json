@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajz-1.0.0",
-    "name": "Földrajz - Sweden grade-07",
+    "name": "Geography - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minuters prov i Geography (grade-07). Omfattar: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.706841+00:00",
-    "updated_at": "2026-10-21T11:02:25.706859+00:00",
+    "created_at": "2026-10-24T17:53:48.442874+00:00",
+    "updated_at": "2026-10-24T17:53:48.442879+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geography",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "b311fad977956b1d942ed751ce203911a001a7c089cac4b93b15c65614ddf12a",
+    "checksum": "ba5a5c7460ef1f4308e5b595b0e5b4eea22d629fb416c20e2f41a094b6283a1d",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajz",
-    "description": "Test on Földrajz including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geography",
+    "description": "Prov i Geography: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geography - Fråga 1: Geography",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-07"
+        "geography",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geography - Fråga 2: Geography",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-07"
+        "geography",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geography - Fråga 3: Geography",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Geography.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-07"
+        "geography",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geography - Fråga 4: Geography",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-07"
+        "geography",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geography - Fråga 5: Geography",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-07"
+        "geography",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "SWEDEN-GRADE-07-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     }
   ],

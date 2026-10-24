@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - USA grade-09",
+    "name": "Historical events - USA grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minute assessment on Historical events for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.028051+00:00",
-    "updated_at": "2026-10-21T11:02:18.028061+00:00",
+    "created_at": "2026-10-24T17:53:46.388329+00:00",
+    "updated_at": "2026-10-24T17:53:46.388334+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historical-events",
       "grade-09",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "c56822571c6dfc270a32b70fd7da85d719c9a65465cf116b6a51a10a9838a5b3",
+    "checksum": "17e55d0f871a8a3a35adf46b8412ea34b66b0cc6da30c2603ac4558b08371590",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - Történelmi események",
-    "description": "Test on Történelmi események including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - Historical events",
+    "description": "Assessment on Historical events including History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historical events - Question 1: Historical events",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "USA-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historical events - Question 2: Historical events",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "USA-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historical events - Question 3: Historical events",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Historical events.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "USA-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historical events - Question 4: Historical events",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "USA-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historical events - Question 5: Historical events",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "USA-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     }
   ],

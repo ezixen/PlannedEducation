@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-természet-1.0.0",
-    "name": "Természet - Denmark grade-04",
+    "name": "Natur - Denmark grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Natur (grade-04). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.209198+00:00",
-    "updated_at": "2026-10-21T11:02:27.209217+00:00",
+    "created_at": "2026-10-24T17:53:49.365785+00:00",
+    "updated_at": "2026-10-24T17:53:49.365794+00:00",
     "tags": [
       "science",
-      "természet",
+      "natur",
       "grade-04",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "7a333aa3475ef48b43abd35174ff903dd7d2a69bb27f11d92039aa5670575cfe",
+    "checksum": "d86f4ca638ce2f87f23b3a6a9016e02d40045f3c6a3278478a2d28960fbaec97",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturbeskyttelse"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Natur",
+    "description": "Prøve i Natur: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Natur - Spørgsmål 1: Natur",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-04"
+        "natur",
+        "grade-04",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Natur - Spørgsmål 2: Natur",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-04"
+        "natur",
+        "grade-04",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Natur - Spørgsmål 3: Natur",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Natur.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-04"
+        "natur",
+        "grade-04",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Natur - Spørgsmål 4: Natur",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-04"
+        "natur",
+        "grade-04",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Natur - Spørgsmål 5: Natur",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-04"
+        "natur",
+        "grade-04",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "DENMARK-GRADE-04-SCIENCE-Natur",
+      "learning_objective": "Natur"
     }
   ],
   "rubrics": []

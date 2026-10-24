@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-racionális-számok-1.0.0",
-    "name": "Racionális számok - European Union grade-07",
+    "name": "Rational numbers - European Union grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Racionális számok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minute assessment on Rational numbers for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.141040+00:00",
-    "updated_at": "2026-10-21T11:02:19.141056+00:00",
+    "created_at": "2026-10-24T17:53:47.199059+00:00",
+    "updated_at": "2026-10-24T17:53:47.199066+00:00",
     "tags": [
       "math",
-      "racionális-számok",
+      "rational-numbers",
       "grade-07",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "3f7ff959c30fda8e81177f1672ff20563d43e449770954c1884d794ec6fe35c5",
+    "checksum": "3c07bfac6738718c08c4155fb7fef0ec64d36dcc127a3dcae97ca73a28c42ad3",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Racionális számok",
-    "description": "Test on Racionális számok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Rational numbers",
+    "description": "Assessment on Rational numbers including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 1: Rational numbers",
+      "text": "[math] Rational numbers - Question 1: Rational numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "EU-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 2: Rational numbers",
+      "text": "[math] Rational numbers - Question 2: Rational numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "EU-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 3: Rational numbers",
+      "text": "[math] Rational numbers - Question 3: Rational numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "EU-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Racionális számok - Kérdés 4: Rational numbers",
+      "text": "[math] Rational numbers - Question 4: Rational numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Rational numbers.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "EU-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Racionális számok - Question 5: Rational numbers [rand:1-100]",
+      "text": "[math] Rational numbers - Question 5: Rational numbers [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "racionális-számok",
+        "rational-numbers",
         "grade-07",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "EU-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     }
   ],

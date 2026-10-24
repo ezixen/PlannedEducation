@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-1.0.0",
-    "name": "Földrajz - Finland grade-12",
+    "name": "Geography - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 minuutin koe aiheesta Geography (grade-12). Aiheet: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.734827+00:00",
-    "updated_at": "2026-10-21T11:02:24.734842+00:00",
+    "created_at": "2026-10-24T17:53:47.861364+00:00",
+    "updated_at": "2026-10-24T17:53:47.861371+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geography",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "49a17ecfeff65f00a1753f09c19f69ffedf47f7c6b23fb45900a22f4939bdd28",
+    "checksum": "52353bf4d7983cebce58d4addab88c886a5cbfbfbee74c9a68a3a9928d0e302e",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz",
-    "description": "Test on Földrajz including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geography",
+    "description": "Koe aiheesta Geography: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geography - Kysymys 1: Geography",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geography - Kysymys 2: Geography",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geography - Kysymys 3: Geography",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Geography.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geography - Kysymys 4: Geography",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geography - Kysymys 5: Geography",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     }
   ],

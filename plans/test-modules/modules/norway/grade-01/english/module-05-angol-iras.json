@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-írás-1.0.0",
-    "name": "Angol írás - Norway grade-01",
+    "name": "English writing - Norway grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minutters prøve i English writing (grade-01). Emner: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.174982+00:00",
-    "updated_at": "2026-10-21T11:02:26.174995+00:00",
+    "created_at": "2026-10-24T17:53:48.797327+00:00",
+    "updated_at": "2026-10-24T17:53:48.797333+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-01",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "acb97eed3db0fe4fb2f1aebdc7bf168963dfa425cdd3e0f8c1d3e5802ebffc8f",
+    "checksum": "5236b0f03c7b702feb17496c3e38211b6c3bef30428448b395444db7932c54ad",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol írás",
-    "description": "Test on Angol írás including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English writing",
+    "description": "Prøve i English writing: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Spørsmål 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Spørsmål 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Spørsmål 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English writing.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Spørsmål 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Spørsmål 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

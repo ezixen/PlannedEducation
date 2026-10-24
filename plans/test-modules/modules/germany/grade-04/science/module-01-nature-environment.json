@@ -8,11 +8,18 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["naturwissenschaften", "natur", "umwelt", "klasse-4", "deutschland"],
+    "tags": [
+      "naturwissenschaften",
+      "natur",
+      "umwelt",
+      "klasse-4",
+      "deutschland",
+      "de"
+    ],
     "subject": "science",
     "grade_level": "grade-04",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "7e03cea344326fbbda5b292b36cdb66a568cdcd747526530db58de67b4d064bf",
     "curriculum": "deutschland-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +32,10 @@
       "Jahreszeiten und Wetter verstehen",
       "Pflanzen und Tiere erkennen",
       "Umweltschutz verstehen"
-    ]
+    ],
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany"
   },
   "exam": {
     "title": "Klasse 4 Naturwissenschaften - Natur und Umwelt",
@@ -51,12 +61,20 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Welches davon ist ein Lebewesen?",
-      "options": ["Ein Stein", "Ein Baum", "Ein Auto", "Ein Bleistift"],
+      "options": [
+        "Ein Stein",
+        "Ein Baum",
+        "Ein Auto",
+        "Ein Bleistift"
+      ],
       "correct_answer": "Ein Baum",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["lebewesen", "klassifizierung"],
+      "tags": [
+        "lebewesen",
+        "klassifizierung"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Lebewesen",
@@ -66,12 +84,20 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Was brauchen Pflanzen zum Wachsen?",
-      "options": ["Nur Wasser", "Nur Sonnenlicht", "Wasser und Sonnenlicht", "Nur Erde"],
+      "options": [
+        "Nur Wasser",
+        "Nur Sonnenlicht",
+        "Wasser und Sonnenlicht",
+        "Nur Erde"
+      ],
       "correct_answer": "Wasser und Sonnenlicht",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["pflanzen", "beduerfnisse"],
+      "tags": [
+        "pflanzen",
+        "beduerfnisse"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Pflanzen",
@@ -81,12 +107,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Welche Jahreszeit hat das kälteste Wetter?",
-      "options": ["Frühling", "Sommer", "Herbst", "Winter"],
+      "options": [
+        "Frühling",
+        "Sommer",
+        "Herbst",
+        "Winter"
+      ],
       "correct_answer": "Winter",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["jahreszeiten", "wetter"],
+      "tags": [
+        "jahreszeiten",
+        "wetter"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Jahreszeiten",
@@ -96,12 +130,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Welches Tier hält Winterschlaf?",
-      "options": ["Adler", "Bär", "Delfin", "Adler"],
+      "options": [
+        "Adler",
+        "Bär",
+        "Delfin",
+        "Adler"
+      ],
       "correct_answer": "Bär",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["tiere", "winterschlaf"],
+      "tags": [
+        "tiere",
+        "winterschlaf"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Tiere",
@@ -111,12 +153,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Welcher Teil der Pflanze nimmt Wasser aus dem Boden auf?",
-      "options": ["Blätter", "Blüten", "Wurzeln", "Stängel"],
+      "options": [
+        "Blätter",
+        "Blüten",
+        "Wurzeln",
+        "Stängel"
+      ],
       "correct_answer": "Wurzeln",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["pflanzen", "teile"],
+      "tags": [
+        "pflanzen",
+        "teile"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Pflanzenteile",
@@ -126,12 +176,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Welches davon ist KEIN Lebewesen?",
-      "options": ["Hund", "Baum", "Stein", "Vogel"],
+      "options": [
+        "Hund",
+        "Baum",
+        "Stein",
+        "Vogel"
+      ],
       "correct_answer": "Stein",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["lebewesen", "klassifizierung"],
+      "tags": [
+        "lebewesen",
+        "klassifizierung"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Lebewesen",
@@ -141,12 +199,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Pflanzen stellen ihre eigene Nahrung her mit:",
-      "options": ["Nur Erde", "Sonnenlicht", "Steine", "Wind"],
+      "options": [
+        "Nur Erde",
+        "Sonnenlicht",
+        "Steine",
+        "Wind"
+      ],
       "correct_answer": "Sonnenlicht",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["pflanzen", "photosynthese"],
+      "tags": [
+        "pflanzen",
+        "photosynthese"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-04-Naturwissenschaften-Pflanzennahrung",
@@ -156,12 +222,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Welches davon braucht KEIN Wasser?",
-      "options": ["Fisch", "Pflanze", "Mensch", "Stein"],
+      "options": [
+        "Fisch",
+        "Pflanze",
+        "Mensch",
+        "Stein"
+      ],
       "correct_answer": "Stein",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["wasser", "beduerfnisse"],
+      "tags": [
+        "wasser",
+        "beduerfnisse"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-04-Naturwissenschaften-Wasser",
@@ -176,7 +250,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["pflanzen", "zeichnen", "beschriften"],
+      "tags": [
+        "pflanzen",
+        "zeichnen",
+        "beschriften"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "DE-04-Naturwissenschaften-Pflanzenteile",
@@ -191,7 +269,10 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["klassifizierung", "lebewesen"],
+      "tags": [
+        "klassifizierung",
+        "lebewesen"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-04-Naturwissenschaften-Lebewesen",
@@ -207,19 +288,35 @@
           "id": "c-009-1",
           "description": "Zeichnung zeigt eine Pflanze mit erkennbaren Teilen",
           "points": 4,
-          "keywords": ["pflanze", "zeichnung", "teile"]
+          "keywords": [
+            "pflanze",
+            "zeichnung",
+            "teile"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Mindestens 3 Teile korrekt beschriftet",
           "points": 3,
-          "keywords": ["wurzeln", "stängel", "blätter", "blüten", "beschriftet"]
+          "keywords": [
+            "wurzeln",
+            "stängel",
+            "blätter",
+            "blüten",
+            "beschriftet"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Jedes Label enthält korrekte Funktion",
           "points": 3,
-          "keywords": ["funktion", "aufnehmen", "halten", "nahrung", "herstellen"]
+          "keywords": [
+            "funktion",
+            "aufnehmen",
+            "halten",
+            "nahrung",
+            "herstellen"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +329,37 @@
           "id": "c-010-1",
           "description": "Nennt 3 Lebewesen korrekt",
           "points": 3,
-          "keywords": ["hund", "baum", "mensch", "katze", "vogel"]
+          "keywords": [
+            "hund",
+            "baum",
+            "mensch",
+            "katze",
+            "vogel"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Nennt 3 nicht-lebende Dinge korrekt",
           "points": 3,
-          "keywords": ["stein", "auto", "bleistift", "buch", "tisch"]
+          "keywords": [
+            "stein",
+            "auto",
+            "bleistift",
+            "buch",
+            "tisch"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Erklärt, warum Lebewesen leben (wachsen, brauchen Nahrung/Wasser)",
           "points": 4,
-          "keywords": ["wachsen", "nahrung", "wasser", "leben", "atmen"]
+          "keywords": [
+            "wachsen",
+            "nahrung",
+            "wasser",
+            "leben",
+            "atmen"
+          ]
         }
       ],
       "total_points": 10

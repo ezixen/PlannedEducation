@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-statisztika-1.0.0",
-    "name": "Statisztika - Netherlands grade-11",
+    "name": "Statistics - Netherlands grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "Toets van 45 minuten over Statistics (grade-11). Onderwerpen: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.419120+00:00",
-    "updated_at": "2026-10-21T11:02:25.419133+00:00",
+    "created_at": "2026-10-24T17:53:48.284178+00:00",
+    "updated_at": "2026-10-24T17:53:48.284185+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistics",
       "grade-11",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "fa8bc2d7bc0195291eced99eb237290c09e382d9d79ae32151255d6ae4c60704",
+    "checksum": "864cdefa409f2cc17ab6729f4637472e63d37723c3671309f80b6b0f9eb51224",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Statisztika",
-    "description": "Test on Statisztika including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Statistics",
+    "description": "Toets over Statistics: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistics - Vraag 1: Statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistics - Vraag 2: Statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistics - Vraag 3: Statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistics - Vraag 4: Statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Statistics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-100]",
+      "text": "[math] Statistics - Vraag 5: Statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     }
   ],

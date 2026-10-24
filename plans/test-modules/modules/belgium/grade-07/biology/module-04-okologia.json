@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-ökológia-1.0.0",
-    "name": "Ökológia - Belgium grade-07",
+    "name": "Ecology - Belgium grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Ecology (grade-07). Onderwerpen: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.628114+00:00",
-    "updated_at": "2026-10-21T11:02:29.628126+00:00",
+    "created_at": "2026-10-24T17:53:50.790048+00:00",
+    "updated_at": "2026-10-24T17:53:50.790056+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ecology",
       "grade-07",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "398787d0f318cba5f8c7b215a60ed6f40a9e13a423d6fcfba56b02bfea2d865b",
+    "checksum": "5a616611ee89aa3d828dad5102a38c04bbe380943f3e9863a61d8632409689e9",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Ökológia",
-    "description": "Test on Ökológia including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Ecology",
+    "description": "Toets over Ecology: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ecology - Vraag 1: Ecology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-07"
+        "ecology",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ecology - Vraag 2: Ecology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-07"
+        "ecology",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ecology - Vraag 3: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-07"
+        "ecology",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ecology - Vraag 4: Ecology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-07"
+        "ecology",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ecology - Vraag 5: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-07"
+        "ecology",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     }
   ],

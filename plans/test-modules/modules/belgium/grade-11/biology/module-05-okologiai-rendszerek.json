@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - Belgium grade-11",
+    "name": "Ecological systems - Belgium grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Ecological systems (grade-11). Onderwerpen: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.066540+00:00",
-    "updated_at": "2026-10-21T11:02:30.066564+00:00",
+    "created_at": "2026-10-24T17:53:51.027605+00:00",
+    "updated_at": "2026-10-24T17:53:51.027611+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ecological-systems",
       "grade-11",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "e786c38bd50cb5555c8401d69f903a0f9b4868123964de8079c7f73dca037f32",
+    "checksum": "664f0620c9627da951b4fa62a43c4aca85708ef409a71627709ce4263048d56e",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Ecological systems",
+    "description": "Toets over Ecological systems: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 1: Ecological systems",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 2: Ecological systems",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 3: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecological systems.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 4: Ecological systems",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 5: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecological systems.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     }
   ],

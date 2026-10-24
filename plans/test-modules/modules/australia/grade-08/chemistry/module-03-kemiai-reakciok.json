@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-reakciók-1.0.0",
-    "name": "Kémiai reakciók - Australia grade-08",
+    "name": "Chemical reactions - Australia grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minute assessment on Chemical reactions for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.587487+00:00",
-    "updated_at": "2026-10-21T11:02:18.587498+00:00",
+    "created_at": "2026-10-24T17:53:46.708887+00:00",
+    "updated_at": "2026-10-24T17:53:46.708899+00:00",
     "tags": [
       "chemistry",
-      "kémiai-reakciók",
+      "chemical-reactions",
       "grade-08",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "6dd23c43fbfc88327df68cba317584b5d799466dbacff40fc74ede08ce099f53",
+    "checksum": "029643375f1547e310c115c6f8a3262f043fdcb5ea70bd4678a51dcab4251d97",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical reactions",
+    "description": "Assessment on Chemical reactions including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 1: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 2: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 3: Chemical reactions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Chemical reactions.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-1000]",
+      "text": "[chemistry] Chemical reactions - Question 4: Chemical reactions [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
+        "chemical-reactions",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 5: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     }
   ],

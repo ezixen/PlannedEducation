@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Finland grade-03",
+    "name": "Luonto ja ympäristö - Finland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 minuutin koe aiheesta Luonto ja ympäristö (grade-03). Aiheet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.053553+00:00",
-    "updated_at": "2026-10-21T11:02:24.053565+00:00",
+    "created_at": "2026-10-24T17:53:47.520472+00:00",
+    "updated_at": "2026-10-24T17:53:47.520481+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "luonto-ja-ympäristö",
       "grade-03",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "science",
     "grade_level": "grade-03",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "86c73f34283679ad55a877e9e7c87642a8f6102a40a91f52f7bc3b2c829f6c5b",
+    "checksum": "bbd64a8a18e895ddbe1ef8bad3ff3c87396406ae5376fbc41258c4553d2fad79",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Luonto ja ympäristö",
+      "Kasvit ja eläimet",
+      "Luonto",
+      "Ympäristö",
+      "Luonnonsuojelu"
     ]
   },
   "exam": {
-    "title": "grade-03 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-03 Science - Luonto ja ympäristö",
+    "description": "Koe aiheesta Luonto ja ympäristö: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Luonto ja ympäristö - Kysymys 1: Luonto ja ympäristö",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-03"
+        "luonto-ja-ympäristö",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto ja ympäristö",
+      "learning_objective": "Luonto ja ympäristö"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Luonto ja ympäristö - Kysymys 2: Luonto ja ympäristö",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-03"
+        "luonto-ja-ympäristö",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto ja ympäristö",
+      "learning_objective": "Luonto ja ympäristö"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Luonto ja ympäristö - Kysymys 3: Luonto ja ympäristö",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Luonto ja ympäristö.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-03"
+        "luonto-ja-ympäristö",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto ja ympäristö",
+      "learning_objective": "Luonto ja ympäristö"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Luonto ja ympäristö - Kysymys 4: Luonto ja ympäristö",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-03"
+        "luonto-ja-ympäristö",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto ja ympäristö",
+      "learning_objective": "Luonto ja ympäristö"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Luonto ja ympäristö - Kysymys 5: Luonto ja ympäristö",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-03"
+        "luonto-ja-ympäristö",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto ja ympäristö",
+      "learning_objective": "Luonto ja ympäristö"
     }
   ],
   "rubrics": []

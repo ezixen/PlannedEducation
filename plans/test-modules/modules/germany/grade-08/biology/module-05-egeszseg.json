@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-egészség-1.0.0",
-    "name": "Egészség - Germany grade-08",
+    "name": "Gesundheit - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minütige Prüfung zum Thema Gesundheit (grade-08). Themen: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.389074+00:00",
-    "updated_at": "2026-10-21T11:02:16.389092+00:00",
+    "created_at": "2026-10-24T17:53:45.402566+00:00",
+    "updated_at": "2026-10-24T17:53:45.402572+00:00",
     "tags": [
       "biology",
-      "egészség",
+      "gesundheit",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "2b0df95e9a7577560fbe46c8d979fb631eae48823f5019bbdc6cca7324a9aa96",
+    "checksum": "29c97b34bfbfc0c40ab9c6ec9da8819163b7f8fd3aadb215e7da335c5724ac05",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Menschlicher Körper und Gesundheit",
+      "Anatomie des Menschen",
+      "Sinnesorgane",
+      "Wahrnehmung",
+      "Gesundheit"
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Gesundheit",
+    "description": "Prüfung zum Thema Gesundheit: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Gesundheit - Frage 1: Gesundheit",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Gesundheit - Frage 2: Gesundheit",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Gesundheit - Frage 3: Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Gesundheit - Frage 4: Gesundheit",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Gesundheit - Frage 5: Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-erők-1.0.0",
-    "name": "Erők - Denmark grade-08",
+    "name": "Forces - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minutters prøve i Forces (grade-08). Emner: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.496854+00:00",
-    "updated_at": "2026-10-21T11:02:27.496866+00:00",
+    "created_at": "2026-10-24T17:53:49.588804+00:00",
+    "updated_at": "2026-10-24T17:53:49.588815+00:00",
     "tags": [
       "physics",
-      "erők",
+      "forces",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "5f31c1d5691455112af01df69e248ada16783ba70b352f34cb4e303945028831",
+    "checksum": "eeb4d79ea421a0afbc6d07eadd437fd766a21db84a554e611e21cd808a0b52d6",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Forces",
+    "description": "Prøve i Forces: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Forces - Spørgsmål 1: Forces",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Forces - Spørgsmål 2: Forces",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Forces - Spørgsmål 3: Forces",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Forces.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Forces - Spørgsmål 4: Forces [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők",
+        "forces",
         "grade-08",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Forces - Spørgsmål 5: Forces",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     }
   ],

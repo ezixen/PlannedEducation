@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-integrálás-1.0.0",
-    "name": "Integrálás - Finland grade-11",
+    "name": "Integration - Finland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45 minuutin koe aiheesta Integration (grade-11). Aiheet: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.689775+00:00",
-    "updated_at": "2026-10-21T11:02:24.689787+00:00",
+    "created_at": "2026-10-24T17:53:47.833523+00:00",
+    "updated_at": "2026-10-24T17:53:47.833534+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integration",
       "grade-11",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "d23f9e20b157117d2a0c520f19ca84b768bc8601dabc3acb89358435dc15a901",
+    "checksum": "d84ede973ff8d3151bc33756667ff2ea017b35a5081f148010602a1d6cb617a2",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Integrálás",
-    "description": "Test on Integrálás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Integration",
+    "description": "Koe aiheesta Integration: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integration - Kysymys 1: Integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integration - Kysymys 2: Integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integration - Kysymys 3: Integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integration - Kysymys 4: Integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Integration.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-100]",
+      "text": "[math] Integration - Kysymys 5: Integration [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integration",
         "grade-11",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     }
   ],

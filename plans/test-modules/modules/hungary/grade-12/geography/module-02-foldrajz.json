@@ -3,21 +3,25 @@
     "id": "grade-12-geography-földrajz-1.0.0",
     "name": "Földrajz - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 perces felmérő: Földrajz (grade-12). Témakörök: Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.673866+00:00",
-    "updated_at": "2026-10-21T11:02:35.673879+00:00",
+    "created_at": "2026-10-24T17:53:52.486669+00:00",
+    "updated_at": "2026-10-24T17:53:52.486675+00:00",
     "tags": [
       "geography",
       "földrajz",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "28448e33ac0304de47e41ef900f4e581b5cecaf6a431393363202dd1cdc71541",
+    "checksum": "3e93f0d9c51bf41fe0abf65dee622032b75ebcf574cebbd9a747ee903e207679",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Földrajz-erettségi",
+      "Földrajz",
+      "Földrajzi ismeretek",
+      "Európa és világ",
+      "Földrajzi eszközök"
     ]
   },
   "exam": {
     "title": "grade-12 Geography - Földrajz",
-    "description": "Test on Földrajz including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "Felmérő a(z) Földrajz témakörből (Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Földrajz - Kérdés 1: Földrajz",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "földrajz",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "learning_objective": "Földrajz"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Földrajz - Kérdés 2: Földrajz",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "földrajz",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "learning_objective": "Földrajz"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Földrajz - Kérdés 3: Földrajz",
       "options": null,
       "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "földrajz",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "learning_objective": "Földrajz"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Földrajz - Kérdés 4: Földrajz",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "földrajz",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "learning_objective": "Földrajz"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Földrajz - Kérdés 5: Földrajz",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "földrajz",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "learning_objective": "Földrajz"
     }
   ],
   "rubrics": []

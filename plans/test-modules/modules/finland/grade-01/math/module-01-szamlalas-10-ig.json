@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
-    "name": "Számlálás 10-ig - Finland grade-01",
+    "name": "Laskeminen 10:een - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 minuutin koe aiheesta Laskeminen 10:een (grade-01). Aiheet: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.926241+00:00",
-    "updated_at": "2026-10-21T11:02:23.926252+00:00",
+    "created_at": "2026-10-24T17:53:47.483604+00:00",
+    "updated_at": "2026-10-24T17:53:47.483611+00:00",
     "tags": [
       "math",
-      "számlálás-10-ig",
+      "laskeminen-10:een",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "81ca2e9156b0173f648c0ca70db894c2d0c2ff809048efa92c244bcd9fe28a36",
+    "checksum": "baa99c5d66df8d6af488059001b144e19abda7fafcd7f6229275b07cfe5cd111",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Laskeminen 10:een",
+      "Yhteenlasku 10:een",
+      "Vähennyslasku 10:een",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Laskeminen 10:een",
+    "description": "Koe aiheesta Laskeminen 10:een: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Laskeminen 10:een - Kysymys 1: Laskeminen 10:een",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "laskeminen-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Laskeminen 10:een",
+      "learning_objective": "Laskeminen 10:een"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Laskeminen 10:een - Kysymys 2: Laskeminen 10:een",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "laskeminen-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Laskeminen 10:een",
+      "learning_objective": "Laskeminen 10:een"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Laskeminen 10:een - Kysymys 3: Laskeminen 10:een",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "laskeminen-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Laskeminen 10:een",
+      "learning_objective": "Laskeminen 10:een"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Laskeminen 10:een - Kysymys 4: Laskeminen 10:een",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Laskeminen 10:een.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "laskeminen-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Laskeminen 10:een",
+      "learning_objective": "Laskeminen 10:een"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Laskeminen 10:een - Kysymys 5: Laskeminen 10:een [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "számlálás-10-ig",
+        "laskeminen-10:een",
         "grade-01",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Laskeminen 10:een",
+      "learning_objective": "Laskeminen 10:een"
     }
   ],
   "rubrics": []

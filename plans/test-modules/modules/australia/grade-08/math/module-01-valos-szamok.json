@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-valós-számok-1.0.0",
-    "name": "Valós számok - Australia grade-08",
+    "name": "Real numbers - Australia grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Valós számok for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minute assessment on Real numbers for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.639927+00:00",
-    "updated_at": "2026-10-21T11:02:18.639943+00:00",
+    "created_at": "2026-10-24T17:53:46.746267+00:00",
+    "updated_at": "2026-10-24T17:53:46.746273+00:00",
     "tags": [
       "math",
-      "valós-számok",
+      "real-numbers",
       "grade-08",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "7a04aa906f9a074807ed47554811d3ba13119b34841ccfe5edbc16fd17fc2043",
+    "checksum": "f6ee86e7ebdd6684ad1da5bf31a8c7edc130e21ddc72470955454d5410e9ab1b",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Valós számok",
-    "description": "Test on Valós számok including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Real numbers",
+    "description": "Assessment on Real numbers including Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 1: Real numbers",
+      "text": "[math] Real numbers - Question 1: Real numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 2: Real numbers",
+      "text": "[math] Real numbers - Question 2: Real numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 3: Real numbers",
+      "text": "[math] Real numbers - Question 3: Real numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valós számok - Kérdés 4: Real numbers",
+      "text": "[math] Real numbers - Question 4: Real numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valós számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Real numbers.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valós számok - Question 5: Real numbers [rand:1-1000]",
+      "text": "[math] Real numbers - Question 5: Real numbers [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valós-számok",
+        "real-numbers",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     }
   ],

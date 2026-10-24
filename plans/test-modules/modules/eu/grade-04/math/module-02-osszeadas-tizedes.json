@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-összeadás-tizedes-1.0.0",
-    "name": "Összeadás tizedes - European Union grade-04",
+    "name": "Decimal addition - European Union grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minute assessment on Decimal addition for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.021127+00:00",
-    "updated_at": "2026-10-21T11:02:19.021145+00:00",
+    "created_at": "2026-10-24T17:53:47.099769+00:00",
+    "updated_at": "2026-10-24T17:53:47.099779+00:00",
     "tags": [
       "math",
-      "összeadás-tizedes",
+      "decimal-addition",
       "grade-04",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "953a2f05e2fb2f7e974788f9a8de1a552a799f6d97c8db48eb3ef79d7f7a949d",
+    "checksum": "573f61b133bc2b713caa706a91d223aef7e060e31384e775d6ef4b79b761c007",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Összeadás tizedes",
-    "description": "Test on Összeadás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal addition",
+    "description": "Assessment on Decimal addition including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 1: Decimal addition",
+      "text": "[math] Decimal addition - Question 1: Decimal addition",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "EU-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 2: Decimal addition",
+      "text": "[math] Decimal addition - Question 2: Decimal addition",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "EU-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 3: Decimal addition",
+      "text": "[math] Decimal addition - Question 3: Decimal addition",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "EU-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás tizedes - Kérdés 4: Decimal addition",
+      "text": "[math] Decimal addition - Question 4: Decimal addition",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Decimal addition.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "EU-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás tizedes - Question 5: Decimal addition [rand:1-100]",
+      "text": "[math] Decimal addition - Question 5: Decimal addition [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-tizedes",
+        "decimal-addition",
         "grade-04",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "EU-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     }
   ],

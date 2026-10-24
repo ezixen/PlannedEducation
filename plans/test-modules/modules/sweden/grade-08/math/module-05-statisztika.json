@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-statisztika-1.0.0",
-    "name": "Statisztika - Sweden grade-08",
+    "name": "Statistics - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minuters prov i Statistics (grade-08). Omfattar: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.842182+00:00",
-    "updated_at": "2026-10-21T11:02:25.842194+00:00",
+    "created_at": "2026-10-24T17:53:48.540294+00:00",
+    "updated_at": "2026-10-24T17:53:48.540304+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistics",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "5d4508e15e31a5c531200f0eab0b7d2d0b7b4a88f55f6719d3afd957d59b1a5b",
+    "checksum": "cb6ead9ad2ccfbf3d410f525ec6503f444d6c84a484488194d6eafbd1c60de18",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Statisztika",
-    "description": "Test on Statisztika including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Statistics",
+    "description": "Prov i Statistics: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistics - Fråga 1: Statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistics - Fråga 2: Statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistics - Fråga 3: Statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistics - Fråga 4: Statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Statistics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-1000]",
+      "text": "[math] Statistics - Fråga 5: Statistics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistics",
         "grade-08",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     }
   ],

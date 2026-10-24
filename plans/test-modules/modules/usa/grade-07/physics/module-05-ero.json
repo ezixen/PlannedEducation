@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erő-1.0.0",
-    "name": "Erő - USA grade-07",
+    "name": "Force - USA grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minute assessment on Force for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.886227+00:00",
-    "updated_at": "2026-10-21T11:02:17.886245+00:00",
+    "created_at": "2026-10-24T17:53:46.294659+00:00",
+    "updated_at": "2026-10-24T17:53:46.294672+00:00",
     "tags": [
       "physics",
-      "erő",
+      "force",
       "grade-07",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "73f38b2df11a30050fe811ff26cdcbbb5836b9f1d1f7c6ed0e4b2f76f6b4013d",
+    "checksum": "5cd0f9699cbe0e39f541518299f098f262b4c1846829df7295e90b58d988bb31",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erő",
-    "description": "Test on Erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Force",
+    "description": "Assessment on Force including Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 1: Force",
+      "text": "[physics] Force - Question 1: Force",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 2: Force",
+      "text": "[physics] Force - Question 2: Force",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erő - Kérdés 3: Force",
+      "text": "[physics] Force - Question 3: Force",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erő témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Force.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erő - Question 4: Force [rand:1-100]",
+      "text": "[physics] Force - Question 4: Force [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erő",
+        "force",
         "grade-07",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 5: Force",
+      "text": "[physics] Force - Question 5: Force",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     }
   ],

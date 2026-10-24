@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-sejt-szerkezete-1.0.0",
-    "name": "Sejt szerkezete - Norway grade-10",
+    "name": "Cell structure - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Cell structure (grade-10). Emner: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.647781+00:00",
-    "updated_at": "2026-10-21T11:02:26.647799+00:00",
+    "created_at": "2026-10-24T17:53:49.100699+00:00",
+    "updated_at": "2026-10-24T17:53:49.100710+00:00",
     "tags": [
       "biology",
-      "sejt-szerkezete",
+      "cell-structure",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "bae28c0f3eee84f137595c34877ae503b178bb8709f046f8036f3f2751fde245",
+    "checksum": "a66e312b986517e8cd9c31582516cd740cc7e7ca599735ac9855cb9a217c4682",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Cell structure",
+    "description": "Prøve i Cell structure: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Cell structure - Spørsmål 1: Cell structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-10"
+        "cell-structure",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Cell structure - Spørsmål 2: Cell structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-10"
+        "cell-structure",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Cell structure - Spørsmål 3: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Cell structure.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-10"
+        "cell-structure",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Cell structure - Spørsmål 4: Cell structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-10"
+        "cell-structure",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Cell structure - Spørsmål 5: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Cell structure.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-10"
+        "cell-structure",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     }
   ],

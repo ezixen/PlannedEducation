@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-fiziologia-és-immunológia-1.0.0",
-    "name": "Embri fiziologia és immunológia - Denmark grade-12",
+    "name": "Human physiology and immunology - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri fiziologia és immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Human physiology and immunology (grade-12). Emner: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.747473+00:00",
-    "updated_at": "2026-10-21T11:02:27.747494+00:00",
+    "created_at": "2026-10-24T17:53:49.781402+00:00",
+    "updated_at": "2026-10-24T17:53:49.781411+00:00",
     "tags": [
       "biology",
-      "embri-fiziologia-és-immunológia",
+      "human-physiology-and-immunology",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "a11dcdfc855bb40a0564f5055bb0d5acb341c7b45c18c42a14af0d990bebb106",
+    "checksum": "f8aa2d322b50aa268ac932fc8849b1d8433a8f91a3ab795a78a12873deaeccc1",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri fiziologia és immunológia",
-    "description": "Test on Embri fiziologia és immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Human physiology and immunology",
+    "description": "Prøve i Human physiology and immunology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 1: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Spørgsmål 1: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 2: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Spørgsmål 2: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 3: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Spørgsmål 3: Human physiology and immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Human physiology and immunology.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 4: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Spørgsmål 4: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 5: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Spørgsmål 5: Human physiology and immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Human physiology and immunology.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     }
   ],

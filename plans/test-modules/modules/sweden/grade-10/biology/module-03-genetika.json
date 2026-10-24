@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-genetika-1.0.0",
-    "name": "Genetika - Sweden grade-10",
+    "name": "Genetics - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minuters prov i Genetics (grade-10). Omfattar: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.955692+00:00",
-    "updated_at": "2026-10-21T11:02:25.955704+00:00",
+    "created_at": "2026-10-24T17:53:48.632047+00:00",
+    "updated_at": "2026-10-24T17:53:48.632056+00:00",
     "tags": [
       "biology",
-      "genetika",
+      "genetics",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "9e14c2ef234e1ab5bf4ece44124ed0a102ebc21fad5b0b66946454bb12ba307f",
+    "checksum": "8bb5b3bc04552f4cb2b3d11584a16c99b1b3f455bcb6b0121b8e4b6282401ea4",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Genetika",
-    "description": "Test on Genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Genetics",
+    "description": "Prov i Genetics: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 1: Genetics",
+      "text": "[biology] Genetics - Fråga 1: Genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 2: Genetics",
+      "text": "[biology] Genetics - Fråga 2: Genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 3: Genetics",
+      "text": "[biology] Genetics - Fråga 3: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Genetics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 4: Genetics",
+      "text": "[biology] Genetics - Fråga 4: Genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 5: Genetics",
+      "text": "[biology] Genetics - Fråga 5: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Genetics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "SWEDEN-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     }
   ],

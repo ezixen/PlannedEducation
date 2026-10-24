@@ -11,12 +11,13 @@
     "tags": [
       "chemistry",
       "atomfelépítés-és-kötések",
-      "grade-10"
+      "grade-10",
+      "hu"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "3a3a64a50a6981369cb949b6ecd6263fd653aa675450f9d8050ef76b228a580c",
+    "checksum": "05df814af8b2b7f38056e4bd38f43dd91c9979ec4dafb5042b6bce1cdbfb0d75",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Kvantummechanika",
       "Kötéselmélet",
       "Reakciókinetika"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 10 Chemistry - Atomfelépítés és kötések",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-függvények-1.0.0",
-    "name": "Függvények - New Zealand grade-08",
+    "name": "Functions - New Zealand grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minute assessment on Functions for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.643520+00:00",
-    "updated_at": "2026-10-21T11:02:34.643530+00:00",
+    "created_at": "2026-10-24T17:53:51.803922+00:00",
+    "updated_at": "2026-10-24T17:53:51.803933+00:00",
     "tags": [
       "math",
-      "függvények",
+      "functions",
       "grade-08",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "3f7a445cd20d0ddb6ca42477c476a5ffdfdc88cacf0564d117164c743d280530",
+    "checksum": "e66a671015d124137f43324efc585774343a57e34e9dc9fe10f6f807f636272f",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Függvények",
-    "description": "Test on Függvények including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Functions",
+    "description": "Assessment on Functions including Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Functions - Question 1: Functions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Functions - Question 2: Functions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Functions - Question 3: Functions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Functions - Question 4: Functions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Functions.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-1000]",
+      "text": "[math] Functions - Question 5: Functions [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények",
+        "functions",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     }
   ],

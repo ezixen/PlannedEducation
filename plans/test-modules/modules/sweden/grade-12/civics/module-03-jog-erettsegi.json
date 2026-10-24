@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-jog-erettségi-1.0.0",
-    "name": "Jog-erettségi - Sweden grade-12",
+    "name": "Law-maturity - Sweden grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minuters prov i Law-maturity (grade-12). Omfattar: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.116525+00:00",
-    "updated_at": "2026-10-21T11:02:26.116543+00:00",
+    "created_at": "2026-10-24T17:53:48.765401+00:00",
+    "updated_at": "2026-10-24T17:53:48.765408+00:00",
     "tags": [
       "civics",
-      "jog-erettségi",
+      "law-maturity",
       "grade-12",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "d90a962964682037ca9e6127940fb42d50be09d0e454c49d41622b0af01610e3",
+    "checksum": "3675abb39d50a4e0082835eb450dced3631c6209170652f8d254cd6458341325",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Law-maturity",
+    "description": "Prov i Law-maturity: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Law-maturity - Fråga 1: Law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Law-maturity - Fråga 2: Law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Law-maturity - Fråga 3: Law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Law-maturity.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Law-maturity - Fråga 4: Law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Law-maturity - Fråga 5: Law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     }
   ],

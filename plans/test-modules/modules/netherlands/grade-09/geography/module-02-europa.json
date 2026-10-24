@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-európa-1.0.0",
-    "name": "Európa - Netherlands grade-09",
+    "name": "Europe - Netherlands grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "Toets van 45 minuten over Europe (grade-09). Onderwerpen: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.190581+00:00",
-    "updated_at": "2026-10-21T11:02:25.190593+00:00",
+    "created_at": "2026-10-24T17:53:48.182457+00:00",
+    "updated_at": "2026-10-24T17:53:48.182465+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europe",
       "grade-09",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "484835b067d77b4bd865dbb30b69776a2661364a812fcc866f6ce8315cbcfea3",
+    "checksum": "894d33e6df29bc68d1a1e5c0c73b6bfd2acd559e86bf7437153a5426bb5b75d2",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Európa",
-    "description": "Test on Európa including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Europe",
+    "description": "Toets over Europe: Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europe - Vraag 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europe - Vraag 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europe - Vraag 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Europe.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europe - Vraag 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europe - Vraag 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     }
   ],

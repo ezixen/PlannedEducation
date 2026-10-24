@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-függvények-1.0.0",
-    "name": "Függvények - Sweden grade-08",
+    "name": "Functions - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minuters prov i Functions (grade-08). Omfattar: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.835825+00:00",
-    "updated_at": "2026-10-21T11:02:25.835840+00:00",
+    "created_at": "2026-10-24T17:53:48.534666+00:00",
+    "updated_at": "2026-10-24T17:53:48.534676+00:00",
     "tags": [
       "math",
-      "függvények",
+      "functions",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e0165279905b51e50dbbf0245d680f97c10817228dd2b66fbd5b5e1f30fc0b4a",
+    "checksum": "a16486a615c355bb45d822f586e42da292bb8e3649efae116b40af4e75a583f6",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Függvények",
-    "description": "Test on Függvények including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Functions",
+    "description": "Prov i Functions: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Functions - Fråga 1: Functions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Functions - Fråga 2: Functions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Functions - Fråga 3: Functions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Functions - Fråga 4: Functions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Functions.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "functions",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-1000]",
+      "text": "[math] Functions - Fråga 5: Functions [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények",
+        "functions",
         "grade-08",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Függvények",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Functions",
       "learning_objective": "Functions"
     }
   ],

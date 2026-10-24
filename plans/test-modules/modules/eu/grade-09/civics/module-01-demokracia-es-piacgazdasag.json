@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-civics-demokracia-és-piacgazdaság-1.0.0",
-    "name": "Demokracia és piacgazdaság - European Union grade-09",
+    "name": "Democracy and market economy - European Union grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Demokracia és piacgazdaság for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minute assessment on Democracy and market economy for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.277356+00:00",
-    "updated_at": "2026-10-21T11:02:19.277377+00:00",
+    "created_at": "2026-10-24T17:53:47.291075+00:00",
+    "updated_at": "2026-10-24T17:53:47.291082+00:00",
     "tags": [
       "civics",
-      "demokracia-és-piacgazdaság",
+      "democracy-and-market-economy",
       "grade-09",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "d32db4ccc4697b281d7fd1a7217f43cbd8084578caff8bd7398d16ac6ac1e0ad",
+    "checksum": "9760f62397a05708a3b99877856ee33adfaddde010348700a3ba28b0b7978777",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Civics - Demokracia és piacgazdaság",
-    "description": "Test on Demokracia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-09 Civics - Democracy and market economy",
+    "description": "Assessment on Democracy and market economy including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Question 1: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "EU-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Question 2: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "EU-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Question 3: Democracy and market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokracia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Democracy and market economy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "EU-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Question 4: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "EU-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Question 5: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "EU-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     }
   ],

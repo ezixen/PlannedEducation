@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Norway grade-12",
+    "name": "World history - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i World history (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.908936+00:00",
-    "updated_at": "2026-10-21T11:02:26.908957+00:00",
+    "created_at": "2026-10-24T17:53:49.249771+00:00",
+    "updated_at": "2026-10-24T17:53:49.249780+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "170369c9fc855b743bdcac26a032ec6a0a3d00310f0da3011694c8934138aa70",
+    "checksum": "59d85ad83d5f46f8151a57a6112dfcd4a0c44069cafd26b4996007c6c540d537",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Világtörténet",
-    "description": "Test on Világtörténet including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - World history",
+    "description": "Prøve i World history: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Spørsmål 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Spørsmål 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Spørsmål 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for World history.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Spørsmål 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Spørsmål 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

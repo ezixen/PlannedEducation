@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-deriválás-1.0.0",
-    "name": "Deriválás - Finland grade-11",
+    "name": "Differentiation - Finland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45 minuutin koe aiheesta Differentiation (grade-11). Aiheet: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.687398+00:00",
-    "updated_at": "2026-10-21T11:02:24.687417+00:00",
+    "created_at": "2026-10-24T17:53:47.831929+00:00",
+    "updated_at": "2026-10-24T17:53:47.831937+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentiation",
       "grade-11",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1dff9f733e15918526346ed71e0fcdda7369357d4a7650294cea4f8bff2a480b",
+    "checksum": "47930c0ba394013cde0a4d89f69ed5ee8e9a82fb6a29d9d4225aedefc726aeb0",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Deriválás",
-    "description": "Test on Deriválás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Differentiation",
+    "description": "Koe aiheesta Differentiation: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentiation - Kysymys 1: Differentiation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentiation - Kysymys 2: Differentiation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentiation - Kysymys 3: Differentiation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentiation - Kysymys 4: Differentiation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Differentiation.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-100]",
+      "text": "[math] Differentiation - Kysymys 5: Differentiation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentiation",
         "grade-11",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     }
   ],

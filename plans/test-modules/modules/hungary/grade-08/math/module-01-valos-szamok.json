@@ -3,21 +3,25 @@
     "id": "grade-08-math-valós-számok-1.0.0",
     "name": "Valós számok - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Valós számok for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45 perces felmérő: Valós számok (grade-08). Témakörök: Valós számok, Függvények, Lineáris egyenletek, Geometria, Statisztika",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.317409+00:00",
-    "updated_at": "2026-10-21T11:02:35.317421+00:00",
+    "created_at": "2026-10-24T17:53:52.292002+00:00",
+    "updated_at": "2026-10-24T17:53:52.292008+00:00",
     "tags": [
       "math",
       "valós-számok",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "8cabde06c6533fb0403e07fea85ab41f34ed254eee6c427ef53945742427c248",
+    "checksum": "8fb97bb1511297ed67f41e36c798e8d0639aee89b18f69cb5efedf0c25a76628",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Valós számok",
+      "Függvények",
+      "Lineáris egyenletek",
+      "Geometria",
+      "Statisztika"
     ]
   },
   "exam": {
     "title": "grade-08 Math - Valós számok",
-    "description": "Test on Valós számok including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "Felmérő a(z) Valós számok témakörből (Valós számok, Függvények, Lineáris egyenletek, Geometria, Statisztika)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 1: Real numbers",
+      "text": "[math] Valós számok - Kérdés 1: Valós számok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "valós-számok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "learning_objective": "Valós számok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 2: Real numbers",
+      "text": "[math] Valós számok - Kérdés 2: Valós számok",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "valós-számok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "learning_objective": "Valós számok"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 3: Real numbers",
+      "text": "[math] Valós számok - Kérdés 3: Valós számok",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "valós-számok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "learning_objective": "Valós számok"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valós számok - Kérdés 4: Real numbers",
+      "text": "[math] Valós számok - Kérdés 4: Valós számok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Valós számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "valós-számok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "learning_objective": "Valós számok"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valós számok - Question 5: Real numbers [rand:1-1000]",
+      "text": "[math] Valós számok - Kérdés 5: Valós számok [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "valós-számok",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "learning_objective": "Valós számok"
     }
   ],
   "rubrics": []

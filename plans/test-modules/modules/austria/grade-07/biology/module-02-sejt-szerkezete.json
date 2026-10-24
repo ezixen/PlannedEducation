@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-sejt-szerkezete-1.0.0",
-    "name": "Sejt szerkezete - Austria grade-07",
+    "name": "Zellaufbau - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Zellaufbau (grade-07). Themen: Zellbiologie und Genetik, Zellaufbau, Genetik Grundlagen, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.927348+00:00",
-    "updated_at": "2026-10-21T11:02:28.927360+00:00",
+    "created_at": "2026-10-24T17:53:50.381657+00:00",
+    "updated_at": "2026-10-24T17:53:50.381663+00:00",
     "tags": [
       "biology",
-      "sejt-szerkezete",
+      "zellaufbau",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "bfacb7665ef719acd51679a230340e395ed384864c2fa1754aeef150abf386a2",
+    "checksum": "42fb7d69e314f0b7027a2e52cf82f6d5cfb44c49e671e801a55cd5b38bc7ee90",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics basics",
-      "Ecology",
-      "Ecological systems"
+      "Zellbiologie und Genetik",
+      "Zellaufbau",
+      "Genetik Grundlagen",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Zellaufbau",
+    "description": "Prüfung zum Thema Zellaufbau: Zellbiologie und Genetik, Zellaufbau, Genetik Grundlagen, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Zellaufbau - Frage 1: Zellaufbau",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "zellaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Zellaufbau",
+      "learning_objective": "Zellaufbau"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Zellaufbau - Frage 2: Zellaufbau",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "zellaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Zellaufbau",
+      "learning_objective": "Zellaufbau"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Zellaufbau - Frage 3: Zellaufbau",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Zellaufbau.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "zellaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Zellaufbau",
+      "learning_objective": "Zellaufbau"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Zellaufbau - Frage 4: Zellaufbau",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "zellaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Zellaufbau",
+      "learning_objective": "Zellaufbau"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Zellaufbau - Frage 5: Zellaufbau",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Zellaufbau.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "zellaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Zellaufbau",
+      "learning_objective": "Zellaufbau"
     }
   ],
   "rubrics": []

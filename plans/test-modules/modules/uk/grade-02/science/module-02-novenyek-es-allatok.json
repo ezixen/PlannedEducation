@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - United Kingdom grade-02",
+    "name": "Plants and animals - United Kingdom grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Plants and animals for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.884021+00:00",
-    "updated_at": "2026-10-21T11:02:16.884036+00:00",
+    "created_at": "2026-10-24T17:53:45.690225+00:00",
+    "updated_at": "2026-10-24T17:53:45.690237+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "plants-and-animals",
       "grade-02",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "86a1171e9c4266072b3541019198bf86b2f507cc806ae044b50816fc751d1c0f",
+    "checksum": "1f28141add97669af3a67e0ac78f46831f7883cdfa0e480be3436b3903a16a38",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Plants and animals",
+    "description": "Assessment on Plants and animals including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Plants and animals - Question 1: Plants and animals",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "plants-and-animals",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-02-SCIENCE-Növények és állatok",
+      "curriculum_topic": "UK-GRADE-02-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Plants and animals - Question 2: Plants and animals",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "plants-and-animals",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-02-SCIENCE-Növények és állatok",
+      "curriculum_topic": "UK-GRADE-02-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Plants and animals - Question 3: Plants and animals",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Plants and animals.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "plants-and-animals",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-02-SCIENCE-Növények és állatok",
+      "curriculum_topic": "UK-GRADE-02-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Plants and animals - Question 4: Plants and animals",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "plants-and-animals",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-02-SCIENCE-Növények és állatok",
+      "curriculum_topic": "UK-GRADE-02-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Plants and animals - Question 5: Plants and animals",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "plants-and-animals",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-02-SCIENCE-Növények és állatok",
+      "curriculum_topic": "UK-GRADE-02-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     }
   ],

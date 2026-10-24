@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-geometria-1.0.0",
-    "name": "Geometria - Australia grade-08",
+    "name": "Geometry - Australia grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minute assessment on Geometry for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.647411+00:00",
-    "updated_at": "2026-10-21T11:02:18.647421+00:00",
+    "created_at": "2026-10-24T17:53:46.750493+00:00",
+    "updated_at": "2026-10-24T17:53:46.750508+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometry",
       "grade-08",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "cfb5534b3cb3c790a093c516c00d5769d5aa5d935b1898c6030aad850357ec75",
+    "checksum": "78d88efdb307a06b789c62526c8ac6e4efb1c98eed448bc8d7cad57429505723",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Geometria",
-    "description": "Test on Geometria including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Geometry",
+    "description": "Assessment on Geometry including Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometry - Question 1: Geometry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometry",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometria",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometry - Question 2: Geometry",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometry",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometria",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometry - Question 3: Geometry",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometry",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometria",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometry - Question 4: Geometry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geometry.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometry",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometria",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometry - Question 5: Geometry [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometry",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometria",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Geometry",
       "learning_objective": "Geometry"
     }
   ],

@@ -8,11 +8,18 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["naturwissenschaften", "kraefte", "bewegung", "klasse-7", "deutschland"],
+    "tags": [
+      "naturwissenschaften",
+      "kraefte",
+      "bewegung",
+      "klasse-7",
+      "deutschland",
+      "de"
+    ],
     "subject": "science",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "d8709e9928d516a689141edca02d62934c44e6fd3c7e77e34f4a4a6faa41d859",
     "curriculum": "deutschland-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +32,10 @@
       "Resultierende Kraft berechnen",
       "Auswirkungen von Kräften auf Bewegung erklären",
       "Reibung und ihre Auswirkungen verstehen"
-    ]
+    ],
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany"
   },
   "exam": {
     "title": "Klasse 7 Naturwissenschaften - Kräfte und Bewegung",
@@ -51,12 +61,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Welche der folgenden Kräfte ist eine Berührungskraft?",
-      "options": ["Schwerkraft", "Magnetismus", "Reibung", "Elektrostatische Kraft"],
+      "options": [
+        "Schwerkraft",
+        "Magnetismus",
+        "Reibung",
+        "Elektrostatische Kraft"
+      ],
       "correct_answer": "Reibung",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["kraefte", "beruehrungskraft", "reibung"],
+      "tags": [
+        "kraefte",
+        "beruehrungskraft",
+        "reibung"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -66,12 +85,20 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Welche Kraft zieht Gegenstände zum Erdmittelpunkt?",
-      "options": ["Reibung", "Magnetismus", "Schwerkraft", "Luftwiderstand"],
+      "options": [
+        "Reibung",
+        "Magnetismus",
+        "Schwerkraft",
+        "Luftwiderstand"
+      ],
       "correct_answer": "Schwerkraft",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["schwerkraft", "kraefte"],
+      "tags": [
+        "schwerkraft",
+        "kraefte"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -101,7 +128,10 @@
           "step": 1
         }
       ],
-      "tags": ["resultierende-kraft", "berechnung"],
+      "tags": [
+        "resultierende-kraft",
+        "berechnung"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 5,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -111,12 +141,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Reibung wirkt immer:",
-      "options": ["In Bewegungsrichtung", "Entgegen der Bewegungsrichtung", "Senkrecht zur Bewegung", "Im 45-Grad-Winkel zur Bewegung"],
+      "options": [
+        "In Bewegungsrichtung",
+        "Entgegen der Bewegungsrichtung",
+        "Senkrecht zur Bewegung",
+        "Im 45-Grad-Winkel zur Bewegung"
+      ],
       "correct_answer": "Entgegen der Bewegungsrichtung",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["reibung", "richtung"],
+      "tags": [
+        "reibung",
+        "richtung"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -126,12 +164,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Welche Oberfläche erzeugt die meiste Reibung?",
-      "options": ["Eis", "Glas", "Schmirgelpapier", "Poliertes Holz"],
+      "options": [
+        "Eis",
+        "Glas",
+        "Schmirgelpapier",
+        "Poliertes Holz"
+      ],
       "correct_answer": "Schmirgelpapier",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["reibung", "oberflaechen"],
+      "tags": [
+        "reibung",
+        "oberflaechen"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -141,12 +187,21 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Wenn Kräfte im Gleichgewicht sind, dann:",
-      "options": ["Bewegt sich der Körper immer", "Beschleunigt der Körper immer", "Bleibt der Körper in Ruhe oder bewegt sich gleichförmig", "Ändert der Körper immer die Richtung"],
+      "options": [
+        "Bewegt sich der Körper immer",
+        "Beschleunigt der Körper immer",
+        "Bleibt der Körper in Ruhe oder bewegt sich gleichförmig",
+        "Ändert der Körper immer die Richtung"
+      ],
       "correct_answer": "Bleibt der Körper in Ruhe oder bewegt sich gleichförmig",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["gleichgewicht", "kraefte", "bewegung"],
+      "tags": [
+        "gleichgewicht",
+        "kraefte",
+        "bewegung"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -176,7 +231,11 @@
           "step": 1
         }
       ],
-      "tags": ["beschleunigung", "berechnung", "newton"],
+      "tags": [
+        "beschleunigung",
+        "berechnung",
+        "newton"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 5,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -186,12 +245,21 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "In welcher Einheit wird Kraft gemessen?",
-      "options": ["Kilogramm", "Newton", "Meter", "Sekunde"],
+      "options": [
+        "Kilogramm",
+        "Newton",
+        "Meter",
+        "Sekunde"
+      ],
       "correct_answer": "Newton",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["kraft", "einheiten", "newton"],
+      "tags": [
+        "kraft",
+        "einheiten",
+        "newton"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -206,7 +274,12 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["reibung", "auto", "vorteile", "nachteile"],
+      "tags": [
+        "reibung",
+        "auto",
+        "vorteile",
+        "nachteile"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -221,7 +294,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["reibung", "experiment", "untersuchung"],
+      "tags": [
+        "reibung",
+        "experiment",
+        "untersuchung"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-07-Naturwissenschaften-Kraefte",
@@ -237,19 +314,35 @@
           "id": "c-009-1",
           "description": "Erklärt, dass Reibung Reifen auf Straße greifen lässt (Vorteil)",
           "points": 4,
-          "keywords": ["reifen", "greifen", "straße", "vorteil", "fahren", "bremsen"]
+          "keywords": [
+            "reifen",
+            "greifen",
+            "straße",
+            "vorteil",
+            "fahren",
+            "bremsen"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Erklärt, dass Reibung Verschleiß und Wärme verursacht (Nachteil)",
           "points": 3,
-          "keywords": ["verschleiß", "wärme", "nachteil", "bewegliche-teile"]
+          "keywords": [
+            "verschleiß",
+            "wärme",
+            "nachteil",
+            "bewegliche-teile"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Erwähnt, dass Luftwiderstand Kraftstoffverbrauch beeinflusst",
           "points": 3,
-          "keywords": ["luftwiderstand", "kraftstoff", "verbrauch"]
+          "keywords": [
+            "luftwiderstand",
+            "kraftstoff",
+            "verbrauch"
+          ]
         }
       ],
       "total_points": 10
@@ -262,19 +355,36 @@
           "id": "c-010-1",
           "description": "Listet geeignete Geräte auf (Block, Oberflächen, Kraftmesser, Gewichte)",
           "points": 3,
-          "keywords": ["block", "oberflächen", "kraftmesser", "gewichte", "geräte"]
+          "keywords": [
+            "block",
+            "oberflächen",
+            "kraftmesser",
+            "gewichte",
+            "geräte"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Beschreibt Vorgehen klar (Block ziehen, Kraft messen)",
           "points": 4,
-          "keywords": ["ziehen", "messen", "kraft", "vorgehen", "schritte"]
+          "keywords": [
+            "ziehen",
+            "messen",
+            "kraft",
+            "vorgehen",
+            "schritte"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Identifiziert was gemessen wird (Kraft zum Bewegen des Blocks)",
           "points": 3,
-          "keywords": ["messen", "kraft", "bewegen", "block"]
+          "keywords": [
+            "messen",
+            "kraft",
+            "bewegen",
+            "block"
+          ]
         }
       ],
       "total_points": 10

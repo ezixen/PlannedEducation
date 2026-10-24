@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-statisztika-1.0.0",
-    "name": "Statisztika - Belgium grade-08",
+    "name": "Statistics - Belgium grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "Toets van 45 minuten over Statistics (grade-08). Onderwerpen: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.819756+00:00",
-    "updated_at": "2026-10-21T11:02:29.819776+00:00",
+    "created_at": "2026-10-24T17:53:50.906967+00:00",
+    "updated_at": "2026-10-24T17:53:50.906976+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistics",
       "grade-08",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "454868d1672fc213423bbf7e8a576e6a13becb13d71935196a841bbbb74dab8d",
+    "checksum": "f056032a8cc5e19b360699a10639c254cfdfdf12d62a11a0be9f4f60a90b3641",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Statisztika",
-    "description": "Test on Statisztika including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Statistics",
+    "description": "Toets over Statistics: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistics - Vraag 1: Statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistics - Vraag 2: Statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistics - Vraag 3: Statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistics - Vraag 4: Statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Statistics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-08"
+        "statistics",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-1000]",
+      "text": "[math] Statistics - Vraag 5: Statistics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistics",
         "grade-08",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statisztika",
+      "curriculum_topic": "BELGIUM-GRADE-08-MATH-Statistics",
       "learning_objective": "Statistics"
     }
   ],

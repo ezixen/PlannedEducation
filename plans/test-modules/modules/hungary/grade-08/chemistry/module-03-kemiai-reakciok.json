@@ -3,21 +3,25 @@
     "id": "grade-08-chemistry-kémiai-reakciók-1.0.0",
     "name": "Kémiai reakciók - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45 perces felmérő: Kémiai reakciók (grade-08). Témakörök: Anyagok és tulajdonságaik, Anyagváltozások, Kémiai reakciók, Savak és bazák, Kémiai egyenletek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.259508+00:00",
-    "updated_at": "2026-10-21T11:02:35.259521+00:00",
+    "created_at": "2026-10-24T17:53:52.256564+00:00",
+    "updated_at": "2026-10-24T17:53:52.256571+00:00",
     "tags": [
       "chemistry",
       "kémiai-reakciók",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "485b4fa4afa92665aa3942562e5d8c2b59a07c330d49b2bc104342cef467a78c",
+    "checksum": "d9e780409671932cfd2a0a2db71d4c46b08f2e046b77836a5c512c13a3683e0f",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Substances and properties",
-      "Substance changes",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equations"
+      "Anyagok és tulajdonságaik",
+      "Anyagváltozások",
+      "Kémiai reakciók",
+      "Savak és bazák",
+      "Kémiai egyenletek"
     ]
   },
   "exam": {
     "title": "grade-08 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "Felmérő a(z) Kémiai reakciók témakörből (Anyagok és tulajdonságaik, Anyagváltozások, Kémiai reakciók, Savak és bazák, Kémiai egyenletek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Kémiai reakciók",
       "options": null,
       "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-1000]",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 4: Kémiai reakciók [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "chemistry",
         "kémiai-reakciók",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     }
   ],
   "rubrics": []

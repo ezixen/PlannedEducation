@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-racionális-számok-1.0.0",
-    "name": "Racionális számok - Netherlands grade-07",
+    "name": "Rational numbers - Netherlands grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Racionális számok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "Toets van 45 minuten over Rational numbers (grade-07). Onderwerpen: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.021922+00:00",
-    "updated_at": "2026-10-21T11:02:25.021934+00:00",
+    "created_at": "2026-10-24T17:53:48.046452+00:00",
+    "updated_at": "2026-10-24T17:53:48.046465+00:00",
     "tags": [
       "math",
-      "racionális-számok",
+      "rational-numbers",
       "grade-07",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "02c6757b9656dc9aaf14821e33e5e8e3a155c70405561d1c8092712ddd5a7335",
+    "checksum": "1c43378809c6e963eec086c7d42604d6bb80739313973931f45e9a24c791a978",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Racionális számok",
-    "description": "Test on Racionális számok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Rational numbers",
+    "description": "Toets over Rational numbers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 1: Rational numbers",
+      "text": "[math] Rational numbers - Vraag 1: Rational numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 2: Rational numbers",
+      "text": "[math] Rational numbers - Vraag 2: Rational numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 3: Rational numbers",
+      "text": "[math] Rational numbers - Vraag 3: Rational numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Racionális számok - Kérdés 4: Rational numbers",
+      "text": "[math] Rational numbers - Vraag 4: Rational numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Rational numbers.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Racionális számok - Question 5: Rational numbers [rand:1-100]",
+      "text": "[math] Rational numbers - Vraag 5: Rational numbers [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "racionális-számok",
+        "rational-numbers",
         "grade-07",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     }
   ],

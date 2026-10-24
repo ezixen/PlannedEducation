@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-valószínűség-számítás-1.0.0",
-    "name": "Valószínűség-számítás - Finland grade-12",
+    "name": "Probability calculation - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség-számítás for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45 minuutin koe aiheesta Probability calculation (grade-12). Aiheet: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.758383+00:00",
-    "updated_at": "2026-10-21T11:02:24.758393+00:00",
+    "created_at": "2026-10-24T17:53:47.876698+00:00",
+    "updated_at": "2026-10-24T17:53:47.876707+00:00",
     "tags": [
       "math",
-      "valószínűség-számítás",
+      "probability-calculation",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "87b414601e3dae7d4649ccfe9e441c79251eb0ec5dbdd7e312f33cfd87b3c3aa",
+    "checksum": "e28e146cbc50bd603da2c901607939b133df35585a1dd7aa387c5aac71ab4dcd",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Valószínűség-számítás",
-    "description": "Test on Valószínűség-számítás including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Probability calculation",
+    "description": "Koe aiheesta Probability calculation: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 1: Probability calculation",
+      "text": "[math] Probability calculation - Kysymys 1: Probability calculation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "FINLAND-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 2: Probability calculation",
+      "text": "[math] Probability calculation - Kysymys 2: Probability calculation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "FINLAND-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 3: Probability calculation",
+      "text": "[math] Probability calculation - Kysymys 3: Probability calculation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "FINLAND-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség-számítás - Kérdés 4: Probability calculation",
+      "text": "[math] Probability calculation - Kysymys 4: Probability calculation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség-számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Probability calculation.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "FINLAND-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség-számítás - Question 5: Probability calculation [rand:1-1000]",
+      "text": "[math] Probability calculation - Kysymys 5: Probability calculation [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valószínűség-számítás",
+        "probability-calculation",
         "grade-12",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "FINLAND-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     }
   ],

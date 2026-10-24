@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-számlálás-100-ig-1.0.0",
-    "name": "Számlálás 100-ig - Canada grade-02",
+    "name": "Counting to 100 - Canada grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minute assessment on Counting to 100 for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.457756+00:00",
-    "updated_at": "2026-10-21T11:02:15.457764+00:00",
+    "created_at": "2026-10-24T17:53:44.763010+00:00",
+    "updated_at": "2026-10-24T17:53:44.763015+00:00",
     "tags": [
       "math",
-      "számlálás-100-ig",
+      "counting-to-100",
       "grade-02",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "0e03e87b29b52db53e09e6ecafe885ee253088dd1dd8e961c007f07681a20c89",
+    "checksum": "333e819ca5d311470e986508cc1abb4a3c66deaa3ec96631f1f04c115636d997",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Számlálás 100-ig",
-    "description": "Test on Számlálás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Counting to 100",
+    "description": "Assessment on Counting to 100 including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 100-ig - Kérdés 1: Counting to 100",
+      "text": "[math] Counting to 100 - Question 1: Counting to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-100-ig",
-        "grade-02"
+        "counting-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-MATH-Számlálás 100-ig",
+      "curriculum_topic": "CANADA-GRADE-02-MATH-Counting to 100",
       "learning_objective": "Counting to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 100-ig - Kérdés 2: Counting to 100",
+      "text": "[math] Counting to 100 - Question 2: Counting to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-100-ig",
-        "grade-02"
+        "counting-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-MATH-Számlálás 100-ig",
+      "curriculum_topic": "CANADA-GRADE-02-MATH-Counting to 100",
       "learning_objective": "Counting to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 100-ig - Kérdés 3: Counting to 100",
+      "text": "[math] Counting to 100 - Question 3: Counting to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-100-ig",
-        "grade-02"
+        "counting-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-MATH-Számlálás 100-ig",
+      "curriculum_topic": "CANADA-GRADE-02-MATH-Counting to 100",
       "learning_objective": "Counting to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 100-ig - Kérdés 4: Counting to 100",
+      "text": "[math] Counting to 100 - Question 4: Counting to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Counting to 100.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-100-ig",
-        "grade-02"
+        "counting-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-MATH-Számlálás 100-ig",
+      "curriculum_topic": "CANADA-GRADE-02-MATH-Counting to 100",
       "learning_objective": "Counting to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 100-ig - Question 5: Counting to 100 [rand:1-20]",
+      "text": "[math] Counting to 100 - Question 5: Counting to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "számlálás-100-ig",
+        "counting-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-MATH-Számlálás 100-ig",
+      "curriculum_topic": "CANADA-GRADE-02-MATH-Counting to 100",
       "learning_objective": "Counting to 100"
     }
   ],

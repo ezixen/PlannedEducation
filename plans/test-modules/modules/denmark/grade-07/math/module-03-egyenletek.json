@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-egyenletek-1.0.0",
-    "name": "Egyenletek - Denmark grade-07",
+    "name": "Equations - Denmark grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Egyenletek for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minutters prøve i Equations (grade-07). Emner: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.353030+00:00",
-    "updated_at": "2026-10-21T11:02:27.353044+00:00",
+    "created_at": "2026-10-24T17:53:49.475212+00:00",
+    "updated_at": "2026-10-24T17:53:49.475234+00:00",
     "tags": [
       "math",
-      "egyenletek",
+      "equations",
       "grade-07",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "b021ba40c9c08ef4b6b96798b043c7f2686c6ad2f8f75586a5f6deef522fe3d6",
+    "checksum": "596c10a0bc4d0af25657e846ab8f4e0f4bed1df44ad1cf4d4886029b5ccdd858",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Egyenletek",
-    "description": "Test on Egyenletek including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Equations",
+    "description": "Prøve i Equations: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 1: Equations",
+      "text": "[math] Equations - Spørgsmål 1: Equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 2: Equations",
+      "text": "[math] Equations - Spørgsmål 2: Equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 3: Equations",
+      "text": "[math] Equations - Spørgsmål 3: Equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Egyenletek - Kérdés 4: Equations",
+      "text": "[math] Equations - Spørgsmål 4: Equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Equations.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Egyenletek - Question 5: Equations [rand:1-100]",
+      "text": "[math] Equations - Spørgsmål 5: Equations [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "egyenletek",
+        "equations",
         "grade-07",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     }
   ],

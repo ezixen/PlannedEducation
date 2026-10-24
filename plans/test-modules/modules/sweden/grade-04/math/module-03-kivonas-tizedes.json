@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Sweden grade-04",
+    "name": "Decimal subtraction - Sweden grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minuters prov i Decimal subtraction (grade-04). Omfattar: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.596528+00:00",
-    "updated_at": "2026-10-21T11:02:25.596545+00:00",
+    "created_at": "2026-10-24T17:53:48.384638+00:00",
+    "updated_at": "2026-10-24T17:53:48.384644+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "decimal-subtraction",
       "grade-04",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "d9ba559fb549078a6cd95fc8e39ce609c71dffa03a1a31e75eaa8fc13a5f6d5e",
+    "checksum": "40bb19bc60e9bcd1a19267da174bc461f45b591e929a723e3ee9cf23f3e71a80",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal subtraction",
+    "description": "Prov i Decimal subtraction: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Fråga 1: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Fråga 2: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Fråga 3: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Fråga 4: Decimal subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Decimal subtraction.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Decimal subtraction - Fråga 5: Decimal subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "decimal-subtraction",
         "grade-04",
-        "integer"
+        "integer",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     }
   ],

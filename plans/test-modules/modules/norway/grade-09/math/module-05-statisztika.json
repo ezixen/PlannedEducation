@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-statisztika-1.0.0",
-    "name": "Statisztika - Norway grade-09",
+    "name": "Statistics - Norway grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Statistics (grade-09). Emner: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.631178+00:00",
-    "updated_at": "2026-10-21T11:02:26.631191+00:00",
+    "created_at": "2026-10-24T17:53:49.088974+00:00",
+    "updated_at": "2026-10-24T17:53:49.088983+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistics",
       "grade-09",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "04d0c1970b31535e3565479bdb23ad9c8cb3a39749025f23ecb51d8cc79a2104",
+    "checksum": "54655235a62766faf34a3993f3ba74e0883e937861a64cffd7eaa83b7b5d5f59",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Statisztika",
-    "description": "Test on Statisztika including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Statistics",
+    "description": "Prøve i Statistics: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistics - Spørsmål 1: Statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistics",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statisztika",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistics - Spørsmål 2: Statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistics",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statisztika",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistics - Spørsmål 3: Statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistics",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statisztika",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistics - Spørsmål 4: Statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Statistics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistics",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statisztika",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-1000]",
+      "text": "[math] Statistics - Spørsmål 5: Statistics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistics",
         "grade-09",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statisztika",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Statistics",
       "learning_objective": "Statistics"
     }
   ],

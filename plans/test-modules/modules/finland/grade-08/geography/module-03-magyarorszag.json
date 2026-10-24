@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-magyarország-1.0.0",
-    "name": "Magyarország - Finland grade-08",
+    "name": "Hungary - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45 minuutin koe aiheesta Hungary (grade-08). Aiheet: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.337375+00:00",
-    "updated_at": "2026-10-21T11:02:24.337388+00:00",
+    "created_at": "2026-10-24T17:53:47.680315+00:00",
+    "updated_at": "2026-10-24T17:53:47.680321+00:00",
     "tags": [
       "geography",
-      "magyarország",
+      "hungary",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "112e2a017c13172cb9d74e8dcd5600459faf98a49189b49b6ef4eaf330ca9a95",
+    "checksum": "401c42cba3aff95190511c346af2fcc3e2eaaaca14de4b09a25e332669d57a9d",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Magyarország",
-    "description": "Test on Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Hungary",
+    "description": "Koe aiheesta Hungary: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 1: Hungary",
+      "text": "[geography] Hungary - Kysymys 1: Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 2: Hungary",
+      "text": "[geography] Hungary - Kysymys 2: Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Magyarország - Kérdés 3: Hungary",
+      "text": "[geography] Hungary - Kysymys 3: Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Hungary.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 4: Hungary",
+      "text": "[geography] Hungary - Kysymys 4: Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 5: Hungary",
+      "text": "[geography] Hungary - Kysymys 5: Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     }
   ],

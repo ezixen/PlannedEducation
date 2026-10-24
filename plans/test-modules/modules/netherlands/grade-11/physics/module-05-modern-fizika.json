@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-modern-fizika-1.0.0",
-    "name": "Modern fizika - Netherlands grade-11",
+    "name": "Modern physics - Netherlands grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Modern fizika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "Toets van 45 minuten over Modern physics (grade-11). Onderwerpen: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.430206+00:00",
-    "updated_at": "2026-10-21T11:02:25.430220+00:00",
+    "created_at": "2026-10-24T17:53:48.290876+00:00",
+    "updated_at": "2026-10-24T17:53:48.290882+00:00",
     "tags": [
       "physics",
-      "modern-fizika",
+      "modern-physics",
       "grade-11",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "79e923e99fef9092485cc594ed80e4ab028cb6ae568a9d71d00e83a92dd3b2d3",
+    "checksum": "06df432e9004f55e5da7864fe28487891d74b7a56b37f8a5cb3ab1f318374825",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Modern fizika",
-    "description": "Test on Modern fizika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Modern physics",
+    "description": "Toets over Modern physics: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 1: Modern physics",
+      "text": "[physics] Modern physics - Vraag 1: Modern physics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 2: Modern physics",
+      "text": "[physics] Modern physics - Vraag 2: Modern physics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Modern fizika - Kérdés 3: Modern physics",
+      "text": "[physics] Modern physics - Vraag 3: Modern physics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Modern fizika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Modern physics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Modern fizika - Question 4: Modern physics [rand:1-100]",
+      "text": "[physics] Modern physics - Vraag 4: Modern physics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "modern-fizika",
+        "modern-physics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 5: Modern physics",
+      "text": "[physics] Modern physics - Vraag 5: Modern physics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     }
   ],

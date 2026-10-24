@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Finland grade-08",
+    "name": "Civil law - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45 minuutin koe aiheesta Civil law (grade-08). Aiheet: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.309295+00:00",
-    "updated_at": "2026-10-21T11:02:24.309316+00:00",
+    "created_at": "2026-10-24T17:53:47.666511+00:00",
+    "updated_at": "2026-10-24T17:53:47.666521+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "civil-law",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "af95b75a4b637988e8bc9fe0a851de81e1098a7903a089e1e61067669ab1cd2c",
+    "checksum": "f346bc60fdba931c540528e6f55d5624e155ed8f613403f949fd5dbb496d4229",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Polgári jog",
-    "description": "Test on Polgári jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Civil law",
+    "description": "Koe aiheesta Civil law: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Civil law - Kysymys 1: Civil law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Civil law - Kysymys 2: Civil law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Civil law - Kysymys 3: Civil law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Civil law.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Civil law - Kysymys 4: Civil law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Civil law - Kysymys 5: Civil law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "FINLAND-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     }
   ],

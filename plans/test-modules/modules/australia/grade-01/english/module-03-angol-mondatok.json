@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-mondatok-1.0.0",
-    "name": "Angol mondatok - Australia grade-01",
+    "name": "English sentences - Australia grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol mondatok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minute assessment on English sentences for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.330039+00:00",
-    "updated_at": "2026-10-21T11:02:18.330048+00:00",
+    "created_at": "2026-10-24T17:53:46.530687+00:00",
+    "updated_at": "2026-10-24T17:53:46.530694+00:00",
     "tags": [
       "english",
-      "angol-mondatok",
+      "english-sentences",
       "grade-01",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "fd446f26c450cd5e576b309edb0f5f73cb30c6ee2e0e303971e61288c7b13f18",
+    "checksum": "5f6bc1a40debea6702f7f5a852ab1426faeac26e1ea500fb28ab9f26c6f09d9b",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol mondatok",
-    "description": "Test on Angol mondatok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English sentences",
+    "description": "Assessment on English sentences including Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 1: English sentences",
+      "text": "[english] English sentences - Question 1: English sentences",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 2: English sentences",
+      "text": "[english] English sentences - Question 2: English sentences",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol mondatok - Kérdés 3: English sentences",
+      "text": "[english] English sentences - Question 3: English sentences",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol mondatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English sentences.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 4: English sentences",
+      "text": "[english] English sentences - Question 4: English sentences",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 5: English sentences",
+      "text": "[english] English sentences - Question 5: English sentences",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "AUSTRALIA-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     }
   ],

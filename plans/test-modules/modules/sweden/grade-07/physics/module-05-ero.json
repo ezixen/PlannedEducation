@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erő-1.0.0",
-    "name": "Erő - Sweden grade-07",
+    "name": "Force - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minuters prov i Force (grade-07). Omfattar: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.752050+00:00",
-    "updated_at": "2026-10-21T11:02:25.752068+00:00",
+    "created_at": "2026-10-24T17:53:48.469819+00:00",
+    "updated_at": "2026-10-24T17:53:48.469824+00:00",
     "tags": [
       "physics",
-      "erő",
+      "force",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "7b45f40d76fed88722ff83c54f10ba923bb658707dfbbab4c2650ddcdb16b02a",
+    "checksum": "726b73ea23eb34a4cdfacab65eb99590413bccb1d64ecab680c120b6e68bc642",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erő",
-    "description": "Test on Erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Force",
+    "description": "Prov i Force: Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 1: Force",
+      "text": "[physics] Force - Fråga 1: Force",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 2: Force",
+      "text": "[physics] Force - Fråga 2: Force",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erő - Kérdés 3: Force",
+      "text": "[physics] Force - Fråga 3: Force",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erő témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Force.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erő - Question 4: Force [rand:1-100]",
+      "text": "[physics] Force - Fråga 4: Force [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erő",
+        "force",
         "grade-07",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 5: Force",
+      "text": "[physics] Force - Fråga 5: Force",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "SWEDEN-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     }
   ],

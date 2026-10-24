@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Germany grade-09",
+    "name": "Staatsaufbau - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Staatsaufbau (grade-09). Themen: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.488905+00:00",
-    "updated_at": "2026-10-21T11:02:16.488921+00:00",
+    "created_at": "2026-10-24T17:53:45.470734+00:00",
+    "updated_at": "2026-10-24T17:53:45.470739+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "staatsaufbau",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "de0e159e4088331aa3aafbe3c85b3dbccecc064fb1020fa5394f4398cf3d4251",
+    "checksum": "c5fa38c747523a985bde572ce51891063e46b5ee1f51537b07e5049fcab5fd36",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokratie und Marktwirtschaft",
+      "Demokratie",
+      "Marktwirtschaft",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-09 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-09 Civics - Staatsaufbau",
+    "description": "Prüfung zum Thema Staatsaufbau: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] Staatsaufbau - Frage 1: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-09"
+        "staatsaufbau",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] Staatsaufbau - Frage 2: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-09"
+        "staatsaufbau",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] Staatsaufbau - Frage 3: Staatsaufbau",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Staatsaufbau.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-09"
+        "staatsaufbau",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] Staatsaufbau - Frage 4: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-09"
+        "staatsaufbau",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] Staatsaufbau - Frage 5: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-09"
+        "staatsaufbau",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "GERMANY-GRADE-09-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     }
   ],
   "rubrics": []

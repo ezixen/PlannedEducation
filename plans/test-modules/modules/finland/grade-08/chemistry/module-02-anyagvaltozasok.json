@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagváltozások-1.0.0",
-    "name": "Anyagváltozások - Finland grade-08",
+    "name": "Substance changes - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagváltozások for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45 minuutin koe aiheesta Substance changes (grade-08). Aiheet: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.285765+00:00",
-    "updated_at": "2026-10-21T11:02:24.285783+00:00",
+    "created_at": "2026-10-24T17:53:47.655430+00:00",
+    "updated_at": "2026-10-24T17:53:47.655441+00:00",
     "tags": [
       "chemistry",
-      "anyagváltozások",
+      "substance-changes",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "cc3b045314f213a737de52dc0cc7d649de8adbd84342f1a791e472ed5eb998df",
+    "checksum": "8c759a62680f8d0553325d77f988c5a8ca7a7aea22b65c5a53ec99b85a3085d3",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagváltozások",
-    "description": "Test on Anyagváltozások including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substance changes",
+    "description": "Koe aiheesta Substance changes: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 1: Substance changes",
+      "text": "[chemistry] Substance changes - Kysymys 1: Substance changes",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 2: Substance changes",
+      "text": "[chemistry] Substance changes - Kysymys 2: Substance changes",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagváltozások - Kérdés 3: Substance changes",
+      "text": "[chemistry] Substance changes - Kysymys 3: Substance changes",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagváltozások témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Substance changes.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagváltozások - Question 4: Substance changes [rand:1-1000]",
+      "text": "[chemistry] Substance changes - Kysymys 4: Substance changes [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagváltozások",
+        "substance-changes",
         "grade-08",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 5: Substance changes",
+      "text": "[chemistry] Substance changes - Kysymys 5: Substance changes",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     }
   ],

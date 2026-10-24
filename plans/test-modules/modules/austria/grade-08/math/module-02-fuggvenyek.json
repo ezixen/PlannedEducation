@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-függvények-1.0.0",
-    "name": "Függvények - Austria grade-08",
+    "name": "Funktionen - Austria grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minütige Prüfung zum Thema Funktionen (grade-08). Themen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.098878+00:00",
-    "updated_at": "2026-10-21T11:02:29.098892+00:00",
+    "created_at": "2026-10-24T17:53:50.486229+00:00",
+    "updated_at": "2026-10-24T17:53:50.486234+00:00",
     "tags": [
       "math",
-      "függvények",
+      "funktionen",
       "grade-08",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "2a3c303db55cd61d1d0a529a94d1b00ace82114af712ea2f228c3f5cab83d335",
+    "checksum": "adcb626cb5cf484ff1a7093b73c7adb82a34c386c82773a1a1c3ab97e593e682",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Reelle Zahlen",
+      "Funktionen",
+      "Lineare Gleichungen",
+      "Geometrie",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Függvények",
-    "description": "Test on Függvények including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Funktionen",
+    "description": "Prüfung zum Thema Funktionen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Funktionen - Frage 1: Funktionen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "funktionen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Funktionen - Frage 2: Funktionen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "funktionen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Funktionen - Frage 3: Funktionen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "funktionen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Funktionen - Frage 4: Funktionen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Funktionen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-08"
+        "funktionen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-1000]",
+      "text": "[math] Funktionen - Frage 5: Funktionen [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "függvények",
+        "funktionen",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     }
   ],
   "rubrics": []

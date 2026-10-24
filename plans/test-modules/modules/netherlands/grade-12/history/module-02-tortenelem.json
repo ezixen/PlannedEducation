@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-1.0.0",
-    "name": "Történelem - Netherlands grade-12",
+    "name": "History - Netherlands grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "Toets van 45 minuten over History (grade-12). Onderwerpen: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.474383+00:00",
-    "updated_at": "2026-10-21T11:02:25.474400+00:00",
+    "created_at": "2026-10-24T17:53:48.314141+00:00",
+    "updated_at": "2026-10-24T17:53:48.314150+00:00",
     "tags": [
       "history",
-      "történelem",
+      "history",
       "grade-12",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "4123d9aec2a8383b326e35e98fa874c3034611b8832a930253a00db1dd22ca22",
+    "checksum": "3eda2c82969ca363928452fe9a2512d794be7ec3184c0c0e106dca596700018d",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem",
-    "description": "Test on Történelem including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History",
+    "description": "Toets over History: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] History - Vraag 1: History",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] History - Vraag 2: History",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] History - Vraag 3: History",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor History.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] History - Vraag 4: History",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] History - Vraag 5: History",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     }
   ],

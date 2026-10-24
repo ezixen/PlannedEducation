@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-magyarország-1.0.0",
-    "name": "Magyarország - Sweden grade-08",
+    "name": "Hungary - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minuters prov i Hungary (grade-08). Omfattar: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.815403+00:00",
-    "updated_at": "2026-10-21T11:02:25.815422+00:00",
+    "created_at": "2026-10-24T17:53:48.517826+00:00",
+    "updated_at": "2026-10-24T17:53:48.517834+00:00",
     "tags": [
       "geography",
-      "magyarország",
+      "hungary",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "6e587b4889cbd49864e1e15c0b1d222e0488409da9da554f795f968761c9625a",
+    "checksum": "6b1baf423747341eb78aeb037833217ca71a53fe93fcb2011863629286d26fbe",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Magyarország",
-    "description": "Test on Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Hungary",
+    "description": "Prov i Hungary: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 1: Hungary",
+      "text": "[geography] Hungary - Fråga 1: Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 2: Hungary",
+      "text": "[geography] Hungary - Fråga 2: Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Magyarország - Kérdés 3: Hungary",
+      "text": "[geography] Hungary - Fråga 3: Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Hungary.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 4: Hungary",
+      "text": "[geography] Hungary - Fråga 4: Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 5: Hungary",
+      "text": "[geography] Hungary - Fråga 5: Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     }
   ],

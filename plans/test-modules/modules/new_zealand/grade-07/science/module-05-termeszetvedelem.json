@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - New Zealand grade-07",
+    "name": "Nature conservation - New Zealand grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-07 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature conservation for grade-07 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.576645+00:00",
-    "updated_at": "2026-10-21T11:02:34.576662+00:00",
+    "created_at": "2026-10-24T17:53:51.739284+00:00",
+    "updated_at": "2026-10-24T17:53:51.739295+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "nature-conservation",
       "grade-07",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "62f2f06dbb2133a86cc6d4a0a5320c9cbe4f2c25308053e803594140b5e5d99f",
+    "checksum": "6d606ed52996cda6325f5d51be25d4db6bb3e55244a1939f0c0ee7845ff44a6e",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-07 Science - Nature conservation",
+    "description": "Assessment on Nature conservation including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Nature conservation - Question 1: Nature conservation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "nature-conservation",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Természetvédelem",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Nature conservation - Question 2: Nature conservation",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "nature-conservation",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Természetvédelem",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Nature conservation - Question 3: Nature conservation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature conservation.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "nature-conservation",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Természetvédelem",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Nature conservation - Question 4: Nature conservation",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "nature-conservation",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Természetvédelem",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Nature conservation - Question 5: Nature conservation",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "nature-conservation",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Természetvédelem",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     }
   ],

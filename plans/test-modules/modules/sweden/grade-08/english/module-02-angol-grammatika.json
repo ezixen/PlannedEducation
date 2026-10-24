@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - Sweden grade-08",
+    "name": "English grammar - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minuters prov i English grammar (grade-08). Omfattar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.802138+00:00",
-    "updated_at": "2026-10-21T11:02:25.802151+00:00",
+    "created_at": "2026-10-24T17:53:48.508413+00:00",
+    "updated_at": "2026-10-24T17:53:48.508421+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "f3f2921ecd67280bfbcc066ec15b61b63e99e282e57ee88b33d0f22d6f978dc7",
+    "checksum": "de8e51441640b3bef8a131403eec4e138a95747905e2fd2588ba43267be40776",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English grammar",
+    "description": "Prov i English grammar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Fråga 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Fråga 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Fråga 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för English grammar.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Fråga 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Fråga 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "SWEDEN-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Finland grade-03",
+    "name": "Luonnonsuojelu - Finland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 minuutin koe aiheesta Luonnonsuojelu (grade-03). Aiheet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.061401+00:00",
-    "updated_at": "2026-10-21T11:02:24.061411+00:00",
+    "created_at": "2026-10-24T17:53:47.526139+00:00",
+    "updated_at": "2026-10-24T17:53:47.526144+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "luonnonsuojelu",
       "grade-03",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "science",
     "grade_level": "grade-03",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1ae3eb527d2ec4cf56010b51278e0177520155ce7f2b44a9433e010bb1cd7182",
+    "checksum": "fac95bd6731af35839188fdd6a638ea0bcaec149254efbae3f1129acdd778380",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Luonto ja ympäristö",
+      "Kasvit ja eläimet",
+      "Luonto",
+      "Ympäristö",
+      "Luonnonsuojelu"
     ]
   },
   "exam": {
-    "title": "grade-03 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-03 Science - Luonnonsuojelu",
+    "description": "Koe aiheesta Luonnonsuojelu: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Luonnonsuojelu - Kysymys 1: Luonnonsuojelu",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-03"
+        "luonnonsuojelu",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonnonsuojelu",
+      "learning_objective": "Luonnonsuojelu"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Luonnonsuojelu - Kysymys 2: Luonnonsuojelu",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-03"
+        "luonnonsuojelu",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonnonsuojelu",
+      "learning_objective": "Luonnonsuojelu"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Luonnonsuojelu - Kysymys 3: Luonnonsuojelu",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Luonnonsuojelu.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-03"
+        "luonnonsuojelu",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonnonsuojelu",
+      "learning_objective": "Luonnonsuojelu"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Luonnonsuojelu - Kysymys 4: Luonnonsuojelu",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-03"
+        "luonnonsuojelu",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonnonsuojelu",
+      "learning_objective": "Luonnonsuojelu"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Luonnonsuojelu - Kysymys 5: Luonnonsuojelu",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-03"
+        "luonnonsuojelu",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonnonsuojelu",
+      "learning_objective": "Luonnonsuojelu"
     }
   ],
   "rubrics": []

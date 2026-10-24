@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-test-fiziológiája-1.0.0",
-    "name": "Embri test fiziológiája - New Zealand grade-12",
+    "name": "Human body physiology - New Zealand grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test fiziológiája for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minute assessment on Human body physiology for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.912200+00:00",
-    "updated_at": "2026-10-21T11:02:34.912216+00:00",
+    "created_at": "2026-10-24T17:53:52.000390+00:00",
+    "updated_at": "2026-10-24T17:53:52.000397+00:00",
     "tags": [
       "biology",
-      "embri-test-fiziológiája",
+      "human-body-physiology",
       "grade-12",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "ab77cd0b5009e308a3788ef20b8e065b3b0d960c2e00ebcb10e44d20eaefd956",
+    "checksum": "148140423edcf197042f2a1e6a7dd32c7847282237646f3978e5a5ee1c98010e",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri test fiziológiája",
-    "description": "Test on Embri test fiziológiája including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Human body physiology",
+    "description": "Assessment on Human body physiology including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 1: Human body physiology",
+      "text": "[biology] Human body physiology - Question 1: Human body physiology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 2: Human body physiology",
+      "text": "[biology] Human body physiology - Question 2: Human body physiology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 3: Human body physiology",
+      "text": "[biology] Human body physiology - Question 3: Human body physiology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Human body physiology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 4: Human body physiology",
+      "text": "[biology] Human body physiology - Question 4: Human body physiology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 5: Human body physiology",
+      "text": "[biology] Human body physiology - Question 5: Human body physiology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Human body physiology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     }
   ],

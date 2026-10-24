@@ -11,12 +11,13 @@
     "tags": [
       "history",
       "magyarország-történelete",
-      "grade-10"
+      "grade-10",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "4c32b2d5f545f1b0aaee3091fcd5f18ffe77fc7d5a495beb0daf2c91cb961d4c",
+    "checksum": "1b4b4bbfc319554f2520e3649fd609bc985b47f79bf9086c831970418c92fb20",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Honfoglalás",
       "Történelem",
       "Mai Magyarország"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 10 History - Magyarország történelete",

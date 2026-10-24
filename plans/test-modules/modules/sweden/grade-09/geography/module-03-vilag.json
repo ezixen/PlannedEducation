@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-világ-1.0.0",
-    "name": "Világ - Sweden grade-09",
+    "name": "World - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minuters prov i World (grade-09). Omfattar: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.897681+00:00",
-    "updated_at": "2026-10-21T11:02:25.897701+00:00",
+    "created_at": "2026-10-24T17:53:48.575340+00:00",
+    "updated_at": "2026-10-24T17:53:48.575357+00:00",
     "tags": [
       "geography",
-      "világ",
+      "world",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e394292c3d4e810f3c11919c7fc40015717d4ab566f5ee331057aafa2b87a2bd",
+    "checksum": "bd4acc1734abd1c94fb12304f983380a447cbc1c4036833aee9cd8537a5fe583",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Világ",
-    "description": "Test on Világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - World",
+    "description": "Prov i World: Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 1: World",
+      "text": "[geography] World - Fråga 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 2: World",
+      "text": "[geography] World - Fråga 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Világ - Kérdés 3: World",
+      "text": "[geography] World - Fråga 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för World.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 4: World",
+      "text": "[geography] World - Fråga 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 5: World",
+      "text": "[geography] World - Fråga 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "SWEDEN-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     }
   ],

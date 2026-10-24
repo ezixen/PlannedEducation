@@ -3,21 +3,25 @@
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
     "name": "Földrajzi eszközök - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 perces felmérő: Földrajzi eszközök (grade-12). Témakörök: Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.682157+00:00",
-    "updated_at": "2026-10-21T11:02:35.682192+00:00",
+    "created_at": "2026-10-24T17:53:52.490693+00:00",
+    "updated_at": "2026-10-24T17:53:52.490699+00:00",
     "tags": [
       "geography",
       "földrajzi-eszközök",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "b851112cffc4904f498d8317377bfdd358d196acb1b19ef42919d5fa94780af5",
+    "checksum": "31a1af01bd79ea9ecc875b3f6479450431d00342c8f98cbddbaa8a1d220ddb21",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Földrajz-erettségi",
+      "Földrajz",
+      "Földrajzi ismeretek",
+      "Európa és világ",
+      "Földrajzi eszközök"
     ]
   },
   "exam": {
     "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "Felmérő a(z) Földrajzi eszközök témakörből (Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Földrajzi eszközök - Kérdés 1: Földrajzi eszközök",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "földrajzi-eszközök",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "learning_objective": "Földrajzi eszközök"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Földrajzi eszközök - Kérdés 2: Földrajzi eszközök",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "földrajzi-eszközök",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "learning_objective": "Földrajzi eszközök"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Földrajzi eszközök - Kérdés 3: Földrajzi eszközök",
       "options": null,
       "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "földrajzi-eszközök",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "learning_objective": "Földrajzi eszközök"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Földrajzi eszközök - Kérdés 4: Földrajzi eszközök",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "földrajzi-eszközök",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "learning_objective": "Földrajzi eszközök"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Földrajzi eszközök - Kérdés 5: Földrajzi eszközök",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "földrajzi-eszközök",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "learning_objective": "Földrajzi eszközök"
     }
   ],
   "rubrics": []

@@ -3,21 +3,25 @@
     "id": "grade-07-geography-földrajzi-képességek-1.0.0",
     "name": "Földrajzi képességek - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi képességek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45 perces felmérő: Földrajzi képességek (grade-07). Témakörök: Földrajzi képességek, Földrajz, Földrajzi képességek, Földrajzi ismeretek, Földrajzi eszközök",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.183085+00:00",
-    "updated_at": "2026-10-21T11:02:35.183104+00:00",
+    "created_at": "2026-10-24T17:53:52.203021+00:00",
+    "updated_at": "2026-10-24T17:53:52.203031+00:00",
     "tags": [
       "geography",
       "földrajzi-képességek",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "08b0e0a8fdab250e8ef7c82654660b567a07f07c439b3a72be9d9cb352efbabf",
+    "checksum": "5b3bf0d70134252f06ab832a33ef2170199e35bcd0e1c1214176c29370520e8e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geographic skills",
-      "Geography",
-      "Geographic skills",
-      "Geographic knowledge",
-      "Geographic tools"
+      "Földrajzi képességek",
+      "Földrajz",
+      "Földrajzi képességek",
+      "Földrajzi ismeretek",
+      "Földrajzi eszközök"
     ]
   },
   "exam": {
     "title": "grade-07 Geography - Földrajzi képességek",
-    "description": "Test on Földrajzi képességek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "Felmérő a(z) Földrajzi képességek témakörből (Földrajzi képességek, Földrajz, Földrajzi képességek, Földrajzi ismeretek, Földrajzi eszközök)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 1: Geographic skills",
+      "text": "[geography] Földrajzi képességek - Kérdés 1: Földrajzi képességek",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "földrajzi-képességek",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "learning_objective": "Földrajzi képességek"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 2: Geographic skills",
+      "text": "[geography] Földrajzi képességek - Kérdés 2: Földrajzi képességek",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "földrajzi-képességek",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "learning_objective": "Földrajzi képességek"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 3: Geographic skills",
+      "text": "[geography] Földrajzi képességek - Kérdés 3: Földrajzi képességek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "földrajzi-képességek",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "learning_objective": "Földrajzi képességek"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 4: Geographic skills",
+      "text": "[geography] Földrajzi képességek - Kérdés 4: Földrajzi képességek",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "földrajzi-képességek",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "learning_objective": "Földrajzi képességek"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 5: Geographic skills",
+      "text": "[geography] Földrajzi képességek - Kérdés 5: Földrajzi képességek",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "földrajzi-képességek",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "learning_objective": "Földrajzi képességek"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-egészség-1.0.0",
-    "name": "Egészség - Norway grade-08",
+    "name": "Health - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minutters prøve i Health (grade-08). Emner: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.459826+00:00",
-    "updated_at": "2026-10-21T11:02:26.459845+00:00",
+    "created_at": "2026-10-24T17:53:48.986355+00:00",
+    "updated_at": "2026-10-24T17:53:48.986362+00:00",
     "tags": [
       "biology",
-      "egészség",
+      "health",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "d320a6f706b1d1260da8b62e7bacbd7e9033425e4311db6fc0bd9625d5a83e3b",
+    "checksum": "704592e29648cbdaccb310e95d7a51862470d89a18f5f2c75c271c67cc8665f6",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Health",
+    "description": "Prøve i Health: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Health - Spørsmål 1: Health",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Health - Spørsmål 2: Health",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Health - Spørsmål 3: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Health.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Health - Spørsmål 4: Health",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Health - Spørsmål 5: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Health.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "NORWAY-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     }
   ],

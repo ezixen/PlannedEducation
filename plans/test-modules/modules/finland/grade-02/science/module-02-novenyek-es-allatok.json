@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Finland grade-02",
+    "name": "Kasvit ja eläimet - Finland grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 minuutin koe aiheesta Kasvit ja eläimet (grade-02). Aiheet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.032867+00:00",
-    "updated_at": "2026-10-21T11:02:24.032899+00:00",
+    "created_at": "2026-10-24T17:53:47.506936+00:00",
+    "updated_at": "2026-10-24T17:53:47.506943+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "kasvit-ja-eläimet",
       "grade-02",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "f2280d94d9ebd0a25c9ff546124d061b16cd6faf72a937b4e15d45eeaaf437ed",
+    "checksum": "9d6f69a21365ca8397665b9a06b0b37e7a6103e0442a91e5bf6c5e5fa5feae06",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Luonto ja ympäristö",
+      "Kasvit ja eläimet",
+      "Luonto",
+      "Ympäristö",
+      "Luonnonsuojelu"
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Kasvit ja eläimet",
+    "description": "Koe aiheesta Kasvit ja eläimet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Kasvit ja eläimet - Kysymys 1: Kasvit ja eläimet",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "kasvit-ja-eläimet",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Kasvit ja eläimet",
+      "learning_objective": "Kasvit ja eläimet"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Kasvit ja eläimet - Kysymys 2: Kasvit ja eläimet",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "kasvit-ja-eläimet",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Kasvit ja eläimet",
+      "learning_objective": "Kasvit ja eläimet"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Kasvit ja eläimet - Kysymys 3: Kasvit ja eläimet",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Kasvit ja eläimet.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "kasvit-ja-eläimet",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Kasvit ja eläimet",
+      "learning_objective": "Kasvit ja eläimet"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Kasvit ja eläimet - Kysymys 4: Kasvit ja eläimet",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "kasvit-ja-eläimet",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Kasvit ja eläimet",
+      "learning_objective": "Kasvit ja eläimet"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Kasvit ja eläimet - Kysymys 5: Kasvit ja eläimet",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-02"
+        "kasvit-ja-eläimet",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "FINLAND-GRADE-02-SCIENCE-Kasvit ja eläimet",
+      "learning_objective": "Kasvit ja eläimet"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-kivonás-10-ig-1.0.0",
-    "name": "Kivonás 10-ig - Austria grade-01",
+    "name": "Subtraktion bis 10 - Austria grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minütige Prüfung zum Thema Subtraktion bis 10 (grade-01). Themen: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.782347+00:00",
-    "updated_at": "2026-10-21T11:02:28.782360+00:00",
+    "created_at": "2026-10-24T17:53:50.283529+00:00",
+    "updated_at": "2026-10-24T17:53:50.283538+00:00",
     "tags": [
       "math",
-      "kivonás-10-ig",
+      "subtraktion-bis-10",
       "grade-01",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "b1d724d4115f0a7fe4bd0bd8d779f08cba2ee46834f7eb068defce081a8598b8",
+    "checksum": "e3eb4232ff3b3dddd741ada5865b8fc3b6ab8a101d849256c344709a7a352011",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Zählen bis 10",
+      "Addition bis 10",
+      "Subtraktion bis 10",
+      "Zählen bis 20",
+      "Addition bis 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Kivonás 10-ig",
-    "description": "Test on Kivonás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Subtraktion bis 10",
+    "description": "Prüfung zum Thema Subtraktion bis 10: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 1: Subtraction to 10",
+      "text": "[math] Subtraktion bis 10 - Frage 1: Subtraktion bis 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraktion-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Subtraktion bis 10",
+      "learning_objective": "Subtraktion bis 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 2: Subtraction to 10",
+      "text": "[math] Subtraktion bis 10 - Frage 2: Subtraktion bis 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraktion-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Subtraktion bis 10",
+      "learning_objective": "Subtraktion bis 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 3: Subtraction to 10",
+      "text": "[math] Subtraktion bis 10 - Frage 3: Subtraktion bis 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraktion-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Subtraktion bis 10",
+      "learning_objective": "Subtraktion bis 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 10-ig - Kérdés 4: Subtraction to 10",
+      "text": "[math] Subtraktion bis 10 - Frage 4: Subtraktion bis 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Subtraktion bis 10.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraktion-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Subtraktion bis 10",
+      "learning_objective": "Subtraktion bis 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 10-ig - Question 5: Subtraction to 10 [rand:1-20]",
+      "text": "[math] Subtraktion bis 10 - Frage 5: Subtraktion bis 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-10-ig",
+        "subtraktion-bis-10",
         "grade-01",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Subtraktion bis 10",
+      "learning_objective": "Subtraktion bis 10"
     }
   ],
   "rubrics": []

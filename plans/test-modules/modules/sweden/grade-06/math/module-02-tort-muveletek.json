@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-tört-műveletek-1.0.0",
-    "name": "Tört műveletek - Sweden grade-06",
+    "name": "Fraction operations - Sweden grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minuters prov i Fraction operations (grade-06). Omfattar: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.642204+00:00",
-    "updated_at": "2026-10-21T11:02:25.642223+00:00",
+    "created_at": "2026-10-24T17:53:48.409103+00:00",
+    "updated_at": "2026-10-24T17:53:48.409108+00:00",
     "tags": [
       "math",
-      "tört-műveletek",
+      "fraction-operations",
       "grade-06",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "0e6e445eee15e43615581715af6468972cf1b1927802b310cb8698700deda439",
+    "checksum": "29077f442ac6c9606bde3f2b53df8b44fe85b6894bf5ab3bb14b00ae24d6231d",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Tört műveletek",
-    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Fraction operations",
+    "description": "Prov i Fraction operations: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "text": "[math] Fraction operations - Fråga 1: Fraction operations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "text": "[math] Fraction operations - Fråga 2: Fraction operations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "text": "[math] Fraction operations - Fråga 3: Fraction operations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "text": "[math] Fraction operations - Fråga 4: Fraction operations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Fraction operations.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "text": "[math] Fraction operations - Fråga 5: Fraction operations [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "tört-műveletek",
+        "fraction-operations",
         "grade-06",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     }
   ],

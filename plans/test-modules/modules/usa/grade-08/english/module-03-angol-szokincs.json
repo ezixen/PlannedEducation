@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - USA grade-08",
+    "name": "English vocabulary - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English vocabulary for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.937211+00:00",
-    "updated_at": "2026-10-21T11:02:17.937224+00:00",
+    "created_at": "2026-10-24T17:53:46.330735+00:00",
+    "updated_at": "2026-10-24T17:53:46.330741+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "517d4c684a6b0c9d68622194b29044d5e61e6507ea4b5c70c3f16cf2ed20da6c",
+    "checksum": "73ae95ad2039fe882c3daf28646d28ad278b6a274a4602b36511a553d3790061",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English vocabulary",
+    "description": "Assessment on English vocabulary including English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Question 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Question 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Question 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English vocabulary.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Question 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Question 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

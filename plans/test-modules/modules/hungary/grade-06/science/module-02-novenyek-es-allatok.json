@@ -3,21 +3,25 @@
     "id": "grade-06-science-növények-és-állatok-1.0.0",
     "name": "Növények és állatok - Hungary grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 perces felmérő: Növények és állatok (grade-06). Témakörök: Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.134399+00:00",
-    "updated_at": "2026-10-21T11:02:35.134417+00:00",
+    "created_at": "2026-10-24T17:53:52.160970+00:00",
+    "updated_at": "2026-10-24T17:53:52.160989+00:00",
     "tags": [
       "science",
       "növények-és-állatok",
       "grade-06",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-06",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "ccabaa5497480ee933b2ada7393184fe1e72d2c0c492e725c692508a7db69913",
+    "checksum": "6fe6468a2f84ed13d514b9e9ce3057684bc78845604408a55675303ef2d5a901",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Természet és környezet",
+      "Növények és állatok",
+      "Természet",
+      "Környezet",
+      "Természetvédelem"
     ]
   },
   "exam": {
     "title": "grade-06 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Felmérő a(z) Növények és állatok témakörből (Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Növények és állatok - Kérdés 1: Növények és állatok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "science",
         "növények-és-állatok",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "learning_objective": "Növények és állatok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Növények és állatok - Kérdés 2: Növények és állatok",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "science",
         "növények-és-állatok",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "learning_objective": "Növények és állatok"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Növények és állatok - Kérdés 3: Növények és állatok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
         "növények-és-állatok",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "learning_objective": "Növények és állatok"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Növények és állatok - Kérdés 4: Növények és állatok",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "science",
         "növények-és-állatok",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "learning_objective": "Növények és állatok"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Növények és állatok - Kérdés 5: Növények és állatok",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "science",
         "növények-és-állatok",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "learning_objective": "Növények és állatok"
     }
   ],
   "rubrics": []

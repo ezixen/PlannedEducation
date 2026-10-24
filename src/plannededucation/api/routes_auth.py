@@ -690,6 +690,40 @@ def confirm_password_reset(
 
 # ── Classroom Teacher Quick Password Reset ────────────────────────────────────
 
+@router.get("/teacher/students")
+def list_students_for_teacher(
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """List registered student accounts for an approved teacher or administrator."""
+    if not (
+        current_user.role in ("teacher", "admin")
+        and (current_user.teacher_approved or current_user.is_admin)
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Approved teacher or administrator status required",
+        )
+    students = (
+        db.query(models.User)
+        .filter(models.User.role == "student")
+        .order_by(models.User.created_at.desc())
+        .all()
+    )
+    return [
+        {
+            "id": s.id,
+            "username": s.username,
+            "email": s.email,
+            "full_name": s.full_name or s.username,
+            "is_active": s.is_active,
+            "force_password_reset": bool(s.force_password_reset),
+            "locked_until": s.locked_until.isoformat() if s.locked_until else None,
+        }
+        for s in students
+    ]
+
+
 @router.post("/teacher/quick-reset/{student_id}")
 def teacher_quick_reset_student(
     student_id: str,

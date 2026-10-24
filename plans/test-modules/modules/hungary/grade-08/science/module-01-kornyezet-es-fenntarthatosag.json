@@ -11,12 +11,13 @@
     "tags": [
       "science",
       "környezet-és-fenntarthatóság",
-      "grade-08"
+      "grade-08",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "fc464481b5108f6c23ed3a4f1c043907cc6a628b9f9764c6b024b553b94c93b2",
+    "checksum": "1d24bdb5f43452d511fcc1c66b386cc681f0885c8128b4f648bf944a2ff3e5b0",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Ökológia",
       "Klimaváltozás",
       "Megújuló energia"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 08 Science - Környezet és fenntarthatóság",

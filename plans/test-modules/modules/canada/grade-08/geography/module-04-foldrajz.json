@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-földrajz-1.0.0",
-    "name": "Földrajz - Canada grade-08",
+    "name": "Geography - Canada grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minute assessment on Geography for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.741328+00:00",
-    "updated_at": "2026-10-21T11:02:15.741338+00:00",
+    "created_at": "2026-10-24T17:53:44.926969+00:00",
+    "updated_at": "2026-10-24T17:53:44.926978+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geography",
       "grade-08",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "1340cb30ad5ea93f1b5fa0d5adbe11b700e8ec270a6226f8c5a38cbd132af27b",
+    "checksum": "beb153b1cd5f8263194b620eacf8ee927d0b2117246fcb960346c697646b4440",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Földrajz",
-    "description": "Test on Földrajz including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Geography",
+    "description": "Assessment on Geography including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geography - Question 1: Geography",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geography",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geography - Question 2: Geography",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geography",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geography - Question 3: Geography",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geography.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geography",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geography - Question 4: Geography",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geography",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geography - Question 5: Geography",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geography",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "CANADA-GRADE-08-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     }
   ],

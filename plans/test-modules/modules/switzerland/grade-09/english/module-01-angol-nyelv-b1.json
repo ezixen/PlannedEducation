@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-nyelv-b1-1.0.0",
-    "name": "Angol nyelv B1 - Switzerland grade-09",
+    "name": "English language B1 - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B1 for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English language B1 (grade-09). Themen: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.500669+00:00",
-    "updated_at": "2026-10-21T11:02:28.500684+00:00",
+    "created_at": "2026-10-24T17:53:50.091717+00:00",
+    "updated_at": "2026-10-24T17:53:50.091728+00:00",
     "tags": [
       "english",
-      "angol-nyelv-b1",
+      "english-language-b1",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "905592e04041c2289d061d0e409155b676bed7245b7f546eb899fb9f827fdc94",
+    "checksum": "7cee73b36c219b56d5dd5350c0bed9eb4950a4b5a32c61340df6a7be931cdab3",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol nyelv B1",
-    "description": "Test on Angol nyelv B1 including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English language B1",
+    "description": "Prüfung zum Thema English language B1: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B1 - Kérdés 1: English language B1",
+      "text": "[english] English language B1 - Frage 1: English language B1",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b1",
-        "grade-09"
+        "english-language-b1",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-Angol nyelv B1",
+      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-English language B1",
       "learning_objective": "English language B1"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B1 - Kérdés 2: English language B1",
+      "text": "[english] English language B1 - Frage 2: English language B1",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b1",
-        "grade-09"
+        "english-language-b1",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-Angol nyelv B1",
+      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-English language B1",
       "learning_objective": "English language B1"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B1 - Kérdés 3: English language B1",
+      "text": "[english] English language B1 - Frage 3: English language B1",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv B1 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English language B1.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b1",
-        "grade-09"
+        "english-language-b1",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-Angol nyelv B1",
+      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-English language B1",
       "learning_objective": "English language B1"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B1 - Kérdés 4: English language B1",
+      "text": "[english] English language B1 - Frage 4: English language B1",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b1",
-        "grade-09"
+        "english-language-b1",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-Angol nyelv B1",
+      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-English language B1",
       "learning_objective": "English language B1"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B1 - Kérdés 5: English language B1",
+      "text": "[english] English language B1 - Frage 5: English language B1",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b1",
-        "grade-09"
+        "english-language-b1",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-Angol nyelv B1",
+      "curriculum_topic": "SWITZERLAND-GRADE-09-ENGLISH-English language B1",
       "learning_objective": "English language B1"
     }
   ],

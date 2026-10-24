@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - Denmark grade-08",
+    "name": "Historical events - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45-minutters prøve i Historical events (grade-08). Emner: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.478886+00:00",
-    "updated_at": "2026-10-21T11:02:27.478899+00:00",
+    "created_at": "2026-10-24T17:53:49.575242+00:00",
+    "updated_at": "2026-10-24T17:53:49.575251+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historical-events",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "885e939eea1891fa73d38b02f42b94c6f25d4cb7ea893e891fa88084871e3ee9",
+    "checksum": "15c566486430947e9e0efcbbc8ed7cb05a0aab7acd47e7f1d4e76e2cf8633a0d",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - Történelmi események",
-    "description": "Test on Történelmi események including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - Historical events",
+    "description": "Prøve i Historical events: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historical events - Spørgsmål 1: Historical events",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-08"
+        "historical-events",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Történelmi események",
+      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historical events - Spørgsmål 2: Historical events",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-08"
+        "historical-events",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Történelmi események",
+      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historical events - Spørgsmål 3: Historical events",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Historical events.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-08"
+        "historical-events",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Történelmi események",
+      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historical events - Spørgsmål 4: Historical events",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-08"
+        "historical-events",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Történelmi események",
+      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historical events - Spørgsmål 5: Historical events",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-08"
+        "historical-events",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Történelmi események",
+      "curriculum_topic": "DENMARK-GRADE-08-HISTORY-Historical events",
       "learning_objective": "Historical events"
     }
   ],

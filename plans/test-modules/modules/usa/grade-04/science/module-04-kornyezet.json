@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-környezet-1.0.0",
-    "name": "Környezet - USA grade-04",
+    "name": "Environment - USA grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Environment for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.763554+00:00",
-    "updated_at": "2026-10-21T11:02:17.763563+00:00",
+    "created_at": "2026-10-24T17:53:46.199696+00:00",
+    "updated_at": "2026-10-24T17:53:46.199703+00:00",
     "tags": [
       "science",
-      "környezet",
+      "environment",
       "grade-04",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "4d9a76dac2801d3e0bf956e67f1f23ab9b8e7c3adb481fcfb1a9d96699d29d1c",
+    "checksum": "474ae4cb8c9b4e4d4b9bf81dafebff368eb87fe0c50878f30d0d5b3af046f274",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Environment",
+    "description": "Assessment on Environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Environment - Question 1: Environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-04-SCIENCE-Környezet",
+      "curriculum_topic": "USA-GRADE-04-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Environment - Question 2: Environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-04-SCIENCE-Környezet",
+      "curriculum_topic": "USA-GRADE-04-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Environment - Question 3: Environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-04-SCIENCE-Környezet",
+      "curriculum_topic": "USA-GRADE-04-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Environment - Question 4: Environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-04-SCIENCE-Környezet",
+      "curriculum_topic": "USA-GRADE-04-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Environment - Question 5: Environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-04-SCIENCE-Környezet",
+      "curriculum_topic": "USA-GRADE-04-SCIENCE-Environment",
       "learning_objective": "Environment"
     }
   ],

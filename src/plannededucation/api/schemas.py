@@ -564,6 +564,12 @@ class PackageExportRequest(BaseModel):
     include_variables: bool = True
     format: str = Field("json", pattern=r"^(json|yaml)$")
     compress: bool = False
+    language: str | None = None
+    language_name: str | None = None
+    country: str | None = None
+    subject: str | None = None
+    grade_level: str | None = None
+    save_to_server: bool = False
 
 
 class PackageImportResult(BaseModel):

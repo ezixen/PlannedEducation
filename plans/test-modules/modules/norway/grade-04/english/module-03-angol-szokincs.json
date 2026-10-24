@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - Norway grade-04",
+    "name": "English vocabulary - Norway grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minutters prøve i English vocabulary (grade-04). Emner: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.276052+00:00",
-    "updated_at": "2026-10-21T11:02:26.276064+00:00",
+    "created_at": "2026-10-24T17:53:48.853830+00:00",
+    "updated_at": "2026-10-24T17:53:48.853838+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-04",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "4b7b53abd072ff82e1017a6f15aa2aedc52f20b895636e2e4388963a3c4e129d",
+    "checksum": "290afee794ee62b40ccfb30997d3a9537832bf7093dae286877c19f96b5d09f5",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-04 English - English vocabulary",
+    "description": "Prøve i English vocabulary: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Spørsmål 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-04"
+        "english-vocabulary",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Spørsmål 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-04"
+        "english-vocabulary",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Spørsmål 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English vocabulary.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-04"
+        "english-vocabulary",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Spørsmål 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-04"
+        "english-vocabulary",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Spørsmål 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-04"
+        "english-vocabulary",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NORWAY-GRADE-04-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-07-science-természet-1.0.0",
     "name": "Természet - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-07 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 perces felmérő: Természet (grade-07). Témakörök: Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.235984+00:00",
-    "updated_at": "2026-10-21T11:02:35.235996+00:00",
+    "created_at": "2026-10-24T17:53:52.235682+00:00",
+    "updated_at": "2026-10-24T17:53:52.235691+00:00",
     "tags": [
       "science",
       "természet",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "41aed9f95a896a5985fc6c592e8be7906f9c7c055f11c0687eb303e92fdc42bd",
+    "checksum": "763e948e9c8d0cc48f37fb6e399057d47b2d2e0dbb9f019c776d7b4eb582ab2a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Természet és környezet",
+      "Növények és állatok",
+      "Természet",
+      "Környezet",
+      "Természetvédelem"
     ]
   },
   "exam": {
     "title": "grade-07 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Felmérő a(z) Természet témakörből (Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Természet - Kérdés 1: Természet",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "science",
         "természet",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "learning_objective": "Természet"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Természet - Kérdés 2: Természet",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "science",
         "természet",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "learning_objective": "Természet"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Természet - Kérdés 3: Természet",
       "options": null,
       "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
         "természet",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "learning_objective": "Természet"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Természet - Kérdés 4: Természet",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "science",
         "természet",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "learning_objective": "Természet"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Természet - Kérdés 5: Természet",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "science",
         "természet",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "learning_objective": "Természet"
     }
   ],
   "rubrics": []

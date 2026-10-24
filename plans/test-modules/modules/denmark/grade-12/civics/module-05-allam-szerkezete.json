@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Denmark grade-12",
+    "name": "State structure - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minutters prøve i State structure (grade-12). Emner: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.767672+00:00",
-    "updated_at": "2026-10-21T11:02:27.767686+00:00",
+    "created_at": "2026-10-24T17:53:49.797536+00:00",
+    "updated_at": "2026-10-24T17:53:49.797543+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "state-structure",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "209a749ea31fc00dc8b9deef41816761f7a78706de96a9e8ab37fb08bae5628b",
+    "checksum": "bfef1cba9228e61b4af899c23f4514dd7fff6fe505b47c06bfa84686760e7938",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - State structure",
+    "description": "Prøve i State structure: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] State structure - Spørgsmål 1: State structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] State structure - Spørgsmål 2: State structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] State structure - Spørgsmål 3: State structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for State structure.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] State structure - Spørgsmål 4: State structure",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] State structure - Spørgsmål 5: State structure",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     }
   ],

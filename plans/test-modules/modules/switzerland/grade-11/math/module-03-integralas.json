@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-integrálás-1.0.0",
-    "name": "Integrálás - Switzerland grade-11",
+    "name": "Integralrechnung - Switzerland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Integralrechnung (grade-11). Themen: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.689788+00:00",
-    "updated_at": "2026-10-21T11:02:28.689801+00:00",
+    "created_at": "2026-10-24T17:53:50.218166+00:00",
+    "updated_at": "2026-10-24T17:53:50.218176+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integralrechnung",
       "grade-11",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "4675c165d89041f10f39bfa97e34576bce960e7fb925fd3e4c7287d675c35c99",
+    "checksum": "806328e2cb1f20ed2116623c50c84974cf13d4c3482e0362431960e747ff503a",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Integrálás",
-    "description": "Test on Integrálás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Integralrechnung",
+    "description": "Prüfung zum Thema Integralrechnung: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integralrechnung - Frage 1: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integralrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integralrechnung - Frage 2: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integralrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integralrechnung - Frage 3: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integralrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integralrechnung - Frage 4: Integralrechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Integralrechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integralrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-100]",
+      "text": "[math] Integralrechnung - Frage 5: Integralrechnung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integralrechnung",
         "grade-11",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     }
   ],
   "rubrics": []

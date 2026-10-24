@@ -11,12 +11,13 @@
     "tags": [
       "civics",
       "nemzetközi-kapcsolatok",
-      "grade-09"
+      "grade-09",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
     "license": "CC-BY-4.0",
-    "checksum": "8ddc7786fee14f22c069ef6525e90a201822573725d6268a04334aa71de296e2",
+    "checksum": "df0515878769927603e08ea7e1477213460f8f65280d1fb079e4a56f7a11966e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "EU",
       "ENSZ",
       "Globális jog"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 09 Civics - Nemzetközi kapcsolatok",

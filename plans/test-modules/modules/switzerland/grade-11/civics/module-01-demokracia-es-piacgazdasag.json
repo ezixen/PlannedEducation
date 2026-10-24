@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-demokrácia-és-piacgazdaság-1.0.0",
-    "name": "Demokrácia és piacgazdaság - Switzerland grade-11",
+    "name": "Demokratie und Marktwirtschaft - Switzerland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia és piacgazdaság for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Demokratie und Marktwirtschaft (grade-11). Themen: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.648940+00:00",
-    "updated_at": "2026-10-21T11:02:28.648972+00:00",
+    "created_at": "2026-10-24T17:53:50.197571+00:00",
+    "updated_at": "2026-10-24T17:53:50.197578+00:00",
     "tags": [
       "civics",
-      "demokrácia-és-piacgazdaság",
+      "demokratie-und-marktwirtschaft",
       "grade-11",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "5a4900fbad9896670fa3f319b856bd5d2ce56322d210c5e939367dd9b79b1c80",
+    "checksum": "4c8201a21157d653d92f5e8599f16a33d0045957ae6dd92969be6bc5c6cd1386",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokratie und Marktwirtschaft",
+      "Demokratie",
+      "Marktwirtschaft",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Demokrácia és piacgazdaság",
-    "description": "Test on Demokrácia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - Demokratie und Marktwirtschaft",
+    "description": "Prüfung zum Thema Demokratie und Marktwirtschaft: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Demokratie und Marktwirtschaft - Frage 1: Demokratie und Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "demokratie-und-marktwirtschaft",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokratie und Marktwirtschaft",
+      "learning_objective": "Demokratie und Marktwirtschaft"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Demokratie und Marktwirtschaft - Frage 2: Demokratie und Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "demokratie-und-marktwirtschaft",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokratie und Marktwirtschaft",
+      "learning_objective": "Demokratie und Marktwirtschaft"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Demokratie und Marktwirtschaft - Frage 3: Demokratie und Marktwirtschaft",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Demokratie und Marktwirtschaft.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "demokratie-und-marktwirtschaft",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokratie und Marktwirtschaft",
+      "learning_objective": "Demokratie und Marktwirtschaft"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Demokratie und Marktwirtschaft - Frage 4: Demokratie und Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "demokratie-und-marktwirtschaft",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokratie und Marktwirtschaft",
+      "learning_objective": "Demokratie und Marktwirtschaft"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Demokratie und Marktwirtschaft - Frage 5: Demokratie und Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "demokratie-und-marktwirtschaft",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-CIVICS-Demokratie und Marktwirtschaft",
+      "learning_objective": "Demokratie und Marktwirtschaft"
     }
   ],
   "rubrics": []

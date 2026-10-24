@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-optika-1.0.0",
-    "name": "Optika - Netherlands grade-09",
+    "name": "Optics - Netherlands grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Optika for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "Toets van 45 minuten over Optics (grade-09). Onderwerpen: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.286357+00:00",
-    "updated_at": "2026-10-21T11:02:25.286368+00:00",
+    "created_at": "2026-10-24T17:53:48.210697+00:00",
+    "updated_at": "2026-10-24T17:53:48.210704+00:00",
     "tags": [
       "physics",
-      "optika",
+      "optics",
       "grade-09",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "bfccb249d3ba5a498a7d90b8cd84c71f2796e562e1f3cc194060e7d74898881b",
+    "checksum": "9c1408973dd23bd828668482b499c92beb8344b10a27448e5906fec23f372219",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Optika",
-    "description": "Test on Optika including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Optics",
+    "description": "Toets over Optics: Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 1: Optics",
+      "text": "[physics] Optics - Vraag 1: Optics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optics",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optika",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 2: Optics",
+      "text": "[physics] Optics - Vraag 2: Optics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optics",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optika",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Optika - Kérdés 3: Optics",
+      "text": "[physics] Optics - Vraag 3: Optics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Optics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optics",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optika",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Optika - Question 4: Optics [rand:1-1000]",
+      "text": "[physics] Optics - Vraag 4: Optics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "optika",
+        "optics",
         "grade-09",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optika",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 5: Optics",
+      "text": "[physics] Optics - Vraag 5: Optics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optics",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optika",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Optics",
       "learning_objective": "Optics"
     }
   ],

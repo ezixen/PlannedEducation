@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "számolás-10-ig",
-      "grade-01"
+      "grade-01",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-01",
     "license": "CC-BY-4.0",
-    "checksum": "da554739f07fbcda00829d6b74882c921d24fc8e8f2e6e81640b36ccd9b3b8f3",
+    "checksum": "431e051447e9fd7d4ca8149d4df2d41fbe191e0bf5c5ebe2b491deb3312eec7b",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Számlálás",
       "Összeadás",
       "Kivonás"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 01 Math - Számolás 10-ig",

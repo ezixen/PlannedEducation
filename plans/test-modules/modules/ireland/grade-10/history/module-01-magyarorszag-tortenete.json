@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Ireland grade-10",
+    "name": "History of Hungary - Ireland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minute assessment on History of Hungary for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.706524+00:00",
-    "updated_at": "2026-10-21T11:02:30.706543+00:00",
+    "created_at": "2026-10-24T17:53:51.442917+00:00",
+    "updated_at": "2026-10-24T17:53:51.442925+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "history-of-hungary",
       "grade-10",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "0d3d8175a6b00d1e83f96055f19e758930ea031bbb3db20d0245f5275a2f3072",
+    "checksum": "fbe3829e311966af545e8fc90453295e99d41374a6e98209ac14dfdd49113d70",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History of Hungary",
+    "description": "Assessment on History of Hungary including History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] History of Hungary - Question 1: History of Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] History of Hungary - Question 2: History of Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] History of Hungary - Question 3: History of Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for History of Hungary.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] History of Hungary - Question 4: History of Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] History of Hungary - Question 5: History of Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "IRELAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     }
   ],

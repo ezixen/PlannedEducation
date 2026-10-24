@@ -11,12 +11,13 @@
     "tags": [
       "civics",
       "gazdaságjog-és-munkaerőpiac",
-      "grade-11"
+      "grade-11",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
     "license": "CC-BY-4.0",
-    "checksum": "e2ac8598c0a435fa314a2cd494d4f3ab15f97c3a7353c0fe8f06f7fa82dc64e1",
+    "checksum": "98efe13e59a86eca8ae43f9291f5c16128f23ae17039176af9a8fbd0de2ff29c",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Munkajog",
       "Vállalkozás",
       "Társadalombiztosítás"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 11 Civics - Gazdaságjog és munkaerőpiac",

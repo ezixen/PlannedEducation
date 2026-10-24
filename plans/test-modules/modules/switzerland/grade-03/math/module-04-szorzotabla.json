@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-szorzótábla-1.0.0",
-    "name": "Szorzótábla - Switzerland grade-03",
+    "name": "Einmaleins - Switzerland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzótábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minütige Prüfung zum Thema Einmaleins (grade-03). Themen: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.200328+00:00",
-    "updated_at": "2026-10-21T11:02:28.200360+00:00",
+    "created_at": "2026-10-24T17:53:49.878899+00:00",
+    "updated_at": "2026-10-24T17:53:49.878909+00:00",
     "tags": [
       "math",
-      "szorzótábla",
+      "einmaleins",
       "grade-03",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "d3b6e1bf3a5a051d84f1d1cb7aa9a411791af9c57480f9746f22e3cbede1431b",
+    "checksum": "90ca794e5a309957d959d314d2c7418bbd16f2ab9a7a4fac7b311cdaf74a7027",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 1000",
-      "Addition to 1000",
-      "Subtraction to 1000",
-      "Multiplication table",
-      "Division table"
+      "Zählen bis 1000",
+      "Addition bis 1000",
+      "Subtraktion bis 1000",
+      "Einmaleins",
+      "Divisionstabelle"
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Szorzótábla",
-    "description": "Test on Szorzótábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Einmaleins",
+    "description": "Prüfung zum Thema Einmaleins: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 1: Multiplication table",
+      "text": "[math] Einmaleins - Frage 1: Einmaleins",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "einmaleins",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Szorzótábla",
-      "learning_objective": "Multiplication table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Einmaleins",
+      "learning_objective": "Einmaleins"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 2: Multiplication table",
+      "text": "[math] Einmaleins - Frage 2: Einmaleins",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "einmaleins",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Szorzótábla",
-      "learning_objective": "Multiplication table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Einmaleins",
+      "learning_objective": "Einmaleins"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 3: Multiplication table",
+      "text": "[math] Einmaleins - Frage 3: Einmaleins",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "einmaleins",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Szorzótábla",
-      "learning_objective": "Multiplication table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Einmaleins",
+      "learning_objective": "Einmaleins"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzótábla - Kérdés 4: Multiplication table",
+      "text": "[math] Einmaleins - Frage 4: Einmaleins",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzótábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Einmaleins.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "einmaleins",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Szorzótábla",
-      "learning_objective": "Multiplication table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Einmaleins",
+      "learning_objective": "Einmaleins"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzótábla - Question 5: Multiplication table [rand:1-20]",
+      "text": "[math] Einmaleins - Frage 5: Einmaleins [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "szorzótábla",
+        "einmaleins",
         "grade-03",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Szorzótábla",
-      "learning_objective": "Multiplication table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Einmaleins",
+      "learning_objective": "Einmaleins"
     }
   ],
   "rubrics": []

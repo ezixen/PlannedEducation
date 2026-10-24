@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-szorzása-1.0.0",
-    "name": "Törtek szorzása - Finland grade-05",
+    "name": "Fraction multiplication - Finland grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek szorzása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 minuutin koe aiheesta Fraction multiplication (grade-05). Aiheet: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.110469+00:00",
-    "updated_at": "2026-10-21T11:02:24.110482+00:00",
+    "created_at": "2026-10-24T17:53:47.555944+00:00",
+    "updated_at": "2026-10-24T17:53:47.555951+00:00",
     "tags": [
       "math",
-      "törtek-szorzása",
+      "fraction-multiplication",
       "grade-05",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "7fc381b62b1e2d4477da74f9b9ac9a9b782e72440f2a790533934ff44393ba40",
+    "checksum": "7b2ed8077af12cce07ae017304f7323016a466219af11fb0bf9f3daeb48650d4",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek szorzása",
-    "description": "Test on Törtek szorzása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction multiplication",
+    "description": "Koe aiheesta Fraction multiplication: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 1: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Kysymys 1: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 2: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Kysymys 2: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 3: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Kysymys 3: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek szorzása - Kérdés 4: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Kysymys 4: Fraction multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek szorzása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Fraction multiplication.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek szorzása - Question 5: Fraction multiplication [rand:1-100]",
+      "text": "[math] Fraction multiplication - Kysymys 5: Fraction multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-szorzása",
+        "fraction-multiplication",
         "grade-05",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     }
   ],

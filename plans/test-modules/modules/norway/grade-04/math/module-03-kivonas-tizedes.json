@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Norway grade-04",
+    "name": "Decimal subtraction - Norway grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minutters prøve i Decimal subtraction (grade-04). Emner: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.288573+00:00",
-    "updated_at": "2026-10-21T11:02:26.288591+00:00",
+    "created_at": "2026-10-24T17:53:48.862169+00:00",
+    "updated_at": "2026-10-24T17:53:48.862175+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "decimal-subtraction",
       "grade-04",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "fdec6caceffea738605ca6c7a96410c307c79ca0f1d729ab4050db3d3d9a7d8c",
+    "checksum": "5a4de163ed3c7c06486918727fa27755facb79ab5faa785bc9afda41e1498dc1",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal subtraction",
+    "description": "Prøve i Decimal subtraction: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Spørsmål 1: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Spørsmål 2: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Spørsmål 3: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Spørsmål 4: Decimal subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Decimal subtraction.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Decimal subtraction - Spørsmål 5: Decimal subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "decimal-subtraction",
         "grade-04",
-        "integer"
+        "integer",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     }
   ],

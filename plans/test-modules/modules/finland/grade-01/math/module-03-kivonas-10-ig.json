@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-kivonás-10-ig-1.0.0",
-    "name": "Kivonás 10-ig - Finland grade-01",
+    "name": "Vähennyslasku 10:een - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 minuutin koe aiheesta Vähennyslasku 10:een (grade-01). Aiheet: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.930197+00:00",
-    "updated_at": "2026-10-21T11:02:23.930214+00:00",
+    "created_at": "2026-10-24T17:53:47.486369+00:00",
+    "updated_at": "2026-10-24T17:53:47.486376+00:00",
     "tags": [
       "math",
-      "kivonás-10-ig",
+      "vähennyslasku-10:een",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "819bf8415a824ce3660c57aba8a3a14f61d976f83cf82ed7655571113500c34e",
+    "checksum": "fc4d984d8ae7f79c9f3c694d789e7697dcef8e31ad5807bf9f6fc9adaa580338",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Laskeminen 10:een",
+      "Yhteenlasku 10:een",
+      "Vähennyslasku 10:een",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Kivonás 10-ig",
-    "description": "Test on Kivonás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Vähennyslasku 10:een",
+    "description": "Koe aiheesta Vähennyslasku 10:een: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 1: Subtraction to 10",
+      "text": "[math] Vähennyslasku 10:een - Kysymys 1: Vähennyslasku 10:een",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "vähennyslasku-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Vähennyslasku 10:een",
+      "learning_objective": "Vähennyslasku 10:een"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 2: Subtraction to 10",
+      "text": "[math] Vähennyslasku 10:een - Kysymys 2: Vähennyslasku 10:een",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "vähennyslasku-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Vähennyslasku 10:een",
+      "learning_objective": "Vähennyslasku 10:een"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 3: Subtraction to 10",
+      "text": "[math] Vähennyslasku 10:een - Kysymys 3: Vähennyslasku 10:een",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "vähennyslasku-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Vähennyslasku 10:een",
+      "learning_objective": "Vähennyslasku 10:een"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 10-ig - Kérdés 4: Subtraction to 10",
+      "text": "[math] Vähennyslasku 10:een - Kysymys 4: Vähennyslasku 10:een",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Vähennyslasku 10:een.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "vähennyslasku-10:een",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Vähennyslasku 10:een",
+      "learning_objective": "Vähennyslasku 10:een"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 10-ig - Question 5: Subtraction to 10 [rand:1-20]",
+      "text": "[math] Vähennyslasku 10:een - Kysymys 5: Vähennyslasku 10:een [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-10-ig",
+        "vähennyslasku-10:een",
         "grade-01",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Vähennyslasku 10:een",
+      "learning_objective": "Vähennyslasku 10:een"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Ireland grade-01",
+    "name": "Plants and animals - Ireland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Plants and animals for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.195349+00:00",
-    "updated_at": "2026-10-21T11:02:30.195362+00:00",
+    "created_at": "2026-10-24T17:53:51.120894+00:00",
+    "updated_at": "2026-10-24T17:53:51.120908+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "plants-and-animals",
       "grade-01",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "fc7c9b72784933a719d85fdc91499f6edb3b0601346615fea6eab37acb08c387",
+    "checksum": "1e1205cee404d26a043606ae2bc43c1d6e5893846fe09d97a6cc7182d86835d7",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Plants and animals",
+    "description": "Assessment on Plants and animals including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Plants and animals - Question 1: Plants and animals",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "plants-and-animals",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Növények és állatok",
+      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Plants and animals - Question 2: Plants and animals",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "plants-and-animals",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Növények és állatok",
+      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Plants and animals - Question 3: Plants and animals",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Plants and animals.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "plants-and-animals",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Növények és állatok",
+      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Plants and animals - Question 4: Plants and animals",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "plants-and-animals",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Növények és állatok",
+      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Plants and animals - Question 5: Plants and animals",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "plants-and-animals",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Növények és állatok",
+      "curriculum_topic": "IRELAND-GRADE-01-SCIENCE-Plants and animals",
       "learning_objective": "Plants and animals"
     }
   ],

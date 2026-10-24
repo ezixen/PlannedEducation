@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-20.-század-története-1.0.0",
-    "name": "20. század története - Germany grade-09",
+    "name": "Geschichte des 20. Jahrhunderts - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század története for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema Geschichte des 20. Jahrhunderts (grade-09). Themen: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.514788+00:00",
-    "updated_at": "2026-10-21T11:02:16.514803+00:00",
+    "created_at": "2026-10-24T17:53:45.487149+00:00",
+    "updated_at": "2026-10-24T17:53:45.487154+00:00",
     "tags": [
       "history",
-      "20.-század-története",
+      "geschichte-des-20.-jahrhunderts",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "3502e7571fc4f35f87f8a8dfc7e54c343b6ec5969c1cb37c8cb911d2f6fda295",
+    "checksum": "973713cfa2fa2383ecf7b5eb5085467e696c76557684f492f44b3256b4307a84",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of the 20th century",
-      "20th century",
-      "History",
-      "Historical events",
-      "World history"
+      "Geschichte des 20. Jahrhunderts",
+      "20. Jahrhundert",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-09 History - 20. század története",
-    "description": "Test on 20. század története including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - Geschichte des 20. Jahrhunderts",
+    "description": "Prüfung zum Thema Geschichte des 20. Jahrhunderts: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 1: History of the 20th century",
+      "text": "[history] Geschichte des 20. Jahrhunderts - Frage 1: Geschichte des 20. Jahrhunderts",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század-története",
-        "grade-09"
+        "geschichte-des-20.-jahrhunderts",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-Geschichte des 20. Jahrhunderts",
+      "learning_objective": "Geschichte des 20. Jahrhunderts"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 2: History of the 20th century",
+      "text": "[history] Geschichte des 20. Jahrhunderts - Frage 2: Geschichte des 20. Jahrhunderts",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század-története",
-        "grade-09"
+        "geschichte-des-20.-jahrhunderts",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-Geschichte des 20. Jahrhunderts",
+      "learning_objective": "Geschichte des 20. Jahrhunderts"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század története - Kérdés 3: History of the 20th century",
+      "text": "[history] Geschichte des 20. Jahrhunderts - Frage 3: Geschichte des 20. Jahrhunderts",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 20. század története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte des 20. Jahrhunderts.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "20.-század-története",
-        "grade-09"
+        "geschichte-des-20.-jahrhunderts",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-Geschichte des 20. Jahrhunderts",
+      "learning_objective": "Geschichte des 20. Jahrhunderts"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 4: History of the 20th century",
+      "text": "[history] Geschichte des 20. Jahrhunderts - Frage 4: Geschichte des 20. Jahrhunderts",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század-története",
-        "grade-09"
+        "geschichte-des-20.-jahrhunderts",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-Geschichte des 20. Jahrhunderts",
+      "learning_objective": "Geschichte des 20. Jahrhunderts"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 5: History of the 20th century",
+      "text": "[history] Geschichte des 20. Jahrhunderts - Frage 5: Geschichte des 20. Jahrhunderts",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század-története",
-        "grade-09"
+        "geschichte-des-20.-jahrhunderts",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "curriculum_topic": "GERMANY-GRADE-09-HISTORY-Geschichte des 20. Jahrhunderts",
+      "learning_objective": "Geschichte des 20. Jahrhunderts"
     }
   ],
   "rubrics": []

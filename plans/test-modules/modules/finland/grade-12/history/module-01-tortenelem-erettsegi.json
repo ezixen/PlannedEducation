@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-erettségi-1.0.0",
-    "name": "Történelem-erettségi - Finland grade-12",
+    "name": "History-maturity - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45 minuutin koe aiheesta History-maturity (grade-12). Aiheet: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.742837+00:00",
-    "updated_at": "2026-10-21T11:02:24.742849+00:00",
+    "created_at": "2026-10-24T17:53:47.867402+00:00",
+    "updated_at": "2026-10-24T17:53:47.867410+00:00",
     "tags": [
       "history",
-      "történelem-erettségi",
+      "history-maturity",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "c978949fdea8a454c5fbf57c4d0953af74e34c718a58ca0eb958114a56529711",
+    "checksum": "f418e185bf50136cb4d48a3c105ca41a4abc2cfd26502f71d2b0cdb7a9b22aea",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem-erettségi",
-    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History-maturity",
+    "description": "Koe aiheesta History-maturity: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
+      "text": "[history] History-maturity - Kysymys 1: History-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
+      "text": "[history] History-maturity - Kysymys 2: History-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "text": "[history] History-maturity - Kysymys 3: History-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen History-maturity.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
+      "text": "[history] History-maturity - Kysymys 4: History-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
+      "text": "[history] History-maturity - Kysymys 5: History-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     }
   ],

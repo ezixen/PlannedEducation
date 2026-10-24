@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Belgium grade-04",
+    "name": "Decimal subtraction - Belgium grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Toets van 45 minuten over Decimal subtraction (grade-04). Onderwerpen: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.554810+00:00",
-    "updated_at": "2026-10-21T11:02:29.554821+00:00",
+    "created_at": "2026-10-24T17:53:50.732243+00:00",
+    "updated_at": "2026-10-24T17:53:50.732255+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "decimal-subtraction",
       "grade-04",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "178b8dff228822446c404385d9c05fc884eba7620808e873ba5cb29349baf534",
+    "checksum": "aa378b51b294aacd0b5b7b3d590b5ea5c769b584a66af5cc1d617a50c97a0d83",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal subtraction",
+    "description": "Toets over Decimal subtraction: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Vraag 1: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Vraag 2: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Vraag 3: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Vraag 4: Decimal subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Decimal subtraction.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Decimal subtraction - Vraag 5: Decimal subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "decimal-subtraction",
         "grade-04",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-05-math-törtek-kivonása-1.0.0",
     "name": "Törtek kivonása - Hungary grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek kivonása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 perces felmérő: Törtek kivonása (grade-05). Témakörök: Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.092519+00:00",
-    "updated_at": "2026-10-21T11:02:35.092534+00:00",
+    "created_at": "2026-10-24T17:53:52.128525+00:00",
+    "updated_at": "2026-10-24T17:53:52.128539+00:00",
     "tags": [
       "math",
       "törtek-kivonása",
       "grade-05",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "f66c2c91388105d08fe09124fa43a1f2cb23fda0067992449d629bf5c2648b1e",
+    "checksum": "2f56dadccf5a20aca220d1a398dc1316c33bfc124fcc8ddea623ea193e9c32d5",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Törtek alapok",
+      "Törtek összeadása",
+      "Törtek kivonása",
+      "Törtek szorzása",
+      "Törtek osztása"
     ]
   },
   "exam": {
     "title": "grade-05 Math - Törtek kivonása",
-    "description": "Test on Törtek kivonása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Felmérő a(z) Törtek kivonása témakörből (Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 1: Fraction subtraction",
+      "text": "[math] Törtek kivonása - Kérdés 1: Törtek kivonása",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "törtek-kivonása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "learning_objective": "Törtek kivonása"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 2: Fraction subtraction",
+      "text": "[math] Törtek kivonása - Kérdés 2: Törtek kivonása",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "törtek-kivonása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "learning_objective": "Törtek kivonása"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 3: Fraction subtraction",
+      "text": "[math] Törtek kivonása - Kérdés 3: Törtek kivonása",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "törtek-kivonása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "learning_objective": "Törtek kivonása"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek kivonása - Kérdés 4: Fraction subtraction",
+      "text": "[math] Törtek kivonása - Kérdés 4: Törtek kivonása",
       "options": null,
       "correct_answer": "Minta válasz a(z) Törtek kivonása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "törtek-kivonása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "learning_objective": "Törtek kivonása"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek kivonása - Question 5: Fraction subtraction [rand:1-100]",
+      "text": "[math] Törtek kivonása - Kérdés 5: Törtek kivonása [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "törtek-kivonása",
         "grade-05",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "learning_objective": "Törtek kivonása"
     }
   ],
   "rubrics": []

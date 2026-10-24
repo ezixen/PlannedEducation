@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Canada grade-09",
+    "name": "World history - Canada grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minute assessment on World history for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.830920+00:00",
-    "updated_at": "2026-10-21T11:02:15.830933+00:00",
+    "created_at": "2026-10-24T17:53:44.996787+00:00",
+    "updated_at": "2026-10-24T17:53:44.996795+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-09",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "2ae2283187c8950fb563721868ac3c92362d85926eec073f9433955d7757b72f",
+    "checksum": "e4b401fd9d3531f3ffd051fa76eee95c397aabdc609dcf7639b68e446a743015",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - Világtörténet",
-    "description": "Test on Világtörténet including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - World history",
+    "description": "Assessment on World history including History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Question 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Question 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Question 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for World history.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Question 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Question 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

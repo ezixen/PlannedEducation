@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-statisztika-1.0.0",
-    "name": "Statisztika - Austria grade-09",
+    "name": "Statistik - Austria grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Statistik (grade-09). Themen: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.241095+00:00",
-    "updated_at": "2026-10-21T11:02:29.241117+00:00",
+    "created_at": "2026-10-24T17:53:50.536172+00:00",
+    "updated_at": "2026-10-24T17:53:50.536179+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistik",
       "grade-09",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "7f131d46753050a2f6e6a483932c037849bb16177c6c66a64e77e6f04f576620",
+    "checksum": "a13b4344229c40a36ff8077e4e0108713c1e4f93d935695935bcb6b89400e4cd",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen und Grenzwerte",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Statisztika",
-    "description": "Test on Statisztika including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Statistik",
+    "description": "Prüfung zum Thema Statistik: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistik - Frage 1: Statistik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statisztika",
-      "learning_objective": "Statistics"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statistik",
+      "learning_objective": "Statistik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistik - Frage 2: Statistik",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statisztika",
-      "learning_objective": "Statistics"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statistik",
+      "learning_objective": "Statistik"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistik - Frage 3: Statistik",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statisztika",
-      "learning_objective": "Statistics"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statistik",
+      "learning_objective": "Statistik"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistik - Frage 4: Statistik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Statistik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-09"
+        "statistik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statisztika",
-      "learning_objective": "Statistics"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statistik",
+      "learning_objective": "Statistik"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-1000]",
+      "text": "[math] Statistik - Frage 5: Statistik [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistik",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statisztika",
-      "learning_objective": "Statistics"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Statistik",
+      "learning_objective": "Statistik"
     }
   ],
   "rubrics": []

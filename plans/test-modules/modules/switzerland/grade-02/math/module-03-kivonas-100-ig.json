@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-kivonás-100-ig-1.0.0",
-    "name": "Kivonás 100-ig - Switzerland grade-02",
+    "name": "Subtraktion bis 100 - Switzerland grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minütige Prüfung zum Thema Subtraktion bis 100 (grade-02). Themen: Zählen bis 100, Addition bis 100, Subtraktion bis 100, Multiplikation Grundlagen, Division Grundlagen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.181237+00:00",
-    "updated_at": "2026-10-21T11:02:28.181249+00:00",
+    "created_at": "2026-10-24T17:53:49.858835+00:00",
+    "updated_at": "2026-10-24T17:53:49.858846+00:00",
     "tags": [
       "math",
-      "kivonás-100-ig",
+      "subtraktion-bis-100",
       "grade-02",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "46b65157c7f6b35f7e9e50cd272aa98c7c3dc70721be12b0b0f364881fcfa59b",
+    "checksum": "a88b9f3305f8226b3274df14693f6363116bdd26cb683ec5258c2b8957439eab",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 100",
-      "Addition to 100",
-      "Subtraction to 100",
-      "Multiplication basics",
-      "Division basics"
+      "Zählen bis 100",
+      "Addition bis 100",
+      "Subtraktion bis 100",
+      "Multiplikation Grundlagen",
+      "Division Grundlagen"
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Kivonás 100-ig",
-    "description": "Test on Kivonás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Subtraktion bis 100",
+    "description": "Prüfung zum Thema Subtraktion bis 100: Zählen bis 100, Addition bis 100, Subtraktion bis 100, Multiplikation Grundlagen, Division Grundlagen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 1: Subtraction to 100",
+      "text": "[math] Subtraktion bis 100 - Frage 1: Subtraktion bis 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraktion-bis-100",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Kivonás 100-ig",
-      "learning_objective": "Subtraction to 100"
+      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Subtraktion bis 100",
+      "learning_objective": "Subtraktion bis 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 2: Subtraction to 100",
+      "text": "[math] Subtraktion bis 100 - Frage 2: Subtraktion bis 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraktion-bis-100",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Kivonás 100-ig",
-      "learning_objective": "Subtraction to 100"
+      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Subtraktion bis 100",
+      "learning_objective": "Subtraktion bis 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 3: Subtraction to 100",
+      "text": "[math] Subtraktion bis 100 - Frage 3: Subtraktion bis 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraktion-bis-100",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Kivonás 100-ig",
-      "learning_objective": "Subtraction to 100"
+      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Subtraktion bis 100",
+      "learning_objective": "Subtraktion bis 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 100-ig - Kérdés 4: Subtraction to 100",
+      "text": "[math] Subtraktion bis 100 - Frage 4: Subtraktion bis 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Subtraktion bis 100.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraktion-bis-100",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Kivonás 100-ig",
-      "learning_objective": "Subtraction to 100"
+      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Subtraktion bis 100",
+      "learning_objective": "Subtraktion bis 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 100-ig - Question 5: Subtraction to 100 [rand:1-20]",
+      "text": "[math] Subtraktion bis 100 - Frage 5: Subtraktion bis 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-100-ig",
+        "subtraktion-bis-100",
         "grade-02",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Kivonás 100-ig",
-      "learning_objective": "Subtraction to 100"
+      "curriculum_topic": "SWITZERLAND-GRADE-02-MATH-Subtraktion bis 100",
+      "learning_objective": "Subtraktion bis 100"
     }
   ],
   "rubrics": []

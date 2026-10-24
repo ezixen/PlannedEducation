@@ -3,21 +3,25 @@
     "id": "grade-03-math-összeadás-1000-ig-1.0.0",
     "name": "Összeadás 1000-ig - Hungary grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 1000-ig for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45 perces felmérő: Összeadás 1000-ig (grade-03). Témakörök: Számlálás 1000-ig, Összeadás 1000-ig, Kivonás 1000-ig, Szorzótábla, Osztástábla",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.027508+00:00",
-    "updated_at": "2026-10-21T11:02:35.027519+00:00",
+    "created_at": "2026-10-24T17:53:52.078620+00:00",
+    "updated_at": "2026-10-24T17:53:52.078627+00:00",
     "tags": [
       "math",
       "összeadás-1000-ig",
       "grade-03",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "cb4d5fd15ab2fb388650c5b48e2e1a14b250dbfd5ac0ec814d4b687b2da42719",
+    "checksum": "88cba2eee205fa895361d1c4c8f3976728835dcb9c8fa2169e637794de757024",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 1000",
-      "Addition to 1000",
-      "Subtraction to 1000",
-      "Multiplication table",
-      "Division table"
+      "Számlálás 1000-ig",
+      "Összeadás 1000-ig",
+      "Kivonás 1000-ig",
+      "Szorzótábla",
+      "Osztástábla"
     ]
   },
   "exam": {
     "title": "grade-03 Math - Összeadás 1000-ig",
-    "description": "Test on Összeadás 1000-ig including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "Felmérő a(z) Összeadás 1000-ig témakörből (Számlálás 1000-ig, Összeadás 1000-ig, Kivonás 1000-ig, Szorzótábla, Osztástábla)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 1: Addition to 1000",
+      "text": "[math] Összeadás 1000-ig - Kérdés 1: Összeadás 1000-ig",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "összeadás-1000-ig",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Összeadás 1000-ig",
-      "learning_objective": "Addition to 1000"
+      "learning_objective": "Összeadás 1000-ig"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 2: Addition to 1000",
+      "text": "[math] Összeadás 1000-ig - Kérdés 2: Összeadás 1000-ig",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "összeadás-1000-ig",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Összeadás 1000-ig",
-      "learning_objective": "Addition to 1000"
+      "learning_objective": "Összeadás 1000-ig"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 3: Addition to 1000",
+      "text": "[math] Összeadás 1000-ig - Kérdés 3: Összeadás 1000-ig",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "összeadás-1000-ig",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Összeadás 1000-ig",
-      "learning_objective": "Addition to 1000"
+      "learning_objective": "Összeadás 1000-ig"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 1000-ig - Kérdés 4: Addition to 1000",
+      "text": "[math] Összeadás 1000-ig - Kérdés 4: Összeadás 1000-ig",
       "options": null,
       "correct_answer": "Minta válasz a(z) Összeadás 1000-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "összeadás-1000-ig",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Összeadás 1000-ig",
-      "learning_objective": "Addition to 1000"
+      "learning_objective": "Összeadás 1000-ig"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 1000-ig - Question 5: Addition to 1000 [rand:1-20]",
+      "text": "[math] Összeadás 1000-ig - Kérdés 5: Összeadás 1000-ig [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "összeadás-1000-ig",
         "grade-03",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Összeadás 1000-ig",
-      "learning_objective": "Addition to 1000"
+      "learning_objective": "Összeadás 1000-ig"
     }
   ],
   "rubrics": []

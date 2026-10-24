@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Norway grade-10",
+    "name": "Cell biology and genetics - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Cell biology and genetics (grade-10). Emner: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.645656+00:00",
-    "updated_at": "2026-10-21T11:02:26.645668+00:00",
+    "created_at": "2026-10-24T17:53:49.098924+00:00",
+    "updated_at": "2026-10-24T17:53:49.098932+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "cell-biology-and-genetics",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "c58661e9bff2d51e2bee45642d2eaeba207b2b8096ec629db3a0f3c6e9362569",
+    "checksum": "8a075ed2af1258634301f43e0007267a339a665c5c226b381cc82f861a477d4f",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Cell biology and genetics",
+    "description": "Prøve i Cell biology and genetics: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Spørsmål 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Spørsmål 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Spørsmål 3: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Cell biology and genetics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Spørsmål 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Spørsmål 5: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Cell biology and genetics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NORWAY-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     }
   ],

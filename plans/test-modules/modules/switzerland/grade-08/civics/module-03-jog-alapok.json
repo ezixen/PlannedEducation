@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-jog-alapok-1.0.0",
-    "name": "Jog alapok - Switzerland grade-08",
+    "name": "Rechtsgrundlagen - Switzerland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Jog alapok for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Rechtsgrundlagen (grade-08). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.425644+00:00",
-    "updated_at": "2026-10-21T11:02:28.425656+00:00",
+    "created_at": "2026-10-24T17:53:50.036719+00:00",
+    "updated_at": "2026-10-24T17:53:50.036729+00:00",
     "tags": [
       "civics",
-      "jog-alapok",
+      "rechtsgrundlagen",
       "grade-08",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "e2872a5d8dffff6cf634abd374c4efd920bd638e0519469105eb9b959545d881",
+    "checksum": "79312b1988ec2102b76389a5fc0e1416f9c0f393971dfd873bcf7d6f879fad74",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Jog alapok",
-    "description": "Test on Jog alapok including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Rechtsgrundlagen",
+    "description": "Prüfung zum Thema Rechtsgrundlagen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 1: Law basics",
+      "text": "[civics] Rechtsgrundlagen - Frage 1: Rechtsgrundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "rechtsgrundlagen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Rechtsgrundlagen",
+      "learning_objective": "Rechtsgrundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 2: Law basics",
+      "text": "[civics] Rechtsgrundlagen - Frage 2: Rechtsgrundlagen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "rechtsgrundlagen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Rechtsgrundlagen",
+      "learning_objective": "Rechtsgrundlagen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog alapok - Kérdés 3: Law basics",
+      "text": "[civics] Rechtsgrundlagen - Frage 3: Rechtsgrundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Rechtsgrundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "rechtsgrundlagen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Rechtsgrundlagen",
+      "learning_objective": "Rechtsgrundlagen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 4: Law basics",
+      "text": "[civics] Rechtsgrundlagen - Frage 4: Rechtsgrundlagen",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "rechtsgrundlagen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Rechtsgrundlagen",
+      "learning_objective": "Rechtsgrundlagen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 5: Law basics",
+      "text": "[civics] Rechtsgrundlagen - Frage 5: Rechtsgrundlagen",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "rechtsgrundlagen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CIVICS-Rechtsgrundlagen",
+      "learning_objective": "Rechtsgrundlagen"
     }
   ],
   "rubrics": []

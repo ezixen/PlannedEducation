@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-kémiai-reakciók-1.0.0",
-    "name": "Kémiai reakciók - Austria grade-10",
+    "name": "Chemische Reaktionen - Austria grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minütige Prüfung zum Thema Chemische Reaktionen (grade-10). Themen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.277930+00:00",
-    "updated_at": "2026-10-21T11:02:29.277944+00:00",
+    "created_at": "2026-10-24T17:53:50.554982+00:00",
+    "updated_at": "2026-10-24T17:53:50.554987+00:00",
     "tags": [
       "chemistry",
-      "kémiai-reakciók",
+      "chemische-reaktionen",
       "grade-10",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "14050fc18a53a6c69e8b4472e0bd8130508c5546d00ead160ca1bbc3814a722e",
+    "checksum": "50eef9edbc337ea0be3d9613ee4aad6407b65714c62a937453d00808c5d62b68",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Strukturchemie",
+      "Organische Chemie Grundlagen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Chemisches Gleichgewicht"
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Chemische Reaktionen",
+    "description": "Prüfung zum Thema Chemische Reaktionen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Chemische Reaktionen - Frage 1: Chemische Reaktionen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemische-reaktionen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Chemische Reaktionen",
+      "learning_objective": "Chemische Reaktionen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Chemische Reaktionen - Frage 2: Chemische Reaktionen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemische-reaktionen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Chemische Reaktionen",
+      "learning_objective": "Chemische Reaktionen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Chemische Reaktionen - Frage 3: Chemische Reaktionen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Chemische Reaktionen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemische-reaktionen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Chemische Reaktionen",
+      "learning_objective": "Chemische Reaktionen"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-100]",
+      "text": "[chemistry] Chemische Reaktionen - Frage 4: Chemische Reaktionen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
+        "chemische-reaktionen",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Chemische Reaktionen",
+      "learning_objective": "Chemische Reaktionen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Chemische Reaktionen - Frage 5: Chemische Reaktionen",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemische-reaktionen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Chemische Reaktionen",
+      "learning_objective": "Chemische Reaktionen"
     }
   ],
   "rubrics": []

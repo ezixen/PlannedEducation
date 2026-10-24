@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-kivonás-1000-ig-1.0.0",
-    "name": "Kivonás 1000-ig - Germany grade-03",
+    "name": "Subtraktion bis 1000 - Germany grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 1000-ig for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minütige Prüfung zum Thema Subtraktion bis 1000 (grade-03). Themen: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.163443+00:00",
-    "updated_at": "2026-10-21T11:02:16.163456+00:00",
+    "created_at": "2026-10-24T17:53:45.198209+00:00",
+    "updated_at": "2026-10-24T17:53:45.198227+00:00",
     "tags": [
       "math",
-      "kivonás-1000-ig",
+      "subtraktion-bis-1000",
       "grade-03",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "920841dac5e2c5756d0c9c5080616caf87af24265b772d58f49d53b7dfe4b454",
+    "checksum": "0bcfffa7d9eb8feeb3751588ed5e3d550c406d041cc35e254dc88b40686b0ed6",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 1000",
-      "Addition to 1000",
-      "Subtraction to 1000",
-      "Multiplication table",
-      "Division table"
+      "Zählen bis 1000",
+      "Addition bis 1000",
+      "Subtraktion bis 1000",
+      "Einmaleins",
+      "Divisionstabelle"
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Kivonás 1000-ig",
-    "description": "Test on Kivonás 1000-ig including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Subtraktion bis 1000",
+    "description": "Prüfung zum Thema Subtraktion bis 1000: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 1: Subtraction to 1000",
+      "text": "[math] Subtraktion bis 1000 - Frage 1: Subtraktion bis 1000",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraktion-bis-1000",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-03-MATH-Kivonás 1000-ig",
-      "learning_objective": "Subtraction to 1000"
+      "curriculum_topic": "GERMANY-GRADE-03-MATH-Subtraktion bis 1000",
+      "learning_objective": "Subtraktion bis 1000"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 2: Subtraction to 1000",
+      "text": "[math] Subtraktion bis 1000 - Frage 2: Subtraktion bis 1000",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraktion-bis-1000",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-03-MATH-Kivonás 1000-ig",
-      "learning_objective": "Subtraction to 1000"
+      "curriculum_topic": "GERMANY-GRADE-03-MATH-Subtraktion bis 1000",
+      "learning_objective": "Subtraktion bis 1000"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 3: Subtraction to 1000",
+      "text": "[math] Subtraktion bis 1000 - Frage 3: Subtraktion bis 1000",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraktion-bis-1000",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-03-MATH-Kivonás 1000-ig",
-      "learning_objective": "Subtraction to 1000"
+      "curriculum_topic": "GERMANY-GRADE-03-MATH-Subtraktion bis 1000",
+      "learning_objective": "Subtraktion bis 1000"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 1000-ig - Kérdés 4: Subtraction to 1000",
+      "text": "[math] Subtraktion bis 1000 - Frage 4: Subtraktion bis 1000",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 1000-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Subtraktion bis 1000.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraktion-bis-1000",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-03-MATH-Kivonás 1000-ig",
-      "learning_objective": "Subtraction to 1000"
+      "curriculum_topic": "GERMANY-GRADE-03-MATH-Subtraktion bis 1000",
+      "learning_objective": "Subtraktion bis 1000"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 1000-ig - Question 5: Subtraction to 1000 [rand:1-20]",
+      "text": "[math] Subtraktion bis 1000 - Frage 5: Subtraktion bis 1000 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-1000-ig",
+        "subtraktion-bis-1000",
         "grade-03",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-03-MATH-Kivonás 1000-ig",
-      "learning_objective": "Subtraction to 1000"
+      "curriculum_topic": "GERMANY-GRADE-03-MATH-Subtraktion bis 1000",
+      "learning_objective": "Subtraktion bis 1000"
     }
   ],
   "rubrics": []

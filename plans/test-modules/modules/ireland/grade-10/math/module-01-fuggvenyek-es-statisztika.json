@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-függvények-és-statisztika-1.0.0",
-    "name": "Függvények és statisztika - Ireland grade-10",
+    "name": "Functions and statistics - Ireland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és statisztika for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minute assessment on Functions and statistics for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.722544+00:00",
-    "updated_at": "2026-10-21T11:02:30.722558+00:00",
+    "created_at": "2026-10-24T17:53:51.450715+00:00",
+    "updated_at": "2026-10-24T17:53:51.450722+00:00",
     "tags": [
       "math",
-      "függvények-és-statisztika",
+      "functions-and-statistics",
       "grade-10",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "4a58e2ab644dd0ef3b0c12c5a378d6eda41e61963df9f0a8f3335303914ee843",
+    "checksum": "6e1cd0f301cb6986c4de1e86d38f28bb66a1a4dfcc65cb15c41df92accbf4784",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Függvények és statisztika",
-    "description": "Test on Függvények és statisztika including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Functions and statistics",
+    "description": "Assessment on Functions and statistics including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 1: Functions and statistics",
+      "text": "[math] Functions and statistics - Question 1: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "IRELAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 2: Functions and statistics",
+      "text": "[math] Functions and statistics - Question 2: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "IRELAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 3: Functions and statistics",
+      "text": "[math] Functions and statistics - Question 3: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "IRELAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és statisztika - Kérdés 4: Functions and statistics",
+      "text": "[math] Functions and statistics - Question 4: Functions and statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Functions and statistics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "IRELAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és statisztika - Question 5: Functions and statistics [rand:1-100]",
+      "text": "[math] Functions and statistics - Question 5: Functions and statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-statisztika",
+        "functions-and-statistics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "IRELAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     }
   ],

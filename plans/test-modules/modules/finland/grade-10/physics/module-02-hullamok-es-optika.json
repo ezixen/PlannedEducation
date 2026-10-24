@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-hullamok-és-optika-1.0.0",
-    "name": "Hullamok és optika - Finland grade-10",
+    "name": "Waves and optics - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok és optika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45 minuutin koe aiheesta Waves and optics (grade-10). Aiheet: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.617930+00:00",
-    "updated_at": "2026-10-21T11:02:24.617951+00:00",
+    "created_at": "2026-10-24T17:53:47.800651+00:00",
+    "updated_at": "2026-10-24T17:53:47.800658+00:00",
     "tags": [
       "physics",
-      "hullamok-és-optika",
+      "waves-and-optics",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "58fbe2af0fb595ea3fa20764ad0a584af9bb78be9779f312c2513a6e2a7f2d1f",
+    "checksum": "f3e43e2675f5d1a8eb086913504d4f5cf28578c187d83c42baa933ab40756702",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Hullamok és optika",
-    "description": "Test on Hullamok és optika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Waves and optics",
+    "description": "Koe aiheesta Waves and optics: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 1: Waves and optics",
+      "text": "[physics] Waves and optics - Kysymys 1: Waves and optics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 2: Waves and optics",
+      "text": "[physics] Waves and optics - Kysymys 2: Waves and optics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok és optika - Kérdés 3: Waves and optics",
+      "text": "[physics] Waves and optics - Kysymys 3: Waves and optics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok és optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Waves and optics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok és optika - Question 4: Waves and optics [rand:1-100]",
+      "text": "[physics] Waves and optics - Kysymys 4: Waves and optics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok-és-optika",
+        "waves-and-optics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 5: Waves and optics",
+      "text": "[physics] Waves and optics - Kysymys 5: Waves and optics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     }
   ],

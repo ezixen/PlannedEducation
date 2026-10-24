@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-számítás-1.0.0",
-    "name": "Százalék számítás - Norway grade-06",
+    "name": "Percentage calculation - Norway grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék számítás for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minutters prøve i Percentage calculation (grade-06). Emner: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.336769+00:00",
-    "updated_at": "2026-10-21T11:02:26.336788+00:00",
+    "created_at": "2026-10-24T17:53:48.897161+00:00",
+    "updated_at": "2026-10-24T17:53:48.897166+00:00",
     "tags": [
       "math",
-      "százalék-számítás",
+      "percentage-calculation",
       "grade-06",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "df10febebc8858a0d82da5f547fcb6b7a5d64ff8402c8edb28f9ad5ace03a19f",
+    "checksum": "940b7c5d44f9fd904d9e520ce357bc5fcd636229457af0a171592a93e0d27b19",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék számítás",
-    "description": "Test on Százalék számítás including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage calculation",
+    "description": "Prøve i Percentage calculation: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 1: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørsmål 1: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 2: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørsmål 2: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 3: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørsmål 3: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék számítás - Kérdés 4: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørsmål 4: Percentage calculation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Percentage calculation.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék számítás - Question 5: Percentage calculation [rand:1-100]",
+      "text": "[math] Percentage calculation - Spørsmål 5: Percentage calculation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-számítás",
+        "percentage-calculation",
         "grade-06",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     }
   ],

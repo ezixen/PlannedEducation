@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-lineáris-egyenletek-1.0.0",
-    "name": "Lineáris egyenletek - New Zealand grade-08",
+    "name": "Linear equations - New Zealand grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minute assessment on Linear equations for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.645657+00:00",
-    "updated_at": "2026-10-21T11:02:34.645673+00:00",
+    "created_at": "2026-10-24T17:53:51.805795+00:00",
+    "updated_at": "2026-10-24T17:53:51.805804+00:00",
     "tags": [
       "math",
-      "lineáris-egyenletek",
+      "linear-equations",
       "grade-08",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "3053dc6bc7f5e1f3b85015cef715976fd9af4a1decbb2a2236267575cf0fe55a",
+    "checksum": "147aac9e5492c4bf8cdad6f1d6b0fd57a23fdf26e4f944061114948eb16d5cc9",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Lineáris egyenletek",
-    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Linear equations",
+    "description": "Assessment on Linear equations including Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "text": "[math] Linear equations - Question 1: Linear equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "text": "[math] Linear equations - Question 2: Linear equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "text": "[math] Linear equations - Question 3: Linear equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "text": "[math] Linear equations - Question 4: Linear equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Linear equations.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "text": "[math] Linear equations - Question 5: Linear equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "lineáris-egyenletek",
+        "linear-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     }
   ],

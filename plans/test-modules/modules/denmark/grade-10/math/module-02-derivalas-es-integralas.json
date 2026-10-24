@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-deriválás-és-integrálás-1.0.0",
-    "name": "Deriválás és integrálás - Denmark grade-10",
+    "name": "Differentiation and integration - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás és integrálás for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minutters prøve i Differentiation and integration (grade-10). Emner: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.657280+00:00",
-    "updated_at": "2026-10-21T11:02:27.657293+00:00",
+    "created_at": "2026-10-24T17:53:49.714649+00:00",
+    "updated_at": "2026-10-24T17:53:49.714658+00:00",
     "tags": [
       "math",
-      "deriválás-és-integrálás",
+      "differentiation-and-integration",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "9728212ce2c62e0fab0f0b86a6e6a9f965e6606e4f4417d8fcd881c941d19068",
+    "checksum": "5bcbcb1afc4a55a86a44004c900504a4cca8c840c3221fcff9d930aea27a4e09",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Deriválás és integrálás",
-    "description": "Test on Deriválás és integrálás including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Differentiation and integration",
+    "description": "Prøve i Differentiation and integration: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 1: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Spørgsmål 1: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 2: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Spørgsmål 2: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 3: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Spørgsmål 3: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás és integrálás - Kérdés 4: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Spørgsmål 4: Differentiation and integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás és integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Differentiation and integration.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás és integrálás - Question 5: Differentiation and integration [rand:1-100]",
+      "text": "[math] Differentiation and integration - Spørgsmål 5: Differentiation and integration [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
+        "differentiation-and-integration",
         "grade-10",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "DENMARK-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     }
   ],

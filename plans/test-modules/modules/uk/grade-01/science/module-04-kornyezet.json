@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-környezet-1.0.0",
-    "name": "Környezet - United Kingdom grade-01",
+    "name": "Environment - United Kingdom grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Environment for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.864065+00:00",
-    "updated_at": "2026-10-21T11:02:16.864079+00:00",
+    "created_at": "2026-10-24T17:53:45.677768+00:00",
+    "updated_at": "2026-10-24T17:53:45.677777+00:00",
     "tags": [
       "science",
-      "környezet",
+      "environment",
       "grade-01",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "b8d753bf6c4ff38fe87c0fa8cb58f684232448a3ec10f55628e8484174e67ff5",
+    "checksum": "e4450dc2fa3b97c71982d6b309aaf62e3d3ba37db9fc607d7e3ad044993e1ae9",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Environment",
+    "description": "Assessment on Environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Environment - Question 1: Environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-SCIENCE-Környezet",
+      "curriculum_topic": "UK-GRADE-01-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Environment - Question 2: Environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-SCIENCE-Környezet",
+      "curriculum_topic": "UK-GRADE-01-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Environment - Question 3: Environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-SCIENCE-Környezet",
+      "curriculum_topic": "UK-GRADE-01-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Environment - Question 4: Environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-SCIENCE-Környezet",
+      "curriculum_topic": "UK-GRADE-01-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Environment - Question 5: Environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-SCIENCE-Környezet",
+      "curriculum_topic": "UK-GRADE-01-SCIENCE-Environment",
       "learning_objective": "Environment"
     }
   ],

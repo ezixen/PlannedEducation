@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-phonics-alapok-1.0.0",
-    "name": "Phonics alapok - Denmark grade-01",
+    "name": "Phonics basics - Denmark grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Phonics alapok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minutters prøve i Phonics basics (grade-01). Emner: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.930033+00:00",
-    "updated_at": "2026-10-21T11:02:26.930056+00:00",
+    "created_at": "2026-10-24T17:53:49.262565+00:00",
+    "updated_at": "2026-10-24T17:53:49.262573+00:00",
     "tags": [
       "english",
-      "phonics-alapok",
+      "phonics-basics",
       "grade-01",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "782c7ef81a85acd344fa45b3aab94cb9bbbe4a791bc4f04ae02a0c6b7e2d4b3f",
+    "checksum": "fe50ddd7645eb06e659044488851219befcf373eb411d27614c9c2266bce7165",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Phonics alapok",
-    "description": "Test on Phonics alapok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - Phonics basics",
+    "description": "Prøve i Phonics basics: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 1: Phonics basics",
+      "text": "[english] Phonics basics - Spørgsmål 1: Phonics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 2: Phonics basics",
+      "text": "[english] Phonics basics - Spørgsmål 2: Phonics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Phonics alapok - Kérdés 3: Phonics basics",
+      "text": "[english] Phonics basics - Spørgsmål 3: Phonics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Phonics alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Phonics basics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 4: Phonics basics",
+      "text": "[english] Phonics basics - Spørgsmål 4: Phonics basics",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 5: Phonics basics",
+      "text": "[english] Phonics basics - Spørgsmål 5: Phonics basics",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "DENMARK-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     }
   ],

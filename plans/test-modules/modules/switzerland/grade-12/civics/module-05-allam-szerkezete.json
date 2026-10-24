@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Switzerland grade-12",
+    "name": "Staatsaufbau - Switzerland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Staatsaufbau (grade-12). Themen: Politik und Recht, Politikwissenschaft, Rechtskunde, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.728819+00:00",
-    "updated_at": "2026-10-21T11:02:28.728839+00:00",
+    "created_at": "2026-10-24T17:53:50.243192+00:00",
+    "updated_at": "2026-10-24T17:53:50.243197+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "staatsaufbau",
       "grade-12",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "fe2001fa99ea06185ce23fd8fd8321c01b07c2ef1ecab9bceb18dcfe5e842960",
+    "checksum": "0b244022517803f5e5afbf093d32ca9a4caa0e3d4b092f5604b0755f3de84308",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Politology and law-maturity",
-      "Politology",
-      "Law-maturity",
-      "Civil law",
-      "State structure"
+      "Politik und Recht",
+      "Politikwissenschaft",
+      "Rechtskunde",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Staatsaufbau",
+    "description": "Prüfung zum Thema Staatsaufbau: Politik und Recht, Politikwissenschaft, Rechtskunde, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] Staatsaufbau - Frage 1: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "staatsaufbau",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] Staatsaufbau - Frage 2: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "staatsaufbau",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] Staatsaufbau - Frage 3: Staatsaufbau",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Staatsaufbau.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "staatsaufbau",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] Staatsaufbau - Frage 4: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "staatsaufbau",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] Staatsaufbau - Frage 5: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "staatsaufbau",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     }
   ],
   "rubrics": []

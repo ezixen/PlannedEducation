@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-elektromágnesesség-1.0.0",
-    "name": "Elektromágnesesség - USA grade-10",
+    "name": "Electromagnetism - USA grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minute assessment on Electromagnetism for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.190890+00:00",
-    "updated_at": "2026-10-21T11:02:18.190909+00:00",
+    "created_at": "2026-10-24T17:53:46.451049+00:00",
+    "updated_at": "2026-10-24T17:53:46.451054+00:00",
     "tags": [
       "physics",
-      "elektromágnesesség",
+      "electromagnetism",
       "grade-10",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "09311d10f8d41b87852fa258ab603cfb0a7f2ed5163a9913b7b7e89605f8c14d",
+    "checksum": "baf9199cec7a7f4522c8f8f737680c3573dfb12ccfa963b4baf69c5ef067ae12",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Electromagnetism",
+    "description": "Assessment on Electromagnetism including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 1: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "USA-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 2: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "USA-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 3: Electromagnetism",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Electromagnetism.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "USA-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Electromagnetism - Question 4: Electromagnetism [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "elektromágnesesség",
+        "electromagnetism",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "USA-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 5: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "USA-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     }
   ],

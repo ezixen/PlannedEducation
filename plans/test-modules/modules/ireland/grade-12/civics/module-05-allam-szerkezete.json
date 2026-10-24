@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Ireland grade-12",
+    "name": "State structure - Ireland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minute assessment on State structure for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.819968+00:00",
-    "updated_at": "2026-10-21T11:02:30.819977+00:00",
+    "created_at": "2026-10-24T17:53:51.522495+00:00",
+    "updated_at": "2026-10-24T17:53:51.522507+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "state-structure",
       "grade-12",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "492ea8ba29d8afef72281b2143d3a6dec11fd75c18814cb2ffd3889496871618",
+    "checksum": "e495c1b4256f60a1416fbf3951068dabc12139da1c1544e5b711ae6848f4a7af",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - State structure",
+    "description": "Assessment on State structure including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] State structure - Question 1: State structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] State structure - Question 2: State structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] State structure - Question 3: State structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for State structure.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] State structure - Question 4: State structure",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] State structure - Question 5: State structure",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-12"
+        "state-structure",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-Állam szerkezete",
+      "curriculum_topic": "IRELAND-GRADE-12-CIVICS-State structure",
       "learning_objective": "State structure"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-szorzása-1.0.0",
-    "name": "Törtek szorzása - Ireland grade-05",
+    "name": "Fraction multiplication - Ireland grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek szorzása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minute assessment on Fraction multiplication for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.288572+00:00",
-    "updated_at": "2026-10-21T11:02:30.288585+00:00",
+    "created_at": "2026-10-24T17:53:51.193304+00:00",
+    "updated_at": "2026-10-24T17:53:51.193313+00:00",
     "tags": [
       "math",
-      "törtek-szorzása",
+      "fraction-multiplication",
       "grade-05",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "3517572fb0efcd3e7dd11c20daaacad904f69411deb40cacd932f292d429da85",
+    "checksum": "7c66b4036915e70fc6c0a5a36e7e3dbb37385b0b8f73a37e991237e83be085df",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek szorzása",
-    "description": "Test on Törtek szorzása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction multiplication",
+    "description": "Assessment on Fraction multiplication including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 1: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Question 1: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "IRELAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 2: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Question 2: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "IRELAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 3: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Question 3: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "IRELAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek szorzása - Kérdés 4: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Question 4: Fraction multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek szorzása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Fraction multiplication.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "IRELAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek szorzása - Question 5: Fraction multiplication [rand:1-100]",
+      "text": "[math] Fraction multiplication - Question 5: Fraction multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-szorzása",
+        "fraction-multiplication",
         "grade-05",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "IRELAND-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     }
   ],

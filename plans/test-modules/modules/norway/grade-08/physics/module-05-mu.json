@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mű-1.0.0",
-    "name": "Mű - Norway grade-08",
+    "name": "Work - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mű for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minutters prøve i Work (grade-08). Emner: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.560343+00:00",
-    "updated_at": "2026-10-21T11:02:26.560357+00:00",
+    "created_at": "2026-10-24T17:53:49.046013+00:00",
+    "updated_at": "2026-10-24T17:53:49.046033+00:00",
     "tags": [
       "physics",
-      "mű",
+      "work",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "1d3c27ac30969e51bd5401d3529b1eceaed25e3fbbe02e47e3b7aa84e9b3b3ac",
+    "checksum": "d1dada4e028daaaf2723dce9af1c5a11951e063eb3b1fd7d6c238f01e900ad78",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mű",
-    "description": "Test on Mű including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Work",
+    "description": "Prøve i Work: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 1: Work",
+      "text": "[physics] Work - Spørsmål 1: Work",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 2: Work",
+      "text": "[physics] Work - Spørsmål 2: Work",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mű - Kérdés 3: Work",
+      "text": "[physics] Work - Spørsmål 3: Work",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mű témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Work.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mű - Question 4: Work [rand:1-1000]",
+      "text": "[physics] Work - Spørsmål 4: Work [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mű",
+        "work",
         "grade-08",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 5: Work",
+      "text": "[physics] Work - Spørsmål 5: Work",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "NORWAY-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     }
   ],

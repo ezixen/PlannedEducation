@@ -3,21 +3,25 @@
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
     "name": "Számlálás 10-ig - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 perces felmérő: Számlálás 10-ig (grade-01). Témakörök: Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.979803+00:00",
-    "updated_at": "2026-10-21T11:02:34.979851+00:00",
+    "created_at": "2026-10-24T17:53:52.046507+00:00",
+    "updated_at": "2026-10-24T17:53:52.046513+00:00",
     "tags": [
       "math",
       "számlálás-10-ig",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "ea55666d047003a9850d2098daec454215f9ad63e5bf5eee718077138314581f",
+    "checksum": "82fbec83a24fdb9b707dbe99457fe23b82cd940b2df74d9b318774a1b54b3740",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Számlálás 10-ig",
+      "Összeadás 10-ig",
+      "Kivonás 10-ig",
+      "Számlálás 20-ig",
+      "Összeadás 20-ig"
     ]
   },
   "exam": {
     "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "Felmérő a(z) Számlálás 10-ig témakörből (Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Számlálás 10-ig - Kérdés 1: Számlálás 10-ig",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "számlálás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "learning_objective": "Számlálás 10-ig"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Számlálás 10-ig - Kérdés 2: Számlálás 10-ig",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "számlálás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "learning_objective": "Számlálás 10-ig"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Számlálás 10-ig - Kérdés 3: Számlálás 10-ig",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "számlálás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "learning_objective": "Számlálás 10-ig"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Számlálás 10-ig - Kérdés 4: Számlálás 10-ig",
       "options": null,
       "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "számlálás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "learning_objective": "Számlálás 10-ig"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Számlálás 10-ig - Kérdés 5: Számlálás 10-ig [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "számlálás-10-ig",
         "grade-01",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "learning_objective": "Számlálás 10-ig"
     }
   ],
   "rubrics": []

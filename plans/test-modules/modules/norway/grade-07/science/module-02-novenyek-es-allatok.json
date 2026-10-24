@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Norway grade-07",
+    "name": "Planter og dyr - Norway grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-07 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Planter og dyr (grade-07). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.439022+00:00",
-    "updated_at": "2026-10-21T11:02:26.439034+00:00",
+    "created_at": "2026-10-24T17:53:48.972679+00:00",
+    "updated_at": "2026-10-24T17:53:48.972688+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "planter-og-dyr",
       "grade-07",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "science",
     "grade_level": "grade-07",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "03f1fbd08cf28b7193236a74df7c553dc16f11007dea91b6949eea018e1ab5bf",
+    "checksum": "9b9aab8f9e1b426874bb6bff48539fc8c817f225e78c849c9f4fe0f4c0f199b4",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturvern"
     ]
   },
   "exam": {
-    "title": "grade-07 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-07 Science - Planter og dyr",
+    "description": "Prøve i Planter og dyr: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Planter og dyr - Spørsmål 1: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-07"
+        "planter-og-dyr",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Planter og dyr - Spørsmål 2: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-07"
+        "planter-og-dyr",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Planter og dyr - Spørsmål 3: Planter og dyr",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Planter og dyr.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-07"
+        "planter-og-dyr",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Planter og dyr - Spørsmål 4: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-07"
+        "planter-og-dyr",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Planter og dyr - Spørsmål 5: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-07"
+        "planter-og-dyr",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NORWAY-GRADE-07-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     }
   ],
   "rubrics": []

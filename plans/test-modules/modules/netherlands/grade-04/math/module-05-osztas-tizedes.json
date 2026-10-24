@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-osztás-tizedes-1.0.0",
-    "name": "Osztás tizedes - Netherlands grade-04",
+    "name": "Decimal division - Netherlands grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Toets van 45 minuten over Decimal division (grade-04). Onderwerpen: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.884749+00:00",
-    "updated_at": "2026-10-21T11:02:24.884771+00:00",
+    "created_at": "2026-10-24T17:53:47.954354+00:00",
+    "updated_at": "2026-10-24T17:53:47.954364+00:00",
     "tags": [
       "math",
-      "osztás-tizedes",
+      "decimal-division",
       "grade-04",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "f5b90c2dfed66076f019e1a6068636a271b0f9e38367fc5fd630e9ea6a301e97",
+    "checksum": "29561e26d61af833b4f1fbb9c616c1fb8455c1d51b9c77fac602d7dfb1cf09dd",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Osztás tizedes",
-    "description": "Test on Osztás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal division",
+    "description": "Toets over Decimal division: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 1: Decimal division",
+      "text": "[math] Decimal division - Vraag 1: Decimal division",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 2: Decimal division",
+      "text": "[math] Decimal division - Vraag 2: Decimal division",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 3: Decimal division",
+      "text": "[math] Decimal division - Vraag 3: Decimal division",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás tizedes - Kérdés 4: Decimal division",
+      "text": "[math] Decimal division - Vraag 4: Decimal division",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Decimal division.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás tizedes - Question 5: Decimal division [rand:1-100]",
+      "text": "[math] Decimal division - Vraag 5: Decimal division [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztás-tizedes",
+        "decimal-division",
         "grade-04",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "NETHERLANDS-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     }
   ],

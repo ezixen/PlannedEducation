@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-jog-erettségi-1.0.0",
-    "name": "Jog-erettségi - United Kingdom grade-12",
+    "name": "Law-maturity - United Kingdom grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minute assessment on Law-maturity for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.484842+00:00",
-    "updated_at": "2026-10-21T11:02:17.484863+00:00",
+    "created_at": "2026-10-24T17:53:46.087706+00:00",
+    "updated_at": "2026-10-24T17:53:46.087720+00:00",
     "tags": [
       "civics",
-      "jog-erettségi",
+      "law-maturity",
       "grade-12",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "c9907f7e83b79a7f4b40565f9b588b1b911f60339bad1a573a3fa70960372b1f",
+    "checksum": "c795c9e0ebf2e330ca4bae471ee715cf6413d0fc8f49c0db4480b92ae529b751",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Law-maturity",
+    "description": "Assessment on Law-maturity including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Law-maturity - Question 1: Law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "UK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Law-maturity - Question 2: Law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "UK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Law-maturity - Question 3: Law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Law-maturity.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "UK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Law-maturity - Question 4: Law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "UK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Law-maturity - Question 5: Law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "UK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     }
   ],

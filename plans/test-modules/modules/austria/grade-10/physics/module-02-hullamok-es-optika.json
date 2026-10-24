@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-hullamok-és-optika-1.0.0",
-    "name": "Hullamok és optika - Austria grade-10",
+    "name": "Wellen und Optik - Austria grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok és optika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minütige Prüfung zum Thema Wellen und Optik (grade-10). Themen: Mechanik, Wellen und Optik, Elektromagnetismus, Moderne Physik, Physik Abiturvorbereitung",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.332423+00:00",
-    "updated_at": "2026-10-21T11:02:29.332447+00:00",
+    "created_at": "2026-10-24T17:53:50.594629+00:00",
+    "updated_at": "2026-10-24T17:53:50.594634+00:00",
     "tags": [
       "physics",
-      "hullamok-és-optika",
+      "wellen-und-optik",
       "grade-10",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "85ecf4dbd098edd2cfbca26f447ea040c3703bc2ac6f952a8d9ea0916186bee1",
+    "checksum": "2be0b5fd298d8ef302f8aff92328842379056785aa863b36e3d27429765a8ae4",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Waves and optics",
-      "Electromagnetism",
-      "Modern physics",
-      "Physics preparation"
+      "Mechanik",
+      "Wellen und Optik",
+      "Elektromagnetismus",
+      "Moderne Physik",
+      "Physik Abiturvorbereitung"
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Hullamok és optika",
-    "description": "Test on Hullamok és optika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Wellen und Optik",
+    "description": "Prüfung zum Thema Wellen und Optik: Mechanik, Wellen und Optik, Elektromagnetismus, Moderne Physik, Physik Abiturvorbereitung",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 1: Waves and optics",
+      "text": "[physics] Wellen und Optik - Frage 1: Wellen und Optik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "wellen-und-optik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Hullamok és optika",
-      "learning_objective": "Waves and optics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Wellen und Optik",
+      "learning_objective": "Wellen und Optik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 2: Waves and optics",
+      "text": "[physics] Wellen und Optik - Frage 2: Wellen und Optik",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "wellen-und-optik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Hullamok és optika",
-      "learning_objective": "Waves and optics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Wellen und Optik",
+      "learning_objective": "Wellen und Optik"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok és optika - Kérdés 3: Waves and optics",
+      "text": "[physics] Wellen und Optik - Frage 3: Wellen und Optik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok és optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Wellen und Optik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "wellen-und-optik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Hullamok és optika",
-      "learning_objective": "Waves and optics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Wellen und Optik",
+      "learning_objective": "Wellen und Optik"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok és optika - Question 4: Waves and optics [rand:1-100]",
+      "text": "[physics] Wellen und Optik - Frage 4: Wellen und Optik [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok-és-optika",
+        "wellen-und-optik",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Hullamok és optika",
-      "learning_objective": "Waves and optics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Wellen und Optik",
+      "learning_objective": "Wellen und Optik"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 5: Waves and optics",
+      "text": "[physics] Wellen und Optik - Frage 5: Wellen und Optik",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "wellen-und-optik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Hullamok és optika",
-      "learning_objective": "Waves and optics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-PHYSICS-Wellen und Optik",
+      "learning_objective": "Wellen und Optik"
     }
   ],
   "rubrics": []

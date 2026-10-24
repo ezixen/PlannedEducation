@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Ireland grade-04",
+    "name": "Decimal subtraction - Ireland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minute assessment on Decimal subtraction for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.265192+00:00",
-    "updated_at": "2026-10-21T11:02:30.265206+00:00",
+    "created_at": "2026-10-24T17:53:51.174840+00:00",
+    "updated_at": "2026-10-24T17:53:51.174846+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "decimal-subtraction",
       "grade-04",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "ef2d315a94f1df231fdd9d17378409626bb8dcb0c8d5274c348d164d747faa03",
+    "checksum": "7e06e9e55a98d1897c6c97c675e974dab311aad08be9f13706f6fd01b698b1e4",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal subtraction",
+    "description": "Assessment on Decimal subtraction including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Question 1: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Question 2: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Question 3: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Question 4: Decimal subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Decimal subtraction.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Decimal subtraction - Question 5: Decimal subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "decimal-subtraction",
         "grade-04",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     }
   ],

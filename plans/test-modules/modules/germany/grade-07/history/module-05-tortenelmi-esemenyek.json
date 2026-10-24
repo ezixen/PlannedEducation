@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - Germany grade-07",
+    "name": "Historische Ereignisse - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minütige Prüfung zum Thema Historische Ereignisse (grade-07). Themen: Mittelalter und Frühe Neuzeit, Mittelalter, Frühe Neuzeit, Geschichte, Historische Ereignisse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.338189+00:00",
-    "updated_at": "2026-10-21T11:02:16.338203+00:00",
+    "created_at": "2026-10-24T17:53:45.368184+00:00",
+    "updated_at": "2026-10-24T17:53:45.368190+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historische-ereignisse",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "e8be31501e41f9de7bf74b22a85d7cba5979bca3c63f0586e6a062a87cc2e230",
+    "checksum": "4d52ca4e9ec0294079ed1e7c8f9dc47f527d085f2ee4a7c2c35741c8dac68b73",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Middle Ages and early modern period",
-      "Middle Ages",
-      "Early modern period",
-      "History",
-      "Historical events"
+      "Mittelalter und Frühe Neuzeit",
+      "Mittelalter",
+      "Frühe Neuzeit",
+      "Geschichte",
+      "Historische Ereignisse"
     ]
   },
   "exam": {
-    "title": "grade-07 History - Történelmi események",
-    "description": "Test on Történelmi események including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Historische Ereignisse",
+    "description": "Prüfung zum Thema Historische Ereignisse: Mittelalter und Frühe Neuzeit, Mittelalter, Frühe Neuzeit, Geschichte, Historische Ereignisse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historische Ereignisse - Frage 1: Historische Ereignisse",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-07"
+        "historische-ereignisse",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Történelmi események",
-      "learning_objective": "Historical events"
+      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Historische Ereignisse",
+      "learning_objective": "Historische Ereignisse"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historische Ereignisse - Frage 2: Historische Ereignisse",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-07"
+        "historische-ereignisse",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Történelmi események",
-      "learning_objective": "Historical events"
+      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Historische Ereignisse",
+      "learning_objective": "Historische Ereignisse"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historische Ereignisse - Frage 3: Historische Ereignisse",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Historische Ereignisse.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-07"
+        "historische-ereignisse",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Történelmi események",
-      "learning_objective": "Historical events"
+      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Historische Ereignisse",
+      "learning_objective": "Historische Ereignisse"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historische Ereignisse - Frage 4: Historische Ereignisse",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-07"
+        "historische-ereignisse",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Történelmi események",
-      "learning_objective": "Historical events"
+      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Historische Ereignisse",
+      "learning_objective": "Historische Ereignisse"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historische Ereignisse - Frage 5: Historische Ereignisse",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-07"
+        "historische-ereignisse",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Történelmi események",
-      "learning_objective": "Historical events"
+      "curriculum_topic": "GERMANY-GRADE-07-HISTORY-Historische Ereignisse",
+      "learning_objective": "Historische Ereignisse"
     }
   ],
   "rubrics": []

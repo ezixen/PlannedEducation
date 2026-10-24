@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-20.-század-1.0.0",
-    "name": "20. század - Canada grade-09",
+    "name": "20th century - Canada grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minute assessment on 20th century for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.824478+00:00",
-    "updated_at": "2026-10-21T11:02:15.824496+00:00",
+    "created_at": "2026-10-24T17:53:44.992176+00:00",
+    "updated_at": "2026-10-24T17:53:44.992184+00:00",
     "tags": [
       "history",
-      "20.-század",
+      "20th-century",
       "grade-09",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "db04cb84d3cac91e0d319d246a8083d77a82dba1b4818cb799f4740b6642db5c",
+    "checksum": "23317604b7f8062c95ecb068de64c7a95255bb321a0c9b46e355f4f7d4dbf45f",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - 20. század",
-    "description": "Test on 20. század including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - 20th century",
+    "description": "Assessment on 20th century including History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 1: 20th century",
+      "text": "[history] 20th century - Question 1: 20th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 2: 20th century",
+      "text": "[history] 20th century - Question 2: 20th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század - Kérdés 3: 20th century",
+      "text": "[history] 20th century - Question 3: 20th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 20. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for 20th century.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 4: 20th century",
+      "text": "[history] 20th century - Question 4: 20th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 5: 20th century",
+      "text": "[history] 20th century - Question 5: 20th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "CANADA-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     }
   ],

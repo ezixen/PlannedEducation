@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-írás-1.0.0",
-    "name": "Angol írás - United Kingdom grade-01",
+    "name": "English writing - United Kingdom grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minute assessment on English writing for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.840515+00:00",
-    "updated_at": "2026-10-21T11:02:16.840532+00:00",
+    "created_at": "2026-10-24T17:53:45.662759+00:00",
+    "updated_at": "2026-10-24T17:53:45.662776+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-01",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "37808450fdc345187003dd6a58a05699c3b63b5646ad3a29f7bd8112038b2273",
+    "checksum": "56992e100352975c3127afae0388c43b73f7099f0af6405337328ce215bb8b61",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol írás",
-    "description": "Test on Angol írás including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English writing",
+    "description": "Assessment on English writing including Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Question 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "UK-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Question 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "UK-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Question 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English writing.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "UK-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Question 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "UK-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Question 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "UK-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

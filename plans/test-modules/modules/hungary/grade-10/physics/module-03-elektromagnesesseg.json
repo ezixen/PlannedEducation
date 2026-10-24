@@ -3,21 +3,25 @@
     "id": "grade-10-physics-elektromágnesesség-1.0.0",
     "name": "Elektromágnesesség - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45 perces felmérő: Elektromágnesesség (grade-10). Témakörök: Mechanika, Hullamok és optika, Elektromágnesesség, Modern fizika, Fizika felkészülés",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.581757+00:00",
-    "updated_at": "2026-10-21T11:02:35.581775+00:00",
+    "created_at": "2026-10-24T17:53:52.424189+00:00",
+    "updated_at": "2026-10-24T17:53:52.424195+00:00",
     "tags": [
       "physics",
       "elektromágnesesség",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "a6fa9856cc8597a3df554677e30203b41b44b78f44097a887caf4e0744ff793f",
+    "checksum": "e3f4380272a5c34098a79eee23b1a55102f2cf662e954c546cdc2a588ec22ba8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Waves and optics",
-      "Electromagnetism",
-      "Modern physics",
-      "Physics preparation"
+      "Mechanika",
+      "Hullamok és optika",
+      "Elektromágnesesség",
+      "Modern fizika",
+      "Fizika felkészülés"
     ]
   },
   "exam": {
     "title": "grade-10 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "Felmérő a(z) Elektromágnesesség témakörből (Mechanika, Hullamok és optika, Elektromágnesesség, Modern fizika, Fizika felkészülés)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Elektromágnesesség - Kérdés 1: Elektromágnesesség",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "elektromágnesesség",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Elektromágnesesség",
-      "learning_objective": "Electromagnetism"
+      "learning_objective": "Elektromágnesesség"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Elektromágnesesség - Kérdés 2: Elektromágnesesség",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "elektromágnesesség",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Elektromágnesesség",
-      "learning_objective": "Electromagnetism"
+      "learning_objective": "Elektromágnesesség"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Elektromágnesesség - Kérdés 3: Elektromágnesesség",
       "options": null,
       "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "elektromágnesesség",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Elektromágnesesség",
-      "learning_objective": "Electromagnetism"
+      "learning_objective": "Elektromágnesesség"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Elektromágnesesség - Kérdés 4: Elektromágnesesség [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "elektromágnesesség",
         "grade-10",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Elektromágnesesség",
-      "learning_objective": "Electromagnetism"
+      "learning_objective": "Elektromágnesesség"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Elektromágnesesség - Kérdés 5: Elektromágnesesség",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "elektromágnesesség",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Elektromágnesesség",
-      "learning_objective": "Electromagnetism"
+      "learning_objective": "Elektromágnesesség"
     }
   ],
   "rubrics": []

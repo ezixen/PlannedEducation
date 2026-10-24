@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Finland grade-04",
+    "name": "Decimal subtraction - Finland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 minuutin koe aiheesta Decimal subtraction (grade-04). Aiheet: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.080265+00:00",
-    "updated_at": "2026-10-21T11:02:24.080276+00:00",
+    "created_at": "2026-10-24T17:53:47.537843+00:00",
+    "updated_at": "2026-10-24T17:53:47.537852+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "decimal-subtraction",
       "grade-04",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "ad84d87fadcb1ba86bcb1d902a38d87f73dc9466e339a835df11e692b7f9904b",
+    "checksum": "e57ee99e46a6dcfd7255bfe4a2c91596c63628d952f391ef7008ca5fd85a4218",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal subtraction",
+    "description": "Koe aiheesta Decimal subtraction: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Kysymys 1: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Kysymys 2: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Kysymys 3: Decimal subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Decimal subtraction - Kysymys 4: Decimal subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Decimal subtraction.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "decimal-subtraction",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Decimal subtraction - Kysymys 5: Decimal subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "decimal-subtraction",
         "grade-04",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Kivonás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal subtraction",
       "learning_objective": "Decimal subtraction"
     }
   ],

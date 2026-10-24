@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-energia-1.0.0",
-    "name": "Energia - Belgium grade-07",
+    "name": "Energy - Belgium grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "Toets van 45 minuten over Energy (grade-07). Onderwerpen: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.702184+00:00",
-    "updated_at": "2026-10-21T11:02:29.702198+00:00",
+    "created_at": "2026-10-24T17:53:50.838585+00:00",
+    "updated_at": "2026-10-24T17:53:50.838595+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-07",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "ea7b0cbc1c9fb95d011b03971b67c38009574f1cd6d917c9aa0d2358eb5bf9de",
+    "checksum": "0c293f260274c61a27baa48914f06b5cba040aee93781be5437a8da1eb2ec629",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Energia",
-    "description": "Test on Energia including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Energy",
+    "description": "Toets over Energy: Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Vraag 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Vraag 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Vraag 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Energy.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-100]",
+      "text": "[physics] Energy - Vraag 4: Energy [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-07",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Vraag 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "BELGIUM-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

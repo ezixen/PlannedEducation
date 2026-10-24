@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - Netherlands grade-08",
+    "name": "English grammar - Netherlands grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "Toets van 45 minuten over English grammar (grade-08). Onderwerpen: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.098737+00:00",
-    "updated_at": "2026-10-21T11:02:25.098758+00:00",
+    "created_at": "2026-10-24T17:53:48.118968+00:00",
+    "updated_at": "2026-10-24T17:53:48.118978+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-08",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "b4ab0eb6315d417b975b2b8eefbd4b3fd18ec4a4447b688c7b7e158e8b7deea2",
+    "checksum": "253cfa5dae8859e773cf0d3b3253e4012f9347dc9c576642dbe3b96c28772890",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English grammar",
+    "description": "Toets over English grammar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Vraag 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Vraag 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Vraag 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English grammar.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Vraag 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Vraag 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

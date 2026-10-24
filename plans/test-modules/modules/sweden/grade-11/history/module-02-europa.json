@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-európa-1.0.0",
-    "name": "Európa - Sweden grade-11",
+    "name": "Europe - Sweden grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minuters prov i Europe (grade-11). Omfattar: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.066108+00:00",
-    "updated_at": "2026-10-21T11:02:26.066127+00:00",
+    "created_at": "2026-10-24T17:53:48.732206+00:00",
+    "updated_at": "2026-10-24T17:53:48.732215+00:00",
     "tags": [
       "history",
-      "európa",
+      "europe",
       "grade-11",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e0c5306ae555692a690aa708c38ca6f43eee76a424387c1cab6cca3f8d634332",
+    "checksum": "532445e1d114c83ef60d1ce174ec5c158915e0692931f69585b45fd63dbba509",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Európa",
-    "description": "Test on Európa including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - Europe",
+    "description": "Prov i Europe: History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 1: Europe",
+      "text": "[history] Europe - Fråga 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 2: Europe",
+      "text": "[history] Europe - Fråga 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa - Kérdés 3: Europe",
+      "text": "[history] Europe - Fråga 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Europe.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 4: Europe",
+      "text": "[history] Europe - Fråga 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 5: Europe",
+      "text": "[history] Europe - Fråga 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     }
   ],

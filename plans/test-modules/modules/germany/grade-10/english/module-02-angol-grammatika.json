@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - Germany grade-10",
+    "name": "English grammar - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English grammar (grade-10). Themen: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.597989+00:00",
-    "updated_at": "2026-10-21T11:02:16.598001+00:00",
+    "created_at": "2026-10-24T17:53:45.535451+00:00",
+    "updated_at": "2026-10-24T17:53:45.535456+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "ec1ca885df0b8882404d488c43e044a5f959743365007db1169a03267fbfa894",
+    "checksum": "31bd7f51ac280093ecfa7fc956d0e1a55449d4b4b0bcb7772d6bb1efc8480163",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English grammar",
+    "description": "Prüfung zum Thema English grammar: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Frage 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-10"
+        "english-grammar",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-Angol grammatika",
+      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Frage 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-10"
+        "english-grammar",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-Angol grammatika",
+      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Frage 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English grammar.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-10"
+        "english-grammar",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-Angol grammatika",
+      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Frage 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-10"
+        "english-grammar",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-Angol grammatika",
+      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Frage 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-10"
+        "english-grammar",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-Angol grammatika",
+      "curriculum_topic": "GERMANY-GRADE-10-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-osztása-1.0.0",
-    "name": "Törtek osztása - Germany grade-05",
+    "name": "Brüche dividieren - Germany grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek osztása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minütige Prüfung zum Thema Brüche dividieren (grade-05). Themen: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.237709+00:00",
-    "updated_at": "2026-10-21T11:02:16.237721+00:00",
+    "created_at": "2026-10-24T17:53:45.272170+00:00",
+    "updated_at": "2026-10-24T17:53:45.272190+00:00",
     "tags": [
       "math",
-      "törtek-osztása",
+      "brüche-dividieren",
       "grade-05",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "df86e3b918c459c18a9c5a5121f3556495a4a7718db84522527c9dc7b8769226",
+    "checksum": "6319c9b0719831acc465f61059620ab7fbec3a9a7af923369060c78b0b12bd3e",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Bruchrechnung Grundlagen",
+      "Brüche addieren",
+      "Brüche subtrahieren",
+      "Brüche multiplizieren",
+      "Brüche dividieren"
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek osztása",
-    "description": "Test on Törtek osztása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Brüche dividieren",
+    "description": "Prüfung zum Thema Brüche dividieren: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 1: Fraction division",
+      "text": "[math] Brüche dividieren - Frage 1: Brüche dividieren",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "brüche-dividieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek osztása",
-      "learning_objective": "Fraction division"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche dividieren",
+      "learning_objective": "Brüche dividieren"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 2: Fraction division",
+      "text": "[math] Brüche dividieren - Frage 2: Brüche dividieren",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "brüche-dividieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek osztása",
-      "learning_objective": "Fraction division"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche dividieren",
+      "learning_objective": "Brüche dividieren"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 3: Fraction division",
+      "text": "[math] Brüche dividieren - Frage 3: Brüche dividieren",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "brüche-dividieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek osztása",
-      "learning_objective": "Fraction division"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche dividieren",
+      "learning_objective": "Brüche dividieren"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek osztása - Kérdés 4: Fraction division",
+      "text": "[math] Brüche dividieren - Frage 4: Brüche dividieren",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek osztása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Brüche dividieren.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "brüche-dividieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek osztása",
-      "learning_objective": "Fraction division"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche dividieren",
+      "learning_objective": "Brüche dividieren"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek osztása - Question 5: Fraction division [rand:1-100]",
+      "text": "[math] Brüche dividieren - Frage 5: Brüche dividieren [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "törtek-osztása",
+        "brüche-dividieren",
         "grade-05",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek osztása",
-      "learning_objective": "Fraction division"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche dividieren",
+      "learning_objective": "Brüche dividieren"
     }
   ],
   "rubrics": []

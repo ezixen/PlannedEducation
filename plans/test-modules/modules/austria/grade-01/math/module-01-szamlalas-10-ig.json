@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
-    "name": "Számlálás 10-ig - Austria grade-01",
+    "name": "Zählen bis 10 - Austria grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minütige Prüfung zum Thema Zählen bis 10 (grade-01). Themen: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.777914+00:00",
-    "updated_at": "2026-10-21T11:02:28.777926+00:00",
+    "created_at": "2026-10-24T17:53:50.280361+00:00",
+    "updated_at": "2026-10-24T17:53:50.280372+00:00",
     "tags": [
       "math",
-      "számlálás-10-ig",
+      "zählen-bis-10",
       "grade-01",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "3da0e95b04c910e61e30d90788ef7b478daf27a933335a8ac44c54b77beab878",
+    "checksum": "0d8a77e586243308ea988d5a72f21a310eb1015c1fe65082b84b82d0090ff68e",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Zählen bis 10",
+      "Addition bis 10",
+      "Subtraktion bis 10",
+      "Zählen bis 20",
+      "Addition bis 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Zählen bis 10",
+    "description": "Prüfung zum Thema Zählen bis 10: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Zählen bis 10 - Frage 1: Zählen bis 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "zählen-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Zählen bis 10",
+      "learning_objective": "Zählen bis 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Zählen bis 10 - Frage 2: Zählen bis 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "zählen-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Zählen bis 10",
+      "learning_objective": "Zählen bis 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Zählen bis 10 - Frage 3: Zählen bis 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "zählen-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Zählen bis 10",
+      "learning_objective": "Zählen bis 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Zählen bis 10 - Frage 4: Zählen bis 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Zählen bis 10.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "zählen-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Zählen bis 10",
+      "learning_objective": "Zählen bis 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Zählen bis 10 - Frage 5: Zählen bis 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "számlálás-10-ig",
+        "zählen-bis-10",
         "grade-01",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Zählen bis 10",
+      "learning_objective": "Zählen bis 10"
     }
   ],
   "rubrics": []

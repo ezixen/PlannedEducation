@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-osztástábla-1.0.0",
-    "name": "Osztástábla - United Kingdom grade-03",
+    "name": "Division table - United Kingdom grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Osztástábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minute assessment on Division table for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.916331+00:00",
-    "updated_at": "2026-10-21T11:02:16.916346+00:00",
+    "created_at": "2026-10-24T17:53:45.704558+00:00",
+    "updated_at": "2026-10-24T17:53:45.704575+00:00",
     "tags": [
       "math",
-      "osztástábla",
+      "division-table",
       "grade-03",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "2fe33a83c3c44a2f48ad59f6673fec0caaa102184cdca74c1095d8aa87f19f8e",
+    "checksum": "1998e9106d1820e4261c8f55ec14eda0e93e0897821c954468e4ca8022fdcccb",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Osztástábla",
-    "description": "Test on Osztástábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Division table",
+    "description": "Assessment on Division table including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 1: Division table",
+      "text": "[math] Division table - Question 1: Division table",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 2: Division table",
+      "text": "[math] Division table - Question 2: Division table",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 3: Division table",
+      "text": "[math] Division table - Question 3: Division table",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztástábla - Kérdés 4: Division table",
+      "text": "[math] Division table - Question 4: Division table",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztástábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Division table.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztástábla - Question 5: Division table [rand:1-20]",
+      "text": "[math] Division table - Question 5: Division table [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztástábla",
+        "division-table",
         "grade-03",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     }
   ],

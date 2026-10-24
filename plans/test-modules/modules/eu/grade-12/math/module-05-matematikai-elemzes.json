@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-matematikai-elemzés-1.0.0",
-    "name": "Matematikai elemzés - European Union grade-12",
+    "name": "Mathematical analysis - European Union grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Matematikai elemzés for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minute assessment on Mathematical analysis for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.912727+00:00",
-    "updated_at": "2026-10-21T11:02:23.912737+00:00",
+    "created_at": "2026-10-24T17:53:47.474689+00:00",
+    "updated_at": "2026-10-24T17:53:47.474699+00:00",
     "tags": [
       "math",
-      "matematikai-elemzés",
+      "mathematical-analysis",
       "grade-12",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "c6715d426dedef85c4bf8d76d1b15c66a73643763c5fcd6682e2428d82439956",
+    "checksum": "b209e2fa3be13b3c64fc6ae9412c95135b6c73e5d45ab937af6640f75ab5ed84",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Matematikai elemzés",
-    "description": "Test on Matematikai elemzés including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Mathematical analysis",
+    "description": "Assessment on Mathematical analysis including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 1: Mathematical analysis",
+      "text": "[math] Mathematical analysis - Question 1: Mathematical analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-12-MATH-Matematikai elemzés",
+      "curriculum_topic": "EU-GRADE-12-MATH-Mathematical analysis",
       "learning_objective": "Mathematical analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 2: Mathematical analysis",
+      "text": "[math] Mathematical analysis - Question 2: Mathematical analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-12-MATH-Matematikai elemzés",
+      "curriculum_topic": "EU-GRADE-12-MATH-Mathematical analysis",
       "learning_objective": "Mathematical analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 3: Mathematical analysis",
+      "text": "[math] Mathematical analysis - Question 3: Mathematical analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-12-MATH-Matematikai elemzés",
+      "curriculum_topic": "EU-GRADE-12-MATH-Mathematical analysis",
       "learning_objective": "Mathematical analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Matematikai elemzés - Kérdés 4: Mathematical analysis",
+      "text": "[math] Mathematical analysis - Question 4: Mathematical analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Matematikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Mathematical analysis.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-12-MATH-Matematikai elemzés",
+      "curriculum_topic": "EU-GRADE-12-MATH-Mathematical analysis",
       "learning_objective": "Mathematical analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Matematikai elemzés - Question 5: Mathematical analysis [rand:1-1000]",
+      "text": "[math] Mathematical analysis - Question 5: Mathematical analysis [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "matematikai-elemzés",
+        "mathematical-analysis",
         "grade-12",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-12-MATH-Matematikai elemzés",
+      "curriculum_topic": "EU-GRADE-12-MATH-Mathematical analysis",
       "learning_objective": "Mathematical analysis"
     }
   ],

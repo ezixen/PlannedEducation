@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-képességek-1.0.0",
-    "name": "Földrajzi képességek - Finland grade-07",
+    "name": "Geographic skills - Finland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi képességek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45 minuutin koe aiheesta Geographic skills (grade-07). Aiheet: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.203027+00:00",
-    "updated_at": "2026-10-21T11:02:24.203039+00:00",
+    "created_at": "2026-10-24T17:53:47.610530+00:00",
+    "updated_at": "2026-10-24T17:53:47.610540+00:00",
     "tags": [
       "geography",
-      "földrajzi-képességek",
+      "geographic-skills",
       "grade-07",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1b54c0df1b204f1849be666fcca81200e95a49b2fdbe509ff5e18e9375104586",
+    "checksum": "7e8dd233410fe0c29f47fc845b8799083a15bc1dcb31038cd564cc21cf9662f4",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi képességek",
-    "description": "Test on Földrajzi képességek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographic skills",
+    "description": "Koe aiheesta Geographic skills: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 1: Geographic skills",
+      "text": "[geography] Geographic skills - Kysymys 1: Geographic skills",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 2: Geographic skills",
+      "text": "[geography] Geographic skills - Kysymys 2: Geographic skills",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 3: Geographic skills",
+      "text": "[geography] Geographic skills - Kysymys 3: Geographic skills",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Geographic skills.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 4: Geographic skills",
+      "text": "[geography] Geographic skills - Kysymys 4: Geographic skills",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 5: Geographic skills",
+      "text": "[geography] Geographic skills - Kysymys 5: Geographic skills",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "FINLAND-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     }
   ],

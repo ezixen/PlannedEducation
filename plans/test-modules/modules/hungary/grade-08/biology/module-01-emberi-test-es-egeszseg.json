@@ -11,12 +11,13 @@
     "tags": [
       "biology",
       "emberi-test-és-egészség",
-      "grade-08"
+      "grade-08",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "703211aad71310b207c396a1c825956f62a4d14565826c2dc4346d7a19b105d2",
+    "checksum": "b1c268f72f0eb8bcbdb8578aa322fe91361bc8b13839874cec3d8d599d912008",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Rendszerek",
       "Egészség",
       "Prevenció"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 08 Biology - Emberi test és egészség",

@@ -3,21 +3,25 @@
     "id": "grade-06-math-általános-tört-1.0.0",
     "name": "Általános tört - Hungary grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Általános tört for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45 perces felmérő: Általános tört (grade-06). Témakörök: Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.115380+00:00",
-    "updated_at": "2026-10-21T11:02:35.115410+00:00",
+    "created_at": "2026-10-24T17:53:52.145755+00:00",
+    "updated_at": "2026-10-24T17:53:52.145765+00:00",
     "tags": [
       "math",
       "általános-tört",
       "grade-06",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "a9c76f0c7bd6133f91907fb19355d187aeb37c28646716e254024b28cd378d1e",
+    "checksum": "af782c6a5bb005e17bcaca6193eb4a0b148842c46871c7ba6e3e08dae32c44c3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Általános tört",
+      "Tört műveletek",
+      "Százalék alapok",
+      "Százalék számítás",
+      "Aranyszerű arány"
     ]
   },
   "exam": {
     "title": "grade-06 Math - Általános tört",
-    "description": "Test on Általános tört including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "Felmérő a(z) Általános tört témakörből (Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 1: General fractions",
+      "text": "[math] Általános tört - Kérdés 1: Általános tört",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "általános-tört",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "learning_objective": "Általános tört"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 2: General fractions",
+      "text": "[math] Általános tört - Kérdés 2: Általános tört",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "általános-tört",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "learning_objective": "Általános tört"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 3: General fractions",
+      "text": "[math] Általános tört - Kérdés 3: Általános tört",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "általános-tört",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "learning_objective": "Általános tört"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Általános tört - Kérdés 4: General fractions",
+      "text": "[math] Általános tört - Kérdés 4: Általános tört",
       "options": null,
       "correct_answer": "Minta válasz a(z) Általános tört témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "általános-tört",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "learning_objective": "Általános tört"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Általános tört - Question 5: General fractions [rand:1-100]",
+      "text": "[math] Általános tört - Kérdés 5: Általános tört [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "általános-tört",
         "grade-06",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "learning_objective": "Általános tört"
     }
   ],
   "rubrics": []

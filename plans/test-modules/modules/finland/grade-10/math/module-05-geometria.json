@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-geometria-1.0.0",
-    "name": "Geometria - Finland grade-10",
+    "name": "Geometry - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45 minuutin koe aiheesta Geometry (grade-10). Aiheet: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.612119+00:00",
-    "updated_at": "2026-10-21T11:02:24.612135+00:00",
+    "created_at": "2026-10-24T17:53:47.797290+00:00",
+    "updated_at": "2026-10-24T17:53:47.797295+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometry",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "a02bca04963ea5eede419fa2be6fe02e6bfe9046e772155dc8b6994531786209",
+    "checksum": "b7a2a519b9cb9b9ed7cd7006afaae79a0a91f6bf13eee70b4c9a5bb227f84a20",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Geometria",
-    "description": "Test on Geometria including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Geometry",
+    "description": "Koe aiheesta Geometry: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometry - Kysymys 1: Geometry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometry",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometria",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometry - Kysymys 2: Geometry",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometry",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometria",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometry - Kysymys 3: Geometry",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometry",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometria",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometry - Kysymys 4: Geometry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Geometry.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometry",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometria",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-100]",
+      "text": "[math] Geometry - Kysymys 5: Geometry [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometry",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometria",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Geometry",
       "learning_objective": "Geometry"
     }
   ],

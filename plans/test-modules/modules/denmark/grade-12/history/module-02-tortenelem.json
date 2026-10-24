@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-1.0.0",
-    "name": "Történelem - Denmark grade-12",
+    "name": "History - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i History (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.782161+00:00",
-    "updated_at": "2026-10-21T11:02:27.782176+00:00",
+    "created_at": "2026-10-24T17:53:49.810436+00:00",
+    "updated_at": "2026-10-24T17:53:49.810444+00:00",
     "tags": [
       "history",
-      "történelem",
+      "history",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "ba8c4f52c3c7f7c34f2821ccfab5f9d2ab9d126159367a2217e59aeb170b4437",
+    "checksum": "df4c1ebac7de9b09131f53781da31f924e6a6450b15f0218aafc7e3d7a56961c",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem",
-    "description": "Test on Történelem including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History",
+    "description": "Prøve i History: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] History - Spørgsmål 1: History",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] History - Spørgsmål 2: History",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] History - Spørgsmål 3: History",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for History.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] History - Spørgsmål 4: History",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] History - Spørgsmål 5: History",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     }
   ],

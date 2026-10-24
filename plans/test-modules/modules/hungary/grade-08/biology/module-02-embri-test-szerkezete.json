@@ -3,21 +3,25 @@
     "id": "grade-08-biology-embri-test-szerkezete-1.0.0",
     "name": "Embri test szerkezete - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test szerkezete for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45 perces felmérő: Embri test szerkezete (grade-08). Témakörök: Embri test és egészség, Embri test szerkezete, Észek, Észlelés, Egészség",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.245216+00:00",
-    "updated_at": "2026-10-21T11:02:35.245233+00:00",
+    "created_at": "2026-10-24T17:53:52.245228+00:00",
+    "updated_at": "2026-10-24T17:53:52.245240+00:00",
     "tags": [
       "biology",
       "embri-test-szerkezete",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "048aee5b294cfebe445a11315a69d3f8d9f4511ad8bdbffb0ba845497348988e",
+    "checksum": "454697f433cdfbe7c9004fcb2f801d1a3bc3a43596d9bf443b625bacaa378581",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Embri test és egészség",
+      "Embri test szerkezete",
+      "Észek",
+      "Észlelés",
+      "Egészség"
     ]
   },
   "exam": {
     "title": "grade-08 Biology - Embri test szerkezete",
-    "description": "Test on Embri test szerkezete including Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "Felmérő a(z) Embri test szerkezete témakörből (Embri test és egészség, Embri test szerkezete, Észek, Észlelés, Egészség)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 1: Human body structure",
+      "text": "[biology] Embri test szerkezete - Kérdés 1: Embri test szerkezete",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "embri-test-szerkezete",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Embri test szerkezete",
-      "learning_objective": "Human body structure"
+      "learning_objective": "Embri test szerkezete"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 2: Human body structure",
+      "text": "[biology] Embri test szerkezete - Kérdés 2: Embri test szerkezete",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "embri-test-szerkezete",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Embri test szerkezete",
-      "learning_objective": "Human body structure"
+      "learning_objective": "Embri test szerkezete"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 3: Human body structure",
+      "text": "[biology] Embri test szerkezete - Kérdés 3: Embri test szerkezete",
       "options": null,
       "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "embri-test-szerkezete",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Embri test szerkezete",
-      "learning_objective": "Human body structure"
+      "learning_objective": "Embri test szerkezete"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 4: Human body structure",
+      "text": "[biology] Embri test szerkezete - Kérdés 4: Embri test szerkezete",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "embri-test-szerkezete",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Embri test szerkezete",
-      "learning_objective": "Human body structure"
+      "learning_objective": "Embri test szerkezete"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 5: Human body structure",
+      "text": "[biology] Embri test szerkezete - Kérdés 5: Embri test szerkezete",
       "options": null,
       "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "embri-test-szerkezete",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Embri test szerkezete",
-      "learning_objective": "Human body structure"
+      "learning_objective": "Embri test szerkezete"
     }
   ],
   "rubrics": []

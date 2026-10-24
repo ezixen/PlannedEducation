@@ -3,21 +3,25 @@
     "id": "grade-01-science-természetvédelem-1.0.0",
     "name": "Természetvédelem - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 perces felmérő: Természetvédelem (grade-01). Témakörök: Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.001338+00:00",
-    "updated_at": "2026-10-21T11:02:35.001350+00:00",
+    "created_at": "2026-10-24T17:53:52.061877+00:00",
+    "updated_at": "2026-10-24T17:53:52.061884+00:00",
     "tags": [
       "science",
       "természetvédelem",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "37013d332df86bd442eadddf55ce35aa435feb24353342e3c896a05cb52ba784",
+    "checksum": "571fddebcc9c1393a72deb8a7c6176af43a8838f686d75b856c88a5034c719d8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Természet és környezet",
+      "Növények és állatok",
+      "Természet",
+      "Környezet",
+      "Természetvédelem"
     ]
   },
   "exam": {
     "title": "grade-01 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Felmérő a(z) Természetvédelem témakörből (Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Természetvédelem - Kérdés 1: Természetvédelem",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "science",
         "természetvédelem",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "learning_objective": "Természetvédelem"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Természetvédelem - Kérdés 2: Természetvédelem",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "science",
         "természetvédelem",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "learning_objective": "Természetvédelem"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Természetvédelem - Kérdés 3: Természetvédelem",
       "options": null,
       "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
         "természetvédelem",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "learning_objective": "Természetvédelem"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Természetvédelem - Kérdés 4: Természetvédelem",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "science",
         "természetvédelem",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "learning_objective": "Természetvédelem"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Természetvédelem - Kérdés 5: Természetvédelem",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "science",
         "természetvédelem",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "learning_objective": "Természetvédelem"
     }
   ],
   "rubrics": []

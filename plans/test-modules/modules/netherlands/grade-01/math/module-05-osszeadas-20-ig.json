@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-20-ig-1.0.0",
-    "name": "Összeadás 20-ig - Netherlands grade-01",
+    "name": "Addition to 20 - Netherlands grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "Toets van 45 minuten over Addition to 20 (grade-01). Onderwerpen: Tellen tot 10, Optellen tot 10, Aftrekken tot 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.788716+00:00",
-    "updated_at": "2026-10-21T11:02:24.788742+00:00",
+    "created_at": "2026-10-24T17:53:47.900064+00:00",
+    "updated_at": "2026-10-24T17:53:47.900072+00:00",
     "tags": [
       "math",
-      "összeadás-20-ig",
+      "addition-to-20",
       "grade-01",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "376b27a438e143e52eaefda8c9cb1832186352b6f9477d6de4de93d1b1fd8509",
+    "checksum": "474091bc33f812129f95c82a618c7ff8c8012f936def729397df284bbec2b97e",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Tellen tot 10",
+      "Optellen tot 10",
+      "Aftrekken tot 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 20-ig",
-    "description": "Test on Összeadás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition to 20",
+    "description": "Toets over Addition to 20: Tellen tot 10, Optellen tot 10, Aftrekken tot 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 1: Addition to 20",
+      "text": "[math] Addition to 20 - Vraag 1: Addition to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 2: Addition to 20",
+      "text": "[math] Addition to 20 - Vraag 2: Addition to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 3: Addition to 20",
+      "text": "[math] Addition to 20 - Vraag 3: Addition to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 20-ig - Kérdés 4: Addition to 20",
+      "text": "[math] Addition to 20 - Vraag 4: Addition to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Addition to 20.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 20-ig - Question 5: Addition to 20 [rand:1-20]",
+      "text": "[math] Addition to 20 - Vraag 5: Addition to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-20-ig",
+        "addition-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     }
   ],

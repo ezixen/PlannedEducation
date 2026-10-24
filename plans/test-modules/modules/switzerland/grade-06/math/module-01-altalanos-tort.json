@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-általános-tört-1.0.0",
-    "name": "Általános tört - Switzerland grade-06",
+    "name": "Allgemeine Brüche - Switzerland grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Általános tört for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minütige Prüfung zum Thema Allgemeine Brüche (grade-06). Themen: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.268793+00:00",
-    "updated_at": "2026-10-21T11:02:28.268806+00:00",
+    "created_at": "2026-10-24T17:53:49.935965+00:00",
+    "updated_at": "2026-10-24T17:53:49.935972+00:00",
     "tags": [
       "math",
-      "általános-tört",
+      "allgemeine-brüche",
       "grade-06",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "e408950caf763bc5df3e122f63ad3bfb4f674820143639f1ad77687d8cf0a6a8",
+    "checksum": "222d626c20977d9ca3f773bcd57cb801f67705db8b0c4c179699db7a26883655",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Allgemeine Brüche",
+      "Bruchoperationen",
+      "Prozentrechnung Grundlagen",
+      "Prozentberechnung",
+      "Proportionale Zuordnung"
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Általános tört",
-    "description": "Test on Általános tört including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Allgemeine Brüche",
+    "description": "Prüfung zum Thema Allgemeine Brüche: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 1: General fractions",
+      "text": "[math] Allgemeine Brüche - Frage 1: Allgemeine Brüche",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "allgemeine-brüche",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Allgemeine Brüche",
+      "learning_objective": "Allgemeine Brüche"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 2: General fractions",
+      "text": "[math] Allgemeine Brüche - Frage 2: Allgemeine Brüche",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "allgemeine-brüche",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Allgemeine Brüche",
+      "learning_objective": "Allgemeine Brüche"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 3: General fractions",
+      "text": "[math] Allgemeine Brüche - Frage 3: Allgemeine Brüche",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "allgemeine-brüche",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Allgemeine Brüche",
+      "learning_objective": "Allgemeine Brüche"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Általános tört - Kérdés 4: General fractions",
+      "text": "[math] Allgemeine Brüche - Frage 4: Allgemeine Brüche",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Általános tört témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Allgemeine Brüche.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "allgemeine-brüche",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Allgemeine Brüche",
+      "learning_objective": "Allgemeine Brüche"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Általános tört - Question 5: General fractions [rand:1-100]",
+      "text": "[math] Allgemeine Brüche - Frage 5: Allgemeine Brüche [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "általános-tört",
+        "allgemeine-brüche",
         "grade-06",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Általános tört",
-      "learning_objective": "General fractions"
+      "curriculum_topic": "SWITZERLAND-GRADE-06-MATH-Allgemeine Brüche",
+      "learning_objective": "Allgemeine Brüche"
     }
   ],
   "rubrics": []

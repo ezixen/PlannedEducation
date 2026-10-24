@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-ökológia-1.0.0",
-    "name": "Ökológia - Belgium grade-12",
+    "name": "Ecology - Belgium grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Ecology (grade-12). Onderwerpen: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.124628+00:00",
-    "updated_at": "2026-10-21T11:02:30.124641+00:00",
+    "created_at": "2026-10-24T17:53:51.069335+00:00",
+    "updated_at": "2026-10-24T17:53:51.069341+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ecology",
       "grade-12",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "71b0031b33b6b1fb2519a0ab2e786856969d53bd1fbf87b8b511fa8f88d28643",
+    "checksum": "7d210d948f47f78d286e3b47a145065a395b339ac3bf5e251bc0f2ae646f57f7",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Ökológia",
-    "description": "Test on Ökológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Ecology",
+    "description": "Toets over Ecology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ecology - Vraag 1: Ecology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ecology - Vraag 2: Ecology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ecology - Vraag 3: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ecology - Vraag 4: Ecology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ecology - Vraag 5: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "BELGIUM-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     }
   ],

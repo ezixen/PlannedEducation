@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-jog-alapok-1.0.0",
-    "name": "Jog alapok - Norway grade-08",
+    "name": "Law basics - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Jog alapok for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minutters prøve i Law basics (grade-08). Emner: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.482385+00:00",
-    "updated_at": "2026-10-21T11:02:26.482403+00:00",
+    "created_at": "2026-10-24T17:53:49.000044+00:00",
+    "updated_at": "2026-10-24T17:53:49.000051+00:00",
     "tags": [
       "civics",
-      "jog-alapok",
+      "law-basics",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "4ba166f5274ab2317e51ef0874fb2aafaa72ef40a01c1dca3040e3182caaa7f5",
+    "checksum": "ed9bcd6018ca11bc8f8bcdcc2f877e1da596edc42285de4daf87b459b9b86dde",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Jog alapok",
-    "description": "Test on Jog alapok including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Law basics",
+    "description": "Prøve i Law basics: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 1: Law basics",
+      "text": "[civics] Law basics - Spørsmål 1: Law basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "law-basics",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Jog alapok",
+      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Law basics",
       "learning_objective": "Law basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 2: Law basics",
+      "text": "[civics] Law basics - Spørsmål 2: Law basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "law-basics",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Jog alapok",
+      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Law basics",
       "learning_objective": "Law basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog alapok - Kérdés 3: Law basics",
+      "text": "[civics] Law basics - Spørsmål 3: Law basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Law basics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "law-basics",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Jog alapok",
+      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Law basics",
       "learning_objective": "Law basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 4: Law basics",
+      "text": "[civics] Law basics - Spørsmål 4: Law basics",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "law-basics",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Jog alapok",
+      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Law basics",
       "learning_objective": "Law basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 5: Law basics",
+      "text": "[civics] Law basics - Spørsmål 5: Law basics",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-alapok",
-        "grade-08"
+        "law-basics",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Jog alapok",
+      "curriculum_topic": "NORWAY-GRADE-08-CIVICS-Law basics",
       "learning_objective": "Law basics"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-civics-demokrácia-1.0.0",
-    "name": "Demokrácia - European Union grade-10",
+    "name": "Democracy - European Union grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minute assessment on Democracy for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.886490+00:00",
-    "updated_at": "2026-10-21T11:02:19.886512+00:00",
+    "created_at": "2026-10-24T17:53:47.355447+00:00",
+    "updated_at": "2026-10-24T17:53:47.355454+00:00",
     "tags": [
       "civics",
-      "demokrácia",
+      "democracy",
       "grade-10",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "44536e8e39deda45ce1bad027c0f25a38ca1d7b10c835267306164d77d836350",
+    "checksum": "be7d3d1af320c5193a7f821b83a3a00caa418fe1f75b0158a78d0a500f89e4f6",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Civics - Demokrácia",
-    "description": "Test on Demokrácia including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-10 Civics - Democracy",
+    "description": "Assessment on Democracy including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 1: Democracy",
+      "text": "[civics] Democracy - Question 1: Democracy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "EU-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 2: Democracy",
+      "text": "[civics] Democracy - Question 2: Democracy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "EU-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia - Kérdés 3: Democracy",
+      "text": "[civics] Democracy - Question 3: Democracy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Democracy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "EU-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 4: Democracy",
+      "text": "[civics] Democracy - Question 4: Democracy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "EU-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 5: Democracy",
+      "text": "[civics] Democracy - Question 5: Democracy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "EU-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     }
   ],

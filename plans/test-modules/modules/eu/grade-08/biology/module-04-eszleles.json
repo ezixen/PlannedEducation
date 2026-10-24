@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-észlelés-1.0.0",
-    "name": "Észlelés - European Union grade-08",
+    "name": "Perception - European Union grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Észlelés for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minute assessment on Perception for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.182855+00:00",
-    "updated_at": "2026-10-21T11:02:19.182868+00:00",
+    "created_at": "2026-10-24T17:53:47.227562+00:00",
+    "updated_at": "2026-10-24T17:53:47.227569+00:00",
     "tags": [
       "biology",
-      "észlelés",
+      "perception",
       "grade-08",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "80f0274435bc174d2ec45ec9eeb963bffeac7203acb46127cf861938f02acd32",
+    "checksum": "de1d82f22a6edb6678d38c67dd40ab3657bd86108c9923dbe9323a0833ee0b59",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Észlelés",
-    "description": "Test on Észlelés including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Perception",
+    "description": "Assessment on Perception including Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 1: Perception",
+      "text": "[biology] Perception - Question 1: Perception",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 2: Perception",
+      "text": "[biology] Perception - Question 2: Perception",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Észlelés - Kérdés 3: Perception",
+      "text": "[biology] Perception - Question 3: Perception",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észlelés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Perception.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 4: Perception",
+      "text": "[biology] Perception - Question 4: Perception",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Észlelés - Kérdés 5: Perception",
+      "text": "[biology] Perception - Question 5: Perception",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észlelés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Perception.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "EU-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     }
   ],

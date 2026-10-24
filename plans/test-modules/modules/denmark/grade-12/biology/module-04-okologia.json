@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-ökológia-1.0.0",
-    "name": "Ökológia - Denmark grade-12",
+    "name": "Ecology - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Ecology (grade-12). Emner: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.754226+00:00",
-    "updated_at": "2026-10-21T11:02:27.754237+00:00",
+    "created_at": "2026-10-24T17:53:49.785912+00:00",
+    "updated_at": "2026-10-24T17:53:49.785920+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ecology",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "c7e652edb9e5da39a68f8d729957e1753904bae0eeba2655e2ddbeb3e4c213ad",
+    "checksum": "deb972de1670e471276e6d944bbee14bf7a078f1c332aa86ec74d5caa36ceb39",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Ökológia",
-    "description": "Test on Ökológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Ecology",
+    "description": "Prøve i Ecology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ecology - Spørgsmål 1: Ecology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ecology - Spørgsmål 2: Ecology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ecology - Spørgsmål 3: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Ecology.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ecology - Spørgsmål 4: Ecology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ecology - Spørgsmål 5: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Ecology.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ecology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ökológia",
+      "curriculum_topic": "DENMARK-GRADE-12-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     }
   ],

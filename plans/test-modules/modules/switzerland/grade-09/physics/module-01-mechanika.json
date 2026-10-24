@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-mechanika-1.0.0",
-    "name": "Mechanika - Switzerland grade-09",
+    "name": "Mechanik - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minütige Prüfung zum Thema Mechanik (grade-09). Themen: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.547594+00:00",
-    "updated_at": "2026-10-21T11:02:28.547618+00:00",
+    "created_at": "2026-10-24T17:53:50.125069+00:00",
+    "updated_at": "2026-10-24T17:53:50.125076+00:00",
     "tags": [
       "physics",
-      "mechanika",
+      "mechanik",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "50b1c059770df33a24f8ad6765d443ab0eb0900fee5a9d61d40ab71a0f44fc7a",
+    "checksum": "7d8b0ea11e3ae0e1ccb348e0a8775968e2b6462f8f297f69c72cbfc2d3d84fbc",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Forces and motion",
-      "Energy",
-      "Waves",
-      "Optics"
+      "Mechanik",
+      "Kräfte und Bewegung",
+      "Energie",
+      "Wellen",
+      "Optik"
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Mechanika",
-    "description": "Test on Mechanika including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Mechanik",
+    "description": "Prüfung zum Thema Mechanik: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 1: Mechanics",
+      "text": "[physics] Mechanik - Frage 1: Mechanik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-09"
+        "mechanik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanik",
+      "learning_objective": "Mechanik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 2: Mechanics",
+      "text": "[physics] Mechanik - Frage 2: Mechanik",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-09"
+        "mechanik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanik",
+      "learning_objective": "Mechanik"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika - Kérdés 3: Mechanics",
+      "text": "[physics] Mechanik - Frage 3: Mechanik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Mechanik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-09"
+        "mechanik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanik",
+      "learning_objective": "Mechanik"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika - Question 4: Mechanics [rand:1-1000]",
+      "text": "[physics] Mechanik - Frage 4: Mechanik [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika",
+        "mechanik",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanik",
+      "learning_objective": "Mechanik"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 5: Mechanics",
+      "text": "[physics] Mechanik - Frage 5: Mechanik",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-09"
+        "mechanik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Mechanik",
+      "learning_objective": "Mechanik"
     }
   ],
   "rubrics": []

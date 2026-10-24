@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-geometria-1.0.0",
-    "name": "Geometria - Denmark grade-12",
+    "name": "Geometry - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minutters prøve i Geometry (grade-12). Emner: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.797607+00:00",
-    "updated_at": "2026-10-21T11:02:27.797619+00:00",
+    "created_at": "2026-10-24T17:53:49.824085+00:00",
+    "updated_at": "2026-10-24T17:53:49.824092+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometry",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "c4665222c92dffd515f3782ce13c3d22214ecc9c15881f79a21e63a003db3eaa",
+    "checksum": "39bbf8d0700b5fca7ac6f17917f7ebc2700738a0fefe42eb4428a31402edc4e0",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Geometria",
-    "description": "Test on Geometria including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Geometry",
+    "description": "Prøve i Geometry: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometry - Spørgsmål 1: Geometry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometry - Spørgsmål 2: Geometry",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometry - Spørgsmål 3: Geometry",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometry - Spørgsmål 4: Geometry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Geometry.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometry - Spørgsmål 5: Geometry [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometry",
         "grade-12",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Denmark grade-12",
+    "name": "World history - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i World history (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.786958+00:00",
-    "updated_at": "2026-10-21T11:02:27.786969+00:00",
+    "created_at": "2026-10-24T17:53:49.813651+00:00",
+    "updated_at": "2026-10-24T17:53:49.813661+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "423c0dfc41f60932773321e3e6f7aa3f900ee27707e4e8e63cb9abbd74a3b708",
+    "checksum": "f14e0edfac2a2bc22e1a940a312e6617b98b4206b761ec37c46f980043947931",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Világtörténet",
-    "description": "Test on Világtörténet including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - World history",
+    "description": "Prøve i World history: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Spørgsmål 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Spørgsmål 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Spørgsmål 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for World history.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Spørgsmål 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Spørgsmål 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

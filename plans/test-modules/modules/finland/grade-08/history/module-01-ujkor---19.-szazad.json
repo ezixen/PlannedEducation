@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-újkor---19.-század-1.0.0",
-    "name": "Újkor - 19. század - Finland grade-08",
+    "name": "Modern period - 19th century - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Újkor - 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45 minuutin koe aiheesta Modern period - 19th century (grade-08). Aiheet: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.344088+00:00",
-    "updated_at": "2026-10-21T11:02:24.344105+00:00",
+    "created_at": "2026-10-24T17:53:47.684980+00:00",
+    "updated_at": "2026-10-24T17:53:47.684987+00:00",
     "tags": [
       "history",
-      "újkor---19.-század",
+      "modern-period---19th-century",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "cb616f6abfbed7a8666dbfe281a1406d2113c4be210523bef395e5c584c32ef3",
+    "checksum": "3f102ba0404401a6e085bb99402f04aa14a66f7c225e4c78f5209cad305207af",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - Újkor - 19. század",
-    "description": "Test on Újkor - 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - Modern period - 19th century",
+    "description": "Koe aiheesta Modern period - 19th century: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 1: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Kysymys 1: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 2: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Kysymys 2: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Újkor - 19. század - Kérdés 3: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Kysymys 3: Modern period - 19th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Modern period - 19th century.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 4: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Kysymys 4: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 5: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Kysymys 5: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     }
   ],

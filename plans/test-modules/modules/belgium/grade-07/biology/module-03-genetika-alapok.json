@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-genetika-alapok-1.0.0",
-    "name": "Genetika alapok - Belgium grade-07",
+    "name": "Genetics basics - Belgium grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika alapok for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Genetics basics (grade-07). Onderwerpen: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.626067+00:00",
-    "updated_at": "2026-10-21T11:02:29.626080+00:00",
+    "created_at": "2026-10-24T17:53:50.788448+00:00",
+    "updated_at": "2026-10-24T17:53:50.788458+00:00",
     "tags": [
       "biology",
-      "genetika-alapok",
+      "genetics-basics",
       "grade-07",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "f6ba58f5e1f390983488e045d3e01c9acf68fe54d8e66416bbe6cb0b72f6c70c",
+    "checksum": "7f98b780357b40d11ea7ac05a42b18f13a5edd50609627db1481f7632fe98a7e",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Genetika alapok",
-    "description": "Test on Genetika alapok including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Genetics basics",
+    "description": "Toets over Genetics basics: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 1: Genetics basics",
+      "text": "[biology] Genetics basics - Vraag 1: Genetics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 2: Genetics basics",
+      "text": "[biology] Genetics basics - Vraag 2: Genetics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 3: Genetics basics",
+      "text": "[biology] Genetics basics - Vraag 3: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Genetics basics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 4: Genetics basics",
+      "text": "[biology] Genetics basics - Vraag 4: Genetics basics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 5: Genetics basics",
+      "text": "[biology] Genetics basics - Vraag 5: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Genetics basics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     }
   ],

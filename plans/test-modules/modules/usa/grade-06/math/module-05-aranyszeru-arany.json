@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-aranyszerű-arány-1.0.0",
-    "name": "Aranyszerű arány - USA grade-06",
+    "name": "Proportional ratio - USA grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Aranyszerű arány for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minute assessment on Proportional ratio for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.794505+00:00",
-    "updated_at": "2026-10-21T11:02:17.794516+00:00",
+    "created_at": "2026-10-24T17:53:46.225317+00:00",
+    "updated_at": "2026-10-24T17:53:46.225333+00:00",
     "tags": [
       "math",
-      "aranyszerű-arány",
+      "proportional-ratio",
       "grade-06",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "3e1bef1c4a019c00fbd86f4395e69de0d964a0794bab19191c040806e9cdcf32",
+    "checksum": "278bd8694c7e203660adf2955dc461dc905d89d2fad04178bec1104ab506325c",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Aranyszerű arány",
-    "description": "Test on Aranyszerű arány including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Proportional ratio",
+    "description": "Assessment on Proportional ratio including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 1: Proportional ratio",
+      "text": "[math] Proportional ratio - Question 1: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "USA-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 2: Proportional ratio",
+      "text": "[math] Proportional ratio - Question 2: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "USA-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 3: Proportional ratio",
+      "text": "[math] Proportional ratio - Question 3: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "USA-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Aranyszerű arány - Kérdés 4: Proportional ratio",
+      "text": "[math] Proportional ratio - Question 4: Proportional ratio",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Aranyszerű arány témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Proportional ratio.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "USA-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Aranyszerű arány - Question 5: Proportional ratio [rand:1-100]",
+      "text": "[math] Proportional ratio - Question 5: Proportional ratio [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "aranyszerű-arány",
+        "proportional-ratio",
         "grade-06",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "USA-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     }
   ],

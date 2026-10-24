@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-phonics-alapok-1.0.0",
-    "name": "Phonics alapok - Finland grade-01",
+    "name": "Phonics basics - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Phonics alapok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45 minuutin koe aiheesta Phonics basics (grade-01). Aiheet: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.915053+00:00",
-    "updated_at": "2026-10-21T11:02:23.915095+00:00",
+    "created_at": "2026-10-24T17:53:47.476361+00:00",
+    "updated_at": "2026-10-24T17:53:47.476369+00:00",
     "tags": [
       "english",
-      "phonics-alapok",
+      "phonics-basics",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "22f6bf3b2ffbf51e77d92affd48ffb0f9c5db6f9d944d68fa0726911c9131fd6",
+    "checksum": "590bb263ae71cd1d19b7e0a9f415cbc744cd5992b9df5a102a291b632ff4f7e1",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Phonics alapok",
-    "description": "Test on Phonics alapok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - Phonics basics",
+    "description": "Koe aiheesta Phonics basics: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 1: Phonics basics",
+      "text": "[english] Phonics basics - Kysymys 1: Phonics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 2: Phonics basics",
+      "text": "[english] Phonics basics - Kysymys 2: Phonics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Phonics alapok - Kérdés 3: Phonics basics",
+      "text": "[english] Phonics basics - Kysymys 3: Phonics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Phonics alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Phonics basics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 4: Phonics basics",
+      "text": "[english] Phonics basics - Kysymys 4: Phonics basics",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 5: Phonics basics",
+      "text": "[english] Phonics basics - Kysymys 5: Phonics basics",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     }
   ],

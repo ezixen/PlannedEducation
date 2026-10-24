@@ -11,12 +11,13 @@
     "tags": [
       "science",
       "energia-és-erő",
-      "grade-05"
+      "grade-05",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-05",
     "license": "CC-BY-4.0",
-    "checksum": "0e6a50d95c5430415a2999b2905f48ec05dd85c441f765ea209d608ed96408c2",
+    "checksum": "8aa9d42f3b19aaecd4d06a2a4e6485e7e39aeb7e65eb83fb820bb69c79ca755a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Munka",
       "Energiafajták",
       "Egyszerű gépek"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 05 Science - Energia és erő",

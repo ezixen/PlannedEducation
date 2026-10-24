@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-20.-század-1.0.0",
-    "name": "20. század - Switzerland grade-09",
+    "name": "20. Jahrhundert - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema 20. Jahrhundert (grade-09). Themen: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.525325+00:00",
-    "updated_at": "2026-10-21T11:02:28.525336+00:00",
+    "created_at": "2026-10-24T17:53:50.110907+00:00",
+    "updated_at": "2026-10-24T17:53:50.110915+00:00",
     "tags": [
       "history",
-      "20.-század",
+      "20.-jahrhundert",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "a2cba826d70f61794723d2e439c75d1a1e590adda97f214a27b9885b00034e66",
+    "checksum": "1a69aedc5e720be8cbfca1a1d16a7c1c8ce29448d51fa9a30ad50ad406126945",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of the 20th century",
-      "20th century",
-      "History",
-      "Historical events",
-      "World history"
+      "Geschichte des 20. Jahrhunderts",
+      "20. Jahrhundert",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-09 History - 20. század",
-    "description": "Test on 20. század including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - 20. Jahrhundert",
+    "description": "Prüfung zum Thema 20. Jahrhundert: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 1: 20th century",
+      "text": "[history] 20. Jahrhundert - Frage 1: 20. Jahrhundert",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20.-jahrhundert",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. század",
-      "learning_objective": "20th century"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. Jahrhundert",
+      "learning_objective": "20. Jahrhundert"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 2: 20th century",
+      "text": "[history] 20. Jahrhundert - Frage 2: 20. Jahrhundert",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20.-jahrhundert",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. század",
-      "learning_objective": "20th century"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. Jahrhundert",
+      "learning_objective": "20. Jahrhundert"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század - Kérdés 3: 20th century",
+      "text": "[history] 20. Jahrhundert - Frage 3: 20. Jahrhundert",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 20. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema 20. Jahrhundert.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20.-jahrhundert",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. század",
-      "learning_objective": "20th century"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. Jahrhundert",
+      "learning_objective": "20. Jahrhundert"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 4: 20th century",
+      "text": "[history] 20. Jahrhundert - Frage 4: 20. Jahrhundert",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20.-jahrhundert",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. század",
-      "learning_objective": "20th century"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. Jahrhundert",
+      "learning_objective": "20. Jahrhundert"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 5: 20th century",
+      "text": "[history] 20. Jahrhundert - Frage 5: 20. Jahrhundert",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20.-jahrhundert",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. század",
-      "learning_objective": "20th century"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-HISTORY-20. Jahrhundert",
+      "learning_objective": "20. Jahrhundert"
     }
   ],
   "rubrics": []

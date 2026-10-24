@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mű-1.0.0",
-    "name": "Mű - United Kingdom grade-08",
+    "name": "Work - United Kingdom grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mű for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Work for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.244596+00:00",
-    "updated_at": "2026-10-21T11:02:17.244618+00:00",
+    "created_at": "2026-10-24T17:53:45.915797+00:00",
+    "updated_at": "2026-10-24T17:53:45.915803+00:00",
     "tags": [
       "physics",
-      "mű",
+      "work",
       "grade-08",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "8d1ea4e6c537d7b9cfee61158a9fd5e48a4e8128959166c8441adebe06ee75ff",
+    "checksum": "deb513250b0c183e06b49f6b478c2d74e9b86ed6746513b2a56be6a7ed27366b",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mű",
-    "description": "Test on Mű including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Work",
+    "description": "Assessment on Work including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 1: Work",
+      "text": "[physics] Work - Question 1: Work",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "UK-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 2: Work",
+      "text": "[physics] Work - Question 2: Work",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "UK-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mű - Kérdés 3: Work",
+      "text": "[physics] Work - Question 3: Work",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mű témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Work.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "UK-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mű - Question 4: Work [rand:1-1000]",
+      "text": "[physics] Work - Question 4: Work [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mű",
+        "work",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "UK-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 5: Work",
+      "text": "[physics] Work - Question 5: Work",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "UK-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     }
   ],

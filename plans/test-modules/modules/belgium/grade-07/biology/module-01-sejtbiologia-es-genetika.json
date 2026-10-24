@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Belgium grade-07",
+    "name": "Cell biology and genetics - Belgium grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Cell biology and genetics (grade-07). Onderwerpen: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.621954+00:00",
-    "updated_at": "2026-10-21T11:02:29.621966+00:00",
+    "created_at": "2026-10-24T17:53:50.785270+00:00",
+    "updated_at": "2026-10-24T17:53:50.785278+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "cell-biology-and-genetics",
       "grade-07",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "951f9df8b84051d48af6f41a9e1187c7bc6e68a251ddf6cdeedc43119485cfa1",
+    "checksum": "7fb6e1ed8ace8dd0397d3fe4ce4fe159a71790cef752c526b8ee4d7986b36a32",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Cell biology and genetics",
+    "description": "Toets over Cell biology and genetics: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 3: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell biology and genetics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 5: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell biology and genetics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "BELGIUM-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     }
   ],

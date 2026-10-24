@@ -3,21 +3,25 @@
     "id": "grade-09-math-deriválás-1.0.0",
     "name": "Deriválás - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45 perces felmérő: Deriválás (grade-09). Témakörök: Függvények és határek, Deriválás, Integrálás, Valószínűség, Statisztika",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.468117+00:00",
-    "updated_at": "2026-10-21T11:02:35.468143+00:00",
+    "created_at": "2026-10-24T17:53:52.361148+00:00",
+    "updated_at": "2026-10-24T17:53:52.361153+00:00",
     "tags": [
       "math",
       "deriválás",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "b485be65e346fbbc728de1e897db0d866a44c65cb283c8ab1d719280fec343fc",
+    "checksum": "e75e4f957430e1a9610537350f938d7eed924969748e00ec9ab4424400d5a42a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Függvények és határek",
+      "Deriválás",
+      "Integrálás",
+      "Valószínűség",
+      "Statisztika"
     ]
   },
   "exam": {
     "title": "grade-09 Math - Deriválás",
-    "description": "Test on Deriválás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "Felmérő a(z) Deriválás témakörből (Függvények és határek, Deriválás, Integrálás, Valószínűség, Statisztika)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Deriválás - Kérdés 1: Deriválás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "deriválás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "learning_objective": "Deriválás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Deriválás - Kérdés 2: Deriválás",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "deriválás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "learning_objective": "Deriválás"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Deriválás - Kérdés 3: Deriválás",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "deriválás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "learning_objective": "Deriválás"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Deriválás - Kérdés 4: Deriválás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "deriválás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "learning_objective": "Deriválás"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-1000]",
+      "text": "[math] Deriválás - Kérdés 5: Deriválás [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "deriválás",
         "grade-09",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "learning_objective": "Deriválás"
     }
   ],
   "rubrics": []

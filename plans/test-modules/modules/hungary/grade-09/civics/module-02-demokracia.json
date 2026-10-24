@@ -3,21 +3,25 @@
     "id": "grade-09-civics-demokracia-1.0.0",
     "name": "Demokracia - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Demokracia for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45 perces felmérő: Demokracia (grade-09). Témakörök: Demokracia és piacgazdaság, Demokracia, Piacgazdaság, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.365458+00:00",
-    "updated_at": "2026-10-21T11:02:35.365478+00:00",
+    "created_at": "2026-10-24T17:53:52.308643+00:00",
+    "updated_at": "2026-10-24T17:53:52.308651+00:00",
     "tags": [
       "civics",
       "demokracia",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "989064a845b75f4452843e9cab6b7fedfdd55c3065141b53a079218a11ddeff2",
+    "checksum": "bc0bb351234415134d134d0c85c7133042bad581a04e92a2f360f65bf74fa6c6",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokracia és piacgazdaság",
+      "Demokracia",
+      "Piacgazdaság",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-09 Civics - Demokracia",
-    "description": "Test on Demokracia including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Felmérő a(z) Demokracia témakörből (Demokracia és piacgazdaság, Demokracia, Piacgazdaság, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia - Kérdés 1: Democracy",
+      "text": "[civics] Demokracia - Kérdés 1: Demokracia",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "demokracia",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Demokracia",
-      "learning_objective": "Democracy"
+      "learning_objective": "Demokracia"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia - Kérdés 2: Democracy",
+      "text": "[civics] Demokracia - Kérdés 2: Demokracia",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "demokracia",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Demokracia",
-      "learning_objective": "Democracy"
+      "learning_objective": "Demokracia"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokracia - Kérdés 3: Democracy",
+      "text": "[civics] Demokracia - Kérdés 3: Demokracia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Demokracia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "demokracia",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Demokracia",
-      "learning_objective": "Democracy"
+      "learning_objective": "Demokracia"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia - Kérdés 4: Democracy",
+      "text": "[civics] Demokracia - Kérdés 4: Demokracia",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "demokracia",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Demokracia",
-      "learning_objective": "Democracy"
+      "learning_objective": "Demokracia"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia - Kérdés 5: Democracy",
+      "text": "[civics] Demokracia - Kérdés 5: Demokracia",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "demokracia",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Demokracia",
-      "learning_objective": "Democracy"
+      "learning_objective": "Demokracia"
     }
   ],
   "rubrics": []

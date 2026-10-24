@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-deriválás-1.0.0",
-    "name": "Deriválás - Ireland grade-09",
+    "name": "Differentiation - Ireland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Differentiation for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.626747+00:00",
-    "updated_at": "2026-10-21T11:02:30.626759+00:00",
+    "created_at": "2026-10-24T17:53:51.393210+00:00",
+    "updated_at": "2026-10-24T17:53:51.393218+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentiation",
       "grade-09",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "273e0c74be89519175f68d9d1da513507c4a360e59cff0b44e949198b1536328",
+    "checksum": "7abbd1a498eada5ce48b04f34343805e6d86a3ec4c486a6a0269827809e975ef",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Deriválás",
-    "description": "Test on Deriválás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Differentiation",
+    "description": "Assessment on Differentiation including Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentiation - Question 1: Differentiation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "IRELAND-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentiation - Question 2: Differentiation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "IRELAND-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentiation - Question 3: Differentiation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "IRELAND-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentiation - Question 4: Differentiation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Differentiation.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "IRELAND-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-1000]",
+      "text": "[math] Differentiation - Question 5: Differentiation [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentiation",
         "grade-09",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "IRELAND-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     }
   ],

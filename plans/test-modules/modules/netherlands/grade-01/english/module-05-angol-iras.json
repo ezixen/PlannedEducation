@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-írás-1.0.0",
-    "name": "Angol írás - Netherlands grade-01",
+    "name": "English writing - Netherlands grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "Toets van 45 minuten over English writing (grade-01). Onderwerpen: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.776317+00:00",
-    "updated_at": "2026-10-21T11:02:24.776329+00:00",
+    "created_at": "2026-10-24T17:53:47.891326+00:00",
+    "updated_at": "2026-10-24T17:53:47.891337+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-01",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "a36b4cb75a4981fcbbef1527df68033da5afad648e9933afd3f3d3376e34f441",
+    "checksum": "275e2386f32fbae8e8bb08c8db910430e80a4c23efd62c5ad9fde06881752e92",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol írás",
-    "description": "Test on Angol írás including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English writing",
+    "description": "Toets over English writing: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Vraag 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Vraag 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Vraag 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English writing.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Vraag 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Vraag 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-01"
+        "english-writing",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol írás",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Germany grade-08",
+    "name": "Bürgerliches Recht - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Bürgerliches Recht (grade-08). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.413175+00:00",
-    "updated_at": "2026-10-21T11:02:16.413189+00:00",
+    "created_at": "2026-10-24T17:53:45.421335+00:00",
+    "updated_at": "2026-10-24T17:53:45.421349+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "bürgerliches-recht",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "55125bcb038af417ca8c95828d8eee60e4d41ca9600d63f1efeb21e8036f389b",
+    "checksum": "f8dbb7dae42e73b51d81def86530688521693ba9240a9cde7c67db169515671c",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Polgári jog",
-    "description": "Test on Polgári jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Bürgerliches Recht",
+    "description": "Prüfung zum Thema Bürgerliches Recht: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 1: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "bürgerliches-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 2: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "bürgerliches-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 3: Bürgerliches Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Bürgerliches Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "bürgerliches-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 4: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "bürgerliches-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 5: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "bürgerliches-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     }
   ],
   "rubrics": []

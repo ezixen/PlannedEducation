@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-1.0.0",
-    "name": "Földrajz - Norway grade-12",
+    "name": "Geography - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minutters prøve i Geography (grade-12). Emner: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.888240+00:00",
-    "updated_at": "2026-10-21T11:02:26.888254+00:00",
+    "created_at": "2026-10-24T17:53:49.236594+00:00",
+    "updated_at": "2026-10-24T17:53:49.236603+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geography",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "5db4fb4da8bb46e048d583591ff21563911540d4b49e8f592a896a1b6cb9b51e",
+    "checksum": "3c36ab18047741fa1d8885f40419467c480f7b9d6220f3513859ce5b690abb85",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz",
-    "description": "Test on Földrajz including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geography",
+    "description": "Prøve i Geography: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geography - Spørsmål 1: Geography",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geography - Spørsmål 2: Geography",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geography - Spørsmål 3: Geography",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Geography.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geography - Spørsmål 4: Geography",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geography - Spørsmål 5: Geography",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-12"
+        "geography",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-1.0.0",
-    "name": "Magyarország - Sweden grade-10",
+    "name": "Hungary - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minuters prov i Hungary (grade-10). Omfattar: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.002422+00:00",
-    "updated_at": "2026-10-21T11:02:26.002434+00:00",
+    "created_at": "2026-10-24T17:53:48.671418+00:00",
+    "updated_at": "2026-10-24T17:53:48.671437+00:00",
     "tags": [
       "history",
-      "magyarország",
+      "hungary",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "c7732040e7e73bb41f7eed2ab3b656c161a89c9460143d93c97b12213503f72d",
+    "checksum": "b4904e99c69ee9b22ce35821d26093254f3a1bdd58e44fe9da84f982923dcb26",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország",
-    "description": "Test on Magyarország including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - Hungary",
+    "description": "Prov i Hungary: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 1: Hungary",
+      "text": "[history] Hungary - Fråga 1: Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország",
-        "grade-10"
+        "hungary",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 2: Hungary",
+      "text": "[history] Hungary - Fråga 2: Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország",
-        "grade-10"
+        "hungary",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország - Kérdés 3: Hungary",
+      "text": "[history] Hungary - Fråga 3: Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Hungary.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország",
-        "grade-10"
+        "hungary",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 4: Hungary",
+      "text": "[history] Hungary - Fråga 4: Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország",
-        "grade-10"
+        "hungary",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 5: Hungary",
+      "text": "[history] Hungary - Fråga 5: Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország",
-        "grade-10"
+        "hungary",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Magyarország",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Hungary",
       "learning_objective": "Hungary"
     }
   ],

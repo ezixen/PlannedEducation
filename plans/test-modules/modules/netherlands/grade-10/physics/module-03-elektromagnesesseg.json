@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-elektromágnesesség-1.0.0",
-    "name": "Elektromágnesesség - Netherlands grade-10",
+    "name": "Electromagnetism - Netherlands grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "Toets van 45 minuten over Electromagnetism (grade-10). Onderwerpen: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.364082+00:00",
-    "updated_at": "2026-10-21T11:02:25.364093+00:00",
+    "created_at": "2026-10-24T17:53:48.254141+00:00",
+    "updated_at": "2026-10-24T17:53:48.254146+00:00",
     "tags": [
       "physics",
-      "elektromágnesesség",
+      "electromagnetism",
       "grade-10",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "6ed3718b497baeb35f4225c360ec637d24046b04d3222143a4fa74ef7ba4ffb0",
+    "checksum": "8ec42950678087ed2a0149d29ece7d220d28c1905d0c31a92dfa86837d2d277e",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Electromagnetism",
+    "description": "Toets over Electromagnetism: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Electromagnetism - Vraag 1: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Electromagnetism - Vraag 2: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Electromagnetism - Vraag 3: Electromagnetism",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Electromagnetism.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Electromagnetism - Vraag 4: Electromagnetism [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "elektromágnesesség",
+        "electromagnetism",
         "grade-10",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Electromagnetism - Vraag 5: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     }
   ],

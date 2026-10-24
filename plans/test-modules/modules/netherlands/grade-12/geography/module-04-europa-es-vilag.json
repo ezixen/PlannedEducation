@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Netherlands grade-12",
+    "name": "Europe and world - Netherlands grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "Toets van 45 minuten over Europe and world (grade-12). Onderwerpen: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.466119+00:00",
-    "updated_at": "2026-10-21T11:02:25.466180+00:00",
+    "created_at": "2026-10-24T17:53:48.310391+00:00",
+    "updated_at": "2026-10-24T17:53:48.310396+00:00",
     "tags": [
       "geography",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-12",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "341a726e06eef7cd757cbd8b6d6aba9610e8fa35313d96f1ee9ec5d5f804d378",
+    "checksum": "61ee30d4c64834753d43749cf68d3cde2cd23997132e12a2231d5823998419d0",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Európa és világ",
-    "description": "Test on Európa és világ including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Europe and world",
+    "description": "Toets over Europe and world: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[geography] Europe and world - Vraag 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[geography] Europe and world - Vraag 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[geography] Europe and world - Vraag 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Europe and world.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[geography] Europe and world - Vraag 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[geography] Europe and world - Vraag 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

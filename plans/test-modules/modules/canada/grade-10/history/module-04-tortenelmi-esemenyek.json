@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - Canada grade-10",
+    "name": "Historical events - Canada grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minute assessment on Historical events for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.915595+00:00",
-    "updated_at": "2026-10-21T11:02:15.915606+00:00",
+    "created_at": "2026-10-24T17:53:45.050718+00:00",
+    "updated_at": "2026-10-24T17:53:45.050726+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historical-events",
       "grade-10",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "7bd3fbc80c94f0ad3a8c50f2577bb9444133e6a31db463d5bd0b240daf4f9660",
+    "checksum": "c682d14faf587af63af91848534e0d2223d39cfefafc8247e6fcce08efef13b0",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Történelmi események",
-    "description": "Test on Történelmi események including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - Historical events",
+    "description": "Assessment on Historical events including History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historical events - Question 1: Historical events",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-10"
+        "historical-events",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Történelmi események",
+      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historical events - Question 2: Historical events",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-10"
+        "historical-events",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Történelmi események",
+      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historical events - Question 3: Historical events",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Historical events.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-10"
+        "historical-events",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Történelmi események",
+      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historical events - Question 4: Historical events",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-10"
+        "historical-events",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Történelmi események",
+      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historical events - Question 5: Historical events",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-10"
+        "historical-events",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Történelmi események",
+      "curriculum_topic": "CANADA-GRADE-10-HISTORY-Historical events",
       "learning_objective": "Historical events"
     }
   ],

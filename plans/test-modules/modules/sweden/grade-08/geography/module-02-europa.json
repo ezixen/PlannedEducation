@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-1.0.0",
-    "name": "Európa - Sweden grade-08",
+    "name": "Europe - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minuters prov i Europe (grade-08). Omfattar: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.812805+00:00",
-    "updated_at": "2026-10-21T11:02:25.812817+00:00",
+    "created_at": "2026-10-24T17:53:48.516321+00:00",
+    "updated_at": "2026-10-24T17:53:48.516331+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europe",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "5523d72ae9a70044dcb06af3bb1c6f93287e9133cbb0becb76f227af8ea8552a",
+    "checksum": "d86ff9469806ffb63bae6cbf98ff35c907b7b5dfdc00ac5142698932a1fef6ea",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa",
-    "description": "Test on Európa including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe",
+    "description": "Prov i Europe: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europe - Fråga 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europe - Fråga 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europe - Fråga 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Europe.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europe - Fråga 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europe - Fråga 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-polológia-és-jog-erettségi-1.0.0",
-    "name": "Polológia és jog-erettségi - Austria grade-12",
+    "name": "Politik und Recht - Austria grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Polológia és jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Politik und Recht (grade-12). Themen: Politik und Recht, Politikwissenschaft, Rechtskunde, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.410605+00:00",
-    "updated_at": "2026-10-21T11:02:29.410618+00:00",
+    "created_at": "2026-10-24T17:53:50.641703+00:00",
+    "updated_at": "2026-10-24T17:53:50.641711+00:00",
     "tags": [
       "civics",
-      "polológia-és-jog-erettségi",
+      "politik-und-recht",
       "grade-12",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "ab42514677fabf216b2ebe514ff33eeae84c15559c5047f20f2ae60e9d41cf86",
+    "checksum": "99d4cbde25e61990df1431c192d81bb7eb4417e386573cb99a4570017f96aa08",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Politology and law-maturity",
-      "Politology",
-      "Law-maturity",
-      "Civil law",
-      "State structure"
+      "Politik und Recht",
+      "Politikwissenschaft",
+      "Rechtskunde",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Polológia és jog-erettségi",
-    "description": "Test on Polológia és jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Politik und Recht",
+    "description": "Prüfung zum Thema Politik und Recht: Politik und Recht, Politikwissenschaft, Rechtskunde, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 1: Politology and law-maturity",
+      "text": "[civics] Politik und Recht - Frage 1: Politik und Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politik-und-recht",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Polológia és jog-erettségi",
-      "learning_objective": "Politology and law-maturity"
+      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Politik und Recht",
+      "learning_objective": "Politik und Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 2: Politology and law-maturity",
+      "text": "[civics] Politik und Recht - Frage 2: Politik und Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politik-und-recht",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Polológia és jog-erettségi",
-      "learning_objective": "Politology and law-maturity"
+      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Politik und Recht",
+      "learning_objective": "Politik und Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 3: Politology and law-maturity",
+      "text": "[civics] Politik und Recht - Frage 3: Politik und Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polológia és jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Politik und Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politik-und-recht",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Polológia és jog-erettségi",
-      "learning_objective": "Politology and law-maturity"
+      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Politik und Recht",
+      "learning_objective": "Politik und Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 4: Politology and law-maturity",
+      "text": "[civics] Politik und Recht - Frage 4: Politik und Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politik-und-recht",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Polológia és jog-erettségi",
-      "learning_objective": "Politology and law-maturity"
+      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Politik und Recht",
+      "learning_objective": "Politik und Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 5: Politology and law-maturity",
+      "text": "[civics] Politik und Recht - Frage 5: Politik und Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politik-und-recht",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Polológia és jog-erettségi",
-      "learning_objective": "Politology and law-maturity"
+      "curriculum_topic": "AUSTRIA-GRADE-12-CIVICS-Politik und Recht",
+      "learning_objective": "Politik und Recht"
     }
   ],
   "rubrics": []

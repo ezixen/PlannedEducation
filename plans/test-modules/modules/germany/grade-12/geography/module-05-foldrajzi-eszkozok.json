@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Germany grade-12",
+    "name": "Geographische Arbeitsmethoden - Germany grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Geographische Arbeitsmethoden (grade-12). Themen: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.795604+00:00",
-    "updated_at": "2026-10-21T11:02:16.795616+00:00",
+    "created_at": "2026-10-24T17:53:45.634861+00:00",
+    "updated_at": "2026-10-24T17:53:45.634872+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographische-arbeitsmethoden",
       "grade-12",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "b2510727874bd8fe71400a71b3de75854682dc25d93eb3af7790821236d223f6",
+    "checksum": "068b09c6332f73f3198c0a3f2b9978db92244f57fac535b3b309f6270188038c",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Geographie Abiturvorbereitung",
+      "Geographie",
+      "Geographisches Wissen",
+      "Europa und die Welt",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographische Arbeitsmethoden",
+    "description": "Prüfung zum Thema Geographische Arbeitsmethoden: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 1: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographische-arbeitsmethoden",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 2: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographische-arbeitsmethoden",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 3: Geographische Arbeitsmethoden",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographische Arbeitsmethoden.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographische-arbeitsmethoden",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 4: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographische-arbeitsmethoden",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 5: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographische-arbeitsmethoden",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "GERMANY-GRADE-12-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     }
   ],
   "rubrics": []

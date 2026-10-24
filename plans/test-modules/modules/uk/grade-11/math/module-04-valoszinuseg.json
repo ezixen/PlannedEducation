@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-valószínűség-1.0.0",
-    "name": "Valószínűség - United Kingdom grade-11",
+    "name": "Probability - United Kingdom grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Probability for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.453173+00:00",
-    "updated_at": "2026-10-21T11:02:17.453218+00:00",
+    "created_at": "2026-10-24T17:53:46.062962+00:00",
+    "updated_at": "2026-10-24T17:53:46.062968+00:00",
     "tags": [
       "math",
-      "valószínűség",
+      "probability",
       "grade-11",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "b1685ab8cc9af7f14e8b11c4fcb020c1a7475acd7e950abaaaeb91e8776b9404",
+    "checksum": "31273de554ff2534f1a6d84fdb8fe545f92aab5b39493df3d97768dacb08776a",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Valószínűség",
-    "description": "Test on Valószínűség including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Probability",
+    "description": "Assessment on Probability including Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 1: Probability",
+      "text": "[math] Probability - Question 1: Probability",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "UK-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 2: Probability",
+      "text": "[math] Probability - Question 2: Probability",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "UK-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 3: Probability",
+      "text": "[math] Probability - Question 3: Probability",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "UK-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség - Kérdés 4: Probability",
+      "text": "[math] Probability - Question 4: Probability",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Probability.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "UK-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség - Question 5: Probability [rand:1-100]",
+      "text": "[math] Probability - Question 5: Probability [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valószínűség",
+        "probability",
         "grade-11",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "UK-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     }
   ],

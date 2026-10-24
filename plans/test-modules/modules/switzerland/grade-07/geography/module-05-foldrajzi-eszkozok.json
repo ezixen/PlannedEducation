@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Switzerland grade-07",
+    "name": "Geographische Arbeitsmethoden - Switzerland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Geographische Arbeitsmethoden (grade-07). Themen: Geographische Kompetenzen, Geographie, Geographische Kompetenzen, Geographisches Wissen, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.327902+00:00",
-    "updated_at": "2026-10-21T11:02:28.327913+00:00",
+    "created_at": "2026-10-24T17:53:49.982558+00:00",
+    "updated_at": "2026-10-24T17:53:49.982567+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographische-arbeitsmethoden",
       "grade-07",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "fbeb3cadda0e2a0a57f6d0b0d8480da0fdd967b8e159e7b166efebefc60c40db",
+    "checksum": "c975617b3d6fd493577fcb844b85e31f64c2bc61fd941f4747bb0cb19103e345",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geographic skills",
-      "Geography",
-      "Geographic skills",
-      "Geographic knowledge",
-      "Geographic tools"
+      "Geographische Kompetenzen",
+      "Geographie",
+      "Geographische Kompetenzen",
+      "Geographisches Wissen",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographische Arbeitsmethoden",
+    "description": "Prüfung zum Thema Geographische Arbeitsmethoden: Geographische Kompetenzen, Geographie, Geographische Kompetenzen, Geographisches Wissen, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 1: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographische-arbeitsmethoden",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 2: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographische-arbeitsmethoden",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 3: Geographische Arbeitsmethoden",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographische Arbeitsmethoden.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographische-arbeitsmethoden",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 4: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographische-arbeitsmethoden",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographische Arbeitsmethoden - Frage 5: Geographische Arbeitsmethoden",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographische-arbeitsmethoden",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
-      "learning_objective": "Geographic tools"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-GEOGRAPHY-Geographische Arbeitsmethoden",
+      "learning_objective": "Geographische Arbeitsmethoden"
     }
   ],
   "rubrics": []

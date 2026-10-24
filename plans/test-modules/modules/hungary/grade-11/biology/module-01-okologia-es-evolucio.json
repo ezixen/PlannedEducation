@@ -11,12 +11,13 @@
     "tags": [
       "biology",
       "ökológia-és-evolúció",
-      "grade-11"
+      "grade-11",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
     "license": "CC-BY-4.0",
-    "checksum": "e431a9fd9daecbc7d0941f91d682354c61926ab7bd49eda4f9fe9613fc2a8bd6",
+    "checksum": "85d6617d89e4658273ee16b2d07bdd1734f764568e1743e608b339eb3f52e557",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Populációk",
       "Ökológiai rendszerek",
       "Evolúciós elmélet"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 11 Biology - Ökológia és evolúció",

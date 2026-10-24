@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-erettségi-1.0.0",
-    "name": "Történelem-erettségi - Norway grade-12",
+    "name": "History-maturity - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i History-maturity (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.899564+00:00",
-    "updated_at": "2026-10-21T11:02:26.899580+00:00",
+    "created_at": "2026-10-24T17:53:49.244165+00:00",
+    "updated_at": "2026-10-24T17:53:49.244174+00:00",
     "tags": [
       "history",
-      "történelem-erettségi",
+      "history-maturity",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "745ceee3d1bf6ae7f3b8b60dcd279a61f378e7bdd39bb458664c665076b2c519",
+    "checksum": "3b58149241f30ab2e078a4e9c0f3b1c8807baf184a267ed13bb15002128fc88e",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem-erettségi",
-    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History-maturity",
+    "description": "Prøve i History-maturity: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
+      "text": "[history] History-maturity - Spørsmål 1: History-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
+      "text": "[history] History-maturity - Spørsmål 2: History-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "text": "[history] History-maturity - Spørsmål 3: History-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for History-maturity.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
+      "text": "[history] History-maturity - Spørsmål 4: History-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
+      "text": "[history] History-maturity - Spørsmål 5: History-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     }
   ],

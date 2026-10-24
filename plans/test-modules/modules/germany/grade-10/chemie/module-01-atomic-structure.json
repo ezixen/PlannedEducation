@@ -8,11 +8,18 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["chemie", "atomstruktur", "bindung", "klasse-10", "deutschland"],
+    "tags": [
+      "chemie",
+      "atomstruktur",
+      "bindung",
+      "klasse-10",
+      "deutschland",
+      "de"
+    ],
     "subject": "chemie",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "b7936746851243e90efe15b99d04e4a4fbbe93098948e21bb2f40e0465634a7f",
     "curriculum": "deutschland-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +32,10 @@
       "Ionische und kovalente Bindung erklären",
       "Elektronenkonfiguration bestimmen",
       "Isotope identifizieren"
-    ]
+    ],
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany"
   },
   "exam": {
     "title": "Klasse 10 Chemie - Atomstruktur und Bindung",
@@ -51,12 +61,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Welches subatomare Teilchen hat eine positive Ladung?",
-      "options": ["Elektron", "Proton", "Neutron", "Ion"],
+      "options": [
+        "Elektron",
+        "Proton",
+        "Neutron",
+        "Ion"
+      ],
       "correct_answer": "Proton",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["atomstruktur", "proton", "ladung"],
+      "tags": [
+        "atomstruktur",
+        "proton",
+        "ladung"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-10-Chemie-Atomstruktur",
@@ -66,12 +85,21 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Elektronen befinden sich in:",
-      "options": ["Dem Kern", "Elektronenhüllen um den Kern", "Zwischen Protonen und Neutronen", "Im Zentrum des Atoms"],
+      "options": [
+        "Dem Kern",
+        "Elektronenhüllen um den Kern",
+        "Zwischen Protonen und Neutronen",
+        "Im Zentrum des Atoms"
+      ],
       "correct_answer": "Elektronenhüllen um den Kern",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["atomstruktur", "elektronen", "hüllen"],
+      "tags": [
+        "atomstruktur",
+        "elektronen",
+        "hüllen"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-10-Chemie-Atomstruktur",
@@ -81,12 +109,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Die Ordnungszahl eines Elements entspricht der Anzahl der:",
-      "options": ["Neutronen", "Protonen", "Elektronen", "Protonen + Neutronen"],
+      "options": [
+        "Neutronen",
+        "Protonen",
+        "Elektronen",
+        "Protonen + Neutronen"
+      ],
       "correct_answer": "Protonen",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["ordnungszahl", "protonen"],
+      "tags": [
+        "ordnungszahl",
+        "protonen"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-10-Chemie-Atomstruktur",
@@ -96,12 +132,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Isotope desselben Elements haben unterschiedliche Anzahlen von:",
-      "options": ["Protonen", "Elektronen", "Neutronen", "Protonen + Elektronen"],
+      "options": [
+        "Protonen",
+        "Elektronen",
+        "Neutronen",
+        "Protonen + Elektronen"
+      ],
       "correct_answer": "Neutronen",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["isotope", "neutronen"],
+      "tags": [
+        "isotope",
+        "neutronen"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-10-Chemie-Isotope",
@@ -111,12 +155,21 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Ionische Bindung tritt auf zwischen:",
-      "options": ["Zwei Nichtmetallen", "Einem Metall und einem Nichtmetall", "Zwei Metallen", "Zwei Edelgasen"],
+      "options": [
+        "Zwei Nichtmetallen",
+        "Einem Metall und einem Nichtmetall",
+        "Zwei Metallen",
+        "Zwei Edelgasen"
+      ],
       "correct_answer": "Einem Metall und einem Nichtmetall",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["ionische-bindung", "metall", "nichtmetall"],
+      "tags": [
+        "ionische-bindung",
+        "metall",
+        "nichtmetall"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-10-Chemie-Bindung",
@@ -126,12 +179,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Kovalente Bindung beinhaltet:",
-      "options": ["Übertragung von Elektronen", "Teilung von Elektronen", "Verlust von Elektronen", "Gewinn von Elektronen"],
+      "options": [
+        "Übertragung von Elektronen",
+        "Teilung von Elektronen",
+        "Verlust von Elektronen",
+        "Gewinn von Elektronen"
+      ],
       "correct_answer": "Teilung von Elektronen",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["kovalente-bindung", "elektronen"],
+      "tags": [
+        "kovalente-bindung",
+        "elektronen"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-10-Chemie-Bindung",
@@ -141,12 +202,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Die Elektronenkonfiguration von Natrium (Na, Ordnungszahl 11) ist:",
-      "options": ["2,8,1", "2,8,2", "2,7", "2,8,3"],
+      "options": [
+        "2,8,1",
+        "2,8,2",
+        "2,7",
+        "2,8,3"
+      ],
       "correct_answer": "2,8,1",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["elektronenkonfiguration", "natrium"],
+      "tags": [
+        "elektronenkonfiguration",
+        "natrium"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-10-Chemie-Elektronenkonfig",
@@ -156,12 +225,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Welches Element ist in Gruppe 1 des Periodensystems?",
-      "options": ["Sauerstoff", "Chlor", "Natrium", "Kohlenstoff"],
+      "options": [
+        "Sauerstoff",
+        "Chlor",
+        "Natrium",
+        "Kohlenstoff"
+      ],
       "correct_answer": "Natrium",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["periodensystem", "gruppe-1"],
+      "tags": [
+        "periodensystem",
+        "gruppe-1"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-10-Chemie-Periodensystem",
@@ -176,7 +253,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["ionische-bindung", "natriumchlorid", "elektronenübertragung"],
+      "tags": [
+        "ionische-bindung",
+        "natriumchlorid",
+        "elektronenübertragung"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-10-Chemie-Bindung",
@@ -191,7 +272,12 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["bindung", "vergleich", "ionisch", "kovalent"],
+      "tags": [
+        "bindung",
+        "vergleich",
+        "ionisch",
+        "kovalent"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "DE-10-Chemie-Bindung",
@@ -207,19 +293,35 @@
           "id": "c-009-1",
           "description": "Natrium verliert 1 Elektron → Na⁺",
           "points": 3,
-          "keywords": ["natrium", "verliert", "elektron", "Na+", "positiv"]
+          "keywords": [
+            "natrium",
+            "verliert",
+            "elektron",
+            "Na+",
+            "positiv"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Chlor gewinnt 1 Elektron → Cl⁻",
           "points": 3,
-          "keywords": ["chlor", "gewinnt", "elektron", "Cl-", "negativ"]
+          "keywords": [
+            "chlor",
+            "gewinnt",
+            "elektron",
+            "Cl-",
+            "negativ"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Entgegengesetzte Ladungen ziehen sich an → ionische Bindung",
           "points": 4,
-          "keywords": ["anziehen", "ionische-bindung", "entgegengesetzte-ladungen"]
+          "keywords": [
+            "anziehen",
+            "ionische-bindung",
+            "entgegengesetzte-ladungen"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +334,33 @@
           "id": "c-010-1",
           "description": "Ionisch: Metall + Nichtmetall, Elektronenübertragung",
           "points": 3,
-          "keywords": ["metall", "nichtmetall", "übertragung", "ionisch"]
+          "keywords": [
+            "metall",
+            "nichtmetall",
+            "übertragung",
+            "ionisch"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Kovalent: Nichtmetall + Nichtmetall, Elektronenteilung",
           "points": 3,
-          "keywords": ["nichtmetall", "teilung", "kovalent"]
+          "keywords": [
+            "nichtmetall",
+            "teilung",
+            "kovalent"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Gültige Beispiele (NaCl für ionisch, H₂O/CH₄ für kovalent)",
           "points": 4,
-          "keywords": ["NaCl", "H2O", "CH4", "beispiel"]
+          "keywords": [
+            "NaCl",
+            "H2O",
+            "CH4",
+            "beispiel"
+          ]
         }
       ],
       "total_points": 10

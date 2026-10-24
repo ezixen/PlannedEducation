@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-valószínűség-számítás-1.0.0",
-    "name": "Valószínűség-számítás - Denmark grade-12",
+    "name": "Probability calculation - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség-számítás for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minutters prøve i Probability calculation (grade-12). Emner: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.793268+00:00",
-    "updated_at": "2026-10-21T11:02:27.793280+00:00",
+    "created_at": "2026-10-24T17:53:49.820005+00:00",
+    "updated_at": "2026-10-24T17:53:49.820018+00:00",
     "tags": [
       "math",
-      "valószínűség-számítás",
+      "probability-calculation",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "e84b0750a0e9468408edbc3c8a662fe1e0b1a0dcd7c056f5ad7bc6fa35850c52",
+    "checksum": "b059a9e1d93c24c23d2111c58358febbd0ea1191ade8b3f4243c6a5528d43dc8",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Valószínűség-számítás",
-    "description": "Test on Valószínűség-számítás including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Probability calculation",
+    "description": "Prøve i Probability calculation: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 1: Probability calculation",
+      "text": "[math] Probability calculation - Spørgsmål 1: Probability calculation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 2: Probability calculation",
+      "text": "[math] Probability calculation - Spørgsmål 2: Probability calculation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 3: Probability calculation",
+      "text": "[math] Probability calculation - Spørgsmål 3: Probability calculation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség-számítás - Kérdés 4: Probability calculation",
+      "text": "[math] Probability calculation - Spørgsmål 4: Probability calculation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség-számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Probability calculation.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-12"
+        "probability-calculation",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség-számítás - Question 5: Probability calculation [rand:1-1000]",
+      "text": "[math] Probability calculation - Spørgsmål 5: Probability calculation [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valószínűség-számítás",
+        "probability-calculation",
         "grade-12",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-MATH-Valószínűség-számítás",
+      "curriculum_topic": "DENMARK-GRADE-12-MATH-Probability calculation",
       "learning_objective": "Probability calculation"
     }
   ],

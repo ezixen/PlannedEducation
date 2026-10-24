@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - Sweden grade-09",
+    "name": "Historical events - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minuters prov i Historical events (grade-09). Omfattar: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.917438+00:00",
-    "updated_at": "2026-10-21T11:02:25.917456+00:00",
+    "created_at": "2026-10-24T17:53:48.591264+00:00",
+    "updated_at": "2026-10-24T17:53:48.591281+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historical-events",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "efc527fb4efae7efec16256ded46b8a4eafcb9eea566eaee4d1cd0a0f513b5d3",
+    "checksum": "77a48e24dd4aa11ab2a4e4b2d121b459ff0f8b33c3f2c9a3a298dbfd847f06d9",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - Történelmi események",
-    "description": "Test on Történelmi események including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - Historical events",
+    "description": "Prov i Historical events: History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historical events - Fråga 1: Historical events",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historical events - Fråga 2: Historical events",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historical events - Fråga 3: Historical events",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Historical events.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historical events - Fråga 4: Historical events",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historical events - Fråga 5: Historical events",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-09"
+        "historical-events",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Történelmi események",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-Historical events",
       "learning_objective": "Historical events"
     }
   ],

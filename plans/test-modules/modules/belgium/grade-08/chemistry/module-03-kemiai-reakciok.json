@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-reakciók-1.0.0",
-    "name": "Kémiai reakciók - Belgium grade-08",
+    "name": "Chemical reactions - Belgium grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "Toets van 45 minuten over Chemical reactions (grade-08). Onderwerpen: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.735432+00:00",
-    "updated_at": "2026-10-21T11:02:29.735450+00:00",
+    "created_at": "2026-10-24T17:53:50.864247+00:00",
+    "updated_at": "2026-10-24T17:53:50.864257+00:00",
     "tags": [
       "chemistry",
-      "kémiai-reakciók",
+      "chemical-reactions",
       "grade-08",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "9545e3a2d29517a0746f88f193a4a0da72ed54e58ff03f8655b04600c0de9cf7",
+    "checksum": "21f8987f7f287d84606df66f6f0c21fc9a0e2d2df83948682e4a5d68caa46e85",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical reactions",
+    "description": "Toets over Chemical reactions: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Vraag 1: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Vraag 2: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Vraag 3: Chemical reactions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Chemical reactions.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-1000]",
+      "text": "[chemistry] Chemical reactions - Vraag 4: Chemical reactions [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
+        "chemical-reactions",
         "grade-08",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Vraag 5: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "BELGIUM-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     }
   ],

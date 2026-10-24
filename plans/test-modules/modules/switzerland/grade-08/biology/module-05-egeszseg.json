@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-egészség-1.0.0",
-    "name": "Egészség - Switzerland grade-08",
+    "name": "Gesundheit - Switzerland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minütige Prüfung zum Thema Gesundheit (grade-08). Themen: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.406644+00:00",
-    "updated_at": "2026-10-21T11:02:28.406656+00:00",
+    "created_at": "2026-10-24T17:53:50.022274+00:00",
+    "updated_at": "2026-10-24T17:53:50.022283+00:00",
     "tags": [
       "biology",
-      "egészség",
+      "gesundheit",
       "grade-08",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "096022f3b61457d3dc62faecea2db193ab788fa66b53c843d5b95ad83a717cc0",
+    "checksum": "4ee6f348008cb2d24d1eb31a12a8a80c3c602a9341e4c0bfb4d138b6cfa16cdd",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Menschlicher Körper und Gesundheit",
+      "Anatomie des Menschen",
+      "Sinnesorgane",
+      "Wahrnehmung",
+      "Gesundheit"
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Gesundheit",
+    "description": "Prüfung zum Thema Gesundheit: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Gesundheit - Frage 1: Gesundheit",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Gesundheit - Frage 2: Gesundheit",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Gesundheit - Frage 3: Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Gesundheit - Frage 4: Gesundheit",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Gesundheit - Frage 5: Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-BIOLOGY-Gesundheit",
+      "learning_objective": "Gesundheit"
     }
   ],
   "rubrics": []

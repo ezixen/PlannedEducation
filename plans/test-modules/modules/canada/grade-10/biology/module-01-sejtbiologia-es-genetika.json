@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Canada grade-10",
+    "name": "Cell biology and genetics - Canada grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Cell biology and genetics for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.857001+00:00",
-    "updated_at": "2026-10-21T11:02:15.857013+00:00",
+    "created_at": "2026-10-24T17:53:45.014118+00:00",
+    "updated_at": "2026-10-24T17:53:45.014127+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "cell-biology-and-genetics",
       "grade-10",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "b6aa830f5eac92b68cd0d2410c03f0211b6c7aae0a54ee2341ea2b947f6065ba",
+    "checksum": "c0383c107d034707254bf8dcfccb63d70f8ed5abce197b8af50a68d898e5bca6",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Cell biology and genetics",
+    "description": "Assessment on Cell biology and genetics including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 3: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell biology and genetics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 5: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell biology and genetics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "cell-biology-and-genetics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "CANADA-GRADE-10-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     }
   ],

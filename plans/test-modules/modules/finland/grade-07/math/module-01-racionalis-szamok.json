@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-racionális-számok-1.0.0",
-    "name": "Racionális számok - Finland grade-07",
+    "name": "Rational numbers - Finland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Racionális számok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45 minuutin koe aiheesta Rational numbers (grade-07). Aiheet: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.224281+00:00",
-    "updated_at": "2026-10-21T11:02:24.224293+00:00",
+    "created_at": "2026-10-24T17:53:47.623118+00:00",
+    "updated_at": "2026-10-24T17:53:47.623130+00:00",
     "tags": [
       "math",
-      "racionális-számok",
+      "rational-numbers",
       "grade-07",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "8a2520f71a04b0c1acf86cffa1acfada3540f719f4eaa4fc4d09849f9a591810",
+    "checksum": "31983b0f6015ca4aa5b6c3ab1d88431312c19782615307ef22d69cdbbfde7aeb",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Racionális számok",
-    "description": "Test on Racionális számok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Rational numbers",
+    "description": "Koe aiheesta Rational numbers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 1: Rational numbers",
+      "text": "[math] Rational numbers - Kysymys 1: Rational numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "FINLAND-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 2: Rational numbers",
+      "text": "[math] Rational numbers - Kysymys 2: Rational numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "FINLAND-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Racionális számok - Kérdés 3: Rational numbers",
+      "text": "[math] Rational numbers - Kysymys 3: Rational numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "FINLAND-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Racionális számok - Kérdés 4: Rational numbers",
+      "text": "[math] Rational numbers - Kysymys 4: Rational numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Racionális számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Rational numbers.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "racionális-számok",
-        "grade-07"
+        "rational-numbers",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "FINLAND-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Racionális számok - Question 5: Rational numbers [rand:1-100]",
+      "text": "[math] Rational numbers - Kysymys 5: Rational numbers [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "racionális-számok",
+        "rational-numbers",
         "grade-07",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-MATH-Racionális számok",
+      "curriculum_topic": "FINLAND-GRADE-07-MATH-Rational numbers",
       "learning_objective": "Rational numbers"
     }
   ],

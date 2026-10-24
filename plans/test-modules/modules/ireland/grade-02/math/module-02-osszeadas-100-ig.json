@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-összeadás-100-ig-1.0.0",
-    "name": "Összeadás 100-ig - Ireland grade-02",
+    "name": "Addition to 100 - Ireland grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minute assessment on Addition to 100 for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.206167+00:00",
-    "updated_at": "2026-10-21T11:02:30.206177+00:00",
+    "created_at": "2026-10-24T17:53:51.128837+00:00",
+    "updated_at": "2026-10-24T17:53:51.128849+00:00",
     "tags": [
       "math",
-      "összeadás-100-ig",
+      "addition-to-100",
       "grade-02",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "c3927b70695c7c6a8efe7e29e69d32642d40b4e790283e9e5a76cb75bf8569be",
+    "checksum": "3987ed16e43d5f1a7c0569b3ae86b488be060000e4927306355f8872bcf6b092",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Összeadás 100-ig",
-    "description": "Test on Összeadás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Addition to 100",
+    "description": "Assessment on Addition to 100 including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 1: Addition to 100",
+      "text": "[math] Addition to 100 - Question 1: Addition to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "IRELAND-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 2: Addition to 100",
+      "text": "[math] Addition to 100 - Question 2: Addition to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "IRELAND-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 3: Addition to 100",
+      "text": "[math] Addition to 100 - Question 3: Addition to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "IRELAND-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 100-ig - Kérdés 4: Addition to 100",
+      "text": "[math] Addition to 100 - Question 4: Addition to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Addition to 100.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "IRELAND-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 100-ig - Question 5: Addition to 100 [rand:1-20]",
+      "text": "[math] Addition to 100 - Question 5: Addition to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-100-ig",
+        "addition-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "IRELAND-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-english-angol-írás-1.0.0",
-    "name": "Angol írás - Sweden grade-04",
+    "name": "English writing - Sweden grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minuters prov i English writing (grade-04). Omfattar: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.588235+00:00",
-    "updated_at": "2026-10-21T11:02:25.588247+00:00",
+    "created_at": "2026-10-24T17:53:48.380691+00:00",
+    "updated_at": "2026-10-24T17:53:48.380696+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-04",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "1eaf2235912e030002fd2df6b0e9cdca54515c5fa3c0419cd0bec270ac29e45e",
+    "checksum": "876d40c6c8e8d14336371607e67875aa8986b86e011d3be975c163b9c8177611",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 English - Angol írás",
-    "description": "Test on Angol írás including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-04 English - English writing",
+    "description": "Prov i English writing: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Fråga 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-04"
+        "english-writing",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-Angol írás",
+      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Fråga 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-04"
+        "english-writing",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-Angol írás",
+      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Fråga 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för English writing.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-04"
+        "english-writing",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-Angol írás",
+      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Fråga 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-04"
+        "english-writing",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-Angol írás",
+      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Fråga 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-04"
+        "english-writing",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-Angol írás",
+      "curriculum_topic": "SWEDEN-GRADE-04-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

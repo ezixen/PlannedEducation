@@ -3,21 +3,25 @@
     "id": "grade-08-biology-egészség-1.0.0",
     "name": "Egészség - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45 perces felmérő: Egészség (grade-08). Témakörök: Embri test és egészség, Embri test szerkezete, Észek, Észlelés, Egészség",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.252714+00:00",
-    "updated_at": "2026-10-21T11:02:35.252724+00:00",
+    "created_at": "2026-10-24T17:53:52.251510+00:00",
+    "updated_at": "2026-10-24T17:53:52.251525+00:00",
     "tags": [
       "biology",
       "egészség",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "b9e011ae874b458c48b1e61071f81f0ff4647d9a0b6951cc6784a4c615ba318e",
+    "checksum": "734dc157566be2b21b685f6332aec98d23bd7850cfd65db0a6766ef5b14dd61f",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Embri test és egészség",
+      "Embri test szerkezete",
+      "Észek",
+      "Észlelés",
+      "Egészség"
     ]
   },
   "exam": {
     "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "Felmérő a(z) Egészség témakörből (Embri test és egészség, Embri test szerkezete, Észek, Észlelés, Egészség)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Egészség - Kérdés 1: Egészség",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "egészség",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "learning_objective": "Egészség"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Egészség - Kérdés 2: Egészség",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "egészség",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "learning_objective": "Egészség"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Egészség - Kérdés 3: Egészség",
       "options": null,
       "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "egészség",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "learning_objective": "Egészség"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Egészség - Kérdés 4: Egészség",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "egészség",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "learning_objective": "Egészség"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Egészség - Kérdés 5: Egészség",
       "options": null,
       "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "egészség",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-BIOLOGY-Egészség",
-      "learning_objective": "Health"
+      "learning_objective": "Egészség"
     }
   ],
   "rubrics": []

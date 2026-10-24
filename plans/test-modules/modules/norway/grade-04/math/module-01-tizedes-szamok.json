@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-tizedes-számok-1.0.0",
-    "name": "Tizedes számok - Norway grade-04",
+    "name": "Decimal numbers - Norway grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Tizedes számok for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minutters prøve i Decimal numbers (grade-04). Emner: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.283776+00:00",
-    "updated_at": "2026-10-21T11:02:26.283806+00:00",
+    "created_at": "2026-10-24T17:53:48.859049+00:00",
+    "updated_at": "2026-10-24T17:53:48.859060+00:00",
     "tags": [
       "math",
-      "tizedes-számok",
+      "decimal-numbers",
       "grade-04",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "ffdae2f6220b7356f86d0170a9ceec2c7a47547cd2a3cf13e9aa238ae66f5413",
+    "checksum": "eab5e32001691cfafa8c606014d6f7b56d6679dd3cd2ff416394c0cf8a58883b",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Tizedes számok",
-    "description": "Test on Tizedes számok including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal numbers",
+    "description": "Prøve i Decimal numbers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 1: Decimal numbers",
+      "text": "[math] Decimal numbers - Spørsmål 1: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 2: Decimal numbers",
+      "text": "[math] Decimal numbers - Spørsmål 2: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 3: Decimal numbers",
+      "text": "[math] Decimal numbers - Spørsmål 3: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tizedes számok - Kérdés 4: Decimal numbers",
+      "text": "[math] Decimal numbers - Spørsmål 4: Decimal numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tizedes számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Decimal numbers.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tizedes számok - Question 5: Decimal numbers [rand:1-100]",
+      "text": "[math] Decimal numbers - Spørsmål 5: Decimal numbers [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "tizedes-számok",
+        "decimal-numbers",
         "grade-04",
-        "integer"
+        "integer",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "NORWAY-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     }
   ],

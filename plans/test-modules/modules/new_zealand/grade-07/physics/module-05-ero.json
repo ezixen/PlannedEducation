@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erő-1.0.0",
-    "name": "Erő - New Zealand grade-07",
+    "name": "Force - New Zealand grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minute assessment on Force for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.543101+00:00",
-    "updated_at": "2026-10-21T11:02:34.543112+00:00",
+    "created_at": "2026-10-24T17:53:51.728233+00:00",
+    "updated_at": "2026-10-24T17:53:51.728244+00:00",
     "tags": [
       "physics",
-      "erő",
+      "force",
       "grade-07",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "b70cd3823ad3788ca3548a69e11a93a5447f5fc69c35f49eac185a8fd2c8fce6",
+    "checksum": "8066d4ad857182b17fd1a11406f674b4f82457d87291674211b563b17688779b",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erő",
-    "description": "Test on Erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Force",
+    "description": "Assessment on Force including Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 1: Force",
+      "text": "[physics] Force - Question 1: Force",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 2: Force",
+      "text": "[physics] Force - Question 2: Force",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erő - Kérdés 3: Force",
+      "text": "[physics] Force - Question 3: Force",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erő témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Force.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erő - Question 4: Force [rand:1-100]",
+      "text": "[physics] Force - Question 4: Force [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erő",
+        "force",
         "grade-07",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 5: Force",
+      "text": "[physics] Force - Question 5: Force",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "force",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Erő",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-PHYSICS-Force",
       "learning_objective": "Force"
     }
   ],

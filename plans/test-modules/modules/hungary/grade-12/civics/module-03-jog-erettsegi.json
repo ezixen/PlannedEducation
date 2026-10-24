@@ -3,21 +3,25 @@
     "id": "grade-12-civics-jog-erettségi-1.0.0",
     "name": "Jog-erettségi - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45 perces felmérő: Jog-erettségi (grade-12). Témakörök: Polológia és jog-erettségi, Polológia, Jog-erettségi, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.663945+00:00",
-    "updated_at": "2026-10-21T11:02:35.663965+00:00",
+    "created_at": "2026-10-24T17:53:52.481516+00:00",
+    "updated_at": "2026-10-24T17:53:52.481523+00:00",
     "tags": [
       "civics",
       "jog-erettségi",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "af18cfbc34af7aeb60781d4b83b659251ea7e1b61a6cb64b7a234d757fae6c4a",
+    "checksum": "0e0649d75180537f6273f1dc3f7b56078b9c2eaeee2c997697dc3d212de12f44",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Politology and law-maturity",
-      "Politology",
-      "Law-maturity",
-      "Civil law",
-      "State structure"
+      "Polológia és jog-erettségi",
+      "Polológia",
+      "Jog-erettségi",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "Felmérő a(z) Jog-erettségi témakörből (Polológia és jog-erettségi, Polológia, Jog-erettségi, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Jog-erettségi - Kérdés 1: Jog-erettségi",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "jog-erettségi",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Jog-erettségi",
-      "learning_objective": "Law-maturity"
+      "learning_objective": "Jog-erettségi"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Jog-erettségi - Kérdés 2: Jog-erettségi",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "jog-erettségi",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Jog-erettségi",
-      "learning_objective": "Law-maturity"
+      "learning_objective": "Jog-erettségi"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Jog-erettségi - Kérdés 3: Jog-erettségi",
       "options": null,
       "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "jog-erettségi",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Jog-erettségi",
-      "learning_objective": "Law-maturity"
+      "learning_objective": "Jog-erettségi"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Jog-erettségi - Kérdés 4: Jog-erettségi",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "jog-erettségi",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Jog-erettségi",
-      "learning_objective": "Law-maturity"
+      "learning_objective": "Jog-erettségi"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Jog-erettségi - Kérdés 5: Jog-erettségi",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "jog-erettségi",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Jog-erettségi",
-      "learning_objective": "Law-maturity"
+      "learning_objective": "Jog-erettségi"
     }
   ],
   "rubrics": []

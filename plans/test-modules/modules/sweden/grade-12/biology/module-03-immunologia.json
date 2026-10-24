@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-immunológia-1.0.0",
-    "name": "Immunológia - Sweden grade-12",
+    "name": "Immunology - Sweden grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minuters prov i Immunology (grade-12). Omfattar: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.103398+00:00",
-    "updated_at": "2026-10-21T11:02:26.103410+00:00",
+    "created_at": "2026-10-24T17:53:48.757975+00:00",
+    "updated_at": "2026-10-24T17:53:48.757981+00:00",
     "tags": [
       "biology",
-      "immunológia",
+      "immunology",
       "grade-12",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e301501824383aa5484785a88b101aa668ae6c14d18c07043fcd2f60dfbd27c5",
+    "checksum": "5dddcd886f4b283d4eed2a8d0a09118334046b353e3b0c0a3f4d695a31e38e00",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Immunológia",
-    "description": "Test on Immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Immunology",
+    "description": "Prov i Immunology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 1: Immunology",
+      "text": "[biology] Immunology - Fråga 1: Immunology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 2: Immunology",
+      "text": "[biology] Immunology - Fråga 2: Immunology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 3: Immunology",
+      "text": "[biology] Immunology - Fråga 3: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Immunology.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 4: Immunology",
+      "text": "[biology] Immunology - Fråga 4: Immunology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 5: Immunology",
+      "text": "[biology] Immunology - Fråga 5: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Immunology.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     }
   ],

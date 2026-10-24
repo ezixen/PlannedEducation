@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Austria grade-12",
+    "name": "Geographisches Wissen - Austria grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Geographisches Wissen (grade-12). Themen: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.427821+00:00",
-    "updated_at": "2026-10-21T11:02:29.427834+00:00",
+    "created_at": "2026-10-24T17:53:50.650886+00:00",
+    "updated_at": "2026-10-24T17:53:50.650892+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographisches-wissen",
       "grade-12",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "b56779c45a32150e527193608ce94b474229ce7d8e09450b2ba871f3b43390d7",
+    "checksum": "9a92e67f69f036a4d066236804b9211dbf76cd4b428af8083d2ca4433f50c074",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Geographie Abiturvorbereitung",
+      "Geographie",
+      "Geographisches Wissen",
+      "Europa und die Welt",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographisches Wissen",
+    "description": "Prüfung zum Thema Geographisches Wissen: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 1: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographisches-wissen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 2: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographisches-wissen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 3: Geographisches Wissen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographisches Wissen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographisches-wissen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 4: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographisches-wissen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 5: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographisches-wissen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-12-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     }
   ],
   "rubrics": []

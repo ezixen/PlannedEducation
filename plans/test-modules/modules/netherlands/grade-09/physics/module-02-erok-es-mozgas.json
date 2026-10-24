@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-erők-és-mozgás-1.0.0",
-    "name": "Erők és mozgás - Netherlands grade-09",
+    "name": "Forces and motion - Netherlands grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Erők és mozgás for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "Toets van 45 minuten over Forces and motion (grade-09). Onderwerpen: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.278221+00:00",
-    "updated_at": "2026-10-21T11:02:25.278232+00:00",
+    "created_at": "2026-10-24T17:53:48.206376+00:00",
+    "updated_at": "2026-10-24T17:53:48.206383+00:00",
     "tags": [
       "physics",
-      "erők-és-mozgás",
+      "forces-and-motion",
       "grade-09",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "3e346dae20f35d1eca845a4122ce33ace3fedec3c3f147d01b736ea2b6e89600",
+    "checksum": "46196a24e24d98be92686add3f1a7be07bf1e2a193f41851b54b4a97e7503101",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Erők és mozgás",
-    "description": "Test on Erők és mozgás including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Forces and motion",
+    "description": "Toets over Forces and motion: Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 1: Forces and motion",
+      "text": "[physics] Forces and motion - Vraag 1: Forces and motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 2: Forces and motion",
+      "text": "[physics] Forces and motion - Vraag 2: Forces and motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők és mozgás - Kérdés 3: Forces and motion",
+      "text": "[physics] Forces and motion - Vraag 3: Forces and motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők és mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Forces and motion.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők és mozgás - Question 4: Forces and motion [rand:1-1000]",
+      "text": "[physics] Forces and motion - Vraag 4: Forces and motion [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők-és-mozgás",
+        "forces-and-motion",
         "grade-09",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 5: Forces and motion",
+      "text": "[physics] Forces and motion - Vraag 5: Forces and motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     }
   ],

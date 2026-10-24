@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-science-természet-1.0.0",
-    "name": "Természet - Norway grade-06",
+    "name": "Natur - Norway grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Natur (grade-06). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.345231+00:00",
-    "updated_at": "2026-10-21T11:02:26.345242+00:00",
+    "created_at": "2026-10-24T17:53:48.903834+00:00",
+    "updated_at": "2026-10-24T17:53:48.903841+00:00",
     "tags": [
       "science",
-      "természet",
+      "natur",
       "grade-06",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "science",
     "grade_level": "grade-06",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "fb1afc8ef68a756ced1aa5528a71d4a09f2416158353f68ce4378f8bb656c4bc",
+    "checksum": "aa83c660c7b3be832e68c9f32fda71b19e347bc8c18af3030dbb0498429cfaef",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturvern"
     ]
   },
   "exam": {
-    "title": "grade-06 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-06 Science - Natur",
+    "description": "Prøve i Natur: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Natur - Spørsmål 1: Natur",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-06"
+        "natur",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Natur - Spørsmål 2: Natur",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-06"
+        "natur",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Natur - Spørsmål 3: Natur",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Natur.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-06"
+        "natur",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Natur - Spørsmål 4: Natur",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-06"
+        "natur",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Natur - Spørsmål 5: Natur",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-06"
+        "natur",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NORWAY-GRADE-06-SCIENCE-Natur",
+      "learning_objective": "Natur"
     }
   ],
   "rubrics": []

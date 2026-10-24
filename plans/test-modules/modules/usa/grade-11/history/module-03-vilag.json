@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-világ-1.0.0",
-    "name": "Világ - USA grade-11",
+    "name": "World - USA grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minute assessment on World for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.248181+00:00",
-    "updated_at": "2026-10-21T11:02:18.248193+00:00",
+    "created_at": "2026-10-24T17:53:46.473968+00:00",
+    "updated_at": "2026-10-24T17:53:46.473975+00:00",
     "tags": [
       "history",
-      "világ",
+      "world",
       "grade-11",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "a18d945c72b436234e87c8012edff0421db0120266d4f563a51f6ae1889cc7c8",
+    "checksum": "c3e34b2cd0fbe8594682cf142c95a72d7d3b38f8b6ffaebd7337a7fed9d566ec",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Világ",
-    "description": "Test on Világ including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - World",
+    "description": "Assessment on World including History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 1: World",
+      "text": "[history] World - Question 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 2: World",
+      "text": "[history] World - Question 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világ - Kérdés 3: World",
+      "text": "[history] World - Question 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for World.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 4: World",
+      "text": "[history] World - Question 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 5: World",
+      "text": "[history] World - Question 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     }
   ],

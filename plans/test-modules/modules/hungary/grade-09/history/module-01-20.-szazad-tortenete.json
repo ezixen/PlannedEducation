@@ -3,21 +3,25 @@
     "id": "grade-09-history-20.-század-története-1.0.0",
     "name": "20. század története - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század története for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45 perces felmérő: 20. század története (grade-09). Témakörök: 20. század története, 20. század, Történelem, Történelmi események, Világtörténet",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.440573+00:00",
-    "updated_at": "2026-10-21T11:02:35.440593+00:00",
+    "created_at": "2026-10-24T17:53:52.352983+00:00",
+    "updated_at": "2026-10-24T17:53:52.352990+00:00",
     "tags": [
       "history",
       "20.-század-története",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "9853e60146a2301297c6d74c6a3f808f3fa3eb797d1d79568ac42fe680995a14",
+    "checksum": "a2561e0bb665f2a55e40643455aebad2b333ec3edb762f97baf644c9da8ba606",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of the 20th century",
-      "20th century",
-      "History",
-      "Historical events",
-      "World history"
+      "20. század története",
+      "20. század",
+      "Történelem",
+      "Történelmi események",
+      "Világtörténet"
     ]
   },
   "exam": {
     "title": "grade-09 History - 20. század története",
-    "description": "Test on 20. század története including History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "Felmérő a(z) 20. század története témakörből (20. század története, 20. század, Történelem, Történelmi események, Világtörténet)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 1: History of the 20th century",
+      "text": "[history] 20. század története - Kérdés 1: 20. század története",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "20.-század-története",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "learning_objective": "20. század története"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 2: History of the 20th century",
+      "text": "[history] 20. század története - Kérdés 2: 20. század története",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "20.-század-története",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "learning_objective": "20. század története"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század története - Kérdés 3: History of the 20th century",
+      "text": "[history] 20. század története - Kérdés 3: 20. század története",
       "options": null,
       "correct_answer": "Minta válasz a(z) 20. század története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "20.-század-története",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "learning_objective": "20. század története"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 4: History of the 20th century",
+      "text": "[history] 20. század története - Kérdés 4: 20. század története",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "20.-század-története",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "learning_objective": "20. század története"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század története - Kérdés 5: History of the 20th century",
+      "text": "[history] 20. század története - Kérdés 5: 20. század története",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "20.-század-története",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-HISTORY-20. század története",
-      "learning_objective": "History of the 20th century"
+      "learning_objective": "20. század története"
     }
   ],
   "rubrics": []

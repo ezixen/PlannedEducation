@@ -3,21 +3,25 @@
     "id": "grade-11-history-világ-1.0.0",
     "name": "Világ - Hungary grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45 perces felmérő: Világ (grade-11). Témakörök: Európa és világ története, Európa, Világ, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.613821+00:00",
-    "updated_at": "2026-10-21T11:02:35.613835+00:00",
+    "created_at": "2026-10-24T17:53:52.445207+00:00",
+    "updated_at": "2026-10-24T17:53:52.445212+00:00",
     "tags": [
       "history",
       "világ",
       "grade-11",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "882122846133ce959a96c157a19f93a17095ccb279d6c67f792f5941945d6c3c",
+    "checksum": "d5f5f94f56c288839660da3720a93e1e22378f57d0e5ce1bbff49402f23ec368",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Europe and the world",
-      "Europe",
-      "World",
-      "History",
-      "Historical events"
+      "Európa és világ története",
+      "Európa",
+      "Világ",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-11 History - Világ",
-    "description": "Test on Világ including History of Europe and the world, Europe, World, History, Historical events",
+    "description": "Felmérő a(z) Világ témakörből (Európa és világ története, Európa, Világ, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 1: World",
+      "text": "[history] Világ - Kérdés 1: Világ",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "világ",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "learning_objective": "Világ"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 2: World",
+      "text": "[history] Világ - Kérdés 2: Világ",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "világ",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "learning_objective": "Világ"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világ - Kérdés 3: World",
+      "text": "[history] Világ - Kérdés 3: Világ",
       "options": null,
       "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "világ",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "learning_objective": "Világ"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 4: World",
+      "text": "[history] Világ - Kérdés 4: Világ",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "világ",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "learning_objective": "Világ"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 5: World",
+      "text": "[history] Világ - Kérdés 5: Világ",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "világ",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "learning_objective": "Világ"
     }
   ],
   "rubrics": []

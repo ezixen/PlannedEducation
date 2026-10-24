@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagok-és-tulajdonságaik-1.0.0",
-    "name": "Anyagok és tulajdonságaik - Denmark grade-08",
+    "name": "Substances and properties - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagok és tulajdonságaik for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minutters prøve i Substances and properties (grade-08). Emner: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.406665+00:00",
-    "updated_at": "2026-10-21T11:02:27.406687+00:00",
+    "created_at": "2026-10-24T17:53:49.513308+00:00",
+    "updated_at": "2026-10-24T17:53:49.513316+00:00",
     "tags": [
       "chemistry",
-      "anyagok-és-tulajdonságaik",
+      "substances-and-properties",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "28293a39bf8be65d7b98704cdb4265ca082b3cabe7d041b90e9e02730f57623a",
+    "checksum": "eb7da8f25af61e302170870edd294ba166d224fa776ddbd7902e30265dbd79a1",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagok és tulajdonságaik",
-    "description": "Test on Anyagok és tulajdonságaik including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substances and properties",
+    "description": "Prøve i Substances and properties: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 1: Substances and properties",
+      "text": "[chemistry] Substances and properties - Spørgsmål 1: Substances and properties",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 2: Substances and properties",
+      "text": "[chemistry] Substances and properties - Spørgsmål 2: Substances and properties",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 3: Substances and properties",
+      "text": "[chemistry] Substances and properties - Spørgsmål 3: Substances and properties",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Substances and properties.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Question 4: Substances and properties [rand:1-1000]",
+      "text": "[chemistry] Substances and properties - Spørgsmål 4: Substances and properties [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
+        "substances-and-properties",
         "grade-08",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 5: Substances and properties",
+      "text": "[chemistry] Substances and properties - Spørgsmål 5: Substances and properties",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     }
   ],

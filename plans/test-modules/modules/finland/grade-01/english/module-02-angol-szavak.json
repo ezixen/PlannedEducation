@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-szavak-1.0.0",
-    "name": "Angol szavak - Finland grade-01",
+    "name": "English words - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szavak for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45 minuutin koe aiheesta English words (grade-01). Aiheet: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.917643+00:00",
-    "updated_at": "2026-10-21T11:02:23.917675+00:00",
+    "created_at": "2026-10-24T17:53:47.477727+00:00",
+    "updated_at": "2026-10-24T17:53:47.477733+00:00",
     "tags": [
       "english",
-      "angol-szavak",
+      "english-words",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "87ac0c5aa806127c9a92e21affd4102ba4c56ece7db65426b4e596946064defc",
+    "checksum": "7ba2fb77f420d79c3309fc8f183f15c382173172fe10c46427d47ddb981ec9bf",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol szavak",
-    "description": "Test on Angol szavak including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English words",
+    "description": "Koe aiheesta English words: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 1: English words",
+      "text": "[english] English words - Kysymys 1: English words",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 2: English words",
+      "text": "[english] English words - Kysymys 2: English words",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szavak - Kérdés 3: English words",
+      "text": "[english] English words - Kysymys 3: English words",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szavak témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen English words.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 4: English words",
+      "text": "[english] English words - Kysymys 4: English words",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 5: English words",
+      "text": "[english] English words - Kysymys 5: English words",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     }
   ],

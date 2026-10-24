@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - Netherlands grade-12",
+    "name": "Ecological systems - Netherlands grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Ecological systems (grade-12). Onderwerpen: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.443419+00:00",
-    "updated_at": "2026-10-21T11:02:25.443436+00:00",
+    "created_at": "2026-10-24T17:53:48.298036+00:00",
+    "updated_at": "2026-10-24T17:53:48.298042+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ecological-systems",
       "grade-12",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "e384e47b2834ebb28915ce366ac76f7731785d57fc135da3953c55c72329134c",
+    "checksum": "f31ed6520e0c342130a06b4b3971ccfd282ee4f5e60dfa11a66a5d8388e6268c",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Ecological systems",
+    "description": "Toets over Ecological systems: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 1: Ecological systems",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ecological-systems",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 2: Ecological systems",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ecological-systems",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 3: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecological systems.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ecological-systems",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 4: Ecological systems",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ecological-systems",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ecological systems - Vraag 5: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Ecological systems.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ecological-systems",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     }
   ],

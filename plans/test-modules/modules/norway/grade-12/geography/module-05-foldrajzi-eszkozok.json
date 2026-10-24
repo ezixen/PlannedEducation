@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Norway grade-12",
+    "name": "Geographic tools - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minutters prøve i Geographic tools (grade-12). Emner: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.896147+00:00",
-    "updated_at": "2026-10-21T11:02:26.896161+00:00",
+    "created_at": "2026-10-24T17:53:49.242433+00:00",
+    "updated_at": "2026-10-24T17:53:49.242441+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographic-tools",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "3ed1dab96cf270a99e07a436fb6d05be6cac1efff7816ce1ffaba84ad90cb0bc",
+    "checksum": "e59a694ea0d173b434fc57a52032e7759235f2fa24f25611e826bebc431403e2",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic tools",
+    "description": "Prøve i Geographic tools: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographic tools - Spørsmål 1: Geographic tools",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographic tools - Spørsmål 2: Geographic tools",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographic tools - Spørsmål 3: Geographic tools",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Geographic tools.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographic tools - Spørsmål 4: Geographic tools",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographic tools - Spørsmål 5: Geographic tools",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NORWAY-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     }
   ],

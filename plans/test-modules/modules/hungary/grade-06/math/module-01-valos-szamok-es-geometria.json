@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "valós-számok-és-geometria",
-      "grade-06"
+      "grade-06",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-06",
     "license": "CC-BY-4.0",
-    "checksum": "d89f5dd01ea56df93bd795787b5fb3534dde48b0fb28499b38dbe424eafcbedd",
+    "checksum": "a9afd341f494e767dfd42381a7b523c2a4f2e7615a65de83d10545307e5dd3d8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Gyökök",
       "Háromszögek",
       "Koordináta-rendszer"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 06 Math - Valós számok és geometria",

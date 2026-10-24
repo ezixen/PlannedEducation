@@ -8,11 +8,19 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["science", "nature", "environment", "year-4", "uk", "ks2"],
+    "tags": [
+      "science",
+      "nature",
+      "environment",
+      "year-4",
+      "uk",
+      "ks2",
+      "en"
+    ],
     "subject": "science",
     "grade_level": "grade-04",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "1462182252e101615ef91f8a745b71f3d028ecf4afa3a9c388461d2a65f27052",
     "curriculum": "uk-national-curriculum",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +33,10 @@
       "Understand seasons and weather",
       "Recognize plants and animals",
       "Understand environmental protection"
-    ]
+    ],
+    "language": "en",
+    "language_name": "English",
+    "country": "uk"
   },
   "exam": {
     "title": "Year 4 Science - Nature and Environment",
@@ -51,12 +62,20 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Which of these is a living thing?",
-      "options": ["A stone", "A tree", "A car", "A pencil"],
+      "options": [
+        "A stone",
+        "A tree",
+        "A car",
+        "A pencil"
+      ],
       "correct_answer": "A tree",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["living-things", "classification"],
+      "tags": [
+        "living-things",
+        "classification"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-LivingThings",
@@ -66,12 +85,20 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "What do plants need to grow?",
-      "options": ["Only water", "Only sunlight", "Water and sunlight", "Only soil"],
+      "options": [
+        "Only water",
+        "Only sunlight",
+        "Water and sunlight",
+        "Only soil"
+      ],
       "correct_answer": "Water and sunlight",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["plants", "needs"],
+      "tags": [
+        "plants",
+        "needs"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-Plants",
@@ -81,12 +108,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Which season has the coldest weather?",
-      "options": ["Spring", "Summer", "Autumn", "Winter"],
+      "options": [
+        "Spring",
+        "Summer",
+        "Autumn",
+        "Winter"
+      ],
       "correct_answer": "Winter",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["seasons", "weather"],
+      "tags": [
+        "seasons",
+        "weather"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-Seasons",
@@ -96,12 +131,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Which animal hibernates in winter?",
-      "options": ["Eagle", "Bear", "Dolphin", "Eagle"],
+      "options": [
+        "Eagle",
+        "Bear",
+        "Dolphin",
+        "Eagle"
+      ],
       "correct_answer": "Bear",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["animals", "hibernation"],
+      "tags": [
+        "animals",
+        "hibernation"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-Animals",
@@ -111,12 +154,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Which part of the plant absorbs water from soil?",
-      "options": ["Leaves", "Flowers", "Roots", "Stem"],
+      "options": [
+        "Leaves",
+        "Flowers",
+        "Roots",
+        "Stem"
+      ],
       "correct_answer": "Roots",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["plants", "parts"],
+      "tags": [
+        "plants",
+        "parts"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-PlantParts",
@@ -126,12 +177,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Which of these is NOT a living thing?",
-      "options": ["Dog", "Tree", "Rock", "Bird"],
+      "options": [
+        "Dog",
+        "Tree",
+        "Rock",
+        "Bird"
+      ],
       "correct_answer": "Rock",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["living-things", "classification"],
+      "tags": [
+        "living-things",
+        "classification"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-LivingThings",
@@ -141,12 +200,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Plants make their own food using:",
-      "options": ["Soil only", "Sunlight", "Rocks", "Wind"],
+      "options": [
+        "Soil only",
+        "Sunlight",
+        "Rocks",
+        "Wind"
+      ],
       "correct_answer": "Sunlight",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["plants", "photosynthesis"],
+      "tags": [
+        "plants",
+        "photosynthesis"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-04-Science-PlantFood",
@@ -156,12 +223,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Which of these does NOT need water?",
-      "options": ["Fish", "Plant", "Human", "Rock"],
+      "options": [
+        "Fish",
+        "Plant",
+        "Human",
+        "Rock"
+      ],
       "correct_answer": "Rock",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["water", "needs"],
+      "tags": [
+        "water",
+        "needs"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-04-Science-Water",
@@ -176,7 +251,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["plants", "drawing", "labeling"],
+      "tags": [
+        "plants",
+        "drawing",
+        "labeling"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "UK-04-Science-PlantParts",
@@ -191,7 +270,10 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["classification", "living-things"],
+      "tags": [
+        "classification",
+        "living-things"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "UK-04-Science-LivingThings",
@@ -207,19 +289,34 @@
           "id": "c-009-1",
           "description": "Drawing shows a plant with recognizable parts",
           "points": 4,
-          "keywords": ["plant", "drawing", "parts"]
+          "keywords": [
+            "plant",
+            "drawing",
+            "parts"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "At least 3 parts labeled correctly",
           "points": 3,
-          "keywords": ["roots", "stem", "leaves", "flowers", "labels"]
+          "keywords": [
+            "roots",
+            "stem",
+            "leaves",
+            "flowers",
+            "labels"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Each label includes correct function",
           "points": 3,
-          "keywords": ["function", "absorb", "support", "make food"]
+          "keywords": [
+            "function",
+            "absorb",
+            "support",
+            "make food"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +329,37 @@
           "id": "c-010-1",
           "description": "Names 3 living things correctly",
           "points": 3,
-          "keywords": ["dog", "tree", "human", "cat", "bird"]
+          "keywords": [
+            "dog",
+            "tree",
+            "human",
+            "cat",
+            "bird"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Names 3 non-living things correctly",
           "points": 3,
-          "keywords": ["rock", "car", "pencil", "book", "table"]
+          "keywords": [
+            "rock",
+            "car",
+            "pencil",
+            "book",
+            "table"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Explains why living things are alive (grow, need food/water)",
           "points": 4,
-          "keywords": ["grow", "food", "water", "alive", "breathe"]
+          "keywords": [
+            "grow",
+            "food",
+            "water",
+            "alive",
+            "breathe"
+          ]
         }
       ],
       "total_points": 10

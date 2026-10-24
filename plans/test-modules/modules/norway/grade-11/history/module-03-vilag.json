@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-világ-1.0.0",
-    "name": "Világ - Norway grade-11",
+    "name": "World - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minutters prøve i World (grade-11). Emner: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.776792+00:00",
-    "updated_at": "2026-10-21T11:02:26.776805+00:00",
+    "created_at": "2026-10-24T17:53:49.186997+00:00",
+    "updated_at": "2026-10-24T17:53:49.187004+00:00",
     "tags": [
       "history",
-      "világ",
+      "world",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "79b55844b444818e2afc446e91d1c4bbb8868d5ae4e7ec528bd757daa9f1c917",
+    "checksum": "92669a8bb365618ccbbea63b6b955d7e85ca4116c73f3bc0d2cbef2bb42e951e",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Világ",
-    "description": "Test on Világ including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - World",
+    "description": "Prøve i World: History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 1: World",
+      "text": "[history] World - Spørsmål 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 2: World",
+      "text": "[history] World - Spørsmål 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világ - Kérdés 3: World",
+      "text": "[history] World - Spørsmål 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for World.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 4: World",
+      "text": "[history] World - Spørsmål 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 5: World",
+      "text": "[history] World - Spørsmål 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     }
   ],

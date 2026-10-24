@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - New Zealand grade-07",
+    "name": "Cell biology and genetics - New Zealand grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Cell biology and genetics for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.471414+00:00",
-    "updated_at": "2026-10-21T11:02:34.471424+00:00",
+    "created_at": "2026-10-24T17:53:51.669466+00:00",
+    "updated_at": "2026-10-24T17:53:51.669480+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "cell-biology-and-genetics",
       "grade-07",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "bdc554b281690a0dcd174c951e7bc606d3d46d1f9928d842c2a775cb7638e262",
+    "checksum": "dc6f767316fc3c865feffb84e165a305340f9ea51ce9b7ccce60f098232102ae",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Cell biology and genetics",
+    "description": "Assessment on Cell biology and genetics including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 3: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell biology and genetics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Question 5: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell biology and genetics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-07"
+        "cell-biology-and-genetics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-07-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     }
   ],

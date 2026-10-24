@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-és-magyarország-1.0.0",
-    "name": "Európa és Magyarország - Germany grade-08",
+    "name": "Europa und Mitteleuropa - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minütige Prüfung zum Thema Europa und Mitteleuropa (grade-08). Themen: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.426881+00:00",
-    "updated_at": "2026-10-21T11:02:16.426891+00:00",
+    "created_at": "2026-10-24T17:53:45.430972+00:00",
+    "updated_at": "2026-10-24T17:53:45.430977+00:00",
     "tags": [
       "geography",
-      "európa-és-magyarország",
+      "europa-und-mitteleuropa",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "612a1dd60ae12e690939d2ece0e9a857a2288a9cd8f885b97b19ca0dd35bf4c3",
+    "checksum": "ae591b60bcddff8333d87f23be86c7d01c543fa2ba0b4caf7888899fe84bff82",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and Hungary",
-      "Europe",
-      "Hungary",
-      "Geography",
-      "Geographic knowledge"
+      "Europa und Mitteleuropa",
+      "Europa",
+      "Mitteleuropa",
+      "Geographie",
+      "Geographisches Wissen"
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa és Magyarország",
-    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europa und Mitteleuropa",
+    "description": "Prüfung zum Thema Europa und Mitteleuropa: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
+      "text": "[geography] Europa und Mitteleuropa - Frage 1: Europa und Mitteleuropa",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europa-und-mitteleuropa",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Europa und Mitteleuropa",
+      "learning_objective": "Europa und Mitteleuropa"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
+      "text": "[geography] Europa und Mitteleuropa - Frage 2: Europa und Mitteleuropa",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europa-und-mitteleuropa",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Europa und Mitteleuropa",
+      "learning_objective": "Europa und Mitteleuropa"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "text": "[geography] Europa und Mitteleuropa - Frage 3: Europa und Mitteleuropa",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Europa und Mitteleuropa.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europa-und-mitteleuropa",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Europa und Mitteleuropa",
+      "learning_objective": "Europa und Mitteleuropa"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
+      "text": "[geography] Europa und Mitteleuropa - Frage 4: Europa und Mitteleuropa",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europa-und-mitteleuropa",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Europa und Mitteleuropa",
+      "learning_objective": "Europa und Mitteleuropa"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
+      "text": "[geography] Europa und Mitteleuropa - Frage 5: Europa und Mitteleuropa",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europa-und-mitteleuropa",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Europa und Mitteleuropa",
+      "learning_objective": "Europa und Mitteleuropa"
     }
   ],
   "rubrics": []

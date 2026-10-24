@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-erők-és-mozgás-1.0.0",
-    "name": "Erők és mozgás - European Union grade-09",
+    "name": "Forces and motion - European Union grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Erők és mozgás for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minute assessment on Forces and motion for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.331681+00:00",
-    "updated_at": "2026-10-21T11:02:19.331692+00:00",
+    "created_at": "2026-10-24T17:53:47.331160+00:00",
+    "updated_at": "2026-10-24T17:53:47.331167+00:00",
     "tags": [
       "physics",
-      "erők-és-mozgás",
+      "forces-and-motion",
       "grade-09",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "e9838bda6d9aaa8b78af5a0c205d243c655786f660d4f44ed2fdc9e719b32df4",
+    "checksum": "c7487a0d8a32362c230869511c798fb14af98ae6cb653bb0d520a5d1bb8986d4",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Erők és mozgás",
-    "description": "Test on Erők és mozgás including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Forces and motion",
+    "description": "Assessment on Forces and motion including Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 1: Forces and motion",
+      "text": "[physics] Forces and motion - Question 1: Forces and motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "EU-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 2: Forces and motion",
+      "text": "[physics] Forces and motion - Question 2: Forces and motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "EU-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők és mozgás - Kérdés 3: Forces and motion",
+      "text": "[physics] Forces and motion - Question 3: Forces and motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők és mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Forces and motion.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "EU-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők és mozgás - Question 4: Forces and motion [rand:1-1000]",
+      "text": "[physics] Forces and motion - Question 4: Forces and motion [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők-és-mozgás",
+        "forces-and-motion",
         "grade-09",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "EU-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 5: Forces and motion",
+      "text": "[physics] Forces and motion - Question 5: Forces and motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-09"
+        "forces-and-motion",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-09-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "EU-GRADE-09-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     }
   ],

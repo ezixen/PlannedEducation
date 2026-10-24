@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-középkor-1.0.0",
-    "name": "Középkor - Australia grade-07",
+    "name": "Middle Ages - Australia grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Középkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minute assessment on Middle Ages for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.523449+00:00",
-    "updated_at": "2026-10-21T11:02:18.523462+00:00",
+    "created_at": "2026-10-24T17:53:46.657163+00:00",
+    "updated_at": "2026-10-24T17:53:46.657170+00:00",
     "tags": [
       "history",
-      "középkor",
+      "middle-ages",
       "grade-07",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "4a56f92f17c837c48f7f4c8d1a0782bd681a076c5545070774c183208368db5a",
+    "checksum": "a16a78be0ab1d7a74a29880a731a665cdc7a07ac2d6ef6812bd18642658c37b5",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Középkor",
-    "description": "Test on Középkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Middle Ages",
+    "description": "Assessment on Middle Ages including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 1: Middle Ages",
+      "text": "[history] Middle Ages - Question 1: Middle Ages",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 2: Middle Ages",
+      "text": "[history] Middle Ages - Question 2: Middle Ages",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Középkor - Kérdés 3: Middle Ages",
+      "text": "[history] Middle Ages - Question 3: Middle Ages",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Middle Ages.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 4: Middle Ages",
+      "text": "[history] Middle Ages - Question 4: Middle Ages",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 5: Middle Ages",
+      "text": "[history] Middle Ages - Question 5: Middle Ages",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     }
   ],

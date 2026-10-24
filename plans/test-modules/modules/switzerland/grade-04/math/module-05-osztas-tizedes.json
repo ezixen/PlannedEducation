@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-osztás-tizedes-1.0.0",
-    "name": "Osztás tizedes - Switzerland grade-04",
+    "name": "Dezimaldivision - Switzerland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minütige Prüfung zum Thema Dezimaldivision (grade-04). Themen: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.232492+00:00",
-    "updated_at": "2026-10-21T11:02:28.232515+00:00",
+    "created_at": "2026-10-24T17:53:49.906874+00:00",
+    "updated_at": "2026-10-24T17:53:49.906883+00:00",
     "tags": [
       "math",
-      "osztás-tizedes",
+      "dezimaldivision",
       "grade-04",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "27bbb1b423c7d186aa79f43275c942faa500fd9248fe4d79c944cd2182652af3",
+    "checksum": "2452130ee65ca4981bffc5dfcedd912d3069e9a1c4c399df4347ec41ecdb0b2c",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Dezimalzahlen",
+      "Dezimaladdition",
+      "Dezimalsubtraktion",
+      "Dezimalmultiplikation",
+      "Dezimaldivision"
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Osztás tizedes",
-    "description": "Test on Osztás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Dezimaldivision",
+    "description": "Prüfung zum Thema Dezimaldivision: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 1: Decimal division",
+      "text": "[math] Dezimaldivision - Frage 1: Dezimaldivision",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "dezimaldivision",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaldivision",
+      "learning_objective": "Dezimaldivision"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 2: Decimal division",
+      "text": "[math] Dezimaldivision - Frage 2: Dezimaldivision",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "dezimaldivision",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaldivision",
+      "learning_objective": "Dezimaldivision"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 3: Decimal division",
+      "text": "[math] Dezimaldivision - Frage 3: Dezimaldivision",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "dezimaldivision",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaldivision",
+      "learning_objective": "Dezimaldivision"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás tizedes - Kérdés 4: Decimal division",
+      "text": "[math] Dezimaldivision - Frage 4: Dezimaldivision",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Dezimaldivision.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "dezimaldivision",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaldivision",
+      "learning_objective": "Dezimaldivision"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás tizedes - Question 5: Decimal division [rand:1-100]",
+      "text": "[math] Dezimaldivision - Frage 5: Dezimaldivision [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "osztás-tizedes",
+        "dezimaldivision",
         "grade-04",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Osztás tizedes",
-      "learning_objective": "Decimal division"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaldivision",
+      "learning_objective": "Dezimaldivision"
     }
   ],
   "rubrics": []

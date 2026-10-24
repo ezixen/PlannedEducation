@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-hullamok-1.0.0",
-    "name": "Hullamok - Sweden grade-09",
+    "name": "Waves - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minuters prov i Waves (grade-09). Omfattar: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.945470+00:00",
-    "updated_at": "2026-10-21T11:02:25.945482+00:00",
+    "created_at": "2026-10-24T17:53:48.620136+00:00",
+    "updated_at": "2026-10-24T17:53:48.620153+00:00",
     "tags": [
       "physics",
-      "hullamok",
+      "waves",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "fed0a2293d702e053110d0fb1fb94ac5a2af012645c660aa62e0bb2d6cb477a2",
+    "checksum": "d12ea48f5e682c815b723d61a3bf6342e4861118a299f7814c6e222d65721b0e",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Hullamok",
-    "description": "Test on Hullamok including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Waves",
+    "description": "Prov i Waves: Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 1: Waves",
+      "text": "[physics] Waves - Fråga 1: Waves",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 2: Waves",
+      "text": "[physics] Waves - Fråga 2: Waves",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok - Kérdés 3: Waves",
+      "text": "[physics] Waves - Fråga 3: Waves",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Waves.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok - Question 4: Waves [rand:1-1000]",
+      "text": "[physics] Waves - Fråga 4: Waves [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok",
+        "waves",
         "grade-09",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 5: Waves",
+      "text": "[physics] Waves - Fråga 5: Waves",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "SWEDEN-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     }
   ],

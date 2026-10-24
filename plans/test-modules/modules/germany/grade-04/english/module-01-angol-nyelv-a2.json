@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-english-angol-nyelv-a2-1.0.0",
-    "name": "Angol nyelv A2 - Germany grade-04",
+    "name": "English language A2 - Germany grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv A2 for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English language A2 (grade-04). Themen: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.188815+00:00",
-    "updated_at": "2026-10-21T11:02:16.188836+00:00",
+    "created_at": "2026-10-24T17:53:45.211258+00:00",
+    "updated_at": "2026-10-24T17:53:45.211269+00:00",
     "tags": [
       "english",
-      "angol-nyelv-a2",
+      "english-language-a2",
       "grade-04",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "7d74a5ef9aabf3c6014f3334920d5bb0eae99fa9473678664cead47e9e161243",
+    "checksum": "257b69b26b7eccec18df887f87eedfecb1a9dc5b227d2590203c36a99604bb31",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 English - Angol nyelv A2",
-    "description": "Test on Angol nyelv A2 including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-04 English - English language A2",
+    "description": "Prüfung zum Thema English language A2: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 1: English language A2",
+      "text": "[english] English language A2 - Frage 1: English language A2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-04"
+        "english-language-a2",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 2: English language A2",
+      "text": "[english] English language A2 - Frage 2: English language A2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-04"
+        "english-language-a2",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv A2 - Kérdés 3: English language A2",
+      "text": "[english] English language A2 - Frage 3: English language A2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English language A2.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-04"
+        "english-language-a2",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 4: English language A2",
+      "text": "[english] English language A2 - Frage 4: English language A2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-04"
+        "english-language-a2",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 5: English language A2",
+      "text": "[english] English language A2 - Frage 5: English language A2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-04"
+        "english-language-a2",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "GERMANY-GRADE-04-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     }
   ],

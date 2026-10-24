@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-valószínűség-1.0.0",
-    "name": "Valószínűség - Switzerland grade-11",
+    "name": "Wahrscheinlichkeitsrechnung - Switzerland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Wahrscheinlichkeitsrechnung (grade-11). Themen: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.691854+00:00",
-    "updated_at": "2026-10-21T11:02:28.691866+00:00",
+    "created_at": "2026-10-24T17:53:50.219735+00:00",
+    "updated_at": "2026-10-24T17:53:50.219743+00:00",
     "tags": [
       "math",
-      "valószínűség",
+      "wahrscheinlichkeitsrechnung",
       "grade-11",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "8038a29cd37aa9a36d72a16c377cff41b36ab36a636ddfdc9fe318c9998af9ea",
+    "checksum": "d54fb28764b74101a42cb56b2a78e1bcc5744d10844c937a4e5c7c4b22c828dd",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Valószínűség",
-    "description": "Test on Valószínűség including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Wahrscheinlichkeitsrechnung",
+    "description": "Prüfung zum Thema Wahrscheinlichkeitsrechnung: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 1: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 1: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "wahrscheinlichkeitsrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 2: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 2: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "wahrscheinlichkeitsrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 3: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 3: Wahrscheinlichkeitsrechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "wahrscheinlichkeitsrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség - Kérdés 4: Probability",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 4: Wahrscheinlichkeitsrechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Wahrscheinlichkeitsrechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "wahrscheinlichkeitsrechnung",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség - Question 5: Probability [rand:1-100]",
+      "text": "[math] Wahrscheinlichkeitsrechnung - Frage 5: Wahrscheinlichkeitsrechnung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "valószínűség",
+        "wahrscheinlichkeitsrechnung",
         "grade-11",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Valószínűség",
-      "learning_objective": "Probability"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-MATH-Wahrscheinlichkeitsrechnung",
+      "learning_objective": "Wahrscheinlichkeitsrechnung"
     }
   ],
   "rubrics": []

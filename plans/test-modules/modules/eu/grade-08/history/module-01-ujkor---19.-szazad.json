@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-újkor---19.-század-1.0.0",
-    "name": "Újkor - 19. század - European Union grade-08",
+    "name": "Modern period - 19th century - European Union grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Újkor - 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45-minute assessment on Modern period - 19th century for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.244307+00:00",
-    "updated_at": "2026-10-21T11:02:19.244321+00:00",
+    "created_at": "2026-10-24T17:53:47.265613+00:00",
+    "updated_at": "2026-10-24T17:53:47.265622+00:00",
     "tags": [
       "history",
-      "újkor---19.-század",
+      "modern-period---19th-century",
       "grade-08",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "58436490585e80a96a7bb3bd7ad30ace95dd4d93b13c34c4aff8436838aa5c7f",
+    "checksum": "087f2128dc6fda0d3a8057b6c856c758292a4d954ca0ffbf6dd186e2ff684c6d",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - Újkor - 19. század",
-    "description": "Test on Újkor - 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - Modern period - 19th century",
+    "description": "Assessment on Modern period - 19th century including Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 1: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Question 1: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "EU-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 2: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Question 2: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "EU-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Újkor - 19. század - Kérdés 3: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Question 3: Modern period - 19th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor - 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Modern period - 19th century.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "EU-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 4: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Question 4: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "EU-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - 19. század - Kérdés 5: Modern period - 19th century",
+      "text": "[history] Modern period - 19th century - Question 5: Modern period - 19th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor---19.-század",
-        "grade-08"
+        "modern-period---19th-century",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-HISTORY-Újkor - 19. század",
+      "curriculum_topic": "EU-GRADE-08-HISTORY-Modern period - 19th century",
       "learning_objective": "Modern period - 19th century"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-12-biology-embri-fiziologia-és-immunológia-1.0.0",
     "name": "Embri fiziologia és immunológia - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri fiziologia és immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45 perces felmérő: Embri fiziologia és immunológia (grade-12). Témakörök: Embri fiziologia és immunológia, Embri test fiziológiája, Immunológia, Ökológia, Ökológiai rendszerek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.646513+00:00",
-    "updated_at": "2026-10-21T11:02:35.646553+00:00",
+    "created_at": "2026-10-24T17:53:52.472111+00:00",
+    "updated_at": "2026-10-24T17:53:52.472118+00:00",
     "tags": [
       "biology",
       "embri-fiziologia-és-immunológia",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "0d2e429af4cba0a67381309a3619c295d24303642e6a1f9cf33b3e15aed1b334",
+    "checksum": "f5bc6fedd8855c7592b986bbd1e3f8f2b6ab6831c1a86259c3569ca9c411c8f3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Embri fiziologia és immunológia",
+      "Embri test fiziológiája",
+      "Immunológia",
+      "Ökológia",
+      "Ökológiai rendszerek"
     ]
   },
   "exam": {
     "title": "grade-12 Biology - Embri fiziologia és immunológia",
-    "description": "Test on Embri fiziologia és immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "Felmérő a(z) Embri fiziologia és immunológia témakörből (Embri fiziologia és immunológia, Embri test fiziológiája, Immunológia, Ökológia, Ökológiai rendszerek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 1: Human physiology and immunology",
+      "text": "[biology] Embri fiziologia és immunológia - Kérdés 1: Embri fiziologia és immunológia",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "learning_objective": "Embri fiziologia és immunológia"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 2: Human physiology and immunology",
+      "text": "[biology] Embri fiziologia és immunológia - Kérdés 2: Embri fiziologia és immunológia",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "learning_objective": "Embri fiziologia és immunológia"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 3: Human physiology and immunology",
+      "text": "[biology] Embri fiziologia és immunológia - Kérdés 3: Embri fiziologia és immunológia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "learning_objective": "Embri fiziologia és immunológia"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 4: Human physiology and immunology",
+      "text": "[biology] Embri fiziologia és immunológia - Kérdés 4: Embri fiziologia és immunológia",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "learning_objective": "Embri fiziologia és immunológia"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 5: Human physiology and immunology",
+      "text": "[biology] Embri fiziologia és immunológia - Kérdés 5: Embri fiziologia és immunológia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "learning_objective": "Embri fiziologia és immunológia"
     }
   ],
   "rubrics": []

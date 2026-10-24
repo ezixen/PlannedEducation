@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Austria grade-08",
+    "name": "Geographisches Wissen - Austria grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minütige Prüfung zum Thema Geographisches Wissen (grade-08). Themen: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.082613+00:00",
-    "updated_at": "2026-10-21T11:02:29.082634+00:00",
+    "created_at": "2026-10-24T17:53:50.476888+00:00",
+    "updated_at": "2026-10-24T17:53:50.476894+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographisches-wissen",
       "grade-08",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "eb917b750960fdca42ba6e50d2a12b2ad44f0d868e351bb50c9ee735ba340b39",
+    "checksum": "bb7b0d8713440e310a7ebd3f117779dab8b25fdff6c0705e094643dccf5f4951",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and Hungary",
-      "Europe",
-      "Hungary",
-      "Geography",
-      "Geographic knowledge"
+      "Europa und Mitteleuropa",
+      "Europa",
+      "Mitteleuropa",
+      "Geographie",
+      "Geographisches Wissen"
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Geographisches Wissen",
+    "description": "Prüfung zum Thema Geographisches Wissen: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 1: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographisches-wissen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 2: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographisches-wissen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 3: Geographisches Wissen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographisches Wissen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographisches-wissen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 4: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographisches-wissen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographisches Wissen - Frage 5: Geographisches Wissen",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographisches-wissen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "curriculum_topic": "AUSTRIA-GRADE-08-GEOGRAPHY-Geographisches Wissen",
+      "learning_objective": "Geographisches Wissen"
     }
   ],
   "rubrics": []

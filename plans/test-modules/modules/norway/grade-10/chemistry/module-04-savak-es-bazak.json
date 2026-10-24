@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-savak-és-bazák-1.0.0",
-    "name": "Savak és bazák - Norway grade-10",
+    "name": "Acids and bases - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Savak és bazák for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minutters prøve i Acids and bases (grade-10). Emner: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.668739+00:00",
-    "updated_at": "2026-10-21T11:02:26.668758+00:00",
+    "created_at": "2026-10-24T17:53:49.113193+00:00",
+    "updated_at": "2026-10-24T17:53:49.113207+00:00",
     "tags": [
       "chemistry",
-      "savak-és-bazák",
+      "acids-and-bases",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "53d8c3676176dd6abf17f866ea0223cd4a5a1d1f2d478c84afa3325ac45008a9",
+    "checksum": "83df576fd4d61a8133a8cfd53af569ce6b7984ddfaed9d1fb9ef8ba526383dff",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Savak és bazák",
-    "description": "Test on Savak és bazák including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Acids and bases",
+    "description": "Prøve i Acids and bases: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 1: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørsmål 1: Acids and bases",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "acids-and-bases",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 2: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørsmål 2: Acids and bases",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "acids-and-bases",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Savak és bazák - Kérdés 3: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørsmål 3: Acids and bases",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Savak és bazák témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Acids and bases.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "acids-and-bases",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Savak és bazák - Question 4: Acids and bases [rand:1-100]",
+      "text": "[chemistry] Acids and bases - Spørsmål 4: Acids and bases [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
+        "acids-and-bases",
         "grade-10",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 5: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørsmål 5: Acids and bases",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "acids-and-bases",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     }
   ],

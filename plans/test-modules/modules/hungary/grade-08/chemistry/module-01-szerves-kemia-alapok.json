@@ -11,12 +11,13 @@
     "tags": [
       "chemistry",
       "szerves-kémia-alapok",
-      "grade-08"
+      "grade-08",
+      "hu"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "c305d2c68008a482ae91eb435cb58fdc987be9ee4500710aa91b45fc4327e815",
+    "checksum": "568ab4c3353a48d0d547fc5f79ce3b632bf9721566fe5f6d7618d0f4490c7191",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Szénvegyületek",
       "Élettani anyagok",
       "Környezetkémia"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 08 Chemistry - Szerves kémia alapok",

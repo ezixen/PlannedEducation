@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-mechanika-1.0.0",
-    "name": "Mechanika - Denmark grade-11",
+    "name": "Mechanics - Denmark grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minutters prøve i Mechanics (grade-11). Emner: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.737834+00:00",
-    "updated_at": "2026-10-21T11:02:27.737844+00:00",
+    "created_at": "2026-10-24T17:53:49.772080+00:00",
+    "updated_at": "2026-10-24T17:53:49.772091+00:00",
     "tags": [
       "physics",
-      "mechanika",
+      "mechanics",
       "grade-11",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "3bd7ba8833e4f77a694f8d02a49d5b4680d61ac9ad57ee31fbae5d986dc5e952",
+    "checksum": "a8a9e2d0fd77c003daeb5ef208282cc772d22f95205a7819e3d19c0d3dc7d275",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Mechanika",
-    "description": "Test on Mechanika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Mechanics",
+    "description": "Prøve i Mechanics: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 1: Mechanics",
+      "text": "[physics] Mechanics - Spørgsmål 1: Mechanics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-11"
+        "mechanics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanika",
+      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 2: Mechanics",
+      "text": "[physics] Mechanics - Spørgsmål 2: Mechanics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-11"
+        "mechanics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanika",
+      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika - Kérdés 3: Mechanics",
+      "text": "[physics] Mechanics - Spørgsmål 3: Mechanics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Mechanics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-11"
+        "mechanics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanika",
+      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika - Question 4: Mechanics [rand:1-100]",
+      "text": "[physics] Mechanics - Spørgsmål 4: Mechanics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika",
+        "mechanics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanika",
+      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 5: Mechanics",
+      "text": "[physics] Mechanics - Spørgsmål 5: Mechanics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-11"
+        "mechanics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanika",
+      "curriculum_topic": "DENMARK-GRADE-11-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     }
   ],

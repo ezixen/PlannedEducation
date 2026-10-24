@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
-    "name": "Számlálás 10-ig - United Kingdom grade-01",
+    "name": "Counting to 10 - United Kingdom grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minute assessment on Counting to 10 for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.842689+00:00",
-    "updated_at": "2026-10-21T11:02:16.842701+00:00",
+    "created_at": "2026-10-24T17:53:45.664509+00:00",
+    "updated_at": "2026-10-24T17:53:45.664517+00:00",
     "tags": [
       "math",
-      "számlálás-10-ig",
+      "counting-to-10",
       "grade-01",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "d8e43ddaae857da39ca10ed4892449791d949000970da4067a715a12cf446d38",
+    "checksum": "b66ccde99f4aca9aa661bae7a8bc412dd4d617e00de4e9e2fd9f742b95d55b2c",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Counting to 10",
+    "description": "Assessment on Counting to 10 including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Counting to 10 - Question 1: Counting to 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "counting-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Számlálás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Counting to 10",
       "learning_objective": "Counting to 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Counting to 10 - Question 2: Counting to 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "counting-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Számlálás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Counting to 10",
       "learning_objective": "Counting to 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Counting to 10 - Question 3: Counting to 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "counting-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Számlálás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Counting to 10",
       "learning_objective": "Counting to 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Counting to 10 - Question 4: Counting to 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Counting to 10.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "counting-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Számlálás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Counting to 10",
       "learning_objective": "Counting to 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Counting to 10 - Question 5: Counting to 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "számlálás-10-ig",
+        "counting-to-10",
         "grade-01",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-01-MATH-Számlálás 10-ig",
+      "curriculum_topic": "UK-GRADE-01-MATH-Counting to 10",
       "learning_objective": "Counting to 10"
     }
   ],

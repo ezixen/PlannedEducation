@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - USA grade-08",
+    "name": "English reading - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English reading for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.939169+00:00",
-    "updated_at": "2026-10-21T11:02:17.939180+00:00",
+    "created_at": "2026-10-24T17:53:46.331987+00:00",
+    "updated_at": "2026-10-24T17:53:46.331992+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "4a95d244a43004825c90d7db34b7ff4b97ee43575ed7244b16e3fc8f71b10b04",
+    "checksum": "8664bbfaba74b8bf174b8229a3633b00425e3b7a337d2510c253766eb9d1d1b8",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English reading",
+    "description": "Assessment on English reading including English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Question 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Question 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Question 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English reading.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Question 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Question 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "USA-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

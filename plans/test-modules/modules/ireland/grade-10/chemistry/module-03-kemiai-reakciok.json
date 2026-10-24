@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-kémiai-reakciók-1.0.0",
-    "name": "Kémiai reakciók - Ireland grade-10",
+    "name": "Chemical reactions - Ireland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minute assessment on Chemical reactions for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.670025+00:00",
-    "updated_at": "2026-10-21T11:02:30.670038+00:00",
+    "created_at": "2026-10-24T17:53:51.420387+00:00",
+    "updated_at": "2026-10-24T17:53:51.420400+00:00",
     "tags": [
       "chemistry",
-      "kémiai-reakciók",
+      "chemical-reactions",
       "grade-10",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "440895a7de3ce373b41662a854910dc80a87845d13c4b2108a6e521523d11215",
+    "checksum": "bd58210ccd2bcce3339e3dfd068c611e7913fb67b8533bcf93c8b88f26bef019",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Chemical reactions",
+    "description": "Assessment on Chemical reactions including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 1: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemical-reactions",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 2: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemical-reactions",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 3: Chemical reactions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Chemical reactions.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemical-reactions",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-100]",
+      "text": "[chemistry] Chemical reactions - Question 4: Chemical reactions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
+        "chemical-reactions",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Question 5: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-10"
+        "chemical-reactions",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     }
   ],

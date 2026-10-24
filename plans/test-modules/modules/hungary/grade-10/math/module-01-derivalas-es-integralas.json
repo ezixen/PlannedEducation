@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "deriválás-és-integrálás",
-      "grade-10"
+      "grade-10",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "0471a6647531e1e371ddbf6ad817314f6cc9e57ff12da93fd4adc97195c65e59",
+    "checksum": "d530f6d3c25c3b285b61a8a24c56ac8ff2cb85131ec6d4e3ca96826f8fbe997d",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Derivált",
       "Integrál",
       "Alkalmazások"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 10 Math - Deriválás és integrálás",

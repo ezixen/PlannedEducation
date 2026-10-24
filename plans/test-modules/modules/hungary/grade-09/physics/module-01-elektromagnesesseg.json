@@ -11,12 +11,13 @@
     "tags": [
       "physics",
       "elektromágnesesség",
-      "grade-09"
+      "grade-09",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
     "license": "CC-BY-4.0",
-    "checksum": "5ee6d0031497447254213a61c03c9450eed377e19e3261164329832b20f8225a",
+    "checksum": "3e18ae206314c089d373824615e07b254ac72bd5379b671304103eae0551967e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Elektrostatikus",
       "Áramkörök",
       "Mágneses mező"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 09 Physics - Elektromágnesesség",

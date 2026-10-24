@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-genetika-alapok-1.0.0",
-    "name": "Genetika alapok - Ireland grade-07",
+    "name": "Genetics basics - Ireland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika alapok for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Genetics basics for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.405975+00:00",
-    "updated_at": "2026-10-21T11:02:30.405984+00:00",
+    "created_at": "2026-10-24T17:53:51.225781+00:00",
+    "updated_at": "2026-10-24T17:53:51.225792+00:00",
     "tags": [
       "biology",
-      "genetika-alapok",
+      "genetics-basics",
       "grade-07",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "bfc58601a5e08452eb9d6949b8a94f5bfb456eac4d14ec65ff8b797bccd39834",
+    "checksum": "84ff7d75c9bf29f6f19bc89c32f9db2c9b35bb102e61a088966893509fc5aa4c",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Genetika alapok",
-    "description": "Test on Genetika alapok including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Genetics basics",
+    "description": "Assessment on Genetics basics including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 1: Genetics basics",
+      "text": "[biology] Genetics basics - Question 1: Genetics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 2: Genetics basics",
+      "text": "[biology] Genetics basics - Question 2: Genetics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 3: Genetics basics",
+      "text": "[biology] Genetics basics - Question 3: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Genetics basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 4: Genetics basics",
+      "text": "[biology] Genetics basics - Question 4: Genetics basics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 5: Genetics basics",
+      "text": "[biology] Genetics basics - Question 5: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Genetics basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "IRELAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     }
   ],

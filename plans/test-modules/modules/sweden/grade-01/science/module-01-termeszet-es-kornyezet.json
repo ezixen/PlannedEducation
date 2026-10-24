@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Sweden grade-01",
+    "name": "Natur och miljö - Sweden grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minuters prov i Natur och miljö (grade-01). Omfattar: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.520250+00:00",
-    "updated_at": "2026-10-21T11:02:25.520270+00:00",
+    "created_at": "2026-10-24T17:53:48.341119+00:00",
+    "updated_at": "2026-10-24T17:53:48.341124+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "natur-och-miljö",
       "grade-01",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "95411104c497cfb8685a7f42809803ecb23303086ddb3fada6d05553a961d55d",
+    "checksum": "7b0cbc592e28bd9c4ccd771e769ba506bf59c515b1f4feb1e971e6ca7ec35de4",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur och miljö",
+      "Växter och djur",
+      "Natur",
+      "Miljö",
+      "Naturskydd"
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Natur och miljö",
+    "description": "Prov i Natur och miljö: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Natur och miljö - Fråga 1: Natur och miljö",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-och-miljö",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Natur och miljö",
+      "learning_objective": "Natur och miljö"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Natur och miljö - Fråga 2: Natur och miljö",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-och-miljö",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Natur och miljö",
+      "learning_objective": "Natur och miljö"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Natur och miljö - Fråga 3: Natur och miljö",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Natur och miljö.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-och-miljö",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Natur och miljö",
+      "learning_objective": "Natur och miljö"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Natur och miljö - Fråga 4: Natur och miljö",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-och-miljö",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Natur och miljö",
+      "learning_objective": "Natur och miljö"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Natur och miljö - Fråga 5: Natur och miljö",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-och-miljö",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWEDEN-GRADE-01-SCIENCE-Natur och miljö",
+      "learning_objective": "Natur och miljö"
     }
   ],
   "rubrics": []

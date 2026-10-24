@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-kivonás-1000-ig-1.0.0",
-    "name": "Kivonás 1000-ig - USA grade-03",
+    "name": "Subtraction to 1000 - USA grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 1000-ig for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minute assessment on Subtraction to 1000 for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.719980+00:00",
-    "updated_at": "2026-10-21T11:02:17.719993+00:00",
+    "created_at": "2026-10-24T17:53:46.161410+00:00",
+    "updated_at": "2026-10-24T17:53:46.161420+00:00",
     "tags": [
       "math",
-      "kivonás-1000-ig",
+      "subtraction-to-1000",
       "grade-03",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "7b1e1f740f6b67d4b4beb35c1a9d7072bb74d20cc4a592923fe046efa273fed4",
+    "checksum": "99692e0fa128d00636575a43221a307eef363db017d34559856e70f13800a1f8",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Kivonás 1000-ig",
-    "description": "Test on Kivonás 1000-ig including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Subtraction to 1000",
+    "description": "Assessment on Subtraction to 1000 including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 1: Subtraction to 1000",
+      "text": "[math] Subtraction to 1000 - Question 1: Subtraction to 1000",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraction-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-03-MATH-Kivonás 1000-ig",
+      "curriculum_topic": "USA-GRADE-03-MATH-Subtraction to 1000",
       "learning_objective": "Subtraction to 1000"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 2: Subtraction to 1000",
+      "text": "[math] Subtraction to 1000 - Question 2: Subtraction to 1000",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraction-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-03-MATH-Kivonás 1000-ig",
+      "curriculum_topic": "USA-GRADE-03-MATH-Subtraction to 1000",
       "learning_objective": "Subtraction to 1000"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 1000-ig - Kérdés 3: Subtraction to 1000",
+      "text": "[math] Subtraction to 1000 - Question 3: Subtraction to 1000",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraction-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-03-MATH-Kivonás 1000-ig",
+      "curriculum_topic": "USA-GRADE-03-MATH-Subtraction to 1000",
       "learning_objective": "Subtraction to 1000"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 1000-ig - Kérdés 4: Subtraction to 1000",
+      "text": "[math] Subtraction to 1000 - Question 4: Subtraction to 1000",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 1000-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Subtraction to 1000.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-1000-ig",
-        "grade-03"
+        "subtraction-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-03-MATH-Kivonás 1000-ig",
+      "curriculum_topic": "USA-GRADE-03-MATH-Subtraction to 1000",
       "learning_objective": "Subtraction to 1000"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 1000-ig - Question 5: Subtraction to 1000 [rand:1-20]",
+      "text": "[math] Subtraction to 1000 - Question 5: Subtraction to 1000 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-1000-ig",
+        "subtraction-to-1000",
         "grade-03",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-03-MATH-Kivonás 1000-ig",
+      "curriculum_topic": "USA-GRADE-03-MATH-Subtraction to 1000",
       "learning_objective": "Subtraction to 1000"
     }
   ],

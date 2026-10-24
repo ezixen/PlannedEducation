@@ -3,21 +3,25 @@
     "id": "grade-04-math-tizedes-számok-1.0.0",
     "name": "Tizedes számok - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Tizedes számok for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 perces felmérő: Tizedes számok (grade-04). Témakörök: Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.062145+00:00",
-    "updated_at": "2026-10-21T11:02:35.062157+00:00",
+    "created_at": "2026-10-24T17:53:52.098345+00:00",
+    "updated_at": "2026-10-24T17:53:52.098351+00:00",
     "tags": [
       "math",
       "tizedes-számok",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "93c8261fc67eeb89a1e4ec90d1f0fed9b94d9f405a9e97f3a31d6c2a3e801aeb",
+    "checksum": "9460e4433e1af1eec0761ae94817456a32db0b9391745c910d1a75a45a39310d",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Tizedes számok",
+      "Összeadás tizedes",
+      "Kivonás tizedes",
+      "Szorzás tizedes",
+      "Osztás tizedes"
     ]
   },
   "exam": {
     "title": "grade-04 Math - Tizedes számok",
-    "description": "Test on Tizedes számok including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Felmérő a(z) Tizedes számok témakörből (Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 1: Decimal numbers",
+      "text": "[math] Tizedes számok - Kérdés 1: Tizedes számok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "tizedes-számok",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "learning_objective": "Tizedes számok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 2: Decimal numbers",
+      "text": "[math] Tizedes számok - Kérdés 2: Tizedes számok",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "tizedes-számok",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "learning_objective": "Tizedes számok"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 3: Decimal numbers",
+      "text": "[math] Tizedes számok - Kérdés 3: Tizedes számok",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "tizedes-számok",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "learning_objective": "Tizedes számok"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tizedes számok - Kérdés 4: Decimal numbers",
+      "text": "[math] Tizedes számok - Kérdés 4: Tizedes számok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Tizedes számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "tizedes-számok",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "learning_objective": "Tizedes számok"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tizedes számok - Question 5: Decimal numbers [rand:1-100]",
+      "text": "[math] Tizedes számok - Kérdés 5: Tizedes számok [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "tizedes-számok",
         "grade-04",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "learning_objective": "Tizedes számok"
     }
   ],
   "rubrics": []

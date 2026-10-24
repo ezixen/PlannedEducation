@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-európa-és-világ-története-1.0.0",
-    "name": "Európa és világ története - USA grade-11",
+    "name": "History of Europe and the world - USA grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ története for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minute assessment on History of Europe and the world for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.242980+00:00",
-    "updated_at": "2026-10-21T11:02:18.243003+00:00",
+    "created_at": "2026-10-24T17:53:46.471076+00:00",
+    "updated_at": "2026-10-24T17:53:46.471084+00:00",
     "tags": [
       "history",
-      "európa-és-világ-története",
+      "history-of-europe-and-the-world",
       "grade-11",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "bdc264faac4d91a4b450e562d910c49cc2cb28370f274a2e558b20ec9955e52b",
+    "checksum": "105dccccfdbd756e8194c05f161c498368386e262b8bc75f18a42efe44ad7b71",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Európa és világ története",
-    "description": "Test on Európa és világ története including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - History of Europe and the world",
+    "description": "Assessment on History of Europe and the world including History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 1: History of Europe and the world",
+      "text": "[history] History of Europe and the world - Question 1: History of Europe and the world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "history-of-europe-and-the-world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa és világ története",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-History of Europe and the world",
       "learning_objective": "History of Europe and the world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 2: History of Europe and the world",
+      "text": "[history] History of Europe and the world - Question 2: History of Europe and the world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "history-of-europe-and-the-world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa és világ története",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-History of Europe and the world",
       "learning_objective": "History of Europe and the world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ története - Kérdés 3: History of Europe and the world",
+      "text": "[history] History of Europe and the world - Question 3: History of Europe and the world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for History of Europe and the world.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "history-of-europe-and-the-world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa és világ története",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-History of Europe and the world",
       "learning_objective": "History of Europe and the world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 4: History of Europe and the world",
+      "text": "[history] History of Europe and the world - Question 4: History of Europe and the world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "history-of-europe-and-the-world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa és világ története",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-History of Europe and the world",
       "learning_objective": "History of Europe and the world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 5: History of Europe and the world",
+      "text": "[history] History of Europe and the world - Question 5: History of Europe and the world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "history-of-europe-and-the-world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa és világ története",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-History of Europe and the world",
       "learning_objective": "History of Europe and the world"
     }
   ],

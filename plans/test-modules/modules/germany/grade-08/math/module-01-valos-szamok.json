@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-valós-számok-1.0.0",
-    "name": "Valós számok - Germany grade-08",
+    "name": "Reelle Zahlen - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Valós számok for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minütige Prüfung zum Thema Reelle Zahlen (grade-08). Themen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.452007+00:00",
-    "updated_at": "2026-10-21T11:02:16.452028+00:00",
+    "created_at": "2026-10-24T17:53:45.446517+00:00",
+    "updated_at": "2026-10-24T17:53:45.446531+00:00",
     "tags": [
       "math",
-      "valós-számok",
+      "reelle-zahlen",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "9fc4ab422d8c1bcb726aae86cc8111a9d446e0303347b77187f68a1055c94556",
+    "checksum": "66c4087071b60e3c285a8da2cfddaa641b8e60625e7deb507f624a5e2019e616",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Reelle Zahlen",
+      "Funktionen",
+      "Lineare Gleichungen",
+      "Geometrie",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Valós számok",
-    "description": "Test on Valós számok including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Reelle Zahlen",
+    "description": "Prüfung zum Thema Reelle Zahlen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 1: Real numbers",
+      "text": "[math] Reelle Zahlen - Frage 1: Reelle Zahlen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "reelle-zahlen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Reelle Zahlen",
+      "learning_objective": "Reelle Zahlen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 2: Real numbers",
+      "text": "[math] Reelle Zahlen - Frage 2: Reelle Zahlen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "reelle-zahlen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Reelle Zahlen",
+      "learning_objective": "Reelle Zahlen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 3: Real numbers",
+      "text": "[math] Reelle Zahlen - Frage 3: Reelle Zahlen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "reelle-zahlen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Reelle Zahlen",
+      "learning_objective": "Reelle Zahlen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valós számok - Kérdés 4: Real numbers",
+      "text": "[math] Reelle Zahlen - Frage 4: Reelle Zahlen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valós számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Reelle Zahlen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "reelle-zahlen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Reelle Zahlen",
+      "learning_objective": "Reelle Zahlen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valós számok - Question 5: Real numbers [rand:1-1000]",
+      "text": "[math] Reelle Zahlen - Frage 5: Reelle Zahlen [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "valós-számok",
+        "reelle-zahlen",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Valós számok",
-      "learning_objective": "Real numbers"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Reelle Zahlen",
+      "learning_objective": "Reelle Zahlen"
     }
   ],
   "rubrics": []

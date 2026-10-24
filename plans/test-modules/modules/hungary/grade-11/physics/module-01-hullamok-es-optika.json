@@ -11,12 +11,13 @@
     "tags": [
       "physics",
       "hullámok-és-optika",
-      "grade-11"
+      "grade-11",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
     "license": "CC-BY-4.0",
-    "checksum": "b26ca969720bbb9f037dc9958a682bdd420ef5fc813664f2f0e4c8fbda19b1d9",
+    "checksum": "d107f03e04c3dad571c0684922e22e231a97eae5604579f9e3bd8789c85934a3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Hullámmechanika",
       "Geometriai optika",
       "Fizikai optika"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 11 Physics - Hullámok és optika",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erők-és-mozgás-1.0.0",
-    "name": "Erők és mozgás - Germany grade-07",
+    "name": "Kräfte und Bewegung - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erők és mozgás for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minütige Prüfung zum Thema Kräfte und Bewegung (grade-07). Themen: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.356159+00:00",
-    "updated_at": "2026-10-21T11:02:16.356178+00:00",
+    "created_at": "2026-10-24T17:53:45.380250+00:00",
+    "updated_at": "2026-10-24T17:53:45.380262+00:00",
     "tags": [
       "physics",
-      "erők-és-mozgás",
+      "kräfte-und-bewegung",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "9fb7a0f91338c0d369309a9ca535a9efba0f20f842e11ded0bb1683b00fa8286",
+    "checksum": "1efa02450f80d37a4550cd1f71d7b7ad9fc7b3a19b06ac81d2417a3b89cdd0a6",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energie und Kraft",
+      "Kräfte und Bewegung",
+      "Bewegung",
+      "Energie",
+      "Kraft"
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erők és mozgás",
-    "description": "Test on Erők és mozgás including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Kräfte und Bewegung",
+    "description": "Prüfung zum Thema Kräfte und Bewegung: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 1: Forces and motion",
+      "text": "[physics] Kräfte und Bewegung - Frage 1: Kräfte und Bewegung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "kräfte-und-bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Kräfte und Bewegung",
+      "learning_objective": "Kräfte und Bewegung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 2: Forces and motion",
+      "text": "[physics] Kräfte und Bewegung - Frage 2: Kräfte und Bewegung",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "kräfte-und-bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Kräfte und Bewegung",
+      "learning_objective": "Kräfte und Bewegung"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők és mozgás - Kérdés 3: Forces and motion",
+      "text": "[physics] Kräfte und Bewegung - Frage 3: Kräfte und Bewegung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők és mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Kräfte und Bewegung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "kräfte-und-bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Kräfte und Bewegung",
+      "learning_objective": "Kräfte und Bewegung"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők és mozgás - Question 4: Forces and motion [rand:1-100]",
+      "text": "[physics] Kräfte und Bewegung - Frage 4: Kräfte und Bewegung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők-és-mozgás",
+        "kräfte-und-bewegung",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Kräfte und Bewegung",
+      "learning_objective": "Kräfte und Bewegung"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 5: Forces and motion",
+      "text": "[physics] Kräfte und Bewegung - Frage 5: Kräfte und Bewegung",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "kräfte-und-bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Kräfte und Bewegung",
+      "learning_objective": "Kräfte und Bewegung"
     }
   ],
   "rubrics": []

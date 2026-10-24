@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-világ-1.0.0",
-    "name": "Világ - Ireland grade-09",
+    "name": "World - Ireland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minute assessment on World for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.607154+00:00",
-    "updated_at": "2026-10-21T11:02:30.607165+00:00",
+    "created_at": "2026-10-24T17:53:51.376883+00:00",
+    "updated_at": "2026-10-24T17:53:51.376891+00:00",
     "tags": [
       "geography",
-      "világ",
+      "world",
       "grade-09",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "65c113c2edd252c1330227381b4dd1a64db7e21b50dc52c66477432007954924",
+    "checksum": "1c84a3d8ae1a598497763e2b1c077e2e70294e3d205773424c69bf4c1d97633d",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Világ",
-    "description": "Test on Világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - World",
+    "description": "Assessment on World including Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 1: World",
+      "text": "[geography] World - Question 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 2: World",
+      "text": "[geography] World - Question 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Világ - Kérdés 3: World",
+      "text": "[geography] World - Question 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for World.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 4: World",
+      "text": "[geography] World - Question 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 5: World",
+      "text": "[geography] World - Question 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     }
   ],

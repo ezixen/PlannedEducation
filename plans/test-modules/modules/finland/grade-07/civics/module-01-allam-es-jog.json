@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - Finland grade-07",
+    "name": "State and law - Finland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45 minuutin koe aiheesta State and law (grade-07). Aiheet: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.164547+00:00",
-    "updated_at": "2026-10-21T11:02:24.164558+00:00",
+    "created_at": "2026-10-24T17:53:47.592148+00:00",
+    "updated_at": "2026-10-24T17:53:47.592156+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "state-and-law",
       "grade-07",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "4dabb7cdf0b742d1957fca079ba0558803a5c96d26085dd283ae06bdba55d732",
+    "checksum": "151e8841d3834bd8f77764ca8b9ad1bb1466eeb8fa23affa3b9dd067ed102b2c",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - State and law",
+    "description": "Koe aiheesta State and law: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] State and law - Kysymys 1: State and law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] State and law - Kysymys 2: State and law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] State and law - Kysymys 3: State and law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen State and law.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] State and law - Kysymys 4: State and law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] State and law - Kysymys 5: State and law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "FINLAND-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     }
   ],

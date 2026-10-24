@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-1.0.0",
-    "name": "Európa - Denmark grade-08",
+    "name": "Europe - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minutters prøve i Europe (grade-08). Emner: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.456636+00:00",
-    "updated_at": "2026-10-21T11:02:27.456664+00:00",
+    "created_at": "2026-10-24T17:53:49.556393+00:00",
+    "updated_at": "2026-10-24T17:53:49.556413+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europe",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "efc5c579d6cbd2d8c0c940fc90700056e6ae0016e049077fa93e630f18462b48",
+    "checksum": "a1faf1d09c51875571ce702545a5507a81ff76ddc7b76c05924bd0ebc9a4faf0",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa",
-    "description": "Test on Európa including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe",
+    "description": "Prøve i Europe: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europe - Spørgsmål 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europe - Spørgsmål 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europe - Spørgsmål 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Europe.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europe - Spørgsmål 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europe - Spørgsmål 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "DENMARK-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Canada grade-02",
+    "name": "Nature conservation - Canada grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature conservation for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.474624+00:00",
-    "updated_at": "2026-10-21T11:02:15.474633+00:00",
+    "created_at": "2026-10-24T17:53:44.774944+00:00",
+    "updated_at": "2026-10-24T17:53:44.774950+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "nature-conservation",
       "grade-02",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "5365114781dd6f6c68d76cddf0bb3b07c1e7f99b8dfccb140cfa8b4fd76b1f2b",
+    "checksum": "9d893bf80f23fc77cca7974a75f8fd856a98f586bde8bb555c27973dbb8a65fe",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Nature conservation",
+    "description": "Assessment on Nature conservation including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Nature conservation - Question 1: Nature conservation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "nature-conservation",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Természetvédelem",
+      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Nature conservation - Question 2: Nature conservation",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "nature-conservation",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Természetvédelem",
+      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Nature conservation - Question 3: Nature conservation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature conservation.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "nature-conservation",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Természetvédelem",
+      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Nature conservation - Question 4: Nature conservation",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "nature-conservation",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Természetvédelem",
+      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Nature conservation - Question 5: Nature conservation",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "nature-conservation",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Természetvédelem",
+      "curriculum_topic": "CANADA-GRADE-02-SCIENCE-Nature conservation",
       "learning_objective": "Nature conservation"
     }
   ],

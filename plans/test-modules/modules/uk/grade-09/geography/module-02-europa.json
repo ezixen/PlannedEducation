@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-európa-1.0.0",
-    "name": "Európa - United Kingdom grade-09",
+    "name": "Europe - United Kingdom grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minute assessment on Europe for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.274071+00:00",
-    "updated_at": "2026-10-21T11:02:17.274086+00:00",
+    "created_at": "2026-10-24T17:53:45.934787+00:00",
+    "updated_at": "2026-10-24T17:53:45.934796+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europe",
       "grade-09",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "0c5ad454169d6cd1c8beb232e7bec345a541e56fedfea3b84a06c65fbf69ecc5",
+    "checksum": "3b574eeaecc54c62a3175e592226aa48cbf46ceb7c60e7b0fd99399fc625a78f",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Európa",
-    "description": "Test on Európa including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Europe",
+    "description": "Assessment on Europe including Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europe - Question 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europe - Question 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europe - Question 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Europe.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europe - Question 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europe - Question 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europe",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Európa",
+      "curriculum_topic": "UK-GRADE-09-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     }
   ],

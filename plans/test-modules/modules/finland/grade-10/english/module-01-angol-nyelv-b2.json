@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-nyelv-b2-1.0.0",
-    "name": "Angol nyelv B2 - Finland grade-10",
+    "name": "English language B2 - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 minuutin koe aiheesta English language B2 (grade-10). Aiheet: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.548176+00:00",
-    "updated_at": "2026-10-21T11:02:24.548197+00:00",
+    "created_at": "2026-10-24T17:53:47.776628+00:00",
+    "updated_at": "2026-10-24T17:53:47.776634+00:00",
     "tags": [
       "english",
-      "angol-nyelv-b2",
+      "english-language-b2",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "8faf00c12dbc858fa1490bd30c01da83aa6a56461438fc54157e31ec03608fdb",
+    "checksum": "6d408619eef4fa9135fca2bd5cfba8242e25fa27c904b8632dfca7f820b408ee",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol nyelv B2",
-    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English language B2",
+    "description": "Koe aiheesta English language B2: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "text": "[english] English language B2 - Kysymys 1: English language B2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "text": "[english] English language B2 - Kysymys 2: English language B2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "text": "[english] English language B2 - Kysymys 3: English language B2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen English language B2.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "text": "[english] English language B2 - Kysymys 4: English language B2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "text": "[english] English language B2 - Kysymys 5: English language B2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "FINLAND-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     }
   ],

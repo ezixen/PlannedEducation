@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-genetika-alapok-1.0.0",
-    "name": "Genetika alapok - Austria grade-07",
+    "name": "Genetik Grundlagen - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika alapok for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Genetik Grundlagen (grade-07). Themen: Zellbiologie und Genetik, Zellaufbau, Genetik Grundlagen, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.929499+00:00",
-    "updated_at": "2026-10-21T11:02:28.929512+00:00",
+    "created_at": "2026-10-24T17:53:50.382992+00:00",
+    "updated_at": "2026-10-24T17:53:50.382998+00:00",
     "tags": [
       "biology",
-      "genetika-alapok",
+      "genetik-grundlagen",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "5beb8adbdd806ea9fd8d6a2b4d95bbcb8aaa962ba16257d41d2f7be16b38da41",
+    "checksum": "44135498ba22881b4aa7c7d68cab13c1f44597585dbbc049278f6c58443a62e5",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics basics",
-      "Ecology",
-      "Ecological systems"
+      "Zellbiologie und Genetik",
+      "Zellaufbau",
+      "Genetik Grundlagen",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Genetika alapok",
-    "description": "Test on Genetika alapok including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Genetik Grundlagen",
+    "description": "Prüfung zum Thema Genetik Grundlagen: Zellbiologie und Genetik, Zellaufbau, Genetik Grundlagen, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 1: Genetics basics",
+      "text": "[biology] Genetik Grundlagen - Frage 1: Genetik Grundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetik Grundlagen",
+      "learning_objective": "Genetik Grundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 2: Genetics basics",
+      "text": "[biology] Genetik Grundlagen - Frage 2: Genetik Grundlagen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetik Grundlagen",
+      "learning_objective": "Genetik Grundlagen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 3: Genetics basics",
+      "text": "[biology] Genetik Grundlagen - Frage 3: Genetik Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Genetik Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetik Grundlagen",
+      "learning_objective": "Genetik Grundlagen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 4: Genetics basics",
+      "text": "[biology] Genetik Grundlagen - Frage 4: Genetik Grundlagen",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetik Grundlagen",
+      "learning_objective": "Genetik Grundlagen"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 5: Genetics basics",
+      "text": "[biology] Genetik Grundlagen - Frage 5: Genetik Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Genetik Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "curriculum_topic": "AUSTRIA-GRADE-07-BIOLOGY-Genetik Grundlagen",
+      "learning_objective": "Genetik Grundlagen"
     }
   ],
   "rubrics": []

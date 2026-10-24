@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - European Union grade-07",
+    "name": "Ecological systems - European Union grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Ecological systems for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.095240+00:00",
-    "updated_at": "2026-10-21T11:02:19.095253+00:00",
+    "created_at": "2026-10-24T17:53:47.165117+00:00",
+    "updated_at": "2026-10-24T17:53:47.165123+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ecological-systems",
       "grade-07",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "e9485c2b7d76c8b00a6214ec4118773c737ebad8d19555c21c8071d3bbf62397",
+    "checksum": "d56bef0e9cb06bffc05200332a6851633a4d5a6fb334f2ad71ee56e06cd18c6c",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Ecological systems",
+    "description": "Assessment on Ecological systems including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ecological systems - Question 1: Ecological systems",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-07"
+        "ecological-systems",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ecological systems - Question 2: Ecological systems",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-07"
+        "ecological-systems",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ecological systems - Question 3: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecological systems.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-07"
+        "ecological-systems",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ecological systems - Question 4: Ecological systems",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-07"
+        "ecological-systems",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ecological systems - Question 5: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecological systems.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-07"
+        "ecological-systems",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "EU-GRADE-07-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-geometria-1.0.0",
-    "name": "Geometria - Belgium grade-12",
+    "name": "Geometry - Belgium grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "Toets van 45 minuten over Geometry (grade-12). Onderwerpen: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.167797+00:00",
-    "updated_at": "2026-10-21T11:02:30.167809+00:00",
+    "created_at": "2026-10-24T17:53:51.100265+00:00",
+    "updated_at": "2026-10-24T17:53:51.100276+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometry",
       "grade-12",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "710c0bc2676a74e66d6173dabc54dbe090d6aac82833cebe08ef8268e5098c4a",
+    "checksum": "8aa00d6df3f5e845215e8a920e2f78a02994bf97c4f7c1be9cc963bb24f37281",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Geometria",
-    "description": "Test on Geometria including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Geometry",
+    "description": "Toets over Geometry: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometry - Vraag 1: Geometry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometry - Vraag 2: Geometry",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometry - Vraag 3: Geometry",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometry - Vraag 4: Geometry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Geometry.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometry - Vraag 5: Geometry [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometry",
         "grade-12",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "BELGIUM-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     }
   ],

@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "számolás-10000-ig",
-      "grade-04"
+      "grade-04",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-04",
     "license": "CC-BY-4.0",
-    "checksum": "090f1dd6e0d7873e6a27a2f27d92394b3b5f8269107a869c035d29f9ba6ddccf",
+    "checksum": "86400200e5b4fca375abe2293e88f8123f86dcc3a716e710467cfd531fd1651d",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Tizedestörtök",
       "Mértékek",
       "Valószínűség"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 04 Math - Számolás 10000-ig",

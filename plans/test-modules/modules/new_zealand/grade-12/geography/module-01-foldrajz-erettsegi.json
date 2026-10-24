@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-erettségi-1.0.0",
-    "name": "Földrajz-erettségi - New Zealand grade-12",
+    "name": "Geography-maturity - New Zealand grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz-erettségi for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minute assessment on Geography-maturity for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.931171+00:00",
-    "updated_at": "2026-10-21T11:02:34.931182+00:00",
+    "created_at": "2026-10-24T17:53:52.017599+00:00",
+    "updated_at": "2026-10-24T17:53:52.017607+00:00",
     "tags": [
       "geography",
-      "földrajz-erettségi",
+      "geography-maturity",
       "grade-12",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "f03806957b5c5eb63ddaa0249910be18efe837d47ab8ccb5ae3c48e26a666a91",
+    "checksum": "5674b155128a652b198495c6c9ccec436edae720e728256422f2f0c5ba5adec2",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz-erettségi",
-    "description": "Test on Földrajz-erettségi including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geography-maturity",
+    "description": "Assessment on Geography-maturity including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 1: Geography-maturity",
+      "text": "[geography] Geography-maturity - Question 1: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 2: Geography-maturity",
+      "text": "[geography] Geography-maturity - Question 2: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz-erettségi - Kérdés 3: Geography-maturity",
+      "text": "[geography] Geography-maturity - Question 3: Geography-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geography-maturity.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 4: Geography-maturity",
+      "text": "[geography] Geography-maturity - Question 4: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 5: Geography-maturity",
+      "text": "[geography] Geography-maturity - Question 5: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     }
   ],

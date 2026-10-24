@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-kivonás-10-ig-1.0.0",
-    "name": "Kivonás 10-ig - Netherlands grade-01",
+    "name": "Aftrekken tot 10 - Netherlands grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "Toets van 45 minuten over Aftrekken tot 10 (grade-01). Onderwerpen: Tellen tot 10, Optellen tot 10, Aftrekken tot 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.783607+00:00",
-    "updated_at": "2026-10-21T11:02:24.783622+00:00",
+    "created_at": "2026-10-24T17:53:47.896758+00:00",
+    "updated_at": "2026-10-24T17:53:47.896764+00:00",
     "tags": [
       "math",
-      "kivonás-10-ig",
+      "aftrekken-tot-10",
       "grade-01",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "b6fe0da70860e03878d7e3661dabc007799093b9a6e3aa5aa1f7c0cc60b78c51",
+    "checksum": "640b2235f4420fc85ad244a1128605e49134cbb32df11acbaa725335587d18c7",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Tellen tot 10",
+      "Optellen tot 10",
+      "Aftrekken tot 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Kivonás 10-ig",
-    "description": "Test on Kivonás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Aftrekken tot 10",
+    "description": "Toets over Aftrekken tot 10: Tellen tot 10, Optellen tot 10, Aftrekken tot 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 1: Subtraction to 10",
+      "text": "[math] Aftrekken tot 10 - Vraag 1: Aftrekken tot 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "aftrekken-tot-10",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Aftrekken tot 10",
+      "learning_objective": "Aftrekken tot 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 2: Subtraction to 10",
+      "text": "[math] Aftrekken tot 10 - Vraag 2: Aftrekken tot 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "aftrekken-tot-10",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Aftrekken tot 10",
+      "learning_objective": "Aftrekken tot 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 3: Subtraction to 10",
+      "text": "[math] Aftrekken tot 10 - Vraag 3: Aftrekken tot 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "aftrekken-tot-10",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Aftrekken tot 10",
+      "learning_objective": "Aftrekken tot 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 10-ig - Kérdés 4: Subtraction to 10",
+      "text": "[math] Aftrekken tot 10 - Vraag 4: Aftrekken tot 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Aftrekken tot 10.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "aftrekken-tot-10",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Aftrekken tot 10",
+      "learning_objective": "Aftrekken tot 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 10-ig - Question 5: Subtraction to 10 [rand:1-20]",
+      "text": "[math] Aftrekken tot 10 - Vraag 5: Aftrekken tot 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-10-ig",
+        "aftrekken-tot-10",
         "grade-01",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-MATH-Aftrekken tot 10",
+      "learning_objective": "Aftrekken tot 10"
     }
   ],
   "rubrics": []

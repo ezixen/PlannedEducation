@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Netherlands grade-01",
+    "name": "Planten en dieren - Netherlands grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Toets van 45 minuten over Planten en dieren (grade-01). Onderwerpen: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.793360+00:00",
-    "updated_at": "2026-10-21T11:02:24.793373+00:00",
+    "created_at": "2026-10-24T17:53:47.902890+00:00",
+    "updated_at": "2026-10-24T17:53:47.902897+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "planten-en-dieren",
       "grade-01",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "02f39a4b1510eb5f098b5178af4347cb0e8f9b87675f279fc9b1d1bc6b2270e3",
+    "checksum": "f21f13998f7c13a01f555b9c25874a8974405e7f9e826d8fa62521310b1bf2bc",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natuur en milieu",
+      "Planten en dieren",
+      "Natuur",
+      "Milieu",
+      "Natuurbehoud"
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Planten en dieren",
+    "description": "Toets over Planten en dieren: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 1: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planten-en-dieren",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 2: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planten-en-dieren",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 3: Planten en dieren",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Planten en dieren.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planten-en-dieren",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 4: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planten-en-dieren",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Planten en dieren - Vraag 5: Planten en dieren",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planten-en-dieren",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "NETHERLANDS-GRADE-01-SCIENCE-Planten en dieren",
+      "learning_objective": "Planten en dieren"
     }
   ],
   "rubrics": []

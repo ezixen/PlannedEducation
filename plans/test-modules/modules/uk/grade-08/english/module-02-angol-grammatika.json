@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - United Kingdom grade-08",
+    "name": "English grammar - United Kingdom grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English grammar for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.190266+00:00",
-    "updated_at": "2026-10-21T11:02:17.190284+00:00",
+    "created_at": "2026-10-24T17:53:45.875442+00:00",
+    "updated_at": "2026-10-24T17:53:45.875450+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-08",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "cd32e6a89f890e8e1b6f8b8c42abb139c7e0e8ccd2f6394f701559da1b486c54",
+    "checksum": "03b24209b8ac1abeee6378dac559faee52d1e29fcb53c6ea83a4804c8fcfd505",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English grammar",
+    "description": "Assessment on English grammar including English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Question 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "UK-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Question 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "UK-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Question 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English grammar.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "UK-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Question 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "UK-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Question 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-08"
+        "english-grammar",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-ENGLISH-Angol grammatika",
+      "curriculum_topic": "UK-GRADE-08-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

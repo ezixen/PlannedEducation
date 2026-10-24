@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Norway grade-11",
+    "name": "State structure - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minutters prøve i State structure (grade-11). Emner: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.769524+00:00",
-    "updated_at": "2026-10-21T11:02:26.769538+00:00",
+    "created_at": "2026-10-24T17:53:49.181062+00:00",
+    "updated_at": "2026-10-24T17:53:49.181074+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "state-structure",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "4d718c4862eddad7bdda4bb0dbf671b0e3a4809e59db5842f46f21209b25f510",
+    "checksum": "ca3e7101066b655714037704e77656cded223247e6d0bd40c6b64b3569cdc9e2",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - State structure",
+    "description": "Prøve i State structure: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] State structure - Spørsmål 1: State structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-11"
+        "state-structure",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Állam szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] State structure - Spørsmål 2: State structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-11"
+        "state-structure",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Állam szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] State structure - Spørsmål 3: State structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for State structure.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-11"
+        "state-structure",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Állam szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] State structure - Spørsmål 4: State structure",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-11"
+        "state-structure",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Állam szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] State structure - Spørsmål 5: State structure",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-11"
+        "state-structure",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Állam szerkezete",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-State structure",
       "learning_objective": "State structure"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-civics-demokrácia-1.0.0",
-    "name": "Demokrácia - Netherlands grade-10",
+    "name": "Democracy - Netherlands grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Toets van 45 minuten over Democracy (grade-10). Onderwerpen: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.313352+00:00",
-    "updated_at": "2026-10-21T11:02:25.313364+00:00",
+    "created_at": "2026-10-24T17:53:48.226583+00:00",
+    "updated_at": "2026-10-24T17:53:48.226589+00:00",
     "tags": [
       "civics",
-      "demokrácia",
+      "democracy",
       "grade-10",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "68d4c2d138f32c311fb05fd56103ea1d82fa53bb9497f7e2009dcf5a6967e7a3",
+    "checksum": "3633183932a20c7dc7c41e661b1ef5ca89dee7f3993af86c1e658a185b9c1760",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Civics - Demokrácia",
-    "description": "Test on Demokrácia including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-10 Civics - Democracy",
+    "description": "Toets over Democracy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 1: Democracy",
+      "text": "[civics] Democracy - Vraag 1: Democracy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 2: Democracy",
+      "text": "[civics] Democracy - Vraag 2: Democracy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia - Kérdés 3: Democracy",
+      "text": "[civics] Democracy - Vraag 3: Democracy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Democracy.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 4: Democracy",
+      "text": "[civics] Democracy - Vraag 4: Democracy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 5: Democracy",
+      "text": "[civics] Democracy - Vraag 5: Democracy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-10"
+        "democracy",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Demokrácia",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-CIVICS-Democracy",
       "learning_objective": "Democracy"
     }
   ],

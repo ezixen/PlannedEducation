@@ -3,21 +3,25 @@
     "id": "grade-07-biology-genetika-alapok-1.0.0",
     "name": "Genetika alapok - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika alapok for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45 perces felmérő: Genetika alapok (grade-07). Témakörök: Sejtbiológia és genetika, Sejt szerkezete, Genetika alapok, Ökológia, Ökológiai rendszerek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.148236+00:00",
-    "updated_at": "2026-10-21T11:02:35.148249+00:00",
+    "created_at": "2026-10-24T17:53:52.176161+00:00",
+    "updated_at": "2026-10-24T17:53:52.176177+00:00",
     "tags": [
       "biology",
       "genetika-alapok",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "e1e9673dfb4d2412828813cadd4220595f0959a375624df9a129d4df6c56b950",
+    "checksum": "dcea9319834eef5e426f2182b190d4310a6a904afc009854544cfa2f06a22216",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics basics",
-      "Ecology",
-      "Ecological systems"
+      "Sejtbiológia és genetika",
+      "Sejt szerkezete",
+      "Genetika alapok",
+      "Ökológia",
+      "Ökológiai rendszerek"
     ]
   },
   "exam": {
     "title": "grade-07 Biology - Genetika alapok",
-    "description": "Test on Genetika alapok including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "Felmérő a(z) Genetika alapok témakörből (Sejtbiológia és genetika, Sejt szerkezete, Genetika alapok, Ökológia, Ökológiai rendszerek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 1: Genetics basics",
+      "text": "[biology] Genetika alapok - Kérdés 1: Genetika alapok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "genetika-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "learning_objective": "Genetika alapok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 2: Genetics basics",
+      "text": "[biology] Genetika alapok - Kérdés 2: Genetika alapok",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "genetika-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "learning_objective": "Genetika alapok"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 3: Genetics basics",
+      "text": "[biology] Genetika alapok - Kérdés 3: Genetika alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "genetika-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "learning_objective": "Genetika alapok"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 4: Genetics basics",
+      "text": "[biology] Genetika alapok - Kérdés 4: Genetika alapok",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "genetika-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "learning_objective": "Genetika alapok"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 5: Genetics basics",
+      "text": "[biology] Genetika alapok - Kérdés 5: Genetika alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "genetika-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Genetika alapok",
-      "learning_objective": "Genetics basics"
+      "learning_objective": "Genetika alapok"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-demokrácia-és-piacgazdaság-1.0.0",
-    "name": "Demokrácia és piacgazdaság - Belgium grade-11",
+    "name": "Democracy and market economy - Belgium grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia és piacgazdaság for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Toets van 45 minuten over Democracy and market economy (grade-11). Onderwerpen: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.068958+00:00",
-    "updated_at": "2026-10-21T11:02:30.068970+00:00",
+    "created_at": "2026-10-24T17:53:51.028881+00:00",
+    "updated_at": "2026-10-24T17:53:51.028887+00:00",
     "tags": [
       "civics",
-      "demokrácia-és-piacgazdaság",
+      "democracy-and-market-economy",
       "grade-11",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "c7a991a44363a2cce8b52469cc777ff2c066a7b1581078d67e1e60bb29d34822",
+    "checksum": "d078e059560bb01ae14e5633ddfc3d472fe24ad91552a89be049269250768118",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Demokrácia és piacgazdaság",
-    "description": "Test on Demokrácia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - Democracy and market economy",
+    "description": "Toets over Democracy and market economy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Vraag 1: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "democracy-and-market-economy",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Vraag 2: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "democracy-and-market-economy",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Vraag 3: Democracy and market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Democracy and market economy.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "democracy-and-market-economy",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Vraag 4: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "democracy-and-market-economy",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Vraag 5: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-11"
+        "democracy-and-market-economy",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "BELGIUM-GRADE-11-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-19.-század-1.0.0",
-    "name": "19. század - Finland grade-08",
+    "name": "19th century - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45 minuutin koe aiheesta 19th century (grade-08). Aiheet: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.349375+00:00",
-    "updated_at": "2026-10-21T11:02:24.349400+00:00",
+    "created_at": "2026-10-24T17:53:47.687856+00:00",
+    "updated_at": "2026-10-24T17:53:47.687864+00:00",
     "tags": [
       "history",
-      "19.-század",
+      "19th-century",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "3c900be844cf38092e3a097dffd00f6c884f178a5942156e81bddcacd36006ca",
+    "checksum": "27d00ebc0a9f464e861927ce308d8d4e3989069615d9b7d4998baa4b598a1ca6",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - 19. század",
-    "description": "Test on 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - 19th century",
+    "description": "Koe aiheesta 19th century: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 1: 19th century",
+      "text": "[history] 19th century - Kysymys 1: 19th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 2: 19th century",
+      "text": "[history] 19th century - Kysymys 2: 19th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 19. század - Kérdés 3: 19th century",
+      "text": "[history] 19th century - Kysymys 3: 19th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen 19th century.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 4: 19th century",
+      "text": "[history] 19th century - Kysymys 4: 19th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 5: 19th century",
+      "text": "[history] 19th century - Kysymys 5: 19th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     }
   ],

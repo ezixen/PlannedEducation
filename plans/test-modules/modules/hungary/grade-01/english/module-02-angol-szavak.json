@@ -3,21 +3,25 @@
     "id": "grade-01-english-angol-szavak-1.0.0",
     "name": "Angol szavak - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szavak for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45 perces felmérő: Angol szavak (grade-01). Témakörök: Phonics alapok, Angol szavak, Angol mondatok, Angol olvasás, Angol írás",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.971606+00:00",
-    "updated_at": "2026-10-21T11:02:34.971616+00:00",
+    "created_at": "2026-10-24T17:53:52.041075+00:00",
+    "updated_at": "2026-10-24T17:53:52.041081+00:00",
     "tags": [
       "english",
       "angol-szavak",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "c198393111303214c36038c1342c35978168344ec401cc74a0f0e6e2a5014337",
+    "checksum": "41a4d9e3ba8ad2edebf1cadb3b7504b19627145de0ca0c1c5f1b16539c20d2a8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Phonics basics",
-      "English words",
-      "English sentences",
-      "English reading",
-      "English writing"
+      "Phonics alapok",
+      "Angol szavak",
+      "Angol mondatok",
+      "Angol olvasás",
+      "Angol írás"
     ]
   },
   "exam": {
     "title": "grade-01 English - Angol szavak",
-    "description": "Test on Angol szavak including Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "Felmérő a(z) Angol szavak témakörből (Phonics alapok, Angol szavak, Angol mondatok, Angol olvasás, Angol írás)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 1: English words",
+      "text": "[english] Angol szavak - Kérdés 1: Angol szavak",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "english",
         "angol-szavak",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-ENGLISH-Angol szavak",
-      "learning_objective": "English words"
+      "learning_objective": "Angol szavak"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 2: English words",
+      "text": "[english] Angol szavak - Kérdés 2: Angol szavak",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "english",
         "angol-szavak",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-ENGLISH-Angol szavak",
-      "learning_objective": "English words"
+      "learning_objective": "Angol szavak"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szavak - Kérdés 3: English words",
+      "text": "[english] Angol szavak - Kérdés 3: Angol szavak",
       "options": null,
       "correct_answer": "Minta válasz a(z) Angol szavak témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
         "angol-szavak",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-ENGLISH-Angol szavak",
-      "learning_objective": "English words"
+      "learning_objective": "Angol szavak"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 4: English words",
+      "text": "[english] Angol szavak - Kérdés 4: Angol szavak",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "english",
         "angol-szavak",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-ENGLISH-Angol szavak",
-      "learning_objective": "English words"
+      "learning_objective": "Angol szavak"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 5: English words",
+      "text": "[english] Angol szavak - Kérdés 5: Angol szavak",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "english",
         "angol-szavak",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-ENGLISH-Angol szavak",
-      "learning_objective": "English words"
+      "learning_objective": "Angol szavak"
     }
   ],
   "rubrics": []

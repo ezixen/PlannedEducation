@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-fizika-felkészülés-1.0.0",
-    "name": "Fizika felkészülés - Belgium grade-10",
+    "name": "Physics preparation - Belgium grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Fizika felkészülés for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "Toets van 45 minuten over Physics preparation (grade-10). Onderwerpen: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.055739+00:00",
-    "updated_at": "2026-10-21T11:02:30.055759+00:00",
+    "created_at": "2026-10-24T17:53:51.019852+00:00",
+    "updated_at": "2026-10-24T17:53:51.019859+00:00",
     "tags": [
       "physics",
-      "fizika-felkészülés",
+      "physics-preparation",
       "grade-10",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "a144aa0a77d21862ac6fa9c69092f4d1792c33f19f77c584b760714734a3cd33",
+    "checksum": "8eb605928ec4d19efcf6af3f127fe08a857f9d2f582316ba015764f46b162baf",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Fizika felkészülés",
-    "description": "Test on Fizika felkészülés including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Physics preparation",
+    "description": "Toets over Physics preparation: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 1: Physics preparation",
+      "text": "[physics] Physics preparation - Vraag 1: Physics preparation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 2: Physics preparation",
+      "text": "[physics] Physics preparation - Vraag 2: Physics preparation",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Fizika felkészülés - Kérdés 3: Physics preparation",
+      "text": "[physics] Physics preparation - Vraag 3: Physics preparation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Fizika felkészülés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Physics preparation.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Fizika felkészülés - Question 4: Physics preparation [rand:1-100]",
+      "text": "[physics] Physics preparation - Vraag 4: Physics preparation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "fizika-felkészülés",
+        "physics-preparation",
         "grade-10",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 5: Physics preparation",
+      "text": "[physics] Physics preparation - Vraag 5: Physics preparation",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "BELGIUM-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - United Kingdom grade-05",
+    "name": "Nature and environment - United Kingdom grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature and environment for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.001686+00:00",
-    "updated_at": "2026-10-21T11:02:17.001729+00:00",
+    "created_at": "2026-10-24T17:53:45.751084+00:00",
+    "updated_at": "2026-10-24T17:53:45.751090+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "nature-and-environment",
       "grade-05",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-05",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "151beb553d83d703940f2d368cf8582b6473b04d04746fad65572b58dda0ecd6",
+    "checksum": "31239eb1466cfd6c7d5b68c42b73b868c5b52ca482ed1cc47565f049a2c9731b",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-05 Science - Nature and environment",
+    "description": "Assessment on Nature and environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Nature and environment - Question 1: Nature and environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "nature-and-environment",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-05-SCIENCE-Természet és környezet",
+      "curriculum_topic": "UK-GRADE-05-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Nature and environment - Question 2: Nature and environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "nature-and-environment",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-05-SCIENCE-Természet és környezet",
+      "curriculum_topic": "UK-GRADE-05-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Nature and environment - Question 3: Nature and environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature and environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "nature-and-environment",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-05-SCIENCE-Természet és környezet",
+      "curriculum_topic": "UK-GRADE-05-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Nature and environment - Question 4: Nature and environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "nature-and-environment",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-05-SCIENCE-Természet és környezet",
+      "curriculum_topic": "UK-GRADE-05-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Nature and environment - Question 5: Nature and environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "nature-and-environment",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-05-SCIENCE-Természet és környezet",
+      "curriculum_topic": "UK-GRADE-05-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     }
   ],

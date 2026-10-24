@@ -72,8 +72,12 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
     setInitializing(true);
     
     try {
-      // Try to load existing offline state
-      let state = await getOfflineExamState(examId, studentId);
+      const searchParams = new URLSearchParams(window.location.search);
+      const isTestMode = searchParams.get('test_mode') === 'true';
+      const randomSeed = searchParams.get('random_seed');
+
+      // Try to load existing offline state (skip shared cache in test_mode so each seed is unique)
+      let state = isTestMode ? undefined : await getOfflineExamState(examId, studentId);
       
       if (state && state.package) {
         // Resume existing exam
@@ -93,7 +97,10 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           }
         }
       } else {
-        const response: any = await downloadExamPackage(examId);
+        const response: any = await downloadExamPackage(examId, {
+          testMode: isTestMode,
+          randomSeed,
+        });
         const pkg: ExamPackage = response.exam_package || {
           examId,
           title: 'Assessment',
@@ -113,13 +120,16 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           expires_at: Date.now() + 60 * 60 * 1000,
         };
         
-        // Cache for offline use
-        await cacheExamPackage(pkg);
+        // Cache for offline use only in normal student mode
+        if (!isTestMode) {
+          await cacheExamPackage(pkg);
+        }
         setExamPackage(pkg);
         
-        // Create initial state
+        // Create initial state (in test_mode, auto-start timer so preview is immediately interactive)
+        const durationMs = (pkg.duration_minutes || 60) * 60 * 1000;
         const initialState: OfflineExamState = {
-          id: `${examId}-${studentId}`,
+          id: isTestMode ? `${examId}-${studentId}-seed-${randomSeed || Date.now()}` : `${examId}-${studentId}`,
           examId,
           studentId,
           studentName: user?.full_name || user?.username || 'Unknown Student',
@@ -127,10 +137,10 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           answers: {},
           answerTimestamps: {},
           currentQuestionIndex: 0,
-          timeRemainingMs: 0,
-          timerState: 'paused',
+          timeRemainingMs: isTestMode ? durationMs : 0,
+          timerState: isTestMode ? 'running' : 'paused',
           lastTimerTick: Date.now(),
-          startedAt: 0,
+          startedAt: isTestMode ? Date.now() : 0,
           lastHeartbeat: 0,
           isComplete: false,
           submissionId: response.submission_id,
@@ -138,7 +148,9 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           lastUpdated: Date.now(),
         };
         
-        await saveOfflineExamState(initialState);
+        if (!isTestMode) {
+          await saveOfflineExamState(initialState);
+        }
         setExamState(initialState);
       }
       
@@ -263,12 +275,14 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
       const studentName = user?.full_name || user?.username || 'Unknown Student';
       const sealed = await sealExamSubmission(examState, studentName);
       
+      const isTestMode = new URLSearchParams(window.location.search).get('test_mode') === 'true';
       // Also submit to server if online
       const result = await submitExamOffline(
         examId,
         studentId,
         examState.answers,
-        examState.submissionId || ''
+        examState.submissionId || '',
+        isTestMode
       );
       
       // Update state with sealed submission

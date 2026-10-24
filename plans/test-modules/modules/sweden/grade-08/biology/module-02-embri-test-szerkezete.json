@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-embri-test-szerkezete-1.0.0",
-    "name": "Embri test szerkezete - Sweden grade-08",
+    "name": "Human body structure - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test szerkezete for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minuters prov i Human body structure (grade-08). Omfattar: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.767149+00:00",
-    "updated_at": "2026-10-21T11:02:25.767168+00:00",
+    "created_at": "2026-10-24T17:53:48.481863+00:00",
+    "updated_at": "2026-10-24T17:53:48.481876+00:00",
     "tags": [
       "biology",
-      "embri-test-szerkezete",
+      "human-body-structure",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "45c71a11b1e0d6b8664b62be878d1e7901a5dd431591b99263ae2b9a7d970474",
+    "checksum": "24bf05987683d4a3a9c21250a078b8a8cb4efc09e194cc33bd5b215f8d2bc8e2",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Embri test szerkezete",
-    "description": "Test on Embri test szerkezete including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Human body structure",
+    "description": "Prov i Human body structure: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 1: Human body structure",
+      "text": "[biology] Human body structure - Fråga 1: Human body structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 2: Human body structure",
+      "text": "[biology] Human body structure - Fråga 2: Human body structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 3: Human body structure",
+      "text": "[biology] Human body structure - Fråga 3: Human body structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Human body structure.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 4: Human body structure",
+      "text": "[biology] Human body structure - Fråga 4: Human body structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 5: Human body structure",
+      "text": "[biology] Human body structure - Fråga 5: Human body structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Human body structure.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "SWEDEN-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     }
   ],

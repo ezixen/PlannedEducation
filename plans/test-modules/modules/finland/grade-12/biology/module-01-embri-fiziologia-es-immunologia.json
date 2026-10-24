@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-fiziologia-és-immunológia-1.0.0",
-    "name": "Embri fiziologia és immunológia - Finland grade-12",
+    "name": "Human physiology and immunology - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri fiziologia és immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45 minuutin koe aiheesta Human physiology and immunology (grade-12). Aiheet: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.710018+00:00",
-    "updated_at": "2026-10-21T11:02:24.710032+00:00",
+    "created_at": "2026-10-24T17:53:47.845366+00:00",
+    "updated_at": "2026-10-24T17:53:47.845372+00:00",
     "tags": [
       "biology",
-      "embri-fiziologia-és-immunológia",
+      "human-physiology-and-immunology",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "134bd15d0d4cb8ec458eef263a698bb72ae22c8e6abd80fa96384696a352c7d6",
+    "checksum": "76073ea739776035b1206641661338ffea039fbd017cec76af48b0fa46011f7d",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri fiziologia és immunológia",
-    "description": "Test on Embri fiziologia és immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Human physiology and immunology",
+    "description": "Koe aiheesta Human physiology and immunology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 1: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Kysymys 1: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 2: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Kysymys 2: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 3: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Kysymys 3: Human physiology and immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Human physiology and immunology.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 4: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Kysymys 4: Human physiology and immunology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 5: Human physiology and immunology",
+      "text": "[biology] Human physiology and immunology - Kysymys 5: Human physiology and immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Human physiology and immunology.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "human-physiology-and-immunology",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
+      "curriculum_topic": "FINLAND-GRADE-12-BIOLOGY-Human physiology and immunology",
       "learning_objective": "Human physiology and immunology"
     }
   ],

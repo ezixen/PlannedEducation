@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-világ-1.0.0",
-    "name": "Világ - Germany grade-09",
+    "name": "Welt - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minütige Prüfung zum Thema Welt (grade-09). Themen: Europa und die Welt, Europa, Welt, Geographie, Geographisches Wissen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.508378+00:00",
-    "updated_at": "2026-10-21T11:02:16.508390+00:00",
+    "created_at": "2026-10-24T17:53:45.483095+00:00",
+    "updated_at": "2026-10-24T17:53:45.483104+00:00",
     "tags": [
       "geography",
-      "világ",
+      "welt",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "d697065d76eb2b0aaf801a47104165d00d9afdf523b8f94b3d3558fde0c8577e",
+    "checksum": "088f4262812fde39c78df59423eaa97f8b3a3e569e57465dbf0be257a0325e8e",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and world",
-      "Europe",
-      "World",
-      "Geography",
-      "Geographic knowledge"
+      "Europa und die Welt",
+      "Europa",
+      "Welt",
+      "Geographie",
+      "Geographisches Wissen"
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Világ",
-    "description": "Test on Világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Welt",
+    "description": "Prüfung zum Thema Welt: Europa und die Welt, Europa, Welt, Geographie, Geographisches Wissen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 1: World",
+      "text": "[geography] Welt - Frage 1: Welt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "welt",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 2: World",
+      "text": "[geography] Welt - Frage 2: Welt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "welt",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Világ - Kérdés 3: World",
+      "text": "[geography] Welt - Frage 3: Welt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Welt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "welt",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 4: World",
+      "text": "[geography] Welt - Frage 4: Welt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "welt",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 5: World",
+      "text": "[geography] Welt - Frage 5: Welt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "welt",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "GERMANY-GRADE-09-GEOGRAPHY-Welt",
+      "learning_objective": "Welt"
     }
   ],
   "rubrics": []

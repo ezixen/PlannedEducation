@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagváltozások-1.0.0",
-    "name": "Anyagváltozások - Ireland grade-08",
+    "name": "Substance changes - Ireland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagváltozások for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minute assessment on Substance changes for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.502034+00:00",
-    "updated_at": "2026-10-21T11:02:30.502055+00:00",
+    "created_at": "2026-10-24T17:53:51.297757+00:00",
+    "updated_at": "2026-10-24T17:53:51.297764+00:00",
     "tags": [
       "chemistry",
-      "anyagváltozások",
+      "substance-changes",
       "grade-08",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "178bcecd617ccb3496e2c42fb7dd92279a2307bed9b03ead4cc60493b406f179",
+    "checksum": "f4f7588195c656dc5fb8c2a32e5a9264405978d34c9fae902ec61c8d646d65b8",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagváltozások",
-    "description": "Test on Anyagváltozások including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substance changes",
+    "description": "Assessment on Substance changes including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 1: Substance changes",
+      "text": "[chemistry] Substance changes - Question 1: Substance changes",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 2: Substance changes",
+      "text": "[chemistry] Substance changes - Question 2: Substance changes",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagváltozások - Kérdés 3: Substance changes",
+      "text": "[chemistry] Substance changes - Question 3: Substance changes",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagváltozások témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Substance changes.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagváltozások - Question 4: Substance changes [rand:1-1000]",
+      "text": "[chemistry] Substance changes - Question 4: Substance changes [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagváltozások",
+        "substance-changes",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 5: Substance changes",
+      "text": "[chemistry] Substance changes - Question 5: Substance changes",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     }
   ],

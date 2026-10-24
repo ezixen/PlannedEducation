@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-középkor-és-kora-újkor-1.0.0",
-    "name": "Középkor és kora újkor - Denmark grade-07",
+    "name": "Middle Ages and early modern period - Denmark grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Középkor és kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minutters prøve i Middle Ages and early modern period (grade-07). Emner: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.331447+00:00",
-    "updated_at": "2026-10-21T11:02:27.331471+00:00",
+    "created_at": "2026-10-24T17:53:49.461599+00:00",
+    "updated_at": "2026-10-24T17:53:49.461611+00:00",
     "tags": [
       "history",
-      "középkor-és-kora-újkor",
+      "middle-ages-and-early-modern-period",
       "grade-07",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "b5f9dc2586c9824e6d7047837ce0fe2f6b08e879671170f8ccc8fbea6e3e05b0",
+    "checksum": "683f8632cb77a24e409a47f95d3d1c838c969a4d90cd70c1728de769af150595",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Középkor és kora újkor",
-    "description": "Test on Középkor és kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Middle Ages and early modern period",
+    "description": "Prøve i Middle Ages and early modern period: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 1: Middle Ages and early modern period",
+      "text": "[history] Middle Ages and early modern period - Spørgsmål 1: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor",
-        "grade-07"
+        "middle-ages-and-early-modern-period",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Középkor és kora újkor",
+      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Middle Ages and early modern period",
       "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 2: Middle Ages and early modern period",
+      "text": "[history] Middle Ages and early modern period - Spørgsmål 2: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor",
-        "grade-07"
+        "middle-ages-and-early-modern-period",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Középkor és kora újkor",
+      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Middle Ages and early modern period",
       "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Középkor és kora újkor - Kérdés 3: Middle Ages and early modern period",
+      "text": "[history] Middle Ages and early modern period - Spørgsmål 3: Middle Ages and early modern period",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Middle Ages and early modern period.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor",
-        "grade-07"
+        "middle-ages-and-early-modern-period",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Középkor és kora újkor",
+      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Middle Ages and early modern period",
       "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 4: Middle Ages and early modern period",
+      "text": "[history] Middle Ages and early modern period - Spørgsmål 4: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor",
-        "grade-07"
+        "middle-ages-and-early-modern-period",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Középkor és kora újkor",
+      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Middle Ages and early modern period",
       "learning_objective": "Middle Ages and early modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 5: Middle Ages and early modern period",
+      "text": "[history] Middle Ages and early modern period - Spørgsmål 5: Middle Ages and early modern period",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor-és-kora-újkor",
-        "grade-07"
+        "middle-ages-and-early-modern-period",
+        "grade-07",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Középkor és kora újkor",
+      "curriculum_topic": "DENMARK-GRADE-07-HISTORY-Middle Ages and early modern period",
       "learning_objective": "Middle Ages and early modern period"
     }
   ],

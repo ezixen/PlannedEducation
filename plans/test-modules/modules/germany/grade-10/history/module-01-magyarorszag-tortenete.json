@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Germany grade-10",
+    "name": "Europäische Geschichte - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema Europäische Geschichte (grade-10). Themen: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.608176+00:00",
-    "updated_at": "2026-10-21T11:02:16.608187+00:00",
+    "created_at": "2026-10-24T17:53:45.542193+00:00",
+    "updated_at": "2026-10-24T17:53:45.542198+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "europäische-geschichte",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "6176d0ec43adc49f79443dd89673289330b7fbcc7a7e8073c0f77cfd11e862fc",
+    "checksum": "9119e948531142c9592aa4ee11275e9fb2ddae2365c4459543001a32365f71f3",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Hungary",
-      "Hungary",
-      "History",
-      "Historical events",
-      "World history"
+      "Europäische Geschichte",
+      "Mitteleuropa",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - Europäische Geschichte",
+    "description": "Prüfung zum Thema Europäische Geschichte: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] Europäische Geschichte - Frage 1: Europäische Geschichte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "europäische-geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Magyarország története",
-      "learning_objective": "History of Hungary"
+      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Europäische Geschichte",
+      "learning_objective": "Europäische Geschichte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] Europäische Geschichte - Frage 2: Europäische Geschichte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "europäische-geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Magyarország története",
-      "learning_objective": "History of Hungary"
+      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Europäische Geschichte",
+      "learning_objective": "Europäische Geschichte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] Europäische Geschichte - Frage 3: Europäische Geschichte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Europäische Geschichte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "europäische-geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Magyarország története",
-      "learning_objective": "History of Hungary"
+      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Europäische Geschichte",
+      "learning_objective": "Europäische Geschichte"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] Europäische Geschichte - Frage 4: Europäische Geschichte",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "europäische-geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Magyarország története",
-      "learning_objective": "History of Hungary"
+      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Europäische Geschichte",
+      "learning_objective": "Europäische Geschichte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] Europäische Geschichte - Frage 5: Europäische Geschichte",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "europäische-geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Magyarország története",
-      "learning_objective": "History of Hungary"
+      "curriculum_topic": "GERMANY-GRADE-10-HISTORY-Europäische Geschichte",
+      "learning_objective": "Europäische Geschichte"
     }
   ],
   "rubrics": []

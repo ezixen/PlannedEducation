@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Australia grade-12",
+    "name": "Europe and world - Australia grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minute assessment on Europe and world for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.912331+00:00",
-    "updated_at": "2026-10-21T11:02:18.912341+00:00",
+    "created_at": "2026-10-24T17:53:47.001807+00:00",
+    "updated_at": "2026-10-24T17:53:47.001827+00:00",
     "tags": [
       "history",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-12",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "c743c4720d60cd8cec73ad59e353704d730207d6dbc078083ee8cac103b94833",
+    "checksum": "e280e0f87458de5053501f3f78386e1a08d6141d1004c83d96d77eb9799d080c",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Európa és világ",
-    "description": "Test on Európa és világ including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Europe and world",
+    "description": "Assessment on Europe and world including History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[history] Europe and world - Question 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[history] Europe and world - Question 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[history] Europe and world - Question 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Europe and world.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[history] Europe and world - Question 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[history] Europe and world - Question 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-környezet-1.0.0",
-    "name": "Környezet - Sweden grade-02",
+    "name": "Miljö - Sweden grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minuters prov i Miljö (grade-02). Omfattar: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.550635+00:00",
-    "updated_at": "2026-10-21T11:02:25.550659+00:00",
+    "created_at": "2026-10-24T17:53:48.358841+00:00",
+    "updated_at": "2026-10-24T17:53:48.358846+00:00",
     "tags": [
       "science",
-      "környezet",
+      "miljö",
       "grade-02",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e6c9cfea9d28806979c77c9629b8540104a5daeb5ac2546268e2e5db84f8059d",
+    "checksum": "2bcc946666d289d0f45143ebd29d771da3efdff724c28d8926cadde952bb3567",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur och miljö",
+      "Växter och djur",
+      "Natur",
+      "Miljö",
+      "Naturskydd"
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Miljö",
+    "description": "Prov i Miljö: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Miljö - Fråga 1: Miljö",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-02"
+        "miljö",
+        "grade-02",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Miljö",
+      "learning_objective": "Miljö"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Miljö - Fråga 2: Miljö",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-02"
+        "miljö",
+        "grade-02",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Miljö",
+      "learning_objective": "Miljö"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Miljö - Fråga 3: Miljö",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Miljö.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-02"
+        "miljö",
+        "grade-02",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Miljö",
+      "learning_objective": "Miljö"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Miljö - Fråga 4: Miljö",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-02"
+        "miljö",
+        "grade-02",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Miljö",
+      "learning_objective": "Miljö"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Miljö - Fråga 5: Miljö",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-02"
+        "miljö",
+        "grade-02",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "SWEDEN-GRADE-02-SCIENCE-Miljö",
+      "learning_objective": "Miljö"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Switzerland grade-12",
+    "name": "Europa und die Welt - Switzerland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Europa und die Welt (grade-12). Themen: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.739018+00:00",
-    "updated_at": "2026-10-21T11:02:28.739034+00:00",
+    "created_at": "2026-10-24T17:53:50.248652+00:00",
+    "updated_at": "2026-10-24T17:53:50.248659+00:00",
     "tags": [
       "geography",
-      "európa-és-világ",
+      "europa-und-die-welt",
       "grade-12",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "f9578973b59b98df10ba4a157bcc442b7450a2ffbd85d598220ec5c7ca8247eb",
+    "checksum": "87a1f2d7f1c2306508b2b1ea1c05d155414f8da4d63c19115f218933151668f0",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Geographie Abiturvorbereitung",
+      "Geographie",
+      "Geographisches Wissen",
+      "Europa und die Welt",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Európa és világ",
-    "description": "Test on Európa és világ including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Europa und die Welt",
+    "description": "Prüfung zum Thema Europa und die Welt: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[geography] Europa und die Welt - Frage 1: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[geography] Europa und die Welt - Frage 2: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[geography] Europa und die Welt - Frage 3: Europa und die Welt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Europa und die Welt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[geography] Europa und die Welt - Frage 4: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[geography] Europa und die Welt - Frage 5: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     }
   ],
   "rubrics": []

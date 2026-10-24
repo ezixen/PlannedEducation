@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mű-1.0.0",
-    "name": "Mű - Finland grade-08",
+    "name": "Work - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mű for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 minuutin koe aiheesta Work (grade-08). Aiheet: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.378973+00:00",
-    "updated_at": "2026-10-21T11:02:24.378985+00:00",
+    "created_at": "2026-10-24T17:53:47.705942+00:00",
+    "updated_at": "2026-10-24T17:53:47.705949+00:00",
     "tags": [
       "physics",
-      "mű",
+      "work",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "fafc9549b01fbfc4a8693539becb6acf3bfb3b0c19a74239c384e08bef292e0a",
+    "checksum": "4b142b67ee08a551dc817a9fa5fe8bf88e54861aa80233292101e3cf61c99699",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mű",
-    "description": "Test on Mű including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Work",
+    "description": "Koe aiheesta Work: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 1: Work",
+      "text": "[physics] Work - Kysymys 1: Work",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 2: Work",
+      "text": "[physics] Work - Kysymys 2: Work",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mű - Kérdés 3: Work",
+      "text": "[physics] Work - Kysymys 3: Work",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mű témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Work.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mű - Question 4: Work [rand:1-1000]",
+      "text": "[physics] Work - Kysymys 4: Work [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mű",
+        "work",
         "grade-08",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 5: Work",
+      "text": "[physics] Work - Kysymys 5: Work",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "work",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mű",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Work",
       "learning_objective": "Work"
     }
   ],

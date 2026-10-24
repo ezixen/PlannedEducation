@@ -3,21 +3,25 @@
     "id": "grade-12-biology-ökológiai-rendszerek-1.0.0",
     "name": "Ökológiai rendszerek - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45 perces felmérő: Ökológiai rendszerek (grade-12). Témakörök: Embri fiziologia és immunológia, Embri test fiziológiája, Immunológia, Ökológia, Ökológiai rendszerek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.656779+00:00",
-    "updated_at": "2026-10-21T11:02:35.656792+00:00",
+    "created_at": "2026-10-24T17:53:52.477586+00:00",
+    "updated_at": "2026-10-24T17:53:52.477592+00:00",
     "tags": [
       "biology",
       "ökológiai-rendszerek",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "51b82dd2e8e18e7777e71d3b2557b1ec60fe8ab9fa753daf4ae3cb37ccd6a2ab",
+    "checksum": "756b0348e99f6469f73ffb66003043dce4185b34e77f710291c012350b6e5542",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Embri fiziologia és immunológia",
+      "Embri test fiziológiája",
+      "Immunológia",
+      "Ökológia",
+      "Ökológiai rendszerek"
     ]
   },
   "exam": {
     "title": "grade-12 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "Felmérő a(z) Ökológiai rendszerek témakörből (Embri fiziologia és immunológia, Embri test fiziológiája, Immunológia, Ökológia, Ökológiai rendszerek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ökológiai rendszerek",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "ökológiai-rendszerek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "learning_objective": "Ökológiai rendszerek"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ökológiai rendszerek",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "ökológiai-rendszerek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "learning_objective": "Ökológiai rendszerek"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ökológiai rendszerek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "ökológiai-rendszerek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "learning_objective": "Ökológiai rendszerek"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ökológiai rendszerek",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "ökológiai-rendszerek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "learning_objective": "Ökológiai rendszerek"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ökológiai rendszerek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "ökológiai-rendszerek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "learning_objective": "Ökológiai rendszerek"
     }
   ],
   "rubrics": []

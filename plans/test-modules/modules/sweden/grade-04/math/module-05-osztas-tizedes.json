@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-osztás-tizedes-1.0.0",
-    "name": "Osztás tizedes - Sweden grade-04",
+    "name": "Decimal division - Sweden grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minuters prov i Decimal division (grade-04). Omfattar: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.602325+00:00",
-    "updated_at": "2026-10-21T11:02:25.602339+00:00",
+    "created_at": "2026-10-24T17:53:48.387181+00:00",
+    "updated_at": "2026-10-24T17:53:48.387187+00:00",
     "tags": [
       "math",
-      "osztás-tizedes",
+      "decimal-division",
       "grade-04",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "6e7508708670c9dae3acd4eb3d955e2140fddbe3de56b76830f45de63c79f8ce",
+    "checksum": "1ce8c51b00ad7f7b782d89d752cc74702aa37b60d5ae63c0906158ee8bbe803c",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Osztás tizedes",
-    "description": "Test on Osztás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal division",
+    "description": "Prov i Decimal division: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 1: Decimal division",
+      "text": "[math] Decimal division - Fråga 1: Decimal division",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 2: Decimal division",
+      "text": "[math] Decimal division - Fråga 2: Decimal division",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 3: Decimal division",
+      "text": "[math] Decimal division - Fråga 3: Decimal division",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás tizedes - Kérdés 4: Decimal division",
+      "text": "[math] Decimal division - Fråga 4: Decimal division",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Decimal division.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás tizedes - Question 5: Decimal division [rand:1-100]",
+      "text": "[math] Decimal division - Fråga 5: Decimal division [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztás-tizedes",
+        "decimal-division",
         "grade-04",
-        "integer"
+        "integer",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     }
   ],

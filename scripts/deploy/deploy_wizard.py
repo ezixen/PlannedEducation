@@ -317,11 +317,12 @@ def create_admin_user(project_dir: Path, mode: str) -> bool:
     py_code = (
         f"from src.plannededucation.api.database import SessionLocal; "
         f"from src.plannededucation.api.models import User; "
-        f"from src.plannededucation.api.routes_auth import get_password_hash; "
+        f"from src.plannededucation.api.auth import get_password_hash; "
         f"db = SessionLocal(); "
-        f"admin = User(email='{email_esc}', username='{user_esc}', full_name='{name_esc}', "
-        f"hashed_password=get_password_hash('{pass_esc}'), role='admin', is_admin=True, is_active=True); "
-        f"db.add(admin); db.commit(); print('Admin created: {email_esc}')"
+        f"admin = db.query(User).filter((User.email=='{email_esc}') | (User.username=='{user_esc}')).first(); "
+        f"admin = admin or User(email='{email_esc}', username='{user_esc}', full_name='{name_esc}', role='admin', is_admin=True, is_active=True, teacher_approved=True); "
+        f"admin.hashed_password = get_password_hash('{pass_esc}'); admin.role = 'admin'; admin.is_admin = True; admin.is_active = True; admin.teacher_approved = True; "
+        f"db.add(admin); db.commit(); print('Admin configured: {email_esc}')"
     )
     
     if mode == "docker":

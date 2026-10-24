@@ -3,21 +3,25 @@
     "id": "grade-12-civics-polgári-jog-1.0.0",
     "name": "Polgári jog - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45 perces felmérő: Polgári jog (grade-12). Témakörök: Polológia és jog-erettségi, Polológia, Jog-erettségi, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.666956+00:00",
-    "updated_at": "2026-10-21T11:02:35.666970+00:00",
+    "created_at": "2026-10-24T17:53:52.482846+00:00",
+    "updated_at": "2026-10-24T17:53:52.482853+00:00",
     "tags": [
       "civics",
       "polgári-jog",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "0b0654d7fa3f18524ab7dbd4af5d633fa04befa4ffe2d2dc298e847a92a338c1",
+    "checksum": "b1b4c7231b239aa13eed7f1760fda795e1c205663449721fd511067f8f5eed83",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Politology and law-maturity",
-      "Politology",
-      "Law-maturity",
-      "Civil law",
-      "State structure"
+      "Polológia és jog-erettségi",
+      "Polológia",
+      "Jog-erettségi",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-12 Civics - Polgári jog",
-    "description": "Test on Polgári jog including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "Felmérő a(z) Polgári jog témakörből (Polológia és jog-erettségi, Polológia, Jog-erettségi, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Polgári jog - Kérdés 1: Polgári jog",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "polgári-jog",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "learning_objective": "Polgári jog"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Polgári jog - Kérdés 2: Polgári jog",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "polgári-jog",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "learning_objective": "Polgári jog"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Polgári jog - Kérdés 3: Polgári jog",
       "options": null,
       "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "polgári-jog",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "learning_objective": "Polgári jog"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Polgári jog - Kérdés 4: Polgári jog",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "polgári-jog",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "learning_objective": "Polgári jog"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Polgári jog - Kérdés 5: Polgári jog",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "polgári-jog",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "learning_objective": "Polgári jog"
     }
   ],
   "rubrics": []

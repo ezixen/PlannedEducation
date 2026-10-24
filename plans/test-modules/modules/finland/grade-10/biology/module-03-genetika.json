@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-genetika-1.0.0",
-    "name": "Genetika - Finland grade-10",
+    "name": "Genetics - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45 minuutin koe aiheesta Genetics (grade-10). Aiheet: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.474280+00:00",
-    "updated_at": "2026-10-21T11:02:24.474299+00:00",
+    "created_at": "2026-10-24T17:53:47.756847+00:00",
+    "updated_at": "2026-10-24T17:53:47.756855+00:00",
     "tags": [
       "biology",
-      "genetika",
+      "genetics",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "43232b77683cd306040cf1536db179e9a81674da20b2b613147a430b79e1748d",
+    "checksum": "528905d33ac9fc6755131bb431e27275a9808805b37f5e5410fabea876b5aa0a",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Genetika",
-    "description": "Test on Genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Genetics",
+    "description": "Koe aiheesta Genetics: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 1: Genetics",
+      "text": "[biology] Genetics - Kysymys 1: Genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 2: Genetics",
+      "text": "[biology] Genetics - Kysymys 2: Genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 3: Genetics",
+      "text": "[biology] Genetics - Kysymys 3: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Genetics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 4: Genetics",
+      "text": "[biology] Genetics - Kysymys 4: Genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 5: Genetics",
+      "text": "[biology] Genetics - Kysymys 5: Genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Genetics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetika",
+      "curriculum_topic": "FINLAND-GRADE-10-BIOLOGY-Genetics",
       "learning_objective": "Genetics"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Denmark grade-12",
+    "name": "Europe and world - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i Europe and world (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.788917+00:00",
-    "updated_at": "2026-10-21T11:02:27.788929+00:00",
+    "created_at": "2026-10-24T17:53:49.816097+00:00",
+    "updated_at": "2026-10-24T17:53:49.816108+00:00",
     "tags": [
       "history",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "d30f21c1a95c55f66989a048d007eda83453158a919f202c89e753739d5ee538",
+    "checksum": "11a9b7789b8ce7ef4f5198b5d03dda45275d76523204c4377caf7c1b8efa4f5b",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Európa és világ",
-    "description": "Test on Európa és világ including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Europe and world",
+    "description": "Prøve i Europe and world: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[history] Europe and world - Spørgsmål 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[history] Europe and world - Spørgsmål 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[history] Europe and world - Spørgsmål 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Europe and world.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[history] Europe and world - Spørgsmål 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[history] Europe and world - Spørgsmål 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

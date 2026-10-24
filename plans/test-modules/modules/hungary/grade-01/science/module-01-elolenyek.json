@@ -11,12 +11,13 @@
     "tags": [
       "science",
       "élőlények",
-      "grade-01"
+      "grade-01",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-01",
     "license": "CC-BY-4.0",
-    "checksum": "8e78a6c0fd53f209f6cc788a285a0a17aa4cd9ca0994a26a982ec93163a14c13",
+    "checksum": "fcd75a62767e2457f6087a5facfe283afa800fb2919b32257346f2d6b2cdc131",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Növények",
       "Állatok",
       "Ember"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 01 Science - Élőlények",

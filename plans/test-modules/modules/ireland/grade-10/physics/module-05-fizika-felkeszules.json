@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-fizika-felkészülés-1.0.0",
-    "name": "Fizika felkészülés - Ireland grade-10",
+    "name": "Physics preparation - Ireland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Fizika felkészülés for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minute assessment on Physics preparation for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.744099+00:00",
-    "updated_at": "2026-10-21T11:02:30.744109+00:00",
+    "created_at": "2026-10-24T17:53:51.465541+00:00",
+    "updated_at": "2026-10-24T17:53:51.465548+00:00",
     "tags": [
       "physics",
-      "fizika-felkészülés",
+      "physics-preparation",
       "grade-10",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "d568209bca7bdd563b95cf9927e0edaa119fdaa42f2b19f051050c1241881dd4",
+    "checksum": "b3accfbc26b06b8dafa94a3276bcb7f37b73722c3717a9ccfae58a9413800135",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Fizika felkészülés",
-    "description": "Test on Fizika felkészülés including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Physics preparation",
+    "description": "Assessment on Physics preparation including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 1: Physics preparation",
+      "text": "[physics] Physics preparation - Question 1: Physics preparation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 2: Physics preparation",
+      "text": "[physics] Physics preparation - Question 2: Physics preparation",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Fizika felkészülés - Kérdés 3: Physics preparation",
+      "text": "[physics] Physics preparation - Question 3: Physics preparation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Fizika felkészülés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Physics preparation.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Fizika felkészülés - Question 4: Physics preparation [rand:1-100]",
+      "text": "[physics] Physics preparation - Question 4: Physics preparation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "fizika-felkészülés",
+        "physics-preparation",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 5: Physics preparation",
+      "text": "[physics] Physics preparation - Question 5: Physics preparation",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "IRELAND-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     }
   ],

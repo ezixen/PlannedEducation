@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-lineáris-egyenletek-1.0.0",
-    "name": "Lineáris egyenletek - Netherlands grade-08",
+    "name": "Linear equations - Netherlands grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "Toets van 45 minuten over Linear equations (grade-08). Onderwerpen: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.137920+00:00",
-    "updated_at": "2026-10-21T11:02:25.137933+00:00",
+    "created_at": "2026-10-24T17:53:48.146816+00:00",
+    "updated_at": "2026-10-24T17:53:48.146823+00:00",
     "tags": [
       "math",
-      "lineáris-egyenletek",
+      "linear-equations",
       "grade-08",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "b449da59641c057d9a3c35151a43ed3182b95542a939bae4a4cae4aa472236e0",
+    "checksum": "2c413c94c981ef7f351d9b627ac7b72fc294214ed8dd9c7d5168ac94739c2d46",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Lineáris egyenletek",
-    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Linear equations",
+    "description": "Toets over Linear equations: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "text": "[math] Linear equations - Vraag 1: Linear equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "text": "[math] Linear equations - Vraag 2: Linear equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "text": "[math] Linear equations - Vraag 3: Linear equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "text": "[math] Linear equations - Vraag 4: Linear equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Linear equations.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "text": "[math] Linear equations - Vraag 5: Linear equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "lineáris-egyenletek",
+        "linear-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     }
   ],

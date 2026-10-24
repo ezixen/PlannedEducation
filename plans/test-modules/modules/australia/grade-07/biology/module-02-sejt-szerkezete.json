@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-sejt-szerkezete-1.0.0",
-    "name": "Sejt szerkezete - Australia grade-07",
+    "name": "Cell structure - Australia grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Cell structure for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.481019+00:00",
-    "updated_at": "2026-10-21T11:02:18.481030+00:00",
+    "created_at": "2026-10-24T17:53:46.630333+00:00",
+    "updated_at": "2026-10-24T17:53:46.630338+00:00",
     "tags": [
       "biology",
-      "sejt-szerkezete",
+      "cell-structure",
       "grade-07",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "b3de03903ba384d6c3b2b8a88fc68cd8fed66743b1764c7a0da8068390f0ed95",
+    "checksum": "dcab03867c4eeff2f69e9b022159a25b4ea8448b49c00629c271695c79cd8242",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Cell structure",
+    "description": "Assessment on Cell structure including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Cell structure - Question 1: Cell structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "cell-structure",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Cell structure - Question 2: Cell structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "cell-structure",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Cell structure - Question 3: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell structure.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "cell-structure",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Cell structure - Question 4: Cell structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "cell-structure",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Cell structure - Question 5: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Cell structure.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-07"
+        "cell-structure",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-alapok-1.0.0",
-    "name": "Százalék alapok - Canada grade-06",
+    "name": "Percentage basics - Canada grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék alapok for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minute assessment on Percentage basics for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.563176+00:00",
-    "updated_at": "2026-10-21T11:02:15.563188+00:00",
+    "created_at": "2026-10-24T17:53:44.825615+00:00",
+    "updated_at": "2026-10-24T17:53:44.825620+00:00",
     "tags": [
       "math",
-      "százalék-alapok",
+      "percentage-basics",
       "grade-06",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "136304e38a9423a097c4b3f649deed278697b0c2de2bf61aaa2fd10aaf1ee0c9",
+    "checksum": "532cd255104f43ec4cbd7d6a68e8c7442668619f6d58f2fd8c0c0f4c4a8bb03f",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék alapok",
-    "description": "Test on Százalék alapok including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage basics",
+    "description": "Assessment on Percentage basics including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 1: Percentage basics",
+      "text": "[math] Percentage basics - Question 1: Percentage basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 2: Percentage basics",
+      "text": "[math] Percentage basics - Question 2: Percentage basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 3: Percentage basics",
+      "text": "[math] Percentage basics - Question 3: Percentage basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék alapok - Kérdés 4: Percentage basics",
+      "text": "[math] Percentage basics - Question 4: Percentage basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Percentage basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék alapok - Question 5: Percentage basics [rand:1-100]",
+      "text": "[math] Percentage basics - Question 5: Percentage basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-alapok",
+        "percentage-basics",
         "grade-06",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     }
   ],

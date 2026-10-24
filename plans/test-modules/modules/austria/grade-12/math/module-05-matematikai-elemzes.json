@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-matematikai-elemzés-1.0.0",
-    "name": "Matematikai elemzés - Austria grade-12",
+    "name": "Mathematische Analysis - Austria grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Matematikai elemzés for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minütige Prüfung zum Thema Mathematische Analysis (grade-12). Themen: Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie, Mathematische Analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.453433+00:00",
-    "updated_at": "2026-10-21T11:02:29.453445+00:00",
+    "created_at": "2026-10-24T17:53:50.668099+00:00",
+    "updated_at": "2026-10-24T17:53:50.668105+00:00",
     "tags": [
       "math",
-      "matematikai-elemzés",
+      "mathematische-analysis",
       "grade-12",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "af92e1c414bde07f8ef0ee7dbbb7219bdd312f0ea3486bc4fe185056e7f341ff",
+    "checksum": "97d0d58993998b9cc098c5a4dfb6e095b9a8dc03ea81091aceb470656388228a",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry",
-      "Mathematical analysis"
+      "Analysis",
+      "Wahrscheinlichkeitsberechnung",
+      "Statistische Analyse",
+      "Geometrie",
+      "Mathematische Analysis"
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Matematikai elemzés",
-    "description": "Test on Matematikai elemzés including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Mathematische Analysis",
+    "description": "Prüfung zum Thema Mathematische Analysis: Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie, Mathematische Analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 1: Mathematical analysis",
+      "text": "[math] Mathematische Analysis - Frage 1: Mathematische Analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematische-analysis",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Matematikai elemzés",
-      "learning_objective": "Mathematical analysis"
+      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Mathematische Analysis",
+      "learning_objective": "Mathematische Analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 2: Mathematical analysis",
+      "text": "[math] Mathematische Analysis - Frage 2: Mathematische Analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematische-analysis",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Matematikai elemzés",
-      "learning_objective": "Mathematical analysis"
+      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Mathematische Analysis",
+      "learning_objective": "Mathematische Analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Matematikai elemzés - Kérdés 3: Mathematical analysis",
+      "text": "[math] Mathematische Analysis - Frage 3: Mathematische Analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematische-analysis",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Matematikai elemzés",
-      "learning_objective": "Mathematical analysis"
+      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Mathematische Analysis",
+      "learning_objective": "Mathematische Analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Matematikai elemzés - Kérdés 4: Mathematical analysis",
+      "text": "[math] Mathematische Analysis - Frage 4: Mathematische Analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Matematikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Mathematische Analysis.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "matematikai-elemzés",
-        "grade-12"
+        "mathematische-analysis",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Matematikai elemzés",
-      "learning_objective": "Mathematical analysis"
+      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Mathematische Analysis",
+      "learning_objective": "Mathematische Analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Matematikai elemzés - Question 5: Mathematical analysis [rand:1-1000]",
+      "text": "[math] Mathematische Analysis - Frage 5: Mathematische Analysis [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "matematikai-elemzés",
+        "mathematische-analysis",
         "grade-12",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Matematikai elemzés",
-      "learning_objective": "Mathematical analysis"
+      "curriculum_topic": "AUSTRIA-GRADE-12-MATH-Mathematische Analysis",
+      "learning_objective": "Mathematische Analysis"
     }
   ],
   "rubrics": []

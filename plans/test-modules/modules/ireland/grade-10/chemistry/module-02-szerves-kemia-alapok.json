@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-szerves-kémia-alapok-1.0.0",
-    "name": "Szerves kémia alapok - Ireland grade-10",
+    "name": "Organic chemistry basics - Ireland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerves kémia alapok for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minute assessment on Organic chemistry basics for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.666822+00:00",
-    "updated_at": "2026-10-21T11:02:30.666851+00:00",
+    "created_at": "2026-10-24T17:53:51.417420+00:00",
+    "updated_at": "2026-10-24T17:53:51.417426+00:00",
     "tags": [
       "chemistry",
-      "szerves-kémia-alapok",
+      "organic-chemistry-basics",
       "grade-10",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "0c3cea0a7458e71a8d5d6d4c08ee98edaff0f1810381a401d91055f4979b6d3a",
+    "checksum": "198d05574e96cb504aa2041ae892cdcfd14d9456e5e4fae02dcab4e8f4093889",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Szerves kémia alapok",
-    "description": "Test on Szerves kémia alapok including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Organic chemistry basics",
+    "description": "Assessment on Organic chemistry basics including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 1: Organic chemistry basics",
+      "text": "[chemistry] Organic chemistry basics - Question 1: Organic chemistry basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organic-chemistry-basics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Szerves kémia alapok",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Organic chemistry basics",
       "learning_objective": "Organic chemistry basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 2: Organic chemistry basics",
+      "text": "[chemistry] Organic chemistry basics - Question 2: Organic chemistry basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organic-chemistry-basics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Szerves kémia alapok",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Organic chemistry basics",
       "learning_objective": "Organic chemistry basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 3: Organic chemistry basics",
+      "text": "[chemistry] Organic chemistry basics - Question 3: Organic chemistry basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szerves kémia alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Organic chemistry basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organic-chemistry-basics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Szerves kémia alapok",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Organic chemistry basics",
       "learning_objective": "Organic chemistry basics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerves kémia alapok - Question 4: Organic chemistry basics [rand:1-100]",
+      "text": "[chemistry] Organic chemistry basics - Question 4: Organic chemistry basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
+        "organic-chemistry-basics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Szerves kémia alapok",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Organic chemistry basics",
       "learning_objective": "Organic chemistry basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 5: Organic chemistry basics",
+      "text": "[chemistry] Organic chemistry basics - Question 5: Organic chemistry basics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organic-chemistry-basics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Szerves kémia alapok",
+      "curriculum_topic": "IRELAND-GRADE-10-CHEMISTRY-Organic chemistry basics",
       "learning_objective": "Organic chemistry basics"
     }
   ],

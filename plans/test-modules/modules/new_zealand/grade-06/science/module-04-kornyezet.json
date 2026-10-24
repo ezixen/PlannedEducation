@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-science-környezet-1.0.0",
-    "name": "Környezet - New Zealand grade-06",
+    "name": "Environment - New Zealand grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Environment for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.467682+00:00",
-    "updated_at": "2026-10-21T11:02:34.467694+00:00",
+    "created_at": "2026-10-24T17:53:51.666420+00:00",
+    "updated_at": "2026-10-24T17:53:51.666428+00:00",
     "tags": [
       "science",
-      "környezet",
+      "environment",
       "grade-06",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-06",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "3575aa4a9b58948ddb9215847bde97e043879bca8cc248b932852f9f0f4ffa82",
+    "checksum": "98a180446851515b9e3a3006dc5b79d0ec8763adbb13269acd321b5016eb01a0",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-06 Science - Environment",
+    "description": "Assessment on Environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Environment - Question 1: Environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "environment",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Környezet",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Environment - Question 2: Environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "environment",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Környezet",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Environment - Question 3: Environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "environment",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Környezet",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Environment - Question 4: Environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "environment",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Környezet",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Environment",
       "learning_objective": "Environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Environment - Question 5: Environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "environment",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Környezet",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-06-SCIENCE-Environment",
       "learning_objective": "Environment"
     }
   ],

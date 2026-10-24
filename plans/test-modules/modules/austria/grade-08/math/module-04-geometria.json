@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-geometria-1.0.0",
-    "name": "Geometria - Austria grade-08",
+    "name": "Geometrie - Austria grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minütige Prüfung zum Thema Geometrie (grade-08). Themen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.103697+00:00",
-    "updated_at": "2026-10-21T11:02:29.103710+00:00",
+    "created_at": "2026-10-24T17:53:50.489042+00:00",
+    "updated_at": "2026-10-24T17:53:50.489049+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometrie",
       "grade-08",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "64f9f0c69d91739df3eb9bc5c0c9381e0f118c8182d74aa3756e35271fa602ed",
+    "checksum": "7b3e53b8aa522a734a300f3d423b71b4237d08f5d73a66e67a8922f64e18431f",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Reelle Zahlen",
+      "Funktionen",
+      "Lineare Gleichungen",
+      "Geometrie",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Geometria",
-    "description": "Test on Geometria including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Geometrie",
+    "description": "Prüfung zum Thema Geometrie: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometrie - Frage 1: Geometrie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometrie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometrie - Frage 2: Geometrie",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometrie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometrie - Frage 3: Geometrie",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometrie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometrie - Frage 4: Geometrie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geometrie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-08"
+        "geometrie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometrie - Frage 5: Geometrie [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometrie",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-08-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     }
   ],
   "rubrics": []

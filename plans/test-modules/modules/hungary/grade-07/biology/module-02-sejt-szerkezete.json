@@ -3,21 +3,25 @@
     "id": "grade-07-biology-sejt-szerkezete-1.0.0",
     "name": "Sejt szerkezete - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45 perces felmérő: Sejt szerkezete (grade-07). Témakörök: Sejtbiológia és genetika, Sejt szerkezete, Genetika alapok, Ökológia, Ökológiai rendszerek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.145509+00:00",
-    "updated_at": "2026-10-21T11:02:35.145523+00:00",
+    "created_at": "2026-10-24T17:53:52.173981+00:00",
+    "updated_at": "2026-10-24T17:53:52.173989+00:00",
     "tags": [
       "biology",
       "sejt-szerkezete",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "ad17201c423270e8fbcf8f287bc043ca8d6d7d874a7d5136c7270a5dd9f6c359",
+    "checksum": "3aae4583c4c4f3af82d4d0a80f6dd086e4d34f414426934878ae801f8088abbe",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics basics",
-      "Ecology",
-      "Ecological systems"
+      "Sejtbiológia és genetika",
+      "Sejt szerkezete",
+      "Genetika alapok",
+      "Ökológia",
+      "Ökológiai rendszerek"
     ]
   },
   "exam": {
     "title": "grade-07 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "Felmérő a(z) Sejt szerkezete témakörből (Sejtbiológia és genetika, Sejt szerkezete, Genetika alapok, Ökológia, Ökológiai rendszerek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Sejt szerkezete - Kérdés 1: Sejt szerkezete",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "sejt-szerkezete",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "learning_objective": "Sejt szerkezete"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Sejt szerkezete - Kérdés 2: Sejt szerkezete",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "sejt-szerkezete",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "learning_objective": "Sejt szerkezete"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Sejt szerkezete - Kérdés 3: Sejt szerkezete",
       "options": null,
       "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "sejt-szerkezete",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "learning_objective": "Sejt szerkezete"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Sejt szerkezete - Kérdés 4: Sejt szerkezete",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "sejt-szerkezete",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "learning_objective": "Sejt szerkezete"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Sejt szerkezete - Kérdés 5: Sejt szerkezete",
       "options": null,
       "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "sejt-szerkezete",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-BIOLOGY-Sejt szerkezete",
-      "learning_objective": "Cell structure"
+      "learning_objective": "Sejt szerkezete"
     }
   ],
   "rubrics": []

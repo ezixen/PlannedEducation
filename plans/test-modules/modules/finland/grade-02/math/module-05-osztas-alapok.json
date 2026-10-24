@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-osztás-alapok-1.0.0",
-    "name": "Osztás alapok - Finland grade-02",
+    "name": "Division basics - Finland grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás alapok for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45 minuutin koe aiheesta Division basics (grade-02). Aiheet: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.028307+00:00",
-    "updated_at": "2026-10-21T11:02:24.028318+00:00",
+    "created_at": "2026-10-24T17:53:47.504115+00:00",
+    "updated_at": "2026-10-24T17:53:47.504122+00:00",
     "tags": [
       "math",
-      "osztás-alapok",
+      "division-basics",
       "grade-02",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "f7137628b05ab012a1f6327fc6502ca70e4747f96e8b563893f5ce09a726bcee",
+    "checksum": "5d8a8049765b3f409c1d23997a901f4864ba7324677e1f222f687fefccd9a6eb",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Osztás alapok",
-    "description": "Test on Osztás alapok including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Division basics",
+    "description": "Koe aiheesta Division basics: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás alapok - Kérdés 1: Division basics",
+      "text": "[math] Division basics - Kysymys 1: Division basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-alapok",
-        "grade-02"
+        "division-basics",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-MATH-Osztás alapok",
+      "curriculum_topic": "FINLAND-GRADE-02-MATH-Division basics",
       "learning_objective": "Division basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás alapok - Kérdés 2: Division basics",
+      "text": "[math] Division basics - Kysymys 2: Division basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-alapok",
-        "grade-02"
+        "division-basics",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-MATH-Osztás alapok",
+      "curriculum_topic": "FINLAND-GRADE-02-MATH-Division basics",
       "learning_objective": "Division basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás alapok - Kérdés 3: Division basics",
+      "text": "[math] Division basics - Kysymys 3: Division basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-alapok",
-        "grade-02"
+        "division-basics",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-MATH-Osztás alapok",
+      "curriculum_topic": "FINLAND-GRADE-02-MATH-Division basics",
       "learning_objective": "Division basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás alapok - Kérdés 4: Division basics",
+      "text": "[math] Division basics - Kysymys 4: Division basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztás alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Division basics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztás-alapok",
-        "grade-02"
+        "division-basics",
+        "grade-02",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-MATH-Osztás alapok",
+      "curriculum_topic": "FINLAND-GRADE-02-MATH-Division basics",
       "learning_objective": "Division basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás alapok - Question 5: Division basics [rand:1-20]",
+      "text": "[math] Division basics - Kysymys 5: Division basics [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztás-alapok",
+        "division-basics",
         "grade-02",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-02-MATH-Osztás alapok",
+      "curriculum_topic": "FINLAND-GRADE-02-MATH-Division basics",
       "learning_objective": "Division basics"
     }
   ],

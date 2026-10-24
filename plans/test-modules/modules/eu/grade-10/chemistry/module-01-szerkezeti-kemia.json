@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-szerkezeti-kémia-1.0.0",
-    "name": "Szerkezeti kémia - European Union grade-10",
+    "name": "Structural chemistry - European Union grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerkezeti kémia for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minute assessment on Structural chemistry for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.863666+00:00",
-    "updated_at": "2026-10-21T11:02:19.863687+00:00",
+    "created_at": "2026-10-24T17:53:47.345989+00:00",
+    "updated_at": "2026-10-24T17:53:47.345997+00:00",
     "tags": [
       "chemistry",
-      "szerkezeti-kémia",
+      "structural-chemistry",
       "grade-10",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "beb202985b5d35e6932407193416988d8ff49ff344603e6ff0c548a055cea63e",
+    "checksum": "51bb5e482ba003be9bda38680d060affa25dabd46fb6bd03193c91686060189b",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Szerkezeti kémia",
-    "description": "Test on Szerkezeti kémia including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Structural chemistry",
+    "description": "Assessment on Structural chemistry including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 1: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Question 1: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 2: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Question 2: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 3: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Question 3: Structural chemistry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szerkezeti kémia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Structural chemistry.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerkezeti kémia - Question 4: Structural chemistry [rand:1-100]",
+      "text": "[chemistry] Structural chemistry - Question 4: Structural chemistry [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
+        "structural-chemistry",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 5: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Question 5: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "EU-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     }
   ],

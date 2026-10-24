@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mozgás-1.0.0",
-    "name": "Mozgás - Denmark grade-08",
+    "name": "Motion - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mozgás for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minutters prøve i Motion (grade-08). Emner: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.500049+00:00",
-    "updated_at": "2026-10-21T11:02:27.500070+00:00",
+    "created_at": "2026-10-24T17:53:49.590728+00:00",
+    "updated_at": "2026-10-24T17:53:49.590737+00:00",
     "tags": [
       "physics",
-      "mozgás",
+      "motion",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "9cba98cefcd43af2d5928478afa5b6914b628f4799aa79fffc8f7ced8bc26a6c",
+    "checksum": "55747f704c6e41eb6b83387eaf5a44cd976b61db6ca36d1afd4916ad9eeb8e1e",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mozgás",
-    "description": "Test on Mozgás including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Motion",
+    "description": "Prøve i Motion: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 1: Motion",
+      "text": "[physics] Motion - Spørgsmål 1: Motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 2: Motion",
+      "text": "[physics] Motion - Spørgsmål 2: Motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mozgás - Kérdés 3: Motion",
+      "text": "[physics] Motion - Spørgsmål 3: Motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Motion.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mozgás - Question 4: Motion [rand:1-1000]",
+      "text": "[physics] Motion - Spørgsmål 4: Motion [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mozgás",
+        "motion",
         "grade-08",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 5: Motion",
+      "text": "[physics] Motion - Spørgsmål 5: Motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "DENMARK-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     }
   ],

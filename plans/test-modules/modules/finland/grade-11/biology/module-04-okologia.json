@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-ökológia-1.0.0",
-    "name": "Ökológia - Finland grade-11",
+    "name": "Ecology - Finland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45 minuutin koe aiheesta Ecology (grade-11). Aiheet: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.643491+00:00",
-    "updated_at": "2026-10-21T11:02:24.643514+00:00",
+    "created_at": "2026-10-24T17:53:47.812585+00:00",
+    "updated_at": "2026-10-24T17:53:47.812593+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ecology",
       "grade-11",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "627b805b0be2981808bc56e4102fcdb8f95203bdee040b90f2bd2d875ca00d2f",
+    "checksum": "6b8f853d43a30fb8acc299b0867d92c2de8109e2764623ef9ed34eb4e07987ff",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Ökológia",
-    "description": "Test on Ökológia including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Ecology",
+    "description": "Koe aiheesta Ecology: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ecology - Kysymys 1: Ecology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ecology",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ökológia",
+      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ecology - Kysymys 2: Ecology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ecology",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ökológia",
+      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ecology - Kysymys 3: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Ecology.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ecology",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ökológia",
+      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ecology - Kysymys 4: Ecology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ecology",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ökológia",
+      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ecology - Kysymys 5: Ecology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Ecology.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ecology",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ökológia",
+      "curriculum_topic": "FINLAND-GRADE-11-BIOLOGY-Ecology",
       "learning_objective": "Ecology"
     }
   ],

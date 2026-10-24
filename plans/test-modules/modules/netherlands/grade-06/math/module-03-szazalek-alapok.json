@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-alapok-1.0.0",
-    "name": "Százalék alapok - Netherlands grade-06",
+    "name": "Percentage basics - Netherlands grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék alapok for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "Toets van 45 minuten over Percentage basics (grade-06). Onderwerpen: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.931177+00:00",
-    "updated_at": "2026-10-21T11:02:24.931189+00:00",
+    "created_at": "2026-10-24T17:53:47.981875+00:00",
+    "updated_at": "2026-10-24T17:53:47.981884+00:00",
     "tags": [
       "math",
-      "százalék-alapok",
+      "percentage-basics",
       "grade-06",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "c02d566bcef17ee881f4b592534529883c847ca2a455c0944ebef082eb048f38",
+    "checksum": "da9e400ca5c54d98ee0f34aae77e173bce86592e943f7be7a59f2914393c74b3",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék alapok",
-    "description": "Test on Százalék alapok including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage basics",
+    "description": "Toets over Percentage basics: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 1: Percentage basics",
+      "text": "[math] Percentage basics - Vraag 1: Percentage basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 2: Percentage basics",
+      "text": "[math] Percentage basics - Vraag 2: Percentage basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 3: Percentage basics",
+      "text": "[math] Percentage basics - Vraag 3: Percentage basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék alapok - Kérdés 4: Percentage basics",
+      "text": "[math] Percentage basics - Vraag 4: Percentage basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Percentage basics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék alapok - Question 5: Percentage basics [rand:1-100]",
+      "text": "[math] Percentage basics - Vraag 5: Percentage basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-alapok",
+        "percentage-basics",
         "grade-06",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     }
   ],

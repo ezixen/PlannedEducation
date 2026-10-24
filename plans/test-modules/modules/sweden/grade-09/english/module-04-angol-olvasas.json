@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - Sweden grade-09",
+    "name": "English reading - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minuters prov i English reading (grade-09). Omfattar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.883421+00:00",
-    "updated_at": "2026-10-21T11:02:25.883445+00:00",
+    "created_at": "2026-10-24T17:53:48.564983+00:00",
+    "updated_at": "2026-10-24T17:53:48.564995+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "8cf6b51779d9c9c6c3395e16c988ad22affffd9beb66afb7dfa761300f58c103",
+    "checksum": "17d1e87144a6294cbfd511149a9bb8497658f3873e4eb0904d8794f6ceda1b56",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English reading",
+    "description": "Prov i English reading: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Fråga 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Fråga 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Fråga 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för English reading.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Fråga 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Fråga 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "SWEDEN-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

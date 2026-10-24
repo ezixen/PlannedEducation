@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Australia grade-12",
+    "name": "Geographic tools - Australia grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minute assessment on Geographic tools for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.901313+00:00",
-    "updated_at": "2026-10-21T11:02:18.901327+00:00",
+    "created_at": "2026-10-24T17:53:46.982966+00:00",
+    "updated_at": "2026-10-24T17:53:46.982980+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographic-tools",
       "grade-12",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "ca801559583261fc33f23c2f56a12377465a8ce0e35a100706ff7a25a7639ac5",
+    "checksum": "a539dcca92fc9add82cc9739cd8c8d059357d5bc8e8aa78a9dcf9f1ceef70896",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic tools",
+    "description": "Assessment on Geographic tools including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographic tools - Question 1: Geographic tools",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographic tools - Question 2: Geographic tools",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographic tools - Question 3: Geographic tools",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic tools.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographic tools - Question 4: Geographic tools",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographic tools - Question 5: Geographic tools",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     }
   ],

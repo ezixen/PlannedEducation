@@ -3,21 +3,25 @@
     "id": "grade-10-history-magyarország-1.0.0",
     "name": "Magyarország - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45 perces felmérő: Magyarország (grade-10). Témakörök: Magyarország története, Magyarország, Történelem, Történelmi események, Világtörténet",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.556491+00:00",
-    "updated_at": "2026-10-21T11:02:35.556502+00:00",
+    "created_at": "2026-10-24T17:53:52.404037+00:00",
+    "updated_at": "2026-10-24T17:53:52.404043+00:00",
     "tags": [
       "history",
       "magyarország",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "806c7eab85530cd189cd04491e7eb49250f6c4fd63d466bcb28a9f00c657f8b7",
+    "checksum": "61a6eb9c150ec22158861f4284106100e081eeffbfa74051ad45becbc162dc10",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Hungary",
-      "Hungary",
-      "History",
-      "Historical events",
-      "World history"
+      "Magyarország története",
+      "Magyarország",
+      "Történelem",
+      "Történelmi események",
+      "Világtörténet"
     ]
   },
   "exam": {
     "title": "grade-10 History - Magyarország",
-    "description": "Test on Magyarország including History of Hungary, Hungary, History, Historical events, World history",
+    "description": "Felmérő a(z) Magyarország témakörből (Magyarország története, Magyarország, Történelem, Történelmi események, Világtörténet)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 1: Hungary",
+      "text": "[history] Magyarország - Kérdés 1: Magyarország",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "magyarország",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-HISTORY-Magyarország",
-      "learning_objective": "Hungary"
+      "learning_objective": "Magyarország"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 2: Hungary",
+      "text": "[history] Magyarország - Kérdés 2: Magyarország",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "magyarország",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-HISTORY-Magyarország",
-      "learning_objective": "Hungary"
+      "learning_objective": "Magyarország"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország - Kérdés 3: Hungary",
+      "text": "[history] Magyarország - Kérdés 3: Magyarország",
       "options": null,
       "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "magyarország",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-HISTORY-Magyarország",
-      "learning_objective": "Hungary"
+      "learning_objective": "Magyarország"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 4: Hungary",
+      "text": "[history] Magyarország - Kérdés 4: Magyarország",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "magyarország",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-HISTORY-Magyarország",
-      "learning_objective": "Hungary"
+      "learning_objective": "Magyarország"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország - Kérdés 5: Hungary",
+      "text": "[history] Magyarország - Kérdés 5: Magyarország",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "magyarország",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-HISTORY-Magyarország",
-      "learning_objective": "Hungary"
+      "learning_objective": "Magyarország"
     }
   ],
   "rubrics": []

@@ -3,21 +3,25 @@
     "id": "grade-10-civics-demokrácia-és-piacgazdaság-1.0.0",
     "name": "Demokrácia és piacgazdaság - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia és piacgazdaság for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45 perces felmérő: Demokrácia és piacgazdaság (grade-10). Témakörök: Demokrácia és piacgazdaság, Demokrácia, Piacgazdaság, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.531885+00:00",
-    "updated_at": "2026-10-21T11:02:35.531909+00:00",
+    "created_at": "2026-10-24T17:53:52.387682+00:00",
+    "updated_at": "2026-10-24T17:53:52.387688+00:00",
     "tags": [
       "civics",
       "demokrácia-és-piacgazdaság",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "b58789f63026c0b2b5cf96f1658a2547c27b1f84b0cd01596aa77886bc0292f3",
+    "checksum": "439c1f993dc9298491c91ab32ee47142777879fec745c27fe33430ca066bc4e8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokrácia és piacgazdaság",
+      "Demokrácia",
+      "Piacgazdaság",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-10 Civics - Demokrácia és piacgazdaság",
-    "description": "Test on Demokrácia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Felmérő a(z) Demokrácia és piacgazdaság témakörből (Demokrácia és piacgazdaság, Demokrácia, Piacgazdaság, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Demokrácia és piacgazdaság",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "learning_objective": "Demokrácia és piacgazdaság"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Demokrácia és piacgazdaság",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "learning_objective": "Demokrácia és piacgazdaság"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Demokrácia és piacgazdaság",
       "options": null,
       "correct_answer": "Minta válasz a(z) Demokrácia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "learning_objective": "Demokrácia és piacgazdaság"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Demokrácia és piacgazdaság",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "learning_objective": "Demokrácia és piacgazdaság"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Demokrácia és piacgazdaság",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
-      "learning_objective": "Democracy and market economy"
+      "learning_objective": "Demokrácia és piacgazdaság"
     }
   ],
   "rubrics": []

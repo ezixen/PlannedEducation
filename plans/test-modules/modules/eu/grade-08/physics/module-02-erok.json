@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-erők-1.0.0",
-    "name": "Erők - European Union grade-08",
+    "name": "Forces - European Union grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Forces for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.268714+00:00",
-    "updated_at": "2026-10-21T11:02:19.268730+00:00",
+    "created_at": "2026-10-24T17:53:47.282791+00:00",
+    "updated_at": "2026-10-24T17:53:47.282797+00:00",
     "tags": [
       "physics",
-      "erők",
+      "forces",
       "grade-08",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "6ccfe2e97c1a5fc37d9951f7cd211f998d55c4823c4435787eeab57bd4313662",
+    "checksum": "a7dc62132090d6cceb95a611c7c60d26b8a9304df6c92de2ad215569988634b7",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Forces",
+    "description": "Assessment on Forces including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Forces - Question 1: Forces",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "EU-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Forces - Question 2: Forces",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "EU-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Forces - Question 3: Forces",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Forces.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "EU-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Forces - Question 4: Forces [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők",
+        "forces",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "EU-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Forces - Question 5: Forces",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "EU-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     }
   ],

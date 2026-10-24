@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-általános-tört-1.0.0",
-    "name": "Általános tört - Canada grade-06",
+    "name": "General fractions - Canada grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Általános tört for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minute assessment on General fractions for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.558464+00:00",
-    "updated_at": "2026-10-21T11:02:15.558477+00:00",
+    "created_at": "2026-10-24T17:53:44.822948+00:00",
+    "updated_at": "2026-10-24T17:53:44.822954+00:00",
     "tags": [
       "math",
-      "általános-tört",
+      "general-fractions",
       "grade-06",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "73315966c97ee3e9448f7a84821984b82e5522cc89ff66f467d3882502d347cb",
+    "checksum": "ab10dc99792843db51c671de11561f42470dd3a3f5d489135364af099f7fd1f8",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Általános tört",
-    "description": "Test on Általános tört including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - General fractions",
+    "description": "Assessment on General fractions including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 1: General fractions",
+      "text": "[math] General fractions - Question 1: General fractions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 2: General fractions",
+      "text": "[math] General fractions - Question 2: General fractions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 3: General fractions",
+      "text": "[math] General fractions - Question 3: General fractions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Általános tört - Kérdés 4: General fractions",
+      "text": "[math] General fractions - Question 4: General fractions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Általános tört témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for General fractions.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Általános tört - Question 5: General fractions [rand:1-100]",
+      "text": "[math] General fractions - Question 5: General fractions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "általános-tört",
+        "general-fractions",
         "grade-06",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "CANADA-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-lineáris-egyenletek-1.0.0",
-    "name": "Lineáris egyenletek - Australia grade-08",
+    "name": "Linear equations - Australia grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minute assessment on Linear equations for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.645433+00:00",
-    "updated_at": "2026-10-21T11:02:18.645445+00:00",
+    "created_at": "2026-10-24T17:53:46.748806+00:00",
+    "updated_at": "2026-10-24T17:53:46.748811+00:00",
     "tags": [
       "math",
-      "lineáris-egyenletek",
+      "linear-equations",
       "grade-08",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "58845b3229b134849f6d291b07ab8a026c83740b03eaf163027240cd99899719",
+    "checksum": "a206630d6292a33523eab2527d608dfbc31ce0ec2edef5df641c95b474357441",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Lineáris egyenletek",
-    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Linear equations",
+    "description": "Assessment on Linear equations including Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "text": "[math] Linear equations - Question 1: Linear equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "text": "[math] Linear equations - Question 2: Linear equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "text": "[math] Linear equations - Question 3: Linear equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "text": "[math] Linear equations - Question 4: Linear equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Linear equations.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "text": "[math] Linear equations - Question 5: Linear equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "lineáris-egyenletek",
+        "linear-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     }
   ],

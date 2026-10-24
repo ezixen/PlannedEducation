@@ -3,21 +3,25 @@
     "id": "grade-01-science-természet-és-környezet-1.0.0",
     "name": "Természet és környezet - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 perces felmérő: Természet és környezet (grade-01). Témakörök: Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.991598+00:00",
-    "updated_at": "2026-10-21T11:02:34.991615+00:00",
+    "created_at": "2026-10-24T17:53:52.055288+00:00",
+    "updated_at": "2026-10-24T17:53:52.055298+00:00",
     "tags": [
       "science",
       "természet-és-környezet",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "2bc3583e6dbcf56e1e63d50adb9dc4a305cdb01a04fb778cda12a0c6925ad4bb",
+    "checksum": "7cc52e61972d16af67d29af3ffd9905d4a0fc3135ce3558f7f79c5a7caa50c59",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Természet és környezet",
+      "Növények és állatok",
+      "Természet",
+      "Környezet",
+      "Természetvédelem"
     ]
   },
   "exam": {
     "title": "grade-01 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Felmérő a(z) Természet és környezet témakörből (Természet és környezet, Növények és állatok, Természet, Környezet, Természetvédelem)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Természet és környezet - Kérdés 1: Természet és környezet",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "science",
         "természet-és-környezet",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "learning_objective": "Természet és környezet"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Természet és környezet - Kérdés 2: Természet és környezet",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "science",
         "természet-és-környezet",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "learning_objective": "Természet és környezet"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Természet és környezet - Kérdés 3: Természet és környezet",
       "options": null,
       "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
         "természet-és-környezet",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "learning_objective": "Természet és környezet"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Természet és környezet - Kérdés 4: Természet és környezet",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "science",
         "természet-és-környezet",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "learning_objective": "Természet és környezet"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Természet és környezet - Kérdés 5: Természet és környezet",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "science",
         "természet-és-környezet",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "learning_objective": "Természet és környezet"
     }
   ],
   "rubrics": []

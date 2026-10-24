@@ -12,6 +12,9 @@ export interface PackageMetadata {
   tags: string[];
   subject: string;
   grade_level: string;
+  language?: string;
+  language_name?: string;
+  country?: string;
   license: string;
   checksum: string;
 }
@@ -86,6 +89,12 @@ export interface PackageExportRequest {
   include_variables: boolean;
   format: 'json' | 'yaml';
   compress: boolean;
+  language?: string;
+  language_name?: string;
+  country?: string;
+  subject?: string;
+  grade_level?: string;
+  save_to_server?: boolean;
 }
 
 export interface PackageImportResult {
@@ -108,35 +117,106 @@ export interface PackageListResponse {
   packages: PackageMetadata[];
 }
 
+export interface CurriculumModuleSummary {
+  id: string;
+  name: string;
+  description: string;
+  country: string;
+  language: string;
+  language_name: string;
+  grade_level: string;
+  subject: string;
+  curriculum: string;
+  question_count: number;
+  duration_minutes: number;
+  total_points: number;
+  randomizer_enabled: boolean;
+  path: string;
+}
+
+export interface CurriculumBrowseResponse {
+  total: number;
+  offset: number;
+  limit: number;
+  countries: string[];
+  languages: { code: string; name: string }[];
+  grades: string[];
+  subjects: string[];
+  modules: CurriculumModuleSummary[];
+}
+
+export const MODULE_LANGUAGES: { code: string; name: string; defaultCountry: string }[] = [
+  { code: 'en', name: 'English', defaultCountry: 'usa' },
+  { code: 'hu', name: 'Magyar', defaultCountry: 'hungary' },
+  { code: 'de', name: 'Deutsch', defaultCountry: 'germany' },
+  { code: 'fr', name: 'Français', defaultCountry: 'france' },
+  { code: 'es', name: 'Español', defaultCountry: 'spain' },
+  { code: 'it', name: 'Italiano', defaultCountry: 'italy' },
+  { code: 'nl', name: 'Nederlands', defaultCountry: 'netherlands' },
+  { code: 'pl', name: 'Polski', defaultCountry: 'poland' },
+  { code: 'pt', name: 'Português', defaultCountry: 'portugal' },
+  { code: 'pt-BR', name: 'Português (Brasil)', defaultCountry: 'brazil' },
+  { code: 'sv', name: 'Svenska', defaultCountry: 'sweden' },
+  { code: 'no', name: 'Norsk', defaultCountry: 'norway' },
+  { code: 'da', name: 'Dansk', defaultCountry: 'denmark' },
+  { code: 'fi', name: 'Suomi', defaultCountry: 'finland' },
+  { code: 'uk', name: 'Українська', defaultCountry: 'ukraine' },
+  { code: 'ja', name: '日本語', defaultCountry: 'japan' },
+  { code: 'zh', name: '中文', defaultCountry: 'china' },
+  { code: 'ar', name: 'العربية', defaultCountry: 'international' },
+  { code: 'ko', name: '한국어', defaultCountry: 'south_korea' },
+  { code: 'tr', name: 'Türkçe', defaultCountry: 'turkey' },
+  { code: 'ro', name: 'Română', defaultCountry: 'romania' },
+  { code: 'cs', name: 'Čeština', defaultCountry: 'czechia' },
+  { code: 'sk', name: 'Slovenčina', defaultCountry: 'slovakia' },
+  { code: 'el', name: 'Ελληνικά', defaultCountry: 'greece' },
+];
+
 export const packagesService = {
   async exportPackage(request: PackageExportRequest): Promise<{
     content: string | Blob;
     media_type: string;
     filename: string;
+    saved_server_path?: string | null;
+    language?: string;
+    language_name?: string;
+    country?: string;
   }> {
-    const response = await apiClient.post('/packages/export', request, {
-      responseType: 'blob',
-    });
-    
-    // Get filename from Content-Disposition header
-    const contentDisposition = response.headers['content-disposition'];
-    let filename = `package.${request.format}`;
-    if (contentDisposition) {
-      const match = contentDisposition.match(/filename="(.+)"/);
-      if (match) filename = match[1];
-    }
-    
+    const response = await apiClient.post('/packages/export', request);
+    const data = response.data;
+    const rawContent = typeof data?.content === 'string' ? data.content : JSON.stringify(data, null, 2);
+    const mediaType = String(data?.media_type || (request.format === 'yaml' ? 'application/yaml' : 'application/json'));
+    const filename = String(data?.filename || `package.${request.format}`);
+
     return {
-      content: response.data,
-      media_type: String(response.headers['content-type'] || 'application/json'),
+      content: rawContent,
+      media_type: mediaType,
       filename,
+      saved_server_path: data?.saved_server_path || null,
+      language: data?.language,
+      language_name: data?.language_name,
+      country: data?.country,
     };
   },
 
-  async importPackage(file: File): Promise<PackageImportResult> {
+  async importPackage(
+    file: File,
+    options?: {
+      language?: string;
+      language_name?: string;
+      country?: string;
+      save_to_server?: boolean;
+    }
+  ): Promise<PackageImportResult> {
     const formData = new FormData();
     formData.append('file', file);
-    
+    if (options?.language) formData.append('language', options.language);
+    if (options?.language_name) formData.append('language_name', options.language_name);
+    if (options?.country) formData.append('country', options.country);
+    if (options?.save_to_server !== undefined) {
+      formData.append('save_to_server', String(options.save_to_server));
+    }
+
     const response = await apiClient.post('/packages/import', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
@@ -146,7 +226,7 @@ export const packagesService = {
   async validatePackage(file: File): Promise<PackageValidationResult> {
     const formData = new FormData();
     formData.append('file', file);
-    
+
     const response = await apiClient.post('/packages/validate', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
@@ -164,8 +244,40 @@ export const packagesService = {
     if (filters?.grade_level) params.append('grade_level', filters.grade_level);
     if (filters?.tags) params.append('tags', filters.tags);
     if (filters?.author_id) params.append('author_id', filters.author_id);
-    
+
     const response = await apiClient.get(`/packages?${params.toString()}`);
+    return response.data;
+  },
+
+  async listCurriculumModules(filters?: {
+    country?: string;
+    language?: string;
+    grade_level?: string;
+    subject?: string;
+    search?: string;
+    limit?: number;
+    offset?: number;
+  }): Promise<CurriculumBrowseResponse> {
+    const params = new URLSearchParams();
+    if (filters?.country) params.append('country', filters.country);
+    if (filters?.language) params.append('language', filters.language);
+    if (filters?.grade_level) params.append('grade_level', filters.grade_level);
+    if (filters?.subject) params.append('subject', filters.subject);
+    if (filters?.search) params.append('search', filters.search);
+    if (filters?.limit !== undefined) params.append('limit', String(filters.limit));
+    if (filters?.offset !== undefined) params.append('offset', String(filters.offset));
+
+    const response = await apiClient.get(`/packages/curriculum?${params.toString()}`);
+    return response.data;
+  },
+
+  async importCurriculumModule(path: string): Promise<PackageImportResult> {
+    const response = await apiClient.post('/packages/curriculum/import', { path });
+    return response.data;
+  },
+
+  async importRepositoryPackage(packageId: string): Promise<PackageImportResult> {
+    const response = await apiClient.post(`/packages/${packageId}/import`);
     return response.data;
   },
 
@@ -174,20 +286,15 @@ export const packagesService = {
     media_type: string;
     filename: string;
   }> {
-    const response = await apiClient.get(`/packages/${packageId}/download?format=${format}`, {
-      responseType: 'blob',
-    });
-    
-    const contentDisposition = response.headers['content-disposition'];
-    let filename = `package.${format}`;
-    if (contentDisposition) {
-      const match = contentDisposition.match(/filename="(.+)"/);
-      if (match) filename = match[1];
-    }
-    
+    const response = await apiClient.get(`/packages/${packageId}/download?format=${format}`);
+    const data = response.data;
+    const rawContent = typeof data?.content === 'string' ? data.content : JSON.stringify(data, null, 2);
+    const mediaType = String(data?.media_type || 'application/json');
+    const filename = String(data?.filename || `package.${format}`);
+
     return {
-      content: response.data,
-      media_type: String(response.headers['content-type'] || 'application/json'),
+      content: new Blob([rawContent], { type: mediaType }),
+      media_type: mediaType,
       filename,
     };
   },
@@ -200,7 +307,7 @@ export const packagesService = {
   }> {
     const formData = new FormData();
     formData.append('is_public', isPublic.toString());
-    
+
     const response = await apiClient.post(`/packages/${packageId}/publish`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
@@ -208,7 +315,6 @@ export const packagesService = {
   },
 };
 
-// Helper function to download blob as file
 export function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -218,37 +324,4 @@ export function downloadBlob(blob: Blob, filename: string) {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
-}
-
-// Helper function to parse package file
-export async function parsePackageFile(file: File): Promise<TestPackage> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const content = e.target?.result as string;
-        let pkg: TestPackage;
-        
-        if (file.name.endsWith('.gz')) {
-          // For gzipped files, we'd need a decompression library
-          // For now, reject with helpful message
-          reject(new Error('Gzipped files not yet supported in browser. Please decompress first.'));
-          return;
-        }
-        
-        if (file.name.endsWith('.yaml') || file.name.endsWith('.yml')) {
-          // Would need js-yaml library
-          reject(new Error('YAML parsing not yet supported. Please use JSON format.'));
-          return;
-        }
-        
-        pkg = JSON.parse(content);
-        resolve(pkg);
-      } catch (err) {
-        reject(err);
-      }
-    };
-    reader.onerror = () => reject(new Error('Failed to read file'));
-    reader.readAsText(file);
-  });
 }

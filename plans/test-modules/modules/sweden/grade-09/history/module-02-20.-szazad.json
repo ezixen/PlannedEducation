@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-20.-század-1.0.0",
-    "name": "20. század - Sweden grade-09",
+    "name": "20th century - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minuters prov i 20th century (grade-09). Omfattar: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.911006+00:00",
-    "updated_at": "2026-10-21T11:02:25.911021+00:00",
+    "created_at": "2026-10-24T17:53:48.586722+00:00",
+    "updated_at": "2026-10-24T17:53:48.586740+00:00",
     "tags": [
       "history",
-      "20.-század",
+      "20th-century",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "ff59a32c33be291bb2731f8b86bcf3d12de7d74f11fa6979bb9358e7b875e3ef",
+    "checksum": "f45e8d7a110af7ec967cb1e78e0f329b8d26fa84566827f917e363844d66df84",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - 20. század",
-    "description": "Test on 20. század including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - 20th century",
+    "description": "Prov i 20th century: History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 1: 20th century",
+      "text": "[history] 20th century - Fråga 1: 20th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 2: 20th century",
+      "text": "[history] 20th century - Fråga 2: 20th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század - Kérdés 3: 20th century",
+      "text": "[history] 20th century - Fråga 3: 20th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 20. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för 20th century.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 4: 20th century",
+      "text": "[history] 20th century - Fråga 4: 20th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 5: 20th century",
+      "text": "[history] 20th century - Fråga 5: 20th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "SWEDEN-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     }
   ],

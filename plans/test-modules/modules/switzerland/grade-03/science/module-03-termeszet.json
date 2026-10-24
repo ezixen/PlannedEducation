@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-science-természet-1.0.0",
-    "name": "Természet - Switzerland grade-03",
+    "name": "Natur - Switzerland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Natur (grade-03). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.207231+00:00",
-    "updated_at": "2026-10-21T11:02:28.207241+00:00",
+    "created_at": "2026-10-24T17:53:49.886034+00:00",
+    "updated_at": "2026-10-24T17:53:49.886043+00:00",
     "tags": [
       "science",
-      "természet",
+      "natur",
       "grade-03",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-03",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "11bd1c7073a3e769153f41a290a060f01f93f2ff0d821f229b592e2318a80b47",
+    "checksum": "aa254ba2aad20d5b9a2619c03674130967902169f7029a5e62b8bb3f9abb2048",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-03 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-03 Science - Natur",
+    "description": "Prüfung zum Thema Natur: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Natur - Frage 1: Natur",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natur",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Natur - Frage 2: Natur",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natur",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Natur - Frage 3: Natur",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Natur.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natur",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Natur - Frage 4: Natur",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natur",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Natur - Frage 5: Natur",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natur",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-SCIENCE-Natur",
+      "learning_objective": "Natur"
     }
   ],
   "rubrics": []

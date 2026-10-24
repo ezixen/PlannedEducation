@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-egyenletek-1.0.0",
-    "name": "Kémiai egyenletek - Finland grade-08",
+    "name": "Chemical equations - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenletek for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45 minuutin koe aiheesta Chemical equations (grade-08). Aiheet: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.295342+00:00",
-    "updated_at": "2026-10-21T11:02:24.295364+00:00",
+    "created_at": "2026-10-24T17:53:47.660010+00:00",
+    "updated_at": "2026-10-24T17:53:47.660018+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenletek",
+      "chemical-equations",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "91df9f3c85ccc2916f9f81d8aee7cdc096a3853c59042f749e9ca5b6a5beaf80",
+    "checksum": "2330140701de42c89da17bd7d40d46ec56a273c5b91de3a931437032e9a03a56",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai egyenletek",
-    "description": "Test on Kémiai egyenletek including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical equations",
+    "description": "Koe aiheesta Chemical equations: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 1: Chemical equations",
+      "text": "[chemistry] Chemical equations - Kysymys 1: Chemical equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 2: Chemical equations",
+      "text": "[chemistry] Chemical equations - Kysymys 2: Chemical equations",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 3: Chemical equations",
+      "text": "[chemistry] Chemical equations - Kysymys 3: Chemical equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Chemical equations.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenletek - Question 4: Chemical equations [rand:1-1000]",
+      "text": "[chemistry] Chemical equations - Kysymys 4: Chemical equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
+        "chemical-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 5: Chemical equations",
+      "text": "[chemistry] Chemical equations - Kysymys 5: Chemical equations",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "FINLAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     }
   ],

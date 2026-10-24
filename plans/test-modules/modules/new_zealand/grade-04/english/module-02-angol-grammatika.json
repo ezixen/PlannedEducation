@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - New Zealand grade-04",
+    "name": "English grammar - New Zealand grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English grammar for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.403255+00:00",
-    "updated_at": "2026-10-21T11:02:34.403266+00:00",
+    "created_at": "2026-10-24T17:53:51.610210+00:00",
+    "updated_at": "2026-10-24T17:53:51.610215+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-04",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "fc604ad5c4b30d4722c8644a3eca83a8c3a9f6f403e70f43d55ebf6720ec61fb",
+    "checksum": "2fa212bea2693b9708fc0ee0a39814cd88e48de0f00fc77e075ac620e57e2bdf",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-04 English - English grammar",
+    "description": "Assessment on English grammar including English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Question 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-04"
+        "english-grammar",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Question 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-04"
+        "english-grammar",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Question 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English grammar.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-04"
+        "english-grammar",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Question 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-04"
+        "english-grammar",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Question 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-04"
+        "english-grammar",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-Angol grammatika",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-04-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

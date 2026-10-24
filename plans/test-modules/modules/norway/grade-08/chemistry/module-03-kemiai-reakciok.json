@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-reakciók-1.0.0",
-    "name": "Kémiai reakciók - Norway grade-08",
+    "name": "Chemical reactions - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minutters prøve i Chemical reactions (grade-08). Emner: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.470405+00:00",
-    "updated_at": "2026-10-21T11:02:26.470424+00:00",
+    "created_at": "2026-10-24T17:53:48.992048+00:00",
+    "updated_at": "2026-10-24T17:53:48.992056+00:00",
     "tags": [
       "chemistry",
-      "kémiai-reakciók",
+      "chemical-reactions",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "6924985c770bca134bd3de37e373c74a1120d20518c8680a809f75f0ce66d7f5",
+    "checksum": "7a95137c4ca84c9127a7d9ccdd1b53087746aca90f30c55349fd591cedb6d329",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical reactions",
+    "description": "Prøve i Chemical reactions: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Spørsmål 1: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Spørsmål 2: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Spørsmål 3: Chemical reactions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Chemical reactions.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-1000]",
+      "text": "[chemistry] Chemical reactions - Spørsmål 4: Chemical reactions [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
+        "chemical-reactions",
         "grade-08",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Chemical reactions - Spørsmål 5: Chemical reactions",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-reakciók",
-        "grade-08"
+        "chemical-reactions",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Kémiai reakciók",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Chemical reactions",
       "learning_objective": "Chemical reactions"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-20-ig-1.0.0",
-    "name": "Összeadás 20-ig - Denmark grade-01",
+    "name": "Addition to 20 - Denmark grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minutters prøve i Addition to 20 (grade-01). Emner: Tælle til 10, Addition til 10, Subtraktion til 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.019827+00:00",
-    "updated_at": "2026-10-21T11:02:27.019847+00:00",
+    "created_at": "2026-10-24T17:53:49.278446+00:00",
+    "updated_at": "2026-10-24T17:53:49.278453+00:00",
     "tags": [
       "math",
-      "összeadás-20-ig",
+      "addition-to-20",
       "grade-01",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "e89f2284c852e76616e065c6bd8f1cc8565d93d24a2f68136468a3f29aaf82b0",
+    "checksum": "a5a3cf9cf363123aa9a26622b1e4b99688313f5361aadbfbbfcd07049b93143d",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Tælle til 10",
+      "Addition til 10",
+      "Subtraktion til 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 20-ig",
-    "description": "Test on Összeadás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition to 20",
+    "description": "Prøve i Addition to 20: Tælle til 10, Addition til 10, Subtraktion til 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 1: Addition to 20",
+      "text": "[math] Addition to 20 - Spørgsmål 1: Addition to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 2: Addition to 20",
+      "text": "[math] Addition to 20 - Spørgsmål 2: Addition to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 3: Addition to 20",
+      "text": "[math] Addition to 20 - Spørgsmål 3: Addition to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 20-ig - Kérdés 4: Addition to 20",
+      "text": "[math] Addition to 20 - Spørgsmål 4: Addition to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Addition to 20.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 20-ig - Question 5: Addition to 20 [rand:1-20]",
+      "text": "[math] Addition to 20 - Spørgsmål 5: Addition to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-20-ig",
+        "addition-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "DENMARK-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     }
   ],

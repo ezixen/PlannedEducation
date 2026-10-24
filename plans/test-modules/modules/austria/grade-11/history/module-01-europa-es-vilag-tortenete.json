@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-európa-és-világ-története-1.0.0",
-    "name": "Európa és világ története - Austria grade-11",
+    "name": "Geschichte Europas und der Welt - Austria grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ története for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minütige Prüfung zum Thema Geschichte Europas und der Welt (grade-11). Themen: Geschichte Europas und der Welt, Europa, Welt, Geschichte, Historische Ereignisse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.367330+00:00",
-    "updated_at": "2026-10-21T11:02:29.367352+00:00",
+    "created_at": "2026-10-24T17:53:50.612911+00:00",
+    "updated_at": "2026-10-24T17:53:50.612918+00:00",
     "tags": [
       "history",
-      "európa-és-világ-története",
+      "geschichte-europas-und-der-welt",
       "grade-11",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "d387fadeb8f333f1a869a15eee0710d7ac48ba274576b8fabefb8cee52ec076e",
+    "checksum": "744e11d79a09e673b3648a0655d5b5a88042ff4c4be335d6ec4fdfe2eee9e9e7",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Europe and the world",
-      "Europe",
-      "World",
-      "History",
-      "Historical events"
+      "Geschichte Europas und der Welt",
+      "Europa",
+      "Welt",
+      "Geschichte",
+      "Historische Ereignisse"
     ]
   },
   "exam": {
-    "title": "grade-11 History - Európa és világ története",
-    "description": "Test on Európa és világ története including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - Geschichte Europas und der Welt",
+    "description": "Prüfung zum Thema Geschichte Europas und der Welt: Geschichte Europas und der Welt, Europa, Welt, Geschichte, Historische Ereignisse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 1: History of Europe and the world",
+      "text": "[history] Geschichte Europas und der Welt - Frage 1: Geschichte Europas und der Welt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "geschichte-europas-und-der-welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Geschichte Europas und der Welt",
+      "learning_objective": "Geschichte Europas und der Welt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 2: History of Europe and the world",
+      "text": "[history] Geschichte Europas und der Welt - Frage 2: Geschichte Europas und der Welt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "geschichte-europas-und-der-welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Geschichte Europas und der Welt",
+      "learning_objective": "Geschichte Europas und der Welt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ története - Kérdés 3: History of Europe and the world",
+      "text": "[history] Geschichte Europas und der Welt - Frage 3: Geschichte Europas und der Welt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte Europas und der Welt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "geschichte-europas-und-der-welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Geschichte Europas und der Welt",
+      "learning_objective": "Geschichte Europas und der Welt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 4: History of Europe and the world",
+      "text": "[history] Geschichte Europas und der Welt - Frage 4: Geschichte Europas und der Welt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "geschichte-europas-und-der-welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Geschichte Europas und der Welt",
+      "learning_objective": "Geschichte Europas und der Welt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 5: History of Europe and the world",
+      "text": "[history] Geschichte Europas und der Welt - Frage 5: Geschichte Europas und der Welt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ-története",
-        "grade-11"
+        "geschichte-europas-und-der-welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "curriculum_topic": "AUSTRIA-GRADE-11-HISTORY-Geschichte Europas und der Welt",
+      "learning_objective": "Geschichte Europas und der Welt"
     }
   ],
   "rubrics": []

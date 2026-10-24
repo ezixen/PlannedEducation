@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-immunológia-1.0.0",
-    "name": "Immunológia - Australia grade-12",
+    "name": "Immunology - Australia grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minute assessment on Immunology for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.874168+00:00",
-    "updated_at": "2026-10-21T11:02:18.874180+00:00",
+    "created_at": "2026-10-24T17:53:46.954803+00:00",
+    "updated_at": "2026-10-24T17:53:46.954816+00:00",
     "tags": [
       "biology",
-      "immunológia",
+      "immunology",
       "grade-12",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "f1c8e93e1706df2d0d6affbeea2fc64f5ebd506eed1586b81732759eb515c481",
+    "checksum": "f17b7f81f4ee7e2871fe80d206570aaa7b807f0a5743c1ff58c187b69ff3d9fa",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Immunológia",
-    "description": "Test on Immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Immunology",
+    "description": "Assessment on Immunology including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 1: Immunology",
+      "text": "[biology] Immunology - Question 1: Immunology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 2: Immunology",
+      "text": "[biology] Immunology - Question 2: Immunology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 3: Immunology",
+      "text": "[biology] Immunology - Question 3: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Immunology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 4: Immunology",
+      "text": "[biology] Immunology - Question 4: Immunology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 5: Immunology",
+      "text": "[biology] Immunology - Question 5: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Immunology.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "AUSTRALIA-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     }
   ],

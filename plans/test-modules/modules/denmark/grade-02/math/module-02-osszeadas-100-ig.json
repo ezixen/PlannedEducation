@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-összeadás-100-ig-1.0.0",
-    "name": "Összeadás 100-ig - Denmark grade-02",
+    "name": "Addition to 100 - Denmark grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minutters prøve i Addition to 100 (grade-02). Emner: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.058857+00:00",
-    "updated_at": "2026-10-21T11:02:27.058882+00:00",
+    "created_at": "2026-10-24T17:53:49.292534+00:00",
+    "updated_at": "2026-10-24T17:53:49.292542+00:00",
     "tags": [
       "math",
-      "összeadás-100-ig",
+      "addition-to-100",
       "grade-02",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "25f89257f71cb4773cc66c2739198d1f2f3b5685db280d6eddbebc0cd0be77b7",
+    "checksum": "fc4dc17557484dda520b1c509127b96eab92d505882a21447a017c49786bc450",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Összeadás 100-ig",
-    "description": "Test on Összeadás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Addition to 100",
+    "description": "Prøve i Addition to 100: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 1: Addition to 100",
+      "text": "[math] Addition to 100 - Spørgsmål 1: Addition to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 2: Addition to 100",
+      "text": "[math] Addition to 100 - Spørgsmål 2: Addition to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 3: Addition to 100",
+      "text": "[math] Addition to 100 - Spørgsmål 3: Addition to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 100-ig - Kérdés 4: Addition to 100",
+      "text": "[math] Addition to 100 - Spørgsmål 4: Addition to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Addition to 100.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 100-ig - Question 5: Addition to 100 [rand:1-20]",
+      "text": "[math] Addition to 100 - Spørgsmål 5: Addition to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-100-ig",
+        "addition-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     }
   ],

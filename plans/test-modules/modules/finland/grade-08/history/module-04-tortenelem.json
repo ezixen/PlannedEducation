@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-történelem-1.0.0",
-    "name": "Történelem - Finland grade-08",
+    "name": "History - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45 minuutin koe aiheesta History (grade-08). Aiheet: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.352279+00:00",
-    "updated_at": "2026-10-21T11:02:24.352299+00:00",
+    "created_at": "2026-10-24T17:53:47.689308+00:00",
+    "updated_at": "2026-10-24T17:53:47.689320+00:00",
     "tags": [
       "history",
-      "történelem",
+      "history",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "d7c6b4bea0a13e598497a092a8b438d359df4f82f65c8b1f94dafc8e008f695a",
+    "checksum": "10fd1358cd1b2e463b72b0238b04fb63d0f11f1a3fcf17562889579ebda85b3c",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - Történelem",
-    "description": "Test on Történelem including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - History",
+    "description": "Koe aiheesta History: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] History - Kysymys 1: History",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "history",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Történelem",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] History - Kysymys 2: History",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "history",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Történelem",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] History - Kysymys 3: History",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen History.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "history",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Történelem",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] History - Kysymys 4: History",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "history",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Történelem",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] History - Kysymys 5: History",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "history",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-Történelem",
+      "curriculum_topic": "FINLAND-GRADE-08-HISTORY-History",
       "learning_objective": "History"
     }
   ],

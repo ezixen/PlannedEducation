@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-erettségi-1.0.0",
-    "name": "Történelem-erettségi - Germany grade-12",
+    "name": "Geschichte Abiturvorbereitung - Germany grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minütige Prüfung zum Thema Geschichte Abiturvorbereitung (grade-12). Themen: Geschichte Abiturvorbereitung, Geschichte, Historische Ereignisse, Weltgeschichte, Europa und die Welt",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.797888+00:00",
-    "updated_at": "2026-10-21T11:02:16.797909+00:00",
+    "created_at": "2026-10-24T17:53:45.636447+00:00",
+    "updated_at": "2026-10-24T17:53:45.636455+00:00",
     "tags": [
       "history",
-      "történelem-erettségi",
+      "geschichte-abiturvorbereitung",
       "grade-12",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "0468dfd7f8eedd52a482f85c3dedecd7d14a5681c5ba14d7a0546745459e6cb0",
+    "checksum": "33ae9ce227a195f6c97ea418f98b86928184e7e06d29e6f7513c90abf806f8ed",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History-maturity",
-      "History",
-      "Historical events",
-      "World history",
-      "Europe and world"
+      "Geschichte Abiturvorbereitung",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte",
+      "Europa und die Welt"
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem-erettségi",
-    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Geschichte Abiturvorbereitung",
+    "description": "Prüfung zum Thema Geschichte Abiturvorbereitung: Geschichte Abiturvorbereitung, Geschichte, Historische Ereignisse, Weltgeschichte, Europa und die Welt",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
+      "text": "[history] Geschichte Abiturvorbereitung - Frage 1: Geschichte Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "geschichte-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Történelem-erettségi",
-      "learning_objective": "History-maturity"
+      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Geschichte Abiturvorbereitung",
+      "learning_objective": "Geschichte Abiturvorbereitung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
+      "text": "[history] Geschichte Abiturvorbereitung - Frage 2: Geschichte Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "geschichte-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Történelem-erettségi",
-      "learning_objective": "History-maturity"
+      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Geschichte Abiturvorbereitung",
+      "learning_objective": "Geschichte Abiturvorbereitung"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "text": "[history] Geschichte Abiturvorbereitung - Frage 3: Geschichte Abiturvorbereitung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte Abiturvorbereitung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "geschichte-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Történelem-erettségi",
-      "learning_objective": "History-maturity"
+      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Geschichte Abiturvorbereitung",
+      "learning_objective": "Geschichte Abiturvorbereitung"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
+      "text": "[history] Geschichte Abiturvorbereitung - Frage 4: Geschichte Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "geschichte-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Történelem-erettségi",
-      "learning_objective": "History-maturity"
+      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Geschichte Abiturvorbereitung",
+      "learning_objective": "Geschichte Abiturvorbereitung"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
+      "text": "[history] Geschichte Abiturvorbereitung - Frage 5: Geschichte Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "geschichte-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Történelem-erettségi",
-      "learning_objective": "History-maturity"
+      "curriculum_topic": "GERMANY-GRADE-12-HISTORY-Geschichte Abiturvorbereitung",
+      "learning_objective": "Geschichte Abiturvorbereitung"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mozgás-1.0.0",
-    "name": "Mozgás - New Zealand grade-08",
+    "name": "Motion - New Zealand grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mozgás for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Motion for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.656598+00:00",
-    "updated_at": "2026-10-21T11:02:34.656611+00:00",
+    "created_at": "2026-10-24T17:53:51.816476+00:00",
+    "updated_at": "2026-10-24T17:53:51.816488+00:00",
     "tags": [
       "physics",
-      "mozgás",
+      "motion",
       "grade-08",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "5a40d752138986e6d8d99b35d685119725f34296797c9b2966c1eb067fd84acc",
+    "checksum": "80f8e10022bf161fb2dc25842ceb6702bc52b1a1c91f10df4e574b6f2931a8c8",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mozgás",
-    "description": "Test on Mozgás including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Motion",
+    "description": "Assessment on Motion including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 1: Motion",
+      "text": "[physics] Motion - Question 1: Motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 2: Motion",
+      "text": "[physics] Motion - Question 2: Motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mozgás - Kérdés 3: Motion",
+      "text": "[physics] Motion - Question 3: Motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Motion.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mozgás - Question 4: Motion [rand:1-1000]",
+      "text": "[physics] Motion - Question 4: Motion [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mozgás",
+        "motion",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 5: Motion",
+      "text": "[physics] Motion - Question 5: Motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     }
   ],

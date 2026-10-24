@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Sweden grade-08",
+    "name": "Geographic knowledge - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minuters prov i Geographic knowledge (grade-08). Omfattar: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.820409+00:00",
-    "updated_at": "2026-10-21T11:02:25.820421+00:00",
+    "created_at": "2026-10-24T17:53:48.521839+00:00",
+    "updated_at": "2026-10-24T17:53:48.521851+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographic-knowledge",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "0a95a01a843542133cc43f7699c844b38449c05261c260042f1ae92e60bbccf6",
+    "checksum": "5c41dc56912084b0ad5510bb0053f3771f7f8b6165adf9c356ce7450d93b31f0",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Geographic knowledge",
+    "description": "Prov i Geographic knowledge: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Fråga 1: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographic-knowledge",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Fråga 2: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographic-knowledge",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Fråga 3: Geographic knowledge",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Geographic knowledge.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographic-knowledge",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Fråga 4: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographic-knowledge",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Fråga 5: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-08"
+        "geographic-knowledge",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "SWEDEN-GRADE-08-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     }
   ],

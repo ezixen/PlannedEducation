@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Sweden grade-07",
+    "name": "Civil law - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minuters prov i Civil law (grade-07). Omfattar: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.689069+00:00",
-    "updated_at": "2026-10-21T11:02:25.689084+00:00",
+    "created_at": "2026-10-24T17:53:48.431435+00:00",
+    "updated_at": "2026-10-24T17:53:48.431441+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "civil-law",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "7e660e4412652ea5785d7528775101f648e3fbb5aeb8d7e99014be9571080f12",
+    "checksum": "f31000c39e2ca6380ad16c9ece89bc2148c2f3ca322c47d8f6970cfdb4420408",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Polgári jog",
-    "description": "Test on Polgári jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - Civil law",
+    "description": "Prov i Civil law: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Civil law - Fråga 1: Civil law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "civil-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Polgári jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Civil law - Fråga 2: Civil law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "civil-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Polgári jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Civil law - Fråga 3: Civil law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Civil law.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "civil-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Polgári jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Civil law - Fråga 4: Civil law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "civil-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Polgári jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Civil law - Fråga 5: Civil law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "civil-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Polgári jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Civil law",
       "learning_objective": "Civil law"
     }
   ],

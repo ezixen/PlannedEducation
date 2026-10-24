@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Austria grade-07",
+    "name": "Bürgerliches Recht - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Bürgerliches Recht (grade-07). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.943495+00:00",
-    "updated_at": "2026-10-21T11:02:28.943508+00:00",
+    "created_at": "2026-10-24T17:53:50.392400+00:00",
+    "updated_at": "2026-10-24T17:53:50.392406+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "bürgerliches-recht",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "e471437308428b13d918aeb20d48ed39a3ec87b6f797e5a54658526372d18374",
+    "checksum": "653573c9e69abe208800b1eb02970e4be3a1871a9817e1803cf3d72cc5c93f93",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Polgári jog",
-    "description": "Test on Polgári jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - Bürgerliches Recht",
+    "description": "Prüfung zum Thema Bürgerliches Recht: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 1: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "bürgerliches-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 2: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "bürgerliches-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 3: Bürgerliches Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Bürgerliches Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "bürgerliches-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 4: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "bürgerliches-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 5: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-07"
+        "bürgerliches-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     }
   ],
   "rubrics": []

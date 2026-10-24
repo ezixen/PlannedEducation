@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-test-fiziológiája-1.0.0",
-    "name": "Embri test fiziológiája - Germany grade-12",
+    "name": "Physiologie des Menschen - Germany grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test fiziológiája for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Physiologie des Menschen (grade-12). Themen: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.759934+00:00",
-    "updated_at": "2026-10-21T11:02:16.759953+00:00",
+    "created_at": "2026-10-24T17:53:45.615214+00:00",
+    "updated_at": "2026-10-24T17:53:45.615222+00:00",
     "tags": [
       "biology",
-      "embri-test-fiziológiája",
+      "physiologie-des-menschen",
       "grade-12",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "9389f672741440c3a609183b682c5e9c79a0e735043544ce9f31734ec79153b6",
+    "checksum": "b27a263efb15de97eb237782593e0c8713b4c895b6f8ddcb3a375f8584bad43f",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Humanphysiologie und Immunologie",
+      "Physiologie des Menschen",
+      "Immunologie",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri test fiziológiája",
-    "description": "Test on Embri test fiziológiája including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Physiologie des Menschen",
+    "description": "Prüfung zum Thema Physiologie des Menschen: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 1: Human body physiology",
+      "text": "[biology] Physiologie des Menschen - Frage 1: Physiologie des Menschen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "physiologie-des-menschen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Embri test fiziológiája",
-      "learning_objective": "Human body physiology"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Physiologie des Menschen",
+      "learning_objective": "Physiologie des Menschen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 2: Human body physiology",
+      "text": "[biology] Physiologie des Menschen - Frage 2: Physiologie des Menschen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "physiologie-des-menschen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Embri test fiziológiája",
-      "learning_objective": "Human body physiology"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Physiologie des Menschen",
+      "learning_objective": "Physiologie des Menschen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 3: Human body physiology",
+      "text": "[biology] Physiologie des Menschen - Frage 3: Physiologie des Menschen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Physiologie des Menschen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "physiologie-des-menschen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Embri test fiziológiája",
-      "learning_objective": "Human body physiology"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Physiologie des Menschen",
+      "learning_objective": "Physiologie des Menschen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 4: Human body physiology",
+      "text": "[biology] Physiologie des Menschen - Frage 4: Physiologie des Menschen",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "physiologie-des-menschen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Embri test fiziológiája",
-      "learning_objective": "Human body physiology"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Physiologie des Menschen",
+      "learning_objective": "Physiologie des Menschen"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 5: Human body physiology",
+      "text": "[biology] Physiologie des Menschen - Frage 5: Physiologie des Menschen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Physiologie des Menschen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "physiologie-des-menschen",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Embri test fiziológiája",
-      "learning_objective": "Human body physiology"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Physiologie des Menschen",
+      "learning_objective": "Physiologie des Menschen"
     }
   ],
   "rubrics": []

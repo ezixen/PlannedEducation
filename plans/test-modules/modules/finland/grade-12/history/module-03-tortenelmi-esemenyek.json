@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelmi-események-1.0.0",
-    "name": "Történelmi események - Finland grade-12",
+    "name": "Historical events - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelmi események for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45 minuutin koe aiheesta Historical events (grade-12). Aiheet: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.747145+00:00",
-    "updated_at": "2026-10-21T11:02:24.747157+00:00",
+    "created_at": "2026-10-24T17:53:47.870926+00:00",
+    "updated_at": "2026-10-24T17:53:47.870935+00:00",
     "tags": [
       "history",
-      "történelmi-események",
+      "historical-events",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "ec9e3cf2e5291cba69db6ac64e426a5897350d1d30e5cb53ff7466ea82846fb5",
+    "checksum": "d37a008cbf9948e8b02c7cefaab8bec5c5701f0a3bce37395c2786a9a07dae23",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelmi események",
-    "description": "Test on Történelmi események including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Historical events",
+    "description": "Koe aiheesta Historical events: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 1: Historical events",
+      "text": "[history] Historical events - Kysymys 1: Historical events",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-12"
+        "historical-events",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelmi események",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 2: Historical events",
+      "text": "[history] Historical events - Kysymys 2: Historical events",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-12"
+        "historical-events",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelmi események",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelmi események - Kérdés 3: Historical events",
+      "text": "[history] Historical events - Kysymys 3: Historical events",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelmi események témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Historical events.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-12"
+        "historical-events",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelmi események",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 4: Historical events",
+      "text": "[history] Historical events - Kysymys 4: Historical events",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-12"
+        "historical-events",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelmi események",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Historical events",
       "learning_objective": "Historical events"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelmi események - Kérdés 5: Historical events",
+      "text": "[history] Historical events - Kysymys 5: Historical events",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelmi-események",
-        "grade-12"
+        "historical-events",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Történelmi események",
+      "curriculum_topic": "FINLAND-GRADE-12-HISTORY-Historical events",
       "learning_objective": "Historical events"
     }
   ],

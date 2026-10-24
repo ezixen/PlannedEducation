@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-deriválás-1.0.0",
-    "name": "Deriválás - Denmark grade-09",
+    "name": "Differentiation - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Differentiation (grade-09). Emner: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.562853+00:00",
-    "updated_at": "2026-10-21T11:02:27.562872+00:00",
+    "created_at": "2026-10-24T17:53:49.644584+00:00",
+    "updated_at": "2026-10-24T17:53:49.644595+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentiation",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "ca7849554163a809f1bef68e24c51e0e33bdb32b27e62665ffa96469e8f5fd75",
+    "checksum": "ae233ad5c673e01ae5be01a50f83f921798d9ae0f2e98db54859eb0d64a12716",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Deriválás",
-    "description": "Test on Deriválás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Differentiation",
+    "description": "Prøve i Differentiation: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentiation - Spørgsmål 1: Differentiation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "DENMARK-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentiation - Spørgsmål 2: Differentiation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "DENMARK-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentiation - Spørgsmål 3: Differentiation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "DENMARK-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentiation - Spørgsmål 4: Differentiation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Differentiation.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentiation",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "DENMARK-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-1000]",
+      "text": "[math] Differentiation - Spørgsmål 5: Differentiation [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentiation",
         "grade-09",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-MATH-Deriválás",
+      "curriculum_topic": "DENMARK-GRADE-09-MATH-Differentiation",
       "learning_objective": "Differentiation"
     }
   ],

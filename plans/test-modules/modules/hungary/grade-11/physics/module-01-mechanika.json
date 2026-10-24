@@ -3,21 +3,25 @@
     "id": "grade-11-physics-mechanika-1.0.0",
     "name": "Mechanika - Hungary grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45 perces felmérő: Mechanika (grade-11). Témakörök: Mechanika, Hullamok, Optika, Elektromágnesesség, Modern fizika",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.632929+00:00",
-    "updated_at": "2026-10-21T11:02:35.632949+00:00",
+    "created_at": "2026-10-24T17:53:52.462780+00:00",
+    "updated_at": "2026-10-24T17:53:52.462793+00:00",
     "tags": [
       "physics",
       "mechanika",
       "grade-11",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "641e12fa2bb51b42741d69e12206d00130ee673025fe12ecbcc0f8e2f7159287",
+    "checksum": "149f3f7c24aeb23463815cd9de76f012545b20a175edd2044b2cb874434b031c",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Waves",
-      "Optics",
-      "Electromagnetism",
-      "Modern physics"
+      "Mechanika",
+      "Hullamok",
+      "Optika",
+      "Elektromágnesesség",
+      "Modern fizika"
     ]
   },
   "exam": {
     "title": "grade-11 Physics - Mechanika",
-    "description": "Test on Mechanika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "Felmérő a(z) Mechanika témakörből (Mechanika, Hullamok, Optika, Elektromágnesesség, Modern fizika)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 1: Mechanics",
+      "text": "[physics] Mechanika - Kérdés 1: Mechanika",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "mechanika",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "learning_objective": "Mechanika"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 2: Mechanics",
+      "text": "[physics] Mechanika - Kérdés 2: Mechanika",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "mechanika",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "learning_objective": "Mechanika"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika - Kérdés 3: Mechanics",
+      "text": "[physics] Mechanika - Kérdés 3: Mechanika",
       "options": null,
       "correct_answer": "Minta válasz a(z) Mechanika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "mechanika",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "learning_objective": "Mechanika"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika - Question 4: Mechanics [rand:1-100]",
+      "text": "[physics] Mechanika - Kérdés 4: Mechanika [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "mechanika",
         "grade-11",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "learning_objective": "Mechanika"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 5: Mechanics",
+      "text": "[physics] Mechanika - Kérdés 5: Mechanika",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "mechanika",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-PHYSICS-Mechanika",
-      "learning_objective": "Mechanics"
+      "learning_objective": "Mechanika"
     }
   ],
   "rubrics": []

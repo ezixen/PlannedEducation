@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-optika-1.0.0",
-    "name": "Optika - Germany grade-09",
+    "name": "Optik - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Optika for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minütige Prüfung zum Thema Optik (grade-09). Themen: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.555297+00:00",
-    "updated_at": "2026-10-21T11:02:16.555317+00:00",
+    "created_at": "2026-10-24T17:53:45.510061+00:00",
+    "updated_at": "2026-10-24T17:53:45.510070+00:00",
     "tags": [
       "physics",
-      "optika",
+      "optik",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "9e3a7b0612dde6c5270d8e2044ff9d268e96247c25ca0fbe3bb7d5d17c4d9a61",
+    "checksum": "601c67e6c2b68db9aa6d7e8ecbdbf29468635a4fa2bf1f7270e13501183100ef",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Forces and motion",
-      "Energy",
-      "Waves",
-      "Optics"
+      "Mechanik",
+      "Kräfte und Bewegung",
+      "Energie",
+      "Wellen",
+      "Optik"
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Optika",
-    "description": "Test on Optika including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Optik",
+    "description": "Prüfung zum Thema Optik: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 1: Optics",
+      "text": "[physics] Optik - Frage 1: Optik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optika",
-      "learning_objective": "Optics"
+      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optik",
+      "learning_objective": "Optik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 2: Optics",
+      "text": "[physics] Optik - Frage 2: Optik",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optika",
-      "learning_objective": "Optics"
+      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optik",
+      "learning_objective": "Optik"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Optika - Kérdés 3: Optics",
+      "text": "[physics] Optik - Frage 3: Optik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Optik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optika",
-      "learning_objective": "Optics"
+      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optik",
+      "learning_objective": "Optik"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Optika - Question 4: Optics [rand:1-1000]",
+      "text": "[physics] Optik - Frage 4: Optik [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "optika",
+        "optik",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optika",
-      "learning_objective": "Optics"
+      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optik",
+      "learning_objective": "Optik"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 5: Optics",
+      "text": "[physics] Optik - Frage 5: Optik",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-09"
+        "optik",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optika",
-      "learning_objective": "Optics"
+      "curriculum_topic": "GERMANY-GRADE-09-PHYSICS-Optik",
+      "learning_objective": "Optik"
     }
   ],
   "rubrics": []

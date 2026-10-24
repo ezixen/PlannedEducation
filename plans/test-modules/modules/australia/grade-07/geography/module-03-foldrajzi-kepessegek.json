@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-képességek-1.0.0",
-    "name": "Földrajzi képességek - Australia grade-07",
+    "name": "Geographic skills - Australia grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi képességek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minute assessment on Geographic skills for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.514237+00:00",
-    "updated_at": "2026-10-21T11:02:18.514247+00:00",
+    "created_at": "2026-10-24T17:53:46.651327+00:00",
+    "updated_at": "2026-10-24T17:53:46.651332+00:00",
     "tags": [
       "geography",
-      "földrajzi-képességek",
+      "geographic-skills",
       "grade-07",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "aa35c7395f5f6238e996c815676cf29d3406c5fcb3b57da9c315bbdd254fcdba",
+    "checksum": "a9d9e5cf7282b3d7d63881f494868e354a670e34936ea68325d2e375d751dbd9",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi képességek",
-    "description": "Test on Földrajzi képességek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographic skills",
+    "description": "Assessment on Geographic skills including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 1: Geographic skills",
+      "text": "[geography] Geographic skills - Question 1: Geographic skills",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 2: Geographic skills",
+      "text": "[geography] Geographic skills - Question 2: Geographic skills",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 3: Geographic skills",
+      "text": "[geography] Geographic skills - Question 3: Geographic skills",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic skills.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 4: Geographic skills",
+      "text": "[geography] Geographic skills - Question 4: Geographic skills",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 5: Geographic skills",
+      "text": "[geography] Geographic skills - Question 5: Geographic skills",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographic-skills",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Földrajzi képességek",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-GEOGRAPHY-Geographic skills",
       "learning_objective": "Geographic skills"
     }
   ],

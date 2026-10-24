@@ -3,21 +3,25 @@
     "id": "grade-06-math-tört-műveletek-1.0.0",
     "name": "Tört műveletek - Hungary grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45 perces felmérő: Tört műveletek (grade-06). Témakörök: Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.118985+00:00",
-    "updated_at": "2026-10-21T11:02:35.119003+00:00",
+    "created_at": "2026-10-24T17:53:52.148235+00:00",
+    "updated_at": "2026-10-24T17:53:52.148249+00:00",
     "tags": [
       "math",
       "tört-műveletek",
       "grade-06",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "48838036917bfcfd1aec9a1e97eb95e9024b5a00765120115a08fbd460e1b09a",
+    "checksum": "1f977a3398ddf42f26b1452fbfe5c79e87069d6ac57bc4a20eebc07d98418ba9",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Általános tört",
+      "Tört műveletek",
+      "Százalék alapok",
+      "Százalék számítás",
+      "Aranyszerű arány"
     ]
   },
   "exam": {
     "title": "grade-06 Math - Tört műveletek",
-    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "Felmérő a(z) Tört műveletek témakörből (Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "text": "[math] Tört műveletek - Kérdés 1: Tört műveletek",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "tört-műveletek",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "learning_objective": "Tört műveletek"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "text": "[math] Tört műveletek - Kérdés 2: Tört műveletek",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "tört-műveletek",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "learning_objective": "Tört műveletek"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "text": "[math] Tört műveletek - Kérdés 3: Tört műveletek",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "tört-műveletek",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "learning_objective": "Tört műveletek"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "text": "[math] Tört műveletek - Kérdés 4: Tört műveletek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "tört-műveletek",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "learning_objective": "Tört műveletek"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "text": "[math] Tört műveletek - Kérdés 5: Tört műveletek [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "tört-műveletek",
         "grade-06",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "learning_objective": "Tört műveletek"
     }
   ],
   "rubrics": []

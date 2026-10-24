@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - United Kingdom grade-08",
+    "name": "Civil law - United Kingdom grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minute assessment on Civil law for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.186018+00:00",
-    "updated_at": "2026-10-21T11:02:17.186036+00:00",
+    "created_at": "2026-10-24T17:53:45.870887+00:00",
+    "updated_at": "2026-10-24T17:53:45.870906+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "civil-law",
       "grade-08",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "22439225e1c668ef44b25accc1c27cc7151165751b926c2f57312639a9bad643",
+    "checksum": "f9f721503cd7ab18f8c3d1c9319b8b9673b5d6e7a8c11f0a9e1aeeb7f563d421",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Polgári jog",
-    "description": "Test on Polgári jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Civil law",
+    "description": "Assessment on Civil law including State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Civil law - Question 1: Civil law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "UK-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Civil law - Question 2: Civil law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "UK-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Civil law - Question 3: Civil law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Civil law.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "UK-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Civil law - Question 4: Civil law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "UK-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Civil law - Question 5: Civil law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-08"
+        "civil-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-CIVICS-Polgári jog",
+      "curriculum_topic": "UK-GRADE-08-CIVICS-Civil law",
       "learning_objective": "Civil law"
     }
   ],

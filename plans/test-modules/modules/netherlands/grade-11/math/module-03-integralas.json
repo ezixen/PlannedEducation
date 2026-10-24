@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-integrálás-1.0.0",
-    "name": "Integrálás - Netherlands grade-11",
+    "name": "Integration - Netherlands grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "Toets van 45 minuten over Integration (grade-11). Onderwerpen: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.413874+00:00",
-    "updated_at": "2026-10-21T11:02:25.413885+00:00",
+    "created_at": "2026-10-24T17:53:48.281479+00:00",
+    "updated_at": "2026-10-24T17:53:48.281486+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integration",
       "grade-11",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "1bebc1f84d2f0dd7a360920ed9ff35c28ddb7a3de9dace3adf1ce40065a1ac50",
+    "checksum": "9685e085ee1fbf61aa5680e9300649fe97e63168f9147fb00c80d93a434d3083",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Integrálás",
-    "description": "Test on Integrálás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Integration",
+    "description": "Toets over Integration: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integration - Vraag 1: Integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integration - Vraag 2: Integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integration - Vraag 3: Integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integration - Vraag 4: Integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Integration.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-100]",
+      "text": "[math] Integration - Vraag 5: Integration [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integration",
         "grade-11",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     }
   ],

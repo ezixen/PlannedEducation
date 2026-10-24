@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-történelem-1.0.0",
-    "name": "Történelem - Switzerland grade-10",
+    "name": "Geschichte - Switzerland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema Geschichte (grade-10). Themen: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.611163+00:00",
-    "updated_at": "2026-10-21T11:02:28.611175+00:00",
+    "created_at": "2026-10-24T17:53:50.167767+00:00",
+    "updated_at": "2026-10-24T17:53:50.167774+00:00",
     "tags": [
       "history",
-      "történelem",
+      "geschichte",
       "grade-10",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "abf2e125316f6f96d14a9d90d5b366eff43dad214098f1d62395a20b687abd5d",
+    "checksum": "b9cf86dcf63eb3d346c77a546b194285e017d2a5f34c80c383f4b1b24cf82545",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Hungary",
-      "Hungary",
-      "History",
-      "Historical events",
-      "World history"
+      "Europäische Geschichte",
+      "Mitteleuropa",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-10 History - Történelem",
-    "description": "Test on Történelem including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - Geschichte",
+    "description": "Prüfung zum Thema Geschichte: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] Geschichte - Frage 1: Geschichte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] Geschichte - Frage 2: Geschichte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] Geschichte - Frage 3: Geschichte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] Geschichte - Frage 4: Geschichte",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] Geschichte - Frage 5: Geschichte",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "geschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     }
   ],
   "rubrics": []

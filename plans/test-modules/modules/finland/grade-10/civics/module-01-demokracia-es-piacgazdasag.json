@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-civics-demokrácia-és-piacgazdaság-1.0.0",
-    "name": "Demokrácia és piacgazdaság - Finland grade-10",
+    "name": "Democracy and market economy - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia és piacgazdaság for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45 minuutin koe aiheesta Democracy and market economy (grade-10). Aiheet: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.524634+00:00",
-    "updated_at": "2026-10-21T11:02:24.524656+00:00",
+    "created_at": "2026-10-24T17:53:47.768824+00:00",
+    "updated_at": "2026-10-24T17:53:47.768832+00:00",
     "tags": [
       "civics",
-      "demokrácia-és-piacgazdaság",
+      "democracy-and-market-economy",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "c5517ee7fc41453ad222899f4f955616f9c2885f7163d0bb19bb18c3215e0b63",
+    "checksum": "e0ff1286efc6f06ce60ed2bfd5d93ddc8db8df6688f5122ff00406ec4c1a3202",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Civics - Demokrácia és piacgazdaság",
-    "description": "Test on Demokrácia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-10 Civics - Democracy and market economy",
+    "description": "Koe aiheesta Democracy and market economy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Kysymys 1: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Kysymys 2: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Kysymys 3: Democracy and market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Democracy and market economy.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Kysymys 4: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Kysymys 5: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "FINLAND-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     }
   ],

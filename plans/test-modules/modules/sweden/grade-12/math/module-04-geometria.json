@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-geometria-1.0.0",
-    "name": "Geometria - Sweden grade-12",
+    "name": "Geometry - Sweden grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minuters prov i Geometry (grade-12). Omfattar: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.157877+00:00",
-    "updated_at": "2026-10-21T11:02:26.157892+00:00",
+    "created_at": "2026-10-24T17:53:48.788465+00:00",
+    "updated_at": "2026-10-24T17:53:48.788471+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometry",
       "grade-12",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "73ceadce82eafbecf6445fc12626e56e6fa4610969f2795fcef8e0b9eaac46ee",
+    "checksum": "4d4b000034ee8a1131920bad2e27afb52c2aa291e41eb4af7c0398ef7fa9ab73",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Geometria",
-    "description": "Test on Geometria including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Geometry",
+    "description": "Prov i Geometry: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometry - Fråga 1: Geometry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometry - Fråga 2: Geometry",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometry - Fråga 3: Geometry",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometry - Fråga 4: Geometry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Geometry.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-12"
+        "geometry",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometry - Fråga 5: Geometry [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometry",
         "grade-12",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometria",
+      "curriculum_topic": "SWEDEN-GRADE-12-MATH-Geometry",
       "learning_objective": "Geometry"
     }
   ],

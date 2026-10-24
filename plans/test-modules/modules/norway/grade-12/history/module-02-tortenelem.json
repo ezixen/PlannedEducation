@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-1.0.0",
-    "name": "Történelem - Norway grade-12",
+    "name": "History - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minutters prøve i History (grade-12). Emner: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.902767+00:00",
-    "updated_at": "2026-10-21T11:02:26.902781+00:00",
+    "created_at": "2026-10-24T17:53:49.246498+00:00",
+    "updated_at": "2026-10-24T17:53:49.246510+00:00",
     "tags": [
       "history",
-      "történelem",
+      "history",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "2c2cccb4f63de754532da51448b2fc97e797887953e47055b0407fb24c203630",
+    "checksum": "ac1a78e2da3eb2568d8c30e609d972baba748a053da2a8396eda082cf46707e9",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem",
-    "description": "Test on Történelem including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History",
+    "description": "Prøve i History: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] History - Spørsmål 1: History",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] History - Spørsmål 2: History",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] History - Spørsmål 3: History",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for History.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] History - Spørsmål 4: History",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] History - Spørsmål 5: History",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-12"
+        "history",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-Történelem",
+      "curriculum_topic": "NORWAY-GRADE-12-HISTORY-History",
       "learning_objective": "History"
     }
   ],

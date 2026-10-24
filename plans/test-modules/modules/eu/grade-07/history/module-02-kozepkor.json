@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-középkor-1.0.0",
-    "name": "Középkor - European Union grade-07",
+    "name": "Middle Ages - European Union grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Középkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minute assessment on Middle Ages for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.131436+00:00",
-    "updated_at": "2026-10-21T11:02:19.131445+00:00",
+    "created_at": "2026-10-24T17:53:47.192827+00:00",
+    "updated_at": "2026-10-24T17:53:47.192833+00:00",
     "tags": [
       "history",
-      "középkor",
+      "middle-ages",
       "grade-07",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "66919f921979a1bf4df4b87765fec2cd02b7cc9374394bfe683322365ed340ff",
+    "checksum": "145b57a454734eff04d44d0ea2e9179c9bcb5d14f56986bc8420ecb9e13cedc5",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Középkor",
-    "description": "Test on Középkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Middle Ages",
+    "description": "Assessment on Middle Ages including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 1: Middle Ages",
+      "text": "[history] Middle Ages - Question 1: Middle Ages",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "EU-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 2: Middle Ages",
+      "text": "[history] Middle Ages - Question 2: Middle Ages",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "EU-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Középkor - Kérdés 3: Middle Ages",
+      "text": "[history] Middle Ages - Question 3: Middle Ages",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Middle Ages.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "EU-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 4: Middle Ages",
+      "text": "[history] Middle Ages - Question 4: Middle Ages",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "EU-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 5: Middle Ages",
+      "text": "[history] Middle Ages - Question 5: Middle Ages",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "EU-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     }
   ],

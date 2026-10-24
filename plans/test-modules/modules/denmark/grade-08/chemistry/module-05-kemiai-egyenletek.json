@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-egyenletek-1.0.0",
-    "name": "Kémiai egyenletek - Denmark grade-08",
+    "name": "Chemical equations - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenletek for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minutters prøve i Chemical equations (grade-08). Emner: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.419774+00:00",
-    "updated_at": "2026-10-21T11:02:27.419792+00:00",
+    "created_at": "2026-10-24T17:53:49.522378+00:00",
+    "updated_at": "2026-10-24T17:53:49.522393+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenletek",
+      "chemical-equations",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "ac95228c2cecbfe55c0ce7b8b9e07e8123a697c927f0fe0c4da66640fae779f7",
+    "checksum": "2fbf86942fc7d30fab271776884867981998f67c0b6075e5a6e7d68f946858c2",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai egyenletek",
-    "description": "Test on Kémiai egyenletek including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical equations",
+    "description": "Prøve i Chemical equations: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 1: Chemical equations",
+      "text": "[chemistry] Chemical equations - Spørgsmål 1: Chemical equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 2: Chemical equations",
+      "text": "[chemistry] Chemical equations - Spørgsmål 2: Chemical equations",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 3: Chemical equations",
+      "text": "[chemistry] Chemical equations - Spørgsmål 3: Chemical equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Chemical equations.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenletek - Question 4: Chemical equations [rand:1-1000]",
+      "text": "[chemistry] Chemical equations - Spørgsmål 4: Chemical equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
+        "chemical-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 5: Chemical equations",
+      "text": "[chemistry] Chemical equations - Spørgsmål 5: Chemical equations",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     }
   ],

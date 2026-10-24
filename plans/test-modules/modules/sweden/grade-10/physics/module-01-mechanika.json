@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-mechanika-1.0.0",
-    "name": "Mechanika - Sweden grade-10",
+    "name": "Mechanics - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minuters prov i Mechanics (grade-10). Omfattar: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.026398+00:00",
-    "updated_at": "2026-10-21T11:02:26.026411+00:00",
+    "created_at": "2026-10-24T17:53:48.702744+00:00",
+    "updated_at": "2026-10-24T17:53:48.702756+00:00",
     "tags": [
       "physics",
-      "mechanika",
+      "mechanics",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "a6d11d0f543a1a23f5f0677d3ada09718f0d02e738e29f3c2a5afd373fcccb7f",
+    "checksum": "145086a39c6320fd63b11d40d8377c9c5a9055ecefdc27aee13a464c67808fed",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Mechanika",
-    "description": "Test on Mechanika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Mechanics",
+    "description": "Prov i Mechanics: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 1: Mechanics",
+      "text": "[physics] Mechanics - Fråga 1: Mechanics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 2: Mechanics",
+      "text": "[physics] Mechanics - Fråga 2: Mechanics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika - Kérdés 3: Mechanics",
+      "text": "[physics] Mechanics - Fråga 3: Mechanics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Mechanics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika - Question 4: Mechanics [rand:1-100]",
+      "text": "[physics] Mechanics - Fråga 4: Mechanics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika",
+        "mechanics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 5: Mechanics",
+      "text": "[physics] Mechanics - Fråga 5: Mechanics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     }
   ],

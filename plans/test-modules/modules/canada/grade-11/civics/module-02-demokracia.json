@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-demokrácia-1.0.0",
-    "name": "Demokrácia - Canada grade-11",
+    "name": "Democracy - Canada grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minute assessment on Democracy for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.960428+00:00",
-    "updated_at": "2026-10-21T11:02:15.960440+00:00",
+    "created_at": "2026-10-24T17:53:45.078795+00:00",
+    "updated_at": "2026-10-24T17:53:45.078804+00:00",
     "tags": [
       "civics",
-      "demokrácia",
+      "democracy",
       "grade-11",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "18e8370b2d4fdc3d84cd9f93fb5b3ac07adf9cdee82b88139142e3a8a65e321b",
+    "checksum": "ace336d05d9353d6aa7df752e7dcf7bf1d01e25fcb9c42fd28e868d08830afd0",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Demokrácia",
-    "description": "Test on Demokrácia including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - Democracy",
+    "description": "Assessment on Democracy including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 1: Democracy",
+      "text": "[civics] Democracy - Question 1: Democracy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-11"
+        "democracy",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Demokrácia",
+      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 2: Democracy",
+      "text": "[civics] Democracy - Question 2: Democracy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-11"
+        "democracy",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Demokrácia",
+      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia - Kérdés 3: Democracy",
+      "text": "[civics] Democracy - Question 3: Democracy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Democracy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-11"
+        "democracy",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Demokrácia",
+      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 4: Democracy",
+      "text": "[civics] Democracy - Question 4: Democracy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-11"
+        "democracy",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Demokrácia",
+      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Democracy",
       "learning_objective": "Democracy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia - Kérdés 5: Democracy",
+      "text": "[civics] Democracy - Question 5: Democracy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia",
-        "grade-11"
+        "democracy",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Demokrácia",
+      "curriculum_topic": "CANADA-GRADE-11-CIVICS-Democracy",
       "learning_objective": "Democracy"
     }
   ],

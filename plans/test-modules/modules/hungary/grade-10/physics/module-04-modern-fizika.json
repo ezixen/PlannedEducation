@@ -3,21 +3,25 @@
     "id": "grade-10-physics-modern-fizika-1.0.0",
     "name": "Modern fizika - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Modern fizika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45 perces felmérő: Modern fizika (grade-10). Témakörök: Mechanika, Hullamok és optika, Elektromágnesesség, Modern fizika, Fizika felkészülés",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.583803+00:00",
-    "updated_at": "2026-10-21T11:02:35.583813+00:00",
+    "created_at": "2026-10-24T17:53:52.425674+00:00",
+    "updated_at": "2026-10-24T17:53:52.425683+00:00",
     "tags": [
       "physics",
       "modern-fizika",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "d5c46d42eba7167affd45c457073a706b036b1b37a9d8b64b29cd1747b7c4a99",
+    "checksum": "03d3e998306a7fcc38d75a2fc37aa578756c467c85ab328e5c87d2318057e14a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Waves and optics",
-      "Electromagnetism",
-      "Modern physics",
-      "Physics preparation"
+      "Mechanika",
+      "Hullamok és optika",
+      "Elektromágnesesség",
+      "Modern fizika",
+      "Fizika felkészülés"
     ]
   },
   "exam": {
     "title": "grade-10 Physics - Modern fizika",
-    "description": "Test on Modern fizika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "Felmérő a(z) Modern fizika témakörből (Mechanika, Hullamok és optika, Elektromágnesesség, Modern fizika, Fizika felkészülés)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 1: Modern physics",
+      "text": "[physics] Modern fizika - Kérdés 1: Modern fizika",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "modern-fizika",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Modern fizika",
-      "learning_objective": "Modern physics"
+      "learning_objective": "Modern fizika"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 2: Modern physics",
+      "text": "[physics] Modern fizika - Kérdés 2: Modern fizika",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "modern-fizika",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Modern fizika",
-      "learning_objective": "Modern physics"
+      "learning_objective": "Modern fizika"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Modern fizika - Kérdés 3: Modern physics",
+      "text": "[physics] Modern fizika - Kérdés 3: Modern fizika",
       "options": null,
       "correct_answer": "Minta válasz a(z) Modern fizika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "modern-fizika",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Modern fizika",
-      "learning_objective": "Modern physics"
+      "learning_objective": "Modern fizika"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Modern fizika - Question 4: Modern physics [rand:1-100]",
+      "text": "[physics] Modern fizika - Kérdés 4: Modern fizika [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "modern-fizika",
         "grade-10",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Modern fizika",
-      "learning_objective": "Modern physics"
+      "learning_objective": "Modern fizika"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 5: Modern physics",
+      "text": "[physics] Modern fizika - Kérdés 5: Modern fizika",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "modern-fizika",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-PHYSICS-Modern fizika",
-      "learning_objective": "Modern physics"
+      "learning_objective": "Modern fizika"
     }
   ],
   "rubrics": []

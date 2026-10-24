@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Sweden grade-10",
+    "name": "World history - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minuters prov i World history (grade-10). Omfattar: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.011072+00:00",
-    "updated_at": "2026-10-21T11:02:26.011089+00:00",
+    "created_at": "2026-10-24T17:53:48.693121+00:00",
+    "updated_at": "2026-10-24T17:53:48.693143+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "bc5ac46b586a13e08cce63ad176878f1fa2d4bac1c1205a81d4f52a9540ade6b",
+    "checksum": "ad5ee71e190e9b969709b53d6deeea00e4230f4ff59ad58ca4fd1a04d608b3dc",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Világtörténet",
-    "description": "Test on Világtörténet including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - World history",
+    "description": "Prov i World history: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Fråga 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Fråga 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Fråga 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för World history.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Fråga 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Fråga 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "world-history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Világtörténet",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

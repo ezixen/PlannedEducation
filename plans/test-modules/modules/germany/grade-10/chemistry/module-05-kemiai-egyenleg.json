@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-kémiai-egyenleg-1.0.0",
-    "name": "Kémiai egyenleg - Germany grade-10",
+    "name": "Chemisches Gleichgewicht - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenleg for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minütige Prüfung zum Thema Chemisches Gleichgewicht (grade-10). Themen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.581366+00:00",
-    "updated_at": "2026-10-21T11:02:16.581385+00:00",
+    "created_at": "2026-10-24T17:53:45.525208+00:00",
+    "updated_at": "2026-10-24T17:53:45.525218+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenleg",
+      "chemisches-gleichgewicht",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "8e779863915dd61fedf5dbd4ec6290eded2291c0a9c7790e218f2b0f4da092e4",
+    "checksum": "c29ec27aad6b4bcf909e6064b8f876c9be9d360a78bb6d45af21da6c3b3f16d5",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Strukturchemie",
+      "Organische Chemie Grundlagen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Chemisches Gleichgewicht"
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Kémiai egyenleg",
-    "description": "Test on Kémiai egyenleg including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Chemisches Gleichgewicht",
+    "description": "Prüfung zum Thema Chemisches Gleichgewicht: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 1: Chemical equilibrium",
+      "text": "[chemistry] Chemisches Gleichgewicht - Frage 1: Chemisches Gleichgewicht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemisches-gleichgewicht",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
-      "learning_objective": "Chemical equilibrium"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Chemisches Gleichgewicht",
+      "learning_objective": "Chemisches Gleichgewicht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 2: Chemical equilibrium",
+      "text": "[chemistry] Chemisches Gleichgewicht - Frage 2: Chemisches Gleichgewicht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemisches-gleichgewicht",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
-      "learning_objective": "Chemical equilibrium"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Chemisches Gleichgewicht",
+      "learning_objective": "Chemisches Gleichgewicht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 3: Chemical equilibrium",
+      "text": "[chemistry] Chemisches Gleichgewicht - Frage 3: Chemisches Gleichgewicht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenleg témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Chemisches Gleichgewicht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemisches-gleichgewicht",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
-      "learning_objective": "Chemical equilibrium"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Chemisches Gleichgewicht",
+      "learning_objective": "Chemisches Gleichgewicht"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenleg - Question 4: Chemical equilibrium [rand:1-100]",
+      "text": "[chemistry] Chemisches Gleichgewicht - Frage 4: Chemisches Gleichgewicht [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
+        "chemisches-gleichgewicht",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
-      "learning_objective": "Chemical equilibrium"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Chemisches Gleichgewicht",
+      "learning_objective": "Chemisches Gleichgewicht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 5: Chemical equilibrium",
+      "text": "[chemistry] Chemisches Gleichgewicht - Frage 5: Chemisches Gleichgewicht",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemisches-gleichgewicht",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
-      "learning_objective": "Chemical equilibrium"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Chemisches Gleichgewicht",
+      "learning_objective": "Chemisches Gleichgewicht"
     }
   ],
   "rubrics": []

@@ -3,21 +3,25 @@
     "id": "grade-08-physics-energia-1.0.0",
     "name": "Energia - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 perces felmérő: Energia (grade-08). Témakörök: Mechanika alapok, Erők, Mozgás, Energia, Mű",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.347860+00:00",
-    "updated_at": "2026-10-21T11:02:35.347879+00:00",
+    "created_at": "2026-10-24T17:53:52.304132+00:00",
+    "updated_at": "2026-10-24T17:53:52.304140+00:00",
     "tags": [
       "physics",
       "energia",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "eec131af67535a4bc199c950fe3048de783b90125803c3d92515f319b0202238",
+    "checksum": "f889d8066e4b9f98b6539524e429213807b2f588df1604a16edaa06895ca460e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics basics",
-      "Forces",
-      "Motion",
-      "Energy",
-      "Work"
+      "Mechanika alapok",
+      "Erők",
+      "Mozgás",
+      "Energia",
+      "Mű"
     ]
   },
   "exam": {
     "title": "grade-08 Physics - Energia",
-    "description": "Test on Energia including Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "Felmérő a(z) Energia témakörből (Mechanika alapok, Erők, Mozgás, Energia, Mű)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energia - Kérdés 1: Energia",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "energia",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "learning_objective": "Energia"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energia - Kérdés 2: Energia",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "energia",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "learning_objective": "Energia"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energia - Kérdés 3: Energia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "energia",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "learning_objective": "Energia"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energia - Kérdés 4: Energia [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "energia",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "learning_objective": "Energia"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energia - Kérdés 5: Energia",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "energia",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "learning_objective": "Energia"
     }
   ],
   "rubrics": []

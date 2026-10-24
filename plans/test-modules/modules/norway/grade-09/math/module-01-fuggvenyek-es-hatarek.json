@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-függvények-és-határek-1.0.0",
-    "name": "Függvények és határek - Norway grade-09",
+    "name": "Functions and limits - Norway grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és határek for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Functions and limits (grade-09). Emner: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.619935+00:00",
-    "updated_at": "2026-10-21T11:02:26.619957+00:00",
+    "created_at": "2026-10-24T17:53:49.081996+00:00",
+    "updated_at": "2026-10-24T17:53:49.082005+00:00",
     "tags": [
       "math",
-      "függvények-és-határek",
+      "functions-and-limits",
       "grade-09",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "b3a36aa3dc9e7b16f159f1c104c4fe6d0532687642cd24e6ea7455b0afeec720",
+    "checksum": "ab9cbc38f955cce0061b740c97ca01eda43c563ba5994decf167ac8f9d664561",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Függvények és határek",
-    "description": "Test on Függvények és határek including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Functions and limits",
+    "description": "Prøve i Functions and limits: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 1: Functions and limits",
+      "text": "[math] Functions and limits - Spørsmål 1: Functions and limits",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 2: Functions and limits",
+      "text": "[math] Functions and limits - Spørsmål 2: Functions and limits",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 3: Functions and limits",
+      "text": "[math] Functions and limits - Spørsmål 3: Functions and limits",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és határek - Kérdés 4: Functions and limits",
+      "text": "[math] Functions and limits - Spørsmål 4: Functions and limits",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és határek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Functions and limits.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és határek - Question 5: Functions and limits [rand:1-1000]",
+      "text": "[math] Functions and limits - Spørsmål 5: Functions and limits [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-határek",
+        "functions-and-limits",
         "grade-09",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "NORWAY-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-science-természet-1.0.0",
-    "name": "Természet - Sweden grade-05",
+    "name": "Natur - Sweden grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minuters prov i Natur (grade-05). Omfattar: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.630626+00:00",
-    "updated_at": "2026-10-21T11:02:25.630639+00:00",
+    "created_at": "2026-10-24T17:53:48.403768+00:00",
+    "updated_at": "2026-10-24T17:53:48.403773+00:00",
     "tags": [
       "science",
-      "természet",
+      "natur",
       "grade-05",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "science",
     "grade_level": "grade-05",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "1ec502212b6e2472fa65dab00d4d9c4397d6a67a160f2d5f7618616514050f56",
+    "checksum": "27a7bf8fa1e4544a27ded99c94e8dcb3287231ba4726cf5844af623cd838906d",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur och miljö",
+      "Växter och djur",
+      "Natur",
+      "Miljö",
+      "Naturskydd"
     ]
   },
   "exam": {
-    "title": "grade-05 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-05 Science - Natur",
+    "description": "Prov i Natur: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Natur - Fråga 1: Natur",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-05"
+        "natur",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Natur - Fråga 2: Natur",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-05"
+        "natur",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Natur - Fråga 3: Natur",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Natur.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-05"
+        "natur",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Natur - Fråga 4: Natur",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-05"
+        "natur",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Natur",
+      "learning_objective": "Natur"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Natur - Fråga 5: Natur",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-05"
+        "natur",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Natur",
+      "learning_objective": "Natur"
     }
   ],
   "rubrics": []

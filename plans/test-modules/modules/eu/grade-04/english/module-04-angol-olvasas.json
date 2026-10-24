@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - European Union grade-04",
+    "name": "English reading - European Union grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English reading for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.012189+00:00",
-    "updated_at": "2026-10-21T11:02:19.012202+00:00",
+    "created_at": "2026-10-24T17:53:47.093987+00:00",
+    "updated_at": "2026-10-24T17:53:47.094000+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-04",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "f3a65d5a094e407871d0848523fd5edbebb5b384a19216096024775625239249",
+    "checksum": "1b99a0bae9129cd6b324e0c6e97d2e33b29421cad8aa5915f33e065b31b25d4a",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-04 English - English reading",
+    "description": "Assessment on English reading including English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Question 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-04"
+        "english-reading",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-ENGLISH-Angol olvasás",
+      "curriculum_topic": "EU-GRADE-04-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Question 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-04"
+        "english-reading",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-ENGLISH-Angol olvasás",
+      "curriculum_topic": "EU-GRADE-04-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Question 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English reading.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-04"
+        "english-reading",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-ENGLISH-Angol olvasás",
+      "curriculum_topic": "EU-GRADE-04-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Question 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-04"
+        "english-reading",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-ENGLISH-Angol olvasás",
+      "curriculum_topic": "EU-GRADE-04-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Question 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-04"
+        "english-reading",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-04-ENGLISH-Angol olvasás",
+      "curriculum_topic": "EU-GRADE-04-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

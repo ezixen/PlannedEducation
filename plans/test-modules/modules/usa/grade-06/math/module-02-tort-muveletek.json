@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-tört-műveletek-1.0.0",
-    "name": "Tört műveletek - USA grade-06",
+    "name": "Fraction operations - USA grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minute assessment on Fraction operations for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.788623+00:00",
-    "updated_at": "2026-10-21T11:02:17.788634+00:00",
+    "created_at": "2026-10-24T17:53:46.220497+00:00",
+    "updated_at": "2026-10-24T17:53:46.220504+00:00",
     "tags": [
       "math",
-      "tört-műveletek",
+      "fraction-operations",
       "grade-06",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "a3644e0dc5ee60c054a2b3288c00384d6cdd74195a19341774916929489ff661",
+    "checksum": "45681f7fa97a3efa06fff068357e34b6a138fad5daa0afab6426dd320db574e8",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Tört műveletek",
-    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Fraction operations",
+    "description": "Assessment on Fraction operations including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "text": "[math] Fraction operations - Question 1: Fraction operations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "USA-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "text": "[math] Fraction operations - Question 2: Fraction operations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "USA-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "text": "[math] Fraction operations - Question 3: Fraction operations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "USA-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "text": "[math] Fraction operations - Question 4: Fraction operations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Fraction operations.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "USA-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "text": "[math] Fraction operations - Question 5: Fraction operations [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "tört-műveletek",
+        "fraction-operations",
         "grade-06",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "USA-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     }
   ],

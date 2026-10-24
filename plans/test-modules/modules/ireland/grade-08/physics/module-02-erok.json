@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-erők-1.0.0",
-    "name": "Erők - Ireland grade-08",
+    "name": "Forces - Ireland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Forces for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.569554+00:00",
-    "updated_at": "2026-10-21T11:02:30.569564+00:00",
+    "created_at": "2026-10-24T17:53:51.346736+00:00",
+    "updated_at": "2026-10-24T17:53:51.346743+00:00",
     "tags": [
       "physics",
-      "erők",
+      "forces",
       "grade-08",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "f3afd12c8657139d116e4a994b54390530cdfbe1b48bed96f51c22fc895327e4",
+    "checksum": "b707d402aa47e6d15922556c831620e4256765cbb27a3bb28272a284b50c2b36",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Forces",
+    "description": "Assessment on Forces including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Forces - Question 1: Forces",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Forces - Question 2: Forces",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Forces - Question 3: Forces",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Forces.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Forces - Question 4: Forces [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők",
+        "forces",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Forces - Question 5: Forces",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "forces",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Erők",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Forces",
       "learning_objective": "Forces"
     }
   ],

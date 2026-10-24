@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-függvények-és-statisztika-1.0.0",
-    "name": "Függvények és statisztika - Germany grade-10",
+    "name": "Funktionen und Statistik - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és statisztika for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minütige Prüfung zum Thema Funktionen und Statistik (grade-10). Themen: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.620689+00:00",
-    "updated_at": "2026-10-21T11:02:16.620734+00:00",
+    "created_at": "2026-10-24T17:53:45.554415+00:00",
+    "updated_at": "2026-10-24T17:53:45.554430+00:00",
     "tags": [
       "math",
-      "függvények-és-statisztika",
+      "funktionen-und-statistik",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "df9b690c91abd3188321233c18f7b4be74d8545edf6218e07a31af5bcf9a8bf8",
+    "checksum": "c84719d04bf9f54ffa4466178eb1c157e6a225893069c93c3f200c1db00e453a",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and statistics",
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry"
+      "Funktionen und Statistik",
+      "Analysis",
+      "Wahrscheinlichkeitsberechnung",
+      "Statistische Analyse",
+      "Geometrie"
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Függvények és statisztika",
-    "description": "Test on Függvények és statisztika including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Funktionen und Statistik",
+    "description": "Prüfung zum Thema Funktionen und Statistik: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 1: Functions and statistics",
+      "text": "[math] Funktionen und Statistik - Frage 1: Funktionen und Statistik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "funktionen-und-statistik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Függvények és statisztika",
-      "learning_objective": "Functions and statistics"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Funktionen und Statistik",
+      "learning_objective": "Funktionen und Statistik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 2: Functions and statistics",
+      "text": "[math] Funktionen und Statistik - Frage 2: Funktionen und Statistik",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "funktionen-und-statistik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Függvények és statisztika",
-      "learning_objective": "Functions and statistics"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Funktionen und Statistik",
+      "learning_objective": "Funktionen und Statistik"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 3: Functions and statistics",
+      "text": "[math] Funktionen und Statistik - Frage 3: Funktionen und Statistik",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "funktionen-und-statistik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Függvények és statisztika",
-      "learning_objective": "Functions and statistics"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Funktionen und Statistik",
+      "learning_objective": "Funktionen und Statistik"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és statisztika - Kérdés 4: Functions and statistics",
+      "text": "[math] Funktionen und Statistik - Frage 4: Funktionen und Statistik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Funktionen und Statistik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "funktionen-und-statistik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Függvények és statisztika",
-      "learning_objective": "Functions and statistics"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Funktionen und Statistik",
+      "learning_objective": "Funktionen und Statistik"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és statisztika - Question 5: Functions and statistics [rand:1-100]",
+      "text": "[math] Funktionen und Statistik - Frage 5: Funktionen und Statistik [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "függvények-és-statisztika",
+        "funktionen-und-statistik",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Függvények és statisztika",
-      "learning_objective": "Functions and statistics"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Funktionen und Statistik",
+      "learning_objective": "Funktionen und Statistik"
     }
   ],
   "rubrics": []

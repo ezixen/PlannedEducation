@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Finland grade-10",
+    "name": "History of Hungary - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45 minuutin koe aiheesta History of Hungary (grade-10). Aiheet: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.571810+00:00",
-    "updated_at": "2026-10-21T11:02:24.571832+00:00",
+    "created_at": "2026-10-24T17:53:47.783767+00:00",
+    "updated_at": "2026-10-24T17:53:47.783775+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "history-of-hungary",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "02191d07398bfdd3083571d4b8beb59efb34fdfe3793ed38dcb66cdcce1786e0",
+    "checksum": "389fd972470afc024bc13d253740ccc9e76291b1a3bb4bfd293ef09f14d704c0",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History of Hungary",
+    "description": "Koe aiheesta History of Hungary: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] History of Hungary - Kysymys 1: History of Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] History of Hungary - Kysymys 2: History of Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] History of Hungary - Kysymys 3: History of Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen History of Hungary.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] History of Hungary - Kysymys 4: History of Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] History of Hungary - Kysymys 5: History of Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "FINLAND-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     }
   ],

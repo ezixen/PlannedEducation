@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-középkor-1.0.0",
-    "name": "Középkor - Norway grade-07",
+    "name": "Middle Ages - Norway grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Középkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minutters prøve i Middle Ages (grade-07). Emner: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.400032+00:00",
-    "updated_at": "2026-10-21T11:02:26.400068+00:00",
+    "created_at": "2026-10-24T17:53:48.945245+00:00",
+    "updated_at": "2026-10-24T17:53:48.945252+00:00",
     "tags": [
       "history",
-      "középkor",
+      "middle-ages",
       "grade-07",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "e87e986d65707850555071776fc0dcb95215733ebfdc7ca1dd3dc3a609ad1c54",
+    "checksum": "a158b5454275f60c4dd97955102076fc920e94d3a96dc4119a789b9ff16e7efa",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Középkor",
-    "description": "Test on Középkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Middle Ages",
+    "description": "Prøve i Middle Ages: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 1: Middle Ages",
+      "text": "[history] Middle Ages - Spørsmål 1: Middle Ages",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 2: Middle Ages",
+      "text": "[history] Middle Ages - Spørsmål 2: Middle Ages",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Középkor - Kérdés 3: Middle Ages",
+      "text": "[history] Middle Ages - Spørsmål 3: Middle Ages",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Középkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Middle Ages.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 4: Middle Ages",
+      "text": "[history] Middle Ages - Spørsmål 4: Middle Ages",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor - Kérdés 5: Middle Ages",
+      "text": "[history] Middle Ages - Spørsmål 5: Middle Ages",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "középkor",
-        "grade-07"
+        "middle-ages",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Középkor",
+      "curriculum_topic": "NORWAY-GRADE-07-HISTORY-Middle Ages",
       "learning_objective": "Middle Ages"
     }
   ],

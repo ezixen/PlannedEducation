@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "függvények-és-statisztika",
-      "grade-08"
+      "grade-08",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "27d1132e7c7f3954c3db57c59653054cf23f8f12592837a8982ffefbe5209ea5",
+    "checksum": "57a49d1db86e233b9dcb6a49ff6c61e9d4c54cd3db4d5f085c046fc043b426b8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Lineáris függvények",
       "Valószínűség",
       "Diagramok"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 08 Math - Függvények és statisztika",

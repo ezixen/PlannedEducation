@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - Belgium grade-09",
+    "name": "English grammar - Belgium grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "Toets van 45 minuten over English grammar (grade-09). Onderwerpen: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.878554+00:00",
-    "updated_at": "2026-10-21T11:02:29.878574+00:00",
+    "created_at": "2026-10-24T17:53:50.925231+00:00",
+    "updated_at": "2026-10-24T17:53:50.925237+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-09",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "8947b91c1aba9909c2758409976589614ee1d241bb0077841a64ed9ceacd9a34",
+    "checksum": "79a9943fbd407e079243ce3fa24297ea22c0171143cd44585d9bdd457e7ef08d",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English grammar",
+    "description": "Toets over English grammar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Vraag 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Vraag 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Vraag 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English grammar.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Vraag 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Vraag 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "BELGIUM-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mű-1.0.0",
-    "name": "Mű - Austria grade-08",
+    "name": "Arbeit - Austria grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mű for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minütige Prüfung zum Thema Arbeit (grade-08). Themen: Mechanik Grundlagen, Kräfte, Bewegung, Energie, Arbeit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.118685+00:00",
-    "updated_at": "2026-10-21T11:02:29.118699+00:00",
+    "created_at": "2026-10-24T17:53:50.499538+00:00",
+    "updated_at": "2026-10-24T17:53:50.499546+00:00",
     "tags": [
       "physics",
-      "mű",
+      "arbeit",
       "grade-08",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "5876aabd45879267f0dfb458a4640108cf9ff6e8fb627e29ebd8550794b78ad2",
+    "checksum": "fd500bbe2bd06cb77afb2c6cb2bfe992508160d44fa81dc1c4f24defb1a3d2a9",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics basics",
-      "Forces",
-      "Motion",
-      "Energy",
-      "Work"
+      "Mechanik Grundlagen",
+      "Kräfte",
+      "Bewegung",
+      "Energie",
+      "Arbeit"
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mű",
-    "description": "Test on Mű including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Arbeit",
+    "description": "Prüfung zum Thema Arbeit: Mechanik Grundlagen, Kräfte, Bewegung, Energie, Arbeit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 1: Work",
+      "text": "[physics] Arbeit - Frage 1: Arbeit",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "arbeit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Mű",
-      "learning_objective": "Work"
+      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Arbeit",
+      "learning_objective": "Arbeit"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 2: Work",
+      "text": "[physics] Arbeit - Frage 2: Arbeit",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "arbeit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Mű",
-      "learning_objective": "Work"
+      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Arbeit",
+      "learning_objective": "Arbeit"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mű - Kérdés 3: Work",
+      "text": "[physics] Arbeit - Frage 3: Arbeit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mű témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Arbeit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "arbeit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Mű",
-      "learning_objective": "Work"
+      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Arbeit",
+      "learning_objective": "Arbeit"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mű - Question 4: Work [rand:1-1000]",
+      "text": "[physics] Arbeit - Frage 4: Arbeit [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mű",
+        "arbeit",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Mű",
-      "learning_objective": "Work"
+      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Arbeit",
+      "learning_objective": "Arbeit"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mű - Kérdés 5: Work",
+      "text": "[physics] Arbeit - Frage 5: Arbeit",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "mű",
-        "grade-08"
+        "arbeit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Mű",
-      "learning_objective": "Work"
+      "curriculum_topic": "AUSTRIA-GRADE-08-PHYSICS-Arbeit",
+      "learning_objective": "Arbeit"
     }
   ],
   "rubrics": []

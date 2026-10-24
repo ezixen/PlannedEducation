@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-és-magyarország-1.0.0",
-    "name": "Európa és Magyarország - USA grade-08",
+    "name": "Europe and Hungary - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minute assessment on Europe and Hungary for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.944380+00:00",
-    "updated_at": "2026-10-21T11:02:17.944399+00:00",
+    "created_at": "2026-10-24T17:53:46.334847+00:00",
+    "updated_at": "2026-10-24T17:53:46.334855+00:00",
     "tags": [
       "geography",
-      "európa-és-magyarország",
+      "europe-and-hungary",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "1533163506025788c050e76cf27fba7a169ec9f10acadeb824de35f77088b225",
+    "checksum": "7bc0fca0fead0556201a83200e39a45d9d951b7625d2e15db98c71aca626f582",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa és Magyarország",
-    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe and Hungary",
+    "description": "Assessment on Europe and Hungary including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Question 1: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Question 2: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Question 3: Europe and Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Europe and Hungary.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Question 4: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Question 5: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "USA-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     }
   ],

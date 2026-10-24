@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-statisztikai-elemzés-1.0.0",
-    "name": "Statisztikai elemzés - European Union grade-10",
+    "name": "Statistical analysis - European Union grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztikai elemzés for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minute assessment on Statistical analysis for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.947664+00:00",
-    "updated_at": "2026-10-21T11:02:19.947679+00:00",
+    "created_at": "2026-10-24T17:53:47.384034+00:00",
+    "updated_at": "2026-10-24T17:53:47.384042+00:00",
     "tags": [
       "math",
-      "statisztikai-elemzés",
+      "statistical-analysis",
       "grade-10",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "52a3057ef015a78e37a5066e4c2e0c024d2f4318946a69eea8f45d5fc27e9a06",
+    "checksum": "62e6bd40bb720b15e2b45b6b4f6fd65590610dcb7dc9ca2b39c4a501a623e8f2",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Statisztikai elemzés",
-    "description": "Test on Statisztikai elemzés including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Statistical analysis",
+    "description": "Assessment on Statistical analysis including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 1: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 1: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-10"
+        "statistical-analysis",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-MATH-Statisztikai elemzés",
+      "curriculum_topic": "EU-GRADE-10-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 2: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 2: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-10"
+        "statistical-analysis",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-MATH-Statisztikai elemzés",
+      "curriculum_topic": "EU-GRADE-10-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 3: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 3: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-10"
+        "statistical-analysis",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-MATH-Statisztikai elemzés",
+      "curriculum_topic": "EU-GRADE-10-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztikai elemzés - Kérdés 4: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 4: Statistical analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Statistical analysis.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-10"
+        "statistical-analysis",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-MATH-Statisztikai elemzés",
+      "curriculum_topic": "EU-GRADE-10-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztikai elemzés - Question 5: Statistical analysis [rand:1-100]",
+      "text": "[math] Statistical analysis - Question 5: Statistical analysis [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztikai-elemzés",
+        "statistical-analysis",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-10-MATH-Statisztikai elemzés",
+      "curriculum_topic": "EU-GRADE-10-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     }
   ],

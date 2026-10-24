@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Austria grade-07",
+    "name": "Naturschutz - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-07 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Naturschutz (grade-07). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.021502+00:00",
-    "updated_at": "2026-10-21T11:02:29.021514+00:00",
+    "created_at": "2026-10-24T17:53:50.440133+00:00",
+    "updated_at": "2026-10-24T17:53:50.440140+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "naturschutz",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "665fb64f99767ceac836df3fbee5dad2cda9dea0db06b0c3f3f617cdf6de80ce",
+    "checksum": "b87a15703f8e887c91279222ba0c1e053a16fc060c38973b5ad076868c42d1db",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-07 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-07 Science - Naturschutz",
+    "description": "Prüfung zum Thema Naturschutz: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Naturschutz - Frage 1: Naturschutz",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "naturschutz",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Naturschutz - Frage 2: Naturschutz",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "naturschutz",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Naturschutz - Frage 3: Naturschutz",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Naturschutz.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "naturschutz",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Naturschutz - Frage 4: Naturschutz",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "naturschutz",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Naturschutz - Frage 5: Naturschutz",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-07"
+        "naturschutz",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "AUSTRIA-GRADE-07-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     }
   ],
   "rubrics": []

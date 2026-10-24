@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-energia-1.0.0",
-    "name": "Energia - Finland grade-08",
+    "name": "Energy - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 minuutin koe aiheesta Energy (grade-08). Aiheet: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.376913+00:00",
-    "updated_at": "2026-10-21T11:02:24.376925+00:00",
+    "created_at": "2026-10-24T17:53:47.704470+00:00",
+    "updated_at": "2026-10-24T17:53:47.704480+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1c8786a9250014584751bbcf58f2f7fc1e55d3f46b667450b0c89f2792386e2f",
+    "checksum": "d0498992be7008a5cb6e89496c3be4d71193277cc33d152a6cac5a47fd5eec8c",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Energia",
-    "description": "Test on Energia including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Energy",
+    "description": "Koe aiheesta Energy: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Kysymys 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Kysymys 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Kysymys 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Energy.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energy - Kysymys 4: Energy [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-08",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Kysymys 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-08"
+        "energy",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energia",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

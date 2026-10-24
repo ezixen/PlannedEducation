@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Switzerland grade-10",
+    "name": "Zellbiologie und Genetik - Switzerland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Zellbiologie und Genetik (grade-10). Themen: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.560233+00:00",
-    "updated_at": "2026-10-21T11:02:28.560250+00:00",
+    "created_at": "2026-10-24T17:53:50.133172+00:00",
+    "updated_at": "2026-10-24T17:53:50.133179+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "zellbiologie-und-genetik",
       "grade-10",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "e315af11c49b36249eeff89ad637349d33cc3e89e9fb200628bb3a942c65575b",
+    "checksum": "013e0f2bfa276abd4a6a499f6b18b2524f25452c5411141c7bb7b6d483bb337d",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics",
-      "Ecology",
-      "Ecological systems"
+      "Zellbiologie und Genetik",
+      "Zellaufbau",
+      "Genetik",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Zellbiologie und Genetik",
+    "description": "Prüfung zum Thema Zellbiologie und Genetik: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Zellbiologie und Genetik - Frage 1: Zellbiologie und Genetik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "zellbiologie-und-genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
-      "learning_objective": "Cell biology and genetics"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Zellbiologie und Genetik",
+      "learning_objective": "Zellbiologie und Genetik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Zellbiologie und Genetik - Frage 2: Zellbiologie und Genetik",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "zellbiologie-und-genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
-      "learning_objective": "Cell biology and genetics"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Zellbiologie und Genetik",
+      "learning_objective": "Zellbiologie und Genetik"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Zellbiologie und Genetik - Frage 3: Zellbiologie und Genetik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Zellbiologie und Genetik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "zellbiologie-und-genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
-      "learning_objective": "Cell biology and genetics"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Zellbiologie und Genetik",
+      "learning_objective": "Zellbiologie und Genetik"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Zellbiologie und Genetik - Frage 4: Zellbiologie und Genetik",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "zellbiologie-und-genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
-      "learning_objective": "Cell biology and genetics"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Zellbiologie und Genetik",
+      "learning_objective": "Zellbiologie und Genetik"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Zellbiologie und Genetik - Frage 5: Zellbiologie und Genetik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Zellbiologie und Genetik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-10"
+        "zellbiologie-und-genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Sejtbiológia és genetika",
-      "learning_objective": "Cell biology and genetics"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-BIOLOGY-Zellbiologie und Genetik",
+      "learning_objective": "Zellbiologie und Genetik"
     }
   ],
   "rubrics": []

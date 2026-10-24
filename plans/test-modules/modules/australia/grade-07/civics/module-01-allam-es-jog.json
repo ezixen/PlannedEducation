@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - Australia grade-07",
+    "name": "State and law - Australia grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minute assessment on State and law for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.489372+00:00",
-    "updated_at": "2026-10-21T11:02:18.489383+00:00",
+    "created_at": "2026-10-24T17:53:46.635583+00:00",
+    "updated_at": "2026-10-24T17:53:46.635589+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "state-and-law",
       "grade-07",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "6d48aec95678efad597d37d9b9521dbe231d4ced6c5f63e4cab4ee1f5cbb3fad",
+    "checksum": "c0715e2c6ee7dd51e139dce817f8d16e7ea975986ddb4bf8d13bd6fc6e478566",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - State and law",
+    "description": "Assessment on State and law including State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] State and law - Question 1: State and law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] State and law - Question 2: State and law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] State and law - Question 3: State and law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for State and law.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] State and law - Question 4: State and law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] State and law - Question 5: State and law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "AUSTRALIA-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     }
   ],

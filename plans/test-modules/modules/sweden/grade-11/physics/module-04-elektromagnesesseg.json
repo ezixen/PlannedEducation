@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-elektromágnesesség-1.0.0",
-    "name": "Elektromágnesesség - Sweden grade-11",
+    "name": "Electromagnetism - Sweden grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minuters prov i Electromagnetism (grade-11). Omfattar: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.093653+00:00",
-    "updated_at": "2026-10-21T11:02:26.093665+00:00",
+    "created_at": "2026-10-24T17:53:48.751270+00:00",
+    "updated_at": "2026-10-24T17:53:48.751276+00:00",
     "tags": [
       "physics",
-      "elektromágnesesség",
+      "electromagnetism",
       "grade-11",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "67bf40d37e47da722e9db2e0e4a2066cf9093d1c76e44e510d282c96fbd9a7fc",
+    "checksum": "3b815a0f6cf2b6ab3d89f70d27dba20ad7c8529ef57214b2d52d44dc3f453cfb",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Electromagnetism",
+    "description": "Prov i Electromagnetism: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Electromagnetism - Fråga 1: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Electromagnetism - Fråga 2: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Electromagnetism - Fråga 3: Electromagnetism",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Electromagnetism.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Electromagnetism - Fråga 4: Electromagnetism [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "elektromágnesesség",
+        "electromagnetism",
         "grade-11",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Electromagnetism - Fråga 5: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     }
   ],

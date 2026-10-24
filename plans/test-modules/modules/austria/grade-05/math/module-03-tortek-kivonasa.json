@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-kivonása-1.0.0",
-    "name": "Törtek kivonása - Austria grade-05",
+    "name": "Brüche subtrahieren - Austria grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek kivonása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minütige Prüfung zum Thema Brüche subtrahieren (grade-05). Themen: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.884401+00:00",
-    "updated_at": "2026-10-21T11:02:28.884427+00:00",
+    "created_at": "2026-10-24T17:53:50.350139+00:00",
+    "updated_at": "2026-10-24T17:53:50.350145+00:00",
     "tags": [
       "math",
-      "törtek-kivonása",
+      "brüche-subtrahieren",
       "grade-05",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "06ac0f0a0d1adf200dc4e03e678e02d6f33a5357750a5d9164509d6e4e1a954e",
+    "checksum": "38cd4d379de237f40cf1e01f7b05a29ac9ec184b94c4e8bae71de68353a2ae04",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Bruchrechnung Grundlagen",
+      "Brüche addieren",
+      "Brüche subtrahieren",
+      "Brüche multiplizieren",
+      "Brüche dividieren"
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek kivonása",
-    "description": "Test on Törtek kivonása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Brüche subtrahieren",
+    "description": "Prüfung zum Thema Brüche subtrahieren: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 1: Fraction subtraction",
+      "text": "[math] Brüche subtrahieren - Frage 1: Brüche subtrahieren",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "brüche-subtrahieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Brüche subtrahieren",
+      "learning_objective": "Brüche subtrahieren"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 2: Fraction subtraction",
+      "text": "[math] Brüche subtrahieren - Frage 2: Brüche subtrahieren",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "brüche-subtrahieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Brüche subtrahieren",
+      "learning_objective": "Brüche subtrahieren"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 3: Fraction subtraction",
+      "text": "[math] Brüche subtrahieren - Frage 3: Brüche subtrahieren",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "brüche-subtrahieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Brüche subtrahieren",
+      "learning_objective": "Brüche subtrahieren"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek kivonása - Kérdés 4: Fraction subtraction",
+      "text": "[math] Brüche subtrahieren - Frage 4: Brüche subtrahieren",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek kivonása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Brüche subtrahieren.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "brüche-subtrahieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Brüche subtrahieren",
+      "learning_objective": "Brüche subtrahieren"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek kivonása - Question 5: Fraction subtraction [rand:1-100]",
+      "text": "[math] Brüche subtrahieren - Frage 5: Brüche subtrahieren [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "törtek-kivonása",
+        "brüche-subtrahieren",
         "grade-05",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Törtek kivonása",
-      "learning_objective": "Fraction subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-05-MATH-Brüche subtrahieren",
+      "learning_objective": "Brüche subtrahieren"
     }
   ],
   "rubrics": []

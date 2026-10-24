@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-egészség-1.0.0",
-    "name": "Egészség - Australia grade-08",
+    "name": "Health - Australia grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minute assessment on Health for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.579062+00:00",
-    "updated_at": "2026-10-21T11:02:18.579076+00:00",
+    "created_at": "2026-10-24T17:53:46.702851+00:00",
+    "updated_at": "2026-10-24T17:53:46.702858+00:00",
     "tags": [
       "biology",
-      "egészség",
+      "health",
       "grade-08",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "96100f04b8dc1bf862c3575a69227892f761c54d902e27193b3952ce1a41f53f",
+    "checksum": "d515db6505cb61194cb1bb8004f79fe008f1728365e03cc567bc241bd82de1e8",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Health",
+    "description": "Assessment on Health including Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Health - Question 1: Health",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Health - Question 2: Health",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Health - Question 3: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Health.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Health - Question 4: Health",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Health - Question 5: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Health.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "AUSTRALIA-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     }
   ],

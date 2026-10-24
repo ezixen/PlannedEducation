@@ -3,21 +3,25 @@
     "id": "grade-02-math-összeadás-100-ig-1.0.0",
     "name": "Összeadás 100-ig - Hungary grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45 perces felmérő: Összeadás 100-ig (grade-02). Témakörök: Számlálás 100-ig, Összeadás 100-ig, Kivonás 100-ig, Szorzás alapok, Osztás alapok",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.006009+00:00",
-    "updated_at": "2026-10-21T11:02:35.006023+00:00",
+    "created_at": "2026-10-24T17:53:52.065189+00:00",
+    "updated_at": "2026-10-24T17:53:52.065196+00:00",
     "tags": [
       "math",
       "összeadás-100-ig",
       "grade-02",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "758d7d7822fe9a0f7c8a523d8f9fd4dae2aa60c37b29cb795febff7430a5909f",
+    "checksum": "8c990f97a11372b2f71f718a713c8d6d5a60fc94677f4abfe6efd966bd4ae179",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 100",
-      "Addition to 100",
-      "Subtraction to 100",
-      "Multiplication basics",
-      "Division basics"
+      "Számlálás 100-ig",
+      "Összeadás 100-ig",
+      "Kivonás 100-ig",
+      "Szorzás alapok",
+      "Osztás alapok"
     ]
   },
   "exam": {
     "title": "grade-02 Math - Összeadás 100-ig",
-    "description": "Test on Összeadás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "Felmérő a(z) Összeadás 100-ig témakörből (Számlálás 100-ig, Összeadás 100-ig, Kivonás 100-ig, Szorzás alapok, Osztás alapok)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 1: Addition to 100",
+      "text": "[math] Összeadás 100-ig - Kérdés 1: Összeadás 100-ig",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "összeadás-100-ig",
-        "grade-02"
+        "grade-02",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-02-MATH-Összeadás 100-ig",
-      "learning_objective": "Addition to 100"
+      "learning_objective": "Összeadás 100-ig"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 2: Addition to 100",
+      "text": "[math] Összeadás 100-ig - Kérdés 2: Összeadás 100-ig",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "összeadás-100-ig",
-        "grade-02"
+        "grade-02",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-02-MATH-Összeadás 100-ig",
-      "learning_objective": "Addition to 100"
+      "learning_objective": "Összeadás 100-ig"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 3: Addition to 100",
+      "text": "[math] Összeadás 100-ig - Kérdés 3: Összeadás 100-ig",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "összeadás-100-ig",
-        "grade-02"
+        "grade-02",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-02-MATH-Összeadás 100-ig",
-      "learning_objective": "Addition to 100"
+      "learning_objective": "Összeadás 100-ig"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 100-ig - Kérdés 4: Addition to 100",
+      "text": "[math] Összeadás 100-ig - Kérdés 4: Összeadás 100-ig",
       "options": null,
       "correct_answer": "Minta válasz a(z) Összeadás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "összeadás-100-ig",
-        "grade-02"
+        "grade-02",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-02-MATH-Összeadás 100-ig",
-      "learning_objective": "Addition to 100"
+      "learning_objective": "Összeadás 100-ig"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 100-ig - Question 5: Addition to 100 [rand:1-20]",
+      "text": "[math] Összeadás 100-ig - Kérdés 5: Összeadás 100-ig [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "összeadás-100-ig",
         "grade-02",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-02-MATH-Összeadás 100-ig",
-      "learning_objective": "Addition to 100"
+      "learning_objective": "Összeadás 100-ig"
     }
   ],
   "rubrics": []

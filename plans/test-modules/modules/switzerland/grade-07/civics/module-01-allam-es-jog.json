@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - Switzerland grade-07",
+    "name": "Staat und Recht - Switzerland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Staat und Recht (grade-07). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.299604+00:00",
-    "updated_at": "2026-10-21T11:02:28.299630+00:00",
+    "created_at": "2026-10-24T17:53:49.960534+00:00",
+    "updated_at": "2026-10-24T17:53:49.960543+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "staat-und-recht",
       "grade-07",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "aaaaac4667e3fd4abc70ebc565a50bdcb63ca4e73814aab74b55c539f6fb5102",
+    "checksum": "2cdf96eba3a22aa42d3f7b2ee5dee20c07875f2c56c9eac62efd2fdee521e73b",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - Staat und Recht",
+    "description": "Prüfung zum Thema Staat und Recht: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] Staat und Recht - Frage 1: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "staat-und-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] Staat und Recht - Frage 2: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "staat-und-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] Staat und Recht - Frage 3: Staat und Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Staat und Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "staat-und-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] Staat und Recht - Frage 4: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "staat-und-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] Staat und Recht - Frage 5: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "staat-und-recht",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     }
   ],
   "rubrics": []

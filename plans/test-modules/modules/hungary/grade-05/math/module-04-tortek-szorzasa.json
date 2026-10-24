@@ -3,21 +3,25 @@
     "id": "grade-05-math-törtek-szorzása-1.0.0",
     "name": "Törtek szorzása - Hungary grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek szorzása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 perces felmérő: Törtek szorzása (grade-05). Témakörök: Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.095309+00:00",
-    "updated_at": "2026-10-21T11:02:35.095330+00:00",
+    "created_at": "2026-10-24T17:53:52.130686+00:00",
+    "updated_at": "2026-10-24T17:53:52.130701+00:00",
     "tags": [
       "math",
       "törtek-szorzása",
       "grade-05",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "11894e7dfa4379c5901e3eaf683f9df247bb6ea143f1cd422f84ad0af983a449",
+    "checksum": "f89eb0a65f14cd9f96ff7d341cf0a98c0f45fbda41e1e9dd225e60317a82f29e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Törtek alapok",
+      "Törtek összeadása",
+      "Törtek kivonása",
+      "Törtek szorzása",
+      "Törtek osztása"
     ]
   },
   "exam": {
     "title": "grade-05 Math - Törtek szorzása",
-    "description": "Test on Törtek szorzása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Felmérő a(z) Törtek szorzása témakörből (Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 1: Fraction multiplication",
+      "text": "[math] Törtek szorzása - Kérdés 1: Törtek szorzása",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "törtek-szorzása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "learning_objective": "Törtek szorzása"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 2: Fraction multiplication",
+      "text": "[math] Törtek szorzása - Kérdés 2: Törtek szorzása",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "törtek-szorzása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "learning_objective": "Törtek szorzása"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 3: Fraction multiplication",
+      "text": "[math] Törtek szorzása - Kérdés 3: Törtek szorzása",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "törtek-szorzása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "learning_objective": "Törtek szorzása"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek szorzása - Kérdés 4: Fraction multiplication",
+      "text": "[math] Törtek szorzása - Kérdés 4: Törtek szorzása",
       "options": null,
       "correct_answer": "Minta válasz a(z) Törtek szorzása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "törtek-szorzása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "learning_objective": "Törtek szorzása"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek szorzása - Question 5: Fraction multiplication [rand:1-100]",
+      "text": "[math] Törtek szorzása - Kérdés 5: Törtek szorzása [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "törtek-szorzása",
         "grade-05",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "learning_objective": "Törtek szorzása"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-szavak-1.0.0",
-    "name": "Angol szavak - Belgium grade-01",
+    "name": "English words - Belgium grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szavak for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "Toets van 45 minuten over English words (grade-01). Onderwerpen: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.458586+00:00",
-    "updated_at": "2026-10-21T11:02:29.458597+00:00",
+    "created_at": "2026-10-24T17:53:50.671011+00:00",
+    "updated_at": "2026-10-24T17:53:50.671017+00:00",
     "tags": [
       "english",
-      "angol-szavak",
+      "english-words",
       "grade-01",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "a42934ad6ac86520d0b0276eab56ff3f497acda75fa677d601a119d6840b7838",
+    "checksum": "4058289c2749a56773ae5850e7e206920d1c6a7473b4348fca7cb24a260e6cf7",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol szavak",
-    "description": "Test on Angol szavak including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English words",
+    "description": "Toets over English words: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 1: English words",
+      "text": "[english] English words - Vraag 1: English words",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 2: English words",
+      "text": "[english] English words - Vraag 2: English words",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szavak - Kérdés 3: English words",
+      "text": "[english] English words - Vraag 3: English words",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szavak témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English words.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 4: English words",
+      "text": "[english] English words - Vraag 4: English words",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 5: English words",
+      "text": "[english] English words - Vraag 5: English words",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     }
   ],

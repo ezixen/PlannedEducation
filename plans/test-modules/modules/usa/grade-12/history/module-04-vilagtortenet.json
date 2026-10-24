@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-világtörténet-1.0.0",
-    "name": "Világtörténet - USA grade-12",
+    "name": "World history - USA grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minute assessment on World history for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.312235+00:00",
-    "updated_at": "2026-10-21T11:02:18.312245+00:00",
+    "created_at": "2026-10-24T17:53:46.518305+00:00",
+    "updated_at": "2026-10-24T17:53:46.518311+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-12",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "97d5d76d8092c45a6fe6e00559a6f741324453bbd5b5e817ecf539336b47c33c",
+    "checksum": "4ec6e2835f333c71540c7f24c1287ea3ed5122c7f792078dd07b28fe0344097d",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Világtörténet",
-    "description": "Test on Világtörténet including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - World history",
+    "description": "Assessment on World history including History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Question 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "USA-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Question 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "USA-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Question 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for World history.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "USA-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Question 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "USA-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Question 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-12"
+        "world-history",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-HISTORY-Világtörténet",
+      "curriculum_topic": "USA-GRADE-12-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

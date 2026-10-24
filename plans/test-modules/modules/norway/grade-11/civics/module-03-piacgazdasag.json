@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-piacgazdaság-1.0.0",
-    "name": "Piacgazdaság - Norway grade-11",
+    "name": "Market economy - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Piacgazdaság for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minutters prøve i Market economy (grade-11). Emner: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.764151+00:00",
-    "updated_at": "2026-10-21T11:02:26.764164+00:00",
+    "created_at": "2026-10-24T17:53:49.177776+00:00",
+    "updated_at": "2026-10-24T17:53:49.177787+00:00",
     "tags": [
       "civics",
-      "piacgazdaság",
+      "market-economy",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "da13efc75d4e9d5ff1383c613a2d3f51e3a67f56376f4c2398e1a8dfdae6b492",
+    "checksum": "3d292d7b1a1ce019fb3f4f9b9637162c218f08127cb736bec203b0ca5f5e8eaf",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Piacgazdaság",
-    "description": "Test on Piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - Market economy",
+    "description": "Prøve i Market economy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 1: Market economy",
+      "text": "[civics] Market economy - Spørsmål 1: Market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-11"
+        "market-economy",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Market economy",
       "learning_objective": "Market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 2: Market economy",
+      "text": "[civics] Market economy - Spørsmål 2: Market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-11"
+        "market-economy",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Market economy",
       "learning_objective": "Market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Piacgazdaság - Kérdés 3: Market economy",
+      "text": "[civics] Market economy - Spørsmål 3: Market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Market economy.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-11"
+        "market-economy",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Market economy",
       "learning_objective": "Market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 4: Market economy",
+      "text": "[civics] Market economy - Spørsmål 4: Market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-11"
+        "market-economy",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Market economy",
       "learning_objective": "Market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 5: Market economy",
+      "text": "[civics] Market economy - Spørsmål 5: Market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-11"
+        "market-economy",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Market economy",
       "learning_objective": "Market economy"
     }
   ],

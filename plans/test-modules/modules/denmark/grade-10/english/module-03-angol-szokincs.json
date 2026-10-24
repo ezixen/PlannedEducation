@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - Denmark grade-10",
+    "name": "English vocabulary - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minutters prøve i English vocabulary (grade-10). Emner: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.632522+00:00",
-    "updated_at": "2026-10-21T11:02:27.632538+00:00",
+    "created_at": "2026-10-24T17:53:49.695569+00:00",
+    "updated_at": "2026-10-24T17:53:49.695578+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "f0176e3dfd48ac4619d7a1699651c255e32dc7125a95876146a4081bfdea42b4",
+    "checksum": "e464f13f13b2fb1affc03c85b88622dac91e6e0d8eb2c502c2d33b5724cfe61f",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English vocabulary",
+    "description": "Prøve i English vocabulary: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Spørgsmål 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-10"
+        "english-vocabulary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-Angol szókincs",
+      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Spørgsmål 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-10"
+        "english-vocabulary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-Angol szókincs",
+      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Spørgsmål 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English vocabulary.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-10"
+        "english-vocabulary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-Angol szókincs",
+      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Spørgsmål 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-10"
+        "english-vocabulary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-Angol szókincs",
+      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Spørgsmål 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-10"
+        "english-vocabulary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-Angol szókincs",
+      "curriculum_topic": "DENMARK-GRADE-10-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

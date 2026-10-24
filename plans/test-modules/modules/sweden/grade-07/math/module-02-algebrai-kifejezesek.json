@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-algebrai-kifejezések-1.0.0",
-    "name": "Algebrai kifejezések - Sweden grade-07",
+    "name": "Algebraic expressions - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Algebrai kifejezések for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minuters prov i Algebraic expressions (grade-07). Omfattar: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.732092+00:00",
-    "updated_at": "2026-10-21T11:02:25.732109+00:00",
+    "created_at": "2026-10-24T17:53:48.458243+00:00",
+    "updated_at": "2026-10-24T17:53:48.458249+00:00",
     "tags": [
       "math",
-      "algebrai-kifejezések",
+      "algebraic-expressions",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "d529860e926694ad8ee7d2162488a60216f299cd05c53326d929d44c26f878b5",
+    "checksum": "71351de44da2acea83670853c3da5824da17f280d0b8cc14674f77df03c36642",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Algebrai kifejezések",
-    "description": "Test on Algebrai kifejezések including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Algebraic expressions",
+    "description": "Prov i Algebraic expressions: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 1: Algebraic expressions",
+      "text": "[math] Algebraic expressions - Fråga 1: Algebraic expressions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "algebrai-kifejezések",
-        "grade-07"
+        "algebraic-expressions",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebrai kifejezések",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebraic expressions",
       "learning_objective": "Algebraic expressions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 2: Algebraic expressions",
+      "text": "[math] Algebraic expressions - Fråga 2: Algebraic expressions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "algebrai-kifejezések",
-        "grade-07"
+        "algebraic-expressions",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebrai kifejezések",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebraic expressions",
       "learning_objective": "Algebraic expressions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 3: Algebraic expressions",
+      "text": "[math] Algebraic expressions - Fråga 3: Algebraic expressions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "algebrai-kifejezések",
-        "grade-07"
+        "algebraic-expressions",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebrai kifejezések",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebraic expressions",
       "learning_objective": "Algebraic expressions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Algebrai kifejezések - Kérdés 4: Algebraic expressions",
+      "text": "[math] Algebraic expressions - Fråga 4: Algebraic expressions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Algebrai kifejezések témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Algebraic expressions.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "algebrai-kifejezések",
-        "grade-07"
+        "algebraic-expressions",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebrai kifejezések",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebraic expressions",
       "learning_objective": "Algebraic expressions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Algebrai kifejezések - Question 5: Algebraic expressions [rand:1-100]",
+      "text": "[math] Algebraic expressions - Fråga 5: Algebraic expressions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "algebrai-kifejezések",
+        "algebraic-expressions",
         "grade-07",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebrai kifejezések",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Algebraic expressions",
       "learning_objective": "Algebraic expressions"
     }
   ],

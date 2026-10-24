@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-szerves-kémia-alapok-1.0.0",
-    "name": "Szerves kémia alapok - Austria grade-10",
+    "name": "Organische Chemie Grundlagen - Austria grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerves kémia alapok for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minütige Prüfung zum Thema Organische Chemie Grundlagen (grade-10). Themen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.274986+00:00",
-    "updated_at": "2026-10-21T11:02:29.275002+00:00",
+    "created_at": "2026-10-24T17:53:50.553662+00:00",
+    "updated_at": "2026-10-24T17:53:50.553667+00:00",
     "tags": [
       "chemistry",
-      "szerves-kémia-alapok",
+      "organische-chemie-grundlagen",
       "grade-10",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "8a1c4ad30cf0e4225b3137b4fca0c77b4b83d81589544490666fc62967946bc1",
+    "checksum": "d375cccdf82cb506da102a12cde63b5f634811ca5d7b8f8b0704b8a1cf371ad1",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Strukturchemie",
+      "Organische Chemie Grundlagen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Chemisches Gleichgewicht"
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Szerves kémia alapok",
-    "description": "Test on Szerves kémia alapok including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Organische Chemie Grundlagen",
+    "description": "Prüfung zum Thema Organische Chemie Grundlagen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 1: Organic chemistry basics",
+      "text": "[chemistry] Organische Chemie Grundlagen - Frage 1: Organische Chemie Grundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organische-chemie-grundlagen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Organische Chemie Grundlagen",
+      "learning_objective": "Organische Chemie Grundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 2: Organic chemistry basics",
+      "text": "[chemistry] Organische Chemie Grundlagen - Frage 2: Organische Chemie Grundlagen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organische-chemie-grundlagen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Organische Chemie Grundlagen",
+      "learning_objective": "Organische Chemie Grundlagen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 3: Organic chemistry basics",
+      "text": "[chemistry] Organische Chemie Grundlagen - Frage 3: Organische Chemie Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szerves kémia alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Organische Chemie Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organische-chemie-grundlagen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Organische Chemie Grundlagen",
+      "learning_objective": "Organische Chemie Grundlagen"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerves kémia alapok - Question 4: Organic chemistry basics [rand:1-100]",
+      "text": "[chemistry] Organische Chemie Grundlagen - Frage 4: Organische Chemie Grundlagen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
+        "organische-chemie-grundlagen",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Organische Chemie Grundlagen",
+      "learning_objective": "Organische Chemie Grundlagen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 5: Organic chemistry basics",
+      "text": "[chemistry] Organische Chemie Grundlagen - Frage 5: Organische Chemie Grundlagen",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerves-kémia-alapok",
-        "grade-10"
+        "organische-chemie-grundlagen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "curriculum_topic": "AUSTRIA-GRADE-10-CHEMISTRY-Organische Chemie Grundlagen",
+      "learning_objective": "Organische Chemie Grundlagen"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-európa-1.0.0",
-    "name": "Európa - USA grade-11",
+    "name": "Europe - USA grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minute assessment on Europe for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.245954+00:00",
-    "updated_at": "2026-10-21T11:02:18.245968+00:00",
+    "created_at": "2026-10-24T17:53:46.472664+00:00",
+    "updated_at": "2026-10-24T17:53:46.472670+00:00",
     "tags": [
       "history",
-      "európa",
+      "europe",
       "grade-11",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "8a156e5d36ac85cfbac789e34031df3ff67cab289de59476dc5c9889661774f5",
+    "checksum": "6ccf1127fbf9f6d8eb09459b406e99a1431a064e07dbb013f0c4d8643fef845d",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Európa",
-    "description": "Test on Európa including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - Europe",
+    "description": "Assessment on Europe including History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 1: Europe",
+      "text": "[history] Europe - Question 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 2: Europe",
+      "text": "[history] Europe - Question 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa - Kérdés 3: Europe",
+      "text": "[history] Europe - Question 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Europe.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 4: Europe",
+      "text": "[history] Europe - Question 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 5: Europe",
+      "text": "[history] Europe - Question 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "USA-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     }
   ],

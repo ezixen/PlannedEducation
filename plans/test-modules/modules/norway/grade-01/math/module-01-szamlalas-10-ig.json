@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
-    "name": "Számlálás 10-ig - Norway grade-01",
+    "name": "Telle til 10 - Norway grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minutters prøve i Telle til 10 (grade-01). Emner: Telle til 10, Addisjon til 10, Subtraksjon til 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.177311+00:00",
-    "updated_at": "2026-10-21T11:02:26.177334+00:00",
+    "created_at": "2026-10-24T17:53:48.798597+00:00",
+    "updated_at": "2026-10-24T17:53:48.798603+00:00",
     "tags": [
       "math",
-      "számlálás-10-ig",
+      "telle-til-10",
       "grade-01",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "eda2ffa53b62382fb789796bba08aeafa0f7c486e3b2b33591ea16929ff1a9a1",
+    "checksum": "14abff25a4725eb04e4a05a8bb7c56e1163983958fdcae4795d1110f1acea647",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Telle til 10",
+      "Addisjon til 10",
+      "Subtraksjon til 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Telle til 10",
+    "description": "Prøve i Telle til 10: Telle til 10, Addisjon til 10, Subtraksjon til 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Telle til 10 - Spørsmål 1: Telle til 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "telle-til-10",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "NORWAY-GRADE-01-MATH-Telle til 10",
+      "learning_objective": "Telle til 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Telle til 10 - Spørsmål 2: Telle til 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "telle-til-10",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "NORWAY-GRADE-01-MATH-Telle til 10",
+      "learning_objective": "Telle til 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Telle til 10 - Spørsmål 3: Telle til 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "telle-til-10",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "NORWAY-GRADE-01-MATH-Telle til 10",
+      "learning_objective": "Telle til 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Telle til 10 - Spørsmål 4: Telle til 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Telle til 10.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "telle-til-10",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "NORWAY-GRADE-01-MATH-Telle til 10",
+      "learning_objective": "Telle til 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Telle til 10 - Spørsmål 5: Telle til 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "számlálás-10-ig",
+        "telle-til-10",
         "grade-01",
-        "integer"
+        "integer",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "NORWAY-GRADE-01-MATH-Telle til 10",
+      "learning_objective": "Telle til 10"
     }
   ],
   "rubrics": []

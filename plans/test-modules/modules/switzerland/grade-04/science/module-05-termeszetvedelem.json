@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Switzerland grade-04",
+    "name": "Naturschutz - Switzerland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Naturschutz (grade-04). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.244296+00:00",
-    "updated_at": "2026-10-21T11:02:28.244308+00:00",
+    "created_at": "2026-10-24T17:53:49.915066+00:00",
+    "updated_at": "2026-10-24T17:53:49.915073+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "naturschutz",
       "grade-04",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "1589b7cd564d8d393fe954eec396a802294d078b078fac0ef0e2c262926afd7c",
+    "checksum": "2a6d0891979d01405d258d2276ea7bb4c2c59142e426af7211ad744c4763ad13",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Naturschutz",
+    "description": "Prüfung zum Thema Naturschutz: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Naturschutz - Frage 1: Naturschutz",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturschutz",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Naturschutz - Frage 2: Naturschutz",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturschutz",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Naturschutz - Frage 3: Naturschutz",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Naturschutz.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturschutz",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Naturschutz - Frage 4: Naturschutz",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturschutz",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Naturschutz - Frage 5: Naturschutz",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturschutz",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Naturschutz",
+      "learning_objective": "Naturschutz"
     }
   ],
   "rubrics": []

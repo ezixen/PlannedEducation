@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-deriválás-1.0.0",
-    "name": "Deriválás - Australia grade-11",
+    "name": "Differentiation - Australia grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Differentiation for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.846357+00:00",
-    "updated_at": "2026-10-21T11:02:18.846370+00:00",
+    "created_at": "2026-10-24T17:53:46.931674+00:00",
+    "updated_at": "2026-10-24T17:53:46.931685+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentiation",
       "grade-11",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "c41e7b40c4f3e37644c7596f7605af41dfc56d9cbd76d26a8abaacf0a6db9380",
+    "checksum": "9bbeda9b206e7cb423e0add3f8372df949d067020d2f67c8962d04d225aaf0d7",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Deriválás",
-    "description": "Test on Deriválás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Differentiation",
+    "description": "Assessment on Differentiation including Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentiation - Question 1: Differentiation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentiation - Question 2: Differentiation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentiation - Question 3: Differentiation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentiation - Question 4: Differentiation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Differentiation.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-100]",
+      "text": "[math] Differentiation - Question 5: Differentiation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentiation",
         "grade-11",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     }
   ],

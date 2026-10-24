@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-kora-újkor-1.0.0",
-    "name": "Kora újkor - Canada grade-07",
+    "name": "Early modern period - Canada grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45-minute assessment on Early modern period for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.638780+00:00",
-    "updated_at": "2026-10-21T11:02:15.638790+00:00",
+    "created_at": "2026-10-24T17:53:44.865059+00:00",
+    "updated_at": "2026-10-24T17:53:44.865066+00:00",
     "tags": [
       "history",
-      "kora-újkor",
+      "early-modern-period",
       "grade-07",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "0bcb00ea99e6205d61cb3bd1066815da7f8689d0513bcebd46de322ea30c661d",
+    "checksum": "df8e75574f7a4e46ffdb3bd559c41c9d71b3908197a629ff5b584a655a465595",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Kora újkor",
-    "description": "Test on Kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Early modern period",
+    "description": "Assessment on Early modern period including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 1: Early modern period",
+      "text": "[history] Early modern period - Question 1: Early modern period",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 2: Early modern period",
+      "text": "[history] Early modern period - Question 2: Early modern period",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Kora újkor - Kérdés 3: Early modern period",
+      "text": "[history] Early modern period - Question 3: Early modern period",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Early modern period.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 4: Early modern period",
+      "text": "[history] Early modern period - Question 4: Early modern period",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 5: Early modern period",
+      "text": "[history] Early modern period - Question 5: Early modern period",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "CANADA-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     }
   ],

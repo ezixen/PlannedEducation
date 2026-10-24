@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-deriválás-és-integrálás-1.0.0",
-    "name": "Deriválás és integrálás - Belgium grade-10",
+    "name": "Differentiation and integration - Belgium grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás és integrálás for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "Toets van 45 minuten over Differentiation and integration (grade-10). Onderwerpen: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.037889+00:00",
-    "updated_at": "2026-10-21T11:02:30.037901+00:00",
+    "created_at": "2026-10-24T17:53:51.006585+00:00",
+    "updated_at": "2026-10-24T17:53:51.006592+00:00",
     "tags": [
       "math",
-      "deriválás-és-integrálás",
+      "differentiation-and-integration",
       "grade-10",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "3015775075b2b8854389fc649859738a25f17debaef486a415f0b93dde364531",
+    "checksum": "6b64f4428460990566761ea145d9d2fd8c9857857dddcfd407ecaadc525e265e",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Deriválás és integrálás",
-    "description": "Test on Deriválás és integrálás including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Differentiation and integration",
+    "description": "Toets over Differentiation and integration: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 1: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Vraag 1: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 2: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Vraag 2: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 3: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Vraag 3: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás és integrálás - Kérdés 4: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Vraag 4: Differentiation and integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás és integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Differentiation and integration.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "differentiation-and-integration",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás és integrálás - Question 5: Differentiation and integration [rand:1-100]",
+      "text": "[math] Differentiation and integration - Vraag 5: Differentiation and integration [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
+        "differentiation-and-integration",
         "grade-10",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Deriválás és integrálás",
+      "curriculum_topic": "BELGIUM-GRADE-10-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     }
   ],

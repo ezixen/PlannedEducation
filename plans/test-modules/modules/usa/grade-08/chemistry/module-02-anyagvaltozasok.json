@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagváltozások-1.0.0",
-    "name": "Anyagváltozások - USA grade-08",
+    "name": "Substance changes - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagváltozások for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minute assessment on Substance changes for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.911434+00:00",
-    "updated_at": "2026-10-21T11:02:17.911446+00:00",
+    "created_at": "2026-10-24T17:53:46.313032+00:00",
+    "updated_at": "2026-10-24T17:53:46.313042+00:00",
     "tags": [
       "chemistry",
-      "anyagváltozások",
+      "substance-changes",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "5acdad380cf9f773059fb312770e8b57b3a58248ccecf710275345632bbfe52f",
+    "checksum": "713950f53b6d1e8ed49ad59980d2e1e323edf8988ce20342e5967e04291064c3",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagváltozások",
-    "description": "Test on Anyagváltozások including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substance changes",
+    "description": "Assessment on Substance changes including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 1: Substance changes",
+      "text": "[chemistry] Substance changes - Question 1: Substance changes",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 2: Substance changes",
+      "text": "[chemistry] Substance changes - Question 2: Substance changes",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagváltozások - Kérdés 3: Substance changes",
+      "text": "[chemistry] Substance changes - Question 3: Substance changes",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagváltozások témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Substance changes.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagváltozások - Question 4: Substance changes [rand:1-1000]",
+      "text": "[chemistry] Substance changes - Question 4: Substance changes [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagváltozások",
+        "substance-changes",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 5: Substance changes",
+      "text": "[chemistry] Substance changes - Question 5: Substance changes",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "USA-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     }
   ],

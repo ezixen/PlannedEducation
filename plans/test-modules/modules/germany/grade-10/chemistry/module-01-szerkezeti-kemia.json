@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-szerkezeti-kémia-1.0.0",
-    "name": "Szerkezeti kémia - Germany grade-10",
+    "name": "Strukturchemie - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerkezeti kémia for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minütige Prüfung zum Thema Strukturchemie (grade-10). Themen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.570963+00:00",
-    "updated_at": "2026-10-21T11:02:16.570986+00:00",
+    "created_at": "2026-10-24T17:53:45.518926+00:00",
+    "updated_at": "2026-10-24T17:53:45.518933+00:00",
     "tags": [
       "chemistry",
-      "szerkezeti-kémia",
+      "strukturchemie",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "d01b7d5af56495fe3fe185924deccb6c313015e72cc18880c8578d53aee2bac0",
+    "checksum": "5993692fa862d4a12349eb683830c68e7a550c2d520f153c46218b5ac1991828",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Strukturchemie",
+      "Organische Chemie Grundlagen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Chemisches Gleichgewicht"
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Szerkezeti kémia",
-    "description": "Test on Szerkezeti kémia including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Strukturchemie",
+    "description": "Prüfung zum Thema Strukturchemie: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 1: Structural chemistry",
+      "text": "[chemistry] Strukturchemie - Frage 1: Strukturchemie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "strukturchemie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Szerkezeti kémia",
-      "learning_objective": "Structural chemistry"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Strukturchemie",
+      "learning_objective": "Strukturchemie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 2: Structural chemistry",
+      "text": "[chemistry] Strukturchemie - Frage 2: Strukturchemie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "strukturchemie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Szerkezeti kémia",
-      "learning_objective": "Structural chemistry"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Strukturchemie",
+      "learning_objective": "Strukturchemie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 3: Structural chemistry",
+      "text": "[chemistry] Strukturchemie - Frage 3: Strukturchemie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szerkezeti kémia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Strukturchemie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "strukturchemie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Szerkezeti kémia",
-      "learning_objective": "Structural chemistry"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Strukturchemie",
+      "learning_objective": "Strukturchemie"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerkezeti kémia - Question 4: Structural chemistry [rand:1-100]",
+      "text": "[chemistry] Strukturchemie - Frage 4: Strukturchemie [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
+        "strukturchemie",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Szerkezeti kémia",
-      "learning_objective": "Structural chemistry"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Strukturchemie",
+      "learning_objective": "Strukturchemie"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 5: Structural chemistry",
+      "text": "[chemistry] Strukturchemie - Frage 5: Strukturchemie",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "strukturchemie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Szerkezeti kémia",
-      "learning_objective": "Structural chemistry"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Strukturchemie",
+      "learning_objective": "Strukturchemie"
     }
   ],
   "rubrics": []

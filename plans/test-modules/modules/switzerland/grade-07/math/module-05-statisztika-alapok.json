@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-statisztika-alapok-1.0.0",
-    "name": "Statisztika alapok - Switzerland grade-07",
+    "name": "Statistik Grundlagen - Switzerland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minütige Prüfung zum Thema Statistik Grundlagen (grade-07). Themen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.371150+00:00",
-    "updated_at": "2026-10-21T11:02:28.371160+00:00",
+    "created_at": "2026-10-24T17:53:49.998574+00:00",
+    "updated_at": "2026-10-24T17:53:49.998580+00:00",
     "tags": [
       "math",
-      "statisztika-alapok",
+      "statistik-grundlagen",
       "grade-07",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "387fbd872fa72ad602ca185c15585a0ac6537f454fe3fa9e7e5ef4121d8fb1d2",
+    "checksum": "669777151217f218f7f7b90f2954ef6adaf4e1496d9944fb00169dcd0a943fad",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Rational numbers",
-      "Algebraic expressions",
-      "Equations",
-      "Geometry basics",
-      "Statistics basics"
+      "Rationale Zahlen",
+      "Algebraische Ausdrücke",
+      "Gleichungen",
+      "Geometrie Grundlagen",
+      "Statistik Grundlagen"
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Statisztika alapok",
-    "description": "Test on Statisztika alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Statistik Grundlagen",
+    "description": "Prüfung zum Thema Statistik Grundlagen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 1: Statistics basics",
+      "text": "[math] Statistik Grundlagen - Frage 1: Statistik Grundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statisztika alapok",
-      "learning_objective": "Statistics basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statistik Grundlagen",
+      "learning_objective": "Statistik Grundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 2: Statistics basics",
+      "text": "[math] Statistik Grundlagen - Frage 2: Statistik Grundlagen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statisztika alapok",
-      "learning_objective": "Statistics basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statistik Grundlagen",
+      "learning_objective": "Statistik Grundlagen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 3: Statistics basics",
+      "text": "[math] Statistik Grundlagen - Frage 3: Statistik Grundlagen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statisztika alapok",
-      "learning_objective": "Statistics basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statistik Grundlagen",
+      "learning_objective": "Statistik Grundlagen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika alapok - Kérdés 4: Statistics basics",
+      "text": "[math] Statistik Grundlagen - Frage 4: Statistik Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Statistik Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistik-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statisztika alapok",
-      "learning_objective": "Statistics basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statistik Grundlagen",
+      "learning_objective": "Statistik Grundlagen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika alapok - Question 5: Statistics basics [rand:1-100]",
+      "text": "[math] Statistik Grundlagen - Frage 5: Statistik Grundlagen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "statisztika-alapok",
+        "statistik-grundlagen",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statisztika alapok",
-      "learning_objective": "Statistics basics"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-MATH-Statistik Grundlagen",
+      "learning_objective": "Statistik Grundlagen"
     }
   ],
   "rubrics": []

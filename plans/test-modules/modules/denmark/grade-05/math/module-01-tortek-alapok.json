@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-alapok-1.0.0",
-    "name": "Törtek alapok - Denmark grade-05",
+    "name": "Fraction basics - Denmark grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek alapok for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minutters prøve i Fraction basics (grade-05). Emner: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.221088+00:00",
-    "updated_at": "2026-10-21T11:02:27.221103+00:00",
+    "created_at": "2026-10-24T17:53:49.371072+00:00",
+    "updated_at": "2026-10-24T17:53:49.371083+00:00",
     "tags": [
       "math",
-      "törtek-alapok",
+      "fraction-basics",
       "grade-05",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "54313d80cdc89c9ab2353dfc17468a94bc15ca11c1695dbc20b6ac448f998662",
+    "checksum": "48c160300c8adf48e4ca8f57b62738eb4c24c9cf7a8d430bf0ace82a758ea45a",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek alapok",
-    "description": "Test on Törtek alapok including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction basics",
+    "description": "Prøve i Fraction basics: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 1: Fraction basics",
+      "text": "[math] Fraction basics - Spørgsmål 1: Fraction basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 2: Fraction basics",
+      "text": "[math] Fraction basics - Spørgsmål 2: Fraction basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 3: Fraction basics",
+      "text": "[math] Fraction basics - Spørgsmål 3: Fraction basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek alapok - Kérdés 4: Fraction basics",
+      "text": "[math] Fraction basics - Spørgsmål 4: Fraction basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Fraction basics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek alapok - Question 5: Fraction basics [rand:1-100]",
+      "text": "[math] Fraction basics - Spørgsmål 5: Fraction basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-alapok",
+        "fraction-basics",
         "grade-05",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     }
   ],

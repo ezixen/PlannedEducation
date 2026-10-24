@@ -3,21 +3,25 @@
     "id": "grade-10-civics-állam-szerkezete-1.0.0",
     "name": "Állam szerkezete - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45 perces felmérő: Állam szerkezete (grade-10). Témakörök: Demokrácia és piacgazdaság, Demokrácia, Piacgazdaság, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.540792+00:00",
-    "updated_at": "2026-10-21T11:02:35.540804+00:00",
+    "created_at": "2026-10-24T17:53:52.393398+00:00",
+    "updated_at": "2026-10-24T17:53:52.393407+00:00",
     "tags": [
       "civics",
       "állam-szerkezete",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "1aa1e582b03516bdcc0e285d4532499daff4a46dd24accc76769d8d802083077",
+    "checksum": "0216741a91692d869e590796af7ba3906b81f758ca0ecc69ed88f1e7742b3fbd",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokrácia és piacgazdaság",
+      "Demokrácia",
+      "Piacgazdaság",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-10 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Felmérő a(z) Állam szerkezete témakörből (Demokrácia és piacgazdaság, Demokrácia, Piacgazdaság, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] Állam szerkezete - Kérdés 1: Állam szerkezete",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "állam-szerkezete",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "learning_objective": "Állam szerkezete"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] Állam szerkezete - Kérdés 2: Állam szerkezete",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "állam-szerkezete",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "learning_objective": "Állam szerkezete"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] Állam szerkezete - Kérdés 3: Állam szerkezete",
       "options": null,
       "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "állam-szerkezete",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "learning_objective": "Állam szerkezete"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] Állam szerkezete - Kérdés 4: Állam szerkezete",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "állam-szerkezete",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "learning_objective": "Állam szerkezete"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] Állam szerkezete - Kérdés 5: Állam szerkezete",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "állam-szerkezete",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "learning_objective": "Állam szerkezete"
     }
   ],
   "rubrics": []

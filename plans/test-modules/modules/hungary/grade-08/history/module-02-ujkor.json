@@ -3,21 +3,25 @@
     "id": "grade-08-history-újkor-1.0.0",
     "name": "Újkor - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Újkor for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45 perces felmérő: Újkor (grade-08). Témakörök: Újkor - 19. század, Újkor, 19. század, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.308535+00:00",
-    "updated_at": "2026-10-21T11:02:35.308548+00:00",
+    "created_at": "2026-10-24T17:53:52.285916+00:00",
+    "updated_at": "2026-10-24T17:53:52.285923+00:00",
     "tags": [
       "history",
       "újkor",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "bf3f12e5e08d387dbeba047cebeef38a6813efebb0c57c0e583f43bc626ea54f",
+    "checksum": "f4dd6624b301d406e1627aca91eb2b3f53b7b21fbb278f42edee94d8d4205925",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Modern period - 19th century",
-      "Modern period",
-      "19th century",
-      "History",
-      "Historical events"
+      "Újkor - 19. század",
+      "Újkor",
+      "19. század",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-08 History - Újkor",
-    "description": "Test on Újkor including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "Felmérő a(z) Újkor témakörből (Újkor - 19. század, Újkor, 19. század, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 1: Modern period",
+      "text": "[history] Újkor - Kérdés 1: Újkor",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "újkor",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor",
-      "learning_objective": "Modern period"
+      "learning_objective": "Újkor"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 2: Modern period",
+      "text": "[history] Újkor - Kérdés 2: Újkor",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "újkor",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor",
-      "learning_objective": "Modern period"
+      "learning_objective": "Újkor"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Újkor - Kérdés 3: Modern period",
+      "text": "[history] Újkor - Kérdés 3: Újkor",
       "options": null,
       "correct_answer": "Minta válasz a(z) Újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "újkor",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor",
-      "learning_objective": "Modern period"
+      "learning_objective": "Újkor"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 4: Modern period",
+      "text": "[history] Újkor - Kérdés 4: Újkor",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "újkor",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor",
-      "learning_objective": "Modern period"
+      "learning_objective": "Újkor"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 5: Modern period",
+      "text": "[history] Újkor - Kérdés 5: Újkor",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "újkor",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-Újkor",
-      "learning_objective": "Modern period"
+      "learning_objective": "Újkor"
     }
   ],
   "rubrics": []

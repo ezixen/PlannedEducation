@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-tizedes-számok-1.0.0",
-    "name": "Tizedes számok - United Kingdom grade-04",
+    "name": "Decimal numbers - United Kingdom grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Tizedes számok for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minute assessment on Decimal numbers for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.954441+00:00",
-    "updated_at": "2026-10-21T11:02:16.954461+00:00",
+    "created_at": "2026-10-24T17:53:45.726330+00:00",
+    "updated_at": "2026-10-24T17:53:45.726339+00:00",
     "tags": [
       "math",
-      "tizedes-számok",
+      "decimal-numbers",
       "grade-04",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "f3ad67068f9abb0925501183667bacd010459bad18b7319871250a10c52ad428",
+    "checksum": "c2f4aeecf7f974f5bfd577105014b44dd4834e4c89d256f734096efca25d0b5d",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Tizedes számok",
-    "description": "Test on Tizedes számok including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal numbers",
+    "description": "Assessment on Decimal numbers including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 1: Decimal numbers",
+      "text": "[math] Decimal numbers - Question 1: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "UK-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 2: Decimal numbers",
+      "text": "[math] Decimal numbers - Question 2: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "UK-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 3: Decimal numbers",
+      "text": "[math] Decimal numbers - Question 3: Decimal numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "UK-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tizedes számok - Kérdés 4: Decimal numbers",
+      "text": "[math] Decimal numbers - Question 4: Decimal numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tizedes számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Decimal numbers.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "decimal-numbers",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "UK-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tizedes számok - Question 5: Decimal numbers [rand:1-100]",
+      "text": "[math] Decimal numbers - Question 5: Decimal numbers [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "tizedes-számok",
+        "decimal-numbers",
         "grade-04",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-04-MATH-Tizedes számok",
+      "curriculum_topic": "UK-GRADE-04-MATH-Decimal numbers",
       "learning_objective": "Decimal numbers"
     }
   ],

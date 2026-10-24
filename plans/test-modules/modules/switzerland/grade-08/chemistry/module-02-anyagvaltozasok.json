@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagváltozások-1.0.0",
-    "name": "Anyagváltozások - Switzerland grade-08",
+    "name": "Stoffumwandlungen - Switzerland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagváltozások for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minütige Prüfung zum Thema Stoffumwandlungen (grade-08). Themen: Stoffe und Eigenschaften, Stoffumwandlungen, Chemische Reaktionen, Säuren und Basen, Reaktionsgleichungen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.410949+00:00",
-    "updated_at": "2026-10-21T11:02:28.410963+00:00",
+    "created_at": "2026-10-24T17:53:50.025762+00:00",
+    "updated_at": "2026-10-24T17:53:50.025769+00:00",
     "tags": [
       "chemistry",
-      "anyagváltozások",
+      "stoffumwandlungen",
       "grade-08",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "aabca3597b6c8846cd77eee9a186ea213ba0b1586bf1dcd28327fa3ecccd9cbc",
+    "checksum": "1933b8bb7bbed7d580a8f3ae6e3d467391a5d3261450f6fdf0ca48ed15d47695",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Substances and properties",
-      "Substance changes",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equations"
+      "Stoffe und Eigenschaften",
+      "Stoffumwandlungen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Reaktionsgleichungen"
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagváltozások",
-    "description": "Test on Anyagváltozások including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Stoffumwandlungen",
+    "description": "Prüfung zum Thema Stoffumwandlungen: Stoffe und Eigenschaften, Stoffumwandlungen, Chemische Reaktionen, Säuren und Basen, Reaktionsgleichungen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 1: Substance changes",
+      "text": "[chemistry] Stoffumwandlungen - Frage 1: Stoffumwandlungen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "stoffumwandlungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
-      "learning_objective": "Substance changes"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Stoffumwandlungen",
+      "learning_objective": "Stoffumwandlungen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 2: Substance changes",
+      "text": "[chemistry] Stoffumwandlungen - Frage 2: Stoffumwandlungen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "stoffumwandlungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
-      "learning_objective": "Substance changes"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Stoffumwandlungen",
+      "learning_objective": "Stoffumwandlungen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagváltozások - Kérdés 3: Substance changes",
+      "text": "[chemistry] Stoffumwandlungen - Frage 3: Stoffumwandlungen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagváltozások témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Stoffumwandlungen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "stoffumwandlungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
-      "learning_objective": "Substance changes"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Stoffumwandlungen",
+      "learning_objective": "Stoffumwandlungen"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagváltozások - Question 4: Substance changes [rand:1-1000]",
+      "text": "[chemistry] Stoffumwandlungen - Frage 4: Stoffumwandlungen [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagváltozások",
+        "stoffumwandlungen",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
-      "learning_objective": "Substance changes"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Stoffumwandlungen",
+      "learning_objective": "Stoffumwandlungen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 5: Substance changes",
+      "text": "[chemistry] Stoffumwandlungen - Frage 5: Stoffumwandlungen",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "stoffumwandlungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Anyagváltozások",
-      "learning_objective": "Substance changes"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Stoffumwandlungen",
+      "learning_objective": "Stoffumwandlungen"
     }
   ],
   "rubrics": []

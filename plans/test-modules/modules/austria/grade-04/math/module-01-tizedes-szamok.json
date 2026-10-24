@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-tizedes-számok-1.0.0",
-    "name": "Tizedes számok - Austria grade-04",
+    "name": "Dezimalzahlen - Austria grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Tizedes számok for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minütige Prüfung zum Thema Dezimalzahlen (grade-04). Themen: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.855858+00:00",
-    "updated_at": "2026-10-21T11:02:28.855880+00:00",
+    "created_at": "2026-10-24T17:53:50.334300+00:00",
+    "updated_at": "2026-10-24T17:53:50.334306+00:00",
     "tags": [
       "math",
-      "tizedes-számok",
+      "dezimalzahlen",
       "grade-04",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "504efc25e608d6508e46eb31b7d24736be1bebaa422756ff91ae9eca6eb03f9a",
+    "checksum": "123a5f615422bba56b4970352298ee62fd0e05fadff4efaad2c6d169cf1f3997",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Dezimalzahlen",
+      "Dezimaladdition",
+      "Dezimalsubtraktion",
+      "Dezimalmultiplikation",
+      "Dezimaldivision"
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Tizedes számok",
-    "description": "Test on Tizedes számok including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Dezimalzahlen",
+    "description": "Prüfung zum Thema Dezimalzahlen: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 1: Decimal numbers",
+      "text": "[math] Dezimalzahlen - Frage 1: Dezimalzahlen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "dezimalzahlen",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalzahlen",
+      "learning_objective": "Dezimalzahlen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 2: Decimal numbers",
+      "text": "[math] Dezimalzahlen - Frage 2: Dezimalzahlen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "dezimalzahlen",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalzahlen",
+      "learning_objective": "Dezimalzahlen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tizedes számok - Kérdés 3: Decimal numbers",
+      "text": "[math] Dezimalzahlen - Frage 3: Dezimalzahlen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "dezimalzahlen",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalzahlen",
+      "learning_objective": "Dezimalzahlen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tizedes számok - Kérdés 4: Decimal numbers",
+      "text": "[math] Dezimalzahlen - Frage 4: Dezimalzahlen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tizedes számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Dezimalzahlen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tizedes-számok",
-        "grade-04"
+        "dezimalzahlen",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalzahlen",
+      "learning_objective": "Dezimalzahlen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tizedes számok - Question 5: Decimal numbers [rand:1-100]",
+      "text": "[math] Dezimalzahlen - Frage 5: Dezimalzahlen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "tizedes-számok",
+        "dezimalzahlen",
         "grade-04",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Tizedes számok",
-      "learning_objective": "Decimal numbers"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalzahlen",
+      "learning_objective": "Dezimalzahlen"
     }
   ],
   "rubrics": []

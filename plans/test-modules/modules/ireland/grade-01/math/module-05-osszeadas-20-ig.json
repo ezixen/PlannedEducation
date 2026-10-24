@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-20-ig-1.0.0",
-    "name": "Összeadás 20-ig - Ireland grade-01",
+    "name": "Addition to 20 - Ireland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minute assessment on Addition to 20 for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.191011+00:00",
-    "updated_at": "2026-10-21T11:02:30.191022+00:00",
+    "created_at": "2026-10-24T17:53:51.117451+00:00",
+    "updated_at": "2026-10-24T17:53:51.117457+00:00",
     "tags": [
       "math",
-      "összeadás-20-ig",
+      "addition-to-20",
       "grade-01",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "c5a90f83ff7e2d92b04c45267343c1f1c9f06da69004cdc15737340191513202",
+    "checksum": "32b231a3524af7a004834402a63cdadb2f5bb4b2be1e1e5b159baf6f37a6b989",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 20-ig",
-    "description": "Test on Összeadás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition to 20",
+    "description": "Assessment on Addition to 20 including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 1: Addition to 20",
+      "text": "[math] Addition to 20 - Question 1: Addition to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 2: Addition to 20",
+      "text": "[math] Addition to 20 - Question 2: Addition to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 3: Addition to 20",
+      "text": "[math] Addition to 20 - Question 3: Addition to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 20-ig - Kérdés 4: Addition to 20",
+      "text": "[math] Addition to 20 - Question 4: Addition to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Addition to 20.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 20-ig - Question 5: Addition to 20 [rand:1-20]",
+      "text": "[math] Addition to 20 - Question 5: Addition to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-20-ig",
+        "addition-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     }
   ],

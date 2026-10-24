@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Switzerland grade-10",
+    "name": "Weltgeschichte - Switzerland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema Weltgeschichte (grade-10). Themen: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.615790+00:00",
-    "updated_at": "2026-10-21T11:02:28.615804+00:00",
+    "created_at": "2026-10-24T17:53:50.170863+00:00",
+    "updated_at": "2026-10-24T17:53:50.170870+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "weltgeschichte",
       "grade-10",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "e80e63d613aef4932168d44c046bd4f3c3682c58372b727b7bfd0044f178cab3",
+    "checksum": "347e2673634d170cddd76c3404fa0d4ac83cbe9c18be2921e6f43410eae80c99",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Hungary",
-      "Hungary",
-      "History",
-      "Historical events",
-      "World history"
+      "Europäische Geschichte",
+      "Mitteleuropa",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-10 History - Világtörténet",
-    "description": "Test on Világtörténet including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - Weltgeschichte",
+    "description": "Prüfung zum Thema Weltgeschichte: Europäische Geschichte, Mitteleuropa, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] Weltgeschichte - Frage 1: Weltgeschichte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "weltgeschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Világtörténet",
-      "learning_objective": "World history"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Weltgeschichte",
+      "learning_objective": "Weltgeschichte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] Weltgeschichte - Frage 2: Weltgeschichte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "weltgeschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Világtörténet",
-      "learning_objective": "World history"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Weltgeschichte",
+      "learning_objective": "Weltgeschichte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] Weltgeschichte - Frage 3: Weltgeschichte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Weltgeschichte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "weltgeschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Világtörténet",
-      "learning_objective": "World history"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Weltgeschichte",
+      "learning_objective": "Weltgeschichte"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] Weltgeschichte - Frage 4: Weltgeschichte",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "weltgeschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Világtörténet",
-      "learning_objective": "World history"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Weltgeschichte",
+      "learning_objective": "Weltgeschichte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] Weltgeschichte - Frage 5: Weltgeschichte",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-10"
+        "weltgeschichte",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Világtörténet",
-      "learning_objective": "World history"
+      "curriculum_topic": "SWITZERLAND-GRADE-10-HISTORY-Weltgeschichte",
+      "learning_objective": "Weltgeschichte"
     }
   ],
   "rubrics": []

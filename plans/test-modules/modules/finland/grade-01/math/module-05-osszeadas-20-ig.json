@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-20-ig-1.0.0",
-    "name": "Összeadás 20-ig - Finland grade-01",
+    "name": "Addition to 20 - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 minuutin koe aiheesta Addition to 20 (grade-01). Aiheet: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.005976+00:00",
-    "updated_at": "2026-10-21T11:02:24.005989+00:00",
+    "created_at": "2026-10-24T17:53:47.489327+00:00",
+    "updated_at": "2026-10-24T17:53:47.489335+00:00",
     "tags": [
       "math",
-      "összeadás-20-ig",
+      "addition-to-20",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "b943c9cb726203e70b1cea3d755271a9c5f429ac52fa570d84da5b57e803ddf9",
+    "checksum": "67fbeed0666541152f3ea53b87b26286143d1d6d09116c1abf027f94337792b6",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Laskeminen 10:een",
+      "Yhteenlasku 10:een",
+      "Vähennyslasku 10:een",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 20-ig",
-    "description": "Test on Összeadás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition to 20",
+    "description": "Koe aiheesta Addition to 20: Laskeminen 10:een, Yhteenlasku 10:een, Vähennyslasku 10:een, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 1: Addition to 20",
+      "text": "[math] Addition to 20 - Kysymys 1: Addition to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 2: Addition to 20",
+      "text": "[math] Addition to 20 - Kysymys 2: Addition to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 20-ig - Kérdés 3: Addition to 20",
+      "text": "[math] Addition to 20 - Kysymys 3: Addition to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 20-ig - Kérdés 4: Addition to 20",
+      "text": "[math] Addition to 20 - Kysymys 4: Addition to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Addition to 20.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-20-ig",
-        "grade-01"
+        "addition-to-20",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 20-ig - Question 5: Addition to 20 [rand:1-20]",
+      "text": "[math] Addition to 20 - Kysymys 5: Addition to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-20-ig",
+        "addition-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-MATH-Összeadás 20-ig",
+      "curriculum_topic": "FINLAND-GRADE-01-MATH-Addition to 20",
       "learning_objective": "Addition to 20"
     }
   ],

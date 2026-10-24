@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-hullamok-1.0.0",
-    "name": "Hullamok - Norway grade-11",
+    "name": "Waves - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minutters prøve i Waves (grade-11). Emner: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.802388+00:00",
-    "updated_at": "2026-10-21T11:02:26.802405+00:00",
+    "created_at": "2026-10-24T17:53:49.205456+00:00",
+    "updated_at": "2026-10-24T17:53:49.205466+00:00",
     "tags": [
       "physics",
-      "hullamok",
+      "waves",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "9a168f464980a3c625163ddfc569d671d08eabdd8f2394b92c6e70e5a2593690",
+    "checksum": "e0277ec6a3f1995061730597584c19ad54c8d6cfed84d3fdd3ce1aa05a0877cd",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Hullamok",
-    "description": "Test on Hullamok including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Waves",
+    "description": "Prøve i Waves: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 1: Waves",
+      "text": "[physics] Waves - Spørsmål 1: Waves",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-11"
+        "waves",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Hullamok",
+      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 2: Waves",
+      "text": "[physics] Waves - Spørsmål 2: Waves",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-11"
+        "waves",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Hullamok",
+      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok - Kérdés 3: Waves",
+      "text": "[physics] Waves - Spørsmål 3: Waves",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Waves.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-11"
+        "waves",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Hullamok",
+      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok - Question 4: Waves [rand:1-100]",
+      "text": "[physics] Waves - Spørsmål 4: Waves [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok",
+        "waves",
         "grade-11",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Hullamok",
+      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 5: Waves",
+      "text": "[physics] Waves - Spørsmål 5: Waves",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-11"
+        "waves",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Hullamok",
+      "curriculum_topic": "NORWAY-GRADE-11-PHYSICS-Waves",
       "learning_objective": "Waves"
     }
   ],

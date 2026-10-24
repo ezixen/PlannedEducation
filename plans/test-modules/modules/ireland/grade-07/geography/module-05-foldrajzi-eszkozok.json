@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Ireland grade-07",
+    "name": "Geographic tools - Ireland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minute assessment on Geographic tools for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.440522+00:00",
-    "updated_at": "2026-10-21T11:02:30.440532+00:00",
+    "created_at": "2026-10-24T17:53:51.254526+00:00",
+    "updated_at": "2026-10-24T17:53:51.254535+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographic-tools",
       "grade-07",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "3440351d58f6e0f16de348040411e0c6843ffec2bb683d29df4dee36aa5767ae",
+    "checksum": "c75f8b9e3f56172decb5f43ea7177b8226fa26be633b60d14f68384934f331b1",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographic tools",
+    "description": "Assessment on Geographic tools including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographic tools - Question 1: Geographic tools",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographic-tools",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographic tools - Question 2: Geographic tools",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographic-tools",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographic tools - Question 3: Geographic tools",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic tools.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographic-tools",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographic tools - Question 4: Geographic tools",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographic-tools",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographic tools - Question 5: Geographic tools",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-07"
+        "geographic-tools",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "IRELAND-GRADE-07-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     }
   ],

@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "számolás-1000-ig",
-      "grade-03"
+      "grade-03",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-03",
     "license": "CC-BY-4.0",
-    "checksum": "ad6f7e23ea8210c675e5a7a817646ab6b24d1c76fb9e20bc3396805184b36c86",
+    "checksum": "d1c83239ecb6d9b1d991527266ff3ddf2346f9abddf263f74a4a241d8bef0817",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Törtök",
       "Geometria",
       "Adatkezelés"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 03 Math - Számolás 1000-ig",

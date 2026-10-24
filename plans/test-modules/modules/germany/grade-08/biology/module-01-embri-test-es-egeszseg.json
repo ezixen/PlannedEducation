@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-embri-test-és-egészség-1.0.0",
-    "name": "Embri test és egészség - Germany grade-08",
+    "name": "Menschlicher Körper und Gesundheit - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test és egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minütige Prüfung zum Thema Menschlicher Körper und Gesundheit (grade-08). Themen: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.378942+00:00",
-    "updated_at": "2026-10-21T11:02:16.378954+00:00",
+    "created_at": "2026-10-24T17:53:45.396409+00:00",
+    "updated_at": "2026-10-24T17:53:45.396415+00:00",
     "tags": [
       "biology",
-      "embri-test-és-egészség",
+      "menschlicher-körper-und-gesundheit",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "1b251475db06f5fc0fb62bf95300da8363f90e340c50f3c0340a87058b292d13",
+    "checksum": "65f53cc7e7b2a5aa5de0784ac554f39767be9679e1d2111b9294e58af709ffa6",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Menschlicher Körper und Gesundheit",
+      "Anatomie des Menschen",
+      "Sinnesorgane",
+      "Wahrnehmung",
+      "Gesundheit"
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Embri test és egészség",
-    "description": "Test on Embri test és egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Menschlicher Körper und Gesundheit",
+    "description": "Prüfung zum Thema Menschlicher Körper und Gesundheit: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 1: Human body and health",
+      "text": "[biology] Menschlicher Körper und Gesundheit - Frage 1: Menschlicher Körper und Gesundheit",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "menschlicher-körper-und-gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Embri test és egészség",
-      "learning_objective": "Human body and health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Menschlicher Körper und Gesundheit",
+      "learning_objective": "Menschlicher Körper und Gesundheit"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 2: Human body and health",
+      "text": "[biology] Menschlicher Körper und Gesundheit - Frage 2: Menschlicher Körper und Gesundheit",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "menschlicher-körper-und-gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Embri test és egészség",
-      "learning_objective": "Human body and health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Menschlicher Körper und Gesundheit",
+      "learning_objective": "Menschlicher Körper und Gesundheit"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 3: Human body and health",
+      "text": "[biology] Menschlicher Körper und Gesundheit - Frage 3: Menschlicher Körper und Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Menschlicher Körper und Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "menschlicher-körper-und-gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Embri test és egészség",
-      "learning_objective": "Human body and health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Menschlicher Körper und Gesundheit",
+      "learning_objective": "Menschlicher Körper und Gesundheit"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 4: Human body and health",
+      "text": "[biology] Menschlicher Körper und Gesundheit - Frage 4: Menschlicher Körper und Gesundheit",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "menschlicher-körper-und-gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Embri test és egészség",
-      "learning_objective": "Human body and health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Menschlicher Körper und Gesundheit",
+      "learning_objective": "Menschlicher Körper und Gesundheit"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 5: Human body and health",
+      "text": "[biology] Menschlicher Körper und Gesundheit - Frage 5: Menschlicher Körper und Gesundheit",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Menschlicher Körper und Gesundheit.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "menschlicher-körper-und-gesundheit",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Embri test és egészség",
-      "learning_objective": "Human body and health"
+      "curriculum_topic": "GERMANY-GRADE-08-BIOLOGY-Menschlicher Körper und Gesundheit",
+      "learning_objective": "Menschlicher Körper und Gesundheit"
     }
   ],
   "rubrics": []

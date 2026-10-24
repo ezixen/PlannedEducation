@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-energia-1.0.0",
-    "name": "Energia - Switzerland grade-09",
+    "name": "Energie - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "45-minütige Prüfung zum Thema Energie (grade-09). Themen: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.553027+00:00",
-    "updated_at": "2026-10-21T11:02:28.553039+00:00",
+    "created_at": "2026-10-24T17:53:50.128426+00:00",
+    "updated_at": "2026-10-24T17:53:50.128437+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energie",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "86a32fb9879f4fa9cb517897f589db9e48e91e20211fa5e289201e561cb68ac2",
+    "checksum": "038d72c987057de030652a9f29fd66fdf024419195ab5ba9c26052bb43dbe01f",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics",
-      "Forces and motion",
-      "Energy",
-      "Waves",
-      "Optics"
+      "Mechanik",
+      "Kräfte und Bewegung",
+      "Energie",
+      "Wellen",
+      "Optik"
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Energia",
-    "description": "Test on Energia including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Energie",
+    "description": "Prüfung zum Thema Energie: Mechanik, Kräfte und Bewegung, Energie, Wellen, Optik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energie - Frage 1: Energie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energie",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energie - Frage 2: Energie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energie",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energie - Frage 3: Energie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Energie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energie",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energie - Frage 4: Energie [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energie",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energie - Frage 5: Energie",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energie",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-PHYSICS-Energie",
+      "learning_objective": "Energie"
     }
   ],
   "rubrics": []

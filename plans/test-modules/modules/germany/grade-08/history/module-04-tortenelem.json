@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-történelem-1.0.0",
-    "name": "Történelem - Germany grade-08",
+    "name": "Geschichte - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45-minütige Prüfung zum Thema Geschichte (grade-08). Themen: Neuzeit - 19. Jahrhundert, Neuzeit, 19. Jahrhundert, Geschichte, Historische Ereignisse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.446153+00:00",
-    "updated_at": "2026-10-21T11:02:16.446166+00:00",
+    "created_at": "2026-10-24T17:53:45.443767+00:00",
+    "updated_at": "2026-10-24T17:53:45.443773+00:00",
     "tags": [
       "history",
-      "történelem",
+      "geschichte",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "3038e5dcda294651d8dcaa702384c77665abc1ff61435f1b43f186e5598a193d",
+    "checksum": "da90ed6c9f305e2d397e33e2216e6766247e176e3889917e9dcafc585b39cb1a",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Modern period - 19th century",
-      "Modern period",
-      "19th century",
-      "History",
-      "Historical events"
+      "Neuzeit - 19. Jahrhundert",
+      "Neuzeit",
+      "19. Jahrhundert",
+      "Geschichte",
+      "Historische Ereignisse"
     ]
   },
   "exam": {
-    "title": "grade-08 History - Történelem",
-    "description": "Test on Történelem including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - Geschichte",
+    "description": "Prüfung zum Thema Geschichte: Neuzeit - 19. Jahrhundert, Neuzeit, 19. Jahrhundert, Geschichte, Historische Ereignisse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] Geschichte - Frage 1: Geschichte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "geschichte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] Geschichte - Frage 2: Geschichte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "geschichte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] Geschichte - Frage 3: Geschichte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "geschichte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] Geschichte - Frage 4: Geschichte",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "geschichte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] Geschichte - Frage 5: Geschichte",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-08"
+        "geschichte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "GERMANY-GRADE-08-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     }
   ],
   "rubrics": []

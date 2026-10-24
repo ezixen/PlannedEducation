@@ -11,12 +11,13 @@
     "tags": [
       "science",
       "anyag-és-változásai",
-      "grade-06"
+      "grade-06",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-06",
     "license": "CC-BY-4.0",
-    "checksum": "78f7338c5d8dd76ec166dee9e07b77ccb3397c05f89b0f4d92feb16696f7a53e",
+    "checksum": "47b607005a006b97195c3dd567406d9010cb6e6564f995486c0d2d4bddf4e4b3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Kémia alapok",
       "Kémiai reakciók",
       "Anyagok keringése"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 06 Science - Anyag és változásai",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-magyarország-1.0.0",
-    "name": "Magyarország - Norway grade-08",
+    "name": "Hungary - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minutters prøve i Hungary (grade-08). Emner: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.507914+00:00",
-    "updated_at": "2026-10-21T11:02:26.507927+00:00",
+    "created_at": "2026-10-24T17:53:49.017297+00:00",
+    "updated_at": "2026-10-24T17:53:49.017307+00:00",
     "tags": [
       "geography",
-      "magyarország",
+      "hungary",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "5202dc1eb82e3362946fd6a3f9e48548fcf3dfc5d6fd952d59d5087d9fdb2739",
+    "checksum": "db983bcd7dd6eaa273870489a8ce4efeac9ad6b67c7953a1f1f17a80ae5d1e8a",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Magyarország",
-    "description": "Test on Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Hungary",
+    "description": "Prøve i Hungary: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 1: Hungary",
+      "text": "[geography] Hungary - Spørsmål 1: Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 2: Hungary",
+      "text": "[geography] Hungary - Spørsmål 2: Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Magyarország - Kérdés 3: Hungary",
+      "text": "[geography] Hungary - Spørsmål 3: Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Hungary.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 4: Hungary",
+      "text": "[geography] Hungary - Spørsmål 4: Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Magyarország - Kérdés 5: Hungary",
+      "text": "[geography] Hungary - Spørsmål 5: Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "magyarország",
-        "grade-08"
+        "hungary",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Magyarország",
+      "curriculum_topic": "NORWAY-GRADE-08-GEOGRAPHY-Hungary",
       "learning_objective": "Hungary"
     }
   ],

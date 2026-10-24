@@ -13,12 +13,13 @@
       "phonetik",
       "lesen",
       "klasse-1",
-      "deutschland"
+      "deutschland",
+      "de"
     ],
     "subject": "englisch",
     "grade_level": "grade-01",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "184a930560e2cf17d247b7a018d7ca8649673006ee8ec7177316420597216e04",
     "curriculum": "deutschland-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 50,
@@ -30,7 +31,10 @@
       "Englische Buchstabenlaute erkennen",
       "Einfache englische Wörter lesen",
       "Einfache englische Sätze verstehen"
-    ]
+    ],
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany"
   },
   "exam": {
     "title": "Klasse 1 Englisch - Phonetik und Lesen",

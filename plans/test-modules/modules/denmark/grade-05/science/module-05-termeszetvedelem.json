@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Denmark grade-05",
+    "name": "Naturbeskyttelse - Denmark grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Naturbeskyttelse (grade-05). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.251294+00:00",
-    "updated_at": "2026-10-21T11:02:27.251309+00:00",
+    "created_at": "2026-10-24T17:53:49.389283+00:00",
+    "updated_at": "2026-10-24T17:53:49.389292+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "naturbeskyttelse",
       "grade-05",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "science",
     "grade_level": "grade-05",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "4918f93e4252f9c8ae33d57df9b586c52345c3992d38e49b028d859eb9b0845a",
+    "checksum": "2fa62749d6ee2a27b27e8481653f251719a86246092550a943508e1dc9d3425f",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturbeskyttelse"
     ]
   },
   "exam": {
-    "title": "grade-05 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-05 Science - Naturbeskyttelse",
+    "description": "Prøve i Naturbeskyttelse: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Naturbeskyttelse - Spørgsmål 1: Naturbeskyttelse",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturbeskyttelse",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Naturbeskyttelse",
+      "learning_objective": "Naturbeskyttelse"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Naturbeskyttelse - Spørgsmål 2: Naturbeskyttelse",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturbeskyttelse",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Naturbeskyttelse",
+      "learning_objective": "Naturbeskyttelse"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Naturbeskyttelse - Spørgsmål 3: Naturbeskyttelse",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Naturbeskyttelse.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturbeskyttelse",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Naturbeskyttelse",
+      "learning_objective": "Naturbeskyttelse"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Naturbeskyttelse - Spørgsmål 4: Naturbeskyttelse",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturbeskyttelse",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Naturbeskyttelse",
+      "learning_objective": "Naturbeskyttelse"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Naturbeskyttelse - Spørgsmål 5: Naturbeskyttelse",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturbeskyttelse",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "DENMARK-GRADE-05-SCIENCE-Naturbeskyttelse",
+      "learning_objective": "Naturbeskyttelse"
     }
   ],
   "rubrics": []

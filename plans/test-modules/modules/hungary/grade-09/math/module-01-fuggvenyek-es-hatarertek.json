@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "függvények-és-határérték",
-      "grade-09"
+      "grade-09",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-09",
     "license": "CC-BY-4.0",
-    "checksum": "7717827a6106753e656f150a1f5c34faaeb4453dd1e61baf22236b6adad476cf",
+    "checksum": "56171288814ae2661524cd3156e5a8766142a3a3b5f9dcb9457718720623fe1a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Polinomok",
       "Exponenciális",
       "Logaritmikus"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 09 Math - Függvények és határérték",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - New Zealand grade-12",
+    "name": "Geographic tools - New Zealand grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minute assessment on Geographic tools for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.940038+00:00",
-    "updated_at": "2026-10-21T11:02:34.940048+00:00",
+    "created_at": "2026-10-24T17:53:52.023341+00:00",
+    "updated_at": "2026-10-24T17:53:52.023348+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographic-tools",
       "grade-12",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "535969b68309cd4fa22492b376465162124e8751ff9c2b882c1fbf72d0069380",
+    "checksum": "9d4a926560c542ea5ed4973c13a9f28d97900f9abe9688257772c69e9d1a0144",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic tools",
+    "description": "Assessment on Geographic tools including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographic tools - Question 1: Geographic tools",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographic tools - Question 2: Geographic tools",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographic tools - Question 3: Geographic tools",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic tools.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographic tools - Question 4: Geographic tools",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographic tools - Question 5: Geographic tools",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     }
   ],

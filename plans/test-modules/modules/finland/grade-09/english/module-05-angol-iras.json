@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-írás-1.0.0",
-    "name": "Angol írás - Finland grade-09",
+    "name": "English writing - Finland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 minuutin koe aiheesta English writing (grade-09). Aiheet: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.403775+00:00",
-    "updated_at": "2026-10-21T11:02:24.403795+00:00",
+    "created_at": "2026-10-24T17:53:47.722307+00:00",
+    "updated_at": "2026-10-24T17:53:47.722315+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-09",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "b887328eae20ef0c0a82f22e0d6bdec8834805b4616cf37001c8f8fb5d7de533",
+    "checksum": "6e249698e9de25e75ebcb1b699b046b41800f755c6bd8e93372f114aa288938c",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol írás",
-    "description": "Test on Angol írás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English writing",
+    "description": "Koe aiheesta English writing: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Kysymys 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Kysymys 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Kysymys 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen English writing.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Kysymys 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Kysymys 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

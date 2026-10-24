@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-embri-test-és-egészség-1.0.0",
-    "name": "Embri test és egészség - USA grade-08",
+    "name": "Human body and health - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test és egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minute assessment on Human body and health for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.898196+00:00",
-    "updated_at": "2026-10-21T11:02:17.898208+00:00",
+    "created_at": "2026-10-24T17:53:46.304577+00:00",
+    "updated_at": "2026-10-24T17:53:46.304582+00:00",
     "tags": [
       "biology",
-      "embri-test-és-egészség",
+      "human-body-and-health",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "7f4cd8c5ba3ec545adb8951af5b8e71539dc026d6ae5d6bf1a90b1e4cc5ce6fd",
+    "checksum": "9db52db14b639569de85b013accb11a0ebcd07270cdff52c08adbfcceaffdf09",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Embri test és egészség",
-    "description": "Test on Embri test és egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Human body and health",
+    "description": "Assessment on Human body and health including Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 1: Human body and health",
+      "text": "[biology] Human body and health - Question 1: Human body and health",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 2: Human body and health",
+      "text": "[biology] Human body and health - Question 2: Human body and health",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 3: Human body and health",
+      "text": "[biology] Human body and health - Question 3: Human body and health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Human body and health.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 4: Human body and health",
+      "text": "[biology] Human body and health - Question 4: Human body and health",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 5: Human body and health",
+      "text": "[biology] Human body and health - Question 5: Human body and health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Human body and health.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "USA-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     }
   ],

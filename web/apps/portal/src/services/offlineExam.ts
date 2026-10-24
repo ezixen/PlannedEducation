@@ -429,8 +429,15 @@ async function getSessionKey(examId: string, studentId: string): Promise<CryptoK
  * Download and cache the full exam package for offline use.
  * Called when student clicks "Start Exam" in SEB.
  */
-export async function downloadExamPackage(examId: string): Promise<ExamStartResponse> {
-  const response = await apiClient.post(`/exams/${examId}/start`);
+export async function downloadExamPackage(
+  examId: string,
+  options?: { testMode?: boolean; randomSeed?: string | null }
+): Promise<ExamStartResponse> {
+  const params = new URLSearchParams();
+  if (options?.testMode) params.set('test_mode', 'true');
+  if (options?.randomSeed) params.set('random_seed', options.randomSeed);
+  const qs = params.toString();
+  const response = await apiClient.post(`/exams/${examId}/start${qs ? `?${qs}` : ''}`);
   return response.data;
 }
 
@@ -774,10 +781,11 @@ export async function submitExamOffline(
   examId: string,
   studentId: string,
   answers: Record<string, string>,
-  submissionId: string
+  submissionId: string,
+  testMode = false
 ): Promise<{ success: boolean; queued: boolean; submissionId?: string }> {
   try {
-    const response = await apiClient.post(`/exams/${examId}/submit`, {
+    const response = await apiClient.post(`/exams/${examId}/submit${testMode ? '?test_mode=true' : ''}`, {
       submission_id: submissionId,
       answers: Object.entries(answers).map(([qId, resp]) => ({
         question_id: qId,

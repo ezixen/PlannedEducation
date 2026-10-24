@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-1.0.0",
-    "name": "Európa - Finland grade-08",
+    "name": "Europe - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45 minuutin koe aiheesta Europe (grade-08). Aiheet: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.334314+00:00",
-    "updated_at": "2026-10-21T11:02:24.334343+00:00",
+    "created_at": "2026-10-24T17:53:47.678891+00:00",
+    "updated_at": "2026-10-24T17:53:47.678897+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europe",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "03499e3843d8a4f33fc84f969a7396dd18205d7071714cfde46476503637065a",
+    "checksum": "74bcf08cb07b2e600c31c751f272f5ca6d51596e7e7095f64af43aade71ad299",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa",
-    "description": "Test on Európa including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe",
+    "description": "Koe aiheesta Europe: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europe - Kysymys 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europe - Kysymys 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europe - Kysymys 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Europe.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europe - Kysymys 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europe - Kysymys 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-08"
+        "europe",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe",
       "learning_objective": "Europe"
     }
   ],

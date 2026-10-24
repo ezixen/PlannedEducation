@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-geometria-1.0.0",
-    "name": "Geometria - Austria grade-10",
+    "name": "Geometrie - Austria grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minütige Prüfung zum Thema Geometrie (grade-10). Themen: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.327241+00:00",
-    "updated_at": "2026-10-21T11:02:29.327251+00:00",
+    "created_at": "2026-10-24T17:53:50.591851+00:00",
+    "updated_at": "2026-10-24T17:53:50.591860+00:00",
     "tags": [
       "math",
-      "geometria",
+      "geometrie",
       "grade-10",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "14189c15a9da88c3420cfa9c055f85dd037dc2fa47517d784deb533d5c87cba0",
+    "checksum": "62860822fa890b774da85deae1f6b594bc52e019d91ca212906c020c7d413152",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and statistics",
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry"
+      "Funktionen und Statistik",
+      "Analysis",
+      "Wahrscheinlichkeitsberechnung",
+      "Statistische Analyse",
+      "Geometrie"
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Geometria",
-    "description": "Test on Geometria including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Geometrie",
+    "description": "Prüfung zum Thema Geometrie: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometrie - Frage 1: Geometrie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometrie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometrie - Frage 2: Geometrie",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometrie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometrie - Frage 3: Geometrie",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometrie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometrie - Frage 4: Geometrie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geometrie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria",
-        "grade-10"
+        "geometrie",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-100]",
+      "text": "[math] Geometrie - Frage 5: Geometrie [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "geometria",
+        "geometrie",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Geometrie",
+      "learning_objective": "Geometrie"
     }
   ],
   "rubrics": []

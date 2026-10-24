@@ -14,22 +14,22 @@ $LauncherDir = Join-Path $RepoRoot "artifacts\local-launchers"
 $CanaryUserData = Join-Path $env:TEMP "plannededucation-canary-profile"
 $StudentUserData = Join-Path $env:TEMP "plannededucation-student-profile"
 $ParentUserData = Join-Path $env:TEMP "plannededucation-parent-profile"
-$PythonExe = if (Test-Path "C:\.venv\Scripts\python.exe") {
-    "C:\.venv\Scripts\python.exe"
+$PythonExe = if (Test-Path (Join-Path $env:SystemDrive ".venv\Scripts\python.exe")) {
+    (Join-Path $env:SystemDrive ".venv\Scripts\python.exe")
 } elseif (Test-Path (Join-Path $RepoRoot ".venv\Scripts\python.exe")) {
     Join-Path $RepoRoot ".venv\Scripts\python.exe"
 } elseif (Get-Command python -ErrorAction SilentlyContinue) {
     (Get-Command python).Source
 } else {
-    "C:\.venv\Scripts\python.exe"
+    (Join-Path $env:SystemDrive ".venv\Scripts\python.exe")
 }
-$NodeDirectory = "C:\Program Files\nodejs"
+$NodeDirectory = (Join-Path $env:ProgramFiles "nodejs")
 $JwtSecret = "plannededucation-local-development-secret-only"
 $PowerShellExe = if (Get-Command pwsh -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell.exe" }
 
 if (-not (Test-Path $LauncherDir)) { New-Item -ItemType Directory -Path $LauncherDir | Out-Null }
 if (-not (Test-Path $PythonExe)) {
-    throw "Required project Python environment was not found. Looked in C:\.venv, .venv, and PATH."
+    throw "Required project Python environment was not found. Looked in .venv and PATH."
 }
 if (-not (Test-Path (Join-Path $RepoRoot "web\apps\portal\package.json"))) {
     throw "Portal package.json was not found. Run this script from the repository root."
@@ -102,7 +102,7 @@ Write-Host "Launching Teacher Chrome (Canary)..." -ForegroundColor Cyan
 $CanaryPath = "${env:LOCALAPPDATA}\Google\Chrome SxS\Application\chrome.exe"
 if (-not (Test-Path $CanaryPath)) {
     Write-Host "Canary not found at $CanaryPath, falling back to standard Chrome..." -ForegroundColor Yellow
-    $CanaryPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    $CanaryPath = (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe")
 }
 
 if (-not (Test-Path $CanaryPath)) {
@@ -120,7 +120,7 @@ Write-Host "Teacher Chrome opened at $PortalUrl/login." -ForegroundColor Green
 
 # 5. Launch Student Chrome on port 9223
 Write-Host "Launching Student Chrome..." -ForegroundColor Cyan
-$StudentPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+$StudentPath = (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe")
 if (-not (Test-Path $StudentPath)) {
     throw "Chrome was not found. Services are running at $PortalUrl/login."
 }
@@ -136,7 +136,7 @@ Write-Host "Student Chrome opened at $PortalUrl/login." -ForegroundColor Green
 
 # 6. Launch Parent Chrome on port 9224
 Write-Host "Launching Parent Chrome..." -ForegroundColor Cyan
-$ParentPath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+$ParentPath = (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe")
 if (-not (Test-Path $ParentPath)) {
     throw "Chrome was not found. Services are running at $PortalUrl/login."
 }

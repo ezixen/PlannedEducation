@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-függvények-1.0.0",
-    "name": "Függvények - Finland grade-11",
+    "name": "Functions - Finland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45 minuutin koe aiheesta Functions (grade-11). Aiheet: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.684986+00:00",
-    "updated_at": "2026-10-21T11:02:24.685006+00:00",
+    "created_at": "2026-10-24T17:53:47.830490+00:00",
+    "updated_at": "2026-10-24T17:53:47.830497+00:00",
     "tags": [
       "math",
-      "függvények",
+      "functions",
       "grade-11",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1b0b847359b5d71f842b6bfa31aad9634d7d6fc955868d20c35831b0a473d438",
+    "checksum": "5c6e0a8c482559bad687a3dfcd0cd9e0959717b823814fa725b6d5fa92f8c379",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Függvények",
-    "description": "Test on Függvények including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Functions",
+    "description": "Koe aiheesta Functions: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Functions - Kysymys 1: Functions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "functions",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Függvények",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Functions - Kysymys 2: Functions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "functions",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Függvények",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Functions - Kysymys 3: Functions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "functions",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Függvények",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Functions - Kysymys 4: Functions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Functions.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "functions",
+        "grade-11",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Függvények",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Functions",
       "learning_objective": "Functions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-100]",
+      "text": "[math] Functions - Kysymys 5: Functions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények",
+        "functions",
         "grade-11",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-11-MATH-Függvények",
+      "curriculum_topic": "FINLAND-GRADE-11-MATH-Functions",
       "learning_objective": "Functions"
     }
   ],

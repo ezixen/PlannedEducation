@@ -3,21 +3,25 @@
     "id": "grade-11-history-európa-és-világ-története-1.0.0",
     "name": "Európa és világ története - Hungary grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ története for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45 perces felmérő: Európa és világ története (grade-11). Témakörök: Európa és világ története, Európa, Világ, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.609400+00:00",
-    "updated_at": "2026-10-21T11:02:35.609414+00:00",
+    "created_at": "2026-10-24T17:53:52.442493+00:00",
+    "updated_at": "2026-10-24T17:53:52.442500+00:00",
     "tags": [
       "history",
       "európa-és-világ-története",
       "grade-11",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "abc2c8775a074f23bd196790d6786b3b8cfd1cce94758a1451f3184f70fa0a2b",
+    "checksum": "45dfd5d4fc440104097f70ea6f73557a1a269dcbd5affe4502958732133c87ba",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Europe and the world",
-      "Europe",
-      "World",
-      "History",
-      "Historical events"
+      "Európa és világ története",
+      "Európa",
+      "Világ",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-11 History - Európa és világ története",
-    "description": "Test on Európa és világ története including History of Europe and the world, Europe, World, History, Historical events",
+    "description": "Felmérő a(z) Európa és világ története témakörből (Európa és világ története, Európa, Világ, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 1: History of Europe and the world",
+      "text": "[history] Európa és világ története - Kérdés 1: Európa és világ története",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "európa-és-világ-története",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "learning_objective": "Európa és világ története"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 2: History of Europe and the world",
+      "text": "[history] Európa és világ története - Kérdés 2: Európa és világ története",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "európa-és-világ-története",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "learning_objective": "Európa és világ története"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ története - Kérdés 3: History of Europe and the world",
+      "text": "[history] Európa és világ története - Kérdés 3: Európa és világ története",
       "options": null,
       "correct_answer": "Minta válasz a(z) Európa és világ története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "európa-és-világ-története",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "learning_objective": "Európa és világ története"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 4: History of Europe and the world",
+      "text": "[history] Európa és világ története - Kérdés 4: Európa és világ története",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "európa-és-világ-története",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "learning_objective": "Európa és világ története"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ története - Kérdés 5: History of Europe and the world",
+      "text": "[history] Európa és világ története - Kérdés 5: Európa és világ története",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "európa-és-világ-története",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa és világ története",
-      "learning_objective": "History of Europe and the world"
+      "learning_objective": "Európa és világ története"
     }
   ],
   "rubrics": []

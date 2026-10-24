@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-eszközök-1.0.0",
-    "name": "Földrajzi eszközök - Finland grade-12",
+    "name": "Geographic tools - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi eszközök for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 minuutin koe aiheesta Geographic tools (grade-12). Aiheet: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.740781+00:00",
-    "updated_at": "2026-10-21T11:02:24.740792+00:00",
+    "created_at": "2026-10-24T17:53:47.866078+00:00",
+    "updated_at": "2026-10-24T17:53:47.866085+00:00",
     "tags": [
       "geography",
-      "földrajzi-eszközök",
+      "geographic-tools",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "824193f707ef1d73381e48d4b64b9afc01a874a8666d3223ad271474a226742a",
+    "checksum": "94278b38f932d2176048ee086e6aee15eb8df21c0a33433c741d8d6f21dd1055",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi eszközök",
-    "description": "Test on Földrajzi eszközök including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic tools",
+    "description": "Koe aiheesta Geographic tools: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 1: Geographic tools",
+      "text": "[geography] Geographic tools - Kysymys 1: Geographic tools",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 2: Geographic tools",
+      "text": "[geography] Geographic tools - Kysymys 2: Geographic tools",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi eszközök - Kérdés 3: Geographic tools",
+      "text": "[geography] Geographic tools - Kysymys 3: Geographic tools",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi eszközök témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Geographic tools.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 4: Geographic tools",
+      "text": "[geography] Geographic tools - Kysymys 4: Geographic tools",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi eszközök - Kérdés 5: Geographic tools",
+      "text": "[geography] Geographic tools - Kysymys 5: Geographic tools",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-eszközök",
-        "grade-12"
+        "geographic-tools",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi eszközök",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic tools",
       "learning_objective": "Geographic tools"
     }
   ],

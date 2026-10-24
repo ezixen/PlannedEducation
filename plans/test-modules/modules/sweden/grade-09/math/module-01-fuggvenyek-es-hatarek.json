@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-függvények-és-határek-1.0.0",
-    "name": "Függvények és határek - Sweden grade-09",
+    "name": "Functions and limits - Sweden grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és határek for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minuters prov i Functions and limits (grade-09). Omfattar: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.923537+00:00",
-    "updated_at": "2026-10-21T11:02:25.923560+00:00",
+    "created_at": "2026-10-24T17:53:48.596957+00:00",
+    "updated_at": "2026-10-24T17:53:48.596975+00:00",
     "tags": [
       "math",
-      "függvények-és-határek",
+      "functions-and-limits",
       "grade-09",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "85bef10ffdfc805b9ac6c2ed49fc193c11e37c8d361fbb474fac51263d02b1d0",
+    "checksum": "46029a77bce2ab6c95a7064fc39b131ea6dcd595aaeab5d853092f926632666a",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Függvények és határek",
-    "description": "Test on Függvények és határek including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Functions and limits",
+    "description": "Prov i Functions and limits: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 1: Functions and limits",
+      "text": "[math] Functions and limits - Fråga 1: Functions and limits",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 2: Functions and limits",
+      "text": "[math] Functions and limits - Fråga 2: Functions and limits",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és határek - Kérdés 3: Functions and limits",
+      "text": "[math] Functions and limits - Fråga 3: Functions and limits",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és határek - Kérdés 4: Functions and limits",
+      "text": "[math] Functions and limits - Fråga 4: Functions and limits",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és határek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Functions and limits.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-határek",
-        "grade-09"
+        "functions-and-limits",
+        "grade-09",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és határek - Question 5: Functions and limits [rand:1-1000]",
+      "text": "[math] Functions and limits - Fråga 5: Functions and limits [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-határek",
+        "functions-and-limits",
         "grade-09",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Függvények és határek",
+      "curriculum_topic": "SWEDEN-GRADE-09-MATH-Functions and limits",
       "learning_objective": "Functions and limits"
     }
   ],

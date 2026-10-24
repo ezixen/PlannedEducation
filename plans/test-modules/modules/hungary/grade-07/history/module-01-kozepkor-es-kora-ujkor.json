@@ -3,21 +3,25 @@
     "id": "grade-07-history-középkor-és-kora-újkor-1.0.0",
     "name": "Középkor és kora újkor - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Középkor és kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45 perces felmérő: Középkor és kora újkor (grade-07). Témakörök: Középkor és kora újkor, Középkor, Kora újkor, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.192844+00:00",
-    "updated_at": "2026-10-21T11:02:35.192861+00:00",
+    "created_at": "2026-10-24T17:53:52.207545+00:00",
+    "updated_at": "2026-10-24T17:53:52.207550+00:00",
     "tags": [
       "history",
       "középkor-és-kora-újkor",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "24b024ae168e3cb3ee000ce8a9215cb165c30599e0dd35cf5c5e836bd1d84b4f",
+    "checksum": "bfe79d4ca1436816650af37ddef3661f0d045ad421c46ac8252d3498cbed7205",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Middle Ages and early modern period",
-      "Middle Ages",
-      "Early modern period",
-      "History",
-      "Historical events"
+      "Középkor és kora újkor",
+      "Középkor",
+      "Kora újkor",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-07 History - Középkor és kora újkor",
-    "description": "Test on Középkor és kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "Felmérő a(z) Középkor és kora újkor témakörből (Középkor és kora újkor, Középkor, Kora újkor, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 1: Middle Ages and early modern period",
+      "text": "[history] Középkor és kora újkor - Kérdés 1: Középkor és kora újkor",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "középkor-és-kora-újkor",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
-      "learning_objective": "Middle Ages and early modern period"
+      "learning_objective": "Középkor és kora újkor"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 2: Middle Ages and early modern period",
+      "text": "[history] Középkor és kora újkor - Kérdés 2: Középkor és kora újkor",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "középkor-és-kora-újkor",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
-      "learning_objective": "Middle Ages and early modern period"
+      "learning_objective": "Középkor és kora újkor"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Középkor és kora újkor - Kérdés 3: Middle Ages and early modern period",
+      "text": "[history] Középkor és kora újkor - Kérdés 3: Középkor és kora újkor",
       "options": null,
       "correct_answer": "Minta válasz a(z) Középkor és kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "középkor-és-kora-újkor",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
-      "learning_objective": "Middle Ages and early modern period"
+      "learning_objective": "Középkor és kora újkor"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 4: Middle Ages and early modern period",
+      "text": "[history] Középkor és kora újkor - Kérdés 4: Középkor és kora újkor",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "középkor-és-kora-újkor",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
-      "learning_objective": "Middle Ages and early modern period"
+      "learning_objective": "Középkor és kora újkor"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Középkor és kora újkor - Kérdés 5: Middle Ages and early modern period",
+      "text": "[history] Középkor és kora újkor - Kérdés 5: Középkor és kora újkor",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "középkor-és-kora-újkor",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-HISTORY-Középkor és kora újkor",
-      "learning_objective": "Middle Ages and early modern period"
+      "learning_objective": "Középkor és kora újkor"
     }
   ],
   "rubrics": []

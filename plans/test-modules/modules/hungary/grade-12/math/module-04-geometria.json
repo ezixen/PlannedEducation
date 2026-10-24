@@ -3,21 +3,25 @@
     "id": "grade-12-math-geometria-1.0.0",
     "name": "Geometria - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45 perces felmérő: Geometria (grade-12). Témakörök: Deriválás és integrálás, Valószínűség-számítás, Statisztikai elemzés, Geometria, Matematikai elemzés",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.704111+00:00",
-    "updated_at": "2026-10-21T11:02:35.704123+00:00",
+    "created_at": "2026-10-24T17:53:52.503474+00:00",
+    "updated_at": "2026-10-24T17:53:52.503480+00:00",
     "tags": [
       "math",
       "geometria",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "ce322c0c3aba3891cc63e8818a489fa0c4ccd6fe09f8bcc29562d5c3fb9451f5",
+    "checksum": "c57fb106d3a99cae4b056a59f3e34944ed75182e3133bc8f0cc8a65341832e15",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry",
-      "Mathematical analysis"
+      "Deriválás és integrálás",
+      "Valószínűség-számítás",
+      "Statisztikai elemzés",
+      "Geometria",
+      "Matematikai elemzés"
     ]
   },
   "exam": {
     "title": "grade-12 Math - Geometria",
-    "description": "Test on Geometria including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "Felmérő a(z) Geometria témakörből (Deriválás és integrálás, Valószínűség-számítás, Statisztikai elemzés, Geometria, Matematikai elemzés)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 1: Geometry",
+      "text": "[math] Geometria - Kérdés 1: Geometria",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "geometria",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "learning_objective": "Geometria"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 2: Geometry",
+      "text": "[math] Geometria - Kérdés 2: Geometria",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "geometria",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "learning_objective": "Geometria"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria - Kérdés 3: Geometry",
+      "text": "[math] Geometria - Kérdés 3: Geometria",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "geometria",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "learning_objective": "Geometria"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria - Kérdés 4: Geometry",
+      "text": "[math] Geometria - Kérdés 4: Geometria",
       "options": null,
       "correct_answer": "Minta válasz a(z) Geometria témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "geometria",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "learning_objective": "Geometria"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria - Question 5: Geometry [rand:1-1000]",
+      "text": "[math] Geometria - Kérdés 5: Geometria [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "geometria",
         "grade-12",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-MATH-Geometria",
-      "learning_objective": "Geometry"
+      "learning_objective": "Geometria"
     }
   ],
   "rubrics": []

@@ -3,21 +3,25 @@
     "id": "grade-05-math-törtek-alapok-1.0.0",
     "name": "Törtek alapok - Hungary grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek alapok for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 perces felmérő: Törtek alapok (grade-05). Témakörök: Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.086865+00:00",
-    "updated_at": "2026-10-21T11:02:35.086890+00:00",
+    "created_at": "2026-10-24T17:53:52.123541+00:00",
+    "updated_at": "2026-10-24T17:53:52.123556+00:00",
     "tags": [
       "math",
       "törtek-alapok",
       "grade-05",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "a96d4809ff98e6d8a943fc66cc180aa4fd8fa716252c93a07cf21e231fa8f5eb",
+    "checksum": "87e7efe11d907859b28ab866eb80660eebb2ad5ca67a3bdc6745f73c4bbdfad5",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Törtek alapok",
+      "Törtek összeadása",
+      "Törtek kivonása",
+      "Törtek szorzása",
+      "Törtek osztása"
     ]
   },
   "exam": {
     "title": "grade-05 Math - Törtek alapok",
-    "description": "Test on Törtek alapok including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Felmérő a(z) Törtek alapok témakörből (Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 1: Fraction basics",
+      "text": "[math] Törtek alapok - Kérdés 1: Törtek alapok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "törtek-alapok",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek alapok",
-      "learning_objective": "Fraction basics"
+      "learning_objective": "Törtek alapok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 2: Fraction basics",
+      "text": "[math] Törtek alapok - Kérdés 2: Törtek alapok",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "törtek-alapok",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek alapok",
-      "learning_objective": "Fraction basics"
+      "learning_objective": "Törtek alapok"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 3: Fraction basics",
+      "text": "[math] Törtek alapok - Kérdés 3: Törtek alapok",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "törtek-alapok",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek alapok",
-      "learning_objective": "Fraction basics"
+      "learning_objective": "Törtek alapok"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek alapok - Kérdés 4: Fraction basics",
+      "text": "[math] Törtek alapok - Kérdés 4: Törtek alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Törtek alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "törtek-alapok",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek alapok",
-      "learning_objective": "Fraction basics"
+      "learning_objective": "Törtek alapok"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek alapok - Question 5: Fraction basics [rand:1-100]",
+      "text": "[math] Törtek alapok - Kérdés 5: Törtek alapok [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "törtek-alapok",
         "grade-05",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek alapok",
-      "learning_objective": "Fraction basics"
+      "learning_objective": "Törtek alapok"
     }
   ],
   "rubrics": []

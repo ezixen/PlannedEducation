@@ -643,70 +643,237 @@ SUBJECT_TOPICS = {
     },
 }
 
+COUNTRY_LANGUAGE_MAP = {
+    "hungary": ("hu", "Magyar"),
+    "germany": ("de", "Deutsch"),
+    "austria": ("de", "Deutsch"),
+    "switzerland": ("de", "Deutsch"),
+    "uk": ("en", "English"),
+    "usa": ("en", "English"),
+    "canada": ("en", "English"),
+    "australia": ("en", "English"),
+    "ireland": ("en", "English"),
+    "new_zealand": ("en", "English"),
+    "eu": ("en", "English"),
+    "finland": ("fi", "Suomi"),
+    "netherlands": ("nl", "Nederlands"),
+    "belgium": ("nl", "Nederlands"),
+    "sweden": ("sv", "Svenska"),
+    "norway": ("no", "Norsk"),
+    "denmark": ("da", "Dansk"),
+}
+
+TOPIC_TRANSLATIONS = {
+    "de": {
+        "Counting to 10": "Zählen bis 10", "Addition to 10": "Addition bis 10", "Subtraction to 10": "Subtraktion bis 10",
+        "Counting to 20": "Zählen bis 20", "Addition to 20": "Addition bis 20", "Counting to 100": "Zählen bis 100",
+        "Addition to 100": "Addition bis 100", "Subtraction to 100": "Subtraktion bis 100",
+        "Multiplication basics": "Multiplikation Grundlagen", "Division basics": "Division Grundlagen",
+        "Counting to 1000": "Zählen bis 1000", "Addition to 1000": "Addition bis 1000", "Subtraction to 1000": "Subtraktion bis 1000",
+        "Multiplication table": "Einmaleins", "Division table": "Divisionstabelle",
+        "Decimal numbers": "Dezimalzahlen", "Decimal addition": "Dezimaladdition", "Decimal subtraction": "Dezimalsubtraktion",
+        "Decimal multiplication": "Dezimalmultiplikation", "Decimal division": "Dezimaldivision",
+        "Fraction basics": "Bruchrechnung Grundlagen", "Fraction addition": "Brüche addieren", "Fraction subtraction": "Brüche subtrahieren",
+        "Fraction multiplication": "Brüche multiplizieren", "Fraction division": "Brüche dividieren",
+        "General fractions": "Allgemeine Brüche", "Fraction operations": "Bruchoperationen",
+        "Percentage basics": "Prozentrechnung Grundlagen", "Percentage calculation": "Prozentberechnung", "Proportional ratio": "Proportionale Zuordnung",
+        "Rational numbers": "Rationale Zahlen", "Algebraic expressions": "Algebraische Ausdrücke", "Equations": "Gleichungen",
+        "Geometry basics": "Geometrie Grundlagen", "Statistics basics": "Statistik Grundlagen",
+        "Real numbers": "Reelle Zahlen", "Functions": "Funktionen", "Linear equations": "Lineare Gleichungen",
+        "Geometry": "Geometrie", "Statistics": "Statistik", "Functions and limits": "Funktionen und Grenzwerte",
+        "Differentiation": "Differentialrechnung", "Integration": "Integralrechnung", "Probability": "Wahrscheinlichkeitsrechnung",
+        "Functions and statistics": "Funktionen und Statistik", "Differentiation and integration": "Analysis",
+        "Probability calculation": "Wahrscheinlichkeitsberechnung", "Statistical analysis": "Statistische Analyse",
+        "Mathematical analysis": "Mathematische Analysis",
+        "Energy and force": "Energie und Kraft", "Forces and motion": "Kräfte und Bewegung", "Motion": "Bewegung",
+        "Energy": "Energie", "Force": "Kraft", "Mechanics basics": "Mechanik Grundlagen", "Forces": "Kräfte",
+        "Work": "Arbeit", "Mechanics": "Mechanik", "Waves": "Wellen", "Optics": "Optik",
+        "Waves and optics": "Wellen und Optik", "Electromagnetism": "Elektromagnetismus", "Modern physics": "Moderne Physik",
+        "Physics preparation": "Physik Abiturvorbereitung",
+        "Substances and properties": "Stoffe und Eigenschaften", "Substance changes": "Stoffumwandlungen",
+        "Chemical reactions": "Chemische Reaktionen", "Acids and bases": "Säuren und Basen", "Chemical equations": "Reaktionsgleichungen",
+        "Structural chemistry": "Strukturchemie", "Organic chemistry basics": "Organische Chemie Grundlagen",
+        "Chemical equilibrium": "Chemisches Gleichgewicht", "Organic chemistry": "Organische Chemie",
+        "Cell biology and genetics": "Zellbiologie und Genetik", "Cell structure": "Zellaufbau", "Genetics basics": "Genetik Grundlagen",
+        "Ecology": "Ökologie", "Ecological systems": "Ökosysteme", "Human body and health": "Menschlicher Körper und Gesundheit",
+        "Human body structure": "Anatomie des Menschen", "Senses": "Sinnesorgane", "Perception": "Wahrnehmung", "Health": "Gesundheit",
+        "Genetics": "Genetik", "Human physiology and immunology": "Humanphysiologie und Immunologie",
+        "Human body physiology": "Physiologie des Menschen", "Immunology": "Immunologie",
+        "Nature and environment": "Natur und Umwelt", "Plants and animals": "Pflanzen und Tiere", "Nature": "Natur",
+        "Environment": "Umwelt", "Nature conservation": "Naturschutz",
+        "State and law": "Staat und Recht", "State structure": "Staatsaufbau", "Law basics": "Rechtsgrundlagen",
+        "Civil law": "Bürgerliches Recht", "Democracy and market economy": "Demokratie und Marktwirtschaft",
+        "Democracy": "Demokratie", "Market economy": "Marktwirtschaft", "Politology and law-maturity": "Politik und Recht",
+        "Politology": "Politikwissenschaft", "Law-maturity": "Rechtskunde",
+        "Middle Ages and early modern period": "Mittelalter und Frühe Neuzeit", "Middle Ages": "Mittelalter",
+        "Early modern period": "Frühe Neuzeit", "History": "Geschichte", "Historical events": "Historische Ereignisse",
+        "Modern period - 19th century": "Neuzeit - 19. Jahrhundert", "Modern period": "Neuzeit", "19th century": "19. Jahrhundert",
+        "History of the 20th century": "Geschichte des 20. Jahrhunderts", "20th century": "20. Jahrhundert",
+        "World history": "Weltgeschichte", "History of Hungary": "Europäische Geschichte", "Hungary": "Mitteleuropa",
+        "History of Europe and the world": "Geschichte Europas und der Welt", "Europe": "Europa", "World": "Welt",
+        "History-maturity": "Geschichte Abiturvorbereitung", "Europe and world": "Europa und die Welt",
+        "Geographic skills": "Geographische Kompetenzen", "Geography": "Geographie", "Geographic knowledge": "Geographisches Wissen",
+        "Geographic tools": "Geographische Arbeitsmethoden", "Europe and Hungary": "Europa und Mitteleuropa",
+        "Geography-maturity": "Geographie Abiturvorbereitung",
+    },
+    "fi": {
+        "Nature and environment": "Luonto ja ympäristö", "Plants and animals": "Kasvit ja eläimet", "Nature": "Luonto",
+        "Environment": "Ympäristö", "Nature conservation": "Luonnonsuojelu",
+        "Counting to 10": "Laskeminen 10:een", "Addition to 10": "Yhteenlasku 10:een", "Subtraction to 10": "Vähennyslasku 10:een",
+    },
+    "nl": {
+        "Nature and environment": "Natuur en milieu", "Plants and animals": "Planten en dieren", "Nature": "Natuur",
+        "Environment": "Milieu", "Nature conservation": "Natuurbehoud",
+        "Counting to 10": "Tellen tot 10", "Addition to 10": "Optellen tot 10", "Subtraction to 10": "Aftrekken tot 10",
+    },
+    "sv": {
+        "Nature and environment": "Natur och miljö", "Plants and animals": "Växter och djur", "Nature": "Natur",
+        "Environment": "Miljö", "Nature conservation": "Naturskydd",
+        "Counting to 10": "Räkna till 10", "Addition to 10": "Addition till 10", "Subtraction to 10": "Subtraktion till 10",
+    },
+    "no": {
+        "Nature and environment": "Natur og miljø", "Plants and animals": "Planter og dyr", "Nature": "Natur",
+        "Environment": "Miljø", "Nature conservation": "Naturvern",
+        "Counting to 10": "Telle til 10", "Addition to 10": "Addisjon til 10", "Subtraction to 10": "Subtraksjon til 10",
+    },
+    "da": {
+        "Nature and environment": "Natur og miljø", "Plants and animals": "Planter og dyr", "Nature": "Natur",
+        "Environment": "Miljø", "Nature conservation": "Naturbeskyttelse",
+        "Counting to 10": "Tælle til 10", "Addition to 10": "Addition til 10", "Subtraction to 10": "Subtraktion til 10",
+    },
+}
+
+LANGUAGE_TEMPLATES = {
+    "hu": {
+        "question_label": "Kérdés",
+        "desc_tpl": "45 perces felmérő: {topic} ({grade}). Témakörök: {objectives}",
+        "exam_desc_tpl": "Felmérő a(z) {topic} témakörből ({objectives})",
+        "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
+        "essay_ans": "Minta válasz a(z) {topic} témakörhöz.",
+        "essay_rubric": "Pontszámítás: {pts} pont. Értékelés: helyesség, teljesítettség, érvelés.",
+    },
+    "en": {
+        "question_label": "Question",
+        "desc_tpl": "45-minute assessment on {topic} for {grade} students. Covers: {objectives}",
+        "exam_desc_tpl": "Assessment on {topic} including {objectives}",
+        "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
+        "essay_ans": "Sample answer for {topic}.",
+        "essay_rubric": "Scoring: {pts} points. Evaluation criteria: accuracy, completeness, reasoning.",
+    },
+    "de": {
+        "question_label": "Frage",
+        "desc_tpl": "45-minütige Prüfung zum Thema {topic} ({grade}). Themen: {objectives}",
+        "exam_desc_tpl": "Prüfung zum Thema {topic}: {objectives}",
+        "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
+        "essay_ans": "Musterantwort zum Thema {topic}.",
+        "essay_rubric": "Bewertung: {pts} Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
+    },
+    "fi": {
+        "question_label": "Kysymys",
+        "desc_tpl": "45 minuutin koe aiheesta {topic} ({grade}). Aiheet: {objectives}",
+        "exam_desc_tpl": "Koe aiheesta {topic}: {objectives}",
+        "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
+        "essay_ans": "Mallivastaus aiheeseen {topic}.",
+        "essay_rubric": "Pisteytys: {pts} pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
+    },
+    "nl": {
+        "question_label": "Vraag",
+        "desc_tpl": "Toets van 45 minuten over {topic} ({grade}). Onderwerpen: {objectives}",
+        "exam_desc_tpl": "Toets over {topic}: {objectives}",
+        "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
+        "essay_ans": "Voorbeeldantwoord voor {topic}.",
+        "essay_rubric": "Beoordeling: {pts} punten. Criteria: juistheid, volledigheid, argumentatie.",
+    },
+    "sv": {
+        "question_label": "Fråga",
+        "desc_tpl": "45-minuters prov i {topic} ({grade}). Omfattar: {objectives}",
+        "exam_desc_tpl": "Prov i {topic}: {objectives}",
+        "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
+        "essay_ans": "Exempelsvar för {topic}.",
+        "essay_rubric": "Bedömning: {pts} poäng. Kriterier: korrekthet, fullständighet, resonemang.",
+    },
+    "no": {
+        "question_label": "Spørsmål",
+        "desc_tpl": "45-minutters prøve i {topic} ({grade}). Emner: {objectives}",
+        "exam_desc_tpl": "Prøve i {topic}: {objectives}",
+        "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
+        "essay_ans": "Eksempelsvar for {topic}.",
+        "essay_rubric": "Vurdering: {pts} poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
+    },
+    "da": {
+        "question_label": "Spørgsmål",
+        "desc_tpl": "45-minutters prøve i {topic} ({grade}). Emner: {objectives}",
+        "exam_desc_tpl": "Prøve i {topic}: {objectives}",
+        "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
+        "essay_ans": "Eksempelsvar for {topic}.",
+        "essay_rubric": "Bedømmelse: {pts} point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
+    },
+}
+
+
+def localize_topic(lang_code: str, topic_hu: str, topic_en: str) -> str:
+    if lang_code == "hu":
+        return topic_hu
+    return TOPIC_TRANSLATIONS.get(lang_code, {}).get(topic_en, topic_en)
+
+
 def generate_module(country_code, country_name, grade, subject, topic_info, module_num):
-    """Generate a single test module."""
-    topic_name, topic_en, difficulty, time_min = topic_info
-    
-    module_id = f"{grade}-{subject}-{topic_name.lower().replace(' ', '-')}-1.0.0"
-    
-    # Determine question types based on subject
+    """Generate a single test module in the country's native language."""
+    topic_hu, topic_en, difficulty, time_min = topic_info
+    lang_code, lang_name = COUNTRY_LANGUAGE_MAP.get(country_code, ("en", "English"))
+    tpl = LANGUAGE_TEMPLATES.get(lang_code, LANGUAGE_TEMPLATES["en"])
+    display_topic = localize_topic(lang_code, topic_hu, topic_en)
+
+    module_id = f"{grade}-{subject}-{topic_hu.lower().replace(' ', '-')}-1.0.0"
+
     if subject == "math":
         question_types = ["multiple_choice", "multiple_choice", "multiple_choice", "essay", "dynamic_math"]
     elif subject in ["physics", "chemistry"]:
         question_types = ["multiple_choice", "multiple_choice", "essay", "dynamic_math", "multiple_choice"]
     elif subject == "biology":
         question_types = ["multiple_choice", "multiple_choice", "essay", "multiple_choice", "essay"]
-    elif subject == "english":
+    else:
         question_types = ["multiple_choice", "multiple_choice", "essay", "multiple_choice", "multiple_choice"]
-    elif subject in ["civics", "history", "geography"]:
-        question_types = ["multiple_choice", "multiple_choice", "essay", "multiple_choice", "multiple_choice"]
-    else:  # science
-        question_types = ["multiple_choice", "multiple_choice", "essay", "multiple_choice", "multiple_choice"]
-    
+
+    q_label = tpl["question_label"]
     questions = []
     for i, q_type in enumerate(question_types):
         q_id = f"q-{i+1:03d}"
-        topic_idx = i % len(SUBJECT_TOPICS.get(subject, {}).get(grade, [("Topic", "Topic", "easy", 3)]))
-        
+
         if q_type == "multiple_choice":
             question = {
                 "id": q_id,
                 "question_type": "multiple_choice",
-                "text": f"[{subject}] {topic_name} - Kérdés {i+1}: {topic_en}",
+                "text": f"[{subject}] {display_topic} - {q_label} {i+1}: {display_topic}",
                 "options": ["A", "B", "C", "D"],
                 "correct_answer": "A",
                 "rubric": None,
                 "points": 5,
                 "variables": [],
-                "tags": [subject, topic_name.lower().replace(' ', '-'), grade],
+                "tags": [subject, display_topic.lower().replace(' ', '-'), grade, lang_code],
                 "difficulty": difficulty,
                 "estimated_time_minutes": time_min,
-                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{topic_name}",
-                "learning_objective": topic_en
+                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{display_topic}",
+                "learning_objective": display_topic
             }
         elif q_type == "essay":
             question = {
                 "id": q_id,
                 "question_type": "essay",
-                "text": f"[{subject}] {topic_name} - Kérdés {i+1}: {topic_en}",
+                "text": f"[{subject}] {display_topic} - {q_label} {i+1}: {display_topic}",
                 "options": None,
-                "correct_answer": f"Minta válasz a(z) {topic_name} témakörhöz.",
-                "rubric": f"Pontszámítás: {time_min} pont. Értékelés: helyesség, teljesítettség, érvelés.",
+                "correct_answer": tpl["essay_ans"].format(topic=display_topic),
+                "rubric": tpl["essay_rubric"].format(pts=time_min * 2),
                 "points": time_min * 2,
                 "variables": [],
-                "tags": [subject, topic_name.lower().replace(' ', '-'), grade],
+                "tags": [subject, display_topic.lower().replace(' ', '-'), grade, lang_code],
                 "difficulty": difficulty,
                 "estimated_time_minutes": time_min,
-                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{topic_name}",
-                "learning_objective": topic_en
+                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{display_topic}",
+                "learning_objective": display_topic
             }
         else:  # dynamic_math
-            # General randomizer: modulates numbers within allowed range while
-            # preserving number type (integer, decimal, fraction) and magnitude.
-            # All numbers in a question share the same category and magnitude.
             grade_num = int(grade.split('-')[1])
-            
-            # Determine number category and magnitude range based on grade level
             if grade_num <= 3:
                 number_category = "integer"
                 var_min, var_max = 1, 20
@@ -729,7 +896,7 @@ def generate_module(country_code, country_name, grade, subject, topic_info, modu
             question = {
                 "id": q_id,
                 "question_type": "dynamic_math",
-                "text": f"[{subject}] {topic_name} - Question {i+1}: {topic_en} [rand:{var_min}-{var_max}]",
+                "text": f"[{subject}] {display_topic} - {q_label} {i+1}: {display_topic} [rand:{var_min}-{var_max}]",
                 "options": None,
                 "correct_answer": "calculated",
                 "rubric": None,
@@ -750,29 +917,37 @@ def generate_module(country_code, country_name, grade, subject, topic_info, modu
                         "step": 1 if number_category == "integer" else 0.1
                     }
                 ],
-                "tags": [subject, topic_name.lower().replace(' ', '-'), grade, number_category],
+                "tags": [subject, display_topic.lower().replace(' ', '-'), grade, number_category, lang_code],
                 "difficulty": difficulty,
                 "estimated_time_minutes": time_min,
-                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{topic_name}",
-                "learning_objective": topic_en
+                "curriculum_topic": f"{country_code.upper()}-{grade.upper()}-{subject.upper()}-{display_topic}",
+                "learning_objective": display_topic
             }
         questions.append(question)
-    
+
     total_points = sum(q["points"] for q in questions)
-    
+    objectives_list = [
+        localize_topic(lang_code, t[0], t[1])
+        for t in SUBJECT_TOPICS.get(subject, {}).get(grade, [])
+    ]
+    objectives_str = ", ".join(objectives_list)
+
     module = {
         "metadata": {
             "id": module_id,
-            "name": f"{topic_name} - {country_name} {grade}",
+            "name": f"{display_topic} - {country_name} {grade}",
             "version": "1.0.0",
-            "description": f"45-minute test on {topic_name} for {grade} students. Covers: {', '.join([t[1] for t in SUBJECT_TOPICS.get(subject, {}).get(grade, [])])}",
+            "description": tpl["desc_tpl"].format(topic=display_topic, grade=grade, objectives=objectives_str),
             "author": "PlannedEducation Curriculum Team",
             "author_id": "system",
             "created_at": datetime.now(timezone.utc).isoformat(),
             "updated_at": datetime.now(timezone.utc).isoformat(),
-            "tags": [subject, topic_name.lower().replace(' ', '-'), grade, country_code.lower()],
+            "tags": [subject, display_topic.lower().replace(' ', '-'), grade, country_code.lower(), lang_code],
             "subject": subject,
             "grade_level": grade,
+            "language": lang_code,
+            "language_name": lang_name,
+            "country": country_code.lower(),
             "license": "CC-BY-4.0",
             "checksum": "",
             "curriculum": COUNTRY_CONFIGS[country_code]["curriculum"],
@@ -782,13 +957,13 @@ def generate_module(country_code, country_name, grade, subject, topic_info, modu
             "randomizer_enabled": subject in ["math", "physics", "chemistry"],
             "difficulty": difficulty,
             "prerequisites": [],
-            "learning_objectives": [t[1] for t in SUBJECT_TOPICS.get(subject, {}).get(grade, [])]
+            "learning_objectives": objectives_list
         },
         "exam": {
-            "title": f"{grade} {subject.title()} - {topic_name}",
-            "description": f"Test on {topic_name} including {', '.join([t[1] for t in SUBJECT_TOPICS.get(subject, {}).get(grade, [])])}",
+            "title": f"{grade} {subject.title()} - {display_topic}",
+            "description": tpl["exam_desc_tpl"].format(topic=display_topic, objectives=objectives_str),
             "duration_minutes": 45,
-            "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+            "instructions": tpl["instructions"],
             "settings": {
                 "shuffle_questions": True,
                 "shuffle_options": True,
@@ -806,54 +981,73 @@ def generate_module(country_code, country_name, grade, subject, topic_info, modu
         "questions": questions,
         "rubrics": []
     }
-    
-    # Calculate checksum
+
     import hashlib
     pkg_copy = module.copy()
     pkg_copy["metadata"] = pkg_copy["metadata"].copy()
     pkg_copy["metadata"]["checksum"] = ""
     checksum = hashlib.sha256(json.dumps(pkg_copy, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     module["metadata"]["checksum"] = checksum
-    
+
     return module
 
+
 def main():
+    import hashlib
+    from pathlib import Path
+
     total_modules = 0
-    
+
     for country_code, config in COUNTRY_CONFIGS.items():
-        print(f"\n{'='*70}")
         print(f"Generating modules for {config['country_name']} ({country_code})")
-        print(f"{'='*70}")
-        
+
         for grade, subjects in config["grades"].items():
             for subject in subjects:
                 topics = SUBJECT_TOPICS.get(subject, {}).get(grade, [])
                 if not topics:
-                    print(f"  WARNING: No topics for {grade}/{subject}, skipping")
                     continue
-                
+
                 for topic_idx, topic_info in enumerate(topics):
                     module = generate_module(country_code, config["country_name"], grade, subject, topic_info, topic_idx + 1)
-                    
-                    # Create directory structure
+
                     module_dir = os.path.join(MODULES_ROOT, country_code, grade, subject)
                     os.makedirs(module_dir, exist_ok=True)
-                    
-                    # Generate filename
+
                     topic_slug = topic_info[0].lower().replace(' ', '-').replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ö', 'o').replace('ő', 'o').replace('ú', 'u').replace('ü', 'u').replace('ű', 'u')
                     filename = f"module-{topic_idx+1:02d}-{topic_slug}.json"
                     filepath = os.path.join(module_dir, filename)
-                    
+
                     with open(filepath, "w", encoding="utf-8") as f:
                         json.dump(module, f, indent=2, ensure_ascii=False)
-                    
+
                     total_modules += 1
-                    if total_modules % 10 == 0:
-                        print(f"  Generated {total_modules} modules...")
-    
-    print(f"\n{'='*70}")
-    print(f"Total modules generated: {total_modules}")
-    print(f"{'='*70}")
+
+    # Also ensure any pre-existing standalone module files in MODULES_ROOT have language/country metadata and valid checksums
+    for json_path in Path(MODULES_ROOT).rglob("*.json"):
+        rel_parts = json_path.relative_to(MODULES_ROOT).parts
+        country_code = rel_parts[0].lower() if rel_parts else "usa"
+        lang_code, lang_name = COUNTRY_LANGUAGE_MAP.get(country_code, ("en", "English"))
+        pkg = json.loads(json_path.read_text(encoding="utf-8"))
+        meta = pkg.get("metadata", {})
+        if meta.get("language") != lang_code or meta.get("country") != country_code:
+            meta["language"] = lang_code
+            meta["language_name"] = lang_name
+            meta["country"] = country_code
+            tags = meta.get("tags", [])
+            if isinstance(tags, list) and lang_code not in tags:
+                tags.append(lang_code)
+            meta["tags"] = tags
+            pkg["metadata"] = meta
+            pkg_copy = pkg.copy()
+            pkg_copy["metadata"] = pkg_copy["metadata"].copy()
+            pkg_copy["metadata"]["checksum"] = ""
+            pkg["metadata"]["checksum"] = hashlib.sha256(
+                json.dumps(pkg_copy, sort_keys=True, separators=(',', ':')).encode()
+            ).hexdigest()
+            json_path.write_text(json.dumps(pkg, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    print(f"Total modules generated/updated: {total_modules}")
+
 
 if __name__ == "__main__":
     main()

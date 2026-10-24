@@ -3,21 +3,25 @@
     "id": "grade-04-english-angol-szókincs-1.0.0",
     "name": "Angol szókincs - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 perces felmérő: Angol szókincs (grade-04). Témakörök: Angol nyelv A2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.055574+00:00",
-    "updated_at": "2026-10-21T11:02:35.055585+00:00",
+    "created_at": "2026-10-24T17:53:52.094305+00:00",
+    "updated_at": "2026-10-24T17:53:52.094311+00:00",
     "tags": [
       "english",
       "angol-szókincs",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "4adf4252034bf7388c2afa1222ba194b823922a2305e82271ba67d447012b0d1",
+    "checksum": "e3105c93b1a5a02ceccfb7ed91f4faeedd9ecc4e52431e0fdb95d921a54ff976",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "English language A2",
-      "English grammar",
-      "English vocabulary",
-      "English reading",
-      "English writing"
+      "Angol nyelv A2",
+      "Angol grammatika",
+      "Angol szókincs",
+      "Angol olvasás",
+      "Angol írás"
     ]
   },
   "exam": {
     "title": "grade-04 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "Felmérő a(z) Angol szókincs témakörből (Angol nyelv A2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] Angol szókincs - Kérdés 1: Angol szókincs",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "english",
         "angol-szókincs",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol szókincs",
-      "learning_objective": "English vocabulary"
+      "learning_objective": "Angol szókincs"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] Angol szókincs - Kérdés 2: Angol szókincs",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "english",
         "angol-szókincs",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol szókincs",
-      "learning_objective": "English vocabulary"
+      "learning_objective": "Angol szókincs"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] Angol szókincs - Kérdés 3: Angol szókincs",
       "options": null,
       "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
         "angol-szókincs",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol szókincs",
-      "learning_objective": "English vocabulary"
+      "learning_objective": "Angol szókincs"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] Angol szókincs - Kérdés 4: Angol szókincs",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "english",
         "angol-szókincs",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol szókincs",
-      "learning_objective": "English vocabulary"
+      "learning_objective": "Angol szókincs"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] Angol szókincs - Kérdés 5: Angol szókincs",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "english",
         "angol-szókincs",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol szókincs",
-      "learning_objective": "English vocabulary"
+      "learning_objective": "Angol szókincs"
     }
   ],
   "rubrics": []

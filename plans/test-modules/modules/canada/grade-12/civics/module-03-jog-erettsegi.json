@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-jog-erettségi-1.0.0",
-    "name": "Jog-erettségi - Canada grade-12",
+    "name": "Law-maturity - Canada grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minute assessment on Law-maturity for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.031410+00:00",
-    "updated_at": "2026-10-21T11:02:16.031423+00:00",
+    "created_at": "2026-10-24T17:53:45.125356+00:00",
+    "updated_at": "2026-10-24T17:53:45.125363+00:00",
     "tags": [
       "civics",
-      "jog-erettségi",
+      "law-maturity",
       "grade-12",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "a6edb0caf5bf29956822f3eb13a1709663d245be5ad288bf3732e46a0023edfe",
+    "checksum": "f0c0a23c7759a1056b99594c563d7f48d569aa68d900f60ac5d8ed2eade1daf9",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Law-maturity",
+    "description": "Assessment on Law-maturity including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Law-maturity - Question 1: Law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Law-maturity - Question 2: Law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Law-maturity - Question 3: Law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Law-maturity.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Law-maturity - Question 4: Law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Law-maturity - Question 5: Law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     }
   ],

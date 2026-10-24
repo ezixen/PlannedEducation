@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-környezet-1.0.0",
-    "name": "Környezet - Norway grade-01",
+    "name": "Miljø - Norway grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Miljø (grade-01). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.202878+00:00",
-    "updated_at": "2026-10-21T11:02:26.202890+00:00",
+    "created_at": "2026-10-24T17:53:48.812155+00:00",
+    "updated_at": "2026-10-24T17:53:48.812162+00:00",
     "tags": [
       "science",
-      "környezet",
+      "miljø",
       "grade-01",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "211cbb1844afb809d0714be25b3d55a3174484198a69fc6b30906ebfe6d1ef53",
+    "checksum": "80c0c8ec51b08c4b001f9fc0d85bdaf3a7c0e14cf770d418380e140d0eedede8",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturvern"
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Miljø",
+    "description": "Prøve i Miljø: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Miljø - Spørsmål 1: Miljø",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Miljø",
+      "learning_objective": "Miljø"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Miljø - Spørsmål 2: Miljø",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Miljø",
+      "learning_objective": "Miljø"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Miljø - Spørsmål 3: Miljø",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Miljø.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Miljø",
+      "learning_objective": "Miljø"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Miljø - Spørsmål 4: Miljø",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Miljø",
+      "learning_objective": "Miljø"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Miljø - Spørsmål 5: Miljø",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-01"
+        "miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Miljø",
+      "learning_objective": "Miljø"
     }
   ],
   "rubrics": []

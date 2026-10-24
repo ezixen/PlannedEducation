@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-és-magyarország-1.0.0",
-    "name": "Európa és Magyarország - Netherlands grade-08",
+    "name": "Europe and Hungary - Netherlands grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "Toets van 45 minuten over Europe and Hungary (grade-08). Onderwerpen: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.108999+00:00",
-    "updated_at": "2026-10-21T11:02:25.109016+00:00",
+    "created_at": "2026-10-24T17:53:48.126704+00:00",
+    "updated_at": "2026-10-24T17:53:48.126713+00:00",
     "tags": [
       "geography",
-      "európa-és-magyarország",
+      "europe-and-hungary",
       "grade-08",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "32ee593e622c31b0118e7fc838ab6e0f0185dbbf05dadc0f1b24e9a9440a1a4c",
+    "checksum": "9f2c37f4de080af6145fe374d08525fc19747825e4a0fc2a9d6a7d7b280a3e32",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa és Magyarország",
-    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe and Hungary",
+    "description": "Toets over Europe and Hungary: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Vraag 1: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Vraag 2: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Vraag 3: Europe and Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Europe and Hungary.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Vraag 4: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Vraag 5: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     }
   ],

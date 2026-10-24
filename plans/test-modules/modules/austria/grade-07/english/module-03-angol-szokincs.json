@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - Austria grade-07",
+    "name": "English vocabulary - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-07 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English vocabulary (grade-07). Themen: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.953545+00:00",
-    "updated_at": "2026-10-21T11:02:28.953563+00:00",
+    "created_at": "2026-10-24T17:53:50.397554+00:00",
+    "updated_at": "2026-10-24T17:53:50.397560+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "48b9be3e5cd6e16723d386ecdd4a3556be24120aa52e5712e79cdef13d5635c2",
+    "checksum": "86f7d9df2abe270353d0930c0fb7e09c806ebbe1516e6f0e1ecc196b1c2fb6bc",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-07 English - English vocabulary",
+    "description": "Prüfung zum Thema English vocabulary: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Frage 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Frage 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Frage 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English vocabulary.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Frage 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Frage 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "AUSTRIA-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

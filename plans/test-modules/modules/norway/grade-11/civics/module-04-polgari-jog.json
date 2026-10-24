@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Norway grade-11",
+    "name": "Civil law - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-11 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minutters prøve i Civil law (grade-11). Emner: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.766913+00:00",
-    "updated_at": "2026-10-21T11:02:26.766935+00:00",
+    "created_at": "2026-10-24T17:53:49.179305+00:00",
+    "updated_at": "2026-10-24T17:53:49.179314+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "civil-law",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "civics",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "a5b5d094c53464ef8d4bfa6775138ae11d8c2d02cfed750b941d9a4a77b58a59",
+    "checksum": "a888885bbeb07542cce38642e70ec38972b5c8be35954b54d633ab74789e3e11",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Civics - Polgári jog",
-    "description": "Test on Polgári jog including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-11 Civics - Civil law",
+    "description": "Prøve i Civil law: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Civil law - Spørsmål 1: Civil law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-11"
+        "civil-law",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Polgári jog",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Civil law - Spørsmål 2: Civil law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-11"
+        "civil-law",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Polgári jog",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Civil law - Spørsmål 3: Civil law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Civil law.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-11"
+        "civil-law",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Polgári jog",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Civil law - Spørsmål 4: Civil law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-11"
+        "civil-law",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Polgári jog",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Civil law",
       "learning_objective": "Civil law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Civil law - Spørsmål 5: Civil law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-11"
+        "civil-law",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Polgári jog",
+      "curriculum_topic": "NORWAY-GRADE-11-CIVICS-Civil law",
       "learning_objective": "Civil law"
     }
   ],

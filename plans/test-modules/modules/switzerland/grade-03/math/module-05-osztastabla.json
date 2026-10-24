@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-osztástábla-1.0.0",
-    "name": "Osztástábla - Switzerland grade-03",
+    "name": "Divisionstabelle - Switzerland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Osztástábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minütige Prüfung zum Thema Divisionstabelle (grade-03). Themen: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.202244+00:00",
-    "updated_at": "2026-10-21T11:02:28.202254+00:00",
+    "created_at": "2026-10-24T17:53:49.880379+00:00",
+    "updated_at": "2026-10-24T17:53:49.880386+00:00",
     "tags": [
       "math",
-      "osztástábla",
+      "divisionstabelle",
       "grade-03",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "b31c5772a162406cdd973b63cfda7bf877875b848d82adcf7a59cb6f7a89b5eb",
+    "checksum": "9b21a3c35849019a21e136a7d6c464a9023fc8ac3734d29412f72c5ef5823005",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 1000",
-      "Addition to 1000",
-      "Subtraction to 1000",
-      "Multiplication table",
-      "Division table"
+      "Zählen bis 1000",
+      "Addition bis 1000",
+      "Subtraktion bis 1000",
+      "Einmaleins",
+      "Divisionstabelle"
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Osztástábla",
-    "description": "Test on Osztástábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Divisionstabelle",
+    "description": "Prüfung zum Thema Divisionstabelle: Zählen bis 1000, Addition bis 1000, Subtraktion bis 1000, Einmaleins, Divisionstabelle",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 1: Division table",
+      "text": "[math] Divisionstabelle - Frage 1: Divisionstabelle",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "divisionstabelle",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Divisionstabelle",
+      "learning_objective": "Divisionstabelle"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 2: Division table",
+      "text": "[math] Divisionstabelle - Frage 2: Divisionstabelle",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "divisionstabelle",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Divisionstabelle",
+      "learning_objective": "Divisionstabelle"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 3: Division table",
+      "text": "[math] Divisionstabelle - Frage 3: Divisionstabelle",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "divisionstabelle",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Divisionstabelle",
+      "learning_objective": "Divisionstabelle"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztástábla - Kérdés 4: Division table",
+      "text": "[math] Divisionstabelle - Frage 4: Divisionstabelle",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztástábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Divisionstabelle.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "divisionstabelle",
+        "grade-03",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Divisionstabelle",
+      "learning_objective": "Divisionstabelle"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztástábla - Question 5: Division table [rand:1-20]",
+      "text": "[math] Divisionstabelle - Frage 5: Divisionstabelle [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "osztástábla",
+        "divisionstabelle",
         "grade-03",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "curriculum_topic": "SWITZERLAND-GRADE-03-MATH-Divisionstabelle",
+      "learning_objective": "Divisionstabelle"
     }
   ],
   "rubrics": []

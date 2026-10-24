@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-újkor-1.0.0",
-    "name": "Újkor - USA grade-08",
+    "name": "Modern period - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Újkor for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45-minute assessment on Modern period for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.958792+00:00",
-    "updated_at": "2026-10-21T11:02:17.958803+00:00",
+    "created_at": "2026-10-24T17:53:46.343224+00:00",
+    "updated_at": "2026-10-24T17:53:46.343251+00:00",
     "tags": [
       "history",
-      "újkor",
+      "modern-period",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "145d7ceb7908e231b78a8d9c515149bba7b0c8e617de5e04aaf1f77ec8b46ade",
+    "checksum": "51616c1811b9d7567cd69fc5e7710ae670fc39f4f747a2106e9d954d27915910",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - Újkor",
-    "description": "Test on Újkor including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - Modern period",
+    "description": "Assessment on Modern period including Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 1: Modern period",
+      "text": "[history] Modern period - Question 1: Modern period",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor",
-        "grade-08"
+        "modern-period",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-HISTORY-Újkor",
+      "curriculum_topic": "USA-GRADE-08-HISTORY-Modern period",
       "learning_objective": "Modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 2: Modern period",
+      "text": "[history] Modern period - Question 2: Modern period",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor",
-        "grade-08"
+        "modern-period",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-HISTORY-Újkor",
+      "curriculum_topic": "USA-GRADE-08-HISTORY-Modern period",
       "learning_objective": "Modern period"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Újkor - Kérdés 3: Modern period",
+      "text": "[history] Modern period - Question 3: Modern period",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Modern period.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "újkor",
-        "grade-08"
+        "modern-period",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-HISTORY-Újkor",
+      "curriculum_topic": "USA-GRADE-08-HISTORY-Modern period",
       "learning_objective": "Modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 4: Modern period",
+      "text": "[history] Modern period - Question 4: Modern period",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor",
-        "grade-08"
+        "modern-period",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-HISTORY-Újkor",
+      "curriculum_topic": "USA-GRADE-08-HISTORY-Modern period",
       "learning_objective": "Modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Újkor - Kérdés 5: Modern period",
+      "text": "[history] Modern period - Question 5: Modern period",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "újkor",
-        "grade-08"
+        "modern-period",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-HISTORY-Újkor",
+      "curriculum_topic": "USA-GRADE-08-HISTORY-Modern period",
       "learning_objective": "Modern period"
     }
   ],

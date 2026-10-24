@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-kivonás-100-ig-1.0.0",
-    "name": "Kivonás 100-ig - Denmark grade-02",
+    "name": "Subtraction to 100 - Denmark grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minutters prøve i Subtraction to 100 (grade-02). Emner: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.065778+00:00",
-    "updated_at": "2026-10-21T11:02:27.065831+00:00",
+    "created_at": "2026-10-24T17:53:49.294895+00:00",
+    "updated_at": "2026-10-24T17:53:49.294907+00:00",
     "tags": [
       "math",
-      "kivonás-100-ig",
+      "subtraction-to-100",
       "grade-02",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "67167f2b41cef3f950eb0fe3649d6e21330da6691f8450ef7ba68b2b25515e4a",
+    "checksum": "129959b8e04406745c9844ff4e18a8d375a61ca5faf130e9b55a3469d468ff20",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Kivonás 100-ig",
-    "description": "Test on Kivonás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Subtraction to 100",
+    "description": "Prøve i Subtraction to 100: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 1: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Spørgsmål 1: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 2: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Spørgsmål 2: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 3: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Spørgsmål 3: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 100-ig - Kérdés 4: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Spørgsmål 4: Subtraction to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Subtraction to 100.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 100-ig - Question 5: Subtraction to 100 [rand:1-20]",
+      "text": "[math] Subtraction to 100 - Spørgsmål 5: Subtraction to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-100-ig",
+        "subtraction-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "DENMARK-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     }
   ],

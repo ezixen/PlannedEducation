@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - Sweden grade-07",
+    "name": "State and law - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minuters prov i State and law (grade-07). Omfattar: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.679401+00:00",
-    "updated_at": "2026-10-21T11:02:25.679416+00:00",
+    "created_at": "2026-10-24T17:53:48.427559+00:00",
+    "updated_at": "2026-10-24T17:53:48.427564+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "state-and-law",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "11d1095eec3f9d91d2df63bef0e1421daee2e799c5edde96e8dc4c8a31cac015",
+    "checksum": "74470f42c5287f0ad85050cbd41933b03d3e24c555e1fdafe21d52ba41eefc74",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - State and law",
+    "description": "Prov i State and law: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] State and law - Fråga 1: State and law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] State and law - Fråga 2: State and law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] State and law - Fråga 3: State and law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för State and law.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] State and law - Fråga 4: State and law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] State and law - Fråga 5: State and law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-07"
+        "state-and-law",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-Állam és jog",
+      "curriculum_topic": "SWEDEN-GRADE-07-CIVICS-State and law",
       "learning_objective": "State and law"
     }
   ],

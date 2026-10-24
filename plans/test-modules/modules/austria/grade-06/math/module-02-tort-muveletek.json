@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-tört-műveletek-1.0.0",
-    "name": "Tört műveletek - Austria grade-06",
+    "name": "Bruchoperationen - Austria grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minütige Prüfung zum Thema Bruchoperationen (grade-06). Themen: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.904927+00:00",
-    "updated_at": "2026-10-21T11:02:28.904938+00:00",
+    "created_at": "2026-10-24T17:53:50.366751+00:00",
+    "updated_at": "2026-10-24T17:53:50.366756+00:00",
     "tags": [
       "math",
-      "tört-műveletek",
+      "bruchoperationen",
       "grade-06",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "e25190d59d8d06e6c25fafa3b55e58588baa524205ae19fbc74c62ba03d7c2c1",
+    "checksum": "176c273277688b9bb9a6ea76e79bc8c5e091607db1e052359cada4149b39d66f",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Allgemeine Brüche",
+      "Bruchoperationen",
+      "Prozentrechnung Grundlagen",
+      "Prozentberechnung",
+      "Proportionale Zuordnung"
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Tört műveletek",
-    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Bruchoperationen",
+    "description": "Prüfung zum Thema Bruchoperationen: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "text": "[math] Bruchoperationen - Frage 1: Bruchoperationen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "bruchoperationen",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Bruchoperationen",
+      "learning_objective": "Bruchoperationen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "text": "[math] Bruchoperationen - Frage 2: Bruchoperationen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "bruchoperationen",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Bruchoperationen",
+      "learning_objective": "Bruchoperationen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "text": "[math] Bruchoperationen - Frage 3: Bruchoperationen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "bruchoperationen",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Bruchoperationen",
+      "learning_objective": "Bruchoperationen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "text": "[math] Bruchoperationen - Frage 4: Bruchoperationen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Bruchoperationen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "bruchoperationen",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Bruchoperationen",
+      "learning_objective": "Bruchoperationen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "text": "[math] Bruchoperationen - Frage 5: Bruchoperationen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "tört-műveletek",
+        "bruchoperationen",
         "grade-06",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Tört műveletek",
-      "learning_objective": "Fraction operations"
+      "curriculum_topic": "AUSTRIA-GRADE-06-MATH-Bruchoperationen",
+      "learning_objective": "Bruchoperationen"
     }
   ],
   "rubrics": []

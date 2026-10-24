@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-elektromágnesesség-1.0.0",
-    "name": "Elektromágnesesség - Finland grade-10",
+    "name": "Electromagnetism - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45 minuutin koe aiheesta Electromagnetism (grade-10). Aiheet: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.620921+00:00",
-    "updated_at": "2026-10-21T11:02:24.620935+00:00",
+    "created_at": "2026-10-24T17:53:47.802294+00:00",
+    "updated_at": "2026-10-24T17:53:47.802305+00:00",
     "tags": [
       "physics",
-      "elektromágnesesség",
+      "electromagnetism",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "3fa69dd60eb6c71bc5df840edba5687f296ec85a06fbfc52b80c9a85a174ddd8",
+    "checksum": "298b258f6abdc81247847d3b416b5e7bb487ea84ceb681ff81d28d76c0faf05d",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Electromagnetism",
+    "description": "Koe aiheesta Electromagnetism: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Electromagnetism - Kysymys 1: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Electromagnetism - Kysymys 2: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Electromagnetism - Kysymys 3: Electromagnetism",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Electromagnetism.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Electromagnetism - Kysymys 4: Electromagnetism [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "elektromágnesesség",
+        "electromagnetism",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Electromagnetism - Kysymys 5: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-10"
+        "electromagnetism",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     }
   ],

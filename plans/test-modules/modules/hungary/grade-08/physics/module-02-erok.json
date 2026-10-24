@@ -3,21 +3,25 @@
     "id": "grade-08-physics-erők-1.0.0",
     "name": "Erők - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 perces felmérő: Erők (grade-08). Témakörök: Mechanika alapok, Erők, Mozgás, Energia, Mű",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.330427+00:00",
-    "updated_at": "2026-10-21T11:02:35.330465+00:00",
+    "created_at": "2026-10-24T17:53:52.301232+00:00",
+    "updated_at": "2026-10-24T17:53:52.301242+00:00",
     "tags": [
       "physics",
       "erők",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "d86bc482e114878e6923cc6c5e0a93575dddc709b8142a4081799d4f73fd8b3d",
+    "checksum": "c24cb6b06f65ed6022a8f5971348376e57c5cbb2b79805f3c5013f5616f656cc",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics basics",
-      "Forces",
-      "Motion",
-      "Energy",
-      "Work"
+      "Mechanika alapok",
+      "Erők",
+      "Mozgás",
+      "Energia",
+      "Mű"
     ]
   },
   "exam": {
     "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "Felmérő a(z) Erők témakörből (Mechanika alapok, Erők, Mozgás, Energia, Mű)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Erők - Kérdés 1: Erők",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "erők",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "learning_objective": "Erők"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Erők - Kérdés 2: Erők",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "erők",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "learning_objective": "Erők"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Erők - Kérdés 3: Erők",
       "options": null,
       "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "erők",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "learning_objective": "Erők"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Erők - Kérdés 4: Erők [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "erők",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "learning_objective": "Erők"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Erők - Kérdés 5: Erők",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "erők",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "learning_objective": "Erők"
     }
   ],
   "rubrics": []

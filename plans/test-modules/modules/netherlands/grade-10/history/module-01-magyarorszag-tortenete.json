@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Netherlands grade-10",
+    "name": "History of Hungary - Netherlands grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "Toets van 45 minuten over History of Hungary (grade-10). Onderwerpen: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.336543+00:00",
-    "updated_at": "2026-10-21T11:02:25.336561+00:00",
+    "created_at": "2026-10-24T17:53:48.238036+00:00",
+    "updated_at": "2026-10-24T17:53:48.238042+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "history-of-hungary",
       "grade-10",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "e62370896d160e708171bed3556266eec9d2d14f1929bd0e177f6587a150dc00",
+    "checksum": "cb768365bdbad892b7f7fafb59cd5611bd63de3604c0086193ec0f4163bfa2b7",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History of Hungary",
+    "description": "Toets over History of Hungary: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 1: History of Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 2: History of Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 3: History of Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor History of Hungary.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 4: History of Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 5: History of Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     }
   ],

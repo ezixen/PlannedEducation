@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-nyelv-b2-1.0.0",
-    "name": "Angol nyelv B2 - Norway grade-10",
+    "name": "English language B2 - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minutters prøve i English language B2 (grade-10). Emner: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.689343+00:00",
-    "updated_at": "2026-10-21T11:02:26.689360+00:00",
+    "created_at": "2026-10-24T17:53:49.129437+00:00",
+    "updated_at": "2026-10-24T17:53:49.129447+00:00",
     "tags": [
       "english",
-      "angol-nyelv-b2",
+      "english-language-b2",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "1e55ce71f0140503531e279e65833bd307e3dfb91b7a1765a21acaa67b044291",
+    "checksum": "d54a08370b9455f452428f863ea676a418c7e2b7c0c556c030ee689eeeba2c6d",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol nyelv B2",
-    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English language B2",
+    "description": "Prøve i English language B2: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "text": "[english] English language B2 - Spørsmål 1: English language B2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "text": "[english] English language B2 - Spørsmål 2: English language B2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "text": "[english] English language B2 - Spørsmål 3: English language B2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English language B2.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "text": "[english] English language B2 - Spørsmål 4: English language B2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "text": "[english] English language B2 - Spørsmål 5: English language B2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NORWAY-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     }
   ],

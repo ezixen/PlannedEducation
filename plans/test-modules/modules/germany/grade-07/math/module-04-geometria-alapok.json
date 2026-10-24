@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-geometria-alapok-1.0.0",
-    "name": "Geometria alapok - Germany grade-07",
+    "name": "Geometrie Grundlagen - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minütige Prüfung zum Thema Geometrie Grundlagen (grade-07). Themen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.347880+00:00",
-    "updated_at": "2026-10-21T11:02:16.347900+00:00",
+    "created_at": "2026-10-24T17:53:45.374435+00:00",
+    "updated_at": "2026-10-24T17:53:45.374442+00:00",
     "tags": [
       "math",
-      "geometria-alapok",
+      "geometrie-grundlagen",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "c3ec5b94d4967106cadf8e093ca156989613c6f45057acf04f1c0f8dac8c5b2c",
+    "checksum": "6a7084075cc9d68c67beea564ae2daf97914cf320c89570ecbaf6f328bbd3535",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Rational numbers",
-      "Algebraic expressions",
-      "Equations",
-      "Geometry basics",
-      "Statistics basics"
+      "Rationale Zahlen",
+      "Algebraische Ausdrücke",
+      "Gleichungen",
+      "Geometrie Grundlagen",
+      "Statistik Grundlagen"
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Geometria alapok",
-    "description": "Test on Geometria alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Geometrie Grundlagen",
+    "description": "Prüfung zum Thema Geometrie Grundlagen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 1: Geometry basics",
+      "text": "[math] Geometrie Grundlagen - Frage 1: Geometrie Grundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometrie-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometria alapok",
-      "learning_objective": "Geometry basics"
+      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometrie Grundlagen",
+      "learning_objective": "Geometrie Grundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 2: Geometry basics",
+      "text": "[math] Geometrie Grundlagen - Frage 2: Geometrie Grundlagen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometrie-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometria alapok",
-      "learning_objective": "Geometry basics"
+      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometrie Grundlagen",
+      "learning_objective": "Geometrie Grundlagen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 3: Geometry basics",
+      "text": "[math] Geometrie Grundlagen - Frage 3: Geometrie Grundlagen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometrie-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometria alapok",
-      "learning_objective": "Geometry basics"
+      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometrie Grundlagen",
+      "learning_objective": "Geometrie Grundlagen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria alapok - Kérdés 4: Geometry basics",
+      "text": "[math] Geometrie Grundlagen - Frage 4: Geometrie Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geometrie Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometrie-grundlagen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometria alapok",
-      "learning_objective": "Geometry basics"
+      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometrie Grundlagen",
+      "learning_objective": "Geometrie Grundlagen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria alapok - Question 5: Geometry basics [rand:1-100]",
+      "text": "[math] Geometrie Grundlagen - Frage 5: Geometrie Grundlagen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "geometria-alapok",
+        "geometrie-grundlagen",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometria alapok",
-      "learning_objective": "Geometry basics"
+      "curriculum_topic": "GERMANY-GRADE-07-MATH-Geometrie Grundlagen",
+      "learning_objective": "Geometrie Grundlagen"
     }
   ],
   "rubrics": []

@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "számolás-100-ig",
-      "grade-02"
+      "grade-02",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-02",
     "license": "CC-BY-4.0",
-    "checksum": "b5ddfc366a2a32a4717d652fe8f521f640fa302d5eb166647335f04802c1cdfc",
+    "checksum": "03d8625f942986fc918c3a375d716d17ce3ff8918911088bf04d20634ff02ec9",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Szorzás",
       "Osztás",
       "Mértekegységek"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 02 Math - Számolás 100-ig",

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-függvények-és-statisztika-1.0.0",
-    "name": "Függvények és statisztika - Sweden grade-10",
+    "name": "Functions and statistics - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és statisztika for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minuters prov i Functions and statistics (grade-10). Omfattar: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.013851+00:00",
-    "updated_at": "2026-10-21T11:02:26.013865+00:00",
+    "created_at": "2026-10-24T17:53:48.694724+00:00",
+    "updated_at": "2026-10-24T17:53:48.694732+00:00",
     "tags": [
       "math",
-      "függvények-és-statisztika",
+      "functions-and-statistics",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "d3a3f959b449fca2688a12030fd5b04b43d6ccda3e2b1e7883ffe0c3c4d59914",
+    "checksum": "f966ebefb7a0e071e53db4e42ddba4aac50ec3e7c888cf8a3a37898fa7b1ce85",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Függvények és statisztika",
-    "description": "Test on Függvények és statisztika including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Functions and statistics",
+    "description": "Prov i Functions and statistics: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 1: Functions and statistics",
+      "text": "[math] Functions and statistics - Fråga 1: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 2: Functions and statistics",
+      "text": "[math] Functions and statistics - Fråga 2: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 3: Functions and statistics",
+      "text": "[math] Functions and statistics - Fråga 3: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és statisztika - Kérdés 4: Functions and statistics",
+      "text": "[math] Functions and statistics - Fråga 4: Functions and statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Functions and statistics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és statisztika - Question 5: Functions and statistics [rand:1-100]",
+      "text": "[math] Functions and statistics - Fråga 5: Functions and statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-statisztika",
+        "functions-and-statistics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "SWEDEN-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     }
   ],

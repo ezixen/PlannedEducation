@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Canada grade-09",
+    "name": "Geographic knowledge - Canada grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minute assessment on Geographic knowledge for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.818412+00:00",
-    "updated_at": "2026-10-21T11:02:15.818435+00:00",
+    "created_at": "2026-10-24T17:53:44.987660+00:00",
+    "updated_at": "2026-10-24T17:53:44.987675+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographic-knowledge",
       "grade-09",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "272cb62ab0aa3be825249b2cc5465b8ad1e8a3a36fc969d771367f00d8d3bbe0",
+    "checksum": "1841b443e600b5a93c97c49e0b13a3ce7192eef76261fe80af435fc045064411",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Geographic knowledge",
+    "description": "Assessment on Geographic knowledge including Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 1: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-09"
+        "geographic-knowledge",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 2: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-09"
+        "geographic-knowledge",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 3: Geographic knowledge",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic knowledge.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-09"
+        "geographic-knowledge",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 4: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-09"
+        "geographic-knowledge",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 5: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-09"
+        "geographic-knowledge",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "CANADA-GRADE-09-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-10-chemistry-kémiai-reakciók-1.0.0",
     "name": "Kémiai reakciók - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai reakciók for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45 perces felmérő: Kémiai reakciók (grade-10). Témakörök: Szerkezeti kémia, Szerves kémia alapok, Kémiai reakciók, Savak és bazák, Kémiai egyenleg",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.523721+00:00",
-    "updated_at": "2026-10-21T11:02:35.523734+00:00",
+    "created_at": "2026-10-24T17:53:52.383223+00:00",
+    "updated_at": "2026-10-24T17:53:52.383230+00:00",
     "tags": [
       "chemistry",
       "kémiai-reakciók",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "bbc45456a995e18e815fe134d54a53bc9129379c0f98a780487775c124a4d2d8",
+    "checksum": "bd548fa896d5953960e82c9165f7aa288cce5ec8f1ed7a0b4f999b0a6126c4ab",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Szerkezeti kémia",
+      "Szerves kémia alapok",
+      "Kémiai reakciók",
+      "Savak és bazák",
+      "Kémiai egyenleg"
     ]
   },
   "exam": {
     "title": "grade-10 Chemistry - Kémiai reakciók",
-    "description": "Test on Kémiai reakciók including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "Felmérő a(z) Kémiai reakciók témakörből (Szerkezeti kémia, Szerves kémia alapok, Kémiai reakciók, Savak és bazák, Kémiai egyenleg)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 1: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 2: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 3: Kémiai reakciók",
       "options": null,
       "correct_answer": "Minta válasz a(z) Kémiai reakciók témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai reakciók - Question 4: Chemical reactions [rand:1-100]",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 4: Kémiai reakciók [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "chemistry",
         "kémiai-reakciók",
         "grade-10",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Chemical reactions",
+      "text": "[chemistry] Kémiai reakciók - Kérdés 5: Kémiai reakciók",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "chemistry",
         "kémiai-reakciók",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Kémiai reakciók",
-      "learning_objective": "Chemical reactions"
+      "learning_objective": "Kémiai reakciók"
     }
   ],
   "rubrics": []

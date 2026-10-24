@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-savak-és-bazák-1.0.0",
-    "name": "Savak és bazák - Denmark grade-08",
+    "name": "Acids and bases - Denmark grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Savak és bazák for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minutters prøve i Acids and bases (grade-08). Emner: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.416962+00:00",
-    "updated_at": "2026-10-21T11:02:27.416984+00:00",
+    "created_at": "2026-10-24T17:53:49.519856+00:00",
+    "updated_at": "2026-10-24T17:53:49.519868+00:00",
     "tags": [
       "chemistry",
-      "savak-és-bazák",
+      "acids-and-bases",
       "grade-08",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "fbb0da091ceec99a4a88986022f9cbdf8170c4922c89d409d10184de226efaf5",
+    "checksum": "819f284f63a3fa1c2bd7ce75f8d22c0d68758ee84b119befc4442ad5e935794d",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Savak és bazák",
-    "description": "Test on Savak és bazák including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Acids and bases",
+    "description": "Prøve i Acids and bases: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 1: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørgsmål 1: Acids and bases",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "acids-and-bases",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 2: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørgsmål 2: Acids and bases",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "acids-and-bases",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Savak és bazák - Kérdés 3: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørgsmål 3: Acids and bases",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Savak és bazák témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Acids and bases.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "acids-and-bases",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Savak és bazák - Question 4: Acids and bases [rand:1-1000]",
+      "text": "[chemistry] Acids and bases - Spørgsmål 4: Acids and bases [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
+        "acids-and-bases",
         "grade-08",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 5: Acids and bases",
+      "text": "[chemistry] Acids and bases - Spørgsmål 5: Acids and bases",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "acids-and-bases",
+        "grade-08",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Savak és bazák",
+      "curriculum_topic": "DENMARK-GRADE-08-CHEMISTRY-Acids and bases",
       "learning_objective": "Acids and bases"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-civics-demokracia-és-piacgazdaság-1.0.0",
-    "name": "Demokracia és piacgazdaság - Denmark grade-09",
+    "name": "Democracy and market economy - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Demokracia és piacgazdaság for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minutters prøve i Democracy and market economy (grade-09). Emner: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.508917+00:00",
-    "updated_at": "2026-10-21T11:02:27.508936+00:00",
+    "created_at": "2026-10-24T17:53:49.597325+00:00",
+    "updated_at": "2026-10-24T17:53:49.597339+00:00",
     "tags": [
       "civics",
-      "demokracia-és-piacgazdaság",
+      "democracy-and-market-economy",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "356140c57a489e3a0b3c55ed57decb919f8d17a12ba8a1cb34aaf8f03653a303",
+    "checksum": "dd3f28b9b47f974dd5f586bc1baade54015d72bb495b401f7190cd8617e785c0",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Civics - Demokracia és piacgazdaság",
-    "description": "Test on Demokracia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-09 Civics - Democracy and market economy",
+    "description": "Prøve i Democracy and market economy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørgsmål 1: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørgsmål 2: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørgsmål 3: Democracy and market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokracia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Democracy and market economy.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørgsmål 4: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokracia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørgsmål 5: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokracia-és-piacgazdaság",
-        "grade-09"
+        "democracy-and-market-economy",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Demokracia és piacgazdaság",
+      "curriculum_topic": "DENMARK-GRADE-09-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     }
   ],

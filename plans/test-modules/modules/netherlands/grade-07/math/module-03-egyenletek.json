@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-egyenletek-1.0.0",
-    "name": "Egyenletek - Netherlands grade-07",
+    "name": "Equations - Netherlands grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Egyenletek for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "Toets van 45 minuten over Equations (grade-07). Onderwerpen: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.026283+00:00",
-    "updated_at": "2026-10-21T11:02:25.026293+00:00",
+    "created_at": "2026-10-24T17:53:48.050393+00:00",
+    "updated_at": "2026-10-24T17:53:48.050403+00:00",
     "tags": [
       "math",
-      "egyenletek",
+      "equations",
       "grade-07",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "9d8415c001f8b0b847a87fbc343adf47f1c9df707b28aedd3b4f79a304434265",
+    "checksum": "5eead2f7edace2545c8293e639b405254fc2809055049a43d27e2897a4e2fa31",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Egyenletek",
-    "description": "Test on Egyenletek including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Equations",
+    "description": "Toets over Equations: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 1: Equations",
+      "text": "[math] Equations - Vraag 1: Equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 2: Equations",
+      "text": "[math] Equations - Vraag 2: Equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 3: Equations",
+      "text": "[math] Equations - Vraag 3: Equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Egyenletek - Kérdés 4: Equations",
+      "text": "[math] Equations - Vraag 4: Equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Equations.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "equations",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Egyenletek - Question 5: Equations [rand:1-100]",
+      "text": "[math] Equations - Vraag 5: Equations [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "egyenletek",
+        "equations",
         "grade-07",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Egyenletek",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-MATH-Equations",
       "learning_objective": "Equations"
     }
   ],

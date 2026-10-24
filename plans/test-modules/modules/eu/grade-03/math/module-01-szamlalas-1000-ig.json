@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-számlálás-1000-ig-1.0.0",
-    "name": "Számlálás 1000-ig - European Union grade-03",
+    "name": "Counting to 1000 - European Union grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 1000-ig for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minute assessment on Counting to 1000 for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.981793+00:00",
-    "updated_at": "2026-10-21T11:02:18.981811+00:00",
+    "created_at": "2026-10-24T17:53:47.069509+00:00",
+    "updated_at": "2026-10-24T17:53:47.069518+00:00",
     "tags": [
       "math",
-      "számlálás-1000-ig",
+      "counting-to-1000",
       "grade-03",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "e90dff08e1fafdbd2bc4f8503767c8020e525ee4f62f1305285ca7f2a4426d46",
+    "checksum": "6c31ff27452d7eebce99c7b5ab625e967681c83265499aee3d6745a6fea75eaa",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Számlálás 1000-ig",
-    "description": "Test on Számlálás 1000-ig including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Counting to 1000",
+    "description": "Assessment on Counting to 1000 including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 1000-ig - Kérdés 1: Counting to 1000",
+      "text": "[math] Counting to 1000 - Question 1: Counting to 1000",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-1000-ig",
-        "grade-03"
+        "counting-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-03-MATH-Számlálás 1000-ig",
+      "curriculum_topic": "EU-GRADE-03-MATH-Counting to 1000",
       "learning_objective": "Counting to 1000"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 1000-ig - Kérdés 2: Counting to 1000",
+      "text": "[math] Counting to 1000 - Question 2: Counting to 1000",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-1000-ig",
-        "grade-03"
+        "counting-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-03-MATH-Számlálás 1000-ig",
+      "curriculum_topic": "EU-GRADE-03-MATH-Counting to 1000",
       "learning_objective": "Counting to 1000"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 1000-ig - Kérdés 3: Counting to 1000",
+      "text": "[math] Counting to 1000 - Question 3: Counting to 1000",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-1000-ig",
-        "grade-03"
+        "counting-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-03-MATH-Számlálás 1000-ig",
+      "curriculum_topic": "EU-GRADE-03-MATH-Counting to 1000",
       "learning_objective": "Counting to 1000"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 1000-ig - Kérdés 4: Counting to 1000",
+      "text": "[math] Counting to 1000 - Question 4: Counting to 1000",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 1000-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Counting to 1000.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-1000-ig",
-        "grade-03"
+        "counting-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-03-MATH-Számlálás 1000-ig",
+      "curriculum_topic": "EU-GRADE-03-MATH-Counting to 1000",
       "learning_objective": "Counting to 1000"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 1000-ig - Question 5: Counting to 1000 [rand:1-20]",
+      "text": "[math] Counting to 1000 - Question 5: Counting to 1000 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "számlálás-1000-ig",
+        "counting-to-1000",
         "grade-03",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-03-MATH-Számlálás 1000-ig",
+      "curriculum_topic": "EU-GRADE-03-MATH-Counting to 1000",
       "learning_objective": "Counting to 1000"
     }
   ],

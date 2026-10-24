@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-nyelv-b2-1.0.0",
-    "name": "Angol nyelv B2 - Netherlands grade-10",
+    "name": "English language B2 - Netherlands grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "Toets van 45 minuten over English language B2 (grade-10). Onderwerpen: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.323603+00:00",
-    "updated_at": "2026-10-21T11:02:25.323622+00:00",
+    "created_at": "2026-10-24T17:53:48.231763+00:00",
+    "updated_at": "2026-10-24T17:53:48.231770+00:00",
     "tags": [
       "english",
-      "angol-nyelv-b2",
+      "english-language-b2",
       "grade-10",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "5621826c3e01380b3f830b803798684a2a206b26c8968132dccf9d4835d9e0df",
+    "checksum": "ea1cef5665dfd4e677e4dc71e8d328bbd1147aadac5786620b7995bca97a9940",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol nyelv B2",
-    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English language B2",
+    "description": "Toets over English language B2: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "text": "[english] English language B2 - Vraag 1: English language B2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "text": "[english] English language B2 - Vraag 2: English language B2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "text": "[english] English language B2 - Vraag 3: English language B2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English language B2.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "text": "[english] English language B2 - Vraag 4: English language B2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "text": "[english] English language B2 - Vraag 5: English language B2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "NETHERLANDS-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     }
   ],

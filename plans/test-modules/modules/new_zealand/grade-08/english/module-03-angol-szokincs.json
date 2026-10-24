@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - New Zealand grade-08",
+    "name": "English vocabulary - New Zealand grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minute assessment on English vocabulary for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.615231+00:00",
-    "updated_at": "2026-10-21T11:02:34.615244+00:00",
+    "created_at": "2026-10-24T17:53:51.773782+00:00",
+    "updated_at": "2026-10-24T17:53:51.773806+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-08",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "87ca1c66cbe702d970c353670b997026c4fc60470cfb911e11ae66ba5391300d",
+    "checksum": "9da260e6e944f7dc3e13aff94b65a1d3ae217e51336d70b3a57cc4f9754632f5",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English vocabulary",
+    "description": "Assessment on English vocabulary including English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Question 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Question 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Question 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English vocabulary.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Question 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Question 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-08"
+        "english-vocabulary",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-Angol szókincs",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

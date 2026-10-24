@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Belgium grade-12",
+    "name": "Europe and world - Belgium grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "Toets van 45 minuten over Europe and world (grade-12). Onderwerpen: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.159597+00:00",
-    "updated_at": "2026-10-21T11:02:30.159607+00:00",
+    "created_at": "2026-10-24T17:53:51.093814+00:00",
+    "updated_at": "2026-10-24T17:53:51.093826+00:00",
     "tags": [
       "history",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-12",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "386b616df74788f0bc53bf8c31c7dd4810e8e59b09649cfbc44b8888c59d213b",
+    "checksum": "102addc672e7b491dd8256b3b7f36ec6e670695ac4893ce6aeb4fcb706f44914",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Európa és világ",
-    "description": "Test on Európa és világ including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Europe and world",
+    "description": "Toets over Europe and world: History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[history] Europe and world - Vraag 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[history] Europe and world - Vraag 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[history] Europe and world - Vraag 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Europe and world.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[history] Europe and world - Vraag 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[history] Europe and world - Vraag 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Európa és világ",
+      "curriculum_topic": "BELGIUM-GRADE-12-HISTORY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

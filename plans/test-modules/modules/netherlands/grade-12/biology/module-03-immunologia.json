@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-immunológia-1.0.0",
-    "name": "Immunológia - Netherlands grade-12",
+    "name": "Immunology - Netherlands grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Immunology (grade-12). Onderwerpen: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.438171+00:00",
-    "updated_at": "2026-10-21T11:02:25.438183+00:00",
+    "created_at": "2026-10-24T17:53:48.294823+00:00",
+    "updated_at": "2026-10-24T17:53:48.294833+00:00",
     "tags": [
       "biology",
-      "immunológia",
+      "immunology",
       "grade-12",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "a0d9c36cd3f581503bb9c1001b7b981cbd98378830e179d3e64d2beaa0cbe3aa",
+    "checksum": "36af84a722ee39429ee91ab6095d1a14f86ac370b3d23983c0872eedf9d83efa",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Immunológia",
-    "description": "Test on Immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Immunology",
+    "description": "Toets over Immunology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 1: Immunology",
+      "text": "[biology] Immunology - Vraag 1: Immunology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 2: Immunology",
+      "text": "[biology] Immunology - Vraag 2: Immunology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 3: Immunology",
+      "text": "[biology] Immunology - Vraag 3: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Immunology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Immunológia - Kérdés 4: Immunology",
+      "text": "[biology] Immunology - Vraag 4: Immunology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Immunológia - Kérdés 5: Immunology",
+      "text": "[biology] Immunology - Vraag 5: Immunology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Immunology.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "immunológia",
-        "grade-12"
+        "immunology",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunológia",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-BIOLOGY-Immunology",
       "learning_objective": "Immunology"
     }
   ],

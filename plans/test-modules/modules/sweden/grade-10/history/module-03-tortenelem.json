@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-történelem-1.0.0",
-    "name": "Történelem - Sweden grade-10",
+    "name": "History - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minuters prov i History (grade-10). Omfattar: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.005678+00:00",
-    "updated_at": "2026-10-21T11:02:26.005695+00:00",
+    "created_at": "2026-10-24T17:53:48.675343+00:00",
+    "updated_at": "2026-10-24T17:53:48.675365+00:00",
     "tags": [
       "history",
-      "történelem",
+      "history",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "2e9d8f49d619ed034b4f95811555ff0199bb0e499985e138c02845b17127080e",
+    "checksum": "42fccf343e4ee08371cc7ea41d037be7a2794768b2ac4672bd0c07ac97ea2e36",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Történelem",
-    "description": "Test on Történelem including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History",
+    "description": "Prov i History: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] History - Fråga 1: History",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Történelem",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] History - Fråga 2: History",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Történelem",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] History - Fråga 3: History",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för History.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Történelem",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] History - Fråga 4: History",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Történelem",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-History",
       "learning_objective": "History"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] History - Fråga 5: History",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-10"
+        "history",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-Történelem",
+      "curriculum_topic": "SWEDEN-GRADE-10-HISTORY-History",
       "learning_objective": "History"
     }
   ],

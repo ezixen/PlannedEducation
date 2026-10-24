@@ -3,21 +3,25 @@
     "id": "grade-07-physics-erők-és-mozgás-1.0.0",
     "name": "Erők és mozgás - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erők és mozgás for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45 perces felmérő: Erők és mozgás (grade-07). Témakörök: Energia és erő, Erők és mozgás, Mozgás, Energia, Erő",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.221004+00:00",
-    "updated_at": "2026-10-21T11:02:35.221017+00:00",
+    "created_at": "2026-10-24T17:53:52.224567+00:00",
+    "updated_at": "2026-10-24T17:53:52.224576+00:00",
     "tags": [
       "physics",
       "erők-és-mozgás",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "d6aa0e008a2290902c56e5d673862f603a5b71f0610242f257573ca50b44a62a",
+    "checksum": "aaa34d5a1b2747ee3ac39d4680be2eb54eb5190f4cb16a4f86a1470ee3093384",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energia és erő",
+      "Erők és mozgás",
+      "Mozgás",
+      "Energia",
+      "Erő"
     ]
   },
   "exam": {
     "title": "grade-07 Physics - Erők és mozgás",
-    "description": "Test on Erők és mozgás including Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "Felmérő a(z) Erők és mozgás témakörből (Energia és erő, Erők és mozgás, Mozgás, Energia, Erő)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 1: Forces and motion",
+      "text": "[physics] Erők és mozgás - Kérdés 1: Erők és mozgás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "erők-és-mozgás",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "learning_objective": "Erők és mozgás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 2: Forces and motion",
+      "text": "[physics] Erők és mozgás - Kérdés 2: Erők és mozgás",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "erők-és-mozgás",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "learning_objective": "Erők és mozgás"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők és mozgás - Kérdés 3: Forces and motion",
+      "text": "[physics] Erők és mozgás - Kérdés 3: Erők és mozgás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Erők és mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "erők-és-mozgás",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "learning_objective": "Erők és mozgás"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők és mozgás - Question 4: Forces and motion [rand:1-100]",
+      "text": "[physics] Erők és mozgás - Kérdés 4: Erők és mozgás [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "erők-és-mozgás",
         "grade-07",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "learning_objective": "Erők és mozgás"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 5: Forces and motion",
+      "text": "[physics] Erők és mozgás - Kérdés 5: Erők és mozgás",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "erők-és-mozgás",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Erők és mozgás",
-      "learning_objective": "Forces and motion"
+      "learning_objective": "Erők és mozgás"
     }
   ],
   "rubrics": []

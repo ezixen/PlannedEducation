@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-történelem-1.0.0",
-    "name": "Történelem - Austria grade-09",
+    "name": "Geschichte - Austria grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minütige Prüfung zum Thema Geschichte (grade-09). Themen: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.203606+00:00",
-    "updated_at": "2026-10-21T11:02:29.203619+00:00",
+    "created_at": "2026-10-24T17:53:50.525209+00:00",
+    "updated_at": "2026-10-24T17:53:50.525218+00:00",
     "tags": [
       "history",
-      "történelem",
+      "geschichte",
       "grade-09",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "a015101287f529713a8575bfd0f53445f8c4b699c7e9da5277d1cadef33e2750",
+    "checksum": "3f71f461e57cd72066ff655e2283e02b68960b7704a8e21a07e8bfcecd63f7c7",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of the 20th century",
-      "20th century",
-      "History",
-      "Historical events",
-      "World history"
+      "Geschichte des 20. Jahrhunderts",
+      "20. Jahrhundert",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte"
     ]
   },
   "exam": {
-    "title": "grade-09 History - Történelem",
-    "description": "Test on Történelem including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - Geschichte",
+    "description": "Prüfung zum Thema Geschichte: Geschichte des 20. Jahrhunderts, 20. Jahrhundert, Geschichte, Historische Ereignisse, Weltgeschichte",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 1: History",
+      "text": "[history] Geschichte - Frage 1: Geschichte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-09"
+        "geschichte",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 2: History",
+      "text": "[history] Geschichte - Frage 2: Geschichte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-09"
+        "geschichte",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem - Kérdés 3: History",
+      "text": "[history] Geschichte - Frage 3: Geschichte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geschichte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-09"
+        "geschichte",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 4: History",
+      "text": "[history] Geschichte - Frage 4: Geschichte",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-09"
+        "geschichte",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem - Kérdés 5: History",
+      "text": "[history] Geschichte - Frage 5: Geschichte",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem",
-        "grade-09"
+        "geschichte",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Történelem",
-      "learning_objective": "History"
+      "curriculum_topic": "AUSTRIA-GRADE-09-HISTORY-Geschichte",
+      "learning_objective": "Geschichte"
     }
   ],
   "rubrics": []

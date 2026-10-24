@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-deriválás-és-integrálás-1.0.0",
-    "name": "Deriválás és integrálás - USA grade-12",
+    "name": "Differentiation and integration - USA grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás és integrálás for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minute assessment on Differentiation and integration for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.315897+00:00",
-    "updated_at": "2026-10-21T11:02:18.315907+00:00",
+    "created_at": "2026-10-24T17:53:46.520828+00:00",
+    "updated_at": "2026-10-24T17:53:46.520833+00:00",
     "tags": [
       "math",
-      "deriválás-és-integrálás",
+      "differentiation-and-integration",
       "grade-12",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "3342ed53e2f4683518f1c6746706806c137a6bda94fd9308e3cd8e845d4170f2",
+    "checksum": "9f03ce154aec6e247aa4db1220e443abe09ddee87c3f039e79a59b655dfe7773",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Deriválás és integrálás",
-    "description": "Test on Deriválás és integrálás including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Differentiation and integration",
+    "description": "Assessment on Differentiation and integration including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 1: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Question 1: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-12"
+        "differentiation-and-integration",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-MATH-Deriválás és integrálás",
+      "curriculum_topic": "USA-GRADE-12-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 2: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Question 2: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-12"
+        "differentiation-and-integration",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-MATH-Deriválás és integrálás",
+      "curriculum_topic": "USA-GRADE-12-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 3: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Question 3: Differentiation and integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-12"
+        "differentiation-and-integration",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-MATH-Deriválás és integrálás",
+      "curriculum_topic": "USA-GRADE-12-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás és integrálás - Kérdés 4: Differentiation and integration",
+      "text": "[math] Differentiation and integration - Question 4: Differentiation and integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás és integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Differentiation and integration.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-12"
+        "differentiation-and-integration",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-MATH-Deriválás és integrálás",
+      "curriculum_topic": "USA-GRADE-12-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás és integrálás - Question 5: Differentiation and integration [rand:1-1000]",
+      "text": "[math] Differentiation and integration - Question 5: Differentiation and integration [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
+        "differentiation-and-integration",
         "grade-12",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-MATH-Deriválás és integrálás",
+      "curriculum_topic": "USA-GRADE-12-MATH-Differentiation and integration",
       "learning_objective": "Differentiation and integration"
     }
   ],

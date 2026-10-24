@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-statisztikai-elemzés-1.0.0",
-    "name": "Statisztikai elemzés - Ireland grade-12",
+    "name": "Statistical analysis - Ireland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztikai elemzés for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minute assessment on Statistical analysis for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.285477+00:00",
-    "updated_at": "2026-10-21T11:02:34.285490+00:00",
+    "created_at": "2026-10-24T17:53:51.547904+00:00",
+    "updated_at": "2026-10-24T17:53:51.547911+00:00",
     "tags": [
       "math",
-      "statisztikai-elemzés",
+      "statistical-analysis",
       "grade-12",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "aa12878d820003473be84ea51f43c3309b4676f11ea65015671ecd1c28b116c1",
+    "checksum": "c6ec931adc155e479cf22280597a1d0e0dfa1a411c659bedc88e7c4fcbdf91ef",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Statisztikai elemzés",
-    "description": "Test on Statisztikai elemzés including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Statistical analysis",
+    "description": "Assessment on Statistical analysis including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 1: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 1: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 2: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 2: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 3: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 3: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztikai elemzés - Kérdés 4: Statistical analysis",
+      "text": "[math] Statistical analysis - Question 4: Statistical analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Statistical analysis.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztikai elemzés - Question 5: Statistical analysis [rand:1-1000]",
+      "text": "[math] Statistical analysis - Question 5: Statistical analysis [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztikai-elemzés",
+        "statistical-analysis",
         "grade-12",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "IRELAND-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     }
   ],

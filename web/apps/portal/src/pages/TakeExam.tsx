@@ -20,8 +20,9 @@ export function TakeExam() {
   const [completedSubmission, setCompletedSubmission] = useState<StudentSubmissionDetail | null>(null);
   const [loadingReview, setLoadingReview] = useState(false);
 
+  const isTestMode = new URLSearchParams(window.location.search).get('test_mode') === 'true';
   const fetchMySubmission = useCallback(async () => {
-    if (!id) return;
+    if (!id || isTestMode) return;
     setLoadingReview(true);
     try {
       const res = await apiClient.get(`/exams/${id}/my-submission`);

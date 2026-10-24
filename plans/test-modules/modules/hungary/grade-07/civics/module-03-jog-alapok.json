@@ -3,21 +3,25 @@
     "id": "grade-07-civics-jog-alapok-1.0.0",
     "name": "Jog alapok - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Jog alapok for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45 perces felmérő: Jog alapok (grade-07). Témakörök: Állam és jog, Állam szerkezete, Jog alapok, Polgári jog, Polgári jog",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.158284+00:00",
-    "updated_at": "2026-10-21T11:02:35.158294+00:00",
+    "created_at": "2026-10-24T17:53:52.186618+00:00",
+    "updated_at": "2026-10-24T17:53:52.186626+00:00",
     "tags": [
       "civics",
       "jog-alapok",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "7ab4cb0754a763402b1e45f1ac284612dea23a07ac3881cd07521e441f2581fe",
+    "checksum": "c79f9e85d35e691dab519dfbb55e7f2920f4121beb8bbe10317eb35e28cb22d5",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Állam és jog",
+      "Állam szerkezete",
+      "Jog alapok",
+      "Polgári jog",
+      "Polgári jog"
     ]
   },
   "exam": {
     "title": "grade-07 Civics - Jog alapok",
-    "description": "Test on Jog alapok including State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "Felmérő a(z) Jog alapok témakörből (Állam és jog, Állam szerkezete, Jog alapok, Polgári jog, Polgári jog)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 1: Law basics",
+      "text": "[civics] Jog alapok - Kérdés 1: Jog alapok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "jog-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "learning_objective": "Jog alapok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 2: Law basics",
+      "text": "[civics] Jog alapok - Kérdés 2: Jog alapok",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "jog-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "learning_objective": "Jog alapok"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog alapok - Kérdés 3: Law basics",
+      "text": "[civics] Jog alapok - Kérdés 3: Jog alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Jog alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "jog-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "learning_objective": "Jog alapok"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 4: Law basics",
+      "text": "[civics] Jog alapok - Kérdés 4: Jog alapok",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "jog-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "learning_objective": "Jog alapok"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog alapok - Kérdés 5: Law basics",
+      "text": "[civics] Jog alapok - Kérdés 5: Jog alapok",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "jog-alapok",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-CIVICS-Jog alapok",
-      "learning_objective": "Law basics"
+      "learning_objective": "Jog alapok"
     }
   ],
   "rubrics": []

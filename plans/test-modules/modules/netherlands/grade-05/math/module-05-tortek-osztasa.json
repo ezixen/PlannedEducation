@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-osztása-1.0.0",
-    "name": "Törtek osztása - Netherlands grade-05",
+    "name": "Fraction division - Netherlands grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek osztása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Toets van 45 minuten over Fraction division (grade-05). Onderwerpen: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.911554+00:00",
-    "updated_at": "2026-10-21T11:02:24.911571+00:00",
+    "created_at": "2026-10-24T17:53:47.969929+00:00",
+    "updated_at": "2026-10-24T17:53:47.969941+00:00",
     "tags": [
       "math",
-      "törtek-osztása",
+      "fraction-division",
       "grade-05",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "8c5472c97c0ec610f2a79228b955871ec4605552b9f72b89a7c0a079ce9cdf04",
+    "checksum": "b28e0c3d5364e223714cac205581e0180b1cf99c57a433800b4c5b66956807fe",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek osztása",
-    "description": "Test on Törtek osztása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction division",
+    "description": "Toets over Fraction division: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 1: Fraction division",
+      "text": "[math] Fraction division - Vraag 1: Fraction division",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 2: Fraction division",
+      "text": "[math] Fraction division - Vraag 2: Fraction division",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 3: Fraction division",
+      "text": "[math] Fraction division - Vraag 3: Fraction division",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek osztása - Kérdés 4: Fraction division",
+      "text": "[math] Fraction division - Vraag 4: Fraction division",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek osztása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Fraction division.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek osztása - Question 5: Fraction division [rand:1-100]",
+      "text": "[math] Fraction division - Vraag 5: Fraction division [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-osztása",
+        "fraction-division",
         "grade-05",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     }
   ],

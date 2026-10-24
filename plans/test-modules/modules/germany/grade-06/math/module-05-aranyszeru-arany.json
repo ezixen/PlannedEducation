@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-aranyszerű-arány-1.0.0",
-    "name": "Aranyszerű arány - Germany grade-06",
+    "name": "Proportionale Zuordnung - Germany grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Aranyszerű arány for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minütige Prüfung zum Thema Proportionale Zuordnung (grade-06). Themen: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.259761+00:00",
-    "updated_at": "2026-10-21T11:02:16.259773+00:00",
+    "created_at": "2026-10-24T17:53:45.304360+00:00",
+    "updated_at": "2026-10-24T17:53:45.304369+00:00",
     "tags": [
       "math",
-      "aranyszerű-arány",
+      "proportionale-zuordnung",
       "grade-06",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "b1c735db176c42808bbcc853abf0875a9cbaa976a59a1d23182cad25f2c05fa6",
+    "checksum": "197524f6630a39bd19289cd3d01872a792bf5639be2db56bc4597a1ad513018d",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Allgemeine Brüche",
+      "Bruchoperationen",
+      "Prozentrechnung Grundlagen",
+      "Prozentberechnung",
+      "Proportionale Zuordnung"
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Aranyszerű arány",
-    "description": "Test on Aranyszerű arány including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Proportionale Zuordnung",
+    "description": "Prüfung zum Thema Proportionale Zuordnung: Allgemeine Brüche, Bruchoperationen, Prozentrechnung Grundlagen, Prozentberechnung, Proportionale Zuordnung",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 1: Proportional ratio",
+      "text": "[math] Proportionale Zuordnung - Frage 1: Proportionale Zuordnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportionale-zuordnung",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-MATH-Aranyszerű arány",
-      "learning_objective": "Proportional ratio"
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Proportionale Zuordnung",
+      "learning_objective": "Proportionale Zuordnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 2: Proportional ratio",
+      "text": "[math] Proportionale Zuordnung - Frage 2: Proportionale Zuordnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportionale-zuordnung",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-MATH-Aranyszerű arány",
-      "learning_objective": "Proportional ratio"
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Proportionale Zuordnung",
+      "learning_objective": "Proportionale Zuordnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 3: Proportional ratio",
+      "text": "[math] Proportionale Zuordnung - Frage 3: Proportionale Zuordnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportionale-zuordnung",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-MATH-Aranyszerű arány",
-      "learning_objective": "Proportional ratio"
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Proportionale Zuordnung",
+      "learning_objective": "Proportionale Zuordnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Aranyszerű arány - Kérdés 4: Proportional ratio",
+      "text": "[math] Proportionale Zuordnung - Frage 4: Proportionale Zuordnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Aranyszerű arány témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Proportionale Zuordnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportionale-zuordnung",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-MATH-Aranyszerű arány",
-      "learning_objective": "Proportional ratio"
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Proportionale Zuordnung",
+      "learning_objective": "Proportionale Zuordnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Aranyszerű arány - Question 5: Proportional ratio [rand:1-100]",
+      "text": "[math] Proportionale Zuordnung - Frage 5: Proportionale Zuordnung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "aranyszerű-arány",
+        "proportionale-zuordnung",
         "grade-06",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-MATH-Aranyszerű arány",
-      "learning_objective": "Proportional ratio"
+      "curriculum_topic": "GERMANY-GRADE-06-MATH-Proportionale Zuordnung",
+      "learning_objective": "Proportionale Zuordnung"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - United Kingdom grade-12",
+    "name": "Geographic knowledge - United Kingdom grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minute assessment on Geographic knowledge for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.497416+00:00",
-    "updated_at": "2026-10-21T11:02:17.497430+00:00",
+    "created_at": "2026-10-24T17:53:46.096533+00:00",
+    "updated_at": "2026-10-24T17:53:46.096541+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographic-knowledge",
       "grade-12",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "563350b2ca415379fc348f98d19c607f3ed2c6aaf5bd99fab3ebab04b6a1aa5a",
+    "checksum": "77f3bfacd32bfc57802e2b29346108d948495674cb2d27c5516e19cbd9ddacc8",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic knowledge",
+    "description": "Assessment on Geographic knowledge including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 1: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 2: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 3: Geographic knowledge",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geographic knowledge.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 4: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Question 5: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     }
   ],

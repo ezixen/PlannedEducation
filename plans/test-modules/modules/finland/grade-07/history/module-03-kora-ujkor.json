@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-kora-újkor-1.0.0",
-    "name": "Kora újkor - Finland grade-07",
+    "name": "Early modern period - Finland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "45 minuutin koe aiheesta Early modern period (grade-07). Aiheet: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.215745+00:00",
-    "updated_at": "2026-10-21T11:02:24.215766+00:00",
+    "created_at": "2026-10-24T17:53:47.618683+00:00",
+    "updated_at": "2026-10-24T17:53:47.618691+00:00",
     "tags": [
       "history",
-      "kora-újkor",
+      "early-modern-period",
       "grade-07",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "59bb26cd3780bfa54ea9f6aae90e7a25c93e3bf485ab854136fa0511395cb3c5",
+    "checksum": "4e2f491da7b4ebb1768474d32064a40fc0a3090f34cf24af960a49673f0c5506",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Kora újkor",
-    "description": "Test on Kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Early modern period",
+    "description": "Koe aiheesta Early modern period: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 1: Early modern period",
+      "text": "[history] Early modern period - Kysymys 1: Early modern period",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 2: Early modern period",
+      "text": "[history] Early modern period - Kysymys 2: Early modern period",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Kora újkor - Kérdés 3: Early modern period",
+      "text": "[history] Early modern period - Kysymys 3: Early modern period",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Early modern period.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 4: Early modern period",
+      "text": "[history] Early modern period - Kysymys 4: Early modern period",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 5: Early modern period",
+      "text": "[history] Early modern period - Kysymys 5: Early modern period",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "FINLAND-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     }
   ],

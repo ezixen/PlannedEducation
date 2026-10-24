@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-history-19.-század-1.0.0",
-    "name": "19. század - Netherlands grade-08",
+    "name": "19th century - Netherlands grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "Toets van 45 minuten over 19th century (grade-08). Onderwerpen: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.125613+00:00",
-    "updated_at": "2026-10-21T11:02:25.125625+00:00",
+    "created_at": "2026-10-24T17:53:48.138192+00:00",
+    "updated_at": "2026-10-24T17:53:48.138201+00:00",
     "tags": [
       "history",
-      "19.-század",
+      "19th-century",
       "grade-08",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "8432fe38c3e57f3c489684a139cc9e4725917b53033a264eb7a5429641a47d9f",
+    "checksum": "256516036c92f8382a4bacd87276f59c72c43b2f01f735a0dbe1730353f4bac3",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 History - 19. század",
-    "description": "Test on 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "title": "grade-08 History - 19th century",
+    "description": "Toets over 19th century: Modern period - 19th century, Modern period, 19th century, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 1: 19th century",
+      "text": "[history] 19th century - Vraag 1: 19th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 2: 19th century",
+      "text": "[history] 19th century - Vraag 2: 19th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 19. század - Kérdés 3: 19th century",
+      "text": "[history] 19th century - Vraag 3: 19th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor 19th century.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 4: 19th century",
+      "text": "[history] 19th century - Vraag 4: 19th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 5: 19th century",
+      "text": "[history] 19th century - Vraag 5: 19th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "19.-század",
-        "grade-08"
+        "19th-century",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19. század",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-HISTORY-19th century",
       "learning_objective": "19th century"
     }
   ],

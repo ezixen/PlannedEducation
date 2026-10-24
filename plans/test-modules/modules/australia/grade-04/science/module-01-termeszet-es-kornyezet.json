@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Australia grade-04",
+    "name": "Nature and environment - Australia grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature and environment for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.425058+00:00",
-    "updated_at": "2026-10-21T11:02:18.425070+00:00",
+    "created_at": "2026-10-24T17:53:46.592245+00:00",
+    "updated_at": "2026-10-24T17:53:46.592253+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "nature-and-environment",
       "grade-04",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "b61c8d8c62978d26b44362ea6b4c6c3c7b3c2fd2c4e06a3234075edacfb7962d",
+    "checksum": "85d52305bb8a970add036f0f1b1cc8a594b9d7464a692f4b049e249ae439da6c",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Nature and environment",
+    "description": "Assessment on Nature and environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Nature and environment - Question 1: Nature and environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "nature-and-environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Természet és környezet",
+      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Nature and environment - Question 2: Nature and environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "nature-and-environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Természet és környezet",
+      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Nature and environment - Question 3: Nature and environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature and environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "nature-and-environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Természet és környezet",
+      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Nature and environment - Question 4: Nature and environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "nature-and-environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Természet és környezet",
+      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Nature and environment - Question 5: Nature and environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "nature-and-environment",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Természet és környezet",
+      "curriculum_topic": "AUSTRALIA-GRADE-04-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     }
   ],

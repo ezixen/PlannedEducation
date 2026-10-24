@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Switzerland grade-12",
+    "name": "Europa und die Welt - Switzerland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minütige Prüfung zum Thema Europa und die Welt (grade-12). Themen: Geschichte Abiturvorbereitung, Geschichte, Historische Ereignisse, Weltgeschichte, Europa und die Welt",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.754056+00:00",
-    "updated_at": "2026-10-21T11:02:28.754066+00:00",
+    "created_at": "2026-10-24T17:53:50.261205+00:00",
+    "updated_at": "2026-10-24T17:53:50.261217+00:00",
     "tags": [
       "history",
-      "európa-és-világ",
+      "europa-und-die-welt",
       "grade-12",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "36fabccd2572b3dda402055f02895a0672396efb54389c1d10b48ad6ccfa07d4",
+    "checksum": "40c2987ecaf1b6c697a3929f9494abccef636fa3e3890435cd9c1b0fa9a935f3",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History-maturity",
-      "History",
-      "Historical events",
-      "World history",
-      "Europe and world"
+      "Geschichte Abiturvorbereitung",
+      "Geschichte",
+      "Historische Ereignisse",
+      "Weltgeschichte",
+      "Europa und die Welt"
     ]
   },
   "exam": {
-    "title": "grade-12 History - Európa és világ",
-    "description": "Test on Európa és világ including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - Europa und die Welt",
+    "description": "Prüfung zum Thema Europa und die Welt: Geschichte Abiturvorbereitung, Geschichte, Historische Ereignisse, Weltgeschichte, Europa und die Welt",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[history] Europa und die Welt - Frage 1: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[history] Europa und die Welt - Frage 2: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[history] Europa und die Welt - Frage 3: Europa und die Welt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Europa und die Welt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[history] Europa und die Welt - Frage 4: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[history] Europa und die Welt - Frage 5: Europa und die Welt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "európa-és-világ",
-        "grade-12"
+        "europa-und-die-welt",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Európa és világ",
-      "learning_objective": "Europe and world"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-HISTORY-Europa und die Welt",
+      "learning_objective": "Europa und die Welt"
     }
   ],
   "rubrics": []

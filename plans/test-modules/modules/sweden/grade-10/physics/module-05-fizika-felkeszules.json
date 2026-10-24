@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-fizika-felkészülés-1.0.0",
-    "name": "Fizika felkészülés - Sweden grade-10",
+    "name": "Physics preparation - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Fizika felkészülés for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minuters prov i Physics preparation (grade-10). Omfattar: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.037259+00:00",
-    "updated_at": "2026-10-21T11:02:26.037279+00:00",
+    "created_at": "2026-10-24T17:53:48.709948+00:00",
+    "updated_at": "2026-10-24T17:53:48.709959+00:00",
     "tags": [
       "physics",
-      "fizika-felkészülés",
+      "physics-preparation",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "54af8d6adecfec3aabdda7293d7e820065acd2be47ba20658503e65a18dbc4c7",
+    "checksum": "da0e67e459de4a4f58e587fb617b3455c61074e09ee2f0d491200c01ae7509f3",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Fizika felkészülés",
-    "description": "Test on Fizika felkészülés including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Physics preparation",
+    "description": "Prov i Physics preparation: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 1: Physics preparation",
+      "text": "[physics] Physics preparation - Fråga 1: Physics preparation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 2: Physics preparation",
+      "text": "[physics] Physics preparation - Fråga 2: Physics preparation",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Fizika felkészülés - Kérdés 3: Physics preparation",
+      "text": "[physics] Physics preparation - Fråga 3: Physics preparation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Fizika felkészülés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Physics preparation.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Fizika felkészülés - Question 4: Physics preparation [rand:1-100]",
+      "text": "[physics] Physics preparation - Fråga 4: Physics preparation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "fizika-felkészülés",
+        "physics-preparation",
         "grade-10",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Fizika felkészülés - Kérdés 5: Physics preparation",
+      "text": "[physics] Physics preparation - Fråga 5: Physics preparation",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "fizika-felkészülés",
-        "grade-10"
+        "physics-preparation",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Fizika felkészülés",
+      "curriculum_topic": "SWEDEN-GRADE-10-PHYSICS-Physics preparation",
       "learning_objective": "Physics preparation"
     }
   ],

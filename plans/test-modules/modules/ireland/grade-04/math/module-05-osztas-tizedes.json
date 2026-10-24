@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-osztás-tizedes-1.0.0",
-    "name": "Osztás tizedes - Ireland grade-04",
+    "name": "Decimal division - Ireland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Osztás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minute assessment on Decimal division for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.269697+00:00",
-    "updated_at": "2026-10-21T11:02:30.269709+00:00",
+    "created_at": "2026-10-24T17:53:51.178533+00:00",
+    "updated_at": "2026-10-24T17:53:51.178542+00:00",
     "tags": [
       "math",
-      "osztás-tizedes",
+      "decimal-division",
       "grade-04",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "8a11b14d5cbd36b46ec870dbf6f04dfddecdc17b32db57d7ed1538ee7998fc67",
+    "checksum": "94159d6dc35c12d92e698aeead9e501a9e5feaa7a6352420b732fae20ffcc690",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Osztás tizedes",
-    "description": "Test on Osztás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal division",
+    "description": "Assessment on Decimal division including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 1: Decimal division",
+      "text": "[math] Decimal division - Question 1: Decimal division",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 2: Decimal division",
+      "text": "[math] Decimal division - Question 2: Decimal division",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztás tizedes - Kérdés 3: Decimal division",
+      "text": "[math] Decimal division - Question 3: Decimal division",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztás tizedes - Kérdés 4: Decimal division",
+      "text": "[math] Decimal division - Question 4: Decimal division",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Decimal division.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztás-tizedes",
-        "grade-04"
+        "decimal-division",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztás tizedes - Question 5: Decimal division [rand:1-100]",
+      "text": "[math] Decimal division - Question 5: Decimal division [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztás-tizedes",
+        "decimal-division",
         "grade-04",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-04-MATH-Osztás tizedes",
+      "curriculum_topic": "IRELAND-GRADE-04-MATH-Decimal division",
       "learning_objective": "Decimal division"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-összeadás-1000-ig-1.0.0",
-    "name": "Összeadás 1000-ig - Ireland grade-03",
+    "name": "Addition to 1000 - Ireland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 1000-ig for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minute assessment on Addition to 1000 for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.227675+00:00",
-    "updated_at": "2026-10-21T11:02:30.227686+00:00",
+    "created_at": "2026-10-24T17:53:51.145207+00:00",
+    "updated_at": "2026-10-24T17:53:51.145214+00:00",
     "tags": [
       "math",
-      "összeadás-1000-ig",
+      "addition-to-1000",
       "grade-03",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "f71d6fb6cbf146c96ba723d22673f40c722954865791d1782d881e27d6185025",
+    "checksum": "5499cb8ac24775c8d2e75c1c5c5bc2bac66f32f713f84fafad0a9ee96cc3b4df",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Összeadás 1000-ig",
-    "description": "Test on Összeadás 1000-ig including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Addition to 1000",
+    "description": "Assessment on Addition to 1000 including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 1: Addition to 1000",
+      "text": "[math] Addition to 1000 - Question 1: Addition to 1000",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-1000-ig",
-        "grade-03"
+        "addition-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-03-MATH-Összeadás 1000-ig",
+      "curriculum_topic": "IRELAND-GRADE-03-MATH-Addition to 1000",
       "learning_objective": "Addition to 1000"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 2: Addition to 1000",
+      "text": "[math] Addition to 1000 - Question 2: Addition to 1000",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-1000-ig",
-        "grade-03"
+        "addition-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-03-MATH-Összeadás 1000-ig",
+      "curriculum_topic": "IRELAND-GRADE-03-MATH-Addition to 1000",
       "learning_objective": "Addition to 1000"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 1000-ig - Kérdés 3: Addition to 1000",
+      "text": "[math] Addition to 1000 - Question 3: Addition to 1000",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-1000-ig",
-        "grade-03"
+        "addition-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-03-MATH-Összeadás 1000-ig",
+      "curriculum_topic": "IRELAND-GRADE-03-MATH-Addition to 1000",
       "learning_objective": "Addition to 1000"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 1000-ig - Kérdés 4: Addition to 1000",
+      "text": "[math] Addition to 1000 - Question 4: Addition to 1000",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 1000-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Addition to 1000.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-1000-ig",
-        "grade-03"
+        "addition-to-1000",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-03-MATH-Összeadás 1000-ig",
+      "curriculum_topic": "IRELAND-GRADE-03-MATH-Addition to 1000",
       "learning_objective": "Addition to 1000"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 1000-ig - Question 5: Addition to 1000 [rand:1-20]",
+      "text": "[math] Addition to 1000 - Question 5: Addition to 1000 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-1000-ig",
+        "addition-to-1000",
         "grade-03",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-03-MATH-Összeadás 1000-ig",
+      "curriculum_topic": "IRELAND-GRADE-03-MATH-Addition to 1000",
       "learning_objective": "Addition to 1000"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-írás-1.0.0",
-    "name": "Angol írás - Denmark grade-09",
+    "name": "English writing - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minutters prøve i English writing (grade-09). Emner: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.534926+00:00",
-    "updated_at": "2026-10-21T11:02:27.534940+00:00",
+    "created_at": "2026-10-24T17:53:49.620280+00:00",
+    "updated_at": "2026-10-24T17:53:49.620298+00:00",
     "tags": [
       "english",
-      "angol-írás",
+      "english-writing",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "7151951187997bef57d99d4c2584c51045060aaecb19d8cc3e6a120846daf8be",
+    "checksum": "34647961ead594b65f9ba63556e8f43287db24c73415c31aa14fc8f288d5e5ba",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol írás",
-    "description": "Test on Angol írás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English writing",
+    "description": "Prøve i English writing: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] English writing - Spørgsmål 1: English writing",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] English writing - Spørgsmål 2: English writing",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] English writing - Spørgsmål 3: English writing",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English writing.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] English writing - Spørgsmål 4: English writing",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] English writing - Spørgsmål 5: English writing",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-írás",
-        "grade-09"
+        "english-writing",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-Angol írás",
+      "curriculum_topic": "DENMARK-GRADE-09-ENGLISH-English writing",
       "learning_objective": "English writing"
     }
   ],

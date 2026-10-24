@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-szorzása-1.0.0",
-    "name": "Törtek szorzása - Germany grade-05",
+    "name": "Brüche multiplizieren - Germany grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek szorzása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minütige Prüfung zum Thema Brüche multiplizieren (grade-05). Themen: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.235373+00:00",
-    "updated_at": "2026-10-21T11:02:16.235391+00:00",
+    "created_at": "2026-10-24T17:53:45.264052+00:00",
+    "updated_at": "2026-10-24T17:53:45.264068+00:00",
     "tags": [
       "math",
-      "törtek-szorzása",
+      "brüche-multiplizieren",
       "grade-05",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "1ab088acff227de7666c00c3eb32d65c9fb69cdf18a5ae1cacd845791c78a24e",
+    "checksum": "6c1dd1db31cbe17ca3a379cae440e80e377323d872349dd65d4e80d0c9284abb",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Bruchrechnung Grundlagen",
+      "Brüche addieren",
+      "Brüche subtrahieren",
+      "Brüche multiplizieren",
+      "Brüche dividieren"
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek szorzása",
-    "description": "Test on Törtek szorzása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Brüche multiplizieren",
+    "description": "Prüfung zum Thema Brüche multiplizieren: Bruchrechnung Grundlagen, Brüche addieren, Brüche subtrahieren, Brüche multiplizieren, Brüche dividieren",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 1: Fraction multiplication",
+      "text": "[math] Brüche multiplizieren - Frage 1: Brüche multiplizieren",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "brüche-multiplizieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche multiplizieren",
+      "learning_objective": "Brüche multiplizieren"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 2: Fraction multiplication",
+      "text": "[math] Brüche multiplizieren - Frage 2: Brüche multiplizieren",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "brüche-multiplizieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche multiplizieren",
+      "learning_objective": "Brüche multiplizieren"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 3: Fraction multiplication",
+      "text": "[math] Brüche multiplizieren - Frage 3: Brüche multiplizieren",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "brüche-multiplizieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche multiplizieren",
+      "learning_objective": "Brüche multiplizieren"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek szorzása - Kérdés 4: Fraction multiplication",
+      "text": "[math] Brüche multiplizieren - Frage 4: Brüche multiplizieren",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek szorzása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Brüche multiplizieren.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "brüche-multiplizieren",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche multiplizieren",
+      "learning_objective": "Brüche multiplizieren"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek szorzása - Question 5: Fraction multiplication [rand:1-100]",
+      "text": "[math] Brüche multiplizieren - Frage 5: Brüche multiplizieren [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "törtek-szorzása",
+        "brüche-multiplizieren",
         "grade-05",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-MATH-Törtek szorzása",
-      "learning_objective": "Fraction multiplication"
+      "curriculum_topic": "GERMANY-GRADE-05-MATH-Brüche multiplizieren",
+      "learning_objective": "Brüche multiplizieren"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erők-és-mozgás-1.0.0",
-    "name": "Erők és mozgás - USA grade-07",
+    "name": "Forces and motion - USA grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erők és mozgás for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minute assessment on Forces and motion for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.879101+00:00",
-    "updated_at": "2026-10-21T11:02:17.879122+00:00",
+    "created_at": "2026-10-24T17:53:46.287884+00:00",
+    "updated_at": "2026-10-24T17:53:46.287899+00:00",
     "tags": [
       "physics",
-      "erők-és-mozgás",
+      "forces-and-motion",
       "grade-07",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "a418e1d9ea4591b954853c873b67e687cafcc6a0171cfa4319e00b82b4fc38a2",
+    "checksum": "578bbd2418eeb69267ac73619a1770b442395551f1332450c08d04799a50d29b",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erők és mozgás",
-    "description": "Test on Erők és mozgás including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Forces and motion",
+    "description": "Assessment on Forces and motion including Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 1: Forces and motion",
+      "text": "[physics] Forces and motion - Question 1: Forces and motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "forces-and-motion",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 2: Forces and motion",
+      "text": "[physics] Forces and motion - Question 2: Forces and motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "forces-and-motion",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők és mozgás - Kérdés 3: Forces and motion",
+      "text": "[physics] Forces and motion - Question 3: Forces and motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők és mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Forces and motion.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "forces-and-motion",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők és mozgás - Question 4: Forces and motion [rand:1-100]",
+      "text": "[physics] Forces and motion - Question 4: Forces and motion [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők-és-mozgás",
+        "forces-and-motion",
         "grade-07",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők és mozgás - Kérdés 5: Forces and motion",
+      "text": "[physics] Forces and motion - Question 5: Forces and motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők-és-mozgás",
-        "grade-07"
+        "forces-and-motion",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-07-PHYSICS-Erők és mozgás",
+      "curriculum_topic": "USA-GRADE-07-PHYSICS-Forces and motion",
       "learning_objective": "Forces and motion"
     }
   ],

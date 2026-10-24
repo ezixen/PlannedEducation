@@ -3,21 +3,25 @@
     "id": "grade-04-math-összeadás-tizedes-1.0.0",
     "name": "Összeadás tizedes - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 perces felmérő: Összeadás tizedes (grade-04). Témakörök: Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.065022+00:00",
-    "updated_at": "2026-10-21T11:02:35.065035+00:00",
+    "created_at": "2026-10-24T17:53:52.100173+00:00",
+    "updated_at": "2026-10-24T17:53:52.100182+00:00",
     "tags": [
       "math",
       "összeadás-tizedes",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "0a78c61a22aeda53d0e044bbdba383fd254f0a0a8ec65d97f5fc100ff799270c",
+    "checksum": "3a688aad7343f380c04ef76d59944ae6f197d5b9978b97a7d3262cc571d46a5b",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Tizedes számok",
+      "Összeadás tizedes",
+      "Kivonás tizedes",
+      "Szorzás tizedes",
+      "Osztás tizedes"
     ]
   },
   "exam": {
     "title": "grade-04 Math - Összeadás tizedes",
-    "description": "Test on Összeadás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Felmérő a(z) Összeadás tizedes témakörből (Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 1: Decimal addition",
+      "text": "[math] Összeadás tizedes - Kérdés 1: Összeadás tizedes",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "összeadás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "learning_objective": "Összeadás tizedes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 2: Decimal addition",
+      "text": "[math] Összeadás tizedes - Kérdés 2: Összeadás tizedes",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "összeadás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "learning_objective": "Összeadás tizedes"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 3: Decimal addition",
+      "text": "[math] Összeadás tizedes - Kérdés 3: Összeadás tizedes",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "összeadás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "learning_objective": "Összeadás tizedes"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás tizedes - Kérdés 4: Decimal addition",
+      "text": "[math] Összeadás tizedes - Kérdés 4: Összeadás tizedes",
       "options": null,
       "correct_answer": "Minta válasz a(z) Összeadás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "összeadás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "learning_objective": "Összeadás tizedes"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás tizedes - Question 5: Decimal addition [rand:1-100]",
+      "text": "[math] Összeadás tizedes - Kérdés 5: Összeadás tizedes [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "összeadás-tizedes",
         "grade-04",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "learning_objective": "Összeadás tizedes"
     }
   ],
   "rubrics": []

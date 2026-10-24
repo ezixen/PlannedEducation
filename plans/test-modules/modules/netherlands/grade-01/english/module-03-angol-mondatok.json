@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-mondatok-1.0.0",
-    "name": "Angol mondatok - Netherlands grade-01",
+    "name": "English sentences - Netherlands grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol mondatok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "Toets van 45 minuten over English sentences (grade-01). Onderwerpen: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.772094+00:00",
-    "updated_at": "2026-10-21T11:02:24.772104+00:00",
+    "created_at": "2026-10-24T17:53:47.887890+00:00",
+    "updated_at": "2026-10-24T17:53:47.887897+00:00",
     "tags": [
       "english",
-      "angol-mondatok",
+      "english-sentences",
       "grade-01",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "01a68d14b6b100074381444b062256319cae635023f918da082e5d1352c6d11a",
+    "checksum": "b7bbdc3337de656dd4bef812a2fafe835176f2a630df018e46a107225ffe5ba7",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol mondatok",
-    "description": "Test on Angol mondatok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English sentences",
+    "description": "Toets over English sentences: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 1: English sentences",
+      "text": "[english] English sentences - Vraag 1: English sentences",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 2: English sentences",
+      "text": "[english] English sentences - Vraag 2: English sentences",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol mondatok - Kérdés 3: English sentences",
+      "text": "[english] English sentences - Vraag 3: English sentences",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol mondatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English sentences.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 4: English sentences",
+      "text": "[english] English sentences - Vraag 4: English sentences",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 5: English sentences",
+      "text": "[english] English sentences - Vraag 5: English sentences",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "NETHERLANDS-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     }
   ],

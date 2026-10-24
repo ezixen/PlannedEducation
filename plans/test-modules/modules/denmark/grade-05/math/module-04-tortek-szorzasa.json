@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-szorzása-1.0.0",
-    "name": "Törtek szorzása - Denmark grade-05",
+    "name": "Fraction multiplication - Denmark grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek szorzása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minutters prøve i Fraction multiplication (grade-05). Emner: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.229056+00:00",
-    "updated_at": "2026-10-21T11:02:27.229070+00:00",
+    "created_at": "2026-10-24T17:53:49.377645+00:00",
+    "updated_at": "2026-10-24T17:53:49.377657+00:00",
     "tags": [
       "math",
-      "törtek-szorzása",
+      "fraction-multiplication",
       "grade-05",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "b116b0ce15c58320aad1dd8545338a5ecf01e224bdf2376f697eb97b9fa46b72",
+    "checksum": "c99bd0b6fb509b795dd10ee15a1a6dad60f71aff2af1598119ca6cc0cf420b17",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek szorzása",
-    "description": "Test on Törtek szorzása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction multiplication",
+    "description": "Prøve i Fraction multiplication: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 1: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Spørgsmål 1: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 2: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Spørgsmål 2: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek szorzása - Kérdés 3: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Spørgsmål 3: Fraction multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek szorzása - Kérdés 4: Fraction multiplication",
+      "text": "[math] Fraction multiplication - Spørgsmål 4: Fraction multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek szorzása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Fraction multiplication.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-szorzása",
-        "grade-05"
+        "fraction-multiplication",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek szorzása - Question 5: Fraction multiplication [rand:1-100]",
+      "text": "[math] Fraction multiplication - Spørgsmål 5: Fraction multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-szorzása",
+        "fraction-multiplication",
         "grade-05",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek szorzása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction multiplication",
       "learning_objective": "Fraction multiplication"
     }
   ],

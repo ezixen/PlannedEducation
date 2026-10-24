@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagváltozások-1.0.0",
-    "name": "Anyagváltozások - Norway grade-08",
+    "name": "Substance changes - Norway grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagváltozások for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minutters prøve i Substance changes (grade-08). Emner: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.466302+00:00",
-    "updated_at": "2026-10-21T11:02:26.466322+00:00",
+    "created_at": "2026-10-24T17:53:48.990341+00:00",
+    "updated_at": "2026-10-24T17:53:48.990352+00:00",
     "tags": [
       "chemistry",
-      "anyagváltozások",
+      "substance-changes",
       "grade-08",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "01c98b54dd35c17e370751fae02d931c1ed4188702fc2caca9dc14a308a5e396",
+    "checksum": "0cc60b37848d5f61674298ffeeff684c8716c2b3f72b8bfbdbd347011ef0298d",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagváltozások",
-    "description": "Test on Anyagváltozások including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substance changes",
+    "description": "Prøve i Substance changes: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 1: Substance changes",
+      "text": "[chemistry] Substance changes - Spørsmål 1: Substance changes",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 2: Substance changes",
+      "text": "[chemistry] Substance changes - Spørsmål 2: Substance changes",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagváltozások - Kérdés 3: Substance changes",
+      "text": "[chemistry] Substance changes - Spørsmål 3: Substance changes",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagváltozások témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Substance changes.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagváltozások - Question 4: Substance changes [rand:1-1000]",
+      "text": "[chemistry] Substance changes - Spørsmål 4: Substance changes [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagváltozások",
+        "substance-changes",
         "grade-08",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagváltozások - Kérdés 5: Substance changes",
+      "text": "[chemistry] Substance changes - Spørsmål 5: Substance changes",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagváltozások",
-        "grade-08"
+        "substance-changes",
+        "grade-08",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Anyagváltozások",
+      "curriculum_topic": "NORWAY-GRADE-08-CHEMISTRY-Substance changes",
       "learning_objective": "Substance changes"
     }
   ],

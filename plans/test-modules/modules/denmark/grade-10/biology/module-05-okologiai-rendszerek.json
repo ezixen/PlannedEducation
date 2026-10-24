@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - Denmark grade-10",
+    "name": "Ecological systems - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minutters prøve i Ecological systems (grade-10). Emner: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.595864+00:00",
-    "updated_at": "2026-10-21T11:02:27.595878+00:00",
+    "created_at": "2026-10-24T17:53:49.671856+00:00",
+    "updated_at": "2026-10-24T17:53:49.671864+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ecological-systems",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "5d541119980efd8a05cfae499f6fd4771f28ab55ab0881b53515e79d7772ba14",
+    "checksum": "985fd11757c1d86241480ac5094fbd45f88e6f4409b94a78eb78f4557149c17f",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Ecological systems",
+    "description": "Prøve i Ecological systems: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ecological systems - Spørgsmål 1: Ecological systems",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-10"
+        "ecological-systems",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ecological systems - Spørgsmål 2: Ecological systems",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-10"
+        "ecological-systems",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ecological systems - Spørgsmål 3: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Ecological systems.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-10"
+        "ecological-systems",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ecological systems - Spørgsmål 4: Ecological systems",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-10"
+        "ecological-systems",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ecological systems - Spørgsmål 5: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Ecological systems.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-10"
+        "ecological-systems",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "DENMARK-GRADE-10-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     }
   ],

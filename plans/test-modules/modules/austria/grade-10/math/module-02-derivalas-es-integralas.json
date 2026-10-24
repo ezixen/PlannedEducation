@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-deriválás-és-integrálás-1.0.0",
-    "name": "Deriválás és integrálás - Austria grade-10",
+    "name": "Analysis - Austria grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás és integrálás for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minütige Prüfung zum Thema Analysis (grade-10). Themen: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.321166+00:00",
-    "updated_at": "2026-10-21T11:02:29.321194+00:00",
+    "created_at": "2026-10-24T17:53:50.587487+00:00",
+    "updated_at": "2026-10-24T17:53:50.587496+00:00",
     "tags": [
       "math",
-      "deriválás-és-integrálás",
+      "analysis",
       "grade-10",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "68f33ccb149c47c8d8d088579f2e4a96364088abefb80be9442829bf7d504ed4",
+    "checksum": "581523fca99121b00b69bb2f3a3e7d03c24ac2332a8de64e2bf0ef88f180c5a7",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and statistics",
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry"
+      "Funktionen und Statistik",
+      "Analysis",
+      "Wahrscheinlichkeitsberechnung",
+      "Statistische Analyse",
+      "Geometrie"
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Deriválás és integrálás",
-    "description": "Test on Deriválás és integrálás including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Analysis",
+    "description": "Prüfung zum Thema Analysis: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 1: Differentiation and integration",
+      "text": "[math] Analysis - Frage 1: Analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "analysis",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Deriválás és integrálás",
-      "learning_objective": "Differentiation and integration"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Analysis",
+      "learning_objective": "Analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 2: Differentiation and integration",
+      "text": "[math] Analysis - Frage 2: Analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "analysis",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Deriválás és integrálás",
-      "learning_objective": "Differentiation and integration"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Analysis",
+      "learning_objective": "Analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás és integrálás - Kérdés 3: Differentiation and integration",
+      "text": "[math] Analysis - Frage 3: Analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "analysis",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Deriválás és integrálás",
-      "learning_objective": "Differentiation and integration"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Analysis",
+      "learning_objective": "Analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás és integrálás - Kérdés 4: Differentiation and integration",
+      "text": "[math] Analysis - Frage 4: Analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás és integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Analysis.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
-        "grade-10"
+        "analysis",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Deriválás és integrálás",
-      "learning_objective": "Differentiation and integration"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Analysis",
+      "learning_objective": "Analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás és integrálás - Question 5: Differentiation and integration [rand:1-100]",
+      "text": "[math] Analysis - Frage 5: Analysis [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "deriválás-és-integrálás",
+        "analysis",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Deriválás és integrálás",
-      "learning_objective": "Differentiation and integration"
+      "curriculum_topic": "AUSTRIA-GRADE-10-MATH-Analysis",
+      "learning_objective": "Analysis"
     }
   ],
   "rubrics": []

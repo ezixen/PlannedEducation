@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mechanika-alapok-1.0.0",
-    "name": "Mechanika alapok - Finland grade-08",
+    "name": "Mechanics basics - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika alapok for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 minuutin koe aiheesta Mechanics basics (grade-08). Aiheet: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.370859+00:00",
-    "updated_at": "2026-10-21T11:02:24.370871+00:00",
+    "created_at": "2026-10-24T17:53:47.699911+00:00",
+    "updated_at": "2026-10-24T17:53:47.699917+00:00",
     "tags": [
       "physics",
-      "mechanika-alapok",
+      "mechanics-basics",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "82b00cce76a6a080e6ab173eb7cba35786ef9a171948cac171432b8a14c49782",
+    "checksum": "6f95abd12fb3da578031fc1d964cb308ff83c018c801c2f872dbb3845ba54849",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mechanika alapok",
-    "description": "Test on Mechanika alapok including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Mechanics basics",
+    "description": "Koe aiheesta Mechanics basics: Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 1: Mechanics basics",
+      "text": "[physics] Mechanics basics - Kysymys 1: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 2: Mechanics basics",
+      "text": "[physics] Mechanics basics - Kysymys 2: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika alapok - Kérdés 3: Mechanics basics",
+      "text": "[physics] Mechanics basics - Kysymys 3: Mechanics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Mechanics basics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika alapok - Question 4: Mechanics basics [rand:1-1000]",
+      "text": "[physics] Mechanics basics - Kysymys 4: Mechanics basics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika-alapok",
+        "mechanics-basics",
         "grade-08",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 5: Mechanics basics",
+      "text": "[physics] Mechanics basics - Kysymys 5: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "FINLAND-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     }
   ],

@@ -11,12 +11,13 @@
     "tags": [
       "physics",
       "mechanika-alapok",
-      "grade-07"
+      "grade-07",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "25962b62489fb672e14b02696420b032b1c5b408dafcf0fdb375dea519fb3cdb",
+    "checksum": "344f73d451863bbbf80dbd7be16b1b4033bd92de3fba1cd89b0519044a34968b",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Mozgás",
       "Erők",
       "Energia"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 07 Physics - Mechanika alapok",

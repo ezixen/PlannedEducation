@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Denmark grade-10",
+    "name": "History of Hungary - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "45-minutters prøve i History of Hungary (grade-10). Emner: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.641053+00:00",
-    "updated_at": "2026-10-21T11:02:27.641074+00:00",
+    "created_at": "2026-10-24T17:53:49.702233+00:00",
+    "updated_at": "2026-10-24T17:53:49.702246+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "history-of-hungary",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "4a11cf8adda0d41244f01901ff8839b1262cb5df4551946c57e7cc24d8176fa0",
+    "checksum": "2fb9a2015c75c7ab98f3bef63fde362ee522a6e77027ffd2b4680f39636e797d",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History of Hungary",
+    "description": "Prøve i History of Hungary: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] History of Hungary - Spørgsmål 1: History of Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] History of Hungary - Spørgsmål 2: History of Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] History of Hungary - Spørgsmål 3: History of Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for History of Hungary.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] History of Hungary - Spørgsmål 4: History of Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] History of Hungary - Spørgsmål 5: History of Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "DENMARK-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     }
   ],

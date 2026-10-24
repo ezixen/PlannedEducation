@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-lineáris-egyenletek-1.0.0",
-    "name": "Lineáris egyenletek - Sweden grade-08",
+    "name": "Linear equations - Sweden grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minuters prov i Linear equations (grade-08). Omfattar: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.837926+00:00",
-    "updated_at": "2026-10-21T11:02:25.837938+00:00",
+    "created_at": "2026-10-24T17:53:48.536666+00:00",
+    "updated_at": "2026-10-24T17:53:48.536677+00:00",
     "tags": [
       "math",
-      "lineáris-egyenletek",
+      "linear-equations",
       "grade-08",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "69f5d1e1ad981faa62775db021e8f66f35c2e93070bc582a63309dfdb5f26181",
+    "checksum": "2747e6cd2f54ffb3701becf33c6ea55af59ffc33a42772fbdbcce275a6dedfe8",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Lineáris egyenletek",
-    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Linear equations",
+    "description": "Prov i Linear equations: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "text": "[math] Linear equations - Fråga 1: Linear equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "text": "[math] Linear equations - Fråga 2: Linear equations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "text": "[math] Linear equations - Fråga 3: Linear equations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "text": "[math] Linear equations - Fråga 4: Linear equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Linear equations.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "linear-equations",
+        "grade-08",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "text": "[math] Linear equations - Fråga 5: Linear equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "lineáris-egyenletek",
+        "linear-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Lineáris egyenletek",
+      "curriculum_topic": "SWEDEN-GRADE-08-MATH-Linear equations",
       "learning_objective": "Linear equations"
     }
   ],

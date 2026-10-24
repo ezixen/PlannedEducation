@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-ökológia-1.0.0",
-    "name": "Ökológia - Germany grade-11",
+    "name": "Ökologie - Germany grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Ökologie (grade-11). Themen: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.659596+00:00",
-    "updated_at": "2026-10-21T11:02:16.659613+00:00",
+    "created_at": "2026-10-24T17:53:45.577340+00:00",
+    "updated_at": "2026-10-24T17:53:45.577347+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ökologie",
       "grade-11",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "9bf4b91bddbe63757838ec3117475ca3734659115c3ae04615f261cf2549d558",
+    "checksum": "0dbc8d714a0faf7f32af2f0a36e60e1b6f02739ea70eb4a61822350b741de8af",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics",
-      "Ecology",
-      "Ecological systems"
+      "Zellbiologie und Genetik",
+      "Zellaufbau",
+      "Genetik",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Ökológia",
-    "description": "Test on Ökológia including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Ökologie",
+    "description": "Prüfung zum Thema Ökologie: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ökologie - Frage 1: Ökologie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ökologie",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ökologie - Frage 2: Ökologie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ökologie",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ökologie - Frage 3: Ökologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ökologie",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ökologie - Frage 4: Ökologie",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ökologie",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ökologie - Frage 5: Ökologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-11"
+        "ökologie",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "GERMANY-GRADE-11-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-osztása-1.0.0",
-    "name": "Törtek osztása - Denmark grade-05",
+    "name": "Fraction division - Denmark grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek osztása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minutters prøve i Fraction division (grade-05). Emner: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.232420+00:00",
-    "updated_at": "2026-10-21T11:02:27.232452+00:00",
+    "created_at": "2026-10-24T17:53:49.379869+00:00",
+    "updated_at": "2026-10-24T17:53:49.379879+00:00",
     "tags": [
       "math",
-      "törtek-osztása",
+      "fraction-division",
       "grade-05",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "f29e09aafe1e520b8883be4c0eb60cb87a6cf4c125f73d1303e21fabe11e9d47",
+    "checksum": "01e999afafe948e9f9bfc9bb6ed7099604c4d1b7338f05822de447b0677b6a88",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek osztása",
-    "description": "Test on Törtek osztása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction division",
+    "description": "Prøve i Fraction division: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 1: Fraction division",
+      "text": "[math] Fraction division - Spørgsmål 1: Fraction division",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 2: Fraction division",
+      "text": "[math] Fraction division - Spørgsmål 2: Fraction division",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek osztása - Kérdés 3: Fraction division",
+      "text": "[math] Fraction division - Spørgsmål 3: Fraction division",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek osztása - Kérdés 4: Fraction division",
+      "text": "[math] Fraction division - Spørgsmål 4: Fraction division",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek osztása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Fraction division.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-osztása",
-        "grade-05"
+        "fraction-division",
+        "grade-05",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek osztása - Question 5: Fraction division [rand:1-100]",
+      "text": "[math] Fraction division - Spørgsmål 5: Fraction division [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-osztása",
+        "fraction-division",
         "grade-05",
-        "integer"
+        "integer",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-05-MATH-Törtek osztása",
+      "curriculum_topic": "DENMARK-GRADE-05-MATH-Fraction division",
       "learning_objective": "Fraction division"
     }
   ],

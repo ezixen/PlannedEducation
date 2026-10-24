@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-európa-és-világ-1.0.0",
-    "name": "Európa és világ - United Kingdom grade-12",
+    "name": "Europe and world - United Kingdom grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minute assessment on Europe and world for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.499488+00:00",
-    "updated_at": "2026-10-21T11:02:17.499500+00:00",
+    "created_at": "2026-10-24T17:53:46.097888+00:00",
+    "updated_at": "2026-10-24T17:53:46.097894+00:00",
     "tags": [
       "geography",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-12",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "9c25559b7d17474b38e3f4e804255d768102724739cc8121aa7a93ba77c9d815",
+    "checksum": "6115dd219636fe8a749a764ab95205896049e0fe0fc34586525c6dc0c3fa572a",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Európa és világ",
-    "description": "Test on Európa és világ including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Europe and world",
+    "description": "Assessment on Europe and world including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[geography] Europe and world - Question 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[geography] Europe and world - Question 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[geography] Europe and world - Question 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Europe and world.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[geography] Europe and world - Question 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[geography] Europe and world - Question 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-12"
+        "europe-and-world",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "UK-GRADE-12-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

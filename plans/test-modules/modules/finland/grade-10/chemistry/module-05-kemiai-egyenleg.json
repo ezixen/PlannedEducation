@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-kémiai-egyenleg-1.0.0",
-    "name": "Kémiai egyenleg - Finland grade-10",
+    "name": "Chemical equilibrium - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenleg for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45 minuutin koe aiheesta Chemical equilibrium (grade-10). Aiheet: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.519771+00:00",
-    "updated_at": "2026-10-21T11:02:24.519796+00:00",
+    "created_at": "2026-10-24T17:53:47.767317+00:00",
+    "updated_at": "2026-10-24T17:53:47.767325+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenleg",
+      "chemical-equilibrium",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "6cac454d879309e97f9b8dd8ec1b7b06b2ab4b4f162930cbd16377c83379c32e",
+    "checksum": "b73fa50b7d84e08a0d58a3335bbdbc0fbe837ea5b720613d3590addea7a8878f",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Kémiai egyenleg",
-    "description": "Test on Kémiai egyenleg including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Chemical equilibrium",
+    "description": "Koe aiheesta Chemical equilibrium: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 1: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Kysymys 1: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 2: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Kysymys 2: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 3: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Kysymys 3: Chemical equilibrium",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenleg témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Chemical equilibrium.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenleg - Question 4: Chemical equilibrium [rand:1-100]",
+      "text": "[chemistry] Chemical equilibrium - Kysymys 4: Chemical equilibrium [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
+        "chemical-equilibrium",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 5: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Kysymys 5: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "FINLAND-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     }
   ],

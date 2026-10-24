@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-világ-1.0.0",
-    "name": "Világ - Australia grade-11",
+    "name": "World - Australia grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minute assessment on World for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.836114+00:00",
-    "updated_at": "2026-10-21T11:02:18.836143+00:00",
+    "created_at": "2026-10-24T17:53:46.919011+00:00",
+    "updated_at": "2026-10-24T17:53:46.919027+00:00",
     "tags": [
       "history",
-      "világ",
+      "world",
       "grade-11",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "4da4a8f0341bb7a4393a8e5ddc0ad65a38ab2bc02384a37ff5045ea475c36caf",
+    "checksum": "8c6f21c68507647ecea4b5f86c183a1a7ff5dd736110b0165dd73372234cd7bc",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Világ",
-    "description": "Test on Világ including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - World",
+    "description": "Assessment on World including History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 1: World",
+      "text": "[history] World - Question 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 2: World",
+      "text": "[history] World - Question 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világ - Kérdés 3: World",
+      "text": "[history] World - Question 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for World.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 4: World",
+      "text": "[history] World - Question 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 5: World",
+      "text": "[history] World - Question 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "world",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-Világ",
+      "curriculum_topic": "AUSTRALIA-GRADE-11-HISTORY-World",
       "learning_objective": "World"
     }
   ],

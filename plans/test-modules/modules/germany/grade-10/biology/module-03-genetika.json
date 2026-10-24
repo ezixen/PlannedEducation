@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-biology-genetika-1.0.0",
-    "name": "Genetika - Germany grade-10",
+    "name": "Genetik - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika for grade-10 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Genetik (grade-10). Themen: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.562872+00:00",
-    "updated_at": "2026-10-21T11:02:16.562886+00:00",
+    "created_at": "2026-10-24T17:53:45.514048+00:00",
+    "updated_at": "2026-10-24T17:53:45.514054+00:00",
     "tags": [
       "biology",
-      "genetika",
+      "genetik",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "b3a295623af86f7af0b1f7795e297444670c6e810d2a756207cae043671b853a",
+    "checksum": "c3f07a760f27718e23b4a3be926e17f843bc72211b998e425bd5ec69e754c29c",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics",
-      "Ecology",
-      "Ecological systems"
+      "Zellbiologie und Genetik",
+      "Zellaufbau",
+      "Genetik",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-10 Biology - Genetika",
-    "description": "Test on Genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-10 Biology - Genetik",
+    "description": "Prüfung zum Thema Genetik: Zellbiologie und Genetik, Zellaufbau, Genetik, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 1: Genetics",
+      "text": "[biology] Genetik - Frage 1: Genetik",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetika",
-      "learning_objective": "Genetics"
+      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetik",
+      "learning_objective": "Genetik"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 2: Genetics",
+      "text": "[biology] Genetik - Frage 2: Genetik",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetika",
-      "learning_objective": "Genetics"
+      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetik",
+      "learning_objective": "Genetik"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 3: Genetics",
+      "text": "[biology] Genetik - Frage 3: Genetik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Genetik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetika",
-      "learning_objective": "Genetics"
+      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetik",
+      "learning_objective": "Genetik"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika - Kérdés 4: Genetics",
+      "text": "[biology] Genetik - Frage 4: Genetik",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetika",
-      "learning_objective": "Genetics"
+      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetik",
+      "learning_objective": "Genetik"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika - Kérdés 5: Genetics",
+      "text": "[biology] Genetik - Frage 5: Genetik",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Genetik.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika",
-        "grade-10"
+        "genetik",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetika",
-      "learning_objective": "Genetics"
+      "curriculum_topic": "GERMANY-GRADE-10-BIOLOGY-Genetik",
+      "learning_objective": "Genetik"
     }
   ],
   "rubrics": []

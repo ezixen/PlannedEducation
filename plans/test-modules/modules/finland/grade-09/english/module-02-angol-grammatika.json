@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-grammatika-1.0.0",
-    "name": "Angol grammatika - Finland grade-09",
+    "name": "English grammar - Finland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol grammatika for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 minuutin koe aiheesta English grammar (grade-09). Aiheet: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.395449+00:00",
-    "updated_at": "2026-10-21T11:02:24.395467+00:00",
+    "created_at": "2026-10-24T17:53:47.717523+00:00",
+    "updated_at": "2026-10-24T17:53:47.717534+00:00",
     "tags": [
       "english",
-      "angol-grammatika",
+      "english-grammar",
       "grade-09",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "5b5c61103aeda5b35790058c9371f68f88a47c132fc39667b8d5d903ab3f387e",
+    "checksum": "3fbfb2922cb2017b705e5f8c91c1b0bea6a09768c8b6ae33404aa70674995798",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol grammatika",
-    "description": "Test on Angol grammatika including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English grammar",
+    "description": "Koe aiheesta English grammar: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 1: English grammar",
+      "text": "[english] English grammar - Kysymys 1: English grammar",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 2: English grammar",
+      "text": "[english] English grammar - Kysymys 2: English grammar",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol grammatika - Kérdés 3: English grammar",
+      "text": "[english] English grammar - Kysymys 3: English grammar",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol grammatika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen English grammar.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 4: English grammar",
+      "text": "[english] English grammar - Kysymys 4: English grammar",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol grammatika - Kérdés 5: English grammar",
+      "text": "[english] English grammar - Kysymys 5: English grammar",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-grammatika",
-        "grade-09"
+        "english-grammar",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-Angol grammatika",
+      "curriculum_topic": "FINLAND-GRADE-09-ENGLISH-English grammar",
       "learning_objective": "English grammar"
     }
   ],

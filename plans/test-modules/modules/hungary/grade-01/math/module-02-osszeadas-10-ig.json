@@ -3,21 +3,25 @@
     "id": "grade-01-math-összeadás-10-ig-1.0.0",
     "name": "Összeadás 10-ig - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 perces felmérő: Összeadás 10-ig (grade-01). Témakörök: Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.982602+00:00",
-    "updated_at": "2026-10-21T11:02:34.982620+00:00",
+    "created_at": "2026-10-24T17:53:52.048036+00:00",
+    "updated_at": "2026-10-24T17:53:52.048046+00:00",
     "tags": [
       "math",
       "összeadás-10-ig",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "17442e937040b79d9572a1040459bcea54c510e4695043143eb4dee5f665473c",
+    "checksum": "f3e29363fe32ca273d0dbfda9d5fd33c2139432d8266fdebe1ace5e2a944a657",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Számlálás 10-ig",
+      "Összeadás 10-ig",
+      "Kivonás 10-ig",
+      "Számlálás 20-ig",
+      "Összeadás 20-ig"
     ]
   },
   "exam": {
     "title": "grade-01 Math - Összeadás 10-ig",
-    "description": "Test on Összeadás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "Felmérő a(z) Összeadás 10-ig témakörből (Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 1: Addition to 10",
+      "text": "[math] Összeadás 10-ig - Kérdés 1: Összeadás 10-ig",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "összeadás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "learning_objective": "Összeadás 10-ig"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 2: Addition to 10",
+      "text": "[math] Összeadás 10-ig - Kérdés 2: Összeadás 10-ig",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "összeadás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "learning_objective": "Összeadás 10-ig"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 3: Addition to 10",
+      "text": "[math] Összeadás 10-ig - Kérdés 3: Összeadás 10-ig",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "összeadás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "learning_objective": "Összeadás 10-ig"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 10-ig - Kérdés 4: Addition to 10",
+      "text": "[math] Összeadás 10-ig - Kérdés 4: Összeadás 10-ig",
       "options": null,
       "correct_answer": "Minta válasz a(z) Összeadás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "összeadás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "learning_objective": "Összeadás 10-ig"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 10-ig - Question 5: Addition to 10 [rand:1-20]",
+      "text": "[math] Összeadás 10-ig - Kérdés 5: Összeadás 10-ig [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "összeadás-10-ig",
         "grade-01",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "learning_objective": "Összeadás 10-ig"
     }
   ],
   "rubrics": []

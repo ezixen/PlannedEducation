@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-integrálás-1.0.0",
-    "name": "Integrálás - New Zealand grade-09",
+    "name": "Integration - New Zealand grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Integration for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.718135+00:00",
-    "updated_at": "2026-10-21T11:02:34.718155+00:00",
+    "created_at": "2026-10-24T17:53:51.869129+00:00",
+    "updated_at": "2026-10-24T17:53:51.869137+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integration",
       "grade-09",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "f17b812ff7349627236111c39ea858491bf26f88aa0ec0f90a4e3d450914d949",
+    "checksum": "d2537eb68cf26c58942d0765487a6fdfd78508cb89e1bdf6847f71dac682f7f2",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Integrálás",
-    "description": "Test on Integrálás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Integration",
+    "description": "Assessment on Integration including Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integration - Question 1: Integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integration",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integrálás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integration - Question 2: Integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integration",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integrálás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integration - Question 3: Integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integration",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integrálás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integration - Question 4: Integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Integration.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integration",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integrálás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-1000]",
+      "text": "[math] Integration - Question 5: Integration [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integration",
         "grade-09",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integrálás",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-09-MATH-Integration",
       "learning_objective": "Integration"
     }
   ],

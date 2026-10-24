@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - Germany grade-09",
+    "name": "English reading - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English reading (grade-09). Themen: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.498491+00:00",
-    "updated_at": "2026-10-21T11:02:16.498504+00:00",
+    "created_at": "2026-10-24T17:53:45.477250+00:00",
+    "updated_at": "2026-10-24T17:53:45.477256+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "6d95ee8938e78078afe8b9e4795729149f4d0bf4dc63df1a53076e06f85c7ffe",
+    "checksum": "948b2bd463a0eb8b4ec248021fbcdf1bb11d01d12db56c5939da0709fe06b33b",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-09 English - English reading",
+    "description": "Prüfung zum Thema English reading: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Frage 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Frage 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Frage 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English reading.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Frage 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Frage 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-09"
+        "english-reading",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-Angol olvasás",
+      "curriculum_topic": "GERMANY-GRADE-09-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

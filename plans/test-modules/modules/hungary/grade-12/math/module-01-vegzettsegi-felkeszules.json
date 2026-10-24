@@ -11,12 +11,13 @@
     "tags": [
       "math",
       "végzettségi-felkészülés",
-      "grade-12"
+      "grade-12",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-12",
     "license": "CC-BY-4.0",
-    "checksum": "190c8c109f01d09e64b00da66bb82d704aeb5c7e7044fcdcc0495097b6af0010",
+    "checksum": "155c790776566a0dc42b6c7ff6dd4eb1eca9b2561c9fe6a328180790ebab6292",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Függvények",
       "Analízis",
       "Alkalmazott matematika"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 12 Math - Végzettségi felkészülés",

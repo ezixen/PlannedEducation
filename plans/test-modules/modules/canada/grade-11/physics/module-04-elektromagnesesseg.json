@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-elektromágnesesség-1.0.0",
-    "name": "Elektromágnesesség - Canada grade-11",
+    "name": "Electromagnetism - Canada grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Elektromágnesesség for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minute assessment on Electromagnetism for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.007783+00:00",
-    "updated_at": "2026-10-21T11:02:16.007799+00:00",
+    "created_at": "2026-10-24T17:53:45.106846+00:00",
+    "updated_at": "2026-10-24T17:53:45.106854+00:00",
     "tags": [
       "physics",
-      "elektromágnesesség",
+      "electromagnetism",
       "grade-11",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "efffa29a790c600e2eadc8ef8bbe2b53559c9fc34d068c1d46b0b0e8e7aee220",
+    "checksum": "b78ccb067e1fc82c7f30e267ef96289d18cac330ae241fba721f4677967ac8a1",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Elektromágnesesség",
-    "description": "Test on Elektromágnesesség including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Electromagnetism",
+    "description": "Assessment on Electromagnetism including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 1: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 1: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 2: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 2: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Elektromágnesesség - Kérdés 3: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 3: Electromagnetism",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Elektromágnesesség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Electromagnetism.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Elektromágnesesség - Question 4: Electromagnetism [rand:1-100]",
+      "text": "[physics] Electromagnetism - Question 4: Electromagnetism [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "elektromágnesesség",
+        "electromagnetism",
         "grade-11",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Elektromágnesesség - Kérdés 5: Electromagnetism",
+      "text": "[physics] Electromagnetism - Question 5: Electromagnetism",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "elektromágnesesség",
-        "grade-11"
+        "electromagnetism",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Elektromágnesesség",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Electromagnetism",
       "learning_objective": "Electromagnetism"
     }
   ],

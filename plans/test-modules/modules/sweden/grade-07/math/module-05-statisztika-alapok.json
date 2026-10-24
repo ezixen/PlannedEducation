@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-statisztika-alapok-1.0.0",
-    "name": "Statisztika alapok - Sweden grade-07",
+    "name": "Statistics basics - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minuters prov i Statistics basics (grade-07). Omfattar: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.739498+00:00",
-    "updated_at": "2026-10-21T11:02:25.739511+00:00",
+    "created_at": "2026-10-24T17:53:48.462742+00:00",
+    "updated_at": "2026-10-24T17:53:48.462751+00:00",
     "tags": [
       "math",
-      "statisztika-alapok",
+      "statistics-basics",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "531e1a2dbdaa2f1917bdddb8fb8cb9051be69c58852f2c9b6b764bf659161572",
+    "checksum": "c143b2895f88986ce7ad4554c4c22f45b789dcc56aea92bb050560efc2715454",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Statisztika alapok",
-    "description": "Test on Statisztika alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Statistics basics",
+    "description": "Prov i Statistics basics: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 1: Statistics basics",
+      "text": "[math] Statistics basics - Fråga 1: Statistics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistics-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statisztika alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statistics basics",
       "learning_objective": "Statistics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 2: Statistics basics",
+      "text": "[math] Statistics basics - Fråga 2: Statistics basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistics-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statisztika alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statistics basics",
       "learning_objective": "Statistics basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika alapok - Kérdés 3: Statistics basics",
+      "text": "[math] Statistics basics - Fråga 3: Statistics basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistics-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statisztika alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statistics basics",
       "learning_objective": "Statistics basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika alapok - Kérdés 4: Statistics basics",
+      "text": "[math] Statistics basics - Fråga 4: Statistics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Statistics basics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika-alapok",
-        "grade-07"
+        "statistics-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statisztika alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statistics basics",
       "learning_objective": "Statistics basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika alapok - Question 5: Statistics basics [rand:1-100]",
+      "text": "[math] Statistics basics - Fråga 5: Statistics basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika-alapok",
+        "statistics-basics",
         "grade-07",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statisztika alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Statistics basics",
       "learning_objective": "Statistics basics"
     }
   ],

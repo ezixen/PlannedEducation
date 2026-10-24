@@ -3,21 +3,25 @@
     "id": "grade-08-physics-mechanika-alapok-1.0.0",
     "name": "Mechanika alapok - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika alapok for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45 perces felmérő: Mechanika alapok (grade-08). Témakörök: Mechanika alapok, Erők, Mozgás, Energia, Mű",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.327256+00:00",
-    "updated_at": "2026-10-21T11:02:35.327267+00:00",
+    "created_at": "2026-10-24T17:53:52.299556+00:00",
+    "updated_at": "2026-10-24T17:53:52.299563+00:00",
     "tags": [
       "physics",
       "mechanika-alapok",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "c89f74f1727d6c3e31ac2537b52bd566743bb9a3622be618349558abd6fdb251",
+    "checksum": "59d9a4a2224953cb6d01f92edeb785490e2cd98f805196d4380a8e8b80961162",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics basics",
-      "Forces",
-      "Motion",
-      "Energy",
-      "Work"
+      "Mechanika alapok",
+      "Erők",
+      "Mozgás",
+      "Energia",
+      "Mű"
     ]
   },
   "exam": {
     "title": "grade-08 Physics - Mechanika alapok",
-    "description": "Test on Mechanika alapok including Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "Felmérő a(z) Mechanika alapok témakörből (Mechanika alapok, Erők, Mozgás, Energia, Mű)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 1: Mechanics basics",
+      "text": "[physics] Mechanika alapok - Kérdés 1: Mechanika alapok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "mechanika-alapok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Mechanika alapok",
-      "learning_objective": "Mechanics basics"
+      "learning_objective": "Mechanika alapok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 2: Mechanics basics",
+      "text": "[physics] Mechanika alapok - Kérdés 2: Mechanika alapok",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "mechanika-alapok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Mechanika alapok",
-      "learning_objective": "Mechanics basics"
+      "learning_objective": "Mechanika alapok"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika alapok - Kérdés 3: Mechanics basics",
+      "text": "[physics] Mechanika alapok - Kérdés 3: Mechanika alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Mechanika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "mechanika-alapok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Mechanika alapok",
-      "learning_objective": "Mechanics basics"
+      "learning_objective": "Mechanika alapok"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika alapok - Question 4: Mechanics basics [rand:1-1000]",
+      "text": "[physics] Mechanika alapok - Kérdés 4: Mechanika alapok [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "mechanika-alapok",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Mechanika alapok",
-      "learning_objective": "Mechanics basics"
+      "learning_objective": "Mechanika alapok"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 5: Mechanics basics",
+      "text": "[physics] Mechanika alapok - Kérdés 5: Mechanika alapok",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "mechanika-alapok",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-PHYSICS-Mechanika alapok",
-      "learning_objective": "Mechanics basics"
+      "learning_objective": "Mechanika alapok"
     }
   ],
   "rubrics": []

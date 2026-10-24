@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-jog-erettségi-1.0.0",
-    "name": "Jog-erettségi - Finland grade-12",
+    "name": "Law-maturity - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45 minuutin koe aiheesta Law-maturity (grade-12). Aiheet: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.725555+00:00",
-    "updated_at": "2026-10-21T11:02:24.725566+00:00",
+    "created_at": "2026-10-24T17:53:47.855752+00:00",
+    "updated_at": "2026-10-24T17:53:47.855760+00:00",
     "tags": [
       "civics",
-      "jog-erettségi",
+      "law-maturity",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "d34751bccbd49128c9ddc394602cb0d031f221a474d26471125a233c8da24c25",
+    "checksum": "d2b6c77a649b70337e950ccc7293b13247e2d978518c1abc300025989da90392",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Law-maturity",
+    "description": "Koe aiheesta Law-maturity: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Law-maturity - Kysymys 1: Law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Law-maturity - Kysymys 2: Law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Law-maturity - Kysymys 3: Law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Law-maturity.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Law-maturity - Kysymys 4: Law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Law-maturity - Kysymys 5: Law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     }
   ],

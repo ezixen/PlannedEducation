@@ -3,21 +3,25 @@
     "id": "grade-08-math-függvények-1.0.0",
     "name": "Függvények - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45 perces felmérő: Függvények (grade-08). Témakörök: Valós számok, Függvények, Lineáris egyenletek, Geometria, Statisztika",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.319397+00:00",
-    "updated_at": "2026-10-21T11:02:35.319409+00:00",
+    "created_at": "2026-10-24T17:53:52.293475+00:00",
+    "updated_at": "2026-10-24T17:53:52.293484+00:00",
     "tags": [
       "math",
       "függvények",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "a4a23513201d5b050f2d53f175a587bf07553cfbc703e6eb9b807ae34726f3ea",
+    "checksum": "475ed1227ffcfe81e0e5807dfea6055268886e8ed632537ce36d2edc7e5bb837",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Valós számok",
+      "Függvények",
+      "Lineáris egyenletek",
+      "Geometria",
+      "Statisztika"
     ]
   },
   "exam": {
     "title": "grade-08 Math - Függvények",
-    "description": "Test on Függvények including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "Felmérő a(z) Függvények témakörből (Valós számok, Függvények, Lineáris egyenletek, Geometria, Statisztika)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Függvények - Kérdés 1: Függvények",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "függvények",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "learning_objective": "Függvények"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Függvények - Kérdés 2: Függvények",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "függvények",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "learning_objective": "Függvények"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Függvények - Kérdés 3: Függvények",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "függvények",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "learning_objective": "Függvények"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Függvények - Kérdés 4: Függvények",
       "options": null,
       "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "függvények",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "learning_objective": "Függvények"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-1000]",
+      "text": "[math] Függvények - Kérdés 5: Függvények [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "függvények",
         "grade-08",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-MATH-Függvények",
-      "learning_objective": "Functions"
+      "learning_objective": "Függvények"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-tört-műveletek-1.0.0",
-    "name": "Tört műveletek - Finland grade-06",
+    "name": "Fraction operations - Finland grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Tört műveletek for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45 minuutin koe aiheesta Fraction operations (grade-06). Aiheet: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.131469+00:00",
-    "updated_at": "2026-10-21T11:02:24.131482+00:00",
+    "created_at": "2026-10-24T17:53:47.570592+00:00",
+    "updated_at": "2026-10-24T17:53:47.570599+00:00",
     "tags": [
       "math",
-      "tört-műveletek",
+      "fraction-operations",
       "grade-06",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "f7fd0dd5696423f03cca7dbc58693794b09e9302c85ad5fe9b83a6f519816609",
+    "checksum": "56e90c98572bf517d75a11f9e6bd55de49386c2df6a540a7937854287fa62e8f",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Tört műveletek",
-    "description": "Test on Tört műveletek including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Fraction operations",
+    "description": "Koe aiheesta Fraction operations: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 1: Fraction operations",
+      "text": "[math] Fraction operations - Kysymys 1: Fraction operations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 2: Fraction operations",
+      "text": "[math] Fraction operations - Kysymys 2: Fraction operations",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Tört műveletek - Kérdés 3: Fraction operations",
+      "text": "[math] Fraction operations - Kysymys 3: Fraction operations",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Tört műveletek - Kérdés 4: Fraction operations",
+      "text": "[math] Fraction operations - Kysymys 4: Fraction operations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Tört műveletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Fraction operations.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "tört-műveletek",
-        "grade-06"
+        "fraction-operations",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Tört műveletek - Question 5: Fraction operations [rand:1-100]",
+      "text": "[math] Fraction operations - Kysymys 5: Fraction operations [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "tört-műveletek",
+        "fraction-operations",
         "grade-06",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Tört műveletek",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Fraction operations",
       "learning_objective": "Fraction operations"
     }
   ],

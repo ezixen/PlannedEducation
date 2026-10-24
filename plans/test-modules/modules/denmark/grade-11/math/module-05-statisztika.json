@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-statisztika-1.0.0",
-    "name": "Statisztika - Denmark grade-11",
+    "name": "Statistics - Denmark grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztika for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Statistics (grade-11). Emner: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.736026+00:00",
-    "updated_at": "2026-10-21T11:02:27.736038+00:00",
+    "created_at": "2026-10-24T17:53:49.770258+00:00",
+    "updated_at": "2026-10-24T17:53:49.770265+00:00",
     "tags": [
       "math",
-      "statisztika",
+      "statistics",
       "grade-11",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "3ac8fe05f74f2e7f03e612aa6e77e26973ffaa70dc59d98f08d7d60512c90388",
+    "checksum": "cddbb46892dd6bc4ccad321d05397d94dfeacef67bc0e351f4f8079d595b30c8",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Statisztika",
-    "description": "Test on Statisztika including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Statistics",
+    "description": "Prøve i Statistics: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 1: Statistics",
+      "text": "[math] Statistics - Spørgsmål 1: Statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 2: Statistics",
+      "text": "[math] Statistics - Spørgsmål 2: Statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztika - Kérdés 3: Statistics",
+      "text": "[math] Statistics - Spørgsmål 3: Statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztika - Kérdés 4: Statistics",
+      "text": "[math] Statistics - Spørgsmål 4: Statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Statistics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztika",
-        "grade-11"
+        "statistics",
+        "grade-11",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztika - Question 5: Statistics [rand:1-100]",
+      "text": "[math] Statistics - Spørgsmål 5: Statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztika",
+        "statistics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statisztika",
+      "curriculum_topic": "DENMARK-GRADE-11-MATH-Statistics",
       "learning_objective": "Statistics"
     }
   ],

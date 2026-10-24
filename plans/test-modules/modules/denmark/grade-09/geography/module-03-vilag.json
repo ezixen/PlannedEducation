@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-világ-1.0.0",
-    "name": "Világ - Denmark grade-09",
+    "name": "World - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minutters prøve i World (grade-09). Emner: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.541257+00:00",
-    "updated_at": "2026-10-21T11:02:27.541269+00:00",
+    "created_at": "2026-10-24T17:53:49.625830+00:00",
+    "updated_at": "2026-10-24T17:53:49.625842+00:00",
     "tags": [
       "geography",
-      "világ",
+      "world",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "2ed389940ba438a4351dd8d205e8fd85a017c88c74e59a063dbd8e23ccd00e50",
+    "checksum": "40f7c2930a97eb1812c9e8df7636057a712ba04d36cbb8144802d3ed1bd7536a",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Világ",
-    "description": "Test on Világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - World",
+    "description": "Prøve i World: Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 1: World",
+      "text": "[geography] World - Spørgsmål 1: World",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 2: World",
+      "text": "[geography] World - Spørgsmål 2: World",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Világ - Kérdés 3: World",
+      "text": "[geography] World - Spørgsmål 3: World",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for World.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 4: World",
+      "text": "[geography] World - Spørgsmål 4: World",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Világ - Kérdés 5: World",
+      "text": "[geography] World - Spørgsmål 5: World",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "világ",
-        "grade-09"
+        "world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-World",
       "learning_objective": "World"
     }
   ],

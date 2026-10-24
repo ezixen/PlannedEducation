@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-európa-1.0.0",
-    "name": "Európa - Switzerland grade-09",
+    "name": "Europa - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minütige Prüfung zum Thema Europa (grade-09). Themen: Europa und die Welt, Europa, Welt, Geographie, Geographisches Wissen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.513913+00:00",
-    "updated_at": "2026-10-21T11:02:28.513926+00:00",
+    "created_at": "2026-10-24T17:53:50.102452+00:00",
+    "updated_at": "2026-10-24T17:53:50.102460+00:00",
     "tags": [
       "geography",
-      "európa",
+      "europa",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "5d5c686be1046dbaa9400489168664f4d96a42788d151e3c47c477dd29d75608",
+    "checksum": "ba8520534d7f2c65872a898a664b44abd38022b3fb7306c7c57140e3965eaf3e",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and world",
-      "Europe",
-      "World",
-      "Geography",
-      "Geographic knowledge"
+      "Europa und die Welt",
+      "Europa",
+      "Welt",
+      "Geographie",
+      "Geographisches Wissen"
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Európa",
-    "description": "Test on Európa including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Europa",
+    "description": "Prüfung zum Thema Europa: Europa und die Welt, Europa, Welt, Geographie, Geographisches Wissen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Europa - Frage 1: Europa",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europa",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Europa",
+      "learning_objective": "Europa"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Europa - Frage 2: Europa",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europa",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Europa",
+      "learning_objective": "Europa"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Europa - Frage 3: Europa",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Europa.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europa",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Europa",
+      "learning_objective": "Europa"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Europa - Frage 4: Europa",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europa",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Europa",
+      "learning_objective": "Europa"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Europa - Frage 5: Europa",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa",
-        "grade-09"
+        "europa",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-GEOGRAPHY-Europa",
+      "learning_objective": "Europa"
     }
   ],
   "rubrics": []

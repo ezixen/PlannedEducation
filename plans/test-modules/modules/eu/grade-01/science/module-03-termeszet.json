@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-természet-1.0.0",
-    "name": "Természet - European Union grade-01",
+    "name": "Nature - European Union grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.952971+00:00",
-    "updated_at": "2026-10-21T11:02:18.952986+00:00",
+    "created_at": "2026-10-24T17:53:47.040270+00:00",
+    "updated_at": "2026-10-24T17:53:47.040282+00:00",
     "tags": [
       "science",
-      "természet",
+      "nature",
       "grade-01",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "226b75650bf6079c8fc7e1c50fbe7f0a2cddd37927afa4faeed6281532a174c9",
+    "checksum": "658ef70b5d952307139f98ae7bf44303156e9c4783e92fb012515384b7af1365",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Nature",
+    "description": "Assessment on Nature including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Nature - Question 1: Nature",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-01"
+        "nature",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-01-SCIENCE-Természet",
+      "curriculum_topic": "EU-GRADE-01-SCIENCE-Nature",
       "learning_objective": "Nature"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Nature - Question 2: Nature",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-01"
+        "nature",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-01-SCIENCE-Természet",
+      "curriculum_topic": "EU-GRADE-01-SCIENCE-Nature",
       "learning_objective": "Nature"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Nature - Question 3: Nature",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-01"
+        "nature",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-01-SCIENCE-Természet",
+      "curriculum_topic": "EU-GRADE-01-SCIENCE-Nature",
       "learning_objective": "Nature"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Nature - Question 4: Nature",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-01"
+        "nature",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-01-SCIENCE-Természet",
+      "curriculum_topic": "EU-GRADE-01-SCIENCE-Nature",
       "learning_objective": "Nature"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Nature - Question 5: Nature",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-01"
+        "nature",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-01-SCIENCE-Természet",
+      "curriculum_topic": "EU-GRADE-01-SCIENCE-Nature",
       "learning_objective": "Nature"
     }
   ],

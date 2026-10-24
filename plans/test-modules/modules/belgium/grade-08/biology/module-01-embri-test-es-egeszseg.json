@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-embri-test-és-egészség-1.0.0",
-    "name": "Embri test és egészség - Belgium grade-08",
+    "name": "Human body and health - Belgium grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test és egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "Toets van 45 minuten over Human body and health (grade-08). Onderwerpen: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.717696+00:00",
-    "updated_at": "2026-10-21T11:02:29.717709+00:00",
+    "created_at": "2026-10-24T17:53:50.850643+00:00",
+    "updated_at": "2026-10-24T17:53:50.850653+00:00",
     "tags": [
       "biology",
-      "embri-test-és-egészség",
+      "human-body-and-health",
       "grade-08",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "2496a7320102e55f9058e531158c8c7586ce4c3bd290aadf74f6d1e2f8a56add",
+    "checksum": "dbb25b84fb9cd3a32b123e4063847f68a9ad5fc3dcce64530662c8c3ad8e09be",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Embri test és egészség",
-    "description": "Test on Embri test és egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Human body and health",
+    "description": "Toets over Human body and health: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 1: Human body and health",
+      "text": "[biology] Human body and health - Vraag 1: Human body and health",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 2: Human body and health",
+      "text": "[biology] Human body and health - Vraag 2: Human body and health",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 3: Human body and health",
+      "text": "[biology] Human body and health - Vraag 3: Human body and health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Human body and health.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test és egészség - Kérdés 4: Human body and health",
+      "text": "[biology] Human body and health - Vraag 4: Human body and health",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test és egészség - Kérdés 5: Human body and health",
+      "text": "[biology] Human body and health - Vraag 5: Human body and health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test és egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Human body and health.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-és-egészség",
-        "grade-08"
+        "human-body-and-health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Embri test és egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Human body and health",
       "learning_objective": "Human body and health"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-kivonása-1.0.0",
-    "name": "Törtek kivonása - Finland grade-05",
+    "name": "Fraction subtraction - Finland grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek kivonása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 minuutin koe aiheesta Fraction subtraction (grade-05). Aiheet: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.108085+00:00",
-    "updated_at": "2026-10-21T11:02:24.108096+00:00",
+    "created_at": "2026-10-24T17:53:47.554161+00:00",
+    "updated_at": "2026-10-24T17:53:47.554167+00:00",
     "tags": [
       "math",
-      "törtek-kivonása",
+      "fraction-subtraction",
       "grade-05",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "e01919e80d0d248482965b9fea78d946ad0c3e379825571e58156449f0271994",
+    "checksum": "690eb9dbf688b1738d206f302810030e094168c7acd1988a8b92179d8692ee61",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek kivonása",
-    "description": "Test on Törtek kivonása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction subtraction",
+    "description": "Koe aiheesta Fraction subtraction: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 1: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Kysymys 1: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 2: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Kysymys 2: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 3: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Kysymys 3: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek kivonása - Kérdés 4: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Kysymys 4: Fraction subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek kivonása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Fraction subtraction.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek kivonása - Question 5: Fraction subtraction [rand:1-100]",
+      "text": "[math] Fraction subtraction - Kysymys 5: Fraction subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-kivonása",
+        "fraction-subtraction",
         "grade-05",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-európa-és-világ-1.0.0",
-    "name": "Európa és világ - Denmark grade-09",
+    "name": "Europe and world - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és világ for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minutters prøve i Europe and world (grade-09). Emner: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.537235+00:00",
-    "updated_at": "2026-10-21T11:02:27.537253+00:00",
+    "created_at": "2026-10-24T17:53:49.622554+00:00",
+    "updated_at": "2026-10-24T17:53:49.622573+00:00",
     "tags": [
       "geography",
-      "európa-és-világ",
+      "europe-and-world",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "da549c933db726c0ef88d9be73e56ea343ea6eceb2ac2568fe7aceec4a8f031d",
+    "checksum": "2cb29dbfb0bac363f3fd05f677147023b546aa974b6a82944ae8ee45c1c227cc",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Európa és világ",
-    "description": "Test on Európa és világ including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Europe and world",
+    "description": "Prøve i Europe and world: Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 1: Europe and world",
+      "text": "[geography] Europe and world - Spørgsmål 1: Europe and world",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-09"
+        "europe-and-world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 2: Europe and world",
+      "text": "[geography] Europe and world - Spørgsmål 2: Europe and world",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-09"
+        "europe-and-world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és világ - Kérdés 3: Europe and world",
+      "text": "[geography] Europe and world - Spørgsmål 3: Europe and world",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Europe and world.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-09"
+        "europe-and-world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 4: Europe and world",
+      "text": "[geography] Europe and world - Spørgsmål 4: Europe and world",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-09"
+        "europe-and-world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és világ - Kérdés 5: Europe and world",
+      "text": "[geography] Europe and world - Spørgsmål 5: Europe and world",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-világ",
-        "grade-09"
+        "europe-and-world",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Európa és világ",
+      "curriculum_topic": "DENMARK-GRADE-09-GEOGRAPHY-Europe and world",
       "learning_objective": "Europe and world"
     }
   ],

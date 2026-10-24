@@ -8,11 +8,19 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["science", "forces", "motion", "year-7", "uk", "ks3"],
+    "tags": [
+      "science",
+      "forces",
+      "motion",
+      "year-7",
+      "uk",
+      "ks3",
+      "en"
+    ],
     "subject": "science",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "b68d608867f37f397dbf0e5687713a1b11c7db107e1228ca888ac7e610d5d6ec",
     "curriculum": "uk-national-curriculum",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +33,10 @@
       "Calculate resultant force",
       "Explain effects of forces on motion",
       "Understand friction and its effects"
-    ]
+    ],
+    "language": "en",
+    "language_name": "English",
+    "country": "uk"
   },
   "exam": {
     "title": "Year 7 Science - Forces and Motion",
@@ -51,12 +62,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Which of these is a contact force?",
-      "options": ["Gravity", "Magnetism", "Friction", "Electrostatic force"],
+      "options": [
+        "Gravity",
+        "Magnetism",
+        "Friction",
+        "Electrostatic force"
+      ],
       "correct_answer": "Friction",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["forces", "contact-force", "friction"],
+      "tags": [
+        "forces",
+        "contact-force",
+        "friction"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -66,12 +86,20 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Which force pulls objects towards the centre of the Earth?",
-      "options": ["Friction", "Magnetism", "Gravity", "Air resistance"],
+      "options": [
+        "Friction",
+        "Magnetism",
+        "Gravity",
+        "Air resistance"
+      ],
       "correct_answer": "Gravity",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["gravity", "forces"],
+      "tags": [
+        "gravity",
+        "forces"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -101,7 +129,10 @@
           "step": 1
         }
       ],
-      "tags": ["resultant-force", "calculation"],
+      "tags": [
+        "resultant-force",
+        "calculation"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 5,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -111,12 +142,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Friction always acts:",
-      "options": ["In the direction of motion", "Opposite to the direction of motion", "Perpendicular to motion", "At 45 degrees to motion"],
+      "options": [
+        "In the direction of motion",
+        "Opposite to the direction of motion",
+        "Perpendicular to motion",
+        "At 45 degrees to motion"
+      ],
       "correct_answer": "Opposite to the direction of motion",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["friction", "direction"],
+      "tags": [
+        "friction",
+        "direction"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -126,12 +165,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Which surface produces the most friction?",
-      "options": ["Ice", "Glass", "Sandpaper", "Polished wood"],
+      "options": [
+        "Ice",
+        "Glass",
+        "Sandpaper",
+        "Polished wood"
+      ],
       "correct_answer": "Sandpaper",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["friction", "surfaces"],
+      "tags": [
+        "friction",
+        "surfaces"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -141,12 +188,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "If forces are balanced, the object:",
-      "options": ["Always moves", "Always accelerates", "Stays at rest or moves at constant speed", "Always changes direction"],
+      "options": [
+        "Always moves",
+        "Always accelerates",
+        "Stays at rest or moves at constant speed",
+        "Always changes direction"
+      ],
       "correct_answer": "Stays at rest or moves at constant speed",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["balanced-forces", "motion"],
+      "tags": [
+        "balanced-forces",
+        "motion"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -176,7 +231,11 @@
           "step": 1
         }
       ],
-      "tags": ["acceleration", "calculation", "newton-laws"],
+      "tags": [
+        "acceleration",
+        "calculation",
+        "newton-laws"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 5,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -186,12 +245,21 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Which unit is used to measure force?",
-      "options": ["Kilograms", "Newtons", "Meters", "Seconds"],
+      "options": [
+        "Kilograms",
+        "Newtons",
+        "Meters",
+        "Seconds"
+      ],
       "correct_answer": "Newtons",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["force", "units", "newtons"],
+      "tags": [
+        "force",
+        "units",
+        "newtons"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -206,7 +274,12 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["friction", "car", "advantages", "disadvantages"],
+      "tags": [
+        "friction",
+        "car",
+        "advantages",
+        "disadvantages"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -221,7 +294,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["friction", "experiment", "investigation"],
+      "tags": [
+        "friction",
+        "experiment",
+        "investigation"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "UK-07-Science-Forces",
@@ -237,19 +314,35 @@
           "id": "c-009-1",
           "description": "Explains friction helps tyres grip road (advantage)",
           "points": 4,
-          "keywords": ["tyres", "grip", "road", "advantage", "move", "stop"]
+          "keywords": [
+            "tyres",
+            "grip",
+            "road",
+            "advantage",
+            "move",
+            "stop"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Explains friction causes wear and heat (disadvantage)",
           "points": 3,
-          "keywords": ["wear", "heat", "disadvantage", "moving-parts"]
+          "keywords": [
+            "wear",
+            "heat",
+            "disadvantage",
+            "moving-parts"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Mentions air resistance affects fuel efficiency",
           "points": 3,
-          "keywords": ["air-resistance", "fuel", "efficiency"]
+          "keywords": [
+            "air-resistance",
+            "fuel",
+            "efficiency"
+          ]
         }
       ],
       "total_points": 10
@@ -262,19 +355,36 @@
           "id": "c-010-1",
           "description": "Lists appropriate equipment (block, surfaces, force meter, weights)",
           "points": 3,
-          "keywords": ["block", "surfaces", "force-meter", "weights", "equipment"]
+          "keywords": [
+            "block",
+            "surfaces",
+            "force-meter",
+            "weights",
+            "equipment"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Describes method clearly (pull block, measure force)",
           "points": 4,
-          "keywords": ["pull", "measure", "force", "method", "steps"]
+          "keywords": [
+            "pull",
+            "measure",
+            "force",
+            "method",
+            "steps"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Identifies what to measure (force needed to move block)",
           "points": 3,
-          "keywords": ["measure", "force", "move", "block"]
+          "keywords": [
+            "measure",
+            "force",
+            "move",
+            "block"
+          ]
         }
       ],
       "total_points": 10

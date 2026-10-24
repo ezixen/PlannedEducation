@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-erő-1.0.0",
-    "name": "Erő - Switzerland grade-07",
+    "name": "Kraft - Switzerland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minütige Prüfung zum Thema Kraft (grade-07). Themen: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.383116+00:00",
-    "updated_at": "2026-10-21T11:02:28.383131+00:00",
+    "created_at": "2026-10-24T17:53:50.006095+00:00",
+    "updated_at": "2026-10-24T17:53:50.006101+00:00",
     "tags": [
       "physics",
-      "erő",
+      "kraft",
       "grade-07",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "6ff09270c0d89b665a655c16f2ef903d708c169e5f199e4cd02429c26261031e",
+    "checksum": "90da0a252898efe53a4b6084d7fa933c2d54bde1f82d116f6eb5d6e8e9851557",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energie und Kraft",
+      "Kräfte und Bewegung",
+      "Bewegung",
+      "Energie",
+      "Kraft"
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Erő",
-    "description": "Test on Erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Kraft",
+    "description": "Prüfung zum Thema Kraft: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 1: Force",
+      "text": "[physics] Kraft - Frage 1: Kraft",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "kraft",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Erő",
-      "learning_objective": "Force"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Kraft",
+      "learning_objective": "Kraft"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 2: Force",
+      "text": "[physics] Kraft - Frage 2: Kraft",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "kraft",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Erő",
-      "learning_objective": "Force"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Kraft",
+      "learning_objective": "Kraft"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erő - Kérdés 3: Force",
+      "text": "[physics] Kraft - Frage 3: Kraft",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erő témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Kraft.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "kraft",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Erő",
-      "learning_objective": "Force"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Kraft",
+      "learning_objective": "Kraft"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erő - Question 4: Force [rand:1-100]",
+      "text": "[physics] Kraft - Frage 4: Kraft [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erő",
+        "kraft",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Erő",
-      "learning_objective": "Force"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Kraft",
+      "learning_objective": "Kraft"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erő - Kérdés 5: Force",
+      "text": "[physics] Kraft - Frage 5: Kraft",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "erő",
-        "grade-07"
+        "kraft",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Erő",
-      "learning_objective": "Force"
+      "curriculum_topic": "SWITZERLAND-GRADE-07-PHYSICS-Kraft",
+      "learning_objective": "Kraft"
     }
   ],
   "rubrics": []

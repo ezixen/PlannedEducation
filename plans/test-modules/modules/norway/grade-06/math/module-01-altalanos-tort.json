@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-általános-tört-1.0.0",
-    "name": "Általános tört - Norway grade-06",
+    "name": "General fractions - Norway grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Általános tört for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minutters prøve i General fractions (grade-06). Emner: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.328712+00:00",
-    "updated_at": "2026-10-21T11:02:26.328723+00:00",
+    "created_at": "2026-10-24T17:53:48.892620+00:00",
+    "updated_at": "2026-10-24T17:53:48.892631+00:00",
     "tags": [
       "math",
-      "általános-tört",
+      "general-fractions",
       "grade-06",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "90f11f3fc8a9f24d43003a662a3f41461f5529ad17bab16a07343d666da0bc19",
+    "checksum": "7e6d6437b7b54d2edfe4f4154dbb706a42da0fbe9d0c8e808b8ffd44266dbeb7",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Általános tört",
-    "description": "Test on Általános tört including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - General fractions",
+    "description": "Prøve i General fractions: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 1: General fractions",
+      "text": "[math] General fractions - Spørsmål 1: General fractions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 2: General fractions",
+      "text": "[math] General fractions - Spørsmål 2: General fractions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 3: General fractions",
+      "text": "[math] General fractions - Spørsmål 3: General fractions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Általános tört - Kérdés 4: General fractions",
+      "text": "[math] General fractions - Spørsmål 4: General fractions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Általános tört témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for General fractions.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Általános tört - Question 5: General fractions [rand:1-100]",
+      "text": "[math] General fractions - Spørsmål 5: General fractions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "általános-tört",
+        "general-fractions",
         "grade-06",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "NORWAY-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     }
   ],

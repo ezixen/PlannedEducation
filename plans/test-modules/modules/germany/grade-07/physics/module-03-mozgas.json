@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-mozgás-1.0.0",
-    "name": "Mozgás - Germany grade-07",
+    "name": "Bewegung - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Mozgás for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minütige Prüfung zum Thema Bewegung (grade-07). Themen: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.358568+00:00",
-    "updated_at": "2026-10-21T11:02:16.358579+00:00",
+    "created_at": "2026-10-24T17:53:45.381902+00:00",
+    "updated_at": "2026-10-24T17:53:45.381909+00:00",
     "tags": [
       "physics",
-      "mozgás",
+      "bewegung",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "e3ad442f213c7ea190269c028625d74bfc382a4e051f9ca816ba5085cc2aff78",
+    "checksum": "91fa625d4612cf8885c4ce08c4bbcb97fb25642cffd8b45428f7b4934d2d8a10",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energie und Kraft",
+      "Kräfte und Bewegung",
+      "Bewegung",
+      "Energie",
+      "Kraft"
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Mozgás",
-    "description": "Test on Mozgás including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Bewegung",
+    "description": "Prüfung zum Thema Bewegung: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 1: Motion",
+      "text": "[physics] Bewegung - Frage 1: Bewegung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-07"
+        "bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Mozgás",
-      "learning_objective": "Motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Bewegung",
+      "learning_objective": "Bewegung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 2: Motion",
+      "text": "[physics] Bewegung - Frage 2: Bewegung",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-07"
+        "bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Mozgás",
-      "learning_objective": "Motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Bewegung",
+      "learning_objective": "Bewegung"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mozgás - Kérdés 3: Motion",
+      "text": "[physics] Bewegung - Frage 3: Bewegung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Bewegung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-07"
+        "bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Mozgás",
-      "learning_objective": "Motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Bewegung",
+      "learning_objective": "Bewegung"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mozgás - Question 4: Motion [rand:1-100]",
+      "text": "[physics] Bewegung - Frage 4: Bewegung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mozgás",
+        "bewegung",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Mozgás",
-      "learning_objective": "Motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Bewegung",
+      "learning_objective": "Bewegung"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 5: Motion",
+      "text": "[physics] Bewegung - Frage 5: Bewegung",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-07"
+        "bewegung",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Mozgás",
-      "learning_objective": "Motion"
+      "curriculum_topic": "GERMANY-GRADE-07-PHYSICS-Bewegung",
+      "learning_objective": "Bewegung"
     }
   ],
   "rubrics": []

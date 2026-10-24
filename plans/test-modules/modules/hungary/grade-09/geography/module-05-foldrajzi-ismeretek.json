@@ -3,21 +3,25 @@
     "id": "grade-09-geography-földrajzi-ismeretek-1.0.0",
     "name": "Földrajzi ismeretek - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45 perces felmérő: Földrajzi ismeretek (grade-09). Témakörök: Európa és világ, Európa, Világ, Földrajz, Földrajzi ismeretek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.435984+00:00",
-    "updated_at": "2026-10-21T11:02:35.436009+00:00",
+    "created_at": "2026-10-24T17:53:52.351453+00:00",
+    "updated_at": "2026-10-24T17:53:52.351460+00:00",
     "tags": [
       "geography",
       "földrajzi-ismeretek",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "1afe5720093f8e176fe77087527fe10177d1aaace4d1b189b998ef66bbc8c605",
+    "checksum": "aa7c995511c54c02b1e4c77c9c027eab4783ab7e6111315e15533f6547bf8067",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and world",
-      "Europe",
-      "World",
-      "Geography",
-      "Geographic knowledge"
+      "Európa és világ",
+      "Európa",
+      "Világ",
+      "Földrajz",
+      "Földrajzi ismeretek"
     ]
   },
   "exam": {
     "title": "grade-09 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "Felmérő a(z) Földrajzi ismeretek témakörből (Európa és világ, Európa, Világ, Földrajz, Földrajzi ismeretek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Földrajzi ismeretek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-fiziologia-és-immunológia-1.0.0",
-    "name": "Embri fiziologia és immunológia - Austria grade-12",
+    "name": "Humanphysiologie und Immunologie - Austria grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri fiziologia és immunológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Humanphysiologie und Immunologie (grade-12). Themen: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.400835+00:00",
-    "updated_at": "2026-10-21T11:02:29.400857+00:00",
+    "created_at": "2026-10-24T17:53:50.633467+00:00",
+    "updated_at": "2026-10-24T17:53:50.633482+00:00",
     "tags": [
       "biology",
-      "embri-fiziologia-és-immunológia",
+      "humanphysiologie-und-immunologie",
       "grade-12",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "091025c6d9f4ec26d89cc2d169c3e426d699be36635fbde17765828a765b2803",
+    "checksum": "191d41463d2e9bacd4b13be779845d79df58de4cfe44c1db9acf732087e82405",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Humanphysiologie und Immunologie",
+      "Physiologie des Menschen",
+      "Immunologie",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri fiziologia és immunológia",
-    "description": "Test on Embri fiziologia és immunológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Humanphysiologie und Immunologie",
+    "description": "Prüfung zum Thema Humanphysiologie und Immunologie: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 1: Human physiology and immunology",
+      "text": "[biology] Humanphysiologie und Immunologie - Frage 1: Humanphysiologie und Immunologie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "humanphysiologie-und-immunologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Humanphysiologie und Immunologie",
+      "learning_objective": "Humanphysiologie und Immunologie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 2: Human physiology and immunology",
+      "text": "[biology] Humanphysiologie und Immunologie - Frage 2: Humanphysiologie und Immunologie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "humanphysiologie-und-immunologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Humanphysiologie und Immunologie",
+      "learning_objective": "Humanphysiologie und Immunologie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 3: Human physiology and immunology",
+      "text": "[biology] Humanphysiologie und Immunologie - Frage 3: Humanphysiologie und Immunologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Humanphysiologie und Immunologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "humanphysiologie-und-immunologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Humanphysiologie und Immunologie",
+      "learning_objective": "Humanphysiologie und Immunologie"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 4: Human physiology and immunology",
+      "text": "[biology] Humanphysiologie und Immunologie - Frage 4: Humanphysiologie und Immunologie",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "humanphysiologie-und-immunologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Humanphysiologie und Immunologie",
+      "learning_objective": "Humanphysiologie und Immunologie"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri fiziologia és immunológia - Kérdés 5: Human physiology and immunology",
+      "text": "[biology] Humanphysiologie und Immunologie - Frage 5: Humanphysiologie und Immunologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri fiziologia és immunológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Humanphysiologie und Immunologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-fiziologia-és-immunológia",
-        "grade-12"
+        "humanphysiologie-und-immunologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Embri fiziologia és immunológia",
-      "learning_objective": "Human physiology and immunology"
+      "curriculum_topic": "AUSTRIA-GRADE-12-BIOLOGY-Humanphysiologie und Immunologie",
+      "learning_objective": "Humanphysiologie und Immunologie"
     }
   ],
   "rubrics": []

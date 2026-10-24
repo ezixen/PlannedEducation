@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-egyenletek-1.0.0",
-    "name": "Egyenletek - Austria grade-07",
+    "name": "Gleichungen - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Egyenletek for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minütige Prüfung zum Thema Gleichungen (grade-07). Themen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.993305+00:00",
-    "updated_at": "2026-10-21T11:02:28.993322+00:00",
+    "created_at": "2026-10-24T17:53:50.419484+00:00",
+    "updated_at": "2026-10-24T17:53:50.419492+00:00",
     "tags": [
       "math",
-      "egyenletek",
+      "gleichungen",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "ef22d8e54583e82a6e6a0e74464f6631e19d4beca1e149b5fcab3a068cd72b87",
+    "checksum": "2606d89888ec54e25ebf5f1fee65971ebeb7753e5d4544ef6169efcc552f04ff",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Rational numbers",
-      "Algebraic expressions",
-      "Equations",
-      "Geometry basics",
-      "Statistics basics"
+      "Rationale Zahlen",
+      "Algebraische Ausdrücke",
+      "Gleichungen",
+      "Geometrie Grundlagen",
+      "Statistik Grundlagen"
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Egyenletek",
-    "description": "Test on Egyenletek including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Gleichungen",
+    "description": "Prüfung zum Thema Gleichungen: Rationale Zahlen, Algebraische Ausdrücke, Gleichungen, Geometrie Grundlagen, Statistik Grundlagen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 1: Equations",
+      "text": "[math] Gleichungen - Frage 1: Gleichungen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "gleichungen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Egyenletek",
-      "learning_objective": "Equations"
+      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Gleichungen",
+      "learning_objective": "Gleichungen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 2: Equations",
+      "text": "[math] Gleichungen - Frage 2: Gleichungen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "gleichungen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Egyenletek",
-      "learning_objective": "Equations"
+      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Gleichungen",
+      "learning_objective": "Gleichungen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Egyenletek - Kérdés 3: Equations",
+      "text": "[math] Gleichungen - Frage 3: Gleichungen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "gleichungen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Egyenletek",
-      "learning_objective": "Equations"
+      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Gleichungen",
+      "learning_objective": "Gleichungen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Egyenletek - Kérdés 4: Equations",
+      "text": "[math] Gleichungen - Frage 4: Gleichungen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Gleichungen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "egyenletek",
-        "grade-07"
+        "gleichungen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Egyenletek",
-      "learning_objective": "Equations"
+      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Gleichungen",
+      "learning_objective": "Gleichungen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Egyenletek - Question 5: Equations [rand:1-100]",
+      "text": "[math] Gleichungen - Frage 5: Gleichungen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "egyenletek",
+        "gleichungen",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Egyenletek",
-      "learning_objective": "Equations"
+      "curriculum_topic": "AUSTRIA-GRADE-07-MATH-Gleichungen",
+      "learning_objective": "Gleichungen"
     }
   ],
   "rubrics": []

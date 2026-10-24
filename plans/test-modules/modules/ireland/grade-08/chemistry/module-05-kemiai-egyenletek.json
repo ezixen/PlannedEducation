@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-kémiai-egyenletek-1.0.0",
-    "name": "Kémiai egyenletek - Ireland grade-08",
+    "name": "Chemical equations - Ireland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenletek for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minute assessment on Chemical equations for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.508543+00:00",
-    "updated_at": "2026-10-21T11:02:30.508557+00:00",
+    "created_at": "2026-10-24T17:53:51.302837+00:00",
+    "updated_at": "2026-10-24T17:53:51.302845+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenletek",
+      "chemical-equations",
       "grade-08",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "ac14dd9593edc5701b05cfc4f0cc8b3f7344851cfb3ace599950f13cc5691ed0",
+    "checksum": "5860374af1622767e216b4c58882bdd2420924a3565060149f6bb6e3abf22357",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Kémiai egyenletek",
-    "description": "Test on Kémiai egyenletek including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Chemical equations",
+    "description": "Assessment on Chemical equations including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 1: Chemical equations",
+      "text": "[chemistry] Chemical equations - Question 1: Chemical equations",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 2: Chemical equations",
+      "text": "[chemistry] Chemical equations - Question 2: Chemical equations",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 3: Chemical equations",
+      "text": "[chemistry] Chemical equations - Question 3: Chemical equations",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Chemical equations.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenletek - Question 4: Chemical equations [rand:1-1000]",
+      "text": "[chemistry] Chemical equations - Question 4: Chemical equations [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
+        "chemical-equations",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenletek - Kérdés 5: Chemical equations",
+      "text": "[chemistry] Chemical equations - Question 5: Chemical equations",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenletek",
-        "grade-08"
+        "chemical-equations",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Kémiai egyenletek",
+      "curriculum_topic": "IRELAND-GRADE-08-CHEMISTRY-Chemical equations",
       "learning_objective": "Chemical equations"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - USA grade-11",
+    "name": "Ecological systems - USA grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45-minute assessment on Ecological systems for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.226468+00:00",
-    "updated_at": "2026-10-21T11:02:18.226489+00:00",
+    "created_at": "2026-10-24T17:53:46.461147+00:00",
+    "updated_at": "2026-10-24T17:53:46.461154+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ecological-systems",
       "grade-11",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "cf50baf187cbbce0f13764930854ebfe7aa1d8ba183e099e6a4ce3646cabed71",
+    "checksum": "367a2acf84fea8ea3aa808495fefb23217a9377acc82706f61d291eba19e03d0",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Ecological systems",
+    "description": "Assessment on Ecological systems including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ecological systems - Question 1: Ecological systems",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ecological systems - Question 2: Ecological systems",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ecological systems - Question 3: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecological systems.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ecological systems - Question 4: Ecological systems",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ecological systems - Question 5: Ecological systems",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Ecological systems.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-11"
+        "ecological-systems",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ökológiai rendszerek",
+      "curriculum_topic": "USA-GRADE-11-BIOLOGY-Ecological systems",
       "learning_objective": "Ecological systems"
     }
   ],

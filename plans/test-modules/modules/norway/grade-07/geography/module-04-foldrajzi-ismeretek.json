@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Norway grade-07",
+    "name": "Geographic knowledge - Norway grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minutters prøve i Geographic knowledge (grade-07). Emner: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.392188+00:00",
-    "updated_at": "2026-10-21T11:02:26.392200+00:00",
+    "created_at": "2026-10-24T17:53:48.939402+00:00",
+    "updated_at": "2026-10-24T17:53:48.939410+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographic-knowledge",
       "grade-07",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "96b036bde9ba831ba420091e33c72c9ddda71081c145788d39e3a11d1cfd5809",
+    "checksum": "5437e5a96c39bb53ae5219d32a5272a5fed7ad426ef08214b08afad329bf1433",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographic knowledge",
+    "description": "Prøve i Geographic knowledge: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Spørsmål 1: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-07"
+        "geographic-knowledge",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Spørsmål 2: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-07"
+        "geographic-knowledge",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Spørsmål 3: Geographic knowledge",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Geographic knowledge.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-07"
+        "geographic-knowledge",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Spørsmål 4: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-07"
+        "geographic-knowledge",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Spørsmål 5: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-07"
+        "geographic-knowledge",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "NORWAY-GRADE-07-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     }
   ],

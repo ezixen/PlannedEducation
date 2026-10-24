@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-history-magyarország-története-1.0.0",
-    "name": "Magyarország története - Belgium grade-10",
+    "name": "History of Hungary - Belgium grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Magyarország története for grade-10 students. Covers: History of Hungary, Hungary, History, Historical events, World history",
+    "description": "Toets van 45 minuten over History of Hungary (grade-10). Onderwerpen: History of Hungary, Hungary, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.024050+00:00",
-    "updated_at": "2026-10-21T11:02:30.024072+00:00",
+    "created_at": "2026-10-24T17:53:50.994670+00:00",
+    "updated_at": "2026-10-24T17:53:50.994684+00:00",
     "tags": [
       "history",
-      "magyarország-története",
+      "history-of-hungary",
       "grade-10",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "bc415191680c5f2edfa7e87d3abfe59c586ea61c07d71337899d6777ce4ec3d0",
+    "checksum": "e30ea33696a7d6ba4675c5c6cfbe142cb0e5f8a11112619e41fb3e6aca81a599",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 History - Magyarország története",
-    "description": "Test on Magyarország története including History of Hungary, Hungary, History, Historical events, World history",
+    "title": "grade-10 History - History of Hungary",
+    "description": "Toets over History of Hungary: History of Hungary, Hungary, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 1: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 1: History of Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 2: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 2: History of Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Magyarország története - Kérdés 3: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 3: History of Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Magyarország története témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor History of Hungary.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 4: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 4: History of Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Magyarország története - Kérdés 5: History of Hungary",
+      "text": "[history] History of Hungary - Vraag 5: History of Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "magyarország-története",
-        "grade-10"
+        "history-of-hungary",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-Magyarország története",
+      "curriculum_topic": "BELGIUM-GRADE-10-HISTORY-History of Hungary",
       "learning_objective": "History of Hungary"
     }
   ],

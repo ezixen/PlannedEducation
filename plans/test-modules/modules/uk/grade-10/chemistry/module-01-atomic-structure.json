@@ -8,11 +8,19 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["chemistry", "atomic-structure", "bonding", "year-10", "gcse", "uk"],
+    "tags": [
+      "chemistry",
+      "atomic-structure",
+      "bonding",
+      "year-10",
+      "gcse",
+      "uk",
+      "en"
+    ],
     "subject": "chemistry",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "3451d8b54c696e62b31f2fe6e287ea91ab08ea45c477b6f9ba5d3bbeb7aa750d",
     "curriculum": "uk-national-curriculum",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +33,10 @@
       "Explain ionic and covalent bonding",
       "Determine electron configuration",
       "Identify isotopes"
-    ]
+    ],
+    "language": "en",
+    "language_name": "English",
+    "country": "uk"
   },
   "exam": {
     "title": "Year 10 Chemistry - Atomic Structure & Bonding",
@@ -51,12 +62,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Which subatomic particle has a positive charge?",
-      "options": ["Electron", "Proton", "Neutron", "Ion"],
+      "options": [
+        "Electron",
+        "Proton",
+        "Neutron",
+        "Ion"
+      ],
       "correct_answer": "Proton",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["atomic-structure", "proton", "charge"],
+      "tags": [
+        "atomic-structure",
+        "proton",
+        "charge"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-10-Chemistry-AtomicStructure",
@@ -66,12 +86,21 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Electrons are found in:",
-      "options": ["The nucleus", "Electron shells around the nucleus", "Between protons and neutrons", "The center of the atom"],
+      "options": [
+        "The nucleus",
+        "Electron shells around the nucleus",
+        "Between protons and neutrons",
+        "The center of the atom"
+      ],
       "correct_answer": "Electron shells around the nucleus",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["atomic-structure", "electrons", "shells"],
+      "tags": [
+        "atomic-structure",
+        "electrons",
+        "shells"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-10-Chemistry-AtomicStructure",
@@ -81,12 +110,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "The atomic number of an element equals the number of:",
-      "options": ["Neutrons", "Protons", "Electrons", "Protons + neutrons"],
+      "options": [
+        "Neutrons",
+        "Protons",
+        "Electrons",
+        "Protons + neutrons"
+      ],
       "correct_answer": "Protons",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["atomic-number", "protons"],
+      "tags": [
+        "atomic-number",
+        "protons"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-10-Chemistry-AtomicStructure",
@@ -96,12 +133,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Isotopes of the same element have different numbers of:",
-      "options": ["Protons", "Electrons", "Neutrons", "Protons + electrons"],
+      "options": [
+        "Protons",
+        "Electrons",
+        "Neutrons",
+        "Protons + electrons"
+      ],
       "correct_answer": "Neutrons",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["isotopes", "neutrons"],
+      "tags": [
+        "isotopes",
+        "neutrons"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-10-Chemistry-Isotopes",
@@ -111,12 +156,21 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Ionic bonding occurs between:",
-      "options": ["Two non-metals", "A metal and a non-metal", "Two metals", "Two noble gases"],
+      "options": [
+        "Two non-metals",
+        "A metal and a non-metal",
+        "Two metals",
+        "Two noble gases"
+      ],
       "correct_answer": "A metal and a non-metal",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["ionic-bonding", "metal", "non-metal"],
+      "tags": [
+        "ionic-bonding",
+        "metal",
+        "non-metal"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-10-Chemistry-Bonding",
@@ -126,12 +180,20 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Covalent bonding involves:",
-      "options": ["Transfer of electrons", "Sharing of electrons", "Loss of electrons", "Gain of electrons"],
+      "options": [
+        "Transfer of electrons",
+        "Sharing of electrons",
+        "Loss of electrons",
+        "Gain of electrons"
+      ],
       "correct_answer": "Sharing of electrons",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["covalent-bonding", "electrons"],
+      "tags": [
+        "covalent-bonding",
+        "electrons"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-10-Chemistry-Bonding",
@@ -141,12 +203,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "The electron configuration of sodium (Na, atomic number 11) is:",
-      "options": ["2,8,1", "2,8,2", "2,7", "2,8,3"],
+      "options": [
+        "2,8,1",
+        "2,8,2",
+        "2,7",
+        "2,8,3"
+      ],
       "correct_answer": "2,8,1",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["electron-configuration", "sodium"],
+      "tags": [
+        "electron-configuration",
+        "sodium"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "UK-10-Chemistry-ElectronConfig",
@@ -156,12 +226,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Which element is in Group 1 of the periodic table?",
-      "options": ["Oxygen", "Chlorine", "Sodium", "Carbon"],
+      "options": [
+        "Oxygen",
+        "Chlorine",
+        "Sodium",
+        "Carbon"
+      ],
       "correct_answer": "Sodium",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["periodic-table", "group-1"],
+      "tags": [
+        "periodic-table",
+        "group-1"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "UK-10-Chemistry-PeriodicTable",
@@ -176,7 +254,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["ionic-bonding", "sodium-chloride", "electron-transfer"],
+      "tags": [
+        "ionic-bonding",
+        "sodium-chloride",
+        "electron-transfer"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "UK-10-Chemistry-Bonding",
@@ -191,7 +273,12 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["bonding", "comparison", "ionic", "covalent"],
+      "tags": [
+        "bonding",
+        "comparison",
+        "ionic",
+        "covalent"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "UK-10-Chemistry-Bonding",
@@ -207,19 +294,35 @@
           "id": "c-009-1",
           "description": "Sodium loses 1 electron to form Na⁺",
           "points": 3,
-          "keywords": ["sodium", "loses", "electron", "Na+", "positive"]
+          "keywords": [
+            "sodium",
+            "loses",
+            "electron",
+            "Na+",
+            "positive"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Chlorine gains 1 electron to form Cl⁻",
           "points": 3,
-          "keywords": ["chlorine", "gains", "electron", "Cl-", "negative"]
+          "keywords": [
+            "chlorine",
+            "gains",
+            "electron",
+            "Cl-",
+            "negative"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Opposite charges attract forming ionic bond",
           "points": 4,
-          "keywords": ["attract", "ionic-bond", "opposite-charges"]
+          "keywords": [
+            "attract",
+            "ionic-bond",
+            "opposite-charges"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +335,33 @@
           "id": "c-010-1",
           "description": "Ionic: metal + non-metal, electron transfer",
           "points": 3,
-          "keywords": ["metal", "non-metal", "transfer", "ionic"]
+          "keywords": [
+            "metal",
+            "non-metal",
+            "transfer",
+            "ionic"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Covalent: non-metal + non-metal, electron sharing",
           "points": 3,
-          "keywords": ["non-metal", "sharing", "covalent"]
+          "keywords": [
+            "non-metal",
+            "sharing",
+            "covalent"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Valid examples (NaCl for ionic, H₂O/CH₄ for covalent)",
           "points": 4,
-          "keywords": ["NaCl", "H2O", "CH4", "example"]
+          "keywords": [
+            "NaCl",
+            "H2O",
+            "CH4",
+            "example"
+          ]
         }
       ],
       "total_points": 10

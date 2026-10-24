@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-civics-piacgazdaság-1.0.0",
-    "name": "Piacgazdaság - Switzerland grade-09",
+    "name": "Marktwirtschaft - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Piacgazdaság for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Marktwirtschaft (grade-09). Themen: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.493715+00:00",
-    "updated_at": "2026-10-21T11:02:28.493744+00:00",
+    "created_at": "2026-10-24T17:53:50.087253+00:00",
+    "updated_at": "2026-10-24T17:53:50.087262+00:00",
     "tags": [
       "civics",
-      "piacgazdaság",
+      "marktwirtschaft",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "8c54c08b875bfe16112e287e9e3518df3fa4e245147141a2ece291f04d47a8e3",
+    "checksum": "c87c447972a621759b063bd38a426f9fb41a33f0d0bc73aa756db46b97f431a2",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokratie und Marktwirtschaft",
+      "Demokratie",
+      "Marktwirtschaft",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-09 Civics - Piacgazdaság",
-    "description": "Test on Piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-09 Civics - Marktwirtschaft",
+    "description": "Prüfung zum Thema Marktwirtschaft: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 1: Market economy",
+      "text": "[civics] Marktwirtschaft - Frage 1: Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-09"
+        "marktwirtschaft",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Marktwirtschaft",
+      "learning_objective": "Marktwirtschaft"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 2: Market economy",
+      "text": "[civics] Marktwirtschaft - Frage 2: Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-09"
+        "marktwirtschaft",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Marktwirtschaft",
+      "learning_objective": "Marktwirtschaft"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Piacgazdaság - Kérdés 3: Market economy",
+      "text": "[civics] Marktwirtschaft - Frage 3: Marktwirtschaft",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Marktwirtschaft.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-09"
+        "marktwirtschaft",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Marktwirtschaft",
+      "learning_objective": "Marktwirtschaft"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 4: Market economy",
+      "text": "[civics] Marktwirtschaft - Frage 4: Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-09"
+        "marktwirtschaft",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Marktwirtschaft",
+      "learning_objective": "Marktwirtschaft"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 5: Market economy",
+      "text": "[civics] Marktwirtschaft - Frage 5: Marktwirtschaft",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "piacgazdaság",
-        "grade-09"
+        "marktwirtschaft",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Marktwirtschaft",
+      "learning_objective": "Marktwirtschaft"
     }
   ],
   "rubrics": []

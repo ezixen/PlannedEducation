@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Canada grade-01",
+    "name": "Nature and environment - Canada grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minute assessment on Nature and environment for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.447302+00:00",
-    "updated_at": "2026-10-21T11:02:15.447311+00:00",
+    "created_at": "2026-10-24T17:53:44.756224+00:00",
+    "updated_at": "2026-10-24T17:53:44.756230+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "nature-and-environment",
       "grade-01",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "f95a913a0df56d0c4fa5030bc4dc5761211267520aeeef869cc4b395aeb3a454",
+    "checksum": "5d1ca03e8f65a97e4fc328e53ffe4ac591898422096e31e655e96c61220e46a1",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Nature and environment",
+    "description": "Assessment on Nature and environment including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Nature and environment - Question 1: Nature and environment",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "nature-and-environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Természet és környezet",
+      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Nature and environment - Question 2: Nature and environment",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "nature-and-environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Természet és környezet",
+      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Nature and environment - Question 3: Nature and environment",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Nature and environment.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "nature-and-environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Természet és környezet",
+      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Nature and environment - Question 4: Nature and environment",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "nature-and-environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Természet és környezet",
+      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Nature and environment - Question 5: Nature and environment",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "nature-and-environment",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Természet és környezet",
+      "curriculum_topic": "CANADA-GRADE-01-SCIENCE-Nature and environment",
       "learning_objective": "Nature and environment"
     }
   ],

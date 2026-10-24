@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-kémiai-egyenleg-1.0.0",
-    "name": "Kémiai egyenleg - Norway grade-10",
+    "name": "Chemical equilibrium - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Kémiai egyenleg for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minutters prøve i Chemical equilibrium (grade-10). Emner: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.672124+00:00",
-    "updated_at": "2026-10-21T11:02:26.672142+00:00",
+    "created_at": "2026-10-24T17:53:49.115380+00:00",
+    "updated_at": "2026-10-24T17:53:49.115393+00:00",
     "tags": [
       "chemistry",
-      "kémiai-egyenleg",
+      "chemical-equilibrium",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "99fde122a609d3ef63a07077f32e6a8f573facc2ccbf1d5b0c33cb62855a8346",
+    "checksum": "d2d2fa4c05f7f6b6f4dc58832b092fd7b728bb2ec4dbc519b4321c28ddb90e31",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Kémiai egyenleg",
-    "description": "Test on Kémiai egyenleg including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Chemical equilibrium",
+    "description": "Prøve i Chemical equilibrium: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 1: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Spørsmål 1: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 2: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Spørsmål 2: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 3: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Spørsmål 3: Chemical equilibrium",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kémiai egyenleg témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Chemical equilibrium.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Kémiai egyenleg - Question 4: Chemical equilibrium [rand:1-100]",
+      "text": "[chemistry] Chemical equilibrium - Spørsmål 4: Chemical equilibrium [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
+        "chemical-equilibrium",
         "grade-10",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Kémiai egyenleg - Kérdés 5: Chemical equilibrium",
+      "text": "[chemistry] Chemical equilibrium - Spørsmål 5: Chemical equilibrium",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "kémiai-egyenleg",
-        "grade-10"
+        "chemical-equilibrium",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Kémiai egyenleg",
+      "curriculum_topic": "NORWAY-GRADE-10-CHEMISTRY-Chemical equilibrium",
       "learning_objective": "Chemical equilibrium"
     }
   ],

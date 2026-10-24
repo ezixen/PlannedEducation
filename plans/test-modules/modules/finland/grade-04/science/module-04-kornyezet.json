@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-környezet-1.0.0",
-    "name": "Környezet - Finland grade-04",
+    "name": "Ympäristö - Finland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 minuutin koe aiheesta Ympäristö (grade-04). Aiheet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.096089+00:00",
-    "updated_at": "2026-10-21T11:02:24.096109+00:00",
+    "created_at": "2026-10-24T17:53:47.546714+00:00",
+    "updated_at": "2026-10-24T17:53:47.546719+00:00",
     "tags": [
       "science",
-      "környezet",
+      "ympäristö",
       "grade-04",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "93494ab53b4ff90fed79c7f50b361415c97bcd573d2232dfa5db9302de693b77",
+    "checksum": "eab44cc9c10fa95180e799443464bff0b3110f8c5f08e9434ce8b151a2aa224e",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Luonto ja ympäristö",
+      "Kasvit ja eläimet",
+      "Luonto",
+      "Ympäristö",
+      "Luonnonsuojelu"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Ympäristö",
+    "description": "Koe aiheesta Ympäristö: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Ympäristö - Kysymys 1: Ympäristö",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "ympäristö",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Ympäristö",
+      "learning_objective": "Ympäristö"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Ympäristö - Kysymys 2: Ympäristö",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "ympäristö",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Ympäristö",
+      "learning_objective": "Ympäristö"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Ympäristö - Kysymys 3: Ympäristö",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Ympäristö.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "ympäristö",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Ympäristö",
+      "learning_objective": "Ympäristö"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Ympäristö - Kysymys 4: Ympäristö",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "ympäristö",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Ympäristö",
+      "learning_objective": "Ympäristö"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Ympäristö - Kysymys 5: Ympäristö",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "ympäristö",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "FINLAND-GRADE-04-SCIENCE-Ympäristö",
+      "learning_objective": "Ympäristö"
     }
   ],
   "rubrics": []

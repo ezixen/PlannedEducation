@@ -3,21 +3,25 @@
     "id": "grade-11-biology-ökológia-1.0.0",
     "name": "Ökológia - Hungary grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "45 perces felmérő: Ökológia (grade-11). Témakörök: Sejtbiológia és genetika, Sejt szerkezete, Genetika, Ökológia, Ökológiai rendszerek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.593850+00:00",
-    "updated_at": "2026-10-21T11:02:35.593863+00:00",
+    "created_at": "2026-10-24T17:53:52.433145+00:00",
+    "updated_at": "2026-10-24T17:53:52.433153+00:00",
     "tags": [
       "biology",
       "ökológia",
       "grade-11",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "e14f821c8f5b612ba7b785be03f173b2613e12b50a0f6d586add9f1a1bfc72da",
+    "checksum": "b89659fe336a6ff88bf3c2ec24fa8458810c6b49c277a5251a14e2ee1867500f",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Cell biology and genetics",
-      "Cell structure",
-      "Genetics",
-      "Ecology",
-      "Ecological systems"
+      "Sejtbiológia és genetika",
+      "Sejt szerkezete",
+      "Genetika",
+      "Ökológia",
+      "Ökológiai rendszerek"
     ]
   },
   "exam": {
     "title": "grade-11 Biology - Ökológia",
-    "description": "Test on Ökológia including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "Felmérő a(z) Ökológia témakörből (Sejtbiológia és genetika, Sejt szerkezete, Genetika, Ökológia, Ökológiai rendszerek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ökológia - Kérdés 1: Ökológia",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "biology",
         "ökológia",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "learning_objective": "Ökológia"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ökológia - Kérdés 2: Ökológia",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "biology",
         "ökológia",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "learning_objective": "Ökológia"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ökológia - Kérdés 3: Ökológia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "ökológia",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "learning_objective": "Ökológia"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ökológia - Kérdés 4: Ökológia",
       "options": [
         "A",
         "B",
@@ -137,31 +144,33 @@
       "tags": [
         "biology",
         "ökológia",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "learning_objective": "Ökológia"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ökológia - Kérdés 5: Ökológia",
       "options": null,
       "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
         "ökológia",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "learning_objective": "Ökológia"
     }
   ],
   "rubrics": []

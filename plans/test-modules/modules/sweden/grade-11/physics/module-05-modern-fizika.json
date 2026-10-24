@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-modern-fizika-1.0.0",
-    "name": "Modern fizika - Sweden grade-11",
+    "name": "Modern physics - Sweden grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Modern fizika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minuters prov i Modern physics (grade-11). Omfattar: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.095728+00:00",
-    "updated_at": "2026-10-21T11:02:26.095742+00:00",
+    "created_at": "2026-10-24T17:53:48.753193+00:00",
+    "updated_at": "2026-10-24T17:53:48.753201+00:00",
     "tags": [
       "physics",
-      "modern-fizika",
+      "modern-physics",
       "grade-11",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "7f57b210b1f9ad47924a5faac90aec4f73c7ae93b75b818500f5f85a9826a35c",
+    "checksum": "ea6eb136fcaf96d70ca64354410e3481e7812a2de3abf8c7ce9a58789c35ea8a",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Modern fizika",
-    "description": "Test on Modern fizika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Modern physics",
+    "description": "Prov i Modern physics: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 1: Modern physics",
+      "text": "[physics] Modern physics - Fråga 1: Modern physics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 2: Modern physics",
+      "text": "[physics] Modern physics - Fråga 2: Modern physics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Modern fizika - Kérdés 3: Modern physics",
+      "text": "[physics] Modern physics - Fråga 3: Modern physics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Modern fizika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Modern physics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Modern fizika - Question 4: Modern physics [rand:1-100]",
+      "text": "[physics] Modern physics - Fråga 4: Modern physics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "modern-fizika",
+        "modern-physics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Modern fizika - Kérdés 5: Modern physics",
+      "text": "[physics] Modern physics - Fråga 5: Modern physics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "modern-fizika",
-        "grade-11"
+        "modern-physics",
+        "grade-11",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern fizika",
+      "curriculum_topic": "SWEDEN-GRADE-11-PHYSICS-Modern physics",
       "learning_objective": "Modern physics"
     }
   ],

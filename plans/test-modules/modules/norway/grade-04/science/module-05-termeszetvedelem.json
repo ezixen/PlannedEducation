@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Norway grade-04",
+    "name": "Naturvern - Norway grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Naturvern (grade-04). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.305194+00:00",
-    "updated_at": "2026-10-21T11:02:26.305206+00:00",
+    "created_at": "2026-10-24T17:53:48.873587+00:00",
+    "updated_at": "2026-10-24T17:53:48.873595+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "naturvern",
       "grade-04",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "910c506e835c398c9ada2702c19adb1cc9a63899bf1e00f2ba0e1cd8cdb1f443",
+    "checksum": "0278761645f40a702d9c9b796d805d541c05aba4a07fed59c34a945f333d1d07",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturvern"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Naturvern",
+    "description": "Prøve i Naturvern: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Naturvern - Spørsmål 1: Naturvern",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturvern",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Naturvern",
+      "learning_objective": "Naturvern"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Naturvern - Spørsmål 2: Naturvern",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturvern",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Naturvern",
+      "learning_objective": "Naturvern"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Naturvern - Spørsmål 3: Naturvern",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Naturvern.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturvern",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Naturvern",
+      "learning_objective": "Naturvern"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Naturvern - Spørsmål 4: Naturvern",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturvern",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Naturvern",
+      "learning_objective": "Naturvern"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Naturvern - Spørsmål 5: Naturvern",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-04"
+        "naturvern",
+        "grade-04",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NORWAY-GRADE-04-SCIENCE-Naturvern",
+      "learning_objective": "Naturvern"
     }
   ],
   "rubrics": []

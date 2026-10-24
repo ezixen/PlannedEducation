@@ -3,21 +3,25 @@
     "id": "grade-08-history-19.-század-1.0.0",
     "name": "19. század - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on 19. század for grade-08 students. Covers: Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "45 perces felmérő: 19. század (grade-08). Témakörök: Újkor - 19. század, Újkor, 19. század, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.310471+00:00",
-    "updated_at": "2026-10-21T11:02:35.310483+00:00",
+    "created_at": "2026-10-24T17:53:52.287707+00:00",
+    "updated_at": "2026-10-24T17:53:52.287715+00:00",
     "tags": [
       "history",
       "19.-század",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "949eb67608e0b6cd4a514894914c584aa99c9a54cbb0dd2f3336038ccc6f9021",
+    "checksum": "dc103b1b983fc4924d8fc97a28a3ab0cef69b2cda897e8b656b00288202c7f1e",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Modern period - 19th century",
-      "Modern period",
-      "19th century",
-      "History",
-      "Historical events"
+      "Újkor - 19. század",
+      "Újkor",
+      "19. század",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-08 History - 19. század",
-    "description": "Test on 19. század including Modern period - 19th century, Modern period, 19th century, History, Historical events",
+    "description": "Felmérő a(z) 19. század témakörből (Újkor - 19. század, Újkor, 19. század, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 1: 19th century",
+      "text": "[history] 19. század - Kérdés 1: 19. század",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "19.-század",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-19. század",
-      "learning_objective": "19th century"
+      "learning_objective": "19. század"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 2: 19th century",
+      "text": "[history] 19. század - Kérdés 2: 19. század",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "19.-század",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-19. század",
-      "learning_objective": "19th century"
+      "learning_objective": "19. század"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 19. század - Kérdés 3: 19th century",
+      "text": "[history] 19. század - Kérdés 3: 19. század",
       "options": null,
       "correct_answer": "Minta válasz a(z) 19. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "19.-század",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-19. század",
-      "learning_objective": "19th century"
+      "learning_objective": "19. század"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 4: 19th century",
+      "text": "[history] 19. század - Kérdés 4: 19. század",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "19.-század",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-19. század",
-      "learning_objective": "19th century"
+      "learning_objective": "19. század"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 19. század - Kérdés 5: 19th century",
+      "text": "[history] 19. század - Kérdés 5: 19. század",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "19.-század",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-HISTORY-19. század",
-      "learning_objective": "19th century"
+      "learning_objective": "19. század"
     }
   ],
   "rubrics": []

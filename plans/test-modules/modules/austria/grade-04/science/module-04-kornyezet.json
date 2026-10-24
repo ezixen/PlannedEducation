@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-környezet-1.0.0",
-    "name": "Környezet - Austria grade-04",
+    "name": "Umwelt - Austria grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Umwelt (grade-04). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.875342+00:00",
-    "updated_at": "2026-10-21T11:02:28.875352+00:00",
+    "created_at": "2026-10-24T17:53:50.344919+00:00",
+    "updated_at": "2026-10-24T17:53:50.344925+00:00",
     "tags": [
       "science",
-      "környezet",
+      "umwelt",
       "grade-04",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "51b929e88046fc3555bc6442802ad701213801c99f36bf0a1a04428c9fd25049",
+    "checksum": "cb5f54a4c025b20eb0d14d6696aad00976721fa3933b28e56c19c7c3540ead94",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Umwelt",
+    "description": "Prüfung zum Thema Umwelt: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Umwelt - Frage 1: Umwelt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Umwelt - Frage 2: Umwelt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Umwelt - Frage 3: Umwelt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Umwelt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Umwelt - Frage 4: Umwelt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Umwelt - Frage 5: Umwelt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-04"
+        "umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "AUSTRIA-GRADE-04-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     }
   ],
   "rubrics": []

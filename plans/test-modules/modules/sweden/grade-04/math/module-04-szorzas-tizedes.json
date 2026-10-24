@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-szorzás-tizedes-1.0.0",
-    "name": "Szorzás tizedes - Sweden grade-04",
+    "name": "Decimal multiplication - Sweden grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minuters prov i Decimal multiplication (grade-04). Omfattar: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.599646+00:00",
-    "updated_at": "2026-10-21T11:02:25.599666+00:00",
+    "created_at": "2026-10-24T17:53:48.385910+00:00",
+    "updated_at": "2026-10-24T17:53:48.385915+00:00",
     "tags": [
       "math",
-      "szorzás-tizedes",
+      "decimal-multiplication",
       "grade-04",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "18f04e8584270ab59134ff67b70b20ed6e2c7f88d673efff2fa2653e8da332a1",
+    "checksum": "07654d687d263800f7ecadbc14d50eb9862a8654a8f10c57931e8e309b9d7451",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Szorzás tizedes",
-    "description": "Test on Szorzás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal multiplication",
+    "description": "Prov i Decimal multiplication: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 1: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Fråga 1: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 2: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Fråga 2: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 3: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Fråga 3: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzás tizedes - Kérdés 4: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Fråga 4: Decimal multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Decimal multiplication.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzás tizedes - Question 5: Decimal multiplication [rand:1-100]",
+      "text": "[math] Decimal multiplication - Fråga 5: Decimal multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzás-tizedes",
+        "decimal-multiplication",
         "grade-04",
-        "integer"
+        "integer",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "SWEDEN-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     }
   ],

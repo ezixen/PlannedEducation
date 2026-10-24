@@ -3,21 +3,25 @@
     "id": "grade-12-geography-földrajzi-ismeretek-1.0.0",
     "name": "Földrajzi ismeretek - Hungary grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 perces felmérő: Földrajzi ismeretek (grade-12). Témakörök: Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.676121+00:00",
-    "updated_at": "2026-10-21T11:02:35.676133+00:00",
+    "created_at": "2026-10-24T17:53:52.487980+00:00",
+    "updated_at": "2026-10-24T17:53:52.487988+00:00",
     "tags": [
       "geography",
       "földrajzi-ismeretek",
       "grade-12",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "da1092d3a99b56063877ce70a9a093c5c4daee7345b5b3cac17ef0789a3501b4",
+    "checksum": "cb81fe24a79b1d11d748e7301450c6237ea1a1603d756c7b289bfe64d50e0daa",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Földrajz-erettségi",
+      "Földrajz",
+      "Földrajzi ismeretek",
+      "Európa és világ",
+      "Földrajzi eszközök"
     ]
   },
   "exam": {
     "title": "grade-12 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "Felmérő a(z) Földrajzi ismeretek témakörből (Földrajz-erettségi, Földrajz, Földrajzi ismeretek, Európa és világ, Földrajzi eszközök)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Földrajzi ismeretek",
       "options": null,
       "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Földrajzi ismeretek",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "földrajzi-ismeretek",
-        "grade-12"
+        "grade-12",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
-      "learning_objective": "Geographic knowledge"
+      "learning_objective": "Földrajzi ismeretek"
     }
   ],
   "rubrics": []

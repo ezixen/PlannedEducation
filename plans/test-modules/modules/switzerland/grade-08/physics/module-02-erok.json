@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-erők-1.0.0",
-    "name": "Erők - Switzerland grade-08",
+    "name": "Kräfte - Switzerland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Erők for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minütige Prüfung zum Thema Kräfte (grade-08). Themen: Mechanik Grundlagen, Kräfte, Bewegung, Energie, Arbeit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.479362+00:00",
-    "updated_at": "2026-10-21T11:02:28.479374+00:00",
+    "created_at": "2026-10-24T17:53:50.076308+00:00",
+    "updated_at": "2026-10-24T17:53:50.076316+00:00",
     "tags": [
       "physics",
-      "erők",
+      "kräfte",
       "grade-08",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "9f83ff0280199e7c19b75415a91fbaf621b3199c2d72a903a9de7d80f0fc484a",
+    "checksum": "3edfab1dcf9ee7b2c7ae40fdde78f700bfc1af5aed2e290327aa8885462d2cd8",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Mechanics basics",
-      "Forces",
-      "Motion",
-      "Energy",
-      "Work"
+      "Mechanik Grundlagen",
+      "Kräfte",
+      "Bewegung",
+      "Energie",
+      "Arbeit"
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Erők",
-    "description": "Test on Erők including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Kräfte",
+    "description": "Prüfung zum Thema Kräfte: Mechanik Grundlagen, Kräfte, Bewegung, Energie, Arbeit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 1: Forces",
+      "text": "[physics] Kräfte - Frage 1: Kräfte",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "kräfte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Kräfte",
+      "learning_objective": "Kräfte"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 2: Forces",
+      "text": "[physics] Kräfte - Frage 2: Kräfte",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "kräfte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Kräfte",
+      "learning_objective": "Kräfte"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Erők - Kérdés 3: Forces",
+      "text": "[physics] Kräfte - Frage 3: Kräfte",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Erők témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Kräfte.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "kräfte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Kräfte",
+      "learning_objective": "Kräfte"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Erők - Question 4: Forces [rand:1-1000]",
+      "text": "[physics] Kräfte - Frage 4: Kräfte [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "erők",
+        "kräfte",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Kräfte",
+      "learning_objective": "Kräfte"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Erők - Kérdés 5: Forces",
+      "text": "[physics] Kräfte - Frage 5: Kräfte",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "erők",
-        "grade-08"
+        "kräfte",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Erők",
-      "learning_objective": "Forces"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-PHYSICS-Kräfte",
+      "learning_objective": "Kräfte"
     }
   ],
   "rubrics": []

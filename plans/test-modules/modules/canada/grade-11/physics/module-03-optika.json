@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-physics-optika-1.0.0",
-    "name": "Optika - Canada grade-11",
+    "name": "Optics - Canada grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Optika for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "description": "45-minute assessment on Optics for grade-11 students. Covers: Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.004856+00:00",
-    "updated_at": "2026-10-21T11:02:16.004874+00:00",
+    "created_at": "2026-10-24T17:53:45.105262+00:00",
+    "updated_at": "2026-10-24T17:53:45.105267+00:00",
     "tags": [
       "physics",
-      "optika",
+      "optics",
       "grade-11",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "c02ecddaf5b8b088990bffcccc87f4286569eed48f1f8eae80da81f3bec46ca3",
+    "checksum": "e3ef6700acc2378762602a4062ecce3e53e929f540669e5c1fde7e04ef1b8c4b",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Physics - Optika",
-    "description": "Test on Optika including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
+    "title": "grade-11 Physics - Optics",
+    "description": "Assessment on Optics including Mechanics, Waves, Optics, Electromagnetism, Modern physics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 1: Optics",
+      "text": "[physics] Optics - Question 1: Optics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-11"
+        "optics",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optika",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 2: Optics",
+      "text": "[physics] Optics - Question 2: Optics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-11"
+        "optics",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optika",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Optika - Kérdés 3: Optics",
+      "text": "[physics] Optics - Question 3: Optics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Optics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-11"
+        "optics",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optika",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Optika - Question 4: Optics [rand:1-100]",
+      "text": "[physics] Optics - Question 4: Optics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "optika",
+        "optics",
         "grade-11",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optika",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optics",
       "learning_objective": "Optics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Optika - Kérdés 5: Optics",
+      "text": "[physics] Optics - Question 5: Optics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "optika",
-        "grade-11"
+        "optics",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optika",
+      "curriculum_topic": "CANADA-GRADE-11-PHYSICS-Optics",
       "learning_objective": "Optics"
     }
   ],

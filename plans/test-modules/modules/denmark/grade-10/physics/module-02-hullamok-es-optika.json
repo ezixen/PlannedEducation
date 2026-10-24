@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-hullamok-és-optika-1.0.0",
-    "name": "Hullamok és optika - Denmark grade-10",
+    "name": "Waves and optics - Denmark grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok és optika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minutters prøve i Waves and optics (grade-10). Emner: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.673433+00:00",
-    "updated_at": "2026-10-21T11:02:27.673448+00:00",
+    "created_at": "2026-10-24T17:53:49.725914+00:00",
+    "updated_at": "2026-10-24T17:53:49.725935+00:00",
     "tags": [
       "physics",
-      "hullamok-és-optika",
+      "waves-and-optics",
       "grade-10",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "32c1a3fbaef44b748c19e65fba5213fa9f669a3a807c5f535b19415d2a513dc0",
+    "checksum": "f403b321091fcff9b1e04596e04c6b75d19191a5fc88aa79c75ac47b0b5f9742",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Hullamok és optika",
-    "description": "Test on Hullamok és optika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Waves and optics",
+    "description": "Prøve i Waves and optics: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 1: Waves and optics",
+      "text": "[physics] Waves and optics - Spørgsmål 1: Waves and optics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 2: Waves and optics",
+      "text": "[physics] Waves and optics - Spørgsmål 2: Waves and optics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok és optika - Kérdés 3: Waves and optics",
+      "text": "[physics] Waves and optics - Spørgsmål 3: Waves and optics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok és optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Waves and optics.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok és optika - Question 4: Waves and optics [rand:1-100]",
+      "text": "[physics] Waves and optics - Spørgsmål 4: Waves and optics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok-és-optika",
+        "waves-and-optics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 5: Waves and optics",
+      "text": "[physics] Waves and optics - Spørgsmål 5: Waves and optics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "DENMARK-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     }
   ],

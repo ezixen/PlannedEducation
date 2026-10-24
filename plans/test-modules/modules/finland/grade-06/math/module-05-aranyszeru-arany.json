@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-aranyszerű-arány-1.0.0",
-    "name": "Aranyszerű arány - Finland grade-06",
+    "name": "Proportional ratio - Finland grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Aranyszerű arány for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45 minuutin koe aiheesta Proportional ratio (grade-06). Aiheet: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.139837+00:00",
-    "updated_at": "2026-10-21T11:02:24.139847+00:00",
+    "created_at": "2026-10-24T17:53:47.575159+00:00",
+    "updated_at": "2026-10-24T17:53:47.575165+00:00",
     "tags": [
       "math",
-      "aranyszerű-arány",
+      "proportional-ratio",
       "grade-06",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "6915c40ec8d01189ee439f8aaef0620936c3d8c5a49b9b6a7e426245c671fb5c",
+    "checksum": "a1608b818db2d70ed7f1122a598939cbe3501d892f38587832370bef20625c29",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Aranyszerű arány",
-    "description": "Test on Aranyszerű arány including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Proportional ratio",
+    "description": "Koe aiheesta Proportional ratio: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 1: Proportional ratio",
+      "text": "[math] Proportional ratio - Kysymys 1: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 2: Proportional ratio",
+      "text": "[math] Proportional ratio - Kysymys 2: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Aranyszerű arány - Kérdés 3: Proportional ratio",
+      "text": "[math] Proportional ratio - Kysymys 3: Proportional ratio",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Aranyszerű arány - Kérdés 4: Proportional ratio",
+      "text": "[math] Proportional ratio - Kysymys 4: Proportional ratio",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Aranyszerű arány témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Proportional ratio.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "aranyszerű-arány",
-        "grade-06"
+        "proportional-ratio",
+        "grade-06",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Aranyszerű arány - Question 5: Proportional ratio [rand:1-100]",
+      "text": "[math] Proportional ratio - Kysymys 5: Proportional ratio [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "aranyszerű-arány",
+        "proportional-ratio",
         "grade-06",
-        "decimal"
+        "decimal",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-06-MATH-Aranyszerű arány",
+      "curriculum_topic": "FINLAND-GRADE-06-MATH-Proportional ratio",
       "learning_objective": "Proportional ratio"
     }
   ],

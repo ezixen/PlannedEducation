@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-sejt-szerkezete-1.0.0",
-    "name": "Sejt szerkezete - Belgium grade-11",
+    "name": "Cell structure - Belgium grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Sejt szerkezete for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Cell structure (grade-11). Onderwerpen: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.059957+00:00",
-    "updated_at": "2026-10-21T11:02:30.059970+00:00",
+    "created_at": "2026-10-24T17:53:51.022537+00:00",
+    "updated_at": "2026-10-24T17:53:51.022544+00:00",
     "tags": [
       "biology",
-      "sejt-szerkezete",
+      "cell-structure",
       "grade-11",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "b6c6d1df66be6b1be49cd0e5c8358f196fee779593dca632ebba23b4dcbac2f3",
+    "checksum": "cdd7371b3b3a84669aedbc1313a509eb487be17870de2740be6ee3303d92b8a0",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Sejt szerkezete",
-    "description": "Test on Sejt szerkezete including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Cell structure",
+    "description": "Toets over Cell structure: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 1: Cell structure",
+      "text": "[biology] Cell structure - Vraag 1: Cell structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 2: Cell structure",
+      "text": "[biology] Cell structure - Vraag 2: Cell structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 3: Cell structure",
+      "text": "[biology] Cell structure - Vraag 3: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell structure.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejt szerkezete - Kérdés 4: Cell structure",
+      "text": "[biology] Cell structure - Vraag 4: Cell structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejt szerkezete - Kérdés 5: Cell structure",
+      "text": "[biology] Cell structure - Vraag 5: Cell structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejt szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell structure.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejt-szerkezete",
-        "grade-11"
+        "cell-structure",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Sejt szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-11-BIOLOGY-Cell structure",
       "learning_objective": "Cell structure"
     }
   ],

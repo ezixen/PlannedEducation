@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-energia-1.0.0",
-    "name": "Energia - United Kingdom grade-07",
+    "name": "Energy - United Kingdom grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minute assessment on Energy for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.132072+00:00",
-    "updated_at": "2026-10-21T11:02:17.132086+00:00",
+    "created_at": "2026-10-24T17:53:45.830387+00:00",
+    "updated_at": "2026-10-24T17:53:45.830396+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-07",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "a9d65675e264a40b4ef91119eac9901e69689b6ec1ba56a751d591acc35bab4c",
+    "checksum": "aa825ac6994c6b691429b591ccf1a6210fadaaeb660bf3ddfbb65b320ddfb6c4",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Energia",
-    "description": "Test on Energia including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Energy",
+    "description": "Assessment on Energy including Energy and force, Forces and motion, Motion, Energy, Force",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Question 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Question 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Question 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Energy.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-100]",
+      "text": "[physics] Energy - Question 4: Energy [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-07",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Question 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energy",
+        "grade-07",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energia",
+      "curriculum_topic": "UK-GRADE-07-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

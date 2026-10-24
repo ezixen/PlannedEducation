@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-összeadás-tizedes-1.0.0",
-    "name": "Összeadás tizedes - Finland grade-04",
+    "name": "Decimal addition - Finland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 minuutin koe aiheesta Decimal addition (grade-04). Aiheet: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.078161+00:00",
-    "updated_at": "2026-10-21T11:02:24.078171+00:00",
+    "created_at": "2026-10-24T17:53:47.536006+00:00",
+    "updated_at": "2026-10-24T17:53:47.536012+00:00",
     "tags": [
       "math",
-      "összeadás-tizedes",
+      "decimal-addition",
       "grade-04",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "18785347e9844c370f774419ea4128b7631ed19bc00fd1fcbe6eb119e05fab0d",
+    "checksum": "66fa9c0dd349ed8baa614e597d5d32dfce2849ceb6e325e65ec39b83fcd79e68",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Összeadás tizedes",
-    "description": "Test on Összeadás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal addition",
+    "description": "Koe aiheesta Decimal addition: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 1: Decimal addition",
+      "text": "[math] Decimal addition - Kysymys 1: Decimal addition",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 2: Decimal addition",
+      "text": "[math] Decimal addition - Kysymys 2: Decimal addition",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 3: Decimal addition",
+      "text": "[math] Decimal addition - Kysymys 3: Decimal addition",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás tizedes - Kérdés 4: Decimal addition",
+      "text": "[math] Decimal addition - Kysymys 4: Decimal addition",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Decimal addition.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "decimal-addition",
+        "grade-04",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás tizedes - Question 5: Decimal addition [rand:1-100]",
+      "text": "[math] Decimal addition - Kysymys 5: Decimal addition [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-tizedes",
+        "decimal-addition",
         "grade-04",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-04-MATH-Összeadás tizedes",
+      "curriculum_topic": "FINLAND-GRADE-04-MATH-Decimal addition",
       "learning_objective": "Decimal addition"
     }
   ],

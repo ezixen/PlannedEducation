@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-szorzótábla-1.0.0",
-    "name": "Szorzótábla - United Kingdom grade-03",
+    "name": "Multiplication table - United Kingdom grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzótábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minute assessment on Multiplication table for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.912850+00:00",
-    "updated_at": "2026-10-21T11:02:16.912865+00:00",
+    "created_at": "2026-10-24T17:53:45.701977+00:00",
+    "updated_at": "2026-10-24T17:53:45.701987+00:00",
     "tags": [
       "math",
-      "szorzótábla",
+      "multiplication-table",
       "grade-03",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "75804f497bc574f3474eca218a3eab7c904e6f01ad3cbdbb9b20fb81611e381a",
+    "checksum": "944e0bb4c40fe89b0cfe46460489a7e5532aff6466218180de40495447d821af",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Szorzótábla",
-    "description": "Test on Szorzótábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Multiplication table",
+    "description": "Assessment on Multiplication table including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 1: Multiplication table",
+      "text": "[math] Multiplication table - Question 1: Multiplication table",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 2: Multiplication table",
+      "text": "[math] Multiplication table - Question 2: Multiplication table",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 3: Multiplication table",
+      "text": "[math] Multiplication table - Question 3: Multiplication table",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzótábla - Kérdés 4: Multiplication table",
+      "text": "[math] Multiplication table - Question 4: Multiplication table",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzótábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Multiplication table.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzótábla - Question 5: Multiplication table [rand:1-20]",
+      "text": "[math] Multiplication table - Question 5: Multiplication table [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzótábla",
+        "multiplication-table",
         "grade-03",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "UK-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     }
   ],

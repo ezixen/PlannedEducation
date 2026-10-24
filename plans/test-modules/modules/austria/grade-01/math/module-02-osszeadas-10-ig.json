@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-összeadás-10-ig-1.0.0",
-    "name": "Összeadás 10-ig - Austria grade-01",
+    "name": "Addition bis 10 - Austria grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minütige Prüfung zum Thema Addition bis 10 (grade-01). Themen: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.780037+00:00",
-    "updated_at": "2026-10-21T11:02:28.780050+00:00",
+    "created_at": "2026-10-24T17:53:50.282039+00:00",
+    "updated_at": "2026-10-24T17:53:50.282048+00:00",
     "tags": [
       "math",
-      "összeadás-10-ig",
+      "addition-bis-10",
       "grade-01",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "9d372339aa7664b3313df1b991309b7788c1cea6391d9c9da92b5a6c50ab7e1e",
+    "checksum": "30c5edbefea1f9379dc191947a090ef796a9c411ce9c1680d4b778d42a3eea1a",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Zählen bis 10",
+      "Addition bis 10",
+      "Subtraktion bis 10",
+      "Zählen bis 20",
+      "Addition bis 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Összeadás 10-ig",
-    "description": "Test on Összeadás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Addition bis 10",
+    "description": "Prüfung zum Thema Addition bis 10: Zählen bis 10, Addition bis 10, Subtraktion bis 10, Zählen bis 20, Addition bis 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 1: Addition to 10",
+      "text": "[math] Addition bis 10 - Frage 1: Addition bis 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Addition bis 10",
+      "learning_objective": "Addition bis 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 2: Addition to 10",
+      "text": "[math] Addition bis 10 - Frage 2: Addition bis 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Addition bis 10",
+      "learning_objective": "Addition bis 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 10-ig - Kérdés 3: Addition to 10",
+      "text": "[math] Addition bis 10 - Frage 3: Addition bis 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Addition bis 10",
+      "learning_objective": "Addition bis 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 10-ig - Kérdés 4: Addition to 10",
+      "text": "[math] Addition bis 10 - Frage 4: Addition bis 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Addition bis 10.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-10-ig",
-        "grade-01"
+        "addition-bis-10",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Addition bis 10",
+      "learning_objective": "Addition bis 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 10-ig - Question 5: Addition to 10 [rand:1-20]",
+      "text": "[math] Addition bis 10 - Frage 5: Addition bis 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "összeadás-10-ig",
+        "addition-bis-10",
         "grade-01",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Összeadás 10-ig",
-      "learning_objective": "Addition to 10"
+      "curriculum_topic": "AUSTRIA-GRADE-01-MATH-Addition bis 10",
+      "learning_objective": "Addition bis 10"
     }
   ],
   "rubrics": []

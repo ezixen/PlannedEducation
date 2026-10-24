@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajzi-ismeretek-1.0.0",
-    "name": "Földrajzi ismeretek - Finland grade-12",
+    "name": "Geographic knowledge - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi ismeretek for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45 minuutin koe aiheesta Geographic knowledge (grade-12). Aiheet: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.736836+00:00",
-    "updated_at": "2026-10-21T11:02:24.736848+00:00",
+    "created_at": "2026-10-24T17:53:47.862739+00:00",
+    "updated_at": "2026-10-24T17:53:47.862746+00:00",
     "tags": [
       "geography",
-      "földrajzi-ismeretek",
+      "geographic-knowledge",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "b74beb4c2b5b9954bf977a708a4665b26b11f197264ab98c52ad222cef1154e4",
+    "checksum": "9932585ee6868893ba987e37c9ac902c30997782dd4d00186600190db9ad0645",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajzi ismeretek",
-    "description": "Test on Földrajzi ismeretek including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographic knowledge",
+    "description": "Koe aiheesta Geographic knowledge: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 1: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Kysymys 1: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 2: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Kysymys 2: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 3: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Kysymys 3: Geographic knowledge",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi ismeretek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Geographic knowledge.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 4: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Kysymys 4: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi ismeretek - Kérdés 5: Geographic knowledge",
+      "text": "[geography] Geographic knowledge - Kysymys 5: Geographic knowledge",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-ismeretek",
-        "grade-12"
+        "geographic-knowledge",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Földrajzi ismeretek",
+      "curriculum_topic": "FINLAND-GRADE-12-GEOGRAPHY-Geographic knowledge",
       "learning_objective": "Geographic knowledge"
     }
   ],

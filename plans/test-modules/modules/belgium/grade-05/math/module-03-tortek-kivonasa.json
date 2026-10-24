@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-kivonása-1.0.0",
-    "name": "Törtek kivonása - Belgium grade-05",
+    "name": "Fraction subtraction - Belgium grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek kivonása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Toets van 45 minuten over Fraction subtraction (grade-05). Onderwerpen: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.577593+00:00",
-    "updated_at": "2026-10-21T11:02:29.577605+00:00",
+    "created_at": "2026-10-24T17:53:50.747603+00:00",
+    "updated_at": "2026-10-24T17:53:50.747611+00:00",
     "tags": [
       "math",
-      "törtek-kivonása",
+      "fraction-subtraction",
       "grade-05",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "dda4ab2fd2ea5c6ee2470e731690d61fe21608423b9ff3438660491a49e81ca8",
+    "checksum": "6906684e02098151c10945a612db0826ab7869bb62fb325b4a81a8bd3ec0eeb5",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek kivonása",
-    "description": "Test on Törtek kivonása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction subtraction",
+    "description": "Toets over Fraction subtraction: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 1: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Vraag 1: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 2: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Vraag 2: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek kivonása - Kérdés 3: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Vraag 3: Fraction subtraction",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek kivonása - Kérdés 4: Fraction subtraction",
+      "text": "[math] Fraction subtraction - Vraag 4: Fraction subtraction",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek kivonása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Fraction subtraction.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-kivonása",
-        "grade-05"
+        "fraction-subtraction",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek kivonása - Question 5: Fraction subtraction [rand:1-100]",
+      "text": "[math] Fraction subtraction - Vraag 5: Fraction subtraction [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-kivonása",
+        "fraction-subtraction",
         "grade-05",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Törtek kivonása",
+      "curriculum_topic": "BELGIUM-GRADE-05-MATH-Fraction subtraction",
       "learning_objective": "Fraction subtraction"
     }
   ],

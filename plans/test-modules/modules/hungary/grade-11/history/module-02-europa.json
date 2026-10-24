@@ -3,21 +3,25 @@
     "id": "grade-11-history-európa-1.0.0",
     "name": "Európa - Hungary grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45 perces felmérő: Európa (grade-11). Témakörök: Európa és világ története, Európa, Világ, Történelem, Történelmi események",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.611380+00:00",
-    "updated_at": "2026-10-21T11:02:35.611397+00:00",
+    "created_at": "2026-10-24T17:53:52.443872+00:00",
+    "updated_at": "2026-10-24T17:53:52.443879+00:00",
     "tags": [
       "history",
       "európa",
       "grade-11",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "786767e0ea9176ac0f88a3551c8e6f3e82fba78d0c2bedd11a0cac2742045538",
+    "checksum": "3e7291ec6922c447427a6ae3e39e698bc475a373e3668b34d597a58762ef4a6a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Europe and the world",
-      "Europe",
-      "World",
-      "History",
-      "Historical events"
+      "Európa és világ története",
+      "Európa",
+      "Világ",
+      "Történelem",
+      "Történelmi események"
     ]
   },
   "exam": {
     "title": "grade-11 History - Európa",
-    "description": "Test on Európa including History of Europe and the world, Europe, World, History, Historical events",
+    "description": "Felmérő a(z) Európa témakörből (Európa és világ története, Európa, Világ, Történelem, Történelmi események)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 1: Europe",
+      "text": "[history] Európa - Kérdés 1: Európa",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "history",
         "európa",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 2: Europe",
+      "text": "[history] Európa - Kérdés 2: Európa",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "history",
         "európa",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa - Kérdés 3: Europe",
+      "text": "[history] Európa - Kérdés 3: Európa",
       "options": null,
       "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
         "európa",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 4: Europe",
+      "text": "[history] Európa - Kérdés 4: Európa",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "history",
         "európa",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 5: Europe",
+      "text": "[history] Európa - Kérdés 5: Európa",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "history",
         "európa",
-        "grade-11"
+        "grade-11",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-11-HISTORY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     }
   ],
   "rubrics": []

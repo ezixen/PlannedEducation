@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Austria grade-07",
+    "name": "Staatsaufbau - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Staatsaufbau (grade-07). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.939090+00:00",
-    "updated_at": "2026-10-21T11:02:28.939103+00:00",
+    "created_at": "2026-10-24T17:53:50.389375+00:00",
+    "updated_at": "2026-10-24T17:53:50.389382+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "staatsaufbau",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "b4aa561713562c03110e395b92e4965549666a44eb8a8db5ac9c0a085d512b87",
+    "checksum": "b76205cddba8b0271f9dabf1a2347898278f53c228b655c7f8c560b4b1317904",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - Staatsaufbau",
+    "description": "Prüfung zum Thema Staatsaufbau: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] Staatsaufbau - Frage 1: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "staatsaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] Staatsaufbau - Frage 2: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "staatsaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] Staatsaufbau - Frage 3: Staatsaufbau",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Staatsaufbau.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "staatsaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] Staatsaufbau - Frage 4: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "staatsaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] Staatsaufbau - Frage 5: Staatsaufbau",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "staatsaufbau",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Állam szerkezete",
-      "learning_objective": "State structure"
+      "curriculum_topic": "AUSTRIA-GRADE-07-CIVICS-Staatsaufbau",
+      "learning_objective": "Staatsaufbau"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-alapok-1.0.0",
-    "name": "Százalék alapok - Sweden grade-06",
+    "name": "Percentage basics - Sweden grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék alapok for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minuters prov i Percentage basics (grade-06). Omfattar: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.645557+00:00",
-    "updated_at": "2026-10-21T11:02:25.645570+00:00",
+    "created_at": "2026-10-24T17:53:48.410322+00:00",
+    "updated_at": "2026-10-24T17:53:48.410327+00:00",
     "tags": [
       "math",
-      "százalék-alapok",
+      "percentage-basics",
       "grade-06",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "5a90acb01f2f4ade03cd3c49a0f49db96c70a0aa04b56f54720385634d30fadd",
+    "checksum": "16b85c071c015914692065ec17ff2ca81600129144bb021f0cbab48e6d1e0ed2",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék alapok",
-    "description": "Test on Százalék alapok including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage basics",
+    "description": "Prov i Percentage basics: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 1: Percentage basics",
+      "text": "[math] Percentage basics - Fråga 1: Percentage basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 2: Percentage basics",
+      "text": "[math] Percentage basics - Fråga 2: Percentage basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék alapok - Kérdés 3: Percentage basics",
+      "text": "[math] Percentage basics - Fråga 3: Percentage basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék alapok - Kérdés 4: Percentage basics",
+      "text": "[math] Percentage basics - Fråga 4: Percentage basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Percentage basics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-alapok",
-        "grade-06"
+        "percentage-basics",
+        "grade-06",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék alapok - Question 5: Percentage basics [rand:1-100]",
+      "text": "[math] Percentage basics - Fråga 5: Percentage basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-alapok",
+        "percentage-basics",
         "grade-06",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Százalék alapok",
+      "curriculum_topic": "SWEDEN-GRADE-06-MATH-Percentage basics",
       "learning_objective": "Percentage basics"
     }
   ],

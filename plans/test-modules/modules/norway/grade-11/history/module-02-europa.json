@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-európa-1.0.0",
-    "name": "Európa - Norway grade-11",
+    "name": "Europe - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minutters prøve i Europe (grade-11). Emner: History of Europe and the world, Europe, World, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.774440+00:00",
-    "updated_at": "2026-10-21T11:02:26.774456+00:00",
+    "created_at": "2026-10-24T17:53:49.185334+00:00",
+    "updated_at": "2026-10-24T17:53:49.185344+00:00",
     "tags": [
       "history",
-      "európa",
+      "europe",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "031c194404bb9696d7b1b4a6cf654f3df207921c8ac059b9da30f7d75c2d8dd3",
+    "checksum": "b0ccd2825fa9d16bbb4a199b5179d474a85a4027eb69e326299badac38ff3f0a",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 History - Európa",
-    "description": "Test on Európa including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - Europe",
+    "description": "Prøve i Europe: History of Europe and the world, Europe, World, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 1: Europe",
+      "text": "[history] Europe - Spørsmål 1: Europe",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 2: Europe",
+      "text": "[history] Europe - Spørsmål 2: Europe",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Európa - Kérdés 3: Europe",
+      "text": "[history] Europe - Spørsmål 3: Europe",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Europe.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 4: Europe",
+      "text": "[history] Europe - Spørsmål 4: Europe",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Európa - Kérdés 5: Europe",
+      "text": "[history] Europe - Spørsmål 5: Europe",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "európa",
-        "grade-11"
+        "europe",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Európa",
+      "curriculum_topic": "NORWAY-GRADE-11-HISTORY-Europe",
       "learning_objective": "Europe"
     }
   ],

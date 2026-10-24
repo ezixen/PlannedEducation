@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-ökológia-1.0.0",
-    "name": "Ökológia - Switzerland grade-12",
+    "name": "Ökologie - Switzerland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológia for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Ökologie (grade-12). Themen: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.715980+00:00",
-    "updated_at": "2026-10-21T11:02:28.716001+00:00",
+    "created_at": "2026-10-24T17:53:50.235295+00:00",
+    "updated_at": "2026-10-24T17:53:50.235301+00:00",
     "tags": [
       "biology",
-      "ökológia",
+      "ökologie",
       "grade-12",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "5b364fe3cac2858533ea43ce1070118e25f9983322d204df2733ec737542df74",
+    "checksum": "4a7c489583e846d50ed4c9c49e79a578177004a4503f90721e3f56ce3f3eba17",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Humanphysiologie und Immunologie",
+      "Physiologie des Menschen",
+      "Immunologie",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Ökológia",
-    "description": "Test on Ökológia including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Ökologie",
+    "description": "Prüfung zum Thema Ökologie: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 1: Ecology",
+      "text": "[biology] Ökologie - Frage 1: Ökologie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ökologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 2: Ecology",
+      "text": "[biology] Ökologie - Frage 2: Ökologie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ökologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 3: Ecology",
+      "text": "[biology] Ökologie - Frage 3: Ökologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ökologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológia - Kérdés 4: Ecology",
+      "text": "[biology] Ökologie - Frage 4: Ökologie",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ökologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológia - Kérdés 5: Ecology",
+      "text": "[biology] Ökologie - Frage 5: Ökologie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökologie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológia",
-        "grade-12"
+        "ökologie",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökológia",
-      "learning_objective": "Ecology"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-BIOLOGY-Ökologie",
+      "learning_objective": "Ökologie"
     }
   ],
   "rubrics": []

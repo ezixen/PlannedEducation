@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-english-angol-nyelv-b2-1.0.0",
-    "name": "Angol nyelv B2 - Sweden grade-10",
+    "name": "English language B2 - Sweden grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minuters prov i English language B2 (grade-10). Omfattar: English language B2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.986797+00:00",
-    "updated_at": "2026-10-21T11:02:25.986810+00:00",
+    "created_at": "2026-10-24T17:53:48.657728+00:00",
+    "updated_at": "2026-10-24T17:53:48.657739+00:00",
     "tags": [
       "english",
-      "angol-nyelv-b2",
+      "english-language-b2",
       "grade-10",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "6b2387953dc01a24bc7c669206784b469f7373ef01551b5407935e276468642e",
+    "checksum": "960efb0abd0d29228802cf22a68bb51d842c57667490b739d4979d41c4b84540",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 English - Angol nyelv B2",
-    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-10 English - English language B2",
+    "description": "Prov i English language B2: English language B2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "text": "[english] English language B2 - Fråga 1: English language B2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "text": "[english] English language B2 - Fråga 2: English language B2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "text": "[english] English language B2 - Fråga 3: English language B2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för English language B2.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "text": "[english] English language B2 - Fråga 4: English language B2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "text": "[english] English language B2 - Fråga 5: English language B2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-b2",
-        "grade-10"
+        "english-language-b2",
+        "grade-10",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-Angol nyelv B2",
+      "curriculum_topic": "SWEDEN-GRADE-10-ENGLISH-English language B2",
       "learning_objective": "English language B2"
     }
   ],

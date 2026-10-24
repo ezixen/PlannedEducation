@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-valószínűség-1.0.0",
-    "name": "Valószínűség - Canada grade-09",
+    "name": "Probability - Canada grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Probability for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.841024+00:00",
-    "updated_at": "2026-10-21T11:02:15.841035+00:00",
+    "created_at": "2026-10-24T17:53:45.002563+00:00",
+    "updated_at": "2026-10-24T17:53:45.002572+00:00",
     "tags": [
       "math",
-      "valószínűség",
+      "probability",
       "grade-09",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "4e2d8864d1547e3f2d30e34ec43053256c41c249d840575ae85414dfd2a6de16",
+    "checksum": "89b049d67a96e8b0f975295e5dad36a1fdccb1f666ff780ef2586a434ff160bc",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Valószínűség",
-    "description": "Test on Valószínűség including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Probability",
+    "description": "Assessment on Probability including Functions and limits, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 1: Probability",
+      "text": "[math] Probability - Question 1: Probability",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "probability",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-MATH-Valószínűség",
+      "curriculum_topic": "CANADA-GRADE-09-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 2: Probability",
+      "text": "[math] Probability - Question 2: Probability",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "probability",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-MATH-Valószínűség",
+      "curriculum_topic": "CANADA-GRADE-09-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 3: Probability",
+      "text": "[math] Probability - Question 3: Probability",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "probability",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-MATH-Valószínűség",
+      "curriculum_topic": "CANADA-GRADE-09-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség - Kérdés 4: Probability",
+      "text": "[math] Probability - Question 4: Probability",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Probability.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-09"
+        "probability",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-MATH-Valószínűség",
+      "curriculum_topic": "CANADA-GRADE-09-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség - Question 5: Probability [rand:1-1000]",
+      "text": "[math] Probability - Question 5: Probability [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valószínűség",
+        "probability",
         "grade-09",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-09-MATH-Valószínűség",
+      "curriculum_topic": "CANADA-GRADE-09-MATH-Probability",
       "learning_objective": "Probability"
     }
   ],

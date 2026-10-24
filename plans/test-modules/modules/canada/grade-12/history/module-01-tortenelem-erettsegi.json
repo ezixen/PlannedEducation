@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-history-történelem-erettségi-1.0.0",
-    "name": "Történelem-erettségi - Canada grade-12",
+    "name": "History-maturity - Canada grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Történelem-erettségi for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
+    "description": "45-minute assessment on History-maturity for grade-12 students. Covers: History-maturity, History, Historical events, World history, Europe and world",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.054111+00:00",
-    "updated_at": "2026-10-21T11:02:16.054127+00:00",
+    "created_at": "2026-10-24T17:53:45.138771+00:00",
+    "updated_at": "2026-10-24T17:53:45.138777+00:00",
     "tags": [
       "history",
-      "történelem-erettségi",
+      "history-maturity",
       "grade-12",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "history",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "8c9b97b1c34f930f183827c5a2cd06036b8b4145ae9ae9dd9b1283e3e448839c",
+    "checksum": "147855a1e80bb4ae3326f09b2b25f5826d67f3e8b8ec0fe99253810983510904",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 History - Történelem-erettségi",
-    "description": "Test on Történelem-erettségi including History-maturity, History, Historical events, World history, Europe and world",
+    "title": "grade-12 History - History-maturity",
+    "description": "Assessment on History-maturity including History-maturity, History, Historical events, World history, Europe and world",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 1: History-maturity",
+      "text": "[history] History-maturity - Question 1: History-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 2: History-maturity",
+      "text": "[history] History-maturity - Question 2: History-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Történelem-erettségi - Kérdés 3: History-maturity",
+      "text": "[history] History-maturity - Question 3: History-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Történelem-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for History-maturity.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 4: History-maturity",
+      "text": "[history] History-maturity - Question 4: History-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Történelem-erettségi - Kérdés 5: History-maturity",
+      "text": "[history] History-maturity - Question 5: History-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "történelem-erettségi",
-        "grade-12"
+        "history-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-12-HISTORY-Történelem-erettségi",
+      "curriculum_topic": "CANADA-GRADE-12-HISTORY-History-maturity",
       "learning_objective": "History-maturity"
     }
   ],

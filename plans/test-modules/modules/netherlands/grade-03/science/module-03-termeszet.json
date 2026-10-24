@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-science-természet-1.0.0",
-    "name": "Természet - Netherlands grade-03",
+    "name": "Natuur - Netherlands grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Toets van 45 minuten over Natuur (grade-03). Onderwerpen: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.855455+00:00",
-    "updated_at": "2026-10-21T11:02:24.855469+00:00",
+    "created_at": "2026-10-24T17:53:47.935747+00:00",
+    "updated_at": "2026-10-24T17:53:47.935753+00:00",
     "tags": [
       "science",
-      "természet",
+      "natuur",
       "grade-03",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "science",
     "grade_level": "grade-03",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "3ca0bbc2fa93023470c253a8eb9bd854a9409c762f5c70baf50946e523e4079a",
+    "checksum": "7985ab1a84e40a635058a278da8fd7a97043871c62edad2331ab332a36a8f444",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natuur en milieu",
+      "Planten en dieren",
+      "Natuur",
+      "Milieu",
+      "Natuurbehoud"
     ]
   },
   "exam": {
-    "title": "grade-03 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-03 Science - Natuur",
+    "description": "Toets over Natuur: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Natuur - Vraag 1: Natuur",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natuur",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Natuur",
+      "learning_objective": "Natuur"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Natuur - Vraag 2: Natuur",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natuur",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Natuur",
+      "learning_objective": "Natuur"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Natuur - Vraag 3: Natuur",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Natuur.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natuur",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Natuur",
+      "learning_objective": "Natuur"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Natuur - Vraag 4: Natuur",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natuur",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Natuur",
+      "learning_objective": "Natuur"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Natuur - Vraag 5: Natuur",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "natuur",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "NETHERLANDS-GRADE-03-SCIENCE-Natuur",
+      "learning_objective": "Natuur"
     }
   ],
   "rubrics": []

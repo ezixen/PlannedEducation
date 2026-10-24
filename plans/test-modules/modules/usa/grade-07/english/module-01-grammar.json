@@ -8,11 +8,19 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["english", "grammar", "writing", "grade-7", "ngss", "usa"],
+    "tags": [
+      "english",
+      "grammar",
+      "writing",
+      "grade-7",
+      "ngss",
+      "usa",
+      "en"
+    ],
     "subject": "english",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "e581a72ebe2ab16fd75493fcce3b8436394361704dc8ae940da1433d079d99fd",
     "curriculum": "usa-ngss",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +33,10 @@
       "Apply subject-verb agreement",
       "Use proper punctuation",
       "Write coherent paragraphs"
-    ]
+    ],
+    "language": "en",
+    "language_name": "English",
+    "country": "usa"
   },
   "exam": {
     "title": "Grade 7 English - Grammar and Writing",
@@ -51,12 +62,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Choose the correct verb form: 'She ____ to school every day.'",
-      "options": ["go", "goes", "going", "went"],
+      "options": [
+        "go",
+        "goes",
+        "going",
+        "went"
+      ],
       "correct_answer": "goes",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "present-tense", "third-person"],
+      "tags": [
+        "grammar",
+        "present-tense",
+        "third-person"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -66,12 +86,21 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Choose the correct past tense: 'Yesterday, I ____ to the park.'",
-      "options": ["go", "goes", "went", "going"],
+      "options": [
+        "go",
+        "goes",
+        "went",
+        "going"
+      ],
       "correct_answer": "went",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "past-tense", "irregular-verbs"],
+      "tags": [
+        "grammar",
+        "past-tense",
+        "irregular-verbs"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -81,12 +110,21 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Choose the correct form: 'If it ____ tomorrow, we will stay home.'",
-      "options": ["rain", "rains", "rained", "raining"],
+      "options": [
+        "rain",
+        "rains",
+        "rained",
+        "raining"
+      ],
       "correct_answer": "rains",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "conditional", "first-conditional"],
+      "tags": [
+        "grammar",
+        "conditional",
+        "first-conditional"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -96,12 +134,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Which sentence uses the correct article?",
-      "options": ["She is a teacher.", "She is an teacher.", "She is the teacher.", "She is teacher."],
+      "options": [
+        "She is a teacher.",
+        "She is an teacher.",
+        "She is the teacher.",
+        "She is teacher."
+      ],
       "correct_answer": "She is a teacher.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "articles"],
+      "tags": [
+        "grammar",
+        "articles"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -111,12 +157,21 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Choose the correct preposition: 'We will meet ____ 3 o'clock.'",
-      "options": ["in", "on", "at", "by"],
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
       "correct_answer": "at",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "prepositions", "time"],
+      "tags": [
+        "grammar",
+        "prepositions",
+        "time"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -126,12 +181,21 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Which sentence uses the correct comparative form?",
-      "options": ["This book is more better than that one.", "This book is better than that one.", "This book is gooder than that one.", "This book is more good than that one."],
+      "options": [
+        "This book is more better than that one.",
+        "This book is better than that one.",
+        "This book is gooder than that one.",
+        "This book is more good than that one."
+      ],
       "correct_answer": "This book is better than that one.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "comparatives", "irregular-comparatives"],
+      "tags": [
+        "grammar",
+        "comparatives",
+        "irregular-comparatives"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -141,12 +205,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Choose the correct relative pronoun: 'The book ____ I read was interesting.'",
-      "options": ["who", "which", "where", "when"],
+      "options": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
       "correct_answer": "which",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "relative-pronouns"],
+      "tags": [
+        "grammar",
+        "relative-pronouns"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "USA-07-English-Grammar",
@@ -156,12 +228,21 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Which sentence uses the correct punctuation?",
-      "options": ["Lets go to the park.", "Let's go to the park.", "Lets' go to the park.", "Let,s go to the park."],
+      "options": [
+        "Lets go to the park.",
+        "Let's go to the park.",
+        "Lets' go to the park.",
+        "Let,s go to the park."
+      ],
       "correct_answer": "Let's go to the park.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["punctuation", "apostrophe", "contractions"],
+      "tags": [
+        "punctuation",
+        "apostrophe",
+        "contractions"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-07-English-Punctuation",
@@ -176,7 +257,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["writing", "composition", "tenses"],
+      "tags": [
+        "writing",
+        "composition",
+        "tenses"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "USA-07-English-Writing",
@@ -191,7 +276,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["writing", "email", "format"],
+      "tags": [
+        "writing",
+        "email",
+        "format"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "USA-07-English-Writing",
@@ -207,19 +296,32 @@
           "id": "c-009-1",
           "description": "Writes 5-7 sentences",
           "points": 3,
-          "keywords": ["sentences", "five", "seven"]
+          "keywords": [
+            "sentences",
+            "five",
+            "seven"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Uses at least 3 different tenses",
           "points": 4,
-          "keywords": ["tenses", "present", "past", "future"]
+          "keywords": [
+            "tenses",
+            "present",
+            "past",
+            "future"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Correct grammar and vocabulary",
           "points": 3,
-          "keywords": ["grammar", "vocabulary", "correct"]
+          "keywords": [
+            "grammar",
+            "vocabulary",
+            "correct"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +334,33 @@
           "id": "c-010-1",
           "description": "Uses proper email format (greeting, body, closing)",
           "points": 3,
-          "keywords": ["greeting", "body", "closing", "format"]
+          "keywords": [
+            "greeting",
+            "body",
+            "closing",
+            "format"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Includes date, time, and location",
           "points": 4,
-          "keywords": ["date", "time", "location", "details"]
+          "keywords": [
+            "date",
+            "time",
+            "location",
+            "details"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Proper email format with greeting and closing",
           "points": 3,
-          "keywords": ["format", "email", "structure"]
+          "keywords": [
+            "format",
+            "email",
+            "structure"
+          ]
         }
       ],
       "total_points": 10

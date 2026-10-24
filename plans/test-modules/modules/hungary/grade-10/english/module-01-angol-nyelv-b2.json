@@ -3,21 +3,25 @@
     "id": "grade-10-english-angol-nyelv-b2-1.0.0",
     "name": "Angol nyelv B2 - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv B2 for grade-10 students. Covers: English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 perces felmérő: Angol nyelv B2 (grade-10). Témakörök: Angol nyelv B2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.542801+00:00",
-    "updated_at": "2026-10-21T11:02:35.542812+00:00",
+    "created_at": "2026-10-24T17:53:52.394963+00:00",
+    "updated_at": "2026-10-24T17:53:52.394969+00:00",
     "tags": [
       "english",
       "angol-nyelv-b2",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "english",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "dda9f8dd971d26822ce3201df1a04a0386bd95586601a95958825c3bcc40f92f",
+    "checksum": "3312eaf80830aab6e864ee330bf6a8c89e24617f423a26a3e848ac5b7e964ff3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "English language B2",
-      "English grammar",
-      "English vocabulary",
-      "English reading",
-      "English writing"
+      "Angol nyelv B2",
+      "Angol grammatika",
+      "Angol szókincs",
+      "Angol olvasás",
+      "Angol írás"
     ]
   },
   "exam": {
     "title": "grade-10 English - Angol nyelv B2",
-    "description": "Test on Angol nyelv B2 including English language B2, English grammar, English vocabulary, English reading, English writing",
+    "description": "Felmérő a(z) Angol nyelv B2 témakörből (Angol nyelv B2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 1: English language B2",
+      "text": "[english] Angol nyelv B2 - Kérdés 1: Angol nyelv B2",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "english",
         "angol-nyelv-b2",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-ENGLISH-Angol nyelv B2",
-      "learning_objective": "English language B2"
+      "learning_objective": "Angol nyelv B2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 2: English language B2",
+      "text": "[english] Angol nyelv B2 - Kérdés 2: Angol nyelv B2",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "english",
         "angol-nyelv-b2",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-ENGLISH-Angol nyelv B2",
-      "learning_objective": "English language B2"
+      "learning_objective": "Angol nyelv B2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv B2 - Kérdés 3: English language B2",
+      "text": "[english] Angol nyelv B2 - Kérdés 3: Angol nyelv B2",
       "options": null,
       "correct_answer": "Minta válasz a(z) Angol nyelv B2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
         "angol-nyelv-b2",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-ENGLISH-Angol nyelv B2",
-      "learning_objective": "English language B2"
+      "learning_objective": "Angol nyelv B2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 4: English language B2",
+      "text": "[english] Angol nyelv B2 - Kérdés 4: Angol nyelv B2",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "english",
         "angol-nyelv-b2",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-ENGLISH-Angol nyelv B2",
-      "learning_objective": "English language B2"
+      "learning_objective": "Angol nyelv B2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv B2 - Kérdés 5: English language B2",
+      "text": "[english] Angol nyelv B2 - Kérdés 5: Angol nyelv B2",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "english",
         "angol-nyelv-b2",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-ENGLISH-Angol nyelv B2",
-      "learning_objective": "English language B2"
+      "learning_objective": "Angol nyelv B2"
     }
   ],
   "rubrics": []

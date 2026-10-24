@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-civics-állam-szerkezete-1.0.0",
-    "name": "Állam szerkezete - Belgium grade-07",
+    "name": "State structure - Belgium grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Állam szerkezete for grade-07 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "Toets van 45 minuten over State structure (grade-07). Onderwerpen: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.635447+00:00",
-    "updated_at": "2026-10-21T11:02:29.635460+00:00",
+    "created_at": "2026-10-24T17:53:50.795220+00:00",
+    "updated_at": "2026-10-24T17:53:50.795234+00:00",
     "tags": [
       "civics",
-      "állam-szerkezete",
+      "state-structure",
       "grade-07",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "civics",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "1ec4f505a8750fe94fc1323160123a4d0a95e1b9c80c037aa5565b72c7aab613",
+    "checksum": "e5bb0a9f0be8f9f05bd6e18599f1cebf16bc18042e2f546220f1ec7cba3f3787",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Civics - Állam szerkezete",
-    "description": "Test on Állam szerkezete including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-07 Civics - State structure",
+    "description": "Toets over State structure: State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 1: State structure",
+      "text": "[civics] State structure - Vraag 1: State structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "state-structure",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-Állam szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 2: State structure",
+      "text": "[civics] State structure - Vraag 2: State structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "state-structure",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-Állam szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam szerkezete - Kérdés 3: State structure",
+      "text": "[civics] State structure - Vraag 3: State structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor State structure.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "state-structure",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-Állam szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 4: State structure",
+      "text": "[civics] State structure - Vraag 4: State structure",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "state-structure",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-Állam szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-State structure",
       "learning_objective": "State structure"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam szerkezete - Kérdés 5: State structure",
+      "text": "[civics] State structure - Vraag 5: State structure",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-szerkezete",
-        "grade-07"
+        "state-structure",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-Állam szerkezete",
+      "curriculum_topic": "BELGIUM-GRADE-07-CIVICS-State structure",
       "learning_objective": "State structure"
     }
   ],

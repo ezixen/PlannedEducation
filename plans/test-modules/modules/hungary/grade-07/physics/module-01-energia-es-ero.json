@@ -3,21 +3,25 @@
     "id": "grade-07-physics-energia-és-erő-1.0.0",
     "name": "Energia és erő - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Energia és erő for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45 perces felmérő: Energia és erő (grade-07). Témakörök: Energia és erő, Erők és mozgás, Mozgás, Energia, Erő",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.217976+00:00",
-    "updated_at": "2026-10-21T11:02:35.217992+00:00",
+    "created_at": "2026-10-24T17:53:52.222879+00:00",
+    "updated_at": "2026-10-24T17:53:52.222886+00:00",
     "tags": [
       "physics",
       "energia-és-erő",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "4abec48ddeb9d84464abe2f225469ffe4d66fd006c8ffd9b39d05166d4d17903",
+    "checksum": "280fe2c48644e93186048d4a49ae6bc8b5cadb0317f78cff5471a8060bd602a9",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energia és erő",
+      "Erők és mozgás",
+      "Mozgás",
+      "Energia",
+      "Erő"
     ]
   },
   "exam": {
     "title": "grade-07 Physics - Energia és erő",
-    "description": "Test on Energia és erő including Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "Felmérő a(z) Energia és erő témakörből (Energia és erő, Erők és mozgás, Mozgás, Energia, Erő)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia és erő - Kérdés 1: Energy and force",
+      "text": "[physics] Energia és erő - Kérdés 1: Energia és erő",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "physics",
         "energia-és-erő",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Energia és erő",
-      "learning_objective": "Energy and force"
+      "learning_objective": "Energia és erő"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia és erő - Kérdés 2: Energy and force",
+      "text": "[physics] Energia és erő - Kérdés 2: Energia és erő",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "physics",
         "energia-és-erő",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Energia és erő",
-      "learning_objective": "Energy and force"
+      "learning_objective": "Energia és erő"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia és erő - Kérdés 3: Energy and force",
+      "text": "[physics] Energia és erő - Kérdés 3: Energia és erő",
       "options": null,
       "correct_answer": "Minta válasz a(z) Energia és erő témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
         "energia-és-erő",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Energia és erő",
-      "learning_objective": "Energy and force"
+      "learning_objective": "Energia és erő"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia és erő - Question 4: Energy and force [rand:1-100]",
+      "text": "[physics] Energia és erő - Kérdés 4: Energia és erő [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "physics",
         "energia-és-erő",
         "grade-07",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Energia és erő",
-      "learning_objective": "Energy and force"
+      "learning_objective": "Energia és erő"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia és erő - Kérdés 5: Energy and force",
+      "text": "[physics] Energia és erő - Kérdés 5: Energia és erő",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "physics",
         "energia-és-erő",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-PHYSICS-Energia és erő",
-      "learning_objective": "Energy and force"
+      "learning_objective": "Energia és erő"
     }
   ],
   "rubrics": []

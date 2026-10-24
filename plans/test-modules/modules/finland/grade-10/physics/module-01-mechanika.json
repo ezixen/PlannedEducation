@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-mechanika-1.0.0",
-    "name": "Mechanika - Finland grade-10",
+    "name": "Mechanics - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45 minuutin koe aiheesta Mechanics (grade-10). Aiheet: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.614817+00:00",
-    "updated_at": "2026-10-21T11:02:24.614837+00:00",
+    "created_at": "2026-10-24T17:53:47.799114+00:00",
+    "updated_at": "2026-10-24T17:53:47.799123+00:00",
     "tags": [
       "physics",
-      "mechanika",
+      "mechanics",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "1646c95d000d7a684201bed0f04e34fb553329ea1d8be483583e64c020616833",
+    "checksum": "1b009fea54674424d5d1c31a865f342cf825293defc2db548b9b77be141332eb",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Mechanika",
-    "description": "Test on Mechanika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Mechanics",
+    "description": "Koe aiheesta Mechanics: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 1: Mechanics",
+      "text": "[physics] Mechanics - Kysymys 1: Mechanics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 2: Mechanics",
+      "text": "[physics] Mechanics - Kysymys 2: Mechanics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika - Kérdés 3: Mechanics",
+      "text": "[physics] Mechanics - Kysymys 3: Mechanics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Mechanics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika - Question 4: Mechanics [rand:1-100]",
+      "text": "[physics] Mechanics - Kysymys 4: Mechanics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika",
+        "mechanics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika - Kérdés 5: Mechanics",
+      "text": "[physics] Mechanics - Kysymys 5: Mechanics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika",
-        "grade-10"
+        "mechanics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanika",
+      "curriculum_topic": "FINLAND-GRADE-10-PHYSICS-Mechanics",
       "learning_objective": "Mechanics"
     }
   ],

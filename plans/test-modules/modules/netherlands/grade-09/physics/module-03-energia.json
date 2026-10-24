@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-energia-1.0.0",
-    "name": "Energia - Netherlands grade-09",
+    "name": "Energy - Netherlands grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "Toets van 45 minuten over Energy (grade-09). Onderwerpen: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.280411+00:00",
-    "updated_at": "2026-10-21T11:02:25.280423+00:00",
+    "created_at": "2026-10-24T17:53:48.207944+00:00",
+    "updated_at": "2026-10-24T17:53:48.207952+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energy",
       "grade-09",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "eb18239f8d5bbe8ce297d009d405e6e2c9e5781744a49dda31b3e3816cb19b23",
+    "checksum": "71d5f62f3ae826d5b35890bfe33a05eef91312cebe79735f366260f91348ad06",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Energia",
-    "description": "Test on Energia including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Energy",
+    "description": "Toets over Energy: Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energy - Vraag 1: Energy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energy - Vraag 2: Energy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energy - Vraag 3: Energy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Energy.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-1000]",
+      "text": "[physics] Energy - Vraag 4: Energy [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energy",
         "grade-09",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energy - Vraag 5: Energy",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-09"
+        "energy",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energia",
+      "curriculum_topic": "NETHERLANDS-GRADE-09-PHYSICS-Energy",
       "learning_objective": "Energy"
     }
   ],

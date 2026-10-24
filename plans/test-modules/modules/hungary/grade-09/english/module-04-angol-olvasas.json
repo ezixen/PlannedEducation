@@ -3,21 +3,25 @@
     "id": "grade-09-english-angol-olvasás-1.0.0",
     "name": "Angol olvasás - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-09 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 perces felmérő: Angol olvasás (grade-09). Témakörök: Angol nyelv B1, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.403777+00:00",
-    "updated_at": "2026-10-21T11:02:35.403797+00:00",
+    "created_at": "2026-10-24T17:53:52.318636+00:00",
+    "updated_at": "2026-10-24T17:53:52.318642+00:00",
     "tags": [
       "english",
       "angol-olvasás",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "english",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "13111821900a26504fefc54c03978ef511f3698e9a318cb8146f59bea21ddb21",
+    "checksum": "59184c338a94368ec488ca67dedb933e701e54a78be0335ad1a36502822c10a4",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "English language B1",
-      "English grammar",
-      "English vocabulary",
-      "English reading",
-      "English writing"
+      "Angol nyelv B1",
+      "Angol grammatika",
+      "Angol szókincs",
+      "Angol olvasás",
+      "Angol írás"
     ]
   },
   "exam": {
     "title": "grade-09 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "Felmérő a(z) Angol olvasás témakörből (Angol nyelv B1, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] Angol olvasás - Kérdés 1: Angol olvasás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "english",
         "angol-olvasás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-ENGLISH-Angol olvasás",
-      "learning_objective": "English reading"
+      "learning_objective": "Angol olvasás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] Angol olvasás - Kérdés 2: Angol olvasás",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "english",
         "angol-olvasás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-ENGLISH-Angol olvasás",
-      "learning_objective": "English reading"
+      "learning_objective": "Angol olvasás"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] Angol olvasás - Kérdés 3: Angol olvasás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
         "angol-olvasás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-ENGLISH-Angol olvasás",
-      "learning_objective": "English reading"
+      "learning_objective": "Angol olvasás"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] Angol olvasás - Kérdés 4: Angol olvasás",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "english",
         "angol-olvasás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-ENGLISH-Angol olvasás",
-      "learning_objective": "English reading"
+      "learning_objective": "Angol olvasás"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] Angol olvasás - Kérdés 5: Angol olvasás",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "english",
         "angol-olvasás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-ENGLISH-Angol olvasás",
-      "learning_objective": "English reading"
+      "learning_objective": "Angol olvasás"
     }
   ],
   "rubrics": []

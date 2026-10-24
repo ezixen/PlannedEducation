@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-science-környezet-1.0.0",
-    "name": "Környezet - Germany grade-06",
+    "name": "Umwelt - Germany grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Környezet for grade-06 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Umwelt (grade-06). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.270323+00:00",
-    "updated_at": "2026-10-21T11:02:16.270338+00:00",
+    "created_at": "2026-10-24T17:53:45.313070+00:00",
+    "updated_at": "2026-10-24T17:53:45.313079+00:00",
     "tags": [
       "science",
-      "környezet",
+      "umwelt",
       "grade-06",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-06",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "386856023ff3f409bfbfaeb5e5a2b4b102e19f3852bf2b9ee447c5dd16da53d4",
+    "checksum": "2748caac1cbb49e3ef8444d97fa4ee090f5f4e458b37442f2099a3cdb8e411ef",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-06 Science - Környezet",
-    "description": "Test on Környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-06 Science - Umwelt",
+    "description": "Prüfung zum Thema Umwelt: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 1: Environment",
+      "text": "[science] Umwelt - Frage 1: Umwelt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "umwelt",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 2: Environment",
+      "text": "[science] Umwelt - Frage 2: Umwelt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "umwelt",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Környezet - Kérdés 3: Environment",
+      "text": "[science] Umwelt - Frage 3: Umwelt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Umwelt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "umwelt",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 4: Environment",
+      "text": "[science] Umwelt - Frage 4: Umwelt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "umwelt",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Környezet - Kérdés 5: Environment",
+      "text": "[science] Umwelt - Frage 5: Umwelt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "környezet",
-        "grade-06"
+        "umwelt",
+        "grade-06",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Környezet",
-      "learning_objective": "Environment"
+      "curriculum_topic": "GERMANY-GRADE-06-SCIENCE-Umwelt",
+      "learning_objective": "Umwelt"
     }
   ],
   "rubrics": []

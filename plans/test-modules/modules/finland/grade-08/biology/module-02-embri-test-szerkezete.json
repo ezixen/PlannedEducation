@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-embri-test-szerkezete-1.0.0",
-    "name": "Embri test szerkezete - Finland grade-08",
+    "name": "Human body structure - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test szerkezete for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45 minuutin koe aiheesta Human body structure (grade-08). Aiheet: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.271693+00:00",
-    "updated_at": "2026-10-21T11:02:24.271706+00:00",
+    "created_at": "2026-10-24T17:53:47.647584+00:00",
+    "updated_at": "2026-10-24T17:53:47.647592+00:00",
     "tags": [
       "biology",
-      "embri-test-szerkezete",
+      "human-body-structure",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "02d011eb11b693877e179e1b420cd0bf6e5a7633cb59ce8a4227de7cefef9bf9",
+    "checksum": "fed7afdb4c922159b4f2bbcf4b56fa3b5ff7ac852a8d8a79f5945e7e58126af9",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Embri test szerkezete",
-    "description": "Test on Embri test szerkezete including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Human body structure",
+    "description": "Koe aiheesta Human body structure: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 1: Human body structure",
+      "text": "[biology] Human body structure - Kysymys 1: Human body structure",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 2: Human body structure",
+      "text": "[biology] Human body structure - Kysymys 2: Human body structure",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 3: Human body structure",
+      "text": "[biology] Human body structure - Kysymys 3: Human body structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Human body structure.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test szerkezete - Kérdés 4: Human body structure",
+      "text": "[biology] Human body structure - Kysymys 4: Human body structure",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test szerkezete - Kérdés 5: Human body structure",
+      "text": "[biology] Human body structure - Kysymys 5: Human body structure",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test szerkezete témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Human body structure.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-szerkezete",
-        "grade-08"
+        "human-body-structure",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Embri test szerkezete",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Human body structure",
       "learning_objective": "Human body structure"
     }
   ],

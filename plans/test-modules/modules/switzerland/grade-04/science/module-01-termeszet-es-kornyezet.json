@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Switzerland grade-04",
+    "name": "Natur und Umwelt - Switzerland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-04 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Natur und Umwelt (grade-04). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.235623+00:00",
-    "updated_at": "2026-10-21T11:02:28.235641+00:00",
+    "created_at": "2026-10-24T17:53:49.908400+00:00",
+    "updated_at": "2026-10-24T17:53:49.908409+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "natur-und-umwelt",
       "grade-04",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "9a0f2279e69b48b7b9722ed14a2123ac9ff2a9c0357abb2d5feb5401ff3be661",
+    "checksum": "57d0750afb4e41c1a34898584e9cc282a6a0aabbc24baad77561bbe3ade4caec",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-04 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-04 Science - Natur und Umwelt",
+    "description": "Prüfung zum Thema Natur und Umwelt: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 1: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "natur-und-umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 2: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "natur-und-umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 3: Natur und Umwelt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Natur und Umwelt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "natur-und-umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 4: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "natur-und-umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 5: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-04"
+        "natur-und-umwelt",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     }
   ],
   "rubrics": []

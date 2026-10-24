@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-civics-demokrácia-és-piacgazdaság-1.0.0",
-    "name": "Demokrácia és piacgazdaság - Norway grade-10",
+    "name": "Democracy and market economy - Norway grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Demokrácia és piacgazdaság for grade-10 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minutters prøve i Democracy and market economy (grade-10). Emner: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.675347+00:00",
-    "updated_at": "2026-10-21T11:02:26.675360+00:00",
+    "created_at": "2026-10-24T17:53:49.117175+00:00",
+    "updated_at": "2026-10-24T17:53:49.117186+00:00",
     "tags": [
       "civics",
-      "demokrácia-és-piacgazdaság",
+      "democracy-and-market-economy",
       "grade-10",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "f416e1463b079639928af09f10fb47c5a5c4326b6330ca3e463a4978b690f0b4",
+    "checksum": "e94b2fc19ce14e4efeef3f94de3f79fd3fc5bea326eea28d52bb60115efab815",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Civics - Demokrácia és piacgazdaság",
-    "description": "Test on Demokrácia és piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-10 Civics - Democracy and market economy",
+    "description": "Prøve i Democracy and market economy: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 1: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørsmål 1: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 2: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørsmål 2: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 3: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørsmål 3: Democracy and market economy",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Demokrácia és piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Democracy and market economy.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 4: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørsmål 4: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Demokrácia és piacgazdaság - Kérdés 5: Democracy and market economy",
+      "text": "[civics] Democracy and market economy - Spørsmål 5: Democracy and market economy",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "demokrácia-és-piacgazdaság",
-        "grade-10"
+        "democracy-and-market-economy",
+        "grade-10",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Demokrácia és piacgazdaság",
+      "curriculum_topic": "NORWAY-GRADE-10-CIVICS-Democracy and market economy",
       "learning_objective": "Democracy and market economy"
     }
   ],

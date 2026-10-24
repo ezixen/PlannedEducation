@@ -204,6 +204,8 @@ def generate_seb_config(
 @router.post("/{exam_id}/start")
 def start_exam(
     exam_id: str,
+    test_mode: bool = False,
+    random_seed: str | None = None,
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),
     is_secure: bool = Depends(verify_seb_request),
@@ -211,8 +213,60 @@ def start_exam(
     """
     Begin an exam session. SEB verification is required (bypassed in dev mode).
     Returns the student's personalised question set — NO correct answers included.
+    When test_mode=True, generates an ephemeral randomized preview using random_seed
+    without creating or locking a database ExamSubmission record.
     """
     exam = _get_exam_or_404(exam_id, db)
+
+    if test_mode:
+        rng = random.Random(str(random_seed)) if random_seed is not None else random.Random()
+        questions = list(
+            db.query(models.Question).filter(models.Question.exam_id == exam_id).all()
+        )
+        if len(questions) > 10:
+            questions = rng.sample(questions, 10)
+        else:
+            rng.shuffle(questions)
+
+        preview_questions = []
+        for q in questions:
+            q_text = q.text
+            if "[rand:" in q_text or q.question_type == models.QuestionType.dynamic_math:
+                def _replace_preview_rand(match: re.Match) -> str:
+                    lo, hi = map(int, match.group(1).split("-"))
+                    if lo > hi:
+                        lo, hi = hi, lo
+                    return str(rng.randint(lo, hi))
+
+                q_text = re.sub(r"\[rand:(\d+-\d+)\]", _replace_preview_rand, q_text)
+
+            preview_opts = None
+            if q.question_type == models.QuestionType.multiple_choice and q.options_json:
+                try:
+                    opts = json.loads(q.options_json)
+                    if isinstance(opts, list):
+                        opts = list(opts)
+                        rng.shuffle(opts)
+                        preview_opts = opts
+                except (json.JSONDecodeError, TypeError):
+                    pass
+
+            preview_questions.append(
+                {
+                    "question_id": q.id,
+                    "question_type": q.question_type,
+                    "text": q_text,
+                    "options": preview_opts,
+                    "points": q.points,
+                }
+            )
+
+        return {
+            "submission_id": f"test-preview-{random_seed or 'default'}",
+            "test_mode": True,
+            "random_seed": random_seed,
+            "questions": preview_questions,
+        }
 
     # Prevent duplicate completed submissions; resume if still in progress
     existing_sub = (
@@ -277,7 +331,7 @@ def start_exam(
         q_text = q.text
 
         # Dynamic math: replace [rand:1-10] tokens with actual numbers
-        if q.question_type == models.QuestionType.dynamic_math:
+        if q.question_type == models.QuestionType.dynamic_math or "[rand:" in q_text:
             def replace_rand(match: re.Match) -> str:
                 lo, hi = map(int, match.group(1).split("-"))
                 if lo > hi:
@@ -329,11 +383,18 @@ def start_exam(
 def submit_exam(
     exam_id: str,
     body: schemas.ExamSubmitRequest,
+    test_mode: bool = False,
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(get_current_user),
     is_secure: bool = Depends(verify_seb_request),
 ):
     """Submit answers for a running exam. Idempotency: raises 409 if already completed."""
+    if test_mode:
+        return {
+            "status": "success",
+            "message": "Test preview submitted successfully",
+            "test_mode": True,
+        }
     submission = (
         db.query(models.ExamSubmission)
         .filter(

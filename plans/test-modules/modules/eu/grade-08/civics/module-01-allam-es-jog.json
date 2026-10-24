@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - European Union grade-08",
+    "name": "State and law - European Union grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minute assessment on State and law for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:19.201606+00:00",
-    "updated_at": "2026-10-21T11:02:19.201621+00:00",
+    "created_at": "2026-10-24T17:53:47.239909+00:00",
+    "updated_at": "2026-10-24T17:53:47.239918+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "state-and-law",
       "grade-08",
-      "eu"
+      "eu",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "eu",
     "license": "CC-BY-4.0",
-    "checksum": "34d8534040d6ebee02d5a6ecbc9e004800747fbad2966943c1846327e8c19954",
+    "checksum": "6bdbf00402164445cf542e79504251555eec83d5fcbfd8e3bb638dc640a45a96",
     "curriculum": "eu-key-competences",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - State and law",
+    "description": "Assessment on State and law including State and law, State structure, Law basics, Civil law, Civil law",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] State and law - Question 1: State and law",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "state-and-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-CIVICS-Állam és jog",
+      "curriculum_topic": "EU-GRADE-08-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] State and law - Question 2: State and law",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "state-and-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-CIVICS-Állam és jog",
+      "curriculum_topic": "EU-GRADE-08-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] State and law - Question 3: State and law",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for State and law.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "state-and-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-CIVICS-Állam és jog",
+      "curriculum_topic": "EU-GRADE-08-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] State and law - Question 4: State and law",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "state-and-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-CIVICS-Állam és jog",
+      "curriculum_topic": "EU-GRADE-08-CIVICS-State and law",
       "learning_objective": "State and law"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] State and law - Question 5: State and law",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "state-and-law",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "EU-GRADE-08-CIVICS-Állam és jog",
+      "curriculum_topic": "EU-GRADE-08-CIVICS-State and law",
       "learning_objective": "State and law"
     }
   ],

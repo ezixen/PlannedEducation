@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-polológia-1.0.0",
-    "name": "Polológia - Denmark grade-12",
+    "name": "Politology - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Polológia for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minutters prøve i Politology (grade-12). Emner: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.760633+00:00",
-    "updated_at": "2026-10-21T11:02:27.760645+00:00",
+    "created_at": "2026-10-24T17:53:49.792014+00:00",
+    "updated_at": "2026-10-24T17:53:49.792022+00:00",
     "tags": [
       "civics",
-      "polológia",
+      "politology",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "8b0bc93b3108a447736b1e07c6145f03cadb6a8039e0875b380794e5805b63ef",
+    "checksum": "6bf4434f241c20080480c5903fb0b09fcf883b513ad4e627886f9d30f9ccdc61",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Polológia",
-    "description": "Test on Polológia including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Politology",
+    "description": "Prøve i Politology: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia - Kérdés 1: Politology",
+      "text": "[civics] Politology - Spørgsmål 1: Politology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia",
-        "grade-12"
+        "politology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Polológia",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Politology",
       "learning_objective": "Politology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia - Kérdés 2: Politology",
+      "text": "[civics] Politology - Spørgsmål 2: Politology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia",
-        "grade-12"
+        "politology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Polológia",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Politology",
       "learning_objective": "Politology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polológia - Kérdés 3: Politology",
+      "text": "[civics] Politology - Spørgsmål 3: Politology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polológia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Politology.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polológia",
-        "grade-12"
+        "politology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Polológia",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Politology",
       "learning_objective": "Politology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia - Kérdés 4: Politology",
+      "text": "[civics] Politology - Spørgsmål 4: Politology",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia",
-        "grade-12"
+        "politology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Polológia",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Politology",
       "learning_objective": "Politology"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia - Kérdés 5: Politology",
+      "text": "[civics] Politology - Spørgsmål 5: Politology",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia",
-        "grade-12"
+        "politology",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Polológia",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Politology",
       "learning_objective": "Politology"
     }
   ],

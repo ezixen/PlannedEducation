@@ -3,21 +3,25 @@
     "id": "grade-05-math-törtek-összeadása-1.0.0",
     "name": "Törtek összeadása - Hungary grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek összeadása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 perces felmérő: Törtek összeadása (grade-05). Témakörök: Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.089691+00:00",
-    "updated_at": "2026-10-21T11:02:35.089704+00:00",
+    "created_at": "2026-10-24T17:53:52.126176+00:00",
+    "updated_at": "2026-10-24T17:53:52.126188+00:00",
     "tags": [
       "math",
       "törtek-összeadása",
       "grade-05",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "1606b6035b9f32399b30a119535ac0c1d642efe3ef7040baee5f7eea76b557a2",
+    "checksum": "b33b116eabc86c1d4bacf712b82630fa68bdf0a95c20628dee435ea1736040cc",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Fraction basics",
-      "Fraction addition",
-      "Fraction subtraction",
-      "Fraction multiplication",
-      "Fraction division"
+      "Törtek alapok",
+      "Törtek összeadása",
+      "Törtek kivonása",
+      "Törtek szorzása",
+      "Törtek osztása"
     ]
   },
   "exam": {
     "title": "grade-05 Math - Törtek összeadása",
-    "description": "Test on Törtek összeadása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Felmérő a(z) Törtek összeadása témakörből (Törtek alapok, Törtek összeadása, Törtek kivonása, Törtek szorzása, Törtek osztása)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 1: Fraction addition",
+      "text": "[math] Törtek összeadása - Kérdés 1: Törtek összeadása",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "törtek-összeadása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek összeadása",
-      "learning_objective": "Fraction addition"
+      "learning_objective": "Törtek összeadása"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 2: Fraction addition",
+      "text": "[math] Törtek összeadása - Kérdés 2: Törtek összeadása",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "törtek-összeadása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek összeadása",
-      "learning_objective": "Fraction addition"
+      "learning_objective": "Törtek összeadása"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 3: Fraction addition",
+      "text": "[math] Törtek összeadása - Kérdés 3: Törtek összeadása",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "törtek-összeadása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek összeadása",
-      "learning_objective": "Fraction addition"
+      "learning_objective": "Törtek összeadása"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek összeadása - Kérdés 4: Fraction addition",
+      "text": "[math] Törtek összeadása - Kérdés 4: Törtek összeadása",
       "options": null,
       "correct_answer": "Minta válasz a(z) Törtek összeadása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "törtek-összeadása",
-        "grade-05"
+        "grade-05",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek összeadása",
-      "learning_objective": "Fraction addition"
+      "learning_objective": "Törtek összeadása"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek összeadása - Question 5: Fraction addition [rand:1-100]",
+      "text": "[math] Törtek összeadása - Kérdés 5: Törtek összeadása [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "törtek-összeadása",
         "grade-05",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-05-MATH-Törtek összeadása",
-      "learning_objective": "Fraction addition"
+      "learning_objective": "Törtek összeadása"
     }
   ],
   "rubrics": []

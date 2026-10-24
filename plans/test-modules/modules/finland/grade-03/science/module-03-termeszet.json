@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-science-természet-1.0.0",
-    "name": "Természet - Finland grade-03",
+    "name": "Luonto - Finland grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Természet for grade-03 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45 minuutin koe aiheesta Luonto (grade-03). Aiheet: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.057516+00:00",
-    "updated_at": "2026-10-21T11:02:24.057528+00:00",
+    "created_at": "2026-10-24T17:53:47.523366+00:00",
+    "updated_at": "2026-10-24T17:53:47.523375+00:00",
     "tags": [
       "science",
-      "természet",
+      "luonto",
       "grade-03",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "science",
     "grade_level": "grade-03",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "ce9eddeeb76dd220c64420c6b68cbf27a94b3c43ddea4e7f22157f5852bd5814",
+    "checksum": "138ddbb51ed39940c59e36e595449707ae2857dc4c212c826adcc4c444759ead",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Luonto ja ympäristö",
+      "Kasvit ja eläimet",
+      "Luonto",
+      "Ympäristö",
+      "Luonnonsuojelu"
     ]
   },
   "exam": {
-    "title": "grade-03 Science - Természet",
-    "description": "Test on Természet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-03 Science - Luonto",
+    "description": "Koe aiheesta Luonto: Luonto ja ympäristö, Kasvit ja eläimet, Luonto, Ympäristö, Luonnonsuojelu",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 1: Nature",
+      "text": "[science] Luonto - Kysymys 1: Luonto",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "luonto",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto",
+      "learning_objective": "Luonto"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 2: Nature",
+      "text": "[science] Luonto - Kysymys 2: Luonto",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "luonto",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto",
+      "learning_objective": "Luonto"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet - Kérdés 3: Nature",
+      "text": "[science] Luonto - Kysymys 3: Luonto",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Luonto.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "luonto",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto",
+      "learning_objective": "Luonto"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 4: Nature",
+      "text": "[science] Luonto - Kysymys 4: Luonto",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "luonto",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto",
+      "learning_objective": "Luonto"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet - Kérdés 5: Nature",
+      "text": "[science] Luonto - Kysymys 5: Luonto",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet",
-        "grade-03"
+        "luonto",
+        "grade-03",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Természet",
-      "learning_objective": "Nature"
+      "curriculum_topic": "FINLAND-GRADE-03-SCIENCE-Luonto",
+      "learning_objective": "Luonto"
     }
   ],
   "rubrics": []

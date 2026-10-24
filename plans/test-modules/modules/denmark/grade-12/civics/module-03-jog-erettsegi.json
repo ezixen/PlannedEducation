@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-jog-erettségi-1.0.0",
-    "name": "Jog-erettségi - Denmark grade-12",
+    "name": "Law-maturity - Denmark grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minutters prøve i Law-maturity (grade-12). Emner: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.762546+00:00",
-    "updated_at": "2026-10-21T11:02:27.762556+00:00",
+    "created_at": "2026-10-24T17:53:49.793992+00:00",
+    "updated_at": "2026-10-24T17:53:49.794003+00:00",
     "tags": [
       "civics",
-      "jog-erettségi",
+      "law-maturity",
       "grade-12",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "074be1fff5c2884d42bbb6eb0612d5e150c1483c2e9c0f3db9cc1a677210c5e5",
+    "checksum": "1d6711ea2d282a0384fc7948e9aa48f9cfa06a53da79edf5b0b1452526dae301",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Jog-erettségi",
-    "description": "Test on Jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Law-maturity",
+    "description": "Prøve i Law-maturity: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 1: Law-maturity",
+      "text": "[civics] Law-maturity - Spørgsmål 1: Law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 2: Law-maturity",
+      "text": "[civics] Law-maturity - Spørgsmål 2: Law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Jog-erettségi - Kérdés 3: Law-maturity",
+      "text": "[civics] Law-maturity - Spørgsmål 3: Law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Law-maturity.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 4: Law-maturity",
+      "text": "[civics] Law-maturity - Spørgsmål 4: Law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Jog-erettségi - Kérdés 5: Law-maturity",
+      "text": "[civics] Law-maturity - Spørgsmål 5: Law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "jog-erettségi",
-        "grade-12"
+        "law-maturity",
+        "grade-12",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Jog-erettségi",
+      "curriculum_topic": "DENMARK-GRADE-12-CIVICS-Law-maturity",
       "learning_objective": "Law-maturity"
     }
   ],

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Users, KeyRound, X, CheckCircle2 } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
@@ -13,58 +13,101 @@ interface StudentRosterItem {
   force_password_reset?: boolean;
 }
 
+const DEFAULT_CLASSES = [
+  {
+    id: 1,
+    name: 'Calculus 101 - Fall 2026',
+    students: [
+      { id: 'student-1', name: 'Alex Johnson', email: 'alex@school.edu', iep_multiplier: 1.0 },
+      { id: 'student-2', name: 'Emma Watson', email: 'emma@school.edu', iep_multiplier: 1.5 },
+      { id: 'student-3', name: 'Lucas Miller', email: 'lucas@school.edu', iep_multiplier: 1.0 },
+      { id: 'student-4', name: 'Sophia Davis', email: 'sophia@school.edu', iep_multiplier: 1.25 },
+    ],
+  },
+  {
+    id: 2,
+    name: 'AP History - Spring 2027',
+    students: [
+      { id: 'student-5', name: 'Daniel Brown', email: 'daniel@school.edu', iep_multiplier: 1.0 },
+      { id: 'student-6', name: 'Olivia Garcia', email: 'olivia@school.edu', iep_multiplier: 1.0 },
+    ],
+  },
+];
+
 export function TeacherClasses() {
   const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
-  const [classes, setClasses] = useState<any[]>([]);
+  const [classes, setClasses] = useState<any[]>(() => {
+    try {
+      const saved = localStorage.getItem('pe_teacher_classes');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {
+      // ignore
+    }
+    return DEFAULT_CLASSES;
+  });
   const [newClassName, setNewClassName] = useState('');
-  
+  const [registeredStudents, setRegisteredStudents] = useState<StudentRosterItem[]>([]);
+
   // Selected class for roster view
   const [selectedClass, setSelectedClass] = useState<any | null>(null);
   const [rosterStudents, setRosterStudents] = useState<StudentRosterItem[]>([]);
   const [resettingId, setResettingId] = useState<string | null>(null);
 
-  useEffect(() => {
-    // Initial classes
-    setClasses([
-      {
-        id: 1,
-        name: 'Calculus 101 - Fall 2026',
-        students: [
-          { id: 'student-1', name: 'Alex Johnson', email: 'alex@school.edu', iep_multiplier: 1.0 },
-          { id: 'student-2', name: 'Emma Watson', email: 'emma@school.edu', iep_multiplier: 1.5 },
-          { id: 'student-3', name: 'Lucas Miller', email: 'lucas@school.edu', iep_multiplier: 1.0 },
-          { id: 'student-4', name: 'Sophia Davis', email: 'sophia@school.edu', iep_multiplier: 1.25 },
-        ],
-      },
-      {
-        id: 2,
-        name: 'AP History - Spring 2027',
-        students: [
-          { id: 'student-5', name: 'Daniel Brown', email: 'daniel@school.edu', iep_multiplier: 1.0 },
-          { id: 'student-6', name: 'Olivia Garcia', email: 'olivia@school.edu', iep_multiplier: 1.0 },
-        ],
-      },
-    ]);
+  const loadRegisteredStudents = useCallback(async () => {
+    try {
+      const res = await apiClient.get('/auth/teacher/students');
+      if (Array.isArray(res.data)) {
+        const mapped: StudentRosterItem[] = res.data.map((s: any) => ({
+          id: s.id,
+          name: s.full_name || s.username || s.email,
+          email: s.email,
+          iep_multiplier: 1.0,
+          force_password_reset: Boolean(s.force_password_reset),
+        }));
+        setRegisteredStudents(mapped);
+      }
+    } catch {
+      // ignore if not approved yet
+    }
   }, []);
+
+  useEffect(() => {
+    void loadRegisteredStudents();
+  }, [loadRegisteredStudents]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('pe_teacher_classes', JSON.stringify(classes));
+    } catch {
+      // ignore
+    }
+  }, [classes]);
 
   const handleCreateClass = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newClassName.trim()) return;
-    
+
     const newClass = {
       id: Date.now(),
       name: newClassName.trim(),
-      students: [],
+      students: registeredStudents,
     };
-    setClasses([...classes, newClass]);
+    setClasses(prev => [...prev, newClass]);
     setNewClassName('');
     showSuccess(`Class "${newClass.name}" created!`);
   };
 
   const handleOpenRoster = (cls: any) => {
     setSelectedClass(cls);
-    setRosterStudents(cls.students || []);
+    const existing: StudentRosterItem[] = cls.students || [];
+    const mergedMap = new Map<string, StudentRosterItem>();
+    for (const s of existing) mergedMap.set(s.email || s.id, s);
+    for (const s of registeredStudents) mergedMap.set(s.email || s.id, s);
+    setRosterStudents(Array.from(mergedMap.values()));
   };
 
   const handleQuickReset = async (student: StudentRosterItem) => {
@@ -102,11 +145,11 @@ export function TeacherClasses() {
           {t('teacher_classes.create_new_class')}
         </h3>
         <form onSubmit={handleCreateClass} style={{ display: 'flex', gap: '0.75rem' }}>
-          <input 
-            type="text" 
+          <input
+            type="text"
             value={newClassName}
-            onChange={(e) => setNewClassName(e.target.value)}
-            placeholder={t("teacher_classes.class_name_placeholder")} 
+            onChange={e => setNewClassName(e.target.value)}
+            placeholder={t('teacher_classes.class_name_placeholder')}
             style={{ flex: 1, padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
           />
           <button type="submit" style={{ padding: '0.65rem 1.25rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600 }}>
@@ -116,22 +159,25 @@ export function TeacherClasses() {
       </div>
 
       <div style={{ display: 'grid', gap: '1rem' }}>
-        {classes.map(cls => (
-          <div key={cls.id} style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ margin: '0 0 0.25rem 0', fontSize: '1.05rem', color: 'var(--text-color)' }}>{cls.name}</h3>
-              <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{cls.students.length} {t('teacher_classes.enrolled_students')}</p>
+        {classes.map(cls => {
+          const studentCount = Math.max((cls.students || []).length, registeredStudents.length);
+          return (
+            <div key={cls.id} style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <h3 style={{ margin: '0 0 0.25rem 0', fontSize: '1.05rem', color: 'var(--text-color)' }}>{cls.name}</h3>
+                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{studentCount} {t('teacher_classes.enrolled_students')}</p>
+              </div>
+              <div>
+                <button
+                  onClick={() => handleOpenRoster(cls)}
+                  style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--bg-color)', color: 'var(--primary-color)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}
+                >
+                  👥 {t('teacher_classes.manage_roster')}
+                </button>
+              </div>
             </div>
-            <div>
-              <button
-                onClick={() => handleOpenRoster(cls)}
-                style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--bg-color)', color: 'var(--primary-color)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}
-              >
-                👥 {t('teacher_classes.manage_roster')}
-              </button>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Classroom Student Roster & Quick Password Reset Modal */}
@@ -175,7 +221,7 @@ export function TeacherClasses() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Users size={20} style={{ color: 'var(--primary-color)' }} />
                 <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-                  {selectedClass.name} — Student Roster
+                  {selectedClass.name}
                 </h3>
               </div>
               <button
@@ -199,7 +245,7 @@ export function TeacherClasses() {
                   lineHeight: 1.4,
                 }}
               >
-                ⚡ <strong>{t('teacher_classes.emergency_reset_title')}</strong> {t('teacher_classes.emergency_reset_desc')} <em>{t('admin.reset_password')}</em>. The student can then simply type their email at login and set a new password immediately!
+                ⚡ <strong>{t('teacher_classes.emergency_reset_title')}</strong> {t('teacher_classes.emergency_reset_desc')} <em>{t('admin.reset_password')}</em>.
               </div>
 
               {rosterStudents.length === 0 ? (
@@ -245,29 +291,28 @@ export function TeacherClasses() {
                               fontWeight: 600,
                             }}
                           >
-                            <CheckCircle2 size={12} /> Unlocked
+                            <CheckCircle2 size={12} /> {t('common.10')}
                           </span>
                         )}
-
                         <button
                           onClick={() => handleQuickReset(student)}
                           disabled={resettingId === student.id}
                           style={{
-                            padding: '0.4rem 0.75rem',
-                            backgroundColor: 'rgba(16, 185, 129, 0.12)',
-                            color: '#059669',
-                            border: '1px solid rgba(16, 185, 129, 0.3)',
-                            borderRadius: 'var(--radius-sm)',
-                            fontSize: '0.8rem',
-                            fontWeight: 600,
-                            cursor: resettingId === student.id ? 'not-allowed' : 'pointer',
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '0.35rem',
+                            padding: '0.4rem 0.75rem',
+                            backgroundColor: '#f59e0b',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: 'var(--radius-md)',
+                            cursor: resettingId === student.id ? 'not-allowed' : 'pointer',
+                            fontWeight: 600,
+                            fontSize: '0.8rem',
                           }}
                         >
                           <KeyRound size={14} />
-                          {resettingId === student.id ? t('teacher_classes.unlocking') : t('teacher_classes.reset_pwd_for_test')}
+                          {resettingId === student.id ? t('common.loading') : t('admin.reset_password')}
                         </button>
                       </div>
                     </div>

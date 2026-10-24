@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-erettségi-1.0.0",
-    "name": "Földrajz-erettségi - Sweden grade-12",
+    "name": "Geography-maturity - Sweden grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz-erettségi for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minuters prov i Geography-maturity (grade-12). Omfattar: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.123728+00:00",
-    "updated_at": "2026-10-21T11:02:26.123744+00:00",
+    "created_at": "2026-10-24T17:53:48.769433+00:00",
+    "updated_at": "2026-10-24T17:53:48.769439+00:00",
     "tags": [
       "geography",
-      "földrajz-erettségi",
+      "geography-maturity",
       "grade-12",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "e152a6a6591b977afdf073e8321a77422fc4ce43908fc55bef9c2cd25bfd147d",
+    "checksum": "5243ef53e75beb9ce9381ba065c511909d94ad7db82e28be3f2b6503f3622585",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz-erettségi",
-    "description": "Test on Földrajz-erettségi including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geography-maturity",
+    "description": "Prov i Geography-maturity: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 1: Geography-maturity",
+      "text": "[geography] Geography-maturity - Fråga 1: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 2: Geography-maturity",
+      "text": "[geography] Geography-maturity - Fråga 2: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz-erettségi - Kérdés 3: Geography-maturity",
+      "text": "[geography] Geography-maturity - Fråga 3: Geography-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Geography-maturity.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 4: Geography-maturity",
+      "text": "[geography] Geography-maturity - Fråga 4: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 5: Geography-maturity",
+      "text": "[geography] Geography-maturity - Fråga 5: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "SWEDEN-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     }
   ],

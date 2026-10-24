@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-alapok-1.0.0",
-    "name": "Törtek alapok - USA grade-05",
+    "name": "Fraction basics - USA grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek alapok for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45-minute assessment on Fraction basics for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.766775+00:00",
-    "updated_at": "2026-10-21T11:02:17.766787+00:00",
+    "created_at": "2026-10-24T17:53:46.202277+00:00",
+    "updated_at": "2026-10-24T17:53:46.202282+00:00",
     "tags": [
       "math",
-      "törtek-alapok",
+      "fraction-basics",
       "grade-05",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "80c2acb20dd8559b587e128b2e708b0d175bc6f463b47a4cf4bda625ad50ddaa",
+    "checksum": "513d2cd39df1371de95bd5d8ed8c8437b99d95500ba91bdd524a81272e4daf01",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek alapok",
-    "description": "Test on Törtek alapok including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction basics",
+    "description": "Assessment on Fraction basics including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 1: Fraction basics",
+      "text": "[math] Fraction basics - Question 1: Fraction basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "USA-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 2: Fraction basics",
+      "text": "[math] Fraction basics - Question 2: Fraction basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "USA-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 3: Fraction basics",
+      "text": "[math] Fraction basics - Question 3: Fraction basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "USA-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek alapok - Kérdés 4: Fraction basics",
+      "text": "[math] Fraction basics - Question 4: Fraction basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Fraction basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "USA-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek alapok - Question 5: Fraction basics [rand:1-100]",
+      "text": "[math] Fraction basics - Question 5: Fraction basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-alapok",
+        "fraction-basics",
         "grade-05",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "USA-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     }
   ],

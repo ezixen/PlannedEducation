@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-embri-test-fiziológiája-1.0.0",
-    "name": "Embri test fiziológiája - Sweden grade-12",
+    "name": "Human body physiology - Sweden grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Embri test fiziológiája for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minuters prov i Human body physiology (grade-12). Omfattar: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.101348+00:00",
-    "updated_at": "2026-10-21T11:02:26.101370+00:00",
+    "created_at": "2026-10-24T17:53:48.756041+00:00",
+    "updated_at": "2026-10-24T17:53:48.756050+00:00",
     "tags": [
       "biology",
-      "embri-test-fiziológiája",
+      "human-body-physiology",
       "grade-12",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "1051e71f4f5353ebd1276e5237b0fb2111bb553336c691dfca65495d1a7c9d28",
+    "checksum": "2996e4461c9529c39dd5410817d91c37c818840f8886bc8c2395724273b492c7",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Embri test fiziológiája",
-    "description": "Test on Embri test fiziológiája including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Human body physiology",
+    "description": "Prov i Human body physiology: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 1: Human body physiology",
+      "text": "[biology] Human body physiology - Fråga 1: Human body physiology",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 2: Human body physiology",
+      "text": "[biology] Human body physiology - Fråga 2: Human body physiology",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 3: Human body physiology",
+      "text": "[biology] Human body physiology - Fråga 3: Human body physiology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Human body physiology.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Embri test fiziológiája - Kérdés 4: Human body physiology",
+      "text": "[biology] Human body physiology - Fråga 4: Human body physiology",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Embri test fiziológiája - Kérdés 5: Human body physiology",
+      "text": "[biology] Human body physiology - Fråga 5: Human body physiology",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Embri test fiziológiája témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Human body physiology.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "embri-test-fiziológiája",
-        "grade-12"
+        "human-body-physiology",
+        "grade-12",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Embri test fiziológiája",
+      "curriculum_topic": "SWEDEN-GRADE-12-BIOLOGY-Human body physiology",
       "learning_objective": "Human body physiology"
     }
   ],

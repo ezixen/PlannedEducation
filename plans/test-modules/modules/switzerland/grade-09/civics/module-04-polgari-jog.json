@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-civics-polgári-jog-1.0.0",
-    "name": "Polgári jog - Switzerland grade-09",
+    "name": "Bürgerliches Recht - Switzerland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Polgári jog for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45-minütige Prüfung zum Thema Bürgerliches Recht (grade-09). Themen: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.495786+00:00",
-    "updated_at": "2026-10-21T11:02:28.495797+00:00",
+    "created_at": "2026-10-24T17:53:50.088679+00:00",
+    "updated_at": "2026-10-24T17:53:50.088686+00:00",
     "tags": [
       "civics",
-      "polgári-jog",
+      "bürgerliches-recht",
       "grade-09",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "8a6b7df9cf461438c0364fb7dd8f2e105eceec3fa02e7ae836631da6b09ae6fc",
+    "checksum": "bd44f0398bc4a463af083b17971fd463941666ebec7d3cb529a48e20299fab14",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokratie und Marktwirtschaft",
+      "Demokratie",
+      "Marktwirtschaft",
+      "Bürgerliches Recht",
+      "Staatsaufbau"
     ]
   },
   "exam": {
-    "title": "grade-09 Civics - Polgári jog",
-    "description": "Test on Polgári jog including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "title": "grade-09 Civics - Bürgerliches Recht",
+    "description": "Prüfung zum Thema Bürgerliches Recht: Demokratie und Marktwirtschaft, Demokratie, Marktwirtschaft, Bürgerliches Recht, Staatsaufbau",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 1: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 1: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-09"
+        "bürgerliches-recht",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 2: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 2: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-09"
+        "bürgerliches-recht",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polgári jog - Kérdés 3: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 3: Bürgerliches Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polgári jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Bürgerliches Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-09"
+        "bürgerliches-recht",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 4: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 4: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-09"
+        "bürgerliches-recht",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polgári jog - Kérdés 5: Civil law",
+      "text": "[civics] Bürgerliches Recht - Frage 5: Bürgerliches Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "polgári-jog",
-        "grade-09"
+        "bürgerliches-recht",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Polgári jog",
-      "learning_objective": "Civil law"
+      "curriculum_topic": "SWITZERLAND-GRADE-09-CIVICS-Bürgerliches Recht",
+      "learning_objective": "Bürgerliches Recht"
     }
   ],
   "rubrics": []

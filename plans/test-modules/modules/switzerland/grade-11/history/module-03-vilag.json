@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-history-világ-1.0.0",
-    "name": "Világ - Switzerland grade-11",
+    "name": "Welt - Switzerland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Világ for grade-11 students. Covers: History of Europe and the world, Europe, World, History, Historical events",
+    "description": "45-minütige Prüfung zum Thema Welt (grade-11). Themen: Geschichte Europas und der Welt, Europa, Welt, Geschichte, Historische Ereignisse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.677854+00:00",
-    "updated_at": "2026-10-21T11:02:28.677866+00:00",
+    "created_at": "2026-10-24T17:53:50.207963+00:00",
+    "updated_at": "2026-10-24T17:53:50.207972+00:00",
     "tags": [
       "history",
-      "világ",
+      "welt",
       "grade-11",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "history",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "39e2f7ec4682f29e6bad938fb98713153d7dc2b7acb71963fb04cbcd02e57470",
+    "checksum": "f07e32e9bdf0e160a7fdc20140e9421490de1c191956e3cca8dcf8fba6b8a4bc",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "History of Europe and the world",
-      "Europe",
-      "World",
-      "History",
-      "Historical events"
+      "Geschichte Europas und der Welt",
+      "Europa",
+      "Welt",
+      "Geschichte",
+      "Historische Ereignisse"
     ]
   },
   "exam": {
-    "title": "grade-11 History - Világ",
-    "description": "Test on Világ including History of Europe and the world, Europe, World, History, Historical events",
+    "title": "grade-11 History - Welt",
+    "description": "Prüfung zum Thema Welt: Geschichte Europas und der Welt, Europa, Welt, Geschichte, Historische Ereignisse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 1: World",
+      "text": "[history] Welt - Frage 1: Welt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 2: World",
+      "text": "[history] Welt - Frage 2: Welt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világ - Kérdés 3: World",
+      "text": "[history] Welt - Frage 3: Welt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világ témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Welt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 4: World",
+      "text": "[history] Welt - Frage 4: Welt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Welt",
+      "learning_objective": "Welt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világ - Kérdés 5: World",
+      "text": "[history] Welt - Frage 5: Welt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "history",
-        "világ",
-        "grade-11"
+        "welt",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Világ",
-      "learning_objective": "World"
+      "curriculum_topic": "SWITZERLAND-GRADE-11-HISTORY-Welt",
+      "learning_objective": "Welt"
     }
   ],
   "rubrics": []

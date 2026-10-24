@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - Belgium grade-08",
+    "name": "English reading - Belgium grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-08 students. Covers: English language B1, English grammar, English vocabulary, English reading, English writing",
+    "description": "Toets van 45 minuten over English reading (grade-08). Onderwerpen: English language B1, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.763330+00:00",
-    "updated_at": "2026-10-21T11:02:29.763342+00:00",
+    "created_at": "2026-10-24T17:53:50.882494+00:00",
+    "updated_at": "2026-10-24T17:53:50.882500+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-08",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "0b7dc49c83d0b55df19ec1fa6aaa7f38d7e3b7e2323a7be81d9bceb42a580955",
+    "checksum": "38a5948b6284b19ffe0883a9cc8770192d7ac62a55b290f04908e185eb8cf375",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language B1, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-08 English - English reading",
+    "description": "Toets over English reading: English language B1, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Vraag 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Vraag 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Vraag 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor English reading.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Vraag 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Vraag 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-08"
+        "english-reading",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-Angol olvasás",
+      "curriculum_topic": "BELGIUM-GRADE-08-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

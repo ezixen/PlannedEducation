@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-english-angol-olvasás-1.0.0",
-    "name": "Angol olvasás - Norway grade-07",
+    "name": "English reading - Norway grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Angol olvasás for grade-07 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minutters prøve i English reading (grade-07). Emner: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.380320+00:00",
-    "updated_at": "2026-10-21T11:02:26.380336+00:00",
+    "created_at": "2026-10-24T17:53:48.931107+00:00",
+    "updated_at": "2026-10-24T17:53:48.931114+00:00",
     "tags": [
       "english",
-      "angol-olvasás",
+      "english-reading",
       "grade-07",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "english",
     "grade_level": "grade-07",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "ff28ff13040518302ec6c74d1c0c36e88601606d355bf9410fca318c4b4e2478",
+    "checksum": "91a14652947394a21f2841214ef6e7dd95e3287d92568ed43ebd928126233672",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 English - Angol olvasás",
-    "description": "Test on Angol olvasás including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-07 English - English reading",
+    "description": "Prøve i English reading: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 1: English reading",
+      "text": "[english] English reading - Spørsmål 1: English reading",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-07"
+        "english-reading",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-Angol olvasás",
+      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 2: English reading",
+      "text": "[english] English reading - Spørsmål 2: English reading",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-07"
+        "english-reading",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-Angol olvasás",
+      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol olvasás - Kérdés 3: English reading",
+      "text": "[english] English reading - Spørsmål 3: English reading",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol olvasás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English reading.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-07"
+        "english-reading",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-Angol olvasás",
+      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 4: English reading",
+      "text": "[english] English reading - Spørsmål 4: English reading",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-07"
+        "english-reading",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-Angol olvasás",
+      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-English reading",
       "learning_objective": "English reading"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol olvasás - Kérdés 5: English reading",
+      "text": "[english] English reading - Spørsmål 5: English reading",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-olvasás",
-        "grade-07"
+        "english-reading",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-Angol olvasás",
+      "curriculum_topic": "NORWAY-GRADE-07-ENGLISH-English reading",
       "learning_objective": "English reading"
     }
   ],

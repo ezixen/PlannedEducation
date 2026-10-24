@@ -3,21 +3,25 @@
     "id": "grade-09-civics-piacgazdaság-1.0.0",
     "name": "Piacgazdaság - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Piacgazdaság for grade-09 students. Covers: Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "45 perces felmérő: Piacgazdaság (grade-09). Témakörök: Demokracia és piacgazdaság, Demokracia, Piacgazdaság, Polgári jog, Állam szerkezete",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.369615+00:00",
-    "updated_at": "2026-10-21T11:02:35.369635+00:00",
+    "created_at": "2026-10-24T17:53:52.310025+00:00",
+    "updated_at": "2026-10-24T17:53:52.310031+00:00",
     "tags": [
       "civics",
       "piacgazdaság",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "0c0672be2820ba4e5c5054b674397560eb3cdeef9cc52da16dbf0b8321d4051e",
+    "checksum": "44a470fd01590429b804e9a4127e27cc09ed750e99ef85ee7563930d544c9bd2",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Democracy and market economy",
-      "Democracy",
-      "Market economy",
-      "Civil law",
-      "State structure"
+      "Demokracia és piacgazdaság",
+      "Demokracia",
+      "Piacgazdaság",
+      "Polgári jog",
+      "Állam szerkezete"
     ]
   },
   "exam": {
     "title": "grade-09 Civics - Piacgazdaság",
-    "description": "Test on Piacgazdaság including Democracy and market economy, Democracy, Market economy, Civil law, State structure",
+    "description": "Felmérő a(z) Piacgazdaság témakörből (Demokracia és piacgazdaság, Demokracia, Piacgazdaság, Polgári jog, Állam szerkezete)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 1: Market economy",
+      "text": "[civics] Piacgazdaság - Kérdés 1: Piacgazdaság",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "civics",
         "piacgazdaság",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "learning_objective": "Piacgazdaság"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 2: Market economy",
+      "text": "[civics] Piacgazdaság - Kérdés 2: Piacgazdaság",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "civics",
         "piacgazdaság",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "learning_objective": "Piacgazdaság"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Piacgazdaság - Kérdés 3: Market economy",
+      "text": "[civics] Piacgazdaság - Kérdés 3: Piacgazdaság",
       "options": null,
       "correct_answer": "Minta válasz a(z) Piacgazdaság témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
         "piacgazdaság",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "learning_objective": "Piacgazdaság"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 4: Market economy",
+      "text": "[civics] Piacgazdaság - Kérdés 4: Piacgazdaság",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "civics",
         "piacgazdaság",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "learning_objective": "Piacgazdaság"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Piacgazdaság - Kérdés 5: Market economy",
+      "text": "[civics] Piacgazdaság - Kérdés 5: Piacgazdaság",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "civics",
         "piacgazdaság",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-CIVICS-Piacgazdaság",
-      "learning_objective": "Market economy"
+      "learning_objective": "Piacgazdaság"
     }
   ],
   "rubrics": []

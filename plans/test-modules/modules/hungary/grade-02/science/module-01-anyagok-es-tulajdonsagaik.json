@@ -11,12 +11,13 @@
     "tags": [
       "science",
       "anyagok-és-tulajdonságaik",
-      "grade-02"
+      "grade-02",
+      "hu"
     ],
     "subject": "science",
     "grade_level": "grade-02",
     "license": "CC-BY-4.0",
-    "checksum": "126f4982f6da194653213adcb62fd491d11a5e507a5ea8fd30a816bca347c175",
+    "checksum": "a5cbf2a8c69b7baed87dc660a46e80967517f27a66fe7bf006735c675d032002",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Anyagok",
       "Állapotváltozások",
       "Anyagok használata"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 02 Science - Anyagok és tulajdonságaik",

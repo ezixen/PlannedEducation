@@ -1338,12 +1338,19 @@ async def list_teacher_submissions(
     """
     List all submissions for exams taught by the current teacher.
     """
-    submissions = (
-        db.query(models.ExamSubmission)
-        .join(models.Exam, models.ExamSubmission.exam_id == models.Exam.id)
-        .filter(models.Exam.teacher_id == current_user.id)
-        .all()
+    base_query = db.query(models.ExamSubmission).join(
+        models.Exam, models.ExamSubmission.exam_id == models.Exam.id
     )
+    if current_user.role == "student":
+        submissions = base_query.filter(
+            models.ExamSubmission.student_id == current_user.id
+        ).all()
+    elif current_user.is_admin:
+        submissions = base_query.all()
+    else:
+        submissions = base_query.filter(
+            models.Exam.teacher_id == current_user.id
+        ).all()
 
     result = []
     for s in submissions:

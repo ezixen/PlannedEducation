@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-deriválás-1.0.0",
-    "name": "Deriválás - Germany grade-09",
+    "name": "Differentialrechnung - Germany grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Differentialrechnung (grade-09). Themen: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.529435+00:00",
-    "updated_at": "2026-10-21T11:02:16.529447+00:00",
+    "created_at": "2026-10-24T17:53:45.497439+00:00",
+    "updated_at": "2026-10-24T17:53:45.497448+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentialrechnung",
       "grade-09",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "dc658f8b8b1142c5251690ab93ef2409add20a3ed9c88c1958e5ac6294930ae7",
+    "checksum": "e6cb2fd7e6c7d4b4e5ba213242ed6e39b27f937c5cf4a9d52675c4e0fd6318ff",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen und Grenzwerte",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Deriválás",
-    "description": "Test on Deriválás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Differentialrechnung",
+    "description": "Prüfung zum Thema Differentialrechnung: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentialrechnung - Frage 1: Differentialrechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentialrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "curriculum_topic": "GERMANY-GRADE-09-MATH-Differentialrechnung",
+      "learning_objective": "Differentialrechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentialrechnung - Frage 2: Differentialrechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentialrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "curriculum_topic": "GERMANY-GRADE-09-MATH-Differentialrechnung",
+      "learning_objective": "Differentialrechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentialrechnung - Frage 3: Differentialrechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentialrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "curriculum_topic": "GERMANY-GRADE-09-MATH-Differentialrechnung",
+      "learning_objective": "Differentialrechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentialrechnung - Frage 4: Differentialrechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Differentialrechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-09"
+        "differentialrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "curriculum_topic": "GERMANY-GRADE-09-MATH-Differentialrechnung",
+      "learning_objective": "Differentialrechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-1000]",
+      "text": "[math] Differentialrechnung - Frage 5: Differentialrechnung [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentialrechnung",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-09-MATH-Deriválás",
-      "learning_objective": "Differentiation"
+      "curriculum_topic": "GERMANY-GRADE-09-MATH-Differentialrechnung",
+      "learning_objective": "Differentialrechnung"
     }
   ],
   "rubrics": []

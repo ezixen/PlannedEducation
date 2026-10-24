@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-biology-genetika-alapok-1.0.0",
-    "name": "Genetika alapok - Finland grade-07",
+    "name": "Genetics basics - Finland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Genetika alapok for grade-07 students. Covers: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "description": "45 minuutin koe aiheesta Genetics basics (grade-07). Aiheet: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.158349+00:00",
-    "updated_at": "2026-10-21T11:02:24.158364+00:00",
+    "created_at": "2026-10-24T17:53:47.587812+00:00",
+    "updated_at": "2026-10-24T17:53:47.587818+00:00",
     "tags": [
       "biology",
-      "genetika-alapok",
+      "genetics-basics",
       "grade-07",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-07",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "253077b9236cde805fb21b99c2e9d75324a76f1c5fd5fd572537d2fac33e7f07",
+    "checksum": "020675bdfd852e3cc24d9f614013732ae587246ecd590257b892fabd72782ce9",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Biology - Genetika alapok",
-    "description": "Test on Genetika alapok including Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
+    "title": "grade-07 Biology - Genetics basics",
+    "description": "Koe aiheesta Genetics basics: Cell biology and genetics, Cell structure, Genetics basics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 1: Genetics basics",
+      "text": "[biology] Genetics basics - Kysymys 1: Genetics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 2: Genetics basics",
+      "text": "[biology] Genetics basics - Kysymys 2: Genetics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 3: Genetics basics",
+      "text": "[biology] Genetics basics - Kysymys 3: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Genetics basics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Genetika alapok - Kérdés 4: Genetics basics",
+      "text": "[biology] Genetics basics - Kysymys 4: Genetics basics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Genetika alapok - Kérdés 5: Genetics basics",
+      "text": "[biology] Genetics basics - Kysymys 5: Genetics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Genetika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Genetics basics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "genetika-alapok",
-        "grade-07"
+        "genetics-basics",
+        "grade-07",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetika alapok",
+      "curriculum_topic": "FINLAND-GRADE-07-BIOLOGY-Genetics basics",
       "learning_objective": "Genetics basics"
     }
   ],

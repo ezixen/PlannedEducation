@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-szorzás-tizedes-1.0.0",
-    "name": "Szorzás tizedes - Belgium grade-04",
+    "name": "Decimal multiplication - Belgium grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Toets van 45 minuten over Decimal multiplication (grade-04). Onderwerpen: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.556748+00:00",
-    "updated_at": "2026-10-21T11:02:29.556760+00:00",
+    "created_at": "2026-10-24T17:53:50.733946+00:00",
+    "updated_at": "2026-10-24T17:53:50.733953+00:00",
     "tags": [
       "math",
-      "szorzás-tizedes",
+      "decimal-multiplication",
       "grade-04",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "aa44a1aa29569802cc996fef55fb724396f820616664c06ec3ff3d4383f48fac",
+    "checksum": "9d576bbf3011bffc16a9bd901de60f6554dee545445d9197bf14222a1ef226f5",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Szorzás tizedes",
-    "description": "Test on Szorzás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal multiplication",
+    "description": "Toets over Decimal multiplication: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 1: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Vraag 1: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 2: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Vraag 2: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 3: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Vraag 3: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzás tizedes - Kérdés 4: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Vraag 4: Decimal multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Decimal multiplication.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzás tizedes - Question 5: Decimal multiplication [rand:1-100]",
+      "text": "[math] Decimal multiplication - Vraag 5: Decimal multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzás-tizedes",
+        "decimal-multiplication",
         "grade-04",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "BELGIUM-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     }
   ],

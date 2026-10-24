@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-phonics-alapok-1.0.0",
-    "name": "Phonics alapok - Belgium grade-01",
+    "name": "Phonics basics - Belgium grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Phonics alapok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "Toets van 45 minuten over Phonics basics (grade-01). Onderwerpen: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.456670+00:00",
-    "updated_at": "2026-10-21T11:02:29.456686+00:00",
+    "created_at": "2026-10-24T17:53:50.669702+00:00",
+    "updated_at": "2026-10-24T17:53:50.669710+00:00",
     "tags": [
       "english",
-      "phonics-alapok",
+      "phonics-basics",
       "grade-01",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "a8289b676fbd11f2e1affafd57a9feddd91486bd1343b82f708bfe6bce43d690",
+    "checksum": "d251557746cf78dcdaae34ecdd9e80003d52ed4949a3b372ddb3323c6a7b279f",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Phonics alapok",
-    "description": "Test on Phonics alapok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - Phonics basics",
+    "description": "Toets over Phonics basics: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 1: Phonics basics",
+      "text": "[english] Phonics basics - Vraag 1: Phonics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 2: Phonics basics",
+      "text": "[english] Phonics basics - Vraag 2: Phonics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Phonics alapok - Kérdés 3: Phonics basics",
+      "text": "[english] Phonics basics - Vraag 3: Phonics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Phonics alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Phonics basics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 4: Phonics basics",
+      "text": "[english] Phonics basics - Vraag 4: Phonics basics",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 5: Phonics basics",
+      "text": "[english] Phonics basics - Vraag 5: Phonics basics",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "BELGIUM-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     }
   ],

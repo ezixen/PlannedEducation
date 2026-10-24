@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mozgás-1.0.0",
-    "name": "Mozgás - Ireland grade-08",
+    "name": "Motion - Ireland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mozgás for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Motion for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.571654+00:00",
-    "updated_at": "2026-10-21T11:02:30.571666+00:00",
+    "created_at": "2026-10-24T17:53:51.350560+00:00",
+    "updated_at": "2026-10-24T17:53:51.350569+00:00",
     "tags": [
       "physics",
-      "mozgás",
+      "motion",
       "grade-08",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "e45df740e147cc4e8ba05a5ab59ea0d6c5de48778519f483d175e46f1ecf3caf",
+    "checksum": "19befa29e9bdc5f255fd2f42b6283f70bd9efcb9563f132443f438c3f7cca1e9",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mozgás",
-    "description": "Test on Mozgás including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Motion",
+    "description": "Assessment on Motion including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 1: Motion",
+      "text": "[physics] Motion - Question 1: Motion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 2: Motion",
+      "text": "[physics] Motion - Question 2: Motion",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mozgás - Kérdés 3: Motion",
+      "text": "[physics] Motion - Question 3: Motion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mozgás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Motion.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mozgás - Question 4: Motion [rand:1-1000]",
+      "text": "[physics] Motion - Question 4: Motion [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mozgás",
+        "motion",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mozgás - Kérdés 5: Motion",
+      "text": "[physics] Motion - Question 5: Motion",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mozgás",
-        "grade-08"
+        "motion",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Mozgás",
+      "curriculum_topic": "IRELAND-GRADE-08-PHYSICS-Motion",
       "learning_objective": "Motion"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-09-math-integrálás-1.0.0",
     "name": "Integrálás - Hungary grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45 perces felmérő: Integrálás (grade-09). Témakörök: Függvények és határek, Deriválás, Integrálás, Valószínűség, Statisztika",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.471236+00:00",
-    "updated_at": "2026-10-21T11:02:35.471263+00:00",
+    "created_at": "2026-10-24T17:53:52.362505+00:00",
+    "updated_at": "2026-10-24T17:53:52.362511+00:00",
     "tags": [
       "math",
       "integrálás",
       "grade-09",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "3c88685bdef038f996b70802c37289c63f8089c5c1b78b6ad263810f1de16647",
+    "checksum": "9183ff1db0ce2347135e3a8b13934919be6afb50d0fd2601766139a2a32f784d",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Függvények és határek",
+      "Deriválás",
+      "Integrálás",
+      "Valószínűség",
+      "Statisztika"
     ]
   },
   "exam": {
     "title": "grade-09 Math - Integrálás",
-    "description": "Test on Integrálás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "Felmérő a(z) Integrálás témakörből (Függvények és határek, Deriválás, Integrálás, Valószínűség, Statisztika)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integrálás - Kérdés 1: Integrálás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "integrálás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "learning_objective": "Integrálás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integrálás - Kérdés 2: Integrálás",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "integrálás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "learning_objective": "Integrálás"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integrálás - Kérdés 3: Integrálás",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "integrálás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "learning_objective": "Integrálás"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integrálás - Kérdés 4: Integrálás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "integrálás",
-        "grade-09"
+        "grade-09",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "learning_objective": "Integrálás"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-1000]",
+      "text": "[math] Integrálás - Kérdés 5: Integrálás [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "integrálás",
         "grade-09",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "learning_objective": "Integrálás"
     }
   ],
   "rubrics": []

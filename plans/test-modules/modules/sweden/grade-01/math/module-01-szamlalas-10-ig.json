@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-10-ig-1.0.0",
-    "name": "Számlálás 10-ig - Sweden grade-01",
+    "name": "Räkna till 10 - Sweden grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minuters prov i Räkna till 10 (grade-01). Omfattar: Räkna till 10, Addition till 10, Subtraktion till 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.508487+00:00",
-    "updated_at": "2026-10-21T11:02:25.508498+00:00",
+    "created_at": "2026-10-24T17:53:48.334695+00:00",
+    "updated_at": "2026-10-24T17:53:48.334704+00:00",
     "tags": [
       "math",
-      "számlálás-10-ig",
+      "räkna-till-10",
       "grade-01",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "055a99fa4d949b17a9f74ba7ce038d316daf9263d04e3cae437c38ee12d7d5b1",
+    "checksum": "3545e2c14cdb6a70265593b7bf11e1ebae2497d2ea3c3ac3c493d08d4f2034bd",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
+      "Räkna till 10",
+      "Addition till 10",
+      "Subtraktion till 10",
       "Counting to 20",
       "Addition to 20"
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 10-ig",
-    "description": "Test on Számlálás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Räkna till 10",
+    "description": "Prov i Räkna till 10: Räkna till 10, Addition till 10, Subtraktion till 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 1: Counting to 10",
+      "text": "[math] Räkna till 10 - Fråga 1: Räkna till 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "räkna-till-10",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Räkna till 10",
+      "learning_objective": "Räkna till 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 2: Counting to 10",
+      "text": "[math] Räkna till 10 - Fråga 2: Räkna till 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "räkna-till-10",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Räkna till 10",
+      "learning_objective": "Räkna till 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 10-ig - Kérdés 3: Counting to 10",
+      "text": "[math] Räkna till 10 - Fråga 3: Räkna till 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "räkna-till-10",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Räkna till 10",
+      "learning_objective": "Räkna till 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 10-ig - Kérdés 4: Counting to 10",
+      "text": "[math] Räkna till 10 - Fråga 4: Räkna till 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Räkna till 10.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-10-ig",
-        "grade-01"
+        "räkna-till-10",
+        "grade-01",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Räkna till 10",
+      "learning_objective": "Räkna till 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 10-ig - Question 5: Counting to 10 [rand:1-20]",
+      "text": "[math] Räkna till 10 - Fråga 5: Räkna till 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "számlálás-10-ig",
+        "räkna-till-10",
         "grade-01",
-        "integer"
+        "integer",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Számlálás 10-ig",
-      "learning_objective": "Counting to 10"
+      "curriculum_topic": "SWEDEN-GRADE-01-MATH-Räkna till 10",
+      "learning_objective": "Räkna till 10"
     }
   ],
   "rubrics": []

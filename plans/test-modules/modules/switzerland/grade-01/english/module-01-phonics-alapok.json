@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-phonics-alapok-1.0.0",
-    "name": "Phonics alapok - Switzerland grade-01",
+    "name": "Phonics basics - Switzerland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Phonics alapok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema Phonics basics (grade-01). Themen: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.802844+00:00",
-    "updated_at": "2026-10-21T11:02:27.802858+00:00",
+    "created_at": "2026-10-24T17:53:49.827657+00:00",
+    "updated_at": "2026-10-24T17:53:49.827673+00:00",
     "tags": [
       "english",
-      "phonics-alapok",
+      "phonics-basics",
       "grade-01",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "f7e920871970171d747a4371fce0a7cf84f8a5bf263bed1824f319df11a07930",
+    "checksum": "634a663c7e3b8a7ddca1e43ae54124d6a16750bee0471b5a6d05b000cac3d7ad",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Phonics alapok",
-    "description": "Test on Phonics alapok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - Phonics basics",
+    "description": "Prüfung zum Thema Phonics basics: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 1: Phonics basics",
+      "text": "[english] Phonics basics - Frage 1: Phonics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 2: Phonics basics",
+      "text": "[english] Phonics basics - Frage 2: Phonics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Phonics alapok - Kérdés 3: Phonics basics",
+      "text": "[english] Phonics basics - Frage 3: Phonics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Phonics alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Phonics basics.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 4: Phonics basics",
+      "text": "[english] Phonics basics - Frage 4: Phonics basics",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Phonics alapok - Kérdés 5: Phonics basics",
+      "text": "[english] Phonics basics - Frage 5: Phonics basics",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "phonics-alapok",
-        "grade-01"
+        "phonics-basics",
+        "grade-01",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics alapok",
+      "curriculum_topic": "SWITZERLAND-GRADE-01-ENGLISH-Phonics basics",
       "learning_objective": "Phonics basics"
     }
   ],

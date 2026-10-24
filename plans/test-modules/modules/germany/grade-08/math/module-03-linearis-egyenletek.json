@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-lineáris-egyenletek-1.0.0",
-    "name": "Lineáris egyenletek - Germany grade-08",
+    "name": "Lineare Gleichungen - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Lineáris egyenletek for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "45-minütige Prüfung zum Thema Lineare Gleichungen (grade-08). Themen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.457434+00:00",
-    "updated_at": "2026-10-21T11:02:16.457447+00:00",
+    "created_at": "2026-10-24T17:53:45.450640+00:00",
+    "updated_at": "2026-10-24T17:53:45.450648+00:00",
     "tags": [
       "math",
-      "lineáris-egyenletek",
+      "lineare-gleichungen",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "431eabdc8cfc0076d6c279fcfaf05c9f0f400f12c214089bbe082d66b2d22428",
+    "checksum": "3eb85e2bfa13d36612a55a95cf2f7ac40a72d814e4133f4f9b297cbbeab68d93",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Real numbers",
-      "Functions",
-      "Linear equations",
-      "Geometry",
-      "Statistics"
+      "Reelle Zahlen",
+      "Funktionen",
+      "Lineare Gleichungen",
+      "Geometrie",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Lineáris egyenletek",
-    "description": "Test on Lineáris egyenletek including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Lineare Gleichungen",
+    "description": "Prüfung zum Thema Lineare Gleichungen: Reelle Zahlen, Funktionen, Lineare Gleichungen, Geometrie, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 1: Linear equations",
+      "text": "[math] Lineare Gleichungen - Frage 1: Lineare Gleichungen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "lineare-gleichungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineáris egyenletek",
-      "learning_objective": "Linear equations"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineare Gleichungen",
+      "learning_objective": "Lineare Gleichungen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 2: Linear equations",
+      "text": "[math] Lineare Gleichungen - Frage 2: Lineare Gleichungen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "lineare-gleichungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineáris egyenletek",
-      "learning_objective": "Linear equations"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineare Gleichungen",
+      "learning_objective": "Lineare Gleichungen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Lineáris egyenletek - Kérdés 3: Linear equations",
+      "text": "[math] Lineare Gleichungen - Frage 3: Lineare Gleichungen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "lineare-gleichungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineáris egyenletek",
-      "learning_objective": "Linear equations"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineare Gleichungen",
+      "learning_objective": "Lineare Gleichungen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Lineáris egyenletek - Kérdés 4: Linear equations",
+      "text": "[math] Lineare Gleichungen - Frage 4: Lineare Gleichungen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Lineáris egyenletek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Lineare Gleichungen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "lineáris-egyenletek",
-        "grade-08"
+        "lineare-gleichungen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineáris egyenletek",
-      "learning_objective": "Linear equations"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineare Gleichungen",
+      "learning_objective": "Lineare Gleichungen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Lineáris egyenletek - Question 5: Linear equations [rand:1-1000]",
+      "text": "[math] Lineare Gleichungen - Frage 5: Lineare Gleichungen [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "lineáris-egyenletek",
+        "lineare-gleichungen",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineáris egyenletek",
-      "learning_objective": "Linear equations"
+      "curriculum_topic": "GERMANY-GRADE-08-MATH-Lineare Gleichungen",
+      "learning_objective": "Lineare Gleichungen"
     }
   ],
   "rubrics": []

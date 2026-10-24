@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-függvények-1.0.0",
-    "name": "Függvények - Austria grade-11",
+    "name": "Funktionen - Austria grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Funktionen (grade-11). Themen: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.377253+00:00",
-    "updated_at": "2026-10-21T11:02:29.377263+00:00",
+    "created_at": "2026-10-24T17:53:50.619598+00:00",
+    "updated_at": "2026-10-24T17:53:50.619604+00:00",
     "tags": [
       "math",
-      "függvények",
+      "funktionen",
       "grade-11",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "8ad6da49504ef24b04bd3b92cd7527a8c98c4cbe92abe966c6d7d6469f6c618c",
+    "checksum": "f09e33725bcef79b9132bd50655835352a9633ec094a269aec789ff9f70271e9",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Függvények",
-    "description": "Test on Függvények including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Funktionen",
+    "description": "Prüfung zum Thema Funktionen: Funktionen, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 1: Functions",
+      "text": "[math] Funktionen - Frage 1: Funktionen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "funktionen",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 2: Functions",
+      "text": "[math] Funktionen - Frage 2: Funktionen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "funktionen",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények - Kérdés 3: Functions",
+      "text": "[math] Funktionen - Frage 3: Funktionen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "funktionen",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények - Kérdés 4: Functions",
+      "text": "[math] Funktionen - Frage 4: Funktionen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Funktionen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények",
-        "grade-11"
+        "funktionen",
+        "grade-11",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények - Question 5: Functions [rand:1-100]",
+      "text": "[math] Funktionen - Frage 5: Funktionen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "függvények",
+        "funktionen",
         "grade-11",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Függvények",
-      "learning_objective": "Functions"
+      "curriculum_topic": "AUSTRIA-GRADE-11-MATH-Funktionen",
+      "learning_objective": "Funktionen"
     }
   ],
   "rubrics": []

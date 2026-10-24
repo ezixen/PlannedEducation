@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-anyagok-és-tulajdonságaik-1.0.0",
-    "name": "Anyagok és tulajdonságaik - New Zealand grade-08",
+    "name": "Substances and properties - New Zealand grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Anyagok és tulajdonságaik for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minute assessment on Substances and properties for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.590636+00:00",
-    "updated_at": "2026-10-21T11:02:34.590646+00:00",
+    "created_at": "2026-10-24T17:53:51.749486+00:00",
+    "updated_at": "2026-10-24T17:53:51.749494+00:00",
     "tags": [
       "chemistry",
-      "anyagok-és-tulajdonságaik",
+      "substances-and-properties",
       "grade-08",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "bf432802b7699e7b498151c4f1d0d825890296f34953fb463a8cd008b9af79df",
+    "checksum": "6de69bd28999bdf29b4305481f7e22bb0dabf121e10aa0b668c099bccb12fac0",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Anyagok és tulajdonságaik",
-    "description": "Test on Anyagok és tulajdonságaik including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Substances and properties",
+    "description": "Assessment on Substances and properties including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 1: Substances and properties",
+      "text": "[chemistry] Substances and properties - Question 1: Substances and properties",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 2: Substances and properties",
+      "text": "[chemistry] Substances and properties - Question 2: Substances and properties",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 3: Substances and properties",
+      "text": "[chemistry] Substances and properties - Question 3: Substances and properties",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Anyagok és tulajdonságaik témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Substances and properties.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Question 4: Substances and properties [rand:1-1000]",
+      "text": "[chemistry] Substances and properties - Question 4: Substances and properties [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
+        "substances-and-properties",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Anyagok és tulajdonságaik - Kérdés 5: Substances and properties",
+      "text": "[chemistry] Substances and properties - Question 5: Substances and properties",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "anyagok-és-tulajdonságaik",
-        "grade-08"
+        "substances-and-properties",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Anyagok és tulajdonságaik",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-08-CHEMISTRY-Substances and properties",
       "learning_objective": "Substances and properties"
     }
   ],

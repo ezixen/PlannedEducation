@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-európa-és-magyarország-1.0.0",
-    "name": "Európa és Magyarország - Finland grade-08",
+    "name": "Europe and Hungary - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45 minuutin koe aiheesta Europe and Hungary (grade-08). Aiheet: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.331113+00:00",
-    "updated_at": "2026-10-21T11:02:24.331127+00:00",
+    "created_at": "2026-10-24T17:53:47.677489+00:00",
+    "updated_at": "2026-10-24T17:53:47.677498+00:00",
     "tags": [
       "geography",
-      "európa-és-magyarország",
+      "europe-and-hungary",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "4c95034aa56a1cd700739052330119f2bf71ba25f34988cd941a108fd9002bff",
+    "checksum": "3f790f5b973d54cccf6ee8d15489a7cff5143963bf033c1c48aae543e597051c",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Európa és Magyarország",
-    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Europe and Hungary",
+    "description": "Koe aiheesta Europe and Hungary: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Kysymys 1: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Kysymys 2: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Kysymys 3: Europe and Hungary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Europe and Hungary.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Kysymys 4: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
+      "text": "[geography] Europe and Hungary - Kysymys 5: Europe and Hungary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "európa-és-magyarország",
-        "grade-08"
+        "europe-and-hungary",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Európa és Magyarország",
+      "curriculum_topic": "FINLAND-GRADE-08-GEOGRAPHY-Europe and Hungary",
       "learning_objective": "Europe and Hungary"
     }
   ],

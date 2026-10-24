@@ -3,21 +3,25 @@
     "id": "grade-01-math-kivonás-10-ig-1.0.0",
     "name": "Kivonás 10-ig - Hungary grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45 perces felmérő: Kivonás 10-ig (grade-01). Témakörök: Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.984936+00:00",
-    "updated_at": "2026-10-21T11:02:34.984948+00:00",
+    "created_at": "2026-10-24T17:53:52.049828+00:00",
+    "updated_at": "2026-10-24T17:53:52.049837+00:00",
     "tags": [
       "math",
       "kivonás-10-ig",
       "grade-01",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "6ffd8670a89c7a7a608747c140cafaf61648eeb0b65a850ad8a8ca8577b8f2ba",
+    "checksum": "1b3692928cf87eee0d4cf3efc78760b74b93b76ecf8f7d644d9b1e7f05dca61a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 10",
-      "Addition to 10",
-      "Subtraction to 10",
-      "Counting to 20",
-      "Addition to 20"
+      "Számlálás 10-ig",
+      "Összeadás 10-ig",
+      "Kivonás 10-ig",
+      "Számlálás 20-ig",
+      "Összeadás 20-ig"
     ]
   },
   "exam": {
     "title": "grade-01 Math - Kivonás 10-ig",
-    "description": "Test on Kivonás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "Felmérő a(z) Kivonás 10-ig témakörből (Számlálás 10-ig, Összeadás 10-ig, Kivonás 10-ig, Számlálás 20-ig, Összeadás 20-ig)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 1: Subtraction to 10",
+      "text": "[math] Kivonás 10-ig - Kérdés 1: Kivonás 10-ig",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "kivonás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "learning_objective": "Kivonás 10-ig"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 2: Subtraction to 10",
+      "text": "[math] Kivonás 10-ig - Kérdés 2: Kivonás 10-ig",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "kivonás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "learning_objective": "Kivonás 10-ig"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 3: Subtraction to 10",
+      "text": "[math] Kivonás 10-ig - Kérdés 3: Kivonás 10-ig",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "kivonás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "learning_objective": "Kivonás 10-ig"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 10-ig - Kérdés 4: Subtraction to 10",
+      "text": "[math] Kivonás 10-ig - Kérdés 4: Kivonás 10-ig",
       "options": null,
       "correct_answer": "Minta válasz a(z) Kivonás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "kivonás-10-ig",
-        "grade-01"
+        "grade-01",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "learning_objective": "Kivonás 10-ig"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 10-ig - Question 5: Subtraction to 10 [rand:1-20]",
+      "text": "[math] Kivonás 10-ig - Kérdés 5: Kivonás 10-ig [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "kivonás-10-ig",
         "grade-01",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-01-MATH-Kivonás 10-ig",
-      "learning_objective": "Subtraction to 10"
+      "learning_objective": "Kivonás 10-ig"
     }
   ],
   "rubrics": []

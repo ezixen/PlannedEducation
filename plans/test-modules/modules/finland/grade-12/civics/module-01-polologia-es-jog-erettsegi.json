@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-polológia-és-jog-erettségi-1.0.0",
-    "name": "Polológia és jog-erettségi - Finland grade-12",
+    "name": "Politology and law-maturity - Finland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Polológia és jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45 minuutin koe aiheesta Politology and law-maturity (grade-12). Aiheet: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.721488+00:00",
-    "updated_at": "2026-10-21T11:02:24.721501+00:00",
+    "created_at": "2026-10-24T17:53:47.852599+00:00",
+    "updated_at": "2026-10-24T17:53:47.852604+00:00",
     "tags": [
       "civics",
-      "polológia-és-jog-erettségi",
+      "politology-and-law-maturity",
       "grade-12",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "3fc66f9306b5092e94b1897cb3999caef091098a7f64a087cf4e706bb0c26a00",
+    "checksum": "160fd5c00a253382861e1877fa4c8b3c268b29be70aef77571d011675b168ba4",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Polológia és jog-erettségi",
-    "description": "Test on Polológia és jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Politology and law-maturity",
+    "description": "Koe aiheesta Politology and law-maturity: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 1: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Kysymys 1: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 2: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Kysymys 2: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 3: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Kysymys 3: Politology and law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polológia és jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Politology and law-maturity.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 4: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Kysymys 4: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 5: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Kysymys 5: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "FINLAND-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     }
   ],

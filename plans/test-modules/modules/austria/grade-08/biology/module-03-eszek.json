@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-észek-1.0.0",
-    "name": "Észek - Austria grade-08",
+    "name": "Sinnesorgane - Austria grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Észek for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minütige Prüfung zum Thema Sinnesorgane (grade-08). Themen: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.027453+00:00",
-    "updated_at": "2026-10-21T11:02:29.027467+00:00",
+    "created_at": "2026-10-24T17:53:50.444560+00:00",
+    "updated_at": "2026-10-24T17:53:50.444567+00:00",
     "tags": [
       "biology",
-      "észek",
+      "sinnesorgane",
       "grade-08",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "7c38ec7500933866fad4c6ed9634a5b62eaa97d43acaeb334ad582b8e508065d",
+    "checksum": "10640c63e42b6086fd8d111ad5effe13b058c3f73f50d226f6c28928544993c9",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human body and health",
-      "Human body structure",
-      "Senses",
-      "Perception",
-      "Health"
+      "Menschlicher Körper und Gesundheit",
+      "Anatomie des Menschen",
+      "Sinnesorgane",
+      "Wahrnehmung",
+      "Gesundheit"
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Észek",
-    "description": "Test on Észek including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Sinnesorgane",
+    "description": "Prüfung zum Thema Sinnesorgane: Menschlicher Körper und Gesundheit, Anatomie des Menschen, Sinnesorgane, Wahrnehmung, Gesundheit",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 1: Senses",
+      "text": "[biology] Sinnesorgane - Frage 1: Sinnesorgane",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "sinnesorgane",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Észek",
-      "learning_objective": "Senses"
+      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Sinnesorgane",
+      "learning_objective": "Sinnesorgane"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 2: Senses",
+      "text": "[biology] Sinnesorgane - Frage 2: Sinnesorgane",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "sinnesorgane",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Észek",
-      "learning_objective": "Senses"
+      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Sinnesorgane",
+      "learning_objective": "Sinnesorgane"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Észek - Kérdés 3: Senses",
+      "text": "[biology] Sinnesorgane - Frage 3: Sinnesorgane",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Sinnesorgane.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "sinnesorgane",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Észek",
-      "learning_objective": "Senses"
+      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Sinnesorgane",
+      "learning_objective": "Sinnesorgane"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 4: Senses",
+      "text": "[biology] Sinnesorgane - Frage 4: Sinnesorgane",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "sinnesorgane",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Észek",
-      "learning_objective": "Senses"
+      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Sinnesorgane",
+      "learning_objective": "Sinnesorgane"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Észek - Kérdés 5: Senses",
+      "text": "[biology] Sinnesorgane - Frage 5: Sinnesorgane",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Sinnesorgane.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "sinnesorgane",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Észek",
-      "learning_objective": "Senses"
+      "curriculum_topic": "AUSTRIA-GRADE-08-BIOLOGY-Sinnesorgane",
+      "learning_objective": "Sinnesorgane"
     }
   ],
   "rubrics": []

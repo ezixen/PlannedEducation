@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-szorzás-alapok-1.0.0",
-    "name": "Szorzás alapok - Germany grade-02",
+    "name": "Multiplikation Grundlagen - Germany grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzás alapok for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minütige Prüfung zum Thema Multiplikation Grundlagen (grade-02). Themen: Zählen bis 100, Addition bis 100, Subtraktion bis 100, Multiplikation Grundlagen, Division Grundlagen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.137260+00:00",
-    "updated_at": "2026-10-21T11:02:16.137273+00:00",
+    "created_at": "2026-10-24T17:53:45.184954+00:00",
+    "updated_at": "2026-10-24T17:53:45.184962+00:00",
     "tags": [
       "math",
-      "szorzás-alapok",
+      "multiplikation-grundlagen",
       "grade-02",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "372d8135d3e3aa0b25f46a7ec2a06c3d4ee7eebc1edd50535c21ada7aa58257d",
+    "checksum": "b2204be6615f8efa6c6e6e04d2c2a8c3b5fbdac2b19e0c924a47990d4edbdbeb",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 100",
-      "Addition to 100",
-      "Subtraction to 100",
-      "Multiplication basics",
-      "Division basics"
+      "Zählen bis 100",
+      "Addition bis 100",
+      "Subtraktion bis 100",
+      "Multiplikation Grundlagen",
+      "Division Grundlagen"
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Szorzás alapok",
-    "description": "Test on Szorzás alapok including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Multiplikation Grundlagen",
+    "description": "Prüfung zum Thema Multiplikation Grundlagen: Zählen bis 100, Addition bis 100, Subtraktion bis 100, Multiplikation Grundlagen, Division Grundlagen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás alapok - Kérdés 1: Multiplication basics",
+      "text": "[math] Multiplikation Grundlagen - Frage 1: Multiplikation Grundlagen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-alapok",
-        "grade-02"
+        "multiplikation-grundlagen",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-02-MATH-Szorzás alapok",
-      "learning_objective": "Multiplication basics"
+      "curriculum_topic": "GERMANY-GRADE-02-MATH-Multiplikation Grundlagen",
+      "learning_objective": "Multiplikation Grundlagen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás alapok - Kérdés 2: Multiplication basics",
+      "text": "[math] Multiplikation Grundlagen - Frage 2: Multiplikation Grundlagen",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-alapok",
-        "grade-02"
+        "multiplikation-grundlagen",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-02-MATH-Szorzás alapok",
-      "learning_objective": "Multiplication basics"
+      "curriculum_topic": "GERMANY-GRADE-02-MATH-Multiplikation Grundlagen",
+      "learning_objective": "Multiplikation Grundlagen"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás alapok - Kérdés 3: Multiplication basics",
+      "text": "[math] Multiplikation Grundlagen - Frage 3: Multiplikation Grundlagen",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-alapok",
-        "grade-02"
+        "multiplikation-grundlagen",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-02-MATH-Szorzás alapok",
-      "learning_objective": "Multiplication basics"
+      "curriculum_topic": "GERMANY-GRADE-02-MATH-Multiplikation Grundlagen",
+      "learning_objective": "Multiplikation Grundlagen"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzás alapok - Kérdés 4: Multiplication basics",
+      "text": "[math] Multiplikation Grundlagen - Frage 4: Multiplikation Grundlagen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzás alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Multiplikation Grundlagen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzás-alapok",
-        "grade-02"
+        "multiplikation-grundlagen",
+        "grade-02",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-02-MATH-Szorzás alapok",
-      "learning_objective": "Multiplication basics"
+      "curriculum_topic": "GERMANY-GRADE-02-MATH-Multiplikation Grundlagen",
+      "learning_objective": "Multiplikation Grundlagen"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzás alapok - Question 5: Multiplication basics [rand:1-20]",
+      "text": "[math] Multiplikation Grundlagen - Frage 5: Multiplikation Grundlagen [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "szorzás-alapok",
+        "multiplikation-grundlagen",
         "grade-02",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-02-MATH-Szorzás alapok",
-      "learning_objective": "Multiplication basics"
+      "curriculum_topic": "GERMANY-GRADE-02-MATH-Multiplikation Grundlagen",
+      "learning_objective": "Multiplikation Grundlagen"
     }
   ],
   "rubrics": []

@@ -3,21 +3,25 @@
     "id": "grade-03-math-osztástábla-1.0.0",
     "name": "Osztástábla - Hungary grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Osztástábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45 perces felmérő: Osztástábla (grade-03). Témakörök: Számlálás 1000-ig, Összeadás 1000-ig, Kivonás 1000-ig, Szorzótábla, Osztástábla",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.035678+00:00",
-    "updated_at": "2026-10-21T11:02:35.035690+00:00",
+    "created_at": "2026-10-24T17:53:52.082773+00:00",
+    "updated_at": "2026-10-24T17:53:52.082778+00:00",
     "tags": [
       "math",
       "osztástábla",
       "grade-03",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "2ccc3b65663c306878a6bd7c000e99e6dd4f4764a7534629ec01094ece2f7d86",
+    "checksum": "5ebdb0cf0654036dbfba0fac5a5c54d7b3dbc8ea66910d22e3537460b505c26b",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Counting to 1000",
-      "Addition to 1000",
-      "Subtraction to 1000",
-      "Multiplication table",
-      "Division table"
+      "Számlálás 1000-ig",
+      "Összeadás 1000-ig",
+      "Kivonás 1000-ig",
+      "Szorzótábla",
+      "Osztástábla"
     ]
   },
   "exam": {
     "title": "grade-03 Math - Osztástábla",
-    "description": "Test on Osztástábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "Felmérő a(z) Osztástábla témakörből (Számlálás 1000-ig, Összeadás 1000-ig, Kivonás 1000-ig, Szorzótábla, Osztástábla)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 1: Division table",
+      "text": "[math] Osztástábla - Kérdés 1: Osztástábla",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "osztástábla",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "learning_objective": "Osztástábla"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 2: Division table",
+      "text": "[math] Osztástábla - Kérdés 2: Osztástábla",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "osztástábla",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "learning_objective": "Osztástábla"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 3: Division table",
+      "text": "[math] Osztástábla - Kérdés 3: Osztástábla",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "osztástábla",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "learning_objective": "Osztástábla"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztástábla - Kérdés 4: Division table",
+      "text": "[math] Osztástábla - Kérdés 4: Osztástábla",
       "options": null,
       "correct_answer": "Minta válasz a(z) Osztástábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "osztástábla",
-        "grade-03"
+        "grade-03",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "learning_objective": "Osztástábla"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztástábla - Question 5: Division table [rand:1-20]",
+      "text": "[math] Osztástábla - Kérdés 5: Osztástábla [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "osztástábla",
         "grade-03",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-03-MATH-Osztástábla",
-      "learning_objective": "Division table"
+      "learning_objective": "Osztástábla"
     }
   ],
   "rubrics": []

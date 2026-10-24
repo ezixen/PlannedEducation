@@ -6,8 +6,11 @@ Supports central repository, custom sources, categories, ratings, and versioning
 
 import hashlib
 import json
+import os
+import re
 import uuid
 from datetime import UTC, datetime
+from pathlib import Path
 
 import yaml
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
@@ -35,6 +38,201 @@ from .schemas import (
 
 router = APIRouter(prefix="/packages", tags=["packages"])
 
+REPO_ROOT = Path(__file__).resolve().parents[3]
+MODULES_DIR = Path(
+    os.getenv("PE_MODULES_DIR", str(REPO_ROOT / "plans" / "test-modules" / "modules"))
+)
+
+DEFAULT_LANGUAGE_NAMES: dict[str, str] = {
+    "en": "English",
+    "hu": "Magyar",
+    "de": "Deutsch",
+    "fr": "Français",
+    "es": "Español",
+    "it": "Italiano",
+    "nl": "Nederlands",
+    "pl": "Polski",
+    "pt": "Português",
+    "pt-BR": "Português (Brasil)",
+    "sv": "Svenska",
+    "no": "Norsk",
+    "da": "Dansk",
+    "fi": "Suomi",
+    "uk": "Українська",
+    "ja": "日本語",
+    "zh": "中文",
+    "ar": "العربية",
+    "ko": "한국어",
+    "tr": "Türkçe",
+    "ro": "Română",
+    "cs": "Čeština",
+    "sk": "Slovenčina",
+    "el": "Ελληνικά",
+}
+
+DEFAULT_LANGUAGE_COUNTRY: dict[str, str] = {
+    "hu": "hungary",
+    "de": "germany",
+    "en": "usa",
+    "fi": "finland",
+    "nl": "netherlands",
+    "sv": "sweden",
+    "no": "norway",
+    "da": "denmark",
+    "fr": "france",
+    "es": "spain",
+    "it": "italy",
+    "pl": "poland",
+    "pt": "portugal",
+    "pt-BR": "brazil",
+    "uk": "ukraine",
+    "ja": "japan",
+    "zh": "china",
+}
+
+_CURRICULUM_INDEX_CACHE: dict[str, object] = {
+    "count": -1,
+    "items": [],
+}
+
+
+def _sanitize_slug(value: str | None, fallback: str = "general") -> str:
+    if not value:
+        return fallback
+    cleaned = (
+        value.strip()
+        .lower()
+        .replace(" ", "-")
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ö", "o")
+        .replace("ő", "o")
+        .replace("ú", "u")
+        .replace("ü", "u")
+        .replace("ű", "u")
+    )
+    cleaned = re.sub(r"[^a-z0-9_-]", "", cleaned)
+    return cleaned or fallback
+
+
+def _unwrap_package_payload(pkg: dict) -> dict:
+    """Unwrap {'content': ...} export wrappers if uploaded back into validate/import."""
+    if (
+        isinstance(pkg, dict)
+        and "content" in pkg
+        and "metadata" not in pkg
+        and isinstance(pkg["content"], str)
+    ):
+        try:
+            inner = json.loads(pkg["content"])
+            if isinstance(inner, dict):
+                return inner
+        except Exception:
+            try:
+                inner = yaml.safe_load(pkg["content"])
+                if isinstance(inner, dict):
+                    return inner
+            except Exception:
+                pass
+    return pkg
+
+
+def _save_package_to_country_folder(
+    pkg: dict,
+    country: str | None = None,
+    grade_level: str | None = None,
+    subject: str | None = None,
+) -> str:
+    """Save a module JSON into plans/test-modules/modules/<country>/<grade>/<subject>/, creating folders if needed."""
+    meta = pkg.get("metadata", {})
+    lang_code = str(meta.get("language") or "en")
+    resolved_country = _sanitize_slug(
+        country or meta.get("country") or DEFAULT_LANGUAGE_COUNTRY.get(lang_code, "custom"),
+        fallback="custom",
+    )
+    resolved_grade = _sanitize_slug(
+        grade_level or meta.get("grade_level") or "grade-general",
+        fallback="grade-general",
+    )
+    resolved_subject = _sanitize_slug(
+        subject or meta.get("subject") or "general",
+        fallback="general",
+    )
+    module_name_slug = _sanitize_slug(
+        meta.get("name") or pkg.get("exam", {}).get("title") or "module",
+        fallback="module",
+    )
+
+    target_dir = (MODULES_DIR / resolved_country / resolved_grade / resolved_subject).resolve()
+    modules_root_resolved = MODULES_DIR.resolve()
+    if not str(target_dir).startswith(str(modules_root_resolved)):
+        raise HTTPException(status_code=400, detail="Invalid country or module path")
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target_file = target_dir / f"module-{module_name_slug}.json"
+    target_file.write_text(json.dumps(pkg, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    # Invalidate curriculum index cache
+    _CURRICULUM_INDEX_CACHE["count"] = -1
+    return target_file.relative_to(modules_root_resolved).as_posix()
+
+
+def _get_curriculum_index() -> list[dict]:
+    """Build or return cached index of all curriculum modules in MODULES_DIR."""
+    if not MODULES_DIR.exists():
+        return []
+    json_files = sorted(MODULES_DIR.rglob("*.json"))
+    if _CURRICULUM_INDEX_CACHE.get("count") == len(json_files) and _CURRICULUM_INDEX_CACHE.get("items"):
+        return _CURRICULUM_INDEX_CACHE["items"]  # type: ignore[return-value]
+
+    items: list[dict] = []
+    for fpath in json_files:
+        try:
+            rel_path = fpath.relative_to(MODULES_DIR).as_posix()
+            parts = rel_path.split("/")
+            folder_country = parts[0] if len(parts) > 0 else "custom"
+            folder_grade = parts[1] if len(parts) > 1 else ""
+            folder_subject = parts[2] if len(parts) > 2 else ""
+
+            data = json.loads(fpath.read_text(encoding="utf-8"))
+            meta = data.get("metadata", {})
+            exam = data.get("exam", {})
+            questions = data.get("questions", [])
+
+            lang_code = meta.get("language") or DEFAULT_LANGUAGE_COUNTRY.get(folder_country, "en")
+            if lang_code not in DEFAULT_LANGUAGE_NAMES and folder_country == "hungary":
+                lang_code = "hu"
+            elif lang_code not in DEFAULT_LANGUAGE_NAMES and folder_country in ("germany", "austria", "switzerland"):
+                lang_code = "de"
+            lang_name = meta.get("language_name") or DEFAULT_LANGUAGE_NAMES.get(lang_code, lang_code.upper())
+
+            items.append(
+                {
+                    "id": meta.get("id") or fpath.stem,
+                    "name": meta.get("name") or exam.get("title") or fpath.stem,
+                    "description": meta.get("description") or exam.get("description") or "",
+                    "country": meta.get("country") or folder_country,
+                    "language": lang_code,
+                    "language_name": lang_name,
+                    "grade_level": meta.get("grade_level") or folder_grade,
+                    "subject": meta.get("subject") or folder_subject,
+                    "curriculum": meta.get("curriculum") or "",
+                    "question_count": meta.get("question_count") or len(questions),
+                    "duration_minutes": exam.get("duration_minutes") or meta.get("duration_minutes") or 45,
+                    "total_points": meta.get("total_points") or sum(q.get("points", 1) for q in questions),
+                    "randomizer_enabled": bool(meta.get("randomizer_enabled")),
+                    "path": rel_path,
+                }
+            )
+        except Exception:
+            continue
+
+    _CURRICULUM_INDEX_CACHE["count"] = len(json_files)
+    _CURRICULUM_INDEX_CACHE["items"] = items
+    return items
+
 
 # ── Helper Functions ────────────────────────────────────────────────────────
 
@@ -47,6 +245,7 @@ def _calculate_checksum(data: dict) -> str:
 
 def _validate_package_structure(pkg: dict) -> tuple[bool, list[str], list[str]]:
     """Validate package structure and return (valid, errors, warnings)."""
+    pkg = _unwrap_package_payload(pkg)
     errors = []
     warnings = []
 
@@ -139,9 +338,12 @@ async def export_package(
             "author_id": current_user.id,
             "created_at": datetime.now(UTC).isoformat(),
             "updated_at": datetime.now(UTC).isoformat(),
-            "tags": [],
-            "subject": "",
-            "grade_level": "",
+            "tags": [request.language] if request.language else [],
+            "subject": request.subject or "",
+            "grade_level": request.grade_level or "",
+            "language": request.language or "en",
+            "language_name": request.language_name or DEFAULT_LANGUAGE_NAMES.get(request.language or "en", request.language or "English"),
+            "country": (request.country or DEFAULT_LANGUAGE_COUNTRY.get(request.language or "en", "usa")).lower(),
             "license": "CC-BY-4.0",
             "checksum": "",
         },
@@ -213,16 +415,33 @@ async def export_package(
             "filename": filename,
         }
 
+    saved_server_path = None
+    if request.save_to_server:
+        saved_server_path = _save_package_to_country_folder(
+            pkg,
+            country=request.country,
+            grade_level=request.grade_level,
+            subject=request.subject,
+        )
+
     return {
         "content": content,
         "media_type": media_type,
-        "filename": f"{exam.title.replace(' ', '_')}_package.{request.format}"
+        "filename": f"{exam.title.replace(' ', '_')}_package.{request.format}",
+        "saved_server_path": saved_server_path,
+        "language": pkg["metadata"]["language"],
+        "language_name": pkg["metadata"]["language_name"],
+        "country": pkg["metadata"]["country"],
     }
 
 
 @router.post("/import", response_model=PackageImportResult)
 async def import_package(
     file: UploadFile = File(...),
+    language: str | None = Form(None),
+    language_name: str | None = Form(None),
+    country: str | None = Form(None),
+    save_to_server: bool = Form(False),
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
@@ -249,6 +468,8 @@ async def import_package(
             pkg = json.loads(content.decode())
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid package format: {e}") from e
+
+    pkg = _unwrap_package_payload(pkg)
 
     # Validate package
     valid, errors, warnings = _validate_package_structure(pkg)
@@ -293,6 +514,21 @@ async def import_package(
     for _r_data in pkg.get("rubrics", []):
         # Rubrics would be stored separately or linked to questions
         rubrics_imported += 1
+
+    if language or country:
+        meta = pkg.setdefault("metadata", {})
+        if language:
+            meta["language"] = language
+            meta["language_name"] = language_name or DEFAULT_LANGUAGE_NAMES.get(language, language)
+        if country:
+            meta["country"] = country.lower()
+        pkg_copy = pkg.copy()
+        pkg_copy["metadata"] = pkg_copy["metadata"].copy()
+        pkg_copy["metadata"]["checksum"] = ""
+        pkg["metadata"]["checksum"] = _calculate_checksum(pkg_copy)
+
+    if save_to_server:
+        _save_package_to_country_folder(pkg, country=country)
 
     db.commit()
 
@@ -480,8 +716,190 @@ async def packages_health_check():
             "forking",
             "custom_sources",
             "download_tracking",
+            "curriculum_browser",
+            "country_language_folders",
         ]
     }
+
+
+@router.get("/curriculum")
+async def list_curriculum_modules(
+    country: str | None = Query(None),
+    language: str | None = Query(None),
+    grade_level: str | None = Query(None),
+    subject: str | None = Query(None),
+    search: str | None = Query(None),
+    limit: int = Query(24, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    current_user: models.User = Depends(get_current_user),
+):
+    """Browse curriculum modules across all country folders and languages."""
+    all_items = _get_curriculum_index()
+
+    countries = sorted({str(item["country"]) for item in all_items if item.get("country")})
+    lang_map: dict[str, str] = {}
+    for item in all_items:
+        lcode = str(item.get("language") or "en")
+        lname = str(item.get("language_name") or lcode)
+        lang_map[lcode] = lname
+    languages = [{"code": k, "name": v} for k, v in sorted(lang_map.items())]
+    grades = sorted({str(item["grade_level"]) for item in all_items if item.get("grade_level")})
+    subjects = sorted({str(item["subject"]) for item in all_items if item.get("subject")})
+
+    filtered = all_items
+    if country:
+        filtered = [m for m in filtered if str(m.get("country", "")).lower() == country.lower()]
+    if language:
+        filtered = [m for m in filtered if str(m.get("language", "")).lower() == language.lower()]
+    if grade_level:
+        filtered = [m for m in filtered if str(m.get("grade_level", "")).lower() == grade_level.lower()]
+    if subject:
+        filtered = [m for m in filtered if str(m.get("subject", "")).lower() == subject.lower()]
+    if search:
+        q = search.lower()
+        filtered = [
+            m
+            for m in filtered
+            if q in str(m.get("name", "")).lower()
+            or q in str(m.get("description", "")).lower()
+            or q in str(m.get("subject", "")).lower()
+            or q in str(m.get("country", "")).lower()
+            or q in str(m.get("language_name", "")).lower()
+        ]
+
+    total = len(filtered)
+    sliced = filtered[offset : offset + limit]
+
+    return {
+        "total": total,
+        "offset": offset,
+        "limit": limit,
+        "countries": countries,
+        "languages": languages,
+        "grades": grades,
+        "subjects": subjects,
+        "modules": sliced,
+    }
+
+
+@router.post("/curriculum/import", response_model=PackageImportResult)
+async def import_curriculum_module(
+    payload: dict,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Import a server curriculum module by relative path into the teacher's exams."""
+    rel_path = str(payload.get("path") or "").strip()
+    if not rel_path:
+        raise HTTPException(status_code=400, detail="Module path is required")
+
+    target_file = (MODULES_DIR / rel_path).resolve()
+    modules_root_resolved = MODULES_DIR.resolve()
+    if not str(target_file).startswith(str(modules_root_resolved)) or not target_file.is_file():
+        raise HTTPException(status_code=404, detail="Curriculum module file not found")
+
+    pkg = json.loads(target_file.read_text(encoding="utf-8"))
+    valid, errors, warnings = _validate_package_structure(pkg)
+    if not valid:
+        return PackageImportResult(success=False, errors=errors, warnings=warnings)
+
+    meta = pkg.get("metadata", {})
+    exam_data = pkg["exam"]
+    lang_code = meta.get("language") or "en"
+    lang_name = meta.get("language_name") or DEFAULT_LANGUAGE_NAMES.get(lang_code, lang_code)
+    desc_prefix = f"[{lang_code.upper()} - {lang_name}] " if lang_code else ""
+
+    exam = models.Exam(
+        id=str(uuid.uuid4()),
+        title=exam_data["title"],
+        description=f"{desc_prefix}{exam_data.get('description', '')}".strip(),
+        duration_minutes=exam_data.get("duration_minutes", 45),
+        teacher_id=current_user.id,
+        seb_config_key=None,
+    )
+    db.add(exam)
+    db.flush()
+
+    questions_imported = 0
+    for q_data in pkg.get("questions", []):
+        question = models.Question(
+            id=str(uuid.uuid4()),
+            exam_id=exam.id,
+            question_type=q_data["question_type"],
+            text=q_data["text"],
+            options_json=json.dumps(q_data["options"]) if q_data.get("options") else None,
+            correct_answer=q_data.get("correct_answer"),
+            rubric=q_data.get("rubric"),
+            points=q_data.get("points", 1),
+        )
+        db.add(question)
+        questions_imported += 1
+
+    db.commit()
+    return PackageImportResult(
+        success=True,
+        package_id=meta.get("id"),
+        exam_id=exam.id,
+        questions_imported=questions_imported,
+        rubrics_imported=len(pkg.get("rubrics", [])),
+        errors=[],
+        warnings=warnings,
+    )
+
+
+@router.post("/{package_id}/import", response_model=PackageImportResult)
+async def import_repository_package(
+    package_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Import a saved repository package by ID into the teacher's exams."""
+    package = db.query(models.Package).filter(models.Package.id == package_id).first()
+    if not package:
+        raise HTTPException(status_code=404, detail="Package not found")
+    if not package.is_public and package.author_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Access denied")
+
+    pkg = json.loads(package.package_data) if isinstance(package.package_data, str) else package.package_data
+    exam_data = pkg.get("exam", {})
+    meta = pkg.get("metadata", {})
+
+    exam = models.Exam(
+        id=str(uuid.uuid4()),
+        title=exam_data.get("title") or package.name,
+        description=exam_data.get("description") or package.description or "",
+        duration_minutes=exam_data.get("duration_minutes", 45),
+        teacher_id=current_user.id,
+        seb_config_key=None,
+    )
+    db.add(exam)
+    db.flush()
+
+    questions_imported = 0
+    for q_data in pkg.get("questions", []):
+        question = models.Question(
+            id=str(uuid.uuid4()),
+            exam_id=exam.id,
+            question_type=q_data["question_type"],
+            text=q_data["text"],
+            options_json=json.dumps(q_data["options"]) if q_data.get("options") else None,
+            correct_answer=q_data.get("correct_answer"),
+            rubric=q_data.get("rubric"),
+            points=q_data.get("points", 1),
+        )
+        db.add(question)
+        questions_imported += 1
+
+    db.commit()
+    return PackageImportResult(
+        success=True,
+        package_id=meta.get("id") or package.id,
+        exam_id=exam.id,
+        questions_imported=questions_imported,
+        rubrics_imported=len(pkg.get("rubrics", [])),
+        errors=[],
+        warnings=[],
+    )
 
 
 # ── Package Sources (Custom Repositories) ────────────────────────────────

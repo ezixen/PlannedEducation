@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-összeadás-tizedes-1.0.0",
-    "name": "Összeadás tizedes - Switzerland grade-04",
+    "name": "Dezimaladdition - Switzerland grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minütige Prüfung zum Thema Dezimaladdition (grade-04). Themen: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.226088+00:00",
-    "updated_at": "2026-10-21T11:02:28.226099+00:00",
+    "created_at": "2026-10-24T17:53:49.901683+00:00",
+    "updated_at": "2026-10-24T17:53:49.901690+00:00",
     "tags": [
       "math",
-      "összeadás-tizedes",
+      "dezimaladdition",
       "grade-04",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "466868f25c88d42c7085ddf032c9cf6ed6d83ccb7ccad8071df2bf956029383e",
+    "checksum": "bfd9bb455dff6f5a0950e0ff3670d0c6ac13b96a43c622b8a75a7d41b48c3bf7",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Dezimalzahlen",
+      "Dezimaladdition",
+      "Dezimalsubtraktion",
+      "Dezimalmultiplikation",
+      "Dezimaldivision"
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Összeadás tizedes",
-    "description": "Test on Összeadás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Dezimaladdition",
+    "description": "Prüfung zum Thema Dezimaladdition: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 1: Decimal addition",
+      "text": "[math] Dezimaladdition - Frage 1: Dezimaladdition",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "dezimaladdition",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaladdition",
+      "learning_objective": "Dezimaladdition"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 2: Decimal addition",
+      "text": "[math] Dezimaladdition - Frage 2: Dezimaladdition",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "dezimaladdition",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaladdition",
+      "learning_objective": "Dezimaladdition"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás tizedes - Kérdés 3: Decimal addition",
+      "text": "[math] Dezimaladdition - Frage 3: Dezimaladdition",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "dezimaladdition",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaladdition",
+      "learning_objective": "Dezimaladdition"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás tizedes - Kérdés 4: Decimal addition",
+      "text": "[math] Dezimaladdition - Frage 4: Dezimaladdition",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Dezimaladdition.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-tizedes",
-        "grade-04"
+        "dezimaladdition",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaladdition",
+      "learning_objective": "Dezimaladdition"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás tizedes - Question 5: Decimal addition [rand:1-100]",
+      "text": "[math] Dezimaladdition - Frage 5: Dezimaladdition [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "összeadás-tizedes",
+        "dezimaladdition",
         "grade-04",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Összeadás tizedes",
-      "learning_objective": "Decimal addition"
+      "curriculum_topic": "SWITZERLAND-GRADE-04-MATH-Dezimaladdition",
+      "learning_objective": "Dezimaladdition"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-világtörténet-1.0.0",
-    "name": "Világtörténet - Finland grade-09",
+    "name": "World history - Finland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Világtörténet for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45 minuutin koe aiheesta World history (grade-09). Aiheet: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.437317+00:00",
-    "updated_at": "2026-10-21T11:02:24.437333+00:00",
+    "created_at": "2026-10-24T17:53:47.737292+00:00",
+    "updated_at": "2026-10-24T17:53:47.737298+00:00",
     "tags": [
       "history",
-      "világtörténet",
+      "world-history",
       "grade-09",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "297d37601bcabad3f5626ea574ed86c0a90e7818825b91b5d75e81efecb23d7a",
+    "checksum": "cc988e45f809a5a00ba07e50f386e92c722cc71b20a7ce3f5959548f938bc084",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - Világtörténet",
-    "description": "Test on Világtörténet including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - World history",
+    "description": "Koe aiheesta World history: History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 1: World history",
+      "text": "[history] World history - Kysymys 1: World history",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 2: World history",
+      "text": "[history] World history - Kysymys 2: World history",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Világtörténet - Kérdés 3: World history",
+      "text": "[history] World history - Kysymys 3: World history",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Világtörténet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen World history.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 4: World history",
+      "text": "[history] World history - Kysymys 4: World history",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Világtörténet - Kérdés 5: World history",
+      "text": "[history] World history - Kysymys 5: World history",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "világtörténet",
-        "grade-09"
+        "world-history",
+        "grade-09",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-Világtörténet",
+      "curriculum_topic": "FINLAND-GRADE-09-HISTORY-World history",
       "learning_objective": "World history"
     }
   ],

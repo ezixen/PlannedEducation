@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-kivonás-10-ig-1.0.0",
-    "name": "Kivonás 10-ig - Ireland grade-01",
+    "name": "Subtraction to 10 - Ireland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 10-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minute assessment on Subtraction to 10 for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.187057+00:00",
-    "updated_at": "2026-10-21T11:02:30.187067+00:00",
+    "created_at": "2026-10-24T17:53:51.114342+00:00",
+    "updated_at": "2026-10-24T17:53:51.114354+00:00",
     "tags": [
       "math",
-      "kivonás-10-ig",
+      "subtraction-to-10",
       "grade-01",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "e8e873a0c031cf938fa1ad147f9a154c12702c664be7d3d93acf6b845cdb1d07",
+    "checksum": "4cbcbfea26fdcca3c8a36e2bd6557658106512101e1ef16180789556246bb691",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Kivonás 10-ig",
-    "description": "Test on Kivonás 10-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Subtraction to 10",
+    "description": "Assessment on Subtraction to 10 including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 1: Subtraction to 10",
+      "text": "[math] Subtraction to 10 - Question 1: Subtraction to 10",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraction-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Kivonás 10-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Subtraction to 10",
       "learning_objective": "Subtraction to 10"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 2: Subtraction to 10",
+      "text": "[math] Subtraction to 10 - Question 2: Subtraction to 10",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraction-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Kivonás 10-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Subtraction to 10",
       "learning_objective": "Subtraction to 10"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 10-ig - Kérdés 3: Subtraction to 10",
+      "text": "[math] Subtraction to 10 - Question 3: Subtraction to 10",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraction-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Kivonás 10-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Subtraction to 10",
       "learning_objective": "Subtraction to 10"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 10-ig - Kérdés 4: Subtraction to 10",
+      "text": "[math] Subtraction to 10 - Question 4: Subtraction to 10",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 10-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Subtraction to 10.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-10-ig",
-        "grade-01"
+        "subtraction-to-10",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Kivonás 10-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Subtraction to 10",
       "learning_objective": "Subtraction to 10"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 10-ig - Question 5: Subtraction to 10 [rand:1-20]",
+      "text": "[math] Subtraction to 10 - Question 5: Subtraction to 10 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-10-ig",
+        "subtraction-to-10",
         "grade-01",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-01-MATH-Kivonás 10-ig",
+      "curriculum_topic": "IRELAND-GRADE-01-MATH-Subtraction to 10",
       "learning_objective": "Subtraction to 10"
     }
   ],

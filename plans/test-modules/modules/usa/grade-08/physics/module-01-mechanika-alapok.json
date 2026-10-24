@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-physics-mechanika-alapok-1.0.0",
-    "name": "Mechanika alapok - USA grade-08",
+    "name": "Mechanics basics - USA grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Mechanika alapok for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
+    "description": "45-minute assessment on Mechanics basics for grade-08 students. Covers: Mechanics basics, Forces, Motion, Energy, Work",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.978558+00:00",
-    "updated_at": "2026-10-21T11:02:17.978568+00:00",
+    "created_at": "2026-10-24T17:53:46.356795+00:00",
+    "updated_at": "2026-10-24T17:53:46.356803+00:00",
     "tags": [
       "physics",
-      "mechanika-alapok",
+      "mechanics-basics",
       "grade-08",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "b3884f43df09bb00d6e3a63b42d686bdaecc9d92012f22d390e94cf928488e4d",
+    "checksum": "25751ddcdc6d1dfe2dd6ba515404253639cf97a751d0a108bdd481c75432562f",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Physics - Mechanika alapok",
-    "description": "Test on Mechanika alapok including Mechanics basics, Forces, Motion, Energy, Work",
+    "title": "grade-08 Physics - Mechanics basics",
+    "description": "Assessment on Mechanics basics including Mechanics basics, Forces, Motion, Energy, Work",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 1: Mechanics basics",
+      "text": "[physics] Mechanics basics - Question 1: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 2: Mechanics basics",
+      "text": "[physics] Mechanics basics - Question 2: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Mechanika alapok - Kérdés 3: Mechanics basics",
+      "text": "[physics] Mechanics basics - Question 3: Mechanics basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Mechanika alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Mechanics basics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Mechanika alapok - Question 4: Mechanics basics [rand:1-1000]",
+      "text": "[physics] Mechanics basics - Question 4: Mechanics basics [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "mechanika-alapok",
+        "mechanics-basics",
         "grade-08",
-        "decimal"
+        "decimal",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Mechanika alapok - Kérdés 5: Mechanics basics",
+      "text": "[physics] Mechanics basics - Question 5: Mechanics basics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "mechanika-alapok",
-        "grade-08"
+        "mechanics-basics",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanika alapok",
+      "curriculum_topic": "USA-GRADE-08-PHYSICS-Mechanics basics",
       "learning_objective": "Mechanics basics"
     }
   ],

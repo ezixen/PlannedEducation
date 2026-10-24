@@ -3,21 +3,25 @@
     "id": "grade-08-geography-európa-1.0.0",
     "name": "Európa - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45 perces felmérő: Európa (grade-08). Témakörök: Európa és Magyarország, Európa, Magyarország, Földrajz, Földrajzi ismeretek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.298728+00:00",
-    "updated_at": "2026-10-21T11:02:35.298745+00:00",
+    "created_at": "2026-10-24T17:53:52.278484+00:00",
+    "updated_at": "2026-10-24T17:53:52.278490+00:00",
     "tags": [
       "geography",
       "európa",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "ff89980b6167eb2d29da9023b2242ad1cca79773eb8b5629d1a1fe76e17850f2",
+    "checksum": "06bc5c2f7f4a3dd2b212260ad78f784240b8d557f42589e3e5fab835d5340753",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and Hungary",
-      "Europe",
-      "Hungary",
-      "Geography",
-      "Geographic knowledge"
+      "Európa és Magyarország",
+      "Európa",
+      "Magyarország",
+      "Földrajz",
+      "Földrajzi ismeretek"
     ]
   },
   "exam": {
     "title": "grade-08 Geography - Európa",
-    "description": "Test on Európa including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "Felmérő a(z) Európa témakörből (Európa és Magyarország, Európa, Magyarország, Földrajz, Földrajzi ismeretek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 1: Europe",
+      "text": "[geography] Európa - Kérdés 1: Európa",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "európa",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 2: Europe",
+      "text": "[geography] Európa - Kérdés 2: Európa",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "európa",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa - Kérdés 3: Europe",
+      "text": "[geography] Európa - Kérdés 3: Európa",
       "options": null,
       "correct_answer": "Minta válasz a(z) Európa témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "európa",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 4: Europe",
+      "text": "[geography] Európa - Kérdés 4: Európa",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "európa",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa - Kérdés 5: Europe",
+      "text": "[geography] Európa - Kérdés 5: Európa",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "európa",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa",
-      "learning_objective": "Europe"
+      "learning_objective": "Európa"
     }
   ],
   "rubrics": []

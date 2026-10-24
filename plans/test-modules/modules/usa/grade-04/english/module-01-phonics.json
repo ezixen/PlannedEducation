@@ -8,11 +8,19 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["english", "phonics", "reading", "grade-4", "ngss", "usa"],
+    "tags": [
+      "english",
+      "phonics",
+      "reading",
+      "grade-4",
+      "ngss",
+      "usa",
+      "en"
+    ],
     "subject": "english",
     "grade_level": "grade-04",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "e00de5c9bf911fa2e9c664b3291cece26fc4a156d4c232138f776aa209de8ae2",
     "curriculum": "usa-ngss",
     "duration_minutes": 45,
     "total_points": 50,
@@ -24,7 +32,10 @@
       "Identify vowel and consonant sounds",
       "Read simple words and sentences",
       "Understand basic comprehension"
-    ]
+    ],
+    "language": "en",
+    "language_name": "English",
+    "country": "usa"
   },
   "exam": {
     "title": "Grade 4 English - Phonics and Reading",
@@ -50,12 +61,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Which word has the long 'a' sound?",
-      "options": ["cat", "cake", "cap", "can"],
+      "options": [
+        "cat",
+        "cake",
+        "cap",
+        "can"
+      ],
       "correct_answer": "cake",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonics", "long-vowel", "a-sound"],
+      "tags": [
+        "phonics",
+        "long-vowel",
+        "a-sound"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Phonics",
@@ -65,12 +85,20 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Which word rhymes with 'cat'?",
-      "options": ["dog", "hat", "sun", "fish"],
+      "options": [
+        "dog",
+        "hat",
+        "sun",
+        "fish"
+      ],
       "correct_answer": "hat",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["rhyming", "phonics"],
+      "tags": [
+        "rhyming",
+        "phonics"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Phonics",
@@ -80,12 +108,20 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "What is the first sound in 'sun'?",
-      "options": ["s", "u", "n", "su"],
+      "options": [
+        "s",
+        "u",
+        "n",
+        "su"
+      ],
       "correct_answer": "s",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonics", "initial-sound"],
+      "tags": [
+        "phonics",
+        "initial-sound"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Phonics",
@@ -95,12 +131,21 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Which word has the 'sh' sound?",
-      "options": ["ship", "lip", "sip", "tip"],
+      "options": [
+        "ship",
+        "lip",
+        "sip",
+        "tip"
+      ],
       "correct_answer": "ship",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["phonics", "digraphs", "sh"],
+      "tags": [
+        "phonics",
+        "digraphs",
+        "sh"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Phonics",
@@ -110,12 +155,20 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Complete the sentence: The cat ___ on the mat.",
-      "options": ["sit", "sits", "sitting", "sat"],
+      "options": [
+        "sit",
+        "sits",
+        "sitting",
+        "sat"
+      ],
       "correct_answer": "sat",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "past-tense"],
+      "tags": [
+        "grammar",
+        "past-tense"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "USA-04-English-Grammar",
@@ -125,12 +178,21 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Which word is a noun?",
-      "options": ["run", "jump", "ball", "fast"],
+      "options": [
+        "run",
+        "jump",
+        "ball",
+        "fast"
+      ],
       "correct_answer": "ball",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "parts-of-speech", "noun"],
+      "tags": [
+        "grammar",
+        "parts-of-speech",
+        "noun"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Grammar",
@@ -140,12 +202,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "What is the plural of 'box'?",
-      "options": ["boxs", "boxes", "boxen", "box"],
+      "options": [
+        "boxs",
+        "boxes",
+        "boxen",
+        "box"
+      ],
       "correct_answer": "boxes",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "plurals"],
+      "tags": [
+        "grammar",
+        "plurals"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "USA-04-English-Grammar",
@@ -155,12 +225,20 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Which sentence is correct?",
-      "options": ["The dog run fast.", "The dog runs fast.", "The dog running fast.", "The dog runned fast."],
+      "options": [
+        "The dog run fast.",
+        "The dog runs fast.",
+        "The dog running fast.",
+        "The dog runned fast."
+      ],
       "correct_answer": "The dog runs fast.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammar", "subject-verb-agreement"],
+      "tags": [
+        "grammar",
+        "subject-verb-agreement"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "USA-04-English-Grammar",
@@ -175,7 +253,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["writing", "sentences", "punctuation"],
+      "tags": [
+        "writing",
+        "sentences",
+        "punctuation"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "USA-04-English-Writing",
@@ -190,7 +272,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["grammar", "parts-of-speech", "identification"],
+      "tags": [
+        "grammar",
+        "parts-of-speech",
+        "identification"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 8,
       "curriculum_topic": "USA-04-English-Grammar",
@@ -206,19 +292,32 @@
           "id": "c-009-1",
           "description": "Writes 3 complete sentences",
           "points": 4,
-          "keywords": ["sentences", "three", "complete"]
+          "keywords": [
+            "sentences",
+            "three",
+            "complete"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Uses capital letters at start of sentences",
           "points": 3,
-          "keywords": ["capital", "letters", "start"]
+          "keywords": [
+            "capital",
+            "letters",
+            "start"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Uses full stops at end of sentences",
           "points": 3,
-          "keywords": ["full", "stops", "periods", "end"]
+          "keywords": [
+            "full",
+            "stops",
+            "periods",
+            "end"
+          ]
         }
       ],
       "total_points": 10
@@ -231,13 +330,19 @@
           "id": "c-010-1",
           "description": "Identifies 'ball' as noun",
           "points": 5,
-          "keywords": ["ball", "noun"]
+          "keywords": [
+            "ball",
+            "noun"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Identifies 'bounced' as verb",
           "points": 5,
-          "keywords": ["bounced", "verb"]
+          "keywords": [
+            "bounced",
+            "verb"
+          ]
         }
       ],
       "total_points": 10

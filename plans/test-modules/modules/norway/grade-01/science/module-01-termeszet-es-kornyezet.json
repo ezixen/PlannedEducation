@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Norway grade-01",
+    "name": "Natur og miljø - Norway grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Natur og miljø (grade-01). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.193716+00:00",
-    "updated_at": "2026-10-21T11:02:26.193735+00:00",
+    "created_at": "2026-10-24T17:53:48.806285+00:00",
+    "updated_at": "2026-10-24T17:53:48.806292+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "natur-og-miljø",
       "grade-01",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "240f0c72b6ef76a4fc5c759ae5fd2a3b0398ade2aa12b8a69b82e1321a2c42dd",
+    "checksum": "8ba71ee1a4d2734cc98849a2608a085442319a76ead8fa31814beb0991fdc3bf",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturvern"
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Natur og miljø",
+    "description": "Prøve i Natur og miljø: Natur og miljø, Planter og dyr, Natur, Miljø, Naturvern",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Natur og miljø - Spørsmål 1: Natur og miljø",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-og-miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Natur og miljø",
+      "learning_objective": "Natur og miljø"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Natur og miljø - Spørsmål 2: Natur og miljø",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-og-miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Natur og miljø",
+      "learning_objective": "Natur og miljø"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Natur og miljø - Spørsmål 3: Natur og miljø",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Natur og miljø.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-og-miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Natur og miljø",
+      "learning_objective": "Natur og miljø"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Natur og miljø - Spørsmål 4: Natur og miljø",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-og-miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Natur og miljø",
+      "learning_objective": "Natur og miljø"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Natur og miljø - Spørsmål 5: Natur og miljø",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-01"
+        "natur-og-miljø",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "NORWAY-GRADE-01-SCIENCE-Natur og miljø",
+      "learning_objective": "Natur og miljø"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-szerkezeti-kémia-1.0.0",
-    "name": "Szerkezeti kémia - Belgium grade-10",
+    "name": "Structural chemistry - Belgium grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerkezeti kémia for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "Toets van 45 minuten over Structural chemistry (grade-10). Onderwerpen: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.985474+00:00",
-    "updated_at": "2026-10-21T11:02:29.985494+00:00",
+    "created_at": "2026-10-24T17:53:50.971031+00:00",
+    "updated_at": "2026-10-24T17:53:50.971039+00:00",
     "tags": [
       "chemistry",
-      "szerkezeti-kémia",
+      "structural-chemistry",
       "grade-10",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "a24608111317815035af659da491acaea59f027a9715d80bf414d711d48547bf",
+    "checksum": "5b58b2e121f12a754de862b8b4b416179c85758977a127713012e5691072a951",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Szerkezeti kémia",
-    "description": "Test on Szerkezeti kémia including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Structural chemistry",
+    "description": "Toets over Structural chemistry: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 1: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Vraag 1: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 2: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Vraag 2: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 3: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Vraag 3: Structural chemistry",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szerkezeti kémia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Structural chemistry.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerkezeti kémia - Question 4: Structural chemistry [rand:1-100]",
+      "text": "[chemistry] Structural chemistry - Vraag 4: Structural chemistry [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
+        "structural-chemistry",
         "grade-10",
-        "fraction"
+        "fraction",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerkezeti kémia - Kérdés 5: Structural chemistry",
+      "text": "[chemistry] Structural chemistry - Vraag 5: Structural chemistry",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "szerkezeti-kémia",
-        "grade-10"
+        "structural-chemistry",
+        "grade-10",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Szerkezeti kémia",
+      "curriculum_topic": "BELGIUM-GRADE-10-CHEMISTRY-Structural chemistry",
       "learning_objective": "Structural chemistry"
     }
   ],

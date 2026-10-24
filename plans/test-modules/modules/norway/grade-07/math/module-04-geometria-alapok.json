@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-geometria-alapok-1.0.0",
-    "name": "Geometria alapok - Norway grade-07",
+    "name": "Geometry basics - Norway grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minutters prøve i Geometry basics (grade-07). Emner: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.419248+00:00",
-    "updated_at": "2026-10-21T11:02:26.419262+00:00",
+    "created_at": "2026-10-24T17:53:48.957997+00:00",
+    "updated_at": "2026-10-24T17:53:48.958005+00:00",
     "tags": [
       "math",
-      "geometria-alapok",
+      "geometry-basics",
       "grade-07",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "c90f424a9c6adcbeb7359eab9016af47917fdafce8a0b5a871b4146886eb6aac",
+    "checksum": "fa81ccfc526e7f1d27bbfaaad1cb23c66e20a949a20b173a03395918a1313e9c",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Geometria alapok",
-    "description": "Test on Geometria alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Geometry basics",
+    "description": "Prøve i Geometry basics: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 1: Geometry basics",
+      "text": "[math] Geometry basics - Spørsmål 1: Geometry basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 2: Geometry basics",
+      "text": "[math] Geometry basics - Spørsmål 2: Geometry basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 3: Geometry basics",
+      "text": "[math] Geometry basics - Spørsmål 3: Geometry basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria alapok - Kérdés 4: Geometry basics",
+      "text": "[math] Geometry basics - Spørsmål 4: Geometry basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Geometry basics.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria alapok - Question 5: Geometry basics [rand:1-100]",
+      "text": "[math] Geometry basics - Spørsmål 5: Geometry basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria-alapok",
+        "geometry-basics",
         "grade-07",
-        "decimal"
+        "decimal",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "NORWAY-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     }
   ],

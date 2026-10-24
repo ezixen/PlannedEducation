@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-physics-energia-1.0.0",
-    "name": "Energia - Austria grade-07",
+    "name": "Energie - Austria grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Energia for grade-07 students. Covers: Energy and force, Forces and motion, Motion, Energy, Force",
+    "description": "45-minütige Prüfung zum Thema Energie (grade-07). Themen: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.008849+00:00",
-    "updated_at": "2026-10-21T11:02:29.008862+00:00",
+    "created_at": "2026-10-24T17:53:50.430777+00:00",
+    "updated_at": "2026-10-24T17:53:50.430785+00:00",
     "tags": [
       "physics",
-      "energia",
+      "energie",
       "grade-07",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "physics",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "6461f789e38418a92009cc955cf619f6513a32559e537e15e1f218f9e5574b7d",
+    "checksum": "b21c9952956583770cde6f7b41b83adf0b976c09185a9ac1ea42b4f1401cd167",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Energy and force",
-      "Forces and motion",
-      "Motion",
-      "Energy",
-      "Force"
+      "Energie und Kraft",
+      "Kräfte und Bewegung",
+      "Bewegung",
+      "Energie",
+      "Kraft"
     ]
   },
   "exam": {
-    "title": "grade-07 Physics - Energia",
-    "description": "Test on Energia including Energy and force, Forces and motion, Motion, Energy, Force",
+    "title": "grade-07 Physics - Energie",
+    "description": "Prüfung zum Thema Energie: Energie und Kraft, Kräfte und Bewegung, Bewegung, Energie, Kraft",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 1: Energy",
+      "text": "[physics] Energie - Frage 1: Energie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energie",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 2: Energy",
+      "text": "[physics] Energie - Frage 2: Energie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energie",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Energia - Kérdés 3: Energy",
+      "text": "[physics] Energie - Frage 3: Energie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Energia témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Energie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energie",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Energia - Question 4: Energy [rand:1-100]",
+      "text": "[physics] Energie - Frage 4: Energie [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "energia",
+        "energie",
         "grade-07",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energie",
+      "learning_objective": "Energie"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Energia - Kérdés 5: Energy",
+      "text": "[physics] Energie - Frage 5: Energie",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "physics",
-        "energia",
-        "grade-07"
+        "energie",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energia",
-      "learning_objective": "Energy"
+      "curriculum_topic": "AUSTRIA-GRADE-07-PHYSICS-Energie",
+      "learning_objective": "Energie"
     }
   ],
   "rubrics": []

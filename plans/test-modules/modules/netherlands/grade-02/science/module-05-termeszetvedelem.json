@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Netherlands grade-02",
+    "name": "Natuurbehoud - Netherlands grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-02 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "Toets van 45 minuten over Natuurbehoud (grade-02). Onderwerpen: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.827495+00:00",
-    "updated_at": "2026-10-21T11:02:24.827507+00:00",
+    "created_at": "2026-10-24T17:53:47.923594+00:00",
+    "updated_at": "2026-10-24T17:53:47.923602+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "natuurbehoud",
       "grade-02",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "science",
     "grade_level": "grade-02",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "eae5417a2fa838e7dad9c293646a712aa263df8d60485f938090db045256f13d",
+    "checksum": "4cb84f085279b1b43cf7579b9297bb2996d909678279acc1a26f2b793b346b78",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natuur en milieu",
+      "Planten en dieren",
+      "Natuur",
+      "Milieu",
+      "Natuurbehoud"
     ]
   },
   "exam": {
-    "title": "grade-02 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-02 Science - Natuurbehoud",
+    "description": "Toets over Natuurbehoud: Natuur en milieu, Planten en dieren, Natuur, Milieu, Natuurbehoud",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Natuurbehoud - Vraag 1: Natuurbehoud",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "natuurbehoud",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Natuurbehoud",
+      "learning_objective": "Natuurbehoud"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Natuurbehoud - Vraag 2: Natuurbehoud",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "natuurbehoud",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Natuurbehoud",
+      "learning_objective": "Natuurbehoud"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Natuurbehoud - Vraag 3: Natuurbehoud",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Natuurbehoud.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "natuurbehoud",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Natuurbehoud",
+      "learning_objective": "Natuurbehoud"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Natuurbehoud - Vraag 4: Natuurbehoud",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "natuurbehoud",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Natuurbehoud",
+      "learning_objective": "Natuurbehoud"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Natuurbehoud - Vraag 5: Natuurbehoud",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-02"
+        "natuurbehoud",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "NETHERLANDS-GRADE-02-SCIENCE-Natuurbehoud",
+      "learning_objective": "Natuurbehoud"
     }
   ],
   "rubrics": []

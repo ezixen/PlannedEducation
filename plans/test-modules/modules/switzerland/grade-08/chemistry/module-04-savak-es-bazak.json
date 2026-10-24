@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-chemistry-savak-és-bazák-1.0.0",
-    "name": "Savak és bazák - Switzerland grade-08",
+    "name": "Säuren und Basen - Switzerland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Savak és bazák for grade-08 students. Covers: Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "description": "45-minütige Prüfung zum Thema Säuren und Basen (grade-08). Themen: Stoffe und Eigenschaften, Stoffumwandlungen, Chemische Reaktionen, Säuren und Basen, Reaktionsgleichungen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.415976+00:00",
-    "updated_at": "2026-10-21T11:02:28.415999+00:00",
+    "created_at": "2026-10-24T17:53:50.029936+00:00",
+    "updated_at": "2026-10-24T17:53:50.029955+00:00",
     "tags": [
       "chemistry",
-      "savak-és-bazák",
+      "säuren-und-basen",
       "grade-08",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "af34ca0587709c0c40b6e696d044266884e3e30580ceea462f8ab0ff06043ef9",
+    "checksum": "216dda1d3eb24214d3d303d9594d043dc56f7cbb51b68d30387319ee6b67f549",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Substances and properties",
-      "Substance changes",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equations"
+      "Stoffe und Eigenschaften",
+      "Stoffumwandlungen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Reaktionsgleichungen"
     ]
   },
   "exam": {
-    "title": "grade-08 Chemistry - Savak és bazák",
-    "description": "Test on Savak és bazák including Substances and properties, Substance changes, Chemical reactions, Acids and bases, Chemical equations",
+    "title": "grade-08 Chemistry - Säuren und Basen",
+    "description": "Prüfung zum Thema Säuren und Basen: Stoffe und Eigenschaften, Stoffumwandlungen, Chemische Reaktionen, Säuren und Basen, Reaktionsgleichungen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 1: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 1: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "säuren-und-basen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 2: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 2: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "säuren-und-basen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Savak és bazák - Kérdés 3: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 3: Säuren und Basen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Savak és bazák témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Säuren und Basen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "säuren-und-basen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Savak és bazák - Question 4: Acids and bases [rand:1-1000]",
+      "text": "[chemistry] Säuren und Basen - Frage 4: Säuren und Basen [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
+        "säuren-und-basen",
         "grade-08",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 5: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 5: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-08"
+        "säuren-und-basen",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "SWITZERLAND-GRADE-08-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     }
   ],
   "rubrics": []

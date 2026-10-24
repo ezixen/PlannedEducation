@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
-    "name": "Kivonás tizedes - Austria grade-04",
+    "name": "Dezimalsubtraktion - Austria grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minütige Prüfung zum Thema Dezimalsubtraktion (grade-04). Themen: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.860831+00:00",
-    "updated_at": "2026-10-21T11:02:28.860843+00:00",
+    "created_at": "2026-10-24T17:53:50.337054+00:00",
+    "updated_at": "2026-10-24T17:53:50.337060+00:00",
     "tags": [
       "math",
-      "kivonás-tizedes",
+      "dezimalsubtraktion",
       "grade-04",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "9a31b3e5ef9406fb46fcdb55d10b20512ef6efd2d8da38b4f31c93dfeca1ce67",
+    "checksum": "e89197919bf8273a802b01b5065276dd0931ada75e629b367c040375b041805c",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Dezimalzahlen",
+      "Dezimaladdition",
+      "Dezimalsubtraktion",
+      "Dezimalmultiplikation",
+      "Dezimaldivision"
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Dezimalsubtraktion",
+    "description": "Prüfung zum Thema Dezimalsubtraktion: Dezimalzahlen, Dezimaladdition, Dezimalsubtraktion, Dezimalmultiplikation, Dezimaldivision",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Dezimalsubtraktion - Frage 1: Dezimalsubtraktion",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "dezimalsubtraktion",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalsubtraktion",
+      "learning_objective": "Dezimalsubtraktion"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Dezimalsubtraktion - Frage 2: Dezimalsubtraktion",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "dezimalsubtraktion",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalsubtraktion",
+      "learning_objective": "Dezimalsubtraktion"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Dezimalsubtraktion - Frage 3: Dezimalsubtraktion",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "dezimalsubtraktion",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalsubtraktion",
+      "learning_objective": "Dezimalsubtraktion"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Dezimalsubtraktion - Frage 4: Dezimalsubtraktion",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Dezimalsubtraktion.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-tizedes",
-        "grade-04"
+        "dezimalsubtraktion",
+        "grade-04",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalsubtraktion",
+      "learning_objective": "Dezimalsubtraktion"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Dezimalsubtraktion - Frage 5: Dezimalsubtraktion [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "kivonás-tizedes",
+        "dezimalsubtraktion",
         "grade-04",
-        "integer"
+        "integer",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "curriculum_topic": "AUSTRIA-GRADE-04-MATH-Dezimalsubtraktion",
+      "learning_objective": "Dezimalsubtraktion"
     }
   ],
   "rubrics": []

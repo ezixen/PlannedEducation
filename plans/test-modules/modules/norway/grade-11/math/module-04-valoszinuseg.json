@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-valószínűség-1.0.0",
-    "name": "Valószínűség - Norway grade-11",
+    "name": "Probability - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Probability (grade-11). Emner: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.792598+00:00",
-    "updated_at": "2026-10-21T11:02:26.792615+00:00",
+    "created_at": "2026-10-24T17:53:49.199247+00:00",
+    "updated_at": "2026-10-24T17:53:49.199258+00:00",
     "tags": [
       "math",
-      "valószínűség",
+      "probability",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "5a30df96cb87b2eb3a2ba4e4232d2e25a870f398b13f0746b438e03d1f43e7cb",
+    "checksum": "fa683c1d7389ab411170e952130d432cb7836c061d8aa2e58ada46b0ef35c5a7",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Valószínűség",
-    "description": "Test on Valószínűség including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Probability",
+    "description": "Prøve i Probability: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 1: Probability",
+      "text": "[math] Probability - Spørsmål 1: Probability",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 2: Probability",
+      "text": "[math] Probability - Spørsmål 2: Probability",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség - Kérdés 3: Probability",
+      "text": "[math] Probability - Spørsmål 3: Probability",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség - Kérdés 4: Probability",
+      "text": "[math] Probability - Spørsmål 4: Probability",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Probability.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség",
-        "grade-11"
+        "probability",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség - Question 5: Probability [rand:1-100]",
+      "text": "[math] Probability - Spørsmål 5: Probability [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valószínűség",
+        "probability",
         "grade-11",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Valószínűség",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Probability",
       "learning_objective": "Probability"
     }
   ],

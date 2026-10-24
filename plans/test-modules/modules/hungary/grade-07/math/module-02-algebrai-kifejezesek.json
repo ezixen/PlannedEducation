@@ -3,21 +3,25 @@
     "id": "grade-07-math-algebrai-kifejezések-1.0.0",
     "name": "Algebrai kifejezések - Hungary grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Algebrai kifejezések for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45 perces felmérő: Algebrai kifejezések (grade-07). Témakörök: Racionális számok, Algebrai kifejezések, Egyenletek, Geometria alapok, Statisztika alapok",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.208184+00:00",
-    "updated_at": "2026-10-21T11:02:35.208196+00:00",
+    "created_at": "2026-10-24T17:53:52.216965+00:00",
+    "updated_at": "2026-10-24T17:53:52.216973+00:00",
     "tags": [
       "math",
       "algebrai-kifejezések",
       "grade-07",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "c8fa47d103a9a66b03cc43916353fdfd065595fc97ea0bca45a05982b025aae2",
+    "checksum": "1fda26a95b0acf9a1199df2c1ef370ff9f5ca609ea2fcca44c32d1ad12c55f31",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Rational numbers",
-      "Algebraic expressions",
-      "Equations",
-      "Geometry basics",
-      "Statistics basics"
+      "Racionális számok",
+      "Algebrai kifejezések",
+      "Egyenletek",
+      "Geometria alapok",
+      "Statisztika alapok"
     ]
   },
   "exam": {
     "title": "grade-07 Math - Algebrai kifejezések",
-    "description": "Test on Algebrai kifejezések including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "Felmérő a(z) Algebrai kifejezések témakörből (Racionális számok, Algebrai kifejezések, Egyenletek, Geometria alapok, Statisztika alapok)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 1: Algebraic expressions",
+      "text": "[math] Algebrai kifejezések - Kérdés 1: Algebrai kifejezések",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "algebrai-kifejezések",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-MATH-Algebrai kifejezések",
-      "learning_objective": "Algebraic expressions"
+      "learning_objective": "Algebrai kifejezések"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 2: Algebraic expressions",
+      "text": "[math] Algebrai kifejezések - Kérdés 2: Algebrai kifejezések",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "algebrai-kifejezések",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-MATH-Algebrai kifejezések",
-      "learning_objective": "Algebraic expressions"
+      "learning_objective": "Algebrai kifejezések"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Algebrai kifejezések - Kérdés 3: Algebraic expressions",
+      "text": "[math] Algebrai kifejezések - Kérdés 3: Algebrai kifejezések",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "algebrai-kifejezések",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-MATH-Algebrai kifejezések",
-      "learning_objective": "Algebraic expressions"
+      "learning_objective": "Algebrai kifejezések"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Algebrai kifejezések - Kérdés 4: Algebraic expressions",
+      "text": "[math] Algebrai kifejezések - Kérdés 4: Algebrai kifejezések",
       "options": null,
       "correct_answer": "Minta válasz a(z) Algebrai kifejezések témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "algebrai-kifejezések",
-        "grade-07"
+        "grade-07",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-MATH-Algebrai kifejezések",
-      "learning_objective": "Algebraic expressions"
+      "learning_objective": "Algebrai kifejezések"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Algebrai kifejezések - Question 5: Algebraic expressions [rand:1-100]",
+      "text": "[math] Algebrai kifejezések - Kérdés 5: Algebrai kifejezések [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "algebrai-kifejezések",
         "grade-07",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-07-MATH-Algebrai kifejezések",
-      "learning_objective": "Algebraic expressions"
+      "learning_objective": "Algebrai kifejezések"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-math-integrálás-1.0.0",
-    "name": "Integrálás - Austria grade-09",
+    "name": "Integralrechnung - Austria grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-09 students. Covers: Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minütige Prüfung zum Thema Integralrechnung (grade-09). Themen: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.235981+00:00",
-    "updated_at": "2026-10-21T11:02:29.236003+00:00",
+    "created_at": "2026-10-24T17:53:50.533258+00:00",
+    "updated_at": "2026-10-24T17:53:50.533263+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integralrechnung",
       "grade-09",
-      "austria"
+      "austria",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-09",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "austria",
     "license": "CC-BY-4.0",
-    "checksum": "35b77acd0685c269041e2c7f0fd31ca5e7d54a096fcb329e32d29b863fc33019",
+    "checksum": "09eced11c747a8b1f17da3d7e7612d8f433321988066c3dcab61af899dfee60a",
     "curriculum": "austria-lehrplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and limits",
-      "Differentiation",
-      "Integration",
-      "Probability",
-      "Statistics"
+      "Funktionen und Grenzwerte",
+      "Differentialrechnung",
+      "Integralrechnung",
+      "Wahrscheinlichkeitsrechnung",
+      "Statistik"
     ]
   },
   "exam": {
-    "title": "grade-09 Math - Integrálás",
-    "description": "Test on Integrálás including Functions and limits, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-09 Math - Integralrechnung",
+    "description": "Prüfung zum Thema Integralrechnung: Funktionen und Grenzwerte, Differentialrechnung, Integralrechnung, Wahrscheinlichkeitsrechnung, Statistik",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integralrechnung - Frage 1: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integralrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integralrechnung - Frage 2: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integralrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integralrechnung - Frage 3: Integralrechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integralrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integralrechnung - Frage 4: Integralrechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Integralrechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-09"
+        "integralrechnung",
+        "grade-09",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-1000]",
+      "text": "[math] Integralrechnung - Frage 5: Integralrechnung [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integralrechnung",
         "grade-09",
-        "decimal"
+        "decimal",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integrálás",
-      "learning_objective": "Integration"
+      "curriculum_topic": "AUSTRIA-GRADE-09-MATH-Integralrechnung",
+      "learning_objective": "Integralrechnung"
     }
   ],
   "rubrics": []

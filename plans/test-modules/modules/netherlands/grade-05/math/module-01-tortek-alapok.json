@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-alapok-1.0.0",
-    "name": "Törtek alapok - Netherlands grade-05",
+    "name": "Fraction basics - Netherlands grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek alapok for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "Toets van 45 minuten over Fraction basics (grade-05). Onderwerpen: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.900869+00:00",
-    "updated_at": "2026-10-21T11:02:24.900883+00:00",
+    "created_at": "2026-10-24T17:53:47.963709+00:00",
+    "updated_at": "2026-10-24T17:53:47.963715+00:00",
     "tags": [
       "math",
-      "törtek-alapok",
+      "fraction-basics",
       "grade-05",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "d4a9260d7ea75e8083a1acb6f09a539a6639f60f794de2ee604954957a983532",
+    "checksum": "9806c71f6e7e8789a5988ebe5f0ff475abad7980517c1b791318165927637463",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek alapok",
-    "description": "Test on Törtek alapok including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction basics",
+    "description": "Toets over Fraction basics: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 1: Fraction basics",
+      "text": "[math] Fraction basics - Vraag 1: Fraction basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 2: Fraction basics",
+      "text": "[math] Fraction basics - Vraag 2: Fraction basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek alapok - Kérdés 3: Fraction basics",
+      "text": "[math] Fraction basics - Vraag 3: Fraction basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek alapok - Kérdés 4: Fraction basics",
+      "text": "[math] Fraction basics - Vraag 4: Fraction basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Fraction basics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-alapok",
-        "grade-05"
+        "fraction-basics",
+        "grade-05",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek alapok - Question 5: Fraction basics [rand:1-100]",
+      "text": "[math] Fraction basics - Vraag 5: Fraction basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-alapok",
+        "fraction-basics",
         "grade-05",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Törtek alapok",
+      "curriculum_topic": "NETHERLANDS-GRADE-05-MATH-Fraction basics",
       "learning_objective": "Fraction basics"
     }
   ],

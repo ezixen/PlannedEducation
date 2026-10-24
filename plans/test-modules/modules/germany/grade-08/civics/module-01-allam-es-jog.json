@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-civics-állam-és-jog-1.0.0",
-    "name": "Állam és jog - Germany grade-08",
+    "name": "Staat und Recht - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Állam és jog for grade-08 students. Covers: State and law, State structure, Law basics, Civil law, Civil law",
+    "description": "45-minütige Prüfung zum Thema Staat und Recht (grade-08). Themen: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.404406+00:00",
-    "updated_at": "2026-10-21T11:02:16.404427+00:00",
+    "created_at": "2026-10-24T17:53:45.413046+00:00",
+    "updated_at": "2026-10-24T17:53:45.413059+00:00",
     "tags": [
       "civics",
-      "állam-és-jog",
+      "staat-und-recht",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "civics",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "b71aefe4b728cfd59d6ca636f7439730284a376f9a11bb780f0d2b81cc954943",
+    "checksum": "4d8155ead58213e0e9ff0fa378c345f70859b608c1c0ef132be3055777cb1363",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "State and law",
-      "State structure",
-      "Law basics",
-      "Civil law",
-      "Civil law"
+      "Staat und Recht",
+      "Staatsaufbau",
+      "Rechtsgrundlagen",
+      "Bürgerliches Recht",
+      "Bürgerliches Recht"
     ]
   },
   "exam": {
-    "title": "grade-08 Civics - Állam és jog",
-    "description": "Test on Állam és jog including State and law, State structure, Law basics, Civil law, Civil law",
+    "title": "grade-08 Civics - Staat und Recht",
+    "description": "Prüfung zum Thema Staat und Recht: Staat und Recht, Staatsaufbau, Rechtsgrundlagen, Bürgerliches Recht, Bürgerliches Recht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 1: State and law",
+      "text": "[civics] Staat und Recht - Frage 1: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "staat-und-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 2: State and law",
+      "text": "[civics] Staat und Recht - Frage 2: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "staat-und-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Állam és jog - Kérdés 3: State and law",
+      "text": "[civics] Staat und Recht - Frage 3: Staat und Recht",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Állam és jog témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Staat und Recht.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "staat-und-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 4: State and law",
+      "text": "[civics] Staat und Recht - Frage 4: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "staat-und-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Állam és jog - Kérdés 5: State and law",
+      "text": "[civics] Staat und Recht - Frage 5: Staat und Recht",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "civics",
-        "állam-és-jog",
-        "grade-08"
+        "staat-und-recht",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Állam és jog",
-      "learning_objective": "State and law"
+      "curriculum_topic": "GERMANY-GRADE-08-CIVICS-Staat und Recht",
+      "learning_objective": "Staat und Recht"
     }
   ],
   "rubrics": []

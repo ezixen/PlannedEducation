@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-általános-tört-1.0.0",
-    "name": "Általános tört - Belgium grade-06",
+    "name": "General fractions - Belgium grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Általános tört for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "Toets van 45 minuten over General fractions (grade-06). Onderwerpen: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.598265+00:00",
-    "updated_at": "2026-10-21T11:02:29.598328+00:00",
+    "created_at": "2026-10-24T17:53:50.759450+00:00",
+    "updated_at": "2026-10-24T17:53:50.759460+00:00",
     "tags": [
       "math",
-      "általános-tört",
+      "general-fractions",
       "grade-06",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "d1fab321b6952eadcf9653911c29d75ad3f65b05aa157d37f5fdabaeb0e2a288",
+    "checksum": "beed570a831183053ae98574e7ac6b2b118e7a4d7f1d66fe5f8c1be6a9ba0e62",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Általános tört",
-    "description": "Test on Általános tört including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - General fractions",
+    "description": "Toets over General fractions: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 1: General fractions",
+      "text": "[math] General fractions - Vraag 1: General fractions",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "BELGIUM-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 2: General fractions",
+      "text": "[math] General fractions - Vraag 2: General fractions",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "BELGIUM-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Általános tört - Kérdés 3: General fractions",
+      "text": "[math] General fractions - Vraag 3: General fractions",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "BELGIUM-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Általános tört - Kérdés 4: General fractions",
+      "text": "[math] General fractions - Vraag 4: General fractions",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Általános tört témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor General fractions.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "általános-tört",
-        "grade-06"
+        "general-fractions",
+        "grade-06",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "BELGIUM-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Általános tört - Question 5: General fractions [rand:1-100]",
+      "text": "[math] General fractions - Vraag 5: General fractions [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "általános-tört",
+        "general-fractions",
         "grade-06",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-06-MATH-Általános tört",
+      "curriculum_topic": "BELGIUM-GRADE-06-MATH-General fractions",
       "learning_objective": "General fractions"
     }
   ],

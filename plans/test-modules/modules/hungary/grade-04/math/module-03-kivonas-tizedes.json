@@ -3,21 +3,25 @@
     "id": "grade-04-math-kivonás-tizedes-1.0.0",
     "name": "Kivonás tizedes - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45 perces felmérő: Kivonás tizedes (grade-04). Témakörök: Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.067539+00:00",
-    "updated_at": "2026-10-21T11:02:35.067553+00:00",
+    "created_at": "2026-10-24T17:53:52.102079+00:00",
+    "updated_at": "2026-10-24T17:53:52.102088+00:00",
     "tags": [
       "math",
       "kivonás-tizedes",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "7a76b6223f24af6267e3968ddb97a3444709fd76527707c259e71590319fade7",
+    "checksum": "0b05abe41bcf4c1346a9c412b91187fa5780437071f44a67178e9a1158cb7ec0",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Decimal numbers",
-      "Decimal addition",
-      "Decimal subtraction",
-      "Decimal multiplication",
-      "Decimal division"
+      "Tizedes számok",
+      "Összeadás tizedes",
+      "Kivonás tizedes",
+      "Szorzás tizedes",
+      "Osztás tizedes"
     ]
   },
   "exam": {
     "title": "grade-04 Math - Kivonás tizedes",
-    "description": "Test on Kivonás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "Felmérő a(z) Kivonás tizedes témakörből (Tizedes számok, Összeadás tizedes, Kivonás tizedes, Szorzás tizedes, Osztás tizedes)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 1: Decimal subtraction",
+      "text": "[math] Kivonás tizedes - Kérdés 1: Kivonás tizedes",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "kivonás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "learning_objective": "Kivonás tizedes"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 2: Decimal subtraction",
+      "text": "[math] Kivonás tizedes - Kérdés 2: Kivonás tizedes",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "kivonás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "learning_objective": "Kivonás tizedes"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás tizedes - Kérdés 3: Decimal subtraction",
+      "text": "[math] Kivonás tizedes - Kérdés 3: Kivonás tizedes",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "kivonás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "learning_objective": "Kivonás tizedes"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás tizedes - Kérdés 4: Decimal subtraction",
+      "text": "[math] Kivonás tizedes - Kérdés 4: Kivonás tizedes",
       "options": null,
       "correct_answer": "Minta válasz a(z) Kivonás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "kivonás-tizedes",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "learning_objective": "Kivonás tizedes"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás tizedes - Question 5: Decimal subtraction [rand:1-100]",
+      "text": "[math] Kivonás tizedes - Kérdés 5: Kivonás tizedes [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "kivonás-tizedes",
         "grade-04",
-        "integer"
+        "integer",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-MATH-Kivonás tizedes",
-      "learning_objective": "Decimal subtraction"
+      "learning_objective": "Kivonás tizedes"
     }
   ],
   "rubrics": []

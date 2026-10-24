@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-science-természet-és-környezet-1.0.0",
-    "name": "Természet és környezet - Germany grade-05",
+    "name": "Natur und Umwelt - Germany grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Természet és környezet for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minütige Prüfung zum Thema Natur und Umwelt (grade-05). Themen: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.240199+00:00",
-    "updated_at": "2026-10-21T11:02:16.240212+00:00",
+    "created_at": "2026-10-24T17:53:45.276920+00:00",
+    "updated_at": "2026-10-24T17:53:45.276938+00:00",
     "tags": [
       "science",
-      "természet-és-környezet",
+      "natur-und-umwelt",
       "grade-05",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "science",
     "grade_level": "grade-05",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "cafbe94c69964056d2103e0685a3a4ef9bf85f8f4dfa6b725b441dedbed1e1b3",
+    "checksum": "4eea56304eaece700620cfaff101c9fc2f2e084395b2f74f1dc2a188abf8e2d6",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur und Umwelt",
+      "Pflanzen und Tiere",
+      "Natur",
+      "Umwelt",
+      "Naturschutz"
     ]
   },
   "exam": {
-    "title": "grade-05 Science - Természet és környezet",
-    "description": "Test on Természet és környezet including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-05 Science - Natur und Umwelt",
+    "description": "Prüfung zum Thema Natur und Umwelt: Natur und Umwelt, Pflanzen und Tiere, Natur, Umwelt, Naturschutz",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 1: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 1: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "natur-und-umwelt",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 2: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 2: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "natur-und-umwelt",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természet és környezet - Kérdés 3: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 3: Natur und Umwelt",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természet és környezet témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Natur und Umwelt.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "natur-und-umwelt",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 4: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 4: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "natur-und-umwelt",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természet és környezet - Kérdés 5: Nature and environment",
+      "text": "[science] Natur und Umwelt - Frage 5: Natur und Umwelt",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természet-és-környezet",
-        "grade-05"
+        "natur-und-umwelt",
+        "grade-05",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Természet és környezet",
-      "learning_objective": "Nature and environment"
+      "curriculum_topic": "GERMANY-GRADE-05-SCIENCE-Natur und Umwelt",
+      "learning_objective": "Natur und Umwelt"
     }
   ],
   "rubrics": []

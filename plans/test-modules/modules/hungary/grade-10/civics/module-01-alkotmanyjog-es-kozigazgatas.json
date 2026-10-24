@@ -11,12 +11,13 @@
     "tags": [
       "civics",
       "alkotmányjog-és-közigazgatás",
-      "grade-10"
+      "grade-10",
+      "hu"
     ],
     "subject": "civics",
     "grade_level": "grade-10",
     "license": "CC-BY-4.0",
-    "checksum": "347ac9e3ccf88e054c792ebce0fa57d1e4addc806a020f828fbfd409b94e86b8",
+    "checksum": "7f6a5755edd399747b63c6dd02d229d0cdb15f4b3c3676103b345bffd4aafef5",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Alapvető jogok",
       "Közhatalom",
       "Közigazgatás"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 10 Civics - Alkotmányjog és közigazgatás",

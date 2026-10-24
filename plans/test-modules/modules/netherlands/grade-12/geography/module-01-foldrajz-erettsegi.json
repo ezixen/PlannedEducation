@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-erettségi-1.0.0",
-    "name": "Földrajz-erettségi - Netherlands grade-12",
+    "name": "Geography-maturity - Netherlands grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz-erettségi for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "Toets van 45 minuten over Geography-maturity (grade-12). Onderwerpen: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.458925+00:00",
-    "updated_at": "2026-10-21T11:02:25.458937+00:00",
+    "created_at": "2026-10-24T17:53:48.305980+00:00",
+    "updated_at": "2026-10-24T17:53:48.305985+00:00",
     "tags": [
       "geography",
-      "földrajz-erettségi",
+      "geography-maturity",
       "grade-12",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "6755c88bbd85849341263cff52f70dabf103f424d55d12b5c1021468c79788cf",
+    "checksum": "e026d06f843600a68635b192118dcf83e8aa3436a578883d8fd04a93a630094c",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz-erettségi",
-    "description": "Test on Földrajz-erettségi including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geography-maturity",
+    "description": "Toets over Geography-maturity: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 1: Geography-maturity",
+      "text": "[geography] Geography-maturity - Vraag 1: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 2: Geography-maturity",
+      "text": "[geography] Geography-maturity - Vraag 2: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz-erettségi - Kérdés 3: Geography-maturity",
+      "text": "[geography] Geography-maturity - Vraag 3: Geography-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Geography-maturity.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 4: Geography-maturity",
+      "text": "[geography] Geography-maturity - Vraag 4: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 5: Geography-maturity",
+      "text": "[geography] Geography-maturity - Vraag 5: Geography-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geography-maturity",
+        "grade-12",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
+      "curriculum_topic": "NETHERLANDS-GRADE-12-GEOGRAPHY-Geography-maturity",
       "learning_objective": "Geography-maturity"
     }
   ],

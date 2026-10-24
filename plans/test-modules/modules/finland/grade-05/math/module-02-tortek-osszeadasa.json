@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-math-törtek-összeadása-1.0.0",
-    "name": "Törtek összeadása - Finland grade-05",
+    "name": "Fraction addition - Finland grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Törtek összeadása for grade-05 students. Covers: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "description": "45 minuutin koe aiheesta Fraction addition (grade-05). Aiheet: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.105716+00:00",
-    "updated_at": "2026-10-21T11:02:24.105728+00:00",
+    "created_at": "2026-10-24T17:53:47.552771+00:00",
+    "updated_at": "2026-10-24T17:53:47.552780+00:00",
     "tags": [
       "math",
-      "törtek-összeadása",
+      "fraction-addition",
       "grade-05",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-05",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "fc9e29c271374ff976fe6807eba8ac4db65c51acd8ea3e9ba36e66bd4f4b04a1",
+    "checksum": "06d8cc7cccae2b28d1fa12dab61307294789e6660e6918a647d908d477f6f06b",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-05 Math - Törtek összeadása",
-    "description": "Test on Törtek összeadása including Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
+    "title": "grade-05 Math - Fraction addition",
+    "description": "Koe aiheesta Fraction addition: Fraction basics, Fraction addition, Fraction subtraction, Fraction multiplication, Fraction division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 1: Fraction addition",
+      "text": "[math] Fraction addition - Kysymys 1: Fraction addition",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-összeadása",
-        "grade-05"
+        "fraction-addition",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek összeadása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction addition",
       "learning_objective": "Fraction addition"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 2: Fraction addition",
+      "text": "[math] Fraction addition - Kysymys 2: Fraction addition",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-összeadása",
-        "grade-05"
+        "fraction-addition",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek összeadása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction addition",
       "learning_objective": "Fraction addition"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Törtek összeadása - Kérdés 3: Fraction addition",
+      "text": "[math] Fraction addition - Kysymys 3: Fraction addition",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "törtek-összeadása",
-        "grade-05"
+        "fraction-addition",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek összeadása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction addition",
       "learning_objective": "Fraction addition"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Törtek összeadása - Kérdés 4: Fraction addition",
+      "text": "[math] Fraction addition - Kysymys 4: Fraction addition",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Törtek összeadása témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Fraction addition.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "törtek-összeadása",
-        "grade-05"
+        "fraction-addition",
+        "grade-05",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek összeadása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction addition",
       "learning_objective": "Fraction addition"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Törtek összeadása - Question 5: Fraction addition [rand:1-100]",
+      "text": "[math] Fraction addition - Kysymys 5: Fraction addition [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "törtek-összeadása",
+        "fraction-addition",
         "grade-05",
-        "integer"
+        "integer",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-05-MATH-Törtek összeadása",
+      "curriculum_topic": "FINLAND-GRADE-05-MATH-Fraction addition",
       "learning_objective": "Fraction addition"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-science-növények-és-állatok-1.0.0",
-    "name": "Növények és állatok - Denmark grade-01",
+    "name": "Planter og dyr - Denmark grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Növények és állatok for grade-01 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minutters prøve i Planter og dyr (grade-01). Emner: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.029296+00:00",
-    "updated_at": "2026-10-21T11:02:27.029318+00:00",
+    "created_at": "2026-10-24T17:53:49.282452+00:00",
+    "updated_at": "2026-10-24T17:53:49.282461+00:00",
     "tags": [
       "science",
-      "növények-és-állatok",
+      "planter-og-dyr",
       "grade-01",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "science",
     "grade_level": "grade-01",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "92f2a97d868d4587e2be1e2ab3f778d7c3b44ec19ec73d5f2e3a9511c9ecd458",
+    "checksum": "01c3d0a07ed2752597b363e84912b55e974a748d599a567cc6a7b1dfb5f062c2",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur og miljø",
+      "Planter og dyr",
+      "Natur",
+      "Miljø",
+      "Naturbeskyttelse"
     ]
   },
   "exam": {
-    "title": "grade-01 Science - Növények és állatok",
-    "description": "Test on Növények és állatok including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-01 Science - Planter og dyr",
+    "description": "Prøve i Planter og dyr: Natur og miljø, Planter og dyr, Natur, Miljø, Naturbeskyttelse",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 1: Plants and animals",
+      "text": "[science] Planter og dyr - Spørgsmål 1: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planter-og-dyr",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 2: Plants and animals",
+      "text": "[science] Planter og dyr - Spørgsmål 2: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planter-og-dyr",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Növények és állatok - Kérdés 3: Plants and animals",
+      "text": "[science] Planter og dyr - Spørgsmål 3: Planter og dyr",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Növények és állatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Planter og dyr.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planter-og-dyr",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 4: Plants and animals",
+      "text": "[science] Planter og dyr - Spørgsmål 4: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planter-og-dyr",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Növények és állatok - Kérdés 5: Plants and animals",
+      "text": "[science] Planter og dyr - Spørgsmål 5: Planter og dyr",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "növények-és-állatok",
-        "grade-01"
+        "planter-og-dyr",
+        "grade-01",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Növények és állatok",
-      "learning_objective": "Plants and animals"
+      "curriculum_topic": "DENMARK-GRADE-01-SCIENCE-Planter og dyr",
+      "learning_objective": "Planter og dyr"
     }
   ],
   "rubrics": []

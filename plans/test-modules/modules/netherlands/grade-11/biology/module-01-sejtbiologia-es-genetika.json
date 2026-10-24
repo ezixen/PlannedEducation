@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-biology-sejtbiológia-és-genetika-1.0.0",
-    "name": "Sejtbiológia és genetika - Netherlands grade-11",
+    "name": "Cell biology and genetics - Netherlands grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Sejtbiológia és genetika for grade-11 students. Covers: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "description": "Toets van 45 minuten over Cell biology and genetics (grade-11). Onderwerpen: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.373738+00:00",
-    "updated_at": "2026-10-21T11:02:25.373755+00:00",
+    "created_at": "2026-10-24T17:53:48.257741+00:00",
+    "updated_at": "2026-10-24T17:53:48.257746+00:00",
     "tags": [
       "biology",
-      "sejtbiológia-és-genetika",
+      "cell-biology-and-genetics",
       "grade-11",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-11",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "f4215ce473e573c73394150da39ddbbff1f1b7c49ab6db57126ef42fd7477705",
+    "checksum": "42edf667abbbb60083e7633b684c90ce653688ab963b0dff28f267b685242429",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Biology - Sejtbiológia és genetika",
-    "description": "Test on Sejtbiológia és genetika including Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
+    "title": "grade-11 Biology - Cell biology and genetics",
+    "description": "Toets over Cell biology and genetics: Cell biology and genetics, Cell structure, Genetics, Ecology, Ecological systems",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 1: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 1: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-11"
+        "cell-biology-and-genetics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 2: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 2: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-11"
+        "cell-biology-and-genetics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 3: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 3: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell biology and genetics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-11"
+        "cell-biology-and-genetics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 4: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 4: Cell biology and genetics",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-11"
+        "cell-biology-and-genetics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Sejtbiológia és genetika - Kérdés 5: Cell biology and genetics",
+      "text": "[biology] Cell biology and genetics - Vraag 5: Cell biology and genetics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Sejtbiológia és genetika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Cell biology and genetics.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "sejtbiológia-és-genetika",
-        "grade-11"
+        "cell-biology-and-genetics",
+        "grade-11",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Sejtbiológia és genetika",
+      "curriculum_topic": "NETHERLANDS-GRADE-11-BIOLOGY-Cell biology and genetics",
       "learning_objective": "Cell biology and genetics"
     }
   ],

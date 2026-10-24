@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-english-angol-nyelv-a2-1.0.0",
-    "name": "Angol nyelv A2 - Switzerland grade-07",
+    "name": "English language A2 - Switzerland grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Angol nyelv A2 for grade-07 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English language A2 (grade-07). Themen: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.309963+00:00",
-    "updated_at": "2026-10-21T11:02:28.309975+00:00",
+    "created_at": "2026-10-24T17:53:49.968426+00:00",
+    "updated_at": "2026-10-24T17:53:49.968436+00:00",
     "tags": [
       "english",
-      "angol-nyelv-a2",
+      "english-language-a2",
       "grade-07",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "bc5ac7a2c03d8395dd81fb7b991d1850bccb3ef98ae2ddc8461b17a8714103c3",
+    "checksum": "a356264919d11b5cbecf8e01a55b13c530f2494ba65ab5fe788893756050f1fa",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 English - Angol nyelv A2",
-    "description": "Test on Angol nyelv A2 including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-07 English - English language A2",
+    "description": "Prüfung zum Thema English language A2: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 1: English language A2",
+      "text": "[english] English language A2 - Frage 1: English language A2",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-07"
+        "english-language-a2",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 2: English language A2",
+      "text": "[english] English language A2 - Frage 2: English language A2",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-07"
+        "english-language-a2",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol nyelv A2 - Kérdés 3: English language A2",
+      "text": "[english] English language A2 - Frage 3: English language A2",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol nyelv A2 témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English language A2.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-07"
+        "english-language-a2",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 4: English language A2",
+      "text": "[english] English language A2 - Frage 4: English language A2",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-07"
+        "english-language-a2",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol nyelv A2 - Kérdés 5: English language A2",
+      "text": "[english] English language A2 - Frage 5: English language A2",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-nyelv-a2",
-        "grade-07"
+        "english-language-a2",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-Angol nyelv A2",
+      "curriculum_topic": "SWITZERLAND-GRADE-07-ENGLISH-English language A2",
       "learning_objective": "English language A2"
     }
   ],

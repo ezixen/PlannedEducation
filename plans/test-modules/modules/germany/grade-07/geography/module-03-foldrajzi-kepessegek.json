@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-geography-földrajzi-képességek-1.0.0",
-    "name": "Földrajzi képességek - Germany grade-07",
+    "name": "Geographische Kompetenzen - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajzi képességek for grade-07 students. Covers: Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Geographische Kompetenzen (grade-07). Themen: Geographische Kompetenzen, Geographie, Geographische Kompetenzen, Geographisches Wissen, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.319325+00:00",
-    "updated_at": "2026-10-21T11:02:16.319340+00:00",
+    "created_at": "2026-10-24T17:53:45.355679+00:00",
+    "updated_at": "2026-10-24T17:53:45.355687+00:00",
     "tags": [
       "geography",
-      "földrajzi-képességek",
+      "geographische-kompetenzen",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "c8abb9c489d840c7b81a9396a84262596b863665ec979db44dd5d4e92e5b1fae",
+    "checksum": "c5a3be1e76f9361ddc0c162335f16dcffafbf6d7cbfc3135266411c8a512c395",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geographic skills",
-      "Geography",
-      "Geographic skills",
-      "Geographic knowledge",
-      "Geographic tools"
+      "Geographische Kompetenzen",
+      "Geographie",
+      "Geographische Kompetenzen",
+      "Geographisches Wissen",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-07 Geography - Földrajzi képességek",
-    "description": "Test on Földrajzi képességek including Geographic skills, Geography, Geographic skills, Geographic knowledge, Geographic tools",
+    "title": "grade-07 Geography - Geographische Kompetenzen",
+    "description": "Prüfung zum Thema Geographische Kompetenzen: Geographische Kompetenzen, Geographie, Geographische Kompetenzen, Geographisches Wissen, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 1: Geographic skills",
+      "text": "[geography] Geographische Kompetenzen - Frage 1: Geographische Kompetenzen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographische-kompetenzen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Geographische Kompetenzen",
+      "learning_objective": "Geographische Kompetenzen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 2: Geographic skills",
+      "text": "[geography] Geographische Kompetenzen - Frage 2: Geographische Kompetenzen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographische-kompetenzen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Geographische Kompetenzen",
+      "learning_objective": "Geographische Kompetenzen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajzi képességek - Kérdés 3: Geographic skills",
+      "text": "[geography] Geographische Kompetenzen - Frage 3: Geographische Kompetenzen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajzi képességek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographische Kompetenzen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographische-kompetenzen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Geographische Kompetenzen",
+      "learning_objective": "Geographische Kompetenzen"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 4: Geographic skills",
+      "text": "[geography] Geographische Kompetenzen - Frage 4: Geographische Kompetenzen",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographische-kompetenzen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Geographische Kompetenzen",
+      "learning_objective": "Geographische Kompetenzen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajzi képességek - Kérdés 5: Geographic skills",
+      "text": "[geography] Geographische Kompetenzen - Frage 5: Geographische Kompetenzen",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajzi-képességek",
-        "grade-07"
+        "geographische-kompetenzen",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Földrajzi képességek",
-      "learning_objective": "Geographic skills"
+      "curriculum_topic": "GERMANY-GRADE-07-GEOGRAPHY-Geographische Kompetenzen",
+      "learning_objective": "Geographische Kompetenzen"
     }
   ],
   "rubrics": []

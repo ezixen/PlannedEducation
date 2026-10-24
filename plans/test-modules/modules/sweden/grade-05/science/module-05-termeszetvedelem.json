@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-05-science-természetvédelem-1.0.0",
-    "name": "Természetvédelem - Sweden grade-05",
+    "name": "Naturskydd - Sweden grade-05",
     "version": "1.0.0",
-    "description": "45-minute test on Természetvédelem for grade-05 students. Covers: Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "description": "45-minuters prov i Naturskydd (grade-05). Omfattar: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.636470+00:00",
-    "updated_at": "2026-10-21T11:02:25.636482+00:00",
+    "created_at": "2026-10-24T17:53:48.406517+00:00",
+    "updated_at": "2026-10-24T17:53:48.406524+00:00",
     "tags": [
       "science",
-      "természetvédelem",
+      "naturskydd",
       "grade-05",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "science",
     "grade_level": "grade-05",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "8acbde868053f6f9128552a39e57923474355d42d9f2664127ebb826d1de041f",
+    "checksum": "e51554a8848e833413d7ceedd15493ad9a2f10c50afc6fecad950d4a3061b4c8",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Nature and environment",
-      "Plants and animals",
-      "Nature",
-      "Environment",
-      "Nature conservation"
+      "Natur och miljö",
+      "Växter och djur",
+      "Natur",
+      "Miljö",
+      "Naturskydd"
     ]
   },
   "exam": {
-    "title": "grade-05 Science - Természetvédelem",
-    "description": "Test on Természetvédelem including Nature and environment, Plants and animals, Nature, Environment, Nature conservation",
+    "title": "grade-05 Science - Naturskydd",
+    "description": "Prov i Naturskydd: Natur och miljö, Växter och djur, Natur, Miljö, Naturskydd",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 1: Nature conservation",
+      "text": "[science] Naturskydd - Fråga 1: Naturskydd",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturskydd",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Naturskydd",
+      "learning_objective": "Naturskydd"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 2: Nature conservation",
+      "text": "[science] Naturskydd - Fråga 2: Naturskydd",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturskydd",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Naturskydd",
+      "learning_objective": "Naturskydd"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[science] Természetvédelem - Kérdés 3: Nature conservation",
+      "text": "[science] Naturskydd - Fråga 3: Naturskydd",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Természetvédelem témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Naturskydd.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturskydd",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Naturskydd",
+      "learning_objective": "Naturskydd"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 4: Nature conservation",
+      "text": "[science] Naturskydd - Fråga 4: Naturskydd",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturskydd",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Naturskydd",
+      "learning_objective": "Naturskydd"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[science] Természetvédelem - Kérdés 5: Nature conservation",
+      "text": "[science] Naturskydd - Fråga 5: Naturskydd",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "science",
-        "természetvédelem",
-        "grade-05"
+        "naturskydd",
+        "grade-05",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Természetvédelem",
-      "learning_objective": "Nature conservation"
+      "curriculum_topic": "SWEDEN-GRADE-05-SCIENCE-Naturskydd",
+      "learning_objective": "Naturskydd"
     }
   ],
   "rubrics": []

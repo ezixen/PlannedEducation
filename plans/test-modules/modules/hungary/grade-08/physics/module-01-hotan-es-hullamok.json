@@ -11,12 +11,13 @@
     "tags": [
       "physics",
       "hőtan-és-hullámok",
-      "grade-08"
+      "grade-08",
+      "hu"
     ],
     "subject": "physics",
     "grade_level": "grade-08",
     "license": "CC-BY-4.0",
-    "checksum": "ef6798e61c46998e2297147e32bbe8a28c4581411fd9a1fc7bfd278f028bf046",
+    "checksum": "6474e4f78eb5f641d9e6830d12d7415dd6d220e991c6facb4136b44614005ca3",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 65,
@@ -28,7 +29,10 @@
       "Hőenergia",
       "Hang",
       "Fény"
-    ]
+    ],
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary"
   },
   "exam": {
     "title": "Grade 08 Physics - Hőtan és hullámok",

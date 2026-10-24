@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-deriválás-1.0.0",
-    "name": "Deriválás - Norway grade-11",
+    "name": "Differentiation - Norway grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Deriválás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minutters prøve i Differentiation (grade-11). Emner: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.787626+00:00",
-    "updated_at": "2026-10-21T11:02:26.787642+00:00",
+    "created_at": "2026-10-24T17:53:49.194498+00:00",
+    "updated_at": "2026-10-24T17:53:49.194507+00:00",
     "tags": [
       "math",
-      "deriválás",
+      "differentiation",
       "grade-11",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "3bef4333ec56e8b3eb889ce13927b01c437bc57e76a6ab71c946c4c4301777c9",
+    "checksum": "577846d86b5911c72cde26f64927f3221771e6708c7f489ca7ce40c2b8904f76",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Deriválás",
-    "description": "Test on Deriválás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Differentiation",
+    "description": "Prøve i Differentiation: Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 1: Differentiation",
+      "text": "[math] Differentiation - Spørsmål 1: Differentiation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 2: Differentiation",
+      "text": "[math] Differentiation - Spørsmål 2: Differentiation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Deriválás - Kérdés 3: Differentiation",
+      "text": "[math] Differentiation - Spørsmål 3: Differentiation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Deriválás - Kérdés 4: Differentiation",
+      "text": "[math] Differentiation - Spørsmål 4: Differentiation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Deriválás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Differentiation.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "deriválás",
-        "grade-11"
+        "differentiation",
+        "grade-11",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Deriválás - Question 5: Differentiation [rand:1-100]",
+      "text": "[math] Differentiation - Spørsmål 5: Differentiation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "deriválás",
+        "differentiation",
         "grade-11",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-11-MATH-Deriválás",
+      "curriculum_topic": "NORWAY-GRADE-11-MATH-Differentiation",
       "learning_objective": "Differentiation"
     }
   ],

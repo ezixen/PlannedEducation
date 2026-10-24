@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-11-math-integrálás-1.0.0",
-    "name": "Integrálás - Ireland grade-11",
+    "name": "Integration - Ireland grade-11",
     "version": "1.0.0",
-    "description": "45-minute test on Integrálás for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
+    "description": "45-minute assessment on Integration for grade-11 students. Covers: Functions, Differentiation, Integration, Probability, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.783404+00:00",
-    "updated_at": "2026-10-21T11:02:30.783419+00:00",
+    "created_at": "2026-10-24T17:53:51.494903+00:00",
+    "updated_at": "2026-10-24T17:53:51.494912+00:00",
     "tags": [
       "math",
-      "integrálás",
+      "integration",
       "grade-11",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-11",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "bdf83944481469dcbca35a7100ae707b0e54b53064e299e31f6a7ddf6f8e7ab0",
+    "checksum": "bae56fe85520ec6a6acf4c91fa1b4536b77c82488ca4c9ef33fced47cbc9aa13",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-11 Math - Integrálás",
-    "description": "Test on Integrálás including Functions, Differentiation, Integration, Probability, Statistics",
+    "title": "grade-11 Math - Integration",
+    "description": "Assessment on Integration including Functions, Differentiation, Integration, Probability, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 1: Integration",
+      "text": "[math] Integration - Question 1: Integration",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 2: Integration",
+      "text": "[math] Integration - Question 2: Integration",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Integrálás - Kérdés 3: Integration",
+      "text": "[math] Integration - Question 3: Integration",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Integrálás - Kérdés 4: Integration",
+      "text": "[math] Integration - Question 4: Integration",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Integrálás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Integration.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "integrálás",
-        "grade-11"
+        "integration",
+        "grade-11",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Integrálás - Question 5: Integration [rand:1-100]",
+      "text": "[math] Integration - Question 5: Integration [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "integrálás",
+        "integration",
         "grade-11",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integrálás",
+      "curriculum_topic": "IRELAND-GRADE-11-MATH-Integration",
       "learning_objective": "Integration"
     }
   ],

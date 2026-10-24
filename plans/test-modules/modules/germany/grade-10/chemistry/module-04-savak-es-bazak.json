@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-chemistry-savak-és-bazák-1.0.0",
-    "name": "Savak és bazák - Germany grade-10",
+    "name": "Säuren und Basen - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Savak és bazák for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45-minütige Prüfung zum Thema Säuren und Basen (grade-10). Themen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.579121+00:00",
-    "updated_at": "2026-10-21T11:02:16.579133+00:00",
+    "created_at": "2026-10-24T17:53:45.523167+00:00",
+    "updated_at": "2026-10-24T17:53:45.523180+00:00",
     "tags": [
       "chemistry",
-      "savak-és-bazák",
+      "säuren-und-basen",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "19498f9fddf9499ef5c10ee3a05480ca5a4f70a1c7e3a20b4d250bf23eda3b40",
+    "checksum": "a752ad6288f8f281cc713d7d35cca1ba514e8b0ec1a84dd6954f3f68294d6735",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Strukturchemie",
+      "Organische Chemie Grundlagen",
+      "Chemische Reaktionen",
+      "Säuren und Basen",
+      "Chemisches Gleichgewicht"
     ]
   },
   "exam": {
-    "title": "grade-10 Chemistry - Savak és bazák",
-    "description": "Test on Savak és bazák including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "title": "grade-10 Chemistry - Säuren und Basen",
+    "description": "Prüfung zum Thema Säuren und Basen: Strukturchemie, Organische Chemie Grundlagen, Chemische Reaktionen, Säuren und Basen, Chemisches Gleichgewicht",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 1: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 1: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "säuren-und-basen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 2: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 2: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "säuren-und-basen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Savak és bazák - Kérdés 3: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 3: Säuren und Basen",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Savak és bazák témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Säuren und Basen.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "säuren-und-basen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Savak és bazák - Question 4: Acids and bases [rand:1-100]",
+      "text": "[chemistry] Säuren und Basen - Frage 4: Säuren und Basen [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
+        "säuren-und-basen",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Savak és bazák - Kérdés 5: Acids and bases",
+      "text": "[chemistry] Säuren und Basen - Frage 5: Säuren und Basen",
       "options": [
         "A",
         "B",
@@ -171,13 +179,14 @@
       "variables": [],
       "tags": [
         "chemistry",
-        "savak-és-bazák",
-        "grade-10"
+        "säuren-und-basen",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Savak és bazák",
-      "learning_objective": "Acids and bases"
+      "curriculum_topic": "GERMANY-GRADE-10-CHEMISTRY-Säuren und Basen",
+      "learning_objective": "Säuren und Basen"
     }
   ],
   "rubrics": []

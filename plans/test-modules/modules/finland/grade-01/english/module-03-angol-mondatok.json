@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-mondatok-1.0.0",
-    "name": "Angol mondatok - Finland grade-01",
+    "name": "English sentences - Finland grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol mondatok for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45 minuutin koe aiheesta English sentences (grade-01). Aiheet: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:23.920202+00:00",
-    "updated_at": "2026-10-21T11:02:23.920214+00:00",
+    "created_at": "2026-10-24T17:53:47.479180+00:00",
+    "updated_at": "2026-10-24T17:53:47.479188+00:00",
     "tags": [
       "english",
-      "angol-mondatok",
+      "english-sentences",
       "grade-01",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "ff4a5bb4273278fb7e3a25a59dc2d570895aa485bfd298223bf21956d263f166",
+    "checksum": "197e946b8ec1f2156f7636504ab02f1d4d881e57d390e6db9e471db0a6276646",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol mondatok",
-    "description": "Test on Angol mondatok including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English sentences",
+    "description": "Koe aiheesta English sentences: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 1: English sentences",
+      "text": "[english] English sentences - Kysymys 1: English sentences",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 2: English sentences",
+      "text": "[english] English sentences - Kysymys 2: English sentences",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol mondatok - Kérdés 3: English sentences",
+      "text": "[english] English sentences - Kysymys 3: English sentences",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol mondatok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen English sentences.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 4: English sentences",
+      "text": "[english] English sentences - Kysymys 4: English sentences",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol mondatok - Kérdés 5: English sentences",
+      "text": "[english] English sentences - Kysymys 5: English sentences",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-mondatok",
-        "grade-01"
+        "english-sentences",
+        "grade-01",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-Angol mondatok",
+      "curriculum_topic": "FINLAND-GRADE-01-ENGLISH-English sentences",
       "learning_objective": "English sentences"
     }
   ],

@@ -3,21 +3,25 @@
     "id": "grade-06-math-százalék-számítás-1.0.0",
     "name": "Százalék számítás - Hungary grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék számítás for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45 perces felmérő: Százalék számítás (grade-06). Témakörök: Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.124765+00:00",
-    "updated_at": "2026-10-21T11:02:35.124778+00:00",
+    "created_at": "2026-10-24T17:53:52.153155+00:00",
+    "updated_at": "2026-10-24T17:53:52.153166+00:00",
     "tags": [
       "math",
       "százalék-számítás",
       "grade-06",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "e52b598f4cca806bfda87e4ddc5c2adf0248f51244a344ab4c314fbb60423822",
+    "checksum": "fdd836eb08f36fbadf0ed7cb896c4708d578b6853e8c5934ec078beab42a8243",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "General fractions",
-      "Fraction operations",
-      "Percentage basics",
-      "Percentage calculation",
-      "Proportional ratio"
+      "Általános tört",
+      "Tört műveletek",
+      "Százalék alapok",
+      "Százalék számítás",
+      "Aranyszerű arány"
     ]
   },
   "exam": {
     "title": "grade-06 Math - Százalék számítás",
-    "description": "Test on Százalék számítás including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "Felmérő a(z) Százalék számítás témakörből (Általános tört, Tört műveletek, Százalék alapok, Százalék számítás, Aranyszerű arány)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 1: Percentage calculation",
+      "text": "[math] Százalék számítás - Kérdés 1: Százalék számítás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "százalék-számítás",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Százalék számítás",
-      "learning_objective": "Percentage calculation"
+      "learning_objective": "Százalék számítás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 2: Percentage calculation",
+      "text": "[math] Százalék számítás - Kérdés 2: Százalék számítás",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "százalék-számítás",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Százalék számítás",
-      "learning_objective": "Percentage calculation"
+      "learning_objective": "Százalék számítás"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 3: Percentage calculation",
+      "text": "[math] Százalék számítás - Kérdés 3: Százalék számítás",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "százalék-számítás",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Százalék számítás",
-      "learning_objective": "Percentage calculation"
+      "learning_objective": "Százalék számítás"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék számítás - Kérdés 4: Percentage calculation",
+      "text": "[math] Százalék számítás - Kérdés 4: Százalék számítás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Százalék számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "százalék-számítás",
-        "grade-06"
+        "grade-06",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Százalék számítás",
-      "learning_objective": "Percentage calculation"
+      "learning_objective": "Százalék számítás"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék számítás - Question 5: Percentage calculation [rand:1-100]",
+      "text": "[math] Százalék számítás - Kérdés 5: Százalék számítás [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "százalék-számítás",
         "grade-06",
-        "decimal"
+        "decimal",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-06-MATH-Százalék számítás",
-      "learning_objective": "Percentage calculation"
+      "learning_objective": "Százalék számítás"
     }
   ],
   "rubrics": []

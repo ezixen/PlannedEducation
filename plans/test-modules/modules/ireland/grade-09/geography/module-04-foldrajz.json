@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-geography-földrajz-1.0.0",
-    "name": "Földrajz - Ireland grade-09",
+    "name": "Geography - Ireland grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
+    "description": "45-minute assessment on Geography for grade-09 students. Covers: Europe and world, Europe, World, Geography, Geographic knowledge",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:30.609087+00:00",
-    "updated_at": "2026-10-21T11:02:30.609097+00:00",
+    "created_at": "2026-10-24T17:53:51.378670+00:00",
+    "updated_at": "2026-10-24T17:53:51.378681+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geography",
       "grade-09",
-      "ireland"
+      "ireland",
+      "en"
     ],
     "subject": "geography",
     "grade_level": "grade-09",
+    "language": "en",
+    "language_name": "English",
+    "country": "ireland",
     "license": "CC-BY-4.0",
-    "checksum": "d6edc089e52ba13c20258aa77558b5490fbfa9d674c7bb4c5b24533c24463596",
+    "checksum": "28097e663e90c75fd39070872e6af83fb0409901e28dbe0aee4675a80305c372",
     "curriculum": "ireland-ncca-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Geography - Földrajz",
-    "description": "Test on Földrajz including Europe and world, Europe, World, Geography, Geographic knowledge",
+    "title": "grade-09 Geography - Geography",
+    "description": "Assessment on Geography including Europe and world, Europe, World, Geography, Geographic knowledge",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geography - Question 1: Geography",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-09"
+        "geography",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geography - Question 2: Geography",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-09"
+        "geography",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geography - Question 3: Geography",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Geography.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-09"
+        "geography",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geography - Question 4: Geography",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-09"
+        "geography",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geography - Question 5: Geography",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-09"
+        "geography",
+        "grade-09",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Földrajz",
+      "curriculum_topic": "IRELAND-GRADE-09-GEOGRAPHY-Geography",
       "learning_objective": "Geography"
     }
   ],

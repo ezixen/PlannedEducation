@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-physics-hullamok-1.0.0",
-    "name": "Hullamok - Belgium grade-09",
+    "name": "Waves - Belgium grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok for grade-09 students. Covers: Mechanics, Forces and motion, Energy, Waves, Optics",
+    "description": "Toets van 45 minuten over Waves (grade-09). Onderwerpen: Mechanics, Forces and motion, Energy, Waves, Optics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.960163+00:00",
-    "updated_at": "2026-10-21T11:02:29.960196+00:00",
+    "created_at": "2026-10-24T17:53:50.958890+00:00",
+    "updated_at": "2026-10-24T17:53:50.958896+00:00",
     "tags": [
       "physics",
-      "hullamok",
+      "waves",
       "grade-09",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "physics",
     "grade_level": "grade-09",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "56b8dbd222bbbda2808bd458bec62b4104c050d4fa6d1f8b65ce2d50c15cbb9f",
+    "checksum": "1d84480bce401ff6f115e3fda8efbe7e99baaae4291728b281a6d81e5dc9f044",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 Physics - Hullamok",
-    "description": "Test on Hullamok including Mechanics, Forces and motion, Energy, Waves, Optics",
+    "title": "grade-09 Physics - Waves",
+    "description": "Toets over Waves: Mechanics, Forces and motion, Energy, Waves, Optics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 1: Waves",
+      "text": "[physics] Waves - Vraag 1: Waves",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 2: Waves",
+      "text": "[physics] Waves - Vraag 2: Waves",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok - Kérdés 3: Waves",
+      "text": "[physics] Waves - Vraag 3: Waves",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Waves.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok - Question 4: Waves [rand:1-1000]",
+      "text": "[physics] Waves - Vraag 4: Waves [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok",
+        "waves",
         "grade-09",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok - Kérdés 5: Waves",
+      "text": "[physics] Waves - Vraag 5: Waves",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok",
-        "grade-09"
+        "waves",
+        "grade-09",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Hullamok",
+      "curriculum_topic": "BELGIUM-GRADE-09-PHYSICS-Waves",
       "learning_objective": "Waves"
     }
   ],

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-09-history-20.-század-1.0.0",
-    "name": "20. század - Denmark grade-09",
+    "name": "20th century - Denmark grade-09",
     "version": "1.0.0",
-    "description": "45-minute test on 20. század for grade-09 students. Covers: History of the 20th century, 20th century, History, Historical events, World history",
+    "description": "45-minutters prøve i 20th century (grade-09). Emner: History of the 20th century, 20th century, History, Historical events, World history",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.552331+00:00",
-    "updated_at": "2026-10-21T11:02:27.552343+00:00",
+    "created_at": "2026-10-24T17:53:49.634801+00:00",
+    "updated_at": "2026-10-24T17:53:49.634813+00:00",
     "tags": [
       "history",
-      "20.-század",
+      "20th-century",
       "grade-09",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "history",
     "grade_level": "grade-09",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "6cef4b54d3ac5a39e2ed6c9c968c1e6b4d038ca68a0501964a5be714aa33bd48",
+    "checksum": "09fde9de5005c6fc880a507d6b9c5e88a5a4cb3e86efe39d514981bde80d6b5d",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-09 History - 20. század",
-    "description": "Test on 20. század including History of the 20th century, 20th century, History, Historical events, World history",
+    "title": "grade-09 History - 20th century",
+    "description": "Prøve i 20th century: History of the 20th century, 20th century, History, Historical events, World history",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 1: 20th century",
+      "text": "[history] 20th century - Spørgsmål 1: 20th century",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 2: 20th century",
+      "text": "[history] 20th century - Spørgsmål 2: 20th century",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] 20. század - Kérdés 3: 20th century",
+      "text": "[history] 20th century - Spørgsmål 3: 20th century",
       "options": null,
-      "correct_answer": "Minta válasz a(z) 20. század témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for 20th century.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 4: 20th century",
+      "text": "[history] 20th century - Spørgsmål 4: 20th century",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] 20. század - Kérdés 5: 20th century",
+      "text": "[history] 20th century - Spørgsmål 5: 20th century",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "20.-század",
-        "grade-09"
+        "20th-century",
+        "grade-09",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20. század",
+      "curriculum_topic": "DENMARK-GRADE-09-HISTORY-20th century",
       "learning_objective": "20th century"
     }
   ],

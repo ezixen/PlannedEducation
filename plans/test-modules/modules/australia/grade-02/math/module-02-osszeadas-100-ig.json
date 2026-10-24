@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-összeadás-100-ig-1.0.0",
-    "name": "Összeadás 100-ig - Australia grade-02",
+    "name": "Addition to 100 - Australia grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Összeadás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "45-minute assessment on Addition to 100 for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.360438+00:00",
-    "updated_at": "2026-10-21T11:02:18.360451+00:00",
+    "created_at": "2026-10-24T17:53:46.549881+00:00",
+    "updated_at": "2026-10-24T17:53:46.549885+00:00",
     "tags": [
       "math",
-      "összeadás-100-ig",
+      "addition-to-100",
       "grade-02",
-      "australia"
+      "australia",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "en",
+    "language_name": "English",
+    "country": "australia",
     "license": "CC-BY-4.0",
-    "checksum": "505fe24a9ec7938225abb9fadde7a11f2257455fc775652a561f63fd644ef026",
+    "checksum": "9864f72d610c3afca0b5acf8154142ce53e3e2c714a0c36a6151d7c87ee4341a",
     "curriculum": "australia-curriculum",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Összeadás 100-ig",
-    "description": "Test on Összeadás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Addition to 100",
+    "description": "Assessment on Addition to 100 including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 1: Addition to 100",
+      "text": "[math] Addition to 100 - Question 1: Addition to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 2: Addition to 100",
+      "text": "[math] Addition to 100 - Question 2: Addition to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Összeadás 100-ig - Kérdés 3: Addition to 100",
+      "text": "[math] Addition to 100 - Question 3: Addition to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Összeadás 100-ig - Kérdés 4: Addition to 100",
+      "text": "[math] Addition to 100 - Question 4: Addition to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Összeadás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Addition to 100.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "összeadás-100-ig",
-        "grade-02"
+        "addition-to-100",
+        "grade-02",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Összeadás 100-ig - Question 5: Addition to 100 [rand:1-20]",
+      "text": "[math] Addition to 100 - Question 5: Addition to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "összeadás-100-ig",
+        "addition-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Összeadás 100-ig",
+      "curriculum_topic": "AUSTRALIA-GRADE-02-MATH-Addition to 100",
       "learning_objective": "Addition to 100"
     }
   ],

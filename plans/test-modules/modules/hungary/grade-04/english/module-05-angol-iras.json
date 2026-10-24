@@ -3,21 +3,25 @@
     "id": "grade-04-english-angol-írás-1.0.0",
     "name": "Angol írás - Hungary grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Angol írás for grade-04 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45 perces felmérő: Angol írás (grade-04). Témakörök: Angol nyelv A2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.059843+00:00",
-    "updated_at": "2026-10-21T11:02:35.059857+00:00",
+    "created_at": "2026-10-24T17:53:52.097033+00:00",
+    "updated_at": "2026-10-24T17:53:52.097040+00:00",
     "tags": [
       "english",
       "angol-írás",
       "grade-04",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "english",
     "grade_level": "grade-04",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "1d3c7cab3a856f4c48cebcbe6787ee0dd5048bb32e92cd5f5ea40eea8bf1a275",
+    "checksum": "ea8e6703a5811754578a54a2e21518abf42cb3b9e44dc1c08bd5b882f5a2f193",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "English language A2",
-      "English grammar",
-      "English vocabulary",
-      "English reading",
-      "English writing"
+      "Angol nyelv A2",
+      "Angol grammatika",
+      "Angol szókincs",
+      "Angol olvasás",
+      "Angol írás"
     ]
   },
   "exam": {
     "title": "grade-04 English - Angol írás",
-    "description": "Test on Angol írás including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "Felmérő a(z) Angol írás témakörből (Angol nyelv A2, Angol grammatika, Angol szókincs, Angol olvasás, Angol írás)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 1: English writing",
+      "text": "[english] Angol írás - Kérdés 1: Angol írás",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "english",
         "angol-írás",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol írás",
-      "learning_objective": "English writing"
+      "learning_objective": "Angol írás"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 2: English writing",
+      "text": "[english] Angol írás - Kérdés 2: Angol írás",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "english",
         "angol-írás",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol írás",
-      "learning_objective": "English writing"
+      "learning_objective": "Angol írás"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol írás - Kérdés 3: English writing",
+      "text": "[english] Angol írás - Kérdés 3: Angol írás",
       "options": null,
       "correct_answer": "Minta válasz a(z) Angol írás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
         "angol-írás",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol írás",
-      "learning_objective": "English writing"
+      "learning_objective": "Angol írás"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 4: English writing",
+      "text": "[english] Angol írás - Kérdés 4: Angol írás",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "english",
         "angol-írás",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol írás",
-      "learning_objective": "English writing"
+      "learning_objective": "Angol írás"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol írás - Kérdés 5: English writing",
+      "text": "[english] Angol írás - Kérdés 5: Angol írás",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "english",
         "angol-írás",
-        "grade-04"
+        "grade-04",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-04-ENGLISH-Angol írás",
-      "learning_objective": "English writing"
+      "learning_objective": "Angol írás"
     }
   ],
   "rubrics": []

@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-04-math-szorzás-tizedes-1.0.0",
-    "name": "Szorzás tizedes - Canada grade-04",
+    "name": "Decimal multiplication - Canada grade-04",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzás tizedes for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "description": "45-minute assessment on Decimal multiplication for grade-04 students. Covers: Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.518453+00:00",
-    "updated_at": "2026-10-21T11:02:15.518468+00:00",
+    "created_at": "2026-10-24T17:53:44.799987+00:00",
+    "updated_at": "2026-10-24T17:53:44.799993+00:00",
     "tags": [
       "math",
-      "szorzás-tizedes",
+      "decimal-multiplication",
       "grade-04",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-04",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "a627687397e741f6553c7d0eef560181de5d6dd94108fea28d134c035c5d1a78",
+    "checksum": "92b80cf532ab6aed67ec00360f45eedd8fa4f73f293951fec72a244a4b17526e",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-04 Math - Szorzás tizedes",
-    "description": "Test on Szorzás tizedes including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
+    "title": "grade-04 Math - Decimal multiplication",
+    "description": "Assessment on Decimal multiplication including Decimal numbers, Decimal addition, Decimal subtraction, Decimal multiplication, Decimal division",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 1: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Question 1: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "CANADA-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 2: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Question 2: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "CANADA-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzás tizedes - Kérdés 3: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Question 3: Decimal multiplication",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "CANADA-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzás tizedes - Kérdés 4: Decimal multiplication",
+      "text": "[math] Decimal multiplication - Question 4: Decimal multiplication",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzás tizedes témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Decimal multiplication.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzás-tizedes",
-        "grade-04"
+        "decimal-multiplication",
+        "grade-04",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "CANADA-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzás tizedes - Question 5: Decimal multiplication [rand:1-100]",
+      "text": "[math] Decimal multiplication - Question 5: Decimal multiplication [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzás-tizedes",
+        "decimal-multiplication",
         "grade-04",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-04-MATH-Szorzás tizedes",
+      "curriculum_topic": "CANADA-GRADE-04-MATH-Decimal multiplication",
       "learning_objective": "Decimal multiplication"
     }
   ],

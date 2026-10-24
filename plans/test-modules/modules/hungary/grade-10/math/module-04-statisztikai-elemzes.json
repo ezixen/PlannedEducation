@@ -3,21 +3,25 @@
     "id": "grade-10-math-statisztikai-elemzés-1.0.0",
     "name": "Statisztikai elemzés - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztikai elemzés for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45 perces felmérő: Statisztikai elemzés (grade-10). Témakörök: Függvények és statisztika, Deriválás és integrálás, Valószínűség-számítás, Statisztikai elemzés, Geometria",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.572577+00:00",
-    "updated_at": "2026-10-21T11:02:35.572589+00:00",
+    "created_at": "2026-10-24T17:53:52.417867+00:00",
+    "updated_at": "2026-10-24T17:53:52.417874+00:00",
     "tags": [
       "math",
       "statisztikai-elemzés",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "c93728983e0c0686676078e28df13375ef56f949bfa2fe389a19646d4ab08681",
+    "checksum": "9f4064c3047fe30c2e23807bc9907150885e504b795062379a29aa786ea83674",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and statistics",
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry"
+      "Függvények és statisztika",
+      "Deriválás és integrálás",
+      "Valószínűség-számítás",
+      "Statisztikai elemzés",
+      "Geometria"
     ]
   },
   "exam": {
     "title": "grade-10 Math - Statisztikai elemzés",
-    "description": "Test on Statisztikai elemzés including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "Felmérő a(z) Statisztikai elemzés témakörből (Függvények és statisztika, Deriválás és integrálás, Valószínűség-számítás, Statisztikai elemzés, Geometria)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 1: Statistical analysis",
+      "text": "[math] Statisztikai elemzés - Kérdés 1: Statisztikai elemzés",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "math",
         "statisztikai-elemzés",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-MATH-Statisztikai elemzés",
-      "learning_objective": "Statistical analysis"
+      "learning_objective": "Statisztikai elemzés"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 2: Statistical analysis",
+      "text": "[math] Statisztikai elemzés - Kérdés 2: Statisztikai elemzés",
       "options": [
         "A",
         "B",
@@ -94,17 +99,18 @@
       "tags": [
         "math",
         "statisztikai-elemzés",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-MATH-Statisztikai elemzés",
-      "learning_objective": "Statistical analysis"
+      "learning_objective": "Statisztikai elemzés"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 3: Statistical analysis",
+      "text": "[math] Statisztikai elemzés - Kérdés 3: Statisztikai elemzés",
       "options": [
         "A",
         "B",
@@ -118,36 +124,38 @@
       "tags": [
         "math",
         "statisztikai-elemzés",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-MATH-Statisztikai elemzés",
-      "learning_objective": "Statistical analysis"
+      "learning_objective": "Statisztikai elemzés"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztikai elemzés - Kérdés 4: Statistical analysis",
+      "text": "[math] Statisztikai elemzés - Kérdés 4: Statisztikai elemzés",
       "options": null,
       "correct_answer": "Minta válasz a(z) Statisztikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
         "statisztikai-elemzés",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-MATH-Statisztikai elemzés",
-      "learning_objective": "Statistical analysis"
+      "learning_objective": "Statisztikai elemzés"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztikai elemzés - Question 5: Statistical analysis [rand:1-100]",
+      "text": "[math] Statisztikai elemzés - Kérdés 5: Statisztikai elemzés [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -172,12 +180,13 @@
         "math",
         "statisztikai-elemzés",
         "grade-10",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-MATH-Statisztikai elemzés",
-      "learning_objective": "Statistical analysis"
+      "learning_objective": "Statisztikai elemzés"
     }
   ],
   "rubrics": []

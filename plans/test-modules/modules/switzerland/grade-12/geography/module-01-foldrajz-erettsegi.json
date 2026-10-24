@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-geography-földrajz-erettségi-1.0.0",
-    "name": "Földrajz-erettségi - Switzerland grade-12",
+    "name": "Geographie Abiturvorbereitung - Switzerland grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz-erettségi for grade-12 students. Covers: Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "description": "45-minütige Prüfung zum Thema Geographie Abiturvorbereitung (grade-12). Themen: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:28.731906+00:00",
-    "updated_at": "2026-10-21T11:02:28.731950+00:00",
+    "created_at": "2026-10-24T17:53:50.244403+00:00",
+    "updated_at": "2026-10-24T17:53:50.244409+00:00",
     "tags": [
       "geography",
-      "földrajz-erettségi",
+      "geographie-abiturvorbereitung",
       "grade-12",
-      "switzerland"
+      "switzerland",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "switzerland",
     "license": "CC-BY-4.0",
-    "checksum": "71f581983f866a10bda01cb1fd955dfdd9ca2930f3ba8c3980edc2cfd965f55c",
+    "checksum": "b6cd2b5b0b9e0eb06d27e568d43025acc73172b6a9791e762fd29edcacb21509",
     "curriculum": "switzerland-lehrplan-21",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Geography-maturity",
-      "Geography",
-      "Geographic knowledge",
-      "Europe and world",
-      "Geographic tools"
+      "Geographie Abiturvorbereitung",
+      "Geographie",
+      "Geographisches Wissen",
+      "Europa und die Welt",
+      "Geographische Arbeitsmethoden"
     ]
   },
   "exam": {
-    "title": "grade-12 Geography - Földrajz-erettségi",
-    "description": "Test on Földrajz-erettségi including Geography-maturity, Geography, Geographic knowledge, Europe and world, Geographic tools",
+    "title": "grade-12 Geography - Geographie Abiturvorbereitung",
+    "description": "Prüfung zum Thema Geographie Abiturvorbereitung: Geographie Abiturvorbereitung, Geographie, Geographisches Wissen, Europa und die Welt, Geographische Arbeitsmethoden",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 1: Geography-maturity",
+      "text": "[geography] Geographie Abiturvorbereitung - Frage 1: Geographie Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geographie-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
-      "learning_objective": "Geography-maturity"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Geographie Abiturvorbereitung",
+      "learning_objective": "Geographie Abiturvorbereitung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 2: Geography-maturity",
+      "text": "[geography] Geographie Abiturvorbereitung - Frage 2: Geographie Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geographie-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
-      "learning_objective": "Geography-maturity"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Geographie Abiturvorbereitung",
+      "learning_objective": "Geographie Abiturvorbereitung"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz-erettségi - Kérdés 3: Geography-maturity",
+      "text": "[geography] Geographie Abiturvorbereitung - Frage 3: Geographie Abiturvorbereitung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographie Abiturvorbereitung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geographie-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
-      "learning_objective": "Geography-maturity"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Geographie Abiturvorbereitung",
+      "learning_objective": "Geographie Abiturvorbereitung"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 4: Geography-maturity",
+      "text": "[geography] Geographie Abiturvorbereitung - Frage 4: Geographie Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geographie-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
-      "learning_objective": "Geography-maturity"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Geographie Abiturvorbereitung",
+      "learning_objective": "Geographie Abiturvorbereitung"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz-erettségi - Kérdés 5: Geography-maturity",
+      "text": "[geography] Geographie Abiturvorbereitung - Frage 5: Geographie Abiturvorbereitung",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz-erettségi",
-        "grade-12"
+        "geographie-abiturvorbereitung",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Földrajz-erettségi",
-      "learning_objective": "Geography-maturity"
+      "curriculum_topic": "SWITZERLAND-GRADE-12-GEOGRAPHY-Geographie Abiturvorbereitung",
+      "learning_objective": "Geographie Abiturvorbereitung"
     }
   ],
   "rubrics": []

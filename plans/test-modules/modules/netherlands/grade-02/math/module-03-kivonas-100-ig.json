@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-02-math-kivonás-100-ig-1.0.0",
-    "name": "Kivonás 100-ig - Netherlands grade-02",
+    "name": "Subtraction to 100 - Netherlands grade-02",
     "version": "1.0.0",
-    "description": "45-minute test on Kivonás 100-ig for grade-02 students. Covers: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "description": "Toets van 45 minuten over Subtraction to 100 (grade-02). Onderwerpen: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.808315+00:00",
-    "updated_at": "2026-10-21T11:02:24.808328+00:00",
+    "created_at": "2026-10-24T17:53:47.913162+00:00",
+    "updated_at": "2026-10-24T17:53:47.913175+00:00",
     "tags": [
       "math",
-      "kivonás-100-ig",
+      "subtraction-to-100",
       "grade-02",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-02",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "9e2c2df351d293cabd046ae46b74b6e5be163c9b183488673b7a9d7efc8cd2e5",
+    "checksum": "ce33fcd80b80d568ead3d6fd144f7bd6c801c825dcce67fcc465213e1c4159c5",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-02 Math - Kivonás 100-ig",
-    "description": "Test on Kivonás 100-ig including Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
+    "title": "grade-02 Math - Subtraction to 100",
+    "description": "Toets over Subtraction to 100: Counting to 100, Addition to 100, Subtraction to 100, Multiplication basics, Division basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 1: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Vraag 1: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 2: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Vraag 2: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Kivonás 100-ig - Kérdés 3: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Vraag 3: Subtraction to 100",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Kivonás 100-ig - Kérdés 4: Subtraction to 100",
+      "text": "[math] Subtraction to 100 - Vraag 4: Subtraction to 100",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kivonás 100-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Subtraction to 100.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "kivonás-100-ig",
-        "grade-02"
+        "subtraction-to-100",
+        "grade-02",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Kivonás 100-ig - Question 5: Subtraction to 100 [rand:1-20]",
+      "text": "[math] Subtraction to 100 - Vraag 5: Subtraction to 100 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "kivonás-100-ig",
+        "subtraction-to-100",
         "grade-02",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Kivonás 100-ig",
+      "curriculum_topic": "NETHERLANDS-GRADE-02-MATH-Subtraction to 100",
       "learning_objective": "Subtraction to 100"
     }
   ],

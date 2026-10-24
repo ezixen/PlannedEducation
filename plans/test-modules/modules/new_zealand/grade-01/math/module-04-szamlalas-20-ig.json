@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-math-számlálás-20-ig-1.0.0",
-    "name": "Számlálás 20-ig - New Zealand grade-01",
+    "name": "Counting to 20 - New Zealand grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Számlálás 20-ig for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "description": "45-minute assessment on Counting to 20 for grade-01 students. Covers: Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:34.339205+00:00",
-    "updated_at": "2026-10-21T11:02:34.339216+00:00",
+    "created_at": "2026-10-24T17:53:51.564896+00:00",
+    "updated_at": "2026-10-24T17:53:51.564905+00:00",
     "tags": [
       "math",
-      "számlálás-20-ig",
+      "counting-to-20",
       "grade-01",
-      "new_zealand"
+      "new_zealand",
+      "en"
     ],
     "subject": "math",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "new_zealand",
     "license": "CC-BY-4.0",
-    "checksum": "bb293cb2e0ad4c68522308b99d6b3d8af016d3996d3c6af2df202094d53988ba",
+    "checksum": "e9c110f61d374ed02c07436c049a14c97f290c06cc34d451012c139d1202dab5",
     "curriculum": "new-zealand-nzc-te-mataiaho",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 Math - Számlálás 20-ig",
-    "description": "Test on Számlálás 20-ig including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
+    "title": "grade-01 Math - Counting to 20",
+    "description": "Assessment on Counting to 20 including Counting to 10, Addition to 10, Subtraction to 10, Counting to 20, Addition to 20",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 1: Counting to 20",
+      "text": "[math] Counting to 20 - Question 1: Counting to 20",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 2: Counting to 20",
+      "text": "[math] Counting to 20 - Question 2: Counting to 20",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Számlálás 20-ig - Kérdés 3: Counting to 20",
+      "text": "[math] Counting to 20 - Question 3: Counting to 20",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Számlálás 20-ig - Kérdés 4: Counting to 20",
+      "text": "[math] Counting to 20 - Question 4: Counting to 20",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Számlálás 20-ig témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Counting to 20.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "számlálás-20-ig",
-        "grade-01"
+        "counting-to-20",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Számlálás 20-ig - Question 5: Counting to 20 [rand:1-20]",
+      "text": "[math] Counting to 20 - Question 5: Counting to 20 [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "számlálás-20-ig",
+        "counting-to-20",
         "grade-01",
-        "integer"
+        "integer",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Számlálás 20-ig",
+      "curriculum_topic": "NEW_ZEALAND-GRADE-01-MATH-Counting to 20",
       "learning_objective": "Counting to 20"
     }
   ],

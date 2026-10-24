@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-észlelés-1.0.0",
-    "name": "Észlelés - Finland grade-08",
+    "name": "Perception - Finland grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Észlelés for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45 minuutin koe aiheesta Perception (grade-08). Aiheet: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.276244+00:00",
-    "updated_at": "2026-10-21T11:02:24.276256+00:00",
+    "created_at": "2026-10-24T17:53:47.650835+00:00",
+    "updated_at": "2026-10-24T17:53:47.650842+00:00",
     "tags": [
       "biology",
-      "észlelés",
+      "perception",
       "grade-08",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "893b12dae503bf15a606cd9c699d5c39ba6ea339b73c4eda6203094ee5c08e6f",
+    "checksum": "4c1e0589262297d557756d1cf1df32d83ae84c5bdeb91805133bdd01cd35ec8b",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Észlelés",
-    "description": "Test on Észlelés including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Perception",
+    "description": "Koe aiheesta Perception: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 1: Perception",
+      "text": "[biology] Perception - Kysymys 1: Perception",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 2: Perception",
+      "text": "[biology] Perception - Kysymys 2: Perception",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Észlelés - Kérdés 3: Perception",
+      "text": "[biology] Perception - Kysymys 3: Perception",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észlelés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Perception.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Észlelés - Kérdés 4: Perception",
+      "text": "[biology] Perception - Kysymys 4: Perception",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Észlelés - Kérdés 5: Perception",
+      "text": "[biology] Perception - Kysymys 5: Perception",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észlelés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Perception.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észlelés",
-        "grade-08"
+        "perception",
+        "grade-08",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Észlelés",
+      "curriculum_topic": "FINLAND-GRADE-08-BIOLOGY-Perception",
       "learning_objective": "Perception"
     }
   ],

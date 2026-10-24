@@ -3,21 +3,25 @@
     "id": "grade-08-geography-európa-és-magyarország-1.0.0",
     "name": "Európa és Magyarország - Hungary grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Európa és Magyarország for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45 perces felmérő: Európa és Magyarország (grade-08). Témakörök: Európa és Magyarország, Európa, Magyarország, Földrajz, Földrajzi ismeretek",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.295282+00:00",
-    "updated_at": "2026-10-21T11:02:35.295300+00:00",
+    "created_at": "2026-10-24T17:53:52.276993+00:00",
+    "updated_at": "2026-10-24T17:53:52.277000+00:00",
     "tags": [
       "geography",
       "európa-és-magyarország",
       "grade-08",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "baa0bd892fdbe3d4e1e8ec3851eaad023b8814516cb888a26f8d691af2172e1e",
+    "checksum": "ce491ac52e45f0a00550b31aa7f7ed4dc37b0ad42871ec7bc0a0e69ff7ff20b8",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and Hungary",
-      "Europe",
-      "Hungary",
-      "Geography",
-      "Geographic knowledge"
+      "Európa és Magyarország",
+      "Európa",
+      "Magyarország",
+      "Földrajz",
+      "Földrajzi ismeretek"
     ]
   },
   "exam": {
     "title": "grade-08 Geography - Európa és Magyarország",
-    "description": "Test on Európa és Magyarország including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "Felmérő a(z) Európa és Magyarország témakörből (Európa és Magyarország, Európa, Magyarország, Földrajz, Földrajzi ismeretek)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 1: Europe and Hungary",
+      "text": "[geography] Európa és Magyarország - Kérdés 1: Európa és Magyarország",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "geography",
         "európa-és-magyarország",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "learning_objective": "Európa és Magyarország"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 2: Europe and Hungary",
+      "text": "[geography] Európa és Magyarország - Kérdés 2: Európa és Magyarország",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "geography",
         "európa-és-magyarország",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "learning_objective": "Európa és Magyarország"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Európa és Magyarország - Kérdés 3: Europe and Hungary",
+      "text": "[geography] Európa és Magyarország - Kérdés 3: Európa és Magyarország",
       "options": null,
       "correct_answer": "Minta válasz a(z) Európa és Magyarország témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
         "európa-és-magyarország",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "learning_objective": "Európa és Magyarország"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 4: Europe and Hungary",
+      "text": "[geography] Európa és Magyarország - Kérdés 4: Európa és Magyarország",
       "options": [
         "A",
         "B",
@@ -137,17 +144,18 @@
       "tags": [
         "geography",
         "európa-és-magyarország",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "learning_objective": "Európa és Magyarország"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Európa és Magyarország - Kérdés 5: Europe and Hungary",
+      "text": "[geography] Európa és Magyarország - Kérdés 5: Európa és Magyarország",
       "options": [
         "A",
         "B",
@@ -161,12 +169,13 @@
       "tags": [
         "geography",
         "európa-és-magyarország",
-        "grade-08"
+        "grade-08",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-08-GEOGRAPHY-Európa és Magyarország",
-      "learning_objective": "Europe and Hungary"
+      "learning_objective": "Európa és Magyarország"
     }
   ],
   "rubrics": []

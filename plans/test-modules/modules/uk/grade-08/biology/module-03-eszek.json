@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-észek-1.0.0",
-    "name": "Észek - United Kingdom grade-08",
+    "name": "Senses - United Kingdom grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Észek for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "45-minute assessment on Senses for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:17.157011+00:00",
-    "updated_at": "2026-10-21T11:02:17.157022+00:00",
+    "created_at": "2026-10-24T17:53:45.846407+00:00",
+    "updated_at": "2026-10-24T17:53:45.846418+00:00",
     "tags": [
       "biology",
-      "észek",
+      "senses",
       "grade-08",
-      "uk"
+      "uk",
+      "en"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "en",
+    "language_name": "English",
+    "country": "uk",
     "license": "CC-BY-4.0",
-    "checksum": "a775956e4b43dfeabae5da6063a3380c9622354a79ae060cf1717b87c5652e08",
+    "checksum": "80b57d6ed5e7193402a672023df8490ba860d6423889d5ed7419ccf980a1543a",
     "curriculum": "uk-national",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Észek",
-    "description": "Test on Észek including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Senses",
+    "description": "Assessment on Senses including Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 1: Senses",
+      "text": "[biology] Senses - Question 1: Senses",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "senses",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Észek",
+      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Senses",
       "learning_objective": "Senses"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 2: Senses",
+      "text": "[biology] Senses - Question 2: Senses",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "senses",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Észek",
+      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Senses",
       "learning_objective": "Senses"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Észek - Kérdés 3: Senses",
+      "text": "[biology] Senses - Question 3: Senses",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Senses.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "senses",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Észek",
+      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Senses",
       "learning_objective": "Senses"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Észek - Kérdés 4: Senses",
+      "text": "[biology] Senses - Question 4: Senses",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "senses",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Észek",
+      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Senses",
       "learning_objective": "Senses"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Észek - Kérdés 5: Senses",
+      "text": "[biology] Senses - Question 5: Senses",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Észek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Senses.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "észek",
-        "grade-08"
+        "senses",
+        "grade-08",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Észek",
+      "curriculum_topic": "UK-GRADE-08-BIOLOGY-Senses",
       "learning_objective": "Senses"
     }
   ],

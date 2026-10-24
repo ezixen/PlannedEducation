@@ -8,11 +8,18 @@
     "author_id": "system",
     "created_at": "2026-10-19T00:00:00+00:00",
     "updated_at": "2026-10-19T00:00:00+00:00",
-    "tags": ["englisch", "grammatik", "schreiben", "klasse-7", "deutschland"],
+    "tags": [
+      "englisch",
+      "grammatik",
+      "schreiben",
+      "klasse-7",
+      "deutschland",
+      "de"
+    ],
     "subject": "englisch",
     "grade_level": "grade-07",
     "license": "CC-BY-4.0",
-    "checksum": "",
+    "checksum": "6c8c41d435435e0df6b95f30db44f41223f0cf952b49a73417d52ebce5baef52",
     "curriculum": "deutschland-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 50,
@@ -25,7 +32,10 @@
       "Subjekt-Verb-Kongruenz anwenden",
       "Richtige Zeichensetzung verwenden",
       "Kohärente Absätze schreiben"
-    ]
+    ],
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany"
   },
   "exam": {
     "title": "Klasse 7 Englisch - Grammatik und Schreiben",
@@ -51,12 +61,21 @@
       "id": "q-001",
       "question_type": "multiple_choice",
       "text": "Wählen Sie die korrekte Verbform: 'She ____ to school every day.'",
-      "options": ["go", "goes", "going", "went"],
+      "options": [
+        "go",
+        "goes",
+        "going",
+        "went"
+      ],
       "correct_answer": "goes",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "praesens", "dritte-person"],
+      "tags": [
+        "grammatik",
+        "praesens",
+        "dritte-person"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -66,12 +85,21 @@
       "id": "q-002",
       "question_type": "multiple_choice",
       "text": "Wählen Sie die korrekte Vergangenheit: 'Yesterday, I ____ to the park.'",
-      "options": ["go", "goes", "went", "going"],
+      "options": [
+        "go",
+        "goes",
+        "went",
+        "going"
+      ],
       "correct_answer": "went",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "praeteritum", "unregelmaessige-verben"],
+      "tags": [
+        "grammatik",
+        "praeteritum",
+        "unregelmaessige-verben"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -81,12 +109,21 @@
       "id": "q-003",
       "question_type": "multiple_choice",
       "text": "Wählen Sie die korrekte Form: 'If it ____ tomorrow, we will stay home.'",
-      "options": ["rain", "rains", "rained", "raining"],
+      "options": [
+        "rain",
+        "rains",
+        "rained",
+        "raining"
+      ],
       "correct_answer": "rains",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "konditional", "first-conditional"],
+      "tags": [
+        "grammatik",
+        "konditional",
+        "first-conditional"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -96,12 +133,20 @@
       "id": "q-004",
       "question_type": "multiple_choice",
       "text": "Welcher Satz verwendet den richtigen Artikel?",
-      "options": ["She is a teacher.", "She is an teacher.", "She is the teacher.", "She is teacher."],
+      "options": [
+        "She is a teacher.",
+        "She is an teacher.",
+        "She is the teacher.",
+        "She is teacher."
+      ],
       "correct_answer": "She is a teacher.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "artikel"],
+      "tags": [
+        "grammatik",
+        "artikel"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -111,12 +156,21 @@
       "id": "q-005",
       "question_type": "multiple_choice",
       "text": "Wählen Sie die richtige Präposition: 'We will meet ____ 3 o'clock.'",
-      "options": ["in", "on", "at", "by"],
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
       "correct_answer": "at",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "praepositionen", "zeit"],
+      "tags": [
+        "grammatik",
+        "praepositionen",
+        "zeit"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -126,12 +180,21 @@
       "id": "q-006",
       "question_type": "multiple_choice",
       "text": "Welcher Satz verwendet die korrekte Komparativform?",
-      "options": ["This book is more better than that one.", "This book is better than that one.", "This book is gooder than that one.", "This book is more good than that one."],
+      "options": [
+        "This book is more better than that one.",
+        "This book is better than that one.",
+        "This book is gooder than that one.",
+        "This book is more good than that one."
+      ],
       "correct_answer": "This book is better than that one.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "komparativ", "unregelmaessige-komparative"],
+      "tags": [
+        "grammatik",
+        "komparativ",
+        "unregelmaessige-komparative"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -141,12 +204,20 @@
       "id": "q-007",
       "question_type": "multiple_choice",
       "text": "Wählen Sie das richtige Relativpronomen: 'The book ____ I read was interesting.'",
-      "options": ["who", "which", "where", "when"],
+      "options": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
       "correct_answer": "which",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["grammatik", "relativpronomen"],
+      "tags": [
+        "grammatik",
+        "relativpronomen"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 3,
       "curriculum_topic": "DE-07-Englisch-Grammatik",
@@ -156,12 +227,21 @@
       "id": "q-008",
       "question_type": "multiple_choice",
       "text": "Welcher Satz verwendet die korrekte Zeichensetzung?",
-      "options": ["Lets go to the park.", "Let's go to the park.", "Lets' go to the park.", "Let,s go to the park."],
+      "options": [
+        "Lets go to the park.",
+        "Let's go to the park.",
+        "Lets' go to the park.",
+        "Let,s go to the park."
+      ],
       "correct_answer": "Let's go to the park.",
       "rubric": null,
       "points": 5,
       "variables": [],
-      "tags": ["zeichensetzung", "apostroph", "kontraktionen"],
+      "tags": [
+        "zeichensetzung",
+        "apostroph",
+        "kontraktionen"
+      ],
       "difficulty": "easy",
       "estimated_time_minutes": 2,
       "curriculum_topic": "DE-07-Englisch-Zeichensetzung",
@@ -176,7 +256,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["schreiben", "komposition", "zeiten"],
+      "tags": [
+        "schreiben",
+        "komposition",
+        "zeiten"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "DE-07-Englisch-Schreiben",
@@ -191,7 +275,11 @@
       "rubric_points": 10,
       "points": 10,
       "variables": [],
-      "tags": ["schreiben", "e-mail", "format"],
+      "tags": [
+        "schreiben",
+        "e-mail",
+        "format"
+      ],
       "difficulty": "medium",
       "estimated_time_minutes": 10,
       "curriculum_topic": "DE-07-Englisch-Schreiben",
@@ -207,19 +295,32 @@
           "id": "c-009-1",
           "description": "Schreibt 5-7 Sätze",
           "points": 3,
-          "keywords": ["sätze", "fünf", "sieben"]
+          "keywords": [
+            "sätze",
+            "fünf",
+            "sieben"
+          ]
         },
         {
           "id": "c-009-2",
           "description": "Verwendet mindestens 3 verschiedene Zeiten",
           "points": 4,
-          "keywords": ["zeiten", "präsens", "präteritum", "futur"]
+          "keywords": [
+            "zeiten",
+            "präsens",
+            "präteritum",
+            "futur"
+          ]
         },
         {
           "id": "c-009-3",
           "description": "Korrekte Grammatik und Vokabular",
           "points": 3,
-          "keywords": ["grammatik", "vokabular", "korrekt"]
+          "keywords": [
+            "grammatik",
+            "vokabular",
+            "korrekt"
+          ]
         }
       ],
       "total_points": 10
@@ -232,19 +333,33 @@
           "id": "c-010-1",
           "description": "Verwendet korrektes E-Mail-Format (Gruß, Text, Schluss)",
           "points": 3,
-          "keywords": ["gruß", "text", "schluss", "format"]
+          "keywords": [
+            "gruß",
+            "text",
+            "schluss",
+            "format"
+          ]
         },
         {
           "id": "c-010-2",
           "description": "Enthält Datum, Uhrzeit und Ort",
           "points": 4,
-          "keywords": ["datum", "uhrzeit", "ort", "details"]
+          "keywords": [
+            "datum",
+            "uhrzeit",
+            "ort",
+            "details"
+          ]
         },
         {
           "id": "c-010-3",
           "description": "Korrektes E-Mail-Format mit Gruß und Schluss",
           "points": 3,
-          "keywords": ["format", "e-mail", "struktur"]
+          "keywords": [
+            "format",
+            "e-mail",
+            "struktur"
+          ]
         }
       ],
       "total_points": 10

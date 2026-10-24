@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-06-math-százalék-számítás-1.0.0",
-    "name": "Százalék számítás - Denmark grade-06",
+    "name": "Percentage calculation - Denmark grade-06",
     "version": "1.0.0",
-    "description": "45-minute test on Százalék számítás for grade-06 students. Covers: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "description": "45-minutters prøve i Percentage calculation (grade-06). Emner: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:27.261360+00:00",
-    "updated_at": "2026-10-21T11:02:27.261379+00:00",
+    "created_at": "2026-10-24T17:53:49.398906+00:00",
+    "updated_at": "2026-10-24T17:53:49.398922+00:00",
     "tags": [
       "math",
-      "százalék-számítás",
+      "percentage-calculation",
       "grade-06",
-      "denmark"
+      "denmark",
+      "da"
     ],
     "subject": "math",
     "grade_level": "grade-06",
+    "language": "da",
+    "language_name": "Dansk",
+    "country": "denmark",
     "license": "CC-BY-4.0",
-    "checksum": "53f0bb316c72bef52b59a0ce8166d277ae5153d8eb4146fd2a4c06135a52cc38",
+    "checksum": "8e6bbbf9d9b2bdc80872471b53ea920649ed31815f1a08d050de8ad1afd58bac",
     "curriculum": "denmark-emu-faelles-maal",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-06 Math - Százalék számítás",
-    "description": "Test on Százalék számítás including General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
+    "title": "grade-06 Math - Percentage calculation",
+    "description": "Prøve i Percentage calculation: General fractions, Fraction operations, Percentage basics, Percentage calculation, Proportional ratio",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvar alle spørgsmål omhyggeligt. Du har 45 minutter.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 1: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørgsmål 1: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "DENMARK-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 2: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørgsmål 2: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "DENMARK-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Százalék számítás - Kérdés 3: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørgsmål 3: Percentage calculation",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "DENMARK-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Százalék számítás - Kérdés 4: Percentage calculation",
+      "text": "[math] Percentage calculation - Spørgsmål 4: Percentage calculation",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Százalék számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Percentage calculation.",
+      "rubric": "Bedømmelse: 6 point. Kriterier: korrekthed, fuldstændighed, begrundelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "százalék-számítás",
-        "grade-06"
+        "percentage-calculation",
+        "grade-06",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "DENMARK-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Százalék számítás - Question 5: Percentage calculation [rand:1-100]",
+      "text": "[math] Percentage calculation - Spørgsmål 5: Percentage calculation [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "százalék-számítás",
+        "percentage-calculation",
         "grade-06",
-        "decimal"
+        "decimal",
+        "da"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "DENMARK-GRADE-06-MATH-Százalék számítás",
+      "curriculum_topic": "DENMARK-GRADE-06-MATH-Percentage calculation",
       "learning_objective": "Percentage calculation"
     }
   ],

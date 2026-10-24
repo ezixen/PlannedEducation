@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-biology-ökológiai-rendszerek-1.0.0",
-    "name": "Ökológiai rendszerek - Germany grade-12",
+    "name": "Ökosysteme - Germany grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Ökológiai rendszerek for grade-12 students. Covers: Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "description": "45-minütige Prüfung zum Thema Ökosysteme (grade-12). Themen: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.769963+00:00",
-    "updated_at": "2026-10-21T11:02:16.769982+00:00",
+    "created_at": "2026-10-24T17:53:45.619201+00:00",
+    "updated_at": "2026-10-24T17:53:45.619207+00:00",
     "tags": [
       "biology",
-      "ökológiai-rendszerek",
+      "ökosysteme",
       "grade-12",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "biology",
     "grade_level": "grade-12",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "a3f989b7db46c9cd4e03acecf557706e9a119b23779edfbc33416920f991e40e",
+    "checksum": "f7631911f84b198a89bee7e10f1c70f1f21d6d6d489308adb105a1917d15b0a0",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 27,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Human physiology and immunology",
-      "Human body physiology",
-      "Immunology",
-      "Ecology",
-      "Ecological systems"
+      "Humanphysiologie und Immunologie",
+      "Physiologie des Menschen",
+      "Immunologie",
+      "Ökologie",
+      "Ökosysteme"
     ]
   },
   "exam": {
-    "title": "grade-12 Biology - Ökológiai rendszerek",
-    "description": "Test on Ökológiai rendszerek including Human physiology and immunology, Human body physiology, Immunology, Ecology, Ecological systems",
+    "title": "grade-12 Biology - Ökosysteme",
+    "description": "Prüfung zum Thema Ökosysteme: Humanphysiologie und Immunologie, Physiologie des Menschen, Immunologie, Ökologie, Ökosysteme",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 1: Ecological systems",
+      "text": "[biology] Ökosysteme - Frage 1: Ökosysteme",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ökosysteme",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökosysteme",
+      "learning_objective": "Ökosysteme"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 2: Ecological systems",
+      "text": "[biology] Ökosysteme - Frage 2: Ökosysteme",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ökosysteme",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökosysteme",
+      "learning_objective": "Ökosysteme"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 3: Ecological systems",
+      "text": "[biology] Ökosysteme - Frage 3: Ökosysteme",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökosysteme.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ökosysteme",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökosysteme",
+      "learning_objective": "Ökosysteme"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 4: Ecological systems",
+      "text": "[biology] Ökosysteme - Frage 4: Ökosysteme",
       "options": [
         "A",
         "B",
@@ -136,32 +143,34 @@
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ökosysteme",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökosysteme",
+      "learning_objective": "Ökosysteme"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Ökológiai rendszerek - Kérdés 5: Ecological systems",
+      "text": "[biology] Ökosysteme - Frage 5: Ökosysteme",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Ökológiai rendszerek témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Ökosysteme.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "ökológiai-rendszerek",
-        "grade-12"
+        "ökosysteme",
+        "grade-12",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökológiai rendszerek",
-      "learning_objective": "Ecological systems"
+      "curriculum_topic": "GERMANY-GRADE-12-BIOLOGY-Ökosysteme",
+      "learning_objective": "Ökosysteme"
     }
   ],
   "rubrics": []

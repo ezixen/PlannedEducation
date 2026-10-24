@@ -3,21 +3,25 @@
     "id": "grade-10-chemistry-szerves-kémia-alapok-1.0.0",
     "name": "Szerves kémia alapok - Hungary grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Szerves kémia alapok for grade-10 students. Covers: Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "45 perces felmérő: Szerves kémia alapok (grade-10). Témakörök: Szerkezeti kémia, Szerves kémia alapok, Kémiai reakciók, Savak és bazák, Kémiai egyenleg",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:35.521362+00:00",
-    "updated_at": "2026-10-21T11:02:35.521377+00:00",
+    "created_at": "2026-10-24T17:53:52.381752+00:00",
+    "updated_at": "2026-10-24T17:53:52.381758+00:00",
     "tags": [
       "chemistry",
       "szerves-kémia-alapok",
       "grade-10",
-      "hungary"
+      "hungary",
+      "hu"
     ],
     "subject": "chemistry",
     "grade_level": "grade-10",
+    "language": "hu",
+    "language_name": "Magyar",
+    "country": "hungary",
     "license": "CC-BY-4.0",
-    "checksum": "0db536e98dd402a46761464219df0e9148c2e6d1eb26b99a7daba31c6cdce160",
+    "checksum": "533c21efec578e0837351404988f0eb13187fb159116be85521cb2e7fdc7b44a",
     "curriculum": "hungary-nat",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Structural chemistry",
-      "Organic chemistry basics",
-      "Chemical reactions",
-      "Acids and bases",
-      "Chemical equilibrium"
+      "Szerkezeti kémia",
+      "Szerves kémia alapok",
+      "Kémiai reakciók",
+      "Savak és bazák",
+      "Kémiai egyenleg"
     ]
   },
   "exam": {
     "title": "grade-10 Chemistry - Szerves kémia alapok",
-    "description": "Test on Szerves kémia alapok including Structural chemistry, Organic chemistry basics, Chemical reactions, Acids and bases, Chemical equilibrium",
+    "description": "Felmérő a(z) Szerves kémia alapok témakörből (Szerkezeti kémia, Szerves kémia alapok, Kémiai reakciók, Savak és bazák, Kémiai egyenleg)",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Válaszolj minden kérdésre! Jelöld meg a helyes választ. Időkeret: 45 perc.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 1: Organic chemistry basics",
+      "text": "[chemistry] Szerves kémia alapok - Kérdés 1: Szerves kémia alapok",
       "options": [
         "A",
         "B",
@@ -70,17 +74,18 @@
       "tags": [
         "chemistry",
         "szerves-kémia-alapok",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "learning_objective": "Szerves kémia alapok"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 2: Organic chemistry basics",
+      "text": "[chemistry] Szerves kémia alapok - Kérdés 2: Szerves kémia alapok",
       "options": [
         "A",
         "B",
@@ -94,36 +99,38 @@
       "tags": [
         "chemistry",
         "szerves-kémia-alapok",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "learning_objective": "Szerves kémia alapok"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 3: Organic chemistry basics",
+      "text": "[chemistry] Szerves kémia alapok - Kérdés 3: Szerves kémia alapok",
       "options": null,
       "correct_answer": "Minta válasz a(z) Szerves kémia alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "rubric": "Pontszámítás: 6 pont. Értékelés: helyesség, teljesítettség, érvelés.",
       "points": 6,
       "variables": [],
       "tags": [
         "chemistry",
         "szerves-kémia-alapok",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "learning_objective": "Szerves kémia alapok"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[chemistry] Szerves kémia alapok - Question 4: Organic chemistry basics [rand:1-100]",
+      "text": "[chemistry] Szerves kémia alapok - Kérdés 4: Szerves kémia alapok [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -148,17 +155,18 @@
         "chemistry",
         "szerves-kémia-alapok",
         "grade-10",
-        "fraction"
+        "fraction",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "learning_objective": "Szerves kémia alapok"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[chemistry] Szerves kémia alapok - Kérdés 5: Organic chemistry basics",
+      "text": "[chemistry] Szerves kémia alapok - Kérdés 5: Szerves kémia alapok",
       "options": [
         "A",
         "B",
@@ -172,12 +180,13 @@
       "tags": [
         "chemistry",
         "szerves-kémia-alapok",
-        "grade-10"
+        "grade-10",
+        "hu"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
       "curriculum_topic": "HUNGARY-GRADE-10-CHEMISTRY-Szerves kémia alapok",
-      "learning_objective": "Organic chemistry basics"
+      "learning_objective": "Szerves kémia alapok"
     }
   ],
   "rubrics": []

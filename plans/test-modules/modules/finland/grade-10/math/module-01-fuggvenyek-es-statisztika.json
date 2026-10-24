@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-függvények-és-statisztika-1.0.0",
-    "name": "Függvények és statisztika - Finland grade-10",
+    "name": "Functions and statistics - Finland grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Függvények és statisztika for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45 minuutin koe aiheesta Functions and statistics (grade-10). Aiheet: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:24.596555+00:00",
-    "updated_at": "2026-10-21T11:02:24.596575+00:00",
+    "created_at": "2026-10-24T17:53:47.791321+00:00",
+    "updated_at": "2026-10-24T17:53:47.791328+00:00",
     "tags": [
       "math",
-      "függvények-és-statisztika",
+      "functions-and-statistics",
       "grade-10",
-      "finland"
+      "finland",
+      "fi"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "fi",
+    "language_name": "Suomi",
+    "country": "finland",
     "license": "CC-BY-4.0",
-    "checksum": "72cafc0e3812ec6c22bfa62f9438b0f2937a0c2dbee74edc3fe62e1ff2300163",
+    "checksum": "87c6be02531ef062403666c4f7c260c7506d437b94f6e37295418f5e016ea37f",
     "curriculum": "finland-national-core-curriculum-2016",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Függvények és statisztika",
-    "description": "Test on Függvények és statisztika including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Functions and statistics",
+    "description": "Koe aiheesta Functions and statistics: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Vastaa kaikkiin kysymyksiin huolellisesti. Aikaa on 45 minuuttia.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 1: Functions and statistics",
+      "text": "[math] Functions and statistics - Kysymys 1: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 2: Functions and statistics",
+      "text": "[math] Functions and statistics - Kysymys 2: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Függvények és statisztika - Kérdés 3: Functions and statistics",
+      "text": "[math] Functions and statistics - Kysymys 3: Functions and statistics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Függvények és statisztika - Kérdés 4: Functions and statistics",
+      "text": "[math] Functions and statistics - Kysymys 4: Functions and statistics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Függvények és statisztika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Mallivastaus aiheeseen Functions and statistics.",
+      "rubric": "Pisteytys: 6 pistettä. Arviointi: oikeellisuus, kattavuus, perustelut.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "függvények-és-statisztika",
-        "grade-10"
+        "functions-and-statistics",
+        "grade-10",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Függvények és statisztika - Question 5: Functions and statistics [rand:1-100]",
+      "text": "[math] Functions and statistics - Kysymys 5: Functions and statistics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "függvények-és-statisztika",
+        "functions-and-statistics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "fi"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "FINLAND-GRADE-10-MATH-Függvények és statisztika",
+      "curriculum_topic": "FINLAND-GRADE-10-MATH-Functions and statistics",
       "learning_objective": "Functions and statistics"
     }
   ],

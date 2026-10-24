@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-history-kora-újkor-1.0.0",
-    "name": "Kora újkor - Netherlands grade-07",
+    "name": "Early modern period - Netherlands grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Kora újkor for grade-07 students. Covers: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "description": "Toets van 45 minuten over Early modern period (grade-07). Onderwerpen: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.011886+00:00",
-    "updated_at": "2026-10-21T11:02:25.011904+00:00",
+    "created_at": "2026-10-24T17:53:48.030883+00:00",
+    "updated_at": "2026-10-24T17:53:48.030891+00:00",
     "tags": [
       "history",
-      "kora-újkor",
+      "early-modern-period",
       "grade-07",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "history",
     "grade_level": "grade-07",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "2e78626b3c46ee4bc92281892255ca8a74bdcf750071f47a9d1d400131e9655d",
+    "checksum": "36633f067329c7c51bb1c08c6e96a840909fbbe9ab9a4c8290d9ba06674304c6",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 History - Kora újkor",
-    "description": "Test on Kora újkor including Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
+    "title": "grade-07 History - Early modern period",
+    "description": "Toets over Early modern period: Middle Ages and early modern period, Middle Ages, Early modern period, History, Historical events",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 1: Early modern period",
+      "text": "[history] Early modern period - Vraag 1: Early modern period",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 2: Early modern period",
+      "text": "[history] Early modern period - Vraag 2: Early modern period",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[history] Kora újkor - Kérdés 3: Early modern period",
+      "text": "[history] Early modern period - Vraag 3: Early modern period",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Kora újkor témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Early modern period.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 4: Early modern period",
+      "text": "[history] Early modern period - Vraag 4: Early modern period",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[history] Kora újkor - Kérdés 5: Early modern period",
+      "text": "[history] Early modern period - Vraag 5: Early modern period",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "history",
-        "kora-újkor",
-        "grade-07"
+        "early-modern-period",
+        "grade-07",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Kora újkor",
+      "curriculum_topic": "NETHERLANDS-GRADE-07-HISTORY-Early modern period",
       "learning_objective": "Early modern period"
     }
   ],

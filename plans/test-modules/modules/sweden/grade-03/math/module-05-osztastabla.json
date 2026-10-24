@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-osztástábla-1.0.0",
-    "name": "Osztástábla - Sweden grade-03",
+    "name": "Division table - Sweden grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Osztástábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minuters prov i Division table (grade-03). Omfattar: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.565203+00:00",
-    "updated_at": "2026-10-21T11:02:25.565225+00:00",
+    "created_at": "2026-10-24T17:53:48.367351+00:00",
+    "updated_at": "2026-10-24T17:53:48.367359+00:00",
     "tags": [
       "math",
-      "osztástábla",
+      "division-table",
       "grade-03",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "734fe1be55dac262042e9859db9964564b0d0f8d9a7e29c7cbe3612a58226f18",
+    "checksum": "1d508d6924fd37ef1e208dd8d0aa50427c8f474e9eaf8cc00abba4e08a3db5ac",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Osztástábla",
-    "description": "Test on Osztástábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Division table",
+    "description": "Prov i Division table: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 1: Division table",
+      "text": "[math] Division table - Fråga 1: Division table",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 2: Division table",
+      "text": "[math] Division table - Fråga 2: Division table",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Osztástábla - Kérdés 3: Division table",
+      "text": "[math] Division table - Fråga 3: Division table",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Osztástábla - Kérdés 4: Division table",
+      "text": "[math] Division table - Fråga 4: Division table",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Osztástábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Division table.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "osztástábla",
-        "grade-03"
+        "division-table",
+        "grade-03",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Osztástábla - Question 5: Division table [rand:1-20]",
+      "text": "[math] Division table - Fråga 5: Division table [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "osztástábla",
+        "division-table",
         "grade-03",
-        "integer"
+        "integer",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Osztástábla",
+      "curriculum_topic": "SWEDEN-GRADE-03-MATH-Division table",
       "learning_objective": "Division table"
     }
   ],

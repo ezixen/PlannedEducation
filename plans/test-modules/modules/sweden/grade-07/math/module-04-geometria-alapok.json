@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-math-geometria-alapok-1.0.0",
-    "name": "Geometria alapok - Sweden grade-07",
+    "name": "Geometry basics - Sweden grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Geometria alapok for grade-07 students. Covers: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "description": "45-minuters prov i Geometry basics (grade-07). Omfattar: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.737210+00:00",
-    "updated_at": "2026-10-21T11:02:25.737221+00:00",
+    "created_at": "2026-10-24T17:53:48.461120+00:00",
+    "updated_at": "2026-10-24T17:53:48.461128+00:00",
     "tags": [
       "math",
-      "geometria-alapok",
+      "geometry-basics",
       "grade-07",
-      "sweden"
+      "sweden",
+      "sv"
     ],
     "subject": "math",
     "grade_level": "grade-07",
+    "language": "sv",
+    "language_name": "Svenska",
+    "country": "sweden",
     "license": "CC-BY-4.0",
-    "checksum": "5d936690ad49366d56369a7015753177d8f051db65d1f330e78a11c3676b34f4",
+    "checksum": "d0e81fd757b3fb80f7ef2469c8bfb058591ae5c4e695acc33890fecacb293996",
     "curriculum": "sweden-skolverket-laroplan",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 Math - Geometria alapok",
-    "description": "Test on Geometria alapok including Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
+    "title": "grade-07 Math - Geometry basics",
+    "description": "Prov i Geometry basics: Rational numbers, Algebraic expressions, Equations, Geometry basics, Statistics basics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Besvara alla frågor noggrant. Du har 45 minuter på dig.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 1: Geometry basics",
+      "text": "[math] Geometry basics - Fråga 1: Geometry basics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 2: Geometry basics",
+      "text": "[math] Geometry basics - Fråga 2: Geometry basics",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Geometria alapok - Kérdés 3: Geometry basics",
+      "text": "[math] Geometry basics - Fråga 3: Geometry basics",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Geometria alapok - Kérdés 4: Geometry basics",
+      "text": "[math] Geometry basics - Fråga 4: Geometry basics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Geometria alapok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Exempelsvar för Geometry basics.",
+      "rubric": "Bedömning: 6 poäng. Kriterier: korrekthet, fullständighet, resonemang.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "geometria-alapok",
-        "grade-07"
+        "geometry-basics",
+        "grade-07",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Geometria alapok - Question 5: Geometry basics [rand:1-100]",
+      "text": "[math] Geometry basics - Fråga 5: Geometry basics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "geometria-alapok",
+        "geometry-basics",
         "grade-07",
-        "decimal"
+        "decimal",
+        "sv"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometria alapok",
+      "curriculum_topic": "SWEDEN-GRADE-07-MATH-Geometry basics",
       "learning_objective": "Geometry basics"
     }
   ],

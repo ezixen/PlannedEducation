@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-07-english-angol-szókincs-1.0.0",
-    "name": "Angol szókincs - Germany grade-07",
+    "name": "English vocabulary - Germany grade-07",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szókincs for grade-07 students. Covers: English language A2, English grammar, English vocabulary, English reading, English writing",
+    "description": "45-minütige Prüfung zum Thema English vocabulary (grade-07). Themen: English language A2, English grammar, English vocabulary, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.306853+00:00",
-    "updated_at": "2026-10-21T11:02:16.306865+00:00",
+    "created_at": "2026-10-24T17:53:45.347849+00:00",
+    "updated_at": "2026-10-24T17:53:45.347854+00:00",
     "tags": [
       "english",
-      "angol-szókincs",
+      "english-vocabulary",
       "grade-07",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "english",
     "grade_level": "grade-07",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "1dc74fc202dd7d7285f9a31ae5b479f1c0a5d68238974fa823acf1fe0f46366b",
+    "checksum": "648e6dde61d2df96237c61673e1ecbb1b0d57d0e314af3c8921ceb5382cf46f5",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-07 English - Angol szókincs",
-    "description": "Test on Angol szókincs including English language A2, English grammar, English vocabulary, English reading, English writing",
+    "title": "grade-07 English - English vocabulary",
+    "description": "Prüfung zum Thema English vocabulary: English language A2, English grammar, English vocabulary, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 1: English vocabulary",
+      "text": "[english] English vocabulary - Frage 1: English vocabulary",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 2: English vocabulary",
+      "text": "[english] English vocabulary - Frage 2: English vocabulary",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szókincs - Kérdés 3: English vocabulary",
+      "text": "[english] English vocabulary - Frage 3: English vocabulary",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szókincs témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema English vocabulary.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 4: English vocabulary",
+      "text": "[english] English vocabulary - Frage 4: English vocabulary",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szókincs - Kérdés 5: English vocabulary",
+      "text": "[english] English vocabulary - Frage 5: English vocabulary",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szókincs",
-        "grade-07"
+        "english-vocabulary",
+        "grade-07",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-Angol szókincs",
+      "curriculum_topic": "GERMANY-GRADE-07-ENGLISH-English vocabulary",
       "learning_objective": "English vocabulary"
     }
   ],

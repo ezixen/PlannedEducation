@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-math-valós-számok-1.0.0",
-    "name": "Valós számok - Netherlands grade-08",
+    "name": "Real numbers - Netherlands grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Valós számok for grade-08 students. Covers: Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "description": "Toets van 45 minuten over Real numbers (grade-08). Onderwerpen: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:25.132750+00:00",
-    "updated_at": "2026-10-21T11:02:25.132771+00:00",
+    "created_at": "2026-10-24T17:53:48.143486+00:00",
+    "updated_at": "2026-10-24T17:53:48.143494+00:00",
     "tags": [
       "math",
-      "valós-számok",
+      "real-numbers",
       "grade-08",
-      "netherlands"
+      "netherlands",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "netherlands",
     "license": "CC-BY-4.0",
-    "checksum": "ddc3b313fe6db2bbed343f87d2469ec3bd5790b90f1618274b51743f7fbaf1c3",
+    "checksum": "c8f778b94356aa1365e484f58ace1b497e79f4f32a2cca8f161dee0330ea6329",
     "curriculum": "netherlands-slo-kerndoelen",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Math - Valós számok",
-    "description": "Test on Valós számok including Real numbers, Functions, Linear equations, Geometry, Statistics",
+    "title": "grade-08 Math - Real numbers",
+    "description": "Toets over Real numbers: Real numbers, Functions, Linear equations, Geometry, Statistics",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 1: Real numbers",
+      "text": "[math] Real numbers - Vraag 1: Real numbers",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 2: Real numbers",
+      "text": "[math] Real numbers - Vraag 2: Real numbers",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valós számok - Kérdés 3: Real numbers",
+      "text": "[math] Real numbers - Vraag 3: Real numbers",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valós számok - Kérdés 4: Real numbers",
+      "text": "[math] Real numbers - Vraag 4: Real numbers",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valós számok témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Real numbers.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valós-számok",
-        "grade-08"
+        "real-numbers",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valós számok - Question 5: Real numbers [rand:1-1000]",
+      "text": "[math] Real numbers - Vraag 5: Real numbers [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "valós-számok",
+        "real-numbers",
         "grade-08",
-        "decimal"
+        "decimal",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Valós számok",
+      "curriculum_topic": "NETHERLANDS-GRADE-08-MATH-Real numbers",
       "learning_objective": "Real numbers"
     }
   ],

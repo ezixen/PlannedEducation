@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-math-statisztikai-elemzés-1.0.0",
-    "name": "Statisztikai elemzés - Norway grade-12",
+    "name": "Statistical analysis - Norway grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Statisztikai elemzés for grade-12 students. Covers: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "description": "45-minutters prøve i Statistical analysis (grade-12). Emner: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.921872+00:00",
-    "updated_at": "2026-10-21T11:02:26.921886+00:00",
+    "created_at": "2026-10-24T17:53:49.257301+00:00",
+    "updated_at": "2026-10-24T17:53:49.257307+00:00",
     "tags": [
       "math",
-      "statisztikai-elemzés",
+      "statistical-analysis",
       "grade-12",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-12",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "84e0f3252569628d1f15b25afbab9b424a146e40998d9ad92ebb4afc55eaccb9",
+    "checksum": "eb472071e4fb7e09444b78c5872bbca3754ee1f75fc3cb340b88aa374a9f72d2",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Math - Statisztikai elemzés",
-    "description": "Test on Statisztikai elemzés including Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
+    "title": "grade-12 Math - Statistical analysis",
+    "description": "Prøve i Statistical analysis: Differentiation and integration, Probability calculation, Statistical analysis, Geometry, Mathematical analysis",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 1: Statistical analysis",
+      "text": "[math] Statistical analysis - Spørsmål 1: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 2: Statistical analysis",
+      "text": "[math] Statistical analysis - Spørsmål 2: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Statisztikai elemzés - Kérdés 3: Statistical analysis",
+      "text": "[math] Statistical analysis - Spørsmål 3: Statistical analysis",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Statisztikai elemzés - Kérdés 4: Statistical analysis",
+      "text": "[math] Statistical analysis - Spørsmål 4: Statistical analysis",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Statisztikai elemzés témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Statistical analysis.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "statisztikai-elemzés",
-        "grade-12"
+        "statistical-analysis",
+        "grade-12",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Statisztikai elemzés - Question 5: Statistical analysis [rand:1-1000]",
+      "text": "[math] Statistical analysis - Spørsmål 5: Statistical analysis [rand:1-1000]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "statisztikai-elemzés",
+        "statistical-analysis",
         "grade-12",
-        "fraction"
+        "fraction",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statisztikai elemzés",
+      "curriculum_topic": "NORWAY-GRADE-12-MATH-Statistical analysis",
       "learning_objective": "Statistical analysis"
     }
   ],

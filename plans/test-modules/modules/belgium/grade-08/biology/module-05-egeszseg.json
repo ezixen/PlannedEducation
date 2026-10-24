@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-biology-egészség-1.0.0",
-    "name": "Egészség - Belgium grade-08",
+    "name": "Health - Belgium grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Egészség for grade-08 students. Covers: Human body and health, Human body structure, Senses, Perception, Health",
+    "description": "Toets van 45 minuten over Health (grade-08). Onderwerpen: Human body and health, Human body structure, Senses, Perception, Health",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.727423+00:00",
-    "updated_at": "2026-10-21T11:02:29.727452+00:00",
+    "created_at": "2026-10-24T17:53:50.859233+00:00",
+    "updated_at": "2026-10-24T17:53:50.859244+00:00",
     "tags": [
       "biology",
-      "egészség",
+      "health",
       "grade-08",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "biology",
     "grade_level": "grade-08",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "1d673f4a664e6914e2dad78d2d620b572fadd5f2827a2a10f0627a96c14a6311",
+    "checksum": "55d771aa6e22b7e560f658db8601da80f573bc74e4637954c943b260b298df03",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 27,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-08 Biology - Egészség",
-    "description": "Test on Egészség including Human body and health, Human body structure, Senses, Perception, Health",
+    "title": "grade-08 Biology - Health",
+    "description": "Toets over Health: Human body and health, Human body structure, Senses, Perception, Health",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 1: Health",
+      "text": "[biology] Health - Vraag 1: Health",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 2: Health",
+      "text": "[biology] Health - Vraag 2: Health",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 3: Health",
+      "text": "[biology] Health - Vraag 3: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Health.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[biology] Egészség - Kérdés 4: Health",
+      "text": "[biology] Health - Vraag 4: Health",
       "options": [
         "A",
         "B",
@@ -136,31 +143,33 @@
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     },
     {
       "id": "q-005",
       "question_type": "essay",
-      "text": "[biology] Egészség - Kérdés 5: Health",
+      "text": "[biology] Health - Vraag 5: Health",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Egészség témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Health.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "biology",
-        "egészség",
-        "grade-08"
+        "health",
+        "grade-08",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Egészség",
+      "curriculum_topic": "BELGIUM-GRADE-08-BIOLOGY-Health",
       "learning_objective": "Health"
     }
   ],

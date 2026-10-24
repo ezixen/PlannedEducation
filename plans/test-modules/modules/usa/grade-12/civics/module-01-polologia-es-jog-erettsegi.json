@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-12-civics-polológia-és-jog-erettségi-1.0.0",
-    "name": "Polológia és jog-erettségi - USA grade-12",
+    "name": "Politology and law-maturity - USA grade-12",
     "version": "1.0.0",
-    "description": "45-minute test on Polológia és jog-erettségi for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "description": "45-minute assessment on Politology and law-maturity for grade-12 students. Covers: Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:18.287176+00:00",
-    "updated_at": "2026-10-21T11:02:18.287195+00:00",
+    "created_at": "2026-10-24T17:53:46.499518+00:00",
+    "updated_at": "2026-10-24T17:53:46.499524+00:00",
     "tags": [
       "civics",
-      "polológia-és-jog-erettségi",
+      "politology-and-law-maturity",
       "grade-12",
-      "usa"
+      "usa",
+      "en"
     ],
     "subject": "civics",
     "grade_level": "grade-12",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
     "license": "CC-BY-4.0",
-    "checksum": "5d6e0a48a773626cff721d8a1bbfcb3c180d9ab1c3d2be91f8a8e8e40329247f",
+    "checksum": "d7535ca6eba3429ddfbc2cc7fac57fca62d86fc762edc60f24879e83b1e53217",
     "curriculum": "usa-common-core",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-12 Civics - Polológia és jog-erettségi",
-    "description": "Test on Polológia és jog-erettségi including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
+    "title": "grade-12 Civics - Politology and law-maturity",
+    "description": "Assessment on Politology and law-maturity including Politology and law-maturity, Politology, Law-maturity, Civil law, State structure",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 1: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Question 1: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "USA-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 2: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Question 2: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "USA-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 3: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Question 3: Politology and law-maturity",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Polológia és jog-erettségi témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Politology and law-maturity.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "USA-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 4: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Question 4: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "USA-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[civics] Polológia és jog-erettségi - Kérdés 5: Politology and law-maturity",
+      "text": "[civics] Politology and law-maturity - Question 5: Politology and law-maturity",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "civics",
-        "polológia-és-jog-erettségi",
-        "grade-12"
+        "politology-and-law-maturity",
+        "grade-12",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "USA-GRADE-12-CIVICS-Polológia és jog-erettségi",
+      "curriculum_topic": "USA-GRADE-12-CIVICS-Politology and law-maturity",
       "learning_objective": "Politology and law-maturity"
     }
   ],

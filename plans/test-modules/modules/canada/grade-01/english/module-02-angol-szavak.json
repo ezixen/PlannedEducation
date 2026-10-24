@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-szavak-1.0.0",
-    "name": "Angol szavak - Canada grade-01",
+    "name": "English words - Canada grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szavak for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minute assessment on English words for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.430190+00:00",
-    "updated_at": "2026-10-21T11:02:15.430202+00:00",
+    "created_at": "2026-10-24T17:53:44.744012+00:00",
+    "updated_at": "2026-10-24T17:53:44.744019+00:00",
     "tags": [
       "english",
-      "angol-szavak",
+      "english-words",
       "grade-01",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "3904484cb42130e8ead3bd328b614b8b7db88908b931c945521cd5845e857a42",
+    "checksum": "19060656da6140f658d7f86023f479ac3ec271ec1f7a21327755a2ebb214752a",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol szavak",
-    "description": "Test on Angol szavak including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English words",
+    "description": "Assessment on English words including Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 1: English words",
+      "text": "[english] English words - Question 1: English words",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 2: English words",
+      "text": "[english] English words - Question 2: English words",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szavak - Kérdés 3: English words",
+      "text": "[english] English words - Question 3: English words",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szavak témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for English words.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 4: English words",
+      "text": "[english] English words - Question 4: English words",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 5: English words",
+      "text": "[english] English words - Question 5: English words",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "CANADA-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     }
   ],

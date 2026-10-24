@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-physics-hullamok-és-optika-1.0.0",
-    "name": "Hullamok és optika - Canada grade-10",
+    "name": "Waves and optics - Canada grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Hullamok és optika for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "description": "45-minute assessment on Waves and optics for grade-10 students. Covers: Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:15.935461+00:00",
-    "updated_at": "2026-10-21T11:02:15.935475+00:00",
+    "created_at": "2026-10-24T17:53:45.063300+00:00",
+    "updated_at": "2026-10-24T17:53:45.063305+00:00",
     "tags": [
       "physics",
-      "hullamok-és-optika",
+      "waves-and-optics",
       "grade-10",
-      "canada"
+      "canada",
+      "en"
     ],
     "subject": "physics",
     "grade_level": "grade-10",
+    "language": "en",
+    "language_name": "English",
+    "country": "canada",
     "license": "CC-BY-4.0",
-    "checksum": "8b12cc0b66cad1de405e5560c1d3dabac0da4d6959551c36130021bab7a3ee7d",
+    "checksum": "931f27967a1a1232ca2dbc84d8fc11b506317ed08c10f90ea21e0d3809611d68",
     "curriculum": "canada-ontario",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-10 Physics - Hullamok és optika",
-    "description": "Test on Hullamok és optika including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
+    "title": "grade-10 Physics - Waves and optics",
+    "description": "Assessment on Waves and optics including Mechanics, Waves and optics, Electromagnetism, Modern physics, Physics preparation",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Answer all questions. Select or write the best answer. You have 45 minutes.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 1: Waves and optics",
+      "text": "[physics] Waves and optics - Question 1: Waves and optics",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 2: Waves and optics",
+      "text": "[physics] Waves and optics - Question 2: Waves and optics",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[physics] Hullamok és optika - Kérdés 3: Waves and optics",
+      "text": "[physics] Waves and optics - Question 3: Waves and optics",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Hullamok és optika témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Sample answer for Waves and optics.",
+      "rubric": "Scoring: 6 points. Evaluation criteria: accuracy, completeness, reasoning.",
       "points": 6,
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-004",
       "question_type": "dynamic_math",
-      "text": "[physics] Hullamok és optika - Question 4: Waves and optics [rand:1-100]",
+      "text": "[physics] Waves and optics - Question 4: Waves and optics [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -146,19 +153,20 @@
       ],
       "tags": [
         "physics",
-        "hullamok-és-optika",
+        "waves-and-optics",
         "grade-10",
-        "fraction"
+        "fraction",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[physics] Hullamok és optika - Kérdés 5: Waves and optics",
+      "text": "[physics] Waves and optics - Question 5: Waves and optics",
       "options": [
         "A",
         "B",
@@ -171,12 +179,13 @@
       "variables": [],
       "tags": [
         "physics",
-        "hullamok-és-optika",
-        "grade-10"
+        "waves-and-optics",
+        "grade-10",
+        "en"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Hullamok és optika",
+      "curriculum_topic": "CANADA-GRADE-10-PHYSICS-Waves and optics",
       "learning_objective": "Waves and optics"
     }
   ],

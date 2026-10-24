@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-szorzótábla-1.0.0",
-    "name": "Szorzótábla - Belgium grade-03",
+    "name": "Multiplication table - Belgium grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzótábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "Toets van 45 minuten over Multiplication table (grade-03). Onderwerpen: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:29.523994+00:00",
-    "updated_at": "2026-10-21T11:02:29.524007+00:00",
+    "created_at": "2026-10-24T17:53:50.710046+00:00",
+    "updated_at": "2026-10-24T17:53:50.710053+00:00",
     "tags": [
       "math",
-      "szorzótábla",
+      "multiplication-table",
       "grade-03",
-      "belgium"
+      "belgium",
+      "nl"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "nl",
+    "language_name": "Nederlands",
+    "country": "belgium",
     "license": "CC-BY-4.0",
-    "checksum": "874f867fbddb30fc979c5d96fddab1864c86babd1ea455a6a63bff0515ad2a91",
+    "checksum": "11a46f624b7c014e1e3eb40a6c0ded147ff7ba61a1fa4547c8441d880c5e41f7",
     "curriculum": "belgium-flemish-french-curricula",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Szorzótábla",
-    "description": "Test on Szorzótábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Multiplication table",
+    "description": "Toets over Multiplication table: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantwoord alle vragen zorgvuldig. Je hebt 45 minuten de tijd.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 1: Multiplication table",
+      "text": "[math] Multiplication table - Vraag 1: Multiplication table",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 2: Multiplication table",
+      "text": "[math] Multiplication table - Vraag 2: Multiplication table",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 3: Multiplication table",
+      "text": "[math] Multiplication table - Vraag 3: Multiplication table",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzótábla - Kérdés 4: Multiplication table",
+      "text": "[math] Multiplication table - Vraag 4: Multiplication table",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzótábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Voorbeeldantwoord voor Multiplication table.",
+      "rubric": "Beoordeling: 6 punten. Criteria: juistheid, volledigheid, argumentatie.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzótábla - Question 5: Multiplication table [rand:1-20]",
+      "text": "[math] Multiplication table - Vraag 5: Multiplication table [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzótábla",
+        "multiplication-table",
         "grade-03",
-        "integer"
+        "integer",
+        "nl"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "BELGIUM-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     }
   ],

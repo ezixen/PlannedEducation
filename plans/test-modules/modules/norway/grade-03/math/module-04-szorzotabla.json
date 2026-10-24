@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-03-math-szorzótábla-1.0.0",
-    "name": "Szorzótábla - Norway grade-03",
+    "name": "Multiplication table - Norway grade-03",
     "version": "1.0.0",
-    "description": "45-minute test on Szorzótábla for grade-03 students. Covers: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "description": "45-minutters prøve i Multiplication table (grade-03). Emner: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.246837+00:00",
-    "updated_at": "2026-10-21T11:02:26.246851+00:00",
+    "created_at": "2026-10-24T17:53:48.838973+00:00",
+    "updated_at": "2026-10-24T17:53:48.838981+00:00",
     "tags": [
       "math",
-      "szorzótábla",
+      "multiplication-table",
       "grade-03",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "math",
     "grade_level": "grade-03",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "5cc7a84e760adea765a8ce5642a1eebf7c021b7ba736f87e5f25a596167864be",
+    "checksum": "bf4011fba73ed5adc83b32b079352d718a6c8d8e4f3c3542f924f358c5e50029",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-03 Math - Szorzótábla",
-    "description": "Test on Szorzótábla including Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
+    "title": "grade-03 Math - Multiplication table",
+    "description": "Prøve i Multiplication table: Counting to 1000, Addition to 1000, Subtraction to 1000, Multiplication table, Division table",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 1: Multiplication table",
+      "text": "[math] Multiplication table - Spørsmål 1: Multiplication table",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "NORWAY-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 2: Multiplication table",
+      "text": "[math] Multiplication table - Spørsmål 2: Multiplication table",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "NORWAY-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Szorzótábla - Kérdés 3: Multiplication table",
+      "text": "[math] Multiplication table - Spørsmål 3: Multiplication table",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "NORWAY-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Szorzótábla - Kérdés 4: Multiplication table",
+      "text": "[math] Multiplication table - Spørsmål 4: Multiplication table",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Szorzótábla témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for Multiplication table.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "szorzótábla",
-        "grade-03"
+        "multiplication-table",
+        "grade-03",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "NORWAY-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Szorzótábla - Question 5: Multiplication table [rand:1-20]",
+      "text": "[math] Multiplication table - Spørsmål 5: Multiplication table [rand:1-20]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,13 +178,14 @@
       ],
       "tags": [
         "math",
-        "szorzótábla",
+        "multiplication-table",
         "grade-03",
-        "integer"
+        "integer",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-03-MATH-Szorzótábla",
+      "curriculum_topic": "NORWAY-GRADE-03-MATH-Multiplication table",
       "learning_objective": "Multiplication table"
     }
   ],

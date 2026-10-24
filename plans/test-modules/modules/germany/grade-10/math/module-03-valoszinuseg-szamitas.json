@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-10-math-valószínűség-számítás-1.0.0",
-    "name": "Valószínűség-számítás - Germany grade-10",
+    "name": "Wahrscheinlichkeitsberechnung - Germany grade-10",
     "version": "1.0.0",
-    "description": "45-minute test on Valószínűség-számítás for grade-10 students. Covers: Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "description": "45-minütige Prüfung zum Thema Wahrscheinlichkeitsberechnung (grade-10). Themen: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.627164+00:00",
-    "updated_at": "2026-10-21T11:02:16.627177+00:00",
+    "created_at": "2026-10-24T17:53:45.557532+00:00",
+    "updated_at": "2026-10-24T17:53:45.557542+00:00",
     "tags": [
       "math",
-      "valószínűség-számítás",
+      "wahrscheinlichkeitsberechnung",
       "grade-10",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "math",
     "grade_level": "grade-10",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "69871a9d61e2a5d6e40b1f5bf870162600dddba2f5cee33ef87499a41ee61a62",
+    "checksum": "830fc69359d2e0221b839a2c6b9f01c669e61cecc4278f7775bdd0d0234830bf",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Functions and statistics",
-      "Differentiation and integration",
-      "Probability calculation",
-      "Statistical analysis",
-      "Geometry"
+      "Funktionen und Statistik",
+      "Analysis",
+      "Wahrscheinlichkeitsberechnung",
+      "Statistische Analyse",
+      "Geometrie"
     ]
   },
   "exam": {
-    "title": "grade-10 Math - Valószínűség-számítás",
-    "description": "Test on Valószínűség-számítás including Functions and statistics, Differentiation and integration, Probability calculation, Statistical analysis, Geometry",
+    "title": "grade-10 Math - Wahrscheinlichkeitsberechnung",
+    "description": "Prüfung zum Thema Wahrscheinlichkeitsberechnung: Funktionen und Statistik, Analysis, Wahrscheinlichkeitsberechnung, Statistische Analyse, Geometrie",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 1: Probability calculation",
+      "text": "[math] Wahrscheinlichkeitsberechnung - Frage 1: Wahrscheinlichkeitsberechnung",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-10"
+        "wahrscheinlichkeitsberechnung",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Valószínűség-számítás",
-      "learning_objective": "Probability calculation"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Wahrscheinlichkeitsberechnung",
+      "learning_objective": "Wahrscheinlichkeitsberechnung"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 2: Probability calculation",
+      "text": "[math] Wahrscheinlichkeitsberechnung - Frage 2: Wahrscheinlichkeitsberechnung",
       "options": [
         "A",
         "B",
@@ -93,18 +98,19 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-10"
+        "wahrscheinlichkeitsberechnung",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Valószínűség-számítás",
-      "learning_objective": "Probability calculation"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Wahrscheinlichkeitsberechnung",
+      "learning_objective": "Wahrscheinlichkeitsberechnung"
     },
     {
       "id": "q-003",
       "question_type": "multiple_choice",
-      "text": "[math] Valószínűség-számítás - Kérdés 3: Probability calculation",
+      "text": "[math] Wahrscheinlichkeitsberechnung - Frage 3: Wahrscheinlichkeitsberechnung",
       "options": [
         "A",
         "B",
@@ -117,37 +123,39 @@
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-10"
+        "wahrscheinlichkeitsberechnung",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Valószínűség-számítás",
-      "learning_objective": "Probability calculation"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Wahrscheinlichkeitsberechnung",
+      "learning_objective": "Wahrscheinlichkeitsberechnung"
     },
     {
       "id": "q-004",
       "question_type": "essay",
-      "text": "[math] Valószínűség-számítás - Kérdés 4: Probability calculation",
+      "text": "[math] Wahrscheinlichkeitsberechnung - Frage 4: Wahrscheinlichkeitsberechnung",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Valószínűség-számítás témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Wahrscheinlichkeitsberechnung.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "math",
-        "valószínűség-számítás",
-        "grade-10"
+        "wahrscheinlichkeitsberechnung",
+        "grade-10",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Valószínűség-számítás",
-      "learning_objective": "Probability calculation"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Wahrscheinlichkeitsberechnung",
+      "learning_objective": "Wahrscheinlichkeitsberechnung"
     },
     {
       "id": "q-005",
       "question_type": "dynamic_math",
-      "text": "[math] Valószínűség-számítás - Question 5: Probability calculation [rand:1-100]",
+      "text": "[math] Wahrscheinlichkeitsberechnung - Frage 5: Wahrscheinlichkeitsberechnung [rand:1-100]",
       "options": null,
       "correct_answer": "calculated",
       "rubric": null,
@@ -170,14 +178,15 @@
       ],
       "tags": [
         "math",
-        "valószínűség-számítás",
+        "wahrscheinlichkeitsberechnung",
         "grade-10",
-        "fraction"
+        "fraction",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-10-MATH-Valószínűség-számítás",
-      "learning_objective": "Probability calculation"
+      "curriculum_topic": "GERMANY-GRADE-10-MATH-Wahrscheinlichkeitsberechnung",
+      "learning_objective": "Wahrscheinlichkeitsberechnung"
     }
   ],
   "rubrics": []

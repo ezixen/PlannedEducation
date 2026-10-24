@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-08-geography-földrajz-1.0.0",
-    "name": "Földrajz - Germany grade-08",
+    "name": "Geographie - Germany grade-08",
     "version": "1.0.0",
-    "description": "45-minute test on Földrajz for grade-08 students. Covers: Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "description": "45-minütige Prüfung zum Thema Geographie (grade-08). Themen: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:16.433013+00:00",
-    "updated_at": "2026-10-21T11:02:16.433023+00:00",
+    "created_at": "2026-10-24T17:53:45.435639+00:00",
+    "updated_at": "2026-10-24T17:53:45.435646+00:00",
     "tags": [
       "geography",
-      "földrajz",
+      "geographie",
       "grade-08",
-      "germany"
+      "germany",
+      "de"
     ],
     "subject": "geography",
     "grade_level": "grade-08",
+    "language": "de",
+    "language_name": "Deutsch",
+    "country": "germany",
     "license": "CC-BY-4.0",
-    "checksum": "d7c1afb04f8a343993b71997fa897c15f8db5c76b7f04f1b5af88985cd2c3a9d",
+    "checksum": "254083be6caeccab7665e4adc12e8354b853a8b4f913498c16ae70bc07d4c673",
     "curriculum": "germany-bildungsplaene",
     "duration_minutes": 45,
     "total_points": 26,
@@ -26,18 +30,18 @@
     "difficulty": "easy",
     "prerequisites": [],
     "learning_objectives": [
-      "Europe and Hungary",
-      "Europe",
-      "Hungary",
-      "Geography",
-      "Geographic knowledge"
+      "Europa und Mitteleuropa",
+      "Europa",
+      "Mitteleuropa",
+      "Geographie",
+      "Geographisches Wissen"
     ]
   },
   "exam": {
-    "title": "grade-08 Geography - Földrajz",
-    "description": "Test on Földrajz including Europe and Hungary, Europe, Hungary, Geography, Geographic knowledge",
+    "title": "grade-08 Geography - Geographie",
+    "description": "Prüfung zum Thema Geographie: Europa und Mitteleuropa, Europa, Mitteleuropa, Geographie, Geographisches Wissen",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Beantworten Sie alle Fragen sorgfältig. Sie haben 45 Minuten Zeit.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 1: Geography",
+      "text": "[geography] Geographie - Frage 1: Geographie",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geographie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Geographie",
+      "learning_objective": "Geographie"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 2: Geography",
+      "text": "[geography] Geographie - Frage 2: Geographie",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geographie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Geographie",
+      "learning_objective": "Geographie"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[geography] Földrajz - Kérdés 3: Geography",
+      "text": "[geography] Geographie - Frage 3: Geographie",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Földrajz témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Musterantwort zum Thema Geographie.",
+      "rubric": "Bewertung: 6 Punkte. Kriterien: Richtigkeit, Vollständigkeit, Begründung.",
       "points": 6,
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geographie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Geographie",
+      "learning_objective": "Geographie"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 4: Geography",
+      "text": "[geography] Geographie - Frage 4: Geographie",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geographie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Geographie",
+      "learning_objective": "Geographie"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[geography] Földrajz - Kérdés 5: Geography",
+      "text": "[geography] Geographie - Frage 5: Geographie",
       "options": [
         "A",
         "B",
@@ -160,13 +168,14 @@
       "variables": [],
       "tags": [
         "geography",
-        "földrajz",
-        "grade-08"
+        "geographie",
+        "grade-08",
+        "de"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Földrajz",
-      "learning_objective": "Geography"
+      "curriculum_topic": "GERMANY-GRADE-08-GEOGRAPHY-Geographie",
+      "learning_objective": "Geographie"
     }
   ],
   "rubrics": []

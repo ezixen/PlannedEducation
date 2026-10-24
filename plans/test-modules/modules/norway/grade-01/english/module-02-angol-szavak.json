@@ -1,23 +1,27 @@
 {
   "metadata": {
     "id": "grade-01-english-angol-szavak-1.0.0",
-    "name": "Angol szavak - Norway grade-01",
+    "name": "English words - Norway grade-01",
     "version": "1.0.0",
-    "description": "45-minute test on Angol szavak for grade-01 students. Covers: Phonics basics, English words, English sentences, English reading, English writing",
+    "description": "45-minutters prøve i English words (grade-01). Emner: Phonics basics, English words, English sentences, English reading, English writing",
     "author": "PlannedEducation Curriculum Team",
     "author_id": "system",
-    "created_at": "2026-10-21T11:02:26.166539+00:00",
-    "updated_at": "2026-10-21T11:02:26.166559+00:00",
+    "created_at": "2026-10-24T17:53:48.792852+00:00",
+    "updated_at": "2026-10-24T17:53:48.792859+00:00",
     "tags": [
       "english",
-      "angol-szavak",
+      "english-words",
       "grade-01",
-      "norway"
+      "norway",
+      "no"
     ],
     "subject": "english",
     "grade_level": "grade-01",
+    "language": "no",
+    "language_name": "Norsk",
+    "country": "norway",
     "license": "CC-BY-4.0",
-    "checksum": "fca049bf73840d697dc40665444689f4779debc2dae4983a351641b3e0d9e888",
+    "checksum": "ac776ed4a979211f8debaefea392cf3424150ce33b6025232e8e67016bc646ef",
     "curriculum": "norway-udir-lareplanverket",
     "duration_minutes": 45,
     "total_points": 26,
@@ -34,10 +38,10 @@
     ]
   },
   "exam": {
-    "title": "grade-01 English - Angol szavak",
-    "description": "Test on Angol szavak including Phonics basics, English words, English sentences, English reading, English writing",
+    "title": "grade-01 English - English words",
+    "description": "Prøve i English words: Phonics basics, English words, English sentences, English reading, English writing",
     "duration_minutes": 45,
-    "instructions": "Answer all questions. Circle the correct answer. You have 45 minutes.",
+    "instructions": "Svar på alle spørsmålene. Du har 45 minutter til rådighet.",
     "settings": {
       "shuffle_questions": true,
       "shuffle_options": true,
@@ -56,7 +60,7 @@
     {
       "id": "q-001",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 1: English words",
+      "text": "[english] English words - Spørsmål 1: English words",
       "options": [
         "A",
         "B",
@@ -69,18 +73,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-002",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 2: English words",
+      "text": "[english] English words - Spørsmål 2: English words",
       "options": [
         "A",
         "B",
@@ -93,37 +98,39 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-003",
       "question_type": "essay",
-      "text": "[english] Angol szavak - Kérdés 3: English words",
+      "text": "[english] English words - Spørsmål 3: English words",
       "options": null,
-      "correct_answer": "Minta válasz a(z) Angol szavak témakörhöz.",
-      "rubric": "Pontszámítás: 3 pont. Értékelés: helyesség, teljesítettség, érvelés.",
+      "correct_answer": "Eksempelsvar for English words.",
+      "rubric": "Vurdering: 6 poeng. Kriterier: korrekthet, fullstendighet, begrunnelse.",
       "points": 6,
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-004",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 4: English words",
+      "text": "[english] English words - Spørsmål 4: English words",
       "options": [
         "A",
         "B",
@@ -136,18 +143,19 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     },
     {
       "id": "q-005",
       "question_type": "multiple_choice",
-      "text": "[english] Angol szavak - Kérdés 5: English words",
+      "text": "[english] English words - Spørsmål 5: English words",
       "options": [
         "A",
         "B",
@@ -160,12 +168,13 @@
       "variables": [],
       "tags": [
         "english",
-        "angol-szavak",
-        "grade-01"
+        "english-words",
+        "grade-01",
+        "no"
       ],
       "difficulty": "easy",
       "estimated_time_minutes": 3,
-      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-Angol szavak",
+      "curriculum_topic": "NORWAY-GRADE-01-ENGLISH-English words",
       "learning_objective": "English words"
     }
   ],
