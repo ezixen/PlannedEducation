@@ -250,13 +250,37 @@ if (-not (Confirm-Action "Do you want to proceed with removing PlannedEducation 
 Write-Header "Step 5: Removing PlannedEducation Platform"
 
 try {
+    # Run stop_all.ps1 if present to release any bound ports
+    $stopScript = Join-Path $InstallDir "stop_all.ps1"
+    if (Test-Path $stopScript) {
+        try { & powershell.exe -ExecutionPolicy Bypass -NoProfile -File $stopScript | Out-Null } catch {}
+    }
+
+    # Move working directory outside $InstallDir so Windows does not lock the folder
+    Set-Location $env:TEMP
+
     # Stop any remaining processes executing from inside the installation directory
     Get-Process -ErrorAction SilentlyContinue | Where-Object {
-        $_.Path -and $_.Path.StartsWith($InstallDir, [System.StringComparison]::OrdinalIgnoreCase)
+        $_.Id -ne $PID -and $_.Path -and $_.Path.StartsWith($InstallDir, [System.StringComparison]::OrdinalIgnoreCase)
     } | Stop-Process -Force -ErrorAction SilentlyContinue
-    
+
+    # Clear ReadOnly attributes (e.g. .git packfiles) so Remove-Item succeeds cleanly
+    Get-ChildItem -Path $InstallDir -Recurse -Force -ErrorAction SilentlyContinue | ForEach-Object {
+        try {
+            if ($_.Attributes -band [System.IO.FileAttributes]::ReadOnly) {
+                $_.Attributes = $_.Attributes -bxor [System.IO.FileAttributes]::ReadOnly
+            }
+        } catch {}
+    }
+
     # Remove the directory
-    Remove-Item -Path $InstallDir -Recurse -Force -ErrorAction Stop
+    Remove-Item -Path $InstallDir -Recurse -Force -ErrorAction SilentlyContinue
+    if (Test-Path $InstallDir) {
+        cmd.exe /c "rmdir /s /q `"$InstallDir`"" 2>$null
+    }
+    if (Test-Path $InstallDir) {
+        throw "Directory still exists after removal attempt: $InstallDir"
+    }
     Write-Success "Successfully removed: $InstallDir"
 } catch {
     Write-Error "Failed to remove ${InstallDir}: $_"

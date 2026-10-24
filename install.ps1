@@ -410,9 +410,11 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
 if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededucation")) -and ($scriptRepoRoot -ne $InstallDir)) {
     Write-Info "Syncing latest workspace source files from $scriptRepoRoot to $InstallDir..."
     $syncPairs = @(
-        @{ From = "src";                  To = "src" },
-        @{ From = "web\apps\portal\src";  To = "web\apps\portal\src" },
-        @{ From = "scripts";              To = "scripts" }
+        @{ From = "src";                     To = "src" },
+        @{ From = "web\apps\portal\src";     To = "web\apps\portal\src" },
+        @{ From = "web\apps\portal\public";  To = "web\apps\portal\public" },
+        @{ From = "scripts";                 To = "scripts" },
+        @{ From = "docs";                    To = "docs" }
     )
     foreach ($pair in $syncPairs) {
         $dest = Join-Path $InstallDir $pair.To
@@ -1021,28 +1023,12 @@ if (-not $AutoConfirm) {
         $generatedRandom = $true
     }
 } else {
-    # Even in AutoConfirm mode, ask for admin password if it's the default or prompt administrator
+    # In AutoConfirm mode, automatically generate a cryptographically random 20-char password if still at default
     if ($AdminPassword -eq "AdminPassword123!") {
-        Write-Host ""
-        Write-Host "============================================================" -ForegroundColor $YELLOW
-        Write-Host "  [SECURITY REQUIREMENT] Superadmin Password Configuration" -ForegroundColor $YELLOW
-        Write-Host "============================================================" -ForegroundColor $YELLOW
-        Write-Host "For security, you must set a secure administrator password." -ForegroundColor $WHITE
-        try {
-            $inputPass = Read-Host "Enter Superadmin Password (press Enter to generate a secure random password)"
-            if ($inputPass -and $inputPass.Trim() -ne "") {
-                $AdminPassword = $inputPass.Trim()
-            } else {
-                $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
-                $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
-                $generatedRandom = $true
-            }
-        } catch {
-            Write-Info "Non-interactive environment detected; generating secure random password."
-            $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
-            $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
-            $generatedRandom = $true
-        }
+        Write-Info "AutoConfirm enabled; generating secure random Superadmin password."
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
+        $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
+        $generatedRandom = $true
     }
 }
 
@@ -1057,9 +1043,11 @@ if ($generatedRandom) {
     Write-Host "  [IMPORTANT] Please copy or write down this password now!" -ForegroundColor $YELLOW
     Write-Host "  It will NOT be shown again in plaintext on screen." -ForegroundColor $YELLOW
     Write-Host "============================================================" -ForegroundColor $YELLOW
-    try {
-        Read-Host "  Press [Enter] once you have copied/noted down the password to continue"
-    } catch {}
+    if (-not $AutoConfirm) {
+        try {
+            Read-Host "  Press [Enter] once you have copied/noted down the password to continue"
+        } catch {}
+    }
     Write-Host ""
 }
 
@@ -1218,6 +1206,7 @@ if env_file.exists():
         if '=' in line and not line.strip().startswith('#'):
             k, v = line.strip().split('=', 1)
             os.environ.setdefault(k.strip(), v.strip())
+os.environ['PLANNED_EDUCATION_ENV'] = 'test'
 sys.path.insert(0, r'$srcPath')
 from fastapi.testclient import TestClient
 from plannededucation.api.main import app
