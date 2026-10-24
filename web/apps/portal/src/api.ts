@@ -24,3 +24,17 @@ apiClient.interceptors.request.use((config) => {
   return config;
 });
 
+
+// Intercept 401s to clear stale access tokens and avoid repetitive unauthorized requests
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401 && typeof window !== 'undefined') {
+      const token = localStorage.getItem('access_token');
+      if (token) {
+        localStorage.removeItem('access_token');
+      }
+    }
+    return Promise.reject(error);
+  }
+);

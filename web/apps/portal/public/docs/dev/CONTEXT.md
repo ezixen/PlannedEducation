@@ -752,4594 +752,4666 @@ and cross-reference this document to ensure accurate, context-aware translations
 **English:** Are you sure you want to approve all staged submissions?
 **Context:** Used in ai grading interface
 
-### [#185] ai_grading.bulk_upload_desc
+### [#185] ai_grading.approve_error
+**English:** Error approving submissions
+**Context:** Validation or runtime error message in ai grading
+
+### [#186] ai_grading.bulk_upload_desc
 **English:** Take photos of handwritten tests with your mobile phone or camera and upload them in bulk. The privacy filter scrubs student names using the class roster before sending for AI error correction, then safely de-anonymizes them for teacher review.
 **Context:** Descriptive paragraph or helper text in ai grading
 
-### [#186] ai_grading.bulk_upload_title
+### [#187] ai_grading.bulk_upload_title
 **English:** Bulk Handwritten Exam Digitization & AI Grading
 **Context:** Main heading / section header in ai grading
 
-### [#187] ai_grading.digitized_corrected
+### [#188] ai_grading.chip_check_algebra
+**English:** Check algebra in step 2
+**Context:** Used in ai grading interface
+
+### [#189] ai_grading.chip_clear_derivation
+**English:** Clear derivation
+**Context:** Used in ai grading interface
+
+### [#190] ai_grading.chip_great_work
+**English:** Great work!
+**Context:** Used in ai grading interface
+
+### [#191] ai_grading.chip_partial_credit
+**English:** Partial credit
+**Context:** Used in ai grading interface
+
+### [#192] ai_grading.chip_review_units
+**English:** Review physical units
+**Context:** Used in ai grading interface
+
+### [#193] ai_grading.digitized_corrected
 **English:** Digitized & Corrected Version
 **Context:** Used in ai grading interface
 
-### [#188] ai_grading.download
+### [#194] ai_grading.digitized_extracted_text
+**English:** Digitized Extracted Text:
+**Context:** Used in ai grading interface
+
+### [#195] ai_grading.download
 **English:** Download Original Submission
 **Context:** Used in ai grading interface
 
-### [#189] ai_grading.drop_or_browse
+### [#196] ai_grading.drop_or_browse
 **English:** Drop photos of handwritten tests here or click to browse
 **Context:** Used in ai grading interface
 
-### [#190] ai_grading.enable_ai_correction
+### [#197] ai_grading.enable_ai_correction
 **English:** Enable AI Error Correction & Step-by-Step Solutions
 **Context:** Used in ai grading interface
 
-### [#191] ai_grading.enable_ai_correction_desc
+### [#198] ai_grading.enable_ai_correction_desc
 **English:** When enabled, AI checks mathematical steps, chemical equations, physics units, or essay structure, identifies mistakes, and explains the correct derivation.
 **Context:** Descriptive paragraph or helper text in ai grading
 
-### [#192] ai_grading.exam
+### [#199] ai_grading.exam
 **English:** Exam
 **Context:** Used in ai grading interface
 
-### [#193] ai_grading.exam_subject
+### [#200] ai_grading.exam_subject
 **English:** Subject Domain
 **Context:** Used in ai grading interface
 
-### [#194] ai_grading.feedback_label
+### [#201] ai_grading.feedback_label
 **English:** Teacher Feedback & Corrections
 **Context:** Form input label in ai grading
 
-### [#195] ai_grading.grade_submission
+### [#202] ai_grading.grade_submission
 **English:** Grading Submission: {name}
 **Context:** Used in ai grading interface
 
-### [#196] ai_grading.new_exam_batch
+### [#203] ai_grading.new_exam_batch
 **English:** Create New Exam Batch
 **Context:** Used in ai grading interface
 
-### [#197] ai_grading.no_submissions
+### [#204] ai_grading.no_image_photo
+**English:** No image photo attached for this submission.
+**Context:** Used in ai grading interface
+
+### [#205] ai_grading.no_submissions
 **English:** No exam submissions found for grading yet. Upload an exam file above to begin.
 **Context:** Used in ai grading interface
 
-### [#198] ai_grading.ocr_only_mode
+### [#206] ai_grading.no_text_extracted
+**English:** (No text extracted)
+**Context:** Used in ai grading interface
+
+### [#207] ai_grading.ocr_only_mode
 **English:** Digitization Only (No AI Grading)
 **Context:** Used in ai grading interface
 
-### [#199] ai_grading.original_photo
+### [#208] ai_grading.original_photo
 **English:** Original Handwritten Photo
 **Context:** Used in ai grading interface
 
-### [#200] ai_grading.privacy_badge
+### [#209] ai_grading.privacy_badge
 **English:** Privacy Filter Active
 **Context:** Used in ai grading interface
 
-### [#201] ai_grading.privacy_guarantee
+### [#210] ai_grading.privacy_guarantee
 **English:** FERPA Privacy Filter Active: Student names matching class roster are scrubbed and anonymized before AI processing, then restored for teacher review.
 **Context:** Used in ai grading interface
 
-### [#202] ai_grading.processing
+### [#211] ai_grading.processing
 **English:** Analyzing & Grading...
 **Context:** Used in ai grading interface
 
-### [#203] ai_grading.processing_bulk
+### [#212] ai_grading.processing_bulk
 **English:** Digitizing & processing test submissions with privacy filter...
 **Context:** Used in ai grading interface
 
-### [#204] ai_grading.questions
+### [#213] ai_grading.questions
 **English:** Questions
 **Context:** Used in ai grading interface
 
-### [#205] ai_grading.reset_zoom
+### [#214] ai_grading.reset_zoom
 **English:** Reset
 **Context:** Used in ai grading interface
 
-### [#206] ai_grading.return_success
+### [#215] ai_grading.return_success
 **English:** Exam returned to student!
 **Context:** Confirmation / success alert message in ai grading
 
-### [#207] ai_grading.return_to_student
+### [#216] ai_grading.return_to_student
 **English:** Return Graded Exam to Student
 **Context:** Used in ai grading interface
 
-### [#208] ai_grading.review
+### [#217] ai_grading.review
 **English:** Review & Grade
 **Context:** Used in ai grading interface
 
-### [#209] ai_grading.save_and_approve
+### [#218] ai_grading.save_and_approve
 **English:** Save & Approve Final Grade
 **Context:** Used in ai grading interface
 
-### [#210] ai_grading.saved_success
+### [#219] ai_grading.saved_success
 **English:** Grade saved and approved successfully!
 **Context:** Confirmation / success alert message in ai grading
 
-### [#211] ai_grading.score_label
+### [#220] ai_grading.score_label
 **English:** Grade Score
 **Context:** Form input label in ai grading
 
-### [#212] ai_grading.select_class
+### [#221] ai_grading.score_out_of_10
+**English:** (out of 10):
+**Context:** Used in ai grading interface
+
+### [#222] ai_grading.select_class
 **English:** Class Roster (for Name Anonymization)
 **Context:** Used in ai grading interface
 
-### [#213] ai_grading.selected_photos
+### [#223] ai_grading.selected_photos
 **English:** {count} test photos selected
 **Context:** Used in ai grading interface
 
-### [#214] ai_grading.side_by_side_view
+### [#224] ai_grading.side_by_side_view
 **English:** Side-by-Side Review
 **Context:** Used in ai grading interface
 
-### [#215] ai_grading.status_ai_graded
+### [#225] ai_grading.status_ai_graded
 **English:** AI Graded
 **Context:** Used in ai grading interface
 
-### [#216] ai_grading.status_graded
+### [#226] ai_grading.status_graded
 **English:** Graded
 **Context:** Used in ai grading interface
 
-### [#217] ai_grading.status_pending_approval
+### [#227] ai_grading.status_pending_approval
 **English:** Pending Approval
 **Context:** Used in ai grading interface
 
-### [#218] ai_grading.status_returned
+### [#228] ai_grading.status_returned
 **English:** Returned to Student
 **Context:** Used in ai grading interface
 
-### [#219] ai_grading.status_teacher_graded
+### [#229] ai_grading.status_teacher_graded
 **English:** Teacher Graded
 **Context:** Used in ai grading interface
 
-### [#220] ai_grading.status_ungraded
+### [#230] ai_grading.status_ungraded
 **English:** Pending Review
 **Context:** Used in ai grading interface
 
-### [#221] ai_grading.student
+### [#231] ai_grading.step_by_step_solution
+**English:** Step-by-Step Correct Solution:
+**Context:** Used in ai grading interface
+
+### [#232] ai_grading.student
 **English:** Student
 **Context:** Used in ai grading interface
 
-### [#222] ai_grading.submissions_list
+### [#233] ai_grading.students_count
+**English:** {count} students
+**Context:** Used in ai grading interface
+
+### [#234] ai_grading.submissions_approved_success
+**English:** {count} submissions approved!
+**Context:** Confirmation / success alert message in ai grading
+
+### [#235] ai_grading.submissions_list
 **English:** Exam Submissions
 **Context:** Used in ai grading interface
 
-### [#223] ai_grading.submitted
+### [#236] ai_grading.submitted
 **English:** Submitted
 **Context:** Used in ai grading interface
 
-### [#224] ai_grading.target_exam
+### [#237] ai_grading.supported_formats_desc
+**English:** Supports photos from mobile cameras, scans, PNG, JPG, JPEG, and PDF.
+**Context:** Descriptive paragraph or helper text in ai grading
+
+### [#238] ai_grading.target_exam
 **English:** Target Exam
 **Context:** Used in ai grading interface
 
-### [#225] ai_grading.teacher_graded
+### [#239] ai_grading.teacher_graded
 **English:** Approved & Finalized
 **Context:** Used in ai grading interface
 
-### [#226] ai_grading.title
+### [#240] ai_grading.title
 **English:** AI Grading & Feedback Hub
 **Context:** Main heading / section header in ai grading
 
-### [#227] ai_grading.ungraded
+### [#241] ai_grading.ungraded
 **English:** Pending AI Review
 **Context:** Used in ai grading interface
 
-### [#228] ai_grading.upload_and_process
+### [#242] ai_grading.upload_and_process
 **English:** Upload & Digitize All ({count})
 **Context:** Used in ai grading interface
 
-### [#229] ai_grading.upload_error
+### [#243] ai_grading.upload_error
 **English:** Upload failed
 **Context:** Validation or runtime error message in ai grading
 
-### [#230] ai_grading.upload_exam
+### [#244] ai_grading.upload_exam
 **English:** Upload Exam Submission
 **Context:** Used in ai grading interface
 
-### [#231] ai_grading.upload_success
+### [#245] ai_grading.upload_success
 **English:** Exam uploaded and registered for AI grading!
 **Context:** Confirmation / success alert message in ai grading
 
-### [#232] ai_grading.use_ai_grade
+### [#246] ai_grading.use_ai_grade
 **English:** Run AI Grading
 **Context:** Used in ai grading interface
 
-### [#233] ai_grading.zoom_in
+### [#247] ai_grading.zoom_in
 **English:** Zoom In
 **Context:** Used in ai grading interface
 
-### [#234] ai_grading.zoom_out
+### [#248] ai_grading.zoom_out
 **English:** Zoom Out
 **Context:** Used in ai grading interface
 
 ## Ai keys (`ai_keys`)
 
-### [#235] ai_keys.1
+### [#249] ai_keys.1
 **English:** AI Key Management
 **Context:** Used in ai keys interface
 
-### [#236] ai_keys.10
+### [#250] ai_keys.10
 **English:** Supported Providers
 **Context:** Used in ai keys interface
 
-### [#237] ai_keys.11
+### [#251] ai_keys.11
 **English:** Gemini (Google)
 **Context:** Used in ai keys interface
 
-### [#238] ai_keys.12
+### [#252] ai_keys.12
 **English:** OpenRouter
 **Context:** Used in ai keys interface
 
-### [#239] ai_keys.13
+### [#253] ai_keys.13
 **English:** Ollama (Local)
 **Context:** Used in ai keys interface
 
-### [#240] ai_keys.14
+### [#254] ai_keys.14
 **English:** OpenAI Compatible
 **Context:** Used in ai keys interface
 
-### [#241] ai_keys.15
+### [#255] ai_keys.15
 **English:** ChatGPT Session
 **Context:** Used in ai keys interface
 
-### [#242] ai_keys.16
+### [#256] ai_keys.16
 **English:** External AI Integrations & Embedded ChatGPT
 **Context:** Used in ai keys interface
 
-### [#243] ai_keys.17
+### [#257] ai_keys.17
 **English:** Planned Education does not process AI natively to ensure 100% data sovereignty. Teachers can connect their own ChatGPT account directly below (via OpenAI Device-Code Sign-In, no API key required) or connect an external LLM to our anonymized API endpoint.
 **Context:** Used in ai keys interface
 
-### [#244] ai_keys.18
+### [#258] ai_keys.18
 **English:** Your Anonymized API Endpoint
 **Context:** Used in ai keys interface
 
-### [#245] ai_keys.19
+### [#259] ai_keys.19
 **English:** Use this endpoint to pull student submissions. All names, emails, and IDs are automatically stripped.
 **Context:** Used in ai keys interface
 
-### [#246] ai_keys.2
+### [#260] ai_keys.2
 **English:** Configure your AI provider for grading and content generation
 **Context:** Used in ai keys interface
 
-### [#247] ai_keys.20
+### [#261] ai_keys.20
 **English:** Use this endpoint for the AI to push graded results back:
 **Context:** Used in ai keys interface
 
-### [#248] ai_keys.21
+### [#262] ai_keys.21
 **English:** Required System Prompt
 **Context:** Used in ai keys interface
 
-### [#249] ai_keys.22
+### [#263] ai_keys.22
 **English:** When hooking our API up to an external LLM, you must supply this exact System Prompt so the AI understands its job, what to expect, and why it is receiving anonymized data:
 **Context:** Used in ai keys interface
 
-### [#250] ai_keys.23
+### [#264] ai_keys.23
 **English:** Offers extremely generous free tiers for `gemini-2.5-flash`. Highly recommended for large batches of text or image OCR.
 **Context:** Used in ai keys interface
 
-### [#251] ai_keys.24
+### [#265] ai_keys.24
 **English:** Run models like Llama-3 or Mistral directly on your own computer. Zero cost, infinite usage, and maximum privacy.
 **Context:** Used in ai keys interface
 
-### [#252] ai_keys.25
+### [#266] ai_keys.25
 **English:** A unified API that gives you access to hundreds of models. They offer completely free limited tiers for certain models (like Meta Llama 3 8B), as well as paid access to GPT-4o or Claude 3.5 Sonnet.
 **Context:** Used in ai keys interface
 
-### [#253] ai_keys.26
+### [#267] ai_keys.26
 **English:** Industry standard, but strictly pay-per-token. Best for complex reasoning tasks if you have budget.
 **Context:** Used in ai keys interface
 
-### [#254] ai_keys.3
+### [#268] ai_keys.3
 **English:** AI Provider
 **Context:** Used in ai keys interface
 
-### [#255] ai_keys.4
+### [#269] ai_keys.4
 **English:** Model
 **Context:** Used in ai keys interface
 
-### [#256] ai_keys.5
+### [#270] ai_keys.5
 **English:** API Key
 **Context:** Used in ai keys interface
 
-### [#257] ai_keys.6
+### [#271] ai_keys.6
 **English:** Base URL (optional)
 **Context:** Used in ai keys interface
 
-### [#258] ai_keys.7
+### [#272] ai_keys.7
 **English:** Save AI Key
 **Context:** Used in ai keys interface
 
-### [#259] ai_keys.8
+### [#273] ai_keys.8
 **English:** AI key saved
 **Context:** Used in ai keys interface
 
-### [#260] ai_keys.9
+### [#274] ai_keys.9
 **English:** No AI key configured
 **Context:** Used in ai keys interface
 
-### [#261] ai_keys.anthropic
+### [#275] ai_keys.anthropic
 **English:** Anthropic Claude
 **Context:** Used in ai keys interface
 
-### [#262] ai_keys.cohere
+### [#276] ai_keys.cohere
 **English:** Cohere
 **Context:** Used in ai keys interface
 
-### [#263] ai_keys.custom
+### [#277] ai_keys.custom
 **English:** Custom / Other
 **Context:** Used in ai keys interface
 
-### [#264] ai_keys.deepseek
+### [#278] ai_keys.deepseek
 **English:** DeepSeek
 **Context:** Used in ai keys interface
 
-### [#265] ai_keys.groq
+### [#279] ai_keys.groq
 **English:** Groq
 **Context:** Used in ai keys interface
 
-### [#266] ai_keys.mistral
+### [#280] ai_keys.mistral
 **English:** Mistral AI
 **Context:** Used in ai keys interface
 
 ## Backup codes modal (`backup_codes_modal`)
 
-### [#267] backup_codes_modal.active_count
+### [#281] backup_codes_modal.active_count
 **English:** Active recovery codes remaining: {count}
 **Context:** Used in backup codes modal interface
 
-### [#268] backup_codes_modal.copied
+### [#282] backup_codes_modal.copied
 **English:** Copied!
 **Context:** Used in backup codes modal interface
 
-### [#269] backup_codes_modal.copy
+### [#283] backup_codes_modal.copy
 **English:** Copy All Codes
 **Context:** Used in backup codes modal interface
 
-### [#270] backup_codes_modal.generate_btn
+### [#284] backup_codes_modal.generate_btn
 **English:** Generate 5 Fresh Emergency Codes
 **Context:** Action button in backup codes modal view
 
-### [#271] backup_codes_modal.generating
+### [#285] backup_codes_modal.generating
 **English:** Generating...
 **Context:** Used in backup codes modal interface
 
-### [#272] backup_codes_modal.print
+### [#286] backup_codes_modal.print
 **English:** Print Codes
 **Context:** Used in backup codes modal interface
 
-### [#273] backup_codes_modal.title
+### [#287] backup_codes_modal.title
 **English:** Emergency Superadmin Backup Codes
 **Context:** Main heading / section header in backup codes modal
 
-### [#274] backup_codes_modal.warning_desc
+### [#288] backup_codes_modal.warning_desc
 **English:** Emergency backup codes bypass all authentication (passwords, 2FA, passkeys) and grant immediate superadmin access. Store them offline in a physical safe.
 **Context:** Descriptive paragraph or helper text in backup codes modal
 
-### [#275] backup_codes_modal.warning_title
+### [#289] backup_codes_modal.warning_title
 **English:** CRITICAL OVERSIGHT WARNING:
 **Context:** Main heading / section header in backup codes modal
 
 ## Chat (`chat`)
 
-### [#276] chat.1
+### [#290] chat.1
 **English:** Chat
 **Context:** Used in chat interface
 
-### [#277] chat.10
+### [#291] chat.10
 **English:** No messages yet
 **Context:** Used in chat interface
 
-### [#278] chat.2
+### [#292] chat.2
 **English:** Type a message...
 **Context:** Used in chat interface
 
-### [#279] chat.3
+### [#293] chat.3
 **English:** Send
 **Context:** Used in chat interface
 
-### [#280] chat.4
+### [#294] chat.4
 **English:** Teacher
 **Context:** Used in chat interface
 
-### [#281] chat.5
+### [#295] chat.5
 **English:** Student
 **Context:** Used in chat interface
 
-### [#282] chat.6
+### [#296] chat.6
 **English:** Hand Raise
 **Context:** Used in chat interface
 
-### [#283] chat.7
+### [#297] chat.7
 **English:** Raise Hand
 **Context:** Used in chat interface
 
-### [#284] chat.8
+### [#298] chat.8
 **English:** Lower Hand
 **Context:** Used in chat interface
 
-### [#285] chat.9
+### [#299] chat.9
 **English:** Student raised hand
 **Context:** Used in chat interface
 
-### [#286] chat.connected
+### [#300] chat.connected
 **English:** Connected
 **Context:** Used in chat interface
 
-### [#287] chat.connecting
+### [#301] chat.connecting
 **English:** Connecting
 **Context:** Used in chat interface
 
-### [#288] chat.encrypted_subtitle
+### [#302] chat.encrypted_subtitle
 **English:** End-to-end encrypted chat with students
 **Context:** Main heading / section header in chat
 
-### [#289] chat.no_messages
+### [#303] chat.no_messages
 **English:** No messages yet. Students can send messages from their exam view.
 **Context:** Used in chat interface
 
-### [#290] chat.send
+### [#304] chat.send
 **English:** Send
 **Context:** Used in chat interface
 
-### [#291] chat.type_message
+### [#305] chat.type_message
 **English:** Type a message...
 **Context:** Used in chat interface
 
 ## Chatgpt (`chatgpt`)
 
-### [#292] chatgpt.account
+### [#306] chatgpt.account
 **English:** Account: {id}… • 
 **Context:** Used in chatgpt interface
 
-### [#293] chatgpt.answer_length_label
+### [#307] chatgpt.answer_length_label
 **English:** Answer Length
 **Context:** Form input label in chatgpt
 
-### [#294] chatgpt.connected
+### [#308] chatgpt.connected
 **English:** Connected
 **Context:** Used in chatgpt interface
 
-### [#295] chatgpt.context_window
+### [#309] chatgpt.context_window
 **English:** Context window: {k}k tokens
 **Context:** Used in chatgpt interface
 
-### [#296] chatgpt.copied
+### [#310] chatgpt.copied
 **English:** Copied!
 **Context:** Used in chatgpt interface
 
-### [#297] chatgpt.copy_code
+### [#311] chatgpt.copy_code
 **English:** Copy Code
 **Context:** Used in chatgpt interface
 
-### [#298] chatgpt.device_code_instructions
+### [#312] chatgpt.device_code_instructions
 **English:** Copy this code, open the ChatGPT device page, paste it there, and return here.
 **Context:** Used in chatgpt interface
 
-### [#299] chatgpt.device_code_title
+### [#313] chatgpt.device_code_title
 **English:** Your ChatGPT Device Code
 **Context:** Main heading / section header in chatgpt
 
-### [#300] chatgpt.disconnect
+### [#314] chatgpt.disconnect
 **English:** Disconnect ChatGPT
 **Context:** Used in chatgpt interface
 
-### [#301] chatgpt.dismiss
+### [#315] chatgpt.dismiss
 **English:** Dismiss
 **Context:** Used in chatgpt interface
 
-### [#302] chatgpt.empty_history
+### [#316] chatgpt.empty_history
 **English:** Ask ChatGPT anything you type here — grade anonymized answers, summarize class mistakes, or draft new exam questions. Only what you send here is shared with ChatGPT.
 **Context:** Used in chatgpt interface
 
-### [#303] chatgpt.model_label
+### [#317] chatgpt.model_label
 **English:** Model
 **Context:** Form input label in chatgpt
 
-### [#304] chatgpt.new_session
+### [#318] chatgpt.new_session
 **English:** New Session / Clear
 **Context:** Used in chatgpt interface
 
-### [#305] chatgpt.not_connected
+### [#319] chatgpt.not_connected
 **English:** Not Connected
 **Context:** Used in chatgpt interface
 
-### [#306] chatgpt.open_device_page
+### [#320] chatgpt.open_device_page
 **English:** Open ChatGPT Device Page
 **Context:** Used in chatgpt interface
 
-### [#307] chatgpt.placeholder
+### [#321] chatgpt.placeholder
 **English:** Ask ChatGPT to grade anonymized responses, explain rubrics, or draft exam questions…
 **Context:** Input placeholder text in chatgpt
 
-### [#308] chatgpt.ready_to_chat
+### [#322] chatgpt.ready_to_chat
 **English:** Ready to chat
 **Context:** Used in chatgpt interface
 
-### [#309] chatgpt.refresh_models
+### [#323] chatgpt.refresh_models
 **English:** Refresh Models
 **Context:** Used in chatgpt interface
 
-### [#310] chatgpt.requesting_code
+### [#324] chatgpt.requesting_code
 **English:** Requesting device code from OpenAI…
 **Context:** Used in chatgpt interface
 
-### [#311] chatgpt.send
+### [#325] chatgpt.send
 **English:** Send to ChatGPT
 **Context:** Used in chatgpt interface
 
-### [#312] chatgpt.sending
+### [#326] chatgpt.sending
 **English:** Sending…
 **Context:** Used in chatgpt interface
 
-### [#313] chatgpt.setup_notice
+### [#327] chatgpt.setup_notice
 **English:** In your ChatGPT Security Settings, make sure "Enable device code authentication for Codex" is turned on, then click Sign in with ChatGPT below.
 **Context:** Used in chatgpt interface
 
-### [#314] chatgpt.sign_in
+### [#328] chatgpt.sign_in
 **English:** Sign in with ChatGPT
 **Context:** Used in chatgpt interface
 
-### [#315] chatgpt.signing_in
+### [#329] chatgpt.signing_in
 **English:** Sign-in in progress…
 **Context:** Used in chatgpt interface
 
-### [#316] chatgpt.subtitle
+### [#330] chatgpt.subtitle
 **English:** Sign in directly with your existing ChatGPT account (via OpenAI Device Code) to grade anonymized submissions, draft questions, and chat inside PlannedEducation — no API key required.
 **Context:** Main heading / section header in chatgpt
 
-### [#317] chatgpt.thinking_effort_label
+### [#331] chatgpt.thinking_effort_label
 **English:** Thinking Effort
 **Context:** Form input label in chatgpt
 
-### [#318] chatgpt.title
+### [#332] chatgpt.title
 **English:** ChatGPT Teacher Assistant
 **Context:** Main heading / section header in chatgpt
 
-### [#319] chatgpt.waiting
+### [#333] chatgpt.waiting
 **English:** Waiting for ChatGPT sign-in… Keep this page open after pasting your code.
 **Context:** Used in chatgpt interface
 
-### [#320] chatgpt.you
+### [#334] chatgpt.you
 **English:** You
 **Context:** Used in chatgpt interface
 
 ## Common (`common`)
 
-### [#321] common.1
+### [#335] common.1
 **English:** Save
 **Context:** Used in common interface
 
-### [#322] common.10
+### [#336] common.10
 **English:** Submit
 **Context:** Used in common interface
 
-### [#323] common.11
+### [#337] common.11
 **English:** Confirm
 **Context:** Used in common interface
 
-### [#324] common.12
+### [#338] common.12
 **English:** Yes
 **Context:** Used in common interface
 
-### [#325] common.13
+### [#339] common.13
 **English:** No
 **Context:** Used in common interface
 
-### [#326] common.14
+### [#340] common.14
 **English:** Loading...
 **Context:** Used in common interface
 
-### [#327] common.15
+### [#341] common.15
 **English:** Error
 **Context:** Used in common interface
 
-### [#328] common.16
+### [#342] common.16
 **English:** Success
 **Context:** Used in common interface
 
-### [#329] common.17
+### [#343] common.17
 **English:** Warning
 **Context:** Used in common interface
 
-### [#330] common.18
+### [#344] common.18
 **English:** Info
 **Context:** Used in common interface
 
-### [#331] common.19
+### [#345] common.19
 **English:** Required
 **Context:** Used in common interface
 
-### [#332] common.2
+### [#346] common.2
 **English:** Cancel
 **Context:** Used in common interface
 
-### [#333] common.20
+### [#347] common.20
 **English:** Optional
 **Context:** Used in common interface
 
-### [#334] common.21
+### [#348] common.21
 **English:** Search
 **Context:** Used in common interface
 
-### [#335] common.22
+### [#349] common.22
 **English:** Filter
 **Context:** Used in common interface
 
-### [#336] common.23
+### [#350] common.23
 **English:** Sort
 **Context:** Used in common interface
 
-### [#337] common.24
+### [#351] common.24
 **English:** Export
 **Context:** Used in common interface
 
-### [#338] common.25
+### [#352] common.25
 **English:** Import
 **Context:** Used in common interface
 
-### [#339] common.26
+### [#353] common.26
 **English:** Download
 **Context:** Used in common interface
 
-### [#340] common.27
+### [#354] common.27
 **English:** Upload
 **Context:** Used in common interface
 
-### [#341] common.28
+### [#355] common.28
 **English:** Refresh
 **Context:** Used in common interface
 
-### [#342] common.29
+### [#356] common.29
 **English:** Reset
 **Context:** Used in common interface
 
-### [#343] common.3
+### [#357] common.3
 **English:** Delete
 **Context:** Used in common interface
 
-### [#344] common.30
+### [#358] common.30
 **English:** Clear
 **Context:** Used in common interface
 
-### [#345] common.31
+### [#359] common.31
 **English:** Select
 **Context:** Used in common interface
 
-### [#346] common.32
+### [#360] common.32
 **English:** All
 **Context:** Used in common interface
 
-### [#347] common.33
+### [#361] common.33
 **English:** None
 **Context:** Used in common interface
 
-### [#348] common.34
+### [#362] common.34
 **English:** Active
 **Context:** Used in common interface
 
-### [#349] common.35
+### [#363] common.35
 **English:** Inactive
 **Context:** Used in common interface
 
-### [#350] common.36
+### [#364] common.36
 **English:** Pending
 **Context:** Used in common interface
 
-### [#351] common.37
+### [#365] common.37
 **English:** Approved
 **Context:** Used in common interface
 
-### [#352] common.38
+### [#366] common.38
 **English:** Rejected
 **Context:** Used in common interface
 
-### [#353] common.39
+### [#367] common.39
 **English:** Archived
 **Context:** Used in common interface
 
-### [#354] common.4
+### [#368] common.4
 **English:** Edit
 **Context:** Used in common interface
 
-### [#355] common.40
+### [#369] common.40
 **English:** Public
 **Context:** Used in common interface
 
-### [#356] common.41
+### [#370] common.41
 **English:** Private
 **Context:** Used in common interface
 
-### [#357] common.42
+### [#371] common.42
 **English:** Enabled
 **Context:** Used in common interface
 
-### [#358] common.43
+### [#372] common.43
 **English:** Disabled
 **Context:** Used in common interface
 
-### [#359] common.44
+### [#373] common.44
 **English:** On
 **Context:** Used in common interface
 
-### [#360] common.45
+### [#374] common.45
 **English:** Off
 **Context:** Used in common interface
 
-### [#361] common.46
+### [#375] common.46
 **English:** Yes, delete it
 **Context:** Used in common interface
 
-### [#362] common.47
+### [#376] common.47
 **English:** No, keep it
 **Context:** Used in common interface
 
-### [#363] common.48
+### [#377] common.48
 **English:** Are you sure?
 **Context:** Used in common interface
 
-### [#364] common.49
+### [#378] common.49
 **English:** This action cannot be undone
 **Context:** Used in common interface
 
-### [#365] common.5
+### [#379] common.5
 **English:** View
 **Context:** Used in common interface
 
-### [#366] common.50
+### [#380] common.50
 **English:** Copied to clipboard
 **Context:** Used in common interface
 
-### [#367] common.6
+### [#381] common.6
 **English:** Close
 **Context:** Used in common interface
 
-### [#368] common.7
+### [#382] common.7
 **English:** Back
 **Context:** Used in common interface
 
-### [#369] common.8
+### [#383] common.8
 **English:** Next
 **Context:** Used in common interface
 
-### [#370] common.9
+### [#384] common.9
 **English:** Previous
 **Context:** Used in common interface
 
-### [#371] common.dismiss
+### [#385] common.cancel
+**English:** Cancel
+**Context:** Used in common interface
+
+### [#386] common.dismiss
 **English:** Dismiss
 **Context:** Used in common interface
 
-### [#372] common.loading
+### [#387] common.loading
 **English:** Loading exams...
 **Context:** Used in common interface
 
-### [#373] common.no_exams_yet
+### [#388] common.no_exams_yet
 **English:** You have not created any exams yet.
 **Context:** Used in common interface
 
 ## Create user (`create_user`)
 
-### [#374] create_user.email_placeholder
+### [#389] create_user.email_placeholder
 **English:** e.g. admin@school.edu
 **Context:** Input placeholder text in create user
 
-### [#375] create_user.fullname_placeholder
+### [#390] create_user.fullname_placeholder
 **English:** e.g. Dr. John Smith
 **Context:** Input placeholder text in create user
 
-### [#376] create_user.password_placeholder
+### [#391] create_user.password_placeholder
 **English:** Leave empty to auto-generate temporary password
 **Context:** Input placeholder text in create user
 
-### [#377] create_user.username_placeholder
+### [#392] create_user.username_placeholder
 **English:** e.g. principal_smith
 **Context:** Input placeholder text in create user
 
 ## Dashboard (`dashboard`)
 
-### [#378] dashboard.1
+### [#393] dashboard.1
 **English:** Dashboard
 **Context:** Used in dashboard interface
 
-### [#379] dashboard.10
+### [#394] dashboard.10
 **English:** Recent Activity
 **Context:** Used in dashboard interface
 
-### [#380] dashboard.11
+### [#395] dashboard.11
 **English:** No recent activity
 **Context:** Used in dashboard interface
 
-### [#381] dashboard.2
+### [#396] dashboard.2
 **English:** Welcome back
 **Context:** Used in dashboard interface
 
-### [#382] dashboard.3
+### [#397] dashboard.3
 **English:** My Exams
 **Context:** Used in dashboard interface
 
-### [#383] dashboard.4
+### [#398] dashboard.4
 **English:** Upcoming Exams
 **Context:** Used in dashboard interface
 
-### [#384] dashboard.5
+### [#399] dashboard.5
 **English:** Past Exams
 **Context:** Used in dashboard interface
 
-### [#385] dashboard.6
+### [#400] dashboard.6
 **English:** No exams scheduled
 **Context:** Used in dashboard interface
 
-### [#386] dashboard.7
+### [#401] dashboard.7
 **English:** Create New Exam
 **Context:** Used in dashboard interface
 
-### [#387] dashboard.8
+### [#402] dashboard.8
 **English:** View All Exams
 **Context:** Used in dashboard interface
 
-### [#388] dashboard.9
+### [#403] dashboard.9
 **English:** Quick Actions
 **Context:** Used in dashboard interface
 
-### [#389] dashboard.admin_dashboard
+### [#404] dashboard.admin_dashboard
 **English:** Admin Dashboard
 **Context:** Used in dashboard interface
 
-### [#390] dashboard.admin_dashboard_desc
+### [#405] dashboard.admin_dashboard_desc
 **English:** System oversight: users, exams, statistics, and password resets.
 **Context:** Descriptive paragraph or helper text in dashboard
 
-### [#391] dashboard.open_admin
+### [#406] dashboard.open_admin
 **English:** Open Admin Dashboard
 **Context:** Used in dashboard interface
 
-### [#392] dashboard.open_parent
+### [#407] dashboard.open_parent
 **English:** Open Parent Dashboard
 **Context:** Used in dashboard interface
 
-### [#393] dashboard.open_student
+### [#408] dashboard.open_student
 **English:** Open Student Settings
 **Context:** Used in dashboard interface
 
-### [#394] dashboard.open_teacher
+### [#409] dashboard.open_teacher
 **English:** Open Teacher Settings
 **Context:** Used in dashboard interface
 
-### [#395] dashboard.parent_dashboard
+### [#410] dashboard.parent_dashboard
 **English:** Parent Dashboard
 **Context:** Used in dashboard interface
 
-### [#396] dashboard.parent_dashboard_desc
+### [#411] dashboard.parent_dashboard_desc
 **English:** View child progress and teacher feedback.
 **Context:** Descriptive paragraph or helper text in dashboard
 
-### [#397] dashboard.student_settings
+### [#412] dashboard.student_settings
 **English:** Student Settings
 **Context:** Used in dashboard interface
 
-### [#398] dashboard.student_settings_desc
+### [#413] dashboard.student_settings_desc
 **English:** View upcoming exams and take tests.
 **Context:** Descriptive paragraph or helper text in dashboard
 
-### [#399] dashboard.teacher_settings
+### [#414] dashboard.teacher_settings
 **English:** Teacher Settings
 **Context:** Used in dashboard interface
 
-### [#400] dashboard.teacher_settings_desc
+### [#415] dashboard.teacher_settings_desc
 **English:** Manage exams, classes, and AI integrations.
 **Context:** Descriptive paragraph or helper text in dashboard
 
-### [#401] dashboard.welcome
+### [#416] dashboard.welcome
 **English:** Welcome, {name}
 **Context:** Used in dashboard interface
 
 ## Db backup (`db_backup`)
 
-### [#402] db_backup.auto
+### [#417] db_backup.auto
 **English:** Automatic
 **Context:** Used in db backup interface
 
-### [#403] db_backup.auto_notice
+### [#418] db_backup.auto_notice
 **English:** Automatic snapshots are taken daily at 00:00 UTC.
 **Context:** Used in db backup interface
 
-### [#404] db_backup.col_actions
+### [#419] db_backup.col_actions
 **English:** Actions
 **Context:** Used in db backup interface
 
-### [#405] db_backup.col_created
+### [#420] db_backup.col_created
 **English:** Created At
 **Context:** Used in db backup interface
 
-### [#406] db_backup.col_name
+### [#421] db_backup.col_name
 **English:** Filename
 **Context:** Used in db backup interface
 
-### [#407] db_backup.col_size
+### [#422] db_backup.col_size
 **English:** Size
 **Context:** Used in db backup interface
 
-### [#408] db_backup.col_type
+### [#423] db_backup.col_type
 **English:** Type
 **Context:** Used in db backup interface
 
-### [#409] db_backup.create_btn
+### [#424] db_backup.create_btn
 **English:** Create Backup Now
 **Context:** Action button in db backup view
 
-### [#410] db_backup.creating
+### [#425] db_backup.creating
 **English:** Creating...
 **Context:** Used in db backup interface
 
-### [#411] db_backup.delete
+### [#426] db_backup.delete
 **English:** Delete
 **Context:** Used in db backup interface
 
-### [#412] db_backup.download
+### [#427] db_backup.download
 **English:** Download
 **Context:** Used in db backup interface
 
-### [#413] db_backup.empty
+### [#428] db_backup.empty
 **English:** No database backups created yet.
 **Context:** Used in db backup interface
 
-### [#414] db_backup.manual
+### [#429] db_backup.manual
 **English:** Manual
 **Context:** Used in db backup interface
 
-### [#415] db_backup.refresh
+### [#430] db_backup.refresh
 **English:** Refresh
 **Context:** Used in db backup interface
 
-### [#416] db_backup.subtitle
+### [#431] db_backup.subtitle
 **English:** Atomic SQLite database snapshots for disaster recovery. Stored locally in backups/ directory.
 **Context:** Main heading / section header in db backup
 
-### [#417] db_backup.title
+### [#432] db_backup.title
 **English:** Database Backups
 **Context:** Main heading / section header in db backup
 
 ## Deployment (`deployment`)
 
-### [#418] deployment.anonymizer_hint
+### [#433] deployment.anonymizer_hint
 **English:** Automatically scrubs student PII, names, and emails before sending responses to external AI graders.
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#419] deployment.anonymizer_label
+### [#434] deployment.anonymizer_label
 **English:** Enable Submissions Anonymizer
 **Context:** Form input label in deployment
 
-### [#420] deployment.anonymizer_lang_label
+### [#435] deployment.anonymizer_lang_label
 **English:** Anonymizer Language (Presidio)
 **Context:** Form input label in deployment
 
-### [#421] deployment.api_port_hint
+### [#436] deployment.api_port_hint
 **English:** Default: 8000 (dev) / 8002 (fallback)
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#422] deployment.api_port_label
+### [#437] deployment.api_port_label
 **English:** Backend API Port
 **Context:** Form input label in deployment
 
-### [#423] deployment.backup_btn
+### [#438] deployment.backup_btn
 **English:** Backup Config (JSON)
 **Context:** Action button in deployment view
 
-### [#424] deployment.dismiss
+### [#439] deployment.dismiss
 **English:** Dismiss
 **Context:** Used in deployment interface
 
-### [#425] deployment.domain_hint
+### [#440] deployment.domain_hint
 **English:** Used for SEB configuration URLs and QR codes.
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#426] deployment.domain_label
+### [#441] deployment.domain_label
 **English:** Domain or Host IP
 **Context:** Form input label in deployment
 
-### [#427] deployment.domain_placeholder
+### [#442] deployment.domain_placeholder
 **English:** e.g. school.example.com or 192.168.1.100
 **Context:** Input placeholder text in deployment
 
-### [#428] deployment.email_desc
+### [#443] deployment.email_desc
 **English:** PlannedEducation works 100% offline without email (passwords can be reset via supervisor or 5 one-time recovery codes). Configure SMTP only if you wish to deliver reset emails.
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#429] deployment.email_from_label
+### [#444] deployment.email_from_label
 **English:** From Address
 **Context:** Form input label in deployment
 
-### [#430] deployment.env_dev
+### [#445] deployment.env_dev
 **English:** Development (Local SQLite, test tooling)
 **Context:** Used in deployment interface
 
-### [#431] deployment.env_prod
+### [#446] deployment.env_prod
 **English:** Production (PostgreSQL, hardened security)
 **Context:** Used in deployment interface
 
-### [#432] deployment.env_staging
+### [#447] deployment.env_staging
 **English:** Staging
 **Context:** Used in deployment interface
 
-### [#433] deployment.environment_label
+### [#448] deployment.environment_label
 **English:** Environment Mode
 **Context:** Form input label in deployment
 
-### [#434] deployment.frontend_port_hint
+### [#449] deployment.frontend_port_hint
 **English:** Default: 5173 (dev) / 5175 (fallback)
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#435] deployment.frontend_port_label
+### [#450] deployment.frontend_port_label
 **English:** Frontend Web Port
 **Context:** Form input label in deployment
 
-### [#436] deployment.header_image_url_label
+### [#451] deployment.header_image_url_label
 **English:** Header Image URL
 **Context:** Main heading / section header in deployment
 
-### [#437] deployment.header_mode_image
+### [#452] deployment.header_mode_image
 **English:** Image (Custom Logo URL)
 **Context:** Main heading / section header in deployment
 
-### [#438] deployment.header_mode_label
+### [#453] deployment.header_mode_label
 **English:** Custom Header Mode
 **Context:** Main heading / section header in deployment
 
-### [#439] deployment.header_mode_none
+### [#454] deployment.header_mode_none
 **English:** None
 **Context:** Main heading / section header in deployment
 
-### [#440] deployment.header_mode_text
+### [#455] deployment.header_mode_text
 **English:** Text (School Name)
 **Context:** Main heading / section header in deployment
 
-### [#441] deployment.restart_notice
+### [#456] deployment.restart_notice
 **English:** Changes saved to config/deployment.json and .env. To apply system service changes in production, restart the backend service (e.g. systemctl restart plannededucation-backend).
 **Context:** Used in deployment interface
 
-### [#442] deployment.save_btn
+### [#457] deployment.save_btn
 **English:** Save Configuration
 **Context:** Action button in deployment view
 
-### [#443] deployment.saved_notice
+### [#458] deployment.saved_notice
 **English:** Configuration saved to config/deployment.json and .env
 **Context:** Used in deployment interface
 
-### [#444] deployment.saving
+### [#459] deployment.saving
 **English:** Saving...
 **Context:** Used in deployment interface
 
-### [#445] deployment.school_name_hint
+### [#460] deployment.school_name_hint
 **English:** Appears on student logins, exam headers, and PDF reports.
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#446] deployment.school_name_label
+### [#461] deployment.school_name_label
 **English:** School / Institution Name
 **Context:** Form input label in deployment
 
-### [#447] deployment.seb_bypass_hint
+### [#462] deployment.seb_bypass_hint
 **English:** Enables testing exams in regular Chrome/Firefox without requiring full SEB lock. Disable in production.
 **Context:** Descriptive paragraph or helper text in deployment
 
-### [#448] deployment.seb_bypass_label
+### [#463] deployment.seb_bypass_label
 **English:** Allow SEB Developer Bypass
 **Context:** Form input label in deployment
 
-### [#449] deployment.section_email
+### [#464] deployment.section_email
 **English:** ✉️ Outbound Email Settings (Optional)
 **Context:** Used in deployment interface
 
-### [#450] deployment.section_identity
+### [#465] deployment.section_identity
 **English:** 🏫 School Identity & Network
 **Context:** Used in deployment interface
 
-### [#451] deployment.section_privacy
+### [#466] deployment.section_privacy
 **English:** 🛡️ Security & Privacy Hardening
 **Context:** Used in deployment interface
 
-### [#452] deployment.smtp_host_label
+### [#467] deployment.smtp_host_label
 **English:** SMTP Host
 **Context:** Form input label in deployment
 
-### [#453] deployment.smtp_pass_label
+### [#468] deployment.smtp_pass_label
 **English:** SMTP Password
 **Context:** Form input label in deployment
 
-### [#454] deployment.smtp_port_label
+### [#469] deployment.smtp_port_label
 **English:** SMTP Port
 **Context:** Form input label in deployment
 
-### [#455] deployment.smtp_user_label
+### [#470] deployment.smtp_user_label
 **English:** SMTP Username
 **Context:** Form input label in deployment
 
-### [#456] deployment.subtitle
+### [#471] deployment.subtitle
 **English:** Customize school identity, domain ports, network security, and email delivery for this instance.
 **Context:** Main heading / section header in deployment
 
-### [#457] deployment.title
+### [#472] deployment.title
 **English:** School & Deployment Configuration
 **Context:** Main heading / section header in deployment
 
-### [#458] deployment.use_ssl_label
+### [#473] deployment.use_ssl_label
 **English:** Use Direct SSL (Port 465)
 **Context:** Form input label in deployment
 
-### [#459] deployment.use_tls_label
+### [#474] deployment.use_tls_label
 **English:** Use STARTTLS (Port 587)
 **Context:** Form input label in deployment
 
 ## Deployment config (`deployment_config`)
 
-### [#460] deployment_config.comma_separated_hostnames
+### [#475] deployment_config.comma_separated_hostnames
 **English:** Comma-separated hostnames
 **Context:** Used in deployment config interface
 
 ## Errors (`errors`)
 
-### [#461] errors.1
+### [#476] errors.1
 **English:** An error occurred
 **Context:** Validation or runtime error message in errors
 
-### [#462] errors.10
+### [#477] errors.10
 **English:** Session expired, please log in again
 **Context:** Validation or runtime error message in errors
 
-### [#463] errors.2
+### [#478] errors.2
 **English:** Network error
 **Context:** Validation or runtime error message in errors
 
-### [#464] errors.3
+### [#479] errors.3
 **English:** Unauthorized
 **Context:** Validation or runtime error message in errors
 
-### [#465] errors.4
+### [#480] errors.4
 **English:** Forbidden
 **Context:** Validation or runtime error message in errors
 
-### [#466] errors.5
+### [#481] errors.5
 **English:** Not found
 **Context:** Validation or runtime error message in errors
 
-### [#467] errors.6
+### [#482] errors.6
 **English:** Server error
 **Context:** Validation or runtime error message in errors
 
-### [#468] errors.7
+### [#483] errors.7
 **English:** Validation error
 **Context:** Validation or runtime error message in errors
 
-### [#469] errors.7.1
+### [#484] errors.7.1
 **English:** This field is required
 **Context:** Validation or runtime error message in errors
 
-### [#470] errors.7.2
+### [#485] errors.7.2
 **English:** Invalid email format
 **Context:** Validation or runtime error message in errors
 
-### [#471] errors.7.3
+### [#486] errors.7.3
 **English:** Password too short
 **Context:** Validation or runtime error message in errors
 
-### [#472] errors.7.4
+### [#487] errors.7.4
 **English:** Passwords do not match
 **Context:** Validation or runtime error message in errors
 
-### [#473] errors.7.5
+### [#488] errors.7.5
 **English:** Invalid format
 **Context:** Validation or runtime error message in errors
 
-### [#474] errors.8
+### [#489] errors.8
 **English:** Please try again
 **Context:** Validation or runtime error message in errors
 
-### [#475] errors.9
+### [#490] errors.9
 **English:** Something went wrong
 **Context:** Validation or runtime error message in errors
 
 ## Exam editor (`exam_editor`)
 
-### [#476] exam_editor.1
+### [#491] exam_editor.1
 **English:** Exam Editor
 **Context:** Used in exam editor interface
 
-### [#477] exam_editor.10
+### [#492] exam_editor.10
 **English:** Add Question
 **Context:** Used in exam editor interface
 
-### [#478] exam_editor.11
+### [#493] exam_editor.11
 **English:** Question Type
 **Context:** Used in exam editor interface
 
-### [#479] exam_editor.12
+### [#494] exam_editor.12
 **English:** Multiple Choice
 **Context:** Used in exam editor interface
 
-### [#480] exam_editor.13
+### [#495] exam_editor.13
 **English:** Essay
 **Context:** Used in exam editor interface
 
-### [#481] exam_editor.14
+### [#496] exam_editor.14
 **English:** Dynamic Math
 **Context:** Used in exam editor interface
 
-### [#482] exam_editor.15
+### [#497] exam_editor.15
 **English:** Question Text
 **Context:** Used in exam editor interface
 
-### [#483] exam_editor.16
+### [#498] exam_editor.16
 **English:** Options (one per line)
 **Context:** Used in exam editor interface
 
-### [#484] exam_editor.16.1
+### [#499] exam_editor.16.1
 **English:** Mark correct answer with *
 **Context:** Used in exam editor interface
 
-### [#485] exam_editor.17
+### [#500] exam_editor.17
 **English:** Correct Answer
 **Context:** Used in exam editor interface
 
-### [#486] exam_editor.18
+### [#501] exam_editor.18
 **English:** Rubric
 **Context:** Used in exam editor interface
 
-### [#487] exam_editor.19
+### [#502] exam_editor.19
 **English:** Points
 **Context:** Used in exam editor interface
 
-### [#488] exam_editor.2
+### [#503] exam_editor.2
 **English:** Exam Title
 **Context:** Used in exam editor interface
 
-### [#489] exam_editor.20
+### [#504] exam_editor.20
 **English:** Difficulty
 **Context:** Used in exam editor interface
 
-### [#490] exam_editor.21
+### [#505] exam_editor.21
 **English:** Easy
 **Context:** Used in exam editor interface
 
-### [#491] exam_editor.22
+### [#506] exam_editor.22
 **English:** Medium
 **Context:** Used in exam editor interface
 
-### [#492] exam_editor.23
+### [#507] exam_editor.23
 **English:** Hard
 **Context:** Used in exam editor interface
 
-### [#493] exam_editor.24
+### [#508] exam_editor.24
 **English:** Tags
 **Context:** Used in exam editor interface
 
-### [#494] exam_editor.25
+### [#509] exam_editor.25
 **English:** Variables
 **Context:** Used in exam editor interface
 
-### [#495] exam_editor.26
+### [#510] exam_editor.26
 **English:** Add Variable
 **Context:** Used in exam editor interface
 
-### [#496] exam_editor.27
+### [#511] exam_editor.27
 **English:** Variable Name
 **Context:** Used in exam editor interface
 
-### [#497] exam_editor.28
+### [#512] exam_editor.28
 **English:** Variable Type
 **Context:** Used in exam editor interface
 
-### [#498] exam_editor.29
+### [#513] exam_editor.29
 **English:** Min Value
 **Context:** Used in exam editor interface
 
-### [#499] exam_editor.3
+### [#514] exam_editor.3
 **English:** Exam Description
 **Context:** Used in exam editor interface
 
-### [#500] exam_editor.30
+### [#515] exam_editor.30
 **English:** Max Value
 **Context:** Used in exam editor interface
 
-### [#501] exam_editor.31
+### [#516] exam_editor.31
 **English:** Step
 **Context:** Used in exam editor interface
 
-### [#502] exam_editor.32
+### [#517] exam_editor.32
 **English:** Choices
 **Context:** Used in exam editor interface
 
-### [#503] exam_editor.33
+### [#518] exam_editor.33
 **English:** Formula
 **Context:** Used in exam editor interface
 
-### [#504] exam_editor.34
+### [#519] exam_editor.34
 **English:** Save Question
 **Context:** Used in exam editor interface
 
-### [#505] exam_editor.35
+### [#520] exam_editor.35
 **English:** Delete Question
 **Context:** Used in exam editor interface
 
-### [#506] exam_editor.36
+### [#521] exam_editor.36
 **English:** Preview Exam
 **Context:** Used in exam editor interface
 
-### [#507] exam_editor.37
+### [#522] exam_editor.37
 **English:** Save Exam
 **Context:** Used in exam editor interface
 
-### [#508] exam_editor.38
+### [#523] exam_editor.38
 **English:** Back to Dashboard
 **Context:** Used in exam editor interface
 
-### [#509] exam_editor.4
+### [#524] exam_editor.4
 **English:** Duration (minutes)
 **Context:** Used in exam editor interface
 
-### [#510] exam_editor.5
+### [#525] exam_editor.5
 **English:** Instructions
 **Context:** Used in exam editor interface
 
-### [#511] exam_editor.6
+### [#526] exam_editor.6
 **English:** Settings
 **Context:** Used in exam editor interface
 
-### [#512] exam_editor.7
+### [#527] exam_editor.7
 **English:** Shuffle Questions
 **Context:** Used in exam editor interface
 
-### [#513] exam_editor.8
+### [#528] exam_editor.8
 **English:** Shuffle Options
 **Context:** Used in exam editor interface
 
-### [#514] exam_editor.8.1
+### [#529] exam_editor.8.1
 **English:** Show Results Immediately
 **Context:** Used in exam editor interface
 
-### [#515] exam_editor.8.2
+### [#530] exam_editor.8.2
 **English:** Allow Review
 **Context:** Used in exam editor interface
 
-### [#516] exam_editor.8.3
+### [#531] exam_editor.8.3
 **English:** Require SEB
 **Context:** Used in exam editor interface
 
-### [#517] exam_editor.8.4
+### [#532] exam_editor.8.4
 **English:** Passing Score (%)
 **Context:** Used in exam editor interface
 
-### [#518] exam_editor.9
+### [#533] exam_editor.9
 **English:** Questions
 **Context:** Used in exam editor interface
 
-### [#519] exam_editor.add_button
+### [#534] exam_editor.add_button
 **English:** Add
 **Context:** Action button in exam editor view
 
-### [#520] exam_editor.add_question
+### [#535] exam_editor.add_question
 **English:** Add Question
 **Context:** Used in exam editor interface
 
-### [#521] exam_editor.back_to_exams
+### [#536] exam_editor.back_to_exams
 **English:** Back to Exams
 **Context:** Used in exam editor interface
 
-### [#522] exam_editor.chatgpt_not_connected
+### [#537] exam_editor.chatgpt_not_connected
 **English:** ChatGPT Teacher Assistant Not Connected
 **Context:** Used in exam editor interface
 
-### [#523] exam_editor.chatgpt_setup
+### [#538] exam_editor.chatgpt_setup
 **English:** In your ChatGPT Security Settings, make sure “Enable device code authentication for Codex” is turned on, then click Sign in with ChatGPT below.
 **Context:** Used in exam editor interface
 
-### [#524] exam_editor.points
+### [#539] exam_editor.points
 **English:** Points
 **Context:** Used in exam editor interface
 
-### [#525] exam_editor.question_bank
+### [#540] exam_editor.question_bank
 **English:** Question Bank
 **Context:** Used in exam editor interface
 
-### [#526] exam_editor.question_type_placeholder
+### [#541] exam_editor.question_type_placeholder
 **English:** Question text...
 **Context:** Input placeholder text in exam editor
 
-### [#527] exam_editor.seb_enabled
+### [#542] exam_editor.seb_enabled
 **English:** SEB Config Key: Enabled (Locked Down)
 **Context:** Used in exam editor interface
 
-### [#528] exam_editor.seb_not_set
+### [#543] exam_editor.seb_not_set
 **English:** SEB Config Key: Not Set (Insecure)
 **Context:** Used in exam editor interface
 
-### [#529] exam_editor.signin_chatgpt
+### [#544] exam_editor.signin_chatgpt
 **English:** Sign in with ChatGPT
 **Context:** Used in exam editor interface
 
-### [#530] exam_editor.type
+### [#545] exam_editor.type
 **English:** Type
 **Context:** Used in exam editor interface
 
 ## Exams (`exams`)
 
-### [#531] exams.ai_grading
+### [#546] exams.ai_grading
 **English:** AI Grading
 **Context:** Used in exams interface
 
-### [#532] exams.create_button
+### [#547] exams.create_button
 **English:** Create New Exam
 **Context:** Action button in exams view
 
-### [#533] exams.duration_minutes
+### [#548] exams.duration_minutes
 **English:** minutes
 **Context:** Used in exams interface
 
-### [#534] exams.edit_questions
+### [#549] exams.edit_questions
 **English:** Edit Questions
 **Context:** Used in exams interface
 
-### [#535] exams.manage_subtitle
+### [#550] exams.manage_subtitle
 **English:** Create and edit your tests.
 **Context:** Main heading / section header in exams
 
-### [#536] exams.manage_title
+### [#551] exams.manage_title
 **English:** Manage Exams
 **Context:** Main heading / section header in exams
 
-### [#537] exams.new_title_placeholder
+### [#552] exams.new_title_placeholder
 **English:** New Exam Title...
 **Context:** Main heading / section header in exams
 
-### [#538] exams.no_exams
+### [#553] exams.no_exams
 **English:** You have not created any exams yet.
 **Context:** Used in exams interface
 
-### [#539] exams.questions_count
+### [#554] exams.questions_count
 **English:** questions
 **Context:** Used in exams interface
 
 ## Faq (`faq`)
 
-### [#540] faq.close_aria
+### [#555] faq.close_aria
 **English:** Close chat
 **Context:** Used in faq interface
 
-### [#541] faq.help_btn
+### [#556] faq.help_btn
 **English:** Help
 **Context:** Action button in faq view
 
-### [#542] faq.open_aria
+### [#557] faq.open_aria
 **English:** Open FAQ Chatbot
 **Context:** Used in faq interface
 
-### [#543] faq.placeholder
+### [#558] faq.placeholder
 **English:** Type your question...
 **Context:** Input placeholder text in faq
 
-### [#544] faq.send
+### [#559] faq.send
 **English:** Send
 **Context:** Used in faq interface
 
-### [#545] faq.title
+### [#560] faq.title
 **English:** PlannedEducation Help
 **Context:** Main heading / section header in faq
 
-### [#546] faq.typing
+### [#561] faq.typing
 **English:** Typing...
 **Context:** Used in faq interface
 
 ## Forgot password (`forgot_password`)
 
-### [#547] forgot_password.confirm_password_label
+### [#562] forgot_password.confirm_password_label
 **English:** Confirm New Password
 **Context:** Form input label in forgot password
 
-### [#548] forgot_password.email_label
+### [#563] forgot_password.email_label
 **English:** Your Registered Email
 **Context:** Form input label in forgot password
 
-### [#549] forgot_password.email_link_desc
+### [#564] forgot_password.email_link_desc
 **English:** Enter your email address and we will send you a secure link to reset your password. The link expires in 24 hours.
 **Context:** Descriptive paragraph or helper text in forgot password
 
-### [#550] forgot_password.email_placeholder
+### [#565] forgot_password.email_placeholder
 **English:** you@school.edu
 **Context:** Input placeholder text in forgot password
 
-### [#551] forgot_password.identifier_label
+### [#566] forgot_password.identifier_label
 **English:** Your Username or Email
 **Context:** Form input label in forgot password
 
-### [#552] forgot_password.identifier_placeholder
+### [#567] forgot_password.identifier_placeholder
 **English:** username or email@school.edu
 **Context:** Input placeholder text in forgot password
 
-### [#553] forgot_password.link_sent_desc
+### [#568] forgot_password.link_sent_desc
 **English:** If an account exists with that email, a password reset link has been dispatched. Please check your inbox and spam folder.
 **Context:** Descriptive paragraph or helper text in forgot password
 
-### [#554] forgot_password.link_sent_title
+### [#569] forgot_password.link_sent_title
 **English:** Reset Link Sent!
 **Context:** Main heading / section header in forgot password
 
-### [#555] forgot_password.new_password_label
+### [#570] forgot_password.new_password_label
 **English:** New Password
 **Context:** Form input label in forgot password
 
-### [#556] forgot_password.note_label
+### [#571] forgot_password.note_label
 **English:** Optional Note / Message
 **Context:** Form input label in forgot password
 
-### [#557] forgot_password.note_placeholder
+### [#572] forgot_password.note_placeholder
 **English:** e.g., I am sitting in Period 3 Biology test...
 **Context:** Input placeholder text in forgot password
 
-### [#558] forgot_password.passwords_do_not_match
+### [#573] forgot_password.passwords_do_not_match
 **English:** Passwords do not match
 **Context:** Used in forgot password interface
 
-### [#559] forgot_password.recovery_code_label
+### [#574] forgot_password.recovery_code_label
 **English:** One-Time Recovery Code
 **Context:** Form input label in forgot password
 
-### [#560] forgot_password.recovery_code_placeholder
+### [#575] forgot_password.recovery_code_placeholder
 **English:** e.g. a1b2c3d4
 **Context:** Input placeholder text in forgot password
 
-### [#561] forgot_password.request_failed_toast
+### [#576] forgot_password.request_failed_toast
 **English:** Request failed
 **Context:** Used in forgot password interface
 
-### [#562] forgot_password.request_sent_toast
+### [#577] forgot_password.request_sent_toast
 **English:** Request sent to supervisor!
 **Context:** Used in forgot password interface
 
-### [#563] forgot_password.request_success_desc
+### [#578] forgot_password.request_success_desc
 **English:** Your teacher/admin has received an in-platform notification with an instant reset button. Once they approve it, they will give you a temporary password.
 **Context:** Descriptive paragraph or helper text in forgot password
 
-### [#564] forgot_password.request_success_title
+### [#579] forgot_password.request_success_title
 **English:** Request Sent to Supervisor!
 **Context:** Main heading / section header in forgot password
 
-### [#565] forgot_password.reset_button
+### [#580] forgot_password.reset_button
 **English:** Reset Password
 **Context:** Action button in forgot password view
 
-### [#566] forgot_password.reset_failed_toast
+### [#581] forgot_password.reset_failed_toast
 **English:** Reset failed
 **Context:** Used in forgot password interface
 
-### [#567] forgot_password.reset_success_desc
+### [#582] forgot_password.reset_success_desc
 **English:** Your password has been changed. You can now log into your account.
 **Context:** Descriptive paragraph or helper text in forgot password
 
-### [#568] forgot_password.reset_success_title
+### [#583] forgot_password.reset_success_title
 **English:** Password Reset Complete!
 **Context:** Main heading / section header in forgot password
 
-### [#569] forgot_password.reset_success_toast
+### [#584] forgot_password.reset_success_toast
 **English:** Password reset successfully! You can now log in.
 **Context:** Confirmation / success alert message in forgot password
 
-### [#570] forgot_password.resetting
+### [#585] forgot_password.resetting
 **English:** Resetting Password...
 **Context:** Used in forgot password interface
 
-### [#571] forgot_password.role_admin
+### [#586] forgot_password.role_admin
 **English:** School Administrator
 **Context:** Used in forgot password interface
 
-### [#572] forgot_password.role_parent
+### [#587] forgot_password.role_parent
 **English:** My Parent
 **Context:** Used in forgot password interface
 
-### [#573] forgot_password.role_teacher
+### [#588] forgot_password.role_teacher
 **English:** My Teacher (Recommended for students)
 **Context:** Used in forgot password interface
 
-### [#574] forgot_password.saved_codes_notice
+### [#589] forgot_password.saved_codes_notice
 **English:** 💡 Saved your recovery codes? You received 5 one-time recovery codes at registration. Unless you have run out of codes, you can reset your password immediately by yourself without waiting for anyone!
 **Context:** Used in forgot password interface
 
-### [#575] forgot_password.send_link_button
+### [#590] forgot_password.send_link_button
 **English:** Send Reset Link
 **Context:** Action button in forgot password view
 
-### [#576] forgot_password.send_request_button
+### [#591] forgot_password.send_request_button
 **English:** Send Help Request
 **Context:** Action button in forgot password view
 
-### [#577] forgot_password.sending_request
+### [#592] forgot_password.sending_request
 **English:** Sending Request...
 **Context:** Used in forgot password interface
 
-### [#578] forgot_password.supervisor_desc
+### [#593] forgot_password.supervisor_desc
 **English:** If you lost your password and do not have your recovery codes, you can send an urgent reset notification to your teacher or administrator.
 **Context:** Descriptive paragraph or helper text in forgot password
 
-### [#579] forgot_password.supervisor_title
+### [#594] forgot_password.supervisor_title
 **English:** Request In-Person Password Reset
 **Context:** Main heading / section header in forgot password
 
-### [#580] forgot_password.tab_email_link
+### [#595] forgot_password.tab_email_link
 **English:** ✉️ Email Reset Link
 **Context:** Used in forgot password interface
 
-### [#581] forgot_password.tab_email_link_sub
+### [#596] forgot_password.tab_email_link_sub
 **English:** 24-hour secure link
 **Context:** Used in forgot password interface
 
-### [#582] forgot_password.tab_recovery
+### [#597] forgot_password.tab_recovery
 **English:** 🔑 Use Recovery Code
 **Context:** Used in forgot password interface
 
-### [#583] forgot_password.tab_recovery_sub
+### [#598] forgot_password.tab_recovery_sub
 **English:** Instant self-service
 **Context:** Used in forgot password interface
 
-### [#584] forgot_password.tab_supervisor
+### [#599] forgot_password.tab_supervisor
 **English:** 🙋 Ask Teacher / Supervisor
 **Context:** Used in forgot password interface
 
-### [#585] forgot_password.tab_supervisor_sub
+### [#600] forgot_password.tab_supervisor_sub
 **English:** For in-person classroom assistance
 **Context:** Used in forgot password interface
 
-### [#586] forgot_password.target_role_label
+### [#601] forgot_password.target_role_label
 **English:** Who should assist you?
 **Context:** Form input label in forgot password
 
-### [#587] forgot_password.title
+### [#602] forgot_password.title
 **English:** Password Recovery & Reset
 **Context:** Main heading / section header in forgot password
 
 ## Header (`header`)
 
-### [#588] header.language
+### [#603] header.language
 **English:** Select Language
 **Context:** Main heading / section header in header
 
-### [#589] header.notifications
+### [#604] header.notifications
 **English:** In-Platform Notifications
 **Context:** Main heading / section header in header
 
 ## I18n (`i18n`)
 
-### [#590] i18n.badge_context
+### [#605] i18n.badge_context
 **English:** Context
 **Context:** Used in i18n interface
 
-### [#591] i18n.badge_jump
+### [#606] i18n.badge_jump
 **English:** Jump to this element
 **Context:** Used in i18n interface
 
-### [#592] i18n.badge_key
+### [#607] i18n.badge_key
 **English:** Key
 **Context:** Used in i18n interface
 
 ## Languages (`languages`)
 
-### [#593] languages.auto
+### [#608] languages.auto
 **English:** Auto-detect
 **Context:** Used in languages interface
 
-### [#594] languages.de
+### [#609] languages.de
 **English:** German
 **Context:** Used in languages interface
 
-### [#595] languages.en
+### [#610] languages.en
 **English:** English
 **Context:** Used in languages interface
 
-### [#596] languages.es
+### [#611] languages.es
 **English:** Spanish
 **Context:** Used in languages interface
 
-### [#597] languages.fr
+### [#612] languages.fr
 **English:** French
 **Context:** Used in languages interface
 
-### [#598] languages.ja
+### [#613] languages.ja
 **English:** Japanese
 **Context:** Used in languages interface
 
-### [#599] languages.ko
+### [#614] languages.ko
 **English:** Korean
 **Context:** Used in languages interface
 
-### [#600] languages.zh
+### [#615] languages.zh
 **English:** Chinese
 **Context:** Used in languages interface
 
 ## Layout (`layout`)
 
-### [#601] layout.brand_title
+### [#616] layout.brand_title
 **English:** Planned Education
 **Context:** Main heading / section header in layout
 
-### [#602] layout.language_menu
+### [#617] layout.language_menu
 **English:** Language Selector Menu
 **Context:** Used in layout interface
 
-### [#603] layout.logout
+### [#618] layout.logout
 **English:** Log Out
 **Context:** Used in layout interface
 
-### [#604] layout.select_language
+### [#619] layout.select_language
 **English:** Select Language
 **Context:** Used in layout interface
 
-### [#605] layout.toggle_menu
+### [#620] layout.toggle_menu
 **English:** Toggle Menu
 **Context:** Used in layout interface
 
 ## Login (`login`)
 
-### [#606] login.1
+### [#621] login.1
 **English:** Planned Education
 **Context:** Used in login interface
 
-### [#607] login.10
+### [#622] login.10
 **English:** Don't have an account?
 **Context:** Used in login interface
 
-### [#608] login.11
+### [#623] login.11
 **English:** Register
 **Context:** Used in login interface
 
-### [#609] login.12
+### [#624] login.12
 **English:** Forgot password?
 **Context:** Used in login interface
 
-### [#610] login.13
+### [#625] login.13
 **English:** Secure Exam Browser required for exams
 **Context:** Used in login interface
 
-### [#611] login.14
+### [#626] login.14
 **English:** Google sign-in is not configured.
 **Context:** Used in login interface
 
-### [#612] login.15
+### [#627] login.15
 **English:** Register here
 **Context:** Used in login interface
 
-### [#613] login.16
+### [#628] login.16
 **English:** Email or password is incorrect
 **Context:** Used in login interface
 
-### [#614] login.17
+### [#629] login.17
 **English:** Account not found
 **Context:** Used in login interface
 
-### [#615] login.18
+### [#630] login.18
 **English:** Too many attempts, please try again later
 **Context:** Used in login interface
 
-### [#616] login.2
+### [#631] login.2
 **English:** Sign in to your account
 **Context:** Used in login interface
 
-### [#617] login.3
+### [#632] login.3
 **English:** Email address
 **Context:** Used in login interface
 
-### [#618] login.4
+### [#633] login.4
 **English:** Enter your email
 **Context:** Used in login interface
 
-### [#619] login.5
+### [#634] login.5
 **English:** Password
 **Context:** Used in login interface
 
-### [#620] login.6
+### [#635] login.6
 **English:** Enter your password
 **Context:** Used in login interface
 
-### [#621] login.7
+### [#636] login.7
 **English:** Sign in
 **Context:** Used in login interface
 
-### [#622] login.8
+### [#637] login.8
 **English:** or
 **Context:** Used in login interface
 
-### [#623] login.9
+### [#638] login.9
 **English:** Continue with Google
 **Context:** Used in login interface
 
-### [#624] login.account_unlocked
+### [#639] login.account_unlocked
 **English:** Your teacher has unlocked your account! Set your new password to enter.
 **Context:** Used in login interface
 
-### [#625] login.account_unlocked_btn
+### [#640] login.account_unlocked_btn
 **English:** ⚡ My account was reset by my teacher/administrator
 **Context:** Action button in login view
 
-### [#626] login.back_to_login
+### [#641] login.back_to_login
 **English:** ← Back to standard login
 **Context:** Used in login interface
 
-### [#627] login.confirm_password_label
+### [#642] login.confirm_password_label
 **English:** Confirm New Password
 **Context:** Form input label in login
 
-### [#628] login.create_account
+### [#643] login.create_account
 **English:** Create account
 **Context:** Used in login interface
 
-### [#629] login.email_label
+### [#644] login.email_label
 **English:** Email address
 **Context:** Form input label in login
 
-### [#630] login.email_placeholder
+### [#645] login.email_placeholder
 **English:** you@school.edu
 **Context:** Input placeholder text in login
 
-### [#631] login.forgot_password
+### [#646] login.forgot_password
 **English:** Forgot password?
 **Context:** Used in login interface
 
-### [#632] login.google_auth_failed
+### [#647] login.google_auth_failed
 **English:** Google Authentication Failed. Please try again or use email login.
 **Context:** Used in login interface
 
-### [#633] login.google_login_failed
+### [#648] login.google_login_failed
 **English:** Google login failed
 **Context:** Used in login interface
 
-### [#634] login.google_not_configured
+### [#649] login.google_not_configured
 **English:** Google sign-in is not configured. Please use email login instead.
 **Context:** Used in login interface
 
-### [#635] login.invalid_google_token
+### [#650] login.invalid_google_token
 **English:** Invalid Google token. Please try again.
 **Context:** Used in login interface
 
-### [#636] login.new_password_label
+### [#651] login.new_password_label
 **English:** New Password
 **Context:** Form input label in login
 
-### [#637] login.no_account
+### [#652] login.no_account
 **English:** Don't have an account?
 **Context:** Used in login interface
 
-### [#638] login.no_reset_found
+### [#653] login.no_reset_found
 **English:** No active password reset found for this account. Please contact your teacher, parent, or administrator.
 **Context:** Used in login interface
 
-### [#639] login.password_label
+### [#654] login.password_label
 **English:** Password
 **Context:** Form input label in login
 
-### [#640] login.password_placeholder
+### [#655] login.password_placeholder
 **English:** ••••••••
 **Context:** Input placeholder text in login
 
-### [#641] login.remember_me
+### [#656] login.remember_me
 **English:** Remember me on this computer
 **Context:** Used in login interface
 
-### [#642] login.set_password
+### [#657] login.set_password
 **English:** Set Password & Enter Exam ⚡
 **Context:** Used in login interface
 
-### [#643] login.setting_password
+### [#658] login.setting_password
 **English:** Setting Password & Entering…
 **Context:** Used in login interface
 
-### [#644] login.signin
+### [#659] login.signin
 **English:** Sign in
 **Context:** Used in login interface
 
-### [#645] login.signing_in
+### [#660] login.signing_in
 **English:** Signing in…
 **Context:** Used in login interface
 
-### [#646] login.subtitle
+### [#661] login.subtitle
 **English:** Secure exam platform for schools
 **Context:** Main heading / section header in login
 
-### [#647] login.teacher_reset_subtitle
+### [#662] login.teacher_reset_subtitle
 **English:** A teacher, parent, or administrator has initiated a password reset for your account. Only use this form if you were told your password was reset. Enter your email and choose your new password below:
 **Context:** Main heading / section header in login
 
-### [#648] login.teacher_reset_title
+### [#663] login.teacher_reset_title
 **English:** Password Reset Initiated by Teacher/Administrator
 **Context:** Main heading / section header in login
 
-### [#649] login.title
+### [#664] login.title
 **English:** Planned Education
 **Context:** Main heading / section header in login
 
 ## Nav (`nav`)
 
-### [#650] nav.admin
+### [#665] nav.admin
 **English:** Admin
 **Context:** Used in nav interface
 
-### [#651] nav.ai_grading
+### [#666] nav.ai_grading
 **English:** AI Grading
 **Context:** Used in nav interface
 
-### [#652] nav.ai_integrations
+### [#667] nav.ai_integrations
 **English:** AI Integrations
 **Context:** Used in nav interface
 
-### [#653] nav.back
+### [#668] nav.back
 **English:** Back
 **Context:** Used in nav interface
 
-### [#654] nav.classes
+### [#669] nav.classes
 **English:** Classes
 **Context:** Used in nav interface
 
-### [#655] nav.dashboard
+### [#670] nav.dashboard
 **English:** Dashboard
 **Context:** Used in nav interface
 
-### [#656] nav.exam_editor
+### [#671] nav.exam_editor
 **English:** Exam Editor
 **Context:** Used in nav interface
 
-### [#657] nav.logout
+### [#672] nav.logout
 **English:** Logout
 **Context:** Used in nav interface
 
-### [#658] nav.parent_dashboard
+### [#673] nav.parent_dashboard
 **English:** Parent Dashboard
 **Context:** Used in nav interface
 
-### [#659] nav.settings
+### [#674] nav.settings
 **English:** Settings
 **Context:** Used in nav interface
 
-### [#660] nav.take_exam
+### [#675] nav.take_exam
 **English:** Take Exam
 **Context:** Used in nav interface
 
 ## Notifications (`notifications`)
 
-### [#661] notifications.delete
+### [#676] notifications.delete
 **English:** Delete
 **Context:** Used in notifications interface
 
-### [#662] notifications.empty
+### [#677] notifications.empty
 **English:** No notifications right now.
 **Context:** Used in notifications interface
 
-### [#663] notifications.mark_all_read
+### [#678] notifications.mark_all_read
 **English:** Mark all as read
 **Context:** Used in notifications interface
 
-### [#664] notifications.mark_read
+### [#679] notifications.mark_read
 **English:** Mark as read
 **Context:** Used in notifications interface
 
-### [#665] notifications.refresh
+### [#680] notifications.refresh
 **English:** Refresh
 **Context:** Used in notifications interface
 
-### [#666] notifications.reset_action_title
+### [#681] notifications.reset_action_title
 **English:** Password Reset Assistance Request
 **Context:** Main heading / section header in notifications
 
-### [#667] notifications.reset_approve_btn
+### [#682] notifications.reset_approve_btn
 **English:** ⚡ Reset Password for Student
 **Context:** Action button in notifications view
 
-### [#668] notifications.title
+### [#683] notifications.title
 **English:** In-Platform Notifications
 **Context:** Main heading / section header in notifications
 
-### [#669] notifications.tooltip
+### [#684] notifications.tooltip
 **English:** Notifications (updates every minute)
 **Context:** Used in notifications interface
 
-### [#670] notifications.view_link
+### [#685] notifications.view_link
 **English:** View Exam / Details
 **Context:** Used in notifications interface
 
 ## Ocr (`ocr`)
 
-### [#671] ocr.1
+### [#686] ocr.1
 **English:** Handwritten Math OCR
 **Context:** Used in ocr interface
 
-### [#672] ocr.10
+### [#687] ocr.10
 **English:** OCR Unavailable
 **Context:** Used in ocr interface
 
-### [#673] ocr.2
+### [#688] ocr.2
 **English:** Upload Image
 **Context:** Used in ocr interface
 
-### [#674] ocr.3
+### [#689] ocr.3
 **English:** Process
 **Context:** Used in ocr interface
 
-### [#675] ocr.4
+### [#690] ocr.4
 **English:** Result
 **Context:** Used in ocr interface
 
-### [#676] ocr.5
+### [#691] ocr.5
 **English:** LaTeX
 **Context:** Used in ocr interface
 
-### [#677] ocr.6
+### [#692] ocr.6
 **English:** Copy
 **Context:** Used in ocr interface
 
-### [#678] ocr.7
+### [#693] ocr.7
 **English:** Clear
 **Context:** Used in ocr interface
 
-### [#679] ocr.8
+### [#694] ocr.8
 **English:** Processing...
 **Context:** Used in ocr interface
 
-### [#680] ocr.9
+### [#695] ocr.9
 **English:** No image uploaded
 **Context:** Used in ocr interface
 
-### [#681] ocr.bulk_clear_all
+### [#696] ocr.bulk_clear_all
 **English:** Clear All
 **Context:** Used in ocr interface
 
-### [#682] ocr.bulk_progress
+### [#697] ocr.bulk_progress
 **English:** Processing {current} of {total} images...
 **Context:** Used in ocr interface
 
-### [#683] ocr.bulk_select_files
+### [#698] ocr.bulk_select_files
 **English:** Select Test Photos (Bulk)
 **Context:** Used in ocr interface
 
-### [#684] ocr.bulk_selected_files
+### [#699] ocr.bulk_selected_files
 **English:** {count} images selected for digitization
 **Context:** Used in ocr interface
 
-### [#685] ocr.bulk_subject
+### [#700] ocr.bulk_subject
 **English:** Subject Domain
 **Context:** Used in ocr interface
 
-### [#686] ocr.bulk_tab_bulk
+### [#701] ocr.bulk_tab_bulk
 **English:** Bulk Multi-Page Upload
 **Context:** Used in ocr interface
 
-### [#687] ocr.bulk_tab_single
+### [#702] ocr.bulk_tab_single
 **English:** Single Page
 **Context:** Used in ocr interface
 
-### [#688] ocr.bulk_upload_btn
+### [#703] ocr.bulk_upload_btn
 **English:** Process All Images ({count})
 **Context:** Action button in ocr view
 
-### [#689] ocr.completed_confidence
+### [#704] ocr.completed_confidence
 **English:** OCR completed with {percent}% confidence
 **Context:** Used in ocr interface
 
-### [#690] ocr.confidence
+### [#705] ocr.confidence
 **English:** Confidence: {percent}%
 **Context:** Used in ocr interface
 
-### [#691] ocr.copy_digitized
+### [#706] ocr.copy_digitized
 **English:** Copy Digitized Text
 **Context:** Used in ocr interface
 
-### [#692] ocr.desc
+### [#707] ocr.desc
 **English:** Extract text from handwritten exam images using Tesseract OCR. Supports math expressions and multiple languages.
 **Context:** Descriptive paragraph or helper text in ocr
 
-### [#693] ocr.digitized_output
+### [#708] ocr.digitized_output
 **English:** Digitized Digital Version
 **Context:** Used in ocr interface
 
-### [#694] ocr.download_digitized
+### [#709] ocr.download_digitized
 **English:** Download Digitized File
 **Context:** Used in ocr interface
 
-### [#695] ocr.error
+### [#710] ocr.error
 **English:** Error: {error}
 **Context:** Validation or runtime error message in ocr
 
-### [#696] ocr.lang_auto
+### [#711] ocr.lang_auto
 **English:** Auto-detect (OSD)
 **Context:** Used in ocr interface
 
-### [#697] ocr.lang_en
+### [#712] ocr.lang_en
 **English:** English
 **Context:** Used in ocr interface
 
-### [#698] ocr.lang_en_math
+### [#713] ocr.lang_en_math
 **English:** English + Math
 **Context:** Used in ocr interface
 
-### [#699] ocr.lang_math_only
+### [#714] ocr.lang_math_only
 **English:** Math Only
 **Context:** Used in ocr interface
 
-### [#700] ocr.language_label
+### [#715] ocr.language_label
 **English:** Language
 **Context:** Form input label in ocr
 
-### [#701] ocr.math_ocr_desc
+### [#716] ocr.math_ocr_desc
 **English:** Math-specific OCR (optimized for equations)
 **Context:** Descriptive paragraph or helper text in ocr
 
-### [#702] ocr.no_text_detected
+### [#717] ocr.no_text_detected
 **English:** (No text detected)
 **Context:** Used in ocr interface
 
-### [#703] ocr.page_number
+### [#718] ocr.page_number
 **English:** Page {page}
 **Context:** Used in ocr interface
 
-### [#704] ocr.processing_failed
+### [#719] ocr.processing_failed
 **English:** OCR processing failed.
 **Context:** Used in ocr interface
 
-### [#705] ocr.result_title
+### [#720] ocr.result_title
 **English:** Result
 **Context:** Main heading / section header in ocr
 
-### [#706] ocr.select_image_first
+### [#721] ocr.select_image_first
 **English:** Please select an image first.
 **Context:** Used in ocr interface
 
-### [#707] ocr.subject_chemistry
+### [#722] ocr.subject_chemistry
 **English:** Chemistry (Reactions & Formulas)
 **Context:** Used in ocr interface
 
-### [#708] ocr.subject_essay
+### [#723] ocr.subject_essay
 **English:** Essay / Humanities
 **Context:** Used in ocr interface
 
-### [#709] ocr.subject_general
+### [#724] ocr.subject_general
 **English:** General / Other
 **Context:** Used in ocr interface
 
-### [#710] ocr.subject_math
+### [#725] ocr.subject_math
 **English:** Mathematics (Calculus, Algebra, Geometry)
 **Context:** Used in ocr interface
 
-### [#711] ocr.subject_physics
+### [#726] ocr.subject_physics
 **English:** Physics (Equations & Units)
 **Context:** Used in ocr interface
 
 ## Packages (`packages`)
 
-### [#712] packages.1
+### [#727] packages.1
 **English:** Test Package Manager
 **Context:** Used in packages interface
 
-### [#713] packages.10
+### [#728] packages.10
 **English:** My Packages
 **Context:** Used in packages interface
 
-### [#714] packages.11
+### [#729] packages.11
 **English:** No packages yet
 **Context:** Used in packages interface
 
-### [#715] packages.12
+### [#730] packages.12
 **English:** Download
 **Context:** Used in packages interface
 
-### [#716] packages.13
+### [#731] packages.13
 **English:** Delete
 **Context:** Used in packages interface
 
-### [#717] packages.14
+### [#732] packages.14
 **English:** Publish
 **Context:** Used in packages interface
 
-### [#718] packages.15
+### [#733] packages.15
 **English:** Unpublish
 **Context:** Used in packages interface
 
-### [#719] packages.2
+### [#734] packages.2
 **English:** Export Package
 **Context:** Used in packages interface
 
-### [#720] packages.3
+### [#735] packages.3
 **English:** Import Package
 **Context:** Used in packages interface
 
-### [#721] packages.4
+### [#736] packages.4
 **English:** Validate Package
 **Context:** Used in packages interface
 
-### [#722] packages.4.1
+### [#737] packages.4.1
 **English:** Drag and drop .pepkg.json or .pepkg.yaml file
 **Context:** Used in packages interface
 
-### [#723] packages.5
+### [#738] packages.5
 **English:** Export Options
 **Context:** Used in packages interface
 
-### [#724] packages.5.1
+### [#739] packages.5.1
 **English:** Include Answers
 **Context:** Used in packages interface
 
-### [#725] packages.5.2
+### [#740] packages.5.2
 **English:** Include Rubrics
 **Context:** Used in packages interface
 
-### [#726] packages.5.3
+### [#741] packages.5.3
 **English:** Include Variables
 **Context:** Used in packages interface
 
-### [#727] packages.5.4
+### [#742] packages.5.4
 **English:** Format
 **Context:** Used in packages interface
 
-### [#728] packages.5.5
+### [#743] packages.5.5
 **English:** JSON
 **Context:** Used in packages interface
 
-### [#729] packages.5.6
+### [#744] packages.5.6
 **English:** YAML
 **Context:** Used in packages interface
 
-### [#730] packages.5.7
+### [#745] packages.5.7
 **English:** Compress (gzip)
 **Context:** Used in packages interface
 
-### [#731] packages.6
+### [#746] packages.6
 **English:** Export
 **Context:** Used in packages interface
 
-### [#732] packages.7
+### [#747] packages.7
 **English:** Import
 **Context:** Used in packages interface
 
-### [#733] packages.8
+### [#748] packages.8
 **English:** Package Valid
 **Context:** Used in packages interface
 
-### [#734] packages.8.1
+### [#749] packages.8.1
 **English:** Package is valid!
 **Context:** Used in packages interface
 
-### [#735] packages.8.2
+### [#750] packages.8.2
 **English:** Package validation failed
 **Context:** Used in packages interface
 
-### [#736] packages.9
+### [#751] packages.9
 **English:** Package Imported
 **Context:** Used in packages interface
 
-### [#737] packages.9.1
+### [#752] packages.9.1
 **English:** Questions imported
 **Context:** Used in packages interface
 
-### [#738] packages.9.2
+### [#753] packages.9.2
 **English:** Rubrics imported
 **Context:** Used in packages interface
 
-### [#739] packages.available_title
+### [#754] packages.available_title
 **English:** Available Packages
 **Context:** Main heading / section header in packages
 
-### [#740] packages.import_btn
+### [#755] packages.import_btn
 **English:** Import Package
 **Context:** Action button in packages view
 
-### [#741] packages.manager_title
+### [#756] packages.manager_title
 **English:** Test Package Manager
 **Context:** Main heading / section header in packages
 
 ## Parent (`parent`)
 
-### [#742] parent.1
+### [#757] parent.1
 **English:** Parent Dashboard
 **Context:** Used in parent interface
 
-### [#743] parent.10
+### [#758] parent.10
 **English:** Link Pending
 **Context:** Used in parent interface
 
-### [#744] parent.11
+### [#759] parent.11
 **English:** Link Rejected
 **Context:** Used in parent interface
 
-### [#745] parent.2
+### [#760] parent.2
 **English:** My Children
 **Context:** Used in parent interface
 
-### [#746] parent.3
+### [#761] parent.3
 **English:** Add Child
 **Context:** Used in parent interface
 
-### [#747] parent.4
+### [#762] parent.4
 **English:** Child's Progress
 **Context:** Used in parent interface
 
-### [#748] parent.5
+### [#763] parent.5
 **English:** Exam History
 **Context:** Used in parent interface
 
-### [#749] parent.6
+### [#764] parent.6
 **English:** Grades
 **Context:** Used in parent interface
 
-### [#750] parent.7
+### [#765] parent.7
 **English:** No children linked
 **Context:** Used in parent interface
 
-### [#751] parent.8
+### [#766] parent.8
 **English:** Request Link
 **Context:** Used in parent interface
 
-### [#752] parent.9
+### [#767] parent.9
 **English:** Link Approved
+**Context:** Used in parent interface
+
+### [#768] parent.no_feedback
+**English:** No feedback recorded yet.
 **Context:** Used in parent interface
 
 ## Passkeys (`passkeys`)
 
-### [#753] passkeys.1
+### [#769] passkeys.1
 **English:** Passkeys
 **Context:** Used in passkeys interface
 
-### [#754] passkeys.2
+### [#770] passkeys.2
 **English:** Register Passkey
 **Context:** Used in passkeys interface
 
-### [#755] passkeys.3
+### [#771] passkeys.3
 **English:** Use your device's biometric (fingerprint, face ID) or PIN
 **Context:** Used in passkeys interface
 
-### [#756] passkeys.4
+### [#772] passkeys.4
 **English:** Passkeys Registered
 **Context:** Used in passkeys interface
 
-### [#757] passkeys.5
+### [#773] passkeys.5
 **English:** Created
 **Context:** Used in passkeys interface
 
-### [#758] passkeys.6
+### [#774] passkeys.6
 **English:** Last Used
 **Context:** Used in passkeys interface
 
-### [#759] passkeys.7
+### [#775] passkeys.7
 **English:** Delete
 **Context:** Used in passkeys interface
 
-### [#760] passkeys.7.1
+### [#776] passkeys.7.1
 **English:** Are you sure you want to delete this passkey?
 **Context:** Used in passkeys interface
 
-### [#761] passkeys.8
+### [#777] passkeys.8
 **English:** No passkeys registered yet
 **Context:** Used in passkeys interface
 
-### [#762] passkeys.9
+### [#778] passkeys.9
 **English:** Passkeys sync across devices via iCloud Keychain or Google Password Manager
 **Context:** Used in passkeys interface
 
-### [#763] passkeys.col_sign_count
+### [#779] passkeys.col_sign_count
 **English:** Sign Count
 **Context:** Used in passkeys interface
 
-### [#764] passkeys.col_transports
+### [#780] passkeys.col_transports
 **English:** Transports
 **Context:** Used in passkeys interface
 
-### [#765] passkeys.register_btn
+### [#781] passkeys.register_btn
 **English:** Register Passkey
 **Context:** Action button in passkeys view
 
 ## Proctoring (`proctoring`)
 
-### [#766] proctoring.1
+### [#782] proctoring.1
 **English:** Proctoring
 **Context:** Used in proctoring interface
 
-### [#767] proctoring.10
+### [#783] proctoring.10
 **English:** End Session
 **Context:** Used in proctoring interface
 
-### [#768] proctoring.11
+### [#784] proctoring.11
 **English:** Session Events
 **Context:** Used in proctoring interface
 
-### [#769] proctoring.12
+### [#785] proctoring.12
 **English:** Eye Movement
 **Context:** Used in proctoring interface
 
-### [#770] proctoring.13
+### [#786] proctoring.13
 **English:** Multiple Faces
 **Context:** Used in proctoring interface
 
-### [#771] proctoring.14
+### [#787] proctoring.14
 **English:** Background Audio
 **Context:** Used in proctoring interface
 
-### [#772] proctoring.15
+### [#788] proctoring.15
 **English:** Tab Switch
 **Context:** Used in proctoring interface
 
-### [#773] proctoring.16
+### [#789] proctoring.16
 **English:** SEB Violation
 **Context:** Used in proctoring interface
 
-### [#774] proctoring.17
+### [#790] proctoring.17
 **English:** No active session
 **Context:** Used in proctoring interface
 
-### [#775] proctoring.18
+### [#791] proctoring.18
 **English:** Session Ended
 **Context:** Used in proctoring interface
 
-### [#776] proctoring.2
+### [#792] proctoring.2
 **English:** Enable Proctoring
 **Context:** Used in proctoring interface
 
-### [#777] proctoring.3
+### [#793] proctoring.3
 **English:** Camera
 **Context:** Used in proctoring interface
 
-### [#778] proctoring.3.1
+### [#794] proctoring.3.1
 **English:** Microphone
 **Context:** Used in proctoring interface
 
-### [#779] proctoring.4
+### [#795] proctoring.4
 **English:** GDPR Consent
 **Context:** Used in proctoring interface
 
-### [#780] proctoring.4.1
+### [#796] proctoring.4.1
 **English:** I consent to camera and microphone monitoring during exams
 **Context:** Used in proctoring interface
 
-### [#781] proctoring.5
+### [#797] proctoring.5
 **English:** Give Consent
 **Context:** Used in proctoring interface
 
-### [#782] proctoring.6
+### [#798] proctoring.6
 **English:** Consent Given
 **Context:** Used in proctoring interface
 
-### [#783] proctoring.7
+### [#799] proctoring.7
 **English:** Withdraw Consent
 **Context:** Used in proctoring interface
 
-### [#784] proctoring.8
+### [#800] proctoring.8
 **English:** Proctoring Session
 **Context:** Used in proctoring interface
 
-### [#785] proctoring.9
+### [#801] proctoring.9
 **English:** Start Session
 **Context:** Used in proctoring interface
 
-### [#786] proctoring.access_denied
+### [#802] proctoring.access_denied
 **English:** Camera/Microphone access denied. Cannot enable proctoring.
 **Context:** Used in proctoring interface
 
-### [#787] proctoring.active_title
+### [#803] proctoring.active_title
 **English:** 🔴 Proctoring Active
 **Context:** Main heading / section header in proctoring
 
-### [#788] proctoring.activities_title
+### [#804] proctoring.activities_title
 **English:** Data Processing Activities
 **Context:** Main heading / section header in proctoring
 
-### [#789] proctoring.ai_proctoring
+### [#805] proctoring.ai_proctoring
 **English:** ⚪ AI Proctoring
 **Context:** Used in proctoring interface
 
-### [#790] proctoring.camera_desc
+### [#806] proctoring.camera_desc
 **English:** Uses webcam to detect face presence, track eye movements, and identify if multiple people are in frame. Video is processed locally and only event metadata is sent to the server.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#791] proctoring.camera_preview
+### [#807] proctoring.camera_preview
 **English:** Camera Preview
 **Context:** Used in proctoring interface
 
-### [#792] proctoring.camera_title
+### [#808] proctoring.camera_title
 **English:** Camera Access (Face Detection & Eye Tracking)
 **Context:** Main heading / section header in proctoring
 
-### [#793] proctoring.consent_given_desc
+### [#809] proctoring.consent_given_desc
 **English:** Consent has been given. Click below to start the proctoring session.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#794] proctoring.consent_required
+### [#810] proctoring.consent_required
 **English:** Data processing consent is required to proceed.
 **Context:** Used in proctoring interface
 
-### [#795] proctoring.disable_btn
+### [#811] proctoring.disable_btn
 **English:** Disable Proctoring
 **Context:** Action button in proctoring view
 
-### [#796] proctoring.events_recorded
+### [#812] proctoring.events_recorded
 **English:** Events Recorded
 **Context:** Used in proctoring interface
 
-### [#797] proctoring.gdpr_desc
+### [#813] proctoring.gdpr_desc
 **English:** This exam uses optional AI proctoring to ensure academic integrity. Please review and consent to the following data processing activities.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#798] proctoring.gdpr_notice
+### [#814] proctoring.gdpr_notice
 **English:** Review GDPR privacy controls to configure optional proctoring.
 **Context:** Used in proctoring interface
 
-### [#799] proctoring.gdpr_title
+### [#815] proctoring.gdpr_title
 **English:** GDPR Consent for AI Proctoring
 **Context:** Main heading / section header in proctoring
 
-### [#800] proctoring.gdpr_warning
+### [#816] proctoring.gdpr_warning
 **English:** GDPR Warning
 **Context:** Used in proctoring interface
 
-### [#801] proctoring.inactive_title
+### [#817] proctoring.inactive_title
 **English:** ⚪ Proctoring Inactive
 **Context:** Main heading / section header in proctoring
 
-### [#802] proctoring.max_faces
+### [#818] proctoring.max_faces
 **English:** Max Faces Detected
 **Context:** Used in proctoring interface
 
-### [#803] proctoring.mic_desc
+### [#819] proctoring.mic_desc
 **English:** Monitors ambient audio levels to detect unusual sounds or conversations. Audio is analyzed in real-time locally; only anomaly events are recorded.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#804] proctoring.mic_title
+### [#820] proctoring.mic_title
 **English:** Microphone Access (Background Audio Monitoring)
 **Context:** Main heading / section header in proctoring
 
-### [#805] proctoring.no_events
+### [#821] proctoring.no_events
 **English:** No events recorded yet
 **Context:** Used in proctoring interface
 
-### [#806] proctoring.optional_warning
+### [#822] proctoring.optional_warning
 **English:** This is optional and only recommended for remote, take-home exams.
 **Context:** Used in proctoring interface
 
-### [#807] proctoring.ready
+### [#823] proctoring.ready
 **English:** Proctoring Ready
 **Context:** Used in proctoring interface
 
-### [#808] proctoring.recent_events
+### [#824] proctoring.recent_events
 **English:** Recent Events
 **Context:** Used in proctoring interface
 
-### [#809] proctoring.review_consent
+### [#825] proctoring.review_consent
 **English:** Review Proctoring Consent
 **Context:** Used in proctoring interface
 
-### [#810] proctoring.right_access
+### [#826] proctoring.right_access
 **English:** Right to access your proctoring data
 **Context:** Used in proctoring interface
 
-### [#811] proctoring.right_automated
+### [#827] proctoring.right_automated
 **English:** Right to object to automated decision-making
 **Context:** Used in proctoring interface
 
-### [#812] proctoring.right_delete
+### [#828] proctoring.right_delete
 **English:** Right to request data deletion after exam review period
 **Context:** Used in proctoring interface
 
-### [#813] proctoring.right_portability
+### [#829] proctoring.right_portability
 **English:** Right to data portability
 **Context:** Used in proctoring interface
 
-### [#814] proctoring.right_withdraw
+### [#830] proctoring.right_withdraw
 **English:** Right to withdraw consent at any time
 **Context:** Used in proctoring interface
 
-### [#815] proctoring.rights_title
+### [#831] proctoring.rights_title
 **English:** Your Rights (GDPR)
 **Context:** Main heading / section header in proctoring
 
-### [#816] proctoring.screen_desc
+### [#832] proctoring.screen_desc
 **English:** Detects tab switches, window blur, and fullscreen exits. No actual screen content is recorded or transmitted.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#817] proctoring.screen_monitoring
+### [#833] proctoring.screen_monitoring
 **English:** Screen Monitoring
 **Context:** Used in proctoring interface
 
-### [#818] proctoring.screen_title
+### [#834] proctoring.screen_title
 **English:** Screen Recording (Tab/Window Monitoring)
 **Context:** Main heading / section header in proctoring
 
-### [#819] proctoring.start_session_btn
+### [#835] proctoring.start_session_btn
 **English:** Start Proctoring Session
 **Context:** Action button in proctoring view
 
-### [#820] proctoring.storage_desc
+### [#836] proctoring.storage_desc
 **English:** Consent to process and store proctoring event data (timestamps, event types, severity levels, face counts, gaze coordinates) for the duration of the exam and 30 days after for review purposes.
 **Context:** Descriptive paragraph or helper text in proctoring
 
-### [#821] proctoring.storage_title
+### [#837] proctoring.storage_title
 **English:** Data Processing & Storage (Required)
 **Context:** Main heading / section header in proctoring
 
-### [#822] proctoring.submit_consent
+### [#838] proctoring.submit_consent
 **English:** Give Consent & Continue
 **Context:** Used in proctoring interface
 
-### [#823] proctoring.submitting
+### [#839] proctoring.submitting
 **English:** Submitting...
 **Context:** Used in proctoring interface
 
-### [#824] proctoring.violations
+### [#840] proctoring.violations
 **English:** Violations
 **Context:** Used in proctoring interface
 
 ## Register (`register`)
 
-### [#825] register.1
+### [#841] register.1
 **English:** Create your account
 **Context:** Used in register interface
 
-### [#826] register.10
+### [#842] register.10
 **English:** Confirm password
 **Context:** Used in register interface
 
-### [#827] register.11
+### [#843] register.11
 **English:** Confirm your password
 **Context:** Used in register interface
 
-### [#828] register.12
+### [#844] register.12
 **English:** I agree to the Terms of Service and Privacy Policy
 **Context:** Used in register interface
 
-### [#829] register.13
+### [#845] register.13
 **English:** Create account
 **Context:** Used in register interface
 
-### [#830] register.14
+### [#846] register.14
 **English:** Already have an account?
 **Context:** Used in register interface
 
-### [#831] register.15
+### [#847] register.15
 **English:** Sign in
 **Context:** Used in register interface
 
-### [#832] register.16
+### [#848] register.16
 **English:** Passwords do not match
 **Context:** Used in register interface
 
-### [#833] register.17
+### [#849] register.17
 **English:** Email already registered
 **Context:** Used in register interface
 
-### [#834] register.18
+### [#850] register.18
 **English:** Username already taken
 **Context:** Used in register interface
 
-### [#835] register.19
+### [#851] register.19
 **English:** Password does not meet requirements
 **Context:** Used in register interface
 
-### [#836] register.2
+### [#852] register.2
 **English:** Full name
 **Context:** Used in register interface
 
-### [#837] register.3
+### [#853] register.3
 **English:** Enter your full name
 **Context:** Used in register interface
 
-### [#838] register.4
+### [#854] register.4
 **English:** Email address
 **Context:** Used in register interface
 
-### [#839] register.5
+### [#855] register.5
 **English:** Enter your email
 **Context:** Used in register interface
 
-### [#840] register.6
+### [#856] register.6
 **English:** Username
 **Context:** Used in register interface
 
-### [#841] register.7
+### [#857] register.7
 **English:** Choose a username
 **Context:** Used in register interface
 
-### [#842] register.8
+### [#858] register.8
 **English:** Password
 **Context:** Used in register interface
 
-### [#843] register.9
+### [#859] register.9
 **English:** Create a password
 **Context:** Used in register interface
 
-### [#844] register.9.1
+### [#860] register.9.1
 **English:** At least 8 characters
 **Context:** Used in register interface
 
-### [#845] register.9.2
+### [#861] register.9.2
 **English:** One uppercase letter
 **Context:** Used in register interface
 
-### [#846] register.9.3
+### [#862] register.9.3
 **English:** One lowercase letter
 **Context:** Used in register interface
 
-### [#847] register.9.4
+### [#863] register.9.4
 **English:** One number
 **Context:** Used in register interface
 
-### [#848] register.9.5
+### [#864] register.9.5
 **English:** One special character
 **Context:** Used in register interface
 
-### [#849] register.account_role
+### [#865] register.account_role
 **English:** Account Role
 **Context:** Used in register interface
 
-### [#850] register.already_have
+### [#866] register.already_have
 **English:** Already have an account?
 **Context:** Used in register interface
 
-### [#851] register.confirm_password_label
+### [#867] register.confirm_password_label
 **English:** Confirm Password
 **Context:** Form input label in register
 
-### [#852] register.copied
+### [#868] register.copied
 **English:** Copied to Clipboard!
 **Context:** Used in register interface
 
-### [#853] register.copy_codes
+### [#869] register.copy_codes
 **English:** Copy All Codes
 **Context:** Used in register interface
 
-### [#854] register.creating
+### [#870] register.creating
 **English:** Creating account…
 **Context:** Used in register interface
 
-### [#855] register.critical_codes
+### [#871] register.critical_codes
 **English:** CRITICAL — DO NOT SKIP: Store these 5 one-time recovery codes in a safe place (or print them now). If you ever forget your password, you can use one of these single-use codes to reset your password immediately by yourself without waiting for anyone!
 **Context:** Used in register interface
 
-### [#856] register.critical_codes_body
+### [#872] register.critical_codes_body
 **English:** Store these 5 one-time recovery codes in a safe place (or print them now). If you ever forget your password, you can use one of these single-use codes to reset your password immediately by yourself without waiting for anyone!
 **Context:** Used in register interface
 
-### [#857] register.critical_codes_title
+### [#873] register.critical_codes_title
 **English:** CRITICAL — DO NOT SKIP
 **Context:** Main heading / section header in register
 
-### [#858] register.email_label
+### [#874] register.email_label
 **English:** Email
 **Context:** Form input label in register
 
-### [#859] register.full_name_label
+### [#875] register.full_name_label
 **English:** Full Name
 **Context:** Form input label in register
 
-### [#860] register.password_label
+### [#876] register.password_label
 **English:** Password
 **Context:** Form input label in register
 
-### [#861] register.passwords_do_not_match
+### [#877] register.passwords_do_not_match
 **English:** Passwords do not match
 **Context:** Used in register interface
 
-### [#862] register.print_codes
+### [#878] register.print_codes
 **English:** Print Codes
 **Context:** Used in register interface
 
-### [#863] register.proceed_login
+### [#879] register.proceed_login
 **English:** I Have Saved My Codes — Proceed to Login
 **Context:** Used in register interface
 
-### [#864] register.register_button
+### [#880] register.register_button
 **English:** Register
 **Context:** Action button in register view
 
-### [#865] register.role_parent
+### [#881] register.role_parent
 **English:** Parent (View child progress and reports)
 **Context:** Used in register interface
 
-### [#866] register.role_student
+### [#882] register.role_student
 **English:** Student (Take exams, view grades)
 **Context:** Used in register interface
 
-### [#867] register.role_teacher
+### [#883] register.role_teacher
 **English:** Teacher (Create & manage exams, grade submissions)
 **Context:** Used in register interface
 
-### [#868] register.save_recovery_codes
+### [#884] register.save_recovery_codes
 **English:** Save Your Recovery Codes
 **Context:** Used in register interface
 
-### [#869] register.sign_in
+### [#885] register.sign_in
 **English:** Sign in here
 **Context:** Used in register interface
 
-### [#870] register.subtitle
+### [#886] register.subtitle
 **English:** Create a new account
 **Context:** Main heading / section header in register
 
-### [#871] register.teacher_verification
+### [#887] register.teacher_verification
 **English:** Teacher Verification: To protect exam security, self-registered teachers require one-time approval by a school administrator before publishing tests or accessing curriculum modules.
 **Context:** Used in register interface
 
-### [#872] register.teacher_verification_body
+### [#888] register.teacher_verification_body
 **English:** To protect exam security, self-registered teachers require one-time approval by a school administrator before publishing tests or accessing curriculum modules.
 **Context:** Used in register interface
 
-### [#873] register.teacher_verification_title
+### [#889] register.teacher_verification_title
 **English:** Teacher Verification
 **Context:** Main heading / section header in register
 
-### [#874] register.title
+### [#890] register.title
 **English:** Planned Education
 **Context:** Main heading / section header in register
 
-### [#875] register.username_label
+### [#891] register.username_label
 **English:** Username
 **Context:** Form input label in register
 
-### [#876] register.username_rules
+### [#892] register.username_rules
 **English:** Letters, numbers, underscores, dots and hyphens only
 **Context:** Used in register interface
 
 ## Reset password (`reset_password`)
 
-### [#877] reset_password.go_to_login
+### [#893] reset_password.go_to_login
 **English:** Go to Login
 **Context:** Used in reset password interface
 
-### [#878] reset_password.missing_token
+### [#894] reset_password.missing_token
 **English:** Invalid or missing reset token. Please request a new password reset link.
 **Context:** Used in reset password interface
 
-### [#879] reset_password.request_new_link
+### [#895] reset_password.request_new_link
 **English:** Request New Link
 **Context:** Used in reset password interface
 
-### [#880] reset_password.subtitle
+### [#896] reset_password.subtitle
 **English:** Enter and confirm your new password below. This link expires in 24 hours.
 **Context:** Main heading / section header in reset password
 
-### [#881] reset_password.success_desc
+### [#897] reset_password.success_desc
 **English:** Your new password is now active. You have been logged in.
 **Context:** Descriptive paragraph or helper text in reset password
 
-### [#882] reset_password.success_title
+### [#898] reset_password.success_title
 **English:** Password Reset Successfully!
 **Context:** Main heading / section header in reset password
 
-### [#883] reset_password.title
+### [#899] reset_password.title
 **English:** Reset Your Password
 **Context:** Main heading / section header in reset password
 
-### [#884] reset_password.token_placeholder
+### [#900] reset_password.token_placeholder
 **English:** Paste your 32-character reset token here
 **Context:** Input placeholder text in reset password
 
 ## Secure chat (`secure_chat`)
 
-### [#885] secure_chat.1
+### [#901] secure_chat.1
 **English:** Secure Chat
 **Context:** Used in secure chat interface
 
-### [#886] secure_chat.2
+### [#902] secure_chat.2
 **English:** End-to-end encrypted
 **Context:** Used in secure chat interface
 
-### [#887] secure_chat.3
+### [#903] secure_chat.3
 **English:** Message
 **Context:** Used in secure chat interface
 
-### [#888] secure_chat.3.1
+### [#904] secure_chat.3.1
 **English:** Attach File
 **Context:** Used in secure chat interface
 
-### [#889] secure_chat.4
+### [#905] secure_chat.4
 **English:** Send
 **Context:** Used in secure chat interface
 
-### [#890] secure_chat.5
+### [#906] secure_chat.5
 **English:** Connection Status
 **Context:** Used in secure chat interface
 
-### [#891] secure_chat.6
+### [#907] secure_chat.6
 **English:** Connected
 **Context:** Used in secure chat interface
 
-### [#892] secure_chat.7
+### [#908] secure_chat.7
 **English:** Disconnected
 **Context:** Used in secure chat interface
 
-### [#893] secure_chat.8
+### [#909] secure_chat.8
 **English:** Reconnecting...
 **Context:** Used in secure chat interface
 
 ## Settings (`settings`)
 
-### [#894] settings.1
+### [#910] settings.1
 **English:** Settings
 **Context:** Used in settings interface
 
-### [#895] settings.10
+### [#911] settings.10
 **English:** Two-Factor Authentication
 **Context:** Used in settings interface
 
-### [#896] settings.10.1
+### [#912] settings.10.1
 **English:** Enable 2FA
 **Context:** Used in settings interface
 
-### [#897] settings.10.2
+### [#913] settings.10.2
 **English:** Disable 2FA
 **Context:** Used in settings interface
 
-### [#898] settings.10.3
+### [#914] settings.10.3
 **English:** Recovery Codes
 **Context:** Used in settings interface
 
-### [#899] settings.11
+### [#915] settings.11
 **English:** Passkeys
 **Context:** Used in settings interface
 
-### [#900] settings.11.1
+### [#916] settings.11.1
 **English:** Register Passkey
 **Context:** Used in settings interface
 
-### [#901] settings.11.2
+### [#917] settings.11.2
 **English:** Passkeys Registered
 **Context:** Used in settings interface
 
-### [#902] settings.12
+### [#918] settings.12
 **English:** AI Key Management
 **Context:** Used in settings interface
 
-### [#903] settings.12.1
+### [#919] settings.12.1
 **English:** AI Provider
 **Context:** Used in settings interface
 
-### [#904] settings.12.2
+### [#920] settings.12.2
 **English:** Model
 **Context:** Used in settings interface
 
-### [#905] settings.12.3
+### [#921] settings.12.3
 **English:** API Key
 **Context:** Used in settings interface
 
-### [#906] settings.12.3.1
+### [#922] settings.12.3.1
 **English:** Enter your API key
 **Context:** Used in settings interface
 
-### [#907] settings.12.4
+### [#923] settings.12.4
 **English:** Base URL (optional)
 **Context:** Used in settings interface
 
-### [#908] settings.12.5
+### [#924] settings.12.5
 **English:** Save AI Key
 **Context:** Used in settings interface
 
-### [#909] settings.13
+### [#925] settings.13
 **English:** Appearance
 **Context:** Used in settings interface
 
-### [#910] settings.13.1
+### [#926] settings.13.1
 **English:** Theme
 **Context:** Used in settings interface
 
-### [#911] settings.13.2
+### [#927] settings.13.2
 **English:** Border Radius
 **Context:** Used in settings interface
 
-### [#912] settings.14
+### [#928] settings.14
 **English:** Notifications
 **Context:** Used in settings interface
 
-### [#913] settings.15
+### [#929] settings.15
 **English:** Email Notifications
 **Context:** Used in settings interface
 
-### [#914] settings.16
+### [#930] settings.16
 **English:** Push Notifications
 **Context:** Used in settings interface
 
-### [#915] settings.17
+### [#931] settings.17
 **English:** Save Settings
 **Context:** Used in settings interface
 
-### [#916] settings.18
+### [#932] settings.18
 **English:** Settings saved
 **Context:** Used in settings interface
 
-### [#917] settings.19
+### [#933] settings.19
 **English:** Error saving settings
 **Context:** Used in settings interface
 
-### [#918] settings.2
+### [#934] settings.2
 **English:** Profile
 **Context:** Used in settings interface
 
-### [#919] settings.3
+### [#935] settings.3
 **English:** Full Name
 **Context:** Used in settings interface
 
-### [#920] settings.4
+### [#936] settings.4
 **English:** Email
 **Context:** Used in settings interface
 
-### [#921] settings.5
+### [#937] settings.5
 **English:** Username
 **Context:** Used in settings interface
 
-### [#922] settings.6
+### [#938] settings.6
 **English:** Change Password
 **Context:** Used in settings interface
 
-### [#923] settings.7
+### [#939] settings.7
 **English:** Current Password
 **Context:** Used in settings interface
 
-### [#924] settings.8
+### [#940] settings.8
 **English:** New Password
 **Context:** Used in settings interface
 
-### [#925] settings.8.1
+### [#941] settings.8.1
 **English:** Confirm New Password
 **Context:** Used in settings interface
 
-### [#926] settings.9
+### [#942] settings.9
 **English:** Update Password
 **Context:** Used in settings interface
 
-### [#927] settings.appearance_desc
+### [#943] settings.appearance_desc
 **English:** Customize your app theme and UI style.
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#928] settings.border_style
+### [#944] settings.border_style
 **English:** Border Style
 **Context:** Used in settings interface
 
-### [#929] settings.i18n.contribute_desc
+### [#945] settings.i18n.contribute_desc
 **English:** Missing your language? Found a mistake? Contributions welcome!
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#930] settings.i18n.contribute_github
+### [#946] settings.i18n.contribute_github
 **English:** View Locale Files on GitHub
 **Context:** Used in settings interface
 
-### [#931] settings.i18n.contribute_issue
+### [#947] settings.i18n.contribute_issue
 **English:** Report Translation Issue
 **Context:** Used in settings interface
 
-### [#932] settings.i18n.contribute_title
+### [#948] settings.i18n.contribute_title
 **English:** Help Translate PlannedEducation
 **Context:** Main heading / section header in settings
 
-### [#933] settings.i18n.desc
+### [#949] settings.i18n.desc
 **English:** Configure language and translation display options
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#934] settings.i18n.help_1
+### [#950] settings.i18n.help_1
 **English:** Each translatable element has a unique number (e.g., <code>login.3</code> = "Email" field on login page)
 **Context:** Used in settings interface
 
-### [#935] settings.i18n.help_2
+### [#951] settings.i18n.help_2
 **English:** Enable "Show Translation Numbers" to see badges on all translatable elements
 **Context:** Used in settings interface
 
-### [#936] settings.i18n.help_3
+### [#952] settings.i18n.help_3
 **English:** Hover any numbered element to see its key, English text, and context
 **Context:** Used in settings interface
 
-### [#937] settings.i18n.help_4
+### [#953] settings.i18n.help_4
 **English:** Click "Jump" in tooltip or press Enter on focused element to center it on screen
 **Context:** Used in settings interface
 
-### [#938] settings.i18n.help_5
+### [#954] settings.i18n.help_5
 **English:** FAQ chatbot shows translation keys - click to jump directly to that element
 **Context:** Used in settings interface
 
-### [#939] settings.i18n.help_6
+### [#955] settings.i18n.help_6
 **English:** Translators: use the key (e.g., <code>login.3</code>) to find and translate the correct text in locale files
 **Context:** Used in settings interface
 
-### [#940] settings.i18n.help_title
+### [#956] settings.i18n.help_title
 **English:** How Translation Numbers Work
 **Context:** Main heading / section header in settings
 
-### [#941] settings.i18n.language
+### [#957] settings.i18n.language
 **English:** Language
 **Context:** Used in settings interface
 
-### [#942] settings.i18n.language_hint
+### [#958] settings.i18n.language_hint
 **English:** Changes take effect immediately. Translations are community-contributed.
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#943] settings.i18n.show_numbers
+### [#959] settings.i18n.show_numbers
 **English:** Show Translation Numbers
 **Context:** Used in settings interface
 
-### [#944] settings.i18n.show_numbers_desc
+### [#960] settings.i18n.show_numbers_desc
 **English:** Display numbered badges on all translatable elements. Hover for context and jump-to functionality.
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#945] settings.i18n.title
+### [#961] settings.i18n.title
 **English:** Language & Translation
 **Context:** Main heading / section header in settings
 
-### [#946] settings.i18n.translator_guide
+### [#962] settings.i18n.translator_guide
 **English:** Open Translator Context Guide (CONTEXT.md)
 **Context:** Used in settings interface
 
-### [#947] settings.i18n.translator_guide_desc
+### [#963] settings.i18n.translator_guide_desc
 **English:** Detailed context for every translation key: location, purpose, constraints, and screenshots.
 **Context:** Descriptive paragraph or helper text in settings
 
-### [#948] settings.leave_blank_pwd
+### [#964] settings.leave_blank_pwd
 **English:** Leave blank to keep your current password.
 **Context:** Used in settings interface
 
-### [#949] settings.optional_tag
+### [#965] settings.optional_tag
 **English:** (optional)
 **Context:** Used in settings interface
 
-### [#950] settings.passwords_not_match
+### [#966] settings.passwords_not_match
 **English:** Passwords do not match
 **Context:** Used in settings interface
 
-### [#951] settings.section_ai
+### [#967] settings.section_ai
 **English:** AI Keys
 **Context:** Used in settings interface
 
-### [#952] settings.section_appearance
+### [#968] settings.section_appearance
 **English:** Appearance
 **Context:** Used in settings interface
 
-### [#953] settings.section_language
+### [#969] settings.section_language
 **English:** Language
 **Context:** Used in settings interface
 
-### [#954] settings.section_passkeys
+### [#970] settings.section_passkeys
 **English:** Passkeys
 **Context:** Used in settings interface
 
-### [#955] settings.section_personal
+### [#971] settings.section_personal
 **English:** Personal Details
 **Context:** Used in settings interface
 
-### [#956] settings.section_security
+### [#972] settings.section_security
 **English:** Security
 **Context:** Used in settings interface
 
-### [#957] settings.subtitle
+### [#973] settings.subtitle
 **English:** Manage your account preferences and security.
 **Context:** Main heading / section header in settings
 
-### [#958] settings.title
+### [#974] settings.title
 **English:** Settings
 **Context:** Main heading / section header in settings
 
-### [#959] settings.uuid_label
+### [#975] settings.uuid_label
 **English:** UUID:
 **Context:** Form input label in settings
 
 ## Stt (`stt`)
 
-### [#960] stt.1
+### [#976] stt.1
 **English:** Speech to Text
 **Context:** Used in stt interface
 
-### [#961] stt.10
+### [#977] stt.10
 **English:** STT Unavailable
 **Context:** Used in stt interface
 
-### [#962] stt.2
+### [#978] stt.2
 **English:** Record Audio
 **Context:** Used in stt interface
 
-### [#963] stt.3
+### [#979] stt.3
 **English:** Stop Recording
 **Context:** Used in stt interface
 
-### [#964] stt.4
+### [#980] stt.4
 **English:** Upload Audio
 **Context:** Used in stt interface
 
-### [#965] stt.4.1
+### [#981] stt.4.1
 **English:** Transcribe
 **Context:** Used in stt interface
 
-### [#966] stt.5
+### [#982] stt.5
 **English:** Transcription
 **Context:** Used in stt interface
 
-### [#967] stt.6
+### [#983] stt.6
 **English:** Copy
 **Context:** Used in stt interface
 
-### [#968] stt.7
+### [#984] stt.7
 **English:** Clear
 **Context:** Used in stt interface
 
-### [#969] stt.8
+### [#985] stt.8
 **English:** Processing...
 **Context:** Used in stt interface
 
-### [#970] stt.9
+### [#986] stt.9
 **English:** No audio recorded
 **Context:** Used in stt interface
 
-### [#971] stt.duration
+### [#987] stt.duration
 **English:** Duration
 **Context:** Used in stt interface
 
-### [#972] stt.language_label
+### [#988] stt.language_label
 **English:** Language
 **Context:** Form input label in stt
 
-### [#973] stt.no_speech
+### [#989] stt.no_speech
 **English:** (no speech detected)
 **Context:** Used in stt interface
 
-### [#974] stt.processor_desc
+### [#990] stt.processor_desc
 **English:** Transcribe audio recordings using faster-whisper (local inference). Supports multiple languages and translation to English.
 **Context:** Descriptive paragraph or helper text in stt
 
-### [#975] stt.processor_title
+### [#991] stt.processor_title
 **English:** Speech-to-Text Processor
 **Context:** Main heading / section header in stt
 
-### [#976] stt.result_title
+### [#992] stt.result_title
 **English:** Result
 **Context:** Main heading / section header in stt
 
-### [#977] stt.select_file_first
+### [#993] stt.select_file_first
 **English:** Please select an audio file first.
 **Context:** Used in stt interface
 
-### [#978] stt.show_segments
+### [#994] stt.show_segments
 **English:** Show segments ({count})
 **Context:** Used in stt interface
 
-### [#979] stt.task_label
+### [#995] stt.task_label
 **English:** Task
 **Context:** Form input label in stt
 
-### [#980] stt.task_transcribe
+### [#996] stt.task_transcribe
 **English:** Transcribe (same language)
 **Context:** Used in stt interface
 
-### [#981] stt.task_translate
+### [#997] stt.task_translate
 **English:** Translate to English
 **Context:** Used in stt interface
 
-### [#982] stt.transcribe_btn
+### [#998] stt.transcribe_btn
 **English:** Transcribe Audio
 **Context:** Action button in stt view
 
-### [#983] stt.transcribing
+### [#999] stt.transcribing
 **English:** Transcribing…
 **Context:** Used in stt interface
 
-### [#984] stt.transcription_completed
+### [#1000] stt.transcription_completed
 **English:** Transcription completed
 **Context:** Used in stt interface
 
-### [#985] stt.transcription_failed
+### [#1001] stt.transcription_failed
 **English:** Transcription failed.
 **Context:** Used in stt interface
 
-### [#986] stt.upload_label
+### [#1002] stt.upload_label
 **English:** Upload Audio File
 **Context:** Form input label in stt
 
 ## Student dashboard (`student_dashboard`)
 
-### [#987] student_dashboard.completed_title
+### [#1003] student_dashboard.completed_title
 **English:** Completed & Graded Exams
 **Context:** Main heading / section header in student dashboard
 
-### [#988] student_dashboard.digitized_correction
+### [#1004] student_dashboard.digitized_correction
 **English:** Digitized Teacher-Approved Solution
 **Context:** Used in student dashboard interface
 
-### [#989] student_dashboard.duration
+### [#1005] student_dashboard.duration
 **English:** Duration: {minutes} minutes
 **Context:** Used in student dashboard interface
 
-### [#990] student_dashboard.handwritten_original
-**English:** Original Handwritten Test
-**Context:** Used in student dashboard interface
-
-### [#991] student_dashboard.no_completed
-**English:** No completed exams yet.
-**Context:** Used in student dashboard interface
-
-### [#992] student_dashboard.no_upcoming
-**English:** No upcoming exams scheduled right now. Check back when your teacher assigns a new test!
-**Context:** Used in student dashboard interface
-
-### [#993] student_dashboard.quick_tips
-**English:** Exam Day Tips: Maintain a stable internet connection, keep your webcam enabled if proctored, and do not switch browser tabs during lockdown mode.
-**Context:** Used in student dashboard interface
-
-### [#994] student_dashboard.seb_hint
-**English:** Please make sure Safe Exam Browser is installed before starting.
-**Context:** Descriptive paragraph or helper text in student dashboard
-
-### [#995] student_dashboard.seb_required
-**English:** Safe Exam Browser (SEB) Required
-**Context:** Used in student dashboard interface
-
-### [#996] student_dashboard.status_graded
+### [#1006] student_dashboard.graded
 **English:** Graded
 **Context:** Used in student dashboard interface
 
-### [#997] student_dashboard.status_in_progress
+### [#1007] student_dashboard.handwritten_original
+**English:** Original Handwritten Test
+**Context:** Used in student dashboard interface
+
+### [#1008] student_dashboard.no_completed
+**English:** No completed exams yet.
+**Context:** Used in student dashboard interface
+
+### [#1009] student_dashboard.no_upcoming
+**English:** No upcoming exams scheduled right now. Check back when your teacher assigns a new test!
+**Context:** Used in student dashboard interface
+
+### [#1010] student_dashboard.quick_tips
+**English:** Exam Day Tips: Maintain a stable internet connection, keep your webcam enabled if proctored, and do not switch browser tabs during lockdown mode.
+**Context:** Used in student dashboard interface
+
+### [#1011] student_dashboard.score_pts
+**English:** {score} / 10 pts
+**Context:** Used in student dashboard interface
+
+### [#1012] student_dashboard.seb_hint
+**English:** Please make sure Safe Exam Browser is installed before starting.
+**Context:** Descriptive paragraph or helper text in student dashboard
+
+### [#1013] student_dashboard.seb_required
+**English:** Safe Exam Browser (SEB) Required
+**Context:** Used in student dashboard interface
+
+### [#1014] student_dashboard.status_graded
+**English:** Graded
+**Context:** Used in student dashboard interface
+
+### [#1015] student_dashboard.status_in_progress
 **English:** In Progress
 **Context:** Used in student dashboard interface
 
-### [#998] student_dashboard.status_submitted
+### [#1016] student_dashboard.status_submitted
 **English:** Submitted
 **Context:** Used in student dashboard interface
 
-### [#999] student_dashboard.subtitle
+### [#1017] student_dashboard.subtitle
 **English:** View your upcoming scheduled exams, lockdown browser requirements, and past graded results.
 **Context:** Main heading / section header in student dashboard
 
-### [#1000] student_dashboard.take_exam_btn
+### [#1018] student_dashboard.take_exam_btn
 **English:** Take Exam
 **Context:** Action button in student dashboard view
 
-### [#1001] student_dashboard.title
+### [#1019] student_dashboard.title
 **English:** Student Portal — My Exams
 **Context:** Main heading / section header in student dashboard
 
-### [#1002] student_dashboard.upcoming_title
+### [#1020] student_dashboard.upcoming_title
 **English:** Upcoming & Active Exams
 **Context:** Main heading / section header in student dashboard
 
-### [#1003] student_dashboard.view_results_btn
+### [#1021] student_dashboard.view_results_btn
 **English:** View Results
 **Context:** Action button in student dashboard view
 
-### [#1004] student_dashboard.view_side_by_side
+### [#1022] student_dashboard.view_side_by_side
 **English:** View Handwritten & Digitized Solution
 **Context:** Used in student dashboard interface
 
 ## Student review (`student_review`)
 
-### [#1005] student_review.check_corrections_btn
+### [#1023] student_review.check_corrections_btn
 **English:** Check Teacher Corrections
 **Context:** Action button in student review view
 
-### [#1006] student_review.correct_label
+### [#1024] student_review.correct_label
 **English:** Correct
 **Context:** Form input label in student review
 
-### [#1007] student_review.corrected_solution
+### [#1025] student_review.corrected_solution
 **English:** Teacher Corrected Solution:
 **Context:** Used in student review interface
 
-### [#1008] student_review.corrected_version_label
+### [#1026] student_review.corrected_version_label
 **English:** Teacher's Corrected Version & Solution
 **Context:** Form input label in student review
 
-### [#1009] student_review.cryptographic_notice
+### [#1027] student_review.cryptographic_notice
 **English:** Your answers have been cryptographically sealed.
 **Context:** Used in student review interface
 
-### [#1010] student_review.final_score
+### [#1028] student_review.final_score
 **English:** Final Score:
 **Context:** Used in student review interface
 
-### [#1011] student_review.needs_review_label
+### [#1029] student_review.needs_review_label
 **English:** Needs Review
 **Context:** Form input label in student review
 
-### [#1012] student_review.no_answer_submitted
+### [#1030] student_review.no_answer_submitted
 **English:** (No answer submitted)
 **Context:** Used in student review interface
 
-### [#1013] student_review.orig_submitted_label
+### [#1031] student_review.orig_submitted_label
 **English:** Your Original Submitted Answer
 **Context:** Form input label in student review
 
-### [#1014] student_review.partial_credit_label
+### [#1032] student_review.partial_credit_label
 **English:** Partial Credit
 **Context:** Form input label in student review
 
-### [#1015] student_review.pts_possible
+### [#1033] student_review.pts_possible
 **English:** pts possible
 **Context:** Used in student review interface
 
-### [#1016] student_review.question
+### [#1034] student_review.question
 **English:** Question
 **Context:** Used in student review interface
 
-### [#1017] student_review.refreshing
+### [#1035] student_review.refreshing
 **English:** Refreshing...
 **Context:** Used in student review interface
 
-### [#1018] student_review.see_feedback_below
+### [#1036] student_review.see_feedback_below
 **English:** See teacher feedback below.
 **Context:** Used in student review interface
 
-### [#1019] student_review.side_by_side_heading
+### [#1037] student_review.side_by_side_heading
 **English:** Side-by-Side Review: Your Original Submission vs. Teacher's Corrected Version
 **Context:** Used in student review interface
 
-### [#1020] student_review.side_by_side_subtitle
+### [#1038] student_review.side_by_side_subtitle
 **English:** Compare your original submitted answers alongside your teacher's corrected version below.
 **Context:** Main heading / section header in student review
 
-### [#1021] student_review.status_graded
+### [#1039] student_review.status_graded
 **English:** ✓ Graded & Corrected by Teacher
 **Context:** Used in student review interface
 
-### [#1022] student_review.status_pending
+### [#1040] student_review.status_pending
 **English:** ⏳ Pending Teacher Grading & Corrections
 **Context:** Used in student review interface
 
-### [#1023] student_review.teacher_feedback
+### [#1041] student_review.teacher_feedback
 **English:** Teacher Feedback:
 **Context:** Used in student review interface
 
-### [#1024] student_review.teacher_summary
+### [#1042] student_review.teacher_summary
 **English:** Teacher Summary Feedback:
 **Context:** Used in student review interface
 
-### [#1025] student_review.title
+### [#1043] student_review.title
 **English:** Exam Submitted Successfully
 **Context:** Main heading / section header in student review
 
-### [#1026] student_review.under_review_desc
+### [#1044] student_review.under_review_desc
 **English:** Your teacher is currently reviewing your exam. Once graded, the step-by-step corrected solution and feedback will appear right here next to your answer.
 **Context:** Descriptive paragraph or helper text in student review
 
-### [#1027] student_review.your_answer
+### [#1045] student_review.your_answer
 **English:** Your Answer:
 **Context:** Used in student review interface
 
 ## Take exam (`take_exam`)
 
-### [#1028] take_exam.1
+### [#1046] take_exam.1
 **English:** Take Exam
 **Context:** Used in take exam interface
 
-### [#1029] take_exam.10
+### [#1047] take_exam.10
 **English:** Flag Question
 **Context:** Used in take exam interface
 
-### [#1030] take_exam.11
+### [#1048] take_exam.11
 **English:** Question Flagged
 **Context:** Used in take exam interface
 
-### [#1031] take_exam.12
+### [#1049] take_exam.12
 **English:** Confirm Submit
 **Context:** Used in take exam interface
 
-### [#1032] take_exam.13
+### [#1050] take_exam.13
 **English:** Are you sure you want to submit?
 **Context:** Used in take exam interface
 
-### [#1033] take_exam.14
+### [#1051] take_exam.14
 **English:** Exam Submitted
 **Context:** Used in take exam interface
 
-### [#1034] take_exam.15
+### [#1052] take_exam.15
 **English:** Your exam has been submitted successfully
 **Context:** Used in take exam interface
 
-### [#1035] take_exam.16
+### [#1053] take_exam.16
 **English:** Return to Dashboard
 **Context:** Used in take exam interface
 
-### [#1036] take_exam.17
+### [#1054] take_exam.17
 **English:** Question
 **Context:** Used in take exam interface
 
-### [#1037] take_exam.18
+### [#1055] take_exam.18
 **English:** Select an answer
 **Context:** Used in take exam interface
 
-### [#1038] take_exam.19
+### [#1056] take_exam.19
 **English:** Your answer
 **Context:** Used in take exam interface
 
-### [#1039] take_exam.2
+### [#1057] take_exam.2
 **English:** Exam Instructions
 **Context:** Used in take exam interface
 
-### [#1040] take_exam.20
+### [#1058] take_exam.20
 **English:** Hand Raise
 **Context:** Used in take exam interface
 
-### [#1041] take_exam.21
+### [#1059] take_exam.21
 **English:** Chat with Teacher
 **Context:** Used in take exam interface
 
-### [#1042] take_exam.22
+### [#1060] take_exam.22
 **English:** Proctoring Active
 **Context:** Used in take exam interface
 
-### [#1043] take_exam.23
+### [#1061] take_exam.23
 **English:** SEB Mode Active
 **Context:** Used in take exam interface
 
-### [#1044] take_exam.24
+### [#1062] take_exam.24
 **English:** Connection Lost
 **Context:** Used in take exam interface
 
-### [#1045] take_exam.25
+### [#1063] take_exam.25
 **English:** Reconnecting...
 **Context:** Used in take exam interface
 
-### [#1046] take_exam.26
+### [#1064] take_exam.26
 **English:** Auto-saved
 **Context:** Used in take exam interface
 
-### [#1047] take_exam.3
+### [#1065] take_exam.3
 **English:** Start Exam
 **Context:** Used in take exam interface
 
-### [#1048] take_exam.4
+### [#1066] take_exam.4
 **English:** Question
 **Context:** Used in take exam interface
 
-### [#1049] take_exam.5
+### [#1067] take_exam.5
 **English:** of
 **Context:** Used in take exam interface
 
-### [#1050] take_exam.6
+### [#1068] take_exam.6
 **English:** Next
 **Context:** Used in take exam interface
 
-### [#1051] take_exam.7
+### [#1069] take_exam.7
 **English:** Previous
 **Context:** Used in take exam interface
 
-### [#1052] take_exam.8
+### [#1070] take_exam.8
 **English:** Submit Exam
 **Context:** Used in take exam interface
 
-### [#1053] take_exam.9
+### [#1071] take_exam.9
 **English:** Time Remaining
 **Context:** Used in take exam interface
 
-### [#1054] take_exam.in_person_desc
+### [#1072] take_exam.in_person_desc
 **English:** Digital hand-raising is not needed for in-room exams. Please raise your hand directly in class if you need help.
 **Context:** Descriptive paragraph or helper text in take exam
 
-### [#1055] take_exam.in_person_label
+### [#1073] take_exam.in_person_label
 **English:** In-Person Classroom Exam
 **Context:** Form input label in take exam
 
-### [#1056] take_exam.pts
+### [#1074] take_exam.pts
 **English:** pts
 **Context:** Used in take exam interface
 
 ## Teacher classes (`teacher_classes`)
 
-### [#1057] teacher_classes.class_name_placeholder
+### [#1075] teacher_classes.class_name_placeholder
 **English:** e.g., Biology 101 - Period 3
 **Context:** Input placeholder text in teacher classes
 
-### [#1058] teacher_classes.create_class
+### [#1076] teacher_classes.create_class
 **English:** Create Class
 **Context:** Used in teacher classes interface
 
-### [#1059] teacher_classes.create_new_class
+### [#1077] teacher_classes.create_new_class
 **English:** Create New Class
 **Context:** Used in teacher classes interface
 
-### [#1060] teacher_classes.emergency_reset_desc
+### [#1078] teacher_classes.emergency_reset_desc
 **English:** If a student forgot their password right before an exam, click
 **Context:** Descriptive paragraph or helper text in teacher classes
 
-### [#1061] teacher_classes.emergency_reset_title
+### [#1079] teacher_classes.emergency_reset_title
 **English:** Emergency Test-Day Reset:
 **Context:** Main heading / section header in teacher classes
 
-### [#1062] teacher_classes.enrolled_students
+### [#1080] teacher_classes.enrolled_students
 **English:** Enrolled Students
 **Context:** Used in teacher classes interface
 
-### [#1063] teacher_classes.manage_roster
+### [#1081] teacher_classes.manage_roster
 **English:** Manage Roster & Passwords
 **Context:** Used in teacher classes interface
 
-### [#1064] teacher_classes.reset_pwd_for_test
+### [#1082] teacher_classes.reset_pwd_for_test
 **English:** ⚡ Reset Pwd for Test
 **Context:** Used in teacher classes interface
 
-### [#1065] teacher_classes.subtitle
+### [#1083] teacher_classes.subtitle
 **English:** Manage your classes, enroll students, and provide instant classroom password unlocks right before exams.
 **Context:** Main heading / section header in teacher classes
 
-### [#1066] teacher_classes.title
+### [#1084] teacher_classes.title
 **English:** Class Groupings & Student Rosters
 **Context:** Main heading / section header in teacher classes
 
-### [#1067] teacher_classes.unlocking
+### [#1085] teacher_classes.unlocking
 **English:** Unlocking...
 **Context:** Used in teacher classes interface
 
 ## Teacher correction (`teacher_correction`)
 
-### [#1068] teacher_correction.1
+### [#1086] teacher_correction.1
 **English:** Review AI Grade
 **Context:** Used in teacher correction interface
 
-### [#1069] teacher_correction.10
+### [#1087] teacher_correction.10
 **English:** Approve
 **Context:** Used in teacher correction interface
 
-### [#1070] teacher_correction.11
+### [#1088] teacher_correction.11
 **English:** Edit
 **Context:** Used in teacher correction interface
 
-### [#1071] teacher_correction.12
+### [#1089] teacher_correction.12
 **English:** Reject
 **Context:** Used in teacher correction interface
 
-### [#1072] teacher_correction.13
+### [#1090] teacher_correction.13
 **English:** Apply All Approved
 **Context:** Used in teacher correction interface
 
-### [#1073] teacher_correction.14
+### [#1091] teacher_correction.14
 **English:** Flag Low Confidence
 **Context:** Used in teacher correction interface
 
-### [#1074] teacher_correction.15
+### [#1092] teacher_correction.15
 **English:** Save Changes
 **Context:** Used in teacher correction interface
 
-### [#1075] teacher_correction.16
+### [#1093] teacher_correction.16
 **English:** Changes Saved
 **Context:** Used in teacher correction interface
 
-### [#1076] teacher_correction.2
+### [#1094] teacher_correction.2
 **English:** Question
 **Context:** Used in teacher correction interface
 
-### [#1077] teacher_correction.3
+### [#1095] teacher_correction.3
 **English:** Student Answer
 **Context:** Used in teacher correction interface
 
-### [#1078] teacher_correction.4
+### [#1096] teacher_correction.4
 **English:** AI Score
 **Context:** Used in teacher correction interface
 
-### [#1079] teacher_correction.5
+### [#1097] teacher_correction.5
 **English:** AI Feedback
 **Context:** Used in teacher correction interface
 
-### [#1080] teacher_correction.6
+### [#1098] teacher_correction.6
 **English:** AI Confidence
 **Context:** Used in teacher correction interface
 
-### [#1081] teacher_correction.6.1
+### [#1099] teacher_correction.6.1
 **English:** High
 **Context:** Used in teacher correction interface
 
-### [#1082] teacher_correction.6.2
+### [#1100] teacher_correction.6.2
 **English:** Medium
 **Context:** Used in teacher correction interface
 
-### [#1083] teacher_correction.6.3
+### [#1101] teacher_correction.6.3
 **English:** Low
 **Context:** Used in teacher correction interface
 
-### [#1084] teacher_correction.7
+### [#1102] teacher_correction.7
 **English:** AI Reasoning
 **Context:** Used in teacher correction interface
 
-### [#1085] teacher_correction.8
+### [#1103] teacher_correction.8
 **English:** Your Score
 **Context:** Used in teacher correction interface
 
-### [#1086] teacher_correction.9
+### [#1104] teacher_correction.9
 **English:** Your Feedback
 **Context:** Used in teacher correction interface
 
-### [#1087] teacher_correction.ai_grade
+### [#1105] teacher_correction.ai_grade
 **English:** Suggested Score:
 **Context:** Used in teacher correction interface
 
-### [#1088] teacher_correction.ai_suggestion
+### [#1106] teacher_correction.ai_suggestion
 **English:** AI Evaluation
 **Context:** Used in teacher correction interface
 
-### [#1089] teacher_correction.approve_all
+### [#1107] teacher_correction.approve_all
 **English:** Approve All Questions & Save
 **Context:** Used in teacher correction interface
 
-### [#1090] teacher_correction.approve_question
+### [#1108] teacher_correction.approve_question
 **English:** ✓ Approve Question
 **Context:** Used in teacher correction interface
 
-### [#1091] teacher_correction.approved
+### [#1109] teacher_correction.approved
 **English:** Approved
 **Context:** Used in teacher correction interface
 
-### [#1092] teacher_correction.chips_title
+### [#1110] teacher_correction.chips_title
 **English:** Constructive Feedback Suggestions:
 **Context:** Main heading / section header in teacher correction
 
-### [#1093] teacher_correction.custom_score
+### [#1111] teacher_correction.custom_score
 **English:** Assigned Score:
 **Context:** Used in teacher correction interface
 
-### [#1094] teacher_correction.feedback_label
+### [#1112] teacher_correction.feedback_label
 **English:** Teacher Constructive Feedback:
 **Context:** Form input label in teacher correction
 
-### [#1095] teacher_correction.feedback_placeholder
+### [#1113] teacher_correction.feedback_placeholder
 **English:** Add constructive feedback explaining where the student went right or wrong...
 **Context:** Input placeholder text in teacher correction
 
-### [#1096] teacher_correction.points
+### [#1114] teacher_correction.points
 **English:** points
 **Context:** Used in teacher correction interface
 
-### [#1097] teacher_correction.possible
+### [#1115] teacher_correction.possible
 **English:** pts possible
 **Context:** Used in teacher correction interface
 
-### [#1098] teacher_correction.rubric
+### [#1116] teacher_correction.rubric
 **English:** Rubric:
 **Context:** Used in teacher correction interface
 
-### [#1099] teacher_correction.save_review
+### [#1117] teacher_correction.save_review
 **English:** Save Grades & Review
 **Context:** Used in teacher correction interface
 
-### [#1100] teacher_correction.solution_label
+### [#1118] teacher_correction.solution_label
 **English:** Corrected Step-by-Step Solution (Shown to Student):
 **Context:** Form input label in teacher correction
 
-### [#1101] teacher_correction.solution_placeholder
+### [#1119] teacher_correction.solution_placeholder
 **English:** Write the corrected step-by-step math solution or corrected answer here...
 **Context:** Input placeholder text in teacher correction
 
-### [#1102] teacher_correction.student_view
+### [#1120] teacher_correction.student_view
 **English:** Student Submission
 **Context:** Used in teacher correction interface
 
-### [#1103] teacher_correction.teacher_override
+### [#1121] teacher_correction.teacher_override
 **English:** Teacher Override & Correction
 **Context:** Used in teacher correction interface
 
 ## Teacher dashboard (`teacher_dashboard`)
 
-### [#1104] teacher_dashboard.1
+### [#1122] teacher_dashboard.1
 **English:** Teacher Dashboard
 **Context:** Used in teacher dashboard interface
 
-### [#1105] teacher_dashboard.10
+### [#1123] teacher_dashboard.10
 **English:** Require SEB
 **Context:** Used in teacher dashboard interface
 
-### [#1106] teacher_dashboard.11
+### [#1124] teacher_dashboard.11
 **English:** SEB Config Key
 **Context:** Used in teacher dashboard interface
 
-### [#1107] teacher_dashboard.12
+### [#1125] teacher_dashboard.12
 **English:** Save Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1108] teacher_dashboard.13
+### [#1126] teacher_dashboard.13
 **English:** Cancel
 **Context:** Used in teacher dashboard interface
 
-### [#1109] teacher_dashboard.14
+### [#1127] teacher_dashboard.14
 **English:** Delete Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1110] teacher_dashboard.15
+### [#1128] teacher_dashboard.15
 **English:** Edit Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1111] teacher_dashboard.16
+### [#1129] teacher_dashboard.16
 **English:** View Submissions
 **Context:** Used in teacher dashboard interface
 
-### [#1112] teacher_dashboard.17
+### [#1130] teacher_dashboard.17
 **English:** Grade with AI
 **Context:** Used in teacher dashboard interface
 
-### [#1113] teacher_dashboard.18
+### [#1131] teacher_dashboard.18
 **English:** Export Package
 **Context:** Used in teacher dashboard interface
 
-### [#1114] teacher_dashboard.19
+### [#1132] teacher_dashboard.19
 **English:** Archive Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1115] teacher_dashboard.2
+### [#1133] teacher_dashboard.2
 **English:** My Exams
 **Context:** Used in teacher dashboard interface
 
-### [#1116] teacher_dashboard.20
+### [#1134] teacher_dashboard.20
 **English:** No exams created yet
 **Context:** Used in teacher dashboard interface
 
-### [#1117] teacher_dashboard.21
+### [#1135] teacher_dashboard.21
 **English:** Create your first exam
 **Context:** Used in teacher dashboard interface
 
-### [#1118] teacher_dashboard.3
+### [#1136] teacher_dashboard.3
 **English:** Create New Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1119] teacher_dashboard.4
+### [#1137] teacher_dashboard.4
 **English:** Exam Title
 **Context:** Used in teacher dashboard interface
 
-### [#1120] teacher_dashboard.5
+### [#1138] teacher_dashboard.5
 **English:** Exam Description
 **Context:** Used in teacher dashboard interface
 
-### [#1121] teacher_dashboard.6
+### [#1139] teacher_dashboard.6
 **English:** Duration (minutes)
 **Context:** Used in teacher dashboard interface
 
-### [#1122] teacher_dashboard.7
+### [#1140] teacher_dashboard.7
 **English:** Start Time
 **Context:** Used in teacher dashboard interface
 
-### [#1123] teacher_dashboard.8
+### [#1141] teacher_dashboard.8
 **English:** End Time
 **Context:** Used in teacher dashboard interface
 
-### [#1124] teacher_dashboard.9
+### [#1142] teacher_dashboard.9
 **English:** Secure Exam Browser
 **Context:** Used in teacher dashboard interface
 
-### [#1125] teacher_dashboard.ai_grading_subtitle
+### [#1143] teacher_dashboard.ai_grading_subtitle
 **English:** Review and approve AI-generated grades for exam submissions
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1126] teacher_dashboard.ai_grading_title
+### [#1144] teacher_dashboard.ai_grading_title
 **English:** AI Grading Dashboard
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1127] teacher_dashboard.apply_grades_error
+### [#1145] teacher_dashboard.apply_grades_error
 **English:** Failed to apply grades.
 **Context:** Validation or runtime error message in teacher dashboard
 
-### [#1128] teacher_dashboard.archive_details
+### [#1146] teacher_dashboard.archive_details
 **English:** Archive Details
 **Context:** Used in teacher dashboard interface
 
-### [#1129] teacher_dashboard.archive_title
+### [#1147] teacher_dashboard.archive_title
 **English:** Archived Submissions
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1130] teacher_dashboard.archived_submissions
+### [#1148] teacher_dashboard.archived_submissions
 **English:** Archived Submissions
 **Context:** Used in teacher dashboard interface
 
-### [#1131] teacher_dashboard.auto_refresh
+### [#1149] teacher_dashboard.auto_refresh
 **English:** Auto-refreshes every 10s
 **Context:** Used in teacher dashboard interface
 
-### [#1132] teacher_dashboard.available_packages
+### [#1150] teacher_dashboard.available_packages
 **English:** Available Packages
 **Context:** Used in teacher dashboard interface
 
-### [#1133] teacher_dashboard.btn_ai_correct_selected
+### [#1151] teacher_dashboard.btn_ai_correct_selected
 **English:** AI Correct Selected
 **Context:** Action button in teacher dashboard view
 
-### [#1134] teacher_dashboard.btn_approve_selected
+### [#1152] teacher_dashboard.btn_approve_selected
 **English:** Approve & Seal Selected
 **Context:** Action button in teacher dashboard view
 
-### [#1135] teacher_dashboard.btn_archive
+### [#1153] teacher_dashboard.btn_archive
 **English:** Archive
 **Context:** Action button in teacher dashboard view
 
-### [#1136] teacher_dashboard.btn_details
+### [#1154] teacher_dashboard.btn_details
 **English:** Details
 **Context:** Action button in teacher dashboard view
 
-### [#1137] teacher_dashboard.btn_download
+### [#1155] teacher_dashboard.btn_download
 **English:** Download
 **Context:** Action button in teacher dashboard view
 
-### [#1138] teacher_dashboard.btn_open_tests
+### [#1156] teacher_dashboard.btn_open_tests
 **English:** Open Tests
 **Context:** Action button in teacher dashboard view
 
-### [#1139] teacher_dashboard.btn_reopen
+### [#1157] teacher_dashboard.btn_reopen
 **English:** Re-open & Re-correct
 **Context:** Action button in teacher dashboard view
 
-### [#1140] teacher_dashboard.btn_restore
+### [#1158] teacher_dashboard.btn_restore
 **English:** Restore
 **Context:** Action button in teacher dashboard view
 
-### [#1141] teacher_dashboard.cancel
+### [#1159] teacher_dashboard.cancel
 **English:** Cancel
 **Context:** Used in teacher dashboard interface
 
-### [#1142] teacher_dashboard.chat_title
+### [#1160] teacher_dashboard.chat_title
 **English:** Settings
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1143] teacher_dashboard.chime_on
+### [#1161] teacher_dashboard.chime_on
 **English:** Chime On
 **Context:** Used in teacher dashboard interface
 
-### [#1144] teacher_dashboard.choose_file
+### [#1162] teacher_dashboard.choose_file
 **English:** Choose File
 **Context:** Used in teacher dashboard interface
 
-### [#1145] teacher_dashboard.col_actions
+### [#1163] teacher_dashboard.col_actions
 **English:** Actions
 **Context:** Used in teacher dashboard interface
 
-### [#1146] teacher_dashboard.col_ai_grades
+### [#1164] teacher_dashboard.col_ai_grades
 **English:** AI Grades
 **Context:** Used in teacher dashboard interface
 
-### [#1147] teacher_dashboard.col_compressed
+### [#1165] teacher_dashboard.col_compressed
 **English:** Compressed
 **Context:** Used in teacher dashboard interface
 
-### [#1148] teacher_dashboard.col_orig_size
+### [#1166] teacher_dashboard.col_orig_size
 **English:** Original Size
 **Context:** Used in teacher dashboard interface
 
-### [#1149] teacher_dashboard.col_progress
+### [#1167] teacher_dashboard.col_progress
 **English:** Progress
 **Context:** Used in teacher dashboard interface
 
-### [#1150] teacher_dashboard.col_questions
+### [#1168] teacher_dashboard.col_questions
 **English:** Questions
 **Context:** Used in teacher dashboard interface
 
-### [#1151] teacher_dashboard.col_ratio
+### [#1169] teacher_dashboard.col_ratio
 **English:** Ratio
 **Context:** Used in teacher dashboard interface
 
-### [#1152] teacher_dashboard.col_score
+### [#1170] teacher_dashboard.col_score
 **English:** Score
 **Context:** Used in teacher dashboard interface
 
-### [#1153] teacher_dashboard.col_status
+### [#1171] teacher_dashboard.col_status
 **English:** Status
 **Context:** Used in teacher dashboard interface
 
-### [#1154] teacher_dashboard.col_student
+### [#1172] teacher_dashboard.col_student
 **English:** Student
 **Context:** Used in teacher dashboard interface
 
-### [#1155] teacher_dashboard.col_submission_id
+### [#1173] teacher_dashboard.col_submission_id
 **English:** Submission ID
 **Context:** Used in teacher dashboard interface
 
-### [#1156] teacher_dashboard.col_time_remaining
+### [#1174] teacher_dashboard.col_time_remaining
 **English:** Time Remaining
 **Context:** Used in teacher dashboard interface
 
-### [#1157] teacher_dashboard.col_violations
+### [#1175] teacher_dashboard.col_violations
 **English:** Violations
 **Context:** Used in teacher dashboard interface
 
-### [#1158] teacher_dashboard.col_year_month
+### [#1176] teacher_dashboard.col_year_month
 **English:** Year/Month
 **Context:** Used in teacher dashboard interface
 
-### [#1159] teacher_dashboard.completed
+### [#1177] teacher_dashboard.completed
 **English:** Completed
 **Context:** Used in teacher dashboard interface
 
-### [#1160] teacher_dashboard.compress
+### [#1178] teacher_dashboard.compress
 **English:** Compress (gzip)
 **Context:** Used in teacher dashboard interface
 
-### [#1161] teacher_dashboard.digital_hand_raises
+### [#1179] teacher_dashboard.digital_hand_raises
 **English:** Digital Hand Raises
 **Context:** Used in teacher dashboard interface
 
-### [#1162] teacher_dashboard.download_archive_title
+### [#1180] teacher_dashboard.download_archive_title
 **English:** Download sealed .zst.enc archive
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1163] teacher_dashboard.export_current
+### [#1181] teacher_dashboard.export_current
 **English:** Export Current Exam
 **Context:** Used in teacher dashboard interface
 
-### [#1164] teacher_dashboard.export_download
+### [#1182] teacher_dashboard.export_download
 **English:** Export & Download
 **Context:** Used in teacher dashboard interface
 
-### [#1165] teacher_dashboard.export_modal_title
+### [#1183] teacher_dashboard.export_modal_title
 **English:** Export Exam as Package
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1166] teacher_dashboard.fetch_submissions_error
+### [#1184] teacher_dashboard.fetch_submissions_error
 **English:** Failed to fetch submissions.
 **Context:** Validation or runtime error message in teacher dashboard
 
-### [#1167] teacher_dashboard.filter_all_months
+### [#1185] teacher_dashboard.filter_all_months
 **English:** All Months
 **Context:** Used in teacher dashboard interface
 
-### [#1168] teacher_dashboard.filter_all_statuses
+### [#1186] teacher_dashboard.filter_all_statuses
 **English:** All Statuses
 **Context:** Used in teacher dashboard interface
 
-### [#1169] teacher_dashboard.filter_all_years
+### [#1187] teacher_dashboard.filter_all_years
 **English:** All Years
 **Context:** Used in teacher dashboard interface
 
-### [#1170] teacher_dashboard.filter_deleted
+### [#1188] teacher_dashboard.filter_deleted
 **English:** Deleted from Server
 **Context:** Used in teacher dashboard interface
 
-### [#1171] teacher_dashboard.format
+### [#1189] teacher_dashboard.format
 **English:** Format
 **Context:** Used in teacher dashboard interface
 
-### [#1172] teacher_dashboard.generate_ai_grades
+### [#1190] teacher_dashboard.generate_ai_grades
 **English:** Generate AI Grades
 **Context:** Used in teacher dashboard interface
 
-### [#1173] teacher_dashboard.generating
+### [#1191] teacher_dashboard.generating
 **English:** Generating...
 **Context:** Used in teacher dashboard interface
 
-### [#1174] teacher_dashboard.grades_saved
+### [#1192] teacher_dashboard.grades_saved
 **English:** {count} grade(s) and corrected solutions saved!
 **Context:** Used in teacher dashboard interface
 
-### [#1175] teacher_dashboard.group_mistakes
+### [#1193] teacher_dashboard.group_mistakes
 **English:** Group Similar Mistakes
 **Context:** Used in teacher dashboard interface
 
-### [#1176] teacher_dashboard.heartbeat_error
+### [#1194] teacher_dashboard.heartbeat_error
 **English:** Failed to load heartbeats: {error}
 **Context:** Validation or runtime error message in teacher dashboard
 
-### [#1177] teacher_dashboard.import
+### [#1195] teacher_dashboard.import
 **English:** Import
 **Context:** Used in teacher dashboard interface
 
-### [#1178] teacher_dashboard.import_subtitle
+### [#1196] teacher_dashboard.import_subtitle
 **English:** Upload a test package (JSON or YAML) to create a new exam with questions and rubrics.
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1179] teacher_dashboard.import_title
+### [#1197] teacher_dashboard.import_title
 **English:** Import Package
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1180] teacher_dashboard.include_answers
+### [#1198] teacher_dashboard.include_answers
 **English:** Include correct answers
 **Context:** Used in teacher dashboard interface
 
-### [#1181] teacher_dashboard.include_rubrics
+### [#1199] teacher_dashboard.include_rubrics
 **English:** Include rubrics
 **Context:** Used in teacher dashboard interface
 
-### [#1182] teacher_dashboard.include_variables
+### [#1200] teacher_dashboard.include_variables
 **English:** Include question variables
 **Context:** Used in teacher dashboard interface
 
-### [#1183] teacher_dashboard.lbl_compression
+### [#1201] teacher_dashboard.lbl_compression
 **English:** Compression
 **Context:** Used in teacher dashboard interface
 
-### [#1184] teacher_dashboard.lbl_path
+### [#1202] teacher_dashboard.lbl_path
 **English:** Path
 **Context:** Used in teacher dashboard interface
 
-### [#1185] teacher_dashboard.lbl_submission
+### [#1203] teacher_dashboard.lbl_submission
 **English:** Submission
 **Context:** Used in teacher dashboard interface
 
-### [#1186] teacher_dashboard.live
+### [#1204] teacher_dashboard.live
 **English:** Live
 **Context:** Used in teacher dashboard interface
 
-### [#1187] teacher_dashboard.mistake_groups_found
+### [#1205] teacher_dashboard.mistake_groups_found
 **English:** Found {count} mistake groups
 **Context:** Used in teacher dashboard interface
 
-### [#1188] teacher_dashboard.no_archives
+### [#1206] teacher_dashboard.no_archives
 **English:** No archived submissions found for this exam.
 **Context:** Used in teacher dashboard interface
 
-### [#1189] teacher_dashboard.no_hand_raises
+### [#1207] teacher_dashboard.no_hand_raises
 **English:** No digital hand raises currently. Students in remote/different-location testing will appear here automatically when they need assistance.
 **Context:** Used in teacher dashboard interface
 
-### [#1190] teacher_dashboard.no_packages
+### [#1208] teacher_dashboard.no_packages
 **English:** No packages found. Import a package or export an exam to get started.
 **Context:** Used in teacher dashboard interface
 
-### [#1191] teacher_dashboard.no_students
+### [#1209] teacher_dashboard.no_students
 **English:** No students have started this exam yet.
 **Context:** Used in teacher dashboard interface
 
-### [#1192] teacher_dashboard.no_submissions
+### [#1210] teacher_dashboard.no_submissions
 **English:** No submissions found for this exam.
 **Context:** Used in teacher dashboard interface
 
-### [#1193] teacher_dashboard.not_generated
+### [#1211] teacher_dashboard.not_generated
 **English:** Not generated
 **Context:** Used in teacher dashboard interface
 
-### [#1194] teacher_dashboard.open_tests
+### [#1212] teacher_dashboard.open_tests
 **English:** Open Tests
 **Context:** Used in teacher dashboard interface
 
-### [#1195] teacher_dashboard.opening_tests
+### [#1213] teacher_dashboard.opening_tests
 **English:** Opening tests...
 **Context:** Used in teacher dashboard interface
 
-### [#1196] teacher_dashboard.package_exported
+### [#1214] teacher_dashboard.package_exported
 **English:** Package exported successfully!
 **Context:** Used in teacher dashboard interface
 
-### [#1197] teacher_dashboard.package_manager
+### [#1215] teacher_dashboard.package_manager
 **English:** Test Package Manager
 **Context:** Used in teacher dashboard interface
 
-### [#1198] teacher_dashboard.performance_recommendation
+### [#1216] teacher_dashboard.performance_recommendation
 **English:** Recommendation: Start with 5-10 tabs to test your computer's limits. Only increase to 25 if your system handles 10 smoothly. Monitor your system resources (Task Manager / Activity Monitor) while testing.
 **Context:** Used in teacher dashboard interface
 
-### [#1199] teacher_dashboard.performance_warning_desc
+### [#1217] teacher_dashboard.performance_warning_desc
 **English:** Opening many test tabs simultaneously consumes significant RAM and CPU resources. Each tab runs a full exam instance with randomization.
 **Context:** Descriptive paragraph or helper text in teacher dashboard
 
-### [#1200] teacher_dashboard.performance_warning_title
+### [#1218] teacher_dashboard.performance_warning_title
 **English:** Performance Warning
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1201] teacher_dashboard.quick_reset_confirm
+### [#1219] teacher_dashboard.quick_reset_confirm
 **English:** Unlock and reset password for {name}?
 
 The student can immediately type their email at login and choose a new password to take the exam.
 **Context:** Used in teacher dashboard interface
 
-### [#1202] teacher_dashboard.real_time_monitoring
+### [#1220] teacher_dashboard.real_time_monitoring
 **English:** Real-time Student Monitoring
 **Context:** Used in teacher dashboard interface
 
-### [#1203] teacher_dashboard.remote_exam
+### [#1221] teacher_dashboard.remote_exam
 **English:** Different Location / Remote Exam Package (Live WebSocket notifications enabled)
 **Context:** Used in teacher dashboard interface
 
-### [#1204] teacher_dashboard.reopen_test_title
+### [#1222] teacher_dashboard.reopen_test_title
 **English:** Reopen test to edit and re-correct
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1205] teacher_dashboard.reset_pwd_title
+### [#1223] teacher_dashboard.reset_pwd_title
 **English:** Reset student password
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1206] teacher_dashboard.similar_mistake_groups
+### [#1224] teacher_dashboard.similar_mistake_groups
 **English:** Similar Mistake Groups
 **Context:** Used in teacher dashboard interface
 
-### [#1207] teacher_dashboard.stat_space_saved
+### [#1225] teacher_dashboard.stat_space_saved
 **English:** Space Saved
 **Context:** Used in teacher dashboard interface
 
-### [#1208] teacher_dashboard.stat_total_archives
+### [#1226] teacher_dashboard.stat_total_archives
 **English:** Total Archives
 **Context:** Used in teacher dashboard interface
 
-### [#1209] teacher_dashboard.stat_total_size
+### [#1227] teacher_dashboard.stat_total_size
 **English:** Total Size
 **Context:** Used in teacher dashboard interface
 
-### [#1210] teacher_dashboard.status_graded
+### [#1228] teacher_dashboard.status_graded
 **English:** Graded & Sealed
 **Context:** Used in teacher dashboard interface
 
-### [#1211] teacher_dashboard.status_pending_approval
+### [#1229] teacher_dashboard.status_pending_approval
 **English:** AI Corrected (Pending Approval)
 **Context:** Used in teacher dashboard interface
 
-### [#1212] teacher_dashboard.status_ungraded
+### [#1230] teacher_dashboard.status_ungraded
 **English:** Ungraded / Submitted
 **Context:** Used in teacher dashboard interface
 
-### [#1213] teacher_dashboard.test_count_hint
+### [#1231] teacher_dashboard.test_count_hint
 **English:** Enter a number between 1 and 25. Each test will open in a new tab with a unique randomization seed. ⚠️ Performance: Opening many tabs uses significant RAM/CPU. Start with 5-10 to test your system limits.
 **Context:** Descriptive paragraph or helper text in teacher dashboard
 
-### [#1214] teacher_dashboard.test_count_label
+### [#1232] teacher_dashboard.test_count_label
 **English:** Number of Tests
 **Context:** Form input label in teacher dashboard
 
-### [#1215] teacher_dashboard.test_module
+### [#1233] teacher_dashboard.test_module
 **English:** Test Module
 **Context:** Used in teacher dashboard interface
 
-### [#1216] teacher_dashboard.test_module_description
+### [#1234] teacher_dashboard.test_module_description
 **English:** Open multiple randomized test tabs to preview how your module will appear to students. Each tab will have a different randomization seed.
 **Context:** Descriptive paragraph or helper text in teacher dashboard
 
-### [#1217] teacher_dashboard.test_module_title
+### [#1235] teacher_dashboard.test_module_title
 **English:** Test Module Preview
 **Context:** Main heading / section header in teacher dashboard
 
-### [#1218] teacher_dashboard.total_count
+### [#1236] teacher_dashboard.total_count
 **English:** total
 **Context:** Used in teacher dashboard interface
 
-### [#1219] teacher_dashboard.upload_offline_test
+### [#1237] teacher_dashboard.upload_offline_test
 **English:** Upload Test Paper
 **Context:** Used in teacher dashboard interface
 
-### [#1220] teacher_dashboard.validate
+### [#1238] teacher_dashboard.validate
 **English:** Validate
 **Context:** Used in teacher dashboard interface
 
 ## Teacher modal (`teacher_modal`)
 
-### [#1221] teacher_modal.ai_conf
+### [#1239] teacher_modal.ai_conf
 **English:** AI Conf
 **Context:** Used in teacher modal interface
 
-### [#1222] teacher_modal.annotate_work_btn
+### [#1240] teacher_modal.annotate_work_btn
 **English:** Annotate Student Work
 **Context:** Action button in teacher modal view
 
-### [#1223] teacher_modal.approve_all_and_save
+### [#1241] teacher_modal.approve_all_and_save
 **English:** Approve All & Save Corrected Exam
 **Context:** Used in teacher modal interface
 
-### [#1224] teacher_modal.approve_and_save
+### [#1242] teacher_modal.approve_and_save
 **English:** Approve & Save
 **Context:** Used in teacher modal interface
 
-### [#1225] teacher_modal.approve_question_checkbox
+### [#1243] teacher_modal.approve_question_checkbox
 **English:** Approve this question
 **Context:** Used in teacher modal interface
 
-### [#1226] teacher_modal.chip_1
+### [#1244] teacher_modal.chip_1
 **English:** Excellent step-by-step work!
 **Context:** Used in teacher modal interface
 
-### [#1227] teacher_modal.chip_2
+### [#1245] teacher_modal.chip_2
 **English:** Correct method, minor arithmetic error.
 **Context:** Used in teacher modal interface
 
-### [#1228] teacher_modal.chip_3
+### [#1246] teacher_modal.chip_3
 **English:** Check sign when moving terms across =.
 **Context:** Used in teacher modal interface
 
-### [#1229] teacher_modal.chip_4
+### [#1247] teacher_modal.chip_4
 **English:** Partial credit for setting up the equation.
 **Context:** Used in teacher modal interface
 
-### [#1230] teacher_modal.chip_5
+### [#1248] teacher_modal.chip_5
 **English:** Please review the worked solution on the right.
 **Context:** Used in teacher modal interface
 
-### [#1231] teacher_modal.empty_answer
+### [#1249] teacher_modal.empty_answer
 **English:** (empty)
 **Context:** Used in teacher modal interface
 
-### [#1232] teacher_modal.feedback_explanation_label
+### [#1250] teacher_modal.feedback_explanation_label
 **English:** Teacher Feedback & Explanation
 **Context:** Form input label in teacher modal
 
-### [#1233] teacher_modal.mark_all_approved
+### [#1251] teacher_modal.mark_all_approved
 **English:** Mark All Approved
 **Context:** Used in teacher modal interface
 
-### [#1234] teacher_modal.preset_0
+### [#1252] teacher_modal.preset_0
 **English:** 0%
 **Context:** Used in teacher modal interface
 
-### [#1235] teacher_modal.preset_100
+### [#1253] teacher_modal.preset_100
 **English:** 100% Full
 **Context:** Used in teacher modal interface
 
-### [#1236] teacher_modal.preset_50
+### [#1254] teacher_modal.preset_50
 **English:** 50% Partial
 **Context:** Used in teacher modal interface
 
-### [#1237] teacher_modal.preset_75
+### [#1255] teacher_modal.preset_75
 **English:** 75% Method OK
 **Context:** Used in teacher modal interface
 
-### [#1238] teacher_modal.publish_notice
+### [#1256] teacher_modal.publish_notice
 **English:** Saving publishes the corrected version & feedback to the student's exam comparison view.
 **Context:** Used in teacher modal interface
 
-### [#1239] teacher_modal.question_pts
+### [#1257] teacher_modal.question_pts
 **English:** pts
 **Context:** Used in teacher modal interface
 
-### [#1240] teacher_modal.ref_answer_key
+### [#1258] teacher_modal.ref_answer_key
 **English:** Reference Answer Key
 **Context:** Used in teacher modal interface
 
-### [#1241] teacher_modal.review_btn
+### [#1259] teacher_modal.review_btn
 **English:** Review
 **Context:** Action button in teacher modal view
 
-### [#1242] teacher_modal.rubric_label
+### [#1260] teacher_modal.rubric_label
 **English:** Rubric
 **Context:** Form input label in teacher modal
 
-### [#1243] teacher_modal.running_score
+### [#1261] teacher_modal.running_score
 **English:** Score
 **Context:** Used in teacher modal interface
 
-### [#1244] teacher_modal.score_range_label
+### [#1262] teacher_modal.score_range_label
 **English:** Score
 **Context:** Form input label in teacher modal
 
-### [#1245] teacher_modal.student_orig_answer
+### [#1263] teacher_modal.student_orig_answer
 **English:** Student's Original Submitted Answer
 **Context:** Used in teacher modal interface
 
-### [#1246] teacher_modal.subtitle
+### [#1264] teacher_modal.subtitle
 **English:** Write step-by-step corrections alongside the student's answers so they can compare side-by-side.
 **Context:** Main heading / section header in teacher modal
 
-### [#1247] teacher_modal.teacher_approved
+### [#1265] teacher_modal.teacher_approved
 **English:** Teacher Approved
 **Context:** Used in teacher modal interface
 
-### [#1248] teacher_modal.teacher_corrected_version
+### [#1266] teacher_modal.teacher_corrected_version
 **English:** Teacher's Corrected Version (Shown Side-by-Side to Student)
 **Context:** Used in teacher modal interface
 
-### [#1249] teacher_modal.title
+### [#1267] teacher_modal.title
 **English:** Review & Correct Exam
 **Context:** Main heading / section header in teacher modal
 
-### [#1250] teacher_modal.use_answer_key_btn
+### [#1268] teacher_modal.use_answer_key_btn
 **English:** Use Answer Key
 **Context:** Action button in teacher modal view
 
 ## Toast (`toast`)
 
-### [#1251] toast.1
+### [#1269] toast.1
 **English:** Success
 **Context:** Used in toast interface
 
-### [#1252] toast.10
+### [#1270] toast.10
 **English:** Settings saved
 **Context:** Used in toast interface
 
-### [#1253] toast.11
+### [#1271] toast.11
 **English:** Failed to save settings
 **Context:** Used in toast interface
 
-### [#1254] toast.12
+### [#1272] toast.12
 **English:** Exam created
 **Context:** Used in toast interface
 
-### [#1255] toast.13
+### [#1273] toast.13
 **English:** Exam updated
 **Context:** Used in toast interface
 
-### [#1256] toast.14
+### [#1274] toast.14
 **English:** Package exported successfully
 **Context:** Used in toast interface
 
-### [#1257] toast.15
+### [#1275] toast.15
 **English:** Package imported successfully
 **Context:** Used in toast interface
 
-### [#1258] toast.16
+### [#1276] toast.16
 **English:** Question added
 **Context:** Used in toast interface
 
-### [#1259] toast.17
+### [#1277] toast.17
 **English:** Question deleted
 **Context:** Used in toast interface
 
-### [#1260] toast.18
+### [#1278] toast.18
 **English:** Teacher approved
 **Context:** Used in toast interface
 
-### [#1261] toast.19
+### [#1279] toast.19
 **English:** Teacher denied
 **Context:** Used in toast interface
 
-### [#1262] toast.2
+### [#1280] toast.2
 **English:** Error
 **Context:** Used in toast interface
 
-### [#1263] toast.20
+### [#1281] toast.20
 **English:** User created
 **Context:** Used in toast interface
 
-### [#1264] toast.21
+### [#1282] toast.21
 **English:** User deleted
 **Context:** Used in toast interface
 
-### [#1265] toast.22
+### [#1283] toast.22
 **English:** Password reset
 **Context:** Used in toast interface
 
-### [#1266] toast.23
+### [#1284] toast.23
 **English:** Settings saved
 **Context:** Used in toast interface
 
-### [#1267] toast.24
+### [#1285] toast.24
 **English:** Archive created
 **Context:** Used in toast interface
 
-### [#1268] toast.25
+### [#1286] toast.25
 **English:** Archive restored
 **Context:** Used in toast interface
 
-### [#1269] toast.26
+### [#1287] toast.26
 **English:** Backup created
 **Context:** Used in toast interface
 
-### [#1270] toast.27
+### [#1288] toast.27
 **English:** Exam submitted
 **Context:** Used in toast interface
 
-### [#1271] toast.28
+### [#1289] toast.28
 **English:** Grade submitted
 **Context:** Used in toast interface
 
-### [#1272] toast.29
+### [#1290] toast.29
 **English:** Changes saved
 **Context:** Used in toast interface
 
-### [#1273] toast.3
+### [#1291] toast.3
 **English:** Warning
 **Context:** Used in toast interface
 
-### [#1274] toast.30
+### [#1292] toast.30
 **English:** Failed to save changes
 **Context:** Used in toast interface
 
-### [#1275] toast.31
+### [#1293] toast.31
 **English:** Exam deleted
 **Context:** Used in toast interface
 
-### [#1276] toast.32
+### [#1294] toast.32
 **English:** Package exported
 **Context:** Used in toast interface
 
-### [#1277] toast.33
+### [#1295] toast.33
 **English:** Package imported
 **Context:** Used in toast interface
 
-### [#1278] toast.34
+### [#1296] toast.34
 **English:** Package validated
 **Context:** Used in toast interface
 
-### [#1279] toast.35
+### [#1297] toast.35
 **English:** AI key saved
 **Context:** Used in toast interface
 
-### [#1280] toast.36
+### [#1298] toast.36
 **English:** Passkey registered
 **Context:** Used in toast interface
 
-### [#1281] toast.37
+### [#1299] toast.37
 **English:** Passkey deleted
 **Context:** Used in toast interface
 
-### [#1282] toast.38
+### [#1300] toast.38
 **English:** 2FA enabled
 **Context:** Used in toast interface
 
-### [#1283] toast.39
+### [#1301] toast.39
 **English:** 2FA disabled
 **Context:** Used in toast interface
 
-### [#1284] toast.4
+### [#1302] toast.4
 **English:** Info
 **Context:** Used in toast interface
 
-### [#1285] toast.40
+### [#1303] toast.40
 **English:** Consent given
 **Context:** Used in toast interface
 
-### [#1286] toast.41
+### [#1304] toast.41
 **English:** Consent withdrawn
 **Context:** Used in toast interface
 
-### [#1287] toast.42
+### [#1305] toast.42
 **English:** Session started
 **Context:** Used in toast interface
 
-### [#1288] toast.43
+### [#1306] toast.43
 **English:** Session ended
 **Context:** Used in toast interface
 
-### [#1289] toast.5
+### [#1307] toast.5
 **English:** Saved successfully
 **Context:** Used in toast interface
 
-### [#1290] toast.6
+### [#1308] toast.6
 **English:** Failed to save
 **Context:** Used in toast interface
 
-### [#1291] toast.7
+### [#1309] toast.7
 **English:** Deleted successfully
 **Context:** Used in toast interface
 
-### [#1292] toast.8
+### [#1310] toast.8
 **English:** Failed to delete
 **Context:** Used in toast interface
 
-### [#1293] toast.9
+### [#1311] toast.9
 **English:** Copied to clipboard
 **Context:** Used in toast interface
 
 ## Twofa (`twofa`)
 
-### [#1294] twofa.1
+### [#1312] twofa.1
 **English:** Two-Factor Authentication
 **Context:** Used in twofa interface
 
-### [#1295] twofa.10
+### [#1313] twofa.10
 **English:** Enter recovery code to disable
 **Context:** Used in twofa interface
 
-### [#1296] twofa.11
+### [#1314] twofa.11
 **English:** 2FA Disabled
 **Context:** Used in twofa interface
 
-### [#1297] twofa.2
+### [#1315] twofa.2
 **English:** Scan QR Code
 **Context:** Used in twofa interface
 
-### [#1298] twofa.3
+### [#1316] twofa.3
 **English:** Enter 6-digit code from authenticator app
 **Context:** Used in twofa interface
 
-### [#1299] twofa.4
+### [#1317] twofa.4
 **English:** Verify
 **Context:** Used in twofa interface
 
-### [#1300] twofa.5
+### [#1318] twofa.5
 **English:** 2FA Enabled
 **Context:** Used in twofa interface
 
-### [#1301] twofa.6
+### [#1319] twofa.6
 **English:** Recovery Codes
 **Context:** Used in twofa interface
 
-### [#1302] twofa.7
+### [#1320] twofa.7
 **English:** Save these codes securely
 **Context:** Used in twofa interface
 
-### [#1303] twofa.8
+### [#1321] twofa.8
 **English:** Each code can be used once
 **Context:** Used in twofa interface
 
-### [#1304] twofa.9
+### [#1322] twofa.9
 **English:** Disable 2FA
 **Context:** Used in twofa interface
 
-### [#1305] twofa.code_placeholder
+### [#1323] twofa.code_placeholder
 **English:** ABCD-EFGH
 **Context:** Input placeholder text in twofa
 
-### [#1306] twofa.important_notice
+### [#1324] twofa.important_notice
 **English:** IMPORTANT:
 **Context:** Used in twofa interface
 
-### [#1307] twofa.manual_secret_desc
+### [#1325] twofa.manual_secret_desc
 **English:** Or enter this secret manually:
 **Context:** Descriptive paragraph or helper text in twofa
 
-### [#1308] twofa.new_codes_title
+### [#1326] twofa.new_codes_title
 **English:** New Recovery Codes
 **Context:** Main heading / section header in twofa
 
-### [#1309] twofa.qr_ready
+### [#1327] twofa.qr_ready
 **English:** TOTP QR READY
 **Context:** Used in twofa interface
 
-### [#1310] twofa.scan_qr_desc
+### [#1328] twofa.scan_qr_desc
 **English:** Open your authenticator app and scan this QR code:
 **Context:** Descriptive paragraph or helper text in twofa
 
-### [#1311] twofa.step2_title
+### [#1329] twofa.step2_title
 **English:** Step 2: Verify Code
 **Context:** Main heading / section header in twofa

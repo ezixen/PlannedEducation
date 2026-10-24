@@ -89,7 +89,7 @@ export function ParentDashboard() {
                 {(() => {
                   let parsedImageUrl = null;
                   let parsedCorrected = null;
-                  let displayFb = exam.feedback || 'No feedback recorded yet.';
+                  let displayFb = exam.feedback || t('parent.no_feedback');
 
                   if (exam.feedback && exam.feedback.startsWith('{')) {
                     try {
@@ -97,7 +97,7 @@ export function ParentDashboard() {
                       parsedImageUrl = d.image_url;
                       parsedCorrected = d.corrected_solution;
                       displayFb = d.summary_feedback || displayFb;
-                    } catch (e) {}
+                    } catch {}
                   }
 
                   return (

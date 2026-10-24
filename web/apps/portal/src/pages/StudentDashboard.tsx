@@ -31,7 +31,7 @@ export function StudentDashboard() {
       try {
         const subsRes = await apiClient.get('/ai/submissions');
         setCompletedSubs((subsRes.data || []).filter((s: any) => s.status === 'graded' || s.score !== null));
-      } catch (e) {}
+      } catch {}
     } catch (err) {
       console.error('Failed to fetch student exams:', err);
     } finally {
@@ -197,7 +197,7 @@ export function StudentDashboard() {
                   parsedImageUrl = d.image_url || parsedImageUrl;
                   parsedCorrected = d.corrected_solution || parsedCorrected;
                   summaryFb = d.summary_feedback || summaryFb;
-                } catch (e) {}
+                } catch {}
               }
 
               return (
@@ -213,7 +213,7 @@ export function StudentDashboard() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-color)' }}>{sub.exam_title}</h3>
                     <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-color)' }}>
-                      {sub.score !== null ? `${sub.score} / 10 pts` : 'Graded'}
+                      {sub.score !== null ? t('student_dashboard.score_pts', { score: String(sub.score) }) : t('student_dashboard.graded')}
                     </span>
                   </div>
 

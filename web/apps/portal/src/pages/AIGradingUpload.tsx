@@ -55,6 +55,7 @@ export function AIGradingUpload() {
   const [reviewScore, setReviewScore] = useState<number>(9);
   const [reviewFeedback, setReviewFeedback] = useState<string>('');
   const [reviewCorrected, setReviewCorrected] = useState<string>('');
+  const [reviewDigitized, setReviewDigitized] = useState<string>('');
   const [zoomLevel, setZoomLevel] = useState<number>(1);
 
   // Class Rosters for Name Anonymization
@@ -157,7 +158,7 @@ export function AIGradingUpload() {
         if (d.suggested_score !== undefined && d.suggested_score !== null) {
           parsedScore = Number(d.suggested_score);
         }
-      } catch (e) {
+      } catch {
         parsedFeedback = sub.feedback;
       }
     } else {
@@ -167,6 +168,7 @@ export function AIGradingUpload() {
     setReviewScore(parsedScore);
     setReviewFeedback(parsedFeedback);
     setReviewCorrected(parsedCorrected);
+    setReviewDigitized(parsedDigitized);
   };
 
   const handleSaveAndApprove = async () => {
@@ -177,7 +179,7 @@ export function AIGradingUpload() {
       showSuccess(t('ai_grading.saved_success'));
       setActiveReviewSub(null);
       loadSubmissions();
-    } catch (err: any) {
+    } catch {
       // Fallback: update status locally if staging archive endpoint is mocking
       showSuccess(t('ai_grading.saved_success'));
       setActiveReviewSub(null);
@@ -195,14 +197,14 @@ export function AIGradingUpload() {
       for (const s of stagedSubs) {
         try {
           await apiClient.post('/archive/teacher/approve-staged/' + s.id);
-        } catch (e) {
+        } catch {
           // ignore individual errors
         }
       }
-      showSuccess(`${stagedSubs.length} submissions approved!`);
+      showSuccess(t('ai_grading.submissions_approved_success', { count: String(stagedSubs.length) }));
       loadSubmissions();
     } catch (err: any) {
-      showError('Error approving submissions', err.message);
+      showError(t('ai_grading.approve_error'), err.message);
     } finally {
       setLoading(false);
     }
@@ -288,7 +290,7 @@ export function AIGradingUpload() {
             >
               {Object.keys(classRosters).map((cName) => (
                 <option key={cName} value={cName}>
-                  {cName} ({classRosters[cName].length} students)
+                  {cName} ({t('ai_grading.students_count', { count: String(classRosters[cName].length) })})
                 </option>
               ))}
             </select>
@@ -369,7 +371,7 @@ export function AIGradingUpload() {
             {t('ai_grading.drop_or_browse')}
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: '0 0 1rem' }}>
-            Supports photos from mobile cameras, scans, PNG, JPG, JPEG, and PDF.
+            {t('ai_grading.supported_formats_desc')}
           </p>
           <input
             type="file"
@@ -762,7 +764,7 @@ export function AIGradingUpload() {
                     />
                   ) : (
                     <div style={{ color: '#94a3b8', textAlign: 'center', padding: '2rem' }}>
-                      No image photo attached for this submission.
+                      {t('ai_grading.no_image_photo')}
                     </div>
                   )}
                 </div>
@@ -787,7 +789,7 @@ export function AIGradingUpload() {
                 {/* Digitized Student Text */}
                 <div>
                   <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
-                    Digitized Extracted Text:
+                    {t('ai_grading.digitized_extracted_text')}
                   </div>
                   <pre
                     style={{
@@ -805,14 +807,14 @@ export function AIGradingUpload() {
                       color: 'var(--text-color)',
                     }}
                   >
-                    {activeReviewSub.digitized_text || '(No text extracted)'}
+                    {reviewDigitized || t('ai_grading.no_text_extracted')}
                   </pre>
                 </div>
 
                 {/* Corrected Step-by-Step Solution */}
                 <div>
                   <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#059669', marginBottom: '0.3rem' }}>
-                    Step-by-Step Correct Solution:
+                    {t('ai_grading.step_by_step_solution')}
                   </div>
                   <textarea
                     rows={4}
@@ -837,7 +839,7 @@ export function AIGradingUpload() {
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
                     <label style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-color)' }}>
-                      {t('ai_grading.score_label')} (out of 10):
+                      {t('ai_grading.score_label')} {t('ai_grading.score_out_of_10')}
                     </label>
                     <input
                       type="number"
@@ -862,7 +864,7 @@ export function AIGradingUpload() {
 
                   {/* Feedback Chips */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '0.5rem' }}>
-                    {['Great work!', 'Check algebra in step 2', 'Review physical units', 'Clear derivation', 'Partial credit'].map((chip) => (
+                    {[t('ai_grading.chip_great_work'), t('ai_grading.chip_check_algebra'), t('ai_grading.chip_review_units'), t('ai_grading.chip_clear_derivation'), t('ai_grading.chip_partial_credit')].map((chip) => (
                       <button
                         key={chip}
                         type="button"
@@ -929,7 +931,7 @@ export function AIGradingUpload() {
                   cursor: 'pointer',
                 }}
               >
-                Cancel
+                {t('common.cancel')}
               </button>
 
               <button
