@@ -1,6 +1,7 @@
 import type React from 'react';
 import { useState, useEffect, useRef, type ElementType, type ReactNode } from 'react';
 import { useI18n } from '../contexts/I18nContext';
+import { getKeyNumber } from '../locales/keyNumbers';
 
 interface I18nNumberProps {
   key: string;
@@ -33,7 +34,8 @@ export function I18nNumber({ key, children, className = '', tag = 'span' }: I18n
   }
 
   const Tag = (tag || 'span') as ElementType;
-  const number = key.split('.').pop() || key;
+  const keyNum = getKeyNumber(key);
+  const number = keyNum !== undefined ? `#${keyNum}` : (key.split('.').pop() || key);
 
   return (
     <span className="i18n-number-container" ref={containerRef}>
@@ -69,7 +71,7 @@ export function I18nNumber({ key, children, className = '', tag = 'span' }: I18n
                 e.stopPropagation();
                 jumpToElement(key);
               }}
-              aria-label="Jump to this element"
+              aria-label={t("i18n.badge_jump")}
             >
               ↻ Jump
             </button>
@@ -106,7 +108,8 @@ export function I18nText({ key, params, className = '' }: { key: string; params?
     return <span className={className}>{text}</span>;
   }
 
-  const number = key.split('.').pop() || key;
+  const keyNum = getKeyNumber(key);
+  const number = keyNum !== undefined ? `#${keyNum}` : (key.split('.').pop() || key);
 
   return (
     <span className="i18n-number-container" ref={containerRef}>
@@ -136,7 +139,7 @@ export function I18nText({ key, params, className = '' }: { key: string; params?
                 e.stopPropagation();
                 jumpToElement(key);
               }}
-              aria-label="Jump to this element"
+              aria-label={t("i18n.badge_jump")}
             >
               ↻ Jump
             </button>
@@ -161,7 +164,8 @@ export function I18nNumberDisplay({ key, className = '' }: { key: string; classN
   
   if (!showNumbers) return null;
   
-  const number = key.split('.').pop() || key;
+  const keyNum = getKeyNumber(key);
+  const number = keyNum !== undefined ? `#${keyNum}` : (key.split('.').pop() || key);
   
   return (
     <span className={`i18n-number-display ${className}`} aria-hidden="true">

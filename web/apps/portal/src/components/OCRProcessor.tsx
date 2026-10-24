@@ -31,7 +31,7 @@ export function OCRProcessor() {
 
   const handleProcess = async () => {
     if (!imageFile) {
-      showError('Please select an image first.');
+      showError(t('ocr.select_image_first') || 'Please select an image first.');
       return;
     }
 
@@ -47,9 +47,9 @@ export function OCRProcessor() {
       });
 
       setResult(response.data);
-      showSuccess(`OCR completed with ${Math.round(response.data.confidence * 100)}% confidence`);
+      showSuccess(t('ocr.completed_confidence', { percent: String(Math.round(response.data.confidence * 100)) }) || `OCR completed with ${Math.round(response.data.confidence * 100)}% confidence`);
     } catch (err: any) {
-      showError('OCR processing failed.', err.response?.data?.detail || err.message);
+      showError(t('ocr.processing_failed') || 'OCR processing failed.', err.response?.data?.detail || err.message);
       setResult({ text: '', confidence: 0, language, error: err.response?.data?.detail || err.message });
     } finally {
       setLoading(false);
@@ -88,8 +88,7 @@ export function OCRProcessor() {
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
       <h3>{t('ocr.1')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        Extract text from handwritten exam images using Tesseract OCR.
-        Supports math expressions and multiple languages.
+        {t('ocr.desc') || 'Extract text from handwritten exam images using Tesseract OCR. Supports math expressions and multiple languages.'}
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '600px' }}>
@@ -172,12 +171,12 @@ export function OCRProcessor() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <h4 style={{ margin: 0 }}>{t('ocr.result_title')}</h4>
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                Confidence: {Math.round(result.confidence * 100)}%
+                {t('ocr.confidence', { percent: String(Math.round(result.confidence * 100)) }) || `Confidence: ${Math.round(result.confidence * 100)}%`}
               </span>
             </div>
             {result.error && (
               <div style={{ color: '#ef4444', marginBottom: '1rem' }}>
-                Error: {result.error}
+                {t('ocr.error', { error: result.error }) || `Error: ${result.error}`}
               </div>
             )}
             <div style={{ 
@@ -189,7 +188,7 @@ export function OCRProcessor() {
               lineHeight: 1.6,
               color: 'var(--text-color)'
             }}>
-              {result.text || '(No text detected)'}
+              {result.text || t('ocr.no_text_detected') || '(No text detected)'}
             </div>
             {result.bounding_boxes && result.bounding_boxes.length > 0 && (
               <details style={{ marginTop: '1rem' }}>

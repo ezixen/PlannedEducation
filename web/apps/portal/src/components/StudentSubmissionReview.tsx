@@ -110,8 +110,8 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
           </div>
           <p style={{ color: 'var(--text-muted)', marginTop: '0.4rem', marginBottom: 0, fontSize: '0.92rem' }}>
             {submission?.exam_title
-              ? `${submission.exam_title} — Compare your original submitted answers alongside your teacher's corrected version below.`
-              : 'Your answers have been cryptographically sealed.'}
+              ? `${submission.exam_title} — ${t('student_review.side_by_side_subtitle')}`
+              : t('student_review.cryptographic_notice')}
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
               fontSize: '0.88rem',
             }}
           >
-            {loading ? 'Refreshing...' : '🔄 Check Teacher Corrections'}
+            {loading ? t('student_review.refreshing') : `🔄 ${t('student_review.check_corrections_btn')}`}
           </button>
         </div>
       </div>
@@ -161,7 +161,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
       {submission && submission.questions.length > 0 && (
         <div>
           <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '1rem' }}>
-            Side-by-Side Review: Your Original Submission vs. Teacher&apos;s Corrected Version
+            {t('student_review.side_by_side_heading')}
           </h2>
 
           {submission.questions.map((q, idx) => {
@@ -200,7 +200,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                   }}
                 >
                   <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-color)' }}>
-                    Question {idx + 1}
+                    {t('take_exam.4')} {idx + 1}
                   </h3>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -221,14 +221,14 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                         }}
                       >
                         {isFullMarks
-                          ? `✓ Correct (${q.score}/${q.points_possible} pts)`
+                          ? `✓ Correct (${q.score}/${q.points_possible} {t('take_exam.pts')})`
                           : isPartialMarks
-                            ? `◐ Partial Credit (${q.score}/${q.points_possible} pts)`
-                            : `✗ Needs Review (${q.score}/${q.points_possible} pts)`}
+                            ? `◐ Partial Credit (${q.score}/${q.points_possible} {t('take_exam.pts')})`
+                            : `✗ Needs Review (${q.score}/${q.points_possible} {t('take_exam.pts')})`}
                       </span>
                     ) : (
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>
-                        {q.points_possible} pts
+                        {q.points_possible} {t('take_exam.pts')}
                       </span>
                     )}
                   </div>
@@ -275,7 +275,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                         marginBottom: '0.5rem',
                       }}
                     >
-                      📄 Your Original Submitted Answer
+                      📄 {t('student_review.orig_submitted_label')}
                     </div>
                     <pre
                       style={{
@@ -287,7 +287,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                         lineHeight: 1.5,
                       }}
                     >
-                      {q.student_response || '(No answer submitted)'}
+                      {q.student_response || t('student_review.no_answer_submitted')}
                     </pre>
                   </div>
 
@@ -311,7 +311,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                         marginBottom: '0.5rem',
                       }}
                     >
-                      ✍️ Teacher&apos;s Corrected Version &amp; Solution
+                      ✍️ {t('student_review.corrected_version_label')}
                     </div>
 
                     {submission.is_graded ? (
@@ -328,7 +328,7 @@ export const StudentSubmissionReview: React.FC<StudentSubmissionReviewProps> = (
                             fontWeight: 500,
                           }}
                         >
-                          {q.corrected_answer || q.correct_answer || 'See teacher feedback below.'}
+                          {q.corrected_answer || q.correct_answer || t('student_review.see_feedback_below')}
                         </pre>
 
                         {q.teacher_feedback && (

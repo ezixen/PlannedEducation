@@ -136,7 +136,7 @@ export function Layout() {
           )}
         </div>
         <div className="site-header-actions">
-          <NotificationBell />
+          {user && <NotificationBell />}
           <div className="header-lang-pill">
             <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select

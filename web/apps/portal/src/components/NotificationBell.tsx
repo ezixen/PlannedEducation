@@ -3,6 +3,7 @@ import { Bell, Check, Trash2, UserCheck, KeyRound, CheckCheck, RefreshCw } from 
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
+import { useAuth } from '../contexts/AuthContext';
 
 export interface InAppNotification {
   id: string;
@@ -19,6 +20,7 @@ export interface InAppNotification {
 export function NotificationBell() {
   const { success: showSuccess, error: showError } = useToast();
   const { t } = useI18n();
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState<number>(0);
   const [notifications, setNotifications] = useState<InAppNotification[]>([]);
@@ -27,36 +29,47 @@ export function NotificationBell() {
   const [approvedPassResult, setApprovedPassResult] = useState<{ notifId: string; tempPass: string; username: string } | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Poll unread count every 60 seconds (1 minute)
+  // Poll unread count every 60 seconds (1 minute) only when authenticated
   const fetchUnreadCount = async () => {
+    const token = localStorage.getItem('access_token');
+    if (!user || !token) return;
     try {
       const res = await apiClient.get('/notifications/unread-count');
       setUnreadCount(res.data.unread_count || 0);
-    } catch {
-      // Suppress background polling errors silently
+    } catch (err: any) {
+      // Suppress background polling errors silently; abort on 401
+      if (err.response?.status === 401) {
+        setUnreadCount(0);
+      }
     }
   };
 
   const fetchNotifications = async () => {
+    const token = localStorage.getItem('access_token');
+    if (!user || !token) return;
     setLoading(true);
     try {
       const res = await apiClient.get('/notifications');
       setNotifications(res.data);
-      // Recalculate unread count
       const count = res.data.filter((n: InAppNotification) => !n.is_read).length;
       setUnreadCount(count);
     } catch (err: any) {
-      showError('Failed to load notifications', err.response?.data?.detail || err.message);
+      if (err.response?.status !== 401) {
+        showError('Failed to load notifications', err.response?.data?.detail || err.message);
+      }
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
+    if (!user) return;
     fetchUnreadCount();
     const interval = setInterval(fetchUnreadCount, 60000); // 60s poller
     return () => clearInterval(interval);
-  }, []);
+  }, [user]);
+
+  if (!user) return null;
 
   // When dropdown opens, fetch latest notifications
   const handleToggle = () => {
@@ -165,7 +178,7 @@ export function NotificationBell() {
       <button
         onClick={handleToggle}
         aria-label={t("notifications.title")}
-        title="Notifications (updates every minute)"
+        title={t("notifications.tooltip")}
         style={{
           position: 'relative',
           background: 'var(--sidebar-bg)',
@@ -251,14 +264,14 @@ export function NotificationBell() {
                     borderRadius: '9999px',
                   }}
                 >
-                  {unreadCount} new
+                  {unreadCount} {t("notifications.unread")}
                 </span>
               )}
             </div>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <button
                 onClick={fetchNotifications}
-                title="Refresh"
+                title={t("notifications.refresh")}
                 style={{
                   background: 'none',
                   border: 'none',
@@ -401,7 +414,7 @@ export function NotificationBell() {
                         {!notif.is_read && (
                           <button
                             onClick={(e) => handleMarkAsRead(notif.id, e)}
-                            title="Mark as read"
+                            title={t("notifications.mark_read")}
                             style={{
                               background: 'none',
                               border: 'none',
@@ -415,7 +428,7 @@ export function NotificationBell() {
                         )}
                         <button
                           onClick={(e) => handleDelete(notif.id, e)}
-                          title="Delete"
+                          title={t("notifications.delete")}
                           style={{
                             background: 'none',
                             border: 'none',

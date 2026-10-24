@@ -56,12 +56,12 @@ export function AIGradingUpload() {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
-      showSuccess('Exam uploaded and registered for AI grading!');
+      showSuccess(t('ai_grading.upload_success'));
       setUploading(false);
       (e.target as HTMLInputElement).value = '';
       loadSubmissions();
     } catch (err: any) {
-      showError('Upload failed: ' + (err.response?.data?.detail || err.message));
+      showError(t('ai_grading.upload_error') + ': ' + (err.response?.data?.detail || err.message));
       setUploading(false);
     }
   };
@@ -70,7 +70,7 @@ export function AIGradingUpload() {
     setLoading(true);
     try {
       await apiClient.post(`/ai/grade/${submissionId}`);
-      showSuccess('AI grading completed and staged!');
+      showSuccess(t('ai_grading.ai_grade_success'));
       setLoading(false);
       loadSubmissions();
     } catch (err: any) {
@@ -101,7 +101,7 @@ export function AIGradingUpload() {
     setLoading(true);
     try {
       await apiClient.post(`/ai/submissions/${submissionId}/return`);
-      showSuccess('Exam returned to student!');
+      showSuccess(t('ai_grading.return_success'));
       setLoading(false);
       loadSubmissions();
     } catch (err: any) {
@@ -206,7 +206,7 @@ export function AIGradingUpload() {
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                   <span style={{ padding: '0.2rem 0.6rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 600, backgroundColor: sub.status === 'ungraded' ? '#fef3c7' : (sub.status === 'ai_graded' || sub.status === 'pending_approval') ? '#d1fae5' : '#dbeafe', color: sub.status === 'ungraded' ? '#92400e' : (sub.status === 'ai_graded' || sub.status === 'pending_approval') ? '#065f46' : '#1e40af' }}>
-                    {sub.status}
+                    {t('ai_grading.status_' + sub.status)}
                   </span>
                   <button
                     onClick={() => { setSelectedSubmission(sub); setViewMode('grade'); }}

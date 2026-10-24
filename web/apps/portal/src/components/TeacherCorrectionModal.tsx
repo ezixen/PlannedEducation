@@ -60,14 +60,6 @@ interface TeacherCorrectionModalProps {
   onSaveGrades: (submission: SubmissionWithAIGrades, approveAll?: boolean) => Promise<void> | void;
 }
 
-const FEEDBACK_CHIPS = [
-  'Excellent step-by-step work!',
-  'Correct method, minor arithmetic error.',
-  'Check sign when moving terms across =.',
-  'Partial credit for setting up the equation.',
-  'Please review the worked solution on the right.',
-];
-
 export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
   submission,
   reviewingQuestionId,
@@ -79,6 +71,19 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
   onSaveGrades,
 }) => {
   const { t } = useI18n();
+  const feedbackChips = [
+    t('teacher_modal.chip_1'),
+    t('teacher_modal.chip_2'),
+    t('teacher_modal.chip_3'),
+    t('teacher_modal.chip_4'),
+    t('teacher_modal.chip_5'),
+  ];
+  const quickPresets = [
+    { label: t('teacher_modal.preset_100'), mult: 1 },
+    { label: t('teacher_modal.preset_75'), mult: 0.75 },
+    { label: t('teacher_modal.preset_50'), mult: 0.5 },
+    { label: t('teacher_modal.preset_0'), mult: 0 },
+  ];
   const totalPossible = submission.answers.reduce((acc, a) => acc + (a.points_possible || 0), 0);
   const currentTotalScore = submission.answers.reduce((acc, a) => {
     const g = submission.ai_grades?.[a.question_id];
@@ -134,10 +139,10 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
         >
           <div>
             <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--text-color)' }}>
-              Review & Correct Exam — {submission.anonymous_student_ref}
+              {t('teacher_modal.title')} — {submission.anonymous_student_ref}
             </h2>
             <p style={{ margin: '0.25rem 0 0', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              Write step-by-step corrections alongside the student&apos;s answers so they can compare side-by-side.
+              {t('teacher_modal.subtitle')}
             </p>
           </div>
 
@@ -154,7 +159,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                 fontSize: '0.9rem',
               }}
             >
-              Score: {Math.round(currentTotalScore * 10) / 10} / {totalPossible} pts
+              {t('teacher_modal.running_score')}: {Math.round(currentTotalScore * 10) / 10} / {totalPossible} {t('teacher_modal.question_pts')}
             </div>
             <button
               type="button"
@@ -170,7 +175,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                 fontSize: '0.8rem',
               }}
             >
-              ✓ Mark All Approved ({approvedCount}/{submission.answers.length})
+              ✓ {t('teacher_modal.mark_all_approved')} ({approvedCount}/{submission.answers.length})
             </button>
             <button
               type="button"
@@ -228,7 +233,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <h4 style={{ margin: 0, fontSize: '1.05rem', color: 'var(--text-color)' }}>
-                      Question {idx + 1} ({answer.points_possible} pts)
+                      {t('take_exam.4')} {idx + 1} ({answer.points_possible} {t('teacher_modal.question_pts')})
                     </h4>
                     {answer.rubric && (
                       <span
@@ -240,7 +245,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           color: '#3b82f6',
                         }}
                       >
-                        Rubric: {answer.rubric}
+                        {t('teacher_modal.rubric_label')}: {answer.rubric}
                       </span>
                     )}
                   </div>
@@ -257,7 +262,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           color: currentScore === answer.points_possible ? '#10b981' : '#d97706',
                         }}
                       >
-                        Score: {currentScore}/{answer.points_possible} (AI Conf: {Math.round(aiGrade.confidence * 100)}%)
+                        {t('teacher_modal.running_score')}: {currentScore}/{answer.points_possible} ({t('teacher_modal.ai_conf')}: {Math.round(aiGrade.confidence * 100)}%)
                       </span>
                       {aiGrade.teacher_approved ? (
                         <span
@@ -270,7 +275,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                             color: '#10b981',
                           }}
                         >
-                          ✓ Teacher Approved
+                          ✓ {t('teacher_modal.teacher_approved')}
                         </span>
                       ) : (
                         <button
@@ -339,7 +344,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           marginBottom: '0.5rem',
                         }}
                       >
-                        📄 Student&apos;s Original Submitted Answer
+                        📄 {t('teacher_modal.student_orig_answer')}
                       </div>
                       <pre
                         data-testid={`student-original-answer-${idx + 1}`}
@@ -352,7 +357,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           lineHeight: 1.5,
                         }}
                       >
-                        {answer.student_response || '(empty)'}
+                        {answer.student_response || t('teacher_modal.empty_answer')}
                       </pre>
                     </div>
 
@@ -367,7 +372,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                         }}
                       >
                         <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#059669' }}>
-                          Reference Answer Key:
+                          {t('teacher_modal.ref_answer_key')}:
                         </div>
                         <pre
                           style={{
@@ -412,7 +417,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           color: '#166534',
                         }}
                       >
-                        ✍️ Teacher&apos;s Corrected Version (Shown Side-by-Side to Student)
+                        ✍️ {t('teacher_modal.teacher_corrected_version')}
                       </span>
                       <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
                         <button
@@ -423,7 +428,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                               submission.submission_id,
                               answer.question_id,
                               'teacher_corrected_answer',
-                              `Student wrote: ${answer.student_response || '(empty)'}\nCorrection: ${answer.correct_answer || ''}`
+                              `Student wrote: ${answer.student_response || t('teacher_modal.empty_answer')}\nCorrection: ${answer.correct_answer || ''}`
                             )
                           }
                           style={{
@@ -437,7 +442,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                             fontWeight: 600,
                           }}
                         >
-                          📋 Annotate Student Work
+                          📋 {t('teacher_modal.annotate_work_btn')}
                         </button>
                         {answer.correct_answer && (
                           <button
@@ -461,7 +466,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                               fontWeight: 600,
                             }}
                           >
-                            ✨ Use Answer Key
+                            ✨ {t('teacher_modal.use_answer_key_btn')}
                           </button>
                         )}
                       </div>
@@ -524,7 +529,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                             color: '#92400e',
                           }}
                         >
-                          Score (0–{answer.points_possible}):
+                          {t('teacher_modal.score_range_label')} (0–{answer.points_possible}):
                         </label>
                         <input
                           type="number"
@@ -554,12 +559,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                         />
 
                         {/* Quick Score Presets */}
-                        {[
-                          { label: '100% Full', mult: 1 },
-                          { label: '75% Method OK', mult: 0.75 },
-                          { label: '50% Partial', mult: 0.5 },
-                          { label: '0%', mult: 0 },
-                        ].map((preset) => (
+                        {quickPresets.map((preset) => (
                           <button
                             key={preset.label}
                             type="button"
@@ -596,7 +596,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                           }
                         />
                         <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#92400e' }}>
-                          Approve this question
+                          {t('teacher_modal.approve_question_checkbox')}
                         </span>
                       </label>
                     </div>
@@ -614,10 +614,10 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                         }}
                       >
                         <label style={{ fontSize: '0.82rem', fontWeight: 600, color: '#92400e' }}>
-                          Teacher Feedback & Explanation:
+                          {t('teacher_modal.feedback_explanation_label')}:
                         </label>
                         <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
-                          {FEEDBACK_CHIPS.map((chip) => (
+                          {feedbackChips.map((chip) => (
                             <button
                               key={chip}
                               type="button"
@@ -730,7 +730,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
           }}
         >
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            Saving publishes the corrected version &amp; feedback to the student&apos;s exam comparison view.
+            {t('teacher_modal.publish_notice')}
           </span>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
             <button
@@ -765,7 +765,7 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
                 fontWeight: 600,
               }}
             >
-              ✓ Approve All &amp; Save Corrected Exam
+              ✓ {t('teacher_modal.approve_all_and_save')}
             </button>
           </div>
         </div>

@@ -195,8 +195,8 @@ export function TakeExam() {
           {examPackage.questions.map((q: any, idx: number) => (
             <div key={q.question_id} style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>Question {idx + 1}</h3>
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>{q.points} pts</span>
+                <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>{t("take_exam.4")} {idx + 1}</h3>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>{q.points} {t("take_exam.pts")}</span>
               </div>
               <p style={{ fontSize: '1.05rem', marginBottom: '1.5rem', lineHeight: 1.6, color: 'var(--text-color)', wordBreak: 'break-word' }}>{q.text}</p>
               

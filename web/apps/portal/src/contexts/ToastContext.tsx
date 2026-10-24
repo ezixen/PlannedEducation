@@ -263,7 +263,7 @@ function ToastItem({ item, onDismiss }: { item: ToastItem; onDismiss: (id: strin
       <button
         type="button"
         className="toast-close"
-        aria-label="Dismiss"
+        aria-label="Close"
         onClick={() => onDismiss(id)}
       >
         ×

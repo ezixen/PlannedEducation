@@ -396,7 +396,7 @@ export function AdminDashboard() {
       </div>
 
       {/* Tab Navigation */}
-      <div className="submenus-bar" role="tablist" aria-label="Admin Sections">
+      <div className="submenus-bar" role="tablist" aria-label={t("admin.sections_aria")}>
         {[
           { id: 'stats', label: `📊 ${t('admin.statistics')}`, count: null },
           { id: 'users', label: `👥 ${t('admin.users')}`, count: users.length },
@@ -565,7 +565,7 @@ export function AdminDashboard() {
                               alignItems: 'center',
                               gap: '0.25rem',
                             }}
-                            title="Directly reset this user's password without needing an email"
+                            title={t("admin.reset_user_title")}
                           >
                             🔑 {t('admin.reset_password')}
                           </button>
@@ -859,7 +859,7 @@ export function AdminDashboard() {
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_job_type')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_grad_year')}</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Progress</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.progress")}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.created')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_started')}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.col_completed')}</th>
@@ -963,12 +963,12 @@ export function AdminDashboard() {
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
               <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
                 <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h2 style={{ margin: 0, fontSize: '1.25rem' }}>Create Archive Job</h2>
+                  <h2 style={{ margin: 0, fontSize: '1.25rem' }}>{t("admin.create_archive_job")}</h2>
                   <button onClick={() => setShowCreateJobModal(false)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
                 </div>
                 <div style={{ padding: '1.5rem' }}>
                   <div style={{ marginBottom: '1rem' }}>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Graduation Year</label>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>{t("admin.graduation_year")}</label>
                     <select
                       value={newJobParams.graduation_year}
                       onChange={e => setNewJobParams({...newJobParams, graduation_year: parseInt(e.target.value)})}
@@ -980,7 +980,7 @@ export function AdminDashboard() {
                     </select>
                   </div>
                   <div style={{ marginBottom: '1rem' }}>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Compression Level (1-19, higher = smaller but slower)</label>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>{t("admin.compression_level_desc")}</label>
                     <input
                       type="number"
                       min={1}
@@ -997,7 +997,7 @@ export function AdminDashboard() {
                         checked={newJobParams.delete_after_archive}
                         onChange={e => setNewJobParams({...newJobParams, delete_after_archive: e.target.checked})}
                       />
-                      <span>Delete from server after archiving (keep external backup)</span>
+                      <span>{t("admin.delete_after_archive_desc")}</span>
                     </label>
                   </div>
                   <div style={{ marginBottom: '1rem' }}>
@@ -1007,7 +1007,7 @@ export function AdminDashboard() {
                         checked={newJobParams.archive_to_external}
                         onChange={e => setNewJobParams({...newJobParams, archive_to_external: e.target.checked})}
                       />
-                      <span>Archive to external storage (USB, network share, etc.)</span>
+                      <span>{t("admin.archive_to_external_desc")}</span>
                     </label>
                   </div>
                   <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
@@ -1035,7 +1035,7 @@ export function AdminDashboard() {
                 onChange={e => { setArchiveYearFilter(e.target.value === 'all' ? 'all' : parseInt(e.target.value)); fetchArchives(); }}
                 style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
               >
-                <option value="all">All Years</option>
+                <option value="all">{t("admin.all_years")}</option>
                 {Array.from({length: 10}, (_, i) => new Date().getFullYear() - i).map(y => (
                   <option key={y} value={y}>{y}</option>
                 ))}
@@ -1045,21 +1045,21 @@ export function AdminDashboard() {
                 onChange={e => { setArchiveMonthFilter(e.target.value === 'all' ? 'all' : parseInt(e.target.value)); fetchArchives(); }}
                 style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
               >
-                <option value="all">All Months</option>
+                <option value="all">{t("admin.all_months")}</option>
                 {Array.from({length: 12}, (_, i) => i + 1).map(m => (
                   <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>
                 ))}
               </select>
               <input
                 type="text"
-                placeholder="Teacher username..."
+                placeholder={t("admin.teacher_username_placeholder")}
                 value={archiveTeacherFilter}
                 onChange={e => { setArchiveTeacherFilter(e.target.value); fetchArchives(); }}
                 style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', minWidth: '150px' }}
               />
               <input
                 type="text"
-                placeholder="Student username..."
+                placeholder={t("admin.student_username_placeholder")}
                 value={archiveStudentFilter}
                 onChange={e => { setArchiveStudentFilter(e.target.value); fetchArchives(); }}
                 style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', minWidth: '150px' }}
@@ -1069,32 +1069,32 @@ export function AdminDashboard() {
                 onChange={e => { setArchiveStatusFilter(e.target.value as any); fetchArchives(); }}
                 style={{ padding: '0.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
               >
-                <option value="all">All Statuses</option>
-                <option value="active">Active</option>
-                <option value="archived">Archived</option>
-                <option value="deleted">Deleted from Server</option>
+                <option value="all">{t("admin.all_statuses")}</option>
+                <option value="active">{t("admin.archive_status_active")}</option>
+                <option value="archived">{t("admin.archive_status_archived")}</option>
+                <option value="deleted">{t("admin.archive_status_deleted")}</option>
               </select>
             </div>
 
             {archiveLoading ? (
-              <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>Loading archives...</div>
+              <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t("admin.loading_archives")}</div>
             ) : archives.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>No archives found</div>
+              <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>{t("admin.no_archives")}</div>
             ) : (
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Submission ID</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.submission_id")}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('take_exam.1')}</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Student</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.archive_student")}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('chat.4')}</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Year/Month</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Original Size</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Compressed</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Ratio</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.year_month")}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.original_size")}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.compressed_size")}</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.compression_ratio")}</th>
                       <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.status')}</th>
-                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Archived</th>
+                      <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t("admin.archived_at")}</th>
                       <th style={{ padding: '1rem', textAlign: 'right', fontWeight: 600, color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('admin.actions')}</th>
                     </tr>
                   </thead>

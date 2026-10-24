@@ -16,6 +16,7 @@ import { ParentDashboard } from './pages/ParentDashboard';
 import { AiIntegration } from './pages/AiIntegration';
 import { TeacherClasses } from './pages/TeacherClasses';
 import { TakeExam } from './pages/TakeExam';
+import { StudentDashboard } from './pages/StudentDashboard';
 import { TeacherDashboard } from './pages/TeacherDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { AIGradingUpload } from './pages/AIGradingUpload';
@@ -36,6 +37,7 @@ function AppProviders() {
                   <Route path="/" element={<ProtectedRoute />}>
                     <Route index element={<Dashboard />} />
                     <Route path="settings" element={<Settings />} />
+                    <Route path="exam" element={<StudentDashboard />} />
                     <Route path="exam/:id" element={<TakeExam />} />
                     <Route path="teacher-exams" element={<TeacherExams />} />
                     <Route path="ai-grading" element={<AIGradingUpload />} />

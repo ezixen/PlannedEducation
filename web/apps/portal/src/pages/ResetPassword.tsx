@@ -203,7 +203,7 @@ export function ResetPassword() {
                   required
                   value={token}
                   onChange={(e) => setToken(e.target.value)}
-                  placeholder="Paste your 32-character reset token here"
+                  placeholder={t("reset_password.token_placeholder")}
                   style={{
                     width: '100%',
                     padding: '0.7rem',

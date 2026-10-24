@@ -289,7 +289,7 @@ export function Register() {
               minLength={3}
               maxLength={64}
               pattern="[a-zA-Z0-9_.-]+"
-              title="Letters, numbers, underscores, dots and hyphens only"
+              title={t("register.username_rules")}
               autoComplete="username"
               style={inputStyle}
             />

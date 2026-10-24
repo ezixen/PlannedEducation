@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 
 import enMessages from '../locales/en/messages.json';
+import { getKeyNumber } from '../locales/keyNumbers';
 
 export type Locale = 'en' | 'ar' | 'cn' | 'cs' | 'da' | 'de' | 'el' | 'es' | 'fi' | 'fr' | 'he' | 'hu' | 'id' | 'it' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ru' | 'sv' | 'th' | 'tr' | 'uk' | 'vi';
 
@@ -123,8 +124,11 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
 
   const t = useCallback((key: string, params?: Record<string, string>): string => {
     const entry = messages[key] ?? (enMessages as LocaleMessages)[key];
+    const keyNum = getKeyNumber(key);
+    const prefix = showNumbers ? (keyNum !== undefined ? `[#${keyNum}] ` : `[${key}] `) : '';
+
     if (!entry) {
-      return showNumbers ? `[${key}] ${key}` : key;
+      return showNumbers ? `${prefix}${key}` : key;
     }
     let text = typeof entry === 'string' ? entry : (entry[locale] || entry.en || key);
     if (params) {
@@ -132,7 +136,7 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }: { chi
         text = text.replace(new RegExp(`\\{${paramKey}\\}`, 'g'), value);
       });
     }
-    return showNumbers ? `[${key}] ${text}` : text;
+    return `${prefix}${text}`;
   }, [messages, locale, showNumbers]);
 
   const getContext = useCallback((key: string): string | undefined => {

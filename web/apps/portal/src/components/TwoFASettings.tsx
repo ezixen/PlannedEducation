@@ -171,7 +171,7 @@ export function TwoFASettings() {
         <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
           <h4>{t('twofa.2')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-            Open your authenticator app and scan this QR code:
+            {t("twofa.scan_qr_desc")}
           </p>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <img
@@ -184,7 +184,7 @@ export function TwoFASettings() {
             />
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
-            Or enter this secret manually: <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
+            {t("twofa.manual_secret_desc")} <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
           </p>
 
           <h4>{t('twofa.step2_title')}</h4>
