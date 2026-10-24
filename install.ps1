@@ -669,7 +669,7 @@ if (-not (Test-Path `$pythonExe)) {
     if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
     else { `$pythonExe = "python.exe" }
 }
-`$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList @("-m", "uvicorn", "plannededucation.api.main:app", "--env-file", "`$InstallDir\.env", "--host", "0.0.0.0", "--port", `$apiPort) -WorkingDirectory `$InstallDir -PassThru
+`$backendProc = Start-Process -FilePath `$pythonExe -ArgumentList @("-m", "uvicorn", "plannededucation.api.main:app", "--app-dir", "`$InstallDir\src", "--env-file", "`$InstallDir\.env", "--host", "0.0.0.0", "--port", `$apiPort) -WorkingDirectory `$InstallDir -PassThru
 
 Write-Host "2. Starting Frontend Portal on port `$frontendPort..." -ForegroundColor Green
 `$frontendProc = Start-Process -FilePath "cmd.exe" -ArgumentList "/c npm run preview -- --host 127.0.0.1 --port `$frontendPort" -WorkingDirectory (Join-Path `$InstallDir "web\apps\portal") -PassThru
@@ -760,7 +760,7 @@ if (-not (Test-Path `$pythonExe)) {
     if (Test-Path "C:\.venv\Scripts\python.exe") { `$pythonExe = "C:\.venv\Scripts\python.exe" }
     else { `$pythonExe = "python.exe" }
 }
-& `$pythonExe -m uvicorn plannededucation.api.main:app --env-file `$InstallDir\.env --host 0.0.0.0 --port `$apiPort
+& `$pythonExe -m uvicorn plannededucation.api.main:app --app-dir "`$InstallDir\src" --env-file `$InstallDir\.env --host 0.0.0.0 --port `$apiPort
 "@
     Set-Content -Path $startBackendPs1 -Value $backendPs1Content -Encoding UTF8
 
