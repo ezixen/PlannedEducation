@@ -11,12 +11,10 @@ import time
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from uuid import uuid4
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, StreamingResponse
-from uuid import uuid4
-from .ocr_service import OCRService, get_ocr_service
-from .routes_anonymizer import scrub_pii
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
@@ -24,6 +22,8 @@ from . import database, models
 from .ai_providers import (
     get_teacher_ai_provider,
 )
+from .ocr_service import OCRService, get_ocr_service
+from .routes_anonymizer import scrub_pii
 from .routes_auth import get_current_user
 
 logger = logging.getLogger(__name__)
