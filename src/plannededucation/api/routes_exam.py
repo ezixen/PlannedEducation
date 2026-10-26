@@ -25,11 +25,6 @@ def _get_exam_or_404(exam_id: str, db: Session) -> models.Exam:
 
 
 def _require_approved_teacher(user: models.User) -> None:
-    if user.role not in ("teacher", "admin") and not getattr(user, "is_admin", False):
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Only teachers and administrators can create or manage exams.",
-        )
     if user.role == "teacher" and not getattr(user, "teacher_approved", True):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
@@ -63,6 +58,11 @@ def ai_create_exam(
     The created exam is immediately linked to the teacher's account as an AI-Assisted Draft,
     allowing the teacher to review, modify, and publish it within PlannedEducation.
     """
+    if current_user.role not in ("teacher", "admin") and not getattr(current_user, "is_admin", False):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only teachers and administrators can create or manage exams.",
+        )
     _require_approved_teacher(current_user)
 
     desc = (payload.description or "").strip()
