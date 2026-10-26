@@ -10,6 +10,7 @@ Welcome to the central archive of **Google official skills, modern web design gu
 skills/
 │
 ├── 🛠️ Root Developer & QA Skills (Deduplicated & Upgraded):
+│   ├── universal-tester.md     # 🧪 Universal All-Tester & CI/CD Security Pro (universal-all-tester-pro): Logged pytest cache, frontend builds, OSS security scans, Trivy, CycloneDX SBOM, Cosign signing, SLSA, zero-orphan process hygiene
 │   ├── code-review.md          # 🔍 Code Reviewer Pro (code-reviewer-pro): 10-section code, OWASP ASVS 5.0 & CWV audit
 │   ├── web-search.md           # 🌐 Web Search Pro 2026 (web-search-pro-2026): Primary-source research, CVE & BLUF lookup
 │   ├── fulltest.md             # 🧪 Full-Platform & Visual Tester Pro (full-platform-visual-qa-pro): Merged E2E + Playwright visual QA
@@ -67,10 +68,11 @@ skills/
 
 ## 🛠️ Root Developer & QA Skills (Quick Agent Reference)
 
-These 4 unified, non-overlapping master skills at the root of `skills/` provide specialized workflows for auditing, researching, testing, and cleaning codebases:
+These 5 unified, non-overlapping master skills at the root of `skills/` provide specialized workflows for auditing, researching, testing, and cleaning codebases:
 
 | Skill / File | When to Use / Trigger Phrases | Core Capabilities |
 |:---|:---|:---|
+| [**`universal-tester.md`**](./universal-tester.md)<br>`universal-all-tester-pro` | *"Run all tests"*, *"ci cd verification"*, *"security audit"*, *"check dependabot alerts"*, *"trivy scan"*, *"generate sbom"*, *"sign cosign"*, *"ruff check"* | **10-Stage Universal Verification & CI/CD Security Engine**: Orchestrates source-aware pytest caching (`update_test_cache.py --skip-if-clean`), frontend portal compilation & oxlint security linting, free OSS security scanners (pip-audit, npm audit, gitleaks OSS CLI, Bandit), Trivy Dockerfile auditing, CycloneDX SBOM generation, Cosign keyless signing, SLSA v1.0 provenance attestation, active progress monitoring, zero-orphan process cleanup, and GitHub Actions PR zero-defect resolution. |
 | [**`code-review.md`**](./code-review.md)<br>`code-reviewer-pro` | *"Review this code"*, *"audit code quality"*, *"find bugs"*, *"security analysis"*, *"refactor"* | **10-Section Architecture, Security & CWV Audit**: Scores readability, modularity ($\le 400$ line sweet spot), performance, and security (1–10); checks OWASP ASVS 5.0.0, Argon2id/Fernet/Passkeys, native Modern Web APIs, and provides before/after diffs across 18+ languages. |
 | [**`web-search.md`**](./web-search.md)<br>`web-search-pro-2026` | *"Search online for current data"*, *"latest package version / CVE"*, *"fact-check"*, *"statistics"*, *"legal status"* | **Primary-Source Research & Technical Lookup**: Uses `search_web` & `read_url_content`; prioritizes official registries (PyPI, npm, NVD/GHSA), government gazettes, and statistics offices; outputs BLUF summaries with clickable HTTPS citations and 5-tier credibility scores. |
 | [**`fulltest.md`**](./fulltest.md)<br>`full-platform-visual-qa-pro` | *"Run full platform test"*, *"visual regression test"*, *"test user flows as teacher/student/parent"*, *"check themes"* | **Unified Multi-Role E2E & Playwright Visual Tester** *(merges `fulltest.md`, `webvisualtest.md`, and `website-visual-tester`)*: 7-stage authenticated multi-role E2E sync verification, safe destructive CRUD testing, theme/viewport matrix audits, `toHaveScreenshot()` baseline management, `globalTeardown` artifact cleanup, and zero-orphan process termination. |

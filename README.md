@@ -220,6 +220,8 @@ We welcome contributions! Whether it's:
 - **Developer & Architecture**:
   - [System Architecture](docs/dev/ARCHITECTURE.md) — Data models, schemas, and API design.
   - [Comprehensive Testing Guide](docs/dev/TESTING_GUIDE.md) — Automated pytest suites, Playwright E2E, and manual verification.
+  - [Universal All-Tester & CI/CD Security Pro](.copilot/skills/universal-tester.md) (`universal-all-tester-pro`) — 10-stage test caching, OSS security scans, Trivy container auditing, CycloneDX SBOM, Cosign signing, SLSA provenance, and zero-defect CI lifecycle.
+  - [Skills & Master QA Library](.copilot/skills/README.md) — Central library of developer skills, code review pro, and QA tools.
   - [Module & Package Specification](docs/dev/MODULE_SYSTEM.md).
   - [NIST SSDF Compliance](docs/dev/SSDF_COMPLIANCE.md), [NIST CSF 2.0 Alignment](docs/dev/NIST_CSF_2_ALIGNMENT.md), and [AI Risk Governance](docs/dev/AI_RISK_GOVERNANCE.md).
   - [Internationalization (i18n) Guide](docs/dev/I18N_GUIDE.md) & [Key Context Guide](docs/dev/I18N_CONTEXT.md).
