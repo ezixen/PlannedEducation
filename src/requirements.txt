@@ -8,12 +8,12 @@
 # All versions below are set to the latest tested minimums for long-term compatibility.
 
 # Web Framework
-fastapi>=0.156.4    # Tested: 0.156.4
+fastapi>=0.161.1    # Tested: 0.161.1
 uvicorn>=0.54.0     # Tested: 0.54.0
 websockets>=17.3    # Tested: 17.3 (Required for uvicorn WebSocket endpoints)
 
 # Database
-sqlalchemy>=2.1.5       # Tested: 2.1.5
+sqlalchemy>=2.1.6       # Tested: 2.1.6
 greenlet>=3.5.6         # Tested: 3.5.6 (Required for SQLAlchemy async & instrumentation)
 psycopg2-binary>=2.9.13   # Tested: 2.9.13 (PostgreSQL driver, free)
 
