@@ -59,7 +59,7 @@ def ai_create_exam(
     AI Exam Creation API:
     Allows an authenticated teacher, administrator, or authorized AI agent (using a teacher/admin token)
     to generate an entire exam atomically with all questions, choices, correct answers, and rubrics.
-    
+
     The created exam is immediately linked to the teacher's account as an AI-Assisted Draft,
     allowing the teacher to review, modify, and publish it within PlannedEducation.
     """
