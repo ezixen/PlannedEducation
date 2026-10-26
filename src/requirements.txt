@@ -8,7 +8,7 @@
 # All versions below are set to the latest tested minimums for long-term compatibility.
 
 # Web Framework
-fastapi>=0.161.1    # Tested: 0.161.1
+fastapi>=0.162.0    # Tested: 0.162.0
 uvicorn>=0.54.0     # Tested: 0.54.0
 websockets>=17.3    # Tested: 17.3 (Required for uvicorn WebSocket endpoints)
 
