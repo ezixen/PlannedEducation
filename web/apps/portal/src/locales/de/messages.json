@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "KI-Entwurf",
+  "exams.ai_draft_tooltip": "Erstellt von einem KI-Assistenten – wartet auf Ihre Bewertung",
+  "exams.ai_create_title": "AI-Prüfungsersteller-API",
+  "exams.ai_create_desc": "Externe KI-Agenten können mithilfe Ihrer Lehrnachweise vollständige Prüfungen entwerfen. Sie können sie unten inspizieren und polieren.",
+  "faq.welcome": "Hallo! Ich bin Ihr PlannedEducation-Assistent. Stellen Sie Fragen zu Prüfungen, Benotung, Konten oder geben Sie [#Nummer] ein, um zu einer beliebigen Übersetzung zu springen.",
+  "faq.not_found": "Ich konnte im aktuellen Sprachindex keine genaue Antwort finden. Sie können die vollständige Dokumentation anzeigen, sie in Google Translate öffnen oder Schlüsselwörter wie „Prüfung“, „Passwort“, „Beaufsichtigung“ oder „#Nummer“ ausprobieren.",
+  "faq.open_docs": "In-App-Dokumentation anzeigen",
+  "faq.translate_docs": "Vollständige Dokumentation in Google Translate ({lang}) öffnen",
+  "faq.jump_success": "Auf dieser Seite zu [#{num}] {key} gesprungen!",
+  "faq.jump_nav": "Gefunden [#{num}] {key}: „{text}“. Dieses Element befindet sich auf der Seite {page}.",
+  "faq.jump_not_found": "Die Übersetzungsnummer [#{num}] wurde im Plattformindex nicht gefunden (gültiger Bereich: 1 bis {total}).",
+  "faq.jump_btn": "Gehen Sie zu {Seite}"
 }

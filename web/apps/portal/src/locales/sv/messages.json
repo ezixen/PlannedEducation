@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI-utkast",
+  "exams.ai_draft_tooltip": "Genererad av en AI-assistent — väntar på din recension",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "Externa AI-agenter kan utarbeta fullständiga prov med hjälp av dina läraruppgifter. Du kan inspektera och polera dem nedan.",
+  "faq.welcome": "Hej! Jag är din PlannedEducation-assistent. Ställ alla frågor om prov, betyg, konton eller skriv [#nummer] för att hoppa till valfri översättning.",
+  "faq.not_found": "Jag kunde inte hitta ett exakt svar i det aktuella språkindexet. Du kan se hela dokumentationen, öppna den i Google Översätt eller prova nyckelord som \"examen\", \"lösenord\", \"proctoring\" eller \"#nummer\".",
+  "faq.open_docs": "Visa dokumentation i appen",
+  "faq.translate_docs": "Öppna fullständig dokumentation i Google Translate ({lang})",
+  "faq.jump_success": "Hoppade till [#{num}] {key} på den här sidan!",
+  "faq.jump_nav": "Hittade [#{num}] {nyckel}: \"{text}\". Detta element finns på sidan {page}.",
+  "faq.jump_not_found": "Översättningsnummer [#{num}] hittades inte i plattformsindexet (giltigt intervall: 1 till {total}).",
+  "faq.jump_btn": "Gå till {sida}"
 }

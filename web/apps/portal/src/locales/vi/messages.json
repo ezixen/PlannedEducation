@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Dự thảo AI",
+  "exams.ai_draft_tooltip": "Được tạo bởi trợ lý AI — đang chờ bạn đánh giá",
+  "exams.ai_create_title": "API người tạo bài kiểm tra AI",
+  "exams.ai_create_desc": "Nhân viên AI bên ngoài có thể soạn thảo bài kiểm tra hoàn chỉnh bằng thông tin xác thực giáo viên của bạn. Bạn có thể kiểm tra và đánh bóng chúng dưới đây.",
+  "faq.welcome": "Xin chào! Tôi là trợ lý PlannedEducation của bạn. Đặt bất kỳ câu hỏi nào về bài kiểm tra, chấm điểm, tài khoản hoặc nhập [#number] để chuyển sang bất kỳ bản dịch nào.",
+  "faq.not_found": "Tôi không thể tìm thấy câu trả lời chính xác trong chỉ mục ngôn ngữ hiện tại. Bạn có thể xem tài liệu đầy đủ, mở tài liệu đó trong Google Dịch hoặc thử các từ khóa như 'bài kiểm tra', 'mật khẩu', 'giám sát' hoặc '#number'.",
+  "faq.open_docs": "Xem tài liệu trong ứng dụng",
+  "faq.translate_docs": "Mở Tài liệu đầy đủ trong Google Dịch ({lang})",
+  "faq.jump_success": "Đã chuyển tới [#{num}] {key} trên trang này!",
+  "faq.jump_nav": "Đã tìm thấy [#{num}] {key}: \"{text}\". Phần tử này nằm trên trang {page}.",
+  "faq.jump_not_found": "Không tìm thấy số bản dịch [#{num}] trong chỉ mục nền tảng (phạm vi hợp lệ: 1 đến {total}).",
+  "faq.jump_btn": "Đi đến {trang}"
 }

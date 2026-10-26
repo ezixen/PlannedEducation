@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI-luonnos",
+  "exams.ai_draft_tooltip": "Tekoälyassistentin luoma – odottaa arvosteluasi",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "Ulkoiset tekoälyagentit voivat luonnostella täydellisiä kokeita opettajan tunnistetiedoillasi. Voit tarkistaa ja kiillottaa ne alta.",
+  "faq.welcome": "Hei! Olen PlannedEducation-avustajasi. Esitä kysymyksiä kokeista, arvioinnista, tileistä tai kirjoita [#number] siirtyäksesi mihin tahansa käännökseen.",
+  "faq.not_found": "En löytänyt tarkkaa vastausta nykyisestä kielihakemistosta. Voit tarkastella koko dokumentaatiota, avata sen Google-kääntäjässä tai kokeilla avainsanoja, kuten \"koe\", \"salasana\", \"varmistus\" tai \"#numero\".",
+  "faq.open_docs": "Näytä sovelluksen sisäinen dokumentaatio",
+  "faq.translate_docs": "Avaa koko dokumentaatio Google-kääntäjässä ({lang})",
+  "faq.jump_success": "Hyppäsi tällä sivulla kohtaan [#{num}] {key}!",
+  "faq.jump_nav": "Löytyi [#{num}] {key}: \"{text}\". Tämä elementti sijaitsee sivulla {page}.",
+  "faq.jump_not_found": "Käännösnumeroa [#{num}] ei löytynyt alustahakemistosta (kelvollinen alue: 1–{total}).",
+  "faq.jump_btn": "Siirry {sivulle}"
 }

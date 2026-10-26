@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Brouillon IA",
+  "exams.ai_draft_tooltip": "Généré par un assistant IA — en attente de votre avis",
+  "exams.ai_create_title": "API du créateur d'examen AI",
+  "exams.ai_create_desc": "Les agents d'IA externes peuvent rédiger des examens complets en utilisant vos informations d'identification d'enseignant. Vous pouvez les inspecter et les polir ci-dessous.",
+  "faq.welcome": "Bonjour! Je suis votre assistant PlannedEducation. Posez n'importe quelle question sur les examens, les notes, les comptes ou tapez [#numéro] pour accéder à n'importe quelle traduction.",
+  "faq.not_found": "Je n'ai pas trouvé de réponse exacte dans l'index des langues actuel. Vous pouvez consulter la documentation complète, l'ouvrir dans Google Translate ou essayer des mots clés tels que « examen », « mot de passe », « surveillance » ou « #numéro ».",
+  "faq.open_docs": "Afficher la documentation intégrée à l'application",
+  "faq.translate_docs": "Ouvrir la documentation complète dans Google Translate ({lang})",
+  "faq.jump_success": "Passé à [#{num}] {key} sur cette page !",
+  "faq.jump_nav": "Trouvé [#{num}] {key} : \"{text}\". Cet élément se trouve sur la page {page}.",
+  "faq.jump_not_found": "Le numéro de traduction [#{num}] est introuvable dans l'index de la plateforme (plage valide : 1 à {total}).",
+  "faq.jump_btn": "Aller à {page}"
 }

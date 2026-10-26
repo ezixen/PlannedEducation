@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Проект AI",
+  "exams.ai_draft_tooltip": "Створено помічником AI — очікує на ваш огляд",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "Зовнішні агенти ШІ можуть складати проекти повних іспитів, використовуючи облікові дані вашого викладача. Ви можете перевірити та відполірувати їх нижче.",
+  "faq.welcome": "Привіт! Я ваш помічник у PlannedEducation. Поставте будь-яке запитання щодо іспитів, оцінювання, облікових записів або введіть [#число], щоб перейти до будь-якого перекладу.",
+  "faq.not_found": "Я не міг знайти точної відповіді в поточному мовному покажчику. Ви можете переглянути повну документацію, відкрити її в Google Translate або спробувати такі ключові слова, як «екзамен», «пароль», «прокторінг» або «#номер».",
+  "faq.open_docs": "Переглянути документацію програми",
+  "faq.translate_docs": "Відкрити повну документацію в Google Translate ({lang})",
+  "faq.jump_success": "Перейшов до [#{num}] {key} на цій сторінці!",
+  "faq.jump_nav": "Знайдено [#{num}] {key}: \"{text}\". Цей елемент розташований на сторінці {page}.",
+  "faq.jump_not_found": "Номер перекладу [#{num}] не знайдено в індексі платформи (дійсний діапазон: від 1 до {total}).",
+  "faq.jump_btn": "Перейти на {сторінку}"
 }

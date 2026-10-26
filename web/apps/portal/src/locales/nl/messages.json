@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI-concept",
+  "exams.ai_draft_tooltip": "Gegenereerd door een AI-assistent — in afwachting van uw beoordeling",
+  "exams.ai_create_title": "API voor het maken van AI-examens",
+  "exams.ai_create_desc": "Externe AI-agenten kunnen volledige examens opstellen met behulp van uw docentengegevens. Hieronder kunt u ze inspecteren en polijsten.",
+  "faq.welcome": "Hallo! Ik ben uw PlannedEducation-assistent. Stel een vraag over examens, cijfers, accounts of typ [#getal] om naar een vertaling te gaan.",
+  "faq.not_found": "Ik kon geen exact antwoord vinden in de huidige taalindex. Je kunt de volledige documentatie bekijken, openen in Google Translate of trefwoorden gebruiken als 'examen', 'wachtwoord', 'proctoring' of '#nummer'.",
+  "faq.open_docs": "Bekijk in-app-documentatie",
+  "faq.translate_docs": "Open de volledige documentatie in Google Translate ({lang})",
+  "faq.jump_success": "Naar [#{num}] {key} op deze pagina gesprongen!",
+  "faq.jump_nav": "Gevonden [#{num}] {key}: \"{text}\". Dit element bevindt zich op de pagina {page}.",
+  "faq.jump_not_found": "Vertaalnummer [#{num}] is niet gevonden in de platformindex (geldig bereik: 1 tot {total}).",
+  "faq.jump_btn": "Ga naar {pagina}"
 }

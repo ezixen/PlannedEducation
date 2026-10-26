@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "id": "math-18-06-module-02-vector-spaces-eigenvalues-svd-1.0.0",
+    "name": "MIT 18.06: Subspaces, Orthogonality, Eigenvalues & SVD",
+    "version": "1.0.0",
+    "description": "College exam testing the Four Fundamental Subspaces, Gram-Schmidt QR, diagonalization, and Singular Value Decomposition.",
+    "author": "MIT OpenCourseWare Reference Assessment",
+    "author_id": "mit-ocw",
+    "created_at": "2026-10-26T11:35:14.920792+00:00",
+    "updated_at": "2026-10-26T11:35:14.920800+00:00",
+    "tags": [
+      "university",
+      "college",
+      "mit",
+      "mathematics",
+      "math-18-06",
+      "en"
+    ],
+    "subject": "mathematics",
+    "grade_level": "college",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
+    "institution": "Massachusetts Institute of Technology (MIT)",
+    "license": "CC-BY-NC-SA-4.0",
+    "curriculum": "mit-ocw-18-06",
+    "duration_minutes": 60,
+    "total_points": 20,
+    "question_count": 3,
+    "randomizer_enabled": true,
+    "difficulty": "hard",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Determine bases and dimensions for the four fundamental subspaces",
+      "Apply Gram-Schmidt orthogonalization to construct QR factorization",
+      "Compute eigenvalues and eigenvectors to solve dynamic systems",
+      "Formulate Singular Value Decomposition (SVD) for general matrices"
+    ],
+    "checksum": "8f895f09e8ae245cda26f0aeda61eb6a7f1c99457cdb7dc3a405900917d00b8f"
+  },
+  "exam": {
+    "title": "MIT 18.06: Subspaces, Orthogonality, Eigenvalues & SVD",
+    "description": "College exam testing the Four Fundamental Subspaces, Gram-Schmidt QR, diagonalization, and Singular Value Decomposition.",
+    "duration_minutes": 60,
+    "instructions": "Answer all questions rigorously showing all work where applicable. Time limit: 60 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "seb_config_key": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-1",
+      "question_type": "multiple_choice",
+      "text": "According to the Fundamental Theorem of Linear Algebra, what is the orthogonal complement of the Row Space C(A^T) in R^n?",
+      "options": [
+        "The Column Space C(A)",
+        "The Nullspace N(A)",
+        "The Left Nullspace N(A^T)",
+        "The entire space R^m"
+      ],
+      "correct_answer": "The Nullspace N(A)",
+      "points": 5,
+      "rubric": "The row space C(A^T) is orthogonal to the nullspace N(A) in R^n; every vector x in N(A) satisfies A x = 0, meaning it is perpendicular to every row of A.",
+      "category": "mathematics"
+    },
+    {
+      "id": "q-2",
+      "question_type": "multiple_choice",
+      "text": "For any real symmetric matrix S (S = S^T), which statement is always TRUE?",
+      "options": [
+        "All eigenvalues of S are purely imaginary.",
+        "All eigenvalues of S are real, and S can be diagonalized by an orthogonal matrix of eigenvectors (S = Q * Lambda * Q^T).",
+        "The determinant of S must be strictly positive.",
+        "The matrix S has no inverse."
+      ],
+      "correct_answer": "All eigenvalues of S are real, and S can be diagonalized by an orthogonal matrix of eigenvectors (S = Q * Lambda * Q^T).",
+      "points": 5,
+      "rubric": "By the Spectral Theorem, real symmetric matrices always have real eigenvalues and an orthonormal basis of eigenvectors, yielding S = Q Lambda Q^T.",
+      "category": "mathematics"
+    },
+    {
+      "id": "q-3",
+      "question_type": "open_response",
+      "text": "Describe the Singular Value Decomposition (SVD) A = U * Sigma * V^T for an m x n matrix A. State what the columns of U, the diagonal of Sigma, and the columns of V represent.",
+      "options": null,
+      "correct_answer": "U has orthonormal eigenvectors of AA^T, V has orthonormal eigenvectors of A^TA, and Sigma has singular values sigma_i = sqrt(lambda_i).",
+      "points": 10,
+      "rubric": "Full marks require defining U (m x m orthogonal, eigenvectors of AA^T), Sigma (m x n diagonal with singular values sigma_i >= 0), and V (n x n orthogonal, eigenvectors of A^TA).",
+      "category": "mathematics"
+    }
+  ]
+}

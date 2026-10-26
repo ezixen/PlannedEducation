@@ -170,6 +170,14 @@ export const MODULE_LANGUAGES: { code: string; name: string; defaultCountry: str
   { code: 'cs', name: 'Čeština', defaultCountry: 'czechia' },
   { code: 'sk', name: 'Slovenčina', defaultCountry: 'slovakia' },
   { code: 'el', name: 'Ελληνικά', defaultCountry: 'greece' },
+  { code: 'bg', name: 'Български', defaultCountry: 'bulgaria' },
+  { code: 'hr', name: 'Hrvatski', defaultCountry: 'croatia' },
+  { code: 'et', name: 'Eesti', defaultCountry: 'estonia' },
+  { code: 'ga', name: 'Gaeilge', defaultCountry: 'ireland' },
+  { code: 'lv', name: 'Latviešu', defaultCountry: 'latvia' },
+  { code: 'lt', name: 'Lietuvių', defaultCountry: 'lithuania' },
+  { code: 'mt', name: 'Malti', defaultCountry: 'malta' },
+  { code: 'sl', name: 'Slovenščina', defaultCountry: 'slovenia' },
 ];
 
 export const packagesService = {

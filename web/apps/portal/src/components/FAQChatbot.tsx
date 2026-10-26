@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useExam } from '../contexts/ExamContext';
-import { useI18n } from '../contexts/I18nContext';
+import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
+import { KEY_NUMBERS } from '../locales/keyNumbers';
+import enMessages from '../locales/en/messages.json';
 
 interface ChatMessage {
   id: number;
@@ -24,6 +26,11 @@ interface FAQCategory {
 
 // Documentation file index for full-text search
 const DOCS_INDEX: Record<string, { title: string; path: string; content: string }> = {
+  'full-docs': {
+    title: 'Complete Unified Platform Documentation & Reference Manual',
+    path: 'docs/FULL_DOCUMENTATION.md',
+    content: 'PlannedEducation complete unified platform documentation. Covers all features: User Manual, FAQ Reference, Teacher Guide, Student Guide, Parent Guide, AI Exam Creation REST API, Windows & Linux Install Guides, 25x Randomizer Preview, Safe Exam Browser (SEB), Archive Browser with Presidio PII scrubbing, 37 Languages with Translation Numbers (#1 to #1341), and Google Translate integration. View in-app at /docs/FULL_DOCUMENTATION.md or open in Google Translate.',
+  },
   'email-smtp': {
     title: 'SMTP & Email Configuration',
     path: 'docs/admin/EMAIL_SMTP.md',
@@ -406,8 +413,43 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
   }
 ];
 
+const NUMBER_TO_KEY: Record<number, string> = Object.fromEntries(
+  Object.entries(KEY_NUMBERS).map(([k, v]) => [v, k])
+);
+const TOTAL_KEYS = Object.keys(KEY_NUMBERS).length;
+
+const GOOGLE_TRANSLATE_LANG: Record<string, string> = {
+  ar: 'ar', bg: 'bg', cn: 'zh-CN', cs: 'cs', da: 'da', de: 'de',
+  el: 'el', en: 'en', es: 'es', et: 'et', fi: 'fi', fr: 'fr',
+  ga: 'ga', he: 'iw', hr: 'hr', hu: 'hu', id: 'id', it: 'it',
+  ja: 'ja', ko: 'ko', lt: 'lt', lv: 'lv', mt: 'mt', nl: 'nl',
+  no: 'no', pl: 'pl', pt: 'pt', 'pt-BR': 'pt', ro: 'ro', ru: 'ru',
+  sk: 'sk', sl: 'sl', sv: 'sv', th: 'th', tr: 'tr', uk: 'uk',
+  vi: 'vi',
+};
+
+const ROUTE_PREFIX_MAP: Array<{ prefix: string; route: string; name: string }> = [
+  { prefix: 'admin.', route: '/admin', name: 'Admin Dashboard' },
+  { prefix: 'login.', route: '/login', name: 'Login' },
+  { prefix: 'register.', route: '/register', name: 'Register' },
+  { prefix: 'reset_password.', route: '/reset-password', name: 'Reset Password' },
+  { prefix: 'settings.', route: '/settings', name: 'Settings' },
+  { prefix: 'twofa.', route: '/settings', name: 'Settings (2FA)' },
+  { prefix: 'passkeys.', route: '/settings', name: 'Settings (Passkeys)' },
+  { prefix: 'ai_keys.', route: '/settings', name: 'Settings (AI Keys)' },
+  { prefix: 'teacher_dashboard.', route: '/teacher-exams', name: 'Teacher Dashboard' },
+  { prefix: 'teacher_exams.', route: '/teacher-exams', name: 'Teacher Exams' },
+  { prefix: 'exam_editor.', route: '/teacher-exams', name: 'Exam Editor' },
+  { prefix: 'take_exam.', route: '/exam', name: 'Take Exam' },
+  { prefix: 'student_dashboard.', route: '/exam', name: 'Student Dashboard' },
+  { prefix: 'parent_dashboard.', route: '/parent-dashboard', name: 'Parent Dashboard' },
+  { prefix: 'ai_grading.', route: '/ai-grading', name: 'AI Grading' },
+  { prefix: 'teacher_classes.', route: '/teacher-classes', name: 'Teacher Classes' },
+  { prefix: 'dashboard.', route: '/', name: 'Dashboard' },
+];
+
 export function FAQChatbot() {
-  const { t } = useI18n();
+  const { t, locale, jumpToElement } = useI18n();
   const { isExamActive } = useExam();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -419,29 +461,87 @@ export function FAQChatbot() {
     return null;
   }
 
-  // Add welcome message when component mounts
+  // Add welcome message when component mounts or locale changes
   useEffect(() => {
-    setMessages([{
-      id: 0,
-      text: "Hello! I'm the PlannedEducation FAQ assistant. How can I help you today?",
-      sender: "bot",
-      timestamp: new Date()
-    }]);
-  }, []);
+    setMessages(prev => {
+      if (prev.length === 0) {
+        return [{
+          id: 0,
+          text: t("faq.welcome"),
+          sender: "bot",
+          timestamp: new Date()
+        }];
+      }
+      if (prev.length === 1 && prev[0].id === 0) {
+        return [{
+          ...prev[0],
+          text: t("faq.welcome")
+        }];
+      }
+      return prev;
+    });
+  }, [locale, t]);
 
-  // Find answer based on user input - searches FAQ data AND all documentation
-  const findAnswer = (query: string) => {
-    const lowerQuery = query.toLowerCase().trim();
-    
-    // Direct matches or keyword-based matches in FAQ data
+  // Find answer based on user input - supports jump to translation #, multilingual FAQ search & fallback docs
+  const findAnswer = (query: string): string => {
+    const raw = query.trim();
+    if (!raw) return '';
+
+    // 1. Jump to translation number (#num, [#num], jump num, jump to num, go to num, key num)
+    const jumpMatch = raw.match(/^(?:\[?#\s*|jump(?:\s+to)?\s*#?\s*|go\s+to\s*#?\s*|key\s*#?\s*)(\d+)\]?$/i);
+    if (jumpMatch) {
+      const num = parseInt(jumpMatch[1], 10);
+      const targetKey = NUMBER_TO_KEY[num];
+      if (!targetKey) {
+        return t("faq.jump_not_found", { num: String(num), total: String(TOTAL_KEYS) });
+      }
+
+      // Check if element with this key exists in current DOM
+      const element = document.querySelector(`[data-i18n-key="${targetKey}"]`);
+      if (element) {
+        jumpToElement(targetKey);
+        return t("faq.jump_success", { num: String(num), key: targetKey });
+      }
+
+      // Not on current page: locate which page it belongs to
+      const matched = ROUTE_PREFIX_MAP.find(r => targetKey.startsWith(r.prefix)) || { route: '/', name: 'Dashboard' };
+      const enText = (enMessages as Record<string, string>)[targetKey] || targetKey;
+      const previewText = enText.length > 55 ? enText.slice(0, 52) + '...' : enText;
+      const navMsg = t("faq.jump_nav", {
+        num: String(num),
+        key: targetKey,
+        text: previewText,
+        page: matched.name,
+      });
+      const btnLabel = t("faq.jump_btn", { page: matched.name });
+      return `${navMsg}\n\n[${btnLabel}](${matched.route})`;
+    }
+
+    // Direct docs query handler
+    if (/^(?:docs?|documentation|manual|guide|full\s*docs?|translate|fordit|übersetz)/i.test(raw)) {
+      const openDocsLabel = t("faq.open_docs");
+      const gtLang = GOOGLE_TRANSLATE_LANG[locale] || 'en';
+      const rawLangName = LOCALE_NAMES[locale] || locale;
+      const langDisplayName = rawLangName.includes(' - ') ? rawLangName.split(' - ')[1] : rawLangName;
+      const translateDocsLabel = t("faq.translate_docs", { lang: langDisplayName });
+      const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+      const docExternalUrl = isLocalhost
+        ? 'https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/FULL_DOCUMENTATION.md'
+        : (typeof window !== 'undefined' ? `${window.location.origin}/docs/FULL_DOCUMENTATION.md` : '/docs/FULL_DOCUMENTATION.md');
+      const gtUrl = `https://translate.google.com/translate?sl=en&tl=${gtLang}&u=${encodeURIComponent(docExternalUrl)}`;
+
+      return `📚 **PlannedEducation Complete Platform Documentation**\n\nYou can view the comprehensive segmented documentation in-app or open it directly in Google Translate in ${langDisplayName}:\n\n[📄 ${openDocsLabel}](/docs/FULL_DOCUMENTATION.md)\n\n[🌐 ${translateDocsLabel}](${gtUrl})\n\n💡 *Tip: You can also type \`#[number]\` (e.g. \`#42\`) to jump directly to any translation on your screen or find its page!*`;
+    }
+
+    const lowerQuery = raw.toLowerCase();
+
+    // 2. Direct matches or keyword-based matches in FAQ data
     for (const category of FAQ_DATA) {
       for (const faq of category.questions) {
-        // Direct question match
         if (lowerQuery.includes(faq.question.toLowerCase()) || faq.question.toLowerCase().includes(lowerQuery)) {
           return faq.answer;
         }
 
-        // Targeted keywords check (supports single-word matches for specific topics)
         if (faq.keywords) {
           const queryWords = lowerQuery.split(/\s+/);
           const matchedKeywords = faq.keywords.filter(keyword => {
@@ -456,7 +556,6 @@ export function FAQChatbot() {
         const questionWords = faq.question.toLowerCase().split(' ');
         const queryWords = lowerQuery.split(' ');
         
-        // Check if any significant words match
         const matches = questionWords.filter(word => 
           word.length > 3 && queryWords.includes(word)
         );
@@ -467,7 +566,7 @@ export function FAQChatbot() {
       }
     }
     
-    // Search through documentation index
+    // 3. Search through documentation index
     const docMatches = Object.entries(DOCS_INDEX).filter(([, doc]) => {
       const searchable = (doc.title + ' ' + doc.content).toLowerCase();
       const queryWords = lowerQuery.split(' ').filter(w => w.length > 2);
@@ -480,8 +579,28 @@ export function FAQChatbot() {
       return `📚 Found in **${doc.title}** (${doc.path}):\n\n${doc.content.substring(0, 500)}...\n\nFor full details, see the documentation file.`;
     }
     
-    // Default response if no match found
-    return "I'm sorry, I don't have an answer for that question. Please try rephrasing or check our documentation in the docs/ folder (e.g., docs/INSTALL_WINDOWS.md or docs/INSTALL_LINUX.md).";
+    // 4. Multilingual Fallback with In-App Docs & Google Translate
+    const fallbackMsg = t("faq.not_found");
+    const openDocsLabel = t("faq.open_docs");
+    const gtLang = GOOGLE_TRANSLATE_LANG[locale] || 'en';
+    const rawLangName = LOCALE_NAMES[locale] || locale;
+    const langDisplayName = rawLangName.includes(' - ') ? rawLangName.split(' - ')[1] : rawLangName;
+    const translateDocsLabel = t("faq.translate_docs", { lang: langDisplayName });
+
+    const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    const docExternalUrl = isLocalhost
+      ? 'https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/FULL_DOCUMENTATION.md'
+      : (typeof window !== 'undefined' ? `${window.location.origin}/docs/FULL_DOCUMENTATION.md` : '/docs/FULL_DOCUMENTATION.md');
+    const gtUrl = `https://translate.google.com/translate?sl=en&tl=${gtLang}&u=${encodeURIComponent(docExternalUrl)}`;
+
+    let response = `${fallbackMsg}\n\n[📄 ${openDocsLabel}](/docs/FULL_DOCUMENTATION.md)\n\n[🌐 ${translateDocsLabel}](${gtUrl})`;
+
+    if (locale !== 'en' && lowerQuery.length > 3) {
+      const queryTranslateUrl = `https://translate.google.com/?sl=auto&tl=en&text=${encodeURIComponent(raw)}&op=translate`;
+      response += `\n\n[🔤 Translate Question to English](${queryTranslateUrl})`;
+    }
+
+    return response;
   };
 
   // Handle sending message
@@ -526,7 +645,8 @@ export function FAQChatbot() {
         parts.push(text.substring(lastIndex, match.index));
       }
       const [, label, url] = match;
-      if (url.startsWith('/')) {
+      const isFileOrExternal = !url.startsWith('/') || url.includes('.md') || url.includes('.pdf');
+      if (!isFileOrExternal) {
         parts.push(
           <Link
             key={match.index}
@@ -620,6 +740,81 @@ export function FAQChatbot() {
             )}
           </div>
           
+          {/* Quick Actions Bar */}
+          <div className="faq-chatbot-quick-actions" style={{
+            display: 'flex',
+            gap: '0.4rem',
+            padding: '0.4rem 0.75rem',
+            borderTop: '1px solid var(--border-color)',
+            background: 'var(--bg-secondary)',
+            fontSize: '0.78rem',
+            overflowX: 'auto',
+            whiteSpace: 'nowrap'
+          }}>
+            <a
+              href="/docs/FULL_DOCUMENTATION.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
+                background: 'var(--bg-card, #fff)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-color)',
+                textDecoration: 'none',
+                fontWeight: 500,
+              }}
+            >
+              📄 {t("faq.open_docs")}
+            </a>
+            <a
+              href={`https://translate.google.com/translate?sl=en&tl=${GOOGLE_TRANSLATE_LANG[locale] || 'en'}&u=${encodeURIComponent(
+                typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                  ? 'https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/FULL_DOCUMENTATION.md'
+                  : `${window.location.origin}/docs/FULL_DOCUMENTATION.md`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
+                background: 'var(--bg-card, #fff)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--primary-color)',
+                textDecoration: 'none',
+                fontWeight: 500,
+              }}
+            >
+              🌐 Google Translate
+            </a>
+            <button
+              type="button"
+              onClick={() => {
+                setInput('#');
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
+                background: 'var(--bg-card, #fff)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-color)',
+                cursor: 'pointer',
+                fontSize: '0.78rem',
+              }}
+            >
+              🔢 #Number Jump
+            </button>
+          </div>
+
           <div className="faq-chatbot-input-area">
             <input
               type="text"

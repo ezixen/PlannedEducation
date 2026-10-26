@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Návrh AI",
+  "exams.ai_draft_tooltip": "Generováno asistentem AI — čeká na vaši recenzi",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "Externí agenti umělé inteligence mohou navrhnout kompletní zkoušky pomocí vašich pověření učitele. Níže si je můžete prohlédnout a vyleštit.",
+  "faq.welcome": "Ahoj! Jsem váš asistent PlannedEducation. Zeptejte se na jakékoli otázky týkající se zkoušek, hodnocení, účtů nebo zadejte [#číslo] a přejděte k libovolnému překladu.",
+  "faq.not_found": "V aktuálním jazykovém rejstříku jsem nenašel přesnou odpověď. Můžete si prohlédnout úplnou dokumentaci, otevřít ji v Překladači Google nebo zkusit klíčová slova jako „zkouška“, „heslo“, „proctoring“ nebo „#number“.",
+  "faq.open_docs": "Zobrazit dokumentaci v aplikaci",
+  "faq.translate_docs": "Otevřít úplnou dokumentaci v Překladači Google ({lang})",
+  "faq.jump_success": "Přeskočili jste na [#{num}] {klíč} na této stránce!",
+  "faq.jump_nav": "Nalezeno [#{num}] {key}: \"{text}\". Tento prvek se nachází na stránce {page}.",
+  "faq.jump_not_found": "Číslo překladu [#{num}] nebylo nalezeno v indexu platformy (platný rozsah: 1 až {total}).",
+  "faq.jump_btn": "Přejít na {page}"
 }

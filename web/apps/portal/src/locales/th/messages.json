@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "ร่าง AI",
+  "exams.ai_draft_tooltip": "สร้างโดยผู้ช่วย AI — กำลังรอการตรวจสอบของคุณ",
+  "exams.ai_create_title": "API ผู้สร้างการสอบ AI",
+  "exams.ai_create_desc": "ตัวแทน AI ภายนอกสามารถร่างข้อสอบให้เสร็จสิ้นได้โดยใช้ข้อมูลประจำตัวอาจารย์ของคุณ คุณสามารถตรวจสอบและขัดเงาได้ด้านล่าง",
+  "faq.welcome": "สวัสดี! ฉันเป็นผู้ช่วย PlannedEducation ของคุณ ถามคำถามเกี่ยวกับการสอบ การให้เกรด บัญชี หรือพิมพ์ [#number] เพื่อข้ามไปที่การแปล",
+  "faq.not_found": "ฉันไม่พบคำตอบที่แน่นอนในดัชนีภาษาปัจจุบัน คุณสามารถดูเอกสารฉบับเต็ม เปิดใน Google Translate หรือลองใช้คำหลักเช่น 'ข้อสอบ' 'รหัสผ่าน' 'การตรวจสอบ' หรือ '#number'",
+  "faq.open_docs": "ดูเอกสารประกอบในแอป",
+  "faq.translate_docs": "เปิดเอกสารฉบับเต็มใน Google แปลภาษา ({lang})",
+  "faq.jump_success": "ข้ามไปที่ [#{num}] {key} ในหน้านี้!",
+  "faq.jump_nav": "พบ [#{num}] {key}: \"{text}\" องค์ประกอบนี้อยู่ในหน้า {page}",
+  "faq.jump_not_found": "ไม่พบหมายเลขการแปล [#{num}] ในดัชนีแพลตฟอร์ม (ช่วงที่ถูกต้อง: 1 ถึง {total})",
+  "faq.jump_btn": "ไปที่ {หน้า}"
 }

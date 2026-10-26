@@ -133,6 +133,28 @@ class ExamResponse(ExamBase):
     questions: list[QuestionResponse] = []
 
 
+class AIQuestionCreate(BaseModel):
+    """Question schema for AI-assisted exam generation."""
+    question_type: QuestionTypeEnum = Field(..., description="Type of question: multiple_choice, essay, dynamic_math")
+    text: str = Field(..., min_length=1, max_length=4096, description="Question text prompt")
+    options: list[str] | None = Field(None, description="List of choices for multiple choice questions (auto-serialized)")
+    options_json: str | None = Field(None, description="Pre-serialized JSON string of choices")
+    correct_answer: str | None = Field(None, max_length=2048, description="The correct answer text or formula")
+    rubric: str | None = Field(None, max_length=4096, description="Grading criteria or explanation for the answer")
+    points: int = Field(1, ge=1, le=100, description="Point value for this question (1-100)")
+
+
+class AIExamCreate(BaseModel):
+    """Request schema for an AI assistant to generate an entire exam atomically."""
+    title: str = Field(..., min_length=1, max_length=256, description="Exam title")
+    description: str | None = Field(None, max_length=2048, description="Exam description or instructions")
+    duration_minutes: int = Field(60, ge=1, le=600, description="Duration in minutes (1 to 600)")
+    seb_config_key: str | None = Field(None, max_length=512, description="Safe Exam Browser configuration key (optional)")
+    ai_model_name: str | None = Field(None, max_length=128, description="AI model identifier (e.g., 'gemini-2.5-flash', 'gpt-4o')")
+    ai_prompt_summary: str | None = Field(None, max_length=512, description="Brief summary of teacher prompt used for generation")
+    questions: list[AIQuestionCreate] = Field(..., min_length=1, description="List of questions to generate inside the exam")
+
+
 class ExamListResponse(BaseModel):
     """Safe metadata response for listing exams — no questions, no answers."""
     model_config = ConfigDict(from_attributes=True)

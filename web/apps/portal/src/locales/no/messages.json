@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI Draft",
+  "exams.ai_draft_tooltip": "Generert av en AI-assistent — venter på din anmeldelse",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "Eksterne AI-agenter kan utarbeide komplette eksamener ved å bruke lærerlegitimasjonen din. Du kan inspisere og polere dem nedenfor.",
+  "faq.welcome": "Hallo! Jeg er din PlannedEducation-assistent. Still spørsmål om eksamener, karaktersetting, kontoer, eller skriv [#nummer] for å hoppe til en hvilken som helst oversettelse.",
+  "faq.not_found": "Jeg kunne ikke finne et eksakt svar i gjeldende språkindeks. Du kan se hele dokumentasjonen, åpne den i Google Translate eller prøve søkeord som \"eksamen\", \"passord\", \"proctoring\" eller \"#nummer\".",
+  "faq.open_docs": "Se dokumentasjon i appen",
+  "faq.translate_docs": "Åpne full dokumentasjon i Google Translate ({lang})",
+  "faq.jump_success": "Hoppet til [#{num}] {key} på denne siden!",
+  "faq.jump_nav": "Fant [#{num}] {key}: \"{tekst}\". Dette elementet er plassert på {page}-siden.",
+  "faq.jump_not_found": "Oversettelsesnummeret [#{num}] ble ikke funnet i plattformindeksen (gyldig område: 1 til {total}).",
+  "faq.jump_btn": "Gå til {side}"
 }

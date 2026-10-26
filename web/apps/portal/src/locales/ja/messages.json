@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI ドラフト",
+  "exams.ai_draft_tooltip": "AI アシスタントによって生成されました — レビューを待っています",
+  "exams.ai_create_title": "AI 試験作成者 API",
+  "exams.ai_create_desc": "外部 AI エージェントは、教師の資格情報を使用して完全な試験を作成できます。以下で検査して磨くことができます。",
+  "faq.welcome": "こんにちは！私は PlannedEducation アシスタントです。試験、採点、アカウントについて質問するか、[#number] と入力して翻訳にジャンプします。",
+  "faq.not_found": "現在の言語インデックスでは正確な答えが見つかりませんでした。ドキュメント全体を表示したり、Google 翻訳で開いたり、「試験」、「パスワード」、「監督」、「#number」などのキーワードを試したりできます。",
+  "faq.open_docs": "アプリ内ドキュメントを表示",
+  "faq.translate_docs": "Google 翻訳で完全なドキュメントを開く ({lang})",
+  "faq.jump_success": "このページの [#{num}] {key} にジャンプしました!",
+  "faq.jump_nav": "[#{num}] {key} が見つかりました: \"{text}\"。この要素は {page} ページにあります。",
+  "faq.jump_not_found": "翻訳番号 [#{num}] がプラットフォーム インデックスに見つかりませんでした (有効範囲: 1 ～ {total})。",
+  "faq.jump_btn": "{ページ}に移動"
 }

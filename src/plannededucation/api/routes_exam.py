@@ -25,6 +25,11 @@ def _get_exam_or_404(exam_id: str, db: Session) -> models.Exam:
 
 
 def _require_approved_teacher(user: models.User) -> None:
+    if user.role not in ("teacher", "admin") and not getattr(user, "is_admin", False):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only teachers and administrators can create or manage exams.",
+        )
     if user.role == "teacher" and not getattr(user, "teacher_approved", True):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
@@ -43,6 +48,60 @@ def _require_exam_owner(exam: models.Exam, user: models.User) -> None:
 
 
 # ── Exam CRUD ─────────────────────────────────────────────────────────────────
+
+@router.post("/ai-create", response_model=schemas.ExamResponse, status_code=201)
+def ai_create_exam(
+    payload: schemas.AIExamCreate,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    AI Exam Creation API:
+    Allows an authenticated teacher, administrator, or authorized AI agent (using a teacher/admin token)
+    to generate an entire exam atomically with all questions, choices, correct answers, and rubrics.
+    
+    The created exam is immediately linked to the teacher's account as an AI-Assisted Draft,
+    allowing the teacher to review, modify, and publish it within PlannedEducation.
+    """
+    _require_approved_teacher(current_user)
+
+    desc = (payload.description or "").strip()
+    ai_tag = "[AI-Assisted Draft]"
+    if payload.ai_model_name:
+        ai_tag = f"[AI-Assisted Draft | Model: {payload.ai_model_name}]"
+    if ai_tag not in desc and "[AI-Assisted" not in desc:
+        desc = f"{ai_tag} {desc}".strip()
+
+    db_exam = models.Exam(
+        title=payload.title,
+        description=desc,
+        duration_minutes=payload.duration_minutes,
+        seb_config_key=payload.seb_config_key,
+        teacher_id=current_user.id,
+    )
+    db.add(db_exam)
+    db.flush()
+
+    for q in payload.questions:
+        opt_json = q.options_json
+        if not opt_json and q.options is not None:
+            opt_json = json.dumps(q.options)
+
+        db_question = models.Question(
+            exam_id=db_exam.id,
+            question_type=models.QuestionType(q.question_type.value),
+            text=q.text,
+            options_json=opt_json,
+            correct_answer=q.correct_answer,
+            rubric=q.rubric,
+            points=q.points,
+        )
+        db.add(db_question)
+
+    db.commit()
+    db.refresh(db_exam)
+    return db_exam
+
 
 @router.post("/", response_model=schemas.ExamResponse, status_code=201)
 def create_exam(

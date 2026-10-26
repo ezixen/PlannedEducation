@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Проект ИИ",
+  "exams.ai_draft_tooltip": "Создано помощником искусственного интеллекта — ожидает вашего отзыва",
+  "exams.ai_create_title": "API для создания экзаменов AI",
+  "exams.ai_create_desc": "Внешние агенты искусственного интеллекта могут составлять полные экзамены, используя учетные данные вашего преподавателя. Вы можете проверить и отполировать их ниже.",
+  "faq.welcome": "Привет! Я ваш помощник по PlannedEducation. Задайте любой вопрос об экзаменах, оценках, счетах или введите [#номер], чтобы перейти к любому переводу.",
+  "faq.not_found": "В текущем языковом указателе я не смог найти точного ответа. Вы можете просмотреть полную документацию, открыть ее в Google Translate или попробовать ключевые слова, такие как «экзамен», «пароль», «прокторинг» или «#номер».",
+  "faq.open_docs": "Просмотр документации в приложении",
+  "faq.translate_docs": "Открыть полную документацию в Google Translate ({lang})",
+  "faq.jump_success": "Перешел на [#{num}] {key} на этой странице!",
+  "faq.jump_nav": "Найдено [#{num}] {key}: \"{text}\". Этот элемент расположен на странице {page}.",
+  "faq.jump_not_found": "Номер перевода [#{num}] не найден в индексе платформы (допустимый диапазон: от 1 до {total}).",
+  "faq.jump_btn": "Перейти на {страницу}"
 }

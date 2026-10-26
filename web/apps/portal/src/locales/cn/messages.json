@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "人工智能草稿",
+  "exams.ai_draft_tooltip": "由人工智能助手生成 - 等待您的审核",
+  "exams.ai_create_title": "AI 考试创建器 API",
+  "exams.ai_create_desc": "外部人工智能代理可以使用您的教师资格证书起草完整的考试。您可以在下面检查和抛光它们。",
+  "faq.welcome": "你好！我是您的计划教育助理。询问有关考试、评分、帐户的任何问题，或输入 [#number] 跳转到任何翻译。",
+  "faq.not_found": "我在当前的语言索引中找不到确切的答案。您可以查看完整文档，在 Google 翻译中打开它，或尝试使用“考试”、“密码”、“监考”或“#number”等关键字。",
+  "faq.open_docs": "查看应用程序内文档",
+  "faq.translate_docs": "在 Google 翻译 ({lang}) 中打开完整文档",
+  "faq.jump_success": "已跳转至本页的 [#{num}] {key}！",
+  "faq.jump_nav": "找到 [#{num}] {key}：“{text}”。该元素位于 {page} 页面上。",
+  "faq.jump_not_found": "在平台索引中未找到翻译编号 [#{num}]（有效范围：1 到 {total}）。",
+  "faq.jump_btn": "转到{页}"
 }

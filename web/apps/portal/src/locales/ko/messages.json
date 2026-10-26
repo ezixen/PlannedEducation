@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "AI 초안",
+  "exams.ai_draft_tooltip": "AI 보조자가 생성 - 검토를 기다리는 중",
+  "exams.ai_create_title": "AI 시험 생성기 API",
+  "exams.ai_create_desc": "외부 AI 에이전트는 교사 자격 증명을 사용하여 전체 시험 초안을 작성할 수 있습니다. 아래에서 검사하고 다듬을 수 있습니다.",
+  "faq.welcome": "안녕하세요! 저는 귀하의 PlannedEducation 보조원입니다. 시험, 채점, 계정에 대해 질문하거나 [#숫자]를 입력하여 번역으로 이동하세요.",
+  "faq.not_found": "현재 언어 색인에서는 정확한 답변을 찾을 수 없습니다. 전체 문서를 보거나 Google 번역에서 열거나 '시험', '비밀번호', '감독관' 또는 '#번호'와 같은 키워드를 사용해 볼 수 있습니다.",
+  "faq.open_docs": "인앱 문서 보기",
+  "faq.translate_docs": "Google 번역({lang})에서 전체 문서 열기",
+  "faq.jump_success": "이 페이지에서 [#{num}] {key}(으)로 이동했습니다!",
+  "faq.jump_nav": "[#{num}]개 {key}개를 찾았습니다: \"{text}\". 이 요소는 {page} 페이지에 있습니다.",
+  "faq.jump_not_found": "플랫폼 색인에서 번역 번호 [#{num}]을(를) 찾을 수 없습니다(유효 범위: 1~{total}).",
+  "faq.jump_btn": "{페이지}로 이동"
 }

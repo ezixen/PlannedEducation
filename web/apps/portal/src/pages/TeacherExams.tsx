@@ -5,6 +5,7 @@ import { useI18n } from '../contexts/I18nContext';
 import { OCRProcessor } from '../components/OCRProcessor';
 import { STTProcessor } from '../components/STTProcessor';
 import { MODULE_LANGUAGES } from '../services/packages';
+import { PackageManager } from '../components/PackageManager';
 
 export function TeacherExams() {
   const { t, locale } = useI18n();
@@ -148,6 +149,14 @@ export function TeacherExams() {
                         📁 {langInfo.country}
                       </span>
                     )}
+                    {String(exam.description || '').includes('AI-Assisted') && (
+                      <span
+                        title={t('exams.ai_draft_tooltip')}
+                        style={{ padding: '0.15rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600, backgroundColor: 'rgba(168, 85, 247, 0.15)', color: '#9333ea', cursor: 'help' }}
+                      >
+                        🤖 {t('exams.ai_draft_badge')}
+                      </span>
+                    )}
                   </div>
                   <small style={{ color: 'gray' }}>{exam.duration_minutes} {t('exams.duration_minutes')} | {exam.questions?.length || 0} {t('exams.questions_count')}</small>
                 </div>
@@ -163,6 +172,11 @@ export function TeacherExams() {
             );
           })
         )}
+      </div>
+
+      {/* Curriculum Packages & Templates */}
+      <div style={{ marginTop: '2.5rem' }}>
+        <PackageManager onPackageImported={() => { void fetchExams(); }} />
       </div>
 
       {/* OCR Processor - Handwritten Math OCR */}

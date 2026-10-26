@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Borrador de IA",
+  "exams.ai_draft_tooltip": "Generado por un asistente de IA: esperando su revisión",
+  "exams.ai_create_title": "API del creador de exámenes de IA",
+  "exams.ai_create_desc": "Los agentes externos de IA pueden redactar exámenes completos utilizando sus credenciales de profesor. Puede inspeccionarlos y pulirlos a continuación.",
+  "faq.welcome": "¡Hola! Soy tu asistente de PlannedEducation. Haga cualquier pregunta sobre exámenes, calificaciones, cuentas o escriba [#número] para ir a cualquier traducción.",
+  "faq.not_found": "No pude encontrar una respuesta exacta en el índice de idiomas actual. Puede ver la documentación completa, abrirla en Google Translate o probar palabras clave como \"examen\", \"contraseña\", \"supervisión\" o \"#número\".",
+  "faq.open_docs": "Ver documentación en la aplicación",
+  "faq.translate_docs": "Abrir documentación completa en Google Translate ({lang})",
+  "faq.jump_success": "¡Saltó a [#{num}] {key} en esta página!",
+  "faq.jump_nav": "Encontrado [#{num}] {clave}: \"{texto}\". Este elemento se encuentra en la página {page}.",
+  "faq.jump_not_found": "El número de traducción [#{num}] no se encontró en el índice de la plataforma (rango válido: 1 a {total}).",
+  "faq.jump_btn": "Ir a {página}"
 }

@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect, useCallback, useMemo, t
 import enMessages from '../locales/en/messages.json';
 import { getKeyNumber } from '../locales/keyNumbers';
 
-export type Locale = 'en' | 'ar' | 'cn' | 'cs' | 'da' | 'de' | 'el' | 'es' | 'fi' | 'fr' | 'he' | 'hu' | 'id' | 'it' | 'ja' | 'ko' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ru' | 'sv' | 'th' | 'tr' | 'uk' | 'vi';
+export type Locale = 'en' | 'ar' | 'bg' | 'cn' | 'cs' | 'da' | 'de' | 'el' | 'es' | 'et' | 'fi' | 'fr' | 'ga' | 'he' | 'hr' | 'hu' | 'id' | 'it' | 'ja' | 'ko' | 'lt' | 'lv' | 'mt' | 'nl' | 'no' | 'pl' | 'pt' | 'pt-BR' | 'ro' | 'ru' | 'sk' | 'sl' | 'sv' | 'th' | 'tr' | 'uk' | 'vi';
 
 export interface TranslationEntry {
   en: string;
@@ -29,31 +29,41 @@ export interface I18nContextType {
 const I18nContext = createContext<I18nContextType | null>(null);
 
 const DEFAULT_LOCALE: Locale = 'en';
-const AVAILABLE_LOCALES: Locale[] = ['en', 'ar', 'cn', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ru', 'sv', 'th', 'tr', 'uk', 'vi'];
+const AVAILABLE_LOCALES: Locale[] = ['en', 'ar', 'bg', 'cn', 'cs', 'da', 'de', 'el', 'es', 'et', 'fi', 'fr', 'ga', 'he', 'hr', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mt', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'vi'];
 
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'EN - United Kingdom / United States (English)',
   ar: 'AR - Arabic (العربية)',
+  bg: 'BG - Bulgaria (Български)',
   cn: 'CN - China (中文)',
   cs: 'CS - Czech (Čeština)',
   da: 'DA - Denmark (Dansk)',
   de: 'DE - Germany (Deutsch)',
   el: 'EL - Greece (Ελληνικά)',
   es: 'ES - Spain (Español)',
+  et: 'ET - Estonia (Eesti)',
   fi: 'FI - Finland (Suomi)',
   fr: 'FR - France (Français)',
+  ga: 'GA - Ireland (Gaeilge)',
   he: 'HE - Israel (עברית)',
+  hr: 'HR - Croatia (Hrvatski)',
   hu: 'HU - Hungary (Magyar)',
   id: 'ID - Indonesia (Bahasa Indonesia)',
   it: 'IT - Italy (Italiano)',
   ja: 'JA - Japan (日本語)',
   ko: 'KO - Korea (한국어)',
+  lt: 'LT - Lithuania (Lietuvių)',
+  lv: 'LV - Latvia (Latviešu)',
+  mt: 'MT - Malta (Malti)',
   nl: 'NL - Netherlands (Nederlands)',
   no: 'NO - Norway (Norsk)',
   pl: 'PL - Poland (Polski)',
   pt: 'PT - Portugal (Português)',
   'pt-BR': 'PT-BR - Brazil (Português do Brasil)',
+  ro: 'RO - Romania (Română)',
   ru: 'RU - Russia (Русский)',
+  sk: 'SK - Slovakia (Slovenčina)',
+  sl: 'SL - Slovenia (Slovenščina)',
   sv: 'SV - Sweden (Svenska)',
   th: 'TH - Thailand (ไทย)',
   tr: 'TR - Turkey (Türkçe)',

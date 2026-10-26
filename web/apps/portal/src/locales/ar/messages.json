@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "مسودة الذكاء الاصطناعي",
+  "exams.ai_draft_tooltip": "تم إنشاؤها بواسطة مساعد الذكاء الاصطناعي — في انتظار مراجعتك",
+  "exams.ai_create_title": "واجهة برمجة تطبيقات اختبار الذكاء الاصطناعي",
+  "exams.ai_create_desc": "يمكن لوكلاء الذكاء الاصطناعي الخارجيين صياغة اختبارات كاملة باستخدام بيانات اعتماد المعلم الخاصة بك. يمكنك فحصها وتلميعها أدناه.",
+  "faq.welcome": "مرحبًا! أنا مساعدك في التخطيط للتعليم. اطرح أي سؤال حول الاختبارات أو التقدير أو الحسابات، أو اكتب [#number] للانتقال إلى أي ترجمة.",
+  "faq.not_found": "لم أتمكن من العثور على إجابة دقيقة في فهرس اللغة الحالي. يمكنك عرض الوثائق الكاملة، أو فتحها في ترجمة Google، أو تجربة كلمات رئيسية مثل \"exam\"، أو \"password\"، أو \"proctoring\"، أو \"#number\".",
+  "faq.open_docs": "عرض الوثائق داخل التطبيق",
+  "faq.translate_docs": "افتح التوثيق الكامل في ترجمة جوجل ({lang})",
+  "faq.jump_success": "انتقل إلى [#{num}] {key} في هذه الصفحة!",
+  "faq.jump_nav": "تم العثور على [#{num}] {key}: \"{text}\". يقع هذا العنصر في صفحة {page}.",
+  "faq.jump_not_found": "لم يتم العثور على رقم الترجمة [#{num}] في فهرس النظام الأساسي (النطاق الصالح: 1 إلى {total}).",
+  "faq.jump_btn": "انتقل إلى {الصفحة}"
 }

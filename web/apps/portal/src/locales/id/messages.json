@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Draf AI",
+  "exams.ai_draft_tooltip": "Dihasilkan oleh asisten AI — menunggu ulasan Anda",
+  "exams.ai_create_title": "API Pembuat Ujian AI",
+  "exams.ai_create_desc": "Agen AI eksternal dapat menyusun ujian lengkap menggunakan kredensial guru Anda. Anda dapat memeriksa dan memolesnya di bawah.",
+  "faq.welcome": "Halo! Saya asisten PlannedEducation Anda. Ajukan pertanyaan apa pun tentang ujian, penilaian, akun, atau ketik [#number] untuk langsung ke terjemahan apa pun.",
+  "faq.not_found": "Saya tidak dapat menemukan jawaban pasti dalam indeks bahasa saat ini. Anda dapat melihat dokumentasi lengkap, membukanya di Google Terjemahan, atau mencoba kata kunci seperti 'ujian', 'kata sandi', 'pengawasan', atau '#nomor'.",
+  "faq.open_docs": "Lihat Dokumentasi Dalam Aplikasi",
+  "faq.translate_docs": "Buka Dokumentasi Lengkap di Google Terjemahan ({lang})",
+  "faq.jump_success": "Lompat ke [#{num}] {key} di laman ini!",
+  "faq.jump_nav": "Ditemukan [#{num}] {kunci}: \"{teks}\". Elemen ini terletak di halaman {page}.",
+  "faq.jump_not_found": "Nomor terjemahan [#{num}] tidak ditemukan dalam indeks platform (rentang valid: 1 hingga {total}).",
+  "faq.jump_btn": "Buka {halaman}"
 }

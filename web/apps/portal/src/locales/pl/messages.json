@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Projekt AI",
+  "exams.ai_draft_tooltip": "Wygenerowane przez asystenta AI — oczekuje na Twoją recenzję",
+  "exams.ai_create_title": "API kreatora egzaminów AI",
+  "exams.ai_create_desc": "Zewnętrzni agenci AI mogą tworzyć kompletne egzaminy, korzystając z danych uwierzytelniających nauczyciela. Poniżej możesz je sprawdzić i wypolerować.",
+  "faq.welcome": "Cześć! Jestem Twoim asystentem PlannedEducation. Zadaj dowolne pytanie dotyczące egzaminów, ocen, kont lub wpisz [#numer], aby przejść do dowolnego tłumaczenia.",
+  "faq.not_found": "Nie mogłem znaleźć dokładnej odpowiedzi w bieżącym indeksie językowym. Możesz wyświetlić pełną dokumentację, otworzyć ją w Tłumaczu Google lub wypróbować słowa kluczowe takie jak „egzamin”, „hasło”, „nadzorowanie” lub „#numer”.",
+  "faq.open_docs": "Wyświetl dokumentację w aplikacji",
+  "faq.translate_docs": "Otwórz pełną dokumentację w Tłumaczu Google ({lang})",
+  "faq.jump_success": "Przeskoczyłem do [#{num}] {key} na tej stronie!",
+  "faq.jump_nav": "Znaleziono [#{num}] {klucz}: „{tekst}”. Ten element znajduje się na stronie {page}.",
+  "faq.jump_not_found": "Numer tłumaczenia [#{num}] nie został znaleziony w indeksie platformy (prawidłowy zakres: od 1 do {total}).",
+  "faq.jump_btn": "Przejdź do {strony}"
 }

@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "טיוטת AI",
+  "exams.ai_draft_tooltip": "נוצר על ידי עוזר בינה מלאכותית - ממתין לביקורת שלך",
+  "exams.ai_create_title": "AI Exam Creator API",
+  "exams.ai_create_desc": "סוכני AI חיצוניים יכולים לנסח מבחנים שלמים באמצעות אישורי המורה שלך. אתה יכול לבדוק ולהבריש אותם למטה.",
+  "faq.welcome": "שלום! אני העוזר PlannedEducation שלך. שאל כל שאלה לגבי בחינות, ציונים, חשבונות, או הקלד [#number] כדי לדלג לכל תרגום.",
+  "faq.not_found": "לא הצלחתי למצוא תשובה מדויקת באינדקס השפה הנוכחי. אתה יכול להציג את התיעוד המלא, לפתוח אותו ב-Google Translate, או לנסות מילות מפתח כמו 'בחינה', 'סיסמה', 'פרוקטורינג' או 'מספר מספר'.",
+  "faq.open_docs": "צפה בתיעוד בתוך האפליקציה",
+  "faq.translate_docs": "פתח את התיעוד המלא ב-Google Translate ({lang})",
+  "faq.jump_success": "קפץ אל [#{num}] {key} בדף זה!",
+  "faq.jump_nav": "נמצא [#{num}] {key}: \"{text}\". אלמנט זה ממוקם בדף {page}.",
+  "faq.jump_not_found": "מספר התרגום [#{num}] לא נמצא באינדקס הפלטפורמה (טווח חוקי: 1 עד {total}).",
+  "faq.jump_btn": "עבור אל {page}"
 }

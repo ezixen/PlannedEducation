@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "MI Vázlat",
+  "exams.ai_draft_tooltip": "MI asszisztens által létrehozott felmérő — tanári jóváhagyásra vár",
+  "exams.ai_create_title": "MI Felmérő Létrehozó API",
+  "exams.ai_create_desc": "Külső MI asszisztensek komplett felmérőket készíthetnek a tanári fiókodon keresztül. Alább ellenőrizheted és finomíthatod őket.",
+  "faq.welcome": "Üdvözlöm! A PlannedEducation asszisztense vagyok. Tegyen fel bármilyen kérdést a vizsgákról, értékelésről, fiókokról, vagy írja be a [#számot] bármely fordítás megkereséséhez.",
+  "faq.not_found": "Nem találtam pontos választ a jelenlegi nyelvi indexben. Megtekintheti a teljes dokumentációt, megnyithatja a Google Fordítóban, vagy kereshet kulcsszavakra: 'vizsga', 'jelszó', 'felügyelet', vagy '#szám'.",
+  "faq.open_docs": "Alkalmazáson belüli dokumentáció megtekintése",
+  "faq.translate_docs": "Teljes dokumentáció megnyitása a Google Fordítóban ({lang})",
+  "faq.jump_success": "Ugrás a [#{num}] {key} elemhez ezen az oldalon!",
+  "faq.jump_nav": "[#{num}] {key} megtalálva: \"{text}\". Ez az elem a(z) {page} oldalon található.",
+  "faq.jump_not_found": "A(z) [#{num}] fordítási szám nem található a platform indexében (érvényes tartomány: 1 - {total}).",
+  "faq.jump_btn": "Ugrás ide: {page}"
 }

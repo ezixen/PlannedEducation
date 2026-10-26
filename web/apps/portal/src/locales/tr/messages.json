@@ -1327,5 +1327,17 @@
   "ai_grading.approve_error": "Error approving submissions",
   "student_dashboard.score_pts": "{score} / 10 pts",
   "student_dashboard.graded": "Graded",
-  "parent.no_feedback": "No feedback recorded yet."
+  "parent.no_feedback": "No feedback recorded yet.",
+  "exams.ai_draft_badge": "Yapay Zeka Taslağı",
+  "exams.ai_draft_tooltip": "Bir yapay zeka asistanı tarafından oluşturuldu — incelemenizi bekliyorum",
+  "exams.ai_create_title": "AI Sınavı Oluşturucu API'si",
+  "exams.ai_create_desc": "Harici AI temsilcileri, öğretmen kimlik bilgilerinizi kullanarak tamamlanmış sınavların taslağını hazırlayabilir. Bunları aşağıda inceleyebilir ve cilalayabilirsiniz.",
+  "faq.welcome": "Merhaba! Ben PlannedEducation asistanınızım. Sınavlar, not verme, hesaplar hakkında herhangi bir soru sorun veya herhangi bir çeviriye geçmek için [#sayı] yazın.",
+  "faq.not_found": "Mevcut dil dizininde kesin bir cevap bulamadım. Belgelerin tamamını görüntüleyebilir, Google Çeviri'de açabilir veya 'sınav', 'şifre', 'gözetmenlik' veya '#sayı' gibi anahtar kelimeleri deneyebilirsiniz.",
+  "faq.open_docs": "Uygulama İçi Belgeleri Görüntüle",
+  "faq.translate_docs": "Tüm Belgeleri Google Çeviri'de Aç ({lang})",
+  "faq.jump_success": "Bu sayfada [#{num}] {key}'e atlandı!",
+  "faq.jump_nav": "Bulunan [#{num}] {anahtar}: \"{text}\". Bu öğe {page} sayfasında yer almaktadır.",
+  "faq.jump_not_found": "Platform dizininde çeviri numarası [#{num}] bulunamadı (geçerli aralık: 1 - {total}).",
+  "faq.jump_btn": "{sayfa}'ya git"
 }

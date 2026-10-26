@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "id": "cs-6-0001-module-01-python-basics-computation-1.0.0",
+    "name": "MIT 6.0001: Computation, Branching & Bisection Search",
+    "version": "1.0.0",
+    "description": "Undergraduate assessment on computational principles, Python types, branching, loops, and root-finding via bisection search.",
+    "author": "MIT OpenCourseWare Reference Assessment",
+    "author_id": "mit-ocw",
+    "created_at": "2026-10-26T11:35:14.914088+00:00",
+    "updated_at": "2026-10-26T11:35:14.914111+00:00",
+    "tags": [
+      "university",
+      "college",
+      "mit",
+      "computer_science",
+      "cs-6-0001",
+      "en"
+    ],
+    "subject": "computer_science",
+    "grade_level": "college",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
+    "institution": "Massachusetts Institute of Technology (MIT)",
+    "license": "CC-BY-NC-SA-4.0",
+    "curriculum": "mit-ocw-6-0001",
+    "duration_minutes": 60,
+    "total_points": 25,
+    "question_count": 4,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Evaluate primitive and compound data type expressions in Python 3",
+      "Analyze conditional logic and loop iteration behavior",
+      "Formulate root approximation using bisection (binary) search",
+      "Determine convergence bounds for numerical algorithms"
+    ],
+    "checksum": "1f03aac7a7d348c004df2b7c37014026a5c683f28f718116e05ea25e8954a833"
+  },
+  "exam": {
+    "title": "MIT 6.0001: Computation, Branching & Bisection Search",
+    "description": "Undergraduate assessment on computational principles, Python types, branching, loops, and root-finding via bisection search.",
+    "duration_minutes": 60,
+    "instructions": "Answer all questions rigorously showing all work where applicable. Time limit: 60 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "seb_config_key": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-1",
+      "question_type": "multiple_choice",
+      "text": "In Python 3, what is the exact output of evaluating the following expression: `type(3 / 1)`?",
+      "options": [
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'number'>",
+        "<class 'double'>"
+      ],
+      "correct_answer": "<class 'float'>",
+      "points": 5,
+      "rubric": "In Python 3, the single slash division operator (/) always returns a float object, even when dividing integers evenly (3 / 1 == 3.0).",
+      "category": "computer_science"
+    },
+    {
+      "id": "q-2",
+      "question_type": "multiple_choice",
+      "text": "When using bisection search to find the square root of x in the interval [1, x] for x > 1 with precision epsilon, by what factor does the search space decrease in each iteration?",
+      "options": [
+        "1/4",
+        "1/2",
+        "1/10",
+        "1/log(x)"
+      ],
+      "correct_answer": "1/2",
+      "points": 5,
+      "rubric": "Bisection search halves the search interval [low, high] in each step by choosing the midpoint, giving logarithmic time complexity O(log((high - low) / epsilon)).",
+      "category": "computer_science"
+    },
+    {
+      "id": "q-3",
+      "question_type": "open_response",
+      "text": "Explain why testing floating-point equality using `x == y` is dangerous in scientific computing, and describe the standard defensive programming approach taught in MIT 6.0001.",
+      "options": null,
+      "correct_answer": "Use abs(x - y) < epsilon instead of exact equality due to IEEE-754 binary representation rounding errors.",
+      "points": 10,
+      "rubric": "Full credit requires mentioning that binary representation cannot represent many decimal fractions exactly (e.g. 0.1 + 0.2 != 0.3), causing roundoff errors; and proposing testing |x - y| < epsilon with an appropriate tolerance.",
+      "category": "computer_science"
+    },
+    {
+      "id": "q-4",
+      "question_type": "multiple_choice",
+      "text": "Consider the code:\n`s = 'mit ocw'`\n`s[0] = 'M'`\nWhat occurs when this code is executed?",
+      "options": [
+        "s becomes 'Mit ocw'",
+        "TypeError: 'str' object does not support item assignment",
+        "ValueError: string index is read-only",
+        "s remains unchanged with no error"
+      ],
+      "correct_answer": "TypeError: 'str' object does not support item assignment",
+      "points": 5,
+      "rubric": "Python strings are immutable sequences; mutating an individual character directly raises a TypeError.",
+      "category": "computer_science"
+    }
+  ]
+}

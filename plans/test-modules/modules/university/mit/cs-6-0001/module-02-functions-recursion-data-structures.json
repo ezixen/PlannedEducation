@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "id": "cs-6-0001-module-02-functions-recursion-data-structures-1.0.0",
+    "name": "MIT 6.0001: Functions, Data Structures & Recursion",
+    "version": "1.0.0",
+    "description": "College exam testing function abstraction, list mutability and aliasing, dictionary lookups, and recursive divide-and-conquer.",
+    "author": "MIT OpenCourseWare Reference Assessment",
+    "author_id": "mit-ocw",
+    "created_at": "2026-10-26T11:35:14.915141+00:00",
+    "updated_at": "2026-10-26T11:35:14.915150+00:00",
+    "tags": [
+      "university",
+      "college",
+      "mit",
+      "computer_science",
+      "cs-6-0001",
+      "en"
+    ],
+    "subject": "computer_science",
+    "grade_level": "college",
+    "language": "en",
+    "language_name": "English",
+    "country": "usa",
+    "institution": "Massachusetts Institute of Technology (MIT)",
+    "license": "CC-BY-NC-SA-4.0",
+    "curriculum": "mit-ocw-6-0001",
+    "duration_minutes": 60,
+    "total_points": 20,
+    "question_count": 3,
+    "randomizer_enabled": true,
+    "difficulty": "medium",
+    "prerequisites": [],
+    "learning_objectives": [
+      "Trace variable scoping across stack frames",
+      "Distinguish list aliasing from cloning",
+      "Design recursive algorithms with explicit base cases",
+      "Utilize hash maps (dictionaries) for O(1) average lookup"
+    ],
+    "checksum": "fa791f091514e0d16e7bb5f01278a12d49c7081ce20ae7815d8f591df6e959cd"
+  },
+  "exam": {
+    "title": "MIT 6.0001: Functions, Data Structures & Recursion",
+    "description": "College exam testing function abstraction, list mutability and aliasing, dictionary lookups, and recursive divide-and-conquer.",
+    "duration_minutes": 60,
+    "instructions": "Answer all questions rigorously showing all work where applicable. Time limit: 60 minutes.",
+    "settings": {
+      "shuffle_questions": true,
+      "shuffle_options": true,
+      "show_results_immediately": false,
+      "allow_review": true,
+      "require_seb": false,
+      "seb_config_key": null
+    }
+  },
+  "questions": [
+    {
+      "id": "q-1",
+      "question_type": "multiple_choice",
+      "text": "Consider the following code snippet:\n```python\na = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))\n```\nWhat is printed?",
+      "options": [
+        "3",
+        "4",
+        "IndexError",
+        "None"
+      ],
+      "correct_answer": "4",
+      "points": 5,
+      "rubric": "Variable assignment `b = a` binds b to the same list object in memory (aliasing). Mutating `b` mutates `a`, so `len(a)` is 4.",
+      "category": "computer_science"
+    },
+    {
+      "id": "q-2",
+      "question_type": "multiple_choice",
+      "text": "Which of the following data types CANNOT be used as a key in a Python dictionary?",
+      "options": [
+        "tuple: (1, 2, 'a')",
+        "frozenset: frozenset([1, 2])",
+        "list: [1, 2, 3]",
+        "str: 'key_name'"
+      ],
+      "correct_answer": "list: [1, 2, 3]",
+      "points": 5,
+      "rubric": "Dictionary keys must be hashable and immutable. Lists are mutable and do not implement __hash__, raising TypeError: unhashable type: 'list'.",
+      "category": "computer_science"
+    },
+    {
+      "id": "q-3",
+      "question_type": "open_response",
+      "text": "Write a recursive Python function `fib(n)` with a memoization dictionary that computes the n-th Fibonacci number in O(n) time instead of exponential O(2^n) time.",
+      "options": null,
+      "correct_answer": "def fib(n, memo={0: 0, 1: 1}): if n not in memo: memo[n] = fib(n-1, memo) + fib(n-2, memo); return memo[n]",
+      "points": 10,
+      "rubric": "Full marks for providing a base case, recursive step, and storing previously computed values in a dictionary to prevent redundant subproblem calls.",
+      "category": "computer_science"
+    }
+  ]
+}
