@@ -58,10 +58,6 @@ playwright-report/
 # External / Unrelated Projects & Sideprojects
 EasyLegalAid/
 united_earth/
-*United Earth*
-*united_earth*
-*masterplan*
-*Masterplan*
 
 # Local dev agent instructions & PC-specific configurations (local PC only, not for GitHub or deployments)
 AGENTS.md
