@@ -368,7 +368,7 @@ export function DeploymentConfigPanel() {
 
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-              Allowed Hosts Header (TrustedHost)
+              {t('deployment.allowed_hosts_label')}
             </label>
             <input
               type="text"
@@ -383,13 +383,13 @@ export function DeploymentConfigPanel() {
                 color: 'var(--text-color)',
               }}
             />
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Comma-separated hostnames</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('deployment.allowed_hosts_hint')}</span>
           </div>
         </div>
 
         <div>
           <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.35rem', color: 'var(--text-color)' }}>
-            Allowed CORS Origins
+            {t('deployment.cors_origins_label')}
           </label>
           <textarea
             rows={2}
@@ -407,7 +407,7 @@ export function DeploymentConfigPanel() {
             }}
           />
           <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-            Comma-separated origins (e.g. <code>http://localhost:5173,https://school.example.com</code>)
+            {t('deployment.cors_origins_hint')}
           </span>
         </div>
 
