@@ -165,17 +165,23 @@ elif sudo -n true 2>/dev/null; then
 fi
 
 # ==============================================================================
-# Step 1: Check Prerequisites
+# Step 1: Check Required Dependencies
 # ==============================================================================
-print_header "Step 1: Checking Prerequisites"
+print_header "Step 1: Checking Required Dependencies"
 
-HAS_GIT=false; check_command "Git" "git" && HAS_GIT=true || true
-HAS_PYTHON=false; check_command "Python 3.11+" "python3" && HAS_PYTHON=true || true
-HAS_NODE=false; check_command "Node.js 20+" "node" && HAS_NODE=true || true
-HAS_NPM=false; check_command "npm" "npm" && HAS_NPM=true || true
-HAS_DOCKER=false; check_command "Docker" "docker" && HAS_DOCKER=true || true
-HAS_POSTGRES=false; check_command "PostgreSQL" "psql" && HAS_POSTGRES=true || true
-HAS_REDIS=false; check_command "Redis" "redis-cli" && HAS_REDIS=true || true
+print_info "REQUIRED (must be installed for any mode):"
+HAS_GIT=false; check_command "Git (REQUIRED)" "git" && HAS_GIT=true || true
+HAS_PYTHON=false; check_command "Python 3.11+ (REQUIRED)" "python3" && HAS_PYTHON=true || true
+HAS_NODE=false; check_command "Node.js 20+ (REQUIRED)" "node" && HAS_NODE=true || true
+HAS_NPM=false; check_command "npm (REQUIRED)" "npm" && HAS_NPM=true || true
+print_info ""
+print_info "OPTIONAL (only needed for specific deployment modes):"
+HAS_DOCKER=false; check_command "Docker (OPTIONAL - Mode 3)" "docker" && HAS_DOCKER=true || true
+HAS_POSTGRES=false; check_command "PostgreSQL (OPTIONAL - Mode 2)" "psql" && HAS_POSTGRES=true || true
+HAS_REDIS=false; check_command "Redis (OPTIONAL - Mode 2)" "redis-cli" && HAS_REDIS=true || true
+print_info ""
+print_info "NOTE: Mode 1 (SQLite) works with just Git, Python, and Node.js."
+print_info "      Optional items are NOT required for Mode 1."
 
 # ==============================================================================
 # Step 2: Choose Deployment Mode

@@ -293,42 +293,37 @@ switch ($DeployMode) {
     }
 }
 
-# Step 3: Check Prerequisites
-Write-Header "Step 3: Checking Prerequisites"
+# Step 3: Check Required Dependencies
+Write-Header "Step 3: Checking Required Dependencies"
 
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor $CYAN
-Write-Host "  DEPENDENCY GUIDE - What You Need vs What Is Optional" -ForegroundColor $CYAN
+Write-Host "  REQUIRED DEPENDENCIES (must be installed for any mode):" -ForegroundColor $CYAN
 Write-Host "============================================================" -ForegroundColor $CYAN
 Write-Host ""
-Write-Host "  REQUIRED (must be installed for any mode):"
-Write-Host "    - Git          : Source control (used to clone the repository)"
-Write-Host "    - Python 3.12+ : Backend runtime (FastAPI, SQLAlchemy, etc.)"
-Write-Host "    - Node.js 20+  : Frontend build tooling (Vite, npm)"
-Write-Host "    - npm          : Node.js package manager (bundled with Node.js)"
+Write-Host "  - Git          : Source control (used to clone the repository)"
+Write-Host "  - Python 3.12+ : Backend runtime (FastAPI, SQLAlchemy, etc.)"
+Write-Host "  - Node.js 20+  : Frontend build tooling (Vite, npm)"
+Write-Host "  - npm          : Node.js package manager (bundled with Node.js)"
 Write-Host ""
-Write-Host "  OPTIONAL (only needed for specific deployment modes):"
-Write-Host "    - PostgreSQL   : Required ONLY for Mode 2 (Production Server)."
-Write-Host "                     Mode 1 (SQLite) works without it."
-Write-Host "    - Redis        : Required ONLY for Mode 2 (Production Server)."
-Write-Host "                     Mode 1 uses in-memory cache instead."
-Write-Host "    - Docker       : Required ONLY for Mode 3 (Docker Compose)."
-Write-Host "                     Provides all-in-one containerized deployment."
+Write-Host "  OPTIONAL DEPENDENCIES (only needed for specific modes):"
+Write-Host "  - PostgreSQL   : Mode 2 (Production Server) only"
+Write-Host "  - Redis        : Mode 2 (Production Server) only"
+Write-Host "  - Docker       : Mode 3 (Docker Compose) only"
 Write-Host ""
-Write-Host "  NOTE: PlannedEducation runs fully in Mode 1 (SQLite) with just"
-Write-Host "        Git, Python, and Node.js. Redis and PostgreSQL are only"
-Write-Host "        needed if you choose Mode 2 for production-scale use."
+Write-Host "  NOTE: Mode 1 (SQLite) works with just Git, Python, and Node.js."
+Write-Host "        Optional items are NOT required for Mode 1."
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor $CYAN
 Write-Host ""
 
-$hasGit = Check-Command "Git" "git" "--version"
-$hasPython = Check-Command "Python 3.11+" "python" "--version"
-$hasNode = Check-Command "Node.js 20+" "node" "--version"
-$hasNpm = Check-Command "npm" "npm" "--version"
-$hasDocker = Check-Command "Docker Desktop" "docker" "--version"
-$hasPostgres = Check-Command "PostgreSQL" "psql" "--version"
-$hasRedis = Check-Command "Redis" "redis-cli" "--version"
+$hasGit = Check-Command "Git (REQUIRED)" "git" "--version"
+$hasPython = Check-Command "Python 3.11+ (REQUIRED)" "python" "--version"
+$hasNode = Check-Command "Node.js 20+ (REQUIRED)" "node" "--version"
+$hasNpm = Check-Command "npm (REQUIRED)" "npm" "--version"
+$hasDocker = Check-Command "Docker (OPTIONAL - Mode 3)" "docker" "--version"
+$hasPostgres = Check-Command "PostgreSQL (OPTIONAL - Mode 2)" "psql" "--version"
+$hasRedis = Check-Command "Redis (OPTIONAL - Mode 2)" "redis-cli" "--version"
 
 # Step 4: Install Missing Required Dependencies
 Write-Header "Step 4: Checking & Installing Required Dependencies"
