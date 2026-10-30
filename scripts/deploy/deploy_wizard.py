@@ -190,13 +190,6 @@ def setup_env_file(project_dir: Path, mode: str) -> bool:
         pg_password = secrets.token_urlsafe(24)
         db_url = f"postgresql://postgres:{pg_password}@postgres:5432/plannededucation"
     
-    # Optional Google OAuth
-    print(f"\n{Colors.BOLD}Optional: Google OAuth2 (for 'Login with Google'){Colors.RESET}")
-    google_id = get_user_input("Google Client ID (leave blank to skip)", "")
-    google_secret = ""
-    if google_id:
-        google_secret = get_user_input("Google Client Secret", "", secret=True)
-    
     # Build or update .env lines
     lines = env_content.splitlines() if env_content else []
     settings = {
@@ -204,8 +197,6 @@ def setup_env_file(project_dir: Path, mode: str) -> bool:
         'JWT_SECRET_KEY': jwt_key,
         'AI_KEY_MASTER_SECRET': fernet_key,
         'DATABASE_URL': db_url,
-        'GOOGLE_CLIENT_ID': google_id or 'localhost',
-        'GOOGLE_CLIENT_SECRET': google_secret,
         'ALLOWED_HOSTS': domain,
         'CORS_ORIGINS': f"http://{domain}:5173" if domain == "localhost" else f"https://{domain}",
         'WEBAUTHN_RP_ID': domain,
@@ -280,9 +271,23 @@ def start_platform(project_dir: Path, mode: str) -> bool:
             
     return True
 
+def load_env_file(project_dir: Path) -> None:
+    """Load environment variables from .env file if it exists"""
+    env_path = project_dir / ".env"
+    if env_path.exists():
+        with open(env_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, val = line.split('=', 1)
+                    os.environ.setdefault(key.strip(), val.strip())
+
 def init_database(project_dir: Path, mode: str) -> bool:
     """Initialize database tables via SQLAlchemy ORM"""
     print_step(4, 8, "Initializing database tables...")
+    
+    # Load .env file so DATABASE_URL is available to SQLAlchemy
+    load_env_file(project_dir)
     
     if mode == "docker":
         compose_cmd = get_docker_compose_cmd() or ["docker", "compose"]
@@ -304,6 +309,9 @@ def create_admin_user(project_dir: Path, mode: str) -> bool:
     """Create initial administrator user"""
     print_step(5, 8, "Creating Administrator account...")
     
+    # Load .env file so DATABASE_URL is available to SQLAlchemy
+    load_env_file(project_dir)
+    
     email = get_user_input("Admin email", "admin@yourschool.edu", required=True)
     username = get_user_input("Admin username", "admin", required=True)
     full_name = get_user_input("Admin full name", "School Administrator", required=True)
@@ -317,11 +325,11 @@ def create_admin_user(project_dir: Path, mode: str) -> bool:
     py_code = (
         f"from src.plannededucation.api.database import SessionLocal; "
         f"from src.plannededucation.api.models import User; "
-        f"from src.plannededucation.api.auth import get_password_hash; "
+        f"from src.plannededucation.api.auth import hash_password; "
         f"db = SessionLocal(); "
         f"admin = db.query(User).filter((User.email=='{email_esc}') | (User.username=='{user_esc}')).first(); "
         f"admin = admin or User(email='{email_esc}', username='{user_esc}', full_name='{name_esc}', role='admin', is_admin=True, is_active=True, teacher_approved=True); "
-        f"admin.hashed_password = get_password_hash('{pass_esc}'); admin.role = 'admin'; admin.is_admin = True; admin.is_active = True; admin.teacher_approved = True; "
+        f"admin.hashed_password = hash_password('{pass_esc}'); admin.role = 'admin'; admin.is_admin = True; admin.is_active = True; admin.teacher_approved = True; "
         f"db.add(admin); db.commit(); print('Admin configured: {email_esc}')"
     )
     
