@@ -64,7 +64,7 @@ export function ExamEditor() {
       const parsedOptions =
         qType === 'multiple_choice'
           ? qOptions
-              .split(',')
+              .split(/[\n,]+/)
               .map(s => s.trim())
               .filter(Boolean)
           : null;
@@ -144,11 +144,11 @@ export function ExamEditor() {
           {qType === 'multiple_choice' && (
             <div>
               <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.25rem' }}>{t('exam_editor.16')}</label>
-              <input
-                type="text"
+              <textarea
                 value={qOptions}
                 onChange={e => setQOptions(e.target.value)}
                 placeholder={t('exam_editor.16')}
+                rows={3}
                 style={{ width: '100%', padding: '0.45rem', borderRadius: '4px', border: '1px solid var(--border-color)' }}
               />
             </div>

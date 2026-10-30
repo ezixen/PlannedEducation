@@ -655,7 +655,7 @@ if (Test-Path `$depCfg) {
 `$envFile = Join-Path `$InstallDir ".env"
 if (Test-Path `$envFile) {
     Get-Content `$envFile | ForEach-Object {
-        `$line = `$_ .Trim()
+        `$line = `$_.Trim()
         if (`$line -and -not `$line.StartsWith("#") -and `$line.Contains("=")) {
             `$parts = `$line.Split("=", 2)
             `$key = `$parts[0].Trim()
@@ -738,7 +738,7 @@ if (-not (Test-Path `$logsDir)) { New-Item -ItemType Directory -Path `$logsDir -
 `$envFile = Join-Path `$InstallDir ".env"
 if (Test-Path `$envFile) {
     Get-Content `$envFile | ForEach-Object {
-        `$line = `$_ .Trim()
+        `$line = `$_.Trim()
         if (`$line -and -not `$line.StartsWith("#") -and `$line.Contains("=")) {
             `$parts = `$line.Split("=", 2)
             `$key = `$parts[0].Trim()
