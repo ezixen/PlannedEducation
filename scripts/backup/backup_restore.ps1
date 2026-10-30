@@ -195,7 +195,7 @@ function Restore-SQLite {
 function List-Backups {
     param([string]$BackupDir)
     
-    Write-LogInfo "Available backups in $BackupDir:"
+    Write-LogInfo "Available backups in ${BackupDir}:"
     Get-ChildItem "$BackupDir\plannededucation_*.sql.gz" -ErrorAction SilentlyContinue | 
         Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize
     

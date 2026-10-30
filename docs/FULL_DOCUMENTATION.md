@@ -260,7 +260,7 @@ PlannedEducation adapts its user interface, communication channels, and security
 <a id="sec-offline-engine"></a>
 ## 5. Offline Exam Engine & Three-Way Cryptographic Sealing
 
-PlannedEducation incorporates an advanced, client-side offline execution engine located in [`web/apps/portal/src/services/offlineExam.ts`](file:///c:/dev/PlannedEducation/web/apps/portal/src/services/offlineExam.ts).
+PlannedEducation incorporates an advanced, client-side offline execution engine located in [`web/apps/portal/src/services/offlineExam.ts`](../web/apps/portal/src/services/offlineExam.ts).
 
 ### The Three-Way Immutable Storage Model
 To guarantee that neither student tampering, network failure, nor server synchronization bugs can compromise test scores, PlannedEducation implements a **three-way immutable storage architecture**:
@@ -844,18 +844,18 @@ Use Docker Compose with docker-compose.yml + docker-compose.prod.yml. Set enviro
 ### How do I install PlannedEducation on Windows?
 Open PowerShell as Administrator and run:
 `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`
-The installer supports both **Native Mode** (running directly via Python with SQLite or PostgreSQL, requiring no Docker) and **Docker Compose Mode**. See [Windows Installation Guide](../admin/INSTALL_WINDOWS.md) for full details.
+The installer supports both **Native Mode** (running directly via Python with SQLite or PostgreSQL, requiring no Docker) and **Docker Compose Mode**. See [Windows Installation Guide](admin/INSTALL_WINDOWS.md) for full details.
 
 ### How do I install PlannedEducation on Linux?
 Run the one-line bash installer:
 `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash`
-Or clone the repository and run `./install.sh`. The installer supports Ubuntu 22.04/24.04, Debian 12, and CentOS/RHEL with Native Systemd service setup or Docker Compose. See [Linux Installation Guide](../admin/INSTALL_LINUX.md).
+Or clone the repository and run `./install.sh`. The installer supports Ubuntu 22.04/24.04, Debian 12, and CentOS/RHEL with Native Systemd service setup or Docker Compose. See [Linux Installation Guide](admin/INSTALL_LINUX.md).
 
 ### Can I run PlannedEducation without Docker (Native Mode)?
 Yes! Both `install.ps1` and `install.sh` support **Native Mode**. It runs directly on the host using Python 3.12+ and can use SQLite (zero-configuration standalone database) or local PostgreSQL and Redis. This reduces memory usage and eliminates Docker overhead for small school servers.
 
 ### How do I use the Cross-Platform Deployment Wizard?
-Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_wizard.py`). It works on Windows, Linux, and macOS, automatically verifies dependencies, generates secure encryption secrets (JWT and Fernet keys), and guides you through setting up either Native or Docker deployment. See [Master Deployment Guide](../admin/DEPLOYMENT_GUIDE.md).
+Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_wizard.py`). It works on Windows, Linux, and macOS, automatically verifies dependencies, generates secure encryption secrets (JWT and Fernet keys), and guides you through setting up either Native or Docker deployment. See [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md).
 
 ### How do teachers and students connect over the local school network (Wi-Fi/LAN)?
 1. Find the server's local IPv4 address (e.g., `192.168.1.150`).
@@ -1628,11 +1628,11 @@ Start-ScheduledTask -TaskName "PlannedEducationServer"
 ---
 
 ## 📚 Related Documentation
-- [Linux Installation Guide](INSTALL_LINUX.md)
-- [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
+- [Linux Installation Guide](admin/INSTALL_LINUX.md)
+- [Installation Compatibility & Requirements Matrix](admin/INSTALL_COMPATIBILITY.md)
+- [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](user/FAQ.md)
 
 ---
 
@@ -1966,11 +1966,11 @@ sudo nginx -t && sudo systemctl reload nginx
 ---
 
 ## 📚 Related Documentation
-- [Windows Installation Guide](INSTALL_WINDOWS.md)
-- [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
+- [Windows Installation Guide](admin/INSTALL_WINDOWS.md)
+- [Installation Compatibility & Requirements Matrix](admin/INSTALL_COMPATIBILITY.md)
+- [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](user/FAQ.md)
 
 ---
 
@@ -2079,7 +2079,7 @@ PlannedEducation is completely self-contained. While it integrates with optional
 
 ## 5. Offline Exam Execution & Three-Way Cryptographic Sealing
 
-PlannedEducation implements an advanced client-side offline execution engine in [`web/apps/portal/src/services/offlineExam.ts`](file:///c:/dev/PlannedEducation/web/apps/portal/src/services/offlineExam.ts).
+PlannedEducation implements an advanced client-side offline execution engine in [`web/apps/portal/src/services/offlineExam.ts`](../web/apps/portal/src/services/offlineExam.ts).
 
 ### Three-Way Immutable Storage Architecture
 1. **Student Local Storage**: Browser IndexedDB (`plannededucation-offline-exam`), encrypted with AES-GCM (256-bit key derived via PBKDF2), signed with SHA-256 hash.

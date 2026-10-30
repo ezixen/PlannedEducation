@@ -33,7 +33,7 @@ const DOCS_INDEX: Record<string, { title: string; path: string; content: string 
   },
   'email-smtp': {
     title: 'SMTP & Email Configuration',
-    path: 'docs/admin/EMAIL_SMTP.md',
+    path: 'docs/admin/DEPLOYMENT_GUIDE.md',
     content: `Configure school email in Admin Dashboard -> School Settings -> Email/SMTP or in .env with SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, SMTP_TLS, or BREVO_API_KEY. Supports test email delivery and sending 24-hour secure password reset links. See [Admin Dashboard](/admin) or [Settings](/settings).`,
   },
   'seb-config': {
@@ -43,7 +43,7 @@ const DOCS_INDEX: Record<string, { title: string; path: string; content: string 
   },
   'admin-guide': {
     title: 'Administrator Guide',
-    path: 'docs/admin/ADMIN_GUIDE.md',
+    path: 'docs/admin/DEPLOYMENT_GUIDE.md',
     content: `Administrator guide for PlannedEducation. Manage school users, approve teachers, reset student and teacher passwords with 24-hour reset links, configure deployment, manage midnight backups, and configure SMTP email. See [Admin Dashboard](/admin).`,
   },
 

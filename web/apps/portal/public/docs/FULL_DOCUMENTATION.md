@@ -260,7 +260,7 @@ PlannedEducation adapts its user interface, communication channels, and security
 <a id="sec-offline-engine"></a>
 ## 5. Offline Exam Engine & Three-Way Cryptographic Sealing
 
-PlannedEducation incorporates an advanced, client-side offline execution engine located in [`web/apps/portal/src/services/offlineExam.ts`](file:///c:/dev/PlannedEducation/web/apps/portal/src/services/offlineExam.ts).
+PlannedEducation incorporates an advanced, client-side offline execution engine located in [`web/apps/portal/src/services/offlineExam.ts`](../web/apps/portal/src/services/offlineExam.ts).
 
 ### The Three-Way Immutable Storage Model
 To guarantee that neither student tampering, network failure, nor server synchronization bugs can compromise test scores, PlannedEducation implements a **three-way immutable storage architecture**:
@@ -2079,7 +2079,7 @@ PlannedEducation is completely self-contained. While it integrates with optional
 
 ## 5. Offline Exam Execution & Three-Way Cryptographic Sealing
 
-PlannedEducation implements an advanced client-side offline execution engine in [`web/apps/portal/src/services/offlineExam.ts`](file:///c:/dev/PlannedEducation/web/apps/portal/src/services/offlineExam.ts).
+PlannedEducation implements an advanced client-side offline execution engine in [`web/apps/portal/src/services/offlineExam.ts`](../web/apps/portal/src/services/offlineExam.ts).
 
 ### Three-Way Immutable Storage Architecture
 1. **Student Local Storage**: Browser IndexedDB (`plannededucation-offline-exam`), encrypted with AES-GCM (256-bit key derived via PBKDF2), signed with SHA-256 hash.
