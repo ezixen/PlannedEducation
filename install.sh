@@ -741,11 +741,11 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 EOF
-        sudo mv /tmp/plannededucation-backend.service /etc/systemd/system/plannededucation-backend.service
-        sudo systemctl daemon-reload
-        sudo systemctl enable plannededucation-backend
-        sudo systemctl restart plannededucation-backend
-        print_success "Systemd service 'plannededucation-backend' started"
+sudo mv /tmp/plannededucation-backend.service /etc/systemd/system/plannededucation-backend.service
+sudo systemctl daemon-reload
+sudo systemctl enable plannededucation-backend
+sudo systemctl restart plannededucation-backend
+print_success "Systemd service 'plannededucation-backend' started"
     fi
 fi
 
