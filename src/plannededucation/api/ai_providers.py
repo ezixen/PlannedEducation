@@ -342,7 +342,7 @@ class ChatGptSessionProvider(AIProvider):
 
 def get_ai_provider(config: AIProviderConfig) -> AIProvider:
     """Factory function to get the appropriate AI provider."""
-    providers = {
+    providers: dict[str, type[AIProvider]] = {
         "gemini": GeminiProvider,
         "openrouter": OpenRouterProvider,
         "ollama": OllamaProvider,
@@ -385,4 +385,4 @@ async def get_teacher_ai_provider(user, db) -> AIProvider | None:
         return get_ai_provider(config)
     except Exception as e:
         logger.error(f"Failed to create AI provider for user {user.id}: {e}")
-        return None
+        return None

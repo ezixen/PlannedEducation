@@ -645,12 +645,6 @@ class PackageRatingResponse(BaseModel):
     updated_at: datetime
 
 
-class PackageSourceTypeEnum(StrEnum):
-    central = "central"
-    custom = "custom"
-    github = "github"
-
-
 class PackageSourceBase(BaseModel):
     name: str = Field(..., min_length=1, max_length=128)
     url: str = Field(..., max_length=512)

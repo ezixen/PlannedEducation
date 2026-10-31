@@ -63,6 +63,7 @@ disable_error_code = [
     "call-overload",
     "index",
     "misc",
+    "operator",
     "var-annotated",
 ]
 

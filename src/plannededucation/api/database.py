@@ -15,7 +15,7 @@ elif os.getenv("DATABASE_URL", "").startswith("sqlite"):
 else:
     _default_url = "postgresql+psycopg://postgres:postgres@localhost:5433/plannededucation" \
         if os.getenv("PLANNED_EDUCATION_ENV") == "development" else ""
-    SQLALCHEMY_DATABASE_URL: str = os.getenv("DATABASE_URL", _default_url)
+    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", _default_url)
 
 if not SQLALCHEMY_DATABASE_URL:
     raise RuntimeError(

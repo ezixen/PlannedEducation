@@ -499,6 +499,16 @@ async def get_teacher_archive_stats(
         models.ArchivedSubmission.archive_year
     ).all()
 
+    if stats is None:
+        return {
+            "total_archives": 0,
+            "total_size_bytes": 0,
+            "total_size_mb": 0,
+            "original_size_bytes": 0,
+            "compression_savings_mb": 0,
+            "by_year": [],
+        }
+
     orig_sz = stats.original_size or 0
     tot_sz = stats.total_size or 0
     return {

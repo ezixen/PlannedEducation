@@ -113,7 +113,7 @@ def create_database_backup(is_auto: bool = False) -> dict:
 def list_database_backups() -> list[dict]:
     """List all available database backups ordered newest first."""
     bdir = get_backup_dir()
-    backups = []
+    backups: list[dict] = []
 
     for f in bdir.iterdir():
         if f.is_file() and (f.suffix in (".db", ".sql", ".gz") or f.name.endswith(".sql.gz")):

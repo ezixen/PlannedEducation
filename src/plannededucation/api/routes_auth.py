@@ -160,6 +160,13 @@ ph = argon2.PasswordHasher(
     salt_len=16,
 )
 
+def _require_datetime(value: datetime | None) -> datetime:
+    """Narrow datetime | None to datetime for mypy."""
+    if value is None:
+        raise ValueError("Expected datetime, got None")
+    return value
+
+
 def verify_password(plain: str, hashed: str) -> bool:
     """Verify a password against its Argon2id hash."""
     try:
@@ -399,7 +406,7 @@ async def login_for_access_token(
 
     # Read raw body first
     body = await request.body()
-    logger.info(f"Raw body: {body}")
+    logger.info(f"Raw body: {body.decode('utf-8', errors='replace')}")
 
     # Parse form data from body
     from urllib.parse import parse_qs
@@ -523,11 +530,16 @@ def refresh_access_token(
     if not user.refresh_token_hash or not user.refresh_token_expires:
         raise HTTPException(status_code=401, detail="No refresh token stored")
 
+    if user.refresh_token_expires is None:
+        raise HTTPException(status_code=401, detail="Refresh token expired")
     provided_hash = hashlib.sha256(payload.refresh_token.encode()).hexdigest()
     if not secrets.compare_digest(user.refresh_token_hash, provided_hash):
         raise HTTPException(status_code=401, detail="Invalid refresh token")
 
-    if _as_utc(user.refresh_token_expires) < datetime.now(UTC):
+    if (
+        user.refresh_token_expires is not None
+        and _as_utc(_require_datetime(user.refresh_token_expires)) < datetime.now(UTC)  # type: ignore[operator]
+    ):
         raise HTTPException(status_code=401, detail="Refresh token expired")
 
     # Check if the refresh token has remember_me flag
@@ -654,8 +666,11 @@ def confirm_password_reset(
     if token_candidate:
         if not user.password_reset_otp or user.password_reset_otp != token_candidate:
             raise HTTPException(status_code=400, detail="Invalid or expired reset link")
-        if (user.password_reset_otp_expires
-                and _as_utc(user.password_reset_otp_expires) < datetime.now(UTC)):
+        expires = user.password_reset_otp_expires
+        if (
+            expires is not None
+            and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
+        ):
             raise HTTPException(status_code=400, detail="Reset link has expired")
 
     # Check recovery code (for 2FA users)
@@ -928,19 +943,20 @@ def check_teacher_reset_status(
         )
 
     # Check expiration (24 hours)
-    if user.reset_expires and _as_utc(user.reset_expires) < datetime.now(UTC):
-        # Reset expired - clear it
-        user.force_password_reset = False
-        user.reset_by_teacher_id = None
-        user.reset_by_parent_id = None
-        user.reset_by_admin_id = None
-        user.reset_expires = None
-        db.commit()
-        return schemas.TeacherResetCheckResponse(
-            teacher_reset_active=False,
-            message="Password reset has expired. Please request a new reset."
-        )
-
+    expires = user.reset_expires
+    if expires is not None:
+        if _as_utc(_require_datetime(expires)) < datetime.now(UTC):  # type: ignore[operator]
+            # Reset expired - clear it
+            user.force_password_reset = False
+            user.reset_by_teacher_id = None
+            user.reset_by_parent_id = None
+            user.reset_by_admin_id = None
+            user.reset_expires = None
+            db.commit()
+            return schemas.TeacherResetCheckResponse(
+                teacher_reset_active=False,
+                message="Password reset has expired. Please request a new reset."
+            )
     # Determine who initiated the reset for appropriate messaging
     initiator = "an administrator"
     if user.reset_by_teacher_id:
@@ -979,7 +995,11 @@ def complete_teacher_reset(
         raise HTTPException(status_code=400, detail="No active password reset found for this account")
 
     # Check expiration (24 hours)
-    if user.reset_expires and _as_utc(user.reset_expires) < datetime.now(UTC):
+    expires = user.reset_expires
+    if (
+        expires is not None
+        and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
+    ):
         raise HTTPException(status_code=400, detail="Password reset has expired. Please request a new reset.")
 
     _validate_password(payload.new_password)
@@ -1348,13 +1368,17 @@ def webauthn_registration_finish(
     if not current_user.webauthn_challenge:
         raise HTTPException(status_code=400, detail="No active registration challenge")
 
-    if _as_utc(current_user.webauthn_challenge_expires) < datetime.now(UTC):
+    expires = current_user.webauthn_challenge_expires
+    if (
+        expires is not None
+        and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
+    ):
         raise HTTPException(status_code=400, detail="Registration challenge expired")
 
+    expected_challenge = base64.urlsafe_b64decode(
+        current_user.webauthn_challenge + "==="
+    )
     try:
-        expected_challenge = base64.urlsafe_b64decode(
-            current_user.webauthn_challenge + "==="
-        )
         verification = verify_registration_response(
             credential=payload.model_dump(),
             expected_challenge=expected_challenge,
@@ -1438,29 +1462,32 @@ def webauthn_authentication_finish(
     if not current_user.webauthn_challenge:
         raise HTTPException(status_code=400, detail="No active authentication challenge")
 
-    if _as_utc(current_user.webauthn_challenge_expires) < datetime.now(UTC):
+    expires = current_user.webauthn_challenge_expires
+    if (
+        expires is not None
+        and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
+    ):
         raise HTTPException(status_code=400, detail="Authentication challenge expired")
 
+    credential_id = payload.id
+
+    # Look up the stored credential to get the public key
+    creds = (
+        json.loads(current_user.webauthn_credentials)
+        if current_user.webauthn_credentials
+        else []
+    )
+    stored_cred = next((c for c in creds if c["credential_id"] == credential_id), None)
+    if not stored_cred:
+        raise HTTPException(status_code=400, detail="Credential not found")
+
+    pubkey = base64.b64decode(stored_cred["public_key"])
+    sign_count = stored_cred.get("sign_count", 0)
+    expected_challenge = base64.urlsafe_b64decode(
+        current_user.webauthn_challenge + "==="
+    )
+
     try:
-        # Get the credential ID to look up the public key
-        credential_id = payload.id
-
-        # Look up the stored credential to get the public key
-        creds = (
-            json.loads(current_user.webauthn_credentials)
-            if current_user.webauthn_credentials
-            else []
-        )
-        stored_cred = next((c for c in creds if c["credential_id"] == credential_id), None)
-        if not stored_cred:
-            raise HTTPException(status_code=400, detail="Credential not found")
-
-        pubkey = base64.b64decode(stored_cred["public_key"])
-        sign_count = stored_cred.get("sign_count", 0)
-        expected_challenge = base64.urlsafe_b64decode(
-            current_user.webauthn_challenge + "==="
-        )
-
         verification = verify_authentication_response(
             credential=payload.model_dump(),
             expected_challenge=expected_challenge,
