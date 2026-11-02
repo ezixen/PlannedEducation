@@ -19,7 +19,7 @@ psycopg2-binary>=2.9.13   # Tested: 2.9.13 (PostgreSQL driver, free)
 
 # Validation & Serialization
 pydantic[email]>=2.14.1   # Tested: 2.14.1 (EmailStr validation)
-pydantic-settings>=2.16.1 # Tested: 2.16.1 (Settings management)
+pydantic-settings>=2.16.2 # Tested: 2.16.1 (Settings management)
 
 # Authentication & Security
 PyJWT>=2.15.1             # Tested: 2.15.1 (JWT handling)
@@ -46,7 +46,7 @@ pillow>=13.0.0             # Tested: 13.0.0 (Image processing for OCR; eliminate
 # Note: Tesseract binary must be installed separately (apt-get install tesseract-ocr)
 
 # Presidio PII Scrubber (Free, Open-Source - MIT License)
-presidio-analyzer>=2.2.364  # Tested: 2.2.364 (Native span redaction, zero cryptography conflict)
+presidio-analyzer>=2.2.366  # Tested: 2.2.364 (Native span redaction, zero cryptography conflict)
 
 # Speech-to-Text (Free, Open-Source)
 # Note: whisper.cpp or faster-whisper for local inference
@@ -63,9 +63,9 @@ zstandard>=0.25.0          # Tested: 0.25.0
 
 # Observability (OpenTelemetry & Prometheus - Free, Open-Source)
 prometheus-client>=0.26.0  # Tested: 0.26.0
-opentelemetry-api>=1.45.1  # Tested: 1.45.1
-opentelemetry-sdk>=1.45.1  # Tested: 1.45.1
+opentelemetry-api>=1.45.2  # Tested: 1.45.1
+opentelemetry-sdk>=1.45.2  # Tested: 1.45.1
 opentelemetry-exporter-prometheus>=0.66b2      # Tested: 0.66b1
-opentelemetry-instrumentation-fastapi>=0.66b1  # Tested: 0.66b1
-opentelemetry-instrumentation-requests>=0.66b1 # Tested: 0.66b1
-opentelemetry-instrumentation-sqlalchemy>=0.66b1 # Tested: 0.66b1
+opentelemetry-instrumentation-fastapi>=0.66b2  # Tested: 0.66b1
+opentelemetry-instrumentation-requests>=0.66b2 # Tested: 0.66b1
+opentelemetry-instrumentation-sqlalchemy>=0.66b2 # Tested: 0.66b1

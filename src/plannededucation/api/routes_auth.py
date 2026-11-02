@@ -944,19 +944,18 @@ def check_teacher_reset_status(
 
     # Check expiration (24 hours)
     expires = user.reset_expires
-    if expires is not None:
-        if _as_utc(_require_datetime(expires)) < datetime.now(UTC):  # type: ignore[operator]
-            # Reset expired - clear it
-            user.force_password_reset = False
-            user.reset_by_teacher_id = None
-            user.reset_by_parent_id = None
-            user.reset_by_admin_id = None
-            user.reset_expires = None
-            db.commit()
-            return schemas.TeacherResetCheckResponse(
-                teacher_reset_active=False,
-                message="Password reset has expired. Please request a new reset."
-            )
+    if expires is not None and _as_utc(_require_datetime(expires)) < datetime.now(UTC):  # type: ignore[operator]
+        # Reset expired - clear it
+        user.force_password_reset = False
+        user.reset_by_teacher_id = None
+        user.reset_by_parent_id = None
+        user.reset_by_admin_id = None
+        user.reset_expires = None
+        db.commit()
+        return schemas.TeacherResetCheckResponse(
+            teacher_reset_active=False,
+            message="Password reset has expired. Please request a new reset."
+        )
     # Determine who initiated the reset for appropriate messaging
     initiator = "an administrator"
     if user.reset_by_teacher_id:
