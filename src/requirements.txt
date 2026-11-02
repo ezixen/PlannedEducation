@@ -18,7 +18,7 @@ greenlet>=3.5.6         # Tested: 3.5.6 (Required for SQLAlchemy async & instrum
 psycopg2-binary>=2.9.13   # Tested: 2.9.13 (PostgreSQL driver, free)
 
 # Validation & Serialization
-pydantic[email]>=2.14.1   # Tested: 2.14.1 (EmailStr validation)
+pydantic[email]>=2.14.2   # Tested: 2.14.1 (EmailStr validation)
 pydantic-settings>=2.16.1 # Tested: 2.16.1 (Settings management)
 
 # Authentication & Security
