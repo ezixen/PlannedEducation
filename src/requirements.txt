@@ -46,7 +46,7 @@ pillow>=13.0.0             # Tested: 13.0.0 (Image processing for OCR; eliminate
 # Note: Tesseract binary must be installed separately (apt-get install tesseract-ocr)
 
 # Presidio PII Scrubber (Free, Open-Source - MIT License)
-presidio-analyzer>=2.2.364  # Tested: 2.2.364 (Native span redaction, zero cryptography conflict)
+presidio-analyzer>=2.2.366  # Tested: 2.2.364 (Native span redaction, zero cryptography conflict)
 
 # Speech-to-Text (Free, Open-Source)
 # Note: whisper.cpp or faster-whisper for local inference
