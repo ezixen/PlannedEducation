@@ -120,7 +120,7 @@ jobs:
       - name: Check license compliance
         run: |
           cd web/apps/portal
-          npx license-checker --excludePrivatePackages --onlyAllow 'MIT;Apache-2.0;BSD-3-Clause;BSD-2-Clause;ISC;MIT-0;0BSD;BlueOak-1.0.0;CC0-1.0;CC-BY-4.0;CC-BY-3.0;MPL-2.0' --failOnViolation
+          npx license-checker-rseidelsohn --excludePrivatePackages --onlyAllow 'MIT;Apache-2.0;BSD-3-Clause;BSD-2-Clause;ISC;MIT-0;0BSD;BlueOak-1.0.0;CC0-1.0;CC-BY-4.0;CC-BY-3.0;MPL-2.0' --failOnViolation
 
   # Security Scans (Free OSS only - no paid GitHub Advanced Security)
   security-scans:
