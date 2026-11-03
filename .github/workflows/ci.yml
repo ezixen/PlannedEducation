@@ -69,7 +69,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           pip install pytest pytest-cov
-          PYTHONPATH=. pytest tests/ -v --cov=src/plannededucation --cov-report=xml --cov-report=term-missing --maxfail=5 --retries=2
+          PYTHONPATH=. pytest tests/ -v --cov=src/plannededucation --cov-report=xml --cov-report=term-missing
 
   # Frontend Tests
   frontend-tests:
