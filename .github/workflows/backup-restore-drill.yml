@@ -2,7 +2,7 @@ name: Monthly Backup/Restore Drill
 
 on:
   schedule:
-    - cron: '0 3 * * 6'  # Every Saturday at 03:00 UTC (runs only on first Saturday)
+    - cron: '0 3 22-28 * 6'  # 4th Saturday at 03:00 UTC (days 22-28 that fall on Saturday)
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
@@ -20,21 +20,22 @@ jobs:
       STAGING_DB: plannededucation_staging
 
     steps:
-      - name: Check if first Saturday of month
+      - name: Check if 4th Saturday of month
         id: check_date
         run: |
           DAY=$(date +%d)
           WEEKDAY=$(date +%u)  # 6 = Saturday
-          # First Saturday is between 1st and 7th
-          if [ "$DAY" -le 7 ] && [ "$WEEKDAY" = "6" ]; then
-            echo "is_first_saturday=true" >> $GITHUB_OUTPUT
+          # 4th Saturday is between 22nd and 28th
+          if [ "$DAY" -ge 22 ] && [ "$DAY" -le 28 ] && [ "$WEEKDAY" = "6" ]; then
+            echo "is_fourth_saturday=true" >> $GITHUB_OUTPUT
           else
-            echo "is_first_saturday=false" >> $GITHUB_OUTPUT
+            echo "is_fourth_saturday=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Skip if not first Saturday
-        if: steps.check_date.outputs.is_first_saturday != 'true'
-        run: echo "Skipping: not the first Saturday of the month"
+      - name: Skip if not 4th Saturday
+        if: steps.check_date.outputs.is_fourth_saturday != 'true'
+        run: |
+          echo "Skipping: not the 4th Saturday of the month"
 
       - name: Checkout code
         uses: actions/checkout@v7
