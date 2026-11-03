@@ -115,7 +115,7 @@ else:
     echo "=========================================="
     echo "Frontend: http://localhost:5173 (or your domain)"
     echo "API Docs: http://localhost:8000/docs"
-    echo "Admin: admin@yourschool.edu / ChangeMe123!"
+    echo "Admin: Check your configured ADMIN_EMAIL"
     echo "CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN"
 }
 
