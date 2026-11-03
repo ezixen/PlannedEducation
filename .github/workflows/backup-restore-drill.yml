@@ -18,6 +18,10 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       BACKUP_DIR: /backups
       STAGING_DB: plannededucation_staging
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
     steps:
       - name: Check if 4th Saturday of month
