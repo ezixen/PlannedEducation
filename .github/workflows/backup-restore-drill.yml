@@ -13,12 +13,27 @@ jobs:
     name: Backup/Restore Drill
     runs-on: ubuntu-24.04
     timeout-minutes: 120
-    
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: plannededucation
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       BACKUP_DIR: /backups
       STAGING_DB: plannededucation_staging
-      POSTGRES_HOST: postgres
+      POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -42,21 +57,25 @@ jobs:
           echo "Skipping: not the 4th Saturday of the month"
 
       - name: Checkout code
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         uses: actions/checkout@v7
       
       - name: Set up PostgreSQL client
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client-16
       
       - name: Create backup directory and log file
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           sudo mkdir -p ${{ env.BACKUP_DIR }} /var/log
           sudo touch /var/log/backup_restore_drill.log
           sudo chown -R runner:runner ${{ env.BACKUP_DIR }} /var/log/backup_restore_drill.log
 
       - name: Initialize schema for drill backup
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
-          psql -d plannededucation <<'SQL'
+          PGPASSWORD=${{ env.POSTGRES_PASSWORD }} psql -h ${{ env.POSTGRES_HOST }} -p ${{ env.POSTGRES_PORT }} -U ${{ env.POSTGRES_USER }} -d plannededucation <<'SQL'
           CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email TEXT, is_active BOOLEAN DEFAULT true);
           CREATE TABLE IF NOT EXISTS exams (id SERIAL PRIMARY KEY, title TEXT);
           CREATE TABLE IF NOT EXISTS questions (id SERIAL PRIMARY KEY, exam_id INT, text TEXT);
@@ -66,6 +85,7 @@ jobs:
           SQL
       
       - name: Create test backup (simulate daily backup)
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           pg_dump \
             --host=${{ env.POSTGRES_HOST }} \
@@ -79,12 +99,13 @@ jobs:
             --file=${{ env.BACKUP_DIR }}/plannededucation_$(date +%Y%m%d_%H%M%S).dump
       
       - name: Run restore drill script
+        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           chmod +x scripts/backup_restore_drill.sh
           ./scripts/backup_restore_drill.sh
       
       - name: Upload drill logs
-        if: always()
+        if: steps.check_date.outputs.is_fourth_saturday == 'true' && always()
         uses: actions/upload-artifact@v7
         with:
           name: backup-restore-drill-logs
