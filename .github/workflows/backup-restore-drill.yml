@@ -1,9 +1,18 @@
-name: Monthly Backup/Restore Drill
+name: Backup/Restore Drill
 
 on:
   schedule:
-    - cron: '0 3 22-28 * 6'  # 4th Saturday at 03:00 UTC (days 22-28 that fall on Saturday)
+    - cron: '0 22 * * *'  # Daily at 22:00 UTC (configurable via BACKUP_SCHEDULE env var)
   workflow_dispatch:  # Allow manual trigger
+    inputs:
+      backup_interval_days:
+        description: 'Backup interval in days (default: 1)'
+        required: false
+        default: '1'
+      backup_dir:
+        description: 'Backup directory path (default: /backups)'
+        required: false
+        default: '/backups'
 
 permissions:
   contents: read
@@ -31,7 +40,8 @@ jobs:
 
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-      BACKUP_DIR: /backups
+      BACKUP_DIR: ${{ github.event.inputs.backup_dir || '/backups' }}
+      BACKUP_INTERVAL_DAYS: ${{ github.event.inputs.backup_interval_days || '1' }}
       STAGING_DB: plannededucation_staging
       POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
@@ -39,41 +49,20 @@ jobs:
       POSTGRES_PASSWORD: postgres
 
     steps:
-      - name: Check if 4th Saturday of month
-        id: check_date
-        run: |
-          DAY=$(date +%d)
-          WEEKDAY=$(date +%u)  # 6 = Saturday
-          # 4th Saturday is between 22nd and 28th
-          if [ "$DAY" -ge 22 ] && [ "$DAY" -le 28 ] && [ "$WEEKDAY" = "6" ]; then
-            echo "is_fourth_saturday=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_fourth_saturday=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Skip if not 4th Saturday
-        if: steps.check_date.outputs.is_fourth_saturday != 'true'
-        run: |
-          echo "Skipping: not the 4th Saturday of the month"
-
       - name: Checkout code
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         uses: actions/checkout@v7
       
       - name: Set up PostgreSQL client
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client-16
       
       - name: Create backup directory and log file
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           sudo mkdir -p ${{ env.BACKUP_DIR }} /var/log
           sudo touch /var/log/backup_restore_drill.log
           sudo chown -R runner:runner ${{ env.BACKUP_DIR }} /var/log/backup_restore_drill.log
 
       - name: Initialize schema for drill backup
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           PGPASSWORD=${{ env.POSTGRES_PASSWORD }} psql -h ${{ env.POSTGRES_HOST }} -p ${{ env.POSTGRES_PORT }} -U ${{ env.POSTGRES_USER }} -d plannededucation <<'SQL'
           CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email TEXT, is_active BOOLEAN DEFAULT true);
@@ -83,9 +72,8 @@ jobs:
           CREATE TABLE IF NOT EXISTS account_relationships (id SERIAL PRIMARY KEY, parent_id INT, student_id INT);
           INSERT INTO users (email, is_active) VALUES ('drill@plannededucation.org', true);
           SQL
-      
-      - name: Create test backup (simulate daily backup)
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
+
+      - name: Create backup
         run: |
           pg_dump \
             --host=${{ env.POSTGRES_HOST }} \
@@ -99,13 +87,12 @@ jobs:
             --file=${{ env.BACKUP_DIR }}/plannededucation_$(date +%Y%m%d_%H%M%S).dump
       
       - name: Run restore drill script
-        if: steps.check_date.outputs.is_fourth_saturday == 'true'
         run: |
           chmod +x scripts/backup_restore_drill.sh
           ./scripts/backup_restore_drill.sh
       
       - name: Upload drill logs
-        if: steps.check_date.outputs.is_fourth_saturday == 'true' && always()
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: backup-restore-drill-logs
