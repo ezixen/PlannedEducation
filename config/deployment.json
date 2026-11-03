@@ -12,9 +12,8 @@
   "smtp_host": null,
   "smtp_port": 587,
   "smtp_user": null,
-  "smtp_password": null,
   "smtp_use_tls": true,
   "smtp_use_ssl": false,
   "email_from": "PlannedEducation <noreply@localhost>",
-  "updated_at": "2026-11-02T16:37:30.327688+00:00"
+  "updated_at": "2026-11-03T12:40:44.142397+00:00"
 }

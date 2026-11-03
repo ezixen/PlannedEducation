@@ -66,6 +66,7 @@ def test_teacher_quick_reset_and_student_completion(client, db_session):
     )
     assert res.status_code == 200
     assert res.json()["status"] == "success"
+    reset_token = res.json()["reset_token"]
 
     # Verify student is flagged for reset
     db_session.refresh(student)
@@ -86,6 +87,7 @@ def test_teacher_quick_reset_and_student_completion(client, db_session):
     complete_res = client.post("/auth/teacher-reset/complete", json={
         "identifier": "student_quick@school.edu",
         "new_password": new_pwd,
+        "reset_token": reset_token,
     })
     assert complete_res.status_code == 200
     assert "access_token" in complete_res.json()

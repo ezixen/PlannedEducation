@@ -94,31 +94,20 @@ Base.metadata.create_all(bind=engine)
 print('Database initialized')
 "
     
-    # Create admin user if not exists
+    # Create admin user if not exists - FAIL CLOSED if no admin configured
     echo "Creating admin user..."
     docker-compose exec -T backend python -c "
 from src.plannededucation.api.database import SessionLocal
 from src.plannededucation.api.models import User
-from src.plannededucation.api.routes_auth import get_password_hash
 
 db = SessionLocal()
-admin = db.query(User).filter(User.email == 'admin@yourschool.edu').first()
+admin = db.query(User).filter(User.is_admin == True).first()
 if not admin:
-    admin = User(
-        email='admin@yourschool.edu',
-        username='admin',
-        full_name='School Administrator',
-        hashed_password=get_password_hash('ChangeMe123!'),
-        role='admin',
-        is_admin=True,
-        is_active=True
-    )
-    db.add(admin)
-    db.commit()
-    print('Admin created: admin@yourschool.edu / ChangeMe123!')
-    print('CHANGE PASSWORD IMMEDIATELY AFTER FIRST LOGIN')
+    print('ERROR: No admin account configured. Set ADMIN_EMAIL and ADMIN_PASSWORD environment variables.')
+    print('Exiting deployment to prevent predictable credentials.')
+    exit(1)
 else:
-    print('Admin already exists')
+    print(f'Admin account exists: {admin.email}')
 "
     
     echo "=========================================="

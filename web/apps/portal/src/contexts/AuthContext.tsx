@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   const refreshUser = useCallback(async () => {
-    const token = localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!token) {
       setUser(null);
       setLoading(false);
@@ -44,7 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(response.data);
     } catch {
       // Token is invalid or expired — clear it
-      localStorage.removeItem('access_token');
+      sessionStorage.removeItem('access_token');
       setUser(null);
     } finally {
       setLoading(false);
@@ -65,9 +65,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const response = await apiClient.post<{ access_token: string; refresh_token?: string }>('/auth/token', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
-      localStorage.setItem('access_token', response.data.access_token);
+      sessionStorage.setItem('access_token', response.data.access_token);
       if (response.data.refresh_token) {
-        localStorage.setItem('refresh_token', response.data.refresh_token);
+        sessionStorage.setItem('refresh_token', response.data.refresh_token);
       }
       await refreshUser();
     } catch (error: any) {
@@ -78,7 +78,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('access_token');
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('refresh_token');
     setUser(null);
   };
 

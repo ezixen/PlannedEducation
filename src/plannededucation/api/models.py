@@ -107,6 +107,7 @@ class User(Base):
     reset_by_parent_id = Column(String(36), nullable=True)
     reset_by_admin_id = Column(String(36), nullable=True)
     reset_expires = Column(DateTime(timezone=True), nullable=True)
+    reset_token = Column(String(256), nullable=True)  # Signed reset capability token
 
     # Cybersecurity & Brute-Force Safeguards
     failed_login_attempts = Column(Integer, default=0, server_default="0", nullable=False)

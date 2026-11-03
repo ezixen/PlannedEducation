@@ -281,15 +281,13 @@ class TeacherResetCheckRequest(BaseModel):
 
 class TeacherResetCheckResponse(BaseModel):
     teacher_reset_active: bool
-    email: str | None = None
-    username: str | None = None
-    full_name: str | None = None
     message: str | None = None
 
 
 class TeacherResetCompleteRequest(BaseModel):
     identifier: str = Field(..., min_length=3, max_length=255)
     new_password: str = Field(..., min_length=8, max_length=128)
+    reset_token: str = Field(..., min_length=1, max_length=256, description="Signed reset capability token")
 
 
 class InternalPasswordResetRequest(BaseModel):

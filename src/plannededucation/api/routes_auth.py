@@ -401,21 +401,17 @@ async def login_for_access_token(
     db: Session = Depends(database.get_db),
 ):
     # Parse form data manually to avoid OAuth2PasswordRequestForm issues
-    content_type = request.headers.get("content-type", "")
-    logger.info(f"Content-Type: {content_type}")
+    from urllib.parse import parse_qs
 
     # Read raw body first
     body = await request.body()
-    logger.info(f"Raw body: {body.decode('utf-8', errors='replace')}")
-
-    # Parse form data from body
-    from urllib.parse import parse_qs
     form_data = parse_qs(body.decode("utf-8"))
     username = form_data.get("username", [""])[0].lower()
     password = form_data.get("password", [""])[0]
     remember_me = form_data.get("remember_me", ["false"])[0].lower() == "true"
 
-    logger.info(f"Login attempt: username={username}, remember_me={remember_me}")
+    # Log only event name, never credentials or sensitive data
+    logger.info("Login attempt: username=%s, remember_me=%s", username, remember_me)
 
     if not username or not password:
         raise HTTPException(status_code=422, detail="Username and password are required")
@@ -498,7 +494,7 @@ async def login_for_access_token(
     user.locked_until = None
     user.last_login = datetime.now(UTC)
 
-    remember_me = False  # OAuth2PasswordRequestForm doesn't support remember_me
+    # Use the remember_me preference from the login form
     tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
     user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
     if remember_me:
@@ -770,6 +766,11 @@ def teacher_quick_reset_student(
     student.locked_until = None
     student.refresh_token_hash = None
     student.is_active = True
+    # Generate signed reset capability token
+    import hashlib
+    student.reset_token = hashlib.sha256(
+        f"{student.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
+    ).hexdigest()
 
     # In-app notification for the student
     notif = models.InAppNotification(
@@ -787,7 +788,8 @@ def teacher_quick_reset_student(
         "student_id": student.id,
         "student_name": student.full_name or student.username,
         "email": student.email,
-        "message": f"Password reset initiated for {student.full_name or student.username}. They can now enter their email address on the login page and set their new password.",
+        "reset_token": student.reset_token,
+        "message": f"Password reset initiated for {student.full_name or student.username}. Share the reset token securely with the student. They can set their new password using the token.",
     }
 
 
@@ -840,6 +842,11 @@ def parent_quick_reset_student(
     student.locked_until = None
     student.refresh_token_hash = None
     student.is_active = True
+    # Generate signed reset capability token
+    import hashlib
+    student.reset_token = hashlib.sha256(
+        f"{student.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
+    ).hexdigest()
 
     # In-app notification for the student
     notif = models.InAppNotification(
@@ -857,7 +864,8 @@ def parent_quick_reset_student(
         "student_id": student.id,
         "student_name": student.full_name or student.username,
         "email": student.email,
-        "message": f"Password reset initiated for {student.full_name or student.username}. They can now enter their email address on the login page and set their new password.",
+        "reset_token": student.reset_token,
+        "message": f"Password reset initiated for {student.full_name or student.username}. Share the reset token securely with the student. They can set their new password using the token.",
     }
 
 
@@ -903,6 +911,11 @@ def admin_quick_reset_user(
     target_user.locked_until = None
     target_user.refresh_token_hash = None
     target_user.is_active = True
+    # Generate signed reset capability token
+    import hashlib
+    target_user.reset_token = hashlib.sha256(
+        f"{target_user.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
+    ).hexdigest()
 
     # In-app notification for the user
     notif = models.InAppNotification(
@@ -921,7 +934,8 @@ def admin_quick_reset_user(
         "user_name": target_user.full_name or target_user.username,
         "email": target_user.email,
         "role": target_user.role,
-        "message": f"Password reset initiated for {target_user.full_name or target_user.username}. They can now enter their email address on the login page and set their new password.",
+        "reset_token": target_user.reset_token,
+        "message": f"Password reset initiated for {target_user.full_name or target_user.username}. Share the reset token securely with the user. They can set their new password using the token.",
     }
 
 
@@ -967,9 +981,6 @@ def check_teacher_reset_status(
 
     return schemas.TeacherResetCheckResponse(
         teacher_reset_active=True,
-        email=user.email,
-        username=user.username,
-        full_name=user.full_name,
         message=f"Password reset active! {initiator.capitalize()} has unlocked your account. You may set your new password now. This reset link expires in 24 hours.",
     )
 
@@ -993,6 +1004,12 @@ def complete_teacher_reset(
     if not user or not user.force_password_reset:
         raise HTTPException(status_code=400, detail="No active password reset found for this account")
 
+    # Verify signed reset token
+    if not user.reset_token or not payload.reset_token:
+        raise HTTPException(status_code=400, detail="Reset token required")
+    if not secrets.compare_digest(user.reset_token, payload.reset_token):
+        raise HTTPException(status_code=400, detail="Invalid reset token")
+
     # Check expiration (24 hours)
     expires = user.reset_expires
     if (
@@ -1008,6 +1025,7 @@ def complete_teacher_reset(
     user.reset_by_teacher_id = None
     user.reset_by_parent_id = None
     user.reset_by_admin_id = None
+    user.reset_token = None
     user.failed_login_attempts = 0
     user.locked_until = None
     user.is_active = True

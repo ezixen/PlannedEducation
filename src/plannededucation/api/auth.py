@@ -47,16 +47,6 @@ RECOVERY_CODE_COUNT = 5  # Number of one-time recovery codes to generate
 RECOVERY_CODE_LENGTH = 8  # Length of each recovery code in characters
 
 
-def hash_password(password: str) -> str:
-    """Hash a password for storage (SHA-256, kept for reset flow only)."""
-    return hashlib.sha256(password.encode("utf-8")).hexdigest()
-
-
-def verify_password(plain: str, hashed: str) -> bool:
-    """Verify a password against its hash. Used only for self-service reset flow."""
-    return hash_password(plain) == hashed
-
-
 def generate_recovery_codes(
     count: int = RECOVERY_CODE_COUNT, length: int = RECOVERY_CODE_LENGTH
 ) -> list[str]:

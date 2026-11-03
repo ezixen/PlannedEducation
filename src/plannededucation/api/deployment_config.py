@@ -41,7 +41,24 @@ class DeploymentConfigSchema(BaseModel):
     email_from: str = Field(default="PlannedEducation <noreply@localhost>", max_length=128)
 
 
-class DeploymentConfigResponse(DeploymentConfigSchema):
+class DeploymentConfigResponse(BaseModel):
+    school_name: str
+    domain: str
+    api_port: int
+    frontend_port: int
+    cors_origins: str
+    allowed_hosts: str
+    environment: str
+    allow_dev_seb_bypass: bool
+    anonymizer_enabled: bool
+    anonymizer_language: str
+    smtp_host: str | None = None
+    smtp_port: int = 587
+    smtp_user: str | None = None
+    # smtp_password intentionally excluded from API response
+    smtp_use_tls: bool = True
+    smtp_use_ssl: bool = False
+    email_from: str
     config_file_path: str
     last_modified: str | None = None
     restart_required: bool = False
@@ -197,6 +214,8 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
     env_path = get_env_path()
 
     config_data = new_config.model_dump()
+    # Remove sensitive SMTP password from deployment.json (stored in .env only)
+    config_data.pop("smtp_password", None)
     config_data["updated_at"] = datetime.now(UTC).isoformat()
 
     # Write to config/deployment.json

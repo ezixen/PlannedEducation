@@ -2,7 +2,7 @@ name: Monthly Backup/Restore Drill
 
 on:
   schedule:
-    - cron: '0 3 * * 6'  # First Saturday at 03:00 UTC
+    - cron: '0 3 * * 6'  # Every Saturday at 03:00 UTC (runs only on first Saturday)
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
@@ -18,31 +18,24 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       BACKUP_DIR: /backups
       STAGING_DB: plannededucation_staging
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_HOST: localhost
-      POSTGRES_PORT: 5432
-      PGHOST: localhost
-      PGPORT: 5432
-      PGUSER: postgres
-      PGPASSWORD: postgres
-    
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_DB: plannededucation
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd="pg_isready -U postgres"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-    
+
     steps:
+      - name: Check if first Saturday of month
+        id: check_date
+        run: |
+          DAY=$(date +%d)
+          WEEKDAY=$(date +%u)  # 6 = Saturday
+          # First Saturday is between 1st and 7th
+          if [ "$DAY" -le 7 ] && [ "$WEEKDAY" = "6" ]; then
+            echo "is_first_saturday=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_first_saturday=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip if not first Saturday
+        if: steps.check_date.outputs.is_first_saturday != 'true'
+        run: echo "Skipping: not the first Saturday of the month"
+
       - name: Checkout code
         uses: actions/checkout@v7
       

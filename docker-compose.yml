@@ -3,18 +3,18 @@
 # NO PAID SERVICES
 
 services:
-  # PostgreSQL Database (free, open-source)
+  # PostgreSQL Database (free, open-source) - Internal only, no public port
   postgres:
     image: postgres:16-alpine
     container_name: plannededucation-postgres
     environment:
       POSTGRES_DB: plannededucation
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    networks:
+      - pe-internal
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -22,17 +22,17 @@ services:
       retries: 5
     restart: unless-stopped
 
-  # Redis for caching and WebSocket pub/sub (free, open-source)
+  # Redis for caching and WebSocket pub/sub (free, open-source) - Internal only
   redis:
     image: redis:7-alpine
     container_name: plannededucation-redis
-    command: redis-server --appendonly yes
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:?REDIS_PASSWORD must be set}
     volumes:
       - redis_data:/data
-    ports:
-      - "6379:6379"
+    networks:
+      - pe-internal
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -45,9 +45,9 @@ services:
       dockerfile: Dockerfile.backend
     container_name: plannededucation-backend
     environment:
-      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-changeme}@postgres:5432/plannededucation
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/plannededucation
       PLANNED_EDUCATION_ENV: production
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY must be set}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
       AI_KEY_MASTER_SECRET: ${AI_KEY_MASTER_SECRET}
@@ -59,6 +59,9 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    networks:
+      - pe-internal
+      - pe-public
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
       interval: 30s
@@ -77,6 +80,8 @@ services:
       - "80:80"
     depends_on:
       - backend
+    networks:
+      - pe-public
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
       interval: 30s
@@ -85,15 +90,15 @@ services:
       retries: 3
     restart: unless-stopped
 
-  # Prometheus for metrics (free, open-source)
+  # Prometheus for metrics (free, open-source) - Internal only
   prometheus:
     image: prom/prometheus:v2.48.0
     container_name: plannededucation-prometheus
     volumes:
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
-    ports:
-      - "9090:9090"
+    networks:
+      - pe-internal
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -101,37 +106,44 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
     restart: unless-stopped
 
-  # Alertmanager for alert routing (free, open-source)
+  # Alertmanager for alert routing (free, open-source) - Internal only
   alertmanager:
     image: prom/alertmanager:v0.27.0
     container_name: plannededucation-alertmanager
     volumes:
       - ./monitoring/alertmanager.yml:/etc/alertmanager/alertmanager.yml
       - alertmanager_data:/alertmanager
-    ports:
-      - "9093:9093"
+    networks:
+      - pe-internal
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'
     restart: unless-stopped
 
-  # Grafana for dashboards (free, open-source)
+  # Grafana for dashboards (free, open-source) - Internal only
   grafana:
     image: grafana/grafana:10.2.0
     container_name: plannededucation-grafana
     environment:
       GF_SECURITY_ADMIN_USER: admin
-      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:?GRAFANA_PASSWORD must be set}
       GF_USERS_ALLOW_SIGN_UP: "false"
     volumes:
       - grafana_data:/var/lib/grafana
       - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
       - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
-    ports:
-      - "3000:3000"
+    networks:
+      - pe-internal
     depends_on:
       - prometheus
     restart: unless-stopped
+
+networks:
+  pe-internal:
+    driver: bridge
+    internal: true
+  pe-public:
+    driver: bridge
 
 volumes:
   postgres_data:

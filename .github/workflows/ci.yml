@@ -59,7 +59,7 @@ jobs:
       - name: Run security scan (bandit)
         run: |
           pip install bandit
-          bandit -r src/ -f json -o bandit-report.json || true
+          bandit -r src/ -f json -o bandit-report.json
 
       - name: Run dependency audit (pip-audit)
         run: |

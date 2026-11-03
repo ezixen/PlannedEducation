@@ -148,9 +148,29 @@ def _get_session_and_verify(
 
     # Students can only access their own sessions
     # Teachers can access sessions for their exams
-    is_student_owner = current_user.role == "student" and session.student_id != current_user.id
-    is_teacher_owner = current_user.role == "teacher" and session.exam.teacher_id != current_user.id
-    if is_student_owner or is_teacher_owner:
+    # Parents can only access sessions belonging to their children via active relationship
+    if current_user.role == "student":
+        if session.student_id != current_user.id:
+            raise HTTPException(status_code=403, detail="Access denied")
+    elif current_user.role == "teacher":
+        if session.exam.teacher_id != current_user.id:
+            raise HTTPException(status_code=403, detail="Access denied")
+    elif current_user.role == "parent":
+        # Parent must have an active relationship to the student
+        relationship = (
+            db.query(models.AccountRelationship)
+            .filter(
+                models.AccountRelationship.student_id == session.student_id,
+                models.AccountRelationship.parent_id == current_user.id,
+                models.AccountRelationship.status == models.RelationshipStatus.active,
+            )
+            .first()
+        )
+        if not relationship:
+            raise HTTPException(status_code=403, detail="Access denied")
+    elif current_user.role == "admin":
+        pass  # Admins have full access
+    else:
         raise HTTPException(status_code=403, detail="Access denied")
 
     return session
