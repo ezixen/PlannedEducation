@@ -42,6 +42,7 @@ from . import (
 )
 from .database import Base, engine
 from .limiter import RateLimitExceeded, _rate_limit_exceeded_handler, limiter
+from .version import __version__
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────
@@ -418,7 +419,7 @@ app.include_router(routes_notifications.router)
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "Planned Education API", "version": "0.8.8"}
+    return {"status": "ok", "service": "Planned Education API", "version": __version__}
 
 
 # ── Global Exception Handler (no stack traces in production) ─────────────────
