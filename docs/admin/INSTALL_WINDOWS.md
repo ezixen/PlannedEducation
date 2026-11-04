@@ -51,10 +51,66 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
 ```
 
-Or specify non-interactive mode with custom directory:
+#### Unattended Installation (`-AutoConfirm`)
+
+For fully automated, unattended installation (recommended for AI agents, CI/CD, or scripting), use the `-AutoConfirm` switch. This bypasses **all** interactive prompts and uses sensible defaults:
+
+| Setting | Default Value |
+|---------|---------------|
+| Installation directory | `C:\PlannedEducation` |
+| Deployment mode | `1` (Single-Server / SQLite) |
+| Domain | `localhost` |
+| API port | `8000` |
+| Frontend port | `5173` |
+| School name | `PlannedEducation School` |
+| Superadmin email | `admin@yourschool.edu` |
+| Superadmin name | `School Administrator` |
+| Superadmin password | Auto-generated secure random 20-character password |
+| Overwrite existing `.env` | Yes |
+| Install missing dependencies via winget | Yes (if needed) |
+
+**Superadmin password behavior in `-AutoConfirm` mode:**
+- If you **do not** pass `-AdminPassword`, a cryptographically secure random 20-character password is automatically generated and **displayed on screen** during installation.
+- If you **do** pass `-AdminPassword "YourCustomPassword"`, that password is used directly.
+- **No user confirmation is required** — the installer runs from start to finish without pausing.
+
 ```powershell
-.\install.ps1 -InstallDir "C:\PlannedEducation" -AutoConfirm
+# Fully unattended installation with all defaults
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\install.ps1 -AutoConfirm
+
+# Unattended installation with custom directory and admin credentials
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\install.ps1 `
+  -InstallDir "C:\PlannedEducation" `
+  -DeployMode "1" `
+  -Domain "localhost" `
+  -ApiPort 8000 `
+  -FrontendPort 5173 `
+  -AdminEmail "admin@yourschool.edu" `
+  -AdminPassword "MyCustomPassword123!" `
+  -AdminName "School Administrator" `
+  -SchoolName "PlannedEducation School" `
+  -AutoConfirm
 ```
+
+> 🔒 **Security Warning:** The generated superadmin password and recovery codes are displayed on screen during installation but are **not saved to disk**. Copy them to a secure location immediately. You can also copy them from the clipboard after installation completes.
+
+#### Interactive Mode
+
+Without `-AutoConfirm`, the installer prompts you interactively for each setting:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\install.ps1
+```
+
+You will be prompted for:
+- Installation directory (default: `C:\PlannedEducation`)
+- Deployment mode (1=SQLite, 2=PostgreSQL, 3=Docker)
+- Domain/IP address
+- School/institution name
+- Superadmin email, name, and password
 
 ### Step 4: Choose Your Deployment Mode
 When prompted by the installer:
