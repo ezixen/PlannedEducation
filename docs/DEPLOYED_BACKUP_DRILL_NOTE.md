@@ -2,7 +2,7 @@
 
 ## ⚠️ DO NOT CONFUSE WITH DEVELOPMENT PROJECT BACKUP
 
-The `.github/workflows/backup-restore-drill.yml` workflow is **NOT** for backing up this development repository
+The `scripts/backup_restore_drill_deployed.yml` workflow template is **NOT** for backing up this development repository
 (`ezixen/PlannedEducation` on GitHub). It is exclusively for **users' self-hosted deployed instances** of
 PlannedEducation, to ensure their production databases are not lost.
 
@@ -38,11 +38,9 @@ The local development SQLite database (`plannededucation.db`) is gitignored and 
 
 ## Where the Workflow Lives
 
-- The workflow file `.github/workflows/backup-restore-drill.yml` is kept in this repo **only** so it can
-  be copied to deployed instances' own `.github/workflows/` directories
-- It should **not** be triggered by pushes to `dev` or `main` in this development repository
-- If present in this repo's workflows, it should be configured with `if: false` or scheduled only
-  for production deployment branches, not development branches
+- The workflow template is kept at **`scripts/backup_restore_drill_deployed.yml`** — **not** in `.github/workflows/`.
+- It is **untracked** (local-only) and is meant to be copied to a **deployed instance's** own `.github/workflows/` directory.
+- It should **never** be added to this development repo's `.github/workflows/` because it is not part of this repo's CI/CD.
 
 ---
 
