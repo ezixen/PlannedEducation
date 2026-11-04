@@ -202,7 +202,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Planned Education API",
     description="Backend for the Planned Education platform.",
-    version="0.8.7",
+    version="0.8.8",
     lifespan=lifespan,
     # Disable automatic Swagger/Redoc in production
     docs_url="/docs" if os.getenv("PLANNED_EDUCATION_ENV") == "development" else None,
@@ -418,7 +418,7 @@ app.include_router(routes_notifications.router)
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "Planned Education API", "version": "0.8.7"}
+    return {"status": "ok", "service": "Planned Education API", "version": "0.8.8"}
 
 
 # ── Global Exception Handler (no stack traces in production) ─────────────────
