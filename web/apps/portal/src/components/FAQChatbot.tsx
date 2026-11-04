@@ -408,7 +408,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         question: "How do students and teachers connect over school Wi-Fi or LAN?",
         keywords: ["wifi", "lan", "network", "connect", "ip", "school", "firewall", "students", "teachers"],
         answer: "1. Find your server's local IPv4 (e.g., 192.168.1.150). 2. Open port 8000 in your firewall (or port 80 if using Nginx). 3. In .env, set ALLOWED_HOSTS and CORS_ORIGINS to include the server IP. 4. Teachers and students connect by browsing to http://<SERVER_IP>:8000 in any browser or Safe Exam Browser (SEB)."
-      }
+      },
       {
         id: 35,
         question: "How do I configure backup location, frequency, retention, and time?",
@@ -428,7 +428,14 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         answer: "The backup-restore-drill is for users' self-hosted deployed instances only - it tests that your production PostgreSQL database can be backed up and restored. It is NOT part of this development repository's CI/CD. The workflow template is at scripts/backup_restore_drill_deployed.yml and should be copied to your deployed instance's .github/workflows/ directory."
       },
 
-    ];
+    ],
+  }
+];
+
+const NUMBER_TO_KEY: Record<number, string> = Object.fromEntries(
+  Object.entries(KEY_NUMBERS).map(([k, v]) => [v, k])
+);
+const TOTAL_KEYS = Object.keys(KEY_NUMBERS).length;
 
 const GOOGLE_TRANSLATE_LANG: Record<string, string> = {
   ar: 'ar', bg: 'bg', cn: 'zh-CN', cs: 'cs', da: 'da', de: 'de',
