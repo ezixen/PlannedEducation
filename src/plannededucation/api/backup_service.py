@@ -227,7 +227,6 @@ async def run_midnight_autobackup_scheduler():
             cfg = _load_backup_config()
             frequency_days = cfg["backup_frequency_days"]
             backup_time_str = cfg["backup_time"]
-            retention_days = cfg["backup_retention_days"]
 
             # Parse the configured backup time (HH:MM)
             hour, minute = map(int, backup_time_str.split(":"))
