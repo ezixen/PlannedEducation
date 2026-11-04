@@ -23,6 +23,7 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExport
 from prometheus_client import REGISTRY, Counter, Gauge, Histogram, start_http_server
 from starlette.middleware.base import BaseHTTPMiddleware
 
+from ..version import __version__
 from . import (
     routes_admin,
     routes_ai,
@@ -42,7 +43,6 @@ from . import (
 )
 from .database import Base, engine
 from .limiter import RateLimitExceeded, _rate_limit_exceeded_handler, limiter
-from ..version import __version__
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────
