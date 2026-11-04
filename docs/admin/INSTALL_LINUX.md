@@ -329,6 +329,6 @@ sudo nginx -t && sudo systemctl reload nginx
 - [Windows Installation Guide](INSTALL_WINDOWS.md)
 - [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
 - [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
+- [Module System & School Federation](#module-system)
 - [Frequently Asked Questions (FAQ)](../user/FAQ.md)
 

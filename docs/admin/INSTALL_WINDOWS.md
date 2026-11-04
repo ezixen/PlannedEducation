@@ -344,6 +344,6 @@ Start-ScheduledTask -TaskName "PlannedEducationServer"
 - [Linux Installation Guide](INSTALL_LINUX.md)
 - [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
 - [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
+- [Module System & School Federation](#module-system)
 - [Frequently Asked Questions (FAQ)](../user/FAQ.md)
 
