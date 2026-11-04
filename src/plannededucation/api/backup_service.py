@@ -15,15 +15,36 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from . import database
+from .deployment_config import load_deployment_config
 
 logger = logging.getLogger("plannededucation.backup")
 
 BACKUP_DIR = Path(os.getenv("BACKUP_DIR", "backups"))
 
 
+def _load_backup_config() -> dict:
+    """Load backup configuration from deployment config."""
+    try:
+        config = load_deployment_config()
+        return {
+            "backup_location": config.get("backup_location", "backups"),
+            "backup_frequency_days": config.get("backup_frequency_days", 1),
+            "backup_retention_days": config.get("backup_retention_days", 30),
+            "backup_time": config.get("backup_time", "22:00"),
+        }
+    except Exception:
+        return {
+            "backup_location": "backups",
+            "backup_frequency_days": 1,
+            "backup_retention_days": 30,
+            "backup_time": "22:00",
+        }
+
+
 def get_backup_dir() -> Path:
     """Ensure backup directory exists and return resolved path."""
-    bdir = BACKUP_DIR.resolve()
+    cfg = _load_backup_config()
+    bdir = Path(cfg["backup_location"]).resolve()
     bdir.mkdir(parents=True, exist_ok=True)
     return bdir
 
@@ -172,8 +193,11 @@ def delete_backup_file(filename: str) -> bool:
     return False
 
 
-def clean_old_backups(retention_days: int = 30) -> int:
+def clean_old_backups(retention_days: int | None = None) -> int:
     """Remove automated backups older than retention_days."""
+    if retention_days is None:
+        cfg = _load_backup_config()
+        retention_days = cfg["backup_retention_days"]
     bdir = get_backup_dir()
     cutoff = datetime.now(UTC) - timedelta(days=retention_days)
     deleted_count = 0
@@ -194,27 +218,39 @@ def clean_old_backups(retention_days: int = 30) -> int:
 
 async def run_midnight_autobackup_scheduler():
     """
-    Background worker that runs every midnight to create an automated database backup
-    and prune snapshots older than 30 days.
+    Background worker that runs at the configured time to create an automated database backup
+    and prune snapshots older than the configured retention period.
     """
-    logger.info("Midnight autobackup scheduler initialized.")
+    logger.info("Autobackup scheduler initialized.")
     while True:
         try:
+            cfg = _load_backup_config()
+            frequency_days = cfg["backup_frequency_days"]
+            backup_time_str = cfg["backup_time"]
+            retention_days = cfg["backup_retention_days"]
+
+            # Parse the configured backup time (HH:MM)
+            hour, minute = map(int, backup_time_str.split(":"))
+
             now = datetime.now(UTC)
-            # Next midnight: today + 1 day at 00:00:00 UTC
-            next_midnight = (now + timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
-            sleep_seconds = (next_midnight - now).total_seconds()
+            # Next occurrence of the configured time today
+            next_run = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+            if next_run <= now:
+                # Already passed today, schedule for tomorrow
+                next_run = next_run + timedelta(days=frequency_days)
+
+            sleep_seconds = (next_run - now).total_seconds()
 
             if sleep_seconds > 0:
-                logger.info(f"Next midnight autobackup scheduled in {int(sleep_seconds)}s at {next_midnight.isoformat()}")
+                logger.info(f"Next autobackup scheduled in {int(sleep_seconds)}s at {next_run.isoformat()}")
                 await asyncio.sleep(sleep_seconds)
 
             # Perform automated backup
             result = create_database_backup(is_auto=True)
-            purged = clean_old_backups(retention_days=30)
-            logger.info(f"Midnight autobackup completed: {result['filename']}, purged {purged} expired backups.")
+            purged = clean_old_backups()
+            logger.info(f"Autobackup completed: {result['filename']}, purged {purged} expired backups.")
 
-            # Sleep 60 seconds to prevent immediate double execution at 00:00:00
+            # Sleep 60 seconds to prevent immediate double execution
             await asyncio.sleep(60)
         except asyncio.CancelledError:
             logger.info("Midnight autobackup scheduler stopping.")
