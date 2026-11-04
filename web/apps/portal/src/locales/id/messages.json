@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Lompat ke [#{num}] {key} di laman ini!",
   "faq.jump_nav": "Ditemukan [#{num}] {kunci}: \"{teks}\". Elemen ini terletak di halaman {page}.",
   "faq.jump_not_found": "Nomor terjemahan [#{num}] tidak ditemukan dalam indeks platform (rentang valid: 1 hingga {total}).",
-  "faq.jump_btn": "Buka {halaman}"
+  "faq.jump_btn": "Buka {halaman}",
+  "db_backup.config.title": "Konfigurasi Cadangan",
+  "db_backup.config.location": "Lokasi Cadangan",
+  "db_backup.config.frequency": "Frekuensi (hari)",
+  "db_backup.config.frequency_hint": "Seberapa sering cadangan otomatis dijalankan",
+  "db_backup.config.retention": "Penyimpanan (hari)",
+  "db_backup.config.retention_hint": "Hari untuk menyimpan cadangan otomatis",
+  "db_backup.config.time": "Waktu Cadangan",
+  "db_backup.config.save": "Simpan Konfigurasi"
 }

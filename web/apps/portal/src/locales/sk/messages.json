@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Preskočili ste na [#{num}] {key} na tejto stránke!",
   "faq.jump_nav": "Nájdené [#{num}] {key}: \"{text}\". Tento prvok sa nachádza na stránke {page}.",
   "faq.jump_not_found": "Číslo prekladu [#{num}] sa nenašlo v indexe platformy (platný rozsah: 1 až {total}).",
-  "faq.jump_btn": "Prejsť na {page}"
+  "faq.jump_btn": "Prejsť na {page}",
+  "db_backup.config.title": "Nastavenie zálohovaní",
+  "db_backup.config.location": "Umiestnenie zálohy",
+  "db_backup.config.frequency": "Frekvencia (dní)",
+  "db_backup.config.frequency_hint": "Ako často prebiehajú automatické zálohy",
+  "db_backup.config.retention": "Uchovávanie (dní)",
+  "db_backup.config.retention_hint": "Dní na uchovanie automatických záloh",
+  "db_backup.config.time": "Čas zálohovania",
+  "db_backup.config.save": "Uložiť konfiguráciu"
 }

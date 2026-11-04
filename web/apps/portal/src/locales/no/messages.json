@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Hoppet til [#{num}] {key} på denne siden!",
   "faq.jump_nav": "Fant [#{num}] {key}: \"{tekst}\". Dette elementet er plassert på {page}-siden.",
   "faq.jump_not_found": "Oversettelsesnummeret [#{num}] ble ikke funnet i plattformindeksen (gyldig område: 1 til {total}).",
-  "faq.jump_btn": "Gå til {side}"
+  "faq.jump_btn": "Gå til {side}",
+  "db_backup.config.title": "Sikkerhetskopieringskonfigurasjon",
+  "db_backup.config.location": "Sikkerhetskopieringsplassering",
+  "db_backup.config.frequency": "Frekvens (dager)",
+  "db_backup.config.frequency_hint": "Hvor ofte automatiske sikkerhetskopier kjører",
+  "db_backup.config.retention": "Oppbevaring (dager)",
+  "db_backup.config.retention_hint": "Dager å lagre automatiske sikkerhetskopier",
+  "db_backup.config.time": "Sikkerhetskopieringstid",
+  "db_backup.config.save": "Lagre konfigurasjon"
 }

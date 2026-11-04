@@ -1339,5 +1339,13 @@
   "faq.jump_success": "이 페이지에서 [#{num}] {key}(으)로 이동했습니다!",
   "faq.jump_nav": "[#{num}]개 {key}개를 찾았습니다: \"{text}\". 이 요소는 {page} 페이지에 있습니다.",
   "faq.jump_not_found": "플랫폼 색인에서 번역 번호 [#{num}]을(를) 찾을 수 없습니다(유효 범위: 1~{total}).",
-  "faq.jump_btn": "{페이지}로 이동"
+  "faq.jump_btn": "{페이지}로 이동",
+  "db_backup.config.title": "백업 구성",
+  "db_backup.config.location": "백업 위치",
+  "db_backup.config.frequency": "주기 (일)",
+  "db_backup.config.frequency_hint": "자동 백업이 실행되는 주기",
+  "db_backup.config.retention": "보존 기간 (일)",
+  "db_backup.config.retention_hint": "자동 백업을 보존할 일수",
+  "db_backup.config.time": "백업 시간",
+  "db_backup.config.save": "구성 저장"
 }

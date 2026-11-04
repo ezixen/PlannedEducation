@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Hyppäsi tällä sivulla kohtaan [#{num}] {key}!",
   "faq.jump_nav": "Löytyi [#{num}] {key}: \"{text}\". Tämä elementti sijaitsee sivulla {page}.",
   "faq.jump_not_found": "Käännösnumeroa [#{num}] ei löytynyt alustahakemistosta (kelvollinen alue: 1–{total}).",
-  "faq.jump_btn": "Siirry {sivulle}"
+  "faq.jump_btn": "Siirry {sivulle}",
+  "db_backup.config.title": "Varmuuskopioinnin asetukset",
+  "db_backup.config.location": "Varmuuskopiointipaikka",
+  "db_backup.config.frequency": "Taajuus (päiviä)",
+  "db_backup.config.frequency_hint": "Kuinka usein automaattiset varmuuskopiot suoritetaan",
+  "db_backup.config.retention": "Säilytys (päiviä)",
+  "db_backup.config.retention_hint": "Päiviä automaattisten varmuuskopioiden säilyttämiseen",
+  "db_backup.config.time": "Varmuuskopiointiaika",
+  "db_backup.config.save": "Tallenna asetukset"
 }

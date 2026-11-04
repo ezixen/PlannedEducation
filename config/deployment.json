@@ -15,5 +15,9 @@
   "smtp_use_tls": true,
   "smtp_use_ssl": false,
   "email_from": "PlannedEducation <noreply@localhost>",
-  "updated_at": "2026-11-03T14:03:39.831432+00:00"
+  "backup_location": "backups",
+  "backup_frequency_days": 1,
+  "backup_retention_days": 30,
+  "backup_time": "22:00",
+  "updated_at": "2026-11-04T18:48:24.525978+00:00"
 }

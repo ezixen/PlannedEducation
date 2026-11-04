@@ -1339,5 +1339,13 @@
   "faq.jump_success": "A ajuns la [#{num}] {key} pe această pagină!",
   "faq.jump_nav": "S-a găsit [#{num}] {key}: „{text}”. Acest element se află pe pagina {page}.",
   "faq.jump_not_found": "Numărul de traducere [#{num}] nu a fost găsit în indexul platformei (interval valid: de la 1 la {total}).",
-  "faq.jump_btn": "Accesați {pagina}"
+  "faq.jump_btn": "Accesați {pagina}",
+  "db_backup.config.title": "Configurare copie de siguranță",
+  "db_backup.config.location": "Locație copie de siguranță",
+  "db_backup.config.frequency": "Frecvență (zile)",
+  "db_backup.config.frequency_hint": "Cât de des se efectuează copiile de siguranță automate",
+  "db_backup.config.retention": "Păstrare (zile)",
+  "db_backup.config.retention_hint": "Zile pentru păstrarea copiilor de siguranță automate",
+  "db_backup.config.time": "Ora copiei de siguranță",
+  "db_backup.config.save": "Salvați configurația"
 }

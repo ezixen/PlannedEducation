@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Đã chuyển tới [#{num}] {key} trên trang này!",
   "faq.jump_nav": "Đã tìm thấy [#{num}] {key}: \"{text}\". Phần tử này nằm trên trang {page}.",
   "faq.jump_not_found": "Không tìm thấy số bản dịch [#{num}] trong chỉ mục nền tảng (phạm vi hợp lệ: 1 đến {total}).",
-  "faq.jump_btn": "Đi đến {trang}"
+  "faq.jump_btn": "Đi đến {trang}",
+  "db_backup.config.title": "Cấu hình sao lưu",
+  "db_backup.config.location": "Vị trí sao lưu",
+  "db_backup.config.frequency": "Tần suất (ngày)",
+  "db_backup.config.frequency_hint": "Sao lưu tự động chạy thường xuyên thế nào",
+  "db_backup.config.retention": "Lưu trữ (ngày)",
+  "db_backup.config.retention_hint": "Số ngày để lưu trữ sao lưu tự động",
+  "db_backup.config.time": "Thời gian sao lưu",
+  "db_backup.config.save": "Lưu cấu hình"
 }

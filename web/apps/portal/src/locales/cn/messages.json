@@ -1339,5 +1339,13 @@
   "faq.jump_success": "已跳转至本页的 [#{num}] {key}！",
   "faq.jump_nav": "找到 [#{num}] {key}：“{text}”。该元素位于 {page} 页面上。",
   "faq.jump_not_found": "在平台索引中未找到翻译编号 [#{num}]（有效范围：1 到 {total}）。",
-  "faq.jump_btn": "转到{页}"
+  "faq.jump_btn": "转到{页}",
+  "db_backup.config.title": "备份配置",
+  "db_backup.config.location": "备份位置",
+  "db_backup.config.frequency": "频率 (天)",
+  "db_backup.config.frequency_hint": "自动备份运行的频率",
+  "db_backup.config.retention": "保留 (天)",
+  "db_backup.config.retention_hint": "保留自动备份的天数",
+  "db_backup.config.time": "备份时间",
+  "db_backup.config.save": "保存配置"
 }

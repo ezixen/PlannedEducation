@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Saltato a [#{num}] {key} su questa pagina!",
   "faq.jump_nav": "Trovato [#{num}] {key}: \"{text}\". Questo elemento si trova nella pagina {page}.",
   "faq.jump_not_found": "Il numero di traduzione [#{num}] non è stato trovato nell'indice della piattaforma (intervallo valido: da 1 a {totale}).",
-  "faq.jump_btn": "Vai a {pagina}"
+  "faq.jump_btn": "Vai a {pagina}",
+  "db_backup.config.title": "Configurazione backup",
+  "db_backup.config.location": "Percorso backup",
+  "db_backup.config.frequency": "Frequenza (giorni)",
+  "db_backup.config.frequency_hint": "Con quale frequenza vengono eseguiti i backup automatici",
+  "db_backup.config.retention": "Conservazione (giorni)",
+  "db_backup.config.retention_hint": "Giorni per conservare i backup automatici",
+  "db_backup.config.time": "Orario backup",
+  "db_backup.config.save": "Salva configurazione"
 }

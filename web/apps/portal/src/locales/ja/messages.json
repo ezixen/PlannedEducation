@@ -1339,5 +1339,13 @@
   "faq.jump_success": "このページの [#{num}] {key} にジャンプしました!",
   "faq.jump_nav": "[#{num}] {key} が見つかりました: \"{text}\"。この要素は {page} ページにあります。",
   "faq.jump_not_found": "翻訳番号 [#{num}] がプラットフォーム インデックスに見つかりませんでした (有効範囲: 1 ～ {total})。",
-  "faq.jump_btn": "{ページ}に移動"
+  "faq.jump_btn": "{ページ}に移動",
+  "db_backup.config.title": "バックアップ設定",
+  "db_backup.config.location": "バックアップ場所",
+  "db_backup.config.frequency": "頻度 (日)",
+  "db_backup.config.frequency_hint": "自動バックアップが実行される頻度",
+  "db_backup.config.retention": "保持期間 (日)",
+  "db_backup.config.retention_hint": "自動バックアップを保持する日数",
+  "db_backup.config.time": "バックアップ時間",
+  "db_backup.config.save": "設定を保存"
 }

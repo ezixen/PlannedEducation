@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Прескочи до [#{num}] {key} на тази страница!",
   "faq.jump_nav": "Намерен [#{num}] {key}: \"{text}\". Този елемент се намира на страницата {page}.",
   "faq.jump_not_found": "Номерът на превода [#{num}] не беше намерен в индекса на платформата (валиден диапазон: 1 до {total}).",
-  "faq.jump_btn": "Отидете на {страница}"
+  "faq.jump_btn": "Отидете на {страница}",
+  "db_backup.config.title": "Конфигурация на резервно копиране",
+  "db_backup.config.location": "Местоположение на архива",
+  "db_backup.config.frequency": "Честота (дни)",
+  "db_backup.config.frequency_hint": "Как често се извършва автоматичното архивиране",
+  "db_backup.config.retention": "Запазване (дни)",
+  "db_backup.config.retention_hint": "Дни за запазване на автоматичните архиви",
+  "db_backup.config.time": "Время на архивиране",
+  "db_backup.config.save": "Запази конфигурацията"
 }

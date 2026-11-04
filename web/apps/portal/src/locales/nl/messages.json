@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Naar [#{num}] {key} op deze pagina gesprongen!",
   "faq.jump_nav": "Gevonden [#{num}] {key}: \"{text}\". Dit element bevindt zich op de pagina {page}.",
   "faq.jump_not_found": "Vertaalnummer [#{num}] is niet gevonden in de platformindex (geldig bereik: 1 tot {total}).",
-  "faq.jump_btn": "Ga naar {pagina}"
+  "faq.jump_btn": "Ga naar {pagina}",
+  "db_backup.config.title": "Back-up configuratie",
+  "db_backup.config.location": "Back-up locatie",
+  "db_backup.config.frequency": "Frequentie (dagen)",
+  "db_backup.config.frequency_hint": "Hoe vaak automatische back-ups worden uitgevoerd",
+  "db_backup.config.retention": "Bewaring (dagen)",
+  "db_backup.config.retention_hint": "Dagen om automatische back-ups te bewaren",
+  "db_backup.config.time": "Back-up tijd",
+  "db_backup.config.save": "Configuratie opslaan"
 }

@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Sprang til [#{num}] {key} på denne side!",
   "faq.jump_nav": "Fundet [#{num}] {key}: \"{tekst}\". Dette element er placeret på siden {page}.",
   "faq.jump_not_found": "Oversættelsesnummeret [#{num}] blev ikke fundet i platformindekset (gyldigt interval: 1 til {total}).",
-  "faq.jump_btn": "Gå til {side}"
+  "faq.jump_btn": "Gå til {side}",
+  "db_backup.config.title": "Sikkerhedskopieringskonfiguration",
+  "db_backup.config.location": "Sikkerhedskopieringsplacering",
+  "db_backup.config.frequency": "Frekvens (dage)",
+  "db_backup.config.frequency_hint": "Hvor ofte automatiske sikkerhedskopier kører",
+  "db_backup.config.retention": "Opbevaring (dage)",
+  "db_backup.config.retention_hint": "Dage at gemme automatiske sikkerhedskopier",
+  "db_backup.config.time": "Sikkerhedskopieringstid",
+  "db_backup.config.save": "Gem konfiguration"
 }

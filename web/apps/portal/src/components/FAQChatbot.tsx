@@ -383,7 +383,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 27,
         question: "How do I install PlannedEducation on Windows?",
         keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup", "autoconfirm"],
-        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. For fully automated installation with no prompts, use `-AutoConfirm`: `.\install.ps1 -AutoConfirm`. This generates a random superadmin password and saves it to your clipboard. See docs/admin/INSTALL_WINDOWS.md."
+        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; ../install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. For fully automated installation with no prompts, use `-AutoConfirm`: `../install.ps1 -AutoConfirm`. This generates a random superadmin password and saves it to your clipboard. See docs/admin/INSTALL_WINDOWS.md."
       },
       {
         id: 28,

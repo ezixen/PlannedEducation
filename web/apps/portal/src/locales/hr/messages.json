@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Skočio na [#{num}] {key} na ovoj stranici!",
   "faq.jump_nav": "Pronađen [#{num}] {ključ}: \"{tekst}\". Ovaj se element nalazi na stranici {page}.",
   "faq.jump_not_found": "Broj prijevoda [#{num}] nije pronađen u indeksu platforme (važeći raspon: 1 do {total}).",
-  "faq.jump_btn": "Idi na {page}"
+  "faq.jump_btn": "Idi na {page}",
+  "db_backup.config.title": "Konfiguracija sigurnosne kopije",
+  "db_backup.config.location": "Lokacija sigurnosne kopije",
+  "db_backup.config.frequency": "Čestota (dani)",
+  "db_backup.config.frequency_hint": "Koliko često se pokreće automatsko sigurnosno kopiranje",
+  "db_backup.config.retention": "Pohrana (dani)",
+  "db_backup.config.retention_hint": "Dani za pohranu automatskih sigurnosnih kopija",
+  "db_backup.config.time": "Vrijeme sigurnosnog kopiranja",
+  "db_backup.config.save": "Spremi konfiguraciju"
 }

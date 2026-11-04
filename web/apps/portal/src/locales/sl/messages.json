@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Skoči na [#{num}] {key} na tej strani!",
   "faq.jump_nav": "Najdeno [#{num}] {key}: \"{text}\". Ta element se nahaja na strani {page}.",
   "faq.jump_not_found": "Številka prevoda [#{num}] ni bila najdena v indeksu platforme (veljaven obseg: 1 do {total}).",
-  "faq.jump_btn": "Pojdi na {page}"
+  "faq.jump_btn": "Pojdi na {page}",
+  "db_backup.config.title": "Konfiguracija varnostne kopije",
+  "db_backup.config.location": "Lokacija varnostne kopije",
+  "db_backup.config.frequency": "Pogostost (dni)",
+  "db_backup.config.frequency_hint": "Kako pogosto se izvajajo avtomske varnostne kopije",
+  "db_backup.config.retention": "Ohranjanje (dni)",
+  "db_backup.config.retention_hint": "Dni za ohranjanje avtomatskih varnostnih kopij",
+  "db_backup.config.time": "Čas varnostnega kopiranja",
+  "db_backup.config.save": "Shrani konfiguracijo"
 }
