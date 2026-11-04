@@ -42,7 +42,7 @@ from . import (
 )
 from .database import Base, engine
 from .limiter import RateLimitExceeded, _rate_limit_exceeded_handler, limiter
-from .version import __version__
+from ..version import __version__
 
 
 # ── Logging Configuration ────────────────────────────────────────────────────
