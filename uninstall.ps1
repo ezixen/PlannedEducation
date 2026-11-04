@@ -329,7 +329,25 @@ try {
     }
 
     if (Test-Path $InstallDir) {
-        cmd.exe /c "rmdir /s /q `"$InstallDir`"" 2>$null
+        if ($manifestExists) {
+            # Manifest-based removal: remove only empty subdirectories, preserve user-added files
+            $dirs = Get-ChildItem -Path $InstallDir -Recurse -Directory -Force -ErrorAction SilentlyContinue | Sort-Object -Property FullName -Descending
+            foreach ($d in $dirs) {
+                try {
+                    $childItems = Get-ChildItem -Path $d.FullName -Force -ErrorAction SilentlyContinue
+                    if (-not $childItems) {
+                        Remove-Item -Path $d.FullName -Force -ErrorAction SilentlyContinue
+                    }
+                } catch {}
+            }
+            # Remove empty root dir if it's truly empty (should not happen with user files)
+            $rootItems = Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue
+            if (-not $rootItems) {
+                Remove-Item -Path $InstallDir -Force -ErrorAction SilentlyContinue
+            }
+        } else {
+            cmd.exe /c "rmdir /s /q `"$InstallDir`"" 2>$null
+        }
     }
     if (Test-Path $InstallDir) {
         $remaining = @(Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue)
