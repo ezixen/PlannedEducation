@@ -213,13 +213,13 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         answer: "Go to Settings > Personal Details. Enter your current password, then type your new password twice and click 'Save Changes'. The server verifies your current password before accepting the change."
       },
       {
-        id: 35,
+        id: 49,
         question: "How do I customize my school's header?",
         keywords: ["header", "logo", "branding", "school", "name", "image", "customize"],
         answer: "Admins and superadmins can customize the platform header via Admin Dashboard → School Settings → Header. Choose from three modes: 'text' (shows school name), 'image' (shows a custom header image URL), or 'none' (no header). This makes the platform feel like your own school's system."
       },
       {
-        id: 36,
+        id: 50,
         question: "What is the difference between admin and superadmin?",
         keywords: ["superadmin", "admin", "difference", "roles", "create", "user"],
         answer: "Admins can create users (teachers, students, parents, other admins), manage exams, reset teacher passwords, and configure deployment. Superadmins have all admin capabilities PLUS the ability to create other superadmins. Superadmin creation is restricted to existing superadmins only."
@@ -288,7 +288,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         answer: "Prompt injection detection (20+ patterns), hallucination detection via consistency checking, output schema validation, confidence threshold (min 0.75), rate limiting (20/min, 200/hour), cost tracking ($5/day budget), provider health monitoring with automatic fallback."
       },
       {
-        id: 37,
+        id: 51,
         question: "Is AI cost tracking accurate?",
         answer: "⚠️ IMPORTANT: AI cost tracking is OPTIONAL and provides ROUGH ESTIMATES ONLY. AI provider pricing changes frequently (per-token costs, model pricing, regional differences, enterprise discounts, cached tokens, batch pricing). We CANNOT and SHALL NOT track ever-changing AI costs per supplier accurately. Limitations: estimates based on static pricing tables that may be outdated; only tracks token counts from API responses; does NOT account for cached tokens, batch discounts, enterprise pricing, regional pricing, model version changes. Should NOT be relied upon for billing, budgeting, or financial decisions. Teachers MUST monitor their own AI provider dashboards for actual costs. Treat as a rough guardrail only; disable if not needed."
       }
@@ -380,13 +380,11 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
     category: "Installation & Deployment",
     questions: [
       {
-      {
         id: 27,
         question: "How do I install PlannedEducation on Windows?",
         keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup", "autoconfirm"],
         answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. For fully automated installation with no prompts, use `-AutoConfirm`: `.\install.ps1 -AutoConfirm`. This generates a random superadmin password and saves it to your clipboard. See docs/admin/INSTALL_WINDOWS.md."
       },
-      {
       {
         id: 28,
         question: "How do I install PlannedEducation on Linux?",
@@ -430,18 +428,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         answer: "The backup-restore-drill is for users' self-hosted deployed instances only - it tests that your production PostgreSQL database can be backed up and restored. It is NOT part of this development repository's CI/CD. The workflow template is at scripts/backup_restore_drill_deployed.yml and should be copied to your deployed instance's .github/workflows/ directory."
       },
 
-      {
-      {
-      {
-      
-    ]
-  }
-];
-
-const NUMBER_TO_KEY: Record<number, string> = Object.fromEntries(
-  Object.entries(KEY_NUMBERS).map(([k, v]) => [v, k])
-);
-const TOTAL_KEYS = Object.keys(KEY_NUMBERS).length;
+    ];
 
 const GOOGLE_TRANSLATE_LANG: Record<string, string> = {
   ar: 'ar', bg: 'bg', cn: 'zh-CN', cs: 'cs', da: 'da', de: 'de',
