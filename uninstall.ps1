@@ -249,6 +249,28 @@ if (-not (Confirm-Action "Do you want to proceed with removing PlannedEducation 
 # Step 5: Remove the platform
 Write-Header "Step 5: Removing PlannedEducation Platform"
 
+$installManifestPath = Join-Path $InstallDir "logs\\install_manifest.txt"
+$manifestExists = Test-Path $installManifestPath
+
+if (-not $manifestExists) {
+    Write-Warning ""
+    Write-Warning "=============================================================="
+    Write-Warning "  INSTALL MANIFEST NOT FOUND"
+    Write-Warning "=============================================================="
+    Write-Warning "  The install manifest (logs/install_manifest.txt) is missing."
+    Write-Warning "  This means uninstall cannot determine which files were"
+    Write-Warning "  installed by the installer vs. added by you afterward."
+    Write-Warning ""
+    Write-Warning "  If you proceed, ALL files in $InstallDir will be deleted,"
+    Write-Warning "  including any files you added after installation."
+    Write-Warning "=============================================================="
+    Write-Host ""
+    if (-not (Confirm-Action "Are you ABSOLUTELY sure you want to delete ALL files in $InstallDir?")) {
+        Write-Info "Uninstall cancelled by user"
+        exit 0
+    }
+}
+
 try {
     # Run stop_all.ps1 if present to release any bound ports
     $stopScript = Join-Path $InstallDir "stop_all.ps1"
@@ -273,11 +295,39 @@ try {
         } catch {}
     }
 
-    # Remove all contents inside the directory first, then the directory itself
-    Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue | ForEach-Object {
-        Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction SilentlyContinue
+    if ($manifestExists) {
+        # Targeted removal: only remove files listed in the install manifest
+        Write-Info "Using install manifest for targeted removal..."
+        $manifestContent = Get-Content -Path $installManifestPath -ErrorAction SilentlyContinue
+        $removedCount = 0
+        foreach ($filePath in $manifestContent) {
+            $filePath = $filePath.Trim()
+            if ($filePath -and (Test-Path $filePath)) {
+                try {
+                    Remove-Item -Path $filePath -Force -ErrorAction Stop
+                    $removedCount++
+                } catch {
+                    # File may be locked; try cmd fallback
+                    cmd.exe /c "del /f /q `"$filePath`"" 2>$null
+                }
+            }
+        }
+        # Remove the manifest itself
+        if (Test-Path $installManifestPath) {
+            Remove-Item -Path $installManifestPath -Force -ErrorAction SilentlyContinue
+        }
+        Write-Success "Removed $removedCount installed files via manifest"
+        Write-Info "Any files you added to $InstallDir after installation have been preserved"
+    } else {
+        # Full removal: remove everything (no manifest to guide us)
+        Write-Warning "No manifest found - removing ALL files in $InstallDir"
+        # Remove all contents inside the directory first, then the directory itself
+        Get-ChildItem -Path $InstallDir -Force -ErrorAction SilentlyContinue | ForEach-Object {
+            Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction SilentlyContinue
+        }
+        Remove-Item -Path $InstallDir -Recurse -Force -ErrorAction SilentlyContinue
     }
-    Remove-Item -Path $InstallDir -Recurse -Force -ErrorAction SilentlyContinue
+
     if (Test-Path $InstallDir) {
         cmd.exe /c "rmdir /s /q `"$InstallDir`"" 2>$null
     }
@@ -287,10 +337,19 @@ try {
             # Current PowerShell host was launched from inside $InstallDir and holds the empty folder handle until exit
             Start-Process -FilePath "cmd.exe" -ArgumentList "/c ping 127.0.0.1 -n 2 >nul & rmdir /s /q `"$InstallDir`"" -WorkingDirectory $env:TEMP -WindowStyle Hidden
         } else {
-            throw "Directory still contains $($remaining.Count) locked item(s) after removal attempt: $InstallDir"
+            $remainingCount = $remaining.Count
+            if ($manifestExists) {
+                Write-Warning "Directory still contains $remainingCount item(s) (likely user-added files that were preserved): $InstallDir"
+            } else {
+                throw "Directory still contains $remainingCount locked item(s) after removal attempt: $InstallDir"
+            }
         }
     }
-    Write-Success "Successfully removed: $InstallDir"
+    if ($manifestExists) {
+        Write-Success "Uninstall complete (manifest-based removal - user-added files preserved)"
+    } else {
+        Write-Success "Successfully removed: $InstallDir"
+    }
 } catch {
     Write-Error "Failed to remove ${InstallDir}: $_"
     Write-Info "You may need to close applications using files in this directory and try again"

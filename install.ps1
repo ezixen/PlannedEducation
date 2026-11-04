@@ -1215,8 +1215,20 @@ print('HEALTH_OK')
     } | Out-Null
 }
 
+# Step 9b: Generate Install Manifest (for safe uninstall)
+    Write-Header "Step 9b: Generating Install Manifest"
+    $installManifestPath = Join-Path $script:LogDir "install_manifest.txt"
+    try {
+        # Record every file currently in the installation directory so uninstall knows exactly what to remove
+        $installedFiles = Get-ChildItem -Path $InstallDir -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object { $_.FullName }
+        $installedFiles | Set-Content -Path $installManifestPath -Encoding UTF8
+        Write-Success "Install manifest written to: $installManifestPath ($($installedFiles.Count) files tracked)"
+    } catch {
+        Write-Warning "Could not generate install manifest: $_"
+        Write-Info "Uninstall will fall back to removing the entire directory."
+    }
+
 # Step 10: Final Summary
-Write-Header "Step 10: Installation Complete!"
 
 Write-Host "Verification Results: $testsPassed passed, $testsFailed failed" -ForegroundColor $GREEN
 Write-Host ""
