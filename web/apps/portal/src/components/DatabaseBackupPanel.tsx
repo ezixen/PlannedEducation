@@ -12,12 +12,21 @@ interface BackupItem {
   is_auto: boolean;
 }
 
+interface BackupConfig {
+  backup_location: string;
+  backup_frequency_days: number;
+  backup_retention_days: number;
+  backup_time: string;
+}
+
 export function DatabaseBackupPanel() {
   const { success: showSuccess, error: showError } = useToast();
   const { t } = useI18n();
   const [backups, setBackups] = useState<BackupItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [creating, setCreating] = useState(false);
+  const [backupConfig, setBackupConfig] = useState<BackupConfig | null>(null);
+  const [configLoading, setConfigLoading] = useState(false);
 
   const fetchBackups = async () => {
     setLoading(true);
@@ -33,6 +42,7 @@ export function DatabaseBackupPanel() {
 
   useEffect(() => {
     fetchBackups();
+    fetchBackupConfig();
   }, []);
 
   const handleCreateBackup = async () => {
@@ -80,6 +90,31 @@ export function DatabaseBackupPanel() {
       setBackups(prev => prev.filter(b => b.filename !== filename));
     } catch (err: any) {
       showError('Failed to delete backup', err.response?.data?.detail || err.message);
+    }
+  };
+
+  const fetchBackupConfig = async () => {
+    setConfigLoading(true);
+    try {
+      const res = await apiClient.get<BackupConfig>('/admin/backup/config');
+      setBackupConfig(res.data);
+    } catch (err: any) {
+      showError('Failed to load backup configuration', err.response?.data?.detail || err.message);
+    } finally {
+      setConfigLoading(false);
+    }
+  };
+
+  const handleUpdateConfig = async () => {
+    if (!backupConfig) return;
+    setConfigLoading(true);
+    try {
+      await apiClient.put('/admin/backup/config', backupConfig);
+      showSuccess('Backup configuration saved');
+    } catch (err: any) {
+      showError('Failed to save backup configuration', err.response?.data?.detail || err.message);
+    } finally {
+      setConfigLoading(false);
     }
   };
 
@@ -168,6 +203,141 @@ export function DatabaseBackupPanel() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Backup Configuration Panel */}
+      <div
+        style={{
+          padding: '1.5rem',
+          backgroundColor: 'var(--sidebar-bg)',
+          borderRadius: 'var(--radius-lg)',
+          border: '1px solid var(--border-color)',
+        }}
+      >
+        <div style={{ marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <ShieldCheck size={20} style={{ color: 'var(--primary-color)' }} />
+            <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
+              {t('db_backup.config.title')}
+            </h3>
+          </div>
+        </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleUpdateConfig();
+          }}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+              {t('db_backup.config.location')}
+            </label>
+            <input
+              type="text"
+              value={backupConfig?.backup_location ?? ''}
+              onChange={(e) => setBackupConfig({ ...backupConfig!, backup_location: e.target.value })}
+              disabled={!backupConfig || configLoading}
+              style={{
+                padding: '0.5rem',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--bg-color)',
+                color: 'var(--text-color)',
+              }}
+            />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+              {t('db_backup.config.frequency')}
+            </label>
+            <input
+              type="number"
+              min="1"
+              max="365"
+              value={backupConfig?.backup_frequency_days ?? ''}
+              onChange={(e) => setBackupConfig({ ...backupConfig!, backup_frequency_days: parseInt(e.target.value) || 1 })}
+              disabled={!backupConfig || configLoading}
+              style={{
+                padding: '0.5rem',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--bg-color)',
+                color: 'var(--text-color)',
+              }}
+            />
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('db_backup.config.frequency_hint')}</span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+              {t('db_backup.config.retention')}
+            </label>
+            <input
+              type="number"
+              min="1"
+              max="3650"
+              value={backupConfig?.backup_retention_days ?? ''}
+              onChange={(e) => setBackupConfig({ ...backupConfig!, backup_retention_days: parseInt(e.target.value) || 30 })}
+              disabled={!backupConfig || configLoading}
+              style={{
+                padding: '0.5rem',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--bg-color)',
+                color: 'var(--text-color)',
+              }}
+            />
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{t('db_backup.config.retention_hint')}</span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <label style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>
+              {t('db_backup.config.time')}
+            </label>
+            <input
+              type="time"
+              value={backupConfig?.backup_time ?? ''}
+              onChange={(e) => setBackupConfig({ ...backupConfig!, backup_time: e.target.value })}
+              disabled={!backupConfig || configLoading}
+              style={{
+                padding: '0.5rem',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--bg-color)',
+                color: 'var(--text-color)',
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              gridColumn: '1 / -1',
+              display: 'flex',
+              justifyContent: 'flex-end',
+              marginTop: '0.5rem',
+            }}
+          >
+            <button
+              type="submit"
+              disabled={configLoading || !backupConfig}
+              style={{
+                backgroundColor: 'var(--primary-color)',
+                color: 'white',
+                border: 'none',
+                padding: '0.6rem 1.2rem',
+                borderRadius: 'var(--radius-md)',
+                fontWeight: 600,
+                cursor: configLoading || !backupConfig ? 'not-allowed' : 'pointer',
+                opacity: configLoading || !backupConfig ? 0.6 : 1,
+              }}
+            >
+              {configLoading ? t('common.saving') : t('db_backup.config.save')}
+            </button>
+          </div>
+        </form>
       </div>
 
       {/* Main Table Card */}

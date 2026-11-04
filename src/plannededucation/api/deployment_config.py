@@ -40,6 +40,12 @@ class DeploymentConfigSchema(BaseModel):
     smtp_use_ssl: bool = Field(default=False)
     email_from: str = Field(default="PlannedEducation <noreply@localhost>", max_length=128)
 
+    # Database Backup Configuration
+    backup_location: str = Field(default="backups", max_length=512, description="Directory for database backups")
+    backup_frequency_days: int = Field(default=1, ge=1, le=365, description="Automatic backup frequency in days (default: 1 day)")
+    backup_retention_days: int = Field(default=30, ge=1, le=3650, description="Retention period for automatic backups in days (default: 30 days)")
+    backup_time: str = Field(default="22:00", pattern=r"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", description="Time of day for automatic backups in 24h format (default: 22:00)")
+
 
 class DeploymentConfigResponse(BaseModel):
     school_name: str
@@ -62,6 +68,10 @@ class DeploymentConfigResponse(BaseModel):
     config_file_path: str
     last_modified: str | None = None
     restart_required: bool = False
+    backup_location: str = "backups"
+    backup_frequency_days: int = 1
+    backup_retention_days: int = 30
+    backup_time: str = "22:00"
 
 
 def find_project_root() -> Path:
@@ -189,6 +199,11 @@ def load_deployment_config() -> dict[str, Any]:
         "smtp_use_tls": os.getenv("SMTP_USE_TLS", env_vars.get("SMTP_USE_TLS", "true")).lower() in ("true", "1", "yes"),
         "smtp_use_ssl": os.getenv("SMTP_USE_SSL", env_vars.get("SMTP_USE_SSL", "false")).lower() in ("true", "1", "yes"),
         "email_from": os.getenv("EMAIL_FROM", env_vars.get("EMAIL_FROM", "PlannedEducation <noreply@localhost>")),
+        # Database Backup Configuration
+        "backup_location": os.getenv("BACKUP_LOCATION", env_vars.get("BACKUP_LOCATION", "backups")),
+        "backup_frequency_days": int(os.getenv("BACKUP_FREQUENCY_DAYS", env_vars.get("BACKUP_FREQUENCY_DAYS", "1"))),
+        "backup_retention_days": int(os.getenv("BACKUP_RETENTION_DAYS", env_vars.get("BACKUP_RETENTION_DAYS", "30"))),
+        "backup_time": os.getenv("BACKUP_TIME", env_vars.get("BACKUP_TIME", "22:00")),
     }
 
     # If deployment.json exists, overlay its values
@@ -260,6 +275,11 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
         "SMTP_USE_TLS": "true" if new_config.smtp_use_tls else "false",
         "SMTP_USE_SSL": "true" if new_config.smtp_use_ssl else "false",
         "EMAIL_FROM": new_config.email_from,
+        # Database Backup Configuration
+        "BACKUP_LOCATION": new_config.backup_location,
+        "BACKUP_FREQUENCY_DAYS": str(new_config.backup_frequency_days),
+        "BACKUP_RETENTION_DAYS": str(new_config.backup_retention_days),
+        "BACKUP_TIME": new_config.backup_time,
     }
     update_env_file(env_path, env_updates)
 

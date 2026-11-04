@@ -10,6 +10,7 @@ import string
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import FileResponse
+from pydantic import BaseModel, Field
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
@@ -649,3 +650,57 @@ def update_school_header(
     )
 
 
+# ── Database Backup Configuration ─────────────────────────────────────────────
+
+class BackupConfigUpdate(BaseModel):
+    """Backup configuration update request (admin/superadmin only)."""
+    backup_location: str | None = Field(default=None, max_length=512)
+    backup_frequency_days: int | None = Field(default=None, ge=1, le=365)
+    backup_retention_days: int | None = Field(default=None, ge=1, le=3650)
+    backup_time: str | None = Field(default=None, pattern=r"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$")
+
+
+@router.get("/backup/config")
+def get_backup_config(
+    current_user: models.User = Depends(require_admin),
+):
+    """Get current database backup configuration (admin/superadmin only)."""
+    config = load_deployment_config()
+    return {
+        "backup_location": config.get("backup_location", "backups"),
+        "backup_frequency_days": config.get("backup_frequency_days", 1),
+        "backup_retention_days": config.get("backup_retention_days", 30),
+        "backup_time": config.get("backup_time", "22:00"),
+    }
+
+
+@router.put("/backup/config")
+def update_backup_config(
+    payload: BackupConfigUpdate,
+    current_user: models.User = Depends(require_admin),
+):
+    """Update database backup configuration (admin/superadmin only)."""
+    config = load_deployment_config()
+
+    # Apply only provided fields
+    if payload.backup_location is not None:
+        config["backup_location"] = payload.backup_location
+    if payload.backup_frequency_days is not None:
+        config["backup_frequency_days"] = payload.backup_frequency_days
+    if payload.backup_retention_days is not None:
+        config["backup_retention_days"] = payload.backup_retention_days
+    if payload.backup_time is not None:
+        config["backup_time"] = payload.backup_time
+
+    # Save full config via deployment config
+    schema = DeploymentConfigSchema(**config)
+    save_deployment_config(schema)
+
+    return {
+        "status": "success",
+        "message": "Backup configuration saved",
+        "backup_location": config["backup_location"],
+        "backup_frequency_days": config["backup_frequency_days"],
+        "backup_retention_days": config["backup_retention_days"],
+        "backup_time": config["backup_time"],
+    }
