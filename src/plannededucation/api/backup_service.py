@@ -28,6 +28,12 @@ def get_backup_dir() -> Path:
     return bdir
 
 
+def _gzip_compress_file(src_path: Path, dst_path: Path, compress_level: int = 9) -> None:
+    """Compress a file with gzip at the given compression level (1-9)."""
+    with open(src_path, "rb") as f_in, gzip.open(dst_path, "wb", compresslevel=compress_level) as f_out:
+        f_out.write(f_in.read())
+
+
 def create_database_backup(is_auto: bool = False) -> dict:
     """
     Create a complete database backup snapshot.
@@ -47,23 +53,33 @@ def create_database_backup(is_auto: bool = False) -> dict:
             sqlite_path = sqlite_path[2:]
 
         src_path = Path(sqlite_path).resolve()
-        backup_filename = f"{prefix}_{timestamp}.db"
+        # SQLite backups are compressed with gzip for maximum space savings
+        backup_filename = f"{prefix}_{timestamp}.db.gz"
         dst_path = bdir / backup_filename
+        tmp_path = bdir / f"{prefix}_{timestamp}.tmp.db"
 
         if src_path.exists():
-            # Use atomic sqlite3 backup API
+            # Use atomic sqlite3 backup API to a temp file, then gzip compress
             src_conn = sqlite3.connect(str(src_path))
-            dst_conn = sqlite3.connect(str(dst_path))
+            tmp_conn = sqlite3.connect(str(tmp_path))
             try:
-                src_conn.backup(dst_conn)
+                src_conn.backup(tmp_conn)
             finally:
-                dst_conn.close()
+                tmp_conn.close()
                 src_conn.close()
+            # Compress the temp file with max gzip compression
+            _gzip_compress_file(tmp_path, dst_path, compress_level=9)
+            # Remove the temp uncompressed file
+            tmp_path.unlink(missing_ok=True)
         else:
-            # Memory or empty DB - create empty SQLite snapshot
-            dst_conn = sqlite3.connect(str(dst_path))
-            dst_conn.execute("VACUUM")
-            dst_conn.close()
+            # Memory or empty DB - create empty SQLite snapshot then compress
+            tmp_conn = sqlite3.connect(str(tmp_path))
+            try:
+                tmp_conn.execute("VACUUM")
+            finally:
+                tmp_conn.close()
+            _gzip_compress_file(tmp_path, dst_path, compress_level=9)
+            tmp_path.unlink(missing_ok=True)
 
         file_size = dst_path.stat().st_size
     else:
@@ -74,7 +90,7 @@ def create_database_backup(is_auto: bool = False) -> dict:
         pg_dump_cmd = shutil.which("pg_dump")
         if pg_dump_cmd:
             try:
-                # Run pg_dump and compress with gzip
+                # Run pg_dump and compress with gzip max level
                 dump_proc = subprocess.Popen(
                     [pg_dump_cmd, db_url, "-F", "p"],
                     stdout=subprocess.PIPE,
@@ -82,17 +98,17 @@ def create_database_backup(is_auto: bool = False) -> dict:
                 )
                 stdout, stderr = dump_proc.communicate()
                 if dump_proc.returncode == 0:
-                    with gzip.open(dst_path, "wb") as f_out:
+                    with gzip.open(dst_path, "wb", compresslevel=9) as f_out:
                         f_out.write(stdout)
                 else:
                     raise RuntimeError(f"pg_dump error: {stderr.decode('utf-8', errors='ignore')}")
             except Exception as e:
                 logger.warning(f"pg_dump execution failed: {e}. Writing metadata fallback.")
-                with gzip.open(dst_path, "wt", encoding="utf-8") as f_out:
+                with gzip.open(dst_path, "wt", encoding="utf-8", compresslevel=9) as f_out:
                     f_out.write(f"-- PlannedEducation Backup\n-- Database: {db_url}\n-- Timestamp: {timestamp}\n")
         else:
             # Fallback if pg_dump is not installed on system
-            with gzip.open(dst_path, "wt", encoding="utf-8") as f_out:
+            with gzip.open(dst_path, "wt", encoding="utf-8", compresslevel=9) as f_out:
                 f_out.write(f"-- PlannedEducation Backup (Native Dump)\n-- Source: {db_url}\n-- Timestamp: {timestamp}\n")
 
         file_size = dst_path.stat().st_size
