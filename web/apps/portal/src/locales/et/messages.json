@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Hüppas sellel lehel numbrile [#{num}] {key}!",
   "faq.jump_nav": "Leitud [#{num}] {key}: \"{text}\". See element asub lehel {page}.",
   "faq.jump_not_found": "Tõlkenumbrit [#{num}] ei leitud platvormi registrist (kehtiv vahemik: 1 kuni {total}).",
-  "faq.jump_btn": "Mine lehele {page}"
+  "faq.jump_btn": "Mine lehele {page}",
+  "db_backup.config.title": "Varunduskonfiguratsioon",
+  "db_backup.config.location": "Varukoopia asukoht",
+  "db_backup.config.frequency": "Sagedus (päevi)",
+  "db_backup.config.frequency_hint": "Kuidas sageli toimuvad automaatsed varundused",
+  "db_backup.config.retention": "Säilitamine (päevi)",
+  "db_backup.config.retention_hint": "Päevi automaatse varukoopia säilitamiseks",
+  "db_backup.config.time": "Varundusaeg",
+  "db_backup.config.save": "Salvesta konfiguratsioon"
 }

@@ -1339,5 +1339,13 @@
   "faq.jump_success": "ข้ามไปที่ [#{num}] {key} ในหน้านี้!",
   "faq.jump_nav": "พบ [#{num}] {key}: \"{text}\" องค์ประกอบนี้อยู่ในหน้า {page}",
   "faq.jump_not_found": "ไม่พบหมายเลขการแปล [#{num}] ในดัชนีแพลตฟอร์ม (ช่วงที่ถูกต้อง: 1 ถึง {total})",
-  "faq.jump_btn": "ไปที่ {หน้า}"
+  "faq.jump_btn": "ไปที่ {หน้า}",
+  "db_backup.config.title": "การตั้งค่าสำรองข้อมูล",
+  "db_backup.config.location": "ตำแหน่งสำรองข้อมูล",
+  "db_backup.config.frequency": "ความถี่ (วัน)",
+  "db_backup.config.frequency_hint": "การสำรองข้อมูลอัตโนมัติทำงานบ่อยแค่ไหน",
+  "db_backup.config.retention": "การเก็บรักษา (วัน)",
+  "db_backup.config.retention_hint": "จำนวนวันในการเก็บสำรองข้อมูลอัตโนมัติ",
+  "db_backup.config.time": "เวลาสำรองข้อมูล",
+  "db_backup.config.save": "บันทึกการตั้งค่า"
 }

@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Перешел на [#{num}] {key} на этой странице!",
   "faq.jump_nav": "Найдено [#{num}] {key}: \"{text}\". Этот элемент расположен на странице {page}.",
   "faq.jump_not_found": "Номер перевода [#{num}] не найден в индексе платформы (допустимый диапазон: от 1 до {total}).",
-  "faq.jump_btn": "Перейти на {страницу}"
+  "faq.jump_btn": "Перейти на {страницу}",
+  "db_backup.config.title": "Настройка резервных копий",
+  "db_backup.config.location": "Местоположение резервной копии",
+  "db_backup.config.frequency": "Частота (дней)",
+  "db_backup.config.frequency_hint": "Как часто выполняются автоматические резервные копии",
+  "db_backup.config.retention": "Хранение (дней)",
+  "db_backup.config.retention_hint": "Дней хранения автоматических резервных копий",
+  "db_backup.config.time": "Время резервного копирования",
+  "db_backup.config.save": "Сохранить конфигурацию"
 }

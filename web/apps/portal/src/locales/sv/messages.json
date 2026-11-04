@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Hoppade till [#{num}] {key} på den här sidan!",
   "faq.jump_nav": "Hittade [#{num}] {nyckel}: \"{text}\". Detta element finns på sidan {page}.",
   "faq.jump_not_found": "Översättningsnummer [#{num}] hittades inte i plattformsindexet (giltigt intervall: 1 till {total}).",
-  "faq.jump_btn": "Gå till {sida}"
+  "faq.jump_btn": "Gå till {sida}",
+  "db_backup.config.title": "Säkerhetskopieringskonfiguration",
+  "db_backup.config.location": "Säkerhetskopieringsplats",
+  "db_backup.config.frequency": "Frekvens (dagar)",
+  "db_backup.config.frequency_hint": "Hur ofta automatiska säkerhetskopior körs",
+  "db_backup.config.retention": "Kvarhållning (dagar)",
+  "db_backup.config.retention_hint": "Dagar att behålla automatiska säkerhetskopior",
+  "db_backup.config.time": "Säkerhetskopieringstid",
+  "db_backup.config.save": "Spara konfiguration"
 }

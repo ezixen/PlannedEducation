@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Bu sayfada [#{num}] {key}'e atlandı!",
   "faq.jump_nav": "Bulunan [#{num}] {anahtar}: \"{text}\". Bu öğe {page} sayfasında yer almaktadır.",
   "faq.jump_not_found": "Platform dizininde çeviri numarası [#{num}] bulunamadı (geçerli aralık: 1 - {total}).",
-  "faq.jump_btn": "{sayfa}'ya git"
+  "faq.jump_btn": "{sayfa}'ya git",
+  "db_backup.config.title": "Yedekleme Yapılandırması",
+  "db_backup.config.location": "Yedekleme Konumu",
+  "db_backup.config.frequency": "Sıklık (gün)",
+  "db_backup.config.frequency_hint": "Otomatik yedeklemelerin ne sıklıkta çalıştığı",
+  "db_backup.config.retention": "Saklama (gün)",
+  "db_backup.config.retention_hint": "Otomatik yedeklemelerin saklanacağı gün sayısı",
+  "db_backup.config.time": "Yedekleme Zamanı",
+  "db_backup.config.save": "Yapılandırmayı Kaydet"
 }

@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Pārlēca uz [#{num}] {key} šajā lapā!",
   "faq.jump_nav": "Atrasts [#{num}] {key}: \"{text}\". Šis elements atrodas lapā {page}.",
   "faq.jump_not_found": "Tulkojuma numurs [#{num}] netika atrasts platformas rādītājā (derīgs diapazons: no 1 līdz {total}).",
-  "faq.jump_btn": "Iet uz {page}"
+  "faq.jump_btn": "Iet uz {page}",
+  "db_backup.config.title": "Rezerves kopijas konfigurācija",
+  "db_backup.config.location": "Rezerves kopijas atrašanās vieta",
+  "db_backup.config.frequency": "Biežums (dienas)",
+  "db_backup.config.frequency_hint": "Cik bieži tiek veiktas automātās rezervēšanas kopijas",
+  "db_backup.config.retention": "Sagatavošana (dienas)",
+  "db_backup.config.retention_hint": "Dienas, cik ilgi saglabāt automatās rezervēšanas kopijas",
+  "db_backup.config.time": "Rezerves kopijas laiks",
+  "db_backup.config.save": "Saglabāt konfigurāciju"
 }

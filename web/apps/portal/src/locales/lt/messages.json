@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Peršoko į [#{num}] {key} šiame puslapyje!",
   "faq.jump_nav": "Rasta [#{num}] {key}: \"{text}\". Šis elementas yra {page} puslapyje.",
   "faq.jump_not_found": "Vertimo numeris [#{num}] nerastas platformos indekse (galiojantis diapazonas: nuo 1 iki {total}).",
-  "faq.jump_btn": "Eiti į {puslapį}"
+  "faq.jump_btn": "Eiti į {puslapį}",
+  "db_backup.config.title": "Apsarginimo kopijos nustatymai",
+  "db_backup.config.location": "Apsarginimo kopijos vieta",
+  "db_backup.config.frequency": "Dažumas (dienos)",
+  "db_backup.config.frequency_hint": "Kiek kartų vykdomi automatiniai archyvai",
+  "db_backup.config.retention": "Saugojimas (dienos)",
+  "db_backup.config.retention_hint": "Dienų automatiniai archyvai saugomi",
+  "db_backup.config.time": "Apsarginimo laikas",
+  "db_backup.config.save": "Išsaugoti nustatymus"
 }

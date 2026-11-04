@@ -1339,5 +1339,13 @@
   "faq.jump_success": "קפץ אל [#{num}] {key} בדף זה!",
   "faq.jump_nav": "נמצא [#{num}] {key}: \"{text}\". אלמנט זה ממוקם בדף {page}.",
   "faq.jump_not_found": "מספר התרגום [#{num}] לא נמצא באינדקס הפלטפורמה (טווח חוקי: 1 עד {total}).",
-  "faq.jump_btn": "עבור אל {page}"
+  "faq.jump_btn": "עבור אל {page}",
+  "db_backup.config.title": "הגדרות גיבוי",
+  "db_backup.config.location": "מיקום גיבוי",
+  "db_backup.config.frequency": "תדירות (ימים)",
+  "db_backup.config.frequency_hint": "באיזו תדירות מתבצעים גיבויים אוטומטיים",
+  "db_backup.config.retention": "שמירה (ימים)",
+  "db_backup.config.retention_hint": "ימים לשמירת גיבויים אוטומטיים",
+  "db_backup.config.time": "זמן גיבוי",
+  "db_backup.config.save": "שמירת הגדרות"
 }

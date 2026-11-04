@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Перейшов до [#{num}] {key} на цій сторінці!",
   "faq.jump_nav": "Знайдено [#{num}] {key}: \"{text}\". Цей елемент розташований на сторінці {page}.",
   "faq.jump_not_found": "Номер перекладу [#{num}] не знайдено в індексі платформи (дійсний діапазон: від 1 до {total}).",
-  "faq.jump_btn": "Перейти на {сторінку}"
+  "faq.jump_btn": "Перейти на {сторінку}",
+  "db_backup.config.title": "Налаштування резервного копіювання",
+  "db_backup.config.location": "Місцезнаходження резервної копії",
+  "db_backup.config.frequency": "Частота (днів)",
+  "db_backup.config.frequency_hint": "Як часто виконуються автоматичні резервні копії",
+  "db_backup.config.retention": "Збереження (днів)",
+  "db_backup.config.retention_hint": "Днів зберігання автоматичних резервних копій",
+  "db_backup.config.time": "Час резервного копіювання",
+  "db_backup.config.save": "Зберегти конфігурацію"
 }

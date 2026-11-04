@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Ugrás a [#{num}] {key} elemhez ezen az oldalon!",
   "faq.jump_nav": "[#{num}] {key} megtalálva: \"{text}\". Ez az elem a(z) {page} oldalon található.",
   "faq.jump_not_found": "A(z) [#{num}] fordítási szám nem található a platform indexében (érvényes tartomány: 1 - {total}).",
-  "faq.jump_btn": "Ugrás ide: {page}"
+  "faq.jump_btn": "Ugrás ide: {page}",
+  "db_backup.config.title": "Biztonsági mentési beállítások",
+  "db_backup.config.location": "Biztonsági mentés elérési útja",
+  "db_backup.config.frequency": "Gyakoriság (nap)",
+  "db_backup.config.frequency_hint": "Mekkorán futnak az automatikus biztonsági mentések",
+  "db_backup.config.retention": "Tartás (nap)",
+  "db_backup.config.retention_hint": "Napok az automatikus biztonsági mentések megőrzésére",
+  "db_backup.config.time": "Biztonsági mentési idő",
+  "db_backup.config.save": "Beállítások mentése"
 }

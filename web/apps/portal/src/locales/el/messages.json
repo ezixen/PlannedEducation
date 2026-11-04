@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Μεταπήδησε σε [#{num}] {key} σε αυτήν τη σελίδα!",
   "faq.jump_nav": "Βρέθηκε [#{num}] {key}: \"{text}\". Αυτό το στοιχείο βρίσκεται στη σελίδα {σελίδα}.",
   "faq.jump_not_found": "Ο αριθμός μετάφρασης [#{num}] δεν βρέθηκε στο ευρετήριο της πλατφόρμας (έγκυρο εύρος: 1 έως {total}).",
-  "faq.jump_btn": "Μετάβαση στη {σελίδα}"
+  "faq.jump_btn": "Μετάβαση στη {σελίδα}",
+  "db_backup.config.title": "Ρυθμίσεις αντίγραφων ασφαλείας",
+  "db_backup.config.location": "Τοποθεσία αντίγραφου",
+  "db_backup.config.frequency": "Συχνότητα (μέρες)",
+  "db_backup.config.frequency_hint": "Πόσο συχνά τρέχουν αυτόματα αντίγραφα",
+  "db_backup.config.retention": "Διατήρηση (μέρες)",
+  "db_backup.config.retention_hint": "Μέρες για να κρατήσετε αυτόματα αντίγραφα",
+  "db_backup.config.time": "Ώρα αντίγραφου",
+  "db_backup.config.save": "Αποθήκευση ρυθμίσεων"
 }

@@ -1339,5 +1339,13 @@
   "faq.jump_success": "انتقل إلى [#{num}] {key} في هذه الصفحة!",
   "faq.jump_nav": "تم العثور على [#{num}] {key}: \"{text}\". يقع هذا العنصر في صفحة {page}.",
   "faq.jump_not_found": "لم يتم العثور على رقم الترجمة [#{num}] في فهرس النظام الأساسي (النطاق الصالح: 1 إلى {total}).",
-  "faq.jump_btn": "انتقل إلى {الصفحة}"
+  "faq.jump_btn": "انتقل إلى {الصفحة}",
+  "db_backup.config.title": "إعدادات النسخ الاحتياطي",
+  "db_backup.config.location": "موقع النسخ الاحتياطي",
+  "db_backup.config.frequency": "التكرار (أيام)",
+  "db_backup.config.frequency_hint": "مدى تكرار النسخ الاحتياطي التلقائي",
+  "db_backup.config.retention": "الاحتفاظ (أيام)",
+  "db_backup.config.retention_hint": "أيام الاحتفاظ بالنسخ الاحتياطية التلقائية",
+  "db_backup.config.time": "وقت النسخ الاحتياطي",
+  "db_backup.config.save": "حفظ الإعدادات"
 }

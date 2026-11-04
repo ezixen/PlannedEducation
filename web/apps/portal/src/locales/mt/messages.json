@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Qabża għal [#{num}] {key} f'din il-paġna!",
   "faq.jump_nav": "Instab [#{num}] {key}: \"{test}\". Dan l-element jinsab fuq il-paġna {page}.",
   "faq.jump_not_found": "In-numru tat-traduzzjoni [#{num}] ma nstabx fl-indiċi tal-pjattaforma (firxa valida: 1 sa {total}).",
-  "faq.jump_btn": "Mur għal {paġna}"
+  "faq.jump_btn": "Mur għal {paġna}",
+  "db_backup.config.title": "Konfigurazzjoni tal-Kopji tas-Sigurtà",
+  "db_backup.config.location": "Post tal-Kopja tas-Sigurtà",
+  "db_backup.config.frequency": "Frequenza (jumiem)",
+  "db_backup.config.frequency_hint": "X’qad ma’ jirrun il-kopji ta’ sigurtà awtomatikament",
+  "db_backup.config.retention": "Ritenzjoni (jumiem)",
+  "db_backup.config.retention_hint": "Jumiem għal jibqiet il-kopji ta’ sigurtà awtomatikament",
+  "db_backup.config.time": "Il-Ħin tal-Kopja tas-Sigurtà",
+  "db_backup.config.save": "Save l-Konfigurazzjoni"
 }

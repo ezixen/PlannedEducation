@@ -1339,5 +1339,13 @@
   "faq.jump_success": "Léim go [#{num}] {key} ar an leathanach seo!",
   "faq.jump_nav": "Aimsíodh [#{num}] {eochair}: \"{text}\". Tá an eilimint seo suite ar an leathanach {leathanach}.",
   "faq.jump_not_found": "Níor aimsíodh uimhir aistriúcháin [#{num}] san innéacs ardáin (raon bailí: 1 go {total}).",
-  "faq.jump_btn": "Téigh go {leathanach}"
+  "faq.jump_btn": "Téigh go {leathanach}",
+  "db_backup.config.title": "Rialúchán Cóipeanta Sábhála",
+  "db_backup.config.location": "Suímh Cóip Sábhála",
+  "db_backup.config.frequency": "Gníomh (laethanta)",
+  "db_backup.config.frequency_hint": "Cén chomhchosca tarraingtí automata",
+  "db_backup.config.retention": "Cosaint (laethanta)",
+  "db_backup.config.retention_hint": "Laethanta chun cóipí sábhála a choinnt",
+  "db_backup.config.time": "Am Cóip Sábhála",
+  "db_backup.config.save": "Sábháil Rialúcháin"
 }
