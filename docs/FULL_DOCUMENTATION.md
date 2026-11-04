@@ -2334,9 +2334,18 @@ Configurable via API `PUT /admin/school/header` or through **Admin Dashboard →
 
 ### 0. Native Midnight Auto-Backup Scheduler (Built-In)
 PlannedEducation includes a native background backup scheduler (`backup_service.py`):
-- **Automated Schedule:** Runs daily at **00:00 UTC** while the server is active.
-- **Automated Retention:** Automatically prunes backup archives older than **30 days**.
-- **Admin Dashboard Control:** Administrators can create an instant snapshot anytime via **Admin Dashboard → 💾 Database Backups** and download archives directly from the browser.
+
+**Default Schedule:** Runs daily at **22:00** (10 PM) server local time.
+**Default Retention:** Automatically prunes backup archives older than **30 days**.
+**Admin Dashboard Control:** Administrators can configure backup settings via **Admin Dashboard → Database Backups > Configure**:
+- **Backup Location:** Custom directory path for backup files
+- **Backup Frequency:** How often automatic backups run (days, default: 1)
+- **Backup Retention:** Days to keep automatic backups (default: 30)
+- **Backup Time:** Time of day for automatic backups (24h format, default: 22:00)
+
+All backups use maximum gzip compression (level 9) and include date/time in the filename (e.g., `backup_auto_20261104_220000.db.gz`).
+
+**Admin Dashboard Control:** Administrators can create an instant snapshot anytime via **Admin Dashboard → 💾 Database Backups** and download archives directly from the browser.
 - **Engine Support:**
   - SQLite: Uses atomic `sqlite3.connect().backup()` to prevent table locks.
   - PostgreSQL: Uses `pg_dump` with gzip compression.

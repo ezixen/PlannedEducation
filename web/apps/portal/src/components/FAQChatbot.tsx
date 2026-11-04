@@ -380,16 +380,18 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
     category: "Installation & Deployment",
     questions: [
       {
+      {
         id: 27,
         question: "How do I install PlannedEducation on Windows?",
-        keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup"],
-        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. See docs/admin/INSTALL_WINDOWS.md."
+        keywords: ["windows", "install", "installer", "powershell", "install.ps1", "pc", "setup", "autoconfirm"],
+        answer: "To install on Windows: Open PowerShell as Administrator and run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`. You can choose Native Mode (runs directly on Python with zero-config SQLite or PostgreSQL, no Docker required) or Docker Compose Mode. For fully automated installation with no prompts, use `-AutoConfirm`: `.\install.ps1 -AutoConfirm`. This generates a random superadmin password and saves it to your clipboard. See docs/admin/INSTALL_WINDOWS.md."
       },
+      {
       {
         id: 28,
         question: "How do I install PlannedEducation on Linux?",
-        keywords: ["linux", "install", "ubuntu", "debian", "install.sh", "bash", "server"],
-        answer: "To install on Linux (Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL): Run `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash` or clone the repo and run `./install.sh`. It automatically creates a virtual environment, configures SQLite/PostgreSQL, and sets up a background Systemd service. See docs/admin/INSTALL_LINUX.md."
+        keywords: ["linux", "install", "ubuntu", "debian", "install.sh", "bash", "server", "autoconfirm"],
+        answer: "To install on Linux (Ubuntu 22.04/24.04, Debian 12, CentOS/RHEL): Run `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash` or clone the repo and run ./install.sh. It automatically creates a virtual environment, configures SQLite/PostgreSQL, and sets up a background Systemd service. For unattended install, use `AUTO_CONFIRM=true ./install.sh`. See docs/admin/INSTALL_LINUX.md."
       },
       {
         id: 29,
@@ -409,6 +411,29 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         keywords: ["wifi", "lan", "network", "connect", "ip", "school", "firewall", "students", "teachers"],
         answer: "1. Find your server's local IPv4 (e.g., 192.168.1.150). 2. Open port 8000 in your firewall (or port 80 if using Nginx). 3. In .env, set ALLOWED_HOSTS and CORS_ORIGINS to include the server IP. 4. Teachers and students connect by browsing to http://<SERVER_IP>:8000 in any browser or Safe Exam Browser (SEB)."
       }
+      {
+        id: 35,
+        question: "How do I configure backup location, frequency, retention, and time?",
+        keywords: ["backup", "config", "location", "frequency", "retention", "time", "schedule", "admin", "settings"],
+        answer: "Go to Admin Dashboard > Database Backups > Configure. You can set: backup location (folder path), backup frequency in days (default: 1 = daily), retention days (default: 30), and backup time in 24h format (default: 22:00). Backups are created as compressed .db.gz (SQLite) or .sql.gz (PostgreSQL) files with date/time in the filename. All backups use maximum gzip compression (level 9)."
+      },
+      {
+        id: 36,
+        question: "How does uninstall work - will it delete my files?",
+        keywords: ["uninstall", "remove", "delete", "manifest", "files", "preserve", "user", "added"],
+        answer: "The uninstaller uses an install manifest (logs/install_manifest.txt) created during installation. It removes only files that were installed by the installer. Any files you added to the installation folder after installation are preserved. If the manifest is missing, the uninstaller warns you and requires explicit confirmation before deleting everything."
+      },
+      {
+        id: 37,
+        question: "Is the backup-restore drill for development or deployed systems?",
+        keywords: ["backup", "restore", "drill", "deployed", "production", "postgres", "service"],
+        answer: "The backup-restore-drill is for users' self-hosted deployed instances only - it tests that your production PostgreSQL database can be backed up and restored. It is NOT part of this development repository's CI/CD. The workflow template is at scripts/backup_restore_drill_deployed.yml and should be copied to your deployed instance's .github/workflows/ directory."
+      },
+
+      {
+      {
+      {
+      
     ]
   }
 ];
