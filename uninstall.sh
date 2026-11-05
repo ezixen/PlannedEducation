@@ -245,17 +245,98 @@ fi
 # Step 5: Remove the platform
 write_header "Step 5: Removing PlannedEducation Platform"
 
-# Kill any processes using files in the directory
-fuser -k "$INSTALL_DIR" 2>/dev/null || true
-
-# Remove the directory
-if rm -rf "$INSTALL_DIR" 2>/dev/null || sudo -n rm -rf "$INSTALL_DIR" 2>/dev/null; then
-    write_success "Successfully removed: $INSTALL_DIR"
+INSTALL_MANIFEST="$INSTALL_DIR/logs/install_manifest.txt"
+MANIFEST_EXISTS=false
+if [[ -f "$INSTALL_MANIFEST" ]]; then
+    MANIFEST_EXISTS=true
+    write_info "Install manifest found at: $INSTALL_MANIFEST"
 else
-    write_error "Failed to remove $INSTALL_DIR"
-    write_info "You may need to close applications using files in this directory and try again"
-    exit 1
+    write_warning "Install manifest not found at: $INSTALL_MANIFEST"
+    write_warning "This means uninstall cannot determine which files were"
+    write_warning "installed by the installer vs. added by you afterward."
+    write_warning ""
+    write_warning "If you proceed, ALL files in $INSTALL_DIR will be deleted,"
+    write_warning "including any files you added after installation."
+    if [[ "$AUTO_CONFIRM" != "true" ]]; then
+        read -r -p "Are you ABSOLUTELY sure you want to delete ALL files in $INSTALL_DIR? (y/N): " confirm_all
+        [[ "$confirm_all" =~ ^[Yy]$ ]] || { write_info "Uninstall cancelled by user"; exit 0; }
+    fi
 fi
+
+# Run stop_all.sh if present to release any bound ports
+STOP_SCRIPT="$INSTALL_DIR/stop_all.sh"
+if [[ -f "$STOP_SCRIPT" ]]; then
+    write_info "Running stop_all.sh to release bound ports..."
+    bash "$STOP_SCRIPT" 2>/dev/null || true
+fi
+
+# Move working directory outside $INSTALL_DIR so the folder is not locked
+ORIG_DIR="$(pwd)"
+cd /tmp 2>/dev/null || cd ~ 2>/dev/null || true
+
+# Stop any remaining processes executing from inside the installation directory
+for pid_dir in /proc/[0-9]*; do
+    pid="${pid_dir#/proc/}"
+    [[ "$PROTECTED_PIDS" == *" $pid "* ]] && continue
+    comm=$(cat "$pid_dir/comm" 2>/dev/null || true)
+    case "$comm" in
+        python*|uvicorn*|node|npm*|vite*|esbuild) ;;
+        *) continue ;;
+    esac
+    exe_path=$(readlink -f "$pid_dir/exe" 2>/dev/null || true)
+    cmdline=$(tr '\0' ' ' < "$pid_dir/cmdline" 2>/dev/null || true)
+    if [[ ( -n "$exe_path" && "$exe_path" == "$INSTALL_DIR"* ) || "$cmdline" == *"$INSTALL_DIR"* ]]; then
+        kill -9 "$pid" 2>/dev/null || true
+    fi
+done
+
+if [[ "$MANIFEST_EXISTS" == "true" ]]; then
+    # Targeted removal: only remove files listed in the install manifest
+    write_info "Using install manifest for targeted removal..."
+    REMOVED_COUNT=0
+    while IFS= read -r file_path; do
+        file_path="${file_path#"${file_path%%[![:space:]]*}"}"  # trim leading whitespace
+        file_path="${file_path%"${file_path##*[![:space:]]}"}"  # trim trailing whitespace
+        if [[ -n "$file_path" && -f "$file_path" ]]; then
+            if rm -f "$file_path" 2>/dev/null; then
+                REMOVED_COUNT=$((REMOVED_COUNT + 1))
+            fi
+        fi
+    done < "$INSTALL_MANIFEST"
+    # Remove the manifest itself
+    rm -f "$INSTALL_MANIFEST" 2>/dev/null || true
+    write_success "Removed $REMOVED_COUNT installed files via manifest"
+    write_info "Any files you added to $INSTALL_DIR after installation have been preserved"
+else
+    # Full removal: remove everything (no manifest to guide us)
+    write_warning "No manifest found - removing ALL files in $INSTALL_DIR"
+    if rm -rf "$INSTALL_DIR" 2>/dev/null || sudo -n rm -rf "$INSTALL_DIR" 2>/dev/null; then
+        write_success "Successfully removed: $INSTALL_DIR"
+    else
+        write_error "Failed to remove $INSTALL_DIR"
+        write_info "You may need to close applications using files in this directory and try again"
+        cd "$ORIG_DIR" 2>/dev/null || true
+        exit 1
+    fi
+fi
+
+# Clean up empty subdirectories (manifest-based removal preserves user-added files)
+if [[ "$MANIFEST_EXISTS" == "true" && -d "$INSTALL_DIR" ]]; then
+    write_info "Cleaning up empty subdirectories..."
+    # Remove empty directories from deepest to shallowest
+    find "$INSTALL_DIR" -type d -empty -delete 2>/dev/null || true
+    # Check if root dir is now empty
+    if [[ -z "$(ls -A "$INSTALL_DIR" 2>/dev/null)" ]]; then
+        rmdir "$INSTALL_DIR" 2>/dev/null || true
+        write_success "Removed empty installation directory: $INSTALL_DIR"
+    else
+        REMAINING=$(find "$INSTALL_DIR" -mindepth 1 2>/dev/null | head -5)
+        write_info "Directory still contains preserved user-added files: $INSTALL_DIR"
+        echo "$REMAINING"
+    fi
+fi
+
+cd "$ORIG_DIR" 2>/dev/null || true
 
 # Step 6: Remove external dependencies (if requested)
 if [[ ${#DEPS_TO_REMOVE[@]} -gt 0 ]]; then

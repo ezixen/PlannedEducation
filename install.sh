@@ -903,6 +903,22 @@ if [[ "$USE_DOCKER" == "false" ]]; then
 fi
 
 # ==============================================================================
+# Step 9b: Generate Install Manifest (for safe uninstall)
+# ==============================================================================
+print_header "Step 9b: Generating Install Manifest"
+
+INSTALL_MANIFEST="$LOG_DIR/install_manifest.txt"
+if [[ -d "$INSTALL_DIR" ]]; then
+    print_info "Recording installed files for safe uninstall..."
+    find "$INSTALL_DIR" \( -type f -o -type l \) 2>/dev/null | sort > "$INSTALL_MANIFEST"
+    MANIFEST_COUNT=$(wc -l < "$INSTALL_MANIFEST" 2>/dev/null || echo 0)
+    print_success "Install manifest written to: $INSTALL_MANIFEST ($MANIFEST_COUNT files tracked)"
+else
+    print_warning "Could not generate install manifest - installation directory not found"
+    print_info "Uninstall will fall back to removing the entire directory."
+fi
+
+# ==============================================================================
 # Final Summary
 # ==============================================================================
 print_header "Installation Complete!"
