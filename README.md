@@ -3,7 +3,7 @@
 ![Planned Education Logo](docs/assets/branding/PElogo_128x128.jpg)
 
 <audio controls preload="none">
-  <source src="docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
+  <source src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
