@@ -42,6 +42,31 @@
             margin-bottom: 16px;
             border-radius: 12px;
         }
+        .play-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        .play-button:active {
+            transform: translateY(0);
+        }
+        .status-message {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #888;
+            min-height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -49,16 +74,85 @@
         <img src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/branding/PElogo_128x128.jpg" alt="Planned Education Logo" class="logo">
         <h1>Planned Education 🎓</h1>
         <p>Education, Empathy, Love</p>
-        <audio controls autoplay>
+        
+        <audio id="audioPlayer" controls preload="auto" style="display: none;">
             <source src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <p style="margin-top: 24px; font-size: 14px; color: #888;">
-            If audio doesn't start automatically, click the play button above.
-        </p>
+        
+        <button id="playButton" class="play-button" onclick="togglePlay()">
+            ▶ Play Audio
+        </button>
+        
         <p style="margin-top: 16px;">
             <a href="https://github.com/ezixen/PlannedEducation" style="color: #667eea; text-decoration: none;">← Back to PlannedEducation</a>
         </p>
     </div>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const playButton = document.getElementById('playButton');
+        const statusMessage = document.getElementById('statusMessage');
+        let isPlaying = false;
+
+        // Try autoplay with muted first (browsers allow muted autoplay)
+        function tryMutedAutoplay() {
+            audio.muted = true;
+            audio.play().then(() => {
+                // Muted autoplay worked, show unmute button
+                playButton.textContent = '🔇 Unmute';
+                isPlaying = true;
+                statusMessage.textContent = 'Playing (muted) - click to unmute';
+                playButton.onclick = toggleMute;
+            }).catch(() => {
+                // Autoplay blocked, show play button
+                playButton.textContent = '▶ Play Audio';
+                statusMessage.textContent = 'Click play to start the audio';
+                playButton.onclick = togglePlay;
+            });
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.muted = false;
+                audio.play().then(() => {
+                    isPlaying = true;
+                    playButton.textContent = '⏸ Pause';
+                    statusMessage.textContent = 'Playing...';
+                    playButton.onclick = togglePlay;
+                }).catch(e => {
+                    statusMessage.textContent = 'Could not play audio. Please try again.';
+                });
+            } else {
+                audio.pause();
+                isPlaying = false;
+                playButton.textContent = '▶ Play Audio';
+                statusMessage.textContent = 'Paused';
+                playButton.onclick = togglePlay;
+            }
+        }
+
+        function toggleMute() {
+            audio.muted = !audio.muted;
+            if (audio.muted) {
+                playButton.textContent = '🔇 Unmute';
+                statusMessage.textContent = 'Muted - click to unmute';
+            } else {
+                playButton.textContent = '🔊 Mute';
+                statusMessage.textContent = 'Playing with sound';
+            }
+        }
+
+        // Update button when audio ends
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            playButton.textContent = '▶ Play Again';
+            statusMessage.textContent = 'Audio ended - click to play again';
+            playButton.onclick = togglePlay;
+        });
+
+        // Try muted autoplay on load
+        window.addEventListener('load', tryMutedAutoplay);
+    </script>
 </body>
 </html>
