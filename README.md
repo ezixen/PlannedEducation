@@ -2,7 +2,7 @@
 
 ![Planned Education Logo](docs/assets/branding/PElogo_128x128.jpg)
 
-🔊 <a href="https://ezixen.github.io/PlannedEducation/" target="_blank" rel="noopener noreferrer">Listen to "Education, Empathy, Love" audio</a> (opens in new tab, plays in background)
+🔊 <a href="https://ezixen.github.io/PlannedEducation/" target="_blank" rel="noopener noreferrer">Listen to "Education, Empathy, Love" audio</a>
 
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
