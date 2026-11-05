@@ -2,8 +2,6 @@
 
 ![Planned Education Logo](docs/assets/branding/PElogo_128x128.jpg)
 
-[![Listen to Audio](https://img.shields.io/badge/🔊%20Listen%20to%20Audio-Education%2C%20Empathy%2C%20Love-667eea?style=for-the-badge&logo=github)](https://ezixen.github.io/PlannedEducation/)
-
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
 Planned Education exists for a simple reason: **teachers shouldn't have to spend their evenings and weekends buried in grading.** When educators are well-rested and supported, they can show up with more patience, creativity, and heart for the children who need them most. **Children are our future. Let's give them teachers who are rested, supported, and ready to inspire.** 🌱
@@ -244,5 +242,7 @@ If Planned Education gives even one teacher an extra hour with their family, or 
 
 ---
 
-*Built with ☕ and ❤️ for the future and equitable education.*
+*Built with ☕ and ❤️ for the future and equitable education. -ezixen*
+
+[![Listen to Audio](https://img.shields.io/badge/🔊%20Listen%20to%20Audio-Education%2C%20Empathy%2C%20Love-667eea?style=for-the-badge&logo=github)](https://ezixen.github.io/PlannedEducation/)
 
