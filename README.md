@@ -2,6 +2,11 @@
 
 ![Planned Education Logo](docs/assets/branding/PElogo_128x128.jpg)
 
+<audio controls preload="none">
+  <source src="docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 **A free, open-source teacher's aid, grading companion, and secure test-taking environment — built with care for teachers and students alike.**
 
 Planned Education exists for a simple reason: **teachers shouldn't have to spend their evenings and weekends buried in grading.** When educators are well-rested and supported, they can show up with more patience, creativity, and heart for the children who need them most. **Children are our future. Let's give them teachers who are rested, supported, and ready to inspire.** 🌱
