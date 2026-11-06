@@ -86,7 +86,7 @@ export function PasskeysSettings() {
             userVerification: options.authenticatorSelection.userVerification as UserVerificationRequirement,
           },
           extensions: {
-            ...(options.extensions || {}),
+            ...options.extensions,
             ...offlineMasterPrfExtension(),
           },
         },

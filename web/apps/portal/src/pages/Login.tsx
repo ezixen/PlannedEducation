@@ -96,7 +96,7 @@ export function Login() {
           })),
           userVerification: options.userVerification as UserVerificationRequirement,
           extensions: {
-            ...(options.extensions || {}),
+            ...options.extensions,
             ...offlineMasterPrfExtension(),
           },
         },
