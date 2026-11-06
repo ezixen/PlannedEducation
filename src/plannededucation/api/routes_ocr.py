@@ -8,7 +8,13 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, s
 from pydantic import BaseModel, Field
 
 from . import models
-from .ocr_service import OCRService, get_ocr_service
+from .ocr_service import (
+    HandwritingRecognitionResult,
+    HandwritingRecognitionService,
+    OCRService,
+    get_handwriting_service,
+    get_ocr_service,
+)
 from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/ocr", tags=["ocr"])
@@ -222,3 +228,94 @@ async def process_ocr_bulk_upload(
         })
 
     return {"results": results, "total": len(results)}
+
+
+# ── Handwriting Recognition Routes ───────────────────────────────────────────
+
+class HandwritingRecognizeRequest(BaseModel):
+    """Request model for handwriting recognition."""
+    image_base64: str = Field(..., description="Base64 encoded image data")
+    language: str = Field(default="en", description="Language code for recognition")
+    confidence_threshold: float = Field(default=0.3, description="Minimum confidence (0.0-1.0)")
+
+
+class HandwritingRecognizeResponse(BaseModel):
+    """Response model for handwriting recognition."""
+    text: str
+    confidence: float
+    language: str
+    words: list[dict] | None = None
+    error: str | None = None
+    is_handwritten: bool = True
+
+
+@router.post("/handwriting/recognize", response_model=HandwritingRecognizeResponse)
+async def recognize_handwriting(
+    request: HandwritingRecognizeRequest,
+    current_user: models.User = Depends(get_current_user),
+    hw_service: HandwritingRecognitionService = Depends(get_handwriting_service),
+):
+    """
+    Recognize handwritten text from an image using EasyOCR.
+    Returns per-word confidence scores for teacher review workflow.
+    """
+    result = hw_service.recognize_handwriting_from_base64(
+        request.image_base64,
+        language=request.language,
+        confidence_threshold=request.confidence_threshold,
+    )
+
+    return HandwritingRecognizeResponse(
+        text=result.text,
+        confidence=result.confidence,
+        language=result.language,
+        words=result.words,
+        error=result.error,
+        is_handwritten=result.is_handwritten,
+    )
+
+
+@router.post("/handwriting/recognize-upload", response_model=HandwritingRecognizeResponse)
+async def recognize_handwriting_upload(
+    file: UploadFile = File(...),
+    language: str = Form(default="en"),
+    confidence_threshold: float = Form(default=0.3),
+    current_user: models.User = Depends(get_current_user),
+    hw_service: HandwritingRecognitionService = Depends(get_handwriting_service),
+):
+    """
+    Recognize handwritten text from an uploaded image file using EasyOCR.
+    Accepts multipart/form-data with image file.
+    """
+    if not file.content_type or not file.content_type.startswith("image/"):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="File must be an image",
+        )
+
+    image_data = await file.read()
+    result = hw_service.recognize_handwriting(
+        image_data,
+        language=language,
+        confidence_threshold=confidence_threshold,
+    )
+
+    return HandwritingRecognizeResponse(
+        text=result.text,
+        confidence=result.confidence,
+        language=result.language,
+        words=result.words,
+        error=result.error,
+        is_handwritten=result.is_handwritten,
+    )
+
+
+@router.get("/handwriting/health")
+async def handwriting_health_check(
+    hw_service: HandwritingRecognitionService = Depends(get_handwriting_service),
+):
+    """Health check for handwriting recognition service."""
+    return {
+        "available": hw_service.is_available(),
+        "service": "easyocr" if hw_service.is_available() else "tesseract-fallback",
+    }

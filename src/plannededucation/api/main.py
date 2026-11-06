@@ -36,6 +36,7 @@ from . import (
     routes_exam,
     routes_notifications,
     routes_ocr,
+    routes_ocr_review,
     routes_packages,
     routes_parent,
     routes_proctoring,
@@ -406,6 +407,7 @@ app.include_router(routes_chat.router)
 app.include_router(routes_anonymizer.router)
 app.include_router(routes_parent.router)
 app.include_router(routes_ocr.router)
+app.include_router(routes_ocr_review.router)
 app.include_router(routes_stt.router)
 app.include_router(routes_proctoring.router)
 app.include_router(routes_packages.router)

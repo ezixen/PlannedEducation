@@ -757,3 +757,75 @@ class InAppNotification(Base):
     created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
 
     recipient = relationship("User", foreign_keys=[user_id])
+
+
+# ── OCR Review Models ────────────────────────────────────────────────────────
+# Tracks OCR/handwriting recognition review state for teacher verification
+# before text proceeds to anonymizer → AI grading pipeline.
+
+class OCRReviewStatus(enum.StrEnum):
+    pending = "pending"       # OCR done, awaiting teacher review
+    reviewing = "reviewing"   # Teacher is currently reviewing/correcting
+    approved = "approved"     # Teacher approved the OCR text
+    rejected = "rejected"     # Teacher rejected, needs re-scan
+    corrected = "corrected"   # Teacher corrected errors, ready for pipeline
+
+
+class OCRReview(Base):
+    """
+    Records OCR/handwriting recognition results awaiting teacher review.
+    Teacher can approve, correct, or reject before text proceeds to
+    anonymizer and AI grading pipeline.
+    """
+    __tablename__ = "ocr_reviews"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    submission_id = Column(
+        String(36), ForeignKey("exam_submissions.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    exam_id = Column(
+        String(36), ForeignKey("exams.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    student_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    teacher_id = Column(
+        String(36), ForeignKey("users.id", ondelete="SET NULL"),
+        index=True, nullable=True,
+    )
+
+    # Original OCR results
+    original_text = Column(Text, nullable=False)  # Raw OCR output
+    original_confidence = Column(Float, nullable=False)  # Overall confidence 0-1
+    is_handwritten = Column(Boolean, default=False, nullable=False)  # EasyOCR vs Tesseract
+    image_url = Column(String(512), nullable=True)  # Reference to original image
+
+    # Per-word confidence data (JSON) for teacher review UI
+    words_json = Column(Text, nullable=True)  # JSON array of {text, confidence, x, y, width, height}
+
+    # Teacher review state
+    status = Column(Enum(OCRReviewStatus), default=OCRReviewStatus.pending, nullable=False, index=True)
+    corrected_text = Column(Text, nullable=True)  # Teacher-corrected version
+    review_notes = Column(Text, nullable=True)  # Teacher notes about corrections
+    reviewed_at = Column(DateTime(timezone=True), nullable=True)
+
+    # Pipeline integration
+    anonymized = Column(Boolean, default=False, nullable=False)  # PII scrubbed
+    ai_graded = Column(Boolean, default=False, nullable=False)  # AI grading complete
+
+    # Timestamps
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Relationships
+    submission = relationship("ExamSubmission")
+    exam = relationship("Exam")
+    student = relationship("User", foreign_keys=[student_id])
+    teacher = relationship("User", foreign_keys=[teacher_id])
+
+    __table_args__ = (
+        UniqueConstraint("submission_id", name="uq_ocr_review_submission"),
+    )

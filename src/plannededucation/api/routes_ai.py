@@ -18,11 +18,12 @@ from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import database, models
+from . import database, models, schemas
 from .ai_providers import (
     get_teacher_ai_provider,
 )
 from .ocr_service import OCRService, get_ocr_service
+from .handwriting_service import get_handwriting_service, HandwritingRecognitionService
 from .routes_anonymizer import scrub_pii
 from .routes_auth import get_current_user
 
@@ -1175,6 +1176,26 @@ async def bulk_upload_exams_for_grading(
             ],
         }
 
+        # Step 5: Create OCR Review record for teacher verification
+        # Teacher must approve/correct OCR text before it proceeds to anonymizer → AI grading
+        ocr_review = models.OCRReview(
+            submission_id=submission.id,
+            exam_id=exam.id,
+            student_id=final_student_id,
+            teacher_id=current_user.id,
+            original_text=recognized_text,
+            original_confidence=confidence,
+            is_handwritten=True,
+            image_url=f"/ai/grade/image/{unique_file_name}",
+            words_json=json.dumps([]),  # EasyOCR word data could be stored here
+            status=models.OCRReviewStatus.pending,
+        )
+        db.add(ocr_review)
+        db.commit()
+
+        # Store OCR review ID in submission feedback for reference
+        staged_payload["ocr_review_id"] = ocr_review.id
+        staged_payload["ocr_status"] = "pending"
         submission.feedback = json.dumps(staged_payload)
 
         ans = models.Answer(
@@ -1188,6 +1209,7 @@ async def bulk_upload_exams_for_grading(
         created_submissions.append({
             "submission_id": submission.id,
             "exam_id": exam.id,
+            "ocr_review_id": ocr_review.id,
             "student_name": final_student_name,
             "student_id": final_student_id,
             "subject": subject,
@@ -1198,14 +1220,15 @@ async def bulk_upload_exams_for_grading(
             "suggested_score": suggested_score,
             "confidence": confidence,
             "summary_feedback": summary_feedback,
-            "status": "pending_approval",
+            "status": "pending_ocr_review",
+            "message": "OCR review required before AI grading can proceed",
         })
 
     return {
         "status": "success",
         "processed_count": len(created_submissions),
         "submissions": created_submissions,
-        "message": f"Successfully digitized and staged {len(created_submissions)} handwritten test submissions with privacy filtering.",
+        "message": f"Successfully digitized {len(created_submissions)} handwritten test submissions. OCR review required before AI grading can proceed.",
     }
 
 

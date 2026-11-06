@@ -702,3 +702,59 @@ class PackageSourceResponse(BaseModel):
             except Exception:
                 return [v] if v else []
         return v or []
+
+
+# ── OCR Review Schemas ───────────────────────────────────────────────────────
+
+class OCRReviewBase(BaseModel):
+    submission_id: str
+    exam_id: str
+    student_id: str
+    original_text: str
+    original_confidence: float = Field(ge=0.0, le=1.0)
+    is_handwritten: bool = False
+    image_url: str | None = None
+    words_json: str | None = None
+
+
+class OCRReviewCreate(OCRReviewBase):
+    pass
+
+
+class OCRReviewUpdate(BaseModel):
+    status: str | None = Field(None, pattern=r"^(pending|reviewing|approved|rejected|corrected)$")
+    corrected_text: str | None = None
+    review_notes: str | None = None
+
+
+class OCRReviewResponse(OCRReviewBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    teacher_id: str | None = None
+    status: str
+    corrected_text: str | None = None
+    review_notes: str | None = None
+    reviewed_at: datetime | None = None
+    anonymized: bool
+    ai_graded: bool
+    created_at: datetime
+    updated_at: datetime
+
+
+class OCRReviewSubmit(BaseModel):
+    """Submit OCR results for review."""
+    submission_id: str
+    exam_id: str
+    student_id: str
+    original_text: str
+    original_confidence: float = Field(ge=0.0, le=1.0)
+    is_handwritten: bool = False
+    image_url: str | None = None
+    words_json: str | None = None
+
+
+class OCRReviewApprove(BaseModel):
+    """Approve or correct OCR text."""
+    status: str = Field(..., pattern=r"^(approved|rejected|corrected)$")
+    corrected_text: str | None = None
+    review_notes: str | None = None
