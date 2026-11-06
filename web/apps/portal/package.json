@@ -36,7 +36,7 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.4",
     "vite-plugin-pwa": "^2.0.0",
-    "vitest": "^3.2.7"
+    "vitest": "^4.1.12"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -45,7 +45,9 @@
   "overrides": {
     "follow-redirects": "1.16.2",
     "minimatch": "11.0.4",
-    "deepmerge": "4.1.2"
+    "deepmerge": "4.1.2",
+    "tinypool": "2.2.0",
+    "glob": "14.0.4"
   },
   "description": "PlannedEducation Exam Portal - Free/Open-Source Only. NO PAID SERVICES.",
   "keywords": [

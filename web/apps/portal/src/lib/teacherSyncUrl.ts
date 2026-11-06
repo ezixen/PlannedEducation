@@ -27,7 +27,7 @@ function allowlistHosts(): Set<string> {
   return new Set(
     raw
       .split(',')
-      .map((h) => h.trim().toLowerCase())
+      .map((h: string) => h.trim().toLowerCase())
       .filter(Boolean)
   );
 }
