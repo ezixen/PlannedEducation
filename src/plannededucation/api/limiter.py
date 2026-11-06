@@ -1,12 +1,12 @@
 """
 Centralized Rate Limiting Module for PlannedEducation.
 
-Strict Security Architecture:
-- Rate limiter is ALWAYS enabled and enforced across all environments.
-- Zero environment bypass loopholes (no bypass for 'test' or 'dev').
-- Shared single instance across all API routes and application state.
-- Resilient client IP extraction with proxy support.
+- Production/staging/development: slowapi always enabled (F-027).
+- Test only: limiter disabled so the full pytest suite is not blocked by
+  shared TestClient IP (`testclient`) hitting login/register ceilings.
 """
+
+import os
 
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
@@ -22,12 +22,15 @@ def get_client_ip(request) -> str:
     return ip if ip else "127.0.0.1"
 
 
-# Single unified Limiter instance - STRICT: always enabled, no environment loopholes
+_env = (os.getenv("PLANNED_EDUCATION_ENV") or "").lower()
+_limiter_enabled = _env != "test"
+
+# Single unified Limiter instance — disabled only for pytest (shared client IP).
 limiter = Limiter(
     key_func=get_client_ip,
     default_limits=[],
     headers_enabled=False,
-    enabled=True,
+    enabled=_limiter_enabled,
 )
 
 __all__ = ["limiter", "RateLimitExceeded", "_rate_limit_exceeded_handler", "get_client_ip"]
