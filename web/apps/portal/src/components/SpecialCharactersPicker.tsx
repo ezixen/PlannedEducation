@@ -219,8 +219,8 @@ export function SpecialCharactersPicker({
     return (
       <button
         onClick={() => setInternalOpen(true)}
-        title={t('special_chars.title') || 'Special Characters & Symbols Picker'}
-        aria-label="Open Special Characters Picker"
+        title={t('special_chars.title')}
+        aria-label={t('special_chars.open')}
         style={{
           position: 'fixed',
           bottom: '1.5rem',
@@ -244,7 +244,7 @@ export function SpecialCharactersPicker({
         onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
       >
         <Sparkles size={16} style={{ color: 'var(--primary-color)' }} />
-        <span>Ω Symbols</span>
+        <span>{t('special_chars.button_label')}</span>
       </button>
     );
   }
@@ -393,28 +393,33 @@ export function SpecialCharactersPicker({
             backgroundColor: 'var(--sidebar-bg)',
           }}
         >
-          {categories.map((cat, idx) => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                setActiveCategoryIdx(idx);
-                setCurrentPage(0);
-              }}
-              style={{
-                padding: '0.25rem 0.6rem',
-                borderRadius: 'var(--radius-full)',
-                border: `1px solid ${activeCategoryIdx === idx ? 'var(--primary-color)' : 'var(--border-color)'}`,
-                backgroundColor: activeCategoryIdx === idx ? 'var(--primary-color)' : 'transparent',
-                color: activeCategoryIdx === idx ? '#fff' : 'var(--text-color)',
-                fontSize: '0.75rem',
-                fontWeight: activeCategoryIdx === idx ? 600 : 400,
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {cat.name}
-            </button>
-          ))}
+          {categories.map((cat, idx) => {
+            const catLabel = cat.id.startsWith('custom-')
+              ? cat.name
+              : (t(`special_chars.${cat.id}`) || cat.name);
+            return (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  setActiveCategoryIdx(idx);
+                  setCurrentPage(0);
+                }}
+                style={{
+                  padding: '0.25rem 0.6rem',
+                  borderRadius: 'var(--radius-full)',
+                  border: `1px solid ${activeCategoryIdx === idx ? 'var(--primary-color)' : 'var(--border-color)'}`,
+                  backgroundColor: activeCategoryIdx === idx ? 'var(--primary-color)' : 'transparent',
+                  color: activeCategoryIdx === idx ? '#fff' : 'var(--text-color)',
+                  fontSize: '0.75rem',
+                  fontWeight: activeCategoryIdx === idx ? 600 : 400,
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {catLabel}
+              </button>
+            );
+          })}
         </div>
       )}
 

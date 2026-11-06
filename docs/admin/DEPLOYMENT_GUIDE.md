@@ -79,6 +79,8 @@ cp .env.example .env
 ```bash
 python3 -c "import secrets; print('JWT_SECRET_KEY=' + secrets.token_hex(64))"
 python3 -c "from cryptography.fernet import Fernet; print('AI_KEY_MASTER_SECRET=' + Fernet.generate_key().decode())"
+python3 -c "from cryptography.fernet import Fernet; print('DB_ENCRYPTION_MASTER_KEY=' + Fernet.generate_key().decode())"
+# Also set DATABASE_ENCRYPTION=true in .env. JWT ≠ AI Fernet ≠ DB Fernet.
 ```
 
 ### 3. Launch Containers

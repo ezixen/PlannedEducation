@@ -301,7 +301,9 @@ if [[ ! -d "$INSTALL_DIR/.git" ]]; then
     print_info "Cloning PlannedEducation repository into $INSTALL_DIR..."
     CLONE_TMP="$INSTALL_DIR.clone-tmp"
     rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
-    if git clone --quiet https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP"; then
+    # Prefer `dev` (active feature branch); fall back to default branch if unavailable
+    if git clone --quiet --branch dev --single-branch https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP" \
+       || git clone --quiet https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP"; then
         cp -a "$CLONE_TMP/." "$INSTALL_DIR/"
         rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
         print_success "Repository cloned successfully"
@@ -311,7 +313,9 @@ if [[ ! -d "$INSTALL_DIR/.git" ]]; then
     fi
 else
     print_info "Repository already exists in $INSTALL_DIR, pulling latest changes..."
-    (cd "$INSTALL_DIR" && git pull origin dev 2>/dev/null || true)
+    (cd "$INSTALL_DIR" && git fetch origin 2>/dev/null || true
+     git checkout dev 2>/dev/null || true
+     git pull origin dev 2>/dev/null || true)
     print_success "Repository ready"
 fi
 
@@ -360,6 +364,7 @@ if [[ ! -f "$ENV_FILE" ]] || confirm_action "Overwrite existing .env configurati
 
     JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))")
     FERNET_KEY=$(python3 -c "import secrets, base64; print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())")
+    DB_ENC_KEY=$(python3 -c "import secrets, base64; print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())")
 
     if [[ "$AUTO_CONFIRM" != "true" ]]; then
         read -r -p "Enter your domain or IP address (default: $DOMAIN): " input_domain
@@ -398,6 +403,9 @@ JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ENCRYPTION_KEY=${FERNET_KEY}
 AI_KEY_MASTER_SECRET=${FERNET_KEY}
+# Field-level DB encryption for chat bodies, TOTP secrets, recovery codes (distinct from JWT/AI keys)
+DATABASE_ENCRYPTION=true
+DB_ENCRYPTION_MASTER_KEY=${DB_ENC_KEY}
 
 # Server Configuration
 HOST=0.0.0.0

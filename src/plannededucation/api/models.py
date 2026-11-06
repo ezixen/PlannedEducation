@@ -796,6 +796,15 @@ class InAppNotification(Base):
     recipient = relationship("User", foreign_keys=[user_id])
 
 
+register_encrypted_model(
+    InAppNotification,
+    [
+        "message",         # May contain PII / account details
+        "action_payload",  # May contain requester identifiers
+    ],
+)
+
+
 # ── OCR Review Models ────────────────────────────────────────────────────────
 # Tracks OCR/handwriting recognition review state for teacher verification
 # before text proceeds to anonymizer → AI grading pipeline.
@@ -872,23 +881,17 @@ class OCRReview(Base):
 # Register models with their encrypted fields for automatic encrypt/decrypt
 # on SQLAlchemy save/load events.
 
+# NOTE: Do NOT Fernet-encrypt columns used in SQL equality filters (email, username,
+# school name). Field encryption breaks WHERE lookups. Those PII fields are protected
+# at rest via SQLCipher (SQLite) / disk & DB access controls (PostgreSQL). Secrets and
+# free-text message bodies are field-encrypted below.
 register_encrypted_model(
     User,
     [
-        "email",           # PII - student/teacher email addresses
-        "full_name",       # PII - full names
-        "phone_number",    # PII - phone numbers
         "totp_secret",     # 2FA secret - must be encrypted
         "recovery_codes",  # Recovery codes - must be encrypted
         "webauthn_credentials",  # WebAuthn credentials - sensitive
-    ],
-)
-
-register_encrypted_model(
-    School,
-    [
-        "name",            # School name - PII
-        "address",         # School address - PII
+        "webauthn_challenge",  # Ephemeral WebAuthn challenge material
     ],
 )
 
@@ -1001,7 +1004,7 @@ class TeacherLoungeMessage(Base):
         String(36), ForeignKey("teacher_lounge_messages.id", ondelete="CASCADE"),
         index=True, nullable=True,
     )
-    content = Column(Text, nullable=False)
+    content = Column(Text, nullable=False)  # encrypted at rest
     is_pinned = Column(Boolean, default=False, nullable=False, index=True)
     created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
     updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
@@ -1010,6 +1013,14 @@ class TeacherLoungeMessage(Base):
     sender = relationship("User", foreign_keys=[sender_id])
     parent = relationship("TeacherLoungeMessage", remote_side=[id], back_populates="replies")
     replies = relationship("TeacherLoungeMessage", back_populates="parent")
+
+
+register_encrypted_model(
+    TeacherLoungeMessage,
+    [
+        "content",  # Staff lounge message body - encrypted at rest
+    ],
+)
 
 
 # ── Direct Messages (Encrypted, All Users) ─────────────────────────────────────

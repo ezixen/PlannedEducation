@@ -140,7 +140,19 @@ Eye movement (gaze tracking), multiple face detection, background audio levels, 
 PlannedEducation works best with modern browsers: Chrome, Firefox, Safari, and Edge. For secure exams, we recommend using the Secure Exam Browser (SEB) or Chrome Canary for development.
 
 ### Is my data private and secure?
-Yes! PlannedEducation is privacy-first and open-source. All data is stored locally or on your self-hosted server. We use end-to-end encryption for sensitive data and never sell or share your information.
+Yes. PlannedEducation is privacy-first, open-source, and self-hosted: no paid cloud lock-in and no selling of student data. Passwords use Argon2id; sessions use short-lived JWTs; TOTP secrets, recovery codes, WebAuthn material, direct/lounge message bodies, OCR text, and notification payloads are Fernet-encrypted at rest when `DATABASE_ENCRYPTION=true` (installers generate a dedicated `DB_ENCRYPTION_MASTER_KEY` distinct from JWT/AI keys). Presidio scrubs PII before any external AI grading. This is **at-rest field encryption plus access control** — not consumer-style end-to-end chat between devices.
+
+### Are chat messages and the database encrypted?
+Direct messages and Teachers' Lounge message bodies are field-encrypted at rest (Fernet). Installers enable `DATABASE_ENCRYPTION=true` with a dedicated `DB_ENCRYPTION_MASTER_KEY`. Sensitive auth material (TOTP, recovery codes, WebAuthn) is also field-encrypted. Lookup fields such as email/username stay queryable (required for login) and are protected by host/DB access controls and optional SQLCipher for SQLite files. Never commit `.env` or database files to Git.
+
+### How do I nominate a Teacher's Aide?
+Teachers can nominate a registered student as a Teacher's Aide from **Classes**. Enter the student's email or username and click Nominate — this grants the same aide rights as if the student requested approval. You can also revoke aides, share exams for collaborative grading, and manage shared exam lists from the Teacher's Aide tools.
+
+### What is the Teachers' Lounge and how do encrypted direct messages work?
+The Teachers' Lounge is a directory of approved teachers (plus admins who chose to be visible) so staff can send private encrypted direct messages — for example to ask for help correcting a batch of exams. Open the lower-left **Messages** icon or the Messages page. Message bodies are encrypted at rest with Fernet. Students cannot DM each other, and student→teacher DMs stay disabled until a teacher opts in under Classes. Superadmins set a platform support email in **Admin → Deployment Config** that is always visible to teachers.
+
+### How do I use the special characters picker?
+Click the floating special-characters control to open a compact overlay. Categories include Math, Chemistry, Physics, Greek, and Foreign/accents. Type a category name in the search bar and press Enter to jump to that page, or flip pages with the arrows / Left-Right keys. Clicking a symbol inserts it at the cursor in the active input. In Exam Editor, teachers can add custom module character sets that appear in the picker during that exam.
 
 ### How do I get help or report issues?
 For technical issues, check the documentation in the docs/ folder. For feature requests or bug reports, visit our GitHub repository and open an issue.
@@ -191,6 +203,9 @@ Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_
 | exam | 1, 2, 3, 7, 8, 9, 16, 17, 18 |
 | student | 2, 8, 9, 23, 24 |
 | teacher | 1, 7, 9, 16, 17, 18, 23 |
+| teacher aide / lounge / DM / messages | privacy + messaging sections |
+| special characters | privacy + messaging sections |
+| encryption / Fernet / SQLCipher | privacy + messaging sections |
 | AI | 7, 16, 17, 18 |
 | grading | 7, 8, 9, 16, 17, 18 |
 | offline | 8 |

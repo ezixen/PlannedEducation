@@ -177,6 +177,24 @@ const FAQ_DATA: FAQCategory[] = [
         id: 14,
         question: "What are reusable modules?",
         answer: "Modules are self-contained question sets with shared context (e.g., a reading passage with 5 questions). Create them in the Exam Editor > 'Create Module', add context and questions, then reuse across exams."
+      },
+      {
+        id: 60,
+        question: "How do I nominate a Teacher's Aide?",
+        keywords: ["teacher", "aide", "nominate", "assistant", "help", "grading", "share"],
+        answer: "Teachers can nominate a registered student as a Teacher's Aide from Classes (Teacher Classes). Enter the student's email or username and click Nominate — this grants the same aide rights as if the student requested approval. You can also revoke aides, share exams for collaborative grading, and manage shared exam lists from the Teacher's Aide tools."
+      },
+      {
+        id: 61,
+        question: "What is the Teachers' Lounge and how do encrypted direct messages work?",
+        keywords: ["lounge", "message", "dm", "chat", "encrypted", "teacher", "support", "email"],
+        answer: "The Teachers' Lounge is a directory of approved teachers (plus admins who chose to be visible) so staff can send private encrypted direct messages — for example to ask for help correcting a batch of exams. Open the lower-left Messages icon or the Messages page. Message bodies are encrypted at rest with Fernet. Students cannot DM each other, and student→teacher DMs stay disabled until a teacher opts in under Classes. Superadmins set a platform support email in Admin → Deployment Config that is always visible to teachers."
+      },
+      {
+        id: 62,
+        question: "How do I use the special characters picker?",
+        keywords: ["special", "characters", "symbols", "math", "greek", "chemistry", "physics", "accents"],
+        answer: "Click the floating special-characters control to open a compact overlay. Categories include Math, Chemistry, Physics, Greek, and Foreign/accents. Type a category name in the search bar and press Enter to jump to that page, or flip pages with the arrows / Left-Right keys. Clicking a symbol inserts it at the cursor in the active input. In Exam Editor, teachers can add custom module character sets that appear in the picker during that exam."
       }
     ]
   },
@@ -357,7 +375,14 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
       {
         id: 11,
         question: "Is my data private and secure?",
-        answer: "Yes! PlannedEducation is privacy-first and open-source. All data is stored locally or on your self-hosted server. We use end-to-end encryption for sensitive data and never sell or share your information."
+        keywords: ["privacy", "secure", "encryption", "owasp", "ferpa", "gdpr", "database", "chat"],
+        answer: "Yes. PlannedEducation is privacy-first and self-hosted: no paid cloud lock-in, no selling of student data. Passwords use Argon2id; sessions use short-lived JWTs; TOTP secrets, recovery codes, WebAuthn material, direct/lounge message bodies, OCR text, and notification payloads are Fernet-encrypted at rest when DATABASE_ENCRYPTION=true (installers generate a dedicated DB_ENCRYPTION_MASTER_KEY distinct from JWT/AI keys). Presidio scrubs PII before any external AI grading. This is at-rest field encryption plus access control — not consumer-style E2E chat between devices."
+      },
+      {
+        id: 63,
+        question: "Are chat messages and the database encrypted?",
+        keywords: ["encrypt", "chat", "dm", "database", "sqlcipher", "fernet", "plaintext"],
+        answer: "Direct messages and Teachers' Lounge message bodies are field-encrypted at rest (Fernet). Installers enable DATABASE_ENCRYPTION=true with a dedicated DB_ENCRYPTION_MASTER_KEY. Sensitive auth material (TOTP, recovery codes, WebAuthn) is also field-encrypted. Lookup fields such as email/username stay queryable (required for login) and are protected by host/DB access controls and optional SQLCipher for SQLite files. Never commit .env or database files to Git."
       },
       {
         id: 12,

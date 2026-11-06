@@ -146,8 +146,8 @@ def test_student_dm_policy_disabled_by_default(client, db_session):
 
 
 def test_teachers_lounge_directory(client, db_session):
-    teacher = _create_user(db_session, "lounge_teacher@school.edu", "loungeteacher", role="teacher")
-    admin = _create_user(db_session, "lounge_admin@school.edu", "loungeadmin", role="admin", is_admin=True)
+    _create_user(db_session, "lounge_teacher@school.edu", "loungeteacher", role="teacher")
+    _create_user(db_session, "lounge_admin@school.edu", "loungeadmin", role="admin", is_admin=True)
 
     t_token = _get_token(client, "lounge_teacher@school.edu")
 

@@ -71,6 +71,9 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 - **AI Grading Assistant**: Let AI draft grades and feedback for you to review and approve — one click to apply. You stay in control; the AI just does the heavy lifting.
 - **Smart Mistake Grouping**: Instantly see patterns across the class. "These 5 students all struggled with the same concept" — now you can reteach efficiently.
 - **Modular Test Packages**: Export your exams as JSON/YAML packages and share them with colleagues. Import packages from others. Build a library once, use it forever.
+- **Teacher's Aides & Shared Grading**: Nominate approved aides, share class exams for collaborative correction, and manage aide access from Classes.
+- **Teachers' Lounge DMs**: Encrypted staff messaging with a directory of approved teachers (admins optional) plus a superadmin-set support email.
+- **Special Characters Picker**: Math, chemistry, physics, Greek, and accents in a side overlay; modules can add custom character pages.
 - **IEP & Accessibility Built-In**: Assign time multipliers (1.5x, 2x) per student globally. No more manual adjustments per exam.
 - **OCR & Speech-to-Text**: Handwritten math? Audio responses? Upload and let the system transcribe — you grade the content, not the handwriting.
 
@@ -104,8 +107,11 @@ Our scripts (`install.ps1`, `install.sh`, `uninstall.ps1`, `uninstall.sh`) are p
 | **Auth & Recovery** | Google SSO + email login, TOTP 2FA, 5 printable single-use recovery codes, offline in-platform supervisor reset |
 | **Teacher Verification** | Self-registration for students/teachers/parents; teacher verification required by admin before exam creation |
 | **In-App Notifications** | Floating notification bell (60s polling) with 1-click teacher & password reset approvals |
-| **Deployment Config** | Post-deploy editable `config/deployment.json` via file or Admin Panel (no redeploy needed) + backup button |
-| **Database** | PostgreSQL (prod) / SQLite (dev) via SQLAlchemy |
+| **Encrypted Messaging** | Direct messages + Teachers' Lounge bodies Fernet-encrypted at rest; student DMs off by default |
+| **Teacher's Aides** | Nominate/approve/revoke aides; share exams for collaborative grading |
+| **Special Characters** | Overlay picker (math/chem/physics/Greek/accents) + per-module custom sets |
+| **Deployment Config** | Post-deploy editable `config/deployment.json` via file or Admin Panel (no redeploy needed) + backup button + admin support email |
+| **Database** | PostgreSQL (prod) / SQLite (dev) via SQLAlchemy; field-level Fernet encryption + optional SQLCipher for SQLite |
 
 ---
 

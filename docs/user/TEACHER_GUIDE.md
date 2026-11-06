@@ -24,6 +24,22 @@
 2. Click **Create Class**, enter the class name, grade level, and subject.
 3. Share the class join code with your students, or add student accounts directly.
 
+### Teacher's Aides & Shared Grading
+1. From **Classes**, nominate a registered student as a Teacher's Aide by email or username.
+2. Share selected exams with aides for collaborative correction; revoke access anytime.
+3. Aides see only exams you explicitly share — not your full roster or private messages.
+
+### Teachers' Lounge & Encrypted Direct Messages
+1. Open the lower-left **Messages** icon (or the Messages page) to browse the Teachers' Lounge directory of approved teachers (plus admins who opted in).
+2. Message bodies are **Fernet-encrypted at rest** on the server (`DATABASE_ENCRYPTION=true`). This is field encryption + access control, not consumer-style device-to-device E2E.
+3. Students cannot DM each other. Student→teacher DMs stay off until you enable them under Classes.
+4. Superadmins publish a platform support email in **Admin → Deployment Config** that is always visible to teachers.
+
+### Special Characters Picker
+1. Click the floating special-characters control to open Math, Chemistry, Physics, Greek, and accent pages.
+2. Search a category name and press Enter, or flip pages with arrows / Left-Right keys.
+3. In Exam Editor, attach custom module character sets so students see the same symbols during that exam.
+
 ### Pre-Exam Emergency Password Reset ("⚡ Reset Pwd for Test")
 Right before a scheduled exam, students frequently forget their passwords and panic under time pressure. PlannedEducation eliminates exam delays with a single-click teacher unlock:
 1. In **Teacher Dashboard → Real-Time Student Monitoring** or **Classes → Manage Students**, locate the locked-out student in your roster.

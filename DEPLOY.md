@@ -48,8 +48,16 @@ http://localhost:5173
 
 If your school's domain, hostname, ports, or network layout change after deployment, you **do not** need to redeploy or rebuild containers:
 1. Edit `config/deployment.json` directly on the server, or
-2. Open **Admin Dashboard → ⚙️ Deployment & Network** in your browser to update domain names, ports, and optional SMTP settings.
-3. Restart backend services to apply changes immediately.
+2. Open **Admin Dashboard → ⚙️ Deployment & Network** in your browser to update domain names, ports, optional SMTP settings, and the **admin support email** (superadmin; always shown to teachers for platform help).
+3. Restart backend services to apply network changes immediately.
+
+### Encryption at rest (installers enable this)
+
+Fresh installs write to `.env`:
+- `DATABASE_ENCRYPTION=true`
+- `DB_ENCRYPTION_MASTER_KEY=<separate Fernet key>` (must differ from `JWT_SECRET_KEY` and `AI_KEY_MASTER_SECRET`)
+
+This encrypts direct/lounge message bodies, TOTP secrets, recovery codes, WebAuthn material, OCR review text, and notification payloads at rest. Do not commit `.env` or `*.db` files.
 
 ---
 

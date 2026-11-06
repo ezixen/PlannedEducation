@@ -267,7 +267,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                 fontSize: '0.85rem',
               }}
             >
-              <MessageSquare size={16} /> {t('messages.tab_chats') || 'Chats'}
+              <MessageSquare size={16} /> {t('messages.tab_chats')}
             </button>
             <button
               onClick={() => setActiveTab('lounge')}
@@ -287,7 +287,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                 fontSize: '0.85rem',
               }}
             >
-              <Users size={16} /> {t('messages.tab_lounge') || "Teacher's Lounge"}
+              <Users size={16} /> {t('messages.tab_lounge')}
             </button>
           </div>
         )}
@@ -301,13 +301,13 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
               <div style={{ padding: '0.9rem 1rem', borderRadius: 'var(--radius-md)', backgroundColor: 'var(--bg-color)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
                   <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-color)' }}>
-                    {t('messages.support_email_title') || 'Platform Support Contact'}
+                    {t('messages.support_email_title')}
                   </div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                     {adminSupportEmail ? (
-                      <span>Email: <a href={`mailto:${adminSupportEmail}`} style={{ color: 'var(--primary-color)' }}>{adminSupportEmail}</a></span>
+                      <span>{t('messages.support_email_prefix')} <a href={`mailto:${adminSupportEmail}`} style={{ color: 'var(--primary-color)' }}>{adminSupportEmail}</a></span>
                     ) : (
-                      <span>{t('messages.support_not_configured') || 'Admin support email not set'}</span>
+                      <span>{t('messages.support_not_configured')}</span>
                     )}
                   </div>
                 </div>
@@ -316,7 +316,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
               {/* Teachers Directory */}
               <div>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                  {t('messages.colleagues') || 'Teachers & Staff'}
+                  {t('messages.colleagues')}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
                   {teachers.map((tch) => (
@@ -338,7 +338,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                     >
                       <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{tch.name}</span>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        {tch.is_aide ? "Teacher's Aide" : 'Teacher'}
+                        {tch.is_aide ? t('messages.role_aide') : t('messages.role_teacher')}
                       </span>
                     </button>
                   ))}
@@ -349,7 +349,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
               {admins.length > 0 && (
                 <div>
                   <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                    {t('messages.administrators') || 'Administrators'}
+                    {t('messages.administrators')}
                   </h3>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
                     {admins.map((adm) => (
@@ -370,7 +370,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                         }}
                       >
                         <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{adm.name}</span>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)' }}>Admin</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)' }}>{t('messages.role_admin')}</span>
                       </button>
                     ))}
                   </div>
@@ -424,7 +424,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                             <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{displayName}</span>
                             {!conv.is_read && (
                               <span style={{ fontSize: '0.7rem', backgroundColor: isSelected ? '#fff' : 'var(--primary-color)', color: isSelected ? 'var(--primary-color)' : '#fff', padding: '0.1rem 0.4rem', borderRadius: '10px' }}>
-                                new
+                                {t('messages.badge_new')}
                               </span>
                             )}
                           </div>
@@ -464,7 +464,8 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                                 {isOwn && msg.is_read && <CheckCircle size={10} />}
                                 <button
                                   onClick={() => deleteMessage(msg.id)}
-                                  title="Delete message"
+                                  title={t('messages.delete_message_title')}
+                                  aria-label={t('messages.delete_message_title')}
                                   style={{ background: 'none', border: 'none', color: isOwn ? 'rgba(255,255,255,0.8)' : 'var(--text-muted)', cursor: 'pointer', padding: '0 2px' }}
                                 >
                                   <Trash2 size={11} />

@@ -216,10 +216,10 @@ export function Messages() {
           </div>
           <div>
             <h1 style={{ margin: 0, fontSize: '1.5rem', color: 'var(--text-color)' }}>
-              {t('messages.title') || 'Messages & Direct Chat'}
+              {t('messages.title')}
             </h1>
             <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              {t('messages.encrypted_desc') || 'End-to-end encrypted direct messaging stored securely at rest.'}
+              {t('messages.encrypted_desc')}
             </p>
           </div>
         </div>
@@ -227,7 +227,7 @@ export function Messages() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
             <Lock size={15} />
-            <span>Encrypted at Rest</span>
+            <span>{t('messages.encrypted_at_rest')}</span>
           </div>
           {user?.role !== 'student' && (
             <button
@@ -247,7 +247,7 @@ export function Messages() {
               }}
             >
               <Users size={16} />
-              {t('messages.tab_lounge') || "Teacher's Lounge Directory"}
+              {t('messages.tab_lounge')}
             </button>
           )}
         </div>
@@ -257,7 +257,7 @@ export function Messages() {
       {adminSupportEmail && (
         <div style={{ marginBottom: '1rem', padding: '0.75rem 1rem', borderRadius: 'var(--radius-md)', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ fontSize: '0.85rem', color: 'var(--text-color)' }}>
-            <strong>Platform Administrator Support:</strong> In case of technical issues or inquiries, teachers can email:{' '}
+            <strong>{t('messages.support_email_title')}:</strong> {t('messages.support_admin_banner')}{' '}
             <a href={`mailto:${adminSupportEmail}`} style={{ color: 'var(--primary-color)', fontWeight: 600 }}>{adminSupportEmail}</a>
           </div>
         </div>
@@ -269,11 +269,12 @@ export function Messages() {
         <div style={{ borderRight: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'var(--sidebar-bg)' }}>
             <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-color)' }}>
-              {showDirectory ? 'Teacher Directory' : (t('messages.title') || 'Conversations')}
+              {showDirectory ? t('messages.directory_title') : t('messages.conversations')}
             </span>
             <button
               onClick={() => { fetchConversations(); if (user?.role !== 'student') fetchDirectory(); }}
-              title="Refresh"
+              title={t('messages.refresh')}
+              aria-label={t('messages.refresh')}
               style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem' }}
             >
               <RefreshCw size={15} />
@@ -283,7 +284,7 @@ export function Messages() {
           <div style={{ flex: 1, overflowY: 'auto', padding: '0.75rem' }}>
             {showDirectory ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Colleagues</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase' }}>{t('messages.colleagues')}</span>
                 {teachers.map((tch) => (
                   <button
                     key={tch.id}
@@ -302,13 +303,13 @@ export function Messages() {
                     }}
                   >
                     <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{tch.name}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{tch.is_aide ? "Teacher's Aide" : 'Teacher'}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{tch.is_aide ? t('messages.role_aide') : t('messages.role_teacher')}</span>
                   </button>
                 ))}
 
                 {admins.length > 0 && (
                   <>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '0.5rem' }}>Administrators</span>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '0.5rem' }}>{t('messages.administrators')}</span>
                     {admins.map((adm) => (
                       <button
                         key={adm.id}
@@ -327,7 +328,7 @@ export function Messages() {
                         }}
                       >
                         <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{adm.name}</span>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)' }}>Admin</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--primary-color)' }}>{t('messages.role_admin')}</span>
                       </button>
                     ))}
                   </>
@@ -335,7 +336,7 @@ export function Messages() {
               </div>
             ) : conversations.length === 0 ? (
               <div style={{ padding: '2rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                {t('messages.no_messages') || 'No conversations yet.'}
+                {t('messages.no_messages')}
               </div>
             ) : (
               conversations.map((conv) => {
@@ -369,7 +370,7 @@ export function Messages() {
                       <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{displayName}</span>
                       {!conv.is_read && (
                         <span style={{ fontSize: '0.7rem', backgroundColor: isSelected ? '#fff' : 'var(--primary-color)', color: isSelected ? 'var(--primary-color)' : '#fff', padding: '0.1rem 0.4rem', borderRadius: '10px' }}>
-                          new
+                          {t('messages.badge_new')}
                         </span>
                       )}
                     </div>
@@ -389,7 +390,7 @@ export function Messages() {
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
               <Mail size={56} style={{ opacity: 0.3, marginBottom: '1rem' }} />
               <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-color)' }}>
-                {t('messages.select_conversation') || 'Select a conversation or colleague to start messaging'}
+                {t('messages.select_conversation')}
               </h3>
             </div>
           ) : (
@@ -413,7 +414,7 @@ export function Messages() {
                   }}
                 >
                   <Trash2 size={13} />
-                  Clear Chat History
+                  {t('messages.clear_chat')}
                 </button>
               </div>
 
@@ -421,7 +422,7 @@ export function Messages() {
               <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {messages.length === 0 ? (
                   <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                    No messages yet in this conversation.
+                    {t('messages.no_messages_in_conversation')}
                   </div>
                 ) : (
                   messages.map((msg) => {
@@ -435,7 +436,8 @@ export function Messages() {
                             {isOwn && msg.is_read && <CheckCircle size={10} />}
                             <button
                               onClick={() => setConfirmDeleteId(msg.id)}
-                              title="Delete message"
+                              title={t('messages.delete_message_title')}
+                              aria-label={t('messages.delete_message_title')}
                               style={{ background: 'none', border: 'none', color: isOwn ? 'rgba(255,255,255,0.8)' : 'var(--text-muted)', cursor: 'pointer', padding: '0 2px' }}
                             >
                               <Trash2 size={11} />
@@ -454,7 +456,7 @@ export function Messages() {
                 <form onSubmit={sendMessage} style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                   <input
                     type="text"
-                    placeholder={t('messages.type_message') || 'Type a secure message…'}
+                    placeholder={t('messages.type_message')}
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     disabled={loading || sending}
@@ -465,7 +467,7 @@ export function Messages() {
                     disabled={!newMessage.trim() || !selectedPartner || sending}
                     style={{ padding: '0.75rem 1.5rem', borderRadius: 'var(--radius-md)', border: 'none', backgroundColor: 'var(--primary-color)', color: '#fff', cursor: (!newMessage.trim() || !selectedPartner || sending) ? 'not-allowed' : 'pointer', fontSize: '0.9rem', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                   >
-                    <Send size={16} /> {t('messages.send') || 'Send'}
+                    <Send size={16} /> {t('messages.send')}
                   </button>
                 </form>
               </div>
@@ -481,23 +483,23 @@ export function Messages() {
           <div style={{ backgroundColor: 'var(--panel-bg)', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--error-color)', marginBottom: '0.75rem' }}>
               <AlertCircle size={20} />
-              <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>Confirm Message Delete</h3>
+              <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>{t('messages.delete_confirm_title')}</h3>
             </div>
             <p style={{ margin: '0 0 1.25rem 0', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              Are you sure you want to delete this message? It will be removed from your conversation view.
+              {t('messages.delete_confirm_desc')}
             </p>
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
               <button
                 onClick={() => setConfirmDeleteId(null)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', backgroundColor: 'transparent', color: 'var(--text-color)', cursor: 'pointer' }}
               >
-                Cancel
+                {t('common.cancel')}
               </button>
               <button
                 onClick={() => handleDeleteMessage(confirmDeleteId)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)', border: 'none', backgroundColor: 'var(--error-color)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}
               >
-                Delete
+                {t('common.delete')}
               </button>
             </div>
           </div>
@@ -511,23 +513,23 @@ export function Messages() {
           <div style={{ backgroundColor: 'var(--panel-bg)', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--error-color)', marginBottom: '0.75rem' }}>
               <AlertCircle size={20} />
-              <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>Clear Entire Chat History?</h3>
+              <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>{t('messages.clear_confirm_title')}</h3>
             </div>
             <p style={{ margin: '0 0 1.25rem 0', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-              This will delete all messages in this conversation from your account. This action cannot be undone.
+              {t('messages.clear_confirm_desc')}
             </p>
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
               <button
                 onClick={() => setConfirmClearChat(false)}
                 style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', backgroundColor: 'transparent', color: 'var(--text-color)', cursor: 'pointer' }}
               >
-                Cancel
+                {t('common.cancel')}
               </button>
               <button
                 onClick={handleClearChat}
                 style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)', border: 'none', backgroundColor: 'var(--error-color)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}
               >
-                Clear History
+                {t('messages.clear_history_btn')}
               </button>
             </div>
           </div>

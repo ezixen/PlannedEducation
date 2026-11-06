@@ -26,6 +26,7 @@ export function MessageIcon({ unreadCount, onOpen }: MessageIconProps) {
         aria-label={t('messages.icon_alt')}
         title={unreadCount > 0 ? `${t('messages.unread_count')}: ${unreadCount}` : t('messages.title')}
         style={{
+          position: 'relative',
           width: '56px',
           height: '56px',
           borderRadius: '50%',

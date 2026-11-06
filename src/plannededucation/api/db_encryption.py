@@ -6,7 +6,7 @@ Integrates with SQLAlchemy via event listeners for automatic encrypt/decrypt on 
 
 Environment Variables:
     DB_ENCRYPTION_MASTER_KEY - Base64-encoded 32-byte master key for field encryption
-    DATABASE_ENCRYPTION - Set to "enabled" to activate field-level encryption
+    DATABASE_ENCRYPTION - Set to "true" (or 1/yes/on) to activate field-level encryption
 
 Generate master key:
     python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"

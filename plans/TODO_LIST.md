@@ -20,8 +20,14 @@
 ## Explicitly skipped for now (your call)
 
 - Fresh GH install / uninstall / WSL matrix (G1, G5–G7)
-- Visual overlap testing (J4)
 - Merge to `main` / alert wait cycles
+
+## Docs / FAQ / security refresh (2026-11-06)
+
+- README, DEPLOY.md, FAQ chatbot updated for aides, lounge DMs, special chars, encryption
+- Lounge + notification payloads registered for Fernet field encryption
+- Installers + `.env.example` enable `DATABASE_ENCRYPTION` with dedicated key
+- Detail: [`2026-11-06_SECURITY_MESSAGING_NOTES.md`](./2026-11-06_SECURITY_MESSAGING_NOTES.md)
 
 ---
 

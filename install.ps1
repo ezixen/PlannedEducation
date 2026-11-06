@@ -378,8 +378,15 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
     if (Test-Path $cloneTmp) { Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue }
     $prevEap = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
-    $cloneOutput = & git clone --quiet https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
+    # Clone the active development branch (features land on `dev` before `main`)
+    $cloneOutput = & git clone --quiet --branch dev --single-branch https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
     $cloneExit = $LASTEXITCODE
+    if ($cloneExit -ne 0) {
+        Write-Warning "Clone of 'dev' failed; falling back to default branch..."
+        if (Test-Path $cloneTmp) { Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue }
+        $cloneOutput = & git clone --quiet https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
+        $cloneExit = $LASTEXITCODE
+    }
     $ErrorActionPreference = $prevEap
     if ($cloneExit -ne 0) {
         Write-ErrorMsg "git clone failed (exit $cloneExit): $($cloneOutput -join ' ')"
@@ -393,6 +400,8 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
     Write-Info "Repository already exists in $InstallDir, pulling latest changes..."
     Push-Location $InstallDir
     try {
+        git fetch origin 2>&1 | Out-Null
+        git checkout dev 2>&1 | Out-Null
         git pull origin dev 2>&1 | Out-Null
     } catch {
         Write-Warning "Could not pull from remote; continuing with existing checkout."
@@ -453,10 +462,13 @@ if (-not (Test-Path $envFile) -or (Confirm-Action "Overwrite existing .env confi
     [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($jwtBytes)
     $jwtSecret = [System.BitConverter]::ToString($jwtBytes).Replace("-", "").ToLower()
 
-    # Generate URL-safe base64 32-byte Fernet key
+    # Generate URL-safe base64 32-byte Fernet keys (AI keys vs DB field encryption MUST differ)
     $fernetBytes = New-Object byte[] 32
     [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($fernetBytes)
     $fernetKey = [System.Convert]::ToBase64String($fernetBytes).Replace("+", "-").Replace("/", "_")
+    $dbEncBytes = New-Object byte[] 32
+    [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($dbEncBytes)
+    $dbEncKey = [System.Convert]::ToBase64String($dbEncBytes).Replace("+", "-").Replace("/", "_")
 
     if (-not $AutoConfirm) {
         $inputDomain = Read-Host "Enter your domain or IP address (default: $Domain)"
@@ -498,6 +510,9 @@ JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ENCRYPTION_KEY=$fernetKey
 AI_KEY_MASTER_SECRET=$fernetKey
+# Field-level DB encryption for chat bodies, TOTP secrets, recovery codes (distinct from JWT/AI keys)
+DATABASE_ENCRYPTION=true
+DB_ENCRYPTION_MASTER_KEY=$dbEncKey
 
 # Server Configuration
 HOST=0.0.0.0

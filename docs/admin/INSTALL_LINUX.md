@@ -101,9 +101,11 @@ python3 scripts/deploy/deploy_wizard.py
 The wizard guides you through:
 1. Checking OS packages, Python version, and database status.
 2. Choosing between **Native** or **Docker Compose** deployment.
-3. Generating secure `JWT_SECRET_KEY` and Fernet `AI_KEY_MASTER_SECRET`.
+3. Generating secure `JWT_SECRET_KEY`, Fernet `AI_KEY_MASTER_SECRET` (AI BYOK), and a **distinct** Fernet `DB_ENCRYPTION_MASTER_KEY` with `DATABASE_ENCRYPTION=true` (field encryption for DMs, lounge messages, TOTP/recovery/WebAuthn, OCR text, notifications).
 4. Domain / IP binding configuration.
 5. Building the frontend production assets and applying database migrations.
+
+> **Key isolation**: JWT ≠ AI Fernet ≠ DB Fernet. Never reuse one secret for another purpose.
 
 ---
 
@@ -178,12 +180,15 @@ Generate secure cryptographic secrets:
 # Generate 64-byte JWT secret
 JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(64))")
 
-# Generate Fernet 32-byte key
-FERNET_KEY=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
+# Generate distinct Fernet keys (AI BYOK vs DB field encryption)
+AI_FERNET=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
+DB_FERNET=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")
 
 # Replace secrets in .env
 sed -i "s|JWT_SECRET_KEY=.*|JWT_SECRET_KEY=$JWT_SECRET|" .env
-sed -i "s|AI_KEY_MASTER_SECRET=.*|AI_KEY_MASTER_SECRET=$FERNET_KEY|" .env
+sed -i "s|AI_KEY_MASTER_SECRET=.*|AI_KEY_MASTER_SECRET=$AI_FERNET|" .env
+sed -i "s|DATABASE_ENCRYPTION=.*|DATABASE_ENCRYPTION=true|" .env
+sed -i "s|DB_ENCRYPTION_MASTER_KEY=.*|DB_ENCRYPTION_MASTER_KEY=$DB_FERNET|" .env
 ```
 
 Edit `.env` to match your network settings:

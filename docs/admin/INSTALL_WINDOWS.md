@@ -172,9 +172,12 @@ The wizard will:
 2. Prompt you to choose between **Native** or **Docker Compose** mode.
 3. Automatically generate secure random secrets:
    - 64-byte hexadecimal `JWT_SECRET_KEY`
-   - Fernet 32-byte URL-safe base64 `AI_KEY_MASTER_SECRET`
+   - Fernet 32-byte URL-safe base64 `AI_KEY_MASTER_SECRET` (AI provider BYOK keys)
+   - Distinct Fernet `DB_ENCRYPTION_MASTER_KEY` with `DATABASE_ENCRYPTION=true` (field encryption for DMs, lounge messages, TOTP/recovery/WebAuthn, OCR text, notifications)
 4. Guide you through domain setup (`localhost` for single-PC or your school IP / hostname).
 5. Build the frontend and initialize database tables.
+
+> **Key isolation**: JWT ≠ AI Fernet ≠ DB Fernet. Never reuse one secret for another purpose.
 
 ---
 
@@ -226,11 +229,13 @@ Generate secure cryptographic keys in PowerShell:
 # Generate JWT Secret
 $jwtSecret = [System.Convert]::ToHexString((1..64 | ForEach-Object { [byte](Get-Random -Minimum 0 -Maximum 256) }))
 
-# Generate Fernet Master Secret
-$fernetKey = python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+# Generate Fernet secrets (AI keys + DB field encryption — must be DISTINCT)
+$aiFernet = python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+$dbFernet = python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
 
 Write-Host "JWT Secret: $jwtSecret"
-Write-Host "Fernet Key: $fernetKey"
+Write-Host "AI Fernet: $aiFernet"
+Write-Host "DB Fernet: $dbFernet"
 ```
 
 Edit your `.env` file and set the generated values:
@@ -240,7 +245,9 @@ DEBUG=false
 SERVER_HOST=0.0.0.0
 SERVER_PORT=8000
 JWT_SECRET_KEY=<your_generated_jwt_secret>
-AI_KEY_MASTER_SECRET=<your_generated_fernet_key>
+AI_KEY_MASTER_SECRET=<your_generated_ai_fernet_key>
+DATABASE_ENCRYPTION=true
+DB_ENCRYPTION_MASTER_KEY=<your_generated_db_fernet_key>
 
 # For SQLite Standalone (default zero-config):
 DATABASE_URL=sqlite:///./plannededucation.db

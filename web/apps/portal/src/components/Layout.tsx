@@ -3,10 +3,14 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield, Mail } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
+import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
 import { FAQChatbot } from './FAQChatbot';
 import { NotificationBell } from './NotificationBell';
-import { apiClient } from '../api';
+import { MessageIcon } from './MessageIcon';
+import { ChatOverlay } from './ChatOverlay';
+import { SpecialCharactersPicker } from './SpecialCharactersPicker';
+import { apiClient, API_URL } from '../api';
 
 interface DeploymentConfig {
   school_name?: string;
@@ -18,14 +22,40 @@ export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout } = useAuth();
   const { locale, setLocale, availableLocales, t } = useI18n();
+  const { customCategories } = useSpecialCharacters();
   const location = useLocation();
   const navigate = useNavigate();
   const [headerConfig, setHeaderConfig] = useState<DeploymentConfig>({});
+  const [chatOpen, setChatOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
 
-  // Close menu on route changes
+  // Close menu on route changes; also close floating chat when leaving authenticated shell routes
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  // Unread DM badge — only while authenticated Layout is mounted
+  useEffect(() => {
+    if (!user) return;
+    const fetchUnread = async () => {
+      try {
+        const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+        if (!token) return;
+        const res = await fetch(`${API_URL}/chat/messages/direct/unread-count`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setUnreadCount(data.unread_count ?? 0);
+        }
+      } catch {
+        // silent
+      }
+    };
+    fetchUnread();
+    const interval = setInterval(fetchUnread, 30000);
+    return () => clearInterval(interval);
+  }, [user]);
 
   // Close menu on Escape key
   useEffect(() => {
@@ -242,7 +272,11 @@ export function Layout() {
           <Outlet />
         </div>
       </main>
+      {/* Authenticated-only chrome: never on /login, /register, /reset-password */}
       <FAQChatbot />
+      <MessageIcon unreadCount={unreadCount} onOpen={() => setChatOpen(true)} />
+      <ChatOverlay isOpen={chatOpen} onClose={() => setChatOpen(false)} />
+      <SpecialCharactersPicker customCategories={customCategories} />
     </div>
   );
 }
