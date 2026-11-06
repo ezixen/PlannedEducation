@@ -48,12 +48,6 @@
             width: 220px;
             cursor: pointer;
         }
-        .time-display {
-            font-size: 12px;
-            color: #888;
-            min-width: 60px;
-            text-align: center;
-        }
         .controls-note {
             margin-top: 16px;
             font-size: 13px;
@@ -82,17 +76,12 @@
 
             <div class="controls">
                 <div class="control-row">
-                    <span class="control-label">⏱ Seek</span>
-                    <input type="range" id="seekSlider" min="0" max="100" value="0">
-                    <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
-                </div>
-                <div class="control-row">
                     <span class="control-label">🔊 Volume</span>
                     <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
                 </div>
                 <div class="controls-note">
                     <span class="note-icon">💡</span>
-                    Browsers may block autoplay with sound. If audio doesn't start automatically, click the play button above and unmute using the volume slider.
+                    Browsers may block autoplay with sound. Click the play button above to start.
                 </div>
             </div>
         </div>
@@ -105,8 +94,6 @@
     <script>
         const audio = document.getElementById('audioPlayer');
         const volumeSlider = document.getElementById('volumeSlider');
-        const seekSlider = document.getElementById('seekSlider');
-        const timeDisplay = document.getElementById('timeDisplay');
 
         audio.volume = parseFloat(volumeSlider.value);
 
@@ -114,31 +101,7 @@
             audio.volume = parseFloat(this.value);
         });
 
-        seekSlider.addEventListener('input', function() {
-            const time = (parseFloat(this.value) / 100) * audio.duration;
-            audio.currentTime = time;
-        });
-
-        audio.addEventListener('timeupdate', function() {
-            if (!audio.seeking) {
-                const progress = (audio.currentTime / audio.duration) * 100;
-                seekSlider.value = progress;
-                timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
-            }
-        });
-
-        let seeking = false;
-        seekSlider.addEventListener('mousedown', function() { seeking = true; });
-        seekSlider.addEventListener('mouseup', function() { seeking = false; audio.currentTime = (parseFloat(this.value) / 100) * audio.duration; });
-
-        function formatTime(seconds) {
-            const m = Math.floor(seconds / 60);
-            const s = Math.floor(seconds % 60);
-            return m + ':' + (s < 10 ? '0' : '') + s;
-        }
-
         function tryAutoplay() {
-            audio.muted = true;
             audio.play().then(function() {}).catch(function(error) {
                 console.log('Autoplay blocked:', error);
             });
