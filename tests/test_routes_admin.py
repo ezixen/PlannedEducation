@@ -27,7 +27,9 @@ def admin_headers(client, db):
     })
     user = db.query(models.User).filter(models.User.email == "admin_test@test.com").first()
     if user:
+        # F-003: creating admin accounts requires is_superadmin.
         user.is_admin = True
+        user.is_superadmin = True
         user.teacher_approved = True
         db.commit()
     # Login to get token

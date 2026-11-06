@@ -4,14 +4,36 @@ Kept as a separate file to preserve historical test intent while using correct s
 """
 from fastapi.testclient import TestClient
 
+from src.plannededucation.api import database, models
 from src.plannededucation.api.main import app
 
 client = TestClient(app)
 
 
-def _register_and_token(email: str, username: str) -> str:
-    client.post("/auth/register", json={"email": email, "username": username, "password": "Route1234!"})
-    return client.post("/auth/token", data={"username": email, "password": "Route1234!"}).json()["access_token"]
+def _register_and_token(email: str, username: str, *, role: str = "student") -> str:
+    client.post(
+        "/auth/register",
+        json={
+            "email": email,
+            "username": username,
+            "password": "Route1234!",
+            "full_name": username,
+            "role": role,
+        },
+    )
+    if role == "teacher":
+        # Fail-closed teacher approval: ensure authoring works in this suite.
+        db = database.SessionLocal()
+        try:
+            user = db.query(models.User).filter(models.User.email == email).first()
+            if user:
+                user.teacher_approved = True
+                db.commit()
+        finally:
+            db.close()
+    return client.post("/auth/token", data={"username": email, "password": "Route1234!"}).json()[
+        "access_token"
+    ]
 
 
 def _headers(token: str) -> dict:
@@ -19,7 +41,9 @@ def _headers(token: str) -> dict:
 
 
 def test_create_and_list_exams():
-    teacher_token = _register_and_token("routes_teacher@test.com", "routes_teacher")
+    teacher_token = _register_and_token(
+        "routes_teacher@test.com", "routes_teacher", role="teacher"
+    )
     h = _headers(teacher_token)
 
     # Create
@@ -53,7 +77,7 @@ def test_create_and_list_exams():
 
 
 def test_seb_config_generation():
-    token = _register_and_token("seb_gen@test.com", "seb_gen")
+    token = _register_and_token("seb_gen@test.com", "seb_gen", role="teacher")
     h = _headers(token)
 
     r = client.post("/exams/", json={
@@ -70,12 +94,13 @@ def test_seb_config_generation():
 
 
 def test_start_and_submit_with_multiple_choice():
-    owner_token = _register_and_token("mc_owner@test.com", "mc_owner")
-    student_token = _register_and_token("mc_student@test.com", "mc_student")
+    owner_token = _register_and_token("mc_owner@test.com", "mc_owner", role="teacher")
+    student_token = _register_and_token("mc_student@test.com", "mc_student", role="student")
     h_owner = _headers(owner_token)
     h_student = _headers(student_token)
 
     r = client.post("/exams/", json={"title": "MC Exam", "duration_minutes": 30, "seb_config_key": "some_key"}, headers=h_owner)
+    assert r.status_code == 201, r.text
     exam_id = r.json()["id"]
 
     r = client.post(f"/exams/{exam_id}/questions", headers=h_owner, json={
