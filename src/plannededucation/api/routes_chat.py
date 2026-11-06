@@ -717,6 +717,9 @@ def send_direct_message(
     db.add(message)
     db.commit()
     db.refresh(message)
+    # Ensure response body is plaintext (DB stores Fernet ciphertext)
+    from .db_encryption import decrypt_model_instance
+    decrypt_model_instance(message)
 
     sender = _get_user_or_404(db, message.sender_id)
     rec = _get_user_or_404(db, message.recipient_id)
@@ -761,6 +764,8 @@ def update_direct_message(
     message.content = payload.content
     db.commit()
     db.refresh(message)
+    from .db_encryption import decrypt_model_instance
+    decrypt_model_instance(message)
 
     sender = _get_user_or_404(db, message.sender_id)
     recipient = _get_user_or_404(db, message.recipient_id)

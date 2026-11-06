@@ -72,8 +72,12 @@ def encrypt_field(plaintext: str | None) -> str | None:
     """Encrypt a string value for database storage.
 
     Returns None if encryption is disabled or plaintext is None/empty.
+    Already-encrypted Fernet tokens are left unchanged (avoids double-encrypt).
     """
     if not _db_fernet or plaintext is None or plaintext == "":
+        return plaintext
+    # Skip values that already look like Fernet tokens
+    if plaintext.startswith("gAAAA"):
         return plaintext
     try:
         encrypted = _db_fernet.encrypt(plaintext.encode("utf-8"))
@@ -150,16 +154,24 @@ def decrypt_model_instance(instance: Any) -> None:
     """Decrypt all encrypted fields on a model instance after load.
 
     Looks for __encrypted_fields__ attribute on the model class.
+    Uses set_committed_value so decrypt does not mark the row dirty
+    (setattr would re-trigger flush → encrypt → decrypt forever).
     """
     if not _db_fernet:
         return
+
+    from sqlalchemy.orm.attributes import set_committed_value
 
     encrypted_fields = getattr(instance.__class__, "__encrypted_fields__", set())
     for field_name in encrypted_fields:
         value = getattr(instance, field_name, None)
         if value is not None:
             decrypted = decrypt_field(value)
-            setattr(instance, field_name, decrypted)
+            if decrypted != value:
+                set_committed_value(instance, field_name, decrypted)
+
+
+_SESSION_DECRYPT_HOOK_REGISTERED = False
 
 
 def register_encrypted_model(model_class: Any, fields: list[str]) -> None:
@@ -169,10 +181,12 @@ def register_encrypted_model(model_class: Any, fields: list[str]) -> None:
         model_class: The SQLAlchemy model class
         fields: List of field names to encrypt/decrypt automatically
     """
+    global _SESSION_DECRYPT_HOOK_REGISTERED
     model_class.__encrypted_fields__ = set(fields)
 
     # Register event listeners for automatic encrypt/decrypt
     from sqlalchemy import event
+    from sqlalchemy.orm import Session
 
     @event.listens_for(model_class, "before_insert")
     @event.listens_for(model_class, "before_update")
@@ -182,3 +196,15 @@ def register_encrypted_model(model_class: Any, fields: list[str]) -> None:
     @event.listens_for(model_class, "load")
     def _decrypt_after_load(target, context):
         decrypt_model_instance(target)
+
+    # after_insert decrypt is unreliable: SQLAlchemy may re-sync INSERT results
+    # onto the instance afterward (ciphertext wins). Decrypt once the flush is
+    # fully finished so API responses always see plaintext.
+    if not _SESSION_DECRYPT_HOOK_REGISTERED:
+        @event.listens_for(Session, "after_flush_postexec")
+        def _decrypt_after_flush(session: Session, flush_context: Any) -> None:
+            for obj in session.identity_map.values():
+                if getattr(obj.__class__, "__encrypted_fields__", None):
+                    decrypt_model_instance(obj)
+
+        _SESSION_DECRYPT_HOOK_REGISTERED = True
