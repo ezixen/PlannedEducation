@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
-import { Edit } from 'lucide-react';
+import { Edit, AlertCircle, Image as ImageIcon } from 'lucide-react';
 
 interface OCRWord {
   text: string;
