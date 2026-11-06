@@ -18,12 +18,11 @@ from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import database, models, schemas
+from . import database, models
 from .ai_providers import (
     get_teacher_ai_provider,
 )
 from .ocr_service import OCRService, get_ocr_service
-from .handwriting_service import get_handwriting_service, HandwritingRecognitionService
 from .routes_anonymizer import scrub_pii
 from .routes_auth import get_current_user
 

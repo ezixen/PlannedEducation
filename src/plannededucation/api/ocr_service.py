@@ -657,6 +657,7 @@ class HandwritingRecognitionService:
 
         try:
             import io as _io
+
             from PIL import Image as _Image
 
             image = _Image.open(_io.BytesIO(image_data))
