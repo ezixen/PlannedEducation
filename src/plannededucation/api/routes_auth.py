@@ -1643,10 +1643,10 @@ def approve_teacher_aide(
     if not aide:
         raise HTTPException(status_code=404, detail="User not found")
 
-    if aide.role != "teacher":
+    if aide.role in ("admin", "superadmin"):
         raise HTTPException(
             status_code=400,
-            detail="Only teacher accounts can be approved as teacher's aides"
+            detail="Administrators cannot be teacher's aides"
         )
 
     if aide.is_teacher_aide:
@@ -1659,6 +1659,81 @@ def approve_teacher_aide(
     db.refresh(aide)
 
     return aide
+
+
+@router.post("/teacher-aide/nominate", response_model=schemas.UserResponse)
+def nominate_teacher_aide(
+    payload: schemas.TeacherAideNominate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Nominate a student or user directly as a teacher's aide.
+
+    Grants the same rights as if the registered student requested and was approved.
+    Only teachers and admins can nominate teacher's aides.
+    """
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=403,
+            detail="Only teachers and admins can nominate teacher's aides"
+        )
+
+    aide = None
+    if payload.user_id:
+        aide = db.query(models.User).filter(models.User.id == payload.user_id).first()
+    elif payload.identifier:
+        aide = db.query(models.User).filter(
+            (models.User.email == payload.identifier) | (models.User.username == payload.identifier)
+        ).first()
+
+    if not aide:
+        raise HTTPException(status_code=404, detail="User to nominate not found")
+
+    if aide.role in ("admin", "superadmin"):
+        raise HTTPException(status_code=400, detail="Administrators cannot be teacher's aides")
+
+    if aide.is_teacher_aide:
+        raise HTTPException(status_code=400, detail="User is already a teacher's aide")
+
+    aide.is_teacher_aide = True
+    aide.aide_approved_by = current_user.id
+    aide.aide_approved_at = datetime.now(UTC)
+    db.commit()
+    db.refresh(aide)
+
+    return aide
+
+
+@router.patch("/teacher/settings/student-dms", response_model=schemas.UserResponse)
+def toggle_student_dms(
+    payload: schemas.TeacherToggleStudentDms,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Toggle whether students can send direct messages to this teacher."""
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Only teachers can change student DM settings")
+
+    current_user.allow_student_dms = payload.allow_student_dms
+    db.commit()
+    db.refresh(current_user)
+    return current_user
+
+
+@router.patch("/admin/settings/dm-visibility", response_model=schemas.UserResponse)
+def toggle_admin_dm_visibility(
+    payload: schemas.AdminToggleDmVisibility,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Toggle whether an admin is visible in the Teacher Lounge direct message list."""
+    if not (current_user.is_admin or current_user.role in ("admin", "superadmin")):
+        raise HTTPException(status_code=403, detail="Only admins can change DM visibility settings")
+
+    current_user.is_visible_in_teacher_dm = payload.is_visible_in_teacher_dm
+    db.commit()
+    db.refresh(current_user)
+    return current_user
 
 
 @router.post("/teacher-aide/revoke", response_model=schemas.UserResponse)

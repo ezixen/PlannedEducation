@@ -46,6 +46,9 @@ class DeploymentConfigSchema(BaseModel):
     backup_retention_days: int = Field(default=30, ge=1, le=3650, description="Retention period for automatic backups in days (default: 30 days)")
     backup_time: str = Field(default="22:00", pattern=r"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", description="Time of day for automatic backups in 24h format (default: 22:00)")
 
+    # Support Email for Teachers (set by superadmin, visible to all teachers in the Lounge)
+    admin_support_email: str | None = Field(default=None, max_length=256, description="Admin support email visible to all teachers")
+
 
 class DeploymentConfigResponse(BaseModel):
     school_name: str
@@ -72,6 +75,7 @@ class DeploymentConfigResponse(BaseModel):
     backup_frequency_days: int = 1
     backup_retention_days: int = 30
     backup_time: str = "22:00"
+    admin_support_email: str | None = None
 
 
 def find_project_root() -> Path:
@@ -204,6 +208,7 @@ def load_deployment_config() -> dict[str, Any]:
         "backup_frequency_days": int(os.getenv("BACKUP_FREQUENCY_DAYS", env_vars.get("BACKUP_FREQUENCY_DAYS", "1"))),
         "backup_retention_days": int(os.getenv("BACKUP_RETENTION_DAYS", env_vars.get("BACKUP_RETENTION_DAYS", "30"))),
         "backup_time": os.getenv("BACKUP_TIME", env_vars.get("BACKUP_TIME", "22:00")),
+        "admin_support_email": os.getenv("ADMIN_SUPPORT_EMAIL", env_vars.get("ADMIN_SUPPORT_EMAIL")),
     }
 
     # If deployment.json exists, overlay its values
@@ -280,6 +285,7 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
         "BACKUP_FREQUENCY_DAYS": str(new_config.backup_frequency_days),
         "BACKUP_RETENTION_DAYS": str(new_config.backup_retention_days),
         "BACKUP_TIME": new_config.backup_time,
+        "ADMIN_SUPPORT_EMAIL": new_config.admin_support_email or "",
     }
     update_env_file(env_path, env_updates)
 

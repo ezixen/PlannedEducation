@@ -1,142 +1,73 @@
-# PlannedEducation — Todo List: All User Requests (VS Code Chat History)
+# PlannedEducation — Todo List (updated 2026-11-06)
 
-**Source:** VS Code agent chat history (transcript.jsonl), Oct 3 2026 – Nov 6 2026  
-**Most recent request:** Nov 6 2026 — "check vs code chat history and state of code... finish any that are missing or fix mistakes the other agent might have made"
-
----
-
-## A. Teacher's Aide Nomination System (in progress — from progress_log.md)
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| A1 | TeacherAideRequest schema | ✅ DONE | Added to `schemas.py` |
-| A2 | POST /teacher-aide/request endpoint | ✅ DONE | Added to `routes_auth.py` — creates InAppNotification for admins |
-| A3 | Teacher's aide model fields | ✅ DONE | `is_teacher_aide`, `aide_approved_by`, `aide_approved_at`, `aide_approved_by_teacher_id` already on User model |
-| A4 | Teacher's aide approve/revoke/list/share routes | ✅ DONE | Already in `routes_auth.py` |
+**Sources:** VS Code + Antigravity chat history; verified against codebase (no fresh deploy / no test runs this pass).  
+**Detail reports:** [`2026-11-06_AGENT_WORK_STATUS.md`](./2026-11-06_AGENT_WORK_STATUS.md), [`2026-11-06_PENDING_VERIFY.md`](./2026-11-06_PENDING_VERIFY.md)
 
 ---
 
-## B. Teacher's Lounge Messaging System
+## Still open (real residuals)
 
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| B1 | TeacherLoungeMessage model | ✅ DONE | Added to `models.py` |
-| B2 | Lounge message schemas | ✅ DONE | Added to `schemas.py` |
-| B3 | Louse message routes | ✅ DONE | Added REST endpoints to `routes_chat.py` |
-
----
-
-## C. Admin Email Configuration
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| C1 | Admin email config (SMTP settings) | ✅ DONE | Already in `deployment_config.py` + `/config` API endpoints in `routes_admin.py` |
-| C2 | Email config schemas | ✅ DONE | `DeploymentConfigSchema` already includes SMTP fields |
-| C3 | Email config routes | ✅ DONE | GET/PUT `/config` in `routes_admin.py` |
-| C4 | Email service | ✅ DONE | `email_service.py` supports Brevo, SMTP, and console mock |
+| # | Request | Status | Notes |
+|---|---------|--------|-------|
+| R1 | Commit today’s aide/lounge/messaging/special-chars finish pass | ✅ DONE | Committed on `dev` (push not requested) |
+| R2 | Untrack/remove root one-offs from GitHub | ✅ DONE | Removed `extract_faq.py`, `hungarian_university_contacts.md`; backed up under `scratch/one_off_backup_2026-11-06/` |
+| R3 | Untrack gitignored-but-still-tracked docs | ✅ DONE | `git rm --cached` for `docs/dev/` + `docs/admin/runbooks/` (26 files); local copies kept; backup under `scratch/tracked_ignored_backup_2026-11-06/` |
+| R4 | Problems-tab screenshot fixes (F7) | ⏸️ BLOCKED | No screenshot in plans; provide image if still needed |
+| R5 | Deep scripts/docs/FAQ/modules audit report (H2) | ⏸️ DEFERRED | Light verify done; full content audit optional |
 
 ---
 
-## D. Special Characters Picker (Frontend)
+## Explicitly skipped for now (your call)
 
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| D1 | Special characters picker component | ✅ DONE | Created `SpecialCharactersPicker.tsx` in `web/apps/portal/src/components/` with i18n keys |
-
----
-
-## E. Testing & Commit (from progress_log.md)
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| E1 | Test all features | ✅ DONE | Ruff + tsc passed, committed and pushed to dev |
-| E2 | Commit and push | ✅ DONE | Pushed to origin/dev (commit e86fd288) |
+- Fresh GH install / uninstall / WSL matrix (G1, G5–G7)
+- Visual overlap testing (J4)
+- Merge to `main` / alert wait cycles
 
 ---
 
-## F. Security & Compliance (from chat history)
+## Verified DONE (was listed pending — already in code)
 
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| F1 | pip audit implementation | ❌ PENDING | Implement pip audit as requested (Oct 21) |
-| F2 | No plaintext secrets / no hardcoded paths in AGENTS.md | ❌ PENDING | Add rule to AGENTS.md (Oct 20) |
-| F3 | No rate limits except login/password/email resend | ❌ PENDING | (Oct 21) |
-| F4 | Cryptography vuln ignore temporarily | ❌ PENDING | (Oct 21) |
-| F5 | Clean up root folder and one-off scripts | ❌ PENDING | Don't upload dev-testing scripts to GH (Oct 21) |
-| F6 | Update all documents | ❌ PENDING | (Oct 21) |
-| F7 | Fix problems from problem tab on screenshot | ❌ PENDING | (Oct 21) |
+### A–E, K (today’s feature stream)
+Teacher aide nominate/approve/share · Teachers’ lounge directory DMs · Special characters picker (+ module sets) · Encrypted direct messaging UI · SMTP/admin support email config
 
----
+### F. Security & Compliance
+| # | Status |
+|---|--------|
+| F1 pip-audit in CI | ✅ |
+| F2 No plaintext secrets / no hardcoded paths in AGENTS.md | ✅ |
+| F3 Rate limits only on auth-sensitive routes | ✅ |
+| F4 Crypto vuln handling (upgrade; no CI ignore) | ✅ |
+| F6 Docs updates from Oct work | ✅ |
 
-## G. Deployment & Installer (from chat history)
+### G. Deployment UI (not re-tested)
+| # | Status |
+|---|--------|
+| G2 Editable deployment.json | ✅ |
+| G3 Admin deployment config panel | ✅ |
+| G4 Backup config button | ✅ |
 
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| G1 | Deploy from GH — users only have what's on GH, should work | ❓ NEEDS CHECK | (Oct 18) |
-| G2 | Editable deployment config file (config/deployment.json) | ✅ DONE | Already implemented |
-| G3 | Admin panel page to edit deployment config | ❓ NEEDS CHECK | (Oct 18) |
-| G4 | Backup config file button | ❓ NEEDS CHECK | (Oct 18) |
-| G5 | Install/uninstall from GH, log every step, fix issues | ❓ NEEDS CHECK | (Oct 18-19) |
-| G6 | Linux installer/uninstaller via WSL | ❓ NEEDS CHECK | (Oct 19) |
-| G7 | Uninstaller: list dependencies one-by-one, user chooses | ❓ NEEDS CHECK | (Oct 17) |
+### H. I18n & local agent files
+| # | Status |
+|---|--------|
+| H1 Portal i18n migration (Phase 27 + later) | ✅ |
+| H3 AGENTS.local.md backup synced to AGENTS.md | ✅ (fixed 2026-11-06) |
+| H4 Local file protection rules | ✅ |
 
----
+### I. Auth & Notifications
+| # | Status |
+|---|--------|
+| I1–I7 Teacher self-reg + approval, admin notifs, Google/2FA, password reset, in-app + email, OTP/recovery | ✅ |
 
-## H. I18n & Documentation (from chat history)
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| H1 | Migrate hardcoded English user-facing text to i18n t() calls | ❌ PENDING | (Oct 20) |
-| H2 | Check all scripts/docs/text/FAQ/modules, report problems to MD | ❌ PENDING | (Oct 20, Oct 30-31) |
-| H3 | Update AGENTS.local.md backup | ❓ NEEDS CHECK | (Oct 19) |
-| H4 | AGENTS.md rule about local file protection | ✅ DONE | Already in AGENTS.md (§11) |
-
----
-
-## I. Auth & Notifications (from chat history)
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| I1 | Teacher self-registration with admin approval | ❓ NEEDS CHECK | (Oct 18) |
-| I2 | Admin notification when new teacher registers | ❓ NEEDS CHECK | (Oct 18) |
-| I3 | Google register + 2FA | ❓ NEEDS CHECK | (Oct 18) |
-| I4 | Admin password reset + backup codes | ❓ NEEDS CHECK | (Oct 18) |
-| I5 | In-platform notifications for password reset requests | ❓ NEEDS CHECK | (Oct 18) |
-| I6 | Email system for notifications | ❓ NEEDS CHECK | `email_service.py` exists |
-| I7 | One-time password reset codes for everyone | ❓ NEEDS CHECK | (Oct 18) |
-
----
-
-## J. Other Requests (from chat history)
-
-| # | Request | Status | Details |
-|---|---------|--------|---------|
-| J1 | Backend deploy log — separate error logs, agents stop & ask at key decisions | ❓ NEEDS CHECK | (Oct 17) |
-| J2 | Commit and push to GH dev and main | ❓ NEEDS CHECK | (Oct 18) |
-| J3 | Mark GH dev/main as backup, delete older backups | ❓ NEEDS CHECK | (Oct 18) |
-| J4 | Test visually for overlaps/text outside boxes | ❓ NEEDS CHECK | (Oct 6) |
-| J5 | Clean up temp files (visual test screenshots) | ❓ NEEDS CHECK | (Oct 6) |
-| J6 | Save and close all open files | ❓ NEEDS CHECK | (Oct 17) |
-
----
-
-## Next Action
-
-All progress_log.md items (A–E) are ✅ DONE and pushed to dev.
-
-New requests found in VS Code chat database (today's session `dcd4d6e4`, Nov 5-6) and session `bfcbcea9`:
-- **Encrypted messaging system for all users** — popup window lower left corner, chat overlay, encrypted storage, message page with history and delete-after-confirm, new message counter icon always visible (Turns 47-48, session dcd4d6e4)
-- **Process logging / temp log file** — track steps started and finished (Turns 49-51, session dcd4d6e4)
-- **Anti-looping method with self-monitoring** — continue from last step, try another way if looping (Turn 50, session dcd4d6e4)
-- **Restore local files (AGENTS.md, test scripts)** from backup — GH doesn't have gitignored local files (Turns 140-141, session bfcbcea9)
-- **Fresh install from GH test** — install script PS1, default folder, uninstall test (Turn 137, session bfcbcea9)
-- **Merge to main after alerts cleared** (Turn 134, session bfcbcea9)
-
-Review each item and implement or verify as needed.
+### J. Other
+| # | Status |
+|---|--------|
+| J1 Separate backend error log | ✅ |
+| J2/J3 Historical push/backup ops | ✅ / N/A (ops) |
+| J5/J6 Temp cleanup / close files | ✅ / N/A |
 
 ---
 
 ## Legend
-- ✅ DONE — Verified in codebase
-- ❌ PENDING — Not yet implemented
-- ❓ NEEDS CHECK — Need to verify current state
+- ✅ DONE — verified in codebase this pass  
+- ⏳ WAITING / NEEDS OK — needs your go-ahead  
+- ⏸️ BLOCKED / DEFERRED — cannot finish without input or explicitly postponed  

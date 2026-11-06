@@ -607,6 +607,72 @@ def get_direct_conversation(
     return result
 
 
+@router.get("/teachers-lounge/directory", response_model=schemas.TeacherLoungeDirectoryResponse)
+def get_teachers_lounge_directory(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List approved teachers and visible admins for direct messaging, plus admin support email.
+
+    Accessible to teachers, teacher's aides, and admins.
+    """
+    _require_teacher_or_admin(current_user)
+
+    teachers = (
+        db.query(models.User)
+        .filter(
+            models.User.role.in_(["teacher", "teacher_aide"]),
+            models.User.teacher_approved == True,
+            models.User.is_active == True,
+            models.User.id != current_user.id,
+        )
+        .all()
+    )
+
+    teacher_items = [
+        schemas.TeacherDirectoryItem(
+            id=t.id,
+            name=t.full_name or t.username,
+            role=t.role,
+            email=t.email,
+            is_aide=t.is_teacher_aide,
+        )
+        for t in teachers
+    ]
+
+    admins = (
+        db.query(models.User)
+        .filter(
+            (models.User.is_admin == True) | (models.User.role.in_(["admin", "superadmin"])),
+            models.User.is_visible_in_teacher_dm == True,
+            models.User.is_active == True,
+            models.User.id != current_user.id,
+        )
+        .all()
+    )
+
+    admin_items = [
+        schemas.TeacherDirectoryItem(
+            id=a.id,
+            name=a.full_name or a.username,
+            role=a.role,
+            email=a.email,
+            is_aide=False,
+        )
+        for a in admins
+    ]
+
+    from .deployment_config import load_deployment_config
+    dep_cfg = load_deployment_config()
+    support_email = dep_cfg.get("admin_support_email")
+
+    return schemas.TeacherLoungeDirectoryResponse(
+        teachers=teacher_items,
+        admins=admin_items,
+        admin_support_email=support_email,
+    )
+
+
 @router.post("/messages/direct", response_model=schemas.DirectMessageResponse)
 def send_direct_message(
     payload: schemas.DirectMessageCreate,
@@ -621,6 +687,27 @@ def send_direct_message(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Cannot send a message to yourself",
         )
+
+    # Student messaging policy: disabled by default
+    # Students cannot message other students
+    if current_user.role == "student":
+        if recipient.role == "student":
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Direct messaging between students is not enabled",
+            )
+        # Students can only message teachers/aides if the teacher enabled student DMs
+        if recipient.role in ("teacher", "teacher_aide"):
+            if not getattr(recipient, "allow_student_dms", False):
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Direct messaging with this teacher is disabled by default. The teacher must enable student messaging in their settings.",
+                )
+        elif recipient.role not in ("admin", "superadmin"):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Students cannot message this user",
+            )
 
     message = models.DirectMessage(
         sender_id=current_user.id,

@@ -34,8 +34,13 @@ class UserResponse(UserBase):
     id: str
     is_active: bool
     role: str
+    is_admin: bool = False
     totp_enabled: bool
     teacher_approved: bool = True
+    is_teacher_aide: bool = False
+    aide_approved_by: str | None = None
+    allow_student_dms: bool = False
+    is_visible_in_teacher_dm: bool = True
     # hashed_password, totp_secret, ai_api_key_encrypted NEVER included here
 
 
@@ -577,6 +582,11 @@ class PackageListResponse(BaseModel):
     page_size: int
 
 
+class SpecialCharacterSetSchema(BaseModel):
+    category: str = Field(..., min_length=1, max_length=64)
+    chars: list[str] = Field(default_factory=list)
+
+
 class PackageExportRequest(BaseModel):
     exam_id: str
     include_answers: bool = True
@@ -590,6 +600,7 @@ class PackageExportRequest(BaseModel):
     subject: str | None = None
     grade_level: str | None = None
     save_to_server: bool = False
+    special_characters: list[SpecialCharacterSetSchema] | None = None
 
 
 class PackageImportResult(BaseModel):
@@ -765,12 +776,43 @@ class TeacherAideApprove(BaseModel):
     user_id: str
 
 
+class TeacherAideNominate(BaseModel):
+    user_id: str | None = None
+    identifier: str | None = None  # email or username
+
+
 class TeacherAideRevoke(BaseModel):
     user_id: str
 
 
 class TeacherAideRequest(BaseModel):
     message: str | None = Field(None, max_length=512)
+
+
+class TeacherToggleStudentDms(BaseModel):
+    allow_student_dms: bool
+
+
+class AdminToggleDmVisibility(BaseModel):
+    is_visible_in_teacher_dm: bool
+
+
+class AdminSupportEmailUpdate(BaseModel):
+    admin_support_email: str
+
+
+class TeacherDirectoryItem(BaseModel):
+    id: str
+    name: str
+    role: str
+    email: str | None = None
+    is_aide: bool = False
+
+
+class TeacherLoungeDirectoryResponse(BaseModel):
+    teachers: list[TeacherDirectoryItem]
+    admins: list[TeacherDirectoryItem]
+    admin_support_email: str | None = None
 
 
 class ExamShareCreate(BaseModel):

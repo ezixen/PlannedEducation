@@ -1,263 +1,490 @@
-import { useState, useCallback } from 'react';
-import { Search, Check } from 'lucide-react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import { Search, ChevronLeft, ChevronRight, X, Check, Sparkles } from 'lucide-react';
 import { useI18n } from '../contexts/I18nContext';
 
-interface SpecialCharactersPickerProps {
-  onInsert: (char: string) => void;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const MATH_SYMBOLS = [
-  '∑', '∆', '∞', 'π', '√', '³', '²', '≤', '≥', '≠', '±', '×', '÷', '≈', '∝',
-  '∫', '∂', '∇', '∈', '∉', '⊂', '⊃', '∪', '∩', '∅', '∠', '°', '⊥', '∥', '∴',
-];
-
-const GREEK_LETTERS = [
-  'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο',
-  'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
-  'Α', 'Β', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ', 'Ο',
-  'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω',
-];
-
-const FOREIGN_CHARS = [
-  'ñ', '¿', '¡', 'ß', 'æ', 'œ', 'ø', 'å', 'þ', 'ð', 'ł', 'ŋ', 'ħ',
-  '¡', '¿', '«', '»', '„', '‚', '«', '»', '‹', '›',
-];
-
-const ACCENTED_CHARS = [
-  'á', 'é', 'í', 'ó', 'ú', 'à', 'è', 'ì', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û',
-  'ä', 'ë', 'ï', 'ö', 'ü', 'ÿ', 'ã', 'õ', 'ñ', 'ç', 'š', 'ž', 'ř', 'č',
-  'Á', 'É', 'Í', 'Ó', 'Ú', 'À', 'È', 'Ì', 'Ò', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û',
-  'Ä', 'Ë', 'Ï', 'Ö', 'Ü', 'Ÿ', 'Ã', 'Õ', 'Ñ', 'Ç', 'Š', 'Ž', 'Ř', 'Č',
-];
-
-interface CharCategory {
-  id: string;
-  label: string;
+export interface CustomCharSet {
+  category: string;
   chars: string[];
 }
 
-const CATEGORIES: CharCategory[] = [
-  { id: 'all', label: 'all', chars: [] },
-  { id: 'math', label: 'math', chars: MATH_SYMBOLS },
-  { id: 'greek', label: 'greek', chars: GREEK_LETTERS },
-  { id: 'foreign', label: 'foreign', chars: FOREIGN_CHARS },
-  { id: 'accents', label: 'accents', chars: ACCENTED_CHARS },
+export interface SpecialCharactersPickerProps {
+  onInsert?: (char: string) => void;
+  isOpen?: boolean;
+  onClose?: () => void;
+  customCategories?: CustomCharSet[];
+}
+
+const DEFAULT_CATEGORIES: { id: string; name: string; pages: string[][] }[] = [
+  {
+    id: 'math',
+    name: 'Math',
+    pages: [
+      // Page 1: Basic & Algebra
+      ['±', '×', '÷', '=', '≠', '≈', '≤', '≥', '<', '>', '√', '∛', '∜', '²', '³', 'ⁿ', '½', '⅓', '¼', '%', '‰', '∞', '∝', '∠', '°', '⊥', '∥', '∴', '∵', '∎'],
+      // Page 2: Calculus, Sets & Logic
+      ['∫', '∬', '∭', '∮', '∂', '∇', '∑', '∏', '∈', '∉', '⊂', '⊃', '⊆', '⊇', '∪', '∩', '∅', '∧', '∨', '¬', '⇒', '⇔', '∀', '∃', '∄', '≡', '≢', '⊄', '⊅', '⊕'],
+    ],
+  },
+  {
+    id: 'chemistry',
+    name: 'Chemistry',
+    pages: [
+      // Page 1: Arrows & Equilibrium
+      ['→', '⇄', '⇌', '⇋', '↑', '↓', '↔', '⇒', '⥯', '⥮', '⥰', '⥱', '⥲', '⥳', '⥴', '∆', '·', '•', '≡', '═', '─', '℃', '℉', 'K', 'Å', '⦵', '⦶', '⦷', '⦸', '⦹'],
+      // Page 2: Charges, Bonds & Subscripts
+      ['⁺', '⁻', '²⁺', '³⁺', '⁴⁺', '²⁻', '³⁻', '⁴⁻', '⁰', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉', '₊', '₋', '₍', '₎', '₀', 'α', 'β', 'γ', 'δ', 'σ', 'π', 'λ'],
+    ],
+  },
+  {
+    id: 'physics',
+    name: 'Physics',
+    pages: [
+      // Page 1: Constants & Quanta
+      ['ħ', 'ℏ', 'λ', 'ν', 'Ω', 'μ', 'ρ', 'σ', 'τ', 'φ', 'ψ', 'ω', 'Δ', '∇', 'c', 'G', 'h', 'k', 'ε₀', 'μ₀', 'e', 'mₑ', 'mₚ', 'mₙ', 'Å', '℃', '℉', 'K', 'J', 'W'],
+      // Page 2: Units & Symbols
+      ['N', 'Pa', 'V', 'A', 'T', 'Hz', 'Bq', 'Gy', 'Sv', 'ℓ', 'Å', '∢', '∡', '⊾', '⊿', '⊕', '⊗', '⊙', '⊘', '⊥', '∥', '∠', '∡', '⌒', '⌢', '⌣', '⌀', '⌁', '⌂', '⌃'],
+    ],
+  },
+  {
+    id: 'greek',
+    name: 'Greek',
+    pages: [
+      // Page 1: Lowercase
+      ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϑ', 'ϕ', 'ϖ', 'ϰ', 'ϱ', 'ς'],
+      // Page 2: Uppercase
+      ['Α', 'Β', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ', 'Ο', 'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω', 'ϒ', 'ϓ', 'ϔ', '∇', '∏', '∑'],
+    ],
+  },
+  {
+    id: 'foreign',
+    name: 'Foreign',
+    pages: [
+      // Page 1: Accents
+      ['á', 'é', 'í', 'ó', 'ú', 'à', 'è', 'ì', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ä', 'ë', 'ï', 'ö', 'ü', 'ÿ', 'ç', 'ñ', 'ß', 'æ', 'œ', 'ø', 'å', 'þ', 'ð'],
+      // Page 2: Uppercase
+      ['Á', 'É', 'Í', 'Ó', 'Ú', 'À', 'È', 'Ì', 'Ò', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ä', 'Ë', 'Ï', 'Ö', 'Ü', 'Ÿ', 'Ç', 'Ñ', 'Æ', 'Œ', 'Ø', 'Å', 'Þ', 'Ð', 'Ł'],
+      // Page 3: Symbols & Quotes
+      ['ł', 'ŋ', 'ħ', 'š', 'ž', 'ř', 'č', 'ć', 'ń', 'ś', 'ź', 'ż', '¿', '¡', '«', '»', '„', '“', '”', '‘', '’', '‹', '›', '—', '–', '·', '•', '§', '¶', '©'],
+    ],
+  },
 ];
 
 export function SpecialCharactersPicker({
   onInsert,
-  isOpen,
-  onClose,
+  isOpen: controlledIsOpen,
+  onClose: controlledOnClose,
+  customCategories = [],
 }: SpecialCharactersPickerProps) {
   const { t } = useI18n();
+
+  const [internalOpen, setInternalOpen] = useState(false);
+  const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalOpen;
+  const onClose = controlledOnClose || (() => setInternalOpen(false));
+
+  const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('all');
-  const [copied, setCopied] = useState<string | null>(null);
+  const [copiedChar, setCopiedChar] = useState<string | null>(null);
 
-  const filteredChars = useCallback(() => {
-    let chars: string[] = [];
-    if (category === 'all') {
-      chars = [...MATH_SYMBOLS, ...GREEK_LETTERS, ...FOREIGN_CHARS, ...ACCENTED_CHARS];
-    } else {
-      const cat = CATEGORIES.find((c) => c.id === category);
-      chars = cat ? [...cat.chars] : [];
-    }
+  // Track active input in the DOM for direct insertion
+  const lastActiveElementRef = useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
+
+  useEffect(() => {
+    const handleFocusIn = (e: FocusEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target &&
+        (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') &&
+        !target.closest('[data-char-picker]')
+      ) {
+        lastActiveElementRef.current = target as HTMLInputElement | HTMLTextAreaElement;
+      }
+    };
+    document.addEventListener('focusin', handleFocusIn);
+    return () => document.removeEventListener('focusin', handleFocusIn);
+  }, []);
+
+  // Merge custom categories from exam module
+  const categories = [...DEFAULT_CATEGORIES];
+  if (customCategories.length > 0) {
+    customCategories.forEach((cc, idx) => {
+      // Chunk into pages of 30 chars
+      const pages: string[][] = [];
+      for (let i = 0; i < cc.chars.length; i += 30) {
+        pages.push(cc.chars.slice(i, i + 30));
+      }
+      categories.push({
+        id: `custom_${idx}`,
+        name: cc.category,
+        pages: pages.length > 0 ? pages : [[]],
+      });
+    });
+  }
+
+  const currentCategory = categories[activeCategoryIdx] || categories[0];
+  const totalPages = currentCategory.pages.length;
+
+  // Keyboard navigation for page flip (ArrowLeft / ArrowRight)
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement && e.target.type === 'text') {
+        // If typing in search bar, handle Enter to jump to category
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const query = search.trim().toLowerCase();
+          if (query) {
+            const foundIdx = categories.findIndex((c) =>
+              c.name.toLowerCase().startsWith(query) || c.id.toLowerCase().startsWith(query)
+            );
+            if (foundIdx !== -1) {
+              setActiveCategoryIdx(foundIdx);
+              setCurrentPage(0);
+              setSearch('');
+            }
+          }
+        }
+        return;
+      }
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, search, categories, totalPages, onClose]);
+
+  const insertCharacter = useCallback(
+    (char: string) => {
+      // 1. Direct insertion into DOM cursor position
+      const target = lastActiveElementRef.current;
+      if (target && 'value' in target) {
+        const start = target.selectionStart ?? target.value.length;
+        const end = target.selectionEnd ?? target.value.length;
+        const val = target.value;
+        target.value = val.substring(0, start) + char + val.substring(end);
+        target.selectionStart = target.selectionEnd = start + char.length;
+        target.dispatchEvent(new Event('input', { bubbles: true }));
+        target.dispatchEvent(new Event('change', { bubbles: true }));
+        target.focus();
+      }
+
+      // 2. Call external callback if given
+      onInsert?.(char);
+
+      // Visual feedback
+      setCopiedChar(char);
+      setTimeout(() => setCopiedChar(null), 1200);
+    },
+    [onInsert]
+  );
+
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+  };
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+  };
+
+  const displayedChars = (() => {
     if (search.trim()) {
-      const s = search.toLowerCase();
-      chars = chars.filter((c) => c.toLowerCase().includes(s));
+      const q = search.toLowerCase();
+      // Search across all categories
+      const all: string[] = [];
+      categories.forEach((cat) => {
+        cat.pages.forEach((p) => {
+          p.forEach((c) => {
+            if (c.toLowerCase().includes(q) && !all.includes(c)) {
+              all.push(c);
+            }
+          });
+        });
+      });
+      return all.slice(0, 30);
     }
-    return chars;
-  }, [search, category]);
+    return currentCategory.pages[currentPage] || [];
+  })();
 
-  const handleInsert = useCallback((char: string) => {
-    onInsert(char);
-    setCopied(char);
-    setTimeout(() => setCopied(null), 1500);
-  }, [onInsert]);
-
-  if (!isOpen) return null;
+  // Trigger button if uncontrolled
+  if (!isOpen) {
+    return (
+      <button
+        onClick={() => setInternalOpen(true)}
+        title={t('special_chars.title') || 'Special Characters & Symbols Picker'}
+        aria-label="Open Special Characters Picker"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          right: '1.5rem',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.4rem',
+          padding: '0.6rem 1rem',
+          borderRadius: 'var(--radius-full)',
+          border: '1px solid var(--border-color)',
+          backgroundColor: 'var(--panel-bg)',
+          color: 'var(--text-color)',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+          cursor: 'pointer',
+          fontWeight: 600,
+          fontSize: '0.85rem',
+          transition: 'all 0.2s',
+        }}
+        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
+      >
+        <Sparkles size={16} style={{ color: 'var(--primary-color)' }} />
+        <span>Ω Symbols</span>
+      </button>
+    );
+  }
 
   return (
     <div
+      data-char-picker="true"
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 2000,
+        bottom: '1.5rem',
+        right: '1.5rem',
+        zIndex: 2500,
+        width: '340px',
+        maxHeight: '480px',
+        backgroundColor: 'var(--panel-bg)',
+        border: '1px solid var(--border-color)',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        overflow: 'hidden',
       }}
     >
+      {/* Top Header */}
       <div
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.4)',
-          zIndex: -1,
-        }}
-        onClick={onClose}
-      />
-
-      <div
-        style={{
-          backgroundColor: 'var(--panel-bg)',
-          border: '1px solid var(--border-color)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '1.5rem',
-          width: '420px',
-          maxHeight: '600px',
           display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem',
-          boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0.65rem 0.9rem',
+          backgroundColor: 'var(--sidebar-bg)',
+          borderBottom: '1px solid var(--border-color)',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--text-color)' }}>
-            {t('special_chars.title')}
-          </h2>
-          <button
-            onClick={onClose}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'var(--text-muted)',
-              cursor: 'pointer',
-              padding: '0.25rem',
-              borderRadius: 'var(--radius-sm)',
-            }}
-          >
-            <span>×</span>
-          </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <Sparkles size={15} style={{ color: 'var(--primary-color)' }} />
+          <span style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-color)' }}>
+            {t('special_chars.title') || 'Symbols Picker'}
+          </span>
         </div>
+        <button
+          onClick={onClose}
+          aria-label="Close Character Picker"
+          style={{
+            background: 'none',
+            border: 'none',
+            color: 'var(--text-muted)',
+            cursor: 'pointer',
+            padding: '0.2rem',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <X size={17} />
+        </button>
+      </div>
 
-        <div style={{ position: 'relative' }}>
+      {/* Search Bar with Page Navigation Icons */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+          padding: '0.5rem 0.75rem',
+          borderBottom: '1px solid var(--border-color)',
+          backgroundColor: 'var(--bg-color)',
+        }}
+      >
+        <div style={{ position: 'relative', flex: 1 }}>
           <Search
-            size={16}
-            style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}
+            size={14}
+            style={{
+              position: 'absolute',
+              left: '0.6rem',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              color: 'var(--text-muted)',
+            }}
           />
           <input
             type="text"
-            placeholder={t('special_chars.search')}
+            placeholder="Type 'math', 'chem' + Enter..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             style={{
               width: '100%',
-              padding: '0.6rem 0.75rem 0.6rem 2.25rem',
-              borderRadius: 'var(--radius-md)',
+              padding: '0.4rem 0.5rem 0.4rem 1.8rem',
+              borderRadius: 'var(--radius-sm)',
               border: '1px solid var(--border-color)',
-              backgroundColor: 'var(--bg-color)',
+              backgroundColor: 'var(--panel-bg)',
               color: 'var(--text-color)',
-              fontSize: '0.9rem',
+              fontSize: '0.8rem',
             }}
           />
         </div>
 
+        {/* Left & Right page flip icons next to search bar */}
+        {!search.trim() && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.15rem' }}>
+            <button
+              onClick={prevPage}
+              title="Previous Page (Left Arrow)"
+              style={{
+                background: 'none',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '0.3rem',
+                cursor: 'pointer',
+                display: 'flex',
+                color: 'var(--text-color)',
+              }}
+            >
+              <ChevronLeft size={14} />
+            </button>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', padding: '0 0.25rem' }}>
+              {currentPage + 1}/{totalPages}
+            </span>
+            <button
+              onClick={nextPage}
+              title="Next Page (Right Arrow)"
+              style={{
+                background: 'none',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '0.3rem',
+                cursor: 'pointer',
+                display: 'flex',
+                color: 'var(--text-color)',
+              }}
+            >
+              <ChevronRight size={14} />
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Category Pills */}
+      {!search.trim() && (
         <div
           style={{
             display: 'flex',
-            gap: '0.5rem',
+            gap: '0.35rem',
+            padding: '0.4rem 0.75rem',
             overflowX: 'auto',
-            paddingBottom: '0.5rem',
+            borderBottom: '1px solid var(--border-color)',
+            backgroundColor: 'var(--sidebar-bg)',
           }}
         >
-          {CATEGORIES.map((cat) => (
+          {categories.map((cat, idx) => (
             <button
               key={cat.id}
-              onClick={() => setCategory(cat.id)}
+              onClick={() => {
+                setActiveCategoryIdx(idx);
+                setCurrentPage(0);
+              }}
               style={{
-                padding: '0.4rem 0.8rem',
+                padding: '0.25rem 0.6rem',
                 borderRadius: 'var(--radius-full)',
-                border: `1px solid ${category === cat.id ? 'var(--primary-color)' : 'var(--border-color)'}`,
-                backgroundColor: category === cat.id ? 'var(--primary-color)' : 'transparent',
-                color: category === cat.id ? '#fff' : 'var(--text-color)',
-                fontSize: '0.85rem',
+                border: `1px solid ${activeCategoryIdx === idx ? 'var(--primary-color)' : 'var(--border-color)'}`,
+                backgroundColor: activeCategoryIdx === idx ? 'var(--primary-color)' : 'transparent',
+                color: activeCategoryIdx === idx ? '#fff' : 'var(--text-color)',
+                fontSize: '0.75rem',
+                fontWeight: activeCategoryIdx === idx ? 600 : 400,
                 cursor: 'pointer',
                 whiteSpace: 'nowrap',
               }}
             >
-              {t(`special_chars.${cat.label}` as any)}
+              {cat.name}
             </button>
           ))}
         </div>
+      )}
 
-        <div
-          style={{
-            flex: 1,
-            overflowY: 'auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(8, 1fr)',
-            gap: '0.5rem',
-          }}
-        >
-          {filteredChars().length === 0 ? (
-            <div
-              style={{
-                gridColumn: '1 / -1',
-                textAlign: 'center',
-                padding: '2rem',
-                color: 'var(--text-muted)',
-                fontSize: '0.9rem',
-              }}
-            >
-              {t('special_chars.empty')}
-            </div>
-          ) : (
-            filteredChars().map((char) => {
-              const isCopied = copied === char;
-              return (
-                <button
-                  key={char}
-                  onClick={() => handleInsert(char)}
-                  title={t('special_chars.insert')}
-                  style={{
-                    padding: '0.75rem',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1px solid var(--border-color)',
-                    backgroundColor: isCopied ? 'var(--success-color)' : 'var(--bg-color)',
-                    color: isCopied ? '#fff' : 'var(--text-color)',
-                    fontSize: '1.5rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    lineHeight: 1,
-                  }}
-                >
-                  {char}
-                  {isCopied && (
-                    <Check size={14} style={{ color: '#fff', marginLeft: '0.25rem' }} />
-                  )}
-                </button>
-              );
-            })
-          )}
-        </div>
-
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginTop: '0.5rem' }}>
-          <button
-            onClick={onClose}
+      {/* Character Grid */}
+      <div
+        style={{
+          flex: 1,
+          padding: '0.75rem',
+          overflowY: 'auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(6, 1fr)',
+          gap: '0.4rem',
+        }}
+      >
+        {displayedChars.length === 0 ? (
+          <div
             style={{
-              padding: '0.6rem 1rem',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-color)',
-              backgroundColor: 'transparent',
-              color: 'var(--text-color)',
-              fontSize: '0.9rem',
-              cursor: 'pointer',
+              gridColumn: '1 / -1',
+              textAlign: 'center',
+              padding: '1.5rem',
+              color: 'var(--text-muted)',
+              fontSize: '0.8rem',
             }}
           >
-            {t('special_chars.insert')}
-          </button>
-        </div>
+            {t('special_chars.empty') || 'No characters found'}
+          </div>
+        ) : (
+          displayedChars.map((char, i) => {
+            const isJustCopied = copiedChar === char;
+            return (
+              <button
+                key={`${char}_${i}`}
+                onClick={() => insertCharacter(char)}
+                title={`Insert ${char}`}
+                style={{
+                  height: '42px',
+                  borderRadius: 'var(--radius-sm)',
+                  border: '1px solid var(--border-color)',
+                  backgroundColor: isJustCopied ? 'var(--success-color)' : 'var(--bg-color)',
+                  color: isJustCopied ? '#fff' : 'var(--text-color)',
+                  fontSize: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.1s',
+                  lineHeight: 1,
+                }}
+              >
+                {isJustCopied ? <Check size={16} /> : char}
+              </button>
+            );
+          })
+        )}
+      </div>
+
+      {/* Subtle Hint Footer */}
+      <div
+        style={{
+          padding: '0.4rem 0.75rem',
+          backgroundColor: 'var(--sidebar-bg)',
+          borderTop: '1px solid var(--border-color)',
+          fontSize: '0.7rem',
+          color: 'var(--text-muted)',
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+      >
+        <span>Click inserts at cursor position</span>
+        <span>← / → flip pages</span>
       </div>
     </div>
   );

@@ -19,6 +19,11 @@ export interface PackageMetadata {
   checksum: string;
 }
 
+export interface SpecialCharacterSet {
+  category: string;
+  chars: string[];
+}
+
 export interface ExamSettings {
   shuffle_questions: boolean;
   shuffle_options: boolean;
@@ -27,6 +32,10 @@ export interface ExamSettings {
   require_seb: boolean;
   time_multiplier: number;
   passing_score: number;
+  /** Optional custom character pages for the special-characters picker */
+  special_characters?: SpecialCharacterSet[];
+  allow_digital_hand_raise?: boolean;
+  delivery_mode?: string;
 }
 
 export interface ExamTemplate {
@@ -95,6 +104,7 @@ export interface PackageExportRequest {
   subject?: string;
   grade_level?: string;
   save_to_server?: boolean;
+  special_characters?: SpecialCharacterSet[];
 }
 
 export interface PackageImportResult {

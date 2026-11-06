@@ -3,10 +3,25 @@ import { useParams, Link } from 'react-router-dom';
 import { apiClient } from '../api';
 import { ChatGptPanel } from '../components/ChatGptPanel';
 import { useI18n } from '../contexts/I18nContext';
-import { packagesService, MODULE_LANGUAGES } from '../services/packages';
+import { useToast } from '../contexts/ToastContext';
+import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
+import { packagesService, MODULE_LANGUAGES, type SpecialCharacterSet } from '../services/packages';
+
+function loadSpecialChars(examId: string): SpecialCharacterSet[] {
+  try {
+    const raw = localStorage.getItem(`pe_exam_special_chars_${examId}`);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
 
 export function ExamEditor() {
   const { t, locale } = useI18n();
+  const { success: showSuccess } = useToast();
+  const { setCustomCategories, clearCustomCategories } = useSpecialCharacters();
   const { id } = useParams<{ id: string }>();
   const [exam, setExam] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -15,6 +30,9 @@ export function ExamEditor() {
   const defaultLang = MODULE_LANGUAGES.find(l => l.code === locale) || MODULE_LANGUAGES[0];
   const [moduleLang, setModuleLang] = useState(defaultLang.code);
   const [moduleCountry, setModuleCountry] = useState(defaultLang.defaultCountry);
+  const [specialCharSets, setSpecialCharSets] = useState<SpecialCharacterSet[]>([]);
+  const [newCategory, setNewCategory] = useState('');
+  const [newChars, setNewChars] = useState('');
 
   // New Question Form
   const [qType, setQType] = useState('multiple_choice');
@@ -46,17 +64,54 @@ export function ExamEditor() {
           if (m[3]) setModuleCountry(m[3].trim().toLowerCase());
         }
       }
+      const chars = loadSpecialChars(id);
+      setSpecialCharSets(chars);
+      setCustomCategories(chars);
     } catch (e) {
       console.error(e);
       setExam(null);
     } finally {
       setLoading(false);
     }
-  }, [id]);
+  }, [id, setCustomCategories]);
 
   useEffect(() => {
     void fetchExam();
-  }, [fetchExam]);
+    return () => clearCustomCategories();
+  }, [fetchExam, clearCustomCategories]);
+
+  const persistSpecialChars = (sets: SpecialCharacterSet[]) => {
+    if (!id) return;
+    localStorage.setItem(`pe_exam_special_chars_${id}`, JSON.stringify(sets));
+    // Keep module meta in sync so package export can pick them up
+    try {
+      const metaRaw = localStorage.getItem(`pe_exam_meta_${id}`);
+      const meta = metaRaw ? JSON.parse(metaRaw) : {};
+      meta.special_characters = sets;
+      localStorage.setItem(`pe_exam_meta_${id}`, JSON.stringify(meta));
+    } catch {
+      // ignore
+    }
+    setSpecialCharSets(sets);
+    setCustomCategories(sets);
+    showSuccess(t('special_chars.module_saved'));
+  };
+
+  const handleAddSpecialCharSet = () => {
+    const category = newCategory.trim();
+    const chars = newChars
+      .split(/[\s,]+/)
+      .map((c) => c.trim())
+      .filter(Boolean);
+    if (!category || chars.length === 0) return;
+    persistSpecialChars([...specialCharSets, { category, chars }]);
+    setNewCategory('');
+    setNewChars('');
+  };
+
+  const handleRemoveSpecialCharSet = (idx: number) => {
+    persistSpecialChars(specialCharSets.filter((_, i) => i !== idx));
+  };
 
   const addQuestion = async () => {
     if (!qText || !id) return;
@@ -93,6 +148,7 @@ export function ExamEditor() {
         language_name: langObj?.name || moduleLang,
         country: moduleCountry,
         save_to_server: true,
+        special_characters: loadSpecialChars(id),
       });
     } catch (e) {
       console.error(e);
@@ -185,6 +241,60 @@ export function ExamEditor() {
             />
           </div>
         </div>
+      </div>
+
+      <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
+        <h3 style={{ marginTop: 0 }}>{t('special_chars.module_title')}</h3>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+          {t('special_chars.module_desc')}
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <input
+            type="text"
+            value={newCategory}
+            onChange={(e) => setNewCategory(e.target.value)}
+            placeholder={t('special_chars.module_category')}
+            style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)' }}
+          />
+          <input
+            type="text"
+            value={newChars}
+            onChange={(e) => setNewChars(e.target.value)}
+            placeholder={t('special_chars.module_chars')}
+            style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)' }}
+          />
+          <button
+            type="button"
+            onClick={handleAddSpecialCharSet}
+            style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 600 }}
+          >
+            {t('special_chars.module_add')}
+          </button>
+        </div>
+        {specialCharSets.length > 0 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            {specialCharSets.map((set, idx) => (
+              <div
+                key={`${set.category}-${idx}`}
+                style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', padding: '0.65rem 0.75rem', border: '1px solid var(--border-color)', borderRadius: '6px', backgroundColor: 'var(--bg-color)' }}
+              >
+                <div>
+                  <strong>{set.category}</strong>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                    {set.chars.join(' ')}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveSpecialCharSet(idx)}
+                  style={{ background: 'none', border: '1px solid var(--border-color)', borderRadius: '4px', padding: '0.35rem 0.65rem', cursor: 'pointer', color: 'var(--error-color)' }}
+                >
+                  {t('special_chars.module_remove')}
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <ChatGptPanel

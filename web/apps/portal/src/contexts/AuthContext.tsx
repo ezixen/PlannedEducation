@@ -9,9 +9,13 @@ export interface User {
   full_name: string | null;
   phone_number: string | null;
   is_active: boolean;
-  role: 'teacher' | 'student' | 'parent';
+  role: 'teacher' | 'student' | 'parent' | 'admin' | 'superadmin' | 'teacher_aide';
   is_admin: boolean;
   totp_enabled: boolean;
+  teacher_approved?: boolean;
+  is_teacher_aide?: boolean;
+  allow_student_dms?: boolean;
+  is_visible_in_teacher_dm?: boolean;
   ai_provider?: string | null;
   ai_model_name?: string | null;
   ai_base_url?: string | null;

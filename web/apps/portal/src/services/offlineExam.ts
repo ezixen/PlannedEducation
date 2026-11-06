@@ -47,6 +47,11 @@ export interface ExamQuestion {
   rubric?: string;
 }
 
+export interface SpecialCharacterSet {
+  category: string;
+  chars: string[];
+}
+
 export interface ExamSettings {
   shuffle_questions: boolean;
   shuffle_options: boolean;
@@ -57,6 +62,7 @@ export interface ExamSettings {
   passing_score: number;
   delivery_mode?: 'classroom' | 'different_location';
   allow_digital_hand_raise?: boolean;
+  special_characters?: SpecialCharacterSet[];
 }
 
 /**

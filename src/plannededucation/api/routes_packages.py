@@ -362,6 +362,11 @@ async def export_package(
                 "passing_score": 60,
                 "delivery_mode": "classroom",
                 "allow_digital_hand_raise": False,
+                "special_characters": [
+                    {"category": sc.category, "chars": list(sc.chars)}
+                    for sc in (request.special_characters or [])
+                    if sc.category and sc.chars
+                ],
             },
         },
         "questions": [],

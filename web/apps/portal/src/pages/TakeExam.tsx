@@ -11,11 +11,13 @@ import {
 } from '../components/StudentSubmissionReview';
 import { useOfflineExam } from '../hooks/useOfflineExam';
 import { useI18n } from '../contexts/I18nContext';
+import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
 
 export function TakeExam() {
   const { t } = useI18n();
   const { id } = useParams<{ id: string }>();
   const { error: showError, success: showSuccess, warn: showWarn } = useToast();
+  const { setCustomCategories, clearCustomCategories } = useSpecialCharacters();
   const [submitting] = useState(false);
   const [completedSubmission, setCompletedSubmission] = useState<StudentSubmissionDetail | null>(null);
   const [loadingReview, setLoadingReview] = useState(false);
@@ -74,6 +76,27 @@ export function TakeExam() {
       fetchMySubmission();
     }
   }, [isExamComplete, fetchMySubmission]);
+
+  // Load module custom special-character pages into the global picker
+  useEffect(() => {
+    const fromPackage = examPackage?.settings?.special_characters;
+    if (Array.isArray(fromPackage) && fromPackage.length > 0) {
+      setCustomCategories(fromPackage);
+      return () => clearCustomCategories();
+    }
+    if (id) {
+      try {
+        const raw = localStorage.getItem(`pe_exam_special_chars_${id}`);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) setCustomCategories(parsed);
+        }
+      } catch {
+        // ignore
+      }
+    }
+    return () => clearCustomCategories();
+  }, [examPackage, id, setCustomCategories, clearCustomCategories]);
 
   // Auto-poll for teacher corrections while completed but not yet graded
   useEffect(() => {

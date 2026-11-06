@@ -106,9 +106,12 @@ class User(Base):
 
     # Teacher's Aide - approved helper for teachers
     is_teacher_aide = Column(Boolean, default=False, server_default="0", nullable=False)
-    aide_approved_by = Column(String(36), nullable=True)  # Teacher who approved this aide
+    aide_approved_by = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)  # Teacher who approved this aide
     aide_approved_at = Column(DateTime(timezone=True), nullable=True)  # When approved
-    aide_approved_by_teacher_id = Column(String(36), nullable=True)  # Teacher who approved
+
+    # Teacher / Admin Messaging Preferences
+    allow_student_dms = Column(Boolean, default=False, server_default="0", nullable=False)  # Disabled by default for teachers
+    is_visible_in_teacher_dm = Column(Boolean, default=True, server_default="1", nullable=False)  # For admins in Teacher Lounge DM list
 
     # Classroom Emergency Password Reset (teachers can unlock student account right before tests)
     force_password_reset = Column(Boolean, default=False, server_default="0", nullable=False)
@@ -137,28 +140,24 @@ class User(Base):
         "ClassGroup", back_populates="teacher", cascade="all, delete-orphan"
     )
     packages = relationship("Package", back_populates="author", cascade="all, delete-orphan")
-    # Teacher's Aide relationships
-    aided_by_teacher = relationship(
+    # Teacher's Aide relationship (self-referential)
+    aide_approver = relationship(
         "User",
-        foreign_keys=[aide_approved_by_teacher_id],
+        foreign_keys=[aide_approved_by],
         remote_side=[id],
-        back_populates="aided_teachers",
-    )
-    aided_teachers = relationship(
-        "User",
-        foreign_keys=[aide_approved_by_teacher_id],
-        remote_side=[id],
-        back_populates="aided_by_teacher",
+        backref="approved_aides",
     )
     # Shared exams - exams shared with this teacher/aide for collaborative grading
     shared_exams = relationship(
         "ExamShare",
+        foreign_keys="[ExamShare.shared_with_id]",
         back_populates="shared_with",
         cascade="all, delete-orphan",
     )
     # Exams shared by this teacher with other teachers/aides
     shared_exams_with_others = relationship(
         "ExamShare",
+        foreign_keys="[ExamShare.shared_by_teacher_id]",
         back_populates="shared_by",
         cascade="all, delete-orphan",
     )
@@ -1009,7 +1008,7 @@ class TeacherLoungeMessage(Base):
 
     # Relationships
     sender = relationship("User", foreign_keys=[sender_id])
-    parent = relationship("TeacherLoungeMessage", remote_side=[id], back_replies="replies")
+    parent = relationship("TeacherLoungeMessage", remote_side=[id], back_populates="replies")
     replies = relationship("TeacherLoungeMessage", back_populates="parent")
 
 

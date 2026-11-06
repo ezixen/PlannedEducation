@@ -436,6 +436,25 @@ def update_admin_deployment_config(
     }
 
 
+@router.put("/support-email")
+def update_admin_support_email(
+    payload: schemas.AdminSupportEmailUpdate,
+    current_user: models.User = Depends(require_admin),
+):
+    """Set the platform admin support email (is_admin / superadmin only)."""
+    # Platform superadmin privilege is `User.is_admin=True` in this codebase.
+    if not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only superadmins can set the platform support email",
+        )
+    config = load_deployment_config()
+    config["admin_support_email"] = payload.admin_support_email.strip()
+    schema = DeploymentConfigSchema(**config)
+    save_deployment_config(schema)
+    return {"status": "success", "admin_support_email": config["admin_support_email"]}
+
+
 # ── Teacher Approval Management ───────────────────────────────────────────────
 
 @router.get("/pending-teachers")

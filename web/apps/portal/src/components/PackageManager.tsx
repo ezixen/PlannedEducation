@@ -139,10 +139,21 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
     setExporting(true);
     try {
       const langObj = MODULE_LANGUAGES.find(l => l.code === exportOptions.language);
+      let specialCharacters: { category: string; chars: string[] }[] = [];
+      try {
+        const charsRaw = localStorage.getItem(`pe_exam_special_chars_${examId}`);
+        if (charsRaw) {
+          const parsed = JSON.parse(charsRaw);
+          if (Array.isArray(parsed)) specialCharacters = parsed;
+        }
+      } catch {
+        // ignore
+      }
       const result = await packagesService.exportPackage({
         ...exportOptions,
         exam_id: examId,
         language_name: langObj?.name || exportOptions.language,
+        special_characters: specialCharacters,
       });
 
       if (result.content instanceof Blob) {
@@ -205,12 +216,28 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
       if (result.success) {
         showSuccess(`${t('packages.9')}: ${result.questions_imported} ${t('packages.9.1')}`);
         if (result.exam_id) {
+          let importedSpecialChars: { category: string; chars: string[] }[] = [];
+          try {
+            const text = await selectedFile.text();
+            const parsedPkg = JSON.parse(text);
+            const chars = parsedPkg?.exam?.settings?.special_characters;
+            if (Array.isArray(chars)) {
+              importedSpecialChars = chars;
+              localStorage.setItem(
+                `pe_exam_special_chars_${result.exam_id}`,
+                JSON.stringify(chars),
+              );
+            }
+          } catch {
+            // YAML/compressed imports may not parse as JSON here — safe to skip
+          }
           localStorage.setItem(
             `pe_exam_meta_${result.exam_id}`,
             JSON.stringify({
               language: importLanguage,
               language_name: langObj?.name || importLanguage,
               country: importCountry,
+              special_characters: importedSpecialChars,
             })
           );
           if (onPackageImported) {

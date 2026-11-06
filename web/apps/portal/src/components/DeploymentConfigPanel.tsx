@@ -23,6 +23,7 @@ export interface DeploymentConfig {
   smtp_use_tls?: boolean;
   smtp_use_ssl?: boolean;
   email_from?: string;
+  admin_support_email?: string | null;
   config_file_path?: string;
   last_modified?: string;
 }
@@ -32,6 +33,7 @@ export function DeploymentConfigPanel() {
   const { t } = useI18n();
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [savingSupportEmail, setSavingSupportEmail] = useState(false);
   const [restartNotice, setRestartNotice] = useState(false);
   const [config, setConfig] = useState<DeploymentConfig>({
     school_name: 'PlannedEducation School',
@@ -53,6 +55,7 @@ export function DeploymentConfigPanel() {
     smtp_use_tls: true,
     smtp_use_ssl: false,
     email_from: 'PlannedEducation <noreply@localhost>',
+    admin_support_email: '',
   });
 
   const fetchConfig = async () => {
@@ -86,6 +89,24 @@ export function DeploymentConfigPanel() {
       showError(err.response?.data?.detail || err.message || 'Failed to save configuration');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleSaveSupportEmail = async () => {
+    setSavingSupportEmail(true);
+    try {
+      const res = await apiClient.put('/admin/support-email', {
+        admin_support_email: (config.admin_support_email || '').trim(),
+      });
+      setConfig((prev) => ({
+        ...prev,
+        admin_support_email: res.data?.admin_support_email ?? prev.admin_support_email,
+      }));
+      showSuccess(t('deployment.support_email_saved'));
+    } catch (err: any) {
+      showError(err.response?.data?.detail || err.message || 'Failed to save support email');
+    } finally {
+      setSavingSupportEmail(false);
     }
   };
 
@@ -429,6 +450,41 @@ export function DeploymentConfigPanel() {
             />
             {t('deployment.anonymizer_label')}
           </label>
+        </div>
+
+        {/* Platform support email (superadmin) */}
+        <div style={{ marginTop: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: '0 0 0.35rem' }}>
+            {t('deployment.support_email_label')}
+          </h3>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '0.75rem', lineHeight: 1.4 }}>
+            {t('deployment.support_email_hint')}
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <input
+              type="email"
+              value={config.admin_support_email || ''}
+              onChange={(e) => setConfig({ ...config, admin_support_email: e.target.value })}
+              placeholder="support@school.edu"
+              style={{ flex: 1, minWidth: '240px', padding: '0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
+            />
+            <button
+              type="button"
+              onClick={handleSaveSupportEmail}
+              disabled={savingSupportEmail}
+              style={{
+                padding: '0.6rem 1rem',
+                borderRadius: 'var(--radius-md)',
+                border: 'none',
+                backgroundColor: 'var(--primary-color)',
+                color: '#fff',
+                fontWeight: 600,
+                cursor: savingSupportEmail ? 'not-allowed' : 'pointer',
+              }}
+            >
+              {savingSupportEmail ? t('deployment.saving') : t('deployment.save_btn')}
+            </button>
+          </div>
         </div>
 
         {/* Outgoing Email / SMTP Section (Optional) */}

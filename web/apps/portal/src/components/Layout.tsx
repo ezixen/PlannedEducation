@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield } from 'lucide-react';
+import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield, Mail } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
@@ -63,6 +63,7 @@ export function Layout() {
       { path: '/ai-grading', label: t('nav.ai_grading'), icon: <Plus size={20} />, roles: ['teacher', 'admin'] },
       { path: '/parent-dashboard', label: t('nav.parent_dashboard'), icon: <Users size={20} />, roles: ['parent', 'admin'] },
       { path: '/ai-integrations', label: t('nav.ai_integrations'), icon: <BrainCircuit size={20} />, roles: ['teacher', 'admin'] },
+      { path: '/messages', label: t('nav.messages'), icon: <Mail size={20} />, roles: ['student', 'teacher', 'parent', 'admin'] },
       { path: '/admin', label: t('nav.admin'), icon: <Shield size={20} />, roles: ['admin'] },
       { path: '/settings', label: t('nav.settings'), icon: <Settings size={20} />, roles: ['student', 'teacher', 'parent', 'admin'] },
     ];

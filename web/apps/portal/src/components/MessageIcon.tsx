@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Mail, ChevronRight } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useI18n } from '../contexts/I18nContext';
 
 interface MessageIconProps {
