@@ -42,7 +42,7 @@
     Initial administrator email (default: admin@yourschool.edu)
 
 .PARAMETER AdminPassword
-    Initial administrator password (default: AdminPassword123!)
+    Initial administrator password (required unless interactive; empty triggers secure random generation)
 
 .PARAMETER AdminName
     Initial administrator full name (default: School Administrator)
@@ -61,7 +61,7 @@ param(
     [int]$ApiPort = 8000,
     [int]$FrontendPort = 5173,
     [string]$AdminEmail = "admin@yourschool.edu",
-    [string]$AdminPassword = "AdminPassword123!",
+    [string]$AdminPassword = "",
     [string]$AdminName = "School Administrator",
     [string]$SchoolName = "PlannedEducation School",
     [switch]$AutoConfirm
@@ -469,6 +469,12 @@ if (-not (Test-Path $envFile) -or (Confirm-Action "Overwrite existing .env confi
     $dbEncBytes = New-Object byte[] 32
     [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($dbEncBytes)
     $dbEncKey = [System.Convert]::ToBase64String($dbEncBytes).Replace("+", "-").Replace("/", "_")
+    $recoveryHashBytes = New-Object byte[] 32
+    [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($recoveryHashBytes)
+    $recoveryHashSecret = [System.Convert]::ToBase64String($recoveryHashBytes).Replace("+", "-").Replace("/", "_")
+    $tokenHashBytes = New-Object byte[] 32
+    [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($tokenHashBytes)
+    $tokenHashSecret = [System.Convert]::ToBase64String($tokenHashBytes).Replace("+", "-").Replace("/", "_")
 
     if (-not $AutoConfirm) {
         $inputDomain = Read-Host "Enter your domain or IP address (default: $Domain)"
@@ -493,6 +499,7 @@ if (-not (Test-Path $envFile) -or (Confirm-Action "Overwrite existing .env confi
         $envMode = "production"
         $sebBypass = "false"
     }
+    $frontendUrl = if ($envMode -eq "production") { "https://$Domain" } else { "http://${Domain}:${FrontendPort}" }
 
     $envContent = @"
 # PlannedEducation Environment Configuration
@@ -506,6 +513,8 @@ REDIS_URL=$redisUrl
 
 # Security Secrets (NEVER SHARE THESE!)
 JWT_SECRET_KEY=$jwtSecret
+RECOVERY_CODE_HASH_SECRET=$recoveryHashSecret
+TOKEN_HASH_SECRET=$tokenHashSecret
 JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ENCRYPTION_KEY=$fernetKey
@@ -515,6 +524,7 @@ DATABASE_ENCRYPTION=true
 DB_ENCRYPTION_MASTER_KEY=$dbEncKey
 
 # Server Configuration
+FRONTEND_URL=$frontendUrl
 HOST=0.0.0.0
 PORT=$ApiPort
 FRONTEND_PORT=$FrontendPort
@@ -1035,8 +1045,8 @@ if (-not $AutoConfirm) {
         $generatedRandom = $true
     }
 } else {
-    # In AutoConfirm mode, automatically generate a cryptographically random 20-char password if still at default
-    if ($AdminPassword -eq "AdminPassword123!") {
+    # AutoConfirm: reject empty/predictable passwords; generate a strong random one (F-031).
+    if ([string]::IsNullOrWhiteSpace($AdminPassword) -or $AdminPassword -in @("AdminPassword123!", "ChangeMe123!", "changeme", "password")) {
         Write-Info "AutoConfirm enabled; generating secure random Superadmin password."
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
         $AdminPassword = -join ((1..20) | ForEach-Object { $chars[(Get-Random -Maximum $chars.Length)] })
@@ -1088,7 +1098,7 @@ if (-not $useDocker) {
         $codesText = ($codesList | ForEach-Object { "  - $_" }) -join "`r`n"
         Remove-Item $tmpCodes -Force -ErrorAction SilentlyContinue
 
-        # Build credential text for clipboard (NOT saved to disk)
+        # Clipboard may include password for one-time handoff; disk fallback never stores password (F-031).
         $credLines = @(
             "PlannedEducation Superadmin Credentials",
             "=======================================",
@@ -1109,8 +1119,20 @@ if (-not $useDocker) {
             "============================================================"
         )
         $credContent = $credLines -join "`r`n"
+        $recoveryOnlyLines = @(
+            "PlannedEducation Superadmin Recovery Codes (password NOT stored)",
+            "===============================================================",
+            "School Name:    $SchoolName",
+            "Admin Email:    $AdminEmail",
+            "Admin Name:     $AdminName",
+            "",
+            "EMERGENCY RECOVERY CODES:",
+            $codesText,
+            "",
+            "Password was shown once during install and is not written to disk."
+        )
+        $recoveryOnly = $recoveryOnlyLines -join "`r`n"
 
-        # Copy credentials to clipboard if available; fallback to secured file
         $clipboardOk = $false
         try {
             $credContent | Set-Clipboard
@@ -1127,18 +1149,17 @@ if (-not $useDocker) {
             Write-Host ""
             Write-Host "  The following credentials have been copied to your clipboard:" -ForegroundColor $WHITE
             Write-Host "    - Admin Email:    $AdminEmail" -ForegroundColor $WHITE
-            Write-Host "    - Admin Password: $AdminPassword" -ForegroundColor $WHITE
+            Write-Host "    - Admin Password: (included in clipboard — paste into a password manager now)" -ForegroundColor $WHITE
             Write-Host "    - Recovery Codes: $($codesList.Count) one-time codes" -ForegroundColor $WHITE
             Write-Host ""
-            Write-Host "  Please paste these into a secure location (password manager, printed" -ForegroundColor $WHITE
-            Write-Host "  document, or encrypted note) and save them NOW." -ForegroundColor $WHITE
-            Write-Host ""
-            Write-Host "  These credentials are NOT saved to any file on disk for security." -ForegroundColor $YELLOW
-            Write-Host "  If you lose them, you will be permanently locked out." -ForegroundColor $YELLOW
+            Write-Host "  Credentials are NOT saved to any plaintext password file on disk." -ForegroundColor $YELLOW
         } else {
-            Write-Warning "Could not copy to clipboard. Saving to $credFile instead."
-            [System.IO.File]::WriteAllText($credFile, $credContent, (New-Object System.Text.UTF8Encoding($false)))
-            Write-Info "Saved credentials to ADMIN_CREDENTIALS.txt with emergency recovery codes."
+            Write-Warning "Could not copy to clipboard. Saving recovery codes only (no password) to $credFile."
+            [System.IO.File]::WriteAllText($credFile, $recoveryOnly, (New-Object System.Text.UTF8Encoding($false)))
+            try {
+                icacls $credFile /inheritance:r /grant:r "${env:USERNAME}:(R)" | Out-Null
+            } catch {}
+            Write-Info "Saved recovery codes to ADMIN_CREDENTIALS.txt (password omitted)."
         }
 
         Write-Host ""
@@ -1258,7 +1279,7 @@ Write-Host "  Backend API:    http://${Domain}:${ApiPort}"
 Write-Host "  API Docs:       http://${Domain}:${ApiPort}/docs"
 Write-Host "  Frontend App:   http://${Domain}:${FrontendPort}"
 Write-Host "  Admin Email:    $AdminEmail"
-Write-Host "  Admin Password: $AdminPassword"
+Write-Host "  Admin Password: (shown once above if generated — not re-printed here)"
 Write-Host "  Diagnostic Logs:"
 Write-Host "    - Install Log:        $InstallDir\logs\install.log"
 Write-Host "    - Install Error Log:  $InstallDir\logs\install_error.log"

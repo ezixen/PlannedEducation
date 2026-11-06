@@ -35,10 +35,16 @@ class DeploymentConfigSchema(BaseModel):
     smtp_host: str | None = Field(default=None, max_length=255)
     smtp_port: int = Field(default=587, ge=1, le=65535)
     smtp_user: str | None = Field(default=None, max_length=128)
+    # None / omitted => preserve existing .env password (F-041 patch semantics).
+    # Empty string => explicitly clear the stored password.
     smtp_password: str | None = Field(default=None, max_length=256)
     smtp_use_tls: bool = Field(default=True)
     smtp_use_ssl: bool = Field(default=False)
     email_from: str = Field(default="PlannedEducation <noreply@localhost>", max_length=128)
+
+    # School header branding (persisted in deployment.json)
+    header_mode: str | None = Field(default=None, max_length=32)
+    header_image_url: str | None = Field(default=None, max_length=1024)
 
     # Database Backup Configuration
     backup_location: str = Field(default="backups", max_length=512, description="Directory for database backups")
@@ -65,9 +71,12 @@ class DeploymentConfigResponse(BaseModel):
     smtp_port: int = 587
     smtp_user: str | None = None
     # smtp_password intentionally excluded from API response
+    smtp_password_configured: bool = False
     smtp_use_tls: bool = True
     smtp_use_ssl: bool = False
     email_from: str
+    header_mode: str | None = None
+    header_image_url: str | None = None
     config_file_path: str
     last_modified: str | None = None
     restart_required: bool = False
@@ -203,6 +212,8 @@ def load_deployment_config() -> dict[str, Any]:
         "smtp_use_tls": os.getenv("SMTP_USE_TLS", env_vars.get("SMTP_USE_TLS", "true")).lower() in ("true", "1", "yes"),
         "smtp_use_ssl": os.getenv("SMTP_USE_SSL", env_vars.get("SMTP_USE_SSL", "false")).lower() in ("true", "1", "yes"),
         "email_from": os.getenv("EMAIL_FROM", env_vars.get("EMAIL_FROM", "PlannedEducation <noreply@localhost>")),
+        "header_mode": None,
+        "header_image_url": None,
         # Database Backup Configuration
         "backup_location": os.getenv("BACKUP_LOCATION", env_vars.get("BACKUP_LOCATION", "backups")),
         "backup_frequency_days": int(os.getenv("BACKUP_FREQUENCY_DAYS", env_vars.get("BACKUP_FREQUENCY_DAYS", "1"))),
@@ -235,32 +246,30 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
 
     config_data = new_config.model_dump()
     # Remove sensitive SMTP password from deployment.json (stored in .env only)
-    config_data.pop("smtp_password", None)
+    smtp_password = config_data.pop("smtp_password", None)
     config_data["updated_at"] = datetime.now(UTC).isoformat()
 
-    # Write to config/deployment.json
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(config_data, f, indent=2)
-
-    # Reconstruct CORS origins automatically if domain or ports were adjusted
+    # Reconstruct CORS before writing either file so sources stay aligned (F-041).
     domain = new_config.domain.strip()
     frontend_port = new_config.frontend_port
     api_port = new_config.api_port
 
-    # Build CORS origins list ensuring domain, localhost, 127.0.0.1 and ports are present
     user_cors = [o.strip() for o in new_config.cors_origins.split(",") if o.strip()]
     origins_set = set(user_cors)
     origins_set.add(f"http://{domain}:{frontend_port}")
     origins_set.add(f"http://localhost:{frontend_port}")
     origins_set.add(f"http://127.0.0.1:{frontend_port}")
-    if domain != "localhost" and domain != "127.0.0.1":
+    if domain not in {"localhost", "127.0.0.1"}:
         origins_set.add(f"https://{domain}")
-        origins_set.add(f"http://{domain}")
+        if new_config.environment != "production":
+            origins_set.add(f"http://{domain}")
 
     cors_str = ",".join(sorted(origins_set))
     config_data["cors_origins"] = cors_str
 
-    # Update .env
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(config_data, f, indent=2)
+
     env_updates = {
         "PE_SCHOOL_NAME": new_config.school_name,
         "DOMAIN": domain,
@@ -276,20 +285,23 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
         "SMTP_HOST": new_config.smtp_host or "",
         "SMTP_PORT": str(new_config.smtp_port),
         "SMTP_USER": new_config.smtp_user or "",
-        "SMTP_PASSWORD": new_config.smtp_password or "",
         "SMTP_USE_TLS": "true" if new_config.smtp_use_tls else "false",
         "SMTP_USE_SSL": "true" if new_config.smtp_use_ssl else "false",
         "EMAIL_FROM": new_config.email_from,
-        # Database Backup Configuration
         "BACKUP_LOCATION": new_config.backup_location,
         "BACKUP_FREQUENCY_DAYS": str(new_config.backup_frequency_days),
         "BACKUP_RETENTION_DAYS": str(new_config.backup_retention_days),
         "BACKUP_TIME": new_config.backup_time,
         "ADMIN_SUPPORT_EMAIL": new_config.admin_support_email or "",
     }
+    # Patch semantics: omit password => preserve; empty string => clear (F-041).
+    if smtp_password is not None:
+        env_updates["SMTP_PASSWORD"] = smtp_password
     update_env_file(env_path, env_updates)
 
-    # Return full state
+    config_data["smtp_password_configured"] = bool(
+        smtp_password if smtp_password is not None else os.getenv("SMTP_PASSWORD")
+    )
     config_data["config_file_path"] = str(json_path)
     config_data["last_modified"] = config_data["updated_at"]
     config_data["restart_required"] = True

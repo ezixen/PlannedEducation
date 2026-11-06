@@ -13,9 +13,9 @@
 
 ### Linking to Your Child's Account
 1. Once logged in, navigate to **My Children**.
-2. Click **Link Student Account**.
-3. Enter your child's student identifier or linkage code provided by their teacher or school.
-4. Once verified, your child's academic record is securely connected to your portal.
+2. Click **Link Student Account** (or send a relationship request to your child's student account).
+3. Your child must approve the link from their own account before progress appears.
+4. Only **active** (approved) links show grades and feedback. Pending or rejected links stay private.
 
 ---
 

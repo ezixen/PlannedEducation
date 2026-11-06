@@ -18,13 +18,35 @@ export function AIKeySettings() {
   const [loading, setLoading] = useState(false);
   const [showKey, setShowKey] = useState(false);
 
+  // F-040: Load actual key presence from the dedicated endpoint rather than reading the
+  // excluded `ai_api_key_encrypted` field from UserResponse (which is always undefined).
   useEffect(() => {
-    if (user) {
-      setProvider(user.ai_provider || 'gemini');
-      setModelName(user.ai_model_name || 'gemini-2.5-flash');
-      setBaseUrl(user.ai_base_url || '');
-      setHasKey(!!user.ai_api_key_encrypted);
-    }
+    let isMounted = true;
+    const loadKeyState = async () => {
+      try {
+        const res = await apiClient.get<{
+          has_api_key: boolean;
+          ai_provider: string | null;
+          ai_model_name: string | null;
+          ai_base_url: string | null;
+        }>('/auth/ai-key');
+        if (isMounted) {
+          setHasKey(res.data.has_api_key);
+          setProvider(res.data.ai_provider || 'gemini');
+          setModelName(res.data.ai_model_name || 'gemini-2.5-flash');
+          setBaseUrl(res.data.ai_base_url || '');
+        }
+      } catch {
+        // Fall back to user context values if the endpoint call fails
+        if (isMounted && user) {
+          setProvider(user.ai_provider || 'gemini');
+          setModelName(user.ai_model_name || 'gemini-2.5-flash');
+          setBaseUrl(user.ai_base_url || '');
+        }
+      }
+    };
+    loadKeyState();
+    return () => { isMounted = false; };
   }, [user]);
 
   const handleSave = async (e: React.FormEvent) => {
@@ -32,30 +54,33 @@ export function AIKeySettings() {
     setLoading(true);
 
     try {
-      await apiClient.put('/auth/ai-key', {
+      const res = await apiClient.put<{ has_api_key: boolean }>('/auth/ai-key', {
         ai_provider: provider,
         ai_model_name: modelName,
         ai_base_url: baseUrl,
         ai_api_key: apiKey || undefined,
       });
-      showSuccess('AI settings saved successfully!');
+      // F-040: update hasKey from the authoritative response, not from stale local state
+      setHasKey(res.data.has_api_key);
+      if (apiKey) setApiKey(''); // clear the plaintext key from state after save
+      showSuccess(t('ai_keys.saved'));
     } catch (err: any) {
-      showError('Failed to save AI settings.', err.response?.data?.detail || err.message);
+      showError(t('ai_keys.save_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handleDeleteKey = async () => {
-    if (!confirm('Are you sure you want to remove your AI API key?')) return;
+    if (!confirm(t('ai_keys.remove_confirm'))) return;
     setLoading(true);
     try {
       await apiClient.put('/auth/ai-key', { ai_api_key: '' });
       setApiKey('');
       setHasKey(false);
-      showSuccess('AI API key removed.');
+      showSuccess(t('ai_keys.removed'));
     } catch (err: any) {
-      showError('Failed to remove AI key.', err.response?.data?.detail || err.message);
+      showError(t('ai_keys.remove_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -93,17 +118,12 @@ export function AIKeySettings() {
             onChange={e => setProvider(e.target.value)}
             style={inputStyle}
           >
+            {/* F-040: only list providers that have backend implementations */}
             <option value="chatgpt">{t('ai_keys.15')}</option>
             <option value="gemini">{t('ai_keys.11')}</option>
             <option value="openrouter">{t('ai_keys.12')}</option>
             <option value="ollama">{t('ai_keys.13')}</option>
             <option value="openai">{t('ai_keys.14')}</option>
-            <option value="anthropic">{t('ai_keys.anthropic')}</option>
-            <option value="deepseek">{t('ai_keys.deepseek')}</option>
-            <option value="groq">{t('ai_keys.groq')}</option>
-            <option value="cohere">{t('ai_keys.cohere')}</option>
-            <option value="mistral">{t('ai_keys.mistral')}</option>
-            <option value="custom">{t('ai_keys.custom')}</option>
           </select>
         </label>
 

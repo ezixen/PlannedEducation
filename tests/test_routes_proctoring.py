@@ -2,62 +2,82 @@
 Tests for Proctoring routes.
 """
 
+import uuid
 
 import pytest
 from fastapi.testclient import TestClient
 
+from src.plannededucation.api import database, models
 from src.plannededucation.api.main import app
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def client():
     return TestClient(app)
 
 
-@pytest.fixture
+def _register_and_login(client, *, email: str, username: str, role: str = "student") -> dict:
+    """Register (ignore duplicate) and return bearer headers. Avoids rate-limit storms."""
+    client.post(
+        "/auth/register",
+        json={
+            "email": email,
+            "username": username,
+            "password": "ProctorTest1!",
+            "full_name": f"Proctor {role.title()}",
+            "role": role,
+        },
+    )
+    if role == "teacher":
+        db = database.SessionLocal()
+        try:
+            teacher = db.query(models.User).filter_by(email=email).first()
+            if teacher and not teacher.teacher_approved:
+                teacher.teacher_approved = True
+                db.commit()
+        finally:
+            db.close()
+    token_resp = client.post(
+        "/auth/token",
+        data={"username": email, "password": "ProctorTest1!"},
+    )
+    assert token_resp.status_code == 200, token_resp.text
+    return {"Authorization": f"Bearer {token_resp.json()['access_token']}"}
+
+
+@pytest.fixture(scope="module")
 def student_headers(client):
-    """Create a test student user and return auth headers."""
-    client.post("/auth/register", json={
-        "email": "proctor_student@test.com",
-        "username": "proctor_student",
-        "password": "ProctorTest1!",
-        "full_name": "Proctor Student",
-    })
-    token = client.post("/auth/token", data={
-        "username": "proctor_student@test.com",
-        "password": "ProctorTest1!"
-    }).json()["access_token"]
-    return {"Authorization": f"Bearer {token}"}
+    """Create a test student user and return auth headers (once per module)."""
+    return _register_and_login(
+        client,
+        email="proctor_student@test.com",
+        username="proctor_student",
+        role="student",
+    )
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def teacher_headers(client):
-    """Create a test teacher user and return auth headers."""
-    client.post("/auth/register", json={
-        "email": "proctor_teacher@test.com",
-        "username": "proctor_teacher",
-        "password": "ProctorTest1!",
-        "full_name": "Proctor Teacher",
-        "role": "teacher",
-    })
-    token = client.post("/auth/token", data={
-        "username": "proctor_teacher@test.com",
-        "password": "ProctorTest1!"
-    }).json()["access_token"]
-    return {"Authorization": f"Bearer {token}"}
+    """Create an approved test teacher user and return auth headers (once per module)."""
+    return _register_and_login(
+        client,
+        email="proctor_teacher@test.com",
+        username="proctor_teacher",
+        role="teacher",
+    )
 
 
 @pytest.fixture
 def exam_id(client, teacher_headers):
-    """Create a test exam and return its ID."""
+    """Create a fresh exam per test (avoids session-already-exists collisions)."""
     response = client.post(
         "/exams",
         json={
-            "title": "Proctoring Test Exam",
+            "title": f"Proctoring Test Exam {uuid.uuid4().hex[:8]}",
             "description": "Test exam for proctoring",
             "duration_minutes": 60,
         },
-        headers=teacher_headers
+        headers=teacher_headers,
     )
     assert response.status_code == 201
     return response.json()["id"]
@@ -69,7 +89,7 @@ def submission_id(client, student_headers, exam_id):
     # Start exam
     start_response = client.post(
         f"/exams/{exam_id}/start",
-        headers=student_headers
+        headers=student_headers,
     )
     assert start_response.status_code == 200
 
@@ -77,7 +97,7 @@ def submission_id(client, student_headers, exam_id):
     submit_response = client.post(
         f"/exams/{exam_id}/submit",
         json={"answers": []},
-        headers=student_headers
+        headers=student_headers,
     )
     assert submit_response.status_code == 200
     # The submit endpoint returns status/message, not submission_id
@@ -507,6 +527,7 @@ class TestProctoringEvents:
         assert data["event_type"] == "face_detected"
         assert data["severity"] == "info"
         assert data["event_data"] is not None
+        assert data["event_data"]["event_source"] == "client_telemetry"
 
     def test_record_event_violation(self, client, student_headers, exam_id, submission_id):
         """Test recording a violation event."""
@@ -761,6 +782,165 @@ class TestProctoringEvents:
         assert data[0]["event_type"] == "tab_switch"
         assert data[0]["severity"] == "warning"
 
+    def _start_active_session(self, client, student_headers, exam_id, submission_id):
+        """Helper: consent + start; returns session_id."""
+        client.post(
+            "/proctoring/consent",
+            json={
+                "exam_id": exam_id,
+                "camera_consent": True,
+                "microphone_consent": True,
+                "screen_recording_consent": True,
+                "data_processing_consent": True,
+                "consent_version": "1.0",
+            },
+            headers=student_headers,
+        )
+        start_response = client.post(
+            "/proctoring/session/start",
+            json={
+                "exam_id": exam_id,
+                "submission_id": submission_id,
+                "camera_enabled": True,
+                "microphone_enabled": True,
+                "screen_recording_enabled": True,
+            },
+            headers=student_headers,
+        )
+        assert start_response.status_code == 201
+        return start_response.json()["id"]
+
+    def test_reject_unknown_event_type(self, client, student_headers, exam_id, submission_id):
+        """F-018: unknown event types are rejected."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+        before = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+
+        response = client.post(
+            "/proctoring/event",
+            json={
+                "session_id": session_id,
+                "event_type": "fabricated_cheat_signal",
+                "severity": "violation",
+                "event_data": {"score": 999},
+            },
+            headers=student_headers,
+        )
+        assert response.status_code == 422
+
+        after = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+        assert after["violation_count"] == before["violation_count"]
+        assert after["total_events"] == before["total_events"]
+
+    def test_reject_huge_face_count(self, client, student_headers, exam_id, submission_id):
+        """F-018: unrealistically large face_count is rejected; counters unchanged."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+        before = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+
+        response = client.post(
+            "/proctoring/event",
+            json={
+                "session_id": session_id,
+                "event_type": "multiple_faces",
+                "severity": "violation",
+                "event_data": {"face_count": 10_000},
+            },
+            headers=student_headers,
+        )
+        assert response.status_code == 400
+        assert "face_count" in response.json()["detail"]
+
+        after = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+        assert after["violation_count"] == before["violation_count"]
+        assert after["max_simultaneous_faces"] == before["max_simultaneous_faces"]
+        assert after["total_events"] == before["total_events"]
+
+    def test_reject_oversized_batch(self, client, student_headers, exam_id, submission_id):
+        """F-018: batches larger than the server cap are rejected."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+        before = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+
+        events = [
+            {"event_type": "eye_movement", "severity": "info", "event_data": {"i": i}}
+            for i in range(51)
+        ]
+        response = client.post(
+            "/proctoring/events/batch",
+            json={"session_id": session_id, "events": events},
+            headers=student_headers,
+        )
+        assert response.status_code == 422
+
+        after = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+        assert after["total_events"] == before["total_events"]
+        assert after["violation_count"] == before["violation_count"]
+
+    def test_client_events_stamped_as_telemetry(self, client, student_headers, exam_id, submission_id):
+        """F-018: stored events are stamped event_source=client_telemetry."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+
+        response = client.post(
+            "/proctoring/event",
+            json={
+                "session_id": session_id,
+                "event_type": "tab_switch",
+                "severity": "warning",
+                "event_data": {"new_tab": "example.com", "event_source": "trusted_device"},
+            },
+            headers=student_headers,
+        )
+        assert response.status_code == 201
+        data = response.json()
+        assert data["event_data"]["event_source"] == "client_telemetry"
+
+    def test_severity_clamped_non_countable_types(self, client, student_headers, exam_id, submission_id):
+        """F-018: client cannot inflate violation_count via non-countable types."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+        before = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+
+        # face_detected max severity is info; claiming violation must not bump counter
+        response = client.post(
+            "/proctoring/event",
+            json={
+                "session_id": session_id,
+                "event_type": "face_detected",
+                "severity": "violation",
+                "event_data": {"confidence": 0.99},
+            },
+            headers=student_headers,
+        )
+        assert response.status_code == 201
+        assert response.json()["severity"] == "info"
+
+        after = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+        assert after["violation_count"] == before["violation_count"]
+        assert after["total_events"] == before["total_events"] + 1
+
+    def test_violation_increment_capped_per_batch(self, client, student_headers, exam_id, submission_id):
+        """F-018: violation_count spikes from a single batch are budget-capped."""
+        session_id = self._start_active_session(client, student_headers, exam_id, submission_id)
+        before = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+
+        events = [
+            {
+                "event_type": "fullscreen_exit",
+                "severity": "violation",
+                "event_data": {"i": i},
+            }
+            for i in range(10)
+        ]
+        response = client.post(
+            "/proctoring/events/batch",
+            json={"session_id": session_id, "events": events},
+            headers=student_headers,
+        )
+        assert response.status_code == 200
+        assert len(response.json()) == 10
+
+        after = client.get(f"/proctoring/session/{session_id}", headers=student_headers).json()
+        # Budget = 5; events still recorded, but counter only rises by budget
+        assert after["total_events"] == before["total_events"] + 10
+        assert after["violation_count"] == before["violation_count"] + 5
+
 
 class TestProctoringStats:
     """Test proctoring statistics endpoints."""
@@ -795,21 +975,16 @@ class TestProctoringStats:
 class TestProctoringHealth:
     """Test proctoring health check."""
 
-    def test_health_check(self, client):
-        """Test proctoring health check."""
-        response = client.get("/proctoring/health")
+    def test_health_check(self, client, student_headers):
+        """Test proctoring health check requires auth and hides feature inventory."""
+        unauth = client.get("/proctoring/health")
+        assert unauth.status_code in (401, 403)
 
+        response = client.get("/proctoring/health", headers=student_headers)
         assert response.status_code == 200
         data = response.json()
-        assert data["available"] is True
-        assert data["service"] == "proctoring"
-        assert "features" in data
-        assert "face_detection" in data["features"]
-        assert "eye_tracking" in data["features"]
-        assert "audio_monitoring" in data["features"]
-        assert "gdpr_consent" in data["features"]
-        assert "event_recording" in data["features"]
-        assert "batch_events" in data["features"]
+        assert data == {"status": "ok"}
+        assert "features" not in data
 
 
 if __name__ == "__main__":

@@ -4,13 +4,18 @@ Handles compression, encryption, and archive management for exam submissions.
 Uses zstd (best free compression) + AES-GCM encryption.
 """
 
+import base64
+import hashlib
 import json
+import logging
 import os
 import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 
 import zstandard as zstd
+
+logger = logging.getLogger(__name__)
 
 # ── Compression ──────────────────────────────────────────────────────────────
 
@@ -74,6 +79,59 @@ ARCHIVE_ENCRYPTION_ALGORITHM = "AES-GCM"
 ARCHIVE_KEY_LENGTH = 256
 ARCHIVE_IV_LENGTH = 12
 ARCHIVE_SALT_LENGTH = 16
+
+# Process-local fallback for development/test only (never for production/staging).
+_EPHEMERAL_ARCHIVE_KEY: bytes | None = None
+
+
+def get_archive_master_key(*, require: bool = True) -> bytes:
+    """
+    Load the archive AES master key.
+
+    Preference order:
+      1. ARCHIVE_MASTER_KEY — urlsafe-base64 32 bytes, or 64-char hex, or raw 32 bytes
+      2. Dev/test ephemeral key (generated once per process)
+
+    Production/staging fail closed when the env key is missing and require=True.
+    """
+    global _EPHEMERAL_ARCHIVE_KEY
+
+    raw = (os.getenv("ARCHIVE_MASTER_KEY") or "").strip()
+    env = (os.getenv("PLANNED_EDUCATION_ENV") or os.getenv("ENVIRONMENT") or "").lower()
+
+    if raw:
+        # Fernet-style urlsafe base64 (44 chars) → 32 bytes
+        try:
+            decoded = base64.urlsafe_b64decode(raw.encode("ascii"))
+            if len(decoded) >= 32:
+                return decoded[:32]
+        except Exception:
+            pass
+        # Hex (64 chars → 32 bytes)
+        try:
+            decoded = bytes.fromhex(raw)
+            if len(decoded) >= 32:
+                return decoded[:32]
+        except Exception:
+            pass
+        # Derive a stable 32-byte key from an arbitrary secret string
+        return hashlib.sha256(raw.encode("utf-8")).digest()
+
+    if env in {"production", "staging"}:
+        if require:
+            raise RuntimeError(
+                "ARCHIVE_MASTER_KEY must be set in production/staging for archive encryption."
+            )
+        raise RuntimeError("ARCHIVE_MASTER_KEY is not configured")
+
+    if _EPHEMERAL_ARCHIVE_KEY is None:
+        _EPHEMERAL_ARCHIVE_KEY = os.urandom(32)
+        logger.warning(
+            "ARCHIVE_MASTER_KEY not set — using ephemeral per-process archive key "
+            "(archives will not survive process restart)."
+        )
+    return _EPHEMERAL_ARCHIVE_KEY
+
 
 async def encrypt_archive_data(data: bytes, key: bytes) -> tuple[bytes, bytes, bytes]:
     """
@@ -141,11 +199,17 @@ class ArchiveManager:
         teacher_username: str,
         student_username: str,
         compression_level: int = DEFAULT_COMPRESSION_LEVEL,
-        master_key: bytes = None
+        master_key: bytes | None = None,
+        *,
+        require_encryption: bool = True,
     ) -> dict:
         """
-        Archive a sealed submission.
-        Returns archive metadata.
+        Archive a sealed submission (zstd + AES-GCM).
+
+        F-024: encryption is required by default. When require_encryption is True
+        and no master_key is passed, the archive master key is loaded (fail closed
+        in production/staging). Returns metadata including the ciphertext hex
+        for DB persistence (compressed_data must never store only a hash).
         """
         # Build archive path
         now = datetime.now(UTC)
@@ -169,23 +233,26 @@ class ArchiveManager:
         original_size = len(json_bytes)
         compressed = compress_data(json_bytes, compression_level)
 
-        # Encrypt if master key provided
+        if master_key is None and require_encryption:
+            master_key = get_archive_master_key(require=True)
+
         if master_key:
             encrypted, iv, salt = await encrypt_archive_data(compressed, master_key)
             final_data = encrypted
             encryption_iv = iv.hex()
             encryption_salt = salt.hex()
+            encryption_algorithm = ARCHIVE_ENCRYPTION_ALGORITHM
         else:
+            # Explicit opt-out only (tests); never claim encryption.
             final_data = compressed
             encryption_iv = ""
             encryption_salt = ""
+            encryption_algorithm = "none"
 
-        # Write to file
-        final_data_b64 = final_data.hex()  # Store as hex for simplicity
-        full_path.write_text(final_data_b64)
+        # Persist ciphertext (hex) to disk
+        ciphertext_hex = final_data.hex()
+        full_path.write_text(ciphertext_hex)
 
-        # Compute hashes
-        import hashlib
         content_hash = hashlib.sha256(json_bytes).hexdigest()
         archive_hash = hashlib.sha256(final_data).hexdigest()
 
@@ -195,35 +262,55 @@ class ArchiveManager:
             'compressed_size': len(final_data),
             'compression_ratio': original_size / len(final_data) if len(final_data) > 0 else 0,
             'compression_algorithm': f'zstd-{compression_level}',
-            'encryption_algorithm': 'AES-GCM' if master_key else 'none',
+            'encryption_algorithm': encryption_algorithm,
             'encryption_iv': encryption_iv,
             'encryption_salt': encryption_salt,
             'content_hash': content_hash,
             'archive_hash': archive_hash,
+            # Actual ciphertext for DB compressed_data column (not the hash).
+            'compressed_data': ciphertext_hex,
             'archived_at': now.isoformat(),
         }
 
     async def restore_submission(
         self,
         archive_path: str,
-        master_key: bytes = None
+        master_key: bytes | None = None,
+        *,
+        encryption_algorithm: str | None = None,
+        encryption_iv: str | None = None,
+        encryption_salt: str | None = None,
+        compressed_data_hex: str | None = None,
     ) -> dict:
-        """Restore a submission from archive."""
-        full_path = self.get_archive_file_path(archive_path)
-        if not full_path.exists():
-            raise FileNotFoundError(f"Archive not found: {archive_path}")
+        """Restore a submission from archive file and/or DB ciphertext."""
+        final_data: bytes | None = None
 
-        # Read file
-        final_data_b64 = full_path.read_text()
-        final_data = bytes.fromhex(final_data_b64)
+        if compressed_data_hex:
+            final_data = bytes.fromhex(compressed_data_hex)
+        else:
+            full_path = self.get_archive_file_path(archive_path)
+            if not full_path.exists():
+                raise FileNotFoundError(f"Archive not found: {archive_path}")
+            final_data = bytes.fromhex(full_path.read_text())
 
-        # Decrypt if needed
-        if master_key:
-            # Parse path to get IV and salt from metadata (would need to be stored)
-            # For now, assume metadata is stored separately
-            pass
+        algo = (encryption_algorithm or "").strip() or (
+            ARCHIVE_ENCRYPTION_ALGORITHM if master_key else "none"
+        )
 
-        # Decompress
+        if algo == ARCHIVE_ENCRYPTION_ALGORITHM:
+            if master_key is None:
+                master_key = get_archive_master_key(require=True)
+            if not encryption_iv or not encryption_salt:
+                raise ValueError("Missing encryption_iv/encryption_salt for AES-GCM archive")
+            final_data = await decrypt_archive_data(
+                final_data,
+                bytes.fromhex(encryption_iv),
+                bytes.fromhex(encryption_salt),
+                master_key,
+            )
+        elif algo not in {"", "none"}:
+            raise ValueError(f"Unsupported archive encryption algorithm: {algo}")
+
         json_bytes = decompress_data(final_data)
         return json.loads(json_bytes.decode('utf-8'))
 
@@ -328,3 +415,93 @@ class ArchiveManager:
             'total_size_mb': round(total_size / (1024 * 1024), 2),
             'by_year': by_year,
         }
+
+
+async def reencrypt_legacy_plaintext_row(
+    compressed_data_hex: str,
+    *,
+    master_key: bytes | None = None,
+) -> dict:
+    """
+    F-024 residual: re-encrypt a legacy archive row that used encryption_algorithm=none.
+
+    `compressed_data_hex` is expected to be hex of raw zstd ciphertext (plaintext at rest).
+    Returns fields suitable for updating ArchivedSubmission.
+    """
+    if master_key is None:
+        master_key = get_archive_master_key(require=True)
+
+    try:
+        plaintext_compressed = bytes.fromhex(compressed_data_hex)
+    except ValueError as exc:
+        raise ValueError("Legacy archive compressed_data is not valid hex") from exc
+
+    encrypted, iv, salt = await encrypt_archive_data(plaintext_compressed, master_key)
+    ciphertext_hex = encrypted.hex()
+    return {
+        "compressed_data": ciphertext_hex,
+        "compressed_size": len(encrypted),
+        "encryption_algorithm": ARCHIVE_ENCRYPTION_ALGORITHM,
+        "encryption_iv": iv.hex(),
+        "encryption_salt": salt.hex(),
+        "archive_hash": hashlib.sha256(encrypted).hexdigest(),
+        "key_id": "ARCHIVE_MASTER_KEY",
+    }
+
+
+async def migrate_legacy_plaintext_archives(db_session, *, limit: int = 100) -> dict:
+    """
+    Find ArchivedSubmission rows with encryption_algorithm='none' and re-encrypt them.
+
+    Operator-driven (admin endpoint / ops script). Fail closed if ARCHIVE_MASTER_KEY
+    cannot be loaded in production/staging.
+    """
+    from . import models  # local import avoids circular import at module load
+
+    master_key = get_archive_master_key(require=True)
+    rows = (
+        db_session.query(models.ArchivedSubmission)
+        .filter(models.ArchivedSubmission.encryption_algorithm == "none")
+        .limit(max(1, min(limit, 1000)))
+        .all()
+    )
+    migrated = 0
+    failed: list[str] = []
+    for row in rows:
+        try:
+            updated = await reencrypt_legacy_plaintext_row(
+                row.compressed_data,
+                master_key=master_key,
+            )
+            # Also rewrite on-disk copy when present.
+            try:
+                mgr = ArchiveManager()
+                disk_path = mgr.get_archive_file_path(row.archive_path)
+                if disk_path.exists():
+                    disk_path.write_text(updated["compressed_data"])
+            except OSError as disk_exc:
+                logger.warning(
+                    "Legacy archive disk rewrite failed for %s: %s",
+                    row.id,
+                    disk_exc,
+                )
+            row.compressed_data = updated["compressed_data"]
+            row.compressed_size = updated["compressed_size"]
+            row.encryption_algorithm = updated["encryption_algorithm"]
+            row.encryption_iv = updated["encryption_iv"]
+            row.encryption_salt = updated["encryption_salt"]
+            row.archive_hash = updated["archive_hash"]
+            row.key_id = updated["key_id"]
+            migrated += 1
+        except Exception as exc:  # noqa: BLE001 — collect per-row failures for ops
+            failed.append(f"{row.id}:{type(exc).__name__}")
+            logger.error("Legacy archive migrate failed for %s: %s", row.id, exc)
+
+    if migrated:
+        db_session.commit()
+    return {
+        "scanned": len(rows),
+        "migrated": migrated,
+        "failed": failed,
+        "remaining_hint": "Re-run until scanned=0 or migrated=0 with empty failed.",
+    }

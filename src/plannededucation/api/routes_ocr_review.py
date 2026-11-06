@@ -102,10 +102,13 @@ async def get_ocr_review(
     if not review:
         raise HTTPException(status_code=404, detail="OCR review not found")
 
-    # Permission check
-    if current_user.role == "teacher" and review.exam.teacher_id != current_user.id:
+    # F-020: deny-by-default — only teacher (exam owner), owning student, and admin may read
+    role = current_user.role
+    if role not in ("teacher", "student", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Not authorized to view OCR reviews")
+    if role == "teacher" and review.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to view this review")
-    if current_user.role == "student" and review.student_id != current_user.id:
+    if role == "student" and review.student_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to view this review")
 
     return review
@@ -121,12 +124,16 @@ async def create_ocr_review(
     Submit OCR results for teacher review.
     Creates a new OCR review record with pending status.
     """
+    # F-020: only approved teachers and admins may create OCR reviews
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Only teachers and admins may create OCR reviews")
+
     # Verify the exam exists
     exam = db.query(models.Exam).filter(models.Exam.id == review_data.exam_id).first()
     if not exam:
         raise HTTPException(status_code=404, detail="Exam not found")
 
-    # Permission check - teachers can create reviews for their exams
+    # Permission check - teachers can create reviews only for their own exams
     if current_user.role == "teacher" and exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to create review for this exam")
 
@@ -171,7 +178,9 @@ async def update_ocr_review(
     if not review:
         raise HTTPException(status_code=404, detail="OCR review not found")
 
-    # Permission check
+    # F-020: deny-by-default — only the exam-owning teacher or admin may mutate
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Not authorized to update OCR reviews")
     if current_user.role == "teacher" and review.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to update this review")
 
@@ -208,7 +217,9 @@ async def approve_ocr_review(
     if not review:
         raise HTTPException(status_code=404, detail="OCR review not found")
 
-    # Permission check
+    # F-020: deny-by-default — only the exam-owning teacher or admin may approve
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Not authorized to approve OCR reviews")
     if current_user.role == "teacher" and review.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to approve this review")
 
@@ -239,7 +250,9 @@ async def delete_ocr_review(
     if not review:
         raise HTTPException(status_code=404, detail="OCR review not found")
 
-    # Permission check
+    # F-020: deny-by-default — only the exam-owning teacher or admin may delete
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(status_code=403, detail="Not authorized to delete OCR reviews")
     if current_user.role == "teacher" and review.exam.teacher_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to delete this review")
 

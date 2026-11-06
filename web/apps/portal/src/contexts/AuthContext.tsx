@@ -25,8 +25,14 @@ export interface User {
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  loginWithPassword: (emailOrUsername: string, password: string, rememberMe?: boolean) => Promise<void>;
-  logout: () => void;
+  loginWithPassword: (
+    emailOrUsername: string,
+    password: string,
+    rememberMe?: boolean,
+    totpCode?: string,
+  ) => Promise<void>;
+  loginWithPasskeyTokens: (accessToken: string, refreshToken?: string | null) => Promise<void>;
+  logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
 
@@ -37,15 +43,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   const refreshUser = useCallback(async () => {
-    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+    // F-028: Perform one-time migration of any legacy localStorage access_token into
+    // sessionStorage, then immediately purge localStorage so bearer tokens never
+    // persist across browser sessions or survive logout.
+    const legacyToken = localStorage.getItem('access_token');
+    if (legacyToken && !sessionStorage.getItem('access_token')) {
+      sessionStorage.setItem('access_token', legacyToken);
+    }
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+
+    const token = sessionStorage.getItem('access_token');
     if (!token) {
       setUser(null);
       setLoading(false);
       return;
-    }
-    // Prefer sessionStorage; migrate any legacy localStorage token
-    if (!sessionStorage.getItem('access_token') && localStorage.getItem('access_token')) {
-      sessionStorage.setItem('access_token', localStorage.getItem('access_token')!);
     }
     try {
       const response = await apiClient.get<User>('/auth/me');
@@ -53,7 +65,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch {
       // Token is invalid or expired — clear it
       sessionStorage.removeItem('access_token');
-      localStorage.removeItem('access_token');
       setUser(null);
     } finally {
       setLoading(false);
@@ -64,11 +75,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     refreshUser();
   }, [refreshUser]);
 
-  const loginWithPassword = async (emailOrUsername: string, password: string, rememberMe: boolean = false) => {
+  const loginWithPassword = async (
+    emailOrUsername: string,
+    password: string,
+    rememberMe: boolean = false,
+    totpCode?: string,
+  ) => {
     const formData = new URLSearchParams();
     formData.append('username', emailOrUsername);
     formData.append('password', password);
     formData.append('remember_me', rememberMe.toString());
+    if (totpCode?.trim()) {
+      formData.append('totp_code', totpCode.trim());
+    }
 
     try {
       const response = await apiClient.post<{ access_token: string; refresh_token?: string }>('/auth/token', formData, {
@@ -86,14 +105,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const logout = () => {
+  const loginWithPasskeyTokens = async (
+    accessToken: string,
+    refreshToken?: string | null,
+  ) => {
+    sessionStorage.setItem('access_token', accessToken);
+    if (refreshToken) {
+      sessionStorage.setItem('refresh_token', refreshToken);
+    }
+    await refreshUser();
+  };
+
+  const logout = async () => {
+    const accessToken = sessionStorage.getItem('access_token');
+    const refreshToken = sessionStorage.getItem('refresh_token');
+    if (accessToken) {
+      try {
+        await apiClient.post(
+          '/auth/logout',
+          refreshToken ? { refresh_token: refreshToken } : {},
+        );
+      } catch {
+        // Local clear still proceeds if the revoke call fails.
+      }
+    }
+    // F-028: clear tokens from both storages to prevent stale localStorage tokens
+    // from being silently re-loaded on the next mount.
     sessionStorage.removeItem('access_token');
     sessionStorage.removeItem('refresh_token');
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, loginWithPassword, logout, refreshUser }}>
+    <AuthContext.Provider
+      value={{ user, loading, loginWithPassword, loginWithPasskeyTokens, logout, refreshUser }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -20,12 +20,13 @@ export function SecureChat({ examId }: { examId: string }) {
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!token || !examId) return;
 
-    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const host = API_URL.replace(/^https?:\/\//, '');
-    const wsUrl = `${wsProtocol}//${host}/chat/exam/${examId}`;
+    // Resolve relative API_URL against the page origin so ws:/// is never produced (F-029).
+    const apiBase = new URL(API_URL, window.location.origin);
+    const wsProtocol = apiBase.protocol === 'https:' ? 'wss:' : 'ws:';
+    const wsUrl = `${wsProtocol}//${apiBase.host}${apiBase.pathname.replace(/\/$/, '')}/chat/exam/${examId}`;
 
     const socket = new WebSocket(wsUrl);
     ws.current = socket;

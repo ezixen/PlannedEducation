@@ -42,10 +42,16 @@ PlannedEducation includes a native automated backup service:
 - **Engines Supported**: Full support for both SQLite (using atomic non-locking online backups) and PostgreSQL (using compressed `pg_dump`).
 
 ### How do I configure email for password resets?
-Email is 100% optional. If unconfigured, PlannedEducation operates in self-contained offline mode and logs OTP codes safely. If you wish to enable outgoing email, configure either **Brevo (Sendinblue)** with `BREVO_API_KEY` (free tier: 300 emails/day) or your **School / Campus SMTP Server** (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`) in `.env`.
+Email is optional. Without email, PlannedEducation still lets users recover with recovery codes, teacher/parent unlocks, or an administrator reset from the Admin Panel. School IT can optionally connect the school's outgoing email so reset links arrive in inboxes — ask your administrator; teachers and students do not edit server configuration files.
 
 ### How do I enable two-factor authentication?
-Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 5 recovery codes in case you lose your phone. If you ever lose your phone and recovery codes, a school administrator can reset your 2FA from the Admin Panel.
+Go to Settings > Security, click 'Enable 2FA', scan the QR code with your authenticator app, and enter the verification code to complete setup. Save your 5 recovery codes in case you lose your phone. After 2FA is on, password sign-in asks for a current authenticator code every time. If you ever lose your phone and recovery codes, a school administrator can reset your 2FA from the Admin Panel.
+
+### Where is Help / FAQ and where are Messages?
+After you sign in, open the hamburger menu and choose **Help** for the FAQ assistant. **Messages** sits next to the notification bell in the top header. Neither control appears on the login screen. The special-characters tool stays in the bottom-right corner for authenticated users who need math or science symbols.
+
+### Can a student submit after the exam timer ends?
+No. The length you set for the exam (including any approved extra-time multiplier) is enforced by the school server when the student submits. Changing the clock on the student device does not keep a late submission open.
 
 ### What are Passkeys and how do I use them?
 Passkeys are a passwordless authentication method using biometrics or device PIN. You can set them up in Settings > Passkeys by registering your device's biometric authentication. Passkeys sync across devices via iCloud Keychain or Google Password Manager.

@@ -3,20 +3,42 @@ Speech-to-Text Routes for PlannedEducation
 Endpoints for audio transcription using faster-whisper.
 """
 
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile, status
 from pydantic import BaseModel, Field
 
 from . import models
+from .limiter import limiter
 from .routes_auth import get_current_user
 from .stt_service import SpeechToTextService, get_stt_service
 
 router = APIRouter(prefix="/stt", tags=["speech-to-text"])
 
+# F-038: hard caps on request size / concurrency
+MAX_STT_BASE64_CHARS = 12_000_000  # ~9 MB binary
+MAX_STT_UPLOAD_BYTES = 10 * 1024 * 1024
+MAX_STT_BATCH_ITEMS = 5
+_stt_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="stt")
+
+
+def _enforce_base64_cap(data: str) -> None:
+    if len(data) > MAX_STT_BASE64_CHARS:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail="Audio payload exceeds maximum allowed size",
+        )
+
+
+async def _run_stt(fn, *args, **kwargs):
+    loop = asyncio.get_running_loop()
+    return await loop.run_in_executor(_stt_executor, lambda: fn(*args, **kwargs))
+
 
 class STTRequest(BaseModel):
     """Request model for STT processing."""
-    audio_base64: str = Field(..., description="Base64 encoded audio data")
+    audio_base64: str = Field(..., max_length=MAX_STT_BASE64_CHARS, description="Base64 encoded audio data")
     language: str | None = Field(default=None, description="Language code (None for auto-detect)")
     task: str = Field(default="transcribe", description="Task: transcribe or translate")
 
@@ -33,7 +55,7 @@ class STTResponse(BaseModel):
 
 class STTBatchRequest(BaseModel):
     """Request model for batch STT processing."""
-    audios: list[str] = Field(..., description="List of base64 encoded audio files")
+    audios: list[str] = Field(..., max_length=MAX_STT_BATCH_ITEMS, description="List of base64 encoded audio files")
     language: str | None = Field(default=None, description="Language code")
     task: str = Field(default="transcribe", description="Task: transcribe or translate")
 
@@ -44,8 +66,10 @@ class STTBatchResponse(BaseModel):
 
 
 @router.post("/transcribe", response_model=STTResponse)
+@limiter.limit("10/minute")
 async def transcribe_audio(
-    request: STTRequest,
+    request: Request,
+    payload: STTRequest,
     current_user: models.User = Depends(get_current_user),
     stt_service: SpeechToTextService = Depends(get_stt_service),
 ):
@@ -53,16 +77,19 @@ async def transcribe_audio(
     Transcribe audio from base64 encoded data.
     Returns transcribed text with metadata.
     """
+    _ = request
     if not stt_service.is_available():
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
 
-    result = stt_service.transcribe_from_base64(
-        request.audio_base64,
-        language=request.language,
-        task=request.task
+    _enforce_base64_cap(payload.audio_base64)
+    result = await _run_stt(
+        stt_service.transcribe_from_base64,
+        payload.audio_base64,
+        language=payload.language,
+        task=payload.task,
     )
 
     return STTResponse(
@@ -76,7 +103,9 @@ async def transcribe_audio(
 
 
 @router.post("/transcribe-upload", response_model=STTResponse)
+@limiter.limit("10/minute")
 async def transcribe_audio_upload(
+    request: Request,
     file: UploadFile = File(...),
     language: str | None = Form(default=None),
     task: str = Form(default="transcribe"),
@@ -87,27 +116,31 @@ async def transcribe_audio_upload(
     Transcribe an uploaded audio file.
     Accepts multipart/form-data with audio file (WAV, MP3, etc.).
     """
+    _ = request
     if not stt_service.is_available():
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
 
-    # Validate file type
     if not file.content_type or not file.content_type.startswith('audio/'):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="File must be an audio file"
         )
 
-    # Read file content
-    audio_data = await file.read()
+    audio_data = await file.read(MAX_STT_UPLOAD_BYTES + 1)
+    if len(audio_data) > MAX_STT_UPLOAD_BYTES:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail="Uploaded audio exceeds maximum allowed size",
+        )
 
-    # Transcribe
-    result = stt_service.transcribe(
+    result = await _run_stt(
+        stt_service.transcribe,
         audio_data,
         language=language,
-        task=task
+        task=task,
     )
 
     return STTResponse(
@@ -121,8 +154,10 @@ async def transcribe_audio_upload(
 
 
 @router.post("/batch", response_model=STTBatchResponse)
+@limiter.limit("5/minute")
 async def transcribe_batch(
-    request: STTBatchRequest,
+    request: Request,
+    payload: STTBatchRequest,
     current_user: models.User = Depends(get_current_user),
     stt_service: SpeechToTextService = Depends(get_stt_service),
 ):
@@ -130,19 +165,28 @@ async def transcribe_batch(
     Transcribe multiple audio files in batch.
     Useful for processing multiple audio feedback recordings.
     """
+    _ = request
     if not stt_service.is_available():
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="STT service not available. faster-whisper not installed."
         )
 
+    if len(payload.audios) > MAX_STT_BATCH_ITEMS:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"Batch limited to {MAX_STT_BATCH_ITEMS} audio files",
+        )
+
     results = []
 
-    for audio_base64 in request.audios:
-        result = stt_service.transcribe_from_base64(
+    for audio_base64 in payload.audios:
+        _enforce_base64_cap(audio_base64)
+        result = await _run_stt(
+            stt_service.transcribe_from_base64,
             audio_base64,
-            language=request.language,
-            task=request.task
+            language=payload.language,
+            task=payload.task,
         )
         results.append(STTResponse(
             text=result.text,
@@ -173,8 +217,11 @@ async def get_supported_languages(
 
 
 @router.get("/models")
-async def get_available_models():
-    """Get list of available Whisper model sizes."""
+async def get_available_models(
+    current_user: models.User = Depends(get_current_user),
+):
+    """Authenticated model catalog (F-051)."""
+    _ = current_user
     return {
         "models": [
             {"id": "tiny", "size": "~39 MB", "speed": "fastest", "accuracy": "lowest"},
@@ -189,11 +236,9 @@ async def get_available_models():
 
 @router.get("/health")
 async def stt_health_check(
+    current_user: models.User = Depends(get_current_user),
     stt_service: SpeechToTextService = Depends(get_stt_service),
 ):
-    """Health check for STT service."""
-    return {
-        "available": stt_service.is_available(),
-        "service": "faster-whisper",
-        "model": stt_service.model_size if stt_service.is_available() else "not loaded"
-    }
+    """Authenticated readiness for STT (F-051)."""
+    _ = current_user
+    return {"status": "ok" if stt_service.is_available() else "unavailable"}

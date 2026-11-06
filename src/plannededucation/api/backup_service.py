@@ -2,10 +2,17 @@
 Database Backup & Automated Maintenance Service
 Supports SQLite and PostgreSQL backups, manual on-demand snapshots,
 and automated midnight backups with 30-day retention policies.
+
+F-033: Final backup artifacts are AES-GCM encrypted (PEBAK1 envelope).
+Plaintext gzip dumps are never left as the durable artifact.
 """
 
+from __future__ import annotations
+
 import asyncio
+import base64
 import gzip
+import hashlib
 import logging
 import os
 import shutil
@@ -14,12 +21,142 @@ import subprocess
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
 from . import database
 from .deployment_config import load_deployment_config
 
 logger = logging.getLogger("plannededucation.backup")
 
 BACKUP_DIR = Path(os.getenv("BACKUP_DIR", "backups"))
+
+# PEBAK1 envelope: magic(6) + salt(16) + iv(12) + ciphertext(+GCM tag)
+BACKUP_MAGIC = b"PEBAK1"
+BACKUP_SALT_LENGTH = 16
+BACKUP_IV_LENGTH = 12
+BACKUP_KEY_LENGTH = 32
+BACKUP_PBKDF2_ITERATIONS = 100_000
+
+_EPHEMERAL_BACKUP_KEY: bytes | None = None
+
+_ENCRYPTED_SUFFIXES = (".db.gz.enc", ".sql.gz.enc")
+_LEGACY_PLAIN_SUFFIXES = (".db.gz", ".sql.gz", ".db", ".sql")
+
+
+def _parse_master_key_material(raw: str) -> bytes:
+    """Normalize urlsafe-b64 / hex / arbitrary secret into a 32-byte key."""
+    raw = raw.strip()
+    try:
+        decoded = base64.urlsafe_b64decode(raw.encode("ascii"))
+        if len(decoded) >= 32:
+            return decoded[:32]
+    except Exception:
+        pass
+    try:
+        decoded = bytes.fromhex(raw)
+        if len(decoded) >= 32:
+            return decoded[:32]
+    except Exception:
+        pass
+    return hashlib.sha256(raw.encode("utf-8")).digest()
+
+
+def get_backup_master_key(*, require: bool = True) -> bytes:
+    """
+    Load the backup AES-GCM master key.
+
+    Preference order:
+      1. BACKUP_MASTER_KEY — dedicated key (preferred)
+      2. ARCHIVE_MASTER_KEY — documented fallback for test/dev only
+      3. Ephemeral per-process key (test/dev only)
+
+    Production/staging fail closed when no durable key is configured.
+    """
+    global _EPHEMERAL_BACKUP_KEY
+
+    env = (os.getenv("PLANNED_EDUCATION_ENV") or os.getenv("ENVIRONMENT") or "").lower()
+    backup_raw = (os.getenv("BACKUP_MASTER_KEY") or "").strip()
+    if backup_raw:
+        return _parse_master_key_material(backup_raw)
+
+    archive_raw = (os.getenv("ARCHIVE_MASTER_KEY") or "").strip()
+    if archive_raw and env not in {"production", "staging"}:
+        logger.warning(
+            "BACKUP_MASTER_KEY unset — using ARCHIVE_MASTER_KEY for backup AEAD "
+            "(set a distinct BACKUP_MASTER_KEY in production)."
+        )
+        return _parse_master_key_material(archive_raw)
+
+    if env in {"production", "staging"}:
+        if require:
+            raise RuntimeError(
+                "BACKUP_MASTER_KEY must be set in production/staging for backup encryption."
+            )
+        raise RuntimeError("BACKUP_MASTER_KEY is not configured")
+
+    if _EPHEMERAL_BACKUP_KEY is None:
+        _EPHEMERAL_BACKUP_KEY = os.urandom(32)
+        logger.warning(
+            "BACKUP_MASTER_KEY not set — using ephemeral per-process backup key "
+            "(encrypted backups will not decrypt after process restart)."
+        )
+    return _EPHEMERAL_BACKUP_KEY
+
+
+def encrypt_backup_bytes(plaintext: bytes, key: bytes | None = None) -> bytes:
+    """
+    Encrypt plaintext with AES-GCM into a PEBAK1 single-file envelope.
+    Layout: magic(6) + salt(16) + iv(12) + ciphertext(+tag).
+    """
+    if key is None:
+        key = get_backup_master_key(require=True)
+
+    salt = os.urandom(BACKUP_SALT_LENGTH)
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=BACKUP_KEY_LENGTH,
+        salt=salt,
+        iterations=BACKUP_PBKDF2_ITERATIONS,
+    )
+    derived = kdf.derive(key)
+    iv = os.urandom(BACKUP_IV_LENGTH)
+    ciphertext = AESGCM(derived).encrypt(iv, plaintext, None)
+    return BACKUP_MAGIC + salt + iv + ciphertext
+
+
+def decrypt_backup_bytes(blob: bytes, key: bytes | None = None) -> bytes:
+    """Decrypt a PEBAK1 envelope; raises on wrong key / tampered ciphertext."""
+    if key is None:
+        key = get_backup_master_key(require=True)
+
+    if len(blob) < 6 + BACKUP_SALT_LENGTH + BACKUP_IV_LENGTH + 16:
+        raise ValueError("Backup artifact too short for PEBAK1 envelope")
+    if not blob.startswith(BACKUP_MAGIC):
+        raise ValueError("Invalid backup magic; expected PEBAK1 encrypted artifact")
+
+    salt = blob[6 : 6 + BACKUP_SALT_LENGTH]
+    iv_start = 6 + BACKUP_SALT_LENGTH
+    iv = blob[iv_start : iv_start + BACKUP_IV_LENGTH]
+    ciphertext = blob[iv_start + BACKUP_IV_LENGTH :]
+
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=BACKUP_KEY_LENGTH,
+        salt=salt,
+        iterations=BACKUP_PBKDF2_ITERATIONS,
+    )
+    derived = kdf.derive(key)
+    return AESGCM(derived).decrypt(iv, ciphertext, None)
+
+
+def _approved_backup_root() -> Path:
+    """Root under which backup_location must resolve (path containment)."""
+    raw = (os.getenv("BACKUP_APPROVED_ROOT") or "").strip()
+    if raw:
+        return Path(raw).resolve()
+    return Path.cwd().resolve()
 
 
 def _load_backup_config() -> dict:
@@ -42,9 +179,25 @@ def _load_backup_config() -> dict:
 
 
 def get_backup_dir() -> Path:
-    """Ensure backup directory exists and return resolved path."""
+    """
+    Ensure backup directory exists and return resolved path.
+
+    Restricts backup_location under BACKUP_APPROVED_ROOT (default: cwd)
+    so admin-configurable paths cannot escape an approved root.
+    """
     cfg = _load_backup_config()
-    bdir = Path(cfg["backup_location"]).resolve()
+    location = Path(cfg["backup_location"])
+    root = _approved_backup_root()
+    if not location.is_absolute():
+        bdir = (root / location).resolve()
+    else:
+        bdir = location.resolve()
+
+    if not bdir.is_relative_to(root):
+        raise RuntimeError(
+            f"backup_location must resolve under approved root {root}; got {bdir}"
+        )
+
     bdir.mkdir(parents=True, exist_ok=True)
     return bdir
 
@@ -55,12 +208,48 @@ def _gzip_compress_file(src_path: Path, dst_path: Path, compress_level: int = 9)
         f_out.write(f_in.read())
 
 
+def _seal_gzip_artifact(plain_gz: Path) -> Path:
+    """
+    Encrypt a temporary .gz dump into a durable .gz.enc PEBAK1 file and
+    remove the plaintext gzip so it is never left as the final artifact.
+    """
+    plaintext = plain_gz.read_bytes()
+    sealed = encrypt_backup_bytes(plaintext)
+    enc_path = Path(str(plain_gz) + ".enc")
+    enc_path.write_bytes(sealed)
+    # Best-effort wipe then unlink plaintext gzip
+    try:
+        with open(plain_gz, "wb") as fh:
+            fh.write(b"\x00" * len(plaintext))
+    except Exception:
+        pass
+    plain_gz.unlink(missing_ok=True)
+    return enc_path
+
+
+def decrypt_backup_file(path: Path, key: bytes | None = None) -> bytes:
+    """
+    Decrypt an encrypted backup artifact to its inner gzip (or raw) bytes.
+    Legacy plaintext .gz/.db/.sql files are returned as-is for restore migration.
+    """
+    data = path.read_bytes()
+    name = path.name
+    if name.endswith(_ENCRYPTED_SUFFIXES) or data.startswith(BACKUP_MAGIC):
+        return decrypt_backup_bytes(data, key=key)
+    # Legacy unencrypted artifact (pre-F-033 residual)
+    return data
+
+
 def create_database_backup(is_auto: bool = False) -> dict:
     """
     Create a complete database backup snapshot.
     Supports SQLite atomic backup and PostgreSQL pg_dump.
+    Final artifact is always AES-GCM encrypted (.db.gz.enc / .sql.gz.enc).
     Returns metadata dict on success.
     """
+    # Fail closed early if production/staging lacks a key
+    get_backup_master_key(require=True)
+
     bdir = get_backup_dir()
     prefix = "backup_auto" if is_auto else "backup_manual"
     timestamp = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
@@ -74,9 +263,8 @@ def create_database_backup(is_auto: bool = False) -> dict:
             sqlite_path = sqlite_path[2:]
 
         src_path = Path(sqlite_path).resolve()
-        # SQLite backups are compressed with gzip for maximum space savings
-        backup_filename = f"{prefix}_{timestamp}.db.gz"
-        dst_path = bdir / backup_filename
+        plain_filename = f"{prefix}_{timestamp}.db.gz"
+        plain_path = bdir / plain_filename
         tmp_path = bdir / f"{prefix}_{timestamp}.tmp.db"
 
         if src_path.exists():
@@ -88,9 +276,7 @@ def create_database_backup(is_auto: bool = False) -> dict:
             finally:
                 tmp_conn.close()
                 src_conn.close()
-            # Compress the temp file with max gzip compression
-            _gzip_compress_file(tmp_path, dst_path, compress_level=9)
-            # Remove the temp uncompressed file
+            _gzip_compress_file(tmp_path, plain_path, compress_level=9)
             tmp_path.unlink(missing_ok=True)
         else:
             # Memory or empty DB - create empty SQLite snapshot then compress
@@ -99,19 +285,20 @@ def create_database_backup(is_auto: bool = False) -> dict:
                 tmp_conn.execute("VACUUM")
             finally:
                 tmp_conn.close()
-            _gzip_compress_file(tmp_path, dst_path, compress_level=9)
+            _gzip_compress_file(tmp_path, plain_path, compress_level=9)
             tmp_path.unlink(missing_ok=True)
 
-        file_size = dst_path.stat().st_size
+        enc_path = _seal_gzip_artifact(plain_path)
+        backup_filename = enc_path.name
+        file_size = enc_path.stat().st_size
     else:
         # PostgreSQL backup
-        backup_filename = f"{prefix}_{timestamp}.sql.gz"
-        dst_path = bdir / backup_filename
+        plain_filename = f"{prefix}_{timestamp}.sql.gz"
+        plain_path = bdir / plain_filename
 
         pg_dump_cmd = shutil.which("pg_dump")
         if pg_dump_cmd:
             try:
-                # Run pg_dump and compress with gzip max level
                 dump_proc = subprocess.Popen(
                     [pg_dump_cmd, db_url, "-F", "p"],
                     stdout=subprocess.PIPE,
@@ -119,32 +306,56 @@ def create_database_backup(is_auto: bool = False) -> dict:
                 )
                 stdout, stderr = dump_proc.communicate()
                 if dump_proc.returncode == 0:
-                    with gzip.open(dst_path, "wb", compresslevel=9) as f_out:
+                    with gzip.open(plain_path, "wb", compresslevel=9) as f_out:
                         f_out.write(stdout)
                 else:
-                    raise RuntimeError(f"pg_dump error: {stderr.decode('utf-8', errors='ignore')}")
+                    raise RuntimeError(
+                        f"pg_dump error: {stderr.decode('utf-8', errors='ignore')}"
+                    )
             except Exception as e:
-                logger.warning(f"pg_dump execution failed: {e}. Writing metadata fallback.")
-                with gzip.open(dst_path, "wt", encoding="utf-8", compresslevel=9) as f_out:
-                    f_out.write(f"-- PlannedEducation Backup\n-- Database: {db_url}\n-- Timestamp: {timestamp}\n")
+                # F-033: never write DATABASE_URL/credentials into a fallback artifact.
+                logger.error("pg_dump execution failed; refusing insecure fallback: %s", e)
+                raise RuntimeError(
+                    "PostgreSQL backup failed and insecure credential fallback is disabled"
+                ) from e
         else:
-            # Fallback if pg_dump is not installed on system
-            with gzip.open(dst_path, "wt", encoding="utf-8", compresslevel=9) as f_out:
-                f_out.write(f"-- PlannedEducation Backup (Native Dump)\n-- Source: {db_url}\n-- Timestamp: {timestamp}\n")
+            raise RuntimeError(
+                "pg_dump is not installed; refusing to create a credential-bearing fallback backup"
+            )
 
-        file_size = dst_path.stat().st_size
+        enc_path = _seal_gzip_artifact(plain_path)
+        backup_filename = enc_path.name
+        file_size = enc_path.stat().st_size
 
-    logger.info(f"Database backup created: {backup_filename} ({file_size} bytes, is_auto={is_auto})")
+    logger.info(
+        "Database backup created: %s (%s bytes, is_auto=%s, aead=PEBAK1)",
+        backup_filename,
+        file_size,
+        is_auto,
+    )
 
     return {
         "filename": backup_filename,
-        "path": str(dst_path),
+        # Do not expose absolute server paths to API clients.
+        "path": backup_filename,
         "size_bytes": file_size,
         "size_mb": round(file_size / (1024 * 1024), 2),
         "is_auto": is_auto,
+        "encrypted": True,
+        "encryption": "AES-GCM",
         "created_at": datetime.now(UTC).isoformat(),
         "status": "success",
     }
+
+
+def _is_backup_artifact(name: str) -> bool:
+    """True if filename looks like a (encrypted or legacy) database backup."""
+    lower = name.lower()
+    if any(lower.endswith(sfx) for sfx in _ENCRYPTED_SUFFIXES):
+        return True
+    if any(lower.endswith(sfx) for sfx in _LEGACY_PLAIN_SUFFIXES):
+        return True
+    return False
 
 
 def list_database_backups() -> list[dict]:
@@ -153,16 +364,18 @@ def list_database_backups() -> list[dict]:
     backups: list[dict] = []
 
     for f in bdir.iterdir():
-        if f.is_file() and (f.suffix in (".db", ".sql", ".gz") or f.name.endswith(".sql.gz")):
+        if f.is_file() and _is_backup_artifact(f.name):
             try:
                 stat = f.stat()
                 is_auto = f.name.startswith("backup_auto")
+                encrypted = f.name.endswith(".enc")
                 backups.append({
                     "filename": f.name,
                     "size_bytes": stat.st_size,
                     "size_mb": round(stat.st_size / (1024 * 1024), 2),
                     "created_at": datetime.fromtimestamp(stat.st_mtime, UTC).isoformat(),
                     "is_auto": is_auto,
+                    "encrypted": encrypted,
                 })
             except Exception:
                 continue
@@ -174,6 +387,8 @@ def list_database_backups() -> list[dict]:
 def get_backup_file_path(filename: str) -> Path | None:
     """Retrieve verified, path-traversal protected backup file path."""
     clean_name = os.path.basename(filename)
+    if not _is_backup_artifact(clean_name):
+        return None
     bdir = get_backup_dir()
     target = (bdir / clean_name).resolve()
 
@@ -258,4 +473,3 @@ async def run_midnight_autobackup_scheduler():
             logger.error(f"Error during midnight autobackup: {e}", exc_info=True)
             # Sleep 10 minutes on error before retry
             await asyncio.sleep(600)
-

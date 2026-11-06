@@ -172,18 +172,25 @@ export function AIGradingUpload() {
   };
 
   const handleSaveAndApprove = async () => {
+    // F-030: call the real approval endpoint; never swallow errors as success.
     if (!activeReviewSub) return;
     setLoading(true);
     try {
-      await apiClient.post('/archive/teacher/approve-staged/' + activeReviewSub.id);
+      await apiClient.post('/archive/teacher/approve', {
+        submission_ids: [activeReviewSub.id],
+        overrides: {
+          [activeReviewSub.id]: {
+            score: reviewScore,
+            feedback: reviewFeedback,
+          },
+        },
+      });
       showSuccess(t('ai_grading.saved_success'));
       setActiveReviewSub(null);
       loadSubmissions();
-    } catch {
-      // Fallback: update status locally if staging archive endpoint is mocking
-      showSuccess(t('ai_grading.saved_success'));
-      setActiveReviewSub(null);
-      loadSubmissions();
+    } catch (err: any) {
+      // F-030: surface the server error inline; do NOT show success on failure.
+      showError(t('ai_grading.approve_error'), err?.response?.data?.detail || err?.message);
     } finally {
       setLoading(false);
     }
@@ -193,18 +200,20 @@ export function AIGradingUpload() {
     if (!window.confirm(t('ai_grading.approve_all_confirm'))) return;
     setLoading(true);
     try {
+      // F-030: batch all staged submissions in a single authoritative call.
       const stagedSubs = submissions.filter((s) => s.status === 'pending_approval' || s.status === 'ai_graded');
-      for (const s of stagedSubs) {
-        try {
-          await apiClient.post('/archive/teacher/approve-staged/' + s.id);
-        } catch {
-          // ignore individual errors
-        }
+      if (stagedSubs.length === 0) {
+        setLoading(false);
+        return;
       }
+      await apiClient.post('/archive/teacher/approve', {
+        submission_ids: stagedSubs.map((s) => s.id),
+        overrides: {},
+      });
       showSuccess(t('ai_grading.submissions_approved_success', { count: String(stagedSubs.length) }));
       loadSubmissions();
     } catch (err: any) {
-      showError(t('ai_grading.approve_error'), err.message);
+      showError(t('ai_grading.approve_error'), err?.response?.data?.detail || err?.message);
     } finally {
       setLoading(false);
     }

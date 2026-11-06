@@ -7,10 +7,30 @@ import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
 
 
+function base64urlToBuffer(base64url: string): ArrayBuffer {
+  const base64 = base64url.replace(/-/g, '+').replace(/_/g, '/');
+  const padded = base64.padEnd(base64.length + ((4 - (base64.length % 4)) % 4), '=');
+  const binary = atob(padded);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes.buffer;
+}
+
+function bufferToBase64url(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+
 export function Login() {
   const { t } = useI18n();
-  const { loginWithPassword, refreshUser } = useAuth();
-  const { error: showError, success: showSuccess } = useToast();
+  const { loginWithPassword, loginWithPasskeyTokens, refreshUser } = useAuth();
+  const { error: showError, success: showSuccess, info: showInfo } = useToast();
   const navigate = useNavigate();
   
   const [email, setEmail] = useState('');
@@ -23,6 +43,11 @@ export function Login() {
   const [teacherResetChecking, setTeacherResetChecking] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [totpCode, setTotpCode] = useState('');
+  const [totpRequired, setTotpRequired] = useState(false);
+  // F-039: teacher-reset flow requires the signed token issued to the teacher
+  const [teacherResetToken, setTeacherResetToken] = useState('');
+  const [passkeyLoading, setPasskeyLoading] = useState(false);
 
   const handleCheckTeacherReset = async () => {
     setTeacherResetChecking(true);
@@ -44,16 +69,88 @@ export function Login() {
   };
 
 
+  const handlePasskeyLogin = async () => {
+    if (!email.trim()) {
+      showError(t('login.passkey_email_required'));
+      return;
+    }
+    if (!window.PublicKeyCredential) {
+      showError(t('login.passkey_unsupported'));
+      return;
+    }
+    setPasskeyLoading(true);
+    try {
+      const startRes = await apiClient.post('/auth/webauthn/login/start', {
+        email: email.trim(),
+      });
+      const options = startRes.data;
+      const credential = (await navigator.credentials.get({
+        publicKey: {
+          challenge: base64urlToBuffer(options.challenge),
+          timeout: options.timeout,
+          rpId: options.rpId,
+          allowCredentials: (options.allowCredentials || []).map((c: { id: string; type: string; transports?: string[] }) => ({
+            id: base64urlToBuffer(c.id),
+            type: c.type as PublicKeyCredentialType,
+            transports: c.transports as AuthenticatorTransport[] | undefined,
+          })),
+          userVerification: options.userVerification as UserVerificationRequirement,
+        },
+      })) as PublicKeyCredential | null;
+
+      if (!credential) {
+        throw new Error(t('login.passkey_cancelled'));
+      }
+
+      const assertion = credential.response as AuthenticatorAssertionResponse;
+      const finishRes = await apiClient.post('/auth/webauthn/login/finish', {
+        email: email.trim(),
+        remember_me: rememberMe,
+        id: credential.id,
+        rawId: bufferToBase64url(credential.rawId),
+        type: credential.type,
+        response: {
+          clientDataJSON: bufferToBase64url(assertion.clientDataJSON),
+          authenticatorData: bufferToBase64url(assertion.authenticatorData),
+          signature: bufferToBase64url(assertion.signature),
+          userHandle: assertion.userHandle
+            ? bufferToBase64url(assertion.userHandle)
+            : null,
+        },
+        clientExtensionResults: credential.getClientExtensionResults(),
+      });
+
+      await loginWithPasskeyTokens(
+        finishRes.data.access_token,
+        finishRes.data.refresh_token,
+      );
+      navigate('/');
+    } catch (err: any) {
+      const detail = err.response?.data?.detail || err.message || t('login.passkey_failed');
+      showError(typeof detail === 'string' ? detail : t('login.passkey_failed'));
+    } finally {
+      setPasskeyLoading(false);
+    }
+  };
+
   const handleLocalLogin = async (e: React.FormEvent) => {
     e.preventDefault(); 
     setLoading(true);
     try {
-      await loginWithPassword(email, password, rememberMe);
+      await loginWithPassword(email, password, rememberMe, totpCode);
       navigate('/');
     } catch (err: any) {
       const detail = err.response?.data?.detail || err.message || 'Login failed';
       let message = 'Login failed';
-      if (typeof detail === 'string' && (detail.includes('RESET_ACTIVE') || detail.includes('PASSWORD_RESET_ACTIVE'))) {
+      if (detail === '2FA_REQUIRED') {
+        setTotpRequired(true);
+        showInfo(t('login.twofa_required'));
+        setLoading(false);
+        return;
+      } else if (typeof detail === 'string' && detail.includes('two-factor')) {
+        setTotpRequired(true);
+        message = t('login.invalid_twofa');
+      } else if (typeof detail === 'string' && (detail.includes('RESET_ACTIVE') || detail.includes('PASSWORD_RESET_ACTIVE'))) {
         setTeacherResetActive(true);
         showSuccess(t('login.account_unlocked'));
         setLoading(false);
@@ -81,9 +178,11 @@ export function Login() {
     }
     setLoading(true);
     try {
+      // F-039: include the signed reset_token the teacher gave to the student
       const res = await (await import('../api')).apiClient.post('/auth/teacher-reset/complete', {
         identifier: email.trim(),
         new_password: newPassword,
+        reset_token: teacherResetToken.trim(),
       });
       if (res.data?.access_token) {
         sessionStorage.setItem('access_token', res.data.access_token);
@@ -137,6 +236,22 @@ export function Login() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder={t('login.email_placeholder')}
                   style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box' }}
+                />
+              </div>
+
+              {/* F-039: reset token field — the signed code the teacher communicated to the student */}
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>
+                  {t('login.reset_token_label')}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={teacherResetToken}
+                  onChange={e => setTeacherResetToken(e.target.value)}
+                  placeholder={t('login.reset_token_placeholder')}
+                  autoComplete="off"
+                  style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box', fontFamily: 'monospace' }}
                 />
               </div>
 
@@ -283,12 +398,62 @@ export function Login() {
                 </div>
               </div>
 
+              {totpRequired && (
+                <div style={{ marginBottom: '1.25rem', textAlign: 'left' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-color)', fontSize: '0.9rem', fontWeight: 500 }}>
+                    {t('login.totp_code_label')}
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
+                    maxLength={6}
+                    pattern="\d{6}"
+                    required
+                    value={totpCode}
+                    onChange={e => setTotpCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    placeholder={t('login.totp_code_placeholder')}
+                    style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)', fontSize: '0.95rem', boxSizing: 'border-box', letterSpacing: '0.3rem' }}
+                  />
+                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    {t('login.twofa_or_passkey')}
+                  </p>
+                </div>
+              )}
+
               <button 
                 type="submit"
-                disabled={loading}
+                disabled={loading || passkeyLoading}
                 style={{ width: '100%', padding: '0.75rem 1rem', background: loading ? '#94a3b8' : 'var(--primary-color)', color: 'white', border: 'none', borderRadius: 'var(--radius-md)', cursor: loading ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '0.95rem', boxSizing: 'border-box' }}
               >
                 {loading ? t('login.signing_in') : t('login.signin')}
+              </button>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1rem 0' }}>
+                <div style={{ flex: 1, height: 1, background: 'var(--border-color)' }} />
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{t('login.8')}</span>
+                <div style={{ flex: 1, height: 1, background: 'var(--border-color)' }} />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => void handlePasskeyLogin()}
+                disabled={loading || passkeyLoading}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: 'transparent',
+                  color: 'var(--text-color)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-md)',
+                  cursor: passkeyLoading ? 'not-allowed' : 'pointer',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  boxSizing: 'border-box',
+                  opacity: passkeyLoading ? 0.7 : 1,
+                }}
+              >
+                {passkeyLoading ? t('login.passkey_signing_in') : t('login.passkey_signin')}
               </button>
             </form>
           )}

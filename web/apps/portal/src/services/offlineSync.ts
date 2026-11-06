@@ -253,9 +253,14 @@ export async function queueExamSubmission(
   };
   
   await addPendingSubmission(submission);
+  // F-048: queue payload must include examId/studentId used by processSyncQueue.
   await enqueueSyncOperation({
     type: 'submit_exam',
-    payload: { submissionId: submission.id },
+    payload: {
+      submissionId: submission.id,
+      examId,
+      studentId,
+    },
     priority: 1,
     status: 'pending',
   });

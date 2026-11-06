@@ -42,15 +42,29 @@ def print_warning(text: str):
 def print_error(text: str):
     print(f"{Colors.RED}[ERROR] {text}{Colors.RESET}")
 
-def run_cmd(cmd, cwd: Optional[Path] = None, capture: bool = True, shell: bool = False) -> tuple[int, str, str]:
-    """Run command and return (exit_code, stdout, stderr) with cross-platform binary resolution"""
+def run_cmd(cmd, cwd: Optional[Path] = None, capture: bool = True, shell: bool = False, env: Optional[dict] = None) -> tuple[int, str, str]:
+    """Run command and return (exit_code, stdout, stderr) with cross-platform binary resolution.
+
+    Prefer shell=False with an argv list. shell=True is rejected for security (F-032).
+    """
+    if shell:
+        return -1, "", "shell=True is disabled; pass an argument list instead"
     try:
-        if isinstance(cmd, list) and not shell:
-            # Resolve binary path on Windows / Linux via shutil.which
+        if isinstance(cmd, str):
+            return -1, "", "string commands require shell; pass an argument list instead"
+        if isinstance(cmd, list):
             exe = shutil.which(cmd[0])
             if exe:
                 cmd = [exe] + cmd[1:]
-        result = subprocess.run(cmd, cwd=cwd, capture_output=capture, text=True, timeout=300, shell=shell)
+        result = subprocess.run(
+            cmd,
+            cwd=cwd,
+            capture_output=capture,
+            text=True,
+            timeout=300,
+            shell=False,
+            env=env,
+        )
         return result.returncode, result.stdout or "", result.stderr or ""
     except subprocess.TimeoutExpired:
         return -1, "", "Command timed out"
@@ -142,11 +156,12 @@ def get_user_input(prompt: str, default: str = "", required: bool = False, secre
             continue
         return value
 
-def generate_keys() -> tuple[str, str]:
-    """Generate cryptographically secure JWT and Fernet keys"""
+def generate_keys() -> tuple[str, str, str]:
+    """Generate cryptographically secure JWT and distinct Fernet keys (AI + DB)."""
     jwt_key = secrets.token_hex(64)
     fernet_key = Fernet.generate_key().decode()
-    return jwt_key, fernet_key
+    db_fernet_key = Fernet.generate_key().decode()
+    return jwt_key, fernet_key, db_fernet_key
 
 def setup_env_file(project_dir: Path, mode: str) -> bool:
     """Interactive environment (.env) configuration"""
@@ -163,10 +178,11 @@ def setup_env_file(project_dir: Path, mode: str) -> bool:
     print(f"\n{Colors.YELLOW}Configuring required credentials and domain settings.{Colors.RESET}")
     print("Press Enter to accept defaults.\n")
     
-    # Generate cryptographic keys
-    jwt_key, fernet_key = generate_keys()
+    # Generate cryptographic keys (JWT, AI, DB encryption must all differ — F-032)
+    jwt_key, fernet_key, db_fernet_key = generate_keys()
     print_success("Generated JWT_SECRET_KEY (64-byte hex)")
-    print_success("Generated AI_KEY_MASTER_SECRET (Fernet 32-byte urlsafe base64)")
+    print_success("Generated AI_KEY_MASTER_SECRET (Fernet)")
+    print_success("Generated DB_ENCRYPTION_MASTER_KEY (Fernet, distinct)")
     
     # Domain configuration
     domain = get_user_input("School domain (e.g. yourschool.edu or localhost)", "localhost", required=True)
@@ -188,6 +204,7 @@ def setup_env_file(project_dir: Path, mode: str) -> bool:
     else:
         # Docker Compose mode
         pg_password = secrets.token_urlsafe(24)
+        redis_password = secrets.token_urlsafe(24)
         db_url = f"postgresql://postgres:{pg_password}@postgres:5432/plannededucation"
     
     # Build or update .env lines
@@ -196,15 +213,22 @@ def setup_env_file(project_dir: Path, mode: str) -> bool:
         'PLANNED_EDUCATION_ENV': 'production',
         'JWT_SECRET_KEY': jwt_key,
         'AI_KEY_MASTER_SECRET': fernet_key,
+        'DATABASE_ENCRYPTION': 'true',
+        'DB_ENCRYPTION_MASTER_KEY': db_fernet_key,
         'DATABASE_URL': db_url,
         'ALLOWED_HOSTS': domain,
         'CORS_ORIGINS': f"http://{domain}:5173" if domain == "localhost" else f"https://{domain}",
         'WEBAUTHN_RP_ID': domain,
-        'WEBAUTHN_ORIGIN': f"http://{domain}:5173" if domain == "localhost" else f"https://{domain}"
+        'WEBAUTHN_ORIGIN': f"http://{domain}:5173" if domain == "localhost" else f"https://{domain}",
+        'MAX_DAILY_COST_USD': '5.0',
+        'METRICS_ENABLED': 'false',
     }
     
     if mode == "docker":
         settings['POSTGRES_PASSWORD'] = pg_password
+        settings['REDIS_PASSWORD'] = redis_password
+        settings['REDIS_URL'] = f"redis://:{redis_password}@redis:6379/0"
+        settings['USE_REDIS_CHAT'] = 'true'
     
     output_lines = []
     seen = set()
@@ -235,10 +259,9 @@ def start_platform(project_dir: Path, mode: str) -> bool:
     
     if mode == "docker":
         compose_cmd = get_docker_compose_cmd() or ["docker", "compose"]
-        cmd_str = " ".join(compose_cmd) + " up -d --build"
-        print(f"{Colors.CYAN}Building and starting Docker containers ({cmd_str})...{Colors.RESET}")
+        print(f"{Colors.CYAN}Building and starting Docker containers...{Colors.RESET}")
         
-        code, out, err = run_cmd(cmd_str, cwd=project_dir, capture=False, shell=True)
+        code, out, err = run_cmd([*compose_cmd, "up", "-d", "--build"], cwd=project_dir, capture=False)
         if code != 0:
             print_error(f"Docker build failed: {err}")
             return False
@@ -248,9 +271,11 @@ def start_platform(project_dir: Path, mode: str) -> bool:
         import time
         time.sleep(15)
         
-        # Health check using urllib inside python container
-        health_cmd = f"{' '.join(compose_cmd)} exec -T backend python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\""
-        code, _, _ = run_cmd(health_cmd, cwd=project_dir, shell=True)
+        health_cmd = [
+            *compose_cmd, "exec", "-T", "backend", "python", "-c",
+            "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')",
+        ]
+        code, _, _ = run_cmd(health_cmd, cwd=project_dir)
         if code == 0:
             print_success("Backend health check: OK")
         else:
@@ -261,7 +286,7 @@ def start_platform(project_dir: Path, mode: str) -> bool:
         if not dist_dir.exists():
             print(f"{Colors.CYAN}Building frontend assets (npm run build)...{Colors.RESET}")
             portal_dir = project_dir / "web" / "apps" / "portal"
-            code, _, err = run_cmd("npm run build", cwd=portal_dir, shell=True)
+            code, _, err = run_cmd(["npm", "run", "build"], cwd=portal_dir)
             if code == 0:
                 print_success("Frontend build completed")
             else:
@@ -289,14 +314,19 @@ def init_database(project_dir: Path, mode: str) -> bool:
     # Load .env file so DATABASE_URL is available to SQLAlchemy
     load_env_file(project_dir)
     
+    py_code = (
+        "from src.plannededucation.api.database import Base, engine; "
+        "from src.plannededucation.api import models; "
+        "Base.metadata.create_all(bind=engine); print('Database initialized')"
+    )
     if mode == "docker":
         compose_cmd = get_docker_compose_cmd() or ["docker", "compose"]
-        cmd = f"{' '.join(compose_cmd)} exec -T backend python -c \"from src.plannededucation.api.database import Base, engine; from src.plannededucation.api import models; Base.metadata.create_all(bind=engine); print('Database initialized')\""
-        code, out, err = run_cmd(cmd, cwd=project_dir, shell=True)
+        code, out, err = run_cmd(
+            [*compose_cmd, "exec", "-T", "backend", "python", "-c", py_code],
+            cwd=project_dir,
+        )
     else:
-        # In Native mode, invoke directly with current python
         python_exe = sys.executable
-        py_code = "from src.plannededucation.api.database import Base, engine; from src.plannededucation.api import models; Base.metadata.create_all(bind=engine); print('Database initialized')"
         code, out, err = run_cmd([python_exe, "-c", py_code], cwd=project_dir)
         
     if code == 0:
@@ -306,47 +336,55 @@ def init_database(project_dir: Path, mode: str) -> bool:
     return False
 
 def create_admin_user(project_dir: Path, mode: str) -> bool:
-    """Create initial administrator user"""
+    """Create initial administrator user via setup_admin.py (no shell-interpolated secrets)."""
     print_step(5, 8, "Creating Administrator account...")
     
     # Load .env file so DATABASE_URL is available to SQLAlchemy
     load_env_file(project_dir)
     
     email = get_user_input("Admin email", "admin@yourschool.edu", required=True)
-    username = get_user_input("Admin username", "admin", required=True)
     full_name = get_user_input("Admin full name", "School Administrator", required=True)
-    password = get_user_input("Admin password (min 8 chars)", "ChangeMe123!", required=True, secret=True)
-    
-    email_esc = email.replace('"', '\\"').replace("'", "\\'")
-    user_esc = username.replace('"', '\\"').replace("'", "\\'")
-    name_esc = full_name.replace('"', '\\"').replace("'", "\\'")
-    pass_esc = password.replace('"', '\\"').replace("'", "\\'")
-    
-    py_code = (
-        f"from src.plannededucation.api.database import SessionLocal; "
-        f"from src.plannededucation.api.models import User; "
-        f"from src.plannededucation.api.auth import hash_password; "
-        f"db = SessionLocal(); "
-        f"admin = db.query(User).filter((User.email=='{email_esc}') | (User.username=='{user_esc}')).first(); "
-        f"admin = admin or User(email='{email_esc}', username='{user_esc}', full_name='{name_esc}', role='admin', is_admin=True, is_active=True, teacher_approved=True); "
-        f"admin.hashed_password = hash_password('{pass_esc}'); admin.role = 'admin'; admin.is_admin = True; admin.is_active = True; admin.teacher_approved = True; "
-        f"db.add(admin); db.commit(); print('Admin configured: {email_esc}')"
+    password = get_user_input(
+        "Admin password (min 12 chars; leave blank to generate)",
+        "",
+        required=False,
+        secret=True,
     )
+    if not password or password in {"ChangeMe123!", "AdminPassword123!", "changeme", "password"}:
+        password = secrets.token_urlsafe(18)
+        print_warning(f"Generated admin password (copy now): {password}")
+    
+    env = os.environ.copy()
+    env["PE_ADMIN_EMAIL"] = email
+    env["PE_ADMIN_PASSWORD"] = password
+    env["PE_ADMIN_NAME"] = full_name
+    setup_script = str(project_dir / "scripts" / "deploy" / "setup_admin.py")
     
     if mode == "docker":
         compose_cmd = get_docker_compose_cmd() or ["docker", "compose"]
-        cmd = f"{' '.join(compose_cmd)} exec -T backend python -c \"{py_code}\""
-        code, out, err = run_cmd(cmd, cwd=project_dir, shell=True)
+        # Pass secrets via env to container process — no shell string interpolation (F-032).
+        code, out, err = run_cmd(
+            [*compose_cmd, "exec", "-T",
+             "-e", f"PE_ADMIN_EMAIL={email}",
+             "-e", f"PE_ADMIN_PASSWORD={password}",
+             "-e", f"PE_ADMIN_NAME={full_name}",
+             "backend", "python", "scripts/deploy/setup_admin.py"],
+            cwd=project_dir,
+        )
     else:
         python_exe = sys.executable
-        code, out, err = run_cmd([python_exe, "-c", py_code], cwd=project_dir)
+        code, out, err = run_cmd(
+            [python_exe, setup_script],
+            cwd=project_dir,
+            env=env,
+        )
         
     if code == 0:
         print_success(f"Administrator account created: {email}")
         print_warning("IMPORTANT: Log in and change your password immediately after setup!")
         return True
         
-    print_error(f"Admin creation failed: {err}")
+    print_error(f"Admin creation failed: {err or out}")
     return False
 
 def verify_deployment(project_dir: Path, mode: str) -> bool:
@@ -356,19 +394,19 @@ def verify_deployment(project_dir: Path, mode: str) -> bool:
     if mode == "docker":
         compose_cmd = get_docker_compose_cmd() or ["docker", "compose"]
         checks = [
-            ("Backend API", "curl -f http://localhost:8000/health"),
-            ("Frontend HTTP", "curl -f http://localhost:80/"),
-            ("PostgreSQL Database", f"{' '.join(compose_cmd)} exec -T postgres pg_isready -U postgres"),
-            ("Redis Cache", f"{' '.join(compose_cmd)} exec -T redis redis-cli ping"),
+            ("Backend API", ["curl", "-f", "http://localhost:8000/health"]),
+            ("Frontend HTTP", ["curl", "-f", "http://localhost:80/"]),
+            ("PostgreSQL Database", [*compose_cmd, "exec", "-T", "postgres", "pg_isready", "-U", "postgres"]),
+            ("Redis Cache", [*compose_cmd, "exec", "-T", "redis", "redis-cli", "ping"]),
         ]
     else:
         checks = [
-            ("Backend API Health", "curl -f http://localhost:8000/health"),
+            ("Backend API Health", ["curl", "-f", "http://localhost:8000/health"]),
         ]
         
     all_ok = True
     for name, cmd in checks:
-        code, out, err = run_cmd(cmd, cwd=project_dir, shell=True)
+        code, out, err = run_cmd(cmd, cwd=project_dir)
         if code == 0:
             print_success(f"{name}: OK")
         else:

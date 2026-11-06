@@ -31,7 +31,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
 
   // Connect to the exam WebSocket room
   useEffect(() => {
-    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!token || !examId) return;
 
     const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';

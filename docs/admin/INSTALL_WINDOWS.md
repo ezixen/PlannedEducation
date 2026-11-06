@@ -178,6 +178,8 @@ The wizard will:
 5. Build the frontend and initialize database tables.
 
 > **Key isolation**: JWT ≠ AI Fernet ≠ DB Fernet. Never reuse one secret for another purpose.
+>
+> **Production SEB**: Installers write `ALLOW_DEV_SEB_BYPASS=false`. Keep it false on school servers — bypass is only honored together with `PLANNED_EDUCATION_ENV=development|test`. See `docs/dev/SECURITY_ARCHITECTURE.md` for the engineer-facing contract.
 
 ---
 

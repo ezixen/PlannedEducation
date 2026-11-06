@@ -6,68 +6,54 @@ interface MessageIconProps {
   onOpen: () => void;
 }
 
+/** Header-adjacent messages trigger (sits next to NotificationBell). */
 export function MessageIcon({ unreadCount, onOpen }: MessageIconProps) {
   const { t } = useI18n();
 
   return (
-    <div
+    <button
+      type="button"
+      onClick={onOpen}
+      aria-label={t('messages.icon_alt')}
+      title={unreadCount > 0 ? `${t('messages.unread_count')}: ${unreadCount}` : t('messages.title')}
       style={{
-        position: 'fixed',
-        bottom: '1.5rem',
-        left: '1.5rem',
-        zIndex: 1000,
+        position: 'relative',
+        background: 'var(--sidebar-bg)',
+        border: '1px solid var(--border-color)',
+        borderRadius: 'var(--radius-md)',
+        padding: '0.45rem',
+        cursor: 'pointer',
+        color: 'var(--text-color)',
         display: 'flex',
-        flexDirection: 'column',
-        gap: '0.5rem',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'background-color 0.15s ease',
       }}
     >
-      <button
-        onClick={onOpen}
-        aria-label={t('messages.icon_alt')}
-        title={unreadCount > 0 ? `${t('messages.unread_count')}: ${unreadCount}` : t('messages.title')}
-        style={{
-          position: 'relative',
-          width: '56px',
-          height: '56px',
-          borderRadius: '50%',
-          border: 'none',
-          backgroundColor: 'var(--primary-color)',
-          color: '#fff',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-          fontSize: '1.5rem',
-          transition: 'transform 0.2s',
-        }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-      >
-        <Mail size={24} />
-        {unreadCount > 0 && (
-          <div
-            style={{
-              position: 'absolute',
-              top: '4px',
-              right: '4px',
-              width: '20px',
-              height: '20px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--error-color)',
-              color: '#fff',
-              fontSize: '0.7rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 'bold',
-              border: '2px solid #fff',
-            }}
-          >
-            {unreadCount > 9 ? '9+' : unreadCount}
-          </div>
-        )}
-      </button>
-    </div>
+      <Mail size={18} />
+      {unreadCount > 0 && (
+        <span
+          style={{
+            position: 'absolute',
+            top: '-4px',
+            right: '-4px',
+            backgroundColor: '#ef4444',
+            color: '#ffffff',
+            fontSize: '0.7rem',
+            fontWeight: 700,
+            minWidth: '18px',
+            height: '18px',
+            borderRadius: '9999px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0 4px',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.2)',
+          }}
+        >
+          {unreadCount > 99 ? '99+' : unreadCount}
+        </span>
+      )}
+    </button>
   );
 }

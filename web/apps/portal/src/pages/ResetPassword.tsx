@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import { KeyRound, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { apiClient } from '../api';
@@ -13,8 +13,18 @@ export function ResetPassword() {
   const { error: showError, success: showSuccess } = useToast();
   const { refreshUser } = useAuth();
 
-  const tokenParam = searchParams.get('token') || '';
-  const emailParam = searchParams.get('email') || '';
+  const queryToken = searchParams.get('token') || '';
+  const queryEmail = searchParams.get('email') || '';
+  const [tokenParam, setTokenParam] = useState(() => {
+    if (typeof window === 'undefined') return queryToken;
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    return hash.get('token') || queryToken;
+  });
+  const [emailParam, setEmailParam] = useState(() => {
+    if (typeof window === 'undefined') return queryEmail;
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    return hash.get('email') || queryEmail;
+  });
 
   const [email, setEmail] = useState(emailParam);
   const [token, setToken] = useState(tokenParam);
@@ -24,6 +34,27 @@ export function ResetPassword() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.location.hash) return;
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    const hashToken = hash.get('token');
+    const hashEmail = hash.get('email');
+    if (hashToken) {
+      setTokenParam(hashToken);
+      setToken(hashToken);
+    }
+    if (hashEmail) {
+      setEmailParam(hashEmail);
+      setEmail(hashEmail);
+    }
+    // Remove the bearer token from browser history after the initial handoff.
+    window.history.replaceState(
+      null,
+      document.title,
+      `${window.location.pathname}${window.location.search}`,
+    );
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

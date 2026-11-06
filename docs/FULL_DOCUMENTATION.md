@@ -53,8 +53,9 @@ PlannedEducation is a modern, privacy-first, open-source teacher's aid, exam-tak
 
 ### Dual-Layer Documentation Standard
 Every major topic in this manual is presented in two complementary layers:
-1. **For Teachers, Students & School Users**: Plain-English explanations, real-world classroom workflows, and step-by-step guidance without technical jargon.
-2. **For IT Administrators & Technical Experts**: In-depth architectural details, protocols, cryptographic hashing algorithms, database schemas, HTTP headers, filesystem structures, and code mechanics.
+1. **For Teachers, Students & School Users**: Plain-English explanations, real-world classroom workflows, and step-by-step guidance without technical jargon. Prefer the focused guides in [`docs/user/`](user/).
+2. **For IT Administrators**: Install, deploy, backup, and role operations in [`docs/admin/`](admin/).
+3. **For Engineers & Security Reviewers**: Current auth/crypto/exam contracts and known open risks in [`docs/dev/SECURITY_ARCHITECTURE.md`](dev/SECURITY_ARCHITECTURE.md) (index: [`docs/dev/README.md`](dev/README.md)). Do not paste engineering wording into classroom FAQ or portal i18n strings.
 
 ### Core Architectural Guardrails
 1. **🚫 Strictly Zero Paid Services — Ever**:
@@ -83,7 +84,7 @@ PlannedEducation is designed to operate out-of-the-box with minimal configuratio
 | `REDIS_URL` | **OPTIONAL** | In-Memory fallback | **Why Optional**: Redis connection string (e.g. `redis://localhost:6379/0`). If omitted, PlannedEducation automatically falls back to local in-memory token-bucket rate limiting (`slowapi`). Recommended when running multiple Uvicorn workers. |
 | `SMTP_HOST` / `PORT` | **OPTIONAL** | None (Offline logging) | **Why Optional**: Outgoing school email server for password reset links. If omitted, the platform runs in 100% offline mode: reset links and OTP codes are safely displayed in admin logs and teacher rosters. |
 | `BREVO_API_KEY` | **OPTIONAL** | None | **Why Optional**: Free-tier cloud email API (300 free emails/day) for schools without their own SMTP server. Optional alternative to `SMTP_HOST`. |
-| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: When `false` (production default), Safe Exam Browser header validation is strictly enforced. When set to `true`, developers can preview SEB exams in standard Chrome/Firefox without installing SEB. |
+| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: Production must keep `false`. When `true`, bypass is allowed **only** if `PLANNED_EDUCATION_ENV` is `development` or `test` — a literal `dev-bypass` header alone never unlocks production exams. |
 | `ALLOWED_HOSTS` | **OPTIONAL** | `localhost, 127.0.0.1` | **Why Optional**: Comma-separated list of allowed HTTP Host headers to prevent HTTP Host Header poisoning attacks. Set to your school's server IP or domain name. |
 | `CORS_ORIGINS` | **OPTIONAL** | Frontend origin | **Why Optional**: Cross-Origin Resource Sharing whitelist for API access from web clients. |
 
@@ -2027,7 +2028,7 @@ PlannedEducation enforces strict separation between required security settings a
 | `REDIS_URL` | **OPTIONAL** | In-Memory fallback | **Why Optional**: Redis connection string (e.g. `redis://localhost:6379/0`). If omitted, PlannedEducation automatically falls back to local in-memory token-bucket rate limiting (`slowapi`). Recommended when running multiple Uvicorn workers. |
 | `SMTP_HOST` / `PORT` | **OPTIONAL** | None (Offline logging) | **Why Optional**: Outgoing school email server for password reset links. If omitted, the platform runs in 100% offline mode: reset links and OTP codes are safely displayed in admin logs and teacher rosters. |
 | `BREVO_API_KEY` | **OPTIONAL** | None | **Why Optional**: Free-tier cloud email API (300 free emails/day) for schools without their own SMTP server. Optional alternative to `SMTP_HOST`. |
-| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: When `false` (production default), Safe Exam Browser header validation is strictly enforced. When set to `true`, developers can preview SEB exams in standard Chrome/Firefox without installing SEB. |
+| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: Production must keep `false`. When `true`, bypass is allowed **only** if `PLANNED_EDUCATION_ENV` is `development` or `test` — a literal `dev-bypass` header alone never unlocks production exams. |
 | `ALLOWED_HOSTS` | **OPTIONAL** | `localhost, 127.0.0.1` | **Why Optional**: Comma-separated list of allowed HTTP Host headers to prevent HTTP Host Header poisoning attacks. Set to your school's server IP or domain name. |
 | `CORS_ORIGINS` | **OPTIONAL** | Frontend origin | **Why Optional**: Cross-Origin Resource Sharing whitelist for API access from web clients. |
 

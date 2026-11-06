@@ -101,24 +101,19 @@ export function useOfflineExam({ examId, onExamFailed, onExamCompleted, onTimeWa
           testMode: isTestMode,
           randomSeed,
         });
-        const pkg: ExamPackage = response.exam_package || {
-          examId,
-          title: 'Assessment',
-          duration_minutes: 60,
-          instructions: 'Complete all questions.',
-          questions: response.questions || [],
-          settings: {
-            shuffle_questions: false,
-            shuffle_options: false,
-            show_results_immediately: false,
-            allow_review: true,
-            require_seb: false,
-            time_multiplier: 1,
-            passing_score: 50,
-          },
-          started_at: Date.now(),
-          expires_at: Date.now() + 60 * 60 * 1000,
-        };
+        // F-016: never invent SEB/duration settings client-side — fail closed.
+        const pkg: ExamPackage | undefined = response?.exam_package;
+        if (
+          !pkg ||
+          typeof pkg.duration_minutes !== 'number' ||
+          !pkg.settings ||
+          typeof pkg.settings.require_seb !== 'boolean' ||
+          !Array.isArray(pkg.questions)
+        ) {
+          throw new Error(
+            'Exam start response is missing authoritative exam_package metadata'
+          );
+        }
         
         // Cache for offline use only in normal student mode
         if (!isTestMode) {

@@ -17,7 +17,7 @@ export const apiClient = axios.create({
 
 function readAccessToken(): string | null {
   // AuthContext writes to sessionStorage; some older flows also used localStorage.
-  return sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+  return sessionStorage.getItem('access_token');
 }
 
 function clearAccessTokens(): void {

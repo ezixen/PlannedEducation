@@ -164,23 +164,30 @@ export function SpecialCharactersPicker({
 
   const insertCharacter = useCallback(
     (char: string) => {
-      // 1. Direct insertion into DOM cursor position
+      // Prefer React-controlled insertion via native value setter so state updates (F-045).
       const target = lastActiveElementRef.current;
       if (target && 'value' in target) {
         const start = target.selectionStart ?? target.value.length;
         const end = target.selectionEnd ?? target.value.length;
-        const val = target.value;
-        target.value = val.substring(0, start) + char + val.substring(end);
-        target.selectionStart = target.selectionEnd = start + char.length;
+        const next = target.value.substring(0, start) + char + target.value.substring(end);
+        const proto =
+          target instanceof HTMLTextAreaElement
+            ? HTMLTextAreaElement.prototype
+            : HTMLInputElement.prototype;
+        const descriptor = Object.getOwnPropertyDescriptor(proto, 'value');
+        descriptor?.set?.call(target, next);
+        try {
+          target.setSelectionRange(start + char.length, start + char.length);
+        } catch {
+          // Some input types reject selection ranges.
+        }
         target.dispatchEvent(new Event('input', { bubbles: true }));
         target.dispatchEvent(new Event('change', { bubbles: true }));
         target.focus();
       }
 
-      // 2. Call external callback if given
       onInsert?.(char);
 
-      // Visual feedback
       setCopiedChar(char);
       setTimeout(() => setCopiedChar(null), 1200);
     },

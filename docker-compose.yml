@@ -50,8 +50,16 @@ services:
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY must be set}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
-      AI_KEY_MASTER_SECRET: ${AI_KEY_MASTER_SECRET}
+      AI_KEY_MASTER_SECRET: ${AI_KEY_MASTER_SECRET:?AI_KEY_MASTER_SECRET must be set}
+      # F-034: fail closed without field encryption + wire Redis chat across workers
+      DATABASE_ENCRYPTION: "true"
+      DB_ENCRYPTION_MASTER_KEY: ${DB_ENCRYPTION_MASTER_KEY:?DB_ENCRYPTION_MASTER_KEY must be set}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/0
+      USE_REDIS_CHAT: "true"
+      METRICS_ENABLED: ${METRICS_ENABLED:-false}
+      METRICS_BIND_ADDR: ${METRICS_BIND_ADDR:-127.0.0.1}
       ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      MAX_DAILY_COST_USD: ${MAX_DAILY_COST_USD:-5.0}
     ports:
       - "8000:8000"
     depends_on:
@@ -144,6 +152,8 @@ networks:
     internal: true
   pe-public:
     driver: bridge
+  default:
+    name: plannededucation-network
 
 volumes:
   postgres_data:
@@ -151,7 +161,3 @@ volumes:
   prometheus_data:
   grafana_data:
   alertmanager_data:
-
-networks:
-  default:
-    name: plannededucation-network

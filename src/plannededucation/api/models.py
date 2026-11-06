@@ -99,10 +99,13 @@ class User(Base):
     webauthn_challenge = Column(String(256), nullable=True)  # Challenge for registration/auth
     webauthn_challenge_expires = Column(DateTime(timezone=True), nullable=True)  # Challenge expiry
 
-    # Admin role
+    # Admin role — is_admin grants admin ops; is_superadmin alone may create admins (F-003)
     is_admin = Column(Boolean, default=False, server_default="0", nullable=False)
-    # Teacher approval (teachers who self-register require admin approval before accessing exams/modules)
-    teacher_approved = Column(Boolean, default=True, server_default="1", nullable=False)
+    is_superadmin = Column(Boolean, default=False, server_default="0", nullable=False)
+    # Teacher approval — fail closed. Self-registered teachers must be approved by an
+    # admin/superadmin before exam authoring (F-014). Registration sets this explicitly;
+    # Python/SQL defaults stay False so accidental inserts never grant exam rights.
+    teacher_approved = Column(Boolean, default=False, server_default="0", nullable=False)
 
     # Teacher's Aide - approved helper for teachers
     is_teacher_aide = Column(Boolean, default=False, server_default="0", nullable=False)
@@ -161,8 +164,13 @@ class User(Base):
         back_populates="shared_by",
         cascade="all, delete-orphan",
     )
-# User Sessions (for device tracking and "Remember Me")
+    # User Sessions (for device tracking and "Remember Me")
     sessions = relationship("UserSession", back_populates="user", cascade="all, delete-orphan")
+    refresh_sessions = relationship(
+        "RefreshSession",
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
 
 class UserSession(Base):
@@ -182,6 +190,32 @@ class UserSession(Base):
     remember_me = Column(Boolean, default=False, nullable=False)
 
     user = relationship("User", back_populates="sessions")
+
+
+class RefreshSession(Base):
+    """Per-device refresh-token session with rotation family (F-049)."""
+
+    __tablename__ = "refresh_sessions"
+    __table_args__ = (
+        Index("ix_refresh_sessions_token_hash_user_id", "token_hash", "user_id"),
+    )
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    user_id = Column(
+        String(36),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    token_hash = Column(String(256), nullable=False, index=True)
+    family_id = Column(String(36), nullable=False, index=True)
+    device_label = Column(String(128), nullable=True)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    expires_at = Column(DateTime(timezone=True), nullable=False)
+    revoked_at = Column(DateTime(timezone=True), nullable=True)
+    replaced_by = Column(String(36), nullable=True)
+
+    user = relationship("User", back_populates="refresh_sessions")
 
 
 class AccountRelationship(Base):
@@ -290,6 +324,8 @@ class ExamSubmission(Base):
     exam_id = Column(String(36), ForeignKey("exams.id", ondelete="CASCADE"), nullable=False)
     student_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     started_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    # Server-authoritative exam deadline. The client timer is only UX.
+    deadline_at = Column(DateTime(timezone=True), nullable=True)
     completed_at = Column(DateTime(timezone=True), nullable=True)
     score = Column(Float, nullable=True)
     feedback = Column(Text, nullable=True)
@@ -789,6 +825,7 @@ class InAppNotification(Base):
     message = Column(Text, nullable=False)
     type = Column(String(32), default="info", nullable=False)  # teacher_approval, password_reset_request, system, info
     is_read = Column(Boolean, default=False, nullable=False, index=True)
+    action_consumed_at = Column(DateTime(timezone=True), nullable=True)
     link = Column(String(256), nullable=True)  # Frontend navigation route/tab
     action_payload = Column(Text, nullable=True)  # JSON metadata (e.g. requester_id, request_id)
     created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
@@ -888,6 +925,8 @@ class OCRReview(Base):
 register_encrypted_model(
     User,
     [
+        "password_reset_otp",  # Single-use reset token digest
+        "reset_token",  # Teacher/admin reset capability token
         "totp_secret",     # 2FA secret - must be encrypted
         "recovery_codes",  # Recovery codes - must be encrypted
         "webauthn_credentials",  # WebAuthn credentials - sensitive
@@ -898,7 +937,16 @@ register_encrypted_model(
 register_encrypted_model(
     ExamSubmission,
     [
-        # Exam submissions contain student answers - sensitive educational data
+        "feedback",  # Teacher/AI feedback can contain educational records
+    ],
+)
+
+register_encrypted_model(
+    Answer,
+    [
+        "student_response",  # Student answers are protected educational records
+        "generated_question_text",  # Per-student randomized exam content
+        "generated_options_json",  # Per-student randomized answer options
     ],
 )
 
@@ -1068,5 +1116,51 @@ register_encrypted_model(
     DirectMessage,
     [
         "content",  # Message content - encrypted at rest (PII / student data)
+    ],
+)
+
+
+# ── Sealed Offline Sync (F-048) ───────────────────────────────────────────────
+# Authenticated store for cryptographically sealed offline exam submissions.
+# Payload remains opaque (client-encrypted); server enforces ownership only.
+
+
+class SealedSyncSubmission(Base):
+    """Server copy of a sealed offline exam submission for three-way sync."""
+
+    __tablename__ = "sealed_sync_submissions"
+
+    # Client-generated submission id (primary key for idempotent upsert).
+    id = Column(String(36), primary_key=True, index=True)
+    exam_id = Column(
+        String(36),
+        ForeignKey("exams.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    student_id = Column(
+        String(36),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    content_hash = Column(String(128), nullable=False)
+    sync_hash = Column(String(128), nullable=False)
+    # Full sealed JSON blob (educational record — encrypted at rest).
+    payload_json = Column(Text, nullable=False)
+    payload_bytes = Column(Integer, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(
+        DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False
+    )
+
+    exam = relationship("Exam")
+    student = relationship("User")
+
+
+register_encrypted_model(
+    SealedSyncSubmission,
+    [
+        "payload_json",  # Sealed exam answers / student PII envelope
     ],
 )

@@ -4,7 +4,7 @@ import os
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-from .db_encryption import _DB_ENCRYPTION_MASTER_KEY, is_encryption_enabled  # noqa: E402,F401
+from .db_encryption import is_encryption_enabled  # noqa: E402
 
 logger = logging.getLogger("plannededucation.db")
 
@@ -38,23 +38,19 @@ is_sqlite = SQLALCHEMY_DATABASE_URL.startswith("sqlite")
 engine_kwargs: dict = {}
 if is_sqlite:
     # SQLite: needed for multi-threaded FastAPI use in tests
-    engine_kwargs["connect_args"] = {"check_same_thread": False}
-    # Enable SQLite encryption if SQLCipher is available and encryption is enabled
-    if is_encryption_enabled():
-        try:
-            import importlib.util
-
-            if importlib.util.find_spec("sqlcipher3"):
-                from sqlcipher3 import dbapi2 as sqlite3  # noqa: F401
-
-                engine_kwargs["connect_args"]["check_same_thread"] = False
-                # SQLCipher uses a passphrase, not a Fernet object
-                engine_kwargs["connect_args"]["key"] = _DB_ENCRYPTION_MASTER_KEY
-        except ImportError:
-            logger.warning(
-                "SQLCipher not installed. Install with: pip install sqlcipher3 "
-                "for encrypted SQLite database files."
-            )
+    engine_kwargs["connect_args"] = {"check_same_thread": False, "timeout": 30}
+    # A normal ``sqlite:///`` URL uses the stdlib driver; passing a SQLCipher
+    # key to it is unsupported and can silently create a plaintext database.
+    # Production/staging deployments must use PostgreSQL or an explicitly
+    # configured, verified SQLCipher dialect.
+    if is_encryption_enabled() and os.getenv("PLANNED_EDUCATION_ENV", "").lower() in {
+        "production",
+        "staging",
+    } and "pysqlcipher" not in SQLALCHEMY_DATABASE_URL:
+        raise RuntimeError(
+            "Encrypted production SQLite requires a verified SQLCipher dialect; "
+            "use PostgreSQL or an explicit sqlite+pysqlcipher URL."
+        )
 else:
     # PostgreSQL: connection pool tuning for production
     engine_kwargs["pool_size"] = 10
@@ -65,6 +61,20 @@ else:
         engine_kwargs["connect_args"] = {"sslmode": "require"}
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, **engine_kwargs)
+
+if is_sqlite:
+    @event.listens_for(engine, "connect")
+    def _configure_sqlite_connection(dbapi_connection, connection_record):
+        del connection_record
+        cursor = dbapi_connection.cursor()
+        try:
+            cursor.execute("PRAGMA busy_timeout=30000")
+            if _is_test and ":memory:" not in SQLALCHEMY_DATABASE_URL:
+                cursor.execute("PRAGMA journal_mode=WAL")
+        finally:
+            cursor.close()
+
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

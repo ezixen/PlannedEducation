@@ -6,15 +6,17 @@ and student-to-teacher/parent password reset requests.
 
 import json
 import logging
+from datetime import UTC, datetime
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from . import database, models, schemas
+from . import auth, database, models, schemas
 from .email_service import send_email
+from .limiter import limiter
 from .routes_admin import generate_temporary_password
-from .routes_auth import get_current_user, get_password_hash
+from .routes_auth import _validate_password, get_current_user, get_password_hash
 
 logger = logging.getLogger("plannededucation")
 
@@ -121,7 +123,9 @@ def delete_notification(
 
 
 @router.post("/request-password-reset")
+@limiter.limit("5/minute")
 def request_password_reset_internal(
+    request: Request,
     payload: RequestPasswordResetInternalPayload,
     db: Session = Depends(database.get_db),
 ):
@@ -129,47 +133,70 @@ def request_password_reset_internal(
     Allow students or teachers who cannot log in to request an in-platform password reset
     from their teacher, parent, or an administrator.
     """
+    _ = request  # required for slowapi
     lookup = payload.identifier.strip().lower()
     user = (
         db.query(models.User)
         .filter((models.User.email == lookup) | (models.User.username == lookup))
         .first()
     )
+    # Always generic — no enumeration (F-007)
+    generic = {
+        "status": "success",
+        "message": "If this account exists, your password reset request has been dispatched to your designated supervisor.",
+    }
     if not user:
-        # Generic response to prevent user enumeration
-        return {
-            "status": "success",
-            "message": "If this account exists, your password reset request has been dispatched to your designated supervisor.",
-        }
+        return generic
 
     recipients: list[models.User] = []
 
     if payload.target_role == "teacher":
-        # Find teachers linked through classes or relationships
-        # Or fall back to active teachers in the system
-        teachers = (
+        # Teachers who already have exam submissions from this student — never broadcast all teachers
+        linked = (
             db.query(models.User)
-            .filter(models.User.role == "teacher", models.User.is_active == True)
+            .join(models.Exam, models.Exam.teacher_id == models.User.id)
+            .join(models.ExamSubmission, models.ExamSubmission.exam_id == models.Exam.id)
+            .filter(
+                models.ExamSubmission.student_id == user.id,
+                models.User.role == "teacher",
+                models.User.is_active == True,
+                models.User.teacher_approved == True,
+            )
+            .distinct()
             .all()
         )
-        recipients.extend(teachers)
+        recipients.extend(linked)
+        if not recipients:
+            admins = db.query(models.User).filter(models.User.is_admin == True, models.User.is_active == True).all()
+            recipients.extend(admins)
 
     elif payload.target_role == "parent":
-        # Find parents linked to this student
+        # Active parent relationships only (F-007)
         rel_parents = (
             db.query(models.User)
             .join(models.AccountRelationship, models.AccountRelationship.parent_id == models.User.id)
-            .filter(models.AccountRelationship.student_id == user.id)
+            .filter(
+                models.AccountRelationship.student_id == user.id,
+                models.AccountRelationship.status == models.RelationshipStatus.active,
+                models.User.role == "parent",
+                models.User.is_active == True,
+            )
             .all()
         )
         recipients.extend(rel_parents)
         if not recipients:
-            # If no parent linked, fallback to admins
-            admins = db.query(models.User).filter((models.User.is_admin == True) | (models.User.role == "admin")).all()
+            admins = db.query(models.User).filter(models.User.is_admin == True, models.User.is_active == True).all()
             recipients.extend(admins)
 
     elif payload.target_role == "admin":
-        admins = db.query(models.User).filter((models.User.is_admin == True) | (models.User.role == "admin")).all()
+        admins = (
+            db.query(models.User)
+            .filter(
+                models.User.is_active == True,
+                (models.User.is_admin == True) | (models.User.role == "admin"),
+            )
+            .all()
+        )
         recipients.extend(admins)
 
     # De-duplicate recipients
@@ -179,16 +206,13 @@ def request_password_reset_internal(
             recipient_ids.add(rec.id)
             action_data = {
                 "requester_id": user.id,
-                "requester_email": user.email,
-                "requester_username": user.username,
-                "requester_name": user.full_name or user.username,
                 "requester_role": user.role,
                 "note": payload.note or "Password reset requested via platform.",
             }
             notif = models.InAppNotification(
                 user_id=rec.id,
                 title="Password Reset Request",
-                message=f"{user.full_name or user.username} ({user.email}) requested a password reset. Note: {payload.note or 'No note provided'}.",
+                message=f"{user.full_name or user.username} requested a password reset. Review the request in your notifications.",
                 type="password_reset_request",
                 link="/settings",
                 action_payload=json.dumps(action_data),
@@ -197,10 +221,8 @@ def request_password_reset_internal(
 
     db.commit()
 
-    return {
-        "status": "success",
-        "message": f"Password reset request dispatched to your {payload.target_role}(s). They will review and reset your password inside the platform.",
-    }
+    # Same generic message whether or not recipients were found (no enumeration)
+    return generic
 
 
 @router.post("/approve-password-reset/{notification_id}")
@@ -230,6 +252,8 @@ async def approve_password_reset_request(
 
     if notif.type != "password_reset_request" or not notif.action_payload:
         raise HTTPException(status_code=400, detail="Notification is not a pending password reset request")
+    if notif.action_consumed_at is not None:
+        raise HTTPException(status_code=409, detail="This reset request was already approved")
 
     try:
         action_data = json.loads(notif.action_payload)
@@ -243,35 +267,88 @@ async def approve_password_reset_request(
 
     # Authorization verification
     if not current_user.is_admin and current_user.role != "admin":
-        if current_user.role == "teacher" and target_user.role != "student":
-            raise HTTPException(status_code=403, detail="Teachers can only approve password resets for students.")
-        if current_user.role == "parent":
-            # Check linkage
+        if current_user.role == "teacher":
+            if not current_user.teacher_approved or target_user.role != "student":
+                raise HTTPException(status_code=403, detail="Teachers can only approve password resets for students.")
+            linked_exam = (
+                db.query(models.ExamSubmission)
+                .join(models.Exam, models.Exam.id == models.ExamSubmission.exam_id)
+                .filter(
+                    models.ExamSubmission.student_id == target_user.id,
+                    models.Exam.teacher_id == current_user.id,
+                )
+                .first()
+            )
+            if not linked_exam:
+                raise HTTPException(status_code=403, detail="Teachers can only approve requests from their students.")
+        elif current_user.role == "parent":
+            if target_user.role != "student":
+                raise HTTPException(status_code=403, detail="Parents can only reset student accounts.")
             link_exists = db.query(models.AccountRelationship).filter(
                 models.AccountRelationship.parent_id == current_user.id,
                 models.AccountRelationship.student_id == target_user.id,
+                models.AccountRelationship.status == models.RelationshipStatus.active,
             ).first()
             if not link_exists:
                 raise HTTPException(status_code=403, detail="Parents can only reset passwords for their linked children.")
+        else:
+            raise HTTPException(status_code=403, detail="Not authorized to approve password resets.")
+
+    # Single-use: refuse if already consumed (F-007)
+    if action_data.get("consumed"):
+        raise HTTPException(status_code=400, detail="This reset request was already approved")
 
     # Determine temporary password
     if payload.new_password and payload.new_password.strip():
         temp_pwd = payload.new_password.strip()
+        _validate_password(temp_pwd)
     else:
         temp_pwd = generate_temporary_password()
+        _validate_password(temp_pwd)
 
     target_user.hashed_password = get_password_hash(temp_pwd)
-    target_user.refresh_token_hash = None
-    target_user.refresh_token_expires = None
+    auth.revoke_all_refresh_sessions(db, target_user.id)
+    auth.clear_legacy_refresh_fields(target_user)
+    target_user.password_reset_otp = None
+    target_user.password_reset_otp_expires = None
+    target_user.reset_token = None
+    target_user.force_password_reset = True
 
-    # Mark original notification as read
-    notif.is_read = True
+    # Consume notification action atomically so concurrent approvals cannot
+    # reuse the same capability.
+    consumed_at = datetime.now(UTC)
+    consumed = (
+        db.query(models.InAppNotification)
+        .filter(
+            models.InAppNotification.id == notification_id,
+            models.InAppNotification.user_id == current_user.id,
+            models.InAppNotification.action_consumed_at.is_(None),
+        )
+        .update(
+            {"action_consumed_at": consumed_at, "is_read": True},
+            synchronize_session=False,
+        )
+    )
+    if consumed != 1:
+        db.rollback()
+        raise HTTPException(status_code=409, detail="This reset request was already approved")
 
-    # Send in-app notification to the user
+    # Keep the legacy marker for old clients; the timestamp is authoritative.
+    action_data["consumed"] = True
+    notif.action_payload = json.dumps(action_data)
+
+    # F-026: Do NOT put the temporary password in notification messages (in-app or email body).
+    # The temp_pwd is only sent via SMTP; if email is absent, the approver must communicate
+    # the credential out-of-band. The in-app notification omits the credential.
     user_notif = models.InAppNotification(
         user_id=target_user.id,
         title="Password Reset Approved",
-        message=f"Your password reset request was approved by {current_user.full_name or current_user.username}. Your temporary password is: {temp_pwd}. Please change it upon login.",
+        message=(
+            f"Your password reset request was approved by "
+            f"{current_user.full_name or current_user.username}. "
+            "A temporary password was sent to your registered email address. "
+            "Please log in and change it in Settings."
+        ),
         type="system",
         link="/settings",
     )
@@ -286,19 +363,18 @@ async def approve_password_reset_request(
             text_content=(
                 f"Hello {target_user.full_name or target_user.username},\n\n"
                 f"Your password reset request was approved by {current_user.full_name or current_user.username}.\n\n"
-                f"Your temporary password is:\n\n"
-                f"    {temp_pwd}\n\n"
-                f"Please log in to PlannedEducation and update your password in Settings.\n\n"
+                "A temporary credential was generated. Obtain it through the secure "
+                "supervisor handoff and change it immediately after signing in.\n\n"
                 f"— PlannedEducation Platform"
             ),
         )
     except Exception as exc:
         logger.warning(f"Could not dispatch password reset email: {exc}")
 
+    # F-026: Never return plaintext credentials in API responses.
     return {
         "status": "success",
-        "message": f"Password for {target_user.username} was reset successfully.",
-        "temporary_password": temp_pwd,
+        "message": f"Password for {target_user.username} was reset successfully. Temporary credentials were dispatched via email.",
     }
 
 

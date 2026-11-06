@@ -1,6 +1,14 @@
 # Planned Education - Plans Updated 2026-10-21
 
-## Latest Architecture & Security Updates (2026-10-21)
+## Latest Architecture & Security Updates (2026-11-06)
+
+- Security/logic audit remediations landed on `dev` working tree (see `plans/2026-11-06_2045_SECURITY_LOGIC_AUDIT.md`).
+- Verified suites (cache helper): proctoring/OCR/parent **42**; auth/security battery **65**; deferred F-027..052 **7**; backup AEAD **6**; F-006/048/049 **19**; F-006–015 smoke **12**.
+- Residual wave closed: WebAuthn login, RefreshSession rotation, `/sync/submission`, backup PEBAK1, CSP script hardening, Bandit/oxlint CI fail-closed, legacy archive migrate endpoint, DNS pin helpers.
+- Audience-separated docs refreshed: `docs/user/`, `docs/admin/`, `docs/dev/SECURITY_ARCHITECTURE.md` (verified truth).
+- Still open by design: platform keystore for offline master wrap (F-017), real local face ML (F-019), bulk i18n sweep (F-044), mypy burn-down.
+
+## Prior Architecture & Security Updates (2026-10-21)
 - **Full End-to-End Visual Verification & Deployment (Completed & 100% Passed)**:
   - Verified in Chrome Canary using Playwright CDP automation (`scratch/visual_e2e_walkthrough.py`):
     1. Superadmin login, Admin Dashboard, system metrics, deployment config panel, and database backups.
@@ -764,3 +772,10 @@ pm audit (0 vulnerabilities).
   - Frontend production build (`npm run build`) passed with 0 errors
   - TypeScript compilation clean (0 errors)
   - All i18n keys synchronized across all 25 locale files
+
+### Phase 30: Security Logic Audit F-006–F-015 ✅ **done-tested-working** (2026-11-06)
+- Added TOTP enforcement to password login, reset-token hashing/origin hardening, stronger recovery-code storage, and atomic internal reset actions.
+- Registered student-answer encryption, made production database encryption fail closed, added versioned schema migrations/preflight, and centralized approved exam-author policy.
+- Added fail-closed privacy filtering for external AI, non-fabricating OCR fallback, student-only real exam attempts, owner-only previews, and server-side exam deadlines.
+- Focused cached security tests passed for TOTP login, reset-token flow, schema/encryption/authorization units; portal production build passed.
+- Residual gaps are recorded in `plans/2026-11-06_2045_SECURITY_LOGIC_AUDIT.md` under “Fix progress (agent F-006–015)”.

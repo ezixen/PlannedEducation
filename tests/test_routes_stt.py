@@ -196,29 +196,32 @@ class TestSTTRoutes:
         finally:
             app.dependency_overrides.clear()
 
-    def test_get_models(self, client):
-        """Test getting available models (no auth required)."""
-        response = client.get("/stt/models")
+    def test_get_models(self, client, auth_headers):
+        """Test getting available models requires auth (F-051)."""
+        unauth = client.get("/stt/models")
+        assert unauth.status_code in (401, 403)
 
+        response = client.get("/stt/models", headers=auth_headers)
         assert response.status_code == 200
         data = response.json()
         assert "models" in data
         assert len(data["models"]) == 5
         assert data["recommended"] == "base"
 
-    def test_health_check(self, client, mock_stt_service):
-        """Test STT health check (no auth required)."""
+    def test_health_check(self, client, mock_stt_service, auth_headers):
+        """Test STT health check requires auth and returns minimal readiness."""
         mock_stt_service.model_size = "base"
 
         app.dependency_overrides[get_stt_service] = lambda: mock_stt_service
         try:
-            response = client.get("/stt/health")
+            unauth = client.get("/stt/health")
+            assert unauth.status_code in (401, 403)
 
+            response = client.get("/stt/health", headers=auth_headers)
             assert response.status_code == 200
             data = response.json()
-            assert data["available"] is True
-            assert data["service"] == "faster-whisper"
-            assert data["model"] == "base"
+            assert data["status"] == "ok"
+            assert "model" not in data
         finally:
             app.dependency_overrides.clear()
 

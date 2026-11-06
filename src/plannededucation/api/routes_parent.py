@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from . import database, models
@@ -16,6 +16,10 @@ def get_children_progress(
     Returns exam scores and feedback for all students linked to the requesting
     user via an ACTIVE AccountRelationship (all three parties have approved).
     """
+    # F-035: Only users with the parent role may access children's progress.
+    if current_user.role != "parent":
+        raise HTTPException(status_code=403, detail="Only parents may access children progress")
+
     # Only return data for fully-approved relationships
     relationships = (
         db.query(models.AccountRelationship)
@@ -100,6 +104,12 @@ def request_relationship(
     A parent initiates a link request to a student (by student UUID).
     The student must then approve via /relationships/{id}/approve.
     """
+    # F-035: Only users with the parent role may initiate relationship requests.
+    if current_user.role != "parent":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only users with the parent role may request a parent-student relationship",
+        )
 
     student_id: str = body.get("student_id", "")
     teacher_id: str | None = body.get("teacher_id")
@@ -110,6 +120,13 @@ def request_relationship(
     student = db.query(models.User).filter(models.User.id == student_id).first()
     if not student:
         raise HTTPException(status_code=404, detail="Student not found")
+
+    # F-035: Target must be a student-role account.
+    if student.role != "student":
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="The target account must have the student role",
+        )
 
     if student.id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot create a relationship with yourself")

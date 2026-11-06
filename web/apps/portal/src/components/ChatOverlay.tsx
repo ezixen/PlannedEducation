@@ -66,7 +66,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const getToken = () =>
-    sessionStorage.getItem('access_token') || localStorage.getItem('access_token') || '';
+    sessionStorage.getItem('access_token') || '';
 
   const fetchConversations = useCallback(async () => {
     try {

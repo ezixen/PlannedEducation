@@ -19,8 +19,11 @@ def verify_seb_request(
     SEB computes the hash as: SHA256(url + seb_config_key)
     where `url` is the full request URL including query string.
 
-    In development mode (ALLOW_DEV_SEB_BYPASS=true), this check is skipped
-    so you can test without actually running Safe Exam Browser.
+    Dev/test bypass requires BOTH:
+      PLANNED_EDUCATION_ENV in {development, test}
+      AND ALLOW_DEV_SEB_BYPASS=true
+    A literal "dev-bypass" header is never accepted on its own (F-001).
+    Operator notes: docs/admin/DEPLOYMENT_GUIDE.md §7; engineering: docs/dev/SECURITY_ARCHITECTURE.md.
     """
     env = os.getenv("PLANNED_EDUCATION_ENV")
     if (
@@ -48,11 +51,8 @@ def verify_seb_request(
                    "Please launch the exam via the .seb config file.",
         )
 
-    # Development bypass for testing
-    if seb_header.lower() == "dev-bypass":
-        return True
-
-    # Recompute expected hash
+    # Recompute expected hash — never accept a literal "dev-bypass" header
+    # outside the env/flag gate above (F-001).
     url = str(request.url)
     expected_hash = hashlib.sha256(
         (url + exam.seb_config_key).encode("utf-8")

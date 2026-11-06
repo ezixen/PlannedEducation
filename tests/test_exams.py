@@ -3,14 +3,45 @@ test_exams.py — exam CRUD, question creation, access control, and SEB config.
 """
 from fastapi.testclient import TestClient
 
+from src.plannededucation.api import database, models
 from src.plannededucation.api.main import app
 
 client = TestClient(app)
 
 
-def _register_and_token(email: str, username: str, password: str = "Exam1234!") -> str:
-    client.post("/auth/register", json={"email": email, "username": username, "password": password})
-    return client.post("/auth/token", data={"username": email, "password": password}).json()["access_token"]
+def _register_and_token(
+    email: str,
+    username: str,
+    password: str = "Exam1234!",
+    *,
+    role: str = "teacher",
+    approve_teacher: bool = True,
+) -> str:
+    """Register a user and return an access token.
+
+    F-014: exam authoring requires an approved teacher (or admin).
+    """
+    client.post(
+        "/auth/register",
+        json={
+            "email": email,
+            "username": username,
+            "password": password,
+            "role": role,
+        },
+    )
+    if role == "teacher" and approve_teacher:
+        db = database.SessionLocal()
+        try:
+            user = db.query(models.User).filter_by(email=email).first()
+            if user and not user.teacher_approved:
+                user.teacher_approved = True
+                db.commit()
+        finally:
+            db.close()
+    return client.post("/auth/token", data={"username": email, "password": password}).json()[
+        "access_token"
+    ]
 
 
 def _headers(token: str) -> dict:
@@ -119,7 +150,9 @@ def test_seb_config_requires_ownership():
 def test_start_exam_seb_rejection_without_key():
     """An exam WITH a seb_config_key must reject requests that lack the SEB header."""
     owner_token = _register_and_token("sebreject_owner@test.com", "sebreject_owner")
-    student_token = _register_and_token("sebreject_student@test.com", "sebreject_student")
+    student_token = _register_and_token(
+        "sebreject_student@test.com", "sebreject_student", role="student"
+    )
     h_owner = _headers(owner_token)
 
     # Create a locked exam (with SEB key)
@@ -147,7 +180,9 @@ def test_start_exam_seb_rejection_without_key():
 
 def test_start_and_submit_exam_dev_bypass():
     owner_token = _register_and_token("bypassowner@test.com", "bypassowner")
-    student_token = _register_and_token("bypassstudent@test.com", "bypassstudent")
+    student_token = _register_and_token(
+        "bypassstudent@test.com", "bypassstudent", role="student"
+    )
     h_owner = _headers(owner_token)
     h_student = _headers(student_token)
 
@@ -169,10 +204,17 @@ def test_start_and_submit_exam_dev_bypass():
     data = r.json()
     assert "submission_id" in data
     assert len(data["questions"]) == 1
+    # F-016: authoritative package — no client-side security fallback
+    pkg = data["exam_package"]
+    assert pkg["duration_minutes"] == 45
+    assert pkg["settings"]["require_seb"] is True
+    assert pkg["examId"] == exam_id
+    assert "server_time" in data
     # [rand:X-Y] tokens must be resolved
     assert "[rand" not in data["questions"][0]["text"]
     # Correct answer must NOT be returned to student
     assert "correct_answer" not in data["questions"][0]
+    assert "correct_answer" not in str(pkg["questions"])
 
     submission_id = data["submission_id"]
     question_id = data["questions"][0]["question_id"]

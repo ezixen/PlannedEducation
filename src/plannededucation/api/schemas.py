@@ -35,6 +35,7 @@ class UserResponse(UserBase):
     is_active: bool
     role: str
     is_admin: bool = False
+    is_superadmin: bool = False
     totp_enabled: bool
     teacher_approved: bool = True
     is_teacher_aide: bool = False
@@ -76,6 +77,7 @@ class LoginRequest(BaseModel):
     username: str
     password: str
     remember_me: bool = False
+    totp_code: str | None = Field(None, pattern=r"^\d{6}$")
 
 
 # ── Questions ─────────────────────────────────────────────────────────────────
@@ -224,7 +226,7 @@ class PasswordResetConfirm(BaseModel):
     new_password: str = Field(..., min_length=8, max_length=128)
     token: str | None = Field(None, max_length=128)
     otp: str | None = Field(None)
-    recovery_code: str | None = Field(None, min_length=8, max_length=16)
+    recovery_code: str | None = Field(None, min_length=8, max_length=64)
 
 
 class AdminResetPasswordRequest(BaseModel):
@@ -324,7 +326,14 @@ class TwoFAConfirmResponse(BaseModel):
 
 class TwoFADisable(BaseModel):
     totp_code: str | None = Field(None, pattern=r"^\d{6}$")
-    recovery_code: str | None = Field(None, min_length=8, max_length=16)
+    recovery_code: str | None = Field(None, min_length=8, max_length=64)
+
+
+class TwoFAReauth(BaseModel):
+    """Second-factor proof required for sensitive 2FA management actions."""
+
+    totp_code: str | None = Field(None, pattern=r"^\d{6}$")
+    recovery_code: str | None = Field(None, min_length=8, max_length=64)
 
 
 class TwoFADisableResponse(BaseModel):
@@ -358,6 +367,33 @@ class AIKeyUpdate(BaseModel):
     ai_api_key: str | None = Field(None, max_length=512)
     ai_model_name: str | None = Field(None, max_length=128)
     ai_base_url: str | None = Field(None, max_length=512)
+
+    @field_validator("ai_base_url")
+    @classmethod
+    def _validate_ai_base_url(cls, v, info):
+        """F-022: fail closed on SSRF / credential-exfil custom AI endpoints."""
+        if v is None or (isinstance(v, str) and not v.strip()):
+            return None
+        from .url_safety import UnsafeURLError, validate_ai_base_url
+
+        provider = None
+        if info.data:
+            provider = info.data.get("ai_provider")
+        try:
+            return validate_ai_base_url(v, provider=provider)
+        except UnsafeURLError as first_exc:
+            # When provider is omitted from this payload, accept either a public
+            # HTTPS endpoint or a loopback Ollama URL; the route re-checks with
+            # the persisted provider and still fails closed.
+            if provider is not None:
+                raise ValueError(str(first_exc)) from first_exc
+            try:
+                return validate_ai_base_url(v, provider="ollama")
+            except UnsafeURLError:
+                try:
+                    return validate_ai_base_url(v, provider="openai")
+                except UnsafeURLError as exc:
+                    raise ValueError(str(exc)) from exc
 
 
 class AIKeyResponse(BaseModel):
@@ -409,6 +445,27 @@ class WebAuthnAuthenticationFinish(BaseModel):
     response: dict
     type: str
     clientExtensionResults: dict | None = None
+
+
+class WebAuthnLoginStartRequest(BaseModel):
+    """Unauthenticated passkey login start (email or username)."""
+    email: str = Field(..., min_length=1, max_length=255)
+
+
+class WebAuthnLoginFinishRequest(BaseModel):
+    """Unauthenticated passkey login finish with assertion + account lookup."""
+    email: str = Field(..., min_length=1, max_length=255)
+    id: str
+    rawId: str
+    response: dict
+    type: str
+    clientExtensionResults: dict | None = None
+    remember_me: bool = False
+
+
+class LogoutRequest(BaseModel):
+    """Optional refresh token so logout can revoke the current device session."""
+    refresh_token: str | None = None
 
 
 class WebAuthnCredentialResponse(BaseModel):
@@ -667,6 +724,17 @@ class PackageSourceBase(BaseModel):
     allowed_categories: list[str] = Field(default_factory=list)
     allowed_tags: list[str] = Field(default_factory=list)
 
+    @field_validator("url")
+    @classmethod
+    def _validate_source_url(cls, v):
+        """F-022: package source URLs must be public HTTPS (no SSRF)."""
+        from .url_safety import UnsafeURLError, validate_package_source_url
+
+        try:
+            return validate_package_source_url(v)
+        except UnsafeURLError as exc:
+            raise ValueError(str(exc)) from exc
+
 
 class PackageSourceCreate(PackageSourceBase):
     pass
@@ -683,6 +751,18 @@ class PackageSourceUpdate(BaseModel):
     sync_interval_hours: int | None = Field(None, ge=1, le=168)
     allowed_categories: list[str] | None = None
     allowed_tags: list[str] | None = None
+
+    @field_validator("url")
+    @classmethod
+    def _validate_source_url(cls, v):
+        if v is None:
+            return v
+        from .url_safety import UnsafeURLError, validate_package_source_url
+
+        try:
+            return validate_package_source_url(v)
+        except UnsafeURLError as exc:
+            raise ValueError(str(exc)) from exc
 
 
 class PackageSourceResponse(BaseModel):

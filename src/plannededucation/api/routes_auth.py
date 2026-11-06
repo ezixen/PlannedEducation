@@ -1,4 +1,5 @@
 import base64
+import binascii
 import hashlib
 import hmac
 import json
@@ -8,6 +9,7 @@ import re
 import secrets
 import time
 from datetime import UTC, datetime, timedelta
+from urllib.parse import quote, urlsplit
 
 import argon2
 import httpx
@@ -241,6 +243,45 @@ def _as_utc(dt: datetime | None) -> datetime | None:
     return dt.astimezone(UTC)
 
 
+def _verify_user_second_factor(user: models.User, totp_code: str | None) -> None:
+    """Require a valid TOTP code for accounts that enabled 2FA."""
+    if not user.totp_enabled:
+        return
+    if not totp_code:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="2FA_REQUIRED",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    if not user.totp_secret or not pyotp.TOTP(user.totp_secret).verify(
+        totp_code, valid_window=1
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid two-factor authentication code",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+
+def _configured_frontend_origin() -> str:
+    """Return the configured reset-link origin; never trust request headers."""
+    configured = os.getenv("FRONTEND_URL", "").strip().rstrip("/")
+    environment = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
+    if not configured and environment in {"development", "test"}:
+        configured = "http://localhost:5173"
+    parsed = urlsplit(configured)
+    allowed_local_http = environment in {"development", "test"} and parsed.hostname in {
+        "localhost",
+        "127.0.0.1",
+        "::1",
+    }
+    if parsed.scheme != "https" and not allowed_local_http:
+        raise RuntimeError("FRONTEND_URL must be an HTTPS origin outside local development")
+    if not parsed.scheme or not parsed.netloc or parsed.username or parsed.password:
+        raise RuntimeError("FRONTEND_URL must be a valid origin")
+    return f"{parsed.scheme}://{parsed.netloc}"
+
+
 def get_current_user(
     token: str = Depends(oauth2_scheme),
     db: Session = Depends(database.get_db),
@@ -253,7 +294,8 @@ def get_current_user(
     try:
         payload = jwt.decode(token, auth.SECRET_KEY, algorithms=[auth.ALGORITHM])
         email: str | None = payload.get("sub")
-        if email is None:
+        # Refresh tokens must not authorize API routes (F-005)
+        if email is None or payload.get("type") != "access":
             raise credentials_exception
     except jwt.exceptions.InvalidTokenError:
         raise credentials_exception from None
@@ -264,6 +306,7 @@ def get_current_user(
     return user
 
 
+
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 
 @router.get("/me", response_model=schemas.UserResponse)
@@ -272,7 +315,7 @@ def read_users_me(current_user: models.User = Depends(get_current_user)):
 
 
 @router.post("/register", response_model=schemas.UserRegistrationResponse, status_code=201)
-@limiter.limit("500/minute")
+@limiter.limit("60/minute")
 def register_user(
     request: Request,
     user: schemas.UserCreate,
@@ -319,7 +362,7 @@ def register_user(
 
     # Generate 5 one-time recovery codes for account recovery
     plain_recovery_codes = auth.generate_recovery_codes()
-    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]
+    hashed_codes = [auth.hash_recovery_code(c) for c in plain_recovery_codes]
 
     # Teachers require administrator approval before gaining exam creation rights.
     # In test environments (PLANNED_EDUCATION_ENV == "test"), default to True for backwards compatibility
@@ -395,7 +438,7 @@ def register_user(
 _DUMMY_HASH = get_password_hash("dummy_password_for_timing_check")
 
 @router.post("/token", response_model=schemas.Token)
-@limiter.limit("500/minute")
+@limiter.limit("60/minute")
 async def login_for_access_token(
     request: Request,
     db: Session = Depends(database.get_db),
@@ -409,6 +452,7 @@ async def login_for_access_token(
     username = form_data.get("username", [""])[0].lower()
     password = form_data.get("password", [""])[0]
     remember_me = form_data.get("remember_me", ["false"])[0].lower() == "true"
+    totp_code = form_data.get("totp_code", [""])[0].strip() or None
 
     # Log only event name, never credentials or sensitive data
     logger.info("Login attempt: username=%s, remember_me=%s", username, remember_me)
@@ -490,65 +534,51 @@ async def login_for_access_token(
             detail="Account is deactivated. Please contact support.",
         )
 
+    # Password verification alone is not sufficient once the user enabled TOTP.
+    _verify_user_second_factor(user, totp_code)
+
     user.failed_login_attempts = 0
     user.locked_until = None
     user.last_login = datetime.now(UTC)
 
-    # Use the remember_me preference from the login form
-    tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
-    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    if remember_me:
-        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REMEMBER_ME_REFRESH_TOKEN_EXPIRE_DAYS)
-    else:
-        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
+    tokens, _ = auth.issue_refresh_session(db, user, remember_me=remember_me)
     db.commit()
     return tokens
 
 
+@router.post("/logout")
+@limiter.limit("60/minute")
+def logout_current_session(
+    request: Request,
+    payload: schemas.LogoutRequest = schemas.LogoutRequest(),
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Revoke the current device refresh session (F-049)."""
+    _ = request
+    if payload.refresh_token:
+        auth.revoke_refresh_session_by_token(db, payload.refresh_token)
+    else:
+        # No device token provided — revoke all sessions for safety when bearer logs out.
+        auth.revoke_all_refresh_sessions(db, current_user.id)
+    auth.clear_legacy_refresh_fields(current_user)
+    db.commit()
+    return {"status": "ok", "message": "Logged out"}
+
+
 @router.post("/refresh", response_model=schemas.Token)
-@limiter.limit("200/minute")
+@limiter.limit("60/minute")
 def refresh_access_token(
     request: Request,
     payload: schemas.RefreshTokenRequest,
     db: Session = Depends(database.get_db),
 ):
-    """Refresh an access token using a valid refresh token."""
-    payload_data = auth.verify_refresh_token(payload.refresh_token)
-    if not payload_data:
+    """Refresh an access token using a valid refresh token (rotate family)."""
+    _ = request
+    tokens = auth.rotate_refresh_session(db, payload.refresh_token)
+    if not tokens:
+        db.commit()
         raise HTTPException(status_code=401, detail="Invalid or expired refresh token")
-
-    email = payload_data.get("sub")
-    user = db.query(models.User).filter(models.User.email == email).first()
-    if not user or not user.is_active:
-        raise HTTPException(status_code=401, detail="User not found or inactive")
-
-    # Verify refresh token hash matches database
-    if not user.refresh_token_hash or not user.refresh_token_expires:
-        raise HTTPException(status_code=401, detail="No refresh token stored")
-
-    if user.refresh_token_expires is None:
-        raise HTTPException(status_code=401, detail="Refresh token expired")
-    provided_hash = hashlib.sha256(payload.refresh_token.encode()).hexdigest()
-    if not secrets.compare_digest(user.refresh_token_hash, provided_hash):
-        raise HTTPException(status_code=401, detail="Invalid refresh token")
-
-    if (
-        user.refresh_token_expires is not None
-        and _as_utc(_require_datetime(user.refresh_token_expires)) < datetime.now(UTC)  # type: ignore[operator]
-    ):
-        raise HTTPException(status_code=401, detail="Refresh token expired")
-
-    # Check if the refresh token has remember_me flag
-    payload_data = auth.verify_refresh_token(payload.refresh_token)
-    remember_me = payload_data.get("remember_me", False) if payload_data else False
-
-    tokens = auth.create_token_pair({"sub": user.email}, remember_me=remember_me)
-    # Update refresh token hash in database (rotate)
-    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    if remember_me:
-        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REMEMBER_ME_REFRESH_TOKEN_EXPIRE_DAYS)
-    else:
-        user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
     db.commit()
     return tokens
 
@@ -590,6 +620,9 @@ def update_settings(
                 detail="Current password is incorrect."
             )
         current_user.hashed_password = get_password_hash(settings.password)
+        # F-049: password change must invalidate every refresh session.
+        auth.revoke_all_refresh_sessions(db, current_user.id)
+        auth.clear_legacy_refresh_fields(current_user)
 
     db.commit()
     db.refresh(current_user)
@@ -619,21 +652,26 @@ def request_password_reset(
 
     # Generate high-entropy 32-byte cryptographic token
     reset_token = secrets.token_urlsafe(32)
-    user.password_reset_otp = reset_token
+    user.password_reset_otp = auth.hash_reset_token(reset_token)
     user.password_reset_otp_expires = datetime.now(UTC) + timedelta(hours=24)
     db.commit()
 
-    # Determine base URL for one-click reset link
-    origin = request.headers.get("origin") or request.headers.get("referer")
-    if origin:
-        base_url = origin.split("/#")[0].rstrip("/")
-        for path_suffix in ("/login", "/register", "/dashboard"):
-            if path_suffix in base_url:
-                base_url = base_url.split(path_suffix)[0]
-    else:
-        base_url = os.getenv("FRONTEND_URL", "http://localhost:5173").rstrip("/")
+    # Never derive a credential-bearing link from caller-controlled headers.
+    try:
+        base_url = _configured_frontend_origin()
+    except RuntimeError as exc:
+        logger.error("Password reset link configuration is invalid: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Password reset is temporarily unavailable.",
+        ) from None
 
-    reset_link = f"{base_url}/reset-password?token={reset_token}&email={user.email}"
+    # Keep the bearer token in a URL fragment so it is not sent in HTTP
+    # Referer headers. The reset page removes it from history immediately.
+    reset_link = (
+        f"{base_url}/reset-password#token={quote(reset_token)}"
+        f"&email={quote(user.email)}"
+    )
 
     # Dispatch email asynchronously in background
     background_tasks.add_task(email_service.send_password_reset_email, user.email, reset_link, user.username)
@@ -657,10 +695,11 @@ def confirm_password_reset(
     if not user:
         raise HTTPException(status_code=400, detail="Invalid email or OTP")
 
-    # Check reset token or legacy OTP
+    # Check reset token or legacy OTP. New requests store only a digest;
+    # direct equality remains solely for one-time migration of legacy rows.
     token_candidate = payload.token or payload.otp
     if token_candidate:
-        if not user.password_reset_otp or user.password_reset_otp != token_candidate:
+        if not auth.verify_reset_token(token_candidate, user.password_reset_otp):
             raise HTTPException(status_code=400, detail="Invalid or expired reset link")
         expires = user.password_reset_otp_expires
         if (
@@ -674,11 +713,14 @@ def confirm_password_reset(
         codes = _decode_recovery_codes(user.recovery_codes)
         if not codes:
             raise HTTPException(status_code=400, detail="No recovery codes available")
-        provided_hash = hashlib.sha256(payload.recovery_code.encode()).hexdigest()
-        if provided_hash not in codes:
+        matching_hash = next(
+            (stored for stored in codes if auth.verify_recovery_code(payload.recovery_code, stored)),
+            None,
+        )
+        if matching_hash is None:
             raise HTTPException(status_code=400, detail="Invalid recovery code")
         # Remove used recovery code
-        remaining = [c for c in codes if c != provided_hash]
+        remaining = [c for c in codes if c != matching_hash]
         user.recovery_codes = _encode_recovery_codes(remaining)
 
     else:
@@ -689,6 +731,15 @@ def confirm_password_reset(
     user.hashed_password = get_password_hash(payload.new_password)
     user.password_reset_otp = None
     user.password_reset_otp_expires = None
+    user.reset_token = None
+    user.force_password_reset = False
+    user.reset_expires = None
+    user.reset_by_teacher_id = None
+    user.reset_by_parent_id = None
+    user.reset_by_admin_id = None
+    # Password reset invalidates all refresh credentials issued before it.
+    auth.revoke_all_refresh_sessions(db, user.id)
+    auth.clear_legacy_refresh_fields(user)
     db.commit()
 
     # Return new access token
@@ -764,7 +815,8 @@ def teacher_quick_reset_student(
     student.reset_expires = datetime.now(UTC) + timedelta(hours=24)
     student.failed_login_attempts = 0
     student.locked_until = None
-    student.refresh_token_hash = None
+    auth.revoke_all_refresh_sessions(db, student.id)
+    auth.clear_legacy_refresh_fields(student)
     student.is_active = True
     # Generate signed reset capability token
     import hashlib
@@ -840,7 +892,8 @@ def parent_quick_reset_student(
     student.reset_expires = datetime.now(UTC) + timedelta(hours=24)
     student.failed_login_attempts = 0
     student.locked_until = None
-    student.refresh_token_hash = None
+    auth.revoke_all_refresh_sessions(db, student.id)
+    auth.clear_legacy_refresh_fields(student)
     student.is_active = True
     # Generate signed reset capability token
     import hashlib
@@ -894,8 +947,8 @@ def admin_quick_reset_user(
     if target_user.role not in ("teacher", "admin"):
         raise HTTPException(status_code=400, detail="Admins can only quick-reset teacher or admin accounts")
 
-    # Only superadmin can reset another admin account
-    if target_user.is_admin and not current_user.is_admin:
+    # Only superadmin can reset another admin account (F-003)
+    if target_user.is_admin and not getattr(current_user, "is_superadmin", False):
         raise HTTPException(status_code=403, detail="Only superadmin can reset administrator accounts")
 
     # Prevent self-reset
@@ -909,7 +962,8 @@ def admin_quick_reset_user(
     target_user.reset_expires = datetime.now(UTC) + timedelta(hours=24)
     target_user.failed_login_attempts = 0
     target_user.locked_until = None
-    target_user.refresh_token_hash = None
+    auth.revoke_all_refresh_sessions(db, target_user.id)
+    auth.clear_legacy_refresh_fields(target_user)
     target_user.is_active = True
     # Generate signed reset capability token
     import hashlib
@@ -1030,19 +1084,8 @@ def complete_teacher_reset(
     user.locked_until = None
     user.is_active = True
 
-    tokens = {
-        "access_token": auth.create_access_token(
-            data={"sub": user.email},
-            expires_delta=timedelta(minutes=auth.ACCESS_TOKEN_EXPIRE_MINUTES),
-        ),
-        "refresh_token": auth.create_refresh_token(
-            data={"sub": user.email},
-            expires_delta=timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS),
-        ),
-        "token_type": "bearer",
-    }
-    user.refresh_token_hash = hashlib.sha256(tokens["refresh_token"].encode()).hexdigest()
-    user.refresh_token_expires = datetime.now(UTC) + timedelta(days=auth.REFRESH_TOKEN_EXPIRE_DAYS)
+    auth.revoke_all_refresh_sessions(db, user.id)
+    tokens, _ = auth.issue_refresh_session(db, user, remember_me=False)
     db.commit()
 
     return tokens
@@ -1132,7 +1175,7 @@ def setup_2fa(
     # Generate recovery codes and store only hashed values in the database
     recovery_codes = auth.generate_recovery_codes()
     current_user.recovery_codes = _encode_recovery_codes(
-        [hashlib.sha256(code.encode()).hexdigest() for code in recovery_codes]
+        [auth.hash_recovery_code(code) for code in recovery_codes]
     )
     db.commit()
 
@@ -1191,10 +1234,17 @@ def disable_2fa(
     # Or verify recovery code
     elif payload.recovery_code:
         codes = _decode_recovery_codes(current_user.recovery_codes)
-        provided_hash = hashlib.sha256(payload.recovery_code.encode()).hexdigest()
-        if not codes or provided_hash not in codes:
+        matching_hash = next(
+            (
+                stored
+                for stored in codes
+                if auth.verify_recovery_code(payload.recovery_code, stored)
+            ),
+            None,
+        )
+        if matching_hash is None:
             raise HTTPException(status_code=400, detail="Invalid recovery code")
-        remaining = [c for c in codes if c != provided_hash]
+        remaining = [c for c in codes if c != matching_hash]
         current_user.recovery_codes = _encode_recovery_codes(remaining)
 
     else:
@@ -1211,6 +1261,7 @@ def disable_2fa(
 
 @router.post("/2fa/regenerate-recovery-codes", response_model=schemas.RecoveryCodesResponse)
 def regenerate_recovery_codes(
+    payload: schemas.TwoFAReauth,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
@@ -1218,10 +1269,32 @@ def regenerate_recovery_codes(
     if not current_user.totp_enabled:
         raise HTTPException(status_code=400, detail="2FA is not enabled")
 
-    # In a real implementation, require TOTP confirmation here
+    if payload.totp_code:
+        if not current_user.totp_secret or not pyotp.TOTP(current_user.totp_secret).verify(
+            payload.totp_code, valid_window=1
+        ):
+            raise HTTPException(status_code=400, detail="Invalid TOTP code")
+    elif payload.recovery_code:
+        codes = _decode_recovery_codes(current_user.recovery_codes)
+        matching_hash = next(
+            (
+                stored
+                for stored in codes
+                if auth.verify_recovery_code(payload.recovery_code, stored)
+            ),
+            None,
+        )
+        if matching_hash is None:
+            raise HTTPException(status_code=400, detail="Invalid recovery code")
+        current_user.recovery_codes = _encode_recovery_codes(
+            [code for code in codes if code != matching_hash]
+        )
+    else:
+        raise HTTPException(status_code=400, detail="TOTP code or recovery code required")
+
     recovery_codes = auth.generate_recovery_codes()
     current_user.recovery_codes = _encode_recovery_codes(
-        [hashlib.sha256(code.encode()).hexdigest() for code in recovery_codes]
+        [auth.hash_recovery_code(code) for code in recovery_codes]
     )
     db.commit()
 
@@ -1258,7 +1331,20 @@ def update_ai_key(
     if payload.ai_model_name is not None:
         current_user.ai_model_name = payload.ai_model_name
     if payload.ai_base_url is not None:
-        current_user.ai_base_url = payload.ai_base_url
+        # F-022: re-validate against the (possibly updated) provider; fail closed.
+        from .url_safety import UnsafeURLError, validate_ai_base_url
+
+        provider = (
+            payload.ai_provider
+            if payload.ai_provider is not None
+            else current_user.ai_provider
+        )
+        try:
+            current_user.ai_base_url = validate_ai_base_url(
+                payload.ai_base_url, provider=provider
+            )
+        except UnsafeURLError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
     if payload.ai_api_key is not None:
         if payload.ai_api_key.strip() == "":
             current_user.ai_api_key_encrypted = None
@@ -1296,6 +1382,11 @@ def _get_webauthn_user(user: models.User) -> dict:
         "displayName": user.full_name or user.username,
     }
 
+def _b64url_decode(value: str) -> bytes:
+    """Decode base64url with optional missing padding."""
+    return base64.urlsafe_b64decode(value + "===")
+
+
 def _get_webauthn_credentials(user: models.User) -> list[bytes]:
     """Get user's registered WebAuthn credentials as raw byte IDs."""
     if not user.webauthn_credentials:
@@ -1303,11 +1394,11 @@ def _get_webauthn_credentials(user: models.User) -> list[bytes]:
     try:
         creds = json.loads(user.webauthn_credentials)
         return [
-            base64.urlsafe_b64decode(cred["credential_id"])
+            _b64url_decode(cred["credential_id"])
             for cred in creds
             if "credential_id" in cred
         ]
-    except (json.JSONDecodeError, KeyError, TypeError):
+    except (json.JSONDecodeError, KeyError, TypeError, ValueError, binascii.Error):
         return []
 
 def _save_webauthn_credential(user: models.User, credential: dict) -> None:
@@ -1321,9 +1412,122 @@ def _save_webauthn_credential(user: models.User, credential: dict) -> None:
     creds.append(credential)
     user.webauthn_credentials = json.dumps(creds)
 
+
+def _lookup_user_by_email_or_username(db: Session, identifier: str) -> models.User | None:
+    lookup = identifier.strip().lower()
+    if not lookup:
+        return None
+    return (
+        db.query(models.User)
+        .filter((models.User.email == lookup) | (models.User.username == lookup))
+        .first()
+    )
+
+
+def _webauthn_generic_login_error() -> HTTPException:
+    """Same shape for missing accounts and missing passkeys (anti-enumeration)."""
+    return HTTPException(
+        status_code=400,
+        detail="Passkey authentication unavailable",
+    )
+
+
+def _build_authentication_start_response(
+    user: models.User,
+    db: Session,
+) -> schemas.WebAuthnAuthenticationStart:
+    credentials = _get_webauthn_credentials(user)
+    if not credentials:
+        raise _webauthn_generic_login_error()
+
+    allow_credentials = [
+        PublicKeyCredentialDescriptor(id=cred_id) for cred_id in credentials
+    ]
+    options = generate_authentication_options(
+        rp_id=WEBAUTHN_RP_ID,
+        allow_credentials=allow_credentials,
+        user_verification=UserVerificationRequirement.REQUIRED,
+    )
+    challenge = base64.urlsafe_b64encode(options.challenge).decode()
+    user.webauthn_challenge = challenge
+    user.webauthn_challenge_expires = datetime.now(UTC) + timedelta(minutes=5)
+    db.commit()
+
+    return schemas.WebAuthnAuthenticationStart(
+        challenge=challenge,
+        timeout=options.timeout,
+        rpId=options.rp_id,
+        allowCredentials=[
+            {
+                "type": "public-key",
+                "id": base64.urlsafe_b64encode(cred.id).decode(),
+                "transports": cred.transports,
+            }
+            for cred in options.allow_credentials
+        ]
+        if options.allow_credentials
+        else None,
+        userVerification=options.user_verification,
+        extensions=getattr(options, "extensions", None) or {},
+    )
+
+
+def _verify_webauthn_assertion(
+    user: models.User,
+    assertion: dict,
+    db: Session,
+) -> None:
+    """Verify a WebAuthn assertion and update credential counters."""
+    if not user.webauthn_challenge:
+        raise HTTPException(status_code=400, detail="No active authentication challenge")
+
+    expires = user.webauthn_challenge_expires
+    if (
+        expires is not None
+        and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
+    ):
+        raise HTTPException(status_code=400, detail="Authentication challenge expired")
+
+    credential_id = assertion.get("id")
+    creds = (
+        json.loads(user.webauthn_credentials) if user.webauthn_credentials else []
+    )
+    stored_cred = next((c for c in creds if c["credential_id"] == credential_id), None)
+    if not stored_cred:
+        raise HTTPException(status_code=400, detail="Credential not found")
+
+    pubkey = base64.b64decode(stored_cred["public_key"])
+    sign_count = stored_cred.get("sign_count", 0)
+    expected_challenge = _b64url_decode(user.webauthn_challenge)
+
+    try:
+        verification = verify_authentication_response(
+            credential=assertion,
+            expected_challenge=expected_challenge,
+            expected_rp_id=WEBAUTHN_RP_ID,
+            expected_origin=WEBAUTHN_ORIGIN,
+            credential_public_key=pubkey,
+            credential_current_sign_count=sign_count,
+            require_user_verification=True,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=400, detail=f"Authentication verification failed: {e}"
+        ) from None
+
+    stored_cred["sign_count"] = verification.sign_count
+    stored_cred["last_used_at"] = datetime.now(UTC).isoformat()
+    user.webauthn_credentials = json.dumps(creds)
+    user.webauthn_challenge = None
+    user.webauthn_challenge_expires = None
+
+
 @router.post("/webauthn/registration/start", response_model=schemas.WebAuthnSetupResponse)
 def webauthn_registration_start(
     current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
 ):
     """Start WebAuthn registration (passkey setup)."""
     if not current_user.totp_enabled:
@@ -1356,7 +1560,8 @@ def webauthn_registration_start(
     # Store challenge in user session (simplified: use user model)
     current_user.webauthn_challenge = base64.urlsafe_b64encode(options.challenge).decode()
     current_user.webauthn_challenge_expires = datetime.now(UTC) + timedelta(minutes=5)
-    # Note: In production, use a proper session store
+    # Persist before returning; finish is a separate request/session.
+    db.commit()
 
     # Convert options to dict for response
     options_dict = json.loads(options_to_json(options))
@@ -1429,45 +1634,58 @@ def webauthn_registration_finish(
         message="Passkey registered successfully"
     )
 
+@router.post("/webauthn/login/start", response_model=schemas.WebAuthnAuthenticationStart)
+@limiter.limit("10/minute")
+def webauthn_login_start(
+    request: Request,
+    payload: schemas.WebAuthnLoginStartRequest,
+    db: Session = Depends(database.get_db),
+):
+    """Unauthenticated passkey login start (F-006). No bearer required."""
+    _ = request
+    user = _lookup_user_by_email_or_username(db, payload.email)
+    if not user or not user.is_active or not user.webauthn_credentials:
+        raise _webauthn_generic_login_error()
+    return _build_authentication_start_response(user, db)
+
+
+@router.post("/webauthn/login/finish", response_model=schemas.Token)
+@limiter.limit("10/minute")
+def webauthn_login_finish(
+    request: Request,
+    payload: schemas.WebAuthnLoginFinishRequest,
+    db: Session = Depends(database.get_db),
+):
+    """Unauthenticated passkey login finish — issues access+refresh on success."""
+    _ = request
+    user = _lookup_user_by_email_or_username(db, payload.email)
+    if not user or not user.is_active:
+        raise _webauthn_generic_login_error()
+
+    assertion = payload.model_dump(exclude={"email", "remember_me"})
+    _verify_webauthn_assertion(user, assertion, db)
+
+    user.failed_login_attempts = 0
+    user.locked_until = None
+    user.last_login = datetime.now(UTC)
+    tokens, _ = auth.issue_refresh_session(
+        db, user, remember_me=payload.remember_me
+    )
+    db.commit()
+    return tokens
+
+
 @router.post("/webauthn/authentication/start", response_model=schemas.WebAuthnAuthenticationStart)
 def webauthn_authentication_start(
     current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
 ):
-    """Start WebAuthn authentication (passkey login)."""
+    """Start WebAuthn authentication for step-up (requires bearer)."""
     credentials = _get_webauthn_credentials(current_user)
     if not credentials:
         raise HTTPException(status_code=400, detail="No passkeys registered")
+    return _build_authentication_start_response(current_user, db)
 
-    allow_credentials = [
-        PublicKeyCredentialDescriptor(id=cred_id) for cred_id in credentials
-    ]
-
-    options = generate_authentication_options(
-        rp_id=WEBAUTHN_RP_ID,
-        allow_credentials=allow_credentials,
-        user_verification=UserVerificationRequirement.REQUIRED,
-    )
-    challenge = base64.urlsafe_b64encode(options.challenge).decode()
-
-    # Store challenge
-    current_user.webauthn_challenge = challenge
-    current_user.webauthn_challenge_expires = datetime.now(UTC) + timedelta(minutes=5)
-
-    return schemas.WebAuthnAuthenticationStart(
-        challenge=challenge,
-        timeout=options.timeout,
-        rpId=options.rp_id,
-        allowCredentials=[
-            {
-                "type": "public-key",
-                "id": base64.urlsafe_b64encode(cred.id).decode(),
-                "transports": cred.transports,
-            }
-            for cred in options.allow_credentials
-        ] if options.allow_credentials else None,
-        userVerification=options.user_verification,
-        extensions=options.extensions or {},
-    )
 
 @router.post("/webauthn/authentication/finish", response_model=schemas.WebAuthnVerifyResponse)
 def webauthn_authentication_finish(
@@ -1475,63 +1693,12 @@ def webauthn_authentication_finish(
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
-    """Finish WebAuthn authentication (passkey login)."""
-    if not current_user.webauthn_challenge:
-        raise HTTPException(status_code=400, detail="No active authentication challenge")
-
-    expires = current_user.webauthn_challenge_expires
-    if (
-        expires is not None
-        and _as_utc(_require_datetime(expires)) < datetime.now(UTC)  # type: ignore[operator]
-    ):
-        raise HTTPException(status_code=400, detail="Authentication challenge expired")
-
-    credential_id = payload.id
-
-    # Look up the stored credential to get the public key
-    creds = (
-        json.loads(current_user.webauthn_credentials)
-        if current_user.webauthn_credentials
-        else []
-    )
-    stored_cred = next((c for c in creds if c["credential_id"] == credential_id), None)
-    if not stored_cred:
-        raise HTTPException(status_code=400, detail="Credential not found")
-
-    pubkey = base64.b64decode(stored_cred["public_key"])
-    sign_count = stored_cred.get("sign_count", 0)
-    expected_challenge = base64.urlsafe_b64decode(
-        current_user.webauthn_challenge + "==="
-    )
-
-    try:
-        verification = verify_authentication_response(
-            credential=payload.model_dump(),
-            expected_challenge=expected_challenge,
-            expected_rp_id=WEBAUTHN_RP_ID,
-            expected_origin=WEBAUTHN_ORIGIN,
-            credential_public_key=pubkey,
-            credential_current_sign_count=sign_count,
-            require_user_verification=True,
-        )
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=400, detail=f"Authentication verification failed: {e}"
-        ) from None
-
-    # Update sign count and last used
-    stored_cred["sign_count"] = verification.sign_count
-    stored_cred["last_used_at"] = datetime.now(UTC).isoformat()
-    current_user.webauthn_credentials = json.dumps(creds)
-    current_user.webauthn_challenge = None
-    current_user.webauthn_challenge_expires = None
+    """Finish WebAuthn authentication for step-up (requires bearer)."""
+    _verify_webauthn_assertion(current_user, payload.model_dump(), db)
     db.commit()
-
     return schemas.WebAuthnVerifyResponse(
         verified=True,
-        message="Passkey authentication successful"
+        message="Passkey authentication successful",
     )
 
 @router.get("/webauthn/credentials", response_model=list[schemas.WebAuthnCredentialResponse])
@@ -1558,12 +1725,18 @@ def list_webauthn_credentials(
         return []
 
 @router.delete("/webauthn/credentials/{credential_id}")
+@limiter.limit("10/minute")
 def delete_webauthn_credential(
+    request: Request,
     credential_id: str,
+    totp_code: str | None = None,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
-    """Delete a registered passkey."""
+    """Delete a registered passkey (requires second factor when TOTP is enabled)."""
+    _ = request  # required for slowapi
+    # F-006 remainder: passkey deletion must not rely on bearer alone.
+    _verify_user_second_factor(current_user, totp_code)
     if not current_user.webauthn_credentials:
         raise HTTPException(status_code=404, detail="Credential not found")
 
@@ -1653,6 +1826,8 @@ def approve_teacher_aide(
         raise HTTPException(status_code=400, detail="User is already a teacher's aide")
 
     aide.is_teacher_aide = True
+    # Keep original classroom role for student accounts; grant is the boolean flag.
+    # Lounge/share routes must check is_teacher_aide (F-037).
     aide.aide_approved_by = current_user.id
     aide.aide_approved_at = datetime.now(UTC)
     db.commit()
@@ -1756,8 +1931,13 @@ def revoke_teacher_aide(
     if not aide.is_teacher_aide:
         raise HTTPException(status_code=400, detail="User is not a teacher's aide")
 
-    # Only the teacher who approved can revoke, or an admin
-    if current_user.role != "admin" and aide.aide_approved_by != current_user.id:
+    # Only the teacher who approved can revoke, or an admin/superadmin flag.
+    is_admin_actor = bool(
+        current_user.is_admin
+        or current_user.role in ("admin", "superadmin")
+        or getattr(current_user, "is_superadmin", False)
+    )
+    if not is_admin_actor and aide.aide_approved_by != current_user.id:
         raise HTTPException(
             status_code=403,
             detail="Only the teacher who approved this aide can revoke it"

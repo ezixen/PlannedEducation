@@ -29,11 +29,15 @@
 2. Share selected exams with aides for collaborative correction; revoke access anytime.
 3. Aides see only exams you explicitly share — not your full roster or private messages.
 
-### Teachers' Lounge & Encrypted Direct Messages
-1. Open the lower-left **Messages** icon (or the Messages page) to browse the Teachers' Lounge directory of approved teachers (plus admins who opted in).
-2. Message bodies are **Fernet-encrypted at rest** on the server (`DATABASE_ENCRYPTION=true`). This is field encryption + access control, not consumer-style device-to-device E2E.
-3. Students cannot DM each other. Student→teacher DMs stay off until you enable them under Classes.
-4. Superadmins publish a platform support email in **Admin → Deployment Config** that is always visible to teachers.
+### Teachers' Lounge & Direct Messages
+1. While signed in, open **Messages** next to the notification bell in the top header (or choose **Messages** from the menu) to browse the Teachers' Lounge directory of approved teachers (plus admins who opted in).
+2. Conversation contents are stored securely on the school server and are visible only to the people in that conversation and authorized administrators — this is school-hosted private messaging, not a consumer chat app.
+3. Students cannot message each other. Student→teacher messages stay off until you enable them under Classes.
+4. School superadmins can publish a platform support email in **Admin → Deployment Config** that stays visible to teachers.
+
+### Help & FAQ
+1. Open the hamburger menu and choose **Help** to open the in-app FAQ assistant.
+2. The special-characters picker stays as the floating control in the bottom-right corner for typing math and science symbols.
 
 ### Special Characters Picker
 1. Click the floating special-characters control to open Math, Chemistry, Physics, Greek, and accent pages.
@@ -72,7 +76,7 @@ To prevent students sitting next to each other from copying answers:
 
 ---
 
-## 4. Secure Exam Browser (SEB) & Lockdown Mode
+## 4. Secure Exam Browser (SEB) & Time Limits
 
 PlannedEducation natively supports **Safe Exam Browser (SEB)** to guarantee a secure, locked-down testing environment:
 1. When publishing an exam, toggle **Require Safe Exam Browser**.
@@ -80,8 +84,9 @@ PlannedEducation natively supports **Safe Exam Browser (SEB)** to guarantee a se
 3. During the exam:
    - OS shortcuts (Alt+Tab, Windows Key, Ctrl+Alt+Del) are disabled.
    - Screen capture, virtual machines, and external monitors are restricted.
-   - Network requests are strictly pinned to the PlannedEducation exam server.
-4. **Emergency Exit**: If a workstation encounters a hardware fault or restarts, the student re-authenticates with SEB or requests teacher intervention without losing already saved answers.
+   - The exam session must start from SEB when you require it — ordinary browsers are rejected for those exams.
+4. **Server-side time limit**: The exam duration you set (and any accommodation multiplier) is enforced by the server when the student submits. Extending time only on the student device does not keep a late submission open.
+5. **Emergency Exit**: If a workstation encounters a hardware fault or restarts, the student re-authenticates with SEB or requests teacher intervention without losing already saved answers.
 
 ---
 
@@ -97,11 +102,12 @@ PlannedEducation provides a comprehensive **Archive Browser & AI Grading Pipelin
   - `graded` (Green: *Graded & Sealed in Archive*)
 - Multi-select checkboxes allow batch operations across multiple student submissions.
 
-### 2. Privacy-Preserving AI Grading (Zero PII Exposure)
-- Select one or more tests and click **"🤖 AI Correct Selected"**.
-- **Microsoft Presidio PII Scrubber**: Automatically sanitizes all student personal identifying information (names, email addresses, phone numbers, locations, dates, IDs) from responses and prompts before external evaluation.
+### 2. Privacy-Preserving AI Grading
+- Select one or more tests and click **AI Correct Selected**.
+- Before any answer text is sent to an external AI provider you configured, PlannedEducation removes personal details (names, emails, phones, locations, and similar identifiers).
+- If privacy filtering is unavailable, external AI grading is blocked rather than sending raw student text.
 - The AI evaluates each answer against your rubric or correct answer, provides constructive feedback, explains mistakes, suggests step-by-step solutions, and proposes scores.
-- **Local Fallback**: If no external AI key is configured, PlannedEducation uses a deterministic local rubric matcher so the system works 100% offline.
+- If no external AI key is configured, PlannedEducation can still use its local deterministic rubric matcher so grading workflows continue offline.
 
 ### 3. Temporary Staging in Temp Folder (`pending_approval`)
 - Returned AI suggestions and grades are placed in a secure temporary staging folder on disk: `data/staging_archive/{teacher_id}/{submission_id}.json`.
@@ -116,12 +122,11 @@ PlannedEducation provides a comprehensive **Archive Browser & AI Grading Pipelin
   - **Bottom/Editor**: Quick feedback chips ("Excellent step-by-step work!", "Correct method, minor arithmetic error", etc.), score adjustments, and solution overrides.
 - Teachers can approve questions individually or click **"✓ Approve All & Save Corrected Exam"**.
 
-### 5. Sealing & Encrypted Archiving
-- When approved, final scores and feedback are written to the database.
-- The test is compressed using **zstandard (zstd)** and encrypted using **AES-GCM**.
-- SHA-256 integrity hashes are computed and recorded in `ArchivedSubmission`.
-- The temporary staging file is safely cleaned up, and the test is marked **"Graded & Sealed"** (`graded`).
-- Sealed archives can be downloaded directly as encrypted `.zst.enc` files.
+### 5. Sealing & Archiving
+- When approved, final scores and feedback are written to the school database.
+- The archived package is compressed and encrypted so sealed downloads stay protected at rest.
+- The temporary staging file is cleaned up, and the test is marked **Graded & Sealed**.
+- You can download sealed archives from the Archive Browser when your school keeps offline copies.
 
 ### 6. Reviewable & Re-correctable Any Time
 - Archived tests are never locked permanently away from educators.

@@ -6,14 +6,16 @@ Implements NIST AI RMF 1.0 + Generative AI Profile controls
 import io
 import json
 import logging
+import os
 import re
+import secrets
 import time
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
@@ -22,11 +24,63 @@ from . import database, models
 from .ai_providers import (
     get_teacher_ai_provider,
 )
+from .limiter import limiter
 from .ocr_service import OCRService, get_ocr_service
-from .routes_anonymizer import scrub_pii
-from .routes_auth import get_current_user
+from .routes_anonymizer import PrivacyScrubbingError, scrub_pii
+from .routes_auth import get_current_user, get_password_hash
 
 logger = logging.getLogger(__name__)
+
+
+def _require_teacher_or_admin(user: models.User) -> None:
+    if user.is_admin:
+        return
+    if user.role in ("teacher", "admin") and user.teacher_approved:
+        return
+    raise HTTPException(status_code=403, detail="Teacher or admin access required")
+
+
+def _get_submission_for_grader(
+    db: Session,
+    submission_id: str,
+    current_user: models.User,
+) -> models.ExamSubmission:
+    """Load a submission only if the caller owns the exam or is admin (F-004)."""
+    submission = (
+        db.query(models.ExamSubmission)
+        .filter(models.ExamSubmission.id == submission_id)
+        .first()
+    )
+    if not submission:
+        raise HTTPException(status_code=404, detail="Submission not found")
+    exam = submission.exam or db.query(models.Exam).filter(models.Exam.id == submission.exam_id).first()
+    if not exam:
+        raise HTTPException(status_code=404, detail="Exam not found")
+    if current_user.is_admin:
+        return submission
+    if exam.teacher_id != current_user.id:
+        shared = (
+            db.query(models.ExamShare)
+            .filter(
+                models.ExamShare.exam_id == exam.id,
+                models.ExamShare.shared_with_id == current_user.id,
+            )
+            .first()
+        )
+        if not shared:
+            raise HTTPException(status_code=403, detail="Not authorized for this submission")
+    return submission
+
+
+def _scrub_external_text(text: str) -> str:
+    """Fail closed before any text reaches a configured AI provider."""
+    try:
+        return scrub_pii(text, fail_closed=True)
+    except PrivacyScrubbingError:
+        raise HTTPException(
+            status_code=503,
+            detail="Privacy filtering is unavailable; external AI processing is disabled.",
+        ) from None
 
 # ── NIST AI RMF Controls ─────────────────────────────────────────────────────
 
@@ -60,12 +114,13 @@ MAX_PROMPT_LENGTH = 50000
 HALLUCINATION_CONSISTENCY_THRESHOLD = 0.85  # Similarity threshold for consistency check
 MIN_CONFIDENCE_THRESHOLD = 0.75  # Minimum confidence for auto-accept
 
-# Rate limiting and budget for AI calls (per teacher)
+# Rate limiting and budget for AI calls (per teacher).
+# CAPTCHA is intentionally not required: free/local slowapi + budget gates are the control (F-027).
 AI_RATE_LIMIT_PER_MINUTE = 20
 AI_RATE_LIMIT_PER_HOUR = 200
-MAX_DAILY_COST_USD = 5.0
+MAX_DAILY_COST_USD = float(os.getenv("MAX_DAILY_COST_USD", "5.0"))
 
-# In-memory rate limiting (in production, use Redis)
+# In-memory per-process limiter (augmented by slowapi IP limits on routes)
 _ai_rate_limits: dict[str, list[float]] = {}
 
 
@@ -117,6 +172,21 @@ def check_rate_limit(user_id: str) -> bool:
 
     _ai_rate_limits[user_id].append(now)
     return True
+
+
+def _today_ai_cost_usd(user_id: str) -> float:
+    today = datetime.now(UTC).date().isoformat()
+    entries = _ai_cost_tracking.get(user_id, [])
+    return sum(e.estimated_cost_usd for e in entries if e.timestamp.startswith(today))
+
+
+def enforce_ai_budget(user_id: str) -> None:
+    """Reject AI calls once the configured daily USD budget is reached (F-027)."""
+    if _today_ai_cost_usd(user_id) >= MAX_DAILY_COST_USD:
+        raise HTTPException(
+            status_code=429,
+            detail="Daily AI cost budget exceeded. Try again tomorrow or raise MAX_DAILY_COST_USD.",
+        )
 
 
 def check_hallucination_consistency(
@@ -474,8 +544,10 @@ def _validate_json_response(response: str, schema: dict) -> dict:
 # ── Endpoints ────────────────────────────────────────────────────────────────
 
 @router.post("/grade", response_model=GradingResponse)
+@limiter.limit("30/minute")
 async def ai_grade(
-    request: GradingRequest,
+    request: Request,
+    payload: GradingRequest,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
@@ -484,6 +556,12 @@ async def ai_grade(
     Requires teacher to have AI provider configured.
     Implements NIST AI RMF 1.0 + Generative AI Profile controls.
     """
+    _ = request
+    _require_teacher_or_admin(current_user)
+    enforce_ai_budget(current_user.id)
+    if getattr(payload, "submission_id", None):
+        _get_submission_for_grader(db, payload.submission_id, current_user)
+
     # Check rate limit
     if not check_rate_limit(current_user.id):
         raise HTTPException(
@@ -515,13 +593,22 @@ async def ai_grade(
                 detail="AI provider unavailable and no healthy fallback available."
             )
 
-    # Build grading prompt
-    prompt = f"""Question: {request.question_text}
-Points Possible: {request.points_possible}
-Rubric: {request.rubric}
+    # Build the provider prompt only from privacy-filtered values. This direct
+    # endpoint previously bypassed the anonymizer entirely.
+    safe_question_text = _scrub_external_text(payload.question_text)
+    safe_rubric = _scrub_external_text(payload.rubric)
+    safe_student_response = _scrub_external_text(payload.student_response)
+    safe_system_prompt = (
+        _scrub_external_text(payload.system_prompt)
+        if payload.system_prompt
+        else None
+    )
+    prompt = f"""Question: {safe_question_text}
+Points Possible: {payload.points_possible}
+Rubric: {safe_rubric}
 
 Student Response:
-{request.student_response}
+{safe_student_response}
 
 Grade this response according to the rubric."""
 
@@ -545,7 +632,7 @@ Grade this response according to the rubric."""
         response = await provider.generate_structured(
             prompt=sanitized_prompt,
             schema=GRADING_SCHEMA,
-            system_prompt=request.system_prompt or GRADING_SYSTEM_PROMPT,
+            system_prompt=safe_system_prompt or GRADING_SYSTEM_PROMPT,
             temperature=0.3,  # Lower temperature for consistent grading
         )
 
@@ -627,8 +714,10 @@ Grade this response according to the rubric."""
 
 
 @router.post("/create-test", response_model=TestCreationResponse)
+@limiter.limit("20/minute")
 async def ai_create_test(
-    request: TestCreationRequest,
+    request: Request,
+    payload: TestCreationRequest,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
@@ -637,6 +726,8 @@ async def ai_create_test(
     Requires teacher to have AI provider configured.
     Implements NIST AI RMF 1.0 + Generative AI Profile controls.
     """
+    _ = request
+    enforce_ai_budget(current_user.id)
     # Check rate limit
     if not check_rate_limit(current_user.id):
         raise HTTPException(
@@ -667,15 +758,22 @@ async def ai_create_test(
                 detail="AI provider unavailable and no healthy fallback available."
             )
 
+    safe_topic = _scrub_external_text(payload.topic)
+    safe_grade_level = _scrub_external_text(payload.grade_level)
+    safe_system_prompt = (
+        _scrub_external_text(payload.system_prompt)
+        if payload.system_prompt
+        else None
+    )
     # Build test creation prompt
     prompt = f"""Create a test with the following specifications:
-Topic: {request.topic}
-Grade Level: {request.grade_level}
-Number of Questions: {request.num_questions}
-Question Types: {', '.join(request.question_types)}
-Difficulty: {request.difficulty}
+Topic: {safe_topic}
+Grade Level: {safe_grade_level}
+Number of Questions: {payload.num_questions}
+Question Types: {', '.join(payload.question_types)}
+Difficulty: {payload.difficulty}
 
-Generate {request.num_questions} questions with a mix of the specified types.
+Generate {payload.num_questions} questions with a mix of the specified types.
 For dynamic_math questions, use [rand:min-max] placeholders for variable numbers.
 For multiple_choice, provide 4 options with one correct answer.
 Include rubrics for all questions."""
@@ -700,7 +798,7 @@ Include rubrics for all questions."""
         response = await provider.generate_structured(
             prompt=sanitized_prompt,
             schema=TEST_CREATION_SCHEMA,
-            system_prompt=request.system_prompt or TEST_CREATION_SYSTEM_PROMPT,
+            system_prompt=safe_system_prompt or TEST_CREATION_SYSTEM_PROMPT,
             temperature=0.7,
         )
 
@@ -774,8 +872,10 @@ Include rubrics for all questions."""
 
 
 @router.post("/generate-content", response_model=ContentGenerationResponse)
+@limiter.limit("20/minute")
 async def ai_generate_content(
-    request: ContentGenerationRequest,
+    request: Request,
+    payload: ContentGenerationRequest,
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
@@ -783,6 +883,13 @@ async def ai_generate_content(
     Generate educational content using AI.
     Requires teacher to have AI provider configured.
     """
+    _ = request
+    enforce_ai_budget(current_user.id)
+    if not check_rate_limit(current_user.id):
+        raise HTTPException(
+            status_code=429,
+            detail="Rate limit exceeded. Max 20 calls/minute, 200 calls/hour."
+        )
     # Get teacher's AI provider
     provider = await get_teacher_ai_provider(current_user, db)
     if not provider:
@@ -791,16 +898,25 @@ async def ai_generate_content(
             detail="No AI provider configured. Set up your AI key in settings."
         )
 
+    safe_prompt = _scrub_external_text(payload.prompt)
+    safe_context = (
+        _scrub_external_text(payload.context) if payload.context else "None provided"
+    )
+    safe_system_prompt = (
+        _scrub_external_text(payload.system_prompt)
+        if payload.system_prompt
+        else None
+    )
     # Build content generation prompt
-    prompt = f"""Generate {request.content_type} content:
-Prompt: {request.prompt}
-Context: {request.context or 'None provided'}"""
+    prompt = f"""Generate {payload.content_type} content:
+Prompt: {safe_prompt}
+Context: {safe_context}"""
 
     # Generate content
     response = await provider.generate_structured(
         prompt=prompt,
         schema=CONTENT_GENERATION_SCHEMA,
-        system_prompt=request.system_prompt or CONTENT_GENERATION_SYSTEM_PROMPT,
+        system_prompt=safe_system_prompt or CONTENT_GENERATION_SYSTEM_PROMPT,
         temperature=0.7,
     )
 
@@ -884,6 +1000,126 @@ async def get_ai_usage_summary(
 UPLOAD_DIR = Path("data/ai_grading_uploads")
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+# F-021: hard caps for upload size / bulk count
+MAX_AI_UPLOAD_BYTES = 10 * 1024 * 1024  # 10 MiB per file
+MAX_AI_BULK_FILES = 40
+MAX_AI_BULK_TOTAL_BYTES = 80 * 1024 * 1024
+_ALLOWED_UPLOAD_EXTS = frozenset(
+    {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".pdf", ".txt"}
+)
+
+
+def _sanitize_client_basename(filename: str | None) -> str:
+    """F-021: keep only the final path component from a client-supplied name."""
+    return Path(filename or "upload.bin").name
+
+
+def _opaque_storage_name(original_filename: str | None) -> str:
+    """Server-generated opaque storage name; original name is metadata only."""
+    basename = _sanitize_client_basename(original_filename)
+    ext = Path(basename).suffix.lower()
+    if ext not in _ALLOWED_UPLOAD_EXTS:
+        ext = ""
+    return f"{uuid4().hex}{ext}"
+
+
+def _owner_upload_dir(owner_id: str) -> Path:
+    """Per-teacher upload root with resolve()+is_relative_to containment."""
+    root = UPLOAD_DIR.resolve()
+    owner = Path(str(owner_id)).name
+    target = (UPLOAD_DIR / owner).resolve()
+    if not target.is_relative_to(root):
+        raise HTTPException(status_code=400, detail="Invalid upload path")
+    target.mkdir(parents=True, exist_ok=True)
+    return target
+
+
+async def _read_upload_capped(file: UploadFile, max_bytes: int) -> bytes:
+    """Read an UploadFile with a hard byte cap (fail closed)."""
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(64 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > max_bytes:
+            raise HTTPException(status_code=413, detail="Uploaded file exceeds size limit")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
+def _resolve_owned_upload_path(
+    safe_filename: str,
+    *,
+    owner_id: str | None,
+) -> Path | None:
+    """Resolve a stored upload under UPLOAD_DIR; None if missing/out of bounds."""
+    root = UPLOAD_DIR.resolve()
+    candidates: list[Path] = []
+    if owner_id:
+        candidates.append((_owner_upload_dir(owner_id) / safe_filename).resolve())
+    # Legacy flat layout (pre-F-021): UPLOAD_DIR / name
+    candidates.append((UPLOAD_DIR / safe_filename).resolve())
+    for candidate in candidates:
+        if not candidate.is_relative_to(root):
+            continue
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def _authorize_image_access(
+    db: Session,
+    safe_filename: str,
+    current_user: models.User,
+) -> Path:
+    """
+    F-021: authorize image GET by teacher/owner/admin — not filename alone.
+    Prefer OCRReview / exam ownership; fall back to the caller's own upload dir.
+    """
+    review = (
+        db.query(models.OCRReview)
+        .filter(models.OCRReview.image_url.like(f"%/{safe_filename}"))
+        .first()
+    )
+    if review is not None:
+        if current_user.is_admin or review.teacher_id == current_user.id:
+            path = _resolve_owned_upload_path(safe_filename, owner_id=review.teacher_id)
+            if path is not None:
+                return path
+        exam = db.query(models.Exam).filter(models.Exam.id == review.exam_id).first()
+        if exam and (current_user.is_admin or exam.teacher_id == current_user.id):
+            path = _resolve_owned_upload_path(
+                safe_filename, owner_id=exam.teacher_id or review.teacher_id
+            )
+            if path is not None:
+                return path
+        raise HTTPException(status_code=403, detail="Not authorized for this exam image")
+
+    # No OCRReview row: only the owning teacher (own dir) or admin may read.
+    if current_user.is_admin:
+        # Search teacher subdirs then legacy flat files.
+        root = UPLOAD_DIR.resolve()
+        for candidate in UPLOAD_DIR.glob(f"*/{safe_filename}"):
+            resolved = candidate.resolve()
+            if resolved.is_relative_to(root) and resolved.is_file():
+                return resolved
+        legacy = _resolve_owned_upload_path(safe_filename, owner_id=None)
+        if legacy is not None:
+            # Legacy names may embed owner id as prefix
+            return legacy
+        raise HTTPException(status_code=404, detail="Exam image not found")
+
+    path = _resolve_owned_upload_path(safe_filename, owner_id=current_user.id)
+    if path is None:
+        # Legacy flat: {owner_id}_{opaque_or_name}
+        legacy = _resolve_owned_upload_path(safe_filename, owner_id=None)
+        if legacy is not None and safe_filename.startswith(f"{current_user.id}_"):
+            return legacy
+        raise HTTPException(status_code=404, detail="Exam image not found")
+    return path
+
 
 @router.post("/grade/upload")
 async def upload_exam_for_grading(
@@ -897,19 +1133,24 @@ async def upload_exam_for_grading(
     Teacher uploads student submissions, system processes them through anonymizer,
     then AI grades them, and results are returned to teacher.
     """
+    _require_teacher_or_admin(current_user)
     if teacher_id != current_user.id and not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Cannot upload on behalf of another teacher")
 
-    file_path = UPLOAD_DIR / f"{current_user.id}_{file.filename}"
-    content_bytes = await file.read()
-    with open(file_path, "wb") as f:
-        f.write(content_bytes)
+    original_name = _sanitize_client_basename(file.filename)
+    opaque_name = _opaque_storage_name(file.filename)
+    content_bytes = await _read_upload_capped(file, MAX_AI_UPLOAD_BYTES)
+    owner_dir = _owner_upload_dir(current_user.id)
+    file_path = (owner_dir / opaque_name).resolve()
+    if not file_path.is_relative_to(UPLOAD_DIR.resolve()):
+        raise HTTPException(status_code=400, detail="Invalid upload path")
+    file_path.write_bytes(content_bytes)
 
     # Find or create a container exam
     exam = db.query(models.Exam).filter(models.Exam.teacher_id == current_user.id).first()
     if not exam:
         exam = models.Exam(
-            title=f"Uploaded Exam - {file.filename}",
+            title=f"Uploaded Exam - {original_name}",
             description="Uploaded for AI grading",
             teacher_id=current_user.id,
         )
@@ -919,7 +1160,7 @@ async def upload_exam_for_grading(
         q = models.Question(
             exam_id=exam.id,
             question_type=models.QuestionType.essay,
-            text=f"Question from {file.filename}",
+            text=f"Question from {original_name}",
             correct_answer="Expected solution",
             points=10,
         )
@@ -951,7 +1192,9 @@ async def upload_exam_for_grading(
 
     return {
         "submission_id": submission.id,
-        "filename": file.filename,
+        "filename": original_name,
+        "image_filename": opaque_name,
+        "image_url": f"/ai/grade/image/{opaque_name}",
         "status": "ungraded",
         "message": "Exam uploaded successfully. Ready for AI grading.",
     }
@@ -963,12 +1206,13 @@ async def upload_exam_for_grading(
 async def get_uploaded_exam_image(
     image_filename: str,
     current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
 ):
     """Serve uploaded handwritten exam photo for side-by-side review."""
     safe_filename = Path(image_filename).name
-    file_path = UPLOAD_DIR / safe_filename
-    if not file_path.exists():
+    if not safe_filename or safe_filename in {".", ".."}:
         raise HTTPException(status_code=404, detail="Exam image not found")
+    file_path = _authorize_image_access(db, safe_filename, current_user)
     return FileResponse(file_path)
 
 
@@ -994,8 +1238,15 @@ async def bulk_upload_exams_for_grading(
     5. De-anonymizes back to student real name.
     6. Saves as staged submissions ready for teacher side-by-side review and approval.
     """
+    _require_teacher_or_admin(current_user)
     if teacher_id != current_user.id and not current_user.is_admin:
         raise HTTPException(status_code=403, detail="Cannot upload on behalf of another teacher")
+
+    if len(files) > MAX_AI_BULK_FILES:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Too many files; maximum is {MAX_AI_BULK_FILES}",
+        )
 
     # 1. Parse student roster
     roster_students = []
@@ -1015,6 +1266,8 @@ async def bulk_upload_exams_for_grading(
     exam = None
     if exam_id:
         exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
+        if exam and exam.teacher_id != current_user.id and not current_user.is_admin:
+            raise HTTPException(status_code=403, detail="Not authorized for this exam")
     if not exam:
         subj_title = subject.capitalize() if subject else "General"
         cls_title = f" - {class_name}" if class_name else ""
@@ -1027,10 +1280,14 @@ async def bulk_upload_exams_for_grading(
         db.commit()
         db.refresh(exam)
 
+    # Snapshot identifiers before later commits expire/detach the Exam row.
+    exam_pk = exam.id
+    exam_title = exam.title
+
     # Ensure exam has at least one question container
     if not exam.questions:
         q = models.Question(
-            exam_id=exam.id,
+            exam_id=exam_pk,
             question_type=models.QuestionType.essay,
             text=f"Handwritten {subject} Exam Problems",
             correct_answer="Demonstrate complete solution steps with derivation.",
@@ -1038,30 +1295,44 @@ async def bulk_upload_exams_for_grading(
         )
         db.add(q)
         db.commit()
-        db.refresh(exam)
-    q_target = exam.questions[0]
+        db.refresh(q)
+        q_target = q
+    else:
+        q_target = exam.questions[0]
+    q_target_id = q_target.id
 
     created_submissions = []
     is_math_mode = subject.lower() in ("math", "physics", "chemistry")
     ocr_config = "--psm 6 --oem 3" if is_math_mode else "--psm 6"
+    owner_dir = _owner_upload_dir(current_user.id)
+    bulk_total_bytes = 0
 
     for idx, file in enumerate(files):
         if not file.content_type or not file.content_type.startswith("image/"):
             continue
 
-        raw_bytes = await file.read()
-        unique_file_name = f"{current_user.id}_{uuid4().hex[:12]}_{file.filename}"
-        saved_path = UPLOAD_DIR / unique_file_name
+        raw_bytes = await _read_upload_capped(file, MAX_AI_UPLOAD_BYTES)
+        bulk_total_bytes += len(raw_bytes)
+        if bulk_total_bytes > MAX_AI_BULK_TOTAL_BYTES:
+            raise HTTPException(status_code=413, detail="Bulk upload exceeds total size limit")
+
+        original_name = _sanitize_client_basename(file.filename)
+        unique_file_name = _opaque_storage_name(file.filename)
+        saved_path = (owner_dir / unique_file_name).resolve()
+        if not saved_path.is_relative_to(UPLOAD_DIR.resolve()):
+            raise HTTPException(status_code=400, detail="Invalid upload path")
         saved_path.write_bytes(raw_bytes)
 
         # Step 2: OCR Recognition
-        if ocr_service.is_available():
+        ocr_unavailable = not ocr_service.is_available()
+        if not ocr_unavailable:
             ocr_res = ocr_service.extract_text(raw_bytes, language="eng", config=ocr_config)
             recognized_text = ocr_res.text.strip()
             confidence = ocr_res.confidence
         else:
-            recognized_text = f"Sample handwritten solution for {file.filename}\nProblem 1: Step-by-step derivation verified."
-            confidence = 0.90
+            # Never fabricate recognized answers when OCR is unavailable.
+            recognized_text = ""
+            confidence = 0.0
 
         # Step 3: Privacy Filter - Match & Anonymize Student Name
         detected_student = None
@@ -1085,14 +1356,16 @@ async def bulk_upload_exams_for_grading(
         if detected_student.get("name"):
             anonymized_text = re.sub(re.escape(detected_student["name"]), anon_placeholder, anonymized_text, flags=re.IGNORECASE)
         # Scrub any additional PII
-        anonymized_text = scrub_pii(anonymized_text)
+        anonymized_text = (
+            _scrub_external_text(anonymized_text) if anonymized_text else ""
+        )
 
         # Step 4: AI Correction & Grading (Optional)
         suggested_score = 10.0
         corrected_solution = ""
         summary_feedback = ""
 
-        if ai_correction_enabled:
+        if ai_correction_enabled and not ocr_unavailable:
             if subject.lower() == "math":
                 suggested_score = 9.0
                 corrected_solution = (
@@ -1126,16 +1399,47 @@ async def bulk_upload_exams_for_grading(
                 summary_feedback = "Satisfactory completion of all exam prompts."
         else:
             suggested_score = None
-            corrected_solution = "Digitized digital file generated without automated AI grading."
-            summary_feedback = "Digitized handwritten test. Awaiting teacher evaluation."
+            corrected_solution = ""
+            summary_feedback = (
+                "OCR is unavailable; manual review is required before grading."
+                if ocr_unavailable
+                else "Digitized handwritten test. Awaiting teacher evaluation."
+            )
 
         # Step 5: De-anonymize for Teacher & Classroom linkage
         final_student_name = detected_student.get("name", f"Student {idx + 1}")
-        final_student_id = detected_student.get("id", current_user.id)
+        # Roster may supply placeholder IDs; only real user PKs may be stored.
+        roster_id = detected_student.get("id")
+        student_row = (
+            db.query(models.User).filter(models.User.id == roster_id).first()
+            if roster_id
+            else None
+        )
+        if student_row is None and detected_student.get("email"):
+            student_row = (
+                db.query(models.User)
+                .filter(models.User.email == detected_student["email"])
+                .first()
+            )
+        if student_row is None:
+            # Create a lightweight student shell so FERPA linkage stays valid.
+            shell_username = f"ocr_{uuid4().hex[:10]}"
+            student_row = models.User(
+                email=detected_student.get("email") or f"{shell_username}@ocr.local",
+                username=shell_username,
+                full_name=final_student_name,
+                role="student",
+                hashed_password=get_password_hash(secrets.token_urlsafe(24)),
+                is_active=True,
+            )
+            db.add(student_row)
+            db.commit()
+            db.refresh(student_row)
+        final_student_id = student_row.id
 
         now = datetime.now(UTC)
         submission = models.ExamSubmission(
-            exam_id=exam.id,
+            exam_id=exam_pk,
             student_id=final_student_id,
             started_at=now,
             completed_at=now,
@@ -1148,12 +1452,12 @@ async def bulk_upload_exams_for_grading(
         staged_payload = {
             "status": "pending_teacher_approval",
             "submission_id": submission.id,
-            "exam_id": exam.id,
-            "exam_title": exam.title,
+            "exam_id": exam_pk,
+            "exam_title": exam_title,
             "student_name": final_student_name,
             "student_id": final_student_id,
             "subject": subject,
-            "filename": file.filename,
+            "filename": original_name,
             "image_filename": unique_file_name,
             "image_url": f"/ai/grade/image/{unique_file_name}",
             "digitized_text": recognized_text,
@@ -1165,7 +1469,7 @@ async def bulk_upload_exams_for_grading(
             "confidence": confidence,
             "question_grades": [
                 {
-                    "question_id": q_target.id,
+                    "question_id": q_target_id,
                     "score": suggested_score if suggested_score is not None else 0.0,
                     "feedback": summary_feedback,
                     "corrected_answer": corrected_solution,
@@ -1179,7 +1483,7 @@ async def bulk_upload_exams_for_grading(
         # Teacher must approve/correct OCR text before it proceeds to anonymizer → AI grading
         ocr_review = models.OCRReview(
             submission_id=submission.id,
-            exam_id=exam.id,
+            exam_id=exam_pk,
             student_id=final_student_id,
             teacher_id=current_user.id,
             original_text=recognized_text,
@@ -1199,7 +1503,7 @@ async def bulk_upload_exams_for_grading(
 
         ans = models.Answer(
             submission_id=submission.id,
-            question_id=q_target.id,
+            question_id=q_target_id,
             student_response=recognized_text,
         )
         db.add(ans)
@@ -1207,12 +1511,12 @@ async def bulk_upload_exams_for_grading(
 
         created_submissions.append({
             "submission_id": submission.id,
-            "exam_id": exam.id,
+            "exam_id": exam_pk,
             "ocr_review_id": ocr_review.id,
             "student_name": final_student_name,
             "student_id": final_student_id,
             "subject": subject,
-            "filename": file.filename,
+            "filename": original_name,
             "image_url": f"/ai/grade/image/{unique_file_name}",
             "digitized_text": recognized_text,
             "corrected_solution": corrected_solution,
@@ -1241,12 +1545,8 @@ async def ai_grade_submission(
     """
     Trigger AI grading for a specific submission.
     """
-    submission = db.query(models.ExamSubmission).filter(
-        models.ExamSubmission.id == submission_id,
-    ).first()
-
-    if not submission:
-        raise HTTPException(status_code=404, detail="Submission not found")
+    _require_teacher_or_admin(current_user)
+    submission = _get_submission_for_grader(db, submission_id, current_user)
 
     # Evaluate answers
     total_score = 0.0
@@ -1297,12 +1597,19 @@ async def download_submission(
     """
     Download a graded submission as PDF/text.
     """
-    submission = db.query(models.ExamSubmission).filter(
-        models.ExamSubmission.id == submission_id,
-    ).first()
-
+    # Teacher/admin who owns the exam, or the student who owns the submission
+    submission = (
+        db.query(models.ExamSubmission)
+        .filter(models.ExamSubmission.id == submission_id)
+        .first()
+    )
     if not submission:
         raise HTTPException(status_code=404, detail="Submission not found")
+    if submission.student_id == current_user.id:
+        pass
+    else:
+        _require_teacher_or_admin(current_user)
+        submission = _get_submission_for_grader(db, submission_id, current_user)
 
     student_name = (submission.student.full_name or submission.student.username) if submission.student else "Student"
     status_str = "graded" if submission.score is not None else "pending_review"
@@ -1335,12 +1642,8 @@ async def return_submission_to_student(
     """
     Return a graded submission to the student.
     """
-    submission = db.query(models.ExamSubmission).filter(
-        models.ExamSubmission.id == submission_id,
-    ).first()
-
-    if not submission:
-        raise HTTPException(status_code=404, detail="Submission not found")
+    _require_teacher_or_admin(current_user)
+    _get_submission_for_grader(db, submission_id, current_user)
 
     return {
         "submission_id": submission_id,

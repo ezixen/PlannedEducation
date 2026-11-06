@@ -1,12 +1,13 @@
 """
 conftest.py - shared fixtures for the test suite.
-Uses an in-memory SQLite database so tests are fully isolated from the live Postgres DB.
+Uses a process-local SQLite file so parallel pytest runs do not drop each other's schema.
 """
 import os
 import pytest
 
 # Must be set BEFORE any application modules are imported
-os.environ["DATABASE_URL"] = "sqlite:///./test_plannededucation.db"
+_TEST_DB_PATH = f"./test_plannededucation_{os.getpid()}.db"
+os.environ["DATABASE_URL"] = f"sqlite:///{_TEST_DB_PATH}"
 os.environ["PLANNED_EDUCATION_ENV"] = "test"
 os.environ["ALLOW_DEV_SEB_BYPASS"] = "true"
 os.environ["JWT_SECRET_KEY"] = "test_secret_key_1234567890"
@@ -24,11 +25,25 @@ def setup_test_db():
     models.Base.metadata.create_all(bind=database.engine)
     yield
     models.Base.metadata.drop_all(bind=database.engine)
-    if os.path.exists("./test_plannededucation.db"):
-        try:
-            os.remove("./test_plannededucation.db")
-        except OSError:
-            pass
+    for suffix in ("", "-journal", "-wal", "-shm"):
+        path = f"{_TEST_DB_PATH}{suffix}"
+        if os.path.exists(path):
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+    # Legacy shared filename from older runners
+    for legacy in (
+        "./test_plannededucation.db",
+        "./test_plannededucation.db-journal",
+        "./test_plannededucation.db-wal",
+        "./test_plannededucation.db-shm",
+    ):
+        if os.path.exists(legacy):
+            try:
+                os.remove(legacy)
+            except OSError:
+                pass
 
 
 @pytest.fixture(scope="session")

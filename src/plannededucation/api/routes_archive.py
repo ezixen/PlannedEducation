@@ -19,6 +19,7 @@ from . import database, models
 from .archive_utils import (
     DEFAULT_COMPRESSION_LEVEL,
     ArchiveManager,
+    get_archive_master_key,
 )
 from .routes_auth import get_current_user
 
@@ -111,7 +112,7 @@ archive_manager = ArchiveManager(ARCHIVE_STORAGE_ROOT)
 
 @router.get("/stats", response_model=ArchiveStatsResponse)
 async def get_archive_stats(
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
 ):
     """Get archive storage statistics (admin only)."""
     stats = archive_manager.get_storage_stats()
@@ -127,7 +128,7 @@ async def list_archives(
     status: str | None = Query(None, pattern="^(active|archived|deleted)$"),
     limit: int = Query(100, ge=1, le=1000),
     offset: int = Query(0, ge=0),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """List archived submissions with filters (admin only)."""
@@ -183,7 +184,7 @@ async def list_archives(
 @router.post("/jobs", response_model=ArchiveJobResponse, status_code=201)
 async def create_archive_job(
     request: ArchiveJobRequest,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """Create a new archive job (admin only)."""
@@ -221,7 +222,7 @@ async def list_archive_jobs(
     status: str | None = Query(None, pattern="^(pending|running|completed|failed)$"),
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """List archive jobs (admin only)."""
@@ -251,7 +252,7 @@ async def list_archive_jobs(
 @router.get("/jobs/{job_id}", response_model=ArchiveJobResponse)
 async def get_archive_job(
     job_id: str,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """Get archive job details (admin only)."""
@@ -285,7 +286,7 @@ async def run_archive_job(job: models.ArchiveJob, db: Session) -> dict:
 @router.post("/jobs/{job_id}/start")
 async def start_archive_job(
     job_id: str,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """Start an archive job (admin only)."""
@@ -322,7 +323,7 @@ async def start_archive_job(
 @router.post("/restore")
 async def restore_archive(
     request: RestoreRequest,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """Restore an archived submission (admin only)."""
@@ -337,19 +338,39 @@ async def restore_archive(
     if archive.status == models.ArchiveStatus.deleted:
         raise HTTPException(status_code=400, detail="Archive was deleted from server")
 
-    # In a real implementation, this would restore from external storage if needed
-    # For now, we just mark it as active again
+    try:
+        master_key = get_archive_master_key(require=True)
+        restored = await archive_manager.restore_submission(
+            archive.archive_path,
+            master_key=master_key,
+            encryption_algorithm=archive.encryption_algorithm,
+            encryption_iv=archive.encryption_iv,
+            encryption_salt=archive.encryption_salt,
+            compressed_data_hex=archive.compressed_data,
+        )
+    except Exception as exc:
+        logger.exception("Archive restore failed for %s", archive.id)
+        raise HTTPException(
+            status_code=500,
+            detail="Archive restore failed",
+        ) from exc
+
     archive.status = models.ArchiveStatus.active
     db.commit()
 
-    return {"status": "restored", "archive_id": archive.id}
+    return {
+        "status": "restored",
+        "archive_id": archive.id,
+        "submission_id": restored.get("submissionId"),
+        "content_verified": True,
+    }
 
 
 @router.delete("/archives/{archive_id}")
 async def delete_archive_from_server(
     archive_id: str,
     keep_external: bool = Query(True, description="Keep external backup"),
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """Delete archive from server storage (admin only)."""
@@ -530,13 +551,24 @@ async def get_teacher_archive_stats(
 
 # ── Admin Management Routes ──────────────────────────────────────────────────
 
+def _require_superadmin(current_user: models.User) -> models.User:
+    """Archive promote/revoke is superadmin-only (F-003)."""
+    if not (current_user.is_admin and getattr(current_user, "is_superadmin", False)):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Superadmin privilege required",
+        )
+    return current_user
+
+
 @router.post("/admin/create")
 async def create_admin(
     user_id: str,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
-    """Create a new admin (only admins can create admins)."""
+    """Promote a user to admin (superadmins only)."""
+    _require_superadmin(current_user)
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
@@ -545,6 +577,7 @@ async def create_admin(
         raise HTTPException(status_code=400, detail="User is already an admin")
 
     user.is_admin = True
+    user.is_superadmin = False
     db.commit()
 
     return {"status": "admin_created", "user_id": user.id, "username": user.username}
@@ -552,7 +585,7 @@ async def create_admin(
 
 @router.get("/admin/list")
 async def list_admins(
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
     """List all admins."""
@@ -563,6 +596,7 @@ async def list_admins(
             "username": a.username,
             "email": a.email,
             "full_name": a.full_name,
+            "is_superadmin": bool(getattr(a, "is_superadmin", False)),
             "created_at": a.created_at.isoformat(),
         }
         for a in admins
@@ -572,10 +606,11 @@ async def list_admins(
 @router.delete("/admin/{user_id}")
 async def revoke_admin(
     user_id: str,
-    current_user: models.User = Depends(get_current_user),
+    current_user: models.User = Depends(require_admin),
     db: Session = Depends(database.get_db),
 ):
-    """Revoke admin rights (admin can revoke other admins)."""
+    """Revoke admin rights (superadmins only; cannot self-revoke)."""
+    _require_superadmin(current_user)
     if user_id == current_user.id:
         raise HTTPException(status_code=400, detail="Cannot revoke your own admin rights")
 
@@ -586,7 +621,11 @@ async def revoke_admin(
     if not user.is_admin:
         raise HTTPException(status_code=400, detail="User is not an admin")
 
+    if getattr(user, "is_superadmin", False) and not getattr(current_user, "is_superadmin", False):
+        raise HTTPException(status_code=403, detail="Cannot revoke a superadmin")
+
     user.is_admin = False
+    user.is_superadmin = False
     db.commit()
 
     return {"status": "admin_revoked", "user_id": user.id}
@@ -772,7 +811,10 @@ async def ai_grade_class_submissions(
             q = ans.question
             points = q.points if q else 1
             student_resp = (ans.student_response or "").strip()
-            clean_resp = scrub_pii(student_resp)
+            # This route uses a deterministic local evaluator; it does not
+            # cross an external provider boundary. External AI callers must
+            # use the fail-closed privacy gateway.
+            clean_resp = scrub_pii(student_resp, fail_closed=False)
             clean_correct = (q.correct_answer or "").strip() if q else ""
             clean_rubric = (q.rubric or "").strip() if q else ""
 
@@ -910,11 +952,27 @@ async def approve_and_archive_submissions(
         }
 
         student_user = sub.student.username if sub.student else "student"
-        meta = await archive_manager.archive_submission(
-            sealed_submission=sealed_doc,
-            teacher_username=current_user.username,
-            student_username=student_user,
-        )
+        try:
+            master_key = get_archive_master_key(require=True)
+            meta = await archive_manager.archive_submission(
+                sealed_submission=sealed_doc,
+                teacher_username=current_user.username,
+                student_username=student_user,
+                master_key=master_key,
+                require_encryption=True,
+            )
+        except Exception as exc:
+            logger.exception("Failed to encrypt/archive submission %s", sub.id)
+            raise HTTPException(
+                status_code=500,
+                detail="Encrypted archive storage failed; submission was not approved",
+            ) from exc
+
+        if meta.get("encryption_algorithm") != "AES-GCM":
+            raise HTTPException(
+                status_code=500,
+                detail="Archive encryption required but was not applied",
+            )
 
         now = datetime.now(UTC)
         archived_rec = (
@@ -931,7 +989,8 @@ async def approve_and_archive_submissions(
                 archive_year=now.year,
                 archive_month=now.month,
                 archive_path=meta["archive_path"],
-                compressed_data=meta["archive_hash"],
+                # F-024: store ciphertext (hex), never substitute the archive hash.
+                compressed_data=meta["compressed_data"],
                 original_size=meta["original_size"],
                 compressed_size=meta["compressed_size"],
                 compression_ratio=meta["compression_ratio"],
@@ -939,7 +998,7 @@ async def approve_and_archive_submissions(
                 encryption_algorithm=meta["encryption_algorithm"],
                 encryption_iv=meta["encryption_iv"],
                 encryption_salt=meta["encryption_salt"],
-                key_id="default_key",
+                key_id="archive_master_v1",
                 content_hash=meta["content_hash"],
                 archive_hash=meta["archive_hash"],
                 status=models.ArchiveStatus.active,
@@ -949,9 +1008,15 @@ async def approve_and_archive_submissions(
             db.add(archived_rec)
         else:
             archived_rec.archive_path = meta["archive_path"]
+            archived_rec.compressed_data = meta["compressed_data"]
             archived_rec.original_size = meta["original_size"]
             archived_rec.compressed_size = meta["compressed_size"]
             archived_rec.compression_ratio = meta["compression_ratio"]
+            archived_rec.compression_algorithm = meta["compression_algorithm"]
+            archived_rec.encryption_algorithm = meta["encryption_algorithm"]
+            archived_rec.encryption_iv = meta["encryption_iv"]
+            archived_rec.encryption_salt = meta["encryption_salt"]
+            archived_rec.key_id = "archive_master_v1"
             archived_rec.content_hash = meta["content_hash"]
             archived_rec.archive_hash = meta["archive_hash"]
             archived_rec.status = models.ArchiveStatus.active
@@ -967,8 +1032,9 @@ async def approve_and_archive_submissions(
     db.commit()
     return {
         "status": "success",
-        "message": f"Approved and archived {approved_count} submissions into encrypted storage.",
+        "message": f"Approved and archived {approved_count} submissions into AES-GCM encrypted storage.",
         "archived_count": approved_count,
+        "encryption_algorithm": "AES-GCM",
     }
 
 

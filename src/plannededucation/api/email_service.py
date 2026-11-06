@@ -146,11 +146,13 @@ async def send_email(
             logger.error("Failed to send email via SMTP (%s): %s", smtp_host, e)
 
     # 3. Offline / Mock Logger Fallback (Zero-config school environment)
+    # F-026: Never log message body — it may contain reset tokens or temporary passwords.
+    import hashlib
+    _recipient_hash = hashlib.sha256(to_email.encode()).hexdigest()[:12]
     logger.info(
-        "[EMAIL LOG] To: %s | Subject: %s | Content: %s",
-        to_email,
+        "[EMAIL LOG] recipient_hash=%s | subject=%s | (content redacted — configure SMTP to deliver)",
+        _recipient_hash,
         subject,
-        text_content.replace("\n", " "),
     )
     return True
 

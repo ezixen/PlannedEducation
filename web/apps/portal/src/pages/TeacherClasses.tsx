@@ -23,37 +23,16 @@ interface TeacherAideItem {
   aide_approved_at: string | null;
 }
 
-const DEFAULT_CLASSES = [
-  {
-    id: 1,
-    name: 'Calculus 101 - Fall 2026',
-    students: [
-      { id: 'student-1', name: 'Alex Johnson', email: 'alex@school.edu', iep_multiplier: 1.0 },
-      { id: 'student-2', name: 'Emma Watson', email: 'emma@school.edu', iep_multiplier: 1.5 },
-      { id: 'student-3', name: 'Lucas Miller', email: 'lucas@school.edu', iep_multiplier: 1.0 },
-      { id: 'student-4', name: 'Sophia Davis', email: 'sophia@school.edu', iep_multiplier: 1.25 },
-    ],
-  },
-  {
-    id: 2,
-    name: 'AP History - Spring 2027',
-    students: [
-      { id: 'student-5', name: 'Daniel Brown', email: 'daniel@school.edu', iep_multiplier: 1.0 },
-      { id: 'student-6', name: 'Olivia Garcia', email: 'olivia@school.edu', iep_multiplier: 1.0 },
-    ],
-  },
-];
+// F-047: no demo PII roster in the public bundle; start empty and load server roster.
+const DEFAULT_CLASSES: Array<{ id: number; name: string; students: StudentRosterItem[] }> = [];
 
 export function TeacherClasses() {
   const { t } = useI18n();
   const { success: showSuccess, error: showError } = useToast();
   const [classes, setClasses] = useState<any[]>(() => {
     try {
-      const saved = localStorage.getItem('pe_teacher_classes');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
+      // Clear legacy localStorage roster PII; do not restore names/emails from browser storage.
+      localStorage.removeItem('pe_teacher_classes');
     } catch {
       // ignore
     }
@@ -78,7 +57,8 @@ export function TeacherClasses() {
 
   const loadRegisteredStudents = useCallback(async () => {
     try {
-      const res = await apiClient.get<any[]>('/auth/users/students');
+      // F-039: use the real backend endpoint for teacher student roster
+      const res = await apiClient.get<any[]>('/auth/teacher/students');
       if (Array.isArray(res.data)) {
         setRegisteredStudents(
           res.data.map(u => ({
@@ -123,13 +103,7 @@ export function TeacherClasses() {
     loadTeacherProfile();
   }, [loadRegisteredStudents, loadAides, loadTeacherProfile]);
 
-  useEffect(() => {
-    try {
-      localStorage.setItem('pe_teacher_classes', JSON.stringify(classes));
-    } catch {
-      // ignore
-    }
-  }, [classes]);
+  // Classes are kept in component state only (no localStorage PII persistence).
 
   const handleCreateClass = (e: React.FormEvent) => {
     e.preventDefault();

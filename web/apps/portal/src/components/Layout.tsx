@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield, Mail } from 'lucide-react';
+import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield, Mail, CircleHelp } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
@@ -27,6 +27,7 @@ export function Layout() {
   const navigate = useNavigate();
   const [headerConfig, setHeaderConfig] = useState<DeploymentConfig>({});
   const [chatOpen, setChatOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
   // Close menu on route changes; also close floating chat when leaving authenticated shell routes
@@ -39,7 +40,7 @@ export function Layout() {
     if (!user) return;
     const fetchUnread = async () => {
       try {
-        const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+        const token = sessionStorage.getItem('access_token');
         if (!token) return;
         const res = await fetch(`${API_URL}/chat/messages/direct/unread-count`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -186,7 +187,12 @@ export function Layout() {
           )}
         </div>
         <div className="site-header-actions">
-          {user && <NotificationBell />}
+          {user && (
+            <>
+              <MessageIcon unreadCount={unreadCount} onOpen={() => setChatOpen(true)} />
+              <NotificationBell />
+            </>
+          )}
           <div className="header-lang-pill">
             <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
             <select
@@ -222,6 +228,19 @@ export function Layout() {
                   <span>{item.label}</span>
                 </Link>
               ))}
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setFaqOpen(true);
+                }}
+                className="nav-item"
+                style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}
+                aria-label={t('faq.open_aria')}
+              >
+                <CircleHelp size={20} />
+                <span>{t('nav.help')}</span>
+              </button>
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
               <div style={{ padding: '0.5rem 0.75rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
@@ -273,8 +292,7 @@ export function Layout() {
         </div>
       </main>
       {/* Authenticated-only chrome: never on /login, /register, /reset-password */}
-      <FAQChatbot />
-      <MessageIcon unreadCount={unreadCount} onOpen={() => setChatOpen(true)} />
+      <FAQChatbot isOpen={faqOpen} onOpenChange={setFaqOpen} showFloatingButton={false} />
       <ChatOverlay isOpen={chatOpen} onClose={() => setChatOpen(false)} />
       <SpecialCharactersPicker customCategories={customCategories} />
     </div>

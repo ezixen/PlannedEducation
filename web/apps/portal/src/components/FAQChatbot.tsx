@@ -492,18 +492,32 @@ const ROUTE_PREFIX_MAP: Array<{ prefix: string; route: string; name: string }> =
   { prefix: 'dashboard.', route: '/', name: 'Dashboard' },
 ];
 
-export function FAQChatbot() {
+interface FAQChatbotProps {
+  /** Controlled open state (e.g. from hamburger Help). Falls back to internal state. */
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  /** Legacy floating corner FAB — off by default so Special Characters owns bottom-right. */
+  showFloatingButton?: boolean;
+}
+
+export function FAQChatbot({
+  isOpen: controlledOpen,
+  onOpenChange,
+  showFloatingButton = false,
+}: FAQChatbotProps = {}) {
   const { t, locale, jumpToElement } = useI18n();
   const { isExamActive } = useExam();
-  const [isOpen, setIsOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
 
-  // Disable chatbot during exam taking
-  if (isExamActive) {
-    return null;
-  }
+  const isControlled = controlledOpen !== undefined;
+  const isOpen = isControlled ? controlledOpen : internalOpen;
+  const setIsOpen = (open: boolean) => {
+    if (!isControlled) setInternalOpen(open);
+    onOpenChange?.(open);
+  };
 
   // Add welcome message when component mounts or locale changes
   useEffect(() => {
@@ -731,24 +745,32 @@ export function FAQChatbot() {
     }
   };
 
-  return (
-    <div className="faq-chatbot-container">
-      {/* Floating Button */}
-      <button 
-        className="faq-chatbot-button"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={t("faq.open_aria")}
-      >
-        <span className="faq-chatbot-icon">❓</span>
-        <span className="faq-chatbot-label">{t("faq.help_btn")}</span>
-      </button>
+  // Disable chatbot during exam taking (after hooks)
+  if (isExamActive) {
+    return null;
+  }
 
-      {/* Chat Window */}
+  return (
+    <div className={`faq-chatbot-container${showFloatingButton ? '' : ' faq-chatbot-container--menu'}`}>
+      {showFloatingButton && (
+        <button
+          type="button"
+          className="faq-chatbot-button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={t("faq.open_aria")}
+        >
+          <span className="faq-chatbot-icon">❓</span>
+          <span className="faq-chatbot-label">{t("faq.help_btn")}</span>
+        </button>
+      )}
+
+      {/* Chat Window — opened from hamburger Help (or legacy FAB) */}
       {isOpen && (
         <div className="faq-chatbot-window">
           <div className="faq-chatbot-header">
             <h3>{t("faq.title")}</h3>
-            <button 
+            <button
+              type="button"
               className="faq-chatbot-close"
               onClick={() => setIsOpen(false)}
               aria-label={t("faq.close_aria")}

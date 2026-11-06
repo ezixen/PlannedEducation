@@ -92,7 +92,10 @@ export function TwoFASettings() {
   const handleRegenerateRecoveryCodes = async () => {
     setLoading(true);
     try {
-      const response = await apiClient.post('/auth/2fa/regenerate-recovery-codes');
+      const response = await apiClient.post('/auth/2fa/regenerate-recovery-codes', {
+        totp_code: totpCode || undefined,
+        recovery_code: recoveryCode || undefined,
+      });
       setRecoveryCodes(response.data.recovery_codes);
       setShowRecoveryCodes(true);
       showSuccess('New recovery codes generated. Old codes are now invalid.');

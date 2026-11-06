@@ -12,8 +12,9 @@ def test_health_check():
     response = client.get("/health")
     assert response.status_code == 200
     data = response.json()
-    assert data["status"] == "ok"
-    assert "Planned Education" in data["service"]
+    assert data == {"status": "ok"}
+    assert "version" not in data
+    assert "service" not in data
 
 
 def test_docs_disabled_outside_dev(monkeypatch):
@@ -26,10 +27,6 @@ def test_docs_disabled_outside_dev(monkeypatch):
     assert response.status_code in (200, 404)
 
 
-def test_packages_health_check():
+def test_packages_health_check_requires_auth():
     response = client.get("/packages/health")
-    assert response.status_code == 200
-    data = response.json()
-    assert data["status"] == "ok"
-    assert data["available"] is True
-    assert data["service"] == "packages"
+    assert response.status_code in (401, 403)

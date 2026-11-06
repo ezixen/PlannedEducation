@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useProctoring } from '../hooks/useProctoring';
 import { GDPRConsentModal } from './GDPRConsentModal';
 import { useI18n } from '../contexts/I18nContext';
@@ -12,25 +12,30 @@ interface ProctoringSessionProps {
 export function ProctoringSession({ examId, submissionId, onSessionComplete }: ProctoringSessionProps) {
   const { t } = useI18n();
   const [showConsentModal, setShowConsentModal] = useState(false);
+  // F-019: sessionStarted only after backend session create — not on consent alone
   const [sessionStarted, setSessionStarted] = useState(false);
+  // F-019: checkboxes only update local options; Start Session button starts
+  const [cameraEnabled, setCameraEnabled] = useState(false);
+  const [microphoneEnabled, setMicrophoneEnabled] = useState(false);
+  const [screenRecordingEnabled, setScreenRecordingEnabled] = useState(false);
 
   const proctoring = useProctoring({
     examId,
     submissionId,
     onConsentGiven: () => {
       setShowConsentModal(false);
+      // Do NOT set sessionStarted here — wait for backend session create
+    },
+    onSessionStarted: (_sessionId) => {
       setSessionStarted(true);
     },
-    onSessionStarted: (sessionId) => {
-      console.log('Proctoring session started:', sessionId);
-    },
     onSessionEnded: () => {
-      console.log('Proctoring session ended');
+      setSessionStarted(false);
       if (onSessionComplete) {
         onSessionComplete({
           violations: proctoring.violationCount,
           maxFaces: proctoring.maxFaces,
-          duration: 0, // Would need to track this
+          duration: 0,
         });
       }
     },
@@ -39,19 +44,12 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
     },
   });
 
-  // Sync sessionStarted when existing consent is loaded
-  useEffect(() => {
-    if (proctoring.consentGiven && !sessionStarted) {
-      setSessionStarted(true);
-    }
-  }, [proctoring.consentGiven, sessionStarted]);
-
   const handleStartSession = async () => {
     try {
       await proctoring.startSession({
-        cameraEnabled: proctoring.cameraEnabled,
-        microphoneEnabled: proctoring.microphoneEnabled,
-        screenRecordingEnabled: proctoring.screenRecordingEnabled,
+        cameraEnabled,
+        microphoneEnabled,
+        screenRecordingEnabled,
       });
     } catch (err) {
       console.error('Failed to start session:', err);
@@ -113,8 +111,8 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
               type="checkbox"
-              checked={proctoring.cameraEnabled}
-              onChange={(e) => proctoring.startSession({ ...proctoring, cameraEnabled: e.target.checked })}
+              checked={cameraEnabled}
+              onChange={(e) => setCameraEnabled(e.target.checked)}
               disabled={proctoring.sessionActive}
             />
             {t('proctoring.3')}
@@ -122,8 +120,8 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
               type="checkbox"
-              checked={proctoring.microphoneEnabled}
-              onChange={(e) => proctoring.startSession({ ...proctoring, microphoneEnabled: e.target.checked })}
+              checked={microphoneEnabled}
+              onChange={(e) => setMicrophoneEnabled(e.target.checked)}
               disabled={proctoring.sessionActive}
             />
             {t('proctoring.3.1')}
@@ -131,14 +129,20 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
               type="checkbox"
-              checked={proctoring.screenRecordingEnabled}
-              onChange={(e) => proctoring.startSession({ ...proctoring, screenRecordingEnabled: e.target.checked })}
+              checked={screenRecordingEnabled}
+              onChange={(e) => setScreenRecordingEnabled(e.target.checked)}
               disabled={proctoring.sessionActive}
             />
             {t('proctoring.screen_monitoring')}
           </label>
         </div>
+        {proctoring.error && (
+          <div style={{ color: '#ef4444', marginTop: '1rem', padding: '0.75rem', backgroundColor: '#fef2f2', borderRadius: '4px' }}>
+            {proctoring.error}
+          </div>
+        )}
         <button
+          type="button"
           onClick={handleStartSession}
           disabled={proctoring.sessionActive}
           style={{
@@ -167,6 +171,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
         </h3>
         {proctoring.sessionActive && (
           <button
+            type="button"
             onClick={handleEndSession}
             style={{
               padding: '0.5rem 1rem',
@@ -188,6 +193,23 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
         </div>
       )}
 
+      {(proctoring.faceDetectionMode === 'unavailable' || proctoring.faceDetectionMode === 'manual_review') && (
+        <div
+          style={{
+            marginBottom: '1rem',
+            padding: '0.75rem 1rem',
+            backgroundColor: '#fffbeb',
+            border: '1px solid #f59e0b',
+            borderRadius: '6px',
+            fontSize: '0.875rem',
+            color: '#92400e',
+          }}
+          role="status"
+        >
+          {t('proctoring.face_detection_unavailable')}
+        </div>
+      )}
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: 'bold', color: proctoring.violationCount > 0 ? '#ef4444' : '#10b981' }}>
@@ -205,9 +227,13 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
         </div>
       </div>
 
-      {proctoring.cameraEnabled && proctoring.videoRef.current && (
+      {/* F-019: always render video when camera selected; stream attached in hook effect */}
+      {proctoring.cameraEnabled && (
         <div style={{ marginBottom: '1.5rem' }}>
           <h4 style={{ marginBottom: '0.5rem' }}>{t('proctoring.camera_preview')}</h4>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+            {t('proctoring.manual_review_preview')}
+          </p>
           <div style={{ width: '100%', maxWidth: '400px', aspectRatio: '4/3', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
             <video
               ref={proctoring.videoRef}
@@ -237,9 +263,9 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
             >
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span style={{ fontWeight: '500', textTransform: 'capitalize' }}>{event.event_type.replace(/_/g, ' ')}</span>
-                <span style={{ 
-                  fontSize: '0.75rem', 
-                  padding: '0.125rem 0.375rem', 
+                <span style={{
+                  fontSize: '0.75rem',
+                  padding: '0.125rem 0.375rem',
                   borderRadius: '4px',
                   backgroundColor: event.severity === 'violation' ? '#fecaca' : event.severity === 'warning' ? '#fde68a' : '#d1fae5',
                   color: event.severity === 'violation' ? '#dc2626' : event.severity === 'warning' ? '#d97706' : '#059669',

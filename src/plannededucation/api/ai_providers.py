@@ -36,9 +36,27 @@ class AIResponse:
 class AIProvider(ABC):
     """Abstract base class for AI providers."""
 
-    def __init__(self, config: AIProviderConfig):
+    def __init__(
+        self,
+        config: AIProviderConfig,
+        *,
+        validated_ips: list[str] | None = None,
+        allow_loopback: bool = False,
+    ):
         self.config = config
-        self.client = httpx.AsyncClient(timeout=60.0)
+        # F-022 residual: pin outbound connects to IPs validated at configure time
+        # and re-check DNS before each request (DNS rebinding defense).
+        from .url_safety import create_outbound_async_client
+
+        if config.base_url:
+            self.client = create_outbound_async_client(
+                validated_ips=validated_ips,
+                allow_loopback=allow_loopback,
+                timeout=60.0,
+            )
+        else:
+            # Default vendor endpoints — still never follow redirects.
+            self.client = httpx.AsyncClient(timeout=60.0, follow_redirects=False)
 
     @abstractmethod
     async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
@@ -63,7 +81,8 @@ class GeminiProvider(AIProvider):
     async def generate(self, prompt: str, system_prompt: str | None = None, **kwargs) -> AIResponse:
         base_url = self.config.base_url or "https://generativelanguage.googleapis.com"
         url = f"{base_url}/v1beta/models/{self.config.model_name}:generateContent"
-        params = {"key": self.config.api_key}
+        # F-022: prefer header over query-string key to avoid proxy/access-log leakage.
+        headers = {"x-goog-api-key": self.config.api_key}
 
         contents = []
         if system_prompt:
@@ -83,7 +102,7 @@ class GeminiProvider(AIProvider):
         }
 
         try:
-            response = await self.client.post(url, params=params, json=payload)
+            response = await self.client.post(url, headers=headers, json=payload)
             response.raise_for_status()
             data = response.json()
 
@@ -340,7 +359,12 @@ class ChatGptSessionProvider(AIProvider):
         return await self.generate(structured_prompt, system_prompt, **kwargs)
 
 
-def get_ai_provider(config: AIProviderConfig) -> AIProvider:
+def get_ai_provider(
+    config: AIProviderConfig,
+    *,
+    validated_ips: list[str] | None = None,
+    allow_loopback: bool = False,
+) -> AIProvider:
     """Factory function to get the appropriate AI provider."""
     providers: dict[str, type[AIProvider]] = {
         "gemini": GeminiProvider,
@@ -353,7 +377,11 @@ def get_ai_provider(config: AIProviderConfig) -> AIProvider:
     if not provider_class:
         raise ValueError(f"Unsupported AI provider: {config.provider}")
 
-    return provider_class(config)
+    return provider_class(
+        config,
+        validated_ips=validated_ips,
+        allow_loopback=allow_loopback,
+    )
 
 
 async def get_teacher_ai_provider(user, db) -> AIProvider | None:
@@ -375,14 +403,43 @@ async def get_teacher_ai_provider(user, db) -> AIProvider | None:
         return None
 
     try:
+        from .url_safety import UnsafeURLError, validate_ai_base_url
+
+        provider_name = user.ai_provider or "gemini"
+        validated_ips: list[str] | None = None
+        allow_loopback = provider_name.lower() == "ollama"
+        try:
+            if user.ai_base_url:
+                validated = validate_ai_base_url(
+                    user.ai_base_url, provider=provider_name, return_ips=True
+                )
+                if validated is None:
+                    safe_base = None
+                else:
+                    safe_base, validated_ips = validated  # type: ignore[misc]
+            else:
+                safe_base = None
+        except UnsafeURLError:
+            # F-022: fail closed — do not call an unvalidated custom endpoint with the API key.
+            logger.error(
+                "Rejected unsafe AI base URL for user %s (provider=%s)",
+                user.id,
+                provider_name,
+            )
+            return None
+
         api_key = crypto.decrypt_api_key(user.ai_api_key_encrypted)
         config = AIProviderConfig(
-            provider=user.ai_provider or "gemini",
+            provider=provider_name,
             api_key=api_key,
             model_name=user.ai_model_name or "gemini-2.5-flash",
-            base_url=user.ai_base_url,
+            base_url=safe_base,
         )
-        return get_ai_provider(config)
+        return get_ai_provider(
+            config,
+            validated_ips=validated_ips,
+            allow_loopback=allow_loopback,
+        )
     except Exception as e:
         logger.error(f"Failed to create AI provider for user {user.id}: {e}")
         return None

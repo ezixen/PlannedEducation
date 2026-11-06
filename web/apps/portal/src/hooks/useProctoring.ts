@@ -10,6 +10,12 @@ interface ProctoringConfig {
   onViolation?: (event: any) => void;
 }
 
+export interface ProctoringMediaOptions {
+  cameraEnabled: boolean;
+  microphoneEnabled: boolean;
+  screenRecordingEnabled: boolean;
+}
+
 interface ProctoringState {
   consentGiven: boolean;
   sessionActive: boolean;
@@ -21,6 +27,8 @@ interface ProctoringState {
   events: any[];
   violationCount: number;
   maxFaces: number;
+  /** Face/gaze ML is not available; camera is preview-only / manual review. */
+  faceDetectionMode: 'unavailable' | 'manual_review';
 }
 
 export function useProctoring(config: ProctoringConfig) {
@@ -35,11 +43,12 @@ export function useProctoring(config: ProctoringConfig) {
     events: [],
     violationCount: 0,
     maxFaces: 1,
+    faceDetectionMode: 'unavailable',
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
-  const faceDetectionIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const audioMonitorIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioAnalyserRef = useRef<AnalyserNode | null>(null);
   const eventQueueRef = useRef<any[]>([]);
@@ -49,6 +58,17 @@ export function useProctoring(config: ProctoringConfig) {
   useEffect(() => {
     checkExistingConsent();
   }, [config.examId]);
+
+  // F-019: always attach stream to video element when both are available
+  useEffect(() => {
+    const video = videoRef.current;
+    const stream = streamRef.current;
+    if (video && stream && state.cameraEnabled) {
+      if (video.srcObject !== stream) {
+        video.srcObject = stream;
+      }
+    }
+  }, [state.cameraEnabled, state.sessionActive]);
 
   const checkExistingConsent = async () => {
     try {
@@ -87,11 +107,7 @@ export function useProctoring(config: ProctoringConfig) {
     }
   };
 
-  const startSession = async (options: {
-    cameraEnabled: boolean;
-    microphoneEnabled: boolean;
-    screenRecordingEnabled: boolean;
-  }) => {
+  const startSession = async (options: ProctoringMediaOptions) => {
     if (!state.consentGiven) {
       throw new Error('Consent required before starting session');
     }
@@ -106,7 +122,7 @@ export function useProctoring(config: ProctoringConfig) {
         screen_recording_enabled: options.screenRecordingEnabled,
       };
       const session = await proctoringService.startSession(request);
-      
+
       setState(prev => ({
         ...prev,
         sessionActive: true,
@@ -114,6 +130,7 @@ export function useProctoring(config: ProctoringConfig) {
         cameraEnabled: options.cameraEnabled,
         microphoneEnabled: options.microphoneEnabled,
         screenRecordingEnabled: options.screenRecordingEnabled,
+        faceDetectionMode: options.cameraEnabled ? 'manual_review' : 'unavailable',
       }));
 
       // Start media streams if enabled
@@ -121,8 +138,8 @@ export function useProctoring(config: ProctoringConfig) {
         await startMediaStreams(options.cameraEnabled, options.microphoneEnabled);
       }
 
-      // Start event recording
-      startEventRecording(session.id);
+      // F-019: pass options explicitly — do not read stale React state
+      startEventRecording(session.id, options);
 
       config.onSessionStarted?.(session.id);
     } catch (err: any) {
@@ -142,7 +159,6 @@ export function useProctoring(config: ProctoringConfig) {
         videoRef.current.srcObject = stream;
       }
 
-      // Set up audio analysis for background audio monitoring
       if (microphone) {
         setupAudioAnalysis(stream);
       }
@@ -165,134 +181,78 @@ export function useProctoring(config: ProctoringConfig) {
     }
   };
 
-  const startEventRecording = (sessionId: string) => {
-    // Record session start event
+  const startEventRecording = (sessionId: string, options: ProctoringMediaOptions) => {
     queueEvent({
       session_id: sessionId,
       event_type: ProctoringEventType.SESSION_START,
       severity: 'info',
-      event_data: { timestamp: new Date().toISOString() },
+      event_data: {
+        timestamp: new Date().toISOString(),
+        camera_enabled: options.cameraEnabled,
+        microphone_enabled: options.microphoneEnabled,
+        screen_recording_enabled: options.screenRecordingEnabled,
+        face_detection_mode: options.cameraEnabled ? 'manual_review' : 'unavailable',
+      },
     });
 
-    // Start face detection if camera enabled
-    if (state.cameraEnabled) {
-      startFaceDetection(sessionId);
+    // F-019: do not simulate face/gaze with Math.random.
+    // Emit a single labeled unavailable/manual-review notice; no fake violation evidence.
+    if (options.cameraEnabled) {
+      queueEvent({
+        session_id: sessionId,
+        event_type: ProctoringEventType.FACE_DETECTED,
+        severity: 'info',
+        event_data: {
+          face_detection_mode: 'manual_review',
+          available: false,
+          note: 'Automated face/gaze detection is unavailable; camera preview is for manual teacher review only.',
+        },
+      });
     }
 
-    // Start periodic batch sending
+    if (options.microphoneEnabled) {
+      startAudioLevelMonitor(sessionId);
+    }
+
     batchIntervalRef.current = setInterval(() => {
       flushEventQueue(sessionId);
-    }, 5000); // Send batch every 5 seconds
+    }, 5000);
   };
 
-  const startFaceDetection = (sessionId: string) => {
-    if (!videoRef.current) return;
+  const startAudioLevelMonitor = (sessionId: string) => {
+    const checkAudio = () => {
+      if (!audioAnalyserRef.current) return;
+      const dataArray = new Uint8Array(audioAnalyserRef.current.frequencyBinCount);
+      audioAnalyserRef.current.getByteFrequencyData(dataArray);
+      const averageVolume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
 
-    const detectFaces = async () => {
-      if (!videoRef.current || videoRef.current.readyState < 2) return;
-
-      try {
-        // In a real implementation, this would use a face detection library
-        // like face-api.js, MediaPipe, or a custom TensorFlow.js model
-        // For now, we simulate face detection
-        
-        // Simulate face detection results
-        const faceCount = Math.random() > 0.95 ? 2 : 1; // 5% chance of detecting 2 faces
-        const gazeX = Math.random();
-        const gazeY = Math.random();
-        const gazeOffScreen = gazeX < 0.1 || gazeX > 0.9 || gazeY < 0.1 || gazeY > 0.9;
-
-        // Record face detection event
+      // Volume telemetry only — not fabricated face/gaze evidence.
+      if (averageVolume > 180) {
         queueEvent({
           session_id: sessionId,
-          event_type: ProctoringEventType.FACE_DETECTED,
-          severity: 'info',
+          event_type: ProctoringEventType.AUDIO_ANOMALY,
+          severity: 'warning',
           event_data: {
-            face_count: faceCount,
-            confidence: 0.9 + Math.random() * 0.1,
-            gaze: { x: gazeX, y: gazeY },
-          },
-        });
-
-        // Record eye movement event
-        queueEvent({
-          session_id: sessionId,
-          event_type: ProctoringEventType.EYE_MOVEMENT,
-          severity: 'info',
-          event_data: {
-            gaze_x: gazeX,
-            gaze_y: gazeY,
+            volume_level: Math.round(averageVolume),
             timestamp: new Date().toISOString(),
           },
         });
-
-        // Check for gaze off screen
-        if (gazeOffScreen) {
-          queueEvent({
-            session_id: sessionId,
-            event_type: ProctoringEventType.GAZE_OFF_SCREEN,
-            severity: 'warning',
-            event_data: {
-              gaze_x: gazeX,
-              gaze_y: gazeY,
-              duration_ms: 1000,
-            },
-          });
-        }
-
-        // Check for multiple faces
-        if (faceCount > 1) {
-          queueEvent({
-            session_id: sessionId,
-            event_type: ProctoringEventType.MULTIPLE_FACES,
-            severity: 'violation',
-            event_data: {
-              face_count: faceCount,
-              timestamp: new Date().toISOString(),
-            },
-          });
-          setState(prev => ({ 
-            ...prev, 
-            violationCount: prev.violationCount + 1,
-            maxFaces: Math.max(prev.maxFaces, faceCount),
-          }));
-          config.onViolation?.({ type: 'multiple_faces', faceCount });
-        }
-
-        // Audio anomaly detection
-        if (audioAnalyserRef.current) {
-          const dataArray = new Uint8Array(audioAnalyserRef.current.frequencyBinCount);
-          audioAnalyserRef.current.getByteFrequencyData(dataArray);
-          const averageVolume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
-          
-          // Detect unusual audio levels (too loud or sudden spikes)
-          if (averageVolume > 180) { // Threshold for anomaly
-            queueEvent({
-              session_id: sessionId,
-              event_type: ProctoringEventType.AUDIO_ANOMALY,
-              severity: 'warning',
-              event_data: {
-                volume_level: averageVolume,
-                timestamp: new Date().toISOString(),
-              },
-            });
-          }
-        }
-
-      } catch (err) {
-        console.error('Face detection error:', err);
       }
     };
 
-    // Run detection every 2 seconds
-    faceDetectionIntervalRef.current = setInterval(detectFaces, 2000);
+    audioMonitorIntervalRef.current = setInterval(checkAudio, 2000);
   };
 
   const queueEvent = (event: any) => {
-    eventQueueRef.current.push({
+    const queued = {
       ...event,
       timestamp: new Date().toISOString(),
-    });
+    };
+    eventQueueRef.current.push(queued);
+    setState(prev => ({
+      ...prev,
+      events: [...prev.events, queued],
+    }));
   };
 
   const flushEventQueue = async (sessionId: string) => {
@@ -308,7 +268,6 @@ export function useProctoring(config: ProctoringConfig) {
       });
     } catch (err) {
       console.error('Failed to send event batch:', err);
-      // Re-queue events for retry
       eventQueueRef.current.unshift(...events);
     }
   };
@@ -317,7 +276,6 @@ export function useProctoring(config: ProctoringConfig) {
     if (!state.sessionId) return;
 
     try {
-      // Record session end event
       queueEvent({
         session_id: state.sessionId,
         event_type: ProctoringEventType.SESSION_END,
@@ -325,20 +283,17 @@ export function useProctoring(config: ProctoringConfig) {
         event_data: { timestamp: new Date().toISOString() },
       });
 
-      // Flush remaining events
       await flushEventQueue(state.sessionId);
 
-      // Stop intervals
-      if (faceDetectionIntervalRef.current) {
-        clearInterval(faceDetectionIntervalRef.current);
-        faceDetectionIntervalRef.current = null;
+      if (audioMonitorIntervalRef.current) {
+        clearInterval(audioMonitorIntervalRef.current);
+        audioMonitorIntervalRef.current = null;
       }
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);
         batchIntervalRef.current = null;
       }
 
-      // Stop media streams
       if (streamRef.current) {
         streamRef.current.getTracks().forEach((track: MediaStreamTrack) => track.stop());
         streamRef.current = null;
@@ -347,14 +302,12 @@ export function useProctoring(config: ProctoringConfig) {
         videoRef.current.srcObject = null;
       }
 
-      // Close audio context
       if (audioContextRef.current) {
         await audioContextRef.current.close();
         audioContextRef.current = null;
         audioAnalyserRef.current = null;
       }
 
-      // End session on backend
       await proctoringService.endSession(state.sessionId);
 
       setState(prev => ({
@@ -364,6 +317,7 @@ export function useProctoring(config: ProctoringConfig) {
         cameraEnabled: false,
         microphoneEnabled: false,
         screenRecordingEnabled: false,
+        faceDetectionMode: 'unavailable',
       }));
 
       config.onSessionEnded?.();
@@ -417,11 +371,10 @@ export function useProctoring(config: ProctoringConfig) {
     config.onViolation?.({ type: 'seb_violation', details });
   }, [state.sessionId, state.sessionActive, config]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
-      if (faceDetectionIntervalRef.current) {
-        clearInterval(faceDetectionIntervalRef.current);
+      if (audioMonitorIntervalRef.current) {
+        clearInterval(audioMonitorIntervalRef.current);
       }
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);

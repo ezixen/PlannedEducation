@@ -12,6 +12,11 @@ _analyzer = None
 _presidio_checked = False
 PRESIDIO_AVAILABLE = False
 
+
+class PrivacyScrubbingError(RuntimeError):
+    """Raised when text cannot be proven safe for an external boundary."""
+
+
 def _get_presidio_analyzer():
     """Lazy initialization of Presidio Analyzer engine."""
     global _analyzer, _presidio_checked, PRESIDIO_AVAILABLE
@@ -20,7 +25,7 @@ def _get_presidio_analyzer():
             from presidio_analyzer import AnalyzerEngine
             _analyzer = AnalyzerEngine()
             PRESIDIO_AVAILABLE = True
-        except ImportError:
+        except Exception:
             PRESIDIO_AVAILABLE = False
             _analyzer = None
         _presidio_checked = True
@@ -59,24 +64,34 @@ def _anonymize_spans(text: str, results) -> str:
         chars[r.start:r.end] = list(replacement)
     return "".join(chars)
 
-def scrub_pii(text: str, language: str = "en") -> str:
+def scrub_pii(
+    text: str,
+    language: str = "en",
+    *,
+    fail_closed: bool = True,
+) -> str:
     """
     Scrub PII from text using Microsoft Presidio Analyzer and native span redaction.
     Returns text with PII replaced by entity type placeholders.
     """
-    if not text or not PRESIDIO_AVAILABLE:
+    if not text:
         return text
 
     analyzer = _get_presidio_analyzer()
     if not analyzer:
+        if fail_closed:
+            raise PrivacyScrubbingError("PII scrubber is unavailable")
         return text
 
     try:
         # Analyze text for PII entities
         results = analyzer.analyze(text=text, language=language)
         return _anonymize_spans(text, results)
-    except Exception:
-        # Fail open - return original text if scrubbing fails
+    except Exception as exc:
+        if fail_closed:
+            raise PrivacyScrubbingError("PII scrubber failed") from exc
+        # Local/manual workflows may continue without an external boundary.
+        # Never use this mode before sending text to a provider.
         return text
 
 router = APIRouter(prefix="/anonymizer", tags=["anonymizer"])
@@ -103,6 +118,16 @@ def _get_submission_and_verify_ownership(
             detail="You do not have permission to access this submission",
         )
     return submission
+
+
+def _scrub_for_external(text: str) -> str:
+    try:
+        return scrub_pii(text, fail_closed=True)
+    except PrivacyScrubbingError:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Privacy filtering is unavailable; external processing is disabled.",
+        ) from None
 
 
 @router.get("/exams/{exam_id}/submissions", response_model=list[dict])
@@ -148,7 +173,7 @@ def get_anonymized_submissions(
         anon_answers = []
         for ans in sub.answers:
             # Scrub PII from student response before sending to external AI
-            scrubbed_response = scrub_pii(ans.student_response or "")
+            scrubbed_response = _scrub_for_external(ans.student_response or "")
             saved_qg = parsed_question_grades.get(ans.question_id, {})
             anon_answers.append(
                 {

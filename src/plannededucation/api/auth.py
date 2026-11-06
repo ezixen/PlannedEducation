@@ -44,18 +44,80 @@ PASSWORD_PATTERN = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$") if True 
 # 2FA settings
 TOTP_ISSUER = "PlannedEducation"
 RECOVERY_CODE_COUNT = 5  # Number of one-time recovery codes to generate
-RECOVERY_CODE_LENGTH = 8  # Length of each recovery code in characters
+RECOVERY_CODE_LENGTH = 32  # 128 bits rendered as 32 hexadecimal characters
+
+_RECOVERY_CODE_HASH_SECRET = os.getenv("RECOVERY_CODE_HASH_SECRET", "")
+_AUTH_ENVIRONMENT = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
+if _AUTH_ENVIRONMENT in {"production", "staging"}:
+    if not _RECOVERY_CODE_HASH_SECRET:
+        raise RuntimeError(
+            "RECOVERY_CODE_HASH_SECRET must be set in production/staging."
+        )
+    if _RECOVERY_CODE_HASH_SECRET == SECRET_KEY:
+        raise RuntimeError(
+            "RECOVERY_CODE_HASH_SECRET must differ from JWT_SECRET_KEY."
+        )
+    if not os.getenv("TOKEN_HASH_SECRET"):
+        raise RuntimeError("TOKEN_HASH_SECRET must be set in production/staging.")
+    if os.getenv("TOKEN_HASH_SECRET") in {SECRET_KEY, _RECOVERY_CODE_HASH_SECRET}:
+        raise RuntimeError(
+            "TOKEN_HASH_SECRET must differ from JWT and recovery-code secrets."
+        )
+
+
+def _normalize_recovery_code(code: str) -> str:
+    """Normalize the human-entered representation before verification."""
+    return re.sub(r"[-\s]", "", code).upper()
+
+
+def hash_recovery_code(code: str) -> str:
+    """Hash a recovery code with a dedicated server-side HMAC secret.
+
+    Recovery codes are high-entropy, one-time values. A keyed digest prevents
+    offline verification by a database reader while remaining inexpensive
+    enough for bounded recovery attempts. Legacy SHA-256 values remain
+    verifiable through ``verify_recovery_code`` during migration.
+    """
+    secret = _RECOVERY_CODE_HASH_SECRET
+    if not secret:
+        # Tests/development must not require another local credential. The
+        # derived value is process-local when development uses an ephemeral JWT
+        # key and is never accepted as a production configuration.
+        secret = f"{SECRET_KEY}|recovery-code"
+    digest = hmac.new(
+        secret.encode("utf-8"),
+        _normalize_recovery_code(code).encode("utf-8"),
+        hashlib.sha256,
+    ).hexdigest()
+    return f"hmac-sha256${digest}"
+
+
+def verify_recovery_code(code: str, stored_hash: str) -> bool:
+    """Verify a recovery code against current or legacy storage formats."""
+    normalized = _normalize_recovery_code(code)
+    if stored_hash.startswith("hmac-sha256$"):
+        expected = hash_recovery_code(normalized)
+        return hmac.compare_digest(stored_hash, expected)
+
+    # Legacy deployments stored unsalted SHA-256 digests. Accept them only
+    # during the controlled migration; callers consume a matching code.
+    legacy_candidates = (
+        hashlib.sha256(normalized.encode("utf-8")).hexdigest(),
+        hashlib.sha256(code.encode("utf-8")).hexdigest(),
+    )
+    return any(
+        hmac.compare_digest(stored_hash, candidate)
+        for candidate in legacy_candidates
+    )
 
 
 def generate_recovery_codes(
     count: int = RECOVERY_CODE_COUNT, length: int = RECOVERY_CODE_LENGTH
 ) -> list[str]:
     """Generate a list of one-time recovery codes for 2FA / password reset fallback."""
-    codes: list[str] = []
-    for _ in range(count):
-        code = secrets.token_hex(length // 2)[:length]
-        codes.append(code)
-    return codes
+    if length < 32:
+        raise ValueError("Recovery codes must contain at least 128 bits of entropy")
+    return [secrets.token_hex(length // 2)[:length].upper() for _ in range(count)]
 
 
 # ── Token Configuration ──────────────────────────────────────────────────────
@@ -115,6 +177,184 @@ def verify_refresh_token(token: str) -> dict | None:
         return None
 
 
+def hash_refresh_token(raw_token: str) -> str:
+    """Persist only a digest of a refresh bearer token."""
+    return _preferred_secret_hash(raw_token)
+
+
+def _as_utc_ts(value: datetime | None) -> datetime | None:
+    if value is None:
+        return None
+    if value.tzinfo is None:
+        return value.replace(tzinfo=UTC)
+    return value.astimezone(UTC)
+
+
+def clear_legacy_refresh_fields(user) -> None:
+    """Clear the single-slot legacy refresh columns once RefreshSession is authoritative."""
+    user.refresh_token_hash = None
+    user.refresh_token_expires = None
+
+
+def issue_refresh_session(
+    db,
+    user,
+    *,
+    remember_me: bool = False,
+    device_label: str | None = None,
+    family_id: str | None = None,
+) -> tuple[dict, object]:
+    """Issue access+refresh tokens and insert a RefreshSession row.
+
+    Prefer the per-device table; legacy user.refresh_token_* columns are cleared.
+    Returns ``(token_pair, refresh_session_row)``.
+    """
+    from . import models  # local import avoids cycles with routes_auth
+
+    tokens = create_token_pair({"sub": user.email}, remember_me=remember_me)
+    expire_days = (
+        REMEMBER_ME_REFRESH_TOKEN_EXPIRE_DAYS if remember_me else REFRESH_TOKEN_EXPIRE_DAYS
+    )
+    session = models.RefreshSession(
+        id=str(uuid.uuid4()),
+        user_id=user.id,
+        token_hash=hash_refresh_token(tokens["refresh_token"]),
+        family_id=family_id or str(uuid.uuid4()),
+        device_label=device_label,
+        expires_at=datetime.now(UTC) + timedelta(days=expire_days),
+    )
+    db.add(session)
+    clear_legacy_refresh_fields(user)
+    return tokens, session
+
+
+def revoke_all_refresh_sessions(db, user_id: str) -> int:
+    """Revoke every active refresh session for a user. Returns count revoked."""
+    from . import models
+
+    now = datetime.now(UTC)
+    rows = (
+        db.query(models.RefreshSession)
+        .filter(
+            models.RefreshSession.user_id == user_id,
+            models.RefreshSession.revoked_at.is_(None),
+        )
+        .all()
+    )
+    for row in rows:
+        row.revoked_at = now
+    return len(rows)
+
+
+def revoke_refresh_family(db, family_id: str) -> int:
+    """Revoke an entire refresh-token family (reuse / theft response)."""
+    from . import models
+
+    now = datetime.now(UTC)
+    rows = (
+        db.query(models.RefreshSession)
+        .filter(
+            models.RefreshSession.family_id == family_id,
+            models.RefreshSession.revoked_at.is_(None),
+        )
+        .all()
+    )
+    for row in rows:
+        row.revoked_at = now
+    return len(rows)
+
+
+def revoke_refresh_session_by_token(db, raw_token: str) -> bool:
+    """Revoke the session matching a raw refresh token, if any."""
+    from . import models
+
+    candidates = secret_hash_candidates(raw_token)
+    row = (
+        db.query(models.RefreshSession)
+        .filter(models.RefreshSession.token_hash.in_(candidates))
+        .first()
+    )
+    if row is None or row.revoked_at is not None:
+        return False
+    row.revoked_at = datetime.now(UTC)
+    return True
+
+
+def _find_refresh_session(db, raw_token: str):
+    from . import models
+
+    candidates = secret_hash_candidates(raw_token)
+    return (
+        db.query(models.RefreshSession)
+        .filter(models.RefreshSession.token_hash.in_(candidates))
+        .first()
+    )
+
+
+def rotate_refresh_session(db, raw_token: str) -> dict | None:
+    """Rotate a refresh token within its family.
+
+    Reuse of an already-revoked token revokes the whole family and returns None.
+    Legacy single-hash rows are migrated into RefreshSession on first successful rotate.
+    """
+    from . import models
+
+    payload = verify_refresh_token(raw_token)
+    if not payload:
+        return None
+
+    email = payload.get("sub")
+    remember_me = bool(payload.get("remember_me", False))
+    user = db.query(models.User).filter(models.User.email == email).first()
+    if not user or not user.is_active:
+        return None
+
+    now = datetime.now(UTC)
+    session = _find_refresh_session(db, raw_token)
+
+    if session is not None:
+        if session.revoked_at is not None:
+            revoke_refresh_family(db, session.family_id)
+            clear_legacy_refresh_fields(user)
+            return None
+        expires = _as_utc_ts(session.expires_at)
+        if expires is not None and expires < now:
+            session.revoked_at = now
+            return None
+        if session.user_id != user.id:
+            return None
+
+        session.revoked_at = now
+        tokens, replacement = issue_refresh_session(
+            db,
+            user,
+            remember_me=remember_me,
+            device_label=session.device_label,
+            family_id=session.family_id,
+        )
+        session.replaced_by = replacement.id
+        return tokens
+
+    # Legacy single-slot fallback (one-time migrate into RefreshSession).
+    provided = hashlib.sha256(raw_token.encode()).hexdigest()
+    legacy_hash = user.refresh_token_hash
+    legacy_expires = _as_utc_ts(user.refresh_token_expires)
+    if not legacy_hash or not legacy_expires:
+        return None
+    if not hmac.compare_digest(legacy_hash, provided) and not any(
+        hmac.compare_digest(legacy_hash, candidate)
+        for candidate in secret_hash_candidates(raw_token)
+    ):
+        return None
+    if legacy_expires < now:
+        clear_legacy_refresh_fields(user)
+        return None
+
+    clear_legacy_refresh_fields(user)
+    tokens, _ = issue_refresh_session(db, user, remember_me=remember_me)
+    return tokens
+
+
 # ── Session Token Management (Device Tracking & Remember Me) ─────────────────
 # Based on easylegalaid patterns for device tracking and encrypted sessions
 
@@ -149,6 +389,28 @@ def secret_hash_candidates(raw_value: str) -> tuple[str, ...]:
     if preferred == legacy:
         return (legacy,)
     return (preferred, legacy)
+
+
+def hash_reset_token(raw_token: str) -> str:
+    """Store only a keyed digest of a password-reset bearer token."""
+    return _preferred_secret_hash(raw_token)
+
+
+def verify_reset_token(raw_token: str, stored_value: str | None) -> bool:
+    """Verify a current or legacy password-reset token in constant time."""
+    if not stored_value:
+        return False
+    digest_match = any(
+        hmac.compare_digest(stored_value, candidate)
+        for candidate in secret_hash_candidates(raw_token)
+    )
+    if digest_match:
+        return True
+    # Only pre-envelope rows may use direct comparison. A digest-shaped value
+    # must never be accepted as its own bearer token.
+    if stored_value.startswith("hmac-sha256$") or re.fullmatch(r"[0-9a-f]{64}", stored_value):
+        return False
+    return hmac.compare_digest(stored_value, raw_token)
 
 
 def _hash_token(raw_token: str) -> str:

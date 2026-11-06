@@ -1,7 +1,7 @@
 import json
 import random
 import re
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from xml.sax.saxutils import escape as xml_escape
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
@@ -9,6 +9,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from . import database, models, schemas
+from .authorization import require_exam_author
 from .routes_auth import get_current_user
 from .seb_security import verify_seb_request
 
@@ -25,11 +26,110 @@ def _get_exam_or_404(exam_id: str, db: Session) -> models.Exam:
 
 
 def _require_approved_teacher(user: models.User) -> None:
-    if user.role == "teacher" and not getattr(user, "teacher_approved", True):
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Your teacher account is pending administrator approval before you can create or manage exams.",
+    require_exam_author(user)
+
+
+def _student_time_multiplier(db: Session, student_id: str) -> float:
+    record = (
+        db.query(models.StudentRecord)
+        .filter(models.StudentRecord.student_id == student_id)
+        .first()
+    )
+    multiplier = float(record.time_multiplier) if record and record.time_multiplier else 1.0
+    return max(1.0, min(multiplier, 4.0))
+
+
+def _as_utc(dt: datetime | None) -> datetime | None:
+    """Normalize SQLite/DB timestamps to timezone-aware UTC for comparisons."""
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=UTC)
+    return dt.astimezone(UTC)
+
+
+def _exam_deadline(
+    exam: models.Exam,
+    started_at: datetime,
+    db: Session,
+    student_id: str,
+) -> datetime:
+    """Authoritative server deadline for an attempt (F-015). Client timers are UX only."""
+    started = _as_utc(started_at) or datetime.now(UTC)
+    return started + timedelta(
+        minutes=exam.duration_minutes * _student_time_multiplier(db, student_id)
+    )
+
+
+def _build_exam_package(
+    exam: models.Exam,
+    questions: list[dict],
+    *,
+    started_at: datetime,
+    deadline_at: datetime | None,
+    time_multiplier: float,
+) -> dict:
+    """Safe offline package for the portal (F-016). Never includes answers/rubrics."""
+    started = _as_utc(started_at) or datetime.now(UTC)
+    deadline = _as_utc(deadline_at)
+    if deadline is None:
+        deadline = started + timedelta(
+            minutes=exam.duration_minutes * max(1.0, time_multiplier)
         )
+    return {
+        "examId": exam.id,
+        "title": exam.title,
+        "duration_minutes": exam.duration_minutes,
+        "instructions": exam.description or "",
+        "questions": questions,
+        "settings": {
+            "shuffle_questions": False,
+            "shuffle_options": False,
+            "show_results_immediately": False,
+            "allow_review": True,
+            "require_seb": bool(exam.seb_config_key),
+            "time_multiplier": time_multiplier,
+            "passing_score": 50,
+        },
+        # Never send the raw SEB config secret to the browser package.
+        "started_at": int(started.timestamp() * 1000),
+        "expires_at": int(deadline.timestamp() * 1000),
+    }
+
+
+def _exam_start_response(
+    *,
+    submission_id: str,
+    exam: models.Exam,
+    questions: list[dict],
+    started_at: datetime,
+    deadline_at: datetime | None,
+    time_multiplier: float,
+    test_mode: bool = False,
+    random_seed: str | None = None,
+) -> dict:
+    """Versioned start payload — client must not invent security settings (F-016)."""
+    package = _build_exam_package(
+        exam,
+        questions,
+        started_at=started_at,
+        deadline_at=deadline_at,
+        time_multiplier=time_multiplier,
+    )
+    deadline = _as_utc(deadline_at)
+    if deadline is None:
+        deadline = datetime.fromtimestamp(package["expires_at"] / 1000, tz=UTC)
+    payload: dict = {
+        "submission_id": submission_id,
+        "deadline_at": deadline.isoformat(),
+        "questions": questions,
+        "exam_package": package,
+        "server_time": int(datetime.now(UTC).timestamp() * 1000),
+    }
+    if test_mode:
+        payload["test_mode"] = True
+        payload["random_seed"] = random_seed
+    return payload
 
 
 def _require_exam_owner(exam: models.Exam, user: models.User) -> None:
@@ -139,6 +239,7 @@ def list_my_exams(
     Returns FULL exam data including questions and answers — only for the
     exams owned by the requesting user.
     """
+    _require_approved_teacher(current_user)
     exams = (
         db.query(models.Exam)
         .filter(models.Exam.teacher_id == current_user.id)
@@ -278,6 +379,14 @@ def start_exam(
     exam = _get_exam_or_404(exam_id, db)
 
     if test_mode:
+        if (
+            not current_user.is_admin
+            and (current_user.role != "teacher" or exam.teacher_id != current_user.id)
+        ):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Only the exam owner can use test preview mode.",
+            )
         rng = random.Random(str(random_seed)) if random_seed is not None else random.Random()
         questions = list(
             db.query(models.Question).filter(models.Question.exam_id == exam_id).all()
@@ -320,12 +429,24 @@ def start_exam(
                 }
             )
 
-        return {
-            "submission_id": f"test-preview-{random_seed or 'default'}",
-            "test_mode": True,
-            "random_seed": random_seed,
-            "questions": preview_questions,
-        }
+        preview_started = datetime.now(UTC)
+        preview_deadline = preview_started + timedelta(minutes=exam.duration_minutes)
+        return _exam_start_response(
+            submission_id=f"test-preview-{random_seed or 'default'}",
+            exam=exam,
+            questions=preview_questions,
+            started_at=preview_started,
+            deadline_at=preview_deadline,
+            time_multiplier=1.0,
+            test_mode=True,
+            random_seed=random_seed,
+        )
+
+    if current_user.role != "student":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only student accounts can start an exam.",
+        )
 
     # Prevent duplicate completed submissions; resume if still in progress
     existing_sub = (
@@ -338,33 +459,48 @@ def start_exam(
     )
     if existing_sub:
         if existing_sub.completed_at is None:
+            if existing_sub.deadline_at is None:
+                existing_sub.deadline_at = _exam_deadline(
+                    exam, existing_sub.started_at, db, current_user.id
+                )
+                db.commit()
+            deadline = _as_utc(existing_sub.deadline_at)
+            if deadline is not None and datetime.now(UTC) > deadline:
+                raise HTTPException(status_code=409, detail="The exam time limit has expired")
             existing_answers = (
                 db.query(models.Answer, models.Question)
                 .join(models.Question, models.Answer.question_id == models.Question.id)
                 .filter(models.Answer.submission_id == existing_sub.id)
                 .all()
             )
-            return {
-                "submission_id": existing_sub.id,
-                "questions": [
-                    {
-                        "question_id": q.id,
-                        "question_type": q.question_type,
-                        "text": ans.generated_question_text or q.text,
-                        "options": json.loads(ans.generated_options_json)
-                        if ans.generated_options_json
-                        else (json.loads(q.options_json) if q.options_json else None),
-                        "points": q.points,
-                    }
-                    for ans, q in existing_answers
-                ],
-            }
+            resume_questions = [
+                {
+                    "question_id": q.id,
+                    "question_type": q.question_type,
+                    "text": ans.generated_question_text or q.text,
+                    "options": json.loads(ans.generated_options_json)
+                    if ans.generated_options_json
+                    else (json.loads(q.options_json) if q.options_json else None),
+                    "points": q.points,
+                }
+                for ans, q in existing_answers
+            ]
+            return _exam_start_response(
+                submission_id=existing_sub.id,
+                exam=exam,
+                questions=resume_questions,
+                started_at=_as_utc(existing_sub.started_at) or datetime.now(UTC),
+                deadline_at=deadline,
+                time_multiplier=_student_time_multiplier(db, current_user.id),
+            )
         raise HTTPException(status_code=409, detail="You have already started this exam")
 
+    started_at = datetime.now(UTC)
     submission = models.ExamSubmission(
         exam_id=exam.id,
         student_id=current_user.id,
-        started_at=datetime.now(UTC),
+        started_at=started_at,
+        deadline_at=_exam_deadline(exam, started_at, db, current_user.id),
     )
     db.add(submission)
     try:
@@ -432,10 +568,14 @@ def start_exam(
 
     db.commit()
 
-    return {
-        "submission_id": submission.id,
-        "questions": generated_questions,
-    }
+    return _exam_start_response(
+        submission_id=submission.id,
+        exam=exam,
+        questions=generated_questions,
+        started_at=started_at,
+        deadline_at=submission.deadline_at,
+        time_multiplier=_student_time_multiplier(db, current_user.id),
+    )
 
 
 @router.post("/{exam_id}/submit")
@@ -449,11 +589,25 @@ def submit_exam(
 ):
     """Submit answers for a running exam. Idempotency: raises 409 if already completed."""
     if test_mode:
+        exam = _get_exam_or_404(exam_id, db)
+        if (
+            not current_user.is_admin
+            and (current_user.role != "teacher" or exam.teacher_id != current_user.id)
+        ):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Only the exam owner can use test preview mode.",
+            )
         return {
             "status": "success",
             "message": "Test preview submitted successfully",
             "test_mode": True,
         }
+    if current_user.role != "student":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only student accounts can submit an exam.",
+        )
     submission = (
         db.query(models.ExamSubmission)
         .filter(
@@ -467,6 +621,14 @@ def submit_exam(
         raise HTTPException(status_code=404, detail="No active submission found for this exam")
     if submission.completed_at is not None:
         raise HTTPException(status_code=409, detail="Exam has already been submitted")
+    deadline = _as_utc(submission.deadline_at)
+    if deadline is None:
+        exam = _get_exam_or_404(exam_id, db)
+        deadline = _exam_deadline(exam, submission.started_at, db, current_user.id)
+        submission.deadline_at = deadline
+    if datetime.now(UTC) > deadline:
+        db.rollback()
+        raise HTTPException(status_code=409, detail="The exam time limit has expired")
 
     submission.completed_at = datetime.now(UTC)
 

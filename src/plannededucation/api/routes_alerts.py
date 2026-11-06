@@ -1,18 +1,50 @@
 """Alert webhook endpoints for Alertmanager integration."""
 
+import hashlib
+import hmac
 import json
 import logging
+import os
 from datetime import UTC, datetime
 
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, Header, HTTPException, Request, status
 from pydantic import BaseModel, ConfigDict
 from sqlalchemy.orm import Session
 
 from . import database, models
+from .routes_auth import get_current_user
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/alerts", tags=["alerts"])
+
+
+# F-025: Admin-only guard for alert list/detail routes.
+def _require_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
+    if not current_user.is_admin and current_user.role not in ("admin", "superadmin"):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
+    return current_user
+
+
+# F-025: Shared-secret verification for Alertmanager webhook.
+# Configure ALERT_WEBHOOK_SECRET in .env; leave empty to allow any internal caller (dev only).
+_WEBHOOK_SECRET: str = os.getenv("ALERT_WEBHOOK_SECRET", "")
+
+
+def _verify_webhook_secret(x_webhook_secret: str | None = Header(default=None, alias="X-Webhook-Secret")) -> None:
+    """Verify the shared secret sent by Alertmanager.  No-op when secret is unconfigured."""
+    if not _WEBHOOK_SECRET:
+        # Secret not configured — only safe on loopback/internal networks.
+        logger.warning(
+            "ALERT_WEBHOOK_SECRET is not set; webhook accepts unauthenticated calls. "
+            "Set this variable in production."
+        )
+        return
+    if not x_webhook_secret or not hmac.compare_digest(_WEBHOOK_SECRET, x_webhook_secret):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid or missing webhook secret",
+        )
 
 
 class AlertLabel(BaseModel):
@@ -57,7 +89,7 @@ class AlertmanagerPayload(BaseModel):
     truncatedAlerts: int = 0
 
 
-@router.post("/webhook")
+@router.post("/webhook", dependencies=[Depends(_verify_webhook_secret)])
 async def alertmanager_webhook(
     payload: AlertmanagerPayload,
     request: Request,
@@ -126,9 +158,12 @@ async def alertmanager_webhook(
 
 
 @router.get("/health")
-async def alerts_health():
-    """Health check for alerts endpoint."""
-    return {"status": "healthy", "service": "alerts"}
+async def alerts_health(
+    current_user=Depends(_require_admin),
+):
+    """Authenticated readiness for alerts (F-051)."""
+    _ = current_user
+    return {"status": "ok"}
 
 
 @router.get("", response_model=list[dict])
@@ -137,6 +172,7 @@ async def list_alerts(
     severity: str | None = None,
     limit: int = 100,
     db: Session = Depends(database.get_db),
+    _admin: models.User = Depends(_require_admin),
 ):
     """List stored alerts with optional filtering."""
     query = db.query(models.Alert)
@@ -166,7 +202,11 @@ async def list_alerts(
 
 
 @router.get("/{alert_id}", response_model=dict)
-async def get_alert(alert_id: str, db: Session = Depends(database.get_db)):
+async def get_alert(
+    alert_id: str,
+    db: Session = Depends(database.get_db),
+    _admin: models.User = Depends(_require_admin),
+):
     """Get a specific alert by ID."""
     alert = db.query(models.Alert).filter(models.Alert.id == alert_id).first()
     if not alert:

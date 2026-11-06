@@ -430,10 +430,6 @@ def main():
     print(f"Server health status: {health_data}")
     assert health_data.get("status") == "ok"
 
-    pkg_health = client.get("/packages/health")
-    assert pkg_health.status_code == 200, f"Package health failed: {pkg_health.text}"
-    print(f"Package engine health: {pkg_health.json()}")
-
     # ─────────────────────────────────────────────────────────────────────────────
     # STEP 2: Administrator Authentication
     # ─────────────────────────────────────────────────────────────────────────────
@@ -447,6 +443,9 @@ def main():
     admin_token = admin_tokens["access_token"]
     admin_headers = {"Authorization": f"Bearer {admin_token}"}
     print("Admin login successful. Token acquired.")
+    pkg_health = client.get("/packages/health", headers=admin_headers)
+    assert pkg_health.status_code == 200, f"Package health failed: {pkg_health.text}"
+    print(f"Package engine health: {pkg_health.json()}")
 
     # ─────────────────────────────────────────────────────────────────────────────
     # STEP 3: Teacher Registration & Approval

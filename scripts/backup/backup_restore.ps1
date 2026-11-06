@@ -66,25 +66,36 @@ function Backup-PostgreSQL {
     
     Write-LogInfo "Backing up PostgreSQL database..."
     
-    # Parse postgresql://user:pass@host:port/dbname
+    # Parse postgresql://user:pass@host:port/dbname — never Invoke-Expression (F-032).
     if ($DbUrl -match 'postgresql://([^:]+):([^@]+)@([^:]+):(\d+)/(.+)') {
         $user = $matches[1]
         $pass = $matches[2]
-        $host = $matches[3]
+        $pgHost = $matches[3]
         $port = $matches[4]
         $dbname = $matches[5]
         
         $env:PGPASSWORD = $pass
-        $cmd = "pg_dump -h $host -p $port -U $user -d $dbname --no-owner --no-privileges --clean --if-exists | gzip > $BackupFile"
-        Invoke-Expression $cmd
-        
-        if ($LASTEXITCODE -eq 0) {
-            Write-LogInfo "PostgreSQL backup saved to: $BackupFile"
-            return $BackupFile
-        } else {
+        $pgDump = Get-Command pg_dump -ErrorAction SilentlyContinue
+        if (-not $pgDump) {
+            Write-LogError "pg_dump not found on PATH"
+            exit 1
+        }
+        $rawSql = "$BackupFile.tmp.sql"
+        & $pgDump.Source -h $pgHost -p $port -U $user -d $dbname --no-owner --no-privileges --clean --if-exists -f $rawSql
+        if ($LASTEXITCODE -ne 0) {
             Write-LogError "PostgreSQL backup failed"
             exit 1
         }
+        if (Get-Command gzip -ErrorAction SilentlyContinue) {
+            & gzip -f -c $rawSql | Set-Content -AsByteStream -Path $BackupFile
+            Remove-Item $rawSql -Force -ErrorAction SilentlyContinue
+        } else {
+            # Fallback: keep uncompressed dump when gzip is unavailable
+            Move-Item -Force $rawSql ($BackupFile -replace '\.gz$', '')
+            $BackupFile = $BackupFile -replace '\.gz$', ''
+        }
+        Write-LogInfo "PostgreSQL backup saved to: $BackupFile"
+        return $BackupFile
     } else {
         Write-LogError "Could not parse PostgreSQL URL"
         exit 1
@@ -99,16 +110,28 @@ function Backup-SQLite {
     $dbPath = $DbUrl -replace '^sqlite:///', '' -replace '^sqlite://', ''
     
     if (Test-Path $dbPath) {
-        $cmd = "sqlite3 $dbPath .dump | gzip > $BackupFile"
-        Invoke-Expression $cmd
-        
-        if ($LASTEXITCODE -eq 0) {
-            Write-LogInfo "SQLite backup saved to: $BackupFile"
-            return $BackupFile
-        } else {
+        $sqlite = Get-Command sqlite3 -ErrorAction SilentlyContinue
+        if (-not $sqlite) {
+            # Safe file copy fallback (no shell interpolation)
+            Copy-Item -LiteralPath $dbPath -Destination ($BackupFile -replace '\.sql\.gz$', '.db')
+            Write-LogInfo "SQLite file copied to backup location"
+            return ($BackupFile -replace '\.sql\.gz$', '.db')
+        }
+        $rawSql = "$BackupFile.tmp.sql"
+        & $sqlite.Source $dbPath ".dump" | Set-Content -Path $rawSql -Encoding utf8
+        if ($LASTEXITCODE -ne 0) {
             Write-LogError "SQLite backup failed"
             exit 1
         }
+        if (Get-Command gzip -ErrorAction SilentlyContinue) {
+            & gzip -f -c $rawSql | Set-Content -AsByteStream -Path $BackupFile
+            Remove-Item $rawSql -Force -ErrorAction SilentlyContinue
+        } else {
+            Move-Item -Force $rawSql ($BackupFile -replace '\.gz$', '')
+            $BackupFile = $BackupFile -replace '\.gz$', ''
+        }
+        Write-LogInfo "SQLite backup saved to: $BackupFile"
+        return $BackupFile
     } else {
         Write-LogError "SQLite database file not found: $dbPath"
         exit 1
@@ -128,7 +151,7 @@ function Restore-PostgreSQL {
     if ($DbUrl -match 'postgresql://([^:]+):([^@]+)@([^:]+):(\d+)/(.+)') {
         $user = $matches[1]
         $pass = $matches[2]
-        $host = $matches[3]
+        $pgHost = $matches[3]
         $port = $matches[4]
         $dbname = $matches[5]
         
@@ -140,9 +163,22 @@ function Restore-PostgreSQL {
         }
         
         $env:PGPASSWORD = $pass
-        $cmd = "gunzip -c $BackupFile | psql -h $host -p $port -U $user -d $dbname"
-        Invoke-Expression $cmd
-        
+        $psql = Get-Command psql -ErrorAction SilentlyContinue
+        if (-not $psql) {
+            Write-LogError "psql not found on PATH"
+            exit 1
+        }
+        $sqlFile = $BackupFile
+        if ($BackupFile -like "*.gz") {
+            $sqlFile = "$BackupFile.decompressed.sql"
+            if (Get-Command gunzip -ErrorAction SilentlyContinue) {
+                & gunzip -c $BackupFile | Set-Content -Path $sqlFile -Encoding utf8
+            } else {
+                Write-LogError "gunzip not available to decompress backup"
+                exit 1
+            }
+        }
+        & $psql.Source -h $pgHost -p $port -U $user -d $dbname -f $sqlFile
         if ($LASTEXITCODE -eq 0) {
             Write-LogInfo "PostgreSQL restore completed successfully"
         } else {
@@ -177,12 +213,27 @@ function Restore-SQLite {
     # Backup current database first
     if (Test-Path $dbPath) {
         $preRestore = "${dbPath}.pre_restore_$Timestamp"
-        Copy-Item $dbPath $preRestore
+        Copy-Item -LiteralPath $dbPath -Destination $preRestore
         Write-LogInfo "Current database backed up to: $preRestore"
     }
     
-    $cmd = "gunzip -c $BackupFile | sqlite3 $dbPath"
-    Invoke-Expression $cmd
+    if ($BackupFile -like "*.db" -or $BackupFile -like "*.sqlite*") {
+        Copy-Item -LiteralPath $BackupFile -Destination $dbPath -Force
+        Write-LogInfo "SQLite restore completed successfully"
+        return
+    }
+
+    $sqlite = Get-Command sqlite3 -ErrorAction SilentlyContinue
+    if (-not $sqlite) {
+        Write-LogError "sqlite3 not found on PATH"
+        exit 1
+    }
+    $sqlFile = $BackupFile
+    if ($BackupFile -like "*.gz") {
+        $sqlFile = "$BackupFile.decompressed.sql"
+        & gunzip -c $BackupFile | Set-Content -Path $sqlFile -Encoding utf8
+    }
+    Get-Content -LiteralPath $sqlFile | & $sqlite.Source $dbPath
     
     if ($LASTEXITCODE -eq 0) {
         Write-LogInfo "SQLite restore completed successfully"

@@ -14,14 +14,40 @@
 
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import { apiClient } from '../api';
+import { getValidatedTeacherSyncUrl } from '../lib/teacherSyncUrl';
+import {
+  CRYPTO_ALGORITHM,
+  SALT_LENGTH,
+  SEAL_CRYPTO_VERSION,
+  TAG_LENGTH,
+  type EncryptedPayload,
+  assertEncryptedPayload,
+  buildSealPlaintext,
+  bytesToBase64,
+  canonicalJSON,
+  computeHash,
+  decryptPayload,
+  deriveKey,
+  encryptPayload,
+  exportRawKey,
+  generateMasterWrappingKey,
+  generateSessionKey,
+  importMasterWrappingKey,
+  unwrapSessionKey,
+  wrapSessionKey,
+} from './offlineExamCrypto';
 
-// ── Crypto Constants ───────────────────────────────────────────────────────
-
-const CRYPTO_ALGORITHM = 'AES-GCM';
-const KEY_LENGTH = 256;
-const IV_LENGTH = 12; // 96 bits for GCM
-const SALT_LENGTH = 16;
-export const TAG_LENGTH = 16;
+export {
+  CRYPTO_ALGORITHM,
+  SEAL_CRYPTO_VERSION,
+  TAG_LENGTH,
+  canonicalJSON,
+  computeHash,
+  decryptPayload,
+  deriveKey,
+  encryptPayload,
+  type EncryptedPayload,
+};
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -74,31 +100,35 @@ export interface SealedExamSubmission {
   submissionId: string;
   examId: string;
   studentId: string;
-  studentName: string; // Encrypted in storage
-  
+  /** Encrypted student display name (AES-GCM payload). */
+  studentName: EncryptedPayload;
+
   // Timing (immutable once sealed)
   startedAt: number; // Local timestamp
   completedAt: number; // Local timestamp when sealed
   durationMs: number; // Actual time spent
   timeLimitMs: number; // Configured time limit
   autoSubmitted: boolean; // True if timer expired
-  
-  // Answers (encrypted)
+
+  // Answers (each field-encrypted)
   answers: SealedAnswer[];
-  
+
   // Integrity
-  contentHash: string; // SHA-256 of canonical JSON (before encryption)
+  contentHash: string; // SHA-256 of canonical plaintext JSON (before encryption)
   sealVersion: number; // Protocol version
   sealedAt: number; // Timestamp when cryptographically sealed
-  
-  // Encryption metadata
+
+  // Encryption metadata for the sealed envelope
   encryption: {
     algorithm: string; // 'AES-GCM'
+    ciphertext: string; // Base64 — required; fail closed if missing
     iv: string; // Base64
+    version: number;
+    aad: string;
     salt: string; // Base64
     keyId: string; // Key derivation identifier
   };
-  
+
   // Three-way sync metadata
   sync: {
     localSealed: boolean;
@@ -111,34 +141,15 @@ export interface SealedExamSubmission {
 
 export interface SealedAnswer {
   questionId: string;
-  response: string; // Encrypted
+  encrypted: EncryptedPayload;
   responseHash: string; // SHA-256 of plaintext for verification
   answeredAt: number;
   timeSpentMs: number;
 }
 
-export interface ExamQuestion {
-  question_id: string;
-  question_type: 'multiple_choice' | 'essay' | 'dynamic_math';
-  text: string;
-  options: string[] | null;
-  points: number;
-  correct_answer?: string;
-  rubric?: string;
-}
-
-export interface ExamSettings {
-  shuffle_questions: boolean;
-  shuffle_options: boolean;
-  show_results_immediately: boolean;
-  allow_review: boolean;
-  require_seb: boolean;
-  time_multiplier: number;
-  passing_score: number;
-}
-
 /**
- * OfflineExamState - Runtime state during exam (not sealed)
+ * OfflineExamState - Runtime state during exam (not sealed).
+ * `answers` is plaintext only in memory; IndexedDB stores `answersEncrypted`.
  */
 export interface OfflineExamState {
   id: string; // `${examId}-${studentId}`
@@ -146,7 +157,9 @@ export interface OfflineExamState {
   studentId: string;
   studentName: string;
   package: ExamPackage | null;
-  answers: Record<string, string>; // questionId -> response (plaintext during exam)
+  answers: Record<string, string>; // questionId -> response (plaintext in memory)
+  /** Present only in IndexedDB rows — never leave plaintext answers at rest. */
+  answersEncrypted?: EncryptedPayload | null;
   answerTimestamps: Record<string, number>; // questionId -> when answered
   currentQuestionIndex: number;
   timeRemainingMs: number;
@@ -158,7 +171,7 @@ export interface OfflineExamState {
   submissionId?: string;
   sebViolations: SEBViolation[];
   lastUpdated: number;
-  
+
   // Sealed submission (once completed)
   sealedSubmission?: SealedExamSubmission;
 }
@@ -217,8 +230,17 @@ interface OfflineExamSchema extends DBSchema {
   };
   cryptoKeys: {
     key: string;
-    value: { id: string; key: string };
+    value: StoredCryptoKeyRecord;
   };
+}
+
+/** Master: raw wrapping material. Session: wrapped by master (never raw beside ciphertext). */
+interface StoredCryptoKeyRecord {
+  id: string;
+  /** Legacy / master wrapping key material (base64 raw). */
+  key?: string;
+  /** Wrapped session key payload (AES-GCM wrap). */
+  wrapped?: EncryptedPayload;
 }
 
 interface HeartbeatQueueItem {
@@ -244,7 +266,11 @@ interface SyncQueueItem {
 }
 
 const DB_NAME = 'plannededucation-offline-exam';
-const DB_VERSION = 2; // Incremented for new stores
+const DB_VERSION = 3;
+
+/** Non-extractable session keys held only in memory for the page lifetime. */
+const sessionKeyCache = new Map<string, CryptoKey>();
+let masterKeyPromise: Promise<CryptoKey> | null = null;
 
 let dbInstance: IDBPDatabase<OfflineExamSchema> | null = null;
 
@@ -284,149 +310,81 @@ async function getExamDB(): Promise<IDBPDatabase<OfflineExamSchema>> {
       }
     },
   });
-  
+
   return dbInstance;
 }
 
-// ── Crypto Utilities ───────────────────────────────────────────────────────
+// ── Key Hierarchy ──────────────────────────────────────────────────────────
 
 /**
- * Derive encryption key from passphrase using PBKDF2
- * In production, the key should come from a secure key management system
- */
-export async function deriveKey(passphrase: string, salt: Uint8Array): Promise<CryptoKey> {
-  const encoder = new TextEncoder();
-  const keyMaterial = await crypto.subtle.importKey(
-    'raw',
-    encoder.encode(passphrase),
-    'PBKDF2',
-    false,
-    ['deriveKey']
-  );
-  
-  return crypto.subtle.deriveKey(
-    {
-      name: 'PBKDF2',
-      salt: salt as BufferSource,
-      iterations: 100000,
-      hash: 'SHA-256',
-    },
-    keyMaterial,
-    { name: CRYPTO_ALGORITHM, length: KEY_LENGTH },
-    false,
-    ['encrypt', 'decrypt']
-  );
-}
-
-/**
- * Generate a random encryption key for a session
- */
-async function generateSessionKey(): Promise<CryptoKey> {
-  return crypto.subtle.generateKey(
-    { name: CRYPTO_ALGORITHM, length: KEY_LENGTH },
-    true, // extractable for key wrapping
-    ['encrypt', 'decrypt']
-  );
-}
-
-/**
- * Export key for storage (wrapped with master key)
- */
-async function exportKey(key: CryptoKey): Promise<string> {
-  const raw = await crypto.subtle.exportKey('raw', key);
-  return btoa(String.fromCharCode(...new Uint8Array(raw)));
-}
-
-/**
- * Import key from storage
- */
-async function importKey(raw: string): Promise<CryptoKey> {
-  const binary = Uint8Array.from(atob(raw), c => c.charCodeAt(0));
-  return crypto.subtle.importKey('raw', binary, CRYPTO_ALGORITHM, true, ['encrypt', 'decrypt']);
-}
-
-/**
- * Encrypt data with AES-GCM
- */
-async function encryptData(data: string, key: CryptoKey): Promise<{ ciphertext: string; iv: string }> {
-  const encoder = new TextEncoder();
-  const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH));
-  const ciphertext = await crypto.subtle.encrypt(
-    { name: CRYPTO_ALGORITHM, iv },
-    key,
-    encoder.encode(data)
-  );
-  return {
-    ciphertext: btoa(String.fromCharCode(...new Uint8Array(ciphertext))),
-    iv: btoa(String.fromCharCode(...iv)),
-  };
-}
-
-/**
- * Decrypt data with AES-GCM
- */
-async function decryptData(ciphertext: string, iv: string, key: CryptoKey): Promise<string> {
-  const binaryCipher = Uint8Array.from(atob(ciphertext), c => c.charCodeAt(0));
-  const binaryIv = Uint8Array.from(atob(iv), c => c.charCodeAt(0));
-  const decrypted = await crypto.subtle.decrypt(
-    { name: CRYPTO_ALGORITHM, iv: binaryIv },
-    key,
-    binaryCipher
-  );
-  return new TextDecoder().decode(decrypted);
-}
-
-/**
- * Compute SHA-256 hash
- */
-async function computeHash(data: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const hash = await crypto.subtle.digest('SHA-256', encoder.encode(data));
-  return btoa(String.fromCharCode(...new Uint8Array(hash)));
-}
-
-/**
- * Canonical JSON serialization for consistent hashing
- */
-function canonicalJSON(obj: any): string {
-  return JSON.stringify(obj, Object.keys(obj).sort());
-}
-
-/**
- * Get or create the master encryption key for this device
- * In production, this should integrate with platform key management
+ * Device master wrapping key. Used only to wrap/unwrap session keys.
+ * Residual risk: master material is still device-local in IndexedDB.
  */
 export async function getMasterKey(): Promise<CryptoKey> {
-  const db = await getExamDB();
-  let keyWrapper = await db.get('cryptoKeys', 'master');
-  
-  if (!keyWrapper) {
-    // Generate new master key
-    const masterKey = await generateSessionKey();
-    const exported = await exportKey(masterKey);
-    await db.put('cryptoKeys', { id: 'master', key: exported });
-    return masterKey;
+  if (!masterKeyPromise) {
+    masterKeyPromise = (async () => {
+      const db = await getExamDB();
+      const stored = await db.get('cryptoKeys', 'master');
+
+      if (!stored?.key) {
+        const masterKey = await generateMasterWrappingKey();
+        await db.put('cryptoKeys', { id: 'master', key: await exportRawKey(masterKey) });
+        return masterKey;
+      }
+
+      return importMasterWrappingKey(stored.key);
+    })();
   }
-  
-  return importKey(keyWrapper.key);
+  return masterKeyPromise;
 }
 
 /**
- * Get or create a session key for a specific exam
+ * Get or create a non-extractable session content key.
+ * Persisted only as a wrapped blob under the master key — never raw next to ciphertext.
  */
-async function getSessionKey(examId: string, studentId: string): Promise<CryptoKey> {
-  const db = await getExamDB();
+export async function getSessionKey(examId: string, studentId: string): Promise<CryptoKey> {
   const keyId = `${examId}-${studentId}`;
-  let keyWrapper = await db.get('cryptoKeys', keyId);
-  
-  if (!keyWrapper) {
-    const sessionKey = await generateSessionKey();
-    const exported = await exportKey(sessionKey);
-    await db.put('cryptoKeys', { id: keyId, key: exported });
+  const cached = sessionKeyCache.get(keyId);
+  if (cached) return cached;
+
+  const db = await getExamDB();
+  const masterKey = await getMasterKey();
+  const wrapAad = `session-wrap:${keyId}`;
+  const stored = await db.get('cryptoKeys', keyId);
+
+  if (stored?.wrapped) {
+    const sessionKey = await unwrapSessionKey(stored.wrapped, masterKey);
+    sessionKeyCache.set(keyId, sessionKey);
     return sessionKey;
   }
-  
-  return importKey(keyWrapper.key);
+
+  // Migrate legacy plaintext raw session keys into wrapped form.
+  if (stored?.key) {
+    const legacyRaw = stored.key;
+    const extractable = await crypto.subtle.importKey(
+      'raw',
+      Uint8Array.from(atob(legacyRaw), (c) => c.charCodeAt(0)) as BufferSource,
+      CRYPTO_ALGORITHM,
+      true,
+      ['encrypt', 'decrypt']
+    );
+    const wrapped = await wrapSessionKey(extractable, masterKey, wrapAad);
+    await db.put('cryptoKeys', { id: keyId, wrapped });
+    const sessionKey = await unwrapSessionKey(wrapped, masterKey);
+    sessionKeyCache.set(keyId, sessionKey);
+    return sessionKey;
+  }
+
+  const extractable = await generateSessionKey(true);
+  const wrapped = await wrapSessionKey(extractable, masterKey, wrapAad);
+  await db.put('cryptoKeys', { id: keyId, wrapped });
+  const sessionKey = await unwrapSessionKey(wrapped, masterKey);
+  sessionKeyCache.set(keyId, sessionKey);
+  return sessionKey;
+}
+
+function answersAad(examId: string, studentId: string): string {
+  return `offline-answers:${examId}:${studentId}`;
 }
 
 // ── Exam Package Management ────────────────────────────────────────────────
@@ -464,22 +422,72 @@ export async function removeCachedExamPackage(examId: string): Promise<void> {
 
 // ── Offline Exam State Management ──────────────────────────────────────────
 
+/**
+ * Persist exam state with answers encrypted at rest (AES-GCM).
+ * Runtime callers keep plaintext `answers` in memory; IndexedDB never stores them.
+ */
 export async function saveOfflineExamState(state: OfflineExamState): Promise<void> {
   const db = await getExamDB();
-  state.lastUpdated = Date.now();
-  await db.put('offlineExams', state);
+  const sessionKey = await getSessionKey(state.examId, state.studentId);
+  const aad = answersAad(state.examId, state.studentId);
+  const answersEncrypted = await encryptPayload(JSON.stringify(state.answers ?? {}), sessionKey, aad);
+
+  const toStore: OfflineExamState = {
+    ...state,
+    answers: {},
+    answersEncrypted,
+    lastUpdated: Date.now(),
+  };
+  await db.put('offlineExams', toStore);
 }
 
-export async function getOfflineExamState(examId: string, studentId: string): Promise<OfflineExamState | undefined> {
+async function hydrateOfflineExamState(
+  stored: OfflineExamState | undefined
+): Promise<OfflineExamState | undefined> {
+  if (!stored) return undefined;
+
+  const sessionKey = await getSessionKey(stored.examId, stored.studentId);
+
+  if (stored.answersEncrypted) {
+    try {
+      const plaintext = await decryptPayload(stored.answersEncrypted, sessionKey);
+      const answers = JSON.parse(plaintext) as Record<string, string>;
+      const { answersEncrypted: _drop, ...rest } = stored;
+      return { ...rest, answers, answersEncrypted: null };
+    } catch (error) {
+      console.error('[offlineExam] Failed to decrypt answers at rest:', error);
+      throw new Error('Failed to decrypt offline exam answers — fail closed');
+    }
+  }
+
+  // Legacy plaintext rows: return for UX, re-encrypt on next save.
+  const legacyAnswers = stored.answers ?? {};
+  if (Object.keys(legacyAnswers).length > 0) {
+    await saveOfflineExamState({ ...stored, answers: legacyAnswers, answersEncrypted: null });
+  }
+
+  return { ...stored, answers: legacyAnswers, answersEncrypted: null };
+}
+
+export async function getOfflineExamState(
+  examId: string,
+  studentId: string
+): Promise<OfflineExamState | undefined> {
   const db = await getExamDB();
   const id = `${examId}-${studentId}`;
-  return db.get('offlineExams', id);
+  const stored = await db.get('offlineExams', id);
+  return hydrateOfflineExamState(stored);
 }
 
 export async function getAllOfflineExams(studentId: string): Promise<OfflineExamState[]> {
   const db = await getExamDB();
   const all = await db.getAllFromIndex('offlineExams', 'by-student', studentId);
-  return all;
+  const hydrated: OfflineExamState[] = [];
+  for (const row of all) {
+    const state = await hydrateOfflineExamState(row);
+    if (state) hydrated.push(state);
+  }
+  return hydrated;
 }
 
 export async function deleteOfflineExamState(examId: string, studentId: string): Promise<void> {
@@ -801,28 +809,28 @@ export async function submitExamOffline(
     
     return { success: true, queued: false, submissionId: response.data.submission_id };
   } catch {
-    // Queue for offline submission
-    const db = await getExamDB();
-    await db.put('offlineExams', {
+    // Queue for offline submission — answers encrypted at rest via saveOfflineExamState
+    const existing = await getOfflineExamState(examId, studentId);
+    await saveOfflineExamState({
       id: `${examId}-${studentId}`,
       examId,
       studentId,
-      studentName: '',
-      package: null,
+      studentName: existing?.studentName ?? '',
+      package: existing?.package ?? null,
       answers,
-      answerTimestamps: {},
-      currentQuestionIndex: 0,
+      answerTimestamps: existing?.answerTimestamps ?? {},
+      currentQuestionIndex: existing?.currentQuestionIndex ?? 0,
       timeRemainingMs: 0,
       timerState: 'completed',
       lastTimerTick: Date.now(),
-      startedAt: Date.now(),
-      lastHeartbeat: 0,
+      startedAt: existing?.startedAt ?? Date.now(),
+      lastHeartbeat: existing?.lastHeartbeat ?? 0,
       isComplete: true,
       submissionId,
-      sebViolations: [],
+      sebViolations: existing?.sebViolations ?? [],
       lastUpdated: Date.now(),
     });
-    
+
     return { success: true, queued: true };
   }
 }
@@ -895,90 +903,108 @@ export function getExamProgressPercent(state: OfflineExamState): number {
 // ── Cryptographic Sealing ──────────────────────────────────────────────────
 
 /**
- * Seal an exam submission - cryptographically sign and encrypt for immutable storage.
- * This creates a tamper-evident, encrypted submission that can be verified across
- * all three storage locations (student, teacher, server).
+ * Pure seal (no IndexedDB). Used by sealExamSubmission and unit tests.
  */
-export async function sealExamSubmission(
+export async function buildSealedExamSubmission(
   state: OfflineExamState,
-  studentName: string
+  studentName: string,
+  sessionKey: CryptoKey,
+  completedAt = Date.now()
 ): Promise<SealedExamSubmission> {
   if (!state.package) {
     throw new Error('No exam package in state');
   }
-  
-  const sessionKey = await getSessionKey(state.examId, state.studentId);
-  const completedAt = Date.now();
+
   const durationMs = completedAt - state.startedAt;
   const autoSubmitted = state.timerState === 'expired';
-  
-  // Build sealed answers with individual hashes
+  const submissionId =
+    state.submissionId || `${state.examId}-${state.studentId}-${completedAt}`;
+  const timeLimitMs =
+    state.package.duration_minutes *
+    60 *
+    1000 *
+    (state.package.settings.time_multiplier || 1);
+
+  const plaintextAnswers: Array<{
+    questionId: string;
+    response: string;
+    answeredAt: number;
+    timeSpentMs: number;
+  }> = [];
   const sealedAnswers: SealedAnswer[] = [];
-  
+
   for (const [questionId, response] of Object.entries(state.answers)) {
     const answeredAt = state.answerTimestamps?.[questionId] || state.startedAt;
     const timeSpentMs = answeredAt - state.startedAt;
-    
-    // Hash plaintext response for later verification
     const responseHash = await computeHash(response);
-    
-    // Encrypt response
-    const { ciphertext } = await encryptData(response, sessionKey);
-    
+    const encrypted = await encryptPayload(
+      response,
+      sessionKey,
+      `answer:${state.examId}:${submissionId}:${questionId}`
+    );
+
+    plaintextAnswers.push({ questionId, response, answeredAt, timeSpentMs });
     sealedAnswers.push({
       questionId,
-      response: ciphertext,
+      encrypted,
       responseHash,
       answeredAt,
       timeSpentMs,
     });
   }
-  
-  // Create the submission object (without encryption metadata yet)
-  const submissionData = {
-    submissionId: state.submissionId || `${state.examId}-${state.studentId}-${completedAt}`,
+
+  const plaintext = buildSealPlaintext({
+    submissionId,
     examId: state.examId,
     studentId: state.studentId,
-    studentName, // Will be encrypted
+    studentName,
     startedAt: state.startedAt,
     completedAt,
     durationMs,
-    timeLimitMs: state.package.duration_minutes * 60 * 1000 * (state.package.settings.time_multiplier || 1),
+    timeLimitMs,
+    autoSubmitted,
+    answers: plaintextAnswers,
+    sealVersion: SEAL_CRYPTO_VERSION,
+    sealedAt: completedAt,
+  });
+
+  const plaintextCanonical = canonicalJSON(plaintext);
+  const contentHash = await computeHash(plaintextCanonical);
+
+  const envelopeAad = `submission:${state.examId}:${submissionId}`;
+  const envelope = await encryptPayload(plaintextCanonical, sessionKey, envelopeAad);
+  assertEncryptedPayload(envelope, 'sealed submission envelope');
+
+  const encryptedName = await encryptPayload(
+    studentName,
+    sessionKey,
+    `name:${state.examId}:${submissionId}`
+  );
+
+  const salt = crypto.getRandomValues(new Uint8Array(SALT_LENGTH));
+  const syncHash = await computeHash(contentHash + submissionId);
+
+  return {
+    submissionId,
+    examId: state.examId,
+    studentId: state.studentId,
+    studentName: encryptedName,
+    startedAt: state.startedAt,
+    completedAt,
+    durationMs,
+    timeLimitMs,
     autoSubmitted,
     answers: sealedAnswers,
-    sealVersion: 1,
+    contentHash,
+    sealVersion: SEAL_CRYPTO_VERSION,
     sealedAt: completedAt,
-  };
-  
-  // Compute content hash of canonical JSON (before encryption)
-  const contentHash = await computeHash(canonicalJSON(submissionData));
-  
-  // Encrypt student name
-  const { ciphertext: encryptedName } = await encryptData(studentName, sessionKey);
-  
-  // Encrypt the entire submission
-  const submissionJSON = canonicalJSON({
-    ...submissionData,
-    studentName: encryptedName,
-    contentHash,
-  });
-  
-  const { iv: submissionIv } = await encryptData(submissionJSON, sessionKey);
-  
-  // Generate salt for key derivation
-  const salt = crypto.getRandomValues(new Uint8Array(SALT_LENGTH));
-  
-  // Create sync hash for cross-verification
-  const syncHash = await computeHash(contentHash + submissionData.submissionId);
-  
-  const sealedSubmission: SealedExamSubmission = {
-    ...submissionData,
-    studentName: encryptedName,
-    contentHash,
     encryption: {
       algorithm: CRYPTO_ALGORITHM,
-      iv: submissionIv,
-      salt: btoa(String.fromCharCode(...salt)),
+      ciphertext: envelope.ciphertext,
+      iv: envelope.iv,
+      version: envelope.version,
+      aad: envelope.aad,
+      salt: bytesToBase64(salt),
       keyId: `${state.examId}-${state.studentId}`,
     },
     sync: {
@@ -989,46 +1015,74 @@ export async function sealExamSubmission(
       syncHash,
     },
   };
-  
-  // Store sealed submission locally
+}
+
+/**
+ * Seal an exam submission — AES-GCM envelope + per-answer payloads.
+ * Stores real {ciphertext, iv, version, aad} (never IV-as-ciphertext).
+ */
+export async function sealExamSubmission(
+  state: OfflineExamState,
+  studentName: string
+): Promise<SealedExamSubmission> {
+  const sessionKey = await getSessionKey(state.examId, state.studentId);
+  const sealedSubmission = await buildSealedExamSubmission(state, studentName, sessionKey);
+
   const db = await getExamDB();
   await db.put('sealedSubmissions', sealedSubmission);
-  
-  // Queue for three-way sync
+
   await queueSync(sealedSubmission.submissionId, 'teacher', sealedSubmission);
   await queueSync(sealedSubmission.submissionId, 'server', sealedSubmission);
-  
+
   return sealedSubmission;
 }
 
 /**
- * Verify a sealed submission's integrity.
- * Returns true if the submission hasn't been tampered with.
+ * Verify a sealed submission's integrity. Fail closed on missing ciphertext.
  */
 export async function verifySealedSubmission(
   sealed: SealedExamSubmission,
   sessionKey: CryptoKey
 ): Promise<{ valid: boolean; reason?: string }> {
   try {
-    // Decrypt the submission to verify key works
-    await decryptData(
-      sealed.encryption.iv ? sealed.encryption.iv : '',
-      sealed.encryption.iv,
-      sessionKey
-    );
-    
-    // For now, verify the content hash matches
+    if (!sealed.encryption?.ciphertext || !sealed.encryption?.iv) {
+      return { valid: false, reason: 'Missing ciphertext — fail closed' };
+    }
+
+    const envelope: EncryptedPayload = {
+      ciphertext: sealed.encryption.ciphertext,
+      iv: sealed.encryption.iv,
+      version: sealed.encryption.version ?? SEAL_CRYPTO_VERSION,
+      aad: sealed.encryption.aad ?? `submission:${sealed.examId}:${sealed.submissionId}`,
+    };
+
+    const decrypted = await decryptPayload(envelope, sessionKey);
+    const parsed = JSON.parse(decrypted) as unknown;
+    const computedHash = await computeHash(canonicalJSON(parsed));
+    if (computedHash !== sealed.contentHash) {
+      return { valid: false, reason: 'Content hash mismatch — possible tampering' };
+    }
+
     const expectedSyncHash = await computeHash(sealed.contentHash + sealed.submissionId);
-    
     if (sealed.sync.syncHash !== expectedSyncHash) {
-      return { valid: false, reason: 'Sync hash mismatch - possible tampering' };
+      return { valid: false, reason: 'Sync hash mismatch — possible tampering' };
     }
-    
-    // Verify individual answer hashes
-    for (const _answer of sealed.answers) {
-      // Kept for later verification when teacher/server decrypts
+
+    for (const answer of sealed.answers) {
+      assertEncryptedPayload(answer.encrypted, `answer ${answer.questionId}`);
+      const response = await decryptPayload(answer.encrypted, sessionKey);
+      const responseHash = await computeHash(response);
+      if (responseHash !== answer.responseHash) {
+        return {
+          valid: false,
+          reason: `Answer hash mismatch for question ${answer.questionId}`,
+        };
+      }
     }
-    
+
+    assertEncryptedPayload(sealed.studentName, 'studentName');
+    await decryptPayload(sealed.studentName, sessionKey);
+
     return { valid: true };
   } catch (error) {
     return { valid: false, reason: `Verification failed: ${error}` };
@@ -1037,35 +1091,54 @@ export async function verifySealedSubmission(
 
 /**
  * Decrypt a sealed submission for grading (teacher/server only).
- * Requires the session key.
+ * Requires the session key. Returns null on any crypto/integrity failure.
  */
 export async function decryptSealedSubmission(
   sealed: SealedExamSubmission,
   sessionKey: CryptoKey
 ): Promise<{
-  submission: Omit<SealedExamSubmission, 'encryption' | 'sync'>;
+  submission: {
+    submissionId: string;
+    examId: string;
+    studentId: string;
+    studentName: string;
+    startedAt: number;
+    completedAt: number;
+    durationMs: number;
+    timeLimitMs: number;
+    autoSubmitted: boolean;
+    contentHash: string;
+    sealVersion: number;
+    sealedAt: number;
+  };
   answers: Array<{ questionId: string; response: string; answeredAt: number; timeSpentMs: number }>;
 } | null> {
   try {
-    const decrypted = await decryptData(sealed.encryption.iv, sealed.encryption.iv, sessionKey);
-    
-    // Parse and verify
-    const parsed = JSON.parse(decrypted);
-    
-    // Verify content hash
+    if (!sealed.encryption?.ciphertext || !sealed.encryption?.iv) {
+      throw new Error('Missing ciphertext — fail closed');
+    }
+
+    const envelope: EncryptedPayload = {
+      ciphertext: sealed.encryption.ciphertext,
+      iv: sealed.encryption.iv,
+      version: sealed.encryption.version ?? SEAL_CRYPTO_VERSION,
+      aad: sealed.encryption.aad ?? `submission:${sealed.examId}:${sealed.submissionId}`,
+    };
+
+    const decryptedEnvelope = await decryptPayload(envelope, sessionKey);
+    const parsed = JSON.parse(decryptedEnvelope) as Record<string, unknown>;
     const computedHash = await computeHash(canonicalJSON(parsed));
     if (computedHash !== sealed.contentHash) {
       throw new Error('Content hash mismatch - submission tampered');
     }
-    
-    // Decrypt student name
-    const studentName = await decryptData(sealed.studentName, sealed.encryption.iv, sessionKey);
-    
-    // Decrypt answers
+
+    assertEncryptedPayload(sealed.studentName, 'studentName');
+    const studentName = await decryptPayload(sealed.studentName, sessionKey);
+
     const decryptedAnswers = [];
     for (const answer of sealed.answers) {
-      const response = await decryptData(answer.response, answer.response, sessionKey);
-      // Verify answer hash
+      assertEncryptedPayload(answer.encrypted, `answer ${answer.questionId}`);
+      const response = await decryptPayload(answer.encrypted, sessionKey);
       const responseHash = await computeHash(response);
       if (responseHash !== answer.responseHash) {
         throw new Error(`Answer hash mismatch for question ${answer.questionId}`);
@@ -1077,12 +1150,22 @@ export async function decryptSealedSubmission(
         timeSpentMs: answer.timeSpentMs,
       });
     }
-    
+
     return {
       submission: {
-        ...sealed,
+        submissionId: sealed.submissionId,
+        examId: sealed.examId,
+        studentId: sealed.studentId,
         studentName,
-      } as any,
+        startedAt: sealed.startedAt,
+        completedAt: sealed.completedAt,
+        durationMs: sealed.durationMs,
+        timeLimitMs: sealed.timeLimitMs,
+        autoSubmitted: sealed.autoSubmitted,
+        contentHash: sealed.contentHash,
+        sealVersion: sealed.sealVersion,
+        sealedAt: sealed.sealedAt,
+      },
       answers: decryptedAnswers,
     };
   } catch (error) {
@@ -1171,24 +1254,21 @@ export async function processSyncQueue(): Promise<{ synced: number; failed: numb
 }
 
 /**
- * Sync sealed submission to teacher's device.
- * In a real deployment, this would use WebRTC, local network HTTP, or similar.
+ * Sync sealed submission to teacher's device (LAN only).
+ * F-048: teacherSyncUrl from localStorage must pass private/LAN allowlist validation.
  */
 async function syncToTeacher(submission: SealedExamSubmission): Promise<void> {
-  // Try to reach teacher's local sync endpoint
-  // This assumes teacher's device runs a local sync server on the same network
-  const teacherSyncUrl = localStorage.getItem('teacherSyncUrl');
-  
-  if (teacherSyncUrl) {
-    await fetch(`${teacherSyncUrl}/api/sync/submission`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(submission),
-    });
-  } else {
-    // Fallback: queue for when teacher's device is reachable
-    throw new Error('Teacher sync URL not configured');
+  const validated = getValidatedTeacherSyncUrl();
+  if (!validated.ok) {
+    // Fail closed — do not POST educational records to an unvalidated URL.
+    throw new Error(validated.reasonKey);
   }
+
+  await fetch(`${validated.url}/api/sync/submission`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(submission),
+  });
 }
 
 /**
@@ -1222,11 +1302,11 @@ export async function verifyThreeWayConsistency(
     mismatches.push(`Local: ${localValid.reason}`);
   }
   
-  // Try to fetch from teacher (if on same network)
+  // Try to fetch from teacher (if on same network) — F-048 validated LAN URL only
   try {
-    const teacherSyncUrl = localStorage.getItem('teacherSyncUrl');
-    if (teacherSyncUrl) {
-      const response = await fetch(`${teacherSyncUrl}/api/sync/submission/${submissionId}`);
+    const validated = getValidatedTeacherSyncUrl();
+    if (validated.ok) {
+      const response = await fetch(`${validated.url}/api/sync/submission/${submissionId}`);
       if (response.ok) {
         const teacherCopy = await response.json();
         if (teacherCopy.contentHash !== local.contentHash) {
@@ -1238,7 +1318,7 @@ export async function verifyThreeWayConsistency(
       }
     }
   } catch {
-    // Teacher not reachable - not a mismatch, just unavailable
+    // Teacher not reachable or URL invalid - not a mismatch, just unavailable
   }
   
   // Try to fetch from server

@@ -10,6 +10,7 @@ import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
+from src.plannededucation.api import database, models
 from src.plannededucation.api.main import app
 from src.plannededucation.api.ocr_service import OCRResult, get_ocr_service
 
@@ -21,14 +22,28 @@ def client():
 
 @pytest.fixture
 def auth_headers(client):
-    """Create a test user and return auth headers."""
-    # Register a test user
+    """Create an approved teacher and return auth headers.
+
+    F-004 / F-020: bulk-upload and OCR review routes require teacher/admin.
+    Registering with role='teacher' and manually setting teacher_approved avoids
+    requiring an admin approval flow in unit tests.
+    """
     client.post("/auth/register", json={
         "email": "ocr_test@test.com",
         "username": "ocr_test",
         "password": "OcrTest1!",
         "full_name": "OCR Test User",
+        "role": "teacher",
     })
+    # Approve the teacher so _require_teacher_or_admin passes
+    db = database.SessionLocal()
+    try:
+        teacher = db.query(models.User).filter_by(email="ocr_test@test.com").first()
+        if teacher and not teacher.teacher_approved:
+            teacher.teacher_approved = True
+            db.commit()
+    finally:
+        db.close()
     # Login to get token
     token = client.post("/auth/token", data={
         "username": "ocr_test@test.com",
@@ -272,16 +287,18 @@ class TestOCRRoutes:
         finally:
             app.dependency_overrides.clear()
 
-    def test_health_check(self, client, mock_ocr_service):
-        """Test OCR health check (no auth required)."""
+    def test_health_check(self, client, mock_ocr_service, auth_headers):
+        """Test OCR health check requires auth and returns minimal readiness."""
         app.dependency_overrides[get_ocr_service] = lambda: mock_ocr_service
         try:
-            response = client.get("/ocr/health")
+            unauth = client.get("/ocr/health")
+            assert unauth.status_code in (401, 403)
 
+            response = client.get("/ocr/health", headers=auth_headers)
             assert response.status_code == 200
             data = response.json()
-            assert data["available"] is True
-            assert data["service"] == "tesseract"
+            assert data["status"] == "ok"
+            assert "version" not in data
         finally:
             app.dependency_overrides.clear()
 

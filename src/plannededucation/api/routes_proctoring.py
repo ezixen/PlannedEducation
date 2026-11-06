@@ -8,13 +8,46 @@ from datetime import UTC, datetime
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from sqlalchemy.orm import Session
 
 from . import database, models
 from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/proctoring", tags=["proctoring"])
+
+# ── F-018 event validation / client-telemetry policy ─────────────────────────
+
+ALLOWED_EVENT_TYPES: frozenset[str] = frozenset(e.value for e in models.ProctoringEventType)
+ALLOWED_SEVERITIES: frozenset[str] = frozenset({"info", "warning", "violation"})
+SEVERITY_RANK = {"info": 0, "warning": 1, "violation": 2}
+
+# Max severity a client may claim per event type (server clamps upward claims).
+MAX_CLIENT_SEVERITY_BY_TYPE: dict[str, str] = {
+    "session_start": "info",
+    "session_end": "info",
+    "face_detected": "info",
+    "face_lost": "warning",
+    "eye_movement": "info",
+    "gaze_off_screen": "warning",
+    "audio_anomaly": "warning",
+    "tab_switch": "warning",
+    "window_blur": "warning",
+    "multiple_faces": "violation",
+    "fullscreen_exit": "violation",
+    "seb_violation": "violation",
+}
+
+# Only these client-telemetry types may increment authoritative violation_count.
+VIOLATION_COUNTABLE_TYPES: frozenset[str] = frozenset(
+    {"multiple_faces", "fullscreen_exit", "seb_violation"}
+)
+
+MAX_BATCH_EVENTS = 50
+MAX_EVENT_DATA_BYTES = 4096
+MAX_REF_LENGTH = 256
+MAX_FACE_COUNT = 10
+MAX_VIOLATION_INCREMENTS_PER_REQUEST = 5
 
 
 # ── Pydantic Schemas ────────────────────────────────────────────────────────
@@ -83,8 +116,22 @@ class ProctoringEventRequest(BaseModel):
     event_type: str = Field(..., description="Event type")
     severity: str = Field(default="info", description="Severity: info, warning, violation")
     event_data: dict[str, Any] | None = Field(default=None)
-    screenshot_ref: str | None = Field(default=None)
-    audio_ref: str | None = Field(default=None)
+    screenshot_ref: str | None = Field(default=None, max_length=MAX_REF_LENGTH)
+    audio_ref: str | None = Field(default=None, max_length=MAX_REF_LENGTH)
+
+    @field_validator("event_type")
+    @classmethod
+    def validate_event_type(cls, value: str) -> str:
+        if value not in ALLOWED_EVENT_TYPES:
+            raise ValueError(f"Unknown event_type: {value}")
+        return value
+
+    @field_validator("severity")
+    @classmethod
+    def validate_severity(cls, value: str) -> str:
+        if value not in ALLOWED_SEVERITIES:
+            raise ValueError(f"Invalid severity: {value}")
+        return value
 
 
 class ProctoringEventResponse(BaseModel):
@@ -117,7 +164,12 @@ class ProctoringEventResponse(BaseModel):
 class ProctoringEventBatchRequest(BaseModel):
     """Request model for batch event recording."""
     session_id: str = Field(..., description="Proctoring session ID")
-    events: list[ProctoringEventRequest] = Field(..., description="List of events")
+    events: list[ProctoringEventRequest] = Field(
+        ...,
+        description="List of events",
+        min_length=1,
+        max_length=MAX_BATCH_EVENTS,
+    )
 
 
 class ProctoringStatsResponse(BaseModel):
@@ -131,6 +183,114 @@ class ProctoringStatsResponse(BaseModel):
 
 
 # ── Helper Functions ────────────────────────────────────────────────────────
+
+def _clamp_severity(event_type: str, claimed: str) -> str:
+    """Clamp client-claimed severity to the server max for this event type."""
+    max_allowed = MAX_CLIENT_SEVERITY_BY_TYPE.get(event_type, "info")
+    if SEVERITY_RANK[claimed] <= SEVERITY_RANK[max_allowed]:
+        return claimed
+    return max_allowed
+
+
+def _normalize_client_event_data(event_type: str, event_data: dict[str, Any] | None) -> dict[str, Any]:
+    """
+    Bound and stamp client event payloads as telemetry.
+
+    Rejects oversized JSON and unrealistically large face_count values.
+    Always stamps event_source=client_telemetry so records are not treated as
+    server-attested evidence.
+    """
+    data: dict[str, Any] = dict(event_data) if event_data else {}
+
+    if "face_count" in data:
+        face_count = data["face_count"]
+        if not isinstance(face_count, int) or isinstance(face_count, bool):
+            raise HTTPException(status_code=400, detail="face_count must be an integer")
+        if face_count < 0 or face_count > MAX_FACE_COUNT:
+            raise HTTPException(
+                status_code=400,
+                detail=f"face_count must be between 0 and {MAX_FACE_COUNT}",
+            )
+
+    # Client cannot override provenance; always mark as untrusted telemetry.
+    data["event_source"] = "client_telemetry"
+
+    encoded = json.dumps(data, default=str)
+    if len(encoded.encode("utf-8")) > MAX_EVENT_DATA_BYTES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"event_data exceeds {MAX_EVENT_DATA_BYTES} bytes",
+        )
+
+    # Keep type in the stamp for auditors without trusting client severity.
+    data.setdefault("client_event_type", event_type)
+    return data
+
+
+def _apply_client_event_to_session(
+    session: models.ProctoringSession,
+    event_type: str,
+    severity: str,
+    event_data: dict[str, Any],
+    *,
+    violation_budget: list[int],
+) -> None:
+    """
+    Update session counters under server policy.
+
+    Client events are telemetry: only allowlisted types may increment
+    violation_count, and only within a per-request budget.
+    """
+    session.total_events += 1
+
+    counts_as_violation = (
+        event_type in VIOLATION_COUNTABLE_TYPES
+        and severity == "violation"
+        and violation_budget[0] > 0
+    )
+    if counts_as_violation:
+        session.violation_count += 1
+        violation_budget[0] -= 1
+
+    if event_type == "multiple_faces":
+        face_count = event_data.get("face_count")
+        if isinstance(face_count, int) and not isinstance(face_count, bool):
+            session.max_simultaneous_faces = max(
+                session.max_simultaneous_faces,
+                min(face_count, MAX_FACE_COUNT),
+            )
+
+
+def _persist_client_event(
+    db: Session,
+    session: models.ProctoringSession,
+    event_req: ProctoringEventRequest,
+    *,
+    session_id: str,
+    violation_budget: list[int],
+) -> models.ProctoringEvent:
+    """Validate, stamp, persist one client telemetry event and update session stats."""
+    severity = _clamp_severity(event_req.event_type, event_req.severity)
+    event_data = _normalize_client_event_data(event_req.event_type, event_req.event_data)
+
+    event = models.ProctoringEvent(
+        session_id=session_id,
+        event_type=event_req.event_type,
+        severity=severity,
+        event_data=json.dumps(event_data),
+        screenshot_ref=event_req.screenshot_ref,
+        audio_ref=event_req.audio_ref,
+    )
+    db.add(event)
+    _apply_client_event_to_session(
+        session,
+        event_req.event_type,
+        severity,
+        event_data,
+        violation_budget=violation_budget,
+    )
+    return event
+
 
 def _get_session_and_verify(
     session_id: str,
@@ -390,7 +550,11 @@ def get_session_by_submission(
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
-    """Get proctoring session by submission ID."""
+    """Get proctoring session by submission ID.
+
+    F-018: Delegates to the shared _get_session_and_verify helper so that the same
+    student/teacher/parent/admin/deny-all-others policy is applied consistently.
+    """
     session = (
         db.query(models.ProctoringSession)
         .filter(models.ProctoringSession.submission_id == submission_id)
@@ -399,13 +563,8 @@ def get_session_by_submission(
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
 
-    # Verify access
-    is_student_owner = current_user.role == "student" and session.student_id != current_user.id
-    is_teacher_owner = current_user.role == "teacher" and session.exam.teacher_id != current_user.id
-    if is_student_owner or is_teacher_owner:
-        raise HTTPException(status_code=403, detail="Access denied")
-
-    return session
+    # F-018: use the shared helper (handles all roles, denies unrecognised ones)
+    return _get_session_and_verify(session.id, current_user, db)
 
 
 # ── Event Endpoints ────────────────────────────────────────────────────────
@@ -416,7 +575,7 @@ def record_event(
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
-    """Record a single proctoring event."""
+    """Record a single proctoring event (client telemetry; server-policy counters)."""
     if not request.session_id:
         raise HTTPException(
             status_code=400,
@@ -428,26 +587,14 @@ def record_event(
     if session.ended_at:
         raise HTTPException(status_code=400, detail="Session has ended")
 
-    # Create event
-    event = models.ProctoringEvent(
+    violation_budget = [MAX_VIOLATION_INCREMENTS_PER_REQUEST]
+    event = _persist_client_event(
+        db,
+        session,
+        request,
         session_id=request.session_id,
-        event_type=request.event_type,
-        severity=request.severity,
-        event_data=json.dumps(request.event_data) if request.event_data else None,
-        screenshot_ref=request.screenshot_ref,
-        audio_ref=request.audio_ref,
+        violation_budget=violation_budget,
     )
-    db.add(event)
-
-    # Update session stats
-    session.total_events += 1
-    if request.severity == "violation":
-        session.violation_count += 1
-
-    # Track max simultaneous faces
-    if request.event_type == "multiple_faces" and request.event_data:
-        face_count = request.event_data.get("face_count", 1)
-        session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
 
     db.commit()
     db.refresh(event)
@@ -460,33 +607,23 @@ def record_events_batch(
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
 ):
-    """Record multiple proctoring events in batch."""
+    """Record multiple proctoring events in batch (client telemetry; bounded)."""
     session = _get_session_and_verify(request.session_id, current_user, db)
 
     if session.ended_at:
         raise HTTPException(status_code=400, detail="Session has ended")
 
-    events = []
+    violation_budget = [MAX_VIOLATION_INCREMENTS_PER_REQUEST]
+    events: list[models.ProctoringEvent] = []
     for event_req in request.events:
-        event = models.ProctoringEvent(
+        event = _persist_client_event(
+            db,
+            session,
+            event_req,
             session_id=request.session_id,
-            event_type=event_req.event_type,
-            severity=event_req.severity,
-            event_data=json.dumps(event_req.event_data) if event_req.event_data else None,
-            screenshot_ref=event_req.screenshot_ref,
-            audio_ref=event_req.audio_ref,
+            violation_budget=violation_budget,
         )
-        db.add(event)
         events.append(event)
-
-        # Update session stats
-        session.total_events += 1
-        if event_req.severity == "violation":
-            session.violation_count += 1
-
-        if event_req.event_type == "multiple_faces" and event_req.event_data:
-            face_count = event_req.event_data.get("face_count", 1)
-            session.max_simultaneous_faces = max(session.max_simultaneous_faces, face_count)
 
     db.commit()
     for event in events:
@@ -588,17 +725,9 @@ def get_proctoring_stats(
 
 
 @router.get("/health")
-async def proctoring_health_check():
-    """Health check for proctoring service."""
-    return {
-        "available": True,
-        "service": "proctoring",
-        "features": [
-            "face_detection",
-            "eye_tracking",
-            "audio_monitoring",
-            "gdpr_consent",
-            "event_recording",
-            "batch_events"
-        ]
-    }
+async def proctoring_health_check(
+    current_user=Depends(get_current_user),
+):
+    """Authenticated readiness for proctoring (F-051)."""
+    _ = current_user
+    return {"status": "ok"}

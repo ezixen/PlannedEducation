@@ -2,10 +2,13 @@
 test_auth_flows.py - refresh-token rotation, 2FA recovery codes, password reset.
 Regression tests for flows that previously failed at runtime.
 """
+from datetime import UTC, datetime, timedelta
+from urllib.parse import parse_qs, urlsplit
+
 import pyotp
 from fastapi.testclient import TestClient
 
-from src.plannededucation.api import database, models
+from src.plannededucation.api import database, email_service, models
 from src.plannededucation.api.main import app
 
 client = TestClient(app)
@@ -63,6 +66,35 @@ def test_2fa_setup_confirm_and_disable_with_recovery_code():
     assert r.status_code == 200, r.text
 
 
+def test_totp_is_required_for_password_login():
+    tokens = _register_and_login("login2fa@test.com", "login2fa")
+    headers = _auth(tokens)
+    setup = client.post("/auth/2fa/setup", headers=headers).json()
+    confirm = client.post(
+        "/auth/2fa/confirm",
+        headers=headers,
+        json={"code": pyotp.TOTP(setup["secret"]).now()},
+    )
+    assert confirm.status_code == 200
+
+    missing = client.post(
+        "/auth/token",
+        data={"username": "login2fa@test.com", "password": PASSWORD},
+    )
+    assert missing.status_code == 401
+    assert missing.json()["detail"] == "2FA_REQUIRED"
+
+    valid = client.post(
+        "/auth/token",
+        data={
+            "username": "login2fa@test.com",
+            "password": PASSWORD,
+            "totp_code": pyotp.TOTP(setup["secret"]).now(),
+        },
+    )
+    assert valid.status_code == 200, valid.text
+
+
 def test_recovery_code_is_single_use_for_password_reset():
     tokens = _register_and_login("reset@test.com", "resetuser")
     headers = _auth(tokens)
@@ -76,11 +108,14 @@ def test_recovery_code_is_single_use_for_password_reset():
     assert r.status_code == 400
 
 
-def test_24h_token_password_reset_flow():
-    from src.plannededucation.api import database, models
-    from datetime import UTC, datetime, timedelta
-
+def test_24h_token_password_reset_flow(monkeypatch):
     _register_and_login("tokenreset@test.com", "tokenuser")
+    sent_links: list[str] = []
+
+    async def capture_reset_email(to_email: str, reset_link: str, username: str | None = None):
+        sent_links.append(reset_link)
+
+    monkeypatch.setattr(email_service, "send_password_reset_email", capture_reset_email)
 
     # 1. Request reset link
     r = client.post("/auth/password-reset/request", json={"email": "tokenreset@test.com"})
@@ -89,14 +124,20 @@ def test_24h_token_password_reset_flow():
     assert data["reset_link_sent"] is True
 
     # 2. Check token in DB
-    db = next(database.get_db())
-    user = db.query(models.User).filter(models.User.email == "tokenreset@test.com").first()
-    assert user is not None
-    assert user.password_reset_otp is not None
-    assert len(user.password_reset_otp) >= 32  # High entropy token
-    expires_utc = user.password_reset_otp_expires if user.password_reset_otp_expires.tzinfo else user.password_reset_otp_expires.replace(tzinfo=UTC)
-    assert expires_utc > datetime.now(UTC) + timedelta(hours=23)
-    reset_token = user.password_reset_otp
+    reset_token = ""
+    db = database.SessionLocal()
+    try:
+        user = db.query(models.User).filter(models.User.email == "tokenreset@test.com").first()
+        assert user is not None
+        assert user.password_reset_otp is not None
+        assert len(user.password_reset_otp) >= 32  # High entropy token
+        expires_utc = user.password_reset_otp_expires if user.password_reset_otp_expires.tzinfo else user.password_reset_otp_expires.replace(tzinfo=UTC)
+        assert expires_utc > datetime.now(UTC) + timedelta(hours=23)
+        assert sent_links
+        reset_token = parse_qs(urlsplit(sent_links[0]).fragment)["token"][0]
+        assert user.password_reset_otp != reset_token
+    finally:
+        db.close()
 
     # 3. Confirm with wrong token fails
     r_bad = client.post("/auth/password-reset/confirm", json={

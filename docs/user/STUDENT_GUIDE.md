@@ -32,6 +32,11 @@
 - PlannedEducation saves your answers automatically as you type every few seconds.
 - If your school Wi-Fi or network disconnects temporarily during an exam, **do not panic**: the exam continues running offline locally. When network connection resumes, answers sync automatically.
 - Once you reach the end of the test, click **Submit Exam**.
+- The timer shown on screen matches the official exam length set by your teacher. When that time is up, the server will not accept a late submit.
+
+### Help during study (not during locked exams)
+- After you sign in, open the menu and choose **Help** for FAQ answers.
+- **Messages** appears next to notifications when your school enables teacher messaging. It is hidden on the login screen.
 
 ---
 
@@ -43,6 +48,7 @@ If you forget your password, you have 3 ways to regain access:
 1. On the login screen, click **Forgot Password?**.
 2. Enter your email and one of your **5 one-time recovery codes**.
 3. Choose a new password and sign in immediately. No teacher or parent approval needed!
+4. If you turned on two-factor authentication (authenticator app), you will also need a current code from that app when signing in with your password.
 
 ### Method 2: Emergency Classroom Unlock by Your Teacher (Right Before an Exam!)
 If you are at school right before an exam and forgot your credentials:

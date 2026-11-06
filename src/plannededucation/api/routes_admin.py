@@ -3,7 +3,6 @@ Admin Routes for PlannedEducation
 Endpoints for administrative operations (user management, exam oversight, system stats).
 """
 
-import hashlib
 import re
 import secrets
 import string
@@ -33,11 +32,21 @@ router = APIRouter(prefix="/admin", tags=["admin"])
 
 
 def require_admin(current_user: models.User = Depends(get_current_user)) -> models.User:
-    """Dependency to ensure the current user is a superadmin (is_admin=True)."""
+    """Dependency: any administrator (is_admin=True)."""
     if not current_user.is_admin:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Admin access required"
+        )
+    return current_user
+
+
+def require_superadmin(current_user: models.User = Depends(get_current_user)) -> models.User:
+    """Dependency: only superadmins may create other admins / superadmins (F-003)."""
+    if not (current_user.is_admin and getattr(current_user, "is_superadmin", False)):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Superadmin privilege required"
         )
     return current_user
 
@@ -193,8 +202,8 @@ def admin_reset_user_password(
     user.password_reset_otp_expires = None
 
     # Invalidate existing refresh tokens for security
-    user.refresh_token_hash = None
-    user.refresh_token_expires = None
+    auth.revoke_all_refresh_sessions(db, user.id)
+    auth.clear_legacy_refresh_fields(user)
 
     # Clear brute-force lockout and quick-reset flags
     user.failed_login_attempts = 0
@@ -286,6 +295,13 @@ def create_admin_user(
     current_user: models.User = Depends(require_admin),
 ):
     """Create a new user (admin, teacher, student, or parent) directly from the admin dashboard."""
+    # Only superadmins may create administrator accounts (F-003 / AGENTS §12)
+    if payload.role == "admin" and not getattr(current_user, "is_superadmin", False):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Superadmin privilege required to create admin accounts",
+        )
+
     # Auto-derive username if omitted
     chosen_username = payload.username
     if not chosen_username:
@@ -329,6 +345,7 @@ def create_admin_user(
         role=payload.role,
         hashed_password=hashed_pwd,
         is_admin=is_admin,
+        is_superadmin=False,  # never escalate via /users; use /users/superadmin
         is_active=True,
     )
     db.add(new_user)
@@ -351,19 +368,12 @@ def create_admin_user(
 def create_superadmin_user(
     payload: schemas.AdminCreateUserRequest,
     db: Session = Depends(database.get_db),
-    current_user: models.User = Depends(require_admin),
+    current_user: models.User = Depends(require_superadmin),
 ):
     """
     Create a new superadmin user.
     Only existing superadmins can create other superadmins.
     """
-    # Only superadmins can create superadmins
-    if not current_user.is_admin:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Superadmin privilege required to create superadmin accounts"
-        )
-
     # Check if username or email exists
     existing_user = db.query(models.User).filter(
         (models.User.username == payload.username) | (models.User.email == payload.email)
@@ -389,9 +399,10 @@ def create_superadmin_user(
         username=payload.username,
         email=payload.email,
         full_name=payload.full_name,
-        role=payload.role,
+        role="admin",
         hashed_password=hashed_pwd,
-        is_admin=True,  # Superadmin flag
+        is_admin=True,
+        is_superadmin=True,
         is_active=True,
     )
     db.add(new_user)
@@ -416,6 +427,7 @@ def get_admin_deployment_config(
 ):
     """Get current deployment and network configuration."""
     cfg = load_deployment_config()
+    cfg["smtp_password_configured"] = bool(cfg.pop("smtp_password", None))
     cfg["config_file_path"] = "config/deployment.json"
     cfg["restart_required"] = False
     return cfg
@@ -564,7 +576,7 @@ def generate_admin_backup_codes(
     Admins MUST print or save these codes to ensure system access cannot be lost.
     """
     fresh_codes = auth.generate_recovery_codes(count=5)
-    hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in fresh_codes]
+    hashed_codes = [auth.hash_recovery_code(c) for c in fresh_codes]
 
     current_user.recovery_codes = _encode_recovery_codes(hashed_codes)
     db.commit()
@@ -625,6 +637,26 @@ def delete_database_backup(
     if not success:
         raise HTTPException(status_code=404, detail="Backup file not found or could not be deleted")
     return {"status": "success", "message": f"Backup {filename} deleted successfully."}
+
+
+@router.post("/archives/migrate-legacy-encryption")
+async def migrate_legacy_archive_encryption(
+    limit: int = 100,
+    current_user: models.User = Depends(require_admin),
+    db: Session = Depends(database.get_db),
+):
+    """
+    F-024 residual: re-encrypt ArchivedSubmission rows stored with
+    encryption_algorithm=none using ARCHIVE_MASTER_KEY (AES-GCM).
+    """
+    _ = current_user
+    from .archive_utils import migrate_legacy_plaintext_archives
+
+    try:
+        result = await migrate_legacy_plaintext_archives(db, limit=limit)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    return {"status": "success", **result}
 
 
 # ── School Header Customization ──────────────────────────────────────────────

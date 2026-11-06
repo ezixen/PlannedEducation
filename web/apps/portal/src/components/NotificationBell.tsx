@@ -31,7 +31,7 @@ export function NotificationBell() {
 
   // Poll unread count every 60 seconds (1 minute) only when authenticated
   const fetchUnreadCount = async () => {
-    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!user || !token) return;
     try {
       const res = await apiClient.get('/notifications/unread-count');
@@ -45,7 +45,7 @@ export function NotificationBell() {
   };
 
   const fetchNotifications = async () => {
-    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token');
     if (!user || !token) return;
     setLoading(true);
     try {

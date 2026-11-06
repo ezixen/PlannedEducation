@@ -30,6 +30,14 @@ _DB_ENCRYPTION_ENABLED = os.getenv("DATABASE_ENCRYPTION", "false").lower() in (
 )
 
 _DB_ENCRYPTION_MASTER_KEY = os.getenv("DB_ENCRYPTION_MASTER_KEY", "")
+_ENCRYPTION_ENVELOPE_PREFIX = "pe-db-v1$"
+_DEPLOYMENT_ENV = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
+
+if _DEPLOYMENT_ENV in {"production", "staging"} and not _DB_ENCRYPTION_ENABLED:
+    raise RuntimeError(
+        "DATABASE_ENCRYPTION=true is required in production/staging. "
+        "Refusing to start with plaintext sensitive fields."
+    )
 
 _db_fernet: Fernet | None = None
 
@@ -71,46 +79,54 @@ def is_encryption_enabled() -> bool:
 def encrypt_field(plaintext: str | None) -> str | None:
     """Encrypt a string value for database storage.
 
-    Returns None if encryption is disabled or plaintext is None/empty.
-    Already-encrypted Fernet tokens are left unchanged (avoids double-encrypt).
+    Returns None if plaintext is None/empty. New values use a versioned
+    envelope instead of guessing from a Fernet prefix.
     """
-    if not _db_fernet or plaintext is None or plaintext == "":
+    if plaintext is None or plaintext == "":
         return plaintext
-    # Skip values that already look like Fernet tokens
-    if plaintext.startswith("gAAAA"):
+    if not _db_fernet:
+        return plaintext
+    if plaintext.startswith(_ENCRYPTION_ENVELOPE_PREFIX):
         return plaintext
     try:
         encrypted = _db_fernet.encrypt(plaintext.encode("utf-8"))
-        return encrypted.decode("utf-8")
+        return f"{_ENCRYPTION_ENVELOPE_PREFIX}{encrypted.decode('utf-8')}"
     except Exception as e:
-        logger.error(f"Encryption failed: {e}")
+        logger.error("Database field encryption failed: %s", type(e).__name__)
         raise
 
 
 def decrypt_field(ciphertext: str | None) -> str | None:
     """Decrypt a string value from database storage.
 
-    Returns None if encryption is disabled or ciphertext is None/empty.
-    Legacy plaintext values (from DBs created before field encryption) are
-    returned unchanged so login / upgrades keep working across key rotates.
+    Legacy plaintext values are returned unchanged for the controlled
+    re-encryption migration. Invalid ciphertext never falls back to plaintext.
     """
-    if not _db_fernet or ciphertext is None or ciphertext == "":
+    if ciphertext is None or ciphertext == "":
         return ciphertext
-    # Fernet tokens are url-safe base64 and typically start with version byte `gAAAA`
-    if not ciphertext.startswith("gAAAA"):
+    if not _db_fernet:
+        if ciphertext.startswith(_ENCRYPTION_ENVELOPE_PREFIX) or ciphertext.startswith("gAAAA"):
+            raise RuntimeError("Encrypted database field cannot be opened without the database key")
         return ciphertext
+
+    token = None
+    if ciphertext.startswith(_ENCRYPTION_ENVELOPE_PREFIX):
+        token = ciphertext[len(_ENCRYPTION_ENVELOPE_PREFIX):]
+    elif ciphertext.startswith("gAAAA"):
+        # Compatibility for rows written before the versioned envelope. A
+        # malformed legacy token is treated as corruption, never plaintext.
+        token = ciphertext
+    else:
+        return ciphertext
+
     try:
-        decrypted = _db_fernet.decrypt(ciphertext.encode("utf-8"))
+        decrypted = _db_fernet.decrypt(token.encode("utf-8"))
         return decrypted.decode("utf-8")
     except InvalidToken:
-        # Key rotated or mixed plaintext/ciphertext row — keep readable for upgrade
-        logger.warning(
-            "Decryption InvalidToken; treating value as legacy plaintext "
-            "(re-save the record to re-encrypt under the current key)"
-        )
-        return ciphertext
+        logger.error("Database field decryption failed: invalid ciphertext or key")
+        raise RuntimeError("Encrypted database field failed authentication") from None
     except Exception as e:
-        logger.error(f"Decryption failed: {e}")
+        logger.error("Database field decryption failed: %s", type(e).__name__)
         raise
 
 

@@ -160,8 +160,24 @@ Administrators can trigger an instant backup snapshot anytime from **Admin Dashb
 - **Threshold:** 5 consecutive failed login attempts automatically locks the account for **15 minutes**.
 - **Lockout Reset:** Authorized teachers and administrators can unlock locked students instantly.
 
-### Administrator Account Protection
-- Administrator accounts are strictly protected against modification, deactivation, or password resets by non-superadmins (returns HTTP 403 Forbidden).
+### Administrator vs Superadmin
+- **Admin** (`is_admin=True`, `is_superadmin=False`): day-to-day user ops, teacher approvals, backups, deployment panel.
+- **Superadmin** (`is_admin=True` **and** `is_superadmin=True`): only role that may create other admins or superadmins.
+- Installer bootstrap creates the first superadmin. Ordinary admins receive HTTP 403 on escalate-to-admin routes.
+- Detailed token/encryption contracts for engineers: [`docs/dev/SECURITY_ARCHITECTURE.md`](../dev/SECURITY_ARCHITECTURE.md).
+
+### Session & Field Encryption (operators)
+- Production requires `DATABASE_ENCRYPTION=true` with a Fernet `DB_ENCRYPTION_MASTER_KEY` **distinct** from `JWT_SECRET_KEY` and the AI key secret (installers generate these).
+- Production also requires a distinct `ARCHIVE_MASTER_KEY` for AES-GCM sealing of graded archive packages (see `.env.example`). Do not reuse the JWT or DB Fernet secrets.
+- Portal browsers store session tokens in **sessionStorage** (not long-lived localStorage).
+- Access JWTs carry `type=access`; refresh tokens cannot call ordinary API routes.
+
+### Safe Exam Browser in production
+- Keep `ALLOW_DEV_SEB_BYPASS=false` (installer default for production).
+- Do **not** rely on any client header shortcut; only a valid SEB request hash (or the explicit development/test gate) is accepted.
+- Exam duration is enforced server-side on submit (`deadline_at`).
+
+### Brute-force & query safety
 - Database injection is prevented via fully parameterized ORM queries.
 
 ---
@@ -173,9 +189,9 @@ Administrators can trigger an instant backup snapshot anytime from **Admin Dashb
 2. **Administrators CANNOT self-register** (restricted via API and UI).
 
 ### Teacher Approval Gate
-- To prevent students from registering as teachers and viewing upcoming exams or answer keys, all self-registered teachers are created with `teacher_approved = False`.
-- While pending approval, teachers cannot create, edit, or publish exams.
-- System administrators receive an **in-platform notification** and can approve or deny requests with **one click** under **Admin Dashboard → 🎓 Teacher Approvals**.
+- In production and development, self-registered teachers start **unapproved** and cannot create, edit, or publish exams until an administrator approves them.
+- System administrators receive an **in-platform notification** and can approve or deny requests with **one click** under **Admin Dashboard → Teacher Approvals**.
+- Automated test environments may auto-approve non-pending teacher accounts for unit tests only — never use that behavior in production.
 
 ---
 

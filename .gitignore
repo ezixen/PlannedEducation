@@ -1,4 +1,9 @@
 test_plannededucation.db
+test_plannededucation_*.db
+test_plannededucation_*.db-shm
+test_plannededucation_*.db-wal
+*.db-shm
+*.db-wal
 *.log
 !install.log
 

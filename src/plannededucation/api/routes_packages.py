@@ -18,6 +18,7 @@ from sqlalchemy import desc, or_
 from sqlalchemy.orm import Session
 
 from . import database, models
+from .authorization import require_exam_author
 from .routes_auth import get_current_user
 from .schemas import (
     PackageCreate,
@@ -42,6 +43,62 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 MODULES_DIR = Path(
     os.getenv("PE_MODULES_DIR", str(REPO_ROOT / "plans" / "test-modules" / "modules"))
 )
+
+# F-023: upload / decompression hard caps
+MAX_PACKAGE_UPLOAD_BYTES = 5 * 1024 * 1024  # 5 MiB compressed or raw
+MAX_PACKAGE_DECOMPRESSED_BYTES = 20 * 1024 * 1024  # 20 MiB after gzip
+MAX_PACKAGE_QUESTIONS = 500
+
+
+def _ensure_under_modules_root(target: Path) -> Path:
+    """F-023: Path.resolve().is_relative_to(MODULES_DIR) containment."""
+    root = MODULES_DIR.resolve()
+    resolved = target.resolve()
+    if not resolved.is_relative_to(root):
+        raise HTTPException(status_code=400, detail="Invalid country or module path")
+    return resolved
+
+
+async def _read_package_bytes_capped(file: UploadFile) -> bytes:
+    """Read package upload with a hard size cap."""
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(64 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > MAX_PACKAGE_UPLOAD_BYTES:
+            raise HTTPException(status_code=413, detail="Package exceeds size limit")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
+def _decompress_package_capped(content: bytes) -> bytes:
+    """Gzip decompress with an expansion-size cap (gzip-bomb protection)."""
+    import gzip
+    import io
+
+    try:
+        with gzip.GzipFile(fileobj=io.BytesIO(content)) as gz:
+            chunks: list[bytes] = []
+            total = 0
+            while True:
+                chunk = gz.read(64 * 1024)
+                if not chunk:
+                    break
+                total += len(chunk)
+                if total > MAX_PACKAGE_DECOMPRESSED_BYTES:
+                    raise HTTPException(
+                        status_code=413,
+                        detail="Decompressed package exceeds size limit",
+                    )
+                chunks.append(chunk)
+            return b"".join(chunks)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=400, detail="Invalid gzip file") from e
 
 DEFAULT_LANGUAGE_NAMES: dict[str, str] = {
     "en": "English",
@@ -165,18 +222,18 @@ def _save_package_to_country_folder(
         fallback="module",
     )
 
-    target_dir = (MODULES_DIR / resolved_country / resolved_grade / resolved_subject).resolve()
-    modules_root_resolved = MODULES_DIR.resolve()
-    if not str(target_dir).startswith(str(modules_root_resolved)):
-        raise HTTPException(status_code=400, detail="Invalid country or module path")
+    target_dir = _ensure_under_modules_root(
+        MODULES_DIR / resolved_country / resolved_grade / resolved_subject
+    )
 
     target_dir.mkdir(parents=True, exist_ok=True)
-    target_file = target_dir / f"module-{module_name_slug}.json"
+    target_file = (target_dir / f"module-{module_name_slug}.json").resolve()
+    _ensure_under_modules_root(target_file)
     target_file.write_text(json.dumps(pkg, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     # Invalidate curriculum index cache
     _CURRICULUM_INDEX_CACHE["count"] = -1
-    return target_file.relative_to(modules_root_resolved).as_posix()
+    return target_file.relative_to(MODULES_DIR.resolve()).as_posix()
 
 
 def _get_curriculum_index() -> list[dict]:
@@ -308,6 +365,7 @@ async def export_package(
     Export an exam as a test package.
     Returns the package as JSON or YAML.
     """
+    require_exam_author(current_user)
     # Verify exam ownership
     exam = (
         db.query(models.Exam)
@@ -453,21 +511,16 @@ async def import_package(
     """
     Import a test package and create an exam with questions.
     """
-    # Read file
-    content = await file.read()
+    require_exam_author(current_user)
+    content = await _read_package_bytes_capped(file)
 
     # Decompress if gzipped
     if file.filename and file.filename.endswith(".gz"):
-        import gzip
-
-        try:
-            content = gzip.decompress(content)
-        except Exception as e:
-            raise HTTPException(status_code=400, detail="Invalid gzip file") from e
+        content = _decompress_package_capped(content)
 
     # Parse content
     try:
-        if file.filename and file.filename.endswith((".yaml", ".yml")):
+        if file.filename and file.filename.endswith((".yaml", ".yml", ".yaml.gz", ".yml.gz")):
             pkg = yaml.safe_load(content.decode())
         else:
             pkg = json.loads(content.decode())
@@ -485,6 +538,13 @@ async def import_package(
             warnings=warnings,
         )
 
+    questions_list = pkg.get("questions", [])
+    if len(questions_list) > MAX_PACKAGE_QUESTIONS:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Package exceeds question limit ({MAX_PACKAGE_QUESTIONS})",
+        )
+
     # Create exam
     exam_data = pkg["exam"]
     exam = models.Exam(
@@ -500,7 +560,7 @@ async def import_package(
 
     # Create questions
     questions_imported = 0
-    for q_data in pkg.get("questions", []):
+    for q_data in questions_list:
         question = models.Question(
             id=str(uuid.uuid4()),
             exam_id=exam.id,
@@ -556,22 +616,19 @@ async def validate_package(
     """
     Validate a test package without importing.
     """
-    content = await file.read()
-
-    # Decompress if gzipped
-    if file.filename and file.filename.endswith('.gz'):
-        import gzip
-        try:
-            content = gzip.decompress(content)
-        except Exception:
-            return PackageValidationResult(
-                valid=False,
-                errors=["Invalid gzip file"],
-            )
-
-    # Parse content
     try:
-        if file.filename and file.filename.endswith(('.yaml', '.yml')):
+        content = await _read_package_bytes_capped(file)
+    except HTTPException as exc:
+        return PackageValidationResult(valid=False, errors=[str(exc.detail)])
+
+    if file.filename and file.filename.endswith(".gz"):
+        try:
+            content = _decompress_package_capped(content)
+        except HTTPException as exc:
+            return PackageValidationResult(valid=False, errors=[str(exc.detail)])
+
+    try:
+        if file.filename and file.filename.endswith((".yaml", ".yml", ".yaml.gz", ".yml.gz")):
             pkg = yaml.safe_load(content.decode())
         else:
             pkg = json.loads(content.decode())
@@ -582,6 +639,10 @@ async def validate_package(
         )
 
     valid, errors, warnings = _validate_package_structure(pkg)
+    questions = pkg.get("questions", []) if isinstance(pkg, dict) else []
+    if isinstance(questions, list) and len(questions) > MAX_PACKAGE_QUESTIONS:
+        errors = list(errors) + [f"Package exceeds question limit ({MAX_PACKAGE_QUESTIONS})"]
+        valid = False
     return PackageValidationResult(
         valid=valid,
         errors=errors,
@@ -598,6 +659,7 @@ async def create_package(
     db: Session = Depends(database.get_db),
 ):
     """Create a new package from an exam or package data."""
+    require_exam_author(current_user)
     # Verify the exam exists and user owns it
     exam_id = package.package_data.get("exam", {}).get("id")
     if exam_id:
@@ -702,29 +764,12 @@ async def list_packages(
 
 
 @router.get("/health")
-async def packages_health_check():
-    """Health check for packages service."""
-    return {
-        "status": "ok",
-        "available": True,
-        "service": "packages",
-        "features": [
-            "export_json",
-            "export_yaml",
-            "import_json",
-            "import_yaml",
-            "validation",
-            "checksum_verification",
-            "gzip_compression",
-            "categories",
-            "ratings",
-            "forking",
-            "custom_sources",
-            "download_tracking",
-            "curriculum_browser",
-            "country_language_folders",
-        ]
-    }
+async def packages_health_check(
+    current_user=Depends(get_current_user),
+):
+    """Authenticated readiness for packages (F-051)."""
+    _ = current_user
+    return {"status": "ok"}
 
 
 @router.get("/curriculum")
@@ -794,16 +839,27 @@ async def import_curriculum_module(
     db: Session = Depends(database.get_db),
 ):
     """Import a server curriculum module by relative path into the teacher's exams."""
+    require_exam_author(current_user)
     rel_path = str(payload.get("path") or "").strip()
     if not rel_path:
         raise HTTPException(status_code=400, detail="Module path is required")
 
-    target_file = (MODULES_DIR / rel_path).resolve()
-    modules_root_resolved = MODULES_DIR.resolve()
-    if not str(target_file).startswith(str(modules_root_resolved)) or not target_file.is_file():
+    # Reject absolute / drive-letter / null-byte paths before join
+    if Path(rel_path).is_absolute() or "\x00" in rel_path:
+        raise HTTPException(status_code=400, detail="Invalid module path")
+
+    try:
+        target_file = _ensure_under_modules_root(MODULES_DIR / rel_path)
+    except HTTPException:
+        raise HTTPException(status_code=404, detail="Curriculum module file not found") from None
+
+    if not target_file.is_file() or target_file.suffix.lower() != ".json":
         raise HTTPException(status_code=404, detail="Curriculum module file not found")
 
-    pkg = json.loads(target_file.read_text(encoding="utf-8"))
+    raw = target_file.read_bytes()
+    if len(raw) > MAX_PACKAGE_DECOMPRESSED_BYTES:
+        raise HTTPException(status_code=413, detail="Curriculum module exceeds size limit")
+    pkg = json.loads(raw.decode("utf-8"))
     valid, errors, warnings = _validate_package_structure(pkg)
     if not valid:
         return PackageImportResult(success=False, errors=errors, warnings=warnings)
@@ -859,6 +915,7 @@ async def import_repository_package(
     db: Session = Depends(database.get_db),
 ):
     """Import a saved repository package by ID into the teacher's exams."""
+    require_exam_author(current_user)
     package = db.query(models.Package).filter(models.Package.id == package_id).first()
     if not package:
         raise HTTPException(status_code=404, detail="Package not found")
@@ -1022,14 +1079,33 @@ async def sync_package_source(
     if not source:
         raise HTTPException(status_code=404, detail="Source not found")
 
+    # F-022: re-validate URL + pin to validated public IPs before server-side fetch.
+    from .url_safety import (
+        UnsafeURLError,
+        create_outbound_async_client,
+        validate_package_source_url,
+    )
+
+    try:
+        safe_url, validated_ips = validate_package_source_url(source.url, return_ips=True)
+    except UnsafeURLError as exc:
+        source.last_synced_at = datetime.now(UTC)
+        source.last_sync_status = "error"
+        source.last_sync_error = "Source URL failed safety validation"
+        db.commit()
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
     synced_count = 0
     try:
-        import httpx
         headers = {}
         if source.api_key:
             headers["Authorization"] = f"Bearer {source.api_key}"
-        async with httpx.AsyncClient(timeout=15.0) as client:
-            resp = await client.get(source.url, headers=headers)
+        async with create_outbound_async_client(
+            validated_ips=validated_ips,
+            allow_loopback=False,
+            timeout=15.0,
+        ) as client:
+            resp = await client.get(safe_url, headers=headers)
             if resp.status_code == 200:
                 data = resp.json()
                 if isinstance(data, dict) and "packages" in data:

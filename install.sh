@@ -42,7 +42,8 @@ DOMAIN="${DOMAIN:-localhost}"
 API_PORT="${API_PORT:-8000}"
 FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 ADMIN_EMAIL="${ADMIN_EMAIL:-admin@yourschool.edu}"
-ADMIN_PASS="${ADMIN_PASSWORD:-${ADMIN_PASS:-AdminPassword123!}}"
+# F-031: no predictable default password; empty triggers interactive/random generation.
+ADMIN_PASS="${ADMIN_PASSWORD:-${ADMIN_PASS:-}}"
 ADMIN_NAME="${ADMIN_NAME:-School Administrator}"
 SCHOOL_NAME="${SCHOOL_NAME:-PlannedEducation School}"
 AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
@@ -365,6 +366,8 @@ if [[ ! -f "$ENV_FILE" ]] || confirm_action "Overwrite existing .env configurati
     JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))")
     FERNET_KEY=$(python3 -c "import secrets, base64; print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())")
     DB_ENC_KEY=$(python3 -c "import secrets, base64; print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())")
+    RECOVERY_HASH_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+    TOKEN_HASH_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
 
     if [[ "$AUTO_CONFIRM" != "true" ]]; then
         read -r -p "Enter your domain or IP address (default: $DOMAIN): " input_domain
@@ -386,6 +389,11 @@ if [[ ! -f "$ENV_FILE" ]] || confirm_action "Overwrite existing .env configurati
         ENV_MODE="production"
         SEB_BYPASS="false"
     fi
+    if [[ "$ENV_MODE" == "production" ]]; then
+        FRONTEND_URL="https://${DOMAIN}"
+    else
+        FRONTEND_URL="http://${DOMAIN}:${FRONTEND_PORT}"
+    fi
 
     cat > "$ENV_FILE" <<EOF
 # PlannedEducation Environment Configuration
@@ -399,6 +407,8 @@ REDIS_URL=${REDIS_URL}
 
 # Security Secrets (NEVER SHARE THESE!)
 JWT_SECRET_KEY=${JWT_SECRET}
+RECOVERY_CODE_HASH_SECRET=${RECOVERY_HASH_SECRET}
+TOKEN_HASH_SECRET=${TOKEN_HASH_SECRET}
 JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ENCRYPTION_KEY=${FERNET_KEY}
@@ -408,6 +418,7 @@ DATABASE_ENCRYPTION=true
 DB_ENCRYPTION_MASTER_KEY=${DB_ENC_KEY}
 
 # Server Configuration
+FRONTEND_URL=${FRONTEND_URL}
 HOST=0.0.0.0
 PORT=${API_PORT}
 FRONTEND_PORT=${FRONTEND_PORT}
@@ -767,14 +778,19 @@ if [[ "$AUTO_CONFIRM" != "true" ]]; then
     SCHOOL_NAME=${input_school:-$SCHOOL_NAME}
     read -r -p "Enter Superadmin Email (default: $ADMIN_EMAIL): " input_email
     ADMIN_EMAIL=${input_email:-$ADMIN_EMAIL}
-    read -r -s -p "Enter Superadmin Password (default: $ADMIN_PASS): " input_pass
+    read -r -s -p "Enter Superadmin Password (press Enter to generate a secure random password): " input_pass
     echo ""
-    ADMIN_PASS=${input_pass:-$ADMIN_PASS}
+    if [[ -n "$input_pass" ]]; then
+        ADMIN_PASS="$input_pass"
+    else
+        ADMIN_PASS=$(openssl rand -base64 18 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 20)
+        GENERATED_RANDOM="true"
+    fi
     read -r -p "Enter Superadmin Full Name (default: $ADMIN_NAME): " input_name
     ADMIN_NAME=${input_name:-$ADMIN_NAME}
 else
-    # Even in AutoConfirm mode, ask for admin password if default or prompt administrator
-    if [[ "$ADMIN_PASS" == "AdminPassword123!" ]]; then
+    # AutoConfirm / non-interactive: reject empty/predictable passwords (F-031).
+    if [[ -z "$ADMIN_PASS" || "$ADMIN_PASS" == "AdminPassword123!" || "$ADMIN_PASS" == "ChangeMe123!" || "$ADMIN_PASS" == "changeme" || "$ADMIN_PASS" == "password" ]]; then
         echo ""
         print_warning "[SECURITY REQUIREMENT] Superadmin Password Configuration"
         echo "For security, you must set a secure administrator password."
@@ -784,11 +800,13 @@ else
             if [[ -n "$input_pass" ]]; then
                 ADMIN_PASS="$input_pass"
             else
-                ADMIN_PASS=$(openssl rand -base64 12 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 16)
+                ADMIN_PASS=$(openssl rand -base64 18 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 20)
                 GENERATED_RANDOM="true"
             fi
         else
-            print_info "Non-interactive environment detected; using configured administrator password."
+            ADMIN_PASS=$(openssl rand -base64 18 2>/dev/null || tr -dc 'A-Za-z0-9!@#%' </dev/urandom | head -c 20)
+            GENERATED_RANDOM="true"
+            print_info "Non-interactive environment: generated a secure random administrator password."
         fi
     fi
 fi
@@ -840,7 +858,7 @@ if [[ "$USE_DOCKER" == "false" ]]; then
         echo -e "  2. If you lose your administrator password and recovery codes, you will"
         echo -e "     be permanently locked out and may need to redeploy the whole system,"
         echo -e "     as direct database injection is blocked for security."
-        echo -e "  3. These credentials and recovery codes are also saved to:"
+        echo -e "  3. Recovery codes (not the password) are saved to:"
         echo -e "     ${CYAN}$INSTALL_DIR/ADMIN_CREDENTIALS.txt${RESET}"
         echo -e "${CYAN}============================================================${RESET}"
         if [ -t 0 ] && [[ "$AUTO_CONFIRM" != "true" ]]; then
@@ -850,26 +868,24 @@ if [[ "$USE_DOCKER" == "false" ]]; then
         rm -f "$INSTALL_DIR/admin_recovery_codes.tmp"
     fi
 
+    # F-031: never write the admin password to disk; recovery codes only.
     cat > "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" <<EOF
-PlannedEducation Superadmin Credentials
-=======================================
+PlannedEducation Superadmin Recovery Codes (password NOT stored)
+===============================================================
 School Name:    $SCHOOL_NAME
 Admin Email:    $ADMIN_EMAIL
-Admin Password: $ADMIN_PASS
 Admin Name:     $ADMIN_NAME
 Backend API:    http://$DOMAIN:$API_PORT
 Frontend URL:   http://$DOMAIN:$FRONTEND_PORT
 
-============================================================
-EMERGENCY RECOVERY CODES (PRINT OR KEEP SAFE):
+EMERGENCY RECOVERY CODES:
 $(echo -e "$CODES_TEXT")
+Password was shown once during install and is not written to disk.
 WARNING: If you lose both your administrator password and these
-recovery codes, you will be permanently locked out and will need
-to redeploy the entire platform, as database injection is not an option.
-============================================================
+recovery codes, you will be permanently locked out.
 EOF
     chmod 600 "$INSTALL_DIR/ADMIN_CREDENTIALS.txt" 2>/dev/null || true
-    print_success "Superadmin account ready: $ADMIN_EMAIL (saved to ADMIN_CREDENTIALS.txt with emergency recovery codes)"
+    print_success "Superadmin account ready: $ADMIN_EMAIL (recovery codes saved; password omitted from disk)"
 fi
 
 # ==============================================================================

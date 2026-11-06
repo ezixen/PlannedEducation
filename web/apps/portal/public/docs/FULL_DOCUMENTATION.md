@@ -53,8 +53,9 @@ PlannedEducation is a modern, privacy-first, open-source teacher's aid, exam-tak
 
 ### Dual-Layer Documentation Standard
 Every major topic in this manual is presented in two complementary layers:
-1. **For Teachers, Students & School Users**: Plain-English explanations, real-world classroom workflows, and step-by-step guidance without technical jargon.
-2. **For IT Administrators & Technical Experts**: In-depth architectural details, protocols, cryptographic hashing algorithms, database schemas, HTTP headers, filesystem structures, and code mechanics.
+1. **For Teachers, Students & School Users**: Plain-English explanations, real-world classroom workflows, and step-by-step guidance without technical jargon. Prefer the focused guides in [`docs/user/`](user/).
+2. **For IT Administrators**: Install, deploy, backup, and role operations in [`docs/admin/`](admin/).
+3. **For Engineers & Security Reviewers**: Current auth/crypto/exam contracts and known open risks in [`docs/dev/SECURITY_ARCHITECTURE.md`](dev/SECURITY_ARCHITECTURE.md) (index: [`docs/dev/README.md`](dev/README.md)). Do not paste engineering wording into classroom FAQ or portal i18n strings.
 
 ### Core Architectural Guardrails
 1. **🚫 Strictly Zero Paid Services — Ever**:
@@ -79,11 +80,11 @@ PlannedEducation is designed to operate out-of-the-box with minimal configuratio
 |:---|:---:|:---|:---|
 | `JWT_SECRET_KEY` | **REQUIRED** | None in production | **Why Required**: Cryptographic signing of session authentication tokens (HMAC-SHA256). Without this, user identity cannot be validated and token forgery is possible. Must be a 512-bit secure random string (`secrets.token_hex(64)`). |
 | `DATABASE_URL` | **REQUIRED** | `sqlite:///./plannededucation.db` | **Why Required**: Specifies the relational database connection. Points to a standalone local file (`sqlite:///...`) for zero-config classroom setups or PostgreSQL (`postgresql+psycopg://...`) for high-concurrency campus deployments. |
-| `ENCRYPTION_KEY` | **OPTIONAL** | Derived key | **Why Optional**: Server Fernet encryption key used to encrypt sensitive database columns (e.g. BYOK AI keys, recovery codes, TOTP secrets) at rest. In dev mode it auto-derives; in production it should be set explicitly for cryptographic isolation. |
+| `DATABASE_ENCRYPTION` / `DB_ENCRYPTION_MASTER_KEY` | **REQUIRED in production** | Installer-generated Fernet key | Field-level Fernet encryption for DMs, Teachers' Lounge bodies, TOTP/recovery/WebAuthn, OCR text, notifications. Distinct from `JWT_SECRET_KEY` and `AI_KEY_MASTER_SECRET`. Lookup fields (email/username) stay queryable. |
 | `REDIS_URL` | **OPTIONAL** | In-Memory fallback | **Why Optional**: Redis connection string (e.g. `redis://localhost:6379/0`). If omitted, PlannedEducation automatically falls back to local in-memory token-bucket rate limiting (`slowapi`). Recommended when running multiple Uvicorn workers. |
 | `SMTP_HOST` / `PORT` | **OPTIONAL** | None (Offline logging) | **Why Optional**: Outgoing school email server for password reset links. If omitted, the platform runs in 100% offline mode: reset links and OTP codes are safely displayed in admin logs and teacher rosters. |
 | `BREVO_API_KEY` | **OPTIONAL** | None | **Why Optional**: Free-tier cloud email API (300 free emails/day) for schools without their own SMTP server. Optional alternative to `SMTP_HOST`. |
-| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: When `false` (production default), Safe Exam Browser header validation is strictly enforced. When set to `true`, developers can preview SEB exams in standard Chrome/Firefox without installing SEB. |
+| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: Production must keep `false`. When `true`, bypass is allowed **only** if `PLANNED_EDUCATION_ENV` is `development` or `test` — a literal `dev-bypass` header alone never unlocks production exams. |
 | `ALLOWED_HOSTS` | **OPTIONAL** | `localhost, 127.0.0.1` | **Why Optional**: Comma-separated list of allowed HTTP Host headers to prevent HTTP Host Header poisoning attacks. Set to your school's server IP or domain name. |
 | `CORS_ORIGINS` | **OPTIONAL** | Frontend origin | **Why Optional**: Cross-Origin Resource Sharing whitelist for API access from web clients. |
 
@@ -826,7 +827,7 @@ Eye movement (gaze tracking), multiple face detection, background audio levels, 
 PlannedEducation works best with modern browsers: Chrome, Firefox, Safari, and Edge. For secure exams, we recommend using the Secure Exam Browser (SEB) or Chrome Canary for development.
 
 ### Is my data private and secure?
-Yes! PlannedEducation is privacy-first and open-source. All data is stored locally or on your self-hosted server. We use end-to-end encryption for sensitive data and never sell or share your information.
+Yes. PlannedEducation is privacy-first, open-source, and self-hosted: no paid cloud lock-in and no selling of student data. Passwords use Argon2id; sessions use short-lived JWTs; TOTP secrets, recovery codes, WebAuthn material, direct/lounge message bodies, OCR text, and notification payloads are Fernet-encrypted at rest when `DATABASE_ENCRYPTION=true` (installers generate a dedicated `DB_ENCRYPTION_MASTER_KEY` distinct from JWT/AI keys). Presidio scrubs PII before any external AI grading. This is at-rest field encryption plus access control — not consumer-style end-to-end chat between devices.
 
 ### How do I get help or report issues?
 For technical issues, check the documentation in the docs/ folder. For feature requests or bug reports, visit our GitHub repository and open an issue.
@@ -844,18 +845,18 @@ Use Docker Compose with docker-compose.yml + docker-compose.prod.yml. Set enviro
 ### How do I install PlannedEducation on Windows?
 Open PowerShell as Administrator and run:
 `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\install.ps1`
-The installer supports both **Native Mode** (running directly via Python with SQLite or PostgreSQL, requiring no Docker) and **Docker Compose Mode**. See [Windows Installation Guide](../admin/INSTALL_WINDOWS.md) for full details.
+The installer supports both **Native Mode** (running directly via Python with SQLite or PostgreSQL, requiring no Docker) and **Docker Compose Mode**. See [Windows Installation Guide](admin/INSTALL_WINDOWS.md) for full details.
 
 ### How do I install PlannedEducation on Linux?
 Run the one-line bash installer:
 `curl -fsSL https://raw.githubusercontent.com/ezixen/PlannedEducation/main/install.sh | bash`
-Or clone the repository and run `./install.sh`. The installer supports Ubuntu 22.04/24.04, Debian 12, and CentOS/RHEL with Native Systemd service setup or Docker Compose. See [Linux Installation Guide](../admin/INSTALL_LINUX.md).
+Or clone the repository and run `./install.sh`. The installer supports Ubuntu 22.04/24.04, Debian 12, and CentOS/RHEL with Native Systemd service setup or Docker Compose. See [Linux Installation Guide](admin/INSTALL_LINUX.md).
 
 ### Can I run PlannedEducation without Docker (Native Mode)?
 Yes! Both `install.ps1` and `install.sh` support **Native Mode**. It runs directly on the host using Python 3.12+ and can use SQLite (zero-configuration standalone database) or local PostgreSQL and Redis. This reduces memory usage and eliminates Docker overhead for small school servers.
 
 ### How do I use the Cross-Platform Deployment Wizard?
-Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_wizard.py`). It works on Windows, Linux, and macOS, automatically verifies dependencies, generates secure encryption secrets (JWT and Fernet keys), and guides you through setting up either Native or Docker deployment. See [Master Deployment Guide](../admin/DEPLOYMENT_GUIDE.md).
+Run `python scripts/deploy/deploy_wizard.py` (or `python3 scripts/deploy/deploy_wizard.py`). It works on Windows, Linux, and macOS, automatically verifies dependencies, generates secure encryption secrets (JWT and Fernet keys), and guides you through setting up either Native or Docker deployment. See [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md).
 
 ### How do teachers and students connect over the local school network (Wi-Fi/LAN)?
 1. Find the server's local IPv4 address (e.g., `192.168.1.150`).
@@ -1628,11 +1629,11 @@ Start-ScheduledTask -TaskName "PlannedEducationServer"
 ---
 
 ## 📚 Related Documentation
-- [Linux Installation Guide](INSTALL_LINUX.md)
-- [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
+- [Linux Installation Guide](admin/INSTALL_LINUX.md)
+- [Installation Compatibility & Requirements Matrix](admin/INSTALL_COMPATIBILITY.md)
+- [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](user/FAQ.md)
 
 ---
 
@@ -1966,11 +1967,11 @@ sudo nginx -t && sudo systemctl reload nginx
 ---
 
 ## 📚 Related Documentation
-- [Windows Installation Guide](INSTALL_WINDOWS.md)
-- [Installation Compatibility & Requirements Matrix](INSTALL_COMPATIBILITY.md)
-- [Master Deployment Guide](DEPLOYMENT_GUIDE.md)
-- [Module System & School Federation](../dev/MODULE_SYSTEM.md)
-- [Frequently Asked Questions (FAQ)](../user/FAQ.md)
+- [Windows Installation Guide](admin/INSTALL_WINDOWS.md)
+- [Installation Compatibility & Requirements Matrix](admin/INSTALL_COMPATIBILITY.md)
+- [Master Deployment Guide](admin/DEPLOYMENT_GUIDE.md)
+- [Module System & School Federation](dev/MODULE_SYSTEM.md)
+- [Frequently Asked Questions (FAQ)](user/FAQ.md)
 
 ---
 
@@ -2023,11 +2024,11 @@ PlannedEducation enforces strict separation between required security settings a
 |:---|:---:|:---|:---|
 | `JWT_SECRET_KEY` | **REQUIRED** | None in production | **Why Required**: Cryptographic signing of session authentication tokens (HMAC-SHA256). Without this, user identity cannot be validated and token forgery is possible. Must be a 512-bit secure random string (`secrets.token_hex(64)`). |
 | `DATABASE_URL` | **REQUIRED** | `sqlite:///./plannededucation.db` | **Why Required**: Specifies the relational database connection. Points to a standalone local file (`sqlite:///...`) for zero-config classroom setups or PostgreSQL (`postgresql+psycopg://...`) for high-concurrency campus deployments. |
-| `ENCRYPTION_KEY` | **OPTIONAL** | Derived key | **Why Optional**: Server Fernet encryption key used to encrypt sensitive database columns (e.g. BYOK AI keys, recovery codes, TOTP secrets) at rest. In dev mode it auto-derives; in production it should be set explicitly for cryptographic isolation. |
+| `DATABASE_ENCRYPTION` / `DB_ENCRYPTION_MASTER_KEY` | **REQUIRED in production** | Installer-generated Fernet key | Field-level Fernet encryption for DMs, Teachers' Lounge bodies, TOTP/recovery/WebAuthn, OCR text, notifications. Distinct from `JWT_SECRET_KEY` and `AI_KEY_MASTER_SECRET`. Lookup fields (email/username) stay queryable. |
 | `REDIS_URL` | **OPTIONAL** | In-Memory fallback | **Why Optional**: Redis connection string (e.g. `redis://localhost:6379/0`). If omitted, PlannedEducation automatically falls back to local in-memory token-bucket rate limiting (`slowapi`). Recommended when running multiple Uvicorn workers. |
 | `SMTP_HOST` / `PORT` | **OPTIONAL** | None (Offline logging) | **Why Optional**: Outgoing school email server for password reset links. If omitted, the platform runs in 100% offline mode: reset links and OTP codes are safely displayed in admin logs and teacher rosters. |
 | `BREVO_API_KEY` | **OPTIONAL** | None | **Why Optional**: Free-tier cloud email API (300 free emails/day) for schools without their own SMTP server. Optional alternative to `SMTP_HOST`. |
-| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: When `false` (production default), Safe Exam Browser header validation is strictly enforced. When set to `true`, developers can preview SEB exams in standard Chrome/Firefox without installing SEB. |
+| `ALLOW_DEV_SEB_BYPASS`| **OPTIONAL** | `false` | **Why Optional**: Production must keep `false`. When `true`, bypass is allowed **only** if `PLANNED_EDUCATION_ENV` is `development` or `test` — a literal `dev-bypass` header alone never unlocks production exams. |
 | `ALLOWED_HOSTS` | **OPTIONAL** | `localhost, 127.0.0.1` | **Why Optional**: Comma-separated list of allowed HTTP Host headers to prevent HTTP Host Header poisoning attacks. Set to your school's server IP or domain name. |
 | `CORS_ORIGINS` | **OPTIONAL** | Frontend origin | **Why Optional**: Cross-Origin Resource Sharing whitelist for API access from web clients. |
 
@@ -2334,9 +2335,18 @@ Configurable via API `PUT /admin/school/header` or through **Admin Dashboard →
 
 ### 0. Native Midnight Auto-Backup Scheduler (Built-In)
 PlannedEducation includes a native background backup scheduler (`backup_service.py`):
-- **Automated Schedule:** Runs daily at **00:00 UTC** while the server is active.
-- **Automated Retention:** Automatically prunes backup archives older than **30 days**.
-- **Admin Dashboard Control:** Administrators can create an instant snapshot anytime via **Admin Dashboard → 💾 Database Backups** and download archives directly from the browser.
+
+**Default Schedule:** Runs daily at **22:00** (10 PM) server local time.
+**Default Retention:** Automatically prunes backup archives older than **30 days**.
+**Admin Dashboard Control:** Administrators can configure backup settings via **Admin Dashboard → Database Backups > Configure**:
+- **Backup Location:** Custom directory path for backup files
+- **Backup Frequency:** How often automatic backups run (days, default: 1)
+- **Backup Retention:** Days to keep automatic backups (default: 30)
+- **Backup Time:** Time of day for automatic backups (24h format, default: 22:00)
+
+All backups use maximum gzip compression (level 9) and include date/time in the filename (e.g., `backup_auto_20261104_220000.db.gz`).
+
+**Admin Dashboard Control:** Administrators can create an instant snapshot anytime via **Admin Dashboard → 💾 Database Backups** and download archives directly from the browser.
 - **Engine Support:**
   - SQLite: Uses atomic `sqlite3.connect().backup()` to prevent table locks.
   - PostgreSQL: Uses `pg_dump` with gzip compression.

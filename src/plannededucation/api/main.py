@@ -41,6 +41,7 @@ from . import (
     routes_parent,
     routes_proctoring,
     routes_stt,
+    routes_sync,
 )
 from .database import Base, engine
 from .limiter import RateLimitExceeded, _rate_limit_exceeded_handler, limiter
@@ -134,12 +135,19 @@ except Exception:
     EXAM_SUBMISSIONS = REGISTRY._names_to_collectors.get("exam_submissions_total")
     AI_GRADING_REQUESTS = REGISTRY._names_to_collectors.get("ai_grading_requests_total")
 
-# Start Prometheus metrics server on port 9090 (skip in test mode or if port is busy)
-if os.getenv("PLANNED_EDUCATION_ENV") != "test":
+# Start Prometheus metrics server only when explicitly enabled (F-042).
+# Bind to loopback by default so the scrape port is not public on native hosts.
+_metrics_enabled = os.getenv("METRICS_ENABLED", "false").lower() in {"1", "true", "yes"}
+_metrics_addr = os.getenv("METRICS_BIND_ADDR", "127.0.0.1")
+_metrics_port = int(os.getenv("METRICS_PORT", "9090"))
+if _metrics_enabled and os.getenv("PLANNED_EDUCATION_ENV") != "test":
     try:
-        start_http_server(9090)
+        start_http_server(_metrics_port, addr=_metrics_addr)
     except OSError:
-        logger.warning("Prometheus metrics port 9090 already in use; skipping start_http_server.")
+        logger.warning(
+            "Prometheus metrics port %s already in use; skipping start_http_server.",
+            _metrics_port,
+        )
 
 # Configure OpenTelemetry
 resource = Resource.create({"service.name": "plannededucation-api"})
@@ -184,12 +192,18 @@ async def lifespan(app: FastAPI):
         logger.warning(f"Requests OpenTelemetry instrumentation skipped: {exc}")
 
     Base.metadata.create_all(bind=engine)
-    # Additive column upgrades for existing DBs (create_all never ALTERs)
+    # Versioned schema migrations for existing DBs (create_all never ALTERs).
     try:
         from .schema_ensure import ensure_schema
-        ensure_schema(engine)
+        ensure_schema(engine, Base.metadata)
     except Exception as exc:
-        logger.warning(f"Schema ensure skipped: {exc}")
+        logger.exception("Schema migration failed; refusing to start: %s", exc)
+        raise
+
+    # Exam chat Redis pub/sub lifecycle (F-029): start/stop fail-closed when configured.
+    from .routes_chat import manager as chat_manager
+
+    await chat_manager.start()
 
     # Start background midnight autobackup task (when not in test mode)
     backup_task = None
@@ -203,6 +217,7 @@ async def lifespan(app: FastAPI):
         backup_task.cancel()
         with suppress(asyncio.CancelledError):
             await backup_task
+    await chat_manager.stop()
 
 
 # ── Rate Limiter (shared instance imported from .limiter) ───────────────────
@@ -233,14 +248,23 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["Permissions-Policy"] = (
             "geolocation=(), microphone=(), camera=(), payment=()"
         )
-        # Content Security Policy - restrictive by default
+        # Content Security Policy (F-043). Vite production builds use hashed
+        # external module scripts only (no inline script) — omit script
+        # 'unsafe-inline'/'unsafe-eval' outside development. style-src keeps
+        # 'unsafe-inline' for CSS (fonts + framework). Full per-request nonce
+        # CSP for HTML shells is applied at the reverse proxy (nginx.conf).
+        _env = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
+        if _env == "development":
+            _script_src = "'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com"
+        else:
+            _script_src = "'self' https://accounts.google.com https://apis.google.com"
+        _img_src = "'self' data: https:" if _env == "development" else "'self' data:"
         csp = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' "
-            "https://accounts.google.com https://apis.google.com; "
+            f"script-src {_script_src}; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
-            "img-src 'self' data: https:; "
+            f"img-src {_img_src}; "
             "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com; "
             "frame-src https://accounts.google.com; "
             "frame-ancestors 'none'; "
@@ -286,10 +310,31 @@ try:
 except Exception:
     pass
 
+def _validate_cors_origin(origin: str) -> bool:
+    """Reject wildcards and credential-unsafe origins (F-043)."""
+    o = origin.strip()
+    if not o or o == "*":
+        return False
+    if "://" not in o:
+        return False
+    scheme, _, rest = o.partition("://")
+    if scheme not in {"http", "https"}:
+        return False
+    host = rest.split("/")[0].split(":")[0].lower()
+    env = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
+    if scheme == "http" and env == "production" and host not in {
+        "localhost",
+        "127.0.0.1",
+        "::1",
+    }:
+        return False
+    return True
+
+
 cors_origins = [
     origin.strip()
     for origin in _raw_cors.split(",")
-    if origin.strip()
+    if origin.strip() and _validate_cors_origin(origin)
 ]
 # Ensure both localhost and 127.0.0.1 equivalents are accepted
 expanded_origins = set(cors_origins)
@@ -298,7 +343,9 @@ for origin in list(expanded_origins):
         expanded_origins.add(origin.replace("localhost", "127.0.0.1"))
     elif "127.0.0.1" in origin:
         expanded_origins.add(origin.replace("127.0.0.1", "localhost"))
-cors_origins = list(expanded_origins)
+cors_origins = [o for o in expanded_origins if _validate_cors_origin(o)]
+if not cors_origins:
+    logger.warning("No valid CORS_ORIGINS configured; credentialed CORS will deny all origins")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
@@ -392,15 +439,15 @@ class MetricsMiddleware(BaseHTTPMiddleware):
         duration = time.time() - start_time
         status_code = response.status_code
 
-        # Prometheus metrics
-        REQUEST_COUNT.labels(method=method, endpoint=path, status_code=status_code).inc()
-        REQUEST_LATENCY.labels(method=request.method, endpoint=path).observe(duration)
+        # Prefer low-cardinality route templates over raw paths with IDs (F-042).
+        endpoint_label = getattr(request.scope.get("route"), "path", None) or path
+        REQUEST_COUNT.labels(method=method, endpoint=endpoint_label, status_code=status_code).inc()
+        REQUEST_LATENCY.labels(method=request.method, endpoint=endpoint_label).observe(duration)
 
-        # OpenTelemetry metrics
         request_counter.add(
-            1, {"method": method, "endpoint": path, "status_code": str(status_code)}
+            1, {"method": method, "endpoint": endpoint_label, "status_code": str(status_code)}
         )
-        request_latency.record(duration, {"method": request.method, "endpoint": path})
+        request_latency.record(duration, {"method": request.method, "endpoint": endpoint_label})
 
         return response
 
@@ -423,11 +470,13 @@ app.include_router(routes_archive.router)
 app.include_router(routes_admin.router)
 app.include_router(routes_alerts.router)
 app.include_router(routes_notifications.router)
+app.include_router(routes_sync.router)
 
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "Planned Education API", "version": __version__}
+    # F-051: public liveness only — no version/feature disclosure.
+    return {"status": "ok"}
 
 
 # ── Global Exception Handler (no stack traces in production) ─────────────────

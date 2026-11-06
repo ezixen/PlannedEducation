@@ -41,10 +41,12 @@ class RedisPubSubManager:
         return self._redis
 
     async def start(self):
-        """Start the Redis listener."""
+        """Start the Redis listener. Raises when Redis is required but unavailable."""
         redis = await self._get_redis()
         if not redis:
-            return  # Fall back to in-memory only
+            raise RuntimeError(
+                "USE_REDIS_CHAT is enabled but Redis is unreachable; refusing to split workers"
+            )
         self._running = True
         self._pubsub = redis.pubsub()
         await self._pubsub.subscribe("chat:broadcast")
@@ -103,16 +105,25 @@ class RedisPubSubManager:
 
     async def broadcast_to_exam(self, message: str, exam_id: str, sender_name: str):
         """Broadcast to all workers via Redis, then locally."""
-        payload = json.dumps({"sender": sender_name, "message": message})
+        from datetime import UTC, datetime
 
-        # Publish to Redis for other workers
+        payload = json.dumps(
+            {
+                "type": "message",
+                "sender": sender_name,
+                "message": message,
+                "timestamp": datetime.now(UTC).isoformat(),
+            }
+        )
+
+        # Publish to Redis for other workers — fail closed if Redis was required.
         redis = await self._get_redis()
-        if redis:
-            with contextlib.suppress(Exception):
-                await redis.publish(
-                    "chat:broadcast",
-                    json.dumps({"exam_id": exam_id, "payload": payload}),
-                )
+        if redis is None:
+            raise RuntimeError("Redis chat required but connection is unavailable")
+        await redis.publish(
+            "chat:broadcast",
+            json.dumps({"exam_id": exam_id, "payload": payload}),
+        )
 
         # Always broadcast locally
         await self._broadcast_local(exam_id, payload)
@@ -167,7 +178,16 @@ class ConnectionManager:
                 return
             connections = self._local_connections.get(exam_id, [])
             dead = []
-            payload = json.dumps({"sender": sender_name, "message": message})
+            from datetime import UTC, datetime
+
+            payload = json.dumps(
+                {
+                    "type": "message",
+                    "sender": sender_name,
+                    "message": message,
+                    "timestamp": datetime.now(UTC).isoformat(),
+                }
+            )
             for conn in connections:
                 try:
                     await conn["websocket"].send_text(payload)
@@ -187,7 +207,8 @@ def _get_user_from_ws_token(token: str, db: Session) -> models.User | None:
     try:
         payload = jwt.decode(token, auth.SECRET_KEY, algorithms=[auth.ALGORITHM])
         email: str | None = payload.get("sub")
-        if not email:
+        # Match REST: only short-lived access tokens (F-005)
+        if not email or payload.get("type") != "access":
             return None
         user = db.query(models.User).filter(models.User.email == email).first()
         return user if (user and user.is_active) else None
@@ -230,19 +251,19 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
             await websocket.close(code=1008, reason="Exam not found")
             return
 
-        # A user may join chat if they own the exam OR have an active submission
+        # A user may join chat if they own the exam OR have an in-progress submission.
         is_owner = (exam.teacher_id == user.id)
-        has_submission = (
+        active_submission = (
             db.query(models.ExamSubmission)
             .filter(
                 models.ExamSubmission.exam_id == exam_id,
                 models.ExamSubmission.student_id == user.id,
+                models.ExamSubmission.completed_at.is_(None),
             )
             .first()
-            is not None
         )
 
-        if not is_owner and not has_submission:
+        if not is_owner and active_submission is None:
             await websocket.close(code=1008, reason="Not authorised to join this exam room")
             return
 
@@ -253,6 +274,15 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
                 data = await websocket.receive_text()
                 # Truncate messages to 2 KB to prevent message flooding
                 data = data[:2048]
+                # Prefer structured client frames; accept plain text for compatibility.
+                try:
+                    parsed = json.loads(data)
+                    if isinstance(parsed, dict) and "message" in parsed:
+                        data = str(parsed.get("message") or "")[:2048]
+                except (json.JSONDecodeError, TypeError):
+                    pass
+                if not data.strip():
+                    continue
                 await manager.broadcast_to_exam(data, exam_id, user.full_name or user.username)
         except WebSocketDisconnect:
             manager.disconnect(websocket, exam_id)
@@ -264,25 +294,37 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
 
 
 def _require_teacher_or_admin(current_user: models.User) -> None:
-    if current_user.role not in ("teacher", "teacher_aide", "admin", "superadmin"):
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Only teachers, teacher's aides, and admins can access the lounge",
-        )
+    # F-037: aide grant is the boolean flag; role may remain student/teacher.
+    if (
+        current_user.role in ("teacher", "teacher_aide", "admin", "superadmin")
+        or current_user.is_admin
+        or getattr(current_user, "is_teacher_aide", False)
+    ):
+        return
+    raise HTTPException(
+        status_code=status.HTTP_403_FORBIDDEN,
+        detail="Only teachers, teacher's aides, and admins can access the lounge",
+    )
 
 
 @router.get("/lounge/messages", response_model=list[schemas.TeacherLoungeMessageResponse])
 def list_lounge_messages(
     current_user: models.User = Depends(get_current_user),
     db: Session = Depends(database.get_db),
+    limit: int = 100,
+    offset: int = 0,
 ):
-    """List all top-level teacher's lounge messages with their replies."""
+    """List top-level teacher's lounge messages with their replies (paginated)."""
     _require_teacher_or_admin(current_user)
+    safe_limit = max(1, min(limit, 200))
+    safe_offset = max(0, offset)
 
     messages = (
         db.query(models.TeacherLoungeMessage)
         .filter(models.TeacherLoungeMessage.parent_id.is_(None))
         .order_by(models.TeacherLoungeMessage.is_pinned.desc(), models.TeacherLoungeMessage.created_at.desc())
+        .offset(safe_offset)
+        .limit(safe_limit)
         .all()
     )
 
@@ -539,6 +581,26 @@ def list_direct_messages(
         )
 
     return result
+
+
+# F-036: Register the static /messages/direct/unread-count route BEFORE the dynamic
+# /messages/direct/{partner_id} route so FastAPI matches it correctly.
+@router.get("/messages/direct/unread-count")
+def get_direct_unread_count_early(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Get the count of unread direct messages for the current user."""
+    count = (
+        db.query(models.DirectMessage)
+        .filter(
+            models.DirectMessage.recipient_id == current_user.id,
+            models.DirectMessage.is_read == False,  # noqa: E712
+            models.DirectMessage.deleted_by_recipient == False,  # noqa: E712
+        )
+        .count()
+    )
+    return {"unread_count": count}
 
 
 @router.get(
@@ -812,22 +874,8 @@ def mark_direct_message_read(
     return {"status": "success", "message": "Message marked as read"}
 
 
-@router.get("/messages/direct/unread-count")
-def get_direct_unread_count(
-    current_user: models.User = Depends(get_current_user),
-    db: Session = Depends(database.get_db),
-):
-    """Get the count of unread direct messages for the current user."""
-    count = (
-        db.query(models.DirectMessage)
-        .filter(
-            models.DirectMessage.recipient_id == current_user.id,
-            models.DirectMessage.is_read == False,
-            models.DirectMessage.deleted_by_recipient == False,
-        )
-        .count()
-    )
-    return {"unread_count": count}
+# F-036: Original unread-count registration (now shadowed by the early registration above).
+# Kept for clarity but FastAPI will use the first-registered handler.
 
 
 @router.delete("/messages/direct/{message_id}")

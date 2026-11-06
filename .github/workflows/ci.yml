@@ -2,6 +2,9 @@
 # This workflow uses ONLY GitHub Actions free tier (2000 min/month for private repos)
 # NO PAID CI/CD SERVICES
 # Policy: docs/GITHUB_FREE_TIER.md
+#
+# Action pins: commit SHAs for actions/checkout, setup-python, setup-node (mutable
+# tag @v7 documented alongside). Free-tier OSS only — no paid GitHub Advanced Security.
 
 name: CI/CD Pipeline
 
@@ -18,9 +21,8 @@ env:
   DATABASE_URL: sqlite:///./test.db
   PLANNED_EDUCATION_ENV: test
   ALLOW_DEV_AUTH: "true"
-  JWT_SECRET_KEY: "test-secret-key-for-ci-only-32bytes-minimum" # gitleaks:allow
   CORS_ORIGINS: "http://localhost:5173"
-  AI_KEY_MASTER_SECRET: "EJEtzTWXcAvRD5ZfTZWJ7j5wKfdNdXoSrjGlx1uUrbw=" # gitleaks:allow (throwaway CI-only test key)
+  # JWT_SECRET_KEY / AI_KEY_MASTER_SECRET: generated per-job at runtime (no hardcoded secrets)
 
 jobs:
   # Backend Tests
@@ -30,14 +32,24 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        # actions/checkout@v7 → 3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        # actions/setup-python@v7 → 6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: "3.12"
           cache: "pip"
           cache-dependency-path: src/requirements.txt
+
+      - name: Generate ephemeral CI secrets
+        run: |
+          # Runtime-only secrets (stdlib) — never hardcode token-shaped values in YAML.
+          JWT_SECRET_KEY=$(python -c 'import secrets; print(secrets.token_urlsafe(48))')
+          AI_KEY_MASTER_SECRET=$(python -c 'import base64, os; print(base64.urlsafe_b64encode(os.urandom(32)).decode())')
+          echo "JWT_SECRET_KEY=${JWT_SECRET_KEY}" >> "$GITHUB_ENV"
+          echo "AI_KEY_MASTER_SECRET=${AI_KEY_MASTER_SECRET}" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: |
@@ -50,16 +62,20 @@ jobs:
           ruff check src/
 
       - name: Run type checking (mypy)
-        # Non-blocking: ~99 pre-existing SQLAlchemy Column typing errors; burn down then remove.
+        # Non-blocking: known SQLAlchemy Column typing burn-down (~99 pre-existing
+        # errors). Keep continue-on-error + || true until the typing debt is cleared,
+        # then remove both and make mypy fail-closed.
         continue-on-error: true
         run: |
           pip install mypy
           mypy src/plannededucation --ignore-missing-imports --namespace-packages --explicit-package-bases || true
 
       - name: Run security scan (bandit)
+        # Fail closed on Medium+ (severity -ll). No --exit-zero / || true.
         run: |
           pip install bandit
-          bandit -r src/ -f json -o bandit-report.json --exit-zero || true
+          bandit -r src/ -ll -f json -o bandit-report.json
+          bandit -r src/ -ll
 
       - name: Run dependency audit (pip-audit)
         run: |
@@ -67,6 +83,9 @@ jobs:
           pip-audit -r src/requirements.txt --strict
 
       - name: Run tests with coverage
+        # Controlled exception vs AGENTS.md local mandate: CI uses raw pytest here
+        # to emit coverage XML for the free-tier pipeline. Local/dev agents MUST still
+        # wrap pytest via scripts/testing/update_test_cache.py --skip-if-clean.
         run: |
           pip install pytest pytest-cov
           PYTHONPATH=. pytest tests/ -v --cov=src/plannededucation --cov-report=xml --cov-report=term-missing
@@ -78,10 +97,12 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        # actions/checkout@v7 → 3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        # actions/setup-node@v7 → 949feb2413d6458794dcd2491c4babbbce0c15c1
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: "22"
           cache: "npm"
@@ -97,10 +118,13 @@ jobs:
           cd web/apps/portal
           npm run lint
 
-      - name: Run security linting (oxlint security rules)
+      - name: Run security linting (oxlint deny correctness)
+        # oxlint has no dedicated "security" category. Never use -A (allow) which
+        # disables rules. Deny correctness (outright wrong/useless code). Suspicious
+        # has large pre-existing unicorn/style noise — burn down separately before -D.
         run: |
           cd web/apps/portal
-          npx oxlint -A security
+          npx oxlint -D correctness
 
       - name: Type check
         run: |
@@ -129,17 +153,20 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        # actions/checkout@v7 → 3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: 1
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        # actions/setup-python@v7 → 6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: "3.12"
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        # actions/setup-node@v7 → 949feb2413d6458794dcd2491c4babbbce0c15c1
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: "22"
           cache: "npm"
@@ -184,7 +211,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Install Trivy (Free OSS)
         run: |
@@ -218,10 +245,10 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: "3.12"
 
@@ -236,7 +263,7 @@ jobs:
             cyclonedx-py requirements -o ../sbom-python.json --of json
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: "22"
           cache: "npm"
@@ -288,7 +315,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Install cosign (Free OSS)
         uses: sigstore/cosign-installer@v4.1.2
@@ -322,7 +349,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Install cosign (Free OSS)
         uses: sigstore/cosign-installer@v4.1.2
@@ -400,4 +427,3 @@ jobs:
               exit 1
             fi
           done
-

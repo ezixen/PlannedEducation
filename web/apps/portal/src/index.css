@@ -1082,13 +1082,28 @@ input, select, textarea {
   }
 }
 
-/* FAQ Chatbot Styles */
+/* FAQ Chatbot Styles — Help opens from hamburger; bottom-right reserved for Symbols */
 .faq-chatbot-container {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 9998;
   font-family: inherit;
+  pointer-events: none;
+}
+
+.faq-chatbot-container > * {
+  pointer-events: auto;
+}
+
+/* Menu-driven mode: no FAB; panel sits above Special Characters FAB */
+.faq-chatbot-container--menu {
+  bottom: auto;
+  right: auto;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
 }
 
 .faq-chatbot-button {
@@ -1143,6 +1158,15 @@ input, select, textarea {
   flex-direction: column;
   overflow: hidden;
   animation: slideUp 0.2s ease-out;
+}
+
+/* Menu-opened Help panel: fixed above Symbols FAB so bottom-right stays free */
+.faq-chatbot-container--menu .faq-chatbot-window {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  left: auto;
+  z-index: 9999;
 }
 
 @keyframes slideUp {
