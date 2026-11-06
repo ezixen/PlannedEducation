@@ -71,10 +71,12 @@ def test_schema_assurance_records_versioned_migrations():
         migration_rows = connection.exec_driver_sql(
             "SELECT version FROM schema_migrations ORDER BY version"
         ).fetchall()
-    assert [row[0] for row in migration_rows] == [1, 2, 3, 4, 5]
+    assert [row[0] for row in migration_rows] == [1, 2, 3, 4, 5, 6]
     assert "refresh_sessions" in inspect(engine).get_table_names()
     columns = {column["name"] for column in inspect(engine).get_columns("users")}
     assert "is_superadmin" in columns
+    exam_columns = {column["name"] for column in inspect(engine).get_columns("exams")}
+    assert "home_exam_enabled" in exam_columns
 
 
 def test_exam_authorization_and_server_deadline():

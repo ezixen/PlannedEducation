@@ -8,7 +8,27 @@ import pytest
 from fastapi.testclient import TestClient
 
 from src.plannededucation.api import database, models
+from src.plannededucation.api.deployment_config import (
+    DeploymentConfigSchema,
+    load_deployment_config,
+    save_deployment_config,
+)
 from src.plannededucation.api.main import app
+
+
+def _enable_home_exam_gates(exam_id: str) -> None:
+    """Proctoring routes require platform + per-exam home-exam beta flags."""
+    cfg = load_deployment_config()
+    cfg["home_exam_proctoring_enabled"] = True
+    save_deployment_config(DeploymentConfigSchema(**cfg))
+    db = database.SessionLocal()
+    try:
+        exam = db.query(models.Exam).filter(models.Exam.id == exam_id).first()
+        assert exam is not None
+        exam.home_exam_enabled = True
+        db.commit()
+    finally:
+        db.close()
 
 
 @pytest.fixture(scope="module")
@@ -69,7 +89,7 @@ def teacher_headers(client):
 
 @pytest.fixture
 def exam_id(client, teacher_headers):
-    """Create a fresh exam per test (avoids session-already-exists collisions)."""
+    """Create a fresh home-exam-enabled exam per test (avoids session collisions)."""
     response = client.post(
         "/exams",
         json={
@@ -80,7 +100,9 @@ def exam_id(client, teacher_headers):
         headers=teacher_headers,
     )
     assert response.status_code == 201
-    return response.json()["id"]
+    eid = response.json()["id"]
+    _enable_home_exam_gates(eid)
+    return eid
 
 
 @pytest.fixture

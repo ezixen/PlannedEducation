@@ -43,8 +43,10 @@ def test_schema_includes_refresh_sessions_migration():
                 "SELECT version FROM schema_migrations ORDER BY version"
             ).fetchall()
         ]
-    assert versions == [1, 2, 3, 4, 5]
+    assert versions == [1, 2, 3, 4, 5, 6]
     assert "refresh_sessions" in inspect(engine).get_table_names()
+    exam_columns = {column["name"] for column in inspect(engine).get_columns("exams")}
+    assert "home_exam_enabled" in exam_columns
     columns = {column["name"] for column in inspect(engine).get_columns("refresh_sessions")}
     assert {
         "id",
