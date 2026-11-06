@@ -50,10 +50,13 @@ def main() -> int:
             db.add(School(name=school_name, address="Local Campus"))
             db.commit()
 
-        email = os.environ.get("PE_ADMIN_EMAIL", "admin@yourschool.edu")
-        pwd = os.environ.get("PE_ADMIN_PASSWORD", "AdminPassword123!")
-        name = os.environ.get("PE_ADMIN_NAME", "School Administrator")
+        email = os.environ.get("PE_ADMIN_EMAIL") or os.environ.get("ADMIN_EMAIL", "admin@yourschool.edu")
+        pwd = os.environ.get("PE_ADMIN_PASSWORD") or os.environ.get("ADMIN_PASSWORD", "AdminPassword123!")
+        name = os.environ.get("PE_ADMIN_NAME") or os.environ.get("ADMIN_NAME", "School Administrator")
         uname = email.split("@")[0] or "admin"
+
+        from plannededucation.api.schema_ensure import ensure_schema
+        ensure_schema(engine)
 
         plain_recovery_codes = auth.generate_recovery_codes(count=5)
         hashed_codes = [hashlib.sha256(c.encode()).hexdigest() for c in plain_recovery_codes]

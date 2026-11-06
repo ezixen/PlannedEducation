@@ -214,7 +214,7 @@ def load_deployment_config() -> dict[str, Any]:
     # If deployment.json exists, overlay its values
     if json_path.is_file():
         try:
-            with open(json_path, encoding="utf-8") as f:
+            with open(json_path, encoding="utf-8-sig") as f:
                 data = json.load(f)
                 if isinstance(data, dict):
                     for k, v in data.items():

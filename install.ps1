@@ -550,7 +550,9 @@ ALLOW_DEV_SEB_BYPASS=$sebBypass
         anonymizer_language = "en"
         updated_at = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
     }
-    $depConfigObj | ConvertTo-Json -Depth 4 | Set-Content -Path $deploymentJsonFile -Encoding UTF8
+    # Write without UTF-8 BOM — PowerShell's UTF8 encoding adds BOM which breaks json.load(utf-8)
+    $depJsonText = $depConfigObj | ConvertTo-Json -Depth 4
+    [System.IO.File]::WriteAllText($deploymentJsonFile, $depJsonText, (New-Object System.Text.UTF8Encoding($false)))
     Write-Success "Created config/deployment.json (domain: $Domain, API port: $ApiPort, Frontend port: $FrontendPort)"
 } else {
     Write-Info "Keeping existing .env file"

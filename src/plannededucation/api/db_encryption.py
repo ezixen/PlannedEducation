@@ -87,15 +87,24 @@ def decrypt_field(ciphertext: str | None) -> str | None:
     """Decrypt a string value from database storage.
 
     Returns None if encryption is disabled or ciphertext is None/empty.
+    Legacy plaintext values (from DBs created before field encryption) are
+    returned unchanged so login / upgrades keep working across key rotates.
     """
     if not _db_fernet or ciphertext is None or ciphertext == "":
+        return ciphertext
+    # Fernet tokens are url-safe base64 and typically start with version byte `gAAAA`
+    if not ciphertext.startswith("gAAAA"):
         return ciphertext
     try:
         decrypted = _db_fernet.decrypt(ciphertext.encode("utf-8"))
         return decrypted.decode("utf-8")
     except InvalidToken:
-        logger.error("Decryption failed: invalid token (key may have rotated)")
-        raise
+        # Key rotated or mixed plaintext/ciphertext row — keep readable for upgrade
+        logger.warning(
+            "Decryption InvalidToken; treating value as legacy plaintext "
+            "(re-save the record to re-encrypt under the current key)"
+        )
+        return ciphertext
     except Exception as e:
         logger.error(f"Decryption failed: {e}")
         raise
