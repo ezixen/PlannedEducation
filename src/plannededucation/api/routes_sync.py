@@ -6,6 +6,7 @@ GET  /sync/submission/{submission_id} — student (own), exam teacher, or admin.
 
 from __future__ import annotations
 
+import contextlib
 import json
 import logging
 from typing import Any
@@ -74,12 +75,7 @@ def _can_read_sealed(
         return True
     if _is_admin(user):
         return True
-    if exam is not None and exam.teacher_id == user.id and user.role in {
-        "teacher",
-        "admin",
-    }:
-        return True
-    return False
+    return bool(exam is not None and exam.teacher_id == user.id and user.role in {"teacher", "admin"})
 
 
 def _enforce_payload_size(raw_bytes: int) -> None:
@@ -100,10 +96,8 @@ def upload_sealed_submission(
     """Store a sealed offline submission. Caller may only upload their own."""
     content_length = request.headers.get("content-length")
     if content_length is not None:
-        try:
+        with contextlib.suppress(ValueError):
             _enforce_payload_size(int(content_length))
-        except ValueError:
-            pass
 
     # Fail closed: student_id in the sealed envelope must match the bearer.
     if body.student_id != current_user.id:

@@ -819,7 +819,6 @@ def teacher_quick_reset_student(
     auth.clear_legacy_refresh_fields(student)
     student.is_active = True
     # Generate signed reset capability token
-    import hashlib
     student.reset_token = hashlib.sha256(
         f"{student.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
     ).hexdigest()
@@ -896,7 +895,6 @@ def parent_quick_reset_student(
     auth.clear_legacy_refresh_fields(student)
     student.is_active = True
     # Generate signed reset capability token
-    import hashlib
     student.reset_token = hashlib.sha256(
         f"{student.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
     ).hexdigest()
@@ -966,7 +964,6 @@ def admin_quick_reset_user(
     auth.clear_legacy_refresh_fields(target_user)
     target_user.is_active = True
     # Generate signed reset capability token
-    import hashlib
     target_user.reset_token = hashlib.sha256(
         f"{target_user.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
     ).hexdigest()

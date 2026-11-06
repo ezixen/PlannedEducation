@@ -23,7 +23,6 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExport
 from prometheus_client import REGISTRY, Counter, Gauge, Histogram, start_http_server
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from ..version import __version__
 from . import (
     routes_admin,
     routes_ai,
@@ -322,13 +321,7 @@ def _validate_cors_origin(origin: str) -> bool:
         return False
     host = rest.split("/")[0].split(":")[0].lower()
     env = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
-    if scheme == "http" and env == "production" and host not in {
-        "localhost",
-        "127.0.0.1",
-        "::1",
-    }:
-        return False
-    return True
+    return not (scheme == "http" and env == "production" and host not in {"localhost", "127.0.0.1", "::1"})
 
 
 cors_origins = [

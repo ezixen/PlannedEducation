@@ -1,6 +1,5 @@
 """Alert webhook endpoints for Alertmanager integration."""
 
-import hashlib
 import hmac
 import json
 import logging

@@ -77,24 +77,20 @@ def _hostname_is_blocked_name(hostname: str) -> bool:
     host = hostname.strip(".").lower()
     if host in _BLOCKED_HOSTNAMES or host in _BLOCKED_LITERAL_HOSTS:
         return True
-    if host.endswith(".localhost") or host.endswith(".local"):
-        return True
-    return False
+    return bool(host.endswith(".localhost") or host.endswith(".local"))
 
 
 def _ip_is_blocked(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
-    if (
+    # Explicit cloud metadata ranges / documentation nets already covered by
+    # is_private / is_link_local for 169.254/16 and 10/8, 172.16/12, 192.168/16.
+    return (
         ip.is_private
         or ip.is_loopback
         or ip.is_link_local
         or ip.is_multicast
         or ip.is_reserved
         or ip.is_unspecified
-    ):
-        return True
-    # Explicit cloud metadata ranges / documentation nets already covered by
-    # is_private / is_link_local for 169.254/16 and 10/8, 172.16/12, 192.168/16.
-    return False
+    )
 
 
 def _normalize_ip_str(addr: str) -> str:
@@ -217,10 +213,7 @@ def rewrite_url_to_pinned_ip(url: str, pinned_ip: str) -> tuple[str, str]:
 
     ip = ipaddress.ip_address(pinned_ip.strip("[]"))
     host_for_netloc = f"[{ip}]" if ip.version == 6 else str(ip)
-    if parsed.port is not None:
-        netloc = f"{host_for_netloc}:{parsed.port}"
-    else:
-        netloc = host_for_netloc
+    netloc = f"{host_for_netloc}:{parsed.port}" if parsed.port is not None else host_for_netloc
 
     pinned = urlunparse(
         (parsed.scheme, netloc, parsed.path, parsed.params, parsed.query, parsed.fragment)

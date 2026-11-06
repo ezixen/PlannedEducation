@@ -188,10 +188,7 @@ def get_backup_dir() -> Path:
     cfg = _load_backup_config()
     location = Path(cfg["backup_location"])
     root = _approved_backup_root()
-    if not location.is_absolute():
-        bdir = (root / location).resolve()
-    else:
-        bdir = location.resolve()
+    bdir = (root / location).resolve() if not location.is_absolute() else location.resolve()
 
     if not bdir.is_relative_to(root):
         raise RuntimeError(
@@ -353,9 +350,7 @@ def _is_backup_artifact(name: str) -> bool:
     lower = name.lower()
     if any(lower.endswith(sfx) for sfx in _ENCRYPTED_SUFFIXES):
         return True
-    if any(lower.endswith(sfx) for sfx in _LEGACY_PLAIN_SUFFIXES):
-        return True
-    return False
+    return bool(any(lower.endswith(sfx) for sfx in _LEGACY_PLAIN_SUFFIXES))
 
 
 def list_database_backups() -> list[dict]:
