@@ -197,9 +197,18 @@ def register_encrypted_model(model_class: Any, fields: list[str]) -> None:
     def _decrypt_after_load(target, context):
         decrypt_model_instance(target)
 
-    # after_insert decrypt is unreliable: SQLAlchemy may re-sync INSERT results
-    # onto the instance afterward (ciphertext wins). Decrypt once the flush is
-    # fully finished so API responses always see plaintext.
+    @event.listens_for(model_class, "refresh")
+    def _decrypt_after_refresh(target, context, attrs):
+        decrypt_model_instance(target)
+
+    # after_insert alone can be overwritten by INSERT result sync; also decrypt
+    # after the flush fully finishes. Always use set_committed_value (in
+    # decrypt_model_instance) so we never mark rows dirty / loop flushes.
+    @event.listens_for(model_class, "after_insert")
+    @event.listens_for(model_class, "after_update")
+    def _decrypt_after_save(mapper, connection, target):
+        decrypt_model_instance(target)
+
     if not _SESSION_DECRYPT_HOOK_REGISTERED:
         @event.listens_for(Session, "after_flush_postexec")
         def _decrypt_after_flush(session: Session, flush_context: Any) -> None:
