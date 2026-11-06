@@ -9,7 +9,6 @@ from pydantic import BaseModel, Field
 
 from . import models
 from .ocr_service import (
-    HandwritingRecognitionResult,
     HandwritingRecognitionService,
     OCRService,
     get_handwriting_service,
