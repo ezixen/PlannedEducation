@@ -47,7 +47,8 @@ export function ResetPassword() {
       });
 
       if (res.data?.access_token) {
-        localStorage.setItem('access_token', res.data.access_token);
+        sessionStorage.setItem('access_token', res.data.access_token);
+        localStorage.removeItem('access_token');
         await refreshUser();
       }
 

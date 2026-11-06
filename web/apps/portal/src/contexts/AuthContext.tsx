@@ -37,11 +37,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   const refreshUser = useCallback(async () => {
-    const token = sessionStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
     if (!token) {
       setUser(null);
       setLoading(false);
       return;
+    }
+    // Prefer sessionStorage; migrate any legacy localStorage token
+    if (!sessionStorage.getItem('access_token') && localStorage.getItem('access_token')) {
+      sessionStorage.setItem('access_token', localStorage.getItem('access_token')!);
     }
     try {
       const response = await apiClient.get<User>('/auth/me');
@@ -49,6 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch {
       // Token is invalid or expired — clear it
       sessionStorage.removeItem('access_token');
+      localStorage.removeItem('access_token');
       setUser(null);
     } finally {
       setLoading(false);

@@ -20,7 +20,7 @@ export function SecureChat({ examId }: { examId: string }) {
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
+    const token = sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
     if (!token || !examId) return;
 
     const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';

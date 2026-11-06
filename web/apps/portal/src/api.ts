@@ -15,9 +15,19 @@ export const apiClient = axios.create({
   baseURL: API_URL,
 });
 
+function readAccessToken(): string | null {
+  // AuthContext writes to sessionStorage; some older flows also used localStorage.
+  return sessionStorage.getItem('access_token') || localStorage.getItem('access_token');
+}
+
+function clearAccessTokens(): void {
+  sessionStorage.removeItem('access_token');
+  localStorage.removeItem('access_token');
+}
+
 // Automatically inject JWT token into requests if available
 apiClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem('access_token');
+  const token = readAccessToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -30,9 +40,8 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401 && typeof window !== 'undefined') {
-      const token = localStorage.getItem('access_token');
-      if (token) {
-        localStorage.removeItem('access_token');
+      if (readAccessToken()) {
+        clearAccessTokens();
       }
     }
     return Promise.reject(error);
