@@ -472,3 +472,303 @@ def pin_lounge_message(
         "message": f"Message {'pinned' if message.is_pinned else 'unpinned'}",
         "is_pinned": message.is_pinned,
     }
+
+
+# ── Direct Messages (Encrypted, All Users) ──────────────────────────────────────
+
+
+def _get_user_or_404(db: Session, user_id: str) -> models.User:
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found",
+        )
+    return user
+
+
+@router.get("/messages/direct", response_model=list[schemas.DirectMessageListResponse])
+def list_direct_messages(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List all direct message conversations for the current user."""
+    messages = (
+        db.query(models.DirectMessage)
+        .filter(
+            (models.DirectMessage.sender_id == current_user.id)
+            | (models.DirectMessage.recipient_id == current_user.id),
+        )
+        .filter(
+            ~(
+                (models.DirectMessage.sender_id == current_user.id)
+                & (models.DirectMessage.deleted_by_sender == True)
+            )
+            & ~(
+                (models.DirectMessage.recipient_id == current_user.id)
+                & (models.DirectMessage.deleted_by_recipient == True)
+            )
+        )
+        .order_by(models.DirectMessage.created_at.desc())
+        .all()
+    )
+
+    conversations: dict[str, models.DirectMessage] = {}
+    for msg in messages:
+        partner_id = (
+            msg.recipient_id if msg.sender_id == current_user.id else msg.sender_id
+        )
+        if partner_id not in conversations:
+            conversations[partner_id] = msg
+
+    result = []
+    for partner_id, msg in conversations.items():
+        partner = _get_user_or_404(db, partner_id)
+        sender = _get_user_or_404(db, msg.sender_id)
+        result.append(
+            schemas.DirectMessageListResponse(
+                id=msg.id,
+                sender_id=msg.sender_id,
+                recipient_id=msg.recipient_id,
+                sender_name=sender.full_name or sender.username,
+                recipient_name=partner.full_name or partner.username,
+                content_preview=msg.content[:100] + ("…" if len(msg.content) > 100 else ""),
+                is_read=msg.is_read,
+                created_at=msg.created_at,
+            )
+        )
+
+    return result
+
+
+@router.get(
+    "/messages/direct/{partner_id}",
+    response_model=list[schemas.DirectMessageResponse],
+)
+def get_direct_conversation(
+    partner_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Get all messages in a conversation with a specific user."""
+    _get_user_or_404(db, partner_id)
+
+    messages = (
+        db.query(models.DirectMessage)
+        .filter(
+            (
+                (models.DirectMessage.sender_id == current_user.id)
+                & (models.DirectMessage.recipient_id == partner_id)
+            )
+            | (
+                (models.DirectMessage.sender_id == partner_id)
+                & (models.DirectMessage.recipient_id == current_user.id)
+            )
+        )
+        .filter(
+            ~(
+                (models.DirectMessage.sender_id == current_user.id)
+                & (models.DirectMessage.deleted_by_sender == True)
+            )
+            & ~(
+                (models.DirectMessage.recipient_id == current_user.id)
+                & (models.DirectMessage.deleted_by_recipient == True)
+            )
+        )
+        .order_by(models.DirectMessage.created_at.asc())
+        .all()
+    )
+
+    for msg in messages:
+        if msg.sender_id == partner_id and not msg.is_read:
+            msg.is_read = True
+    db.commit()
+
+    result = []
+    for msg in messages:
+        sender = _get_user_or_404(db, msg.sender_id)
+        recipient = _get_user_or_404(db, msg.recipient_id)
+        result.append(
+            schemas.DirectMessageResponse(
+                id=msg.id,
+                sender_id=msg.sender_id,
+                recipient_id=msg.recipient_id,
+                sender_name=sender.full_name or sender.username,
+                recipient_name=recipient.full_name or recipient.username,
+                content=msg.content,
+                is_read=msg.is_read,
+                deleted_by_sender=msg.deleted_by_sender,
+                deleted_by_recipient=msg.deleted_by_recipient,
+                created_at=msg.created_at,
+                updated_at=msg.updated_at,
+            )
+        )
+
+    return result
+
+
+@router.post("/messages/direct", response_model=schemas.DirectMessageResponse)
+def send_direct_message(
+    payload: schemas.DirectMessageCreate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Send a new encrypted direct message to another user."""
+    recipient = _get_user_or_404(db, payload.recipient_id)
+
+    if recipient.id == current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Cannot send a message to yourself",
+        )
+
+    message = models.DirectMessage(
+        sender_id=current_user.id,
+        recipient_id=recipient.id,
+        content=payload.content,
+    )
+    db.add(message)
+    db.commit()
+    db.refresh(message)
+
+    sender = _get_user_or_404(db, message.sender_id)
+    rec = _get_user_or_404(db, message.recipient_id)
+    return schemas.DirectMessageResponse(
+        id=message.id,
+        sender_id=message.sender_id,
+        recipient_id=message.recipient_id,
+        sender_name=sender.full_name or sender.username,
+        recipient_name=rec.full_name or rec.username,
+        content=message.content,
+        is_read=message.is_read,
+        deleted_by_sender=message.deleted_by_sender,
+        deleted_by_recipient=message.deleted_by_recipient,
+        created_at=message.created_at,
+        updated_at=message.updated_at,
+    )
+
+
+@router.put("/messages/direct/{message_id}", response_model=schemas.DirectMessageResponse)
+def update_direct_message(
+    message_id: str,
+    payload: schemas.DirectMessageUpdate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Update a direct message (only the sender can edit)."""
+    message = db.query(models.DirectMessage).filter(
+        models.DirectMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    if message.sender_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only the sender can edit this message",
+        )
+
+    message.content = payload.content
+    db.commit()
+    db.refresh(message)
+
+    sender = _get_user_or_404(db, message.sender_id)
+    recipient = _get_user_or_404(db, message.recipient_id)
+    return schemas.DirectMessageResponse(
+        id=message.id,
+        sender_id=message.sender_id,
+        recipient_id=message.recipient_id,
+        sender_name=sender.full_name or sender.username,
+        recipient_name=recipient.full_name or recipient.username,
+        content=message.content,
+        is_read=message.is_read,
+        deleted_by_sender=message.deleted_by_sender,
+        deleted_by_recipient=message.deleted_by_recipient,
+        created_at=message.created_at,
+        updated_at=message.updated_at,
+    )
+
+
+@router.patch("/messages/direct/{message_id}/read")
+def mark_direct_message_read(
+    message_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Mark a direct message as read (only the recipient can do this)."""
+    message = db.query(models.DirectMessage).filter(
+        models.DirectMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    if message.recipient_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only the recipient can mark this message as read",
+        )
+
+    message.is_read = True
+    db.commit()
+
+    return {"status": "success", "message": "Message marked as read"}
+
+
+@router.get("/messages/direct/unread-count")
+def get_direct_unread_count(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Get the count of unread direct messages for the current user."""
+    count = (
+        db.query(models.DirectMessage)
+        .filter(
+            models.DirectMessage.recipient_id == current_user.id,
+            models.DirectMessage.is_read == False,
+            models.DirectMessage.deleted_by_recipient == False,
+        )
+        .count()
+    )
+    return {"unread_count": count}
+
+
+@router.delete("/messages/direct/{message_id}")
+def delete_direct_message(
+    message_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Soft-delete a direct message for the current user (sender or recipient).
+
+    The message is only fully removed when both parties have deleted it.
+    """
+    message = db.query(models.DirectMessage).filter(
+        models.DirectMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    if message.sender_id == current_user.id:
+        message.deleted_by_sender = True
+    elif message.recipient_id == current_user.id:
+        message.deleted_by_recipient = True
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not a participant in this message",
+        )
+
+    if message.deleted_by_sender and message.deleted_by_recipient:
+        db.delete(message)
+    db.commit()
+
+    return {"status": "success", "message": "Message deleted"}

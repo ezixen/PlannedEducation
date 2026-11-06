@@ -820,3 +820,46 @@ class TeacherLoungeMessageResponse(TeacherLoungeMessageBase):
     updated_at: datetime
     replies: list["TeacherLoungeMessageResponse"] = []
 
+
+# ── Direct Message Schemas (Encrypted, All Users) ─────────────────────────────
+
+
+class DirectMessageBase(BaseModel):
+    recipient_id: str
+    content: str = Field(..., min_length=1, max_length=4000)
+
+
+class DirectMessageCreate(DirectMessageBase):
+    pass
+
+
+class DirectMessageUpdate(BaseModel):
+    content: str = Field(..., min_length=1, max_length=4000)
+
+
+class DirectMessageResponse(DirectMessageBase):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    sender_id: str
+    sender_name: str | None = None
+    recipient_name: str | None = None
+    is_read: bool
+    deleted_by_sender: bool
+    deleted_by_recipient: bool
+    created_at: datetime
+    updated_at: datetime
+
+
+class DirectMessageListResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    sender_id: str
+    recipient_id: str
+    sender_name: str | None = None
+    recipient_name: str | None = None
+    content_preview: str | None = None  # First 100 chars, decrypted by service
+    is_read: bool
+    created_at: datetime
+

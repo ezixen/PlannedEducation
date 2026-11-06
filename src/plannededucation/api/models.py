@@ -9,6 +9,7 @@ from sqlalchemy import (
     Enum,
     Float,
     ForeignKey,
+    Index,
     Integer,
     String,
     Text,
@@ -1010,3 +1011,52 @@ class TeacherLoungeMessage(Base):
     sender = relationship("User", foreign_keys=[sender_id])
     parent = relationship("TeacherLoungeMessage", remote_side=[id], back_replies="replies")
     replies = relationship("TeacherLoungeMessage", back_populates="parent")
+
+
+# ── Direct Messages (Encrypted, All Users) ─────────────────────────────────────
+# Private one-to-one encrypted messages between any two users (students, teachers,
+# parents, admins). Content is encrypted at rest. Messages support soft-delete
+# with confirmation and a conversation view.
+
+
+class DirectMessage(Base):
+    """An encrypted direct message between two users.
+
+    Visible only to sender and recipient. Content is encrypted at rest.
+    Supports soft-delete per-user with confirmation.
+    """
+
+    __tablename__ = "direct_messages"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    sender_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    recipient_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    content = Column(Text, nullable=False)  # encrypted at rest
+    is_read = Column(Boolean, default=False, nullable=False, index=True)
+    deleted_by_sender = Column(Boolean, default=False, nullable=False)
+    deleted_by_recipient = Column(Boolean, default=False, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Relationships
+    sender = relationship("User", foreign_keys=[sender_id])
+    recipient = relationship("User", foreign_keys=[recipient_id])
+
+    __table_args__ = (
+        Index("ix_direct_messages_conversation", "sender_id", "recipient_id"),
+    )
+
+
+# Register encrypted models for DirectMessage
+register_encrypted_model(
+    DirectMessage,
+    [
+        "content",  # Message content - encrypted at rest (PII / student data)
+    ],
+)

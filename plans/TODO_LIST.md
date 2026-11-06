@@ -124,14 +124,15 @@
 
 All progress_log.md items (A–E) are ✅ DONE and pushed to dev.
 
-Remaining items (F–J) from the chat history are marked ❌ PENDING or ❓ NEEDS CHECK. These require further evaluation:
-- **F1–F7** (Security/Compliance): pip audit, AGENTS.md rules, rate limits, cryptography vuln, cleanup, docs, screenshot fixes
-- **G1–G7** (Deployment): GH deploy verification, admin panel config page, backup button, install/uninstall testing, Linux/WSL
-- **H1–H3** (I18n/Docs): hardcoded text migration, script/docs audit, AGENTS.local.md backup
-- **I1–I7** (Auth/Notifications): teacher self-registration, admin notifications, google register, password reset, email system, one-time codes
-- **J1–J6** (Other): deploy logs, commit/push, backups, visual testing, temp file cleanup, open files
+New requests found in VS Code chat database (today's session `dcd4d6e4`, Nov 5-6) and session `bfcbcea9`:
+- **Encrypted messaging system for all users** — popup window lower left corner, chat overlay, encrypted storage, message page with history and delete-after-confirm, new message counter icon always visible (Turns 47-48, session dcd4d6e4)
+- **Process logging / temp log file** — track steps started and finished (Turns 49-51, session dcd4d6e4)
+- **Anti-looping method with self-monitoring** — continue from last step, try another way if looping (Turn 50, session dcd4d6e4)
+- **Restore local files (AGENTS.md, test scripts)** from backup — GH doesn't have gitignored local files (Turns 140-141, session bfcbcea9)
+- **Fresh install from GH test** — install script PS1, default folder, uninstall test (Turn 137, session bfcbcea9)
+- **Merge to main after alerts cleared** (Turn 134, session bfcbcea9)
 
-Review each ❌ PENDING and ❓ NEEDS CHECK item and implement or verify as needed.
+Review each item and implement or verify as needed.
 
 ---
 
