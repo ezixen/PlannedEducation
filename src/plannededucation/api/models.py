@@ -17,6 +17,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 
 from .database import Base
+from .db_encryption import register_encrypted_model
 
 
 def generate_uuid() -> str:
@@ -829,3 +830,45 @@ class OCRReview(Base):
     __table_args__ = (
         UniqueConstraint("submission_id", name="uq_ocr_review_submission"),
     )
+
+
+# ── Register Encrypted Models ────────────────────────────────────────────────
+# Register models with their encrypted fields for automatic encrypt/decrypt
+# on SQLAlchemy save/load events.
+
+register_encrypted_model(
+    User,
+    [
+        "email",           # PII - student/teacher email addresses
+        "full_name",       # PII - full names
+        "phone_number",    # PII - phone numbers
+        "totp_secret",     # 2FA secret - must be encrypted
+        "recovery_codes",  # Recovery codes - must be encrypted
+        "webauthn_credentials",  # WebAuthn credentials - sensitive
+    ],
+)
+
+register_encrypted_model(
+    School,
+    [
+        "name",            # School name - PII
+        "address",         # School address - PII
+    ],
+)
+
+register_encrypted_model(
+    ExamSubmission,
+    [
+        # Exam submissions contain student answers - sensitive educational data
+    ],
+)
+
+register_encrypted_model(
+    OCRReview,
+    [
+        "original_text",   # OCR'd text may contain PII
+        "corrected_text",  # Corrected text may contain PII
+        "review_notes",    # Teacher notes may contain PII
+        "words_json",      # Word-level OCR data may contain PII
+    ],
+)

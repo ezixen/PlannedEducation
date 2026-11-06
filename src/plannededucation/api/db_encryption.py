@@ -1,0 +1,175 @@
+"""
+Comprehensive Encryption Layer for PlannedEducation
+
+Provides field-level encryption for sensitive database columns using Fernet (AES-128 CBC + HMAC).
+Integrates with SQLAlchemy via event listeners for automatic encrypt/decrypt on model save/load.
+
+Environment Variables:
+    DB_ENCRYPTION_MASTER_KEY - Base64-encoded 32-byte master key for field encryption
+    DATABASE_ENCRYPTION - Set to "enabled" to activate field-level encryption
+
+Generate master key:
+    python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+import os
+from typing import Any
+
+from cryptography.fernet import Fernet, InvalidToken
+
+logger = logging.getLogger("plannededucation.db.encryption")
+
+# ── Master Key Configuration ─────────────────────────────────────────────────
+
+_DB_ENCRYPTION_ENABLED = os.getenv("DATABASE_ENCRYPTION", "false").lower() in (
+    "true", "1", "yes", "on"
+)
+
+_DB_ENCRYPTION_MASTER_KEY = os.getenv("DB_ENCRYPTION_MASTER_KEY", "")
+
+_db_fernet: Fernet | None = None
+
+
+def _init_db_fernet() -> None:
+    """Initialize the database encryption Fernet instance."""
+    global _db_fernet
+    if not _DB_ENCRYPTION_ENABLED:
+        logger.warning(
+            "Database field-level encryption is DISABLED. "
+            "Set DATABASE_ENCRYPTION=true to enable."
+        )
+        return
+
+    if not _DB_ENCRYPTION_MASTER_KEY:
+        raise RuntimeError(
+            "DATABASE_ENCRYPTION=true but DB_ENCRYPTION_MASTER_KEY is not set. "
+            "Generate one with: python -c \"from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())\""
+        )
+
+    try:
+        _db_fernet = Fernet(_DB_ENCRYPTION_MASTER_KEY.encode())
+        logger.info("Database field-level encryption initialized successfully")
+    except Exception as e:
+        raise RuntimeError(
+            f"DB_ENCRYPTION_MASTER_KEY is invalid: {e}"
+        ) from e
+
+
+# Initialize on import
+_init_db_fernet()
+
+
+def is_encryption_enabled() -> bool:
+    """Check if database field-level encryption is enabled."""
+    return _db_fernet is not None
+
+
+def encrypt_field(plaintext: str | None) -> str | None:
+    """Encrypt a string value for database storage.
+
+    Returns None if encryption is disabled or plaintext is None/empty.
+    """
+    if not _db_fernet or plaintext is None or plaintext == "":
+        return plaintext
+    try:
+        encrypted = _db_fernet.encrypt(plaintext.encode("utf-8"))
+        return encrypted.decode("utf-8")
+    except Exception as e:
+        logger.error(f"Encryption failed: {e}")
+        raise
+
+
+def decrypt_field(ciphertext: str | None) -> str | None:
+    """Decrypt a string value from database storage.
+
+    Returns None if encryption is disabled or ciphertext is None/empty.
+    """
+    if not _db_fernet or ciphertext is None or ciphertext == "":
+        return ciphertext
+    try:
+        decrypted = _db_fernet.decrypt(ciphertext.encode("utf-8"))
+        return decrypted.decode("utf-8")
+    except InvalidToken:
+        logger.error("Decryption failed: invalid token (key may have rotated)")
+        raise
+    except Exception as e:
+        logger.error(f"Decryption failed: {e}")
+        raise
+
+
+def encrypt_json(data: dict | None) -> str | None:
+    """Encrypt a JSON-serializable dict for database storage."""
+    if data is None:
+        return None
+    json_str = json.dumps(data, separators=(",", ":"), sort_keys=True)
+    return encrypt_field(json_str)
+
+
+def decrypt_json(ciphertext: str | None) -> dict | None:
+    """Decrypt and parse a JSON string from database storage."""
+    if ciphertext is None:
+        return None
+    json_str = decrypt_field(ciphertext)
+    if json_str is None:
+        return None
+    return json.loads(json_str)
+
+
+# ── SQLAlchemy Integration ───────────────────────────────────────────────────
+
+def encrypt_model_instance(instance: Any) -> None:
+    """Encrypt all encrypted fields on a model instance before save.
+
+    Looks for __encrypted_fields__ attribute on the model class.
+    """
+    if not _db_fernet:
+        return
+
+    encrypted_fields = getattr(instance.__class__, "__encrypted_fields__", set())
+    for field_name in encrypted_fields:
+        value = getattr(instance, field_name, None)
+        if value is not None:
+            encrypted = encrypt_field(value)
+            setattr(instance, field_name, encrypted)
+
+
+def decrypt_model_instance(instance: Any) -> None:
+    """Decrypt all encrypted fields on a model instance after load.
+
+    Looks for __encrypted_fields__ attribute on the model class.
+    """
+    if not _db_fernet:
+        return
+
+    encrypted_fields = getattr(instance.__class__, "__encrypted_fields__", set())
+    for field_name in encrypted_fields:
+        value = getattr(instance, field_name, None)
+        if value is not None:
+            decrypted = decrypt_field(value)
+            setattr(instance, field_name, decrypted)
+
+
+def register_encrypted_model(model_class: Any, fields: list[str]) -> None:
+    """Register a model class with its encrypted fields.
+
+    Args:
+        model_class: The SQLAlchemy model class
+        fields: List of field names to encrypt/decrypt automatically
+    """
+    model_class.__encrypted_fields__ = set(fields)
+
+    # Register event listeners for automatic encrypt/decrypt
+    from sqlalchemy import event
+
+    @event.listens_for(model_class, "before_insert")
+    @event.listens_for(model_class, "before_update")
+    def _encrypt_before_save(mapper, connection, target):
+        encrypt_model_instance(target)
+
+    @event.listens_for(model_class, "load")
+    def _decrypt_after_load(target, context):
+        decrypt_model_instance(target)

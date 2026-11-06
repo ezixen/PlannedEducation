@@ -1,7 +1,17 @@
+import logging
 import os
 
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
+
+from .db_encryption import _DB_ENCRYPTION_MASTER_KEY, is_encryption_enabled  # noqa: E402,F401
+
+logger = logging.getLogger("plannededucation.db")
+
+# ── Database Encryption Initialization ───────────────────────────────────────
+# Initialize field-level encryption for sensitive columns.
+# This must be imported before any model usage to register encrypt/decrypt
+# event listeners on SQLAlchemy models.
 
 # DATABASE_URL must always be set explicitly. No implicit defaults — fail loudly.
 # For tests, use SQLite in-memory. For development, use PostgreSQL.
@@ -29,6 +39,22 @@ engine_kwargs: dict = {}
 if is_sqlite:
     # SQLite: needed for multi-threaded FastAPI use in tests
     engine_kwargs["connect_args"] = {"check_same_thread": False}
+    # Enable SQLite encryption if SQLCipher is available and encryption is enabled
+    if is_encryption_enabled():
+        try:
+            import importlib.util
+
+            if importlib.util.find_spec("sqlcipher3"):
+                from sqlcipher3 import dbapi2 as sqlite3  # noqa: F401
+
+                engine_kwargs["connect_args"]["check_same_thread"] = False
+                # SQLCipher uses a passphrase, not a Fernet object
+                engine_kwargs["connect_args"]["key"] = _DB_ENCRYPTION_MASTER_KEY
+        except ImportError:
+            logger.warning(
+                "SQLCipher not installed. Install with: pip install sqlcipher3 "
+                "for encrypted SQLite database files."
+            )
 else:
     # PostgreSQL: connection pool tuning for production
     engine_kwargs["pool_size"] = 10
