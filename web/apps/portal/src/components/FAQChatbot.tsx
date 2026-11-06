@@ -4,6 +4,7 @@ import { useExam } from '../contexts/ExamContext';
 import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
 import { KEY_NUMBERS } from '../locales/keyNumbers';
 import enMessages from '../locales/en/messages.json';
+import { formatTimeHm } from '../lib/dateTime';
 
 interface ChatMessage {
   id: number;
@@ -360,7 +361,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
       {
         id: 24,
         question: "What proctoring events are tracked?",
-        answer: "Eye movement (gaze tracking), multiple face detection, background audio levels, tab/window switches, SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay."
+        answer: "Local face count and gaze off-screen signals (MediaPipe in the browser when available), background audio levels, tab/window switches, SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay."
       }
     ]
   },
@@ -789,7 +790,7 @@ export function FAQChatbot({
                   {renderMessageContent(message.text)}
                 </div>
                 <div className="faq-chatbot-message-time">
-                  {message.timestamp.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                  {formatTimeHm(message.timestamp)}
                 </div>
               </div>
             ))}

@@ -111,12 +111,22 @@ print_info() {
 }
 
 confirm_action() {
+    # Usage: confirm_action "message" [auto_default]
+    # auto_default: "yes" (default) or "no" — used when AUTO_CONFIRM=true.
+    # Preserve-data prompts MUST pass "no" so updates never wipe secrets/DB.
     local message="$1"
+    local auto_default="${2:-yes}"
     if [[ "$AUTO_CONFIRM" == "true" ]]; then
-        return 0
+        [[ "$auto_default" == "yes" ]]
+        return $?
     fi
     read -r -p "$message (y/N): " response
     [[ "$response" =~ ^[Yy]$ ]]
+}
+
+is_existing_deployment() {
+    local dir="$1"
+    [[ -f "$dir/.env" || -f "$dir/plannededucation.db" || ( -f "$dir/config/deployment.json" && -d "$dir/src/plannededucation" ) ]]
 }
 
 check_command() {
@@ -298,14 +308,42 @@ if [[ ! -d "$INSTALL_DIR" ]]; then
     print_success "Created directory: $INSTALL_DIR"
 fi
 
+# DATA PRESERVATION: detect update-vs-fresh before mutating secrets/accounts.
+IS_UPDATE="false"
+if is_existing_deployment "$INSTALL_DIR"; then
+    IS_UPDATE="true"
+    print_header "Update Mode Detected"
+    print_info "Existing deployment found under $INSTALL_DIR"
+    print_info "Preserving database files, .env secrets, logs, uploads, and user accounts."
+    print_info "This run will refresh application code/modules and apply additive schema updates only."
+fi
+
+PROTECTED_DATA_NAMES=".env .env.local plannededucation.db plannededucation.db-wal plannededucation.db-shm ADMIN_CREDENTIALS.txt admin_recovery_codes.tmp local-secrets logs uploads backups artifacts data"
+
 if [[ ! -d "$INSTALL_DIR/.git" ]]; then
     print_info "Cloning PlannedEducation repository into $INSTALL_DIR..."
     CLONE_TMP="$INSTALL_DIR.clone-tmp"
     rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
-    # Prefer `dev` (active feature branch); fall back to default branch if unavailable
-    if git clone --quiet --branch dev --single-branch https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP" \
+    # End-user / school installs track stable `main`.
+    if git clone --quiet --branch main --single-branch https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP" \
        || git clone --quiet https://github.com/ezixen/PlannedEducation.git "$CLONE_TMP"; then
-        cp -a "$CLONE_TMP/." "$INSTALL_DIR/"
+        # Copy code without clobbering protected runtime data already present.
+        shopt -s dotglob nullglob
+        for item in "$CLONE_TMP"/*; do
+            base="$(basename "$item")"
+            skip="false"
+            for protected in $PROTECTED_DATA_NAMES; do
+                if [[ "$base" == "$protected" ]]; then
+                    print_info "Preserving existing runtime data: $base"
+                    skip="true"
+                    break
+                fi
+            done
+            if [[ "$skip" == "false" ]]; then
+                cp -a "$item" "$INSTALL_DIR/"
+            fi
+        done
+        shopt -u dotglob nullglob
         rm -rf "$CLONE_TMP" 2>/dev/null || sudo rm -rf "$CLONE_TMP" 2>/dev/null || true
         print_success "Repository cloned successfully"
     else
@@ -313,10 +351,10 @@ if [[ ! -d "$INSTALL_DIR/.git" ]]; then
         exit 1
     fi
 else
-    print_info "Repository already exists in $INSTALL_DIR, pulling latest changes..."
+    print_info "Repository already exists in $INSTALL_DIR, pulling latest stable changes from origin/main..."
     (cd "$INSTALL_DIR" && git fetch origin 2>/dev/null || true
-     git checkout dev 2>/dev/null || true
-     git pull origin dev 2>/dev/null || true)
+     git checkout main 2>/dev/null || true
+     git pull origin main 2>/dev/null || true)
     print_success "Repository ready"
 fi
 
@@ -360,7 +398,17 @@ fi
 print_header "Step 5: Configuring Environment & Secrets"
 
 ENV_FILE="$INSTALL_DIR/.env"
-if [[ ! -f "$ENV_FILE" ]] || confirm_action "Overwrite existing .env configuration?"; then
+SHOULD_WRITE_ENV="false"
+if [[ ! -f "$ENV_FILE" ]]; then
+    SHOULD_WRITE_ENV="true"
+elif [[ "$IS_UPDATE" == "true" ]]; then
+    print_info "Keeping existing .env (update mode — secrets and DB encryption keys preserved)."
+elif confirm_action "Overwrite existing .env configuration? WARNING: regenerates secrets and can lock out existing encrypted data." "no"; then
+    SHOULD_WRITE_ENV="true"
+else
+    print_info "Keeping existing .env file"
+fi
+if [[ "$SHOULD_WRITE_ENV" == "true" ]]; then
     print_info "Generating cryptographically secure secrets..."
 
     JWT_SECRET=$(python3 -c "import secrets; print(secrets.token_hex(32))")
@@ -455,8 +503,6 @@ EOF
 EOF
     chmod 600 "$INSTALL_DIR/config/deployment.json"
     print_success "Created config/deployment.json configuration file"
-else
-    print_info "Keeping existing .env file"
 fi
 
 load_dotenv "$ENV_FILE"
@@ -500,11 +546,15 @@ else
     "$PYTHON_EXE" -m pip install -q -r "$INSTALL_DIR/src/requirements.txt"
     print_success "Python dependencies installed"
 
-    # Initialize Database Tables
-    print_info "Initializing database tables..."
+    # Initialize / upgrade schema (additive only — never drops tables or wipes rows).
+    if [[ "$IS_UPDATE" == "true" ]]; then
+        print_info "Applying additive schema updates to existing database (no wipe)..."
+    else
+        print_info "Initializing database tables..."
+    fi
     export PYTHONPATH="$INSTALL_DIR/src"
-    "$PYTHON_EXE" -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database tables initialized successfully!')"
-    print_success "Database tables created"
+    "$PYTHON_EXE" -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database schema ready (create_all + ensure_schema; no data wipe).')"
+    print_success "Database schema ready (existing user data preserved)"
 
     # Setup Frontend
     print_info "Building React frontend..."
@@ -769,11 +819,29 @@ print_success "Systemd service 'plannededucation-backend' started"
 fi
 
 # ==============================================================================
-# Step 7: Create Initial Superadmin & School
+# Step 7: Create Initial Superadmin & School (fresh installs only)
 # ==============================================================================
 print_header "Step 7: Creating Initial Superadmin & School"
 
-if [[ "$AUTO_CONFIRM" != "true" ]]; then
+SKIP_ADMIN_BOOTSTRAP="false"
+if [[ "$IS_UPDATE" == "true" && "$USE_DOCKER" == "false" ]]; then
+    export PYTHONPATH="$INSTALL_DIR/src"
+    load_dotenv "$ENV_FILE"
+    USER_COUNT="$("$PYTHON_EXE" -c "from plannededucation.api.database import SessionLocal; from plannededucation.api.models import User; db=SessionLocal(); print(db.query(User).count()); db.close()" 2>/dev/null || echo "0")"
+    if [[ "$USER_COUNT" =~ ^[0-9]+$ ]] && [[ "$USER_COUNT" -gt 0 ]]; then
+        SKIP_ADMIN_BOOTSTRAP="true"
+        print_info "Existing users detected ($USER_COUNT). Skipping admin bootstrap to preserve accounts and passwords."
+        print_info "Set PE_FORCE_ADMIN_BOOTSTRAP=1 only if you intentionally need to reset the bootstrap superadmin."
+    fi
+    if [[ "${PE_FORCE_ADMIN_BOOTSTRAP:-}" == "1" ]]; then
+        SKIP_ADMIN_BOOTSTRAP="false"
+        print_warning "PE_FORCE_ADMIN_BOOTSTRAP=1 set — bootstrap admin may be created/updated."
+    fi
+fi
+
+if [[ "$SKIP_ADMIN_BOOTSTRAP" == "true" ]]; then
+    print_success "Update mode: existing school accounts left unchanged."
+elif [[ "$AUTO_CONFIRM" != "true" ]]; then
     read -r -p "Enter School / Institution Name (default: $SCHOOL_NAME): " input_school
     SCHOOL_NAME=${input_school:-$SCHOOL_NAME}
     read -r -p "Enter Superadmin Email (default: $ADMIN_EMAIL): " input_email
@@ -811,7 +879,7 @@ else
     fi
 fi
 
-if [[ "${GENERATED_RANDOM:-false}" == "true" ]]; then
+if [[ "${GENERATED_RANDOM:-false}" == "true" && "$SKIP_ADMIN_BOOTSTRAP" != "true" ]]; then
     echo ""
     echo -e "${YELLOW}============================================================${RESET}"
     echo -e "${GREEN}  [KEY] GENERATED SUPERADMIN PASSWORD${RESET}"
@@ -828,7 +896,7 @@ if [[ "${GENERATED_RANDOM:-false}" == "true" ]]; then
     echo ""
 fi
 
-if [[ "$USE_DOCKER" == "false" ]]; then
+if [[ "$USE_DOCKER" == "false" && "$SKIP_ADMIN_BOOTSTRAP" != "true" ]]; then
     export PYTHONPATH="$INSTALL_DIR/src"
     export PE_ADMIN_EMAIL="$ADMIN_EMAIL"
     export PE_ADMIN_PASSWORD="$ADMIN_PASS"

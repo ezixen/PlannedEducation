@@ -66,6 +66,13 @@ AUTO_CONFIRM=true ./install.sh
 - The installer generates **5 one-time administrator recovery codes**, displays them in the console, and writes them with a critical warning into `ADMIN_CREDENTIALS.txt`:
   > *"Keep these safe (print or write them down). If you lose both your password and recovery codes, you will be locked out and will need to redeploy the whole system, as database injection is not an option."*
 
+### Update-in-place (preserve school data)
+Re-running `install.ps1` / `install.sh` against an existing install directory is the supported upgrade path:
+- **Preserved:** database (SQLite file or Postgres data), `.env` secrets, uploads, backups, logs, existing user accounts/passwords.
+- **Updated:** application code from GitHub `main`, Python deps, portal build, additive schema (`create_all` + `ensure_schema`).
+- **Skipped on update:** regenerating `.env`, wiping DB, recreating the bootstrap superadmin (unless `PE_FORCE_ADMIN_BOOTSTRAP=1`).
+- **Destructive wipe:** only via `uninstall.ps1` / `uninstall.sh` after explicit confirmation — never as part of a normal update.
+
 ---
 
 ## 3. Docker Container Deployment

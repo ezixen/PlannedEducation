@@ -7,6 +7,7 @@ import { CreateUserModal } from '../components/CreateUserModal';
 import { TeacherApprovalPanel } from '../components/TeacherApprovalPanel';
 import { AdminBackupCodesModal } from '../components/AdminBackupCodesModal';
 import { DatabaseBackupPanel } from '../components/DatabaseBackupPanel';
+import { formatDateDdMmYyyy, formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
 interface AdminStats {
   totalUsers: number;
@@ -538,10 +539,10 @@ export function AdminDashboard() {
                         </span>
                       </td>
                       <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                        {user.created_at ? new Date(user.created_at).toLocaleDateString() : '—'}
+                        {user.created_at ? formatDateDdMmYyyy(user.created_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                       </td>
                       <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                        {user.last_login ? new Date(user.last_login).toLocaleDateString() : 'Never'}
+                        {user.last_login ? formatDateDdMmYyyy(user.last_login, { timeZoneLabel: 'local' }) : t('common.never')}
                       </td>
                       <td style={{ padding: '1rem', textAlign: 'right' }}>
                         <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
@@ -786,7 +787,7 @@ export function AdminDashboard() {
                         </span>
                       </td>
                       <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                        {exam.created_at ? new Date(exam.created_at).toLocaleDateString() : '—'}
+                        {exam.created_at ? formatDateDdMmYyyy(exam.created_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                       </td>
                       <td style={{ padding: '1rem', textAlign: 'right' }}>
                         <button
@@ -904,13 +905,13 @@ export function AdminDashboard() {
                           </div>
                         </td>
                         <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                          {job.created_at ? new Date(job.created_at).toLocaleString() : '—'}
+                          {job.created_at ? formatDateTimeDdMmYyyy(job.created_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                         </td>
                         <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                          {job.started_at ? new Date(job.started_at).toLocaleString() : '—'}
+                          {job.started_at ? formatDateTimeDdMmYyyy(job.started_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                         </td>
                         <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                          {job.completed_at ? new Date(job.completed_at).toLocaleString() : '—'}
+                          {job.completed_at ? formatDateTimeDdMmYyyy(job.completed_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                         </td>
                         <td style={{ padding: '1rem', textAlign: 'right' }}>
                           <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
@@ -1125,7 +1126,7 @@ export function AdminDashboard() {
                           </span>
                         </td>
                         <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                          {archive.archived_at ? new Date(archive.archived_at).toLocaleDateString() : '—'}
+                          {archive.archived_at ? formatDateDdMmYyyy(archive.archived_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
                         </td>
                         <td style={{ padding: '1rem', textAlign: 'right' }}>
                           <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>

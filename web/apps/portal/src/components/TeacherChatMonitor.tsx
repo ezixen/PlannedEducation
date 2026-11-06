@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { API_URL } from '../api';
+import { formatTimeHm } from '../lib/dateTime';
 
 interface ChatMessage {
   id: string;
@@ -187,7 +188,7 @@ export function TeacherChatMonitor({ examId, examTitle }: TeacherChatMonitorProp
                   {msg.sender}
                 </span>
                 <span style={{ fontSize: '0.75rem', color: msg.isOwn ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)' }}>
-                  {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                  {formatTimeHm(msg.timestamp)}
                 </span>
               </div>
 

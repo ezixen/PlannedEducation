@@ -29,12 +29,17 @@ import {
   decryptPayload,
   deriveKey,
   encryptPayload,
-  generateMasterWrappingKey,
   generateSessionKey,
   importMasterWrappingKey,
   unwrapSessionKey,
   wrapSessionKey,
 } from './offlineExamCrypto';
+import {
+  createMasterWithExportableRaw,
+  persistMasterPrfWrapFromCredential,
+  recoverMasterFromPrfWrap,
+  prfEvalExtension,
+} from './offlineExamPlatformKey';
 
 export {
   CRYPTO_ALGORITHM,
@@ -321,11 +326,14 @@ async function getExamDB(): Promise<IDBPDatabase<OfflineExamSchema>> {
 
 // ── Key Hierarchy ──────────────────────────────────────────────────────────
 
+/** In-memory only: raw master for a one-shot WebAuthn PRF wrap (never persisted). */
+let pendingMasterRawForPrf: string | null = null;
+
 /**
  * Device master wrapping key. Used only to wrap/unwrap session keys.
- * Stored as a non-extractable CryptoKey in IndexedDB (structured clone) —
- * not as exportable base64 raw bytes. Legacy string `key` records are migrated.
- * Residual: still device-local (no OS keystore / server-bound recovery yet).
+ * Stored as a non-extractable CryptoKey in IndexedDB (structured clone).
+ * F-017: when a platform authenticator returns WebAuthn PRF results, a second
+ * AES-GCM wrap (`master-prf-wrap`) is stored for OS-backed recovery.
  */
 export async function getMasterKey(): Promise<CryptoKey> {
   if (!masterKeyPromise) {
@@ -340,16 +348,61 @@ export async function getMasterKey(): Promise<CryptoKey> {
       // Migrate legacy extractable/base64 master → non-extractable CryptoKey in IDB.
       if (stored?.key) {
         const migrated = await importMasterWrappingKey(stored.key);
+        pendingMasterRawForPrf = stored.key;
         await db.put('cryptoKeys', { id: 'master', cryptoKey: migrated });
         return migrated;
       }
 
-      const masterKey = await generateMasterWrappingKey();
+      const { masterKey, rawBase64 } = await createMasterWithExportableRaw();
+      pendingMasterRawForPrf = rawBase64;
       await db.put('cryptoKeys', { id: 'master', cryptoKey: masterKey });
       return masterKey;
     })();
   }
   return masterKeyPromise;
+}
+
+/** Client extension blob to merge into WebAuthn create/get options (F-017). */
+export function offlineMasterPrfExtension(): AuthenticationExtensionsClientInputs {
+  return prfEvalExtension();
+}
+
+/**
+ * After passkey register/login, bind or recover the offline master via PRF.
+ * Safe no-op when the authenticator does not support PRF.
+ */
+export async function syncOfflineMasterWithPasskeyPrf(
+  extensionResults: AuthenticationExtensionsClientOutputs | undefined
+): Promise<'bound' | 'recovered' | 'skipped'> {
+  const db = await getExamDB();
+  const existingWrap = await db.get('cryptoKeys', 'master-prf-wrap');
+  const wrappedPayload = existingWrap?.wrapped as EncryptedPayload | undefined;
+
+  // Prefer recovery when IDB master is missing but PRF wrap exists.
+  const masterRow = await db.get('cryptoKeys', 'master');
+  if (!(masterRow?.cryptoKey instanceof CryptoKey) && wrappedPayload) {
+    const recovered = await recoverMasterFromPrfWrap(wrappedPayload, extensionResults);
+    if (recovered) {
+      await db.put('cryptoKeys', { id: 'master', cryptoKey: recovered });
+      masterKeyPromise = Promise.resolve(recovered);
+      pendingMasterRawForPrf = null;
+      return 'recovered';
+    }
+  }
+
+  await getMasterKey();
+  if (!pendingMasterRawForPrf) {
+    return 'skipped';
+  }
+  const bound = await persistMasterPrfWrapFromCredential(
+    extensionResults,
+    async () => pendingMasterRawForPrf as string,
+    async (payload) => {
+      await db.put('cryptoKeys', { id: 'master-prf-wrap', wrapped: payload });
+      pendingMasterRawForPrf = null;
+    }
+  );
+  return bound ? 'bound' : 'skipped';
 }
 
 /**

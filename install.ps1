@@ -52,6 +52,14 @@
 
 .PARAMETER AutoConfirm
     Run non-interactively using supplied parameter values (for AI agents / CI after human approval of key choices)
+
+.NOTES
+    UPDATE-IN-PLACE DATA PRESERVATION (mandatory):
+    Re-running this installer on an existing school deployment keeps the database,
+    .env secrets, uploads/backups/logs, and user accounts. It refreshes application
+    code (prefers GitHub main) and applies additive schema updates only. It does not
+    wipe SQLite/Postgres data. Admin bootstrap is skipped when users already exist
+    unless PE_FORCE_ADMIN_BOOTSTRAP=1 is set.
 #>
 
 param(
@@ -160,10 +168,24 @@ function Check-Command {
 }
 
 function Confirm-Action {
-    param([string]$Message)
-    if ($AutoConfirm) { return $true }
+    param(
+        [string]$Message,
+        # When AutoConfirm is set: $true = yes (install deps), $false = no (preserve data).
+        [bool]$AutoConfirmDefault = $true
+    )
+    if ($AutoConfirm) { return $AutoConfirmDefault }
     $response = Read-Host "$Message (y/N)"
     return $response -match '^[Yy]$'
+}
+
+function Test-ExistingDeployment {
+    param([string]$Dir)
+    $envPath = Join-Path $Dir ".env"
+    $sqlitePath = Join-Path $Dir "plannededucation.db"
+    $pgMarker = Join-Path $Dir "config\deployment.json"
+    return (Test-Path $envPath) -or (Test-Path $sqlitePath) -or (
+        (Test-Path $pgMarker) -and (Test-Path (Join-Path $Dir "src\plannededucation"))
+    )
 }
 
 function Load-DotEnv {
@@ -254,6 +276,17 @@ if (-not (Test-Path $InstallDir)) {
     }
 } else {
     Write-Success "Using directory: $InstallDir"
+}
+
+# Detect update-vs-fresh BEFORE mutating secrets or admin accounts.
+# DATA PRESERVATION RULE: re-running the installer on an existing school
+# deployment MUST keep .env secrets and the database (accounts, exams, grades).
+$script:IsUpdate = Test-ExistingDeployment -Dir $InstallDir
+if ($script:IsUpdate) {
+    Write-Header "Update Mode Detected"
+    Write-Info "Existing deployment found under $InstallDir"
+    Write-Info "Preserving database files, .env secrets, logs, uploads, and user accounts."
+    Write-Info "This run will refresh application code/modules and apply additive schema updates only."
 }
 
 # Step 2: Choose Deployment Mode
@@ -370,6 +403,13 @@ if ($missingRequired.Count -gt 0) {
 Write-Header "Step 5: Setting Up Application Directory"
 
 $scriptRepoRoot = $PSScriptRoot
+# Protected runtime data - never delete/overwrite during clone sync or updates.
+$script:ProtectedDataNames = @(
+    ".env", ".env.local", "plannededucation.db", "plannededucation.db-wal", "plannededucation.db-shm",
+    "ADMIN_CREDENTIALS.txt", "admin_recovery_codes.tmp", "local-secrets", "logs", "uploads",
+    "backups", "artifacts", "data"
+)
+
 if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
     Write-Info "Cloning PlannedEducation repository into $InstallDir..."
     # Clone into a temp sibling directory first: $InstallDir may already contain logs\ (the
@@ -378,11 +418,11 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
     if (Test-Path $cloneTmp) { Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue }
     $prevEap = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
-    # Clone the active development branch (features land on `dev` before `main`)
-    $cloneOutput = & git clone --quiet --branch dev --single-branch https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
+    # End-user / school installs track stable `main`. Fall back to default remote HEAD if needed.
+    $cloneOutput = & git clone --quiet --branch main --single-branch https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
     $cloneExit = $LASTEXITCODE
     if ($cloneExit -ne 0) {
-        Write-Warning "Clone of 'dev' failed; falling back to default branch..."
+        Write-Warning "Clone of 'main' failed; falling back to default branch..."
         if (Test-Path $cloneTmp) { Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue }
         $cloneOutput = & git clone --quiet https://github.com/ezixen/PlannedEducation.git $cloneTmp 2>&1
         $cloneExit = $LASTEXITCODE
@@ -392,17 +432,28 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
         Write-ErrorMsg "git clone failed (exit $cloneExit): $($cloneOutput -join ' ')"
         exit 1
     }
-    Copy-Item -Path (Join-Path $cloneTmp "*") -Destination $InstallDir -Recurse -Force
-    Copy-Item -Path (Join-Path $cloneTmp ".git") -Destination $InstallDir -Recurse -Force
+    # Copy code into InstallDir without clobbering protected runtime data.
+    Get-ChildItem -Force $cloneTmp | ForEach-Object {
+        if ($script:ProtectedDataNames -contains $_.Name) {
+            Write-Info "Preserving existing runtime data: $($_.Name)"
+            return
+        }
+        $dest = Join-Path $InstallDir $_.Name
+        if ($_.PSIsContainer) {
+            Copy-Item -Path $_.FullName -Destination $dest -Recurse -Force
+        } else {
+            Copy-Item -Path $_.FullName -Destination $dest -Force
+        }
+    }
     Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue
     Write-Success "Repository cloned successfully"
 } else {
-    Write-Info "Repository already exists in $InstallDir, pulling latest changes..."
+    Write-Info "Repository already exists in $InstallDir, pulling latest stable changes from origin/main..."
     Push-Location $InstallDir
     try {
         git fetch origin 2>&1 | Out-Null
-        git checkout dev 2>&1 | Out-Null
-        git pull origin dev 2>&1 | Out-Null
+        git checkout main 2>&1 | Out-Null
+        git pull origin main 2>&1 | Out-Null
     } catch {
         Write-Warning "Could not pull from remote; continuing with existing checkout."
     }
@@ -454,7 +505,19 @@ if ((Test-Path (Join-Path $InstallDir ".env")) -and (Test-Path $existingDepJson)
 Write-Header "Step 6: Configuring Environment & Secrets"
 
 $envFile = Join-Path $InstallDir ".env"
-if (-not (Test-Path $envFile) -or (Confirm-Action "Overwrite existing .env configuration?")) {
+# DATA PRESERVATION: never auto-overwrite .env on updates (would rotate JWT/Fernet
+# keys and break decryption of existing encrypted rows while keeping the same DB).
+$shouldWriteEnv = -not (Test-Path $envFile)
+if (-not $shouldWriteEnv) {
+    if ($script:IsUpdate) {
+        Write-Info "Keeping existing .env (update mode - secrets and DB encryption keys preserved)."
+    } elseif (Confirm-Action "Overwrite existing .env configuration? WARNING: regenerates secrets and can lock out existing encrypted data." -AutoConfirmDefault $false) {
+        $shouldWriteEnv = $true
+    } else {
+        Write-Info "Keeping existing .env file"
+    }
+}
+if ($shouldWriteEnv) {
     Write-Info "Generating cryptographically secure secrets..."
 
     # Generate 64-char hex JWT secret
@@ -560,12 +623,10 @@ ALLOW_DEV_SEB_BYPASS=$sebBypass
         anonymizer_language = "en"
         updated_at = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
     }
-    # Write without UTF-8 BOM — PowerShell's UTF8 encoding adds BOM which breaks json.load(utf-8)
+    # Write without UTF-8 BOM - PowerShell's UTF8 encoding adds BOM which breaks json.load(utf-8)
     $depJsonText = $depConfigObj | ConvertTo-Json -Depth 4
     [System.IO.File]::WriteAllText($deploymentJsonFile, $depJsonText, (New-Object System.Text.UTF8Encoding($false)))
     Write-Success "Created config/deployment.json (domain: $Domain, API port: $ApiPort, Frontend port: $FrontendPort)"
-} else {
-    Write-Info "Keeping existing .env file"
 }
 
 Load-DotEnv $envFile
@@ -611,15 +672,19 @@ if ($useDocker) {
         $pythonExe = $localVenvPython
     }
 
-    # Initialize Database Tables
-    Write-Info "Initializing database tables..."
+    # Initialize / upgrade schema (additive only - never drops tables or wipes rows).
+    if ($script:IsUpdate) {
+        Write-Info "Applying additive schema updates to existing database (no wipe)..."
+    } else {
+        Write-Info "Initializing database tables..."
+    }
     $env:PYTHONPATH = Join-Path $InstallDir "src"
-    & $pythonExe -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database tables initialized successfully!')"
+    & $pythonExe -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database schema ready (create_all + ensure_schema; no data wipe).')"
     if ($LASTEXITCODE -ne 0) {
         Write-ErrorMsg "Database initialization failed!"
         exit 1
     }
-    Write-Success "Database tables created"
+    Write-Success "Database schema ready (existing user data preserved)"
 
     # Setup Frontend
     Write-Info "Building React frontend..."
@@ -1019,12 +1084,34 @@ pause
     }
 }
 
-# Step 8: Create Initial Admin Account & School
+# Step 8: Create Initial Admin Account & School (fresh installs only)
 Write-Header "Step 8: Creating Initial Superadmin & School"
+
+$skipAdminBootstrap = $false
+if ($script:IsUpdate -and -not $useDocker) {
+    $env:PYTHONPATH = Join-Path $InstallDir "src"
+    Load-DotEnv $envFile
+    try {
+        $userCount = & $pythonExe -c "from plannededucation.api.database import SessionLocal; from plannededucation.api.models import User; db=SessionLocal(); print(db.query(User).count()); db.close()" 2>$null
+        if ($LASTEXITCODE -eq 0 -and [int]$userCount -gt 0) {
+            $skipAdminBootstrap = $true
+            Write-Info "Existing users detected ($userCount). Skipping admin bootstrap to preserve accounts and passwords."
+            Write-Info "Set PE_FORCE_ADMIN_BOOTSTRAP=1 only if you intentionally need to reset the bootstrap superadmin."
+        }
+    } catch {
+        Write-Warning "Could not probe existing users; continuing carefully."
+    }
+    if ($env:PE_FORCE_ADMIN_BOOTSTRAP -eq "1") {
+        $skipAdminBootstrap = $false
+        Write-Warning "PE_FORCE_ADMIN_BOOTSTRAP=1 set - bootstrap admin may be created/updated."
+    }
+}
 
 $generatedRandom = $false
 
-if (-not $AutoConfirm) {
+if ($skipAdminBootstrap) {
+    Write-Success "Update mode: existing school accounts left unchanged."
+} elseif (-not $AutoConfirm) {
     $inputSchool = Read-Host "Enter School / Institution Name (default: $SchoolName)"
     if ($inputSchool -and $inputSchool.Trim() -ne "") { $SchoolName = $inputSchool.Trim() }
     $inputEmail = Read-Host "Enter Superadmin Email (default: $AdminEmail)"
@@ -1054,7 +1141,7 @@ if (-not $AutoConfirm) {
     }
 }
 
-if ($generatedRandom) {
+if ($generatedRandom -and -not $skipAdminBootstrap) {
     Write-Host ""
     Write-Host "============================================================" -ForegroundColor $YELLOW
     Write-Host "  [KEY] GENERATED SUPERADMIN PASSWORD" -ForegroundColor $GREEN
@@ -1073,7 +1160,7 @@ if ($generatedRandom) {
     Write-Host ""
 }
 
-if (-not $useDocker) {
+if (-not $useDocker -and -not $skipAdminBootstrap) {
     $env:PYTHONPATH = Join-Path $InstallDir "src"
     $env:PE_ADMIN_EMAIL = $AdminEmail
     $env:PE_ADMIN_PASSWORD = $AdminPassword
@@ -1149,7 +1236,7 @@ if (-not $useDocker) {
             Write-Host ""
             Write-Host "  The following credentials have been copied to your clipboard:" -ForegroundColor $WHITE
             Write-Host "    - Admin Email:    $AdminEmail" -ForegroundColor $WHITE
-            Write-Host "    - Admin Password: (included in clipboard — paste into a password manager now)" -ForegroundColor $WHITE
+            Write-Host "    - Admin Password: (included in clipboard - paste into a password manager now)" -ForegroundColor $WHITE
             Write-Host "    - Recovery Codes: $($codesList.Count) one-time codes" -ForegroundColor $WHITE
             Write-Host ""
             Write-Host "  Credentials are NOT saved to any plaintext password file on disk." -ForegroundColor $YELLOW
@@ -1279,7 +1366,7 @@ Write-Host "  Backend API:    http://${Domain}:${ApiPort}"
 Write-Host "  API Docs:       http://${Domain}:${ApiPort}/docs"
 Write-Host "  Frontend App:   http://${Domain}:${FrontendPort}"
 Write-Host "  Admin Email:    $AdminEmail"
-Write-Host "  Admin Password: (shown once above if generated — not re-printed here)"
+Write-Host "  Admin Password: (shown once above if generated - not re-printed here)"
 Write-Host "  Diagnostic Logs:"
 Write-Host "    - Install Log:        $InstallDir\logs\install.log"
 Write-Host "    - Install Error Log:  $InstallDir\logs\install_error.log"

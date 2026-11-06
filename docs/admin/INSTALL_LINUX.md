@@ -43,6 +43,24 @@ chmod +x install.sh
 ./install.sh
 ```
 
+### Updating an existing Linux deployment (no data loss)
+
+Re-run the installer in the **same** install directory. Update mode:
+
+1. Pulls latest **`main`** (stable).
+2. Rebuilds backend deps + portal `dist`.
+3. Applies additive schema updates only — **does not wipe** SQLite/PostgreSQL data.
+4. **Keeps** `.env` secrets (JWT / Fernet / DB encryption keys).
+5. **Skips** superadmin bootstrap when users already exist (`PE_FORCE_ADMIN_BOOTSTRAP=1` only to force reset).
+
+```bash
+cd /opt/plannededucation
+AUTO_CONFIRM=true ./install.sh
+./start_all.sh
+```
+
+Do **not** delete `plannededucation.db`, `.env`, `uploads/`, or `backups/` when updating. Use `uninstall.sh` only for an intentional full wipe.
+
 ### Deployment Mode Selection:
 When launched, `install.sh` will prompt you to select a deployment mode:
 1. **Mode 1: Single-Server / Local (SQLite + In-Memory Cache)** *(Fastest, zero external database setup)*

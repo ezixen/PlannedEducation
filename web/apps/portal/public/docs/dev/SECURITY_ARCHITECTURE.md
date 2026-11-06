@@ -1,7 +1,7 @@
 # PlannedEducation — Security Architecture (Developer Reference)
 
 > **Audience:** developers and security reviewers only.
-> **Last verified:** 2026-11-06 late evening (security/logic audit remediations + pytest suites listed below).
+> **Last verified:** 2026-11-07 (security/logic audit remediations + F-019 MediaPipe face/gaze + F-043 CSP3 style split + F-017 PRF wrap).
 > Classroom wording for the same topics: [`docs/user/`](../user/).
 
 This document describes **what the code does today**, not aspirational design. Where a control is incomplete, it is marked **Open**.
@@ -37,7 +37,7 @@ Audit trail: `plans/2026-11-06_2045_SECURITY_LOGIC_AUDIT.md`.
 | Brute-force lockout | Failed logins increment counters; lockout window applies. | `routes_auth` login path |
 | Logout / password change | Revokes refresh session(s); password change/reset revokes all families. | `/auth/logout`, settings + reset routes |
 
-**Residual:** CAPTCHA on public auth (intentionally no paid CAPTCHA); style-src still allows `'unsafe-inline'` for CSS.
+**Residual:** CAPTCHA on public auth (intentionally no paid CAPTCHA). Production `style-src` no longer allows `'unsafe-inline'` for stylesheets; React `style={{}}` still needs `style-src-attr 'unsafe-inline'` (CSP3). `Permissions-Policy payment=()` disables the Payment Request API (free/OSS — not a billing feature).
 
 ---
 
@@ -71,7 +71,7 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 | Who may start/submit | Server requires `role == "student"` (teacher preview uses explicit `test_mode` + owner checks). | Fixed (F-015) |
 | Time limit | `deadline_at` stored at start (duration × accommodation multiplier). Submit rejects after deadline (UTC-normalized comparisons for SQLite). | Fixed (F-015) |
 | Offline package metadata | Start returns authoritative `exam_package` (duration, `require_seb`, timestamps). Client fails closed if package missing/malformed. | **Fixed (F-016)** |
-| Offline seal crypto | AES-GCM `{ciphertext, iv, version, aad}` seal; answers encrypted at rest in IndexedDB; session keys wrapped; master stored as non-extractable `CryptoKey` in IDB (structured clone); verify/decrypt fail closed. | **Fixed (F-017)** — further residual: no OS keystore / server-bound recovery |
+| Offline seal crypto | AES-GCM `{ciphertext, iv, version, aad}` seal; answers encrypted at rest in IndexedDB; session keys wrapped; master stored as non-extractable `CryptoKey` in IDB (structured clone); optional WebAuthn **PRF** wrap (`master-prf-wrap`) for platform-authenticator recovery when the passkey supports PRF. | **Fixed (F-017)** |
 
 ---
 
@@ -113,8 +113,9 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 
 | Control | Status |
 |---------|--------|
-| CSP script-src | Production omits `'unsafe-inline'`/`'unsafe-eval'` for scripts (Vite hashed modules). Style still `'unsafe-inline'`. |
-| CI Bandit / oxlint | Bandit fails on Medium+ (`-ll`); oxlint `-D correctness` (never `-A security`). Suspicious category left for a separate burn-down. Mypy still non-blocking. |
+| CSP script-src | Production omits `'unsafe-inline'`/`'unsafe-eval'` for scripts (Vite hashed modules). |
+| CSP style-src | Production `style-src 'self' fonts` (no unsafe-inline on stylesheets); `style-src-attr 'unsafe-inline'` for React inline style attributes; `worker-src 'self' blob:` for MediaPipe. |
+| CI Bandit / oxlint | Bandit fails on Medium+ (`-ll`); oxlint `-D correctness -D suspicious`; mypy fail-closed on typed packages. |
 
 ---
 
@@ -124,8 +125,8 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 |---------|--------|
 | Session lookup by submission | **Fixed (F-018)**: shared `_get_session_and_verify`. |
 | Client event pipeline | **Fixed (F-018 remainder)**: allowlisted types/severities, batch/face_count bounds, `event_source=client_telemetry`, violation budget; still telemetry—not sole disciplinary proof. |
-| Portal session UI | **Fixed (F-019)**: consent ≠ start; checkboxes only set options; video+stream attach effect; local Shape Detection `FaceDetector` when available (`live`), else labeled `manual_review`; no `Math.random` / no cloud face ML. Gaze still unavailable. |
-| Real local face/gaze ML | **Deferred** — UI ships labeled manual-review / unavailable mode until a real local detector exists. |
+| Portal session UI | **Fixed (F-019)**: consent ≠ start; checkboxes only set options; video+stream attach effect; local MediaPipe Face Landmarker (WASM) for face count + iris/head-pose gaze; Shape Detection fallback (face count only); labeled `manual_review` if neither loads; no `Math.random` / no cloud ML. |
+| Real local face/gaze ML | **Fixed (F-019)** — `src/lib/localFaceGaze.ts` + `public/ml` assets via `npm run ensure-ml`. |
 
 ---
 

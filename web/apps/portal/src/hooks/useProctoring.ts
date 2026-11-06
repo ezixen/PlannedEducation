@@ -1,5 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { proctoringService, ProctoringEventType, type ProctoringConsentRequest, type ProctoringSessionStartRequest } from '../services/proctoring';
+import {
+  createLocalFaceGazeDetector,
+  type FaceGazeBackend,
+  type LocalFaceGazeDetector,
+} from '../lib/localFaceGaze';
 
 interface ProctoringConfig {
   examId: string;
@@ -7,7 +12,7 @@ interface ProctoringConfig {
   onConsentGiven?: () => void;
   onSessionStarted?: (sessionId: string) => void;
   onSessionEnded?: () => void;
-  onViolation?: (event: any) => void;
+  onViolation?: (event: unknown) => void;
 }
 
 export interface ProctoringMediaOptions {
@@ -16,23 +21,12 @@ export interface ProctoringMediaOptions {
   screenRecordingEnabled: boolean;
 }
 
-/** Browser Shape Detection API (Chrome) — free local face boxes, no cloud. */
-interface BrowserFaceDetector {
-  detect(image: ImageBitmapSource): Promise<Array<{ boundingBox: DOMRectReadOnly }>>;
-}
-
 type FaceDetectionMode = 'unavailable' | 'manual_review' | 'live';
 
-function createBrowserFaceDetector(): BrowserFaceDetector | null {
-  const FaceDetectorCtor = (globalThis as unknown as {
-    FaceDetector?: new (opts?: { fastMode?: boolean; maxDetectedFaces?: number }) => BrowserFaceDetector;
-  }).FaceDetector;
-  if (typeof FaceDetectorCtor !== 'function') return null;
-  try {
-    return new FaceDetectorCtor({ fastMode: true, maxDetectedFaces: 10 });
-  } catch {
-    return null;
-  }
+function modeFromBackend(backend: FaceGazeBackend, cameraEnabled: boolean): FaceDetectionMode {
+  if (!cameraEnabled) return 'unavailable';
+  if (backend === 'none') return 'manual_review';
+  return 'live';
 }
 
 interface ProctoringState {
@@ -43,13 +37,18 @@ interface ProctoringState {
   microphoneEnabled: boolean;
   screenRecordingEnabled: boolean;
   error: string | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   events: any[];
   violationCount: number;
   maxFaces: number;
-  /** live = Shape Detection API; manual_review = camera preview only; unavailable = no camera. */
+  /** live = local MediaPipe / Shape Detection; manual_review = preview only; unavailable = no camera. */
   faceDetectionMode: FaceDetectionMode;
   /** Latest live face count from local detector (0 when not live). */
   detectedFaceCount: number;
+  /** Which local backend is active (mediapipe includes gaze). */
+  faceGazeBackend: FaceGazeBackend;
+  /** Last gaze sample; null when not estimated. */
+  gazeOffScreen: boolean;
 }
 
 export function useProctoring(config: ProctoringConfig) {
@@ -66,22 +65,24 @@ export function useProctoring(config: ProctoringConfig) {
     maxFaces: 1,
     faceDetectionMode: 'unavailable',
     detectedFaceCount: 0,
+    faceGazeBackend: 'none',
+    gazeOffScreen: false,
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const audioMonitorIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const faceMonitorIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const faceDetectorRef = useRef<BrowserFaceDetector | null>(null);
+  const faceGazeDetectorRef = useRef<LocalFaceGazeDetector | null>(null);
   const lastFaceCountRef = useRef<number | null>(null);
+  const lastGazeOffRef = useRef<boolean | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioAnalyserRef = useRef<AnalyserNode | null>(null);
   const eventQueueRef = useRef<any[]>([]);
   const batchIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Check for existing consent on mount
   useEffect(() => {
-    checkExistingConsent();
+    void checkExistingConsent();
   }, [config.examId]);
 
   // F-019: always attach stream to video element when both are available
@@ -116,8 +117,9 @@ export function useProctoring(config: ProctoringConfig) {
       await proctoringService.giveConsent(request);
       setState(prev => ({ ...prev, consentGiven: true }));
       config.onConsentGiven?.();
-    } catch (err: any) {
-      setState(prev => ({ ...prev, error: err.response?.data?.detail || 'Failed to give consent' }));
+    } catch (err: unknown) {
+      const detail = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail;
+      setState(prev => ({ ...prev, error: detail || 'Failed to give consent' }));
       throw err;
     }
   };
@@ -126,8 +128,9 @@ export function useProctoring(config: ProctoringConfig) {
     try {
       await proctoringService.withdrawConsent(config.examId);
       setState(prev => ({ ...prev, consentGiven: false, sessionActive: false, sessionId: null }));
-    } catch (err: any) {
-      setState(prev => ({ ...prev, error: err.response?.data?.detail || 'Failed to withdraw consent' }));
+    } catch (err: unknown) {
+      const detail = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail;
+      setState(prev => ({ ...prev, error: detail || 'Failed to withdraw consent' }));
       throw err;
     }
   };
@@ -148,13 +151,15 @@ export function useProctoring(config: ProctoringConfig) {
       };
       const session = await proctoringService.startSession(request);
 
-      const detector = options.cameraEnabled ? createBrowserFaceDetector() : null;
-      faceDetectorRef.current = detector;
-      const faceMode: FaceDetectionMode = !options.cameraEnabled
-        ? 'unavailable'
-        : detector
-          ? 'live'
-          : 'manual_review';
+      let backend: FaceGazeBackend = 'none';
+      if (options.cameraEnabled) {
+        const detector = await createLocalFaceGazeDetector();
+        faceGazeDetectorRef.current = detector;
+        backend = detector.backend;
+      } else {
+        faceGazeDetectorRef.current = null;
+      }
+      const faceMode = modeFromBackend(backend, options.cameraEnabled);
 
       setState(prev => ({
         ...prev,
@@ -164,20 +169,21 @@ export function useProctoring(config: ProctoringConfig) {
         microphoneEnabled: options.microphoneEnabled,
         screenRecordingEnabled: options.screenRecordingEnabled,
         faceDetectionMode: faceMode,
+        faceGazeBackend: backend,
         detectedFaceCount: 0,
+        gazeOffScreen: false,
       }));
 
-      // Start media streams if enabled
       if (options.cameraEnabled || options.microphoneEnabled) {
         await startMediaStreams(options.cameraEnabled, options.microphoneEnabled);
       }
 
-      // F-019: pass options explicitly — do not read stale React state
-      startEventRecording(session.id, options, faceMode);
+      startEventRecording(session.id, options, faceMode, backend);
 
       config.onSessionStarted?.(session.id);
-    } catch (err: any) {
-      setState(prev => ({ ...prev, error: err.response?.data?.detail || 'Failed to start session' }));
+    } catch (err: unknown) {
+      const detail = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail;
+      setState(prev => ({ ...prev, error: detail || 'Failed to start session' }));
       throw err;
     }
   };
@@ -218,7 +224,8 @@ export function useProctoring(config: ProctoringConfig) {
   const startEventRecording = (
     sessionId: string,
     options: ProctoringMediaOptions,
-    faceMode: FaceDetectionMode
+    faceMode: FaceDetectionMode,
+    backend: FaceGazeBackend
   ) => {
     queueEvent({
       session_id: sessionId,
@@ -230,13 +237,13 @@ export function useProctoring(config: ProctoringConfig) {
         microphone_enabled: options.microphoneEnabled,
         screen_recording_enabled: options.screenRecordingEnabled,
         face_detection_mode: faceMode,
+        face_gaze_backend: backend,
       },
     });
 
-    // F-019: never simulate face/gaze with Math.random.
-    // Prefer local Shape Detection API; otherwise labeled manual-review only.
+    // F-019: never simulate face/gaze with Math.random — local MediaPipe or Shape Detection only.
     if (options.cameraEnabled && faceMode === 'live') {
-      startFaceDetectionMonitor(sessionId);
+      startFaceGazeMonitor(sessionId, backend);
     } else if (options.cameraEnabled) {
       queueEvent({
         session_id: sessionId,
@@ -245,7 +252,7 @@ export function useProctoring(config: ProctoringConfig) {
         event_data: {
           face_detection_mode: 'manual_review',
           available: false,
-          note: 'Automated face/gaze detection is unavailable; camera preview is for manual teacher review only.',
+          note: 'Local face/gaze model unavailable; camera preview is for manual teacher review only.',
         },
       });
     }
@@ -255,23 +262,29 @@ export function useProctoring(config: ProctoringConfig) {
     }
 
     batchIntervalRef.current = setInterval(() => {
-      flushEventQueue(sessionId);
+      void flushEventQueue(sessionId);
     }, 5000);
   };
 
-  const startFaceDetectionMonitor = (sessionId: string) => {
-    const detector = faceDetectorRef.current;
+  const startFaceGazeMonitor = (sessionId: string, backend: FaceGazeBackend) => {
+    const detector = faceGazeDetectorRef.current;
     if (!detector) return;
 
     lastFaceCountRef.current = null;
+    lastGazeOffRef.current = null;
     queueEvent({
       session_id: sessionId,
       event_type: ProctoringEventType.FACE_DETECTED,
       severity: 'info',
       event_data: {
         face_detection_mode: 'live',
+        face_gaze_backend: backend,
         available: true,
-        note: 'Local browser FaceDetector active (no cloud inference).',
+        gaze_enabled: backend === 'mediapipe',
+        note:
+          backend === 'mediapipe'
+            ? 'Local MediaPipe Face Landmarker active (WASM, no cloud). Face count + iris/head-pose gaze.'
+            : 'Local Shape Detection API active (face count only; gaze requires MediaPipe assets).',
       },
     });
 
@@ -279,26 +292,66 @@ export function useProctoring(config: ProctoringConfig) {
       const video = videoRef.current;
       if (!video || video.readyState < 2) return;
       try {
-        const faces = await detector.detect(video);
-        const count = Math.min(faces.length, 10);
-        setState((prev) => ({ ...prev, detectedFaceCount: count }));
-        // Emit only on change to avoid flooding the event batch.
-        if (lastFaceCountRef.current === count) return;
-        lastFaceCountRef.current = count;
-        const overMax = count > 1;
-        queueEvent({
-          session_id: sessionId,
-          event_type: ProctoringEventType.FACE_DETECTED,
-          severity: overMax ? 'warning' : 'info',
-          event_data: {
-            face_detection_mode: 'live',
-            face_count: count,
-            timestamp: new Date().toISOString(),
-          },
-        });
-        if (overMax) {
-          setState((prev) => ({ ...prev, violationCount: prev.violationCount + 1 }));
-          config.onViolation?.({ type: 'face_count', face_count: count });
+        const frame = await detector.detect(video, performance.now());
+        const count = frame.faceCount;
+        setState((prev) => ({
+          ...prev,
+          detectedFaceCount: count,
+          gazeOffScreen: frame.gaze?.offScreen ?? false,
+        }));
+
+        if (lastFaceCountRef.current !== count) {
+          lastFaceCountRef.current = count;
+          const overMax = count > 1;
+          queueEvent({
+            session_id: sessionId,
+            event_type: overMax ? ProctoringEventType.MULTIPLE_FACES : ProctoringEventType.FACE_DETECTED,
+            severity: overMax ? 'warning' : 'info',
+            event_data: {
+              face_detection_mode: 'live',
+              face_gaze_backend: frame.backend,
+              face_count: count,
+              timestamp: new Date().toISOString(),
+            },
+          });
+          if (overMax) {
+            setState((prev) => ({ ...prev, violationCount: prev.violationCount + 1 }));
+            config.onViolation?.({ type: 'face_count', face_count: count });
+          }
+          if (count === 0) {
+            queueEvent({
+              session_id: sessionId,
+              event_type: ProctoringEventType.FACE_LOST,
+              severity: 'warning',
+              event_data: {
+                face_gaze_backend: frame.backend,
+                timestamp: new Date().toISOString(),
+              },
+            });
+          }
+        }
+
+        if (frame.gaze) {
+          const off = frame.gaze.offScreen;
+          if (lastGazeOffRef.current !== off) {
+            lastGazeOffRef.current = off;
+            queueEvent({
+              session_id: sessionId,
+              event_type: off ? ProctoringEventType.GAZE_OFF_SCREEN : ProctoringEventType.EYE_MOVEMENT,
+              severity: off ? 'warning' : 'info',
+              event_data: {
+                gaze_x: Number(frame.gaze.x.toFixed(3)),
+                gaze_y: Number(frame.gaze.y.toFixed(3)),
+                off_screen: off,
+                face_gaze_backend: frame.backend,
+                timestamp: new Date().toISOString(),
+              },
+            });
+            if (off) {
+              setState((prev) => ({ ...prev, violationCount: prev.violationCount + 1 }));
+              config.onViolation?.({ type: 'gaze_off_screen', gaze: frame.gaze });
+            }
+          }
         }
       } catch {
         // Transient detector errors — keep live mode; next tick retries.
@@ -307,7 +360,7 @@ export function useProctoring(config: ProctoringConfig) {
 
     faceMonitorIntervalRef.current = setInterval(() => {
       void checkFaces();
-    }, 2000);
+    }, 1000);
   };
 
   const startAudioLevelMonitor = (sessionId: string) => {
@@ -317,7 +370,6 @@ export function useProctoring(config: ProctoringConfig) {
       audioAnalyserRef.current.getByteFrequencyData(dataArray);
       const averageVolume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
 
-      // Volume telemetry only — not fabricated face/gaze evidence.
       if (averageVolume > 180) {
         queueEvent({
           session_id: sessionId,
@@ -355,7 +407,7 @@ export function useProctoring(config: ProctoringConfig) {
     try {
       await proctoringService.recordEventsBatch({
         session_id: sessionId,
-        events,
+        events: events as never,
       });
     } catch (err) {
       console.error('Failed to send event batch:', err);
@@ -384,8 +436,10 @@ export function useProctoring(config: ProctoringConfig) {
         clearInterval(faceMonitorIntervalRef.current);
         faceMonitorIntervalRef.current = null;
       }
-      faceDetectorRef.current = null;
+      faceGazeDetectorRef.current?.close();
+      faceGazeDetectorRef.current = null;
       lastFaceCountRef.current = null;
+      lastGazeOffRef.current = null;
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);
         batchIntervalRef.current = null;
@@ -415,12 +469,15 @@ export function useProctoring(config: ProctoringConfig) {
         microphoneEnabled: false,
         screenRecordingEnabled: false,
         faceDetectionMode: 'unavailable',
+        faceGazeBackend: 'none',
         detectedFaceCount: 0,
+        gazeOffScreen: false,
       }));
 
       config.onSessionEnded?.();
-    } catch (err: any) {
-      setState(prev => ({ ...prev, error: err.response?.data?.detail || 'Failed to end session' }));
+    } catch (err: unknown) {
+      const detail = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail;
+      setState(prev => ({ ...prev, error: detail || 'Failed to end session' }));
       throw err;
     }
   };
@@ -457,13 +514,13 @@ export function useProctoring(config: ProctoringConfig) {
     config.onViolation?.({ type: 'fullscreen_exit' });
   }, [state.sessionId, state.sessionActive, config]);
 
-  const recordSEBViolation = useCallback((details: any) => {
+  const recordSEBViolation = useCallback((details: unknown) => {
     if (!state.sessionId || !state.sessionActive) return;
     queueEvent({
       session_id: state.sessionId,
       event_type: ProctoringEventType.SEB_VIOLATION,
       severity: 'violation',
-      event_data: details,
+      event_data: details as Record<string, unknown>,
     });
     setState(prev => ({ ...prev, violationCount: prev.violationCount + 1 }));
     config.onViolation?.({ type: 'seb_violation', details });
@@ -480,11 +537,12 @@ export function useProctoring(config: ProctoringConfig) {
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);
       }
+      faceGazeDetectorRef.current?.close();
       if (streamRef.current) {
         streamRef.current.getTracks().forEach((track: MediaStreamTrack) => track.stop());
       }
       if (audioContextRef.current) {
-        audioContextRef.current.close();
+        void audioContextRef.current.close();
       }
     };
   }, []);

@@ -1,12 +1,17 @@
 # Planned Education - Plans Updated 2026-10-21
 
-## Latest Architecture & Security Updates (2026-11-06)
+## Latest Architecture & Security Updates (2026-11-07)
 
-- Security/logic audit remediations landed on `dev` working tree (see `plans/2026-11-06_2045_SECURITY_LOGIC_AUDIT.md`).
-- Verified suites (cache helper): proctoring/OCR/parent **42**; auth/security battery **65**; deferred F-027..052 **7**; backup AEAD **6**; F-006/048/049 **19**; F-006–015 smoke **12**.
-- Residual wave closed: WebAuthn login, RefreshSession rotation, `/sync/submission`, backup PEBAK1, CSP script hardening, Bandit/oxlint CI fail-closed, legacy archive migrate endpoint, DNS pin helpers.
-- Audience-separated docs refreshed: `docs/user/`, `docs/admin/`, `docs/dev/SECURITY_ARCHITECTURE.md` (verified truth).
-- Still open by design: platform keystore for offline master wrap (F-017), real local face ML (F-019), bulk i18n sweep (F-044), mypy burn-down.
+- F-019 local MediaPipe face + gaze (`localFaceGaze.ts`, `public/ml` via `npm run ensure-ml`); Shape Detection fallback; honest manual-review if unavailable.
+- F-017 WebAuthn PRF platform wrap for offline master (`master-prf-wrap`) on passkey register/login when authenticator supports PRF.
+- F-043 CSP3: production `style-src` without stylesheet `unsafe-inline`; `style-src-attr` for React; `worker-src` for MediaPipe; `payment=()` only disables Payment Request API (free/OSS).
+- F-044/F-050/F-052 closed scoped; install update-in-place preserves DB/.env.
+- Audit trail: `plans/2026-11-06_2045_SECURITY_LOGIC_AUDIT.md`.
+
+## Prior Architecture & Security Updates (2026-11-06)
+
+- Security/logic audit remediations landed on `dev` (see audit plan).
+- Residual wave: WebAuthn login, RefreshSession, `/sync/submission`, backup PEBAK1, CSP script hardening, Bandit/oxlint fail-closed.
 
 ## Prior Architecture & Security Updates (2026-10-21)
 - **Full End-to-End Visual Verification & Deployment (Completed & 100% Passed)**:

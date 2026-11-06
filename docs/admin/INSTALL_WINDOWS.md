@@ -65,9 +65,29 @@ For fully automated, unattended installation (recommended for AI agents, CI/CD, 
 | School name | `PlannedEducation School` |
 | Superadmin email | `admin@yourschool.edu` |
 | Superadmin name | `School Administrator` |
-| Superadmin password | Auto-generated secure random 20-character password |
-| Overwrite existing `.env` | Yes |
+| Superadmin password | Auto-generated secure random 20-character password (fresh installs only) |
+| Overwrite existing `.env` | **No** on updates (preserves secrets + encrypted data). Fresh installs create `.env`. |
+| Existing database / accounts | **Preserved** on re-run (update mode). Schema updates are additive only. |
 | Install missing dependencies via winget | Yes (if needed) |
+
+### Updating an existing Windows deployment (no data loss)
+
+Re-run the installer in the **same** install directory. Update mode:
+
+1. Pulls latest **`main`** (stable) into the install tree.
+2. Rebuilds backend deps + portal `dist`.
+3. Runs additive schema ensure (`create_all` + `ensure_schema`) — **does not wipe** SQLite/PostgreSQL data.
+4. **Keeps** `.env` (JWT / Fernet / DB encryption keys).
+5. **Skips** superadmin bootstrap when users already exist (set `PE_FORCE_ADMIN_BOOTSTRAP=1` only to force reset).
+
+```powershell
+cd C:\PlannedEducation
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\install.ps1 -AutoConfirm
+.\start_all.ps1
+```
+
+Do **not** delete `plannededucation.db`, `.env`, `uploads\`, or `backups\` when updating. Use `uninstall.ps1` only when you intentionally want a full wipe.
 
 **Superadmin password behavior in `-AutoConfirm` mode:**
 - If you **do not** pass `-AdminPassword`, a cryptographically secure random 20-character password is automatically generated and **displayed on screen** during installation.

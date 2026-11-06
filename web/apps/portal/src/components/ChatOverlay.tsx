@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { API_URL } from '../api';
+import { formatTimeHm } from '../lib/dateTime';
 
 interface DirectMessage {
   id: string;
@@ -460,7 +461,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                             <div style={{ maxWidth: '75%', padding: '0.75rem 1rem', borderRadius: isOwn ? 'var(--radius-md) var(--radius-md) 0 var(--radius-md)' : 'var(--radius-md) var(--radius-md) var(--radius-md) 0', backgroundColor: isOwn ? 'var(--primary-color)' : 'var(--bg-color)', color: isOwn ? '#fff' : 'var(--text-color)', border: isOwn ? 'none' : '1px solid var(--border-color)', position: 'relative' }}>
                               <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: 1.4 }}>{msg.content}</p>
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0.4rem', marginTop: '0.35rem', fontSize: '0.65rem', color: isOwn ? 'rgba(255,255,255,0.8)' : 'var(--text-muted)' }}>
-                                <span>{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                <span>{formatTimeHm(msg.created_at)}</span>
                                 {isOwn && msg.is_read && <CheckCircle size={10} />}
                                 <button
                                   onClick={() => deleteMessage(msg.id)}

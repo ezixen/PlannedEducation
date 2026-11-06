@@ -17,6 +17,19 @@
 
 Never copy engineering wording (`.env`, SHA fingerprints, stub tokens, Fernet key names, pytest cache paths) into `docs/user/` or into portal FAQ/i18n strings.
 
+## Update-in-place / data preservation (mandatory)
+
+School deployments are upgraded by re-running `install.ps1` / `install.sh` in the **same** directory (pulls GitHub `main`, rebuilds code, additive schema only).
+
+| Must keep | Must not do on normal update |
+|-----------|------------------------------|
+| `plannededucation.db` / Postgres data | Delete or recreate the live DB |
+| `.env` (JWT / Fernet / DB encryption keys) | Auto-rotate secrets under `-AutoConfirm` |
+| Existing user accounts & passwords | Re-run admin bootstrap (unless `PE_FORCE_ADMIN_BOOTSTRAP=1`) |
+| `uploads/`, `backups/`, `logs/`, `local-secrets/` | Wipe runtime data while refreshing code |
+
+Schema changes must be additive (`create_all` + `ensure_schema` / migrations that never drop live school data by default). See `AGENTS.md` §14.
+
 ## Technical references in this folder
 
 | Document | Purpose |

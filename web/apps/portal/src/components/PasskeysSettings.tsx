@@ -4,6 +4,7 @@ import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
 import { formatDateDdMmYyyy } from '../lib/dateTime';
+import { offlineMasterPrfExtension, syncOfflineMasterWithPasskeyPrf } from '../services/offlineExam';
 
 interface PasskeyCredential {
   credential_id: string;
@@ -84,7 +85,10 @@ export function PasskeysSettings() {
             residentKey: options.authenticatorSelection.residentKey as ResidentKeyRequirement,
             userVerification: options.authenticatorSelection.userVerification as UserVerificationRequirement,
           },
-          extensions: options.extensions,
+          extensions: {
+            ...(options.extensions || {}),
+            ...offlineMasterPrfExtension(),
+          },
         },
       })) as PublicKeyCredential | null;
 
@@ -93,6 +97,7 @@ export function PasskeysSettings() {
       }
 
       const attestationResponse = credential.response as AuthenticatorAttestationResponse;
+      const clientExtensionResults = credential.getClientExtensionResults();
       const credentialData = {
         id: credential.id,
         rawId: bufferToBase64url(credential.rawId),
@@ -101,10 +106,16 @@ export function PasskeysSettings() {
           attestationObject: bufferToBase64url(attestationResponse.attestationObject),
         },
         type: credential.type,
-        clientExtensionResults: credential.getClientExtensionResults(),
+        clientExtensionResults,
       };
 
       await apiClient.post('/auth/webauthn/registration/finish', credentialData);
+      // F-017: OS-backed PRF wrap of offline master when authenticator supports it.
+      try {
+        await syncOfflineMasterWithPasskeyPrf(clientExtensionResults);
+      } catch {
+        /* PRF optional — non-extractable IDB master remains */
+      }
       showSuccess(t('passkeys.registered_success'));
       setShowRegisterModal(false);
       fetchPasskeys();

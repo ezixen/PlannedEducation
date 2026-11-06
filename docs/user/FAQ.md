@@ -133,10 +133,10 @@ Parents request a link to their child's student account from the Parent Dashboar
 ## Proctoring & Monitoring
 
 ### How do I enable proctoring for an exam?
-In exam settings, enable 'Proctoring'. Students will be prompted for camera/microphone permissions and must complete GDPR consent. Events tracked: eye movement, multiple faces, background audio, tab switches, SEB violations.
+In exam settings, enable 'Proctoring'. Students will be prompted for camera/microphone permissions and must complete GDPR consent. When local models load, the portal records face-count and gaze off-screen signals entirely in the browser (MediaPipe WASM — no cloud ML). Background audio anomalies, tab switches, and SEB violations are also recorded. Teachers can still review the camera preview manually.
 
 ### What proctoring events are tracked?
-Eye movement (gaze tracking), multiple face detection, background audio levels, tab/window switches, SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay.
+Local face count (including multiple faces / face lost), gaze off-screen and eye-movement signals (when MediaPipe assets load), background audio levels, tab/window switches, and SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay. If local detection cannot start, the session stays in honest manual-review mode (no simulated events).
 
 ---
 

@@ -244,27 +244,36 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        # payment=() disables Payment Request API (project is free/OSS, no billing).
+        # camera/microphone=(self) required for local proctoring getUserMedia.
         response.headers["Permissions-Policy"] = (
-            "geolocation=(), microphone=(), camera=(), payment=()"
+            "geolocation=(), microphone=(self), camera=(self), payment=()"
         )
         # Content Security Policy (F-043). Vite production builds use hashed
         # external module scripts only (no inline script) — omit script
-        # 'unsafe-inline'/'unsafe-eval' outside development. style-src keeps
-        # 'unsafe-inline' for CSS (fonts + framework). Full per-request nonce
-        # CSP for HTML shells is applied at the reverse proxy (nginx.conf).
+        # 'unsafe-inline'/'unsafe-eval' outside development.
+        # Stylesheets: style-src without unsafe-inline (Vite emits .css files).
+        # React style={{}} attributes still need style-src-attr 'unsafe-inline'
+        # until a nonce/hash pipeline covers every attribute (CSP3 split).
         _env = os.getenv("PLANNED_EDUCATION_ENV", "production").lower()
         if _env == "development":
             _script_src = "'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com"
+            _style_src = "'self' 'unsafe-inline' https://fonts.googleapis.com"
+            _style_src_attr = "'unsafe-inline'"
         else:
             _script_src = "'self' https://accounts.google.com https://apis.google.com"
+            _style_src = "'self' https://fonts.googleapis.com"
+            _style_src_attr = "'unsafe-inline'"
         _img_src = "'self' data: https:" if _env == "development" else "'self' data:"
         csp = (
             "default-src 'self'; "
             f"script-src {_script_src}; "
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            f"style-src {_style_src}; "
+            f"style-src-attr {_style_src_attr}; "
             "font-src 'self' https://fonts.gstatic.com; "
             f"img-src {_img_src}; "
             "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com; "
+            "worker-src 'self' blob:; "
             "frame-src https://accounts.google.com; "
             "frame-ancestors 'none'; "
             "base-uri 'self'; "

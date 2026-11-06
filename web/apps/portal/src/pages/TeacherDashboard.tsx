@@ -25,6 +25,7 @@ import {
 } from '../components/TeacherCorrectionModal';
 
 import { TeacherChatMonitor } from '../components/TeacherChatMonitor';
+import { formatDateDdMmYyyy } from '../lib/dateTime';
 
 
 
@@ -1686,7 +1687,7 @@ export function TeacherDashboard() {
 
                     <td style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
 
-                      {archive.archived_at ? new Date(archive.archived_at).toLocaleDateString() : '—'}
+                      {archive.archived_at ? formatDateDdMmYyyy(archive.archived_at, { timeZoneLabel: 'local' }) : t('common.em_dash')}
 
                     </td>
 

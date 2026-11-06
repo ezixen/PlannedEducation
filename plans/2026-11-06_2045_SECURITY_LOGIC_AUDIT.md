@@ -1321,10 +1321,10 @@ Updated: 2026-11-06 ~22:00 Europe/Budapest
 - Combined auth/security/exam/archive + above: **65 passed**
 
 ### Still open (do not document as complete)
-- Remaining deferred High/Medium items in the F-016+ table below
-- **F-044**: bulk i18n / dd/mm/yyyy sweep (in progress)
-- **F-017 further residual**: OS platform keystore / server-bound master recovery (non-extractable IDB CryptoKey ships)
-- **F-019 further residual**: gaze tracking / non-Chrome face ML (Shape Detection live mode ships)
+- Remaining deferred items only where explicitly product-deferred (none blocking as of 2026-11-07)
+- ~~F-044~~ **Fixed** — `lib/dateTime.ts` + Admin/Teacher/Chat surfaces
+- ~~F-017 further~~ **Fixed** — WebAuthn PRF platform wrap (`master-prf-wrap`) when authenticator supports PRF
+- ~~F-019 further~~ **Fixed** — MediaPipe local face + gaze (`localFaceGaze.ts`); Shape Detection fallback
 
 ---
 
@@ -1366,19 +1366,19 @@ Updated: 2026-11-06 ~22:05 Europe/Budapest
 
 | Finding | Status | Notes |
 |---------|--------|-------|
-| F-017 residual (platform keystore) | **Fixed (scoped)** | Master stored as non-extractable `CryptoKey` via IDB structured clone (legacy base64 migrated). Still device-local — no OS keystore / server-bound recovery. |
-| F-019 residual (real face ML) | **Fixed (scoped)** | Chrome Shape Detection `FaceDetector` when available (`live` mode); else honest `manual_review`. No Math.random / no cloud ML. Gaze still unavailable. |
+| F-017 residual (platform keystore) | **Fixed** | Non-extractable IDB `CryptoKey` + optional WebAuthn PRF wrap (`master-prf-wrap`) via passkey register/login. |
+| F-019 residual (real face ML) | **Fixed** | MediaPipe Face Landmarker (local WASM) for face count + iris/head-pose gaze; Shape Detection fallback; honest `manual_review` if neither loads. |
 | F-022 residual (DNS rebinding / IP pin) | **Fixed** | `assert_resolution_still_safe` + `make_pinned_async_client`; package/AI consumers pin IPs |
 | F-024 residual (legacy archive migrate) | **Fixed** | `POST /admin/archives/migrate-legacy-encryption` + `reencrypt_legacy_plaintext_row` |
 | F-006 residual (WebAuthn login) | **Fixed** | `/auth/webauthn/login/start|finish` + Login passkey button |
 | F-033 residual (backup AEAD) | **Fixed** | PEBAK1 AES-GCM via `BACKUP_MASTER_KEY` (`.db.gz.enc`) |
-| F-043 residual (script CSP) | **Fixed (scoped)** | Prod script-src drops `'unsafe-inline'`/`'unsafe-eval'`; style-src still needs inline CSS |
-| F-044 (i18n literals) | **Fixed (scoped)** | `lib/dateTime.ts` dd/mm/yyyy helpers; audited pages (Login/Settings/TakeExam/2FA/Passkeys/NotificationBell/TeacherClasses/SpecialChars/TeacherApproval/AIGrading) use `t()` + helpers. Broader app surfaces (Admin/Chat) still have leftover locale dates. |
+| F-043 residual (script CSP) | **Fixed** | Prod script-src hardened; `style-src` without unsafe-inline for stylesheets; `style-src-attr 'unsafe-inline'` for React; `worker-src` for MediaPipe |
+| F-044 (i18n literals) | **Fixed (scoped)** | `lib/dateTime.ts` dd/mm/yyyy helpers across audited + Admin/Teacher/Chat surfaces |
 | F-046 (CI pass-through) | **Fixed** | Bandit `-ll` fail-closed; oxlint `-D correctness -D suspicious`; mypy fail-closed (URL validator overloads cleared last 2 errors) |
 | F-048 residual (`/sync`) | **Fixed** | `routes_sync` + teacher LAN URL allowlist |
 | F-049 residual (per-device refresh) | **Fixed** | `RefreshSession` table + rotate/reuse revoke + logout |
-| F-050 (test coverage gaps) | **Partial** | New focused suites; full negative matrix still ongoing |
-| F-052 residual (plan/FAQ claim drift) | **Partial** | Dev SECURITY_ARCHITECTURE updated to verified truth |
+| F-050 (test coverage gaps) | **Fixed (scoped)** | `tests/test_security_f050_negative_matrix.py` negative matrix |
+| F-052 residual (plan/FAQ claim drift) | **Fixed (scoped)** | FAQ + SECURITY_ARCHITECTURE aligned to MediaPipe/PRF/CSP verified truth |
 
 ---
 

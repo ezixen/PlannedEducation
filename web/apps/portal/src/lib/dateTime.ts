@@ -70,3 +70,19 @@ export function formatDuration(ms: number): string {
   const seconds = totalSeconds % 60;
   return `${minutes}m ${seconds}s`;
 }
+
+/**
+ * Compact clock for chat bubbles: `HH:mm` (local) or `HH:mm UTC`.
+ * Prefer `formatDateTimeDdMmYyyy` for admin/audit tables that need a full date.
+ */
+export function formatTimeHm(
+  date: Date | string | number,
+  opts?: FormatDateOpts,
+): string {
+  const d = toDate(date);
+  if (Number.isNaN(d.getTime())) return '';
+  const useUtc = opts?.timeZoneLabel === 'UTC';
+  const hours = pad2(useUtc ? d.getUTCHours() : d.getHours());
+  const minutes = pad2(useUtc ? d.getUTCMinutes() : d.getMinutes());
+  return appendTzLabel(`${hours}:${minutes}`, opts?.timeZoneLabel);
+}

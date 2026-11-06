@@ -64,6 +64,28 @@ def main() -> int:
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     try:
+        from plannededucation.api.schema_ensure import ensure_schema
+
+        ensure_schema(engine)
+
+        # DATA PRESERVATION: on re-deploy/update, never reset passwords or wipe
+        # accounts unless an operator explicitly forces bootstrap.
+        force_bootstrap = os.environ.get("PE_FORCE_ADMIN_BOOTSTRAP", "").strip() in {
+            "1",
+            "true",
+            "TRUE",
+            "yes",
+            "YES",
+        }
+        existing_user_count = db.query(User).count()
+        if existing_user_count > 0 and not force_bootstrap:
+            print(
+                f"Existing deployment detected ({existing_user_count} user(s)). "
+                "Skipping admin bootstrap to preserve accounts and passwords. "
+                "Set PE_FORCE_ADMIN_BOOTSTRAP=1 only to force recreate/update the bootstrap superadmin."
+            )
+            return 0
+
         school_name = os.environ.get("PE_SCHOOL_NAME", "PlannedEducation School")
         if not db.query(School).first():
             db.add(School(name=school_name, address="Local Campus"))
@@ -83,9 +105,6 @@ def main() -> int:
             )
             return 2
         uname = email.split("@")[0] or "admin"
-
-        from plannededucation.api.schema_ensure import ensure_schema
-        ensure_schema(engine)
 
         plain_recovery_codes = auth.generate_recovery_codes(count=5)
         hashed_codes = [auth.hash_recovery_code(c) for c in plain_recovery_codes]

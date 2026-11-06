@@ -5,7 +5,7 @@ import { useToast } from '../contexts/ToastContext';
 import { ForgotPasswordModal } from '../components/ForgotPasswordModal';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
-
+import { offlineMasterPrfExtension, syncOfflineMasterWithPasskeyPrf } from '../services/offlineExam';
 
 function base64urlToBuffer(base64url: string): ArrayBuffer {
   const base64 = base64url.replace(/-/g, '+').replace(/_/g, '/');
@@ -95,6 +95,10 @@ export function Login() {
             transports: c.transports as AuthenticatorTransport[] | undefined,
           })),
           userVerification: options.userVerification as UserVerificationRequirement,
+          extensions: {
+            ...(options.extensions || {}),
+            ...offlineMasterPrfExtension(),
+          },
         },
       })) as PublicKeyCredential | null;
 
@@ -103,6 +107,7 @@ export function Login() {
       }
 
       const assertion = credential.response as AuthenticatorAssertionResponse;
+      const clientExtensionResults = credential.getClientExtensionResults();
       const finishRes = await apiClient.post('/auth/webauthn/login/finish', {
         email: email.trim(),
         remember_me: rememberMe,
@@ -117,8 +122,14 @@ export function Login() {
             ? bufferToBase64url(assertion.userHandle)
             : null,
         },
-        clientExtensionResults: credential.getClientExtensionResults(),
+        clientExtensionResults,
       });
+
+      try {
+        await syncOfflineMasterWithPasskeyPrf(clientExtensionResults);
+      } catch {
+        /* PRF optional */
+      }
 
       await loginWithPasskeyTokens(
         finishRes.data.access_token,
