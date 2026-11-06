@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
 import { OCRProcessor } from '../components/OCRProcessor';
+import { OCRReview } from '../components/OCRReview';
 import { STTProcessor } from '../components/STTProcessor';
 import { MODULE_LANGUAGES } from '../services/packages';
 import { PackageManager } from '../components/PackageManager';
@@ -183,6 +184,12 @@ export function TeacherExams() {
       <div style={{ marginTop: '3rem', padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
         <h3 style={{ margin: '0 0 1rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('ocr.1')}</h3>
         <OCRProcessor />
+      </div>
+
+      {/* OCR Review - Teacher Review of Digitized Text */}
+      <div style={{ marginTop: '2rem', padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+        <h3 style={{ margin: '0 0 1rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('ocr.review_title')}</h3>
+        <OCRReview />
       </div>
 
       {/* Speech-to-Text Processor */}
