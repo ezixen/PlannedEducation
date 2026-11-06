@@ -50,6 +50,11 @@
 .PARAMETER SchoolName
     Initial school/institution name (default: PlannedEducation School)
 
+.PARAMETER SettingsFile
+    Optional portable admin/env settings JSON (.json / .peconfig) from a previous export.
+    Applied on clean installs into config/deployment.json and non-secret .env keys.
+    Never contains JWT/DB encryption secrets or database files. Also accepts PE_SETTINGS_FILE.
+
 .PARAMETER AutoConfirm
     Run non-interactively using supplied parameter values (for AI agents / CI after human approval of key choices)
 
@@ -72,6 +77,7 @@ param(
     [string]$AdminPassword = "",
     [string]$AdminName = "School Administrator",
     [string]$SchoolName = "PlannedEducation School",
+    [string]$SettingsFile = "",
     [switch]$AutoConfirm
 )
 
@@ -489,9 +495,32 @@ if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededuca
 
 Set-Location $InstallDir
 
+# Optional portable settings file (admin/env only — not DB / crypto secrets)
+if (-not $SettingsFile -and $env:PE_SETTINGS_FILE) { $SettingsFile = $env:PE_SETTINGS_FILE }
+$script:ImportedSettings = $null
+if ($SettingsFile) {
+    if (-not (Test-Path -LiteralPath $SettingsFile)) {
+        Write-ErrorMsg "SettingsFile not found: $SettingsFile"
+        exit 1
+    }
+    try {
+        $rawSettings = Get-Content -LiteralPath $SettingsFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($rawSettings.settings) { $script:ImportedSettings = $rawSettings.settings }
+        else { $script:ImportedSettings = $rawSettings }
+        if ($script:ImportedSettings.domain) { $Domain = [string]$script:ImportedSettings.domain }
+        if ($script:ImportedSettings.api_port) { $ApiPort = [int]$script:ImportedSettings.api_port }
+        if ($script:ImportedSettings.frontend_port) { $FrontendPort = [int]$script:ImportedSettings.frontend_port }
+        if ($script:ImportedSettings.school_name) { $SchoolName = [string]$script:ImportedSettings.school_name }
+        Write-Success "Loaded portable admin settings from $SettingsFile (env/deployment only)"
+    } catch {
+        Write-ErrorMsg "Failed to parse SettingsFile: $($_.Exception.Message)"
+        exit 1
+    }
+}
+
 # Read existing deployment.json defaults if available (on existing installations)
 $existingDepJson = Join-Path $InstallDir "config\deployment.json"
-if ((Test-Path (Join-Path $InstallDir ".env")) -and (Test-Path $existingDepJson)) {
+if ((Test-Path (Join-Path $InstallDir ".env")) -and (Test-Path $existingDepJson) -and -not $script:ImportedSettings) {
     try {
         $parsedDep = Get-Content $existingDepJson -Raw | ConvertFrom-Json
         if ($parsedDep.domain) { $Domain = $parsedDep.domain }
@@ -610,17 +639,93 @@ ALLOW_DEV_SEB_BYPASS=$sebBypass
     if (-not (Test-Path $configDir)) { New-Item -ItemType Directory -Path $configDir -Force | Out-Null }
     $deploymentJsonFile = Join-Path $configDir "deployment.json"
     $corsList = "http://${Domain}:${FrontendPort},http://${Domain}:5173,http://${Domain}:5175,http://localhost:${FrontendPort},http://localhost:5173,http://localhost:5175,http://127.0.0.1:${FrontendPort},http://127.0.0.1:5173,http://127.0.0.1:5175,https://$Domain"
+    $anonEnabled = $true
+    $anonLang = "en"
+    $allowSeb = ($sebBypass -eq "true")
+    $allowedHosts = "$Domain,localhost,127.0.0.1"
+    $homeExam = $false
+    $smtpHost = $null
+    $smtpPort = 587
+    $smtpUser = $null
+    $smtpTls = $true
+    $smtpSsl = $false
+    $emailFrom = "PlannedEducation <noreply@localhost>"
+    $headerMode = "text"
+    $headerImage = $null
+    $backupLoc = "backups"
+    $backupFreq = 1
+    $backupRetention = 30
+    $backupTime = "22:00"
+    $supportEmail = $null
+    if ($script:ImportedSettings) {
+        $s = $script:ImportedSettings
+        if ($null -ne $s.cors_origins -and "$($s.cors_origins)".Trim()) { $corsList = [string]$s.cors_origins }
+        if ($null -ne $s.allowed_hosts -and "$($s.allowed_hosts)".Trim()) { $allowedHosts = [string]$s.allowed_hosts }
+        if ($null -ne $s.allow_dev_seb_bypass) { $allowSeb = [bool]$s.allow_dev_seb_bypass }
+        if ($null -ne $s.anonymizer_enabled) { $anonEnabled = [bool]$s.anonymizer_enabled }
+        if ($s.anonymizer_language) { $anonLang = [string]$s.anonymizer_language }
+        if ($null -ne $s.home_exam_proctoring_enabled) { $homeExam = [bool]$s.home_exam_proctoring_enabled }
+        if ($s.PSObject.Properties.Name -contains "smtp_host") { $smtpHost = $s.smtp_host }
+        if ($s.smtp_port) { $smtpPort = [int]$s.smtp_port }
+        if ($s.PSObject.Properties.Name -contains "smtp_user") { $smtpUser = $s.smtp_user }
+        if ($null -ne $s.smtp_use_tls) { $smtpTls = [bool]$s.smtp_use_tls }
+        if ($null -ne $s.smtp_use_ssl) { $smtpSsl = [bool]$s.smtp_use_ssl }
+        if ($s.email_from) { $emailFrom = [string]$s.email_from }
+        if ($s.header_mode) { $headerMode = [string]$s.header_mode }
+        if ($s.PSObject.Properties.Name -contains "header_image_url") { $headerImage = $s.header_image_url }
+        if ($s.backup_location) { $backupLoc = [string]$s.backup_location }
+        if ($s.backup_frequency_days) { $backupFreq = [int]$s.backup_frequency_days }
+        if ($s.backup_retention_days) { $backupRetention = [int]$s.backup_retention_days }
+        if ($s.backup_time) { $backupTime = [string]$s.backup_time }
+        if ($s.PSObject.Properties.Name -contains "admin_support_email") { $supportEmail = $s.admin_support_email }
+        # Apply non-secret env overlays from settings (secrets stay freshly generated above).
+        $envContent += @"
+
+# Applied from portable settings file
+PE_SCHOOL_NAME=$SchoolName
+ANONYMIZER_ENABLED=$($anonEnabled.ToString().ToLower())
+ANONYMIZER_LANGUAGE=$anonLang
+ALLOW_DEV_SEB_BYPASS=$($allowSeb.ToString().ToLower())
+HOME_EXAM_PROCTORING_ENABLED=$($homeExam.ToString().ToLower())
+SMTP_HOST=$smtpHost
+SMTP_PORT=$smtpPort
+SMTP_USER=$smtpUser
+SMTP_USE_TLS=$($smtpTls.ToString().ToLower())
+SMTP_USE_SSL=$($smtpSsl.ToString().ToLower())
+EMAIL_FROM=$emailFrom
+BACKUP_LOCATION=$backupLoc
+BACKUP_FREQUENCY_DAYS=$backupFreq
+BACKUP_RETENTION_DAYS=$backupRetention
+BACKUP_TIME=$backupTime
+ADMIN_SUPPORT_EMAIL=$supportEmail
+"@
+        [System.IO.File]::WriteAllText($envFile, $envContent, (New-Object System.Text.UTF8Encoding($false)))
+    }
     $depConfigObj = [PSCustomObject]@{
         school_name = $SchoolName
         domain = $Domain
         api_port = $ApiPort
         frontend_port = $FrontendPort
         cors_origins = $corsList
-        allowed_hosts = "$Domain,localhost,127.0.0.1"
+        allowed_hosts = $allowedHosts
         environment = $envMode
-        allow_dev_seb_bypass = ($sebBypass -eq "true")
-        anonymizer_enabled = $true
-        anonymizer_language = "en"
+        allow_dev_seb_bypass = $allowSeb
+        anonymizer_enabled = $anonEnabled
+        anonymizer_language = $anonLang
+        smtp_host = $smtpHost
+        smtp_port = $smtpPort
+        smtp_user = $smtpUser
+        smtp_use_tls = $smtpTls
+        smtp_use_ssl = $smtpSsl
+        email_from = $emailFrom
+        header_mode = $headerMode
+        header_image_url = $headerImage
+        backup_location = $backupLoc
+        backup_frequency_days = $backupFreq
+        backup_retention_days = $backupRetention
+        backup_time = $backupTime
+        admin_support_email = $supportEmail
+        home_exam_proctoring_enabled = $homeExam
         updated_at = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
     }
     # Write without UTF-8 BOM - PowerShell's UTF8 encoding adds BOM which breaks json.load(utf-8)

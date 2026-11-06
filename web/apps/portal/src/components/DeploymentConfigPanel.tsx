@@ -39,6 +39,8 @@ export function DeploymentConfigPanel() {
   const [saving, setSaving] = useState(false);
   const [savingSupportEmail, setSavingSupportEmail] = useState(false);
   const [restartNotice, setRestartNotice] = useState(false);
+  const [settingsPath, setSettingsPath] = useState('config/plannededucation.settings.json');
+  const [settingsBusy, setSettingsBusy] = useState(false);
   const [config, setConfig] = useState<DeploymentConfig>({
     school_name: 'PlannedEducation School',
     header_mode: 'text',
@@ -116,43 +118,98 @@ export function DeploymentConfigPanel() {
   };
 
   const handleBackupConfig = async () => {
-    const backupJson = JSON.stringify(config, null, 2);
-    const dateStr = new Date().toISOString().slice(0, 10);
-    const fileName = `plannededucation-config-${dateStr}.json`;
+    try {
+      const res = await apiClient.get('/admin/config/settings-bundle');
+      const backupJson = JSON.stringify(res.data, null, 2);
+      const dateStr = new Date().toISOString().slice(0, 10);
+      const fileName = `plannededucation-settings-${dateStr}.json`;
 
-    // Try modern File System Access API first (opens directory/file save picker)
-    if ('showSaveFilePicker' in window) {
-      try {
-        const fileHandle = await (window as any).showSaveFilePicker({
-          suggestedName: fileName,
-          types: [
-            {
-              description: 'JSON Configuration File',
-              accept: { 'application/json': ['.json'] },
-            },
-          ],
-        });
-        const writable = await fileHandle.createWritable();
-        await writable.write(backupJson);
-        await writable.close();
-        showSuccess(`Configuration backup saved to ${fileHandle.name || fileName}`);
-        return;
-      } catch (err: any) {
-        if (err.name === 'AbortError') return; // User cancelled
+      if ('showSaveFilePicker' in window) {
+        try {
+          const fileHandle = await (window as any).showSaveFilePicker({
+            suggestedName: fileName,
+            types: [
+              {
+                description: 'JSON Configuration File',
+                accept: { 'application/json': ['.json'] },
+              },
+            ],
+          });
+          const writable = await fileHandle.createWritable();
+          await writable.write(backupJson);
+          await writable.close();
+          showSuccess(t('deployment.settings_saved_local', { name: fileHandle.name || fileName }));
+          return;
+        } catch (err: any) {
+          if (err.name === 'AbortError') return;
+        }
       }
-    }
 
-    // Fallback: standard browser download
-    const blob = new Blob([backupJson], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showSuccess(`Configuration backup downloaded as ${fileName}`);
+      const blob = new Blob([backupJson], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showSuccess(t('deployment.settings_downloaded', { name: fileName }));
+    } catch (err: any) {
+      showError(err.response?.data?.detail || err.message || t('deployment.settings_export_failed'));
+    }
+  };
+
+  const handleExportToServerPath = async () => {
+    setSettingsBusy(true);
+    try {
+      const res = await apiClient.post('/admin/config/export-file', {
+        path: settingsPath.trim(),
+        include_smtp_password: false,
+      });
+      showSuccess(t('deployment.settings_exported_path', { path: res.data?.path || settingsPath }));
+    } catch (err: any) {
+      showError(err.response?.data?.detail || err.message || t('deployment.settings_export_failed'));
+    } finally {
+      setSettingsBusy(false);
+    }
+  };
+
+  const handleImportFromServerPath = async () => {
+    setSettingsBusy(true);
+    try {
+      const res = await apiClient.post('/admin/config/import-file', {
+        path: settingsPath.trim(),
+      });
+      if (res.data?.config) {
+        setConfig((prev) => ({ ...prev, ...res.data.config }));
+      }
+      setRestartNotice(true);
+      showSuccess(t('deployment.settings_imported'));
+    } catch (err: any) {
+      showError(err.response?.data?.detail || err.message || t('deployment.settings_import_failed'));
+    } finally {
+      setSettingsBusy(false);
+    }
+  };
+
+  const handleImportFromLocalFile = async (file: File | null) => {
+    if (!file) return;
+    setSettingsBusy(true);
+    try {
+      const text = await file.text();
+      const bundle = JSON.parse(text);
+      const res = await apiClient.post('/admin/config/import-file', { bundle });
+      if (res.data?.config) {
+        setConfig((prev) => ({ ...prev, ...res.data.config }));
+      }
+      setRestartNotice(true);
+      showSuccess(t('deployment.settings_imported'));
+    } catch (err: any) {
+      showError(err.response?.data?.detail || err.message || t('deployment.settings_import_failed'));
+    } finally {
+      setSettingsBusy(false);
+    }
   };
 
   if (loading) {
@@ -189,7 +246,7 @@ export function DeploymentConfigPanel() {
         </div>
         <button
           type="button"
-          onClick={handleBackupConfig}
+          onClick={() => void handleBackupConfig()}
           style={{
             padding: '0.6rem 1.1rem',
             backgroundColor: 'var(--sidebar-bg)',
@@ -205,6 +262,101 @@ export function DeploymentConfigPanel() {
         >
           {t('deployment.backup_btn')}
         </button>
+      </div>
+
+      <div
+        style={{
+          marginBottom: '1.5rem',
+          padding: '1rem 1.1rem',
+          border: '1px solid var(--border-color)',
+          borderRadius: 'var(--radius-md)',
+          backgroundColor: 'var(--sidebar-bg)',
+        }}
+      >
+        <h3 style={{ margin: '0 0 0.35rem 0', fontSize: '1rem', fontWeight: 600 }}>
+          {t('deployment.settings_file_title')}
+        </h3>
+        <p style={{ margin: '0 0 0.85rem 0', fontSize: '0.825rem', color: 'var(--text-muted)', lineHeight: 1.45 }}>
+          {t('deployment.settings_file_desc')}
+        </p>
+        <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 500, marginBottom: '0.35rem' }}>
+          {t('deployment.settings_path_label')}
+        </label>
+        <input
+          type="text"
+          value={settingsPath}
+          onChange={(e) => setSettingsPath(e.target.value)}
+          placeholder="config/plannededucation.settings.json"
+          style={{
+            width: '100%',
+            marginBottom: '0.75rem',
+            padding: '0.55rem 0.65rem',
+            borderRadius: 'var(--radius-md)',
+            border: '1px solid var(--border-color)',
+            backgroundColor: 'var(--bg-color)',
+            color: 'var(--text-color)',
+            fontFamily: 'monospace',
+            fontSize: '0.85rem',
+          }}
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', alignItems: 'center' }}>
+          <button
+            type="button"
+            disabled={settingsBusy || !settingsPath.trim()}
+            onClick={() => void handleExportToServerPath()}
+            style={{
+              padding: '0.5rem 0.9rem',
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid var(--border-color)',
+              backgroundColor: 'var(--bg-color)',
+              color: 'var(--text-color)',
+              cursor: 'pointer',
+              fontWeight: 600,
+            }}
+          >
+            {t('deployment.settings_export_path_btn')}
+          </button>
+          <button
+            type="button"
+            disabled={settingsBusy || !settingsPath.trim()}
+            onClick={() => void handleImportFromServerPath()}
+            style={{
+              padding: '0.5rem 0.9rem',
+              borderRadius: 'var(--radius-md)',
+              border: 'none',
+              backgroundColor: 'var(--primary-color)',
+              color: '#fff',
+              cursor: 'pointer',
+              fontWeight: 600,
+            }}
+          >
+            {t('deployment.settings_import_path_btn')}
+          </button>
+          <label
+            style={{
+              padding: '0.5rem 0.9rem',
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid var(--border-color)',
+              backgroundColor: 'var(--bg-color)',
+              color: 'var(--text-color)',
+              cursor: 'pointer',
+              fontWeight: 600,
+              fontSize: '0.875rem',
+            }}
+          >
+            {t('deployment.settings_import_local_btn')}
+            <input
+              type="file"
+              accept=".json,.peconfig,application/json"
+              style={{ display: 'none' }}
+              onChange={(e) => {
+                const file = e.target.files?.[0] || null;
+                void handleImportFromLocalFile(file);
+                e.target.value = '';
+              }}
+            />
+          </label>
+        </div>
       </div>
 
       {restartNotice && (

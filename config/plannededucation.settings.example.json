@@ -1,0 +1,32 @@
+{
+  "kind": "plannededucation.admin_env_settings",
+  "version": 1,
+  "exported_at": "2026-11-07T00:00:00+00:00",
+  "notes": "Admin/env settings only. Does not include database files, JWT secrets, DB encryption keys, or teacher/student data. Copy to a custom path, then use install -SettingsFile / PE_SETTINGS_FILE or Admin → Deployment → Import.",
+  "settings": {
+    "school_name": "PlannedEducation School",
+    "domain": "localhost",
+    "api_port": 8000,
+    "frontend_port": 5173,
+    "cors_origins": "http://localhost:5173,http://127.0.0.1:5173",
+    "allowed_hosts": "localhost,127.0.0.1",
+    "environment": "development",
+    "allow_dev_seb_bypass": true,
+    "anonymizer_enabled": true,
+    "anonymizer_language": "en",
+    "smtp_host": null,
+    "smtp_port": 587,
+    "smtp_user": null,
+    "smtp_use_tls": true,
+    "smtp_use_ssl": false,
+    "email_from": "PlannedEducation <noreply@localhost>",
+    "header_mode": "text",
+    "header_image_url": null,
+    "backup_location": "backups",
+    "backup_frequency_days": 1,
+    "backup_retention_days": 30,
+    "backup_time": "22:00",
+    "admin_support_email": null,
+    "home_exam_proctoring_enabled": false
+  }
+}

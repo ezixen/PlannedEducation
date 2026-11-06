@@ -6,6 +6,7 @@ Endpoints for administrative operations (user management, exam oversight, system
 import re
 import secrets
 import string
+from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import FileResponse
@@ -17,8 +18,12 @@ from . import auth, backup_service, database, models, schemas
 from .deployment_config import (
     DeploymentConfigResponse,
     DeploymentConfigSchema,
+    apply_settings_bundle_dict,
+    build_settings_bundle,
     load_deployment_config,
+    read_settings_bundle_from_path,
     save_deployment_config,
+    write_settings_bundle_to_path,
 )
 from .routes_auth import (
     _decode_recovery_codes,
@@ -441,20 +446,128 @@ def update_admin_deployment_config(
     """Update deployment configuration and synchronize config/deployment.json and .env."""
     existing = load_deployment_config()
     existing_home = bool(existing.get("home_exam_proctoring_enabled", False))
-    if payload.home_exam_proctoring_enabled != existing_home:
-        # Only superadmins may enable/disable home-exam webcam/mic/gaze beta.
-        if not getattr(current_user, "is_superadmin", False):
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail=(
-                    "Only a superadmin can enable or disable home-exam "
-                    "proctoring (webcam / microphone / gaze) features."
-                ),
-            )
+    # Only superadmins may enable/disable home-exam webcam/mic/gaze beta.
+    if (
+        payload.home_exam_proctoring_enabled != existing_home
+        and not getattr(current_user, "is_superadmin", False)
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=(
+                "Only a superadmin can enable or disable home-exam "
+                "proctoring (webcam / microphone / gaze) features."
+            ),
+        )
     result = save_deployment_config(payload)
     return {
         "status": "success",
         "message": "Deployment configuration saved successfully. A platform restart is required to apply network changes.",
+        "restart_required": True,
+        "config": result,
+    }
+
+
+class AdminSettingsPathRequest(BaseModel):
+    """Save/load admin env settings to an operator-chosen file path."""
+
+    path: str = Field(..., min_length=1, max_length=1024)
+    include_smtp_password: bool = False
+
+
+class AdminSettingsImportBody(BaseModel):
+    """Import settings from JSON body (browser upload) or from a server path."""
+
+    path: str | None = Field(default=None, max_length=1024)
+    bundle: dict[str, Any] | None = None
+    include_smtp_password: bool = False
+
+
+@router.get("/config/settings-bundle")
+def download_admin_settings_bundle(
+    include_smtp_password: bool = False,
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Return a portable admin/env settings JSON (no DB, no JWT/encryption secrets).
+    Use for browser download or clean-install templates.
+    """
+    _ = current_user
+    if include_smtp_password and not getattr(current_user, "is_superadmin", False):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only a superadmin can export SMTP passwords in the settings file.",
+        )
+    return build_settings_bundle(include_smtp_password=include_smtp_password)
+
+
+@router.post("/config/export-file")
+def export_admin_settings_to_path(
+    payload: AdminSettingsPathRequest,
+    current_user: models.User = Depends(require_admin),
+):
+    """Write portable admin/env settings to a custom path on the server host."""
+    if payload.include_smtp_password and not getattr(current_user, "is_superadmin", False):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only a superadmin can export SMTP passwords in the settings file.",
+        )
+    try:
+        target = write_settings_bundle_to_path(
+            payload.path, include_smtp_password=payload.include_smtp_password
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except OSError as exc:
+        raise HTTPException(status_code=400, detail=f"Could not write settings file: {exc}") from exc
+    return {
+        "status": "success",
+        "path": str(target),
+        "message": "Admin env settings exported (no database or crypto secrets).",
+    }
+
+
+@router.post("/config/import-file")
+def import_admin_settings(
+    payload: AdminSettingsImportBody,
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Load admin/env settings from a custom path or an uploaded JSON bundle and
+    apply them to config/deployment.json + non-secret .env keys.
+    """
+    try:
+        if payload.path:
+            raw = read_settings_bundle_from_path(payload.path)
+        elif payload.bundle is not None:
+            raw = payload.bundle
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Provide either path or bundle JSON to import settings.",
+            )
+        # Home-exam flag change still requires superadmin.
+        existing = load_deployment_config()
+        incoming = raw.get("settings") if isinstance(raw.get("settings"), dict) else raw
+        if isinstance(incoming, dict):
+            new_home = bool(incoming.get("home_exam_proctoring_enabled", existing.get("home_exam_proctoring_enabled", False)))
+            old_home = bool(existing.get("home_exam_proctoring_enabled", False))
+            if new_home != old_home and not getattr(current_user, "is_superadmin", False):
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="Only a superadmin can change home-exam proctoring via settings import.",
+                )
+        result = apply_settings_bundle_dict(raw)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"Invalid settings file: {exc}") from exc
+    return {
+        "status": "success",
+        "message": "Admin env settings imported. Restart may be required for network changes.",
         "restart_required": True,
         "config": result,
     }

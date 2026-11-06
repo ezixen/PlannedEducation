@@ -46,6 +46,8 @@ ADMIN_EMAIL="${ADMIN_EMAIL:-admin@yourschool.edu}"
 ADMIN_PASS="${ADMIN_PASSWORD:-${ADMIN_PASS:-}}"
 ADMIN_NAME="${ADMIN_NAME:-School Administrator}"
 SCHOOL_NAME="${SCHOOL_NAME:-PlannedEducation School}"
+# Portable admin/env settings JSON (no DB / JWT secrets). Also PE_SETTINGS_FILE.
+SETTINGS_FILE="${SETTINGS_FILE:-${PE_SETTINGS_FILE:-}}"
 AUTO_CONFIRM="${AUTO_CONFIRM:-false}"
 SHARED_VENV="${SHARED_VENV:-}"
 
@@ -380,8 +382,35 @@ fi
 
 cd "$INSTALL_DIR"
 
+# Optional portable admin/env settings file for clean installs
+if [[ -n "$SETTINGS_FILE" ]]; then
+    if [[ ! -f "$SETTINGS_FILE" ]]; then
+        print_error "SETTINGS_FILE not found: $SETTINGS_FILE"
+        exit 1
+    fi
+    export PE_SETTINGS_FILE_PATH="$SETTINGS_FILE"
+    eval "$(python3 - <<'PY'
+import json, os, shlex
+from pathlib import Path
+path = Path(os.environ["PE_SETTINGS_FILE_PATH"])
+raw = json.loads(path.read_text(encoding="utf-8-sig"))
+s = raw.get("settings", raw) if isinstance(raw, dict) else {}
+def emit(k, v):
+    if v is None:
+        return
+    print(f"export {k}={shlex.quote(str(v))}")
+emit("DOMAIN", s.get("domain"))
+emit("API_PORT", s.get("api_port"))
+emit("FRONTEND_PORT", s.get("frontend_port"))
+emit("SCHOOL_NAME", s.get("school_name"))
+print("export PE_IMPORTED_SETTINGS=1")
+PY
+)"
+    print_success "Loaded portable admin settings from $SETTINGS_FILE"
+fi
+
 # Read existing deployment.json defaults if available (on existing installations)
-if [[ -f "$INSTALL_DIR/.env" && -f "$INSTALL_DIR/config/deployment.json" ]]; then
+if [[ -f "$INSTALL_DIR/.env" && -f "$INSTALL_DIR/config/deployment.json" && -z "${PE_IMPORTED_SETTINGS:-}" ]]; then
     DEP_DOMAIN=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('domain', ''))" 2>/dev/null || true)
     DEP_API_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('api_port', ''))" 2>/dev/null || true)
     DEP_FRONTEND_PORT=$(python3 -c "import json; d=json.load(open('$INSTALL_DIR/config/deployment.json')); print(d.get('frontend_port', ''))" 2>/dev/null || true)
@@ -486,7 +515,84 @@ EOF
 
     mkdir -p "$INSTALL_DIR/config"
     CORS_LIST="http://${DOMAIN}:${FRONTEND_PORT},http://${DOMAIN}:5173,http://${DOMAIN}:5175,http://localhost:${FRONTEND_PORT},http://localhost:5173,http://localhost:5175,http://127.0.0.1:${FRONTEND_PORT},http://127.0.0.1:5173,http://127.0.0.1:5175,https://${DOMAIN}"
-    cat > "$INSTALL_DIR/config/deployment.json" <<EOF
+    if [[ -n "${PE_IMPORTED_SETTINGS:-}" && -n "${PE_SETTINGS_FILE_PATH:-}" ]]; then
+        export ENV_MODE SEB_BYPASS
+        export CORS_LIST
+        python3 - <<PY
+import json, os
+from datetime import datetime, timezone
+from pathlib import Path
+raw = json.loads(Path(os.environ["PE_SETTINGS_FILE_PATH"]).read_text(encoding="utf-8-sig"))
+s = raw.get("settings", raw) if isinstance(raw, dict) else {}
+dep = {
+    "school_name": os.environ.get("SCHOOL_NAME") or s.get("school_name") or "PlannedEducation School",
+    "domain": os.environ.get("DOMAIN") or s.get("domain") or "localhost",
+    "api_port": int(os.environ.get("API_PORT") or s.get("api_port") or 8000),
+    "frontend_port": int(os.environ.get("FRONTEND_PORT") or s.get("frontend_port") or 5173),
+    "cors_origins": s.get("cors_origins") or os.environ.get("CORS_LIST") or "",
+    "allowed_hosts": s.get("allowed_hosts") or f"{os.environ.get('DOMAIN', 'localhost')},localhost,127.0.0.1",
+    "environment": os.environ.get("ENV_MODE") or s.get("environment") or "development",
+    "allow_dev_seb_bypass": bool(s.get("allow_dev_seb_bypass", os.environ.get("SEB_BYPASS", "true") == "true")),
+    "anonymizer_enabled": bool(s.get("anonymizer_enabled", True)),
+    "anonymizer_language": s.get("anonymizer_language") or "en",
+    "smtp_host": s.get("smtp_host"),
+    "smtp_port": int(s.get("smtp_port") or 587),
+    "smtp_user": s.get("smtp_user"),
+    "smtp_use_tls": bool(s.get("smtp_use_tls", True)),
+    "smtp_use_ssl": bool(s.get("smtp_use_ssl", False)),
+    "email_from": s.get("email_from") or "PlannedEducation <noreply@localhost>",
+    "header_mode": s.get("header_mode") or "text",
+    "header_image_url": s.get("header_image_url"),
+    "backup_location": s.get("backup_location") or "backups",
+    "backup_frequency_days": int(s.get("backup_frequency_days") or 1),
+    "backup_retention_days": int(s.get("backup_retention_days") or 30),
+    "backup_time": s.get("backup_time") or "22:00",
+    "admin_support_email": s.get("admin_support_email"),
+    "home_exam_proctoring_enabled": bool(s.get("home_exam_proctoring_enabled", False)),
+    "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+}
+if not dep["cors_origins"]:
+    dep["cors_origins"] = """$CORS_LIST"""
+out = Path("$INSTALL_DIR/config/deployment.json")
+out.write_text(json.dumps(dep, indent=2) + "\n", encoding="utf-8")
+# Overlay non-secret env keys (crypto secrets already written above stay intact).
+env_path = Path("$ENV_FILE")
+lines = env_path.read_text(encoding="utf-8").splitlines()
+updates = {
+    "PE_SCHOOL_NAME": dep["school_name"],
+    "ANONYMIZER_ENABLED": "true" if dep["anonymizer_enabled"] else "false",
+    "ANONYMIZER_LANGUAGE": dep["anonymizer_language"],
+    "ALLOW_DEV_SEB_BYPASS": "true" if dep["allow_dev_seb_bypass"] else "false",
+    "HOME_EXAM_PROCTORING_ENABLED": "true" if dep["home_exam_proctoring_enabled"] else "false",
+    "SMTP_HOST": dep.get("smtp_host") or "",
+    "SMTP_PORT": str(dep.get("smtp_port") or 587),
+    "SMTP_USER": dep.get("smtp_user") or "",
+    "SMTP_USE_TLS": "true" if dep.get("smtp_use_tls") else "false",
+    "SMTP_USE_SSL": "true" if dep.get("smtp_use_ssl") else "false",
+    "EMAIL_FROM": dep.get("email_from") or "",
+    "BACKUP_LOCATION": dep.get("backup_location") or "backups",
+    "BACKUP_FREQUENCY_DAYS": str(dep.get("backup_frequency_days") or 1),
+    "BACKUP_RETENTION_DAYS": str(dep.get("backup_retention_days") or 30),
+    "BACKUP_TIME": dep.get("backup_time") or "22:00",
+    "ADMIN_SUPPORT_EMAIL": dep.get("admin_support_email") or "",
+}
+seen = set()
+out_lines = []
+for line in lines:
+    if line.strip() and not line.strip().startswith("#") and "=" in line:
+        k = line.split("=", 1)[0].strip()
+        if k in updates:
+            out_lines.append(f"{k}={updates[k]}")
+            seen.add(k)
+            continue
+    out_lines.append(line)
+for k, v in updates.items():
+    if k not in seen:
+        out_lines.append(f"{k}={v}")
+env_path.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
+PY
+    else
+        cat > "$INSTALL_DIR/config/deployment.json" <<EOF
 {
   "school_name": "${SCHOOL_NAME}",
   "domain": "${DOMAIN}",
@@ -498,9 +604,11 @@ EOF
   "allow_dev_seb_bypass": $( [ "$SEB_BYPASS" = "true" ] && echo "true" || echo "false" ),
   "anonymizer_enabled": true,
   "anonymizer_language": "en",
+  "home_exam_proctoring_enabled": false,
   "updated_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 }
 EOF
+    fi
     chmod 600 "$INSTALL_DIR/config/deployment.json"
     print_success "Created config/deployment.json configuration file"
 fi

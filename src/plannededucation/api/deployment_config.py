@@ -323,3 +323,153 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
     config_data["restart_required"] = True
     return config_data
 
+
+# ── Portable admin env settings bundle (no DB / secrets / teacher data) ───────
+
+SETTINGS_BUNDLE_KIND = "plannededucation.admin_env_settings"
+SETTINGS_BUNDLE_VERSION = 1
+
+# Explicit allowlist — never JWT/DB encryption/database URL/user dumps.
+_SETTINGS_EXPORT_FIELDS: tuple[str, ...] = (
+    "school_name",
+    "domain",
+    "api_port",
+    "frontend_port",
+    "cors_origins",
+    "allowed_hosts",
+    "environment",
+    "allow_dev_seb_bypass",
+    "anonymizer_enabled",
+    "anonymizer_language",
+    "smtp_host",
+    "smtp_port",
+    "smtp_user",
+    "smtp_use_tls",
+    "smtp_use_ssl",
+    "email_from",
+    "header_mode",
+    "header_image_url",
+    "backup_location",
+    "backup_frequency_days",
+    "backup_retention_days",
+    "backup_time",
+    "admin_support_email",
+    "home_exam_proctoring_enabled",
+)
+
+
+def build_settings_bundle(*, include_smtp_password: bool = False) -> dict[str, Any]:
+    """Build a portable JSON document of admin/env settings for clean reinstalls."""
+    cfg = load_deployment_config()
+    settings: dict[str, Any] = {key: cfg.get(key) for key in _SETTINGS_EXPORT_FIELDS}
+    smtp_password = cfg.get("smtp_password")
+    if include_smtp_password and smtp_password:
+        settings["smtp_password"] = smtp_password
+    else:
+        settings["smtp_password_configured"] = bool(smtp_password)
+    return {
+        "kind": SETTINGS_BUNDLE_KIND,
+        "version": SETTINGS_BUNDLE_VERSION,
+        "exported_at": datetime.now(UTC).isoformat(),
+        "notes": (
+            "Admin/env settings only. Does not include database files, JWT secrets, "
+            "DB encryption keys, or teacher/student data. Place this file on a clean "
+            "install (PE_SETTINGS_FILE / -SettingsFile) or import via Admin → Deployment."
+        ),
+        "settings": settings,
+    }
+
+
+def parse_settings_bundle(raw: dict[str, Any]) -> DeploymentConfigSchema:
+    """Validate a portable settings document into DeploymentConfigSchema."""
+    if not isinstance(raw, dict):
+        raise ValueError("Settings file must be a JSON object")
+    payload = raw.get("settings") if isinstance(raw.get("settings"), dict) else raw
+    if not isinstance(payload, dict):
+        raise ValueError("Settings payload missing")
+    # Drop unknown / secret keys that must never be imported from this file.
+    forbidden = {
+        "jwt_secret_key",
+        "JWT_SECRET_KEY",
+        "database_url",
+        "DATABASE_URL",
+        "db_encryption_master_key",
+        "DB_ENCRYPTION_MASTER_KEY",
+        "ai_key_master_secret",
+        "AI_KEY_MASTER_SECRET",
+        "encryption_key",
+        "ENCRYPTION_KEY",
+        "backup_master_key",
+        "BACKUP_MASTER_KEY",
+        "archive_master_key",
+        "ARCHIVE_MASTER_KEY",
+    }
+    cleaned = {
+        k: v
+        for k, v in payload.items()
+        if k in _SETTINGS_EXPORT_FIELDS or k == "smtp_password"
+    }
+    for key in forbidden:
+        cleaned.pop(key, None)
+    # Merge onto current so omitted fields keep existing values on partial imports.
+    current = load_deployment_config()
+    merged = {**current, **cleaned}
+    # Never let a settings file wipe SMTP password unless explicitly provided.
+    if "smtp_password" not in cleaned:
+        merged["smtp_password"] = None
+    return DeploymentConfigSchema(**merged)
+
+
+def resolve_settings_file_path(path_str: str) -> Path:
+    """
+    Resolve a settings file path for admin export/import.
+
+    Relative paths are under the project root. Absolute paths are allowed for
+    operator-chosen locations (USB / backup folder). Reject empty / null paths
+    and parent-escape when relative.
+    """
+    raw = (path_str or "").strip()
+    if not raw or "\x00" in raw:
+        raise ValueError("Settings path is required")
+    root = find_project_root().resolve()
+    candidate = Path(raw)
+    if not candidate.is_absolute():
+        # Block sneaky relative escapes (e.g. ..\\..\\Windows\\System32)
+        candidate = (root / candidate).resolve()
+        if not candidate.is_relative_to(root):
+            raise ValueError("Relative settings path must stay inside the install directory")
+    else:
+        candidate = candidate.resolve()
+    if candidate.suffix.lower() not in {".json", ".peconfig"}:
+        raise ValueError("Settings file must use .json or .peconfig extension")
+    return candidate
+
+
+def write_settings_bundle_to_path(
+    path_str: str, *, include_smtp_password: bool = False
+) -> Path:
+    target = resolve_settings_file_path(path_str)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    bundle = build_settings_bundle(include_smtp_password=include_smtp_password)
+    with open(target, "w", encoding="utf-8") as f:
+        json.dump(bundle, f, indent=2)
+        f.write("\n")
+    return target
+
+
+def read_settings_bundle_from_path(path_str: str) -> dict[str, Any]:
+    target = resolve_settings_file_path(path_str)
+    if not target.is_file():
+        raise FileNotFoundError(f"Settings file not found: {target}")
+    with open(target, encoding="utf-8-sig") as f:
+        data = json.load(f)
+    if not isinstance(data, dict):
+        raise ValueError("Settings file must contain a JSON object")
+    return data
+
+
+def apply_settings_bundle_dict(raw: dict[str, Any]) -> dict[str, Any]:
+    """Apply a portable settings document to deployment.json + .env (non-secret keys)."""
+    schema = parse_settings_bundle(raw)
+    return save_deployment_config(schema)
+
