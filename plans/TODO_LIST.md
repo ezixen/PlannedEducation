@@ -120,11 +120,22 @@
 
 ---
 
+## Next Action
+
+All progress_log.md items (A–E) are ✅ DONE and pushed to dev.
+
+Remaining items (F–J) from the chat history are marked ❌ PENDING or ❓ NEEDS CHECK. These require further evaluation:
+- **F1–F7** (Security/Compliance): pip audit, AGENTS.md rules, rate limits, cryptography vuln, cleanup, docs, screenshot fixes
+- **G1–G7** (Deployment): GH deploy verification, admin panel config page, backup button, install/uninstall testing, Linux/WSL
+- **H1–H3** (I18n/Docs): hardcoded text migration, script/docs audit, AGENTS.local.md backup
+- **I1–I7** (Auth/Notifications): teacher self-registration, admin notifications, google register, password reset, email system, one-time codes
+- **J1–J6** (Other): deploy logs, commit/push, backups, visual testing, temp file cleanup, open files
+
+Review each ❌ PENDING and ❓ NEEDS CHECK item and implement or verify as needed.
+
+---
+
 ## Legend
 - ✅ DONE — Verified in codebase
 - ❌ PENDING — Not yet implemented
 - ❓ NEEDS CHECK — Need to verify current state
-
----
-
-**Next action:** Start implementing ❌ PENDING items, beginning with A1 (TeacherAideRequest schema) and A2 (POST /teacher-aide/request endpoint).
