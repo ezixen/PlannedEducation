@@ -48,7 +48,6 @@ export function OCRReview({ onComplete, initialReview }: OCRReviewProps) {
   const [correctedText, setCorrectedText] = useState('');
   const [reviewNotes, setReviewNotes] = useState('');
   const [status, setStatus] = useState<'pending' | 'reviewing' | 'approved' | 'rejected' | 'corrected'>('pending');
-  const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [showImage, setShowImage] = useState(true);
 
@@ -62,45 +61,6 @@ export function OCRReview({ onComplete, initialReview }: OCRReviewProps) {
       }
     }
   }, [initialReview]);
-
-  const handleRecognize = async (file: File) => {
-    setLoading(true);
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('language', 'en');
-      formData.append('confidence_threshold', '0.3');
-
-      const response = await apiClient.post('/ocr/handwriting/recognize-upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-
-      const data = response.data;
-      setReview({
-        id: '',
-        submission_id: '',
-        exam_id: '',
-        student_id: '',
-        original_text: data.text,
-        original_confidence: data.confidence,
-        is_handwritten: data.is_handwritten,
-        image_url: URL.createObjectURL(file),
-        words: data.words || [],
-        status: 'pending',
-        anonymized: false,
-        ai_graded: false,
-        created_at: new Date().toISOString(),
-      });
-      setCorrectedText(data.text);
-      setImageUrl(URL.createObjectURL(file));
-      setStatus('reviewing');
-      showSuccess(t('ocr.handwriting_recognized', { percent: String(Math.round(data.confidence * 100)) }));
-    } catch (err: any) {
-      showError(t('ocr.processing_failed'), err.response?.data?.detail || err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleSaveReview = async () => {
     if (!review) return;
@@ -193,7 +153,6 @@ export function OCRReview({ onComplete, initialReview }: OCRReviewProps) {
   }
 
   const currentReview = review || initialReview!;
-  const displayText = correctedText || currentReview.original_text;
 
   return (
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
