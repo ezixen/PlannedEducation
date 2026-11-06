@@ -505,13 +505,36 @@ if ($SettingsFile) {
     }
     try {
         $rawSettings = Get-Content -LiteralPath $SettingsFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($null -ne $rawSettings.kind -and $rawSettings.kind -ne "plannededucation.admin_env_settings") {
+            Write-ErrorMsg "Unsupported settings kind: $($rawSettings.kind)"
+            exit 1
+        }
         if ($rawSettings.settings) { $script:ImportedSettings = $rawSettings.settings }
         else { $script:ImportedSettings = $rawSettings }
+        # Known keys only — unknown/future properties are ignored (forward-compatible).
+        $knownKeys = @(
+            "school_name","domain","api_port","frontend_port","cors_origins","allowed_hosts",
+            "environment","allow_dev_seb_bypass","anonymizer_enabled","anonymizer_language",
+            "smtp_host","smtp_port","smtp_user","smtp_use_tls","smtp_use_ssl","email_from",
+            "header_mode","header_image_url","backup_location","backup_frequency_days",
+            "backup_retention_days","backup_time","admin_support_email","home_exam_proctoring_enabled"
+        )
+        $filtered = [ordered]@{}
+        foreach ($k in $knownKeys) {
+            if ($script:ImportedSettings.PSObject.Properties.Name -contains $k) {
+                $filtered[$k] = $script:ImportedSettings.$k
+            }
+        }
+        $script:ImportedSettings = [pscustomobject]$filtered
         if ($script:ImportedSettings.domain) { $Domain = [string]$script:ImportedSettings.domain }
-        if ($script:ImportedSettings.api_port) { $ApiPort = [int]$script:ImportedSettings.api_port }
-        if ($script:ImportedSettings.frontend_port) { $FrontendPort = [int]$script:ImportedSettings.frontend_port }
+        if ($null -ne $script:ImportedSettings.api_port) {
+            try { $ApiPort = [int]$script:ImportedSettings.api_port } catch { Write-Info "Ignoring invalid api_port in settings file (keeping default $ApiPort)" }
+        }
+        if ($null -ne $script:ImportedSettings.frontend_port) {
+            try { $FrontendPort = [int]$script:ImportedSettings.frontend_port } catch { Write-Info "Ignoring invalid frontend_port in settings file (keeping default $FrontendPort)" }
+        }
         if ($script:ImportedSettings.school_name) { $SchoolName = [string]$script:ImportedSettings.school_name }
-        Write-Success "Loaded portable admin settings from $SettingsFile (env/deployment only)"
+        Write-Success "Loaded portable admin settings from $SettingsFile (env/deployment only; unknown keys ignored)"
     } catch {
         Write-ErrorMsg "Failed to parse SettingsFile: $($_.Exception.Message)"
         exit 1

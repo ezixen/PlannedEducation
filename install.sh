@@ -394,15 +394,25 @@ import json, os, shlex
 from pathlib import Path
 path = Path(os.environ["PE_SETTINGS_FILE_PATH"])
 raw = json.loads(path.read_text(encoding="utf-8-sig"))
+if isinstance(raw, dict) and raw.get("kind") not in (None, "plannededucation.admin_env_settings"):
+    raise SystemExit(f"Unsupported settings kind: {raw.get('kind')!r}")
 s = raw.get("settings", raw) if isinstance(raw, dict) else {}
+if not isinstance(s, dict):
+    s = {}
 def emit(k, v):
     if v is None:
         return
     print(f"export {k}={shlex.quote(str(v))}")
-emit("DOMAIN", s.get("domain"))
-emit("API_PORT", s.get("api_port"))
-emit("FRONTEND_PORT", s.get("frontend_port"))
-emit("SCHOOL_NAME", s.get("school_name"))
+emit("DOMAIN", s.get("domain") if isinstance(s.get("domain"), str) else None)
+try:
+    emit("API_PORT", int(s["api_port"]) if "api_port" in s else None)
+except (TypeError, ValueError, KeyError):
+    pass
+try:
+    emit("FRONTEND_PORT", int(s["frontend_port"]) if "frontend_port" in s else None)
+except (TypeError, ValueError, KeyError):
+    pass
+emit("SCHOOL_NAME", s.get("school_name") if isinstance(s.get("school_name"), str) else None)
 print("export PE_IMPORTED_SETTINGS=1")
 PY
 )"
@@ -523,32 +533,59 @@ import json, os
 from datetime import datetime, timezone
 from pathlib import Path
 raw = json.loads(Path(os.environ["PE_SETTINGS_FILE_PATH"]).read_text(encoding="utf-8-sig"))
+if isinstance(raw, dict) and raw.get("kind") not in (None, "plannededucation.admin_env_settings"):
+    raise SystemExit(f"Unsupported settings kind: {raw.get('kind')!r}")
 s = raw.get("settings", raw) if isinstance(raw, dict) else {}
+if not isinstance(s, dict):
+    s = {}
+# Allowlist only — unknown/future keys ignored; bad values fall back to defaults.
+KNOWN = {
+    "school_name", "domain", "api_port", "frontend_port", "cors_origins", "allowed_hosts",
+    "environment", "allow_dev_seb_bypass", "anonymizer_enabled", "anonymizer_language",
+    "smtp_host", "smtp_port", "smtp_user", "smtp_use_tls", "smtp_use_ssl", "email_from",
+    "header_mode", "header_image_url", "backup_location", "backup_frequency_days",
+    "backup_retention_days", "backup_time", "admin_support_email", "home_exam_proctoring_enabled",
+}
+s = {k: v for k, v in s.items() if k in KNOWN}
+
+def _int(val, default):
+    try:
+        return int(val)
+    except (TypeError, ValueError):
+        return default
+
+def _bool(val, default):
+    if isinstance(val, bool):
+        return val
+    if isinstance(val, str) and val.strip().lower() in ("true", "1", "yes", "false", "0", "no"):
+        return val.strip().lower() in ("true", "1", "yes")
+    return default if val is None else bool(val)
+
 dep = {
     "school_name": os.environ.get("SCHOOL_NAME") or s.get("school_name") or "PlannedEducation School",
     "domain": os.environ.get("DOMAIN") or s.get("domain") or "localhost",
-    "api_port": int(os.environ.get("API_PORT") or s.get("api_port") or 8000),
-    "frontend_port": int(os.environ.get("FRONTEND_PORT") or s.get("frontend_port") or 5173),
+    "api_port": _int(os.environ.get("API_PORT") or s.get("api_port"), 8000),
+    "frontend_port": _int(os.environ.get("FRONTEND_PORT") or s.get("frontend_port"), 5173),
     "cors_origins": s.get("cors_origins") or os.environ.get("CORS_LIST") or "",
     "allowed_hosts": s.get("allowed_hosts") or f"{os.environ.get('DOMAIN', 'localhost')},localhost,127.0.0.1",
     "environment": os.environ.get("ENV_MODE") or s.get("environment") or "development",
-    "allow_dev_seb_bypass": bool(s.get("allow_dev_seb_bypass", os.environ.get("SEB_BYPASS", "true") == "true")),
-    "anonymizer_enabled": bool(s.get("anonymizer_enabled", True)),
+    "allow_dev_seb_bypass": _bool(s.get("allow_dev_seb_bypass"), os.environ.get("SEB_BYPASS", "true") == "true"),
+    "anonymizer_enabled": _bool(s.get("anonymizer_enabled"), True),
     "anonymizer_language": s.get("anonymizer_language") or "en",
     "smtp_host": s.get("smtp_host"),
-    "smtp_port": int(s.get("smtp_port") or 587),
+    "smtp_port": _int(s.get("smtp_port"), 587),
     "smtp_user": s.get("smtp_user"),
-    "smtp_use_tls": bool(s.get("smtp_use_tls", True)),
-    "smtp_use_ssl": bool(s.get("smtp_use_ssl", False)),
+    "smtp_use_tls": _bool(s.get("smtp_use_tls"), True),
+    "smtp_use_ssl": _bool(s.get("smtp_use_ssl"), False),
     "email_from": s.get("email_from") or "PlannedEducation <noreply@localhost>",
     "header_mode": s.get("header_mode") or "text",
     "header_image_url": s.get("header_image_url"),
     "backup_location": s.get("backup_location") or "backups",
-    "backup_frequency_days": int(s.get("backup_frequency_days") or 1),
-    "backup_retention_days": int(s.get("backup_retention_days") or 30),
+    "backup_frequency_days": _int(s.get("backup_frequency_days"), 1),
+    "backup_retention_days": _int(s.get("backup_retention_days"), 30),
     "backup_time": s.get("backup_time") or "22:00",
     "admin_support_email": s.get("admin_support_email"),
-    "home_exam_proctoring_enabled": bool(s.get("home_exam_proctoring_enabled", False)),
+    "home_exam_proctoring_enabled": _bool(s.get("home_exam_proctoring_enabled"), False),
     "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
 }
 if not dep["cors_origins"]:

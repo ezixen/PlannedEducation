@@ -2,7 +2,7 @@
   "kind": "plannededucation.admin_env_settings",
   "version": 1,
   "exported_at": "2026-11-07T00:00:00+00:00",
-  "notes": "Admin/env settings only. Does not include database files, JWT secrets, DB encryption keys, or teacher/student data. Copy to a custom path, then use install -SettingsFile / PE_SETTINGS_FILE or Admin → Deployment → Import.",
+  "notes": "Admin/env settings only. No DB/JWT/encryption secrets. Forward-compatible: unknown keys ignored; missing keys use defaults; invalid values for a key are skipped. Use install -SettingsFile / PE_SETTINGS_FILE or Admin → Deployment → Import.",
   "settings": {
     "school_name": "PlannedEducation School",
     "domain": "localhost",

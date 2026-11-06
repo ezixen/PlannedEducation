@@ -11,7 +11,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationError
 
 logger = logging.getLogger("plannededucation")
 
@@ -327,9 +327,14 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
 # ── Portable admin env settings bundle (no DB / secrets / teacher data) ───────
 
 SETTINGS_BUNDLE_KIND = "plannededucation.admin_env_settings"
+# Bump only for breaking document shape changes. Readers always accept older
+# versions and ignore unknown keys so older files keep working after upgrades.
 SETTINGS_BUNDLE_VERSION = 1
+SETTINGS_BUNDLE_MIN_VERSION = 1
 
 # Explicit allowlist — never JWT/DB encryption/database URL/user dumps.
+# New admin env knobs: add here + DeploymentConfigSchema default; old files omit
+# the key and keep the schema default (no mis-assignment).
 _SETTINGS_EXPORT_FIELDS: tuple[str, ...] = (
     "school_name",
     "domain",
@@ -357,6 +362,26 @@ _SETTINGS_EXPORT_FIELDS: tuple[str, ...] = (
     "home_exam_proctoring_enabled",
 )
 
+_SETTINGS_FORBIDDEN_KEYS: frozenset[str] = frozenset(
+    {
+        "jwt_secret_key",
+        "JWT_SECRET_KEY",
+        "database_url",
+        "DATABASE_URL",
+        "db_encryption_master_key",
+        "DB_ENCRYPTION_MASTER_KEY",
+        "ai_key_master_secret",
+        "AI_KEY_MASTER_SECRET",
+        "encryption_key",
+        "ENCRYPTION_KEY",
+        "backup_master_key",
+        "BACKUP_MASTER_KEY",
+        "archive_master_key",
+        "ARCHIVE_MASTER_KEY",
+        "smtp_password_configured",  # export-only marker, never a writable field
+    }
+)
+
 
 def build_settings_bundle(*, include_smtp_password: bool = False) -> dict[str, Any]:
     """Build a portable JSON document of admin/env settings for clean reinstalls."""
@@ -373,51 +398,159 @@ def build_settings_bundle(*, include_smtp_password: bool = False) -> dict[str, A
         "exported_at": datetime.now(UTC).isoformat(),
         "notes": (
             "Admin/env settings only. Does not include database files, JWT secrets, "
-            "DB encryption keys, or teacher/student data. Place this file on a clean "
-            "install (PE_SETTINGS_FILE / -SettingsFile) or import via Admin → Deployment."
+            "DB encryption keys, or teacher/student data. Forward-compatible: unknown "
+            "keys are ignored; missing keys keep schema defaults; invalid values for a "
+            "key are skipped. Place on a clean install (PE_SETTINGS_FILE / -SettingsFile) "
+            "or import via Admin → Deployment."
         ),
         "settings": settings,
     }
 
 
-def parse_settings_bundle(raw: dict[str, Any]) -> DeploymentConfigSchema:
-    """Validate a portable settings document into DeploymentConfigSchema."""
+def _settings_payload_from_raw(raw: dict[str, Any]) -> tuple[dict[str, Any], int | None]:
+    """Extract settings dict + optional document version; reject wrong kinds."""
     if not isinstance(raw, dict):
         raise ValueError("Settings file must be a JSON object")
-    payload = raw.get("settings") if isinstance(raw.get("settings"), dict) else raw
+
+    kind = raw.get("kind")
+    if kind is not None and kind != SETTINGS_BUNDLE_KIND:
+        raise ValueError(
+            f"Unsupported settings kind {kind!r}; expected {SETTINGS_BUNDLE_KIND!r}"
+        )
+
+    version_raw = raw.get("version")
+    version: int | None = None
+    if version_raw is not None:
+        try:
+            version = int(version_raw)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Settings file version must be an integer") from exc
+        if version < SETTINGS_BUNDLE_MIN_VERSION:
+            raise ValueError(
+                f"Settings file version {version} is too old "
+                f"(minimum {SETTINGS_BUNDLE_MIN_VERSION})"
+            )
+
+    if isinstance(raw.get("settings"), dict):
+        payload = raw["settings"]
+    elif kind == SETTINGS_BUNDLE_KIND:
+        raise ValueError("Settings file is missing a 'settings' object")
+    else:
+        # Bare settings object (legacy / hand-written) — treat whole dict as payload.
+        payload = raw
+
     if not isinstance(payload, dict):
         raise ValueError("Settings payload missing")
-    # Drop unknown / secret keys that must never be imported from this file.
-    forbidden = {
-        "jwt_secret_key",
-        "JWT_SECRET_KEY",
-        "database_url",
-        "DATABASE_URL",
-        "db_encryption_master_key",
-        "DB_ENCRYPTION_MASTER_KEY",
-        "ai_key_master_secret",
-        "AI_KEY_MASTER_SECRET",
-        "encryption_key",
-        "ENCRYPTION_KEY",
-        "backup_master_key",
-        "BACKUP_MASTER_KEY",
-        "archive_master_key",
-        "ARCHIVE_MASTER_KEY",
+    return payload, version
+
+
+def _validate_settings_field(name: str, value: Any) -> Any:
+    """Validate one allowlisted field; raise ValidationError if unusable."""
+    defaults = DeploymentConfigSchema().model_dump()
+    probe = DeploymentConfigSchema.model_validate({**defaults, name: value})
+    return getattr(probe, name)
+
+
+def parse_settings_bundle(
+    raw: dict[str, Any],
+    *,
+    base: dict[str, Any] | None = None,
+) -> DeploymentConfigSchema:
+    """Validate a portable settings document into DeploymentConfigSchema.
+
+    Forward-compatible rules:
+    - Unknown / future keys are ignored (never mapped onto other fields).
+    - Forbidden secret keys are never applied.
+    - Keys missing from the file keep ``base`` (current deploy) then schema defaults.
+    - Invalid values for a known key are skipped (keep base/default) instead of
+      failing the whole import or coercing into the wrong setting.
+    - Document versions newer than this build still load known keys.
+    """
+    schema, _report = parse_settings_bundle_with_report(raw, base=base)
+    return schema
+
+
+def parse_settings_bundle_with_report(
+    raw: dict[str, Any],
+    *,
+    base: dict[str, Any] | None = None,
+) -> tuple[DeploymentConfigSchema, dict[str, Any]]:
+    """Like parse_settings_bundle, plus ignored/skipped/applied key report."""
+    payload, version = _settings_payload_from_raw(raw)
+
+    ignored_unknown: list[str] = []
+    skipped_invalid: dict[str, str] = {}
+    blocked_secrets: list[str] = []
+    applied: list[str] = []
+
+    cleaned: dict[str, Any] = {}
+    allowed = set(_SETTINGS_EXPORT_FIELDS) | {"smtp_password"}
+
+    for key, value in payload.items():
+        if key in _SETTINGS_FORBIDDEN_KEYS:
+            blocked_secrets.append(key)
+            continue
+        if key not in allowed:
+            ignored_unknown.append(key)
+            continue
+        if key == "smtp_password":
+            # Password is optional overlay; empty string clears, None is omitted.
+            if value is None:
+                ignored_unknown.append(key)
+                continue
+            try:
+                cleaned[key] = _validate_settings_field(key, value)
+                applied.append(key)
+            except ValidationError as exc:
+                skipped_invalid[key] = str(exc.errors()[0].get("msg", "invalid"))
+            continue
+        try:
+            cleaned[key] = _validate_settings_field(key, value)
+            applied.append(key)
+        except ValidationError as exc:
+            skipped_invalid[key] = str(exc.errors()[0].get("msg", "invalid"))
+
+    # Start from schema defaults, overlay current deploy, then valid file keys.
+    # New admin fields added later → default when absent from older files.
+    defaults = DeploymentConfigSchema().model_dump()
+    current = base if base is not None else load_deployment_config()
+    current_overlay = {
+        key: current[key]
+        for key in defaults
+        if isinstance(current, dict) and key in current
     }
-    cleaned = {
-        k: v
-        for k, v in payload.items()
-        if k in _SETTINGS_EXPORT_FIELDS or k == "smtp_password"
-    }
-    for key in forbidden:
-        cleaned.pop(key, None)
-    # Merge onto current so omitted fields keep existing values on partial imports.
-    current = load_deployment_config()
-    merged = {**current, **cleaned}
-    # Never let a settings file wipe SMTP password unless explicitly provided.
+    merged = {**defaults, **current_overlay, **cleaned}
+    # Never wipe SMTP password unless the file explicitly provided one.
     if "smtp_password" not in cleaned:
         merged["smtp_password"] = None
-    return DeploymentConfigSchema(**merged)
+
+    try:
+        schema = DeploymentConfigSchema(**merged)
+    except ValidationError as exc:
+        raise ValueError(f"Settings file could not be applied: {exc.errors()[0].get('msg', exc)}") from exc
+    report = {
+        "document_version": version,
+        "reader_version": SETTINGS_BUNDLE_VERSION,
+        "newer_document": bool(version is not None and version > SETTINGS_BUNDLE_VERSION),
+        "applied_keys": sorted(applied),
+        "ignored_unknown_keys": sorted(ignored_unknown),
+        "skipped_invalid_keys": skipped_invalid,
+        "blocked_secret_keys": sorted(blocked_secrets),
+    }
+    if report["newer_document"]:
+        logger.info(
+            "Settings file version %s is newer than reader %s; loaded known keys only",
+            version,
+            SETTINGS_BUNDLE_VERSION,
+        )
+    if ignored_unknown or skipped_invalid or blocked_secrets:
+        logger.info(
+            "Settings import filtered keys: ignored=%s skipped=%s blocked=%s",
+            ignored_unknown,
+            list(skipped_invalid),
+            blocked_secrets,
+        )
+    return schema, report
 
 
 def resolve_settings_file_path(path_str: str) -> Path:
@@ -469,7 +602,12 @@ def read_settings_bundle_from_path(path_str: str) -> dict[str, Any]:
 
 
 def apply_settings_bundle_dict(raw: dict[str, Any]) -> dict[str, Any]:
-    """Apply a portable settings document to deployment.json + .env (non-secret keys)."""
-    schema = parse_settings_bundle(raw)
-    return save_deployment_config(schema)
+    """Apply a portable settings document to deployment.json + .env (non-secret keys).
+
+    Returns saved config plus an ``import_report`` describing ignored/skipped keys.
+    """
+    schema, report = parse_settings_bundle_with_report(raw)
+    saved = save_deployment_config(schema)
+    saved["import_report"] = report
+    return saved
 

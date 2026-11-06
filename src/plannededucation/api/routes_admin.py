@@ -565,11 +565,13 @@ def import_admin_settings(
         raise
     except Exception as exc:
         raise HTTPException(status_code=400, detail=f"Invalid settings file: {exc}") from exc
+    report = result.pop("import_report", {}) if isinstance(result, dict) else {}
     return {
         "status": "success",
         "message": "Admin env settings imported. Restart may be required for network changes.",
         "restart_required": True,
         "config": result,
+        "import_report": report,
     }
 
 

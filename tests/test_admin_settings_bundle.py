@@ -14,6 +14,7 @@ from src.plannededucation.api.deployment_config import (
     SETTINGS_BUNDLE_KIND,
     build_settings_bundle,
     parse_settings_bundle,
+    parse_settings_bundle_with_report,
     write_settings_bundle_to_path,
 )
 from src.plannededucation.api.main import app
@@ -88,7 +89,7 @@ def test_export_and_import_via_api(tmp_path: Path):
 
 
 def test_parse_rejects_secret_injection():
-    schema = parse_settings_bundle(
+    schema, report = parse_settings_bundle_with_report(
         {
             "kind": SETTINGS_BUNDLE_KIND,
             "version": 1,
@@ -103,6 +104,40 @@ def test_parse_rejects_secret_injection():
     dumped = schema.model_dump()
     assert "JWT_SECRET_KEY" not in dumped
     assert "DATABASE_URL" not in dumped
+    assert "JWT_SECRET_KEY" in report["blocked_secret_keys"]
+    assert "DATABASE_URL" in report["blocked_secret_keys"]
+
+
+def test_parse_ignores_unknown_and_keeps_defaults_for_missing():
+    """Older/newer files: unknown keys ignored; omitted keys stay at schema defaults."""
+    schema, report = parse_settings_bundle_with_report(
+        {
+            "kind": SETTINGS_BUNDLE_KIND,
+            "version": 99,
+            "settings": {
+                "school_name": "Partial School",
+                "future_admin_knob": "must-not-land-anywhere",
+                "api_port": "not-a-number",
+            },
+        },
+        base={},
+    )
+    assert schema.school_name == "Partial School"
+    assert schema.home_exam_proctoring_enabled is False
+    assert schema.api_port == 8000  # invalid value skipped → default
+    assert "future_admin_knob" in report["ignored_unknown_keys"]
+    assert "api_port" in report["skipped_invalid_keys"]
+    assert report["newer_document"] is True
+    dumped = schema.model_dump()
+    assert "future_admin_knob" not in dumped
+
+
+def test_parse_rejects_wrong_kind():
+    try:
+        parse_settings_bundle({"kind": "other.product", "version": 1, "settings": {}})
+        raise AssertionError("expected ValueError")
+    except ValueError as exc:
+        assert "Unsupported settings kind" in str(exc)
 
 
 def test_write_settings_roundtrip(tmp_path: Path):
