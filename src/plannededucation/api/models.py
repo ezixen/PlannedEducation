@@ -283,6 +283,10 @@ class Exam(Base):
     duration_minutes = Column(Integer, default=60, nullable=False)
     teacher_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     seb_config_key = Column(String(512), nullable=True)
+    # Home-exam / remote proctoring (webcam, mic, gaze) — OFF by default (classroom).
+    # Requires platform flag home_exam_proctoring_enabled (superadmin) before teachers
+    # may turn this on for an exam.
+    home_exam_enabled = Column(Boolean, default=False, server_default="0", nullable=False)
     created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
 
     teacher = relationship("User", back_populates="exams")

@@ -81,11 +81,20 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
         }}
         onClick={e => e.stopPropagation()}
       >
-        <h2 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-primary)' }}>
+        <h2 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           {t('proctoring.gdpr_title')}
+          <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
+            {t('home_exam.beta_badge')}
+          </span>
         </h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>
           {t('proctoring.gdpr_desc')}
+        </p>
+        <p style={{ color: '#92400e', fontSize: '0.85rem', marginBottom: '1.25rem', lineHeight: 1.45, backgroundColor: '#fffbeb', border: '1px solid #f59e0b', borderRadius: '6px', padding: '0.75rem' }}>
+          {t('home_exam.legal_warning')}
+        </p>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '1.25rem', lineHeight: 1.45 }}>
+          {t('home_exam.parent_student_notice')}
         </p>
 
         {error && (

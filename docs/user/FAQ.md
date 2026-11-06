@@ -133,10 +133,10 @@ Parents request a link to their child's student account from the Parent Dashboar
 ## Proctoring & Monitoring
 
 ### How do I enable proctoring for an exam?
-In exam settings, enable 'Proctoring'. Students will be prompted for camera/microphone permissions and must complete GDPR consent. When local models load, the portal records face-count and gaze off-screen signals entirely in the browser (MediaPipe WASM — no cloud ML). Background audio anomalies, tab switches, and SEB violations are also recorded. Teachers can still review the camera preview manually.
+Classroom exams never use webcam, microphone, or gaze. Home-exam / remote proctoring is a separate **beta** module: a **superadmin** must enable it under Deployment Configuration, then the teacher must set that exam’s delivery mode to Home-exam. Students (and parents where required) must accept a GDPR consent dialog that includes a country-law warning before monitoring starts. When enabled, face-count and gaze signals run locally in the browser (MediaPipe WASM — no cloud ML). Check your local legal guidelines; extra coding may be needed for your jurisdiction.
 
 ### What proctoring events are tracked?
-Local face count (including multiple faces / face lost), gaze off-screen and eye-movement signals (when MediaPipe assets load), background audio levels, tab/window switches, and SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay. If local detection cannot start, the session stays in honest manual-review mode (no simulated events).
+Only on home-exam (beta) sessions: local face count (including multiple faces / face lost), gaze off-screen and eye-movement signals (when MediaPipe assets load), background audio levels, tab/window switches, and SEB violations. Classroom exams do not collect these. If local detection cannot start, the session stays in honest manual-review mode (no simulated events).
 
 ---
 

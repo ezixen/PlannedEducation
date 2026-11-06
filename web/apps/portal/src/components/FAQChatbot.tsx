@@ -361,7 +361,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
       {
         id: 24,
         question: "What proctoring events are tracked?",
-        answer: "Local face count and gaze off-screen signals (MediaPipe in the browser when available), background audio levels, tab/window switches, SEB violations. View in Teacher Dashboard > Proctoring tab with real-time feed and session replay."
+        answer: "Only for home-exam beta sessions (superadmin + teacher opt-in): local face count and gaze signals, background audio, tab switches, SEB violations. Classroom exams never use webcam/mic/gaze."
       }
     ]
   },

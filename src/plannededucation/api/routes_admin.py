@@ -439,6 +439,18 @@ def update_admin_deployment_config(
     current_user: models.User = Depends(require_admin),
 ):
     """Update deployment configuration and synchronize config/deployment.json and .env."""
+    existing = load_deployment_config()
+    existing_home = bool(existing.get("home_exam_proctoring_enabled", False))
+    if payload.home_exam_proctoring_enabled != existing_home:
+        # Only superadmins may enable/disable home-exam webcam/mic/gaze beta.
+        if not getattr(current_user, "is_superadmin", False):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=(
+                    "Only a superadmin can enable or disable home-exam "
+                    "proctoring (webcam / microphone / gaze) features."
+                ),
+            )
     result = save_deployment_config(payload)
     return {
         "status": "success",

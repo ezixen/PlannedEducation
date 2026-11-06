@@ -1,10 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { proctoringService, ProctoringEventType, type ProctoringConsentRequest, type ProctoringSessionStartRequest } from '../services/proctoring';
-import {
-  createLocalFaceGazeDetector,
-  type FaceGazeBackend,
-  type LocalFaceGazeDetector,
-} from '../lib/localFaceGaze';
+import type { FaceGazeBackend, LocalFaceGazeDetector } from '../lib/localFaceGaze';
 
 interface ProctoringConfig {
   examId: string;
@@ -153,6 +149,8 @@ export function useProctoring(config: ProctoringConfig) {
 
       let backend: FaceGazeBackend = 'none';
       if (options.cameraEnabled) {
+        // Dynamic import keeps MediaPipe out of the default classroom bundle path.
+        const { createLocalFaceGazeDetector } = await import('../lib/localFaceGaze');
         const detector = await createLocalFaceGazeDetector();
         faceGazeDetectorRef.current = detector;
         backend = detector.backend;

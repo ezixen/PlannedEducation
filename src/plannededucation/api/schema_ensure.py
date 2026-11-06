@@ -208,6 +208,15 @@ def _migration_sealed_sync_submissions(connection: Connection) -> None:
         connection.execute(text(statement))
 
 
+def _migration_home_exam_flag(connection: Connection) -> None:
+    """Optional home-exam proctoring per exam (classroom default OFF)."""
+    _add_columns(
+        connection,
+        "exams",
+        [("home_exam_enabled", "BOOLEAN NOT NULL DEFAULT 0")],
+    )
+
+
 Migration = tuple[int, str, Callable[[Connection], None]]
 _MIGRATIONS: tuple[Migration, ...] = (
     (1, "users-admin-and-messaging-columns", _migration_users),
@@ -215,6 +224,7 @@ _MIGRATIONS: tuple[Migration, ...] = (
     (3, "password-reset-security-columns", _migration_reset_security_columns),
     (4, "refresh-sessions-per-device", _migration_refresh_sessions),
     (5, "sealed-sync-submissions", _migration_sealed_sync_submissions),
+    (6, "home-exam-enabled-column", _migration_home_exam_flag),
 )
 
 

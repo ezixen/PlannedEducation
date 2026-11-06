@@ -62,6 +62,8 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // Home-exam MediaPipe WASM/models are optional and large — never SW-precache.
+        globIgnores: ['**/ml/**'],
         // Cache API calls (e.g., getting exams) for offline use
         runtimeCaching: [
           {

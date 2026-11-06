@@ -126,10 +126,17 @@ class ExamBase(BaseModel):
     description: str | None = Field(None, max_length=2048)
     duration_minutes: int = Field(60, ge=1, le=600)
     seb_config_key: str | None = Field(None, max_length=512)
+    # Classroom (false, default) vs optional home-exam proctoring (webcam/mic/gaze).
+    home_exam_enabled: bool = False
 
 
 class ExamCreate(ExamBase):
     pass
+
+
+class ExamDeliveryModeUpdate(BaseModel):
+    """Teacher chooses classroom vs home-exam for an existing exam."""
+    home_exam_enabled: bool = False
 
 
 class ExamResponse(ExamBase):
@@ -170,6 +177,7 @@ class ExamListResponse(BaseModel):
     description: str | None = None
     duration_minutes: int
     teacher_id: str
+    home_exam_enabled: bool = False
 
 
 # ── Submission ────────────────────────────────────────────────────────────────

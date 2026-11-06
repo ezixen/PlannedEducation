@@ -127,6 +127,7 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 | Client event pipeline | **Fixed (F-018 remainder)**: allowlisted types/severities, batch/face_count bounds, `event_source=client_telemetry`, violation budget; still telemetry—not sole disciplinary proof. |
 | Portal session UI | **Fixed (F-019)**: consent ≠ start; checkboxes only set options; video+stream attach effect; local MediaPipe Face Landmarker (WASM) for face count + iris/head-pose gaze; Shape Detection fallback (face count only); labeled `manual_review` if neither loads; no `Math.random` / no cloud ML. |
 | Real local face/gaze ML | **Fixed (F-019)** — `src/lib/localFaceGaze.ts` + `public/ml` assets via `npm run ensure-ml`. |
+| Home-exam separation | **Classroom default OFF.** Webcam/mic/gaze require (1) superadmin `home_exam_proctoring_enabled` in deployment config and (2) per-exam `home_exam_enabled`. Labeled **beta** with country-law warning; GDPR consent required. Routes fail closed when gates are off. |
 
 ---
 

@@ -90,7 +90,10 @@ export interface ExamSettings {
   require_seb: boolean;
   time_multiplier: number;
   passing_score: number;
-  delivery_mode?: 'classroom' | 'different_location';
+  /** classroom (default) | home_exam (optional webcam/mic/gaze beta) | different_location */
+  delivery_mode?: 'classroom' | 'different_location' | 'home_exam';
+  /** True only when teacher opted this exam into home-exam proctoring. */
+  home_exam_enabled?: boolean;
   allow_digital_hand_raise?: boolean;
   special_characters?: SpecialCharacterSet[];
 }

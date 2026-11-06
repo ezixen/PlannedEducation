@@ -20,11 +20,13 @@ function loadSpecialChars(examId: string): SpecialCharacterSet[] {
 
 export function ExamEditor() {
   const { t, locale } = useI18n();
-  const { success: showSuccess } = useToast();
+  const { success: showSuccess, error: showError } = useToast();
   const { setCustomCategories, clearCustomCategories } = useSpecialCharacters();
   const { id } = useParams<{ id: string }>();
   const [exam, setExam] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [platformHomeExam, setPlatformHomeExam] = useState(false);
+  const [savingDelivery, setSavingDelivery] = useState(false);
 
   // Module Language & Country metadata
   const defaultLang = MODULE_LANGUAGES.find(l => l.code === locale) || MODULE_LANGUAGES[0];
@@ -49,8 +51,12 @@ export function ExamEditor() {
       return;
     }
     try {
-      const response = await apiClient.get(`/exams/${id}`);
+      const [response, featureRes] = await Promise.all([
+        apiClient.get(`/exams/${id}`),
+        apiClient.get('/proctoring/feature-status').catch(() => ({ data: { home_exam_proctoring_enabled: false } })),
+      ]);
       setExam(response.data);
+      setPlatformHomeExam(Boolean(featureRes.data?.home_exam_proctoring_enabled));
       const raw = localStorage.getItem(`pe_exam_meta_${id}`);
       if (raw) {
         const parsed = JSON.parse(raw);
@@ -79,6 +85,25 @@ export function ExamEditor() {
     void fetchExam();
     return () => clearCustomCategories();
   }, [fetchExam, clearCustomCategories]);
+
+  const setDeliveryMode = async (homeExamEnabled: boolean) => {
+    if (!id) return;
+    setSavingDelivery(true);
+    try {
+      const res = await apiClient.put(`/exams/${id}/delivery-mode`, {
+        home_exam_enabled: homeExamEnabled,
+      });
+      setExam(res.data);
+      showSuccess(
+        homeExamEnabled ? t('home_exam.exam_enabled_ok') : t('home_exam.exam_classroom_ok'),
+      );
+    } catch (err: any) {
+      console.error(err);
+      showError(err.response?.data?.detail || t('home_exam.exam_save_failed'));
+    } finally {
+      setSavingDelivery(false);
+    }
+  };
 
   const persistSpecialChars = (sets: SpecialCharacterSet[]) => {
     if (!id) return;
@@ -174,7 +199,64 @@ export function ExamEditor() {
           📁 {moduleCountry}
         </span>
       </div>
-      <p style={{ color: 'gray', marginBottom: '2rem' }}>{exam.seb_config_key ? t('exam_editor.seb_enabled') : t('exam_editor.seb_not_set')}</p>
+      <p style={{ color: 'gray', marginBottom: '1rem' }}>{exam.seb_config_key ? t('exam_editor.seb_enabled') : t('exam_editor.seb_not_set')}</p>
+
+      <div style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '1.5rem' }}>
+        <h3 style={{ margin: '0 0 0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          {t('home_exam.exam_mode_title')}
+          <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
+            {t('home_exam.beta_badge')}
+          </span>
+        </h3>
+        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.75rem', lineHeight: 1.45 }}>
+          {t('home_exam.exam_mode_desc')}
+        </p>
+        {!platformHomeExam && (
+          <p style={{ fontSize: '0.8rem', color: '#92400e', backgroundColor: '#fffbeb', border: '1px solid #f59e0b', borderRadius: '6px', padding: '0.6rem 0.75rem', marginBottom: '0.75rem' }}>
+            {t('home_exam.platform_disabled_hint')}
+          </p>
+        )}
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            disabled={savingDelivery}
+            onClick={() => void setDeliveryMode(false)}
+            style={{
+              padding: '0.5rem 1rem',
+              borderRadius: '6px',
+              border: exam.home_exam_enabled ? '1px solid var(--border-color)' : '2px solid var(--primary-color)',
+              backgroundColor: exam.home_exam_enabled ? 'var(--bg-color)' : 'rgba(59, 130, 246, 0.12)',
+              color: 'var(--text-color)',
+              cursor: 'pointer',
+              fontWeight: 600,
+            }}
+          >
+            {t('home_exam.mode_classroom')}
+          </button>
+          <button
+            type="button"
+            disabled={savingDelivery || !platformHomeExam}
+            onClick={() => void setDeliveryMode(true)}
+            style={{
+              padding: '0.5rem 1rem',
+              borderRadius: '6px',
+              border: exam.home_exam_enabled ? '2px solid #f59e0b' : '1px solid var(--border-color)',
+              backgroundColor: exam.home_exam_enabled ? 'rgba(245, 158, 11, 0.15)' : 'var(--bg-color)',
+              color: 'var(--text-color)',
+              cursor: platformHomeExam ? 'pointer' : 'not-allowed',
+              fontWeight: 600,
+              opacity: platformHomeExam ? 1 : 0.55,
+            }}
+          >
+            {t('home_exam.mode_home')}
+          </button>
+        </div>
+        {exam.home_exam_enabled && (
+          <p style={{ fontSize: '0.8rem', color: '#92400e', marginTop: '0.75rem', lineHeight: 1.4 }}>
+            {t('home_exam.legal_warning')}
+          </p>
+        )}
+      </div>
 
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '2rem' }}>
         <h3>{t('exam_editor.add_question')}</h3>

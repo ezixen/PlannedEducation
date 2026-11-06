@@ -55,6 +55,13 @@ class DeploymentConfigSchema(BaseModel):
     # Support Email for Teachers (set by superadmin, visible to all teachers in the Lounge)
     admin_support_email: str | None = Field(default=None, max_length=256, description="Admin support email visible to all teachers")
 
+    # Home-exam / remote proctoring platform gate (superadmin). Default OFF —
+    # classroom modules stay free of webcam/mic/gaze unless explicitly enabled.
+    home_exam_proctoring_enabled: bool = Field(
+        default=False,
+        description="When false, teachers cannot enable home-exam webcam/mic/gaze proctoring",
+    )
+
 
 class DeploymentConfigResponse(BaseModel):
     school_name: str
@@ -85,6 +92,7 @@ class DeploymentConfigResponse(BaseModel):
     backup_retention_days: int = 30
     backup_time: str = "22:00"
     admin_support_email: str | None = None
+    home_exam_proctoring_enabled: bool = False
 
 
 def find_project_root() -> Path:
@@ -220,6 +228,11 @@ def load_deployment_config() -> dict[str, Any]:
         "backup_retention_days": int(os.getenv("BACKUP_RETENTION_DAYS", env_vars.get("BACKUP_RETENTION_DAYS", "30"))),
         "backup_time": os.getenv("BACKUP_TIME", env_vars.get("BACKUP_TIME", "22:00")),
         "admin_support_email": os.getenv("ADMIN_SUPPORT_EMAIL", env_vars.get("ADMIN_SUPPORT_EMAIL")),
+        "home_exam_proctoring_enabled": os.getenv(
+            "HOME_EXAM_PROCTORING_ENABLED",
+            env_vars.get("HOME_EXAM_PROCTORING_ENABLED", "false"),
+        ).lower()
+        in ("true", "1", "yes"),
     }
 
     # If deployment.json exists, overlay its values
@@ -293,6 +306,9 @@ def save_deployment_config(new_config: DeploymentConfigSchema) -> dict[str, Any]
         "BACKUP_RETENTION_DAYS": str(new_config.backup_retention_days),
         "BACKUP_TIME": new_config.backup_time,
         "ADMIN_SUPPORT_EMAIL": new_config.admin_support_email or "",
+        "HOME_EXAM_PROCTORING_ENABLED": (
+            "true" if new_config.home_exam_proctoring_enabled else "false"
+        ),
     }
     # Patch semantics: omit password => preserve; empty string => clear (F-041).
     if smtp_password is not None:

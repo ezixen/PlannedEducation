@@ -11,6 +11,7 @@ export interface User {
   is_active: boolean;
   role: 'teacher' | 'student' | 'parent' | 'admin' | 'superadmin' | 'teacher_aide';
   is_admin: boolean;
+  is_superadmin?: boolean;
   totp_enabled: boolean;
   teacher_approved?: boolean;
   is_teacher_aide?: boolean;

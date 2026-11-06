@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 
 from . import database, models, schemas
 from .authorization import require_exam_author
+from .home_exam_policy import assert_platform_home_exam_enabled
 from .routes_auth import get_current_user
 from .seb_security import verify_seb_request
 
@@ -90,6 +91,11 @@ def _build_exam_package(
             "require_seb": bool(exam.seb_config_key),
             "time_multiplier": time_multiplier,
             "passing_score": 50,
+            # Home-exam webcam/mic/gaze only when teacher opted in (platform gate checked at consent/start).
+            "home_exam_enabled": bool(getattr(exam, "home_exam_enabled", False)),
+            "delivery_mode": (
+                "home_exam" if getattr(exam, "home_exam_enabled", False) else "classroom"
+            ),
         },
         # Never send the raw SEB config secret to the browser package.
         "started_at": int(started.timestamp() * 1000),
@@ -210,11 +216,43 @@ def create_exam(
     current_user: models.User = Depends(get_current_user),
 ):
     _require_approved_teacher(current_user)
-    db_exam = models.Exam(**exam.model_dump(), teacher_id=current_user.id)
+    payload = exam.model_dump()
+    if payload.get("home_exam_enabled"):
+        assert_platform_home_exam_enabled()
+    else:
+        payload["home_exam_enabled"] = False
+    db_exam = models.Exam(**payload, teacher_id=current_user.id)
     db.add(db_exam)
     db.commit()
     db.refresh(db_exam)
     return db_exam
+
+
+@router.put("/{exam_id}/delivery-mode", response_model=schemas.ExamResponse)
+def set_exam_delivery_mode(
+    exam_id: str,
+    body: schemas.ExamDeliveryModeUpdate,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Teacher chooses classroom (default) vs home-exam for this exam.
+    Home-exam requires the superadmin platform beta flag.
+    """
+    _require_approved_teacher(current_user)
+    exam = _get_exam_or_404(exam_id, db)
+    if exam.teacher_id != current_user.id and not (
+        current_user.is_admin or getattr(current_user, "is_superadmin", False)
+    ):
+        raise HTTPException(status_code=403, detail="Not the exam owner")
+    if body.home_exam_enabled:
+        assert_platform_home_exam_enabled()
+        exam.home_exam_enabled = True
+    else:
+        exam.home_exam_enabled = False
+    db.commit()
+    db.refresh(exam)
+    return exam
 
 
 @router.get("/", response_model=list[schemas.ExamListResponse])

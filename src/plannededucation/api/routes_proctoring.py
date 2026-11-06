@@ -12,6 +12,10 @@ from pydantic import BaseModel, Field, field_validator
 from sqlalchemy.orm import Session
 
 from . import database, models
+from .home_exam_policy import (
+    assert_exam_allows_home_proctoring,
+    feature_status_payload,
+)
 from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/proctoring", tags=["proctoring"])
@@ -338,6 +342,15 @@ def _get_session_and_verify(
 
 # ── Consent Endpoints ──────────────────────────────────────────────────────
 
+@router.get("/feature-status")
+def get_home_exam_feature_status(
+    current_user: models.User = Depends(get_current_user),
+):
+    """Public-to-auth status: whether home-exam proctoring beta is on for this deploy."""
+    _ = current_user
+    return feature_status_payload()
+
+
 @router.post("/consent", response_model=ProctoringConsentResponse, status_code=201)
 def give_consent(
     request: ProctoringConsentRequest,
@@ -347,11 +360,11 @@ def give_consent(
     """
     Record GDPR consent for proctoring.
     Must be given before starting a proctored exam.
+    Only available when platform + exam home-exam gates are on.
     """
-    # Verify exam exists
+    # Verify exam exists and home-exam is allowed
     exam = db.query(models.Exam).filter(models.Exam.id == request.exam_id).first()
-    if not exam:
-        raise HTTPException(status_code=404, detail="Exam not found")
+    assert_exam_allows_home_proctoring(exam)
 
     # Check if consent already exists
     existing = (
@@ -451,7 +464,7 @@ def start_session(
 ):
     """
     Start a proctoring session for an exam submission.
-    Requires valid consent.
+    Requires valid consent and home-exam gates (platform + exam).
     """
     # Verify submission exists and belongs to student
     submission = (
@@ -468,6 +481,9 @@ def start_session(
     # Verify exam matches
     if submission.exam_id != request.exam_id:
         raise HTTPException(status_code=400, detail="Submission exam mismatch")
+
+    exam = db.query(models.Exam).filter(models.Exam.id == request.exam_id).first()
+    assert_exam_allows_home_proctoring(exam)
 
     # Check consent
     consent = (

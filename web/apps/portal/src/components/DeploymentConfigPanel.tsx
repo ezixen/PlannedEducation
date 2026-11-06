@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
+import { useAuth } from '../contexts/AuthContext';
 import { apiClient } from '../api';
 
 export interface DeploymentConfig {
@@ -24,6 +25,7 @@ export interface DeploymentConfig {
   smtp_use_ssl?: boolean;
   email_from?: string;
   admin_support_email?: string | null;
+  home_exam_proctoring_enabled?: boolean;
   config_file_path?: string;
   last_modified?: string;
 }
@@ -31,6 +33,8 @@ export interface DeploymentConfig {
 export function DeploymentConfigPanel() {
   const { success: showSuccess, error: showError } = useToast();
   const { t } = useI18n();
+  const { user } = useAuth();
+  const isSuperadmin = Boolean(user?.is_superadmin || user?.role === 'superadmin');
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [savingSupportEmail, setSavingSupportEmail] = useState(false);
@@ -56,6 +60,7 @@ export function DeploymentConfigPanel() {
     smtp_use_ssl: false,
     email_from: 'PlannedEducation <noreply@localhost>',
     admin_support_email: '',
+    home_exam_proctoring_enabled: false,
   });
 
   const fetchConfig = async () => {
@@ -449,6 +454,39 @@ export function DeploymentConfigPanel() {
               onChange={(e) => setConfig({ ...config, anonymizer_enabled: e.target.checked })}
             />
             {t('deployment.anonymizer_label')}
+          </label>
+        </div>
+
+        {/* Home-exam / remote proctoring — separate optional beta (superadmin gate) */}
+        <div style={{ marginTop: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: '0 0 0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {t('home_exam.platform_title')}
+            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
+              {t('home_exam.beta_badge')}
+            </span>
+          </h3>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '0.75rem', lineHeight: 1.45 }}>
+            {t('home_exam.platform_desc')}
+          </p>
+          <p style={{ color: '#92400e', fontSize: '0.8rem', marginBottom: '0.85rem', lineHeight: 1.45, backgroundColor: '#fffbeb', border: '1px solid #f59e0b', borderRadius: '6px', padding: '0.65rem 0.75rem' }}>
+            {t('home_exam.legal_warning')}
+          </p>
+          <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', cursor: isSuperadmin ? 'pointer' : 'not-allowed', fontSize: '0.875rem', color: 'var(--text-color)', opacity: isSuperadmin ? 1 : 0.7 }}>
+            <input
+              type="checkbox"
+              checked={Boolean(config.home_exam_proctoring_enabled)}
+              disabled={!isSuperadmin}
+              onChange={(e) => setConfig({ ...config, home_exam_proctoring_enabled: e.target.checked })}
+              style={{ marginTop: '0.2rem' }}
+            />
+            <span>
+              <strong>{t('home_exam.platform_toggle')}</strong>
+              {!isSuperadmin && (
+                <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                  {t('home_exam.superadmin_only')}
+                </span>
+              )}
+            </span>
           </label>
         </div>
 

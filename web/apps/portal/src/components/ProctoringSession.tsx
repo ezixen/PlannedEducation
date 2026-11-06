@@ -69,9 +69,17 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
   if (!proctoring.consentGiven) {
     return (
       <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', textAlign: 'center' }}>
-        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', color: 'var(--text-color)' }}>{t('proctoring.ai_proctoring')}</h4>
-        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
+        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.95rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {t('proctoring.ai_proctoring')}
+          <span style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
+            {t('home_exam.beta_badge')}
+          </span>
+        </h4>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
           {t('proctoring.gdpr_notice')}
+        </p>
+        <p style={{ fontSize: '0.75rem', color: '#92400e', marginBottom: '0.75rem', lineHeight: 1.4 }}>
+          {t('home_exam.legal_warning')}
         </p>
         <button
           type="button"

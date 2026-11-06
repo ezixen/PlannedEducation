@@ -22,6 +22,7 @@ export function TakeExam() {
   const [submitting] = useState(false);
   const [completedSubmission, setCompletedSubmission] = useState<StudentSubmissionDetail | null>(null);
   const [loadingReview, setLoadingReview] = useState(false);
+  const [homeExamActive, setHomeExamActive] = useState(false);
 
   const isTestMode = new URLSearchParams(window.location.search).get('test_mode') === 'true';
   const fetchMySubmission = useCallback(async () => {
@@ -75,6 +76,30 @@ export function TakeExam() {
   useEffect(() => {
     fetchMySubmission();
   }, [fetchMySubmission]);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const featureRes = await apiClient
+          .get('/proctoring/feature-status')
+          .catch(() => ({ data: { home_exam_proctoring_enabled: false } }));
+        if (cancelled) return;
+        const examWantsHome = Boolean(
+          examPackage?.settings?.home_exam_enabled ||
+            examPackage?.settings?.delivery_mode === 'home_exam',
+        );
+        setHomeExamActive(
+          examWantsHome && Boolean(featureRes.data?.home_exam_proctoring_enabled),
+        );
+      } catch {
+        if (!cancelled) setHomeExamActive(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [examPackage]);
 
   useEffect(() => {
     if (isExamComplete) {
@@ -330,16 +355,18 @@ export function TakeExam() {
           </div>
         )}
 
-        {/* Proctoring Session */}
-        <div style={{ marginBottom: '1.5rem' }}>
-          <ProctoringSession 
-            examId={id ?? ''} 
-            submissionId={examState?.submissionId || ''}
-            onSessionComplete={(stats) => {
-              console.log('Proctoring session complete:', stats);
-            }}
-          />
-        </div>
+        {/* Home-exam proctoring only — classroom exams never mount webcam/mic/gaze UI */}
+        {homeExamActive && (
+          <div style={{ marginBottom: '1.5rem' }}>
+            <ProctoringSession
+              examId={id ?? ''}
+              submissionId={examState?.submissionId || ''}
+              onSessionComplete={(stats) => {
+                console.log('Proctoring session complete:', stats);
+              }}
+            />
+          </div>
+        )}
 
         {/* Digital Hand Raise: Enabled by default / for different_location test packages; disabled when delivery_mode is classroom */}
         {(examPackage?.settings?.allow_digital_hand_raise !== false && examPackage?.settings?.delivery_mode !== 'classroom') ? (
