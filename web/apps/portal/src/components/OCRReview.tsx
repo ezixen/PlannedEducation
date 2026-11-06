@@ -1,21 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
-import {
-  Upload,
-  Edit,
-  Check,
-  X,
-  Save,
-  Image as ImageIcon,
-  RefreshCw,
-  Eye,
-  EyeOff,
-  AlertCircle,
-  CheckCircle,
-  Loader2,
-} from 'lucide-react';
+import { Edit } from 'lucide-react';
 
 interface OCRWord {
   text: string;
