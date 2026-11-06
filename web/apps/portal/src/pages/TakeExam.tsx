@@ -12,6 +12,7 @@ import {
 import { useOfflineExam } from '../hooks/useOfflineExam';
 import { useI18n } from '../contexts/I18nContext';
 import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
+import { formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
 export function TakeExam() {
   const { t } = useI18n();
@@ -56,14 +57,18 @@ export function TakeExam() {
   } = useOfflineExam({
     examId: id || '',
     onExamFailed: (reason) => {
-      showError(`Exam Failed: ${reason}`);
+      showError(t('take_exam.failed', { reason }));
     },
     onExamCompleted: () => {
-      showSuccess('Exam completed!');
+      showSuccess(t('take_exam.completed'));
       fetchMySubmission();
     },
     onTimeWarning: (minutes) => {
-      showWarn(`${minutes} minute${minutes !== 1 ? 's' : ''} remaining!`);
+      showWarn(
+        minutes === 1
+          ? t('take_exam.minutes_remaining_one', { minutes: String(minutes) })
+          : t('take_exam.minutes_remaining_other', { minutes: String(minutes) }),
+      );
     },
   });
 
@@ -192,7 +197,7 @@ export function TakeExam() {
                   fontWeight: 600,
                 }}
               >
-                Start Exam
+                {t('take_exam.3')}
               </button>
             )}
             {isExamRunning && (
@@ -209,7 +214,7 @@ export function TakeExam() {
                   fontWeight: 600,
                 }}
               >
-                {submitting ? 'Submitting...' : 'Submit Exam'}
+                {submitting ? t('take_exam.submitting') : t('take_exam.8')}
               </button>
             )}
           </div>
@@ -260,7 +265,11 @@ export function TakeExam() {
             type="submit" 
             disabled={submitting || !isExamRunning}
             style={{ width: '100%', padding: '1rem', backgroundColor: isExamRunning ? 'var(--primary-color)' : '#94a3b8', color: '#fff', border: 'none', borderRadius: 'var(--radius-lg)', cursor: isExamRunning ? (submitting ? 'not-allowed' : 'pointer') : 'not-allowed', fontSize: '1.1rem', fontWeight: 600, transition: 'background-color 0.15s, opacity 0.15s' }}>
-            {submitting ? 'Encrypting & Submitting...' : isExamRunning ? 'Submit Exam' : 'Start Exam to Enable Submit'}
+            {submitting
+              ? t('take_exam.encrypting_submitting')
+              : isExamRunning
+                ? t('take_exam.8')
+                : t('take_exam.start_to_enable_submit')}
           </button>
         </form>
       </div>
@@ -277,7 +286,7 @@ export function TakeExam() {
           textAlign: 'center',
         }}>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
-            Time Remaining
+            {t('take_exam.9')}
           </div>
           <div style={{ 
             fontSize: '2rem', 
@@ -288,7 +297,11 @@ export function TakeExam() {
             {timeRemainingFormatted}
           </div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-            {isExamExpired ? 'TIME EXPIRED' : isExamRunning ? 'EXAM IN PROGRESS' : 'NOT STARTED'}
+            {isExamExpired
+              ? t('take_exam.time_expired')
+              : isExamRunning
+                ? t('take_exam.in_progress')
+                : t('take_exam.not_started')}
           </div>
         </div>
 
@@ -302,11 +315,16 @@ export function TakeExam() {
             marginBottom: '1.5rem',
           }}>
             <h4 style={{ margin: '0 0 0.5rem 0', color: '#dc2626', fontSize: '0.875rem' }}>
-              ⚠️ Security Violations Detected
+              {t('take_exam.security_violations')}
             </h4>
             <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.75rem', color: '#991b1b' }}>
               {sebViolations.slice(-3).map((v, i) => (
-                <li key={i}>{v.type} at {new Date(v.timestamp).toLocaleTimeString()}</li>
+                <li key={i}>
+                  {t('take_exam.violation_at', {
+                    type: String(v.type),
+                    time: formatDateTimeDdMmYyyy(v.timestamp, { timeZoneLabel: 'local' }),
+                  })}
+                </li>
               ))}
             </ul>
           </div>

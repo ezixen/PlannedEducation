@@ -116,7 +116,7 @@ export function TeacherClasses() {
     };
     setClasses(prev => [...prev, newClass]);
     setNewClassName('');
-    showSuccess(`Class "${newClass.name}" created!`);
+    showSuccess(t('teacher_classes.class_created', { name: newClass.name }));
   };
 
   const handleOpenRoster = (cls: any) => {
@@ -129,19 +129,19 @@ export function TeacherClasses() {
   };
 
   const handleQuickReset = async (student: StudentRosterItem) => {
-    if (!window.confirm(`Reset password for ${student.name}?\n\nThe student can immediately type their email at login and set a new password.`)) {
+    if (!window.confirm(t('teacher_classes.reset_confirm', { name: student.name }))) {
       return;
     }
 
     setResettingId(student.id);
     try {
       const res = await apiClient.post(`/auth/teacher/quick-reset/${student.id}`);
-      showSuccess(res.data?.message || `Password reset unlocked for ${student.name}`);
+      showSuccess(res.data?.message || t('teacher_classes.reset_unlocked', { name: student.name }));
       setRosterStudents(prev =>
         prev.map(s => (s.id === student.id ? { ...s, force_password_reset: true } : s))
       );
     } catch (err: any) {
-      showError('Quick reset failed', err.response?.data?.detail || err.message);
+      showError(t('teacher_classes.reset_failed'), err.response?.data?.detail || err.message);
     } finally {
       setResettingId(null);
     }
@@ -152,26 +152,27 @@ export function TeacherClasses() {
     try {
       const payload = isId ? { user_id: userIdOrIdentifier } : { identifier: userIdOrIdentifier };
       const res = await apiClient.post('/auth/teacher-aide/nominate', payload);
-      showSuccess(`Nominated ${res.data.full_name || res.data.username} as Teacher's Aide!`);
+      const aideName = res.data.full_name || res.data.username;
+      showSuccess(t('teacher_classes.nominated', { name: aideName }));
       loadAides();
       loadRegisteredStudents();
       setNominateIdentifier('');
     } catch (err: any) {
-      showError("Nomination failed", err.response?.data?.detail || err.message);
+      showError(t('teacher_classes.nominate_failed'), err.response?.data?.detail || err.message);
     } finally {
       setNominating(false);
     }
   };
 
   const handleRevokeAide = async (userId: string, name: string) => {
-    if (!window.confirm(`Revoke teacher's aide permissions for ${name}?`)) return;
+    if (!window.confirm(t('teacher_classes.revoke_confirm', { name }))) return;
     try {
       await apiClient.post('/auth/teacher-aide/revoke', { user_id: userId });
-      showSuccess(`Revoked aide status for ${name}`);
+      showSuccess(t('teacher_classes.revoked', { name }));
       loadAides();
       loadRegisteredStudents();
     } catch (err: any) {
-      showError("Revocation failed", err.response?.data?.detail || err.message);
+      showError(t('teacher_classes.revoke_failed'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -181,9 +182,9 @@ export function TeacherClasses() {
     try {
       await apiClient.patch('/auth/teacher/settings/student-dms', { allow_student_dms: val });
       setAllowStudentDms(val);
-      showSuccess(val ? "Student direct messaging enabled for your account" : "Student direct messaging disabled (default)");
+      showSuccess(val ? t('teacher_classes.dm_enabled') : t('teacher_classes.dm_disabled'));
     } catch (err: any) {
-      showError("Failed to update DM policy", err.response?.data?.detail || err.message);
+      showError(t('teacher_classes.dm_policy_failed'), err.response?.data?.detail || err.message);
     } finally {
       setUpdatingDmPolicy(false);
     }
@@ -193,10 +194,10 @@ export function TeacherClasses() {
     <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '3rem' }}>
       <div style={{ marginBottom: '1.5rem' }}>
         <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-color)' }}>
-          {t('teacher_classes.title') || 'Classes & Teacher Classroom Management'}
+          {t('teacher_classes.title')}
         </h1>
         <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)' }}>
-          {t('teacher_classes.subtitle') || 'Manage class rosters, emergency student password unlocks, and nominate teacher aides.'}
+          {t('teacher_classes.subtitle')}
         </p>
       </div>
 
@@ -295,18 +296,18 @@ export function TeacherClasses() {
       {/* Create New Class */}
       <div style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', marginBottom: '1.5rem' }}>
         <h3 style={{ margin: '0 0 0.75rem', fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-          {t('teacher_classes.create_new_class') || 'Create New Class'}
+          {t('teacher_classes.create_new_class')}
         </h3>
         <form onSubmit={handleCreateClass} style={{ display: 'flex', gap: '0.75rem' }}>
           <input
             type="text"
             value={newClassName}
             onChange={e => setNewClassName(e.target.value)}
-            placeholder={t('teacher_classes.class_name_placeholder') || 'e.g. Physics 101 - Fall 2026'}
+            placeholder={t('teacher_classes.class_name_placeholder')}
             style={{ flex: 1, padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
           />
           <button type="submit" style={{ padding: '0.65rem 1.25rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600 }}>
-            {t('teacher_classes.create_class') || 'Create Class'}
+            {t('teacher_classes.create_class')}
           </button>
         </form>
       </div>
@@ -319,14 +320,14 @@ export function TeacherClasses() {
             <div key={cls.id} style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <h3 style={{ margin: '0 0 0.25rem 0', fontSize: '1.05rem', color: 'var(--text-color)' }}>{cls.name}</h3>
-                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{studentCount} {t('teacher_classes.enrolled_students') || 'enrolled students'}</p>
+                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem' }}>{studentCount} {t('teacher_classes.enrolled_students')}</p>
               </div>
               <div>
                 <button
                   onClick={() => handleOpenRoster(cls)}
                   style={{ padding: '0.5rem 1rem', backgroundColor: 'var(--bg-color)', color: 'var(--primary-color)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}
                 >
-                  👥 {t('teacher_classes.manage_roster') || 'Manage Roster & Student Actions'}
+                  👥 {t('teacher_classes.manage_roster')}
                 </button>
               </div>
             </div>
@@ -376,7 +377,7 @@ export function TeacherClasses() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Users size={20} style={{ color: 'var(--primary-color)' }} />
                 <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-color)' }}>
-                  {selectedClass.name} — Student Roster
+                  {t('teacher_classes.roster_title', { name: selectedClass.name })}
                 </h3>
               </div>
               <button
@@ -400,12 +401,12 @@ export function TeacherClasses() {
                   lineHeight: 1.4,
                 }}
               >
-                ⚡ <strong>{t('teacher_classes.emergency_reset_title') || 'Emergency Actions:'}</strong> Unlock student test login password, or nominate any enrolled student as your Teacher's Aide.
+                ⚡ <strong>{t('teacher_classes.emergency_reset_title')}</strong> {t('teacher_classes.emergency_reset_desc')}
               </div>
 
               {rosterStudents.length === 0 ? (
                 <p style={{ textAlign: 'center', color: 'var(--text-muted)', margin: '2rem 0' }}>
-                  {t('teacher_dashboard.no_students') || 'No students enrolled.'}
+                  {t('teacher_classes.no_students')}
                 </p>
               ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -427,7 +428,7 @@ export function TeacherClasses() {
                           <span>{student.name}</span>
                           {student.is_teacher_aide && (
                             <span style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem', backgroundColor: '#10b98120', color: '#10b981', borderRadius: '4px', fontWeight: 600 }}>
-                              Teacher's Aide
+                              {t('teacher_classes.aide_badge')}
                             </span>
                           )}
                         </div>
@@ -451,7 +452,7 @@ export function TeacherClasses() {
                               fontWeight: 600,
                             }}
                           >
-                            <CheckCircle2 size={12} /> Unlocked
+                            <CheckCircle2 size={12} /> {t('teacher_classes.unlocked')}
                           </span>
                         )}
 
@@ -459,7 +460,7 @@ export function TeacherClasses() {
                         {!student.is_teacher_aide && (
                           <button
                             onClick={() => handleNominateAide(student.id, true)}
-                            title="Nominate as Teacher's Aide"
+                            title={t('teacher_classes.nominate_aide_title')}
                             style={{
                               display: 'inline-flex',
                               alignItems: 'center',
@@ -475,7 +476,7 @@ export function TeacherClasses() {
                             }}
                           >
                             <UserCheck size={13} />
-                            Nominate Aide
+                            {t('teacher_classes.nominate_aide_btn')}
                           </button>
                         )}
 
@@ -497,7 +498,7 @@ export function TeacherClasses() {
                           }}
                         >
                           <KeyRound size={14} />
-                          {resettingId === student.id ? (t('common.loading') || 'Loading…') : (t('admin.reset_password') || 'Reset Pwd')}
+                          {resettingId === student.id ? t('common.14') : t('admin.reset_password')}
                         </button>
                       </div>
                     </div>

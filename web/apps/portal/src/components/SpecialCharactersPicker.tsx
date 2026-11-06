@@ -289,12 +289,12 @@ export function SpecialCharactersPicker({
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <Sparkles size={15} style={{ color: 'var(--primary-color)' }} />
           <span style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-color)' }}>
-            {t('special_chars.title') || 'Symbols Picker'}
+            {t('special_chars.title')}
           </span>
         </div>
         <button
           onClick={onClose}
-          aria-label="Close Character Picker"
+          aria-label={t('special_chars.close')}
           style={{
             background: 'none',
             border: 'none',
@@ -333,7 +333,7 @@ export function SpecialCharactersPicker({
           />
           <input
             type="text"
-            placeholder="Type 'math', 'chem' + Enter..."
+            placeholder={t('special_chars.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             style={{
@@ -353,7 +353,7 @@ export function SpecialCharactersPicker({
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.15rem' }}>
             <button
               onClick={prevPage}
-              title="Previous Page (Left Arrow)"
+              title={t('special_chars.prev_page')}
               style={{
                 background: 'none',
                 border: '1px solid var(--border-color)',
@@ -371,7 +371,7 @@ export function SpecialCharactersPicker({
             </span>
             <button
               onClick={nextPage}
-              title="Next Page (Right Arrow)"
+              title={t('special_chars.next_page')}
               style={{
                 background: 'none',
                 border: '1px solid var(--border-color)',
@@ -403,7 +403,7 @@ export function SpecialCharactersPicker({
           {categories.map((cat, idx) => {
             const catLabel = cat.id.startsWith('custom-')
               ? cat.name
-              : (t(`special_chars.${cat.id}`) || cat.name);
+              : t(`special_chars.${cat.id}`);
             return (
               <button
                 key={cat.id}
@@ -451,7 +451,7 @@ export function SpecialCharactersPicker({
               fontSize: '0.8rem',
             }}
           >
-            {t('special_chars.empty') || 'No characters found'}
+            {t('special_chars.empty')}
           </div>
         ) : (
           displayedChars.map((char, i) => {

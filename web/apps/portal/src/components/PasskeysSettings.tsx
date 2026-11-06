@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
+import { formatDateDdMmYyyy } from '../lib/dateTime';
 
 interface PasskeyCredential {
   credential_id: string;
@@ -61,7 +62,7 @@ export function PasskeysSettings() {
     try {
       const startRes = await apiClient.post('/auth/webauthn/registration/start');
       const options: WebAuthnRegistrationOptions = startRes.data.registration_options;
-      showInfo("Use your device's biometric/PIN to create a passkey");
+      showInfo(t('passkeys.biometric_prompt'));
 
       const credential = (await navigator.credentials.create({
         publicKey: {
@@ -88,7 +89,7 @@ export function PasskeysSettings() {
       })) as PublicKeyCredential | null;
 
       if (!credential) {
-        throw new Error('No credential returned');
+        throw new Error(t('passkeys.no_credential'));
       }
 
       const attestationResponse = credential.response as AuthenticatorAttestationResponse;
@@ -104,35 +105,31 @@ export function PasskeysSettings() {
       };
 
       await apiClient.post('/auth/webauthn/registration/finish', credentialData);
-      showSuccess('Passkey registered successfully!');
+      showSuccess(t('passkeys.registered_success'));
       setShowRegisterModal(false);
       fetchPasskeys();
     } catch (err: any) {
-      showError('Failed to register passkey.', err.response?.data?.detail || err.message);
+      showError(t('passkeys.register_failed'), err.response?.data?.detail || err.message);
     } finally {
       setRegistering(false);
     }
   };
 
   const handleDelete = async (credentialId: string) => {
-    if (!window.confirm('Are you sure you want to delete this passkey?')) return;
+    if (!window.confirm(t('passkeys.7.1'))) return;
 
     try {
       await apiClient.delete(`/auth/webauthn/credentials/${credentialId}`);
-      showSuccess('Passkey deleted');
+      showSuccess(t('passkeys.deleted'));
       fetchPasskeys();
     } catch (err: any) {
-      showError('Failed to delete passkey.', err.response?.data?.detail || err.message);
+      showError(t('passkeys.delete_failed'), err.response?.data?.detail || err.message);
     }
   };
 
   const formatTransports = (transports: string[] | null): string => {
-    if (!transports || transports.length === 0) return 'Unknown';
+    if (!transports || transports.length === 0) return t('passkeys.unknown_transport');
     return transports.join(', ');
-  };
-
-  const formatDate = (dateStr: string): string => {
-    return new Date(dateStr).toLocaleDateString('en-GB');
   };
 
   const base64urlToBuffer = (base64url: string): ArrayBuffer => {
@@ -176,9 +173,7 @@ export function PasskeysSettings() {
     <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
       <h3>{t('passkeys.1')}</h3>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-        Passkeys are a phishing-resistant alternative to passwords. Use your device's biometric
-        (fingerprint, face ID) or PIN to sign in securely. Passkeys sync across your devices
-        via iCloud Keychain, Google Password Manager, or your password manager.
+        {t('passkeys.intro')}
       </p>
 
       {passkeys.length === 0 ? (
@@ -189,7 +184,7 @@ export function PasskeysSettings() {
             disabled={loading}
             style={{ ...buttonStyle, opacity: loading ? 0.7 : 1 }}
           >
-            {loading ? 'Loading…' : t('passkeys.2')}
+            {loading ? t('common.14') : t('passkeys.2')}
           </button>
         </div>
       ) : (
@@ -210,10 +205,10 @@ export function PasskeysSettings() {
                 {passkeys.map(passkey => (
                   <tr key={passkey.credential_id} style={{ borderBottom: '1px solid var(--border-color)' }}>
                     <td style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                      {formatDate(passkey.created_at)}
+                      {formatDateDdMmYyyy(passkey.created_at)}
                     </td>
                     <td style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                      {passkey.last_used_at ? formatDate(passkey.last_used_at) : 'Never'}
+                      {passkey.last_used_at ? formatDateDdMmYyyy(passkey.last_used_at) : t('passkeys.never')}
                     </td>
                     <td style={{ padding: '0.75rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                       {formatTransports(passkey.transports)}
@@ -226,7 +221,7 @@ export function PasskeysSettings() {
                         onClick={() => handleDelete(passkey.credential_id)}
                         style={dangerButtonStyle}
                       >
-                        Delete
+                        {t('passkeys.7')}
                       </button>
                     </td>
                   </tr>
@@ -239,7 +234,7 @@ export function PasskeysSettings() {
             disabled={loading}
             style={{ ...buttonStyle, marginTop: '1rem' }}
           >
-            {loading ? 'Loading…' : t('passkeys.2')}
+            {loading ? t('common.14') : t('passkeys.2')}
           </button>
         </div>
       )}
@@ -254,18 +249,17 @@ export function PasskeysSettings() {
             </div>
             <div style={{ padding: '1.5rem' }}>
               <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-                Use your device's biometric (fingerprint, face ID) or PIN to create a passkey.
-                This passkey will be synced across your devices via iCloud Keychain, Google Password Manager, or your password manager.
+                {t('passkeys.modal_desc')}
               </p>
               <button
                 onClick={handleRegisterPasskey}
                 disabled={registering}
                 style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--primary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: registering ? 'not-allowed' : 'pointer', fontWeight: 600, fontSize: '1rem' }}
               >
-                {registering ? 'Registering…' : 'Create Passkey'}
+                {registering ? t('passkeys.registering') : t('passkeys.create')}
               </button>
               <button onClick={() => setShowRegisterModal(false)} style={{ width: '100%', padding: '1rem', backgroundColor: 'var(--secondary-color)', color: '#fff', border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontWeight: 600, marginTop: '0.75rem' }}>
-                Cancel
+                {t('common.2')}
               </button>
             </div>
           </div>

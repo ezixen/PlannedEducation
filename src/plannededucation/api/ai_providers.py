@@ -416,7 +416,7 @@ async def get_teacher_ai_provider(user, db) -> AIProvider | None:
                 if validated is None:
                     safe_base = None
                 else:
-                    safe_base, validated_ips = validated  # type: ignore[misc]
+                    safe_base, validated_ips = validated
             else:
                 safe_base = None
         except UnsafeURLError:

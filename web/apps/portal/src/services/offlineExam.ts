@@ -29,7 +29,6 @@ import {
   decryptPayload,
   deriveKey,
   encryptPayload,
-  exportRawKey,
   generateMasterWrappingKey,
   generateSessionKey,
   importMasterWrappingKey,
@@ -234,10 +233,16 @@ interface OfflineExamSchema extends DBSchema {
   };
 }
 
-/** Master: raw wrapping material. Session: wrapped by master (never raw beside ciphertext). */
+/**
+ * Master: non-extractable CryptoKey (structured-clone) preferred.
+ * Legacy base64 `key` is migrated away on first load.
+ * Session: wrapped by master (never raw beside ciphertext).
+ */
 interface StoredCryptoKeyRecord {
   id: string;
-  /** Legacy / master wrapping key material (base64 raw). */
+  /** Non-extractable master CryptoKey persisted via IndexedDB structured clone. */
+  cryptoKey?: CryptoKey;
+  /** @deprecated Legacy base64 raw master — migrated to cryptoKey. */
   key?: string;
   /** Wrapped session key payload (AES-GCM wrap). */
   wrapped?: EncryptedPayload;
@@ -318,7 +323,9 @@ async function getExamDB(): Promise<IDBPDatabase<OfflineExamSchema>> {
 
 /**
  * Device master wrapping key. Used only to wrap/unwrap session keys.
- * Residual risk: master material is still device-local in IndexedDB.
+ * Stored as a non-extractable CryptoKey in IndexedDB (structured clone) —
+ * not as exportable base64 raw bytes. Legacy string `key` records are migrated.
+ * Residual: still device-local (no OS keystore / server-bound recovery yet).
  */
 export async function getMasterKey(): Promise<CryptoKey> {
   if (!masterKeyPromise) {
@@ -326,13 +333,20 @@ export async function getMasterKey(): Promise<CryptoKey> {
       const db = await getExamDB();
       const stored = await db.get('cryptoKeys', 'master');
 
-      if (!stored?.key) {
-        const masterKey = await generateMasterWrappingKey();
-        await db.put('cryptoKeys', { id: 'master', key: await exportRawKey(masterKey) });
-        return masterKey;
+      if (stored?.cryptoKey instanceof CryptoKey) {
+        return stored.cryptoKey;
       }
 
-      return importMasterWrappingKey(stored.key);
+      // Migrate legacy extractable/base64 master → non-extractable CryptoKey in IDB.
+      if (stored?.key) {
+        const migrated = await importMasterWrappingKey(stored.key);
+        await db.put('cryptoKeys', { id: 'master', cryptoKey: migrated });
+        return migrated;
+      }
+
+      const masterKey = await generateMasterWrappingKey();
+      await db.put('cryptoKeys', { id: 'master', cryptoKey: masterKey });
+      return masterKey;
     })();
   }
   return masterKeyPromise;

@@ -16,6 +16,25 @@ export interface ProctoringMediaOptions {
   screenRecordingEnabled: boolean;
 }
 
+/** Browser Shape Detection API (Chrome) — free local face boxes, no cloud. */
+interface BrowserFaceDetector {
+  detect(image: ImageBitmapSource): Promise<Array<{ boundingBox: DOMRectReadOnly }>>;
+}
+
+type FaceDetectionMode = 'unavailable' | 'manual_review' | 'live';
+
+function createBrowserFaceDetector(): BrowserFaceDetector | null {
+  const FaceDetectorCtor = (globalThis as unknown as {
+    FaceDetector?: new (opts?: { fastMode?: boolean; maxDetectedFaces?: number }) => BrowserFaceDetector;
+  }).FaceDetector;
+  if (typeof FaceDetectorCtor !== 'function') return null;
+  try {
+    return new FaceDetectorCtor({ fastMode: true, maxDetectedFaces: 10 });
+  } catch {
+    return null;
+  }
+}
+
 interface ProctoringState {
   consentGiven: boolean;
   sessionActive: boolean;
@@ -27,8 +46,10 @@ interface ProctoringState {
   events: any[];
   violationCount: number;
   maxFaces: number;
-  /** Face/gaze ML is not available; camera is preview-only / manual review. */
-  faceDetectionMode: 'unavailable' | 'manual_review';
+  /** live = Shape Detection API; manual_review = camera preview only; unavailable = no camera. */
+  faceDetectionMode: FaceDetectionMode;
+  /** Latest live face count from local detector (0 when not live). */
+  detectedFaceCount: number;
 }
 
 export function useProctoring(config: ProctoringConfig) {
@@ -44,11 +65,15 @@ export function useProctoring(config: ProctoringConfig) {
     violationCount: 0,
     maxFaces: 1,
     faceDetectionMode: 'unavailable',
+    detectedFaceCount: 0,
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const audioMonitorIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const faceMonitorIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const faceDetectorRef = useRef<BrowserFaceDetector | null>(null);
+  const lastFaceCountRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioAnalyserRef = useRef<AnalyserNode | null>(null);
   const eventQueueRef = useRef<any[]>([]);
@@ -123,6 +148,14 @@ export function useProctoring(config: ProctoringConfig) {
       };
       const session = await proctoringService.startSession(request);
 
+      const detector = options.cameraEnabled ? createBrowserFaceDetector() : null;
+      faceDetectorRef.current = detector;
+      const faceMode: FaceDetectionMode = !options.cameraEnabled
+        ? 'unavailable'
+        : detector
+          ? 'live'
+          : 'manual_review';
+
       setState(prev => ({
         ...prev,
         sessionActive: true,
@@ -130,7 +163,8 @@ export function useProctoring(config: ProctoringConfig) {
         cameraEnabled: options.cameraEnabled,
         microphoneEnabled: options.microphoneEnabled,
         screenRecordingEnabled: options.screenRecordingEnabled,
-        faceDetectionMode: options.cameraEnabled ? 'manual_review' : 'unavailable',
+        faceDetectionMode: faceMode,
+        detectedFaceCount: 0,
       }));
 
       // Start media streams if enabled
@@ -139,7 +173,7 @@ export function useProctoring(config: ProctoringConfig) {
       }
 
       // F-019: pass options explicitly — do not read stale React state
-      startEventRecording(session.id, options);
+      startEventRecording(session.id, options, faceMode);
 
       config.onSessionStarted?.(session.id);
     } catch (err: any) {
@@ -181,7 +215,11 @@ export function useProctoring(config: ProctoringConfig) {
     }
   };
 
-  const startEventRecording = (sessionId: string, options: ProctoringMediaOptions) => {
+  const startEventRecording = (
+    sessionId: string,
+    options: ProctoringMediaOptions,
+    faceMode: FaceDetectionMode
+  ) => {
     queueEvent({
       session_id: sessionId,
       event_type: ProctoringEventType.SESSION_START,
@@ -191,13 +229,15 @@ export function useProctoring(config: ProctoringConfig) {
         camera_enabled: options.cameraEnabled,
         microphone_enabled: options.microphoneEnabled,
         screen_recording_enabled: options.screenRecordingEnabled,
-        face_detection_mode: options.cameraEnabled ? 'manual_review' : 'unavailable',
+        face_detection_mode: faceMode,
       },
     });
 
-    // F-019: do not simulate face/gaze with Math.random.
-    // Emit a single labeled unavailable/manual-review notice; no fake violation evidence.
-    if (options.cameraEnabled) {
+    // F-019: never simulate face/gaze with Math.random.
+    // Prefer local Shape Detection API; otherwise labeled manual-review only.
+    if (options.cameraEnabled && faceMode === 'live') {
+      startFaceDetectionMonitor(sessionId);
+    } else if (options.cameraEnabled) {
       queueEvent({
         session_id: sessionId,
         event_type: ProctoringEventType.FACE_DETECTED,
@@ -217,6 +257,57 @@ export function useProctoring(config: ProctoringConfig) {
     batchIntervalRef.current = setInterval(() => {
       flushEventQueue(sessionId);
     }, 5000);
+  };
+
+  const startFaceDetectionMonitor = (sessionId: string) => {
+    const detector = faceDetectorRef.current;
+    if (!detector) return;
+
+    lastFaceCountRef.current = null;
+    queueEvent({
+      session_id: sessionId,
+      event_type: ProctoringEventType.FACE_DETECTED,
+      severity: 'info',
+      event_data: {
+        face_detection_mode: 'live',
+        available: true,
+        note: 'Local browser FaceDetector active (no cloud inference).',
+      },
+    });
+
+    const checkFaces = async () => {
+      const video = videoRef.current;
+      if (!video || video.readyState < 2) return;
+      try {
+        const faces = await detector.detect(video);
+        const count = Math.min(faces.length, 10);
+        setState((prev) => ({ ...prev, detectedFaceCount: count }));
+        // Emit only on change to avoid flooding the event batch.
+        if (lastFaceCountRef.current === count) return;
+        lastFaceCountRef.current = count;
+        const overMax = count > 1;
+        queueEvent({
+          session_id: sessionId,
+          event_type: ProctoringEventType.FACE_DETECTED,
+          severity: overMax ? 'warning' : 'info',
+          event_data: {
+            face_detection_mode: 'live',
+            face_count: count,
+            timestamp: new Date().toISOString(),
+          },
+        });
+        if (overMax) {
+          setState((prev) => ({ ...prev, violationCount: prev.violationCount + 1 }));
+          config.onViolation?.({ type: 'face_count', face_count: count });
+        }
+      } catch {
+        // Transient detector errors — keep live mode; next tick retries.
+      }
+    };
+
+    faceMonitorIntervalRef.current = setInterval(() => {
+      void checkFaces();
+    }, 2000);
   };
 
   const startAudioLevelMonitor = (sessionId: string) => {
@@ -289,6 +380,12 @@ export function useProctoring(config: ProctoringConfig) {
         clearInterval(audioMonitorIntervalRef.current);
         audioMonitorIntervalRef.current = null;
       }
+      if (faceMonitorIntervalRef.current) {
+        clearInterval(faceMonitorIntervalRef.current);
+        faceMonitorIntervalRef.current = null;
+      }
+      faceDetectorRef.current = null;
+      lastFaceCountRef.current = null;
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);
         batchIntervalRef.current = null;
@@ -318,6 +415,7 @@ export function useProctoring(config: ProctoringConfig) {
         microphoneEnabled: false,
         screenRecordingEnabled: false,
         faceDetectionMode: 'unavailable',
+        detectedFaceCount: 0,
       }));
 
       config.onSessionEnded?.();
@@ -375,6 +473,9 @@ export function useProctoring(config: ProctoringConfig) {
     return () => {
       if (audioMonitorIntervalRef.current) {
         clearInterval(audioMonitorIntervalRef.current);
+      }
+      if (faceMonitorIntervalRef.current) {
+        clearInterval(faceMonitorIntervalRef.current);
       }
       if (batchIntervalRef.current) {
         clearInterval(batchIntervalRef.current);

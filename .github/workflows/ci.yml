@@ -62,13 +62,10 @@ jobs:
           ruff check src/
 
       - name: Run type checking (mypy)
-        # Non-blocking: known SQLAlchemy Column typing burn-down (~99 pre-existing
-        # errors). Keep continue-on-error + || true until the typing debt is cleared,
-        # then remove both and make mypy fail-closed.
-        continue-on-error: true
+        # Fail-closed: overload-typed URL validators cleared the last str-unpack errors.
         run: |
           pip install mypy
-          mypy src/plannededucation --ignore-missing-imports --namespace-packages --explicit-package-bases || true
+          mypy src/plannededucation --ignore-missing-imports --namespace-packages --explicit-package-bases
 
       - name: Run security scan (bandit)
         # Fail closed on Medium+ (severity -ll). No --exit-zero / || true.

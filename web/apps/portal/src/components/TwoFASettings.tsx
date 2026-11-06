@@ -36,9 +36,9 @@ export function TwoFASettings() {
       setSetupRecoveryCodes(response.data.recovery_codes);
       setShowSetup(true);
       setSetupStep('verify');
-      showInfo('Scan the QR code with your authenticator app, then enter the 6-digit code to verify.');
+      showInfo(t('twofa.setup_info'));
     } catch (err: any) {
-      showError('Failed to initiate 2FA setup.', err.response?.data?.detail || err.message);
+      showError(t('twofa.setup_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -46,7 +46,7 @@ export function TwoFASettings() {
 
   const handleConfirm = async () => {
     if (!totpCode || totpCode.length !== 6) {
-      showError('Please enter a valid 6-digit code.');
+      showError(t('twofa.invalid_code_length'));
       return;
     }
     setLoading(true);
@@ -57,9 +57,9 @@ export function TwoFASettings() {
       setTotpCode('');
       setSetupStep('idle');
       await refreshUser?.();
-      showSuccess('2FA enabled successfully! Save your recovery codes.');
+      showSuccess(t('twofa.enabled_success'));
     } catch (err: any) {
-      showError('Invalid TOTP code. Please try again.', err.response?.data?.detail || err.message);
+      showError(t('twofa.invalid_totp'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -68,7 +68,7 @@ export function TwoFASettings() {
   const handleDisable = async () => {
     const code = totpCode || recoveryCode;
     if (!code) {
-      showError('Please enter a TOTP code or recovery code.');
+      showError(t('twofa.code_required'));
       return;
     }
     setLoading(true);
@@ -81,9 +81,9 @@ export function TwoFASettings() {
       setTotpCode('');
       setRecoveryCode('');
       await refreshUser?.();
-      showSuccess('2FA disabled successfully.');
+      showSuccess(t('twofa.disabled_success'));
     } catch (err: any) {
-      showError('Invalid code. Please try again.', err.response?.data?.detail || err.message);
+      showError(t('twofa.invalid_code'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -98,9 +98,9 @@ export function TwoFASettings() {
       });
       setRecoveryCodes(response.data.recovery_codes);
       setShowRecoveryCodes(true);
-      showSuccess('New recovery codes generated. Old codes are now invalid.');
+      showSuccess(t('twofa.recovery_regenerated'));
     } catch (err: any) {
-      showError('Failed to regenerate recovery codes.', err.response?.data?.detail || err.message);
+      showError(t('twofa.recovery_regen_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -142,15 +142,14 @@ export function TwoFASettings() {
       <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
         <h3>{t('twofa.1')}</h3>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          Add an extra layer of security to your account using an authenticator app
-          (Google Authenticator, Authy, Microsoft Authenticator, etc.).
+          {t('twofa.intro')}
         </p>
         <button
           onClick={handleSetup}
           disabled={loading}
           style={{ ...buttonStyle, opacity: loading ? 0.7 : 1 }}
         >
-          {loading ? 'Setting up…' : t('twofa.1')}
+          {loading ? t('twofa.setting_up') : t('twofa.1')}
         </button>
       </div>
     );
@@ -161,11 +160,11 @@ export function TwoFASettings() {
       <h3>{t('twofa.1')}</h3>
       {totpEnabled ? (
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          2FA is <strong>{t('common.42')}</strong>. You can manage your settings below.
+          {t('twofa.enabled_manage', { status: t('common.42') })}
         </p>
       ) : (
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
-          Follow the steps below to complete setting up Two-Factor Authentication.
+          {t('twofa.follow_steps')}
         </p>
       )}
 
@@ -174,20 +173,20 @@ export function TwoFASettings() {
         <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
           <h4>{t('twofa.2')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-            {t("twofa.scan_qr_desc")}
+            {t('twofa.scan_qr_desc')}
           </p>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <img
               src={`data:image/svg+xml;utf8,${encodeURIComponent(
-                `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ffffff"/><rect x="16" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="32" width="16" height="16" fill="#111827"/><rect x="136" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="152" y="32" width="16" height="16" fill="#111827"/><rect x="16" y="136" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="152" width="16" height="16" fill="#111827"/><rect x="80" y="80" width="40" height="40" fill="#111827"/><text x="100" y="192" font-family="monospace" font-size="10" text-anchor="middle" fill="#374151">TOTP QR READY</text></svg>`
+                `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ffffff"/><rect x="16" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="32" width="16" height="16" fill="#111827"/><rect x="136" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="152" y="32" width="16" height="16" fill="#111827"/><rect x="16" y="136" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="152" width="16" height="16" fill="#111827"/><rect x="80" y="80" width="40" height="40" fill="#111827"/><text x="100" y="192" font-family="monospace" font-size="10" text-anchor="middle" fill="#374151">${t('twofa.qr_ready')}</text></svg>`
               )}`}
-              alt="2FA QR Code"
+              alt={t('twofa.qr_alt')}
               data-uri={setupQrCodeUri ? 'configured' : 'empty'}
               style={{ maxWidth: '100%', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)' }}
             />
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
-            {t("twofa.manual_secret_desc")} <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
+            {t('twofa.manual_secret_desc')} <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
           </p>
 
           <h4>{t('twofa.step2_title')}</h4>
@@ -199,13 +198,13 @@ export function TwoFASettings() {
             value={totpCode}
             onChange={e => setTotpCode(e.target.value)}
             maxLength={6}
-            placeholder="123456"
+            placeholder={t('twofa.totp_placeholder')}
             style={{ ...inputStyle, textAlign: 'center', letterSpacing: '0.5rem', fontSize: '1.25rem', maxWidth: '200px' }}
             autoComplete="one-time-code"
           />
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
             <button onClick={handleConfirm} disabled={loading} style={buttonStyle}>
-              {loading ? 'Verifying…' : t('twofa.4')}
+              {loading ? t('twofa.verifying') : t('twofa.4')}
             </button>
             <button onClick={() => setShowSetup(false)} style={secondaryButtonStyle}>
               {t('common.2')}
@@ -215,7 +214,7 @@ export function TwoFASettings() {
           <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
           <h4>{t('twofa.6')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-            <strong>{t('twofa.important_notice')}</strong> {t('twofa.7')} They are the ONLY way to recover access if you lose your 2FA device.
+            <strong>{t('twofa.important_notice')}</strong> {t('twofa.recovery_only_way')}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
             {setupRecoveryCodes.map((code, i) => (
@@ -235,24 +234,24 @@ export function TwoFASettings() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label>
-              TOTP Code (from authenticator app)
+              {t('twofa.totp_label')}
               <input
                 type="text"
                 value={totpCode}
                 onChange={e => setTotpCode(e.target.value)}
                 maxLength={6}
-                placeholder="123456"
+                placeholder={t('twofa.totp_placeholder')}
                 style={{ ...inputStyle, textAlign: 'center', letterSpacing: '0.5rem', fontSize: '1.25rem', maxWidth: '200px' }}
                 autoComplete="one-time-code"
               />
             </label>
             <label>
-              Recovery Code (if you lost your device)
+              {t('twofa.recovery_label')}
               <input
                 type="text"
                 value={recoveryCode}
                 onChange={e => setRecoveryCode(e.target.value.toUpperCase())}
-                placeholder={t("twofa.code_placeholder")}
+                placeholder={t('twofa.code_placeholder')}
                 style={{ ...inputStyle, textTransform: 'uppercase', maxWidth: '200px' }}
               />
             </label>
@@ -264,14 +263,14 @@ export function TwoFASettings() {
               disabled={loading}
               style={dangerButtonStyle}
             >
-              {loading ? 'Disabling…' : t('twofa.9')}
+              {loading ? t('twofa.disabling') : t('twofa.9')}
             </button>
             <button
               onClick={handleRegenerateRecoveryCodes}
               disabled={loading}
               style={secondaryButtonStyle}
             >
-              {loading ? 'Generating…' : t('twofa.10')}
+              {loading ? t('twofa.generating') : t('twofa.regenerate_btn')}
             </button>
           </div>
 
@@ -279,7 +278,7 @@ export function TwoFASettings() {
             <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
               <h4>{t('twofa.new_codes_title')}</h4>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-                <strong>{t('twofa.important_notice')}</strong> {t('twofa.7')} Old codes are now invalid.
+                <strong>{t('twofa.important_notice')}</strong> {t('twofa.old_codes_invalid')}
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
                 {recoveryCodes.map((code, i) => (

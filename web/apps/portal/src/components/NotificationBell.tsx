@@ -4,6 +4,7 @@ import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { useAuth } from '../contexts/AuthContext';
+import { formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
 export interface InAppNotification {
   id: string;
@@ -55,7 +56,7 @@ export function NotificationBell() {
       setUnreadCount(count);
     } catch (err: any) {
       if (err.response?.status !== 401) {
-        showError('Failed to load notifications', err.response?.data?.detail || err.message);
+        showError(t('notifications.load_failed'), err.response?.data?.detail || err.message);
       }
     } finally {
       setLoading(false);
@@ -103,7 +104,7 @@ export function NotificationBell() {
       );
       setUnreadCount((prev) => Math.max(0, prev - 1));
     } catch (err: any) {
-      showError('Could not update notification', err.message);
+      showError(t('notifications.update_failed'), err.message);
     }
   };
 
@@ -112,9 +113,9 @@ export function NotificationBell() {
       await apiClient.post('/notifications/mark-all-read');
       setNotifications((prev) => prev.map((n) => ({ ...n, is_read: true })));
       setUnreadCount(0);
-      showSuccess('All notifications marked as read');
+      showSuccess(t('notifications.mark_all_success'));
     } catch (err: any) {
-      showError('Failed to mark all as read', err.message);
+      showError(t('notifications.mark_all_failed'), err.message);
     }
   };
 
@@ -125,7 +126,7 @@ export function NotificationBell() {
       setNotifications((prev) => prev.filter((n) => n.id !== id));
       fetchUnreadCount();
     } catch (err: any) {
-      showError('Could not delete notification', err.message);
+      showError(t('notifications.delete_failed'), err.message);
     }
   };
 
@@ -134,13 +135,13 @@ export function NotificationBell() {
     setActionLoadingId(notif.id);
     try {
       await apiClient.post(`/notifications/approve-teacher/${notif.id}`);
-      showSuccess('Teacher account approved successfully!');
+      showSuccess(t('notifications.teacher_approved'));
       setNotifications((prev) =>
         prev.map((n) => (n.id === notif.id ? { ...n, is_read: true } : n))
       );
       setUnreadCount((prev) => Math.max(0, prev - 1));
     } catch (err: any) {
-      showError('Failed to approve teacher', err.response?.data?.detail || err.message);
+      showError(t('notifications.teacher_approve_failed'), err.response?.data?.detail || err.message);
     } finally {
       setActionLoadingId(null);
     }
@@ -152,22 +153,22 @@ export function NotificationBell() {
     try {
       const res = await apiClient.post(`/notifications/approve-password-reset/${notif.id}`, {});
       const tempPass = res.data.temporary_password;
-      let username = 'User';
+      let username = t('notifications.default_user');
       if (notif.action_payload) {
         try {
-          username = JSON.parse(notif.action_payload).requester_username || 'User';
+          username = JSON.parse(notif.action_payload).requester_username || t('notifications.default_user');
         } catch {
           // ignore
         }
       }
       setApprovedPassResult({ notifId: notif.id, tempPass, username });
-      showSuccess('Password reset approved! Temporary password generated.');
+      showSuccess(t('notifications.reset_approved'));
       setNotifications((prev) =>
         prev.map((n) => (n.id === notif.id ? { ...n, is_read: true } : n))
       );
       setUnreadCount((prev) => Math.max(0, prev - 1));
     } catch (err: any) {
-      showError('Failed to approve password reset', err.response?.data?.detail || err.message);
+      showError(t('notifications.reset_approve_failed'), err.response?.data?.detail || err.message);
     } finally {
       setActionLoadingId(null);
     }
@@ -474,7 +475,7 @@ export function NotificationBell() {
                           }}
                         >
                           <UserCheck size={13} />
-                          {actionLoadingId === notif.id ? 'Approving...' : 'Approve Teacher Status'}
+                          {actionLoadingId === notif.id ? t('notifications.approving') : t('notifications.approve_teacher')}
                         </button>
                       </div>
                     )}
@@ -505,8 +506,7 @@ export function NotificationBell() {
                     )}
 
                     <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', opacity: 0.75, marginTop: '0.1rem' }}>
-                      {new Date(notif.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })},{' '}
-                      {new Date(notif.created_at).toLocaleDateString()}
+                      {formatDateTimeDdMmYyyy(notif.created_at, { timeZoneLabel: 'local' })}
                     </span>
                   </div>
                 );

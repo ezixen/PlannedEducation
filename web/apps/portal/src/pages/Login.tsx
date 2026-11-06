@@ -140,8 +140,8 @@ export function Login() {
       await loginWithPassword(email, password, rememberMe, totpCode);
       navigate('/');
     } catch (err: any) {
-      const detail = err.response?.data?.detail || err.message || 'Login failed';
-      let message = 'Login failed';
+      const detail = err.response?.data?.detail || err.message || t('login.failed');
+      let message = t('login.failed');
       if (detail === '2FA_REQUIRED') {
         setTotpRequired(true);
         showInfo(t('login.twofa_required'));
@@ -156,13 +156,13 @@ export function Login() {
         setLoading(false);
         return;
       } else if (detail === 'Invalid email/username or password') {
-        message = 'Invalid email or password. Please check your credentials and try again.';
+        message = t('login.invalid_credentials');
       } else if (detail === 'Account is deactivated. Please contact support.') {
-        message = 'This account has been deactivated. Please contact support.';
+        message = t('login.account_deactivated');
       } else if (typeof detail === 'string' && (detail.includes('rate limit') || detail.includes('too many') || detail.includes('temporarily locked'))) {
         message = detail;
       } else {
-        message = detail;
+        message = typeof detail === 'string' ? detail : t('login.failed');
       }
       showError(message);
     } finally {
@@ -192,7 +192,7 @@ export function Login() {
         navigate('/');
       }
     } catch (err: any) {
-      showError('Password reset failed', err.response?.data?.detail || err.message);
+      showError(t('login.reset_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -362,7 +362,7 @@ export function Login() {
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
-                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    aria-label={showPassword ? t('login.hide_password') : t('login.show_password')}
                   >
                     {showPassword ? (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

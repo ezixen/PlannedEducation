@@ -19,6 +19,7 @@ import ipaddress
 import os
 import socket
 from collections.abc import Iterable
+from typing import Literal, overload
 from urllib.parse import urlparse, urlunparse
 
 import httpx
@@ -302,6 +303,28 @@ def _has_credential_exfil_patterns(parsed) -> bool:
     return False
 
 
+@overload
+def validate_outbound_url(
+    url: str | None,
+    *,
+    allow_loopback: bool = False,
+    allowed_schemes: tuple[str, ...] = ("https",),
+    resolve_dns: bool = True,
+    return_ips: Literal[True],
+) -> tuple[str, list[str]]: ...
+
+
+@overload
+def validate_outbound_url(
+    url: str | None,
+    *,
+    allow_loopback: bool = False,
+    allowed_schemes: tuple[str, ...] = ("https",),
+    resolve_dns: bool = True,
+    return_ips: Literal[False] = False,
+) -> str: ...
+
+
 def validate_outbound_url(
     url: str | None,
     *,
@@ -371,6 +394,24 @@ def validate_outbound_url(
     return cleaned
 
 
+@overload
+def validate_ai_base_url(
+    url: str | None,
+    *,
+    provider: str | None = None,
+    return_ips: Literal[True],
+) -> tuple[str, list[str]] | None: ...
+
+
+@overload
+def validate_ai_base_url(
+    url: str | None,
+    *,
+    provider: str | None = None,
+    return_ips: Literal[False] = False,
+) -> str | None: ...
+
+
 def validate_ai_base_url(
     url: str | None,
     *,
@@ -393,20 +434,50 @@ def validate_ai_base_url(
 
     provider_l = (provider or "").lower()
     if provider_l == "ollama":
+        if return_ips:
+            return validate_outbound_url(
+                cleaned,
+                allow_loopback=True,
+                allowed_schemes=("http", "https"),
+                return_ips=True,
+            )
         return validate_outbound_url(
             cleaned,
             allow_loopback=True,
             allowed_schemes=("http", "https"),
-            return_ips=return_ips,
+            return_ips=False,
         )
 
     # Non-ollama custom endpoints: HTTPS only, no private/loopback.
+    if return_ips:
+        return validate_outbound_url(
+            cleaned,
+            allow_loopback=False,
+            allowed_schemes=("https",),
+            return_ips=True,
+        )
     return validate_outbound_url(
         cleaned,
         allow_loopback=False,
         allowed_schemes=("https",),
-        return_ips=return_ips,
+        return_ips=False,
     )
+
+
+@overload
+def validate_package_source_url(
+    url: str | None,
+    *,
+    return_ips: Literal[True],
+) -> tuple[str, list[str]]: ...
+
+
+@overload
+def validate_package_source_url(
+    url: str | None,
+    *,
+    return_ips: Literal[False] = False,
+) -> str: ...
 
 
 def validate_package_source_url(
@@ -415,11 +486,18 @@ def validate_package_source_url(
     return_ips: bool = False,
 ) -> str | tuple[str, list[str]]:
     """Validate admin package-source URLs (HTTPS public hosts only)."""
+    if return_ips:
+        return validate_outbound_url(
+            url,
+            allow_loopback=False,
+            allowed_schemes=("https",),
+            return_ips=True,
+        )
     return validate_outbound_url(
         url,
         allow_loopback=False,
         allowed_schemes=("https",),
-        return_ips=return_ips,
+        return_ips=False,
     )
 
 

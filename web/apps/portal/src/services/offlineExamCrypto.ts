@@ -86,11 +86,15 @@ export async function generateSessionKey(extractable = true): Promise<CryptoKey>
   );
 }
 
-/** Master wrapping key — wrap/unwrap only (not for answer ciphertext). */
+/**
+ * Master wrapping key — wrap/unwrap only (not for answer ciphertext).
+ * Non-extractable so raw key bytes cannot be read from JS after creation.
+ * Persist via IndexedDB structured clone of the CryptoKey itself.
+ */
 export async function generateMasterWrappingKey(): Promise<CryptoKey> {
   return crypto.subtle.generateKey(
     { name: CRYPTO_ALGORITHM, length: KEY_LENGTH },
-    true,
+    false,
     ['wrapKey', 'unwrapKey', 'encrypt', 'decrypt']
   );
 }
@@ -100,12 +104,13 @@ export async function exportRawKey(key: CryptoKey): Promise<string> {
   return bytesToBase64(new Uint8Array(raw));
 }
 
+/** Import legacy base64 master material as a non-extractable wrapping key. */
 export async function importMasterWrappingKey(raw: string): Promise<CryptoKey> {
   return crypto.subtle.importKey(
     'raw',
     base64ToBytes(raw) as BufferSource,
     CRYPTO_ALGORITHM,
-    true,
+    false,
     ['wrapKey', 'unwrapKey', 'encrypt', 'decrypt']
   );
 }

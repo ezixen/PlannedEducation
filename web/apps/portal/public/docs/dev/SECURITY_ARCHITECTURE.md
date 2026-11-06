@@ -71,7 +71,7 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 | Who may start/submit | Server requires `role == "student"` (teacher preview uses explicit `test_mode` + owner checks). | Fixed (F-015) |
 | Time limit | `deadline_at` stored at start (duration × accommodation multiplier). Submit rejects after deadline (UTC-normalized comparisons for SQLite). | Fixed (F-015) |
 | Offline package metadata | Start returns authoritative `exam_package` (duration, `require_seb`, timestamps). Client fails closed if package missing/malformed. | **Fixed (F-016)** |
-| Offline seal crypto | AES-GCM `{ciphertext, iv, version, aad}` seal; answers encrypted at rest in IndexedDB; session keys wrapped (non-extractable in memory); verify/decrypt fail closed. | **Fixed (F-017)** — residual: master wrap material still device-local |
+| Offline seal crypto | AES-GCM `{ciphertext, iv, version, aad}` seal; answers encrypted at rest in IndexedDB; session keys wrapped; master stored as non-extractable `CryptoKey` in IDB (structured clone); verify/decrypt fail closed. | **Fixed (F-017)** — further residual: no OS keystore / server-bound recovery |
 
 ---
 
@@ -124,7 +124,7 @@ Teacher approval defaults are **fail closed** on the `User` model (`teacher_appr
 |---------|--------|
 | Session lookup by submission | **Fixed (F-018)**: shared `_get_session_and_verify`. |
 | Client event pipeline | **Fixed (F-018 remainder)**: allowlisted types/severities, batch/face_count bounds, `event_source=client_telemetry`, violation budget; still telemetry—not sole disciplinary proof. |
-| Portal session UI | **Fixed (F-019)**: consent ≠ start; checkboxes only set options; video+stream attach effect; no `Math.random` face/gaze evidence. |
+| Portal session UI | **Fixed (F-019)**: consent ≠ start; checkboxes only set options; video+stream attach effect; local Shape Detection `FaceDetector` when available (`live`), else labeled `manual_review`; no `Math.random` / no cloud face ML. Gaze still unavailable. |
 | Real local face/gaze ML | **Deferred** — UI ships labeled manual-review / unavailable mode until a real local detector exists. |
 
 ---

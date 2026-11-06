@@ -31,23 +31,23 @@ const labelStyle: React.CSSProperties = {
   color: 'var(--text-color)',
 };
 
-const THEME_OPTIONS: { value: ThemeColor; label: string }[] = [
-  { value: 'skyward', label: 'Skyward' },
-  { value: 'carbon_cyan', label: 'Carbon Cyan' },
-  { value: 'enterprise_blue', label: 'Enterprise Blue' },
-  { value: 'blush_silver', label: 'Blush Silver' },
-  { value: 'matrix_green', label: 'Matrix Green' },
-  { value: 'black_orange', label: 'Black Orange' },
-  { value: 'sunset_cabin', label: 'Sunset Cabin' },
-  { value: 'aurora_night', label: 'Aurora Night' },
-  { value: 'comic_stage', label: 'Comic Stage' },
-  { value: 'ocean_calm', label: 'Ocean Calm' },
+const THEME_OPTIONS: { value: ThemeColor; labelKey: string }[] = [
+  { value: 'skyward', labelKey: 'settings.theme_skyward' },
+  { value: 'carbon_cyan', labelKey: 'settings.theme_carbon_cyan' },
+  { value: 'enterprise_blue', labelKey: 'settings.theme_enterprise_blue' },
+  { value: 'blush_silver', labelKey: 'settings.theme_blush_silver' },
+  { value: 'matrix_green', labelKey: 'settings.theme_matrix_green' },
+  { value: 'black_orange', labelKey: 'settings.theme_black_orange' },
+  { value: 'sunset_cabin', labelKey: 'settings.theme_sunset_cabin' },
+  { value: 'aurora_night', labelKey: 'settings.theme_aurora_night' },
+  { value: 'comic_stage', labelKey: 'settings.theme_comic_stage' },
+  { value: 'ocean_calm', labelKey: 'settings.theme_ocean_calm' },
 ];
 
-const RADIUS_OPTIONS: { value: ThemeRadius; label: string }[] = [
-  { value: 'square', label: 'Square Edges' },
-  { value: 'soft', label: 'Soft Edges' },
-  { value: 'round', label: 'Round Edges' },
+const RADIUS_OPTIONS: { value: ThemeRadius; labelKey: string }[] = [
+  { value: 'square', labelKey: 'settings.radius_square' },
+  { value: 'soft', labelKey: 'settings.radius_soft' },
+  { value: 'round', labelKey: 'settings.radius_round' },
 ];
 
 export function Settings() {
@@ -90,7 +90,7 @@ export function Settings() {
       await refreshUser?.();
       showSuccess(t('settings.dm_visibility_saved'));
     } catch (err: any) {
-      showError(err.response?.data?.detail || err.message || 'Failed to update visibility');
+      showError(err.response?.data?.detail || err.message || t('settings.visibility_update_failed'));
     } finally {
       setSavingDmVisibility(false);
     }
@@ -100,13 +100,13 @@ export function Settings() {
     e.preventDefault();
 
     if (newPassword && newPassword !== confirmNewPassword) {
-      showError('New passwords do not match.');
+      showError(t('settings.passwords_do_not_match'));
       return;
     }
 
     // Require current password when changing password
     if (newPassword && !currentPassword) {
-      showError('Current password is required to change your password.');
+      showError(t('settings.current_password_required'));
       return;
     }
 
@@ -126,9 +126,9 @@ export function Settings() {
       await refreshUser?.();
       setNewPassword('');
       setConfirmNewPassword('');
-      showSuccess('Profile updated successfully!');
+      showSuccess(t('settings.profile_updated'));
     } catch (err: any) {
-      showError('Failed to update profile.', err.response?.data?.detail || err.message);
+      showError(t('settings.profile_update_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -353,7 +353,7 @@ export function Settings() {
                   style={inputStyle}
                 >
                   {THEME_OPTIONS.map(opt => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    <option key={opt.value} value={opt.value}>{t(opt.labelKey)}</option>
                   ))}
                 </select>
               </label>
@@ -366,7 +366,7 @@ export function Settings() {
                   style={inputStyle}
                 >
                   {RADIUS_OPTIONS.map(opt => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    <option key={opt.value} value={opt.value}>{t(opt.labelKey)}</option>
                   ))}
                 </select>
               </label>

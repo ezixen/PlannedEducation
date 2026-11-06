@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useProctoring } from '../hooks/useProctoring';
 import { GDPRConsentModal } from './GDPRConsentModal';
 import { useI18n } from '../contexts/I18nContext';
+import { formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
 interface ProctoringSessionProps {
   examId: string;
@@ -209,6 +210,22 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           {t('proctoring.face_detection_unavailable')}
         </div>
       )}
+      {proctoring.faceDetectionMode === 'live' && (
+        <div
+          style={{
+            marginBottom: '1rem',
+            padding: '0.75rem 1rem',
+            backgroundColor: '#ecfdf5',
+            border: '1px solid #10b981',
+            borderRadius: '6px',
+            fontSize: '0.875rem',
+            color: '#065f46',
+          }}
+          role="status"
+        >
+          {t('proctoring.face_detection_live')}
+        </div>
+      )}
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
@@ -218,8 +235,12 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
           <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{t('proctoring.violations')}</div>
         </div>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>{proctoring.maxFaces}</div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{t('proctoring.max_faces')}</div>
+          <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
+            {proctoring.faceDetectionMode === 'live' ? proctoring.detectedFaceCount : proctoring.maxFaces}
+          </div>
+          <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+            {proctoring.faceDetectionMode === 'live' ? t('proctoring.faces_detected') : t('proctoring.max_faces')}
+          </div>
         </div>
         <div style={{ padding: '1rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', textAlign: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>{proctoring.events.length}</div>
@@ -232,7 +253,9 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
         <div style={{ marginBottom: '1.5rem' }}>
           <h4 style={{ marginBottom: '0.5rem' }}>{t('proctoring.camera_preview')}</h4>
           <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-            {t('proctoring.manual_review_preview')}
+            {proctoring.faceDetectionMode === 'live'
+              ? t('proctoring.live_detection_preview')
+              : t('proctoring.manual_review_preview')}
           </p>
           <div style={{ width: '100%', maxWidth: '400px', aspectRatio: '4/3', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
             <video
@@ -274,7 +297,7 @@ export function ProctoringSession({ examId, submissionId, onSessionComplete }: P
                 </span>
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
-                {new Date(event.timestamp).toLocaleTimeString()}
+                {formatDateTimeDdMmYyyy(event.timestamp, { timeZoneLabel: 'local' })}
               </div>
               {event.event_data && (
                 <pre style={{ fontSize: '0.7rem', marginTop: '0.25rem', overflow: 'auto' }}>

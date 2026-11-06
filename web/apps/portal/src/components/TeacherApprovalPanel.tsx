@@ -3,6 +3,7 @@ import { UserCheck, UserX, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
+import { formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
 export interface PendingTeacher {
   id: string;
@@ -26,7 +27,7 @@ export function TeacherApprovalPanel() {
       const res = await apiClient.get('/admin/pending-teachers');
       setTeachers(res.data);
     } catch (err: any) {
-      showError('Failed to load pending teachers', err.response?.data?.detail || err.message);
+      showError(t('admin.load_pending_failed'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -40,10 +41,10 @@ export function TeacherApprovalPanel() {
     setProcessingId(id);
     try {
       await apiClient.post(`/admin/teachers/${id}/approve`);
-      showSuccess(t('admin.approve_success', { username }) || `Approved teacher status for ${username}`);
+      showSuccess(t('admin.approve_success', { username }));
       setTeachers((prev) => prev.filter((item) => item.id !== id));
     } catch (err: any) {
-      showError(t('admin.approval_failed') || 'Approval failed', err.response?.data?.detail || err.message);
+      showError(t('admin.approval_failed'), err.response?.data?.detail || err.message);
     } finally {
       setProcessingId(null);
     }
@@ -53,10 +54,10 @@ export function TeacherApprovalPanel() {
     setProcessingId(id);
     try {
       await apiClient.post(`/admin/teachers/${id}/deny`);
-      showSuccess(t('admin.deny_success', { username }) || `Declined teacher privileges for ${username} (role set to student)`);
+      showSuccess(t('admin.deny_success', { username }));
       setTeachers((prev) => prev.filter((item) => item.id !== id));
     } catch (err: any) {
-      showError(t('admin.denial_failed') || 'Denial failed', err.response?.data?.detail || err.message);
+      showError(t('admin.denial_failed'), err.response?.data?.detail || err.message);
     } finally {
       setProcessingId(null);
     }
@@ -79,7 +80,7 @@ export function TeacherApprovalPanel() {
             🎓 {t('admin.teacher_approvals')}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>
-            Verify self-registered teachers to protect exam and module integrity. Pending teachers cannot create or publish exams.
+            {t('admin.teacher_approvals_desc')}
           </p>
         </div>
         <button
@@ -164,8 +165,8 @@ export function TeacherApprovalPanel() {
                   {t('admin.username')} <strong>{teacher.username}</strong> • {t('admin.email')} <strong>{teacher.email}</strong>
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
-                  {t('admin.registered_on')} {new Date(teacher.created_at).toLocaleDateString()} at{' '}
-                  {new Date(teacher.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  {t('admin.registered_on')}{' '}
+                  {formatDateTimeDdMmYyyy(teacher.created_at, { timeZoneLabel: 'local' })}
                 </div>
               </div>
 
@@ -208,7 +209,7 @@ export function TeacherApprovalPanel() {
                   }}
                 >
                   <UserCheck size={15} />
-                  {processingId === teacher.id ? 'Approving...' : t('admin.approve')}
+                  {processingId === teacher.id ? t('admin.approving') : t('admin.approve')}
                 </button>
               </div>
             </div>

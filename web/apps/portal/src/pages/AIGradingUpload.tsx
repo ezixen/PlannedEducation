@@ -3,6 +3,7 @@ import { useI18n } from '../contexts/I18nContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { apiClient } from '../api';
+import { formatDateDdMmYyyy } from '../lib/dateTime';
 import {
   Upload,
   ShieldCheck,
@@ -576,7 +577,9 @@ export function AIGradingUpload() {
                       {sub.exam_title} {sub.subject ? `• ${sub.subject.toUpperCase()}` : ''}
                     </div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                      {sub.submitted_at ? new Date(sub.submitted_at).toLocaleDateString() : '—'}
+                      {sub.submitted_at
+                        ? formatDateDdMmYyyy(sub.submitted_at, { timeZoneLabel: 'local' })
+                        : t('common.em_dash')}
                     </div>
                   </div>
                 </div>

@@ -104,6 +104,12 @@ describe('offlineExamCrypto AES-GCM payload', () => {
 });
 
 describe('offlineExamCrypto key wrap', () => {
+  it('generates a non-extractable master wrapping key', async () => {
+    const master = await generateMasterWrappingKey();
+    expect(master.extractable).toBe(false);
+    await expect(crypto.subtle.exportKey('raw', master)).rejects.toThrow();
+  });
+
   it('wraps session key and unwraps as non-extractable', async () => {
     const master = await generateMasterWrappingKey();
     const session = await generateSessionKey(true);

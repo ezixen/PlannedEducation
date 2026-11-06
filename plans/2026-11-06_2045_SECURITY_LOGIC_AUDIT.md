@@ -1322,8 +1322,9 @@ Updated: 2026-11-06 ~22:00 Europe/Budapest
 
 ### Still open (do not document as complete)
 - Remaining deferred High/Medium items in the F-016+ table below
-- **F-019 residual**: real local face/gaze ML detector (manual-review mode ships)
-- **F-017 residual**: platform keystore / server-bound master key (device-local wrapping material remains)
+- **F-044**: bulk i18n / dd/mm/yyyy sweep (in progress)
+- **F-017 further residual**: OS platform keystore / server-bound master recovery (non-extractable IDB CryptoKey ships)
+- **F-019 further residual**: gaze tracking / non-Chrome face ML (Shape Detection live mode ships)
 
 ---
 
@@ -1365,15 +1366,15 @@ Updated: 2026-11-06 ~22:05 Europe/Budapest
 
 | Finding | Status | Notes |
 |---------|--------|-------|
-| F-017 residual (platform keystore) | **Open** | Seal/at-rest crypto fixed; master wrapping material still device-local in IDB |
-| F-019 residual (real face ML) | **Open** | State machine + manual-review mode done; real local detector still future work |
+| F-017 residual (platform keystore) | **Fixed (scoped)** | Master stored as non-extractable `CryptoKey` via IDB structured clone (legacy base64 migrated). Still device-local — no OS keystore / server-bound recovery. |
+| F-019 residual (real face ML) | **Fixed (scoped)** | Chrome Shape Detection `FaceDetector` when available (`live` mode); else honest `manual_review`. No Math.random / no cloud ML. Gaze still unavailable. |
 | F-022 residual (DNS rebinding / IP pin) | **Fixed** | `assert_resolution_still_safe` + `make_pinned_async_client`; package/AI consumers pin IPs |
 | F-024 residual (legacy archive migrate) | **Fixed** | `POST /admin/archives/migrate-legacy-encryption` + `reencrypt_legacy_plaintext_row` |
 | F-006 residual (WebAuthn login) | **Fixed** | `/auth/webauthn/login/start|finish` + Login passkey button |
 | F-033 residual (backup AEAD) | **Fixed** | PEBAK1 AES-GCM via `BACKUP_MASTER_KEY` (`.db.gz.enc`) |
 | F-043 residual (script CSP) | **Fixed (scoped)** | Prod script-src drops `'unsafe-inline'`/`'unsafe-eval'`; style-src still needs inline CSS |
-| F-044 (i18n literals) | **Open** | Bulk i18n sweep — low security impact |
-| F-046 (CI pass-through) | **Fixed (scoped)** | Bandit `-ll` fail-closed; oxlint `-D correctness -D suspicious`; mypy still non-blocking |
+| F-044 (i18n literals) | **Fixed (scoped)** | `lib/dateTime.ts` dd/mm/yyyy helpers; audited pages (Login/Settings/TakeExam/2FA/Passkeys/NotificationBell/TeacherClasses/SpecialChars/TeacherApproval/AIGrading) use `t()` + helpers. Broader app surfaces (Admin/Chat) still have leftover locale dates. |
+| F-046 (CI pass-through) | **Fixed** | Bandit `-ll` fail-closed; oxlint `-D correctness -D suspicious`; mypy fail-closed (URL validator overloads cleared last 2 errors) |
 | F-048 residual (`/sync`) | **Fixed** | `routes_sync` + teacher LAN URL allowlist |
 | F-049 residual (per-device refresh) | **Fixed** | `RefreshSession` table + rotate/reuse revoke + logout |
 | F-050 (test coverage gaps) | **Partial** | New focused suites; full negative matrix still ongoing |
