@@ -3,156 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planned Education - Audio Player</title>
+    <title>Audio Player - PlannedEducation</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
         }
-        .container {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        .player-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
             padding: 40px;
-            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
             width: 90%;
             text-align: center;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 8px;
+        h1 { color: #667eea; margin-bottom: 8px; font-size: 24px; }
+        .subtitle { color: #777; margin-bottom: 32px; font-size: 14px; }
+        .audio-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 16px;
+            padding: 32px;
         }
-        p {
-            color: #666;
-            margin-bottom: 32px;
+        audio { width: 100%; margin-bottom: 24px; }
+        .controls { display: flex; flex-direction: column; gap: 16px; }
+        .control-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
         }
-        audio {
-            width: 100%;
-            margin-top: 20px;
-        }
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 16px;
-            border-radius: 12px;
-        }
-        .play-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 32px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .play-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-        .play-button:active {
-            transform: translateY(0);
-        }
-        .status-message {
-            margin-top: 16px;
+        .control-label {
             font-size: 14px;
+            color: #555;
+            min-width: 60px;
+        }
+        input[type="range"] {
+            width: 220px;
+            cursor: pointer;
+        }
+        .time-display {
+            font-size: 12px;
             color: #888;
-            min-height: 20px;
+            min-width: 60px;
+            text-align: center;
+        }
+        .controls-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #888;
+            line-height: 1.4;
+        }
+        .note-icon { color: #667eea; margin-right: 6px; }
+        .footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/branding/PElogo_128x128.jpg" alt="Planned Education Logo" class="logo">
-        <h1>Planned Education 🎓</h1>
-        <p>Education, Empathy, Love</p>
-        
-        <audio id="audioPlayer" controls preload="auto" style="display: none;">
-            <source src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        
-        <button id="playButton" class="play-button" onclick="togglePlay()">
-            ▶ Play Audio
-        </button>
-        
-        <p style="margin-top: 16px;">
-            <a href="https://github.com/ezixen/PlannedEducation" style="color: #667eea; text-decoration: none;">← Back to PlannedEducation</a>
-        </p>
+    <div class="player-container">
+        <h1>Education · Empathy · Love</h1>
+        <div class="subtitle">PlannedEducation Audio Player</div>
+
+        <div class="audio-card">
+            <audio id="audioPlayer" preload="auto" controls>
+                <source src="https://raw.githubusercontent.com/ezixen/PlannedEducation/dev/docs/assets/audio/speech_only_education_empathy_love.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <div class="controls">
+                <div class="control-row">
+                    <span class="control-label">⏱ Seek</span>
+                    <input type="range" id="seekSlider" min="0" max="100" value="0">
+                    <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+                </div>
+                <div class="control-row">
+                    <span class="control-label">🔊 Volume</span>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                </div>
+                <div class="controls-note">
+                    <span class="note-icon">💡</span>
+                    Browsers may block autoplay with sound. If audio doesn't start automatically, click the play button above and unmute using the volume slider.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Built with ☕ and ♥ for equitable education. -ezixen
+        </div>
     </div>
 
     <script>
         const audio = document.getElementById('audioPlayer');
-        const playButton = document.getElementById('playButton');
-        const statusMessage = document.getElementById('statusMessage');
-        let isPlaying = false;
+        const volumeSlider = document.getElementById('volumeSlider');
+        const seekSlider = document.getElementById('seekSlider');
+        const timeDisplay = document.getElementById('timeDisplay');
 
-        // Try autoplay with muted first (browsers allow muted autoplay)
-        function tryMutedAutoplay() {
+        audio.volume = parseFloat(volumeSlider.value);
+
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = parseFloat(this.value);
+        });
+
+        seekSlider.addEventListener('input', function() {
+            const time = (parseFloat(this.value) / 100) * audio.duration;
+            audio.currentTime = time;
+        });
+
+        audio.addEventListener('timeupdate', function() {
+            if (!audio.seeking) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                seekSlider.value = progress;
+                timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+            }
+        });
+
+        let seeking = false;
+        seekSlider.addEventListener('mousedown', function() { seeking = true; });
+        seekSlider.addEventListener('mouseup', function() { seeking = false; audio.currentTime = (parseFloat(this.value) / 100) * audio.duration; });
+
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60);
+            return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function tryAutoplay() {
             audio.muted = true;
-            audio.play().then(() => {
-                // Muted autoplay worked, show unmute button
-                playButton.textContent = '🔇 Unmute';
-                isPlaying = true;
-                statusMessage.textContent = 'Playing (muted) - click to unmute';
-                playButton.onclick = toggleMute;
-            }).catch(() => {
-                // Autoplay blocked, show play button
-                playButton.textContent = '▶ Play Audio';
-                statusMessage.textContent = 'Click play to start the audio';
-                playButton.onclick = togglePlay;
+            audio.play().then(function() {}).catch(function(error) {
+                console.log('Autoplay blocked:', error);
             });
         }
 
-        function togglePlay() {
-            if (audio.paused) {
-                audio.muted = false;
-                audio.play().then(() => {
-                    isPlaying = true;
-                    playButton.textContent = '⏸ Pause';
-                    statusMessage.textContent = 'Playing...';
-                    playButton.onclick = togglePlay;
-                }).catch(e => {
-                    statusMessage.textContent = 'Could not play audio. Please try again.';
-                });
-            } else {
-                audio.pause();
-                isPlaying = false;
-                playButton.textContent = '▶ Play Audio';
-                statusMessage.textContent = 'Paused';
-                playButton.onclick = togglePlay;
-            }
-        }
-
-        function toggleMute() {
-            audio.muted = !audio.muted;
-            if (audio.muted) {
-                playButton.textContent = '🔇 Unmute';
-                statusMessage.textContent = 'Muted - click to unmute';
-            } else {
-                playButton.textContent = '🔊 Mute';
-                statusMessage.textContent = 'Playing with sound';
-            }
-        }
-
-        // Update button when audio ends
-        audio.addEventListener('ended', () => {
-            isPlaying = false;
-            playButton.textContent = '▶ Play Again';
-            statusMessage.textContent = 'Audio ended - click to play again';
-            playButton.onclick = togglePlay;
-        });
-
-        // Try muted autoplay on load
-        window.addEventListener('load', tryMutedAutoplay);
+        tryAutoplay();
     </script>
 </body>
 </html>
