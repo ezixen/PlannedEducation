@@ -758,3 +758,33 @@ class OCRReviewApprove(BaseModel):
     status: str = Field(..., pattern=r"^(approved|rejected|corrected)$")
     corrected_text: str | None = None
     review_notes: str | None = None
+
+# ── Teacher's Aide Schemas ───────────────────────────────────────────────────
+
+class TeacherAideApprove(BaseModel):
+    user_id: str
+
+
+class TeacherAideRevoke(BaseModel):
+    user_id: str
+
+
+class ExamShareCreate(BaseModel):
+    exam_id: str
+    shared_with_id: str
+    permission_level: str = Field(default='correct', pattern=r'^(view|correct|full)$')
+    share_notes: str | None = None
+
+
+class ExamShareResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    exam_id: str
+    shared_by_teacher_id: str
+    shared_with_id: str
+    permission_level: str
+    share_notes: str | None = None
+    status: str
+    created_at: datetime
+    completed_at: datetime | None = None
+

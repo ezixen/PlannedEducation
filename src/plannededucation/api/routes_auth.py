@@ -1575,3 +1575,258 @@ def delete_webauthn_credential(
         return {"message": "Passkey deleted"}
     except (json.JSONDecodeError, TypeError):
         raise HTTPException(status_code=404, detail="Credential not found") from None
+
+
+# ── Teacher's Aide Management ────────────────────────────────────────────────
+# Teachers can approve teacher's aides (helpers) who can assist with grading
+# exams but cannot submit grades to students - only the teacher can do that.
+
+
+@router.post("/teacher-aide/approve", response_model=schemas.UserResponse)
+def approve_teacher_aide(
+    payload: schemas.TeacherAideApprove,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Approve a user as a teacher's aide.
+
+    Only teachers can approve teacher's aides. The aide gets limited
+    permissions to help with grading but cannot submit grades to students.
+    """
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=403,
+            detail="Only teachers and admins can approve teacher's aides"
+        )
+
+    aide = db.query(models.User).filter(models.User.id == payload.user_id).first()
+    if not aide:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if aide.role != "teacher":
+        raise HTTPException(
+            status_code=400,
+            detail="Only teacher accounts can be approved as teacher's aides"
+        )
+
+    if aide.is_teacher_aide:
+        raise HTTPException(status_code=400, detail="User is already a teacher's aide")
+
+    aide.is_teacher_aide = True
+    aide.aide_approved_by = current_user.id
+    aide.aide_approved_at = datetime.now(UTC)
+    db.commit()
+    db.refresh(aide)
+
+    return aide
+
+
+@router.post("/teacher-aide/revoke", response_model=schemas.UserResponse)
+def revoke_teacher_aide(
+    payload: schemas.TeacherAideRevoke,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Revoke teacher's aide status from a user."""
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=403,
+            detail="Only teachers and admins can revoke teacher's aide status"
+        )
+
+    aide = db.query(models.User).filter(models.User.id == payload.user_id).first()
+    if not aide:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if not aide.is_teacher_aide:
+        raise HTTPException(status_code=400, detail="User is not a teacher's aide")
+
+    # Only the teacher who approved can revoke, or an admin
+    if current_user.role != "admin" and aide.aide_approved_by != current_user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the teacher who approved this aide can revoke it"
+        )
+
+    aide.is_teacher_aide = False
+    aide.aide_approved_by = None
+    aide.aide_approved_at = None
+    db.commit()
+    db.refresh(aide)
+
+    return aide
+
+
+@router.get("/teacher-aide/my-aides", response_model=list[schemas.UserResponse])
+def list_my_aides(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List teacher's aides approved by the current teacher."""
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=403,
+            detail="Only teachers and admins can view their aides"
+        )
+
+    aides = db.query(models.User).filter(
+        models.User.aide_approved_by == current_user.id,
+        models.User.is_teacher_aide == True
+    ).all()
+
+    return aides
+
+
+@router.get("/teacher-aide/my-teacher", response_model=schemas.UserResponse | None)
+def get_my_approving_teacher(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Get the teacher who approved this teacher's aide."""
+    if not current_user.is_teacher_aide:
+        raise HTTPException(
+            status_code=400,
+            detail="User is not a teacher's aide"
+        )
+
+    teacher = db.query(models.User).filter(
+        models.User.id == current_user.aide_approved_by
+    ).first()
+
+    if not teacher:
+        raise HTTPException(status_code=404, detail="Approving teacher not found")
+
+    return teacher
+
+
+@router.get("/teacher-aide/shared-exams", response_model=list[schemas.ExamShareResponse])
+def list_shared_exams(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List exams shared with the current user (teacher's aide or teacher)."""
+    shares = db.query(models.ExamShare).filter(
+        models.ExamShare.shared_with_id == current_user.id,
+        models.ExamShare.status == "active"
+    ).all()
+
+    return shares
+
+
+@router.post("/teacher-aide/share-exam", response_model=schemas.ExamShareResponse)
+def share_exam_with_aide(
+    payload: schemas.ExamShareCreate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Share an exam with a teacher's aide or another teacher for collaborative grading."""
+    if current_user.role not in ("teacher", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=403,
+            detail="Only teachers and admins can share exams"
+        )
+
+    exam = db.query(models.Exam).filter(models.Exam.id == payload.exam_id).first()
+    if not exam:
+        raise HTTPException(status_code=404, detail="Exam not found")
+
+    if exam.teacher_id != current_user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the teacher who owns the exam can share it"
+        )
+
+    aide = db.query(models.User).filter(models.User.id == payload.shared_with_id).first()
+    if not aide:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if aide.role not in ("teacher", "teacher_aide"):
+        raise HTTPException(
+            status_code=400,
+            detail="Can only share exams with teachers or teacher's aides"
+        )
+
+    # Check if already shared
+    existing = db.query(models.ExamShare).filter(
+        models.ExamShare.exam_id == payload.exam_id,
+        models.ExamShare.shared_with_id == payload.shared_with_id,
+        models.ExamShare.status == "active"
+    ).first()
+
+    if existing:
+        raise HTTPException(status_code=400, detail="Exam already shared with this user")
+
+    share = models.ExamShare(
+        exam_id=payload.exam_id,
+        shared_by_teacher_id=current_user.id,
+        shared_with_id=payload.shared_with_id,
+        permission_level=payload.permission_level or "correct",
+        share_notes=payload.share_notes,
+    )
+    db.add(share)
+    db.commit()
+    db.refresh(share)
+
+    return share
+
+
+@router.delete("/teacher-aide/share-exam/{share_id}")
+def unshare_exam(
+    share_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Stop sharing an exam with a teacher's aide or teacher."""
+    share = db.query(models.ExamShare).filter(models.ExamShare.id == share_id).first()
+    if not share:
+        raise HTTPException(status_code=404, detail="Share not found")
+
+    if share.shared_by_teacher_id != current_user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the teacher who shared the exam can unshare it"
+        )
+
+    share.status = "revoked"
+    db.commit()
+
+    return {"message": "Exam unshared successfully"}
+
+
+@router.get("/teacher-aide/exams-shared-with-me", response_model=list[schemas.ExamShareResponse])
+def list_exams_shared_with_me(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List exams shared with the current user (teacher's aide or teacher)."""
+    shares = db.query(models.ExamShare).filter(
+        models.ExamShare.shared_with_id == current_user.id,
+        models.ExamShare.status == "active"
+    ).all()
+
+    return shares
+
+
+@router.post("/teacher-aide/exams/{share_id}/complete", response_model=schemas.ExamShareResponse)
+def mark_exam_share_complete(
+    share_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Mark an exam share as complete (teacher's aide finished correcting)."""
+    share = db.query(models.ExamShare).filter(models.ExamShare.id == share_id).first()
+    if not share:
+        raise HTTPException(status_code=404, detail="Share not found")
+
+    if share.shared_with_id != current_user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the person the exam was shared with can mark it complete"
+        )
+
+    share.status = "completed"
+    share.completed_at = datetime.now(UTC)
+    db.commit()
+    db.refresh(share)
+
+    return share

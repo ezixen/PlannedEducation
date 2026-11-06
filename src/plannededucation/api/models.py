@@ -46,6 +46,7 @@ class RelationshipStatus(enum.StrEnum):
 class UserRole(enum.StrEnum):
     student = "student"
     teacher = "teacher"
+    teacher_aide = "teacher_aide"  # Teacher's aide - approved helper for teachers
     parent = "parent"
     admin = "admin"
 
@@ -102,6 +103,12 @@ class User(Base):
     # Teacher approval (teachers who self-register require admin approval before accessing exams/modules)
     teacher_approved = Column(Boolean, default=True, server_default="1", nullable=False)
 
+    # Teacher's Aide - approved helper for teachers
+    is_teacher_aide = Column(Boolean, default=False, server_default="0", nullable=False)
+    aide_approved_by = Column(String(36), nullable=True)  # Teacher who approved this aide
+    aide_approved_at = Column(DateTime(timezone=True), nullable=True)  # When approved
+    aide_approved_by_teacher_id = Column(String(36), nullable=True)  # Teacher who approved
+
     # Classroom Emergency Password Reset (teachers can unlock student account right before tests)
     force_password_reset = Column(Boolean, default=False, server_default="0", nullable=False)
     reset_by_teacher_id = Column(String(36), nullable=True)
@@ -129,6 +136,31 @@ class User(Base):
         "ClassGroup", back_populates="teacher", cascade="all, delete-orphan"
     )
     packages = relationship("Package", back_populates="author", cascade="all, delete-orphan")
+    # Teacher's Aide relationships
+    aided_by_teacher = relationship(
+        "User",
+        foreign_keys=[aide_approved_by_teacher_id],
+        remote_side=[id],
+        back_populates="aided_teachers",
+    )
+    aided_teachers = relationship(
+        "User",
+        foreign_keys=[aide_approved_by_teacher_id],
+        remote_side=[id],
+        back_populates="aided_by_teacher",
+    )
+    # Shared exams - exams shared with this teacher/aide for collaborative grading
+    shared_exams = relationship(
+        "ExamShare",
+        back_populates="shared_with",
+        cascade="all, delete-orphan",
+    )
+    # Exams shared by this teacher with other teachers/aides
+    shared_exams_with_others = relationship(
+        "ExamShare",
+        back_populates="shared_by",
+        cascade="all, delete-orphan",
+    )
 # User Sessions (for device tracking and "Remember Me")
     sessions = relationship("UserSession", back_populates="user", cascade="all, delete-orphan")
 
@@ -225,6 +257,10 @@ class Exam(Base):
     )
     submissions = relationship(
         "ExamSubmission", back_populates="exam", cascade="all, delete-orphan"
+    )
+    # Exams shared with teacher's aides and other teachers for collaborative grading
+    shared_with_others = relationship(
+        "ExamShare", back_populates="exam", cascade="all, delete-orphan"
     )
 
 
@@ -870,5 +906,74 @@ register_encrypted_model(
         "corrected_text",  # Corrected text may contain PII
         "review_notes",    # Teacher notes may contain PII
         "words_json",      # Word-level OCR data may contain PII
+    ],
+)
+
+
+# ── Exam Share Model ─────────────────────────────────────────────────────────
+# Allows teachers to share exams with teacher's aides and other teachers
+# for collaborative grading. The shared exam can be corrected but not
+# submitted back to students - only the original teacher can do that.
+
+
+class ExamShare(Base):
+    """Record of an exam shared with a teacher's aide or another teacher
+    for collaborative grading/correction."""
+    __tablename__ = "exam_shares"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    exam_id = Column(
+        String(36), ForeignKey("exams.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    # Who shared the exam (the teacher who owns it)
+    shared_by_teacher_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    # Who the exam is shared with (teacher's aide or another teacher)
+    shared_with_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    # What level of access the shared user has
+    # "view" - can view only
+    # "correct" - can correct/grade but not submit
+    # "full" - can do everything except submit to students
+    permission_level = Column(
+        String(20), default="correct", nullable=False
+    )
+    # Status of the share
+    status = Column(
+        String(20), default="active", nullable=False
+    )  # active, revoked, completed
+    # When the share was created
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    # When the share was completed (all corrections done)
+    completed_at = Column(DateTime(timezone=True), nullable=True)
+    # Notes from the teacher about what to correct
+    share_notes = Column(Text, nullable=True)
+
+    # Relationships
+    exam = relationship("Exam", back_populates="shared_with_others")
+    shared_by = relationship(
+        "User", foreign_keys=[shared_by_teacher_id],
+        back_populates="shared_exams_with_others",
+    )
+    shared_with = relationship(
+        "User", foreign_keys=[shared_with_id],
+        back_populates="shared_exams",
+    )
+
+    __table_args__ = (
+        UniqueConstraint("exam_id", "shared_with_id", name="uq_exam_share"),
+    )
+
+
+# Register encrypted models for ExamShare
+register_encrypted_model(
+    ExamShare,
+    [
+        "share_notes",  # Teacher notes may contain PII
     ],
 )
