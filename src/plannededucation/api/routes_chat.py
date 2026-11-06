@@ -4,10 +4,11 @@ import json
 import os
 
 import jwt  # PyJWT for JWT encoding/decoding
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, status
 from sqlalchemy.orm import Session
 
-from . import auth, database, models
+from . import auth, database, models, schemas
+from .routes_auth import get_current_user
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -257,3 +258,217 @@ async def exam_chat_endpoint(websocket: WebSocket, exam_id: str):
             manager.disconnect(websocket, exam_id)
     finally:
         db.close()
+
+
+# ── Teacher's Lounge REST Endpoints ──────────────────────────────────────────
+
+
+def _require_teacher_or_admin(current_user: models.User) -> None:
+    if current_user.role not in ("teacher", "teacher_aide", "admin", "superadmin"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only teachers, teacher's aides, and admins can access the lounge",
+        )
+
+
+@router.get("/lounge/messages", response_model=list[schemas.TeacherLoungeMessageResponse])
+def list_lounge_messages(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """List all top-level teacher's lounge messages with their replies."""
+    _require_teacher_or_admin(current_user)
+
+    messages = (
+        db.query(models.TeacherLoungeMessage)
+        .filter(models.TeacherLoungeMessage.parent_id.is_(None))
+        .order_by(models.TeacherLoungeMessage.is_pinned.desc(), models.TeacherLoungeMessage.created_at.desc())
+        .all()
+    )
+
+    result = []
+    for msg in messages:
+        sender = db.query(models.User).filter(models.User.id == msg.sender_id).first()
+        result.append(
+            schemas.TeacherLoungeMessageResponse(
+                id=msg.id,
+                sender_id=msg.sender_id,
+                sender_name=sender.full_name or sender.username if sender else None,
+                content=msg.content,
+                parent_id=msg.parent_id,
+                is_pinned=msg.is_pinned,
+                created_at=msg.created_at,
+                updated_at=msg.updated_at,
+                replies=[],
+            )
+        )
+
+    # Load replies for each message
+    for item in result:
+        replies = (
+            db.query(models.TeacherLoungeMessage)
+            .filter(models.TeacherLoungeMessage.parent_id == item.id)
+            .order_by(models.TeacherLoungeMessage.created_at.asc())
+            .all()
+        )
+        item.replies = [
+            schemas.TeacherLoungeMessageResponse(
+                id=r.id,
+                sender_id=r.sender_id,
+                sender_name=(
+                    db.query(models.User).filter(models.User.id == r.sender_id).first().full_name
+                    or db.query(models.User).filter(models.User.id == r.sender_id).first().username
+                ),
+                content=r.content,
+                parent_id=r.parent_id,
+                is_pinned=r.is_pinned,
+                created_at=r.created_at,
+                updated_at=r.updated_at,
+                replies=[],
+            )
+            for r in replies
+        ]
+
+    return result
+
+
+@router.post("/lounge/messages", response_model=schemas.TeacherLoungeMessageResponse)
+def create_lounge_message(
+    payload: schemas.TeacherLoungeMessageCreate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Post a new message to the teacher's lounge."""
+    _require_teacher_or_admin(current_user)
+
+    if payload.parent_id:
+        parent = db.query(models.TeacherLoungeMessage).filter(
+            models.TeacherLoungeMessage.id == payload.parent_id
+        ).first()
+        if not parent:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Parent message not found",
+            )
+
+    message = models.TeacherLoungeMessage(
+        sender_id=current_user.id,
+        parent_id=payload.parent_id,
+        content=payload.content,
+    )
+    db.add(message)
+    db.commit()
+    db.refresh(message)
+
+    return schemas.TeacherLoungeMessageResponse(
+        id=message.id,
+        sender_id=message.sender_id,
+        sender_name=current_user.full_name or current_user.username,
+        content=message.content,
+        parent_id=message.parent_id,
+        is_pinned=message.is_pinned,
+        created_at=message.created_at,
+        updated_at=message.updated_at,
+        replies=[],
+    )
+
+
+@router.put("/lounge/messages/{message_id}", response_model=schemas.TeacherLoungeMessageResponse)
+def update_lounge_message(
+    message_id: str,
+    payload: schemas.TeacherLoungeMessageUpdate,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Update a lounge message (only the sender can edit)."""
+    _require_teacher_or_admin(current_user)
+
+    message = db.query(models.TeacherLoungeMessage).filter(
+        models.TeacherLoungeMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    if message.sender_id != current_user.id and current_user.role not in ("admin", "superadmin"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only the sender or an admin can edit this message",
+        )
+
+    message.content = payload.content
+    db.commit()
+    db.refresh(message)
+
+    sender = db.query(models.User).filter(models.User.id == message.sender_id).first()
+    return schemas.TeacherLoungeMessageResponse(
+        id=message.id,
+        sender_id=message.sender_id,
+        sender_name=sender.full_name or sender.username if sender else None,
+        content=message.content,
+        parent_id=message.parent_id,
+        is_pinned=message.is_pinned,
+        created_at=message.created_at,
+        updated_at=message.updated_at,
+        replies=[],
+    )
+
+
+@router.delete("/lounge/messages/{message_id}")
+def delete_lounge_message(
+    message_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Delete a lounge message (only the sender or an admin)."""
+    _require_teacher_or_admin(current_user)
+
+    message = db.query(models.TeacherLoungeMessage).filter(
+        models.TeacherLoungeMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    if message.sender_id != current_user.id and current_user.role not in ("admin", "superadmin"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only the sender or an admin can delete this message",
+        )
+
+    db.delete(message)
+    db.commit()
+
+    return {"status": "success", "message": "Message deleted"}
+
+
+@router.post("/lounge/messages/{message_id}/pin")
+def pin_lounge_message(
+    message_id: str,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Pin or unpin a lounge message (teachers and admins only)."""
+    _require_teacher_or_admin(current_user)
+
+    message = db.query(models.TeacherLoungeMessage).filter(
+        models.TeacherLoungeMessage.id == message_id
+    ).first()
+    if not message:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Message not found",
+        )
+
+    message.is_pinned = not message.is_pinned
+    db.commit()
+
+    return {
+        "status": "success",
+        "message": f"Message {'pinned' if message.is_pinned else 'unpinned'}",
+        "is_pinned": message.is_pinned,
+    }

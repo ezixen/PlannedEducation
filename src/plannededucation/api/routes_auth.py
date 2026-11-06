@@ -1582,6 +1582,46 @@ def delete_webauthn_credential(
 # exams but cannot submit grades to students - only the teacher can do that.
 
 
+@router.post("/teacher-aide/request", response_model=schemas.UserResponse)
+def request_teacher_aide(
+    payload: schemas.TeacherAideRequest,
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Request teacher's aide status.
+
+    Any authenticated user can request to become a teacher's aide.
+    The request creates an in-app notification for administrators to review.
+    A teacher or admin must approve the request via /teacher-aide/approve.
+    """
+    if current_user.is_teacher_aide:
+        raise HTTPException(
+            status_code=400,
+            detail="User is already a teacher's aide",
+        )
+
+    # Notify all admins about the aide request
+    admins = db.query(models.User).filter(
+        (models.User.role == "admin") | (models.User.role == "superadmin")
+    ).all()
+
+    for admin in admins:
+        notif = models.InAppNotification(
+            user_id=admin.id,
+            title="Teacher's Aide Request",
+            message=f"{current_user.full_name or current_user.username} ({current_user.email}) "
+                    f"requested teacher's aide status. {payload.message or 'No message provided.'}",
+            type="aide_request",
+            link="/teacher-aide",
+            action_payload=json.dumps({"requester_id": current_user.id}),
+        )
+        db.add(notif)
+
+    db.commit()
+
+    return current_user
+
+
 @router.post("/teacher-aide/approve", response_model=schemas.UserResponse)
 def approve_teacher_aide(
     payload: schemas.TeacherAideApprove,

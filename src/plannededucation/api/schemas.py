@@ -769,6 +769,10 @@ class TeacherAideRevoke(BaseModel):
     user_id: str
 
 
+class TeacherAideRequest(BaseModel):
+    message: str | None = Field(None, max_length=512)
+
+
 class ExamShareCreate(BaseModel):
     exam_id: str
     shared_with_id: str
@@ -787,4 +791,32 @@ class ExamShareResponse(BaseModel):
     status: str
     created_at: datetime
     completed_at: datetime | None = None
+
+
+# ── Teacher's Lounge Schemas ─────────────────────────────────────────────────
+
+
+class TeacherLoungeMessageBase(BaseModel):
+    content: str = Field(..., min_length=1, max_length=4000)
+    parent_id: str | None = None
+
+
+class TeacherLoungeMessageCreate(TeacherLoungeMessageBase):
+    pass
+
+
+class TeacherLoungeMessageUpdate(BaseModel):
+    content: str = Field(..., min_length=1, max_length=4000)
+
+
+class TeacherLoungeMessageResponse(TeacherLoungeMessageBase):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    sender_id: str
+    sender_name: str | None = None
+    is_pinned: bool
+    created_at: datetime
+    updated_at: datetime
+    replies: list["TeacherLoungeMessageResponse"] = []
 

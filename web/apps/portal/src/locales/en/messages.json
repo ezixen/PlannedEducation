@@ -1368,5 +1368,15 @@
   "ocr.correct_and_approve": "Correct & Approve",
   "ocr.reject": "Reject",
   "ocr.handwritten": "Handwritten",
-  "ocr.word_confidence": "Word Confidence"
+  "ocr.word_confidence": "Word Confidence",
+  "special_chars.title": "Special Characters",
+  "special_chars.insert": "Insert character",
+  "special_chars.math": "Math Symbols",
+  "special_chars.greek": "Greek Letters",
+  "special_chars.foreign": "Foreign Language",
+  "special_chars.accents": "Accented Characters",
+  "special_chars.search": "Search symbols…",
+  "special_chars.empty": "No symbols found",
+  "special_chars.category_all": "All Categories",
+  "special_chars.copy": "Copied!"
 }

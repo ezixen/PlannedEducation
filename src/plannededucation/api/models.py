@@ -977,3 +977,36 @@ register_encrypted_model(
         "share_notes",  # Teacher notes may contain PII
     ],
 )
+
+
+# ── Teacher's Lounge Messages ────────────────────────────────────────────────
+# Teacher-to-teacher messaging in the staff lounge. Visible only to teachers
+# and admins. Used for collaboration, sharing resources, and discussions.
+
+
+class TeacherLoungeMessage(Base):
+    """A message posted in the teacher's lounge by a teacher or admin.
+
+    Visible to all teachers and admins. Supports threaded replies via parent_id.
+    """
+
+    __tablename__ = "teacher_lounge_messages"
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    sender_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"),
+        index=True, nullable=False,
+    )
+    parent_id = Column(
+        String(36), ForeignKey("teacher_lounge_messages.id", ondelete="CASCADE"),
+        index=True, nullable=True,
+    )
+    content = Column(Text, nullable=False)
+    is_pinned = Column(Boolean, default=False, nullable=False, index=True)
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False)
+
+    # Relationships
+    sender = relationship("User", foreign_keys=[sender_id])
+    parent = relationship("TeacherLoungeMessage", remote_side=[id], back_replies="replies")
+    replies = relationship("TeacherLoungeMessage", back_populates="parent")
