@@ -492,7 +492,7 @@ else
     # Initialize Database Tables
     print_info "Initializing database tables..."
     export PYTHONPATH="$INSTALL_DIR/src"
-    "$PYTHON_EXE" -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; Base.metadata.create_all(bind=engine); print('Database tables initialized successfully!')"
+    "$PYTHON_EXE" -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database tables initialized successfully!')"
     print_success "Database tables created"
 
     # Setup Frontend

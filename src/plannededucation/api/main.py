@@ -184,6 +184,12 @@ async def lifespan(app: FastAPI):
         logger.warning(f"Requests OpenTelemetry instrumentation skipped: {exc}")
 
     Base.metadata.create_all(bind=engine)
+    # Additive column upgrades for existing DBs (create_all never ALTERs)
+    try:
+        from .schema_ensure import ensure_schema
+        ensure_schema(engine)
+    except Exception as exc:
+        logger.warning(f"Schema ensure skipped: {exc}")
 
     # Start background midnight autobackup task (when not in test mode)
     backup_task = None

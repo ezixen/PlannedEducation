@@ -602,7 +602,7 @@ if ($useDocker) {
     # Initialize Database Tables
     Write-Info "Initializing database tables..."
     $env:PYTHONPATH = Join-Path $InstallDir "src"
-    & $pythonExe -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; Base.metadata.create_all(bind=engine); print('Database tables initialized successfully!')"
+    & $pythonExe -c "import plannededucation.api.models; from plannededucation.api.database import Base, engine; from plannededucation.api.schema_ensure import ensure_schema; Base.metadata.create_all(bind=engine); ensure_schema(engine); print('Database tables initialized successfully!')"
     if ($LASTEXITCODE -ne 0) {
         Write-ErrorMsg "Database initialization failed!"
         exit 1
