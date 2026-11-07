@@ -318,6 +318,25 @@ try {
         }
         Write-Success "Removed $removedCount installed files via manifest"
         Write-Info "Any files you added to $InstallDir after installation have been preserved"
+        # Platform-owned leftovers that must always go (often incomplete in the file
+        # manifest because Git creates pack/index files after install_manifest runs).
+        # Leaving .git behind makes the next install.ps1 treat the dir as an existing
+        # repo, skip cloning, and fail to restore package.json / source trees.
+        $platformOwned = @(
+            ".git", ".venv", "node_modules", "src", "web", "scripts", "docs", "tests",
+            "plans", "monitoring", "pepkg", "curriculum_docs", ".github", ".copilot",
+            "UnitedEarth", "artifacts"
+        )
+        foreach ($name in $platformOwned) {
+            $ownedPath = Join-Path $InstallDir $name
+            if (Test-Path -LiteralPath $ownedPath) {
+                Write-Info "Removing platform leftover: $name"
+                cmd.exe /c "rmdir /s /q `"$ownedPath`"" 2>$null
+                if (Test-Path -LiteralPath $ownedPath) {
+                    Remove-Item -LiteralPath $ownedPath -Recurse -Force -ErrorAction SilentlyContinue
+                }
+            }
+        }
     } else {
         # Full removal: remove everything (no manifest to guide us)
         Write-Warning "No manifest found - removing ALL files in $InstallDir"

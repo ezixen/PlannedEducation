@@ -416,11 +416,21 @@ $script:ProtectedDataNames = @(
     "backups", "artifacts", "data"
 )
 
-if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
-    Write-Info "Cloning PlannedEducation repository into $InstallDir..."
-    # Clone into a temp sibling directory first: $InstallDir may already contain logs\ (the
+function Test-InstallTreeHealthy {
+    param([string]$Dir)
+    return (
+        (Test-Path (Join-Path $Dir "src\plannededucation")) -and
+        (Test-Path (Join-Path $Dir "web\apps\portal\package.json")) -and
+        (Test-Path (Join-Path $Dir "web\apps\portal\src"))
+    )
+}
+
+function Invoke-FreshRepoClone {
+    param([string]$Dir)
+    Write-Info "Cloning PlannedEducation repository into $Dir..."
+    # Clone into a temp sibling directory first: $Dir may already contain logs\ (the
     # installer logs from the very first step), and git refuses to clone into a non-empty dir.
-    $cloneTmp = "$InstallDir.clone-tmp"
+    $cloneTmp = "$Dir.clone-tmp"
     if (Test-Path $cloneTmp) { Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue }
     $prevEap = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
@@ -444,7 +454,7 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
             Write-Info "Preserving existing runtime data: $($_.Name)"
             return
         }
-        $dest = Join-Path $InstallDir $_.Name
+        $dest = Join-Path $Dir $_.Name
         if ($_.PSIsContainer) {
             Copy-Item -Path $_.FullName -Destination $dest -Recurse -Force
         } else {
@@ -453,35 +463,62 @@ if (-not (Test-Path (Join-Path $InstallDir ".git"))) {
     }
     Remove-Item $cloneTmp -Recurse -Force -ErrorAction SilentlyContinue
     Write-Success "Repository cloned successfully"
+}
+
+$hasGit = Test-Path (Join-Path $InstallDir ".git")
+$treeHealthy = Test-InstallTreeHealthy -Dir $InstallDir
+if ($hasGit -and -not $treeHealthy) {
+    Write-Warning "Existing Git checkout at $InstallDir is incomplete (missing source/portal package files)."
+    Write-Warning "Removing broken .git metadata and performing a fresh clone..."
+    cmd.exe /c "rmdir /s /q `"$(Join-Path $InstallDir '.git')`"" 2>$null
+    $hasGit = $false
+}
+
+if (-not $hasGit) {
+    Invoke-FreshRepoClone -Dir $InstallDir
 } else {
     Write-Info "Repository already exists in $InstallDir, pulling latest stable changes from origin/main..."
     Push-Location $InstallDir
-    try {
-        git fetch origin 2>&1 | Out-Null
-        git checkout main 2>&1 | Out-Null
-        git pull origin main 2>&1 | Out-Null
-    } catch {
-        Write-Warning "Could not pull from remote; continuing with existing checkout."
-    }
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    & git fetch origin 2>&1 | Out-Null
+    $fetchOk = ($LASTEXITCODE -eq 0)
+    & git checkout main 2>&1 | Out-Null
+    $checkoutOk = ($LASTEXITCODE -eq 0)
+    & git pull origin main 2>&1 | Out-Null
+    $pullOk = ($LASTEXITCODE -eq 0)
+    $ErrorActionPreference = $prevEap
     Pop-Location
-    Write-Success "Repository ready"
+    if (-not ($fetchOk -and $checkoutOk -and $pullOk) -or -not (Test-InstallTreeHealthy -Dir $InstallDir)) {
+        Write-Warning "Could not refresh existing checkout into a healthy tree; re-cloning..."
+        cmd.exe /c "rmdir /s /q `"$(Join-Path $InstallDir '.git')`"" 2>$null
+        Invoke-FreshRepoClone -Dir $InstallDir
+    } else {
+        Write-Success "Repository ready"
+    }
+}
+
+if (-not (Test-InstallTreeHealthy -Dir $InstallDir)) {
+    Write-ErrorMsg "Install tree is missing required source files after clone/pull. Aborting."
+    exit 1
 }
 
 # If running installer from a local checkout with newer scripts/files, sync key source directories
 if ($scriptRepoRoot -and (Test-Path (Join-Path $scriptRepoRoot "src\plannededucation")) -and ($scriptRepoRoot -ne $InstallDir)) {
     Write-Info "Syncing latest workspace source files from $scriptRepoRoot to $InstallDir..."
     $syncPairs = @(
-        @{ From = "src";                     To = "src" },
-        @{ From = "web\apps\portal\src";     To = "web\apps\portal\src" },
-        @{ From = "web\apps\portal\public";  To = "web\apps\portal\public" },
-        @{ From = "scripts";                 To = "scripts" },
-        @{ From = "docs";                    To = "docs" }
+        @{ From = "src";                To = "src";                ExtraXd = @("__pycache__", "*.egg-info") },
+        @{ From = "web\apps\portal";    To = "web\apps\portal";    ExtraXd = @("node_modules", "dist", ".vite") },
+        @{ From = "scripts";            To = "scripts";            ExtraXd = @() },
+        @{ From = "docs";               To = "docs";               ExtraXd = @() }
     )
     foreach ($pair in $syncPairs) {
         $dest = Join-Path $InstallDir $pair.To
         New-Item -ItemType Directory -Path $dest -Force | Out-Null
+        $xd = @()
+        foreach ($x in $pair.ExtraXd) { $xd += @("/XD", $x) }
         # robocopy copies directory contents reliably (no leaf/container ambiguity); exit codes < 8 are success
-        & robocopy (Join-Path $scriptRepoRoot $pair.From) $dest /E /NFL /NDL /NJH /NJS /NP /XD __pycache__ "*.egg-info" | Out-Null
+        & robocopy (Join-Path $scriptRepoRoot $pair.From) $dest /E /NFL /NDL /NJH /NJS /NP @xd | Out-Null
         if ($LASTEXITCODE -ge 8) {
             Write-ErrorMsg "Failed to sync $($pair.From) (robocopy exit $LASTEXITCODE)"
             exit 1
@@ -824,8 +861,23 @@ if ($useDocker) {
     Remove-Item (Join-Path $portalDir ".env.production") -Force -ErrorAction SilentlyContinue
     [System.IO.File]::WriteAllText($portalEnv, "VITE_API_URL=http://127.0.0.1:${ApiPort}`n", (New-Object System.Text.UTF8Encoding($false)))
     [System.IO.File]::WriteAllText($portalEnvLocal, "VITE_API_URL=http://127.0.0.1:${ApiPort}`n", (New-Object System.Text.UTF8Encoding($false)))
-    npm install --silent --no-audit --no-fund
+    npm install --no-audit --no-fund
+    if ($LASTEXITCODE -ne 0) {
+        Pop-Location
+        Write-ErrorMsg "npm install failed (exit $LASTEXITCODE). See output above and logs\install_error.log."
+        exit 1
+    }
     npm run build
+    if ($LASTEXITCODE -ne 0) {
+        Pop-Location
+        Write-ErrorMsg "npm run build failed (exit $LASTEXITCODE). See output above and logs\install_error.log."
+        exit 1
+    }
+    if (-not (Test-Path (Join-Path $portalDir "dist\index.html"))) {
+        Pop-Location
+        Write-ErrorMsg "Frontend build finished but dist\index.html is missing."
+        exit 1
+    }
     Pop-Location
     Write-Success "Frontend built successfully"
 
