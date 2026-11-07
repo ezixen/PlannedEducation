@@ -69,8 +69,10 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
       onClick={onClose}
     >
       <div
+        data-pe-modal="true"
+        className="pe-modal-surface"
         style={{
-          backgroundColor: 'var(--card-bg)',
+          backgroundColor: 'var(--panel-bg, var(--card-bg, #ffffff))',
           borderRadius: '12px',
           padding: '2rem',
           maxWidth: '600px',
@@ -78,6 +80,7 @@ export function GDPRConsentModal({ examId, onConsentGiven, onClose, isOpen }: GD
           maxHeight: '90vh',
           overflowY: 'auto',
           boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+          opacity: 1,
         }}
         onClick={e => e.stopPropagation()}
       >

@@ -10,6 +10,7 @@ import {
 } from '../services/packages';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
+import { InfoTip } from './InfoTip';
 
 interface PackageManagerProps {
   examId?: string;
@@ -315,7 +316,10 @@ export function PackageManager({ examId, onPackageImported }: PackageManagerProp
   return (
     <div style={{ padding: '1.5rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h2 style={{ margin: 0 }}>{t('packages.manager_title')}</h2>
+        <h2 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {t('packages.manager_title')}
+          <InfoTip tipKey="info.packages_manager" />
+        </h2>
         {examId && (
           <button
             onClick={() => setShowExportModal(true)}

@@ -118,8 +118,8 @@ def test_teacher_self_registration_pending_approval(client, db):
     assert exam_res2.status_code == 201
 
 
-def test_admin_emergency_backup_codes(client, db):
-    """Admin can view backup codes status and generate fresh emergency backup codes."""
+def test_admin_emergency_backup_codes_removed(client, db):
+    """Admin dashboard must not offer regenerating emergency backup codes."""
     admin = db.query(models.User).filter(models.User.email == "admin_backup@example.com").first()
     if not admin:
         client.post("/auth/register", json={
@@ -140,18 +140,11 @@ def test_admin_emergency_backup_codes(client, db):
     })
     headers = {"Authorization": f"Bearer {login.json()['access_token']}"}
 
-    # Generate fresh emergency codes
     gen_res = client.post("/admin/backup-codes/generate", headers=headers)
-    assert gen_res.status_code == 200
-    data = gen_res.json()
-    assert "recovery_codes" in data
-    assert len(data["recovery_codes"]) == 5
+    assert gen_res.status_code == 404
 
-    # Check status endpoint
     status_res = client.get("/admin/backup-codes", headers=headers)
-    assert status_res.status_code == 200
-    assert status_res.json()["has_backup_codes"] is True
-    assert status_res.json()["active_codes_count"] == 5
+    assert status_res.status_code == 404
 
 
 def test_notifications_unread_count_and_lifecycle(client, db):

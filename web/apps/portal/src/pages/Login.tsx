@@ -5,6 +5,7 @@ import { useToast } from '../contexts/ToastContext';
 import { ForgotPasswordModal } from '../components/ForgotPasswordModal';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
+import { LanguageSelector } from '../components/LanguageSelector';
 import { offlineMasterPrfExtension, syncOfflineMasterWithPasskeyPrf } from '../services/offlineExam';
 
 function base64urlToBuffer(base64url: string): ArrayBuffer {
@@ -210,7 +211,10 @@ export function Login() {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100dvh', padding: '1rem', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', boxSizing: 'border-box' }}>
+    <div style={{ display: 'flex', minHeight: '100dvh', padding: '1rem', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', boxSizing: 'border-box', position: 'relative' }}>
+      <div style={{ position: 'absolute', top: 'max(1rem, env(safe-area-inset-top))', right: 'max(1rem, env(safe-area-inset-right))', zIndex: 5 }}>
+        <LanguageSelector variant="pill" />
+      </div>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center', boxSizing: 'border-box' }}>
         <div style={{ marginBottom: '1.5rem' }}>
           <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 700, color: 'var(--primary-color)' }}>{t('login.title')}</h1>

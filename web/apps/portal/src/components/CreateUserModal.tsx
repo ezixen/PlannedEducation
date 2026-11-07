@@ -95,8 +95,10 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
       }}
     >
       <div
+        data-pe-modal="true"
+        className="pe-modal-surface"
         style={{
-          backgroundColor: 'var(--sidebar-bg, #ffffff)',
+          backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))',
           color: 'var(--text-color, #1e293b)',
           borderRadius: 'var(--radius-lg, 12px)',
           border: '1px solid var(--border-color, #e2e8f0)',
@@ -104,6 +106,7 @@ export function CreateUserModal({ isOpen, onClose, onUserCreated }: CreateUserMo
           width: '100%',
           padding: '1.75rem',
           boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+          opacity: 1,
         }}
       >
         {createdUser ? (

@@ -113,8 +113,10 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
       }}
     >
       <div
+        data-pe-modal="true"
+        className="pe-modal-surface"
         style={{
-          backgroundColor: 'var(--sidebar-bg)',
+          backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))',
           borderRadius: 'var(--radius-lg)',
           border: '1px solid var(--border-color)',
           maxWidth: '1080px',
@@ -123,6 +125,8 @@ export const TeacherCorrectionModal: React.FC<TeacherCorrectionModalProps> = ({
           display: 'flex',
           flexDirection: 'column',
           boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+          opacity: 1,
+          overflow: 'hidden',
         }}
       >
         {/* Modal Header */}

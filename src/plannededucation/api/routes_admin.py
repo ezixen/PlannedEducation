@@ -26,8 +26,6 @@ from .deployment_config import (
     write_settings_bundle_to_path,
 )
 from .routes_auth import (
-    _decode_recovery_codes,
-    _encode_recovery_codes,
     _validate_password,
     get_current_user,
     get_password_hash,
@@ -235,6 +233,40 @@ def admin_reset_user_password(
         temporary_password=new_pwd,
         reset_2fa=payload.reset_2fa,
         message=f"Password for {user.username} was reset successfully.",
+    )
+
+
+@router.post("/users/{user_id}/reset-2fa", response_model=schemas.AdminReset2FAResponse)
+def admin_reset_user_2fa(
+    user_id: str,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(require_admin),
+):
+    """
+    Clear TOTP + recovery codes + WebAuthn for a user without changing their password.
+    Use when the user still knows their password but lost the authenticator device.
+    """
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if (user.is_admin or user.role == "admin") and user.id != current_user.id and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Superadmin privilege required to reset administrator accounts")
+
+    user.totp_enabled = False
+    user.totp_secret = None
+    user.recovery_codes = None
+    user.webauthn_credentials = None
+    user.webauthn_challenge = None
+    user.webauthn_challenge_expires = None
+    db.commit()
+
+    return schemas.AdminReset2FAResponse(
+        status="success",
+        user_id=user.id,
+        username=user.username,
+        email=user.email,
+        message=f"2FA and passkeys for {user.username} were cleared. Password was not changed.",
     )
 
 
@@ -678,44 +710,10 @@ def deny_teacher(
     return {"status": "success", "message": f"Teacher request for {user.username} denied; role set to student."}
 
 
-# ── Admin Emergency Backup Codes ──────────────────────────────────────────────
-
-@router.get("/backup-codes")
-def get_admin_backup_codes_status(
-    current_user: models.User = Depends(require_admin),
-):
-    """Check how many emergency backup codes the administrator has active."""
-    codes = _decode_recovery_codes(current_user.recovery_codes)
-    return {
-        "has_backup_codes": len(codes) > 0,
-        "active_codes_count": len(codes),
-        "username": current_user.username,
-    }
-
-
-@router.post("/backup-codes/generate")
-def generate_admin_backup_codes(
-    db: Session = Depends(database.get_db),
-    current_user: models.User = Depends(require_admin),
-):
-    """
-    Generate 5 fresh one-time emergency backup codes for the administrator.
-    Admins MUST print or save these codes to ensure system access cannot be lost.
-    """
-    fresh_codes = auth.generate_recovery_codes(count=5)
-    hashed_codes = [auth.hash_recovery_code(c) for c in fresh_codes]
-
-    current_user.recovery_codes = _encode_recovery_codes(hashed_codes)
-    db.commit()
-
-    return {
-        "status": "success",
-        "recovery_codes": fresh_codes,
-        "message": (
-            "5 emergency backup codes generated! PRINT OR SAVE THESE CODES IMMEDIATELY in a secure location. "
-            "If you lose access to your password or 2FA, these one-time codes are the only way to recover administrator access."
-        ),
-    }
+# Recovery / emergency codes are issued once at registration (or initial 2FA
+# enroll). They are never regenerated from the Admin Dashboard — save them
+# when shown; do not lose them. Supervisor password / 2FA reset remains the
+# recovery path if codes are gone.
 
 
 # ── Database Backup Operations ────────────────────────────────────────────────

@@ -7,11 +7,15 @@ export interface CustomCharSet {
   chars: string[];
 }
 
+export type SpecialCharsTriggerPlacement = 'header' | 'exam' | 'fab';
+
 export interface SpecialCharactersPickerProps {
   onInsert?: (char: string) => void;
   isOpen?: boolean;
   onClose?: () => void;
   customCategories?: CustomCharSet[];
+  /** Where the open button lives. Header = next to notifications; exam = compact edge dock. */
+  triggerPlacement?: SpecialCharsTriggerPlacement;
 }
 
 const DEFAULT_CATEGORIES: { id: string; name: string; pages: string[][] }[] = [
@@ -74,12 +78,16 @@ export function SpecialCharactersPicker({
   isOpen: controlledIsOpen,
   onClose: controlledOnClose,
   customCategories = [],
+  triggerPlacement = 'header',
 }: SpecialCharactersPickerProps) {
   const { t } = useI18n();
 
   const [internalOpen, setInternalOpen] = useState(false);
   const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalOpen;
   const onClose = controlledOnClose || (() => setInternalOpen(false));
+  const openPicker = () => {
+    if (controlledIsOpen === undefined) setInternalOpen(true);
+  };
 
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
@@ -221,11 +229,41 @@ export function SpecialCharactersPicker({
     return currentCategory.pages[currentPage] || [];
   })();
 
-  // Trigger button if uncontrolled
-  if (!isOpen) {
+  const renderTrigger = () => {
+    if (triggerPlacement === 'header') {
+      return (
+        <button
+          type="button"
+          onClick={openPicker}
+          title={t('special_chars.title')}
+          aria-label={t('special_chars.open')}
+          className="header-special-chars-btn"
+        >
+          <Sparkles size={18} />
+        </button>
+      );
+    }
+
+    if (triggerPlacement === 'exam') {
+      return (
+        <button
+          type="button"
+          onClick={openPicker}
+          title={t('special_chars.title')}
+          aria-label={t('special_chars.open')}
+          className="exam-special-chars-dock"
+        >
+          <Sparkles size={16} />
+          <span className="exam-special-chars-dock-label">{t('special_chars.button_label')}</span>
+        </button>
+      );
+    }
+
+    // Legacy FAB fallback
     return (
       <button
-        onClick={() => setInternalOpen(true)}
+        type="button"
+        onClick={openPicker}
         title={t('special_chars.title')}
         aria-label={t('special_chars.open')}
         style={{
@@ -245,34 +283,43 @@ export function SpecialCharactersPicker({
           cursor: 'pointer',
           fontWeight: 600,
           fontSize: '0.85rem',
-          transition: 'all 0.2s',
         }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
       >
         <Sparkles size={16} style={{ color: 'var(--primary-color)' }} />
         <span>{t('special_chars.button_label')}</span>
       </button>
     );
+  };
+
+  if (!isOpen) {
+    return renderTrigger();
   }
 
+  const panelBottom = triggerPlacement === 'exam' ? '4.5rem' : '1.5rem';
+  const panelRight = triggerPlacement === 'exam' ? '0.75rem' : '1.5rem';
+
   return (
-    <div
+    <>
+      {triggerPlacement !== 'fab' ? renderTrigger() : null}
+      <div
       data-char-picker="true"
+      data-pe-modal="true"
+      className="pe-modal-surface"
       style={{
         position: 'fixed',
-        bottom: '1.5rem',
-        right: '1.5rem',
+        bottom: panelBottom,
+        right: panelRight,
         zIndex: 2500,
-        width: '340px',
-        maxHeight: '480px',
-        backgroundColor: 'var(--panel-bg)',
+        width: 'min(340px, calc(100vw - 1.5rem))',
+        maxHeight: triggerPlacement === 'exam' ? 'min(420px, 55vh)' : '480px',
+        backgroundColor: 'var(--panel-bg, var(--card-bg, #ffffff))',
         border: '1px solid var(--border-color)',
         borderRadius: 'var(--radius-lg)',
         boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
+        opacity: 1,
       }}
     >
       {/* Top Header */}
@@ -282,7 +329,7 @@ export function SpecialCharactersPicker({
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0.65rem 0.9rem',
-          backgroundColor: 'var(--sidebar-bg)',
+          backgroundColor: 'var(--sidebar-bg, #ffffff)',
           borderBottom: '1px solid var(--border-color)',
         }}
       >
@@ -465,7 +512,7 @@ export function SpecialCharactersPicker({
                   height: '42px',
                   borderRadius: 'var(--radius-sm)',
                   border: '1px solid var(--border-color)',
-                  backgroundColor: isJustCopied ? 'var(--success-color)' : 'var(--bg-color)',
+                  backgroundColor: isJustCopied ? 'var(--success-color, #16a34a)' : 'var(--bg-secondary, #f7fbfe)',
                   color: isJustCopied ? '#fff' : 'var(--text-color)',
                   fontSize: '1.25rem',
                   display: 'flex',
@@ -495,9 +542,10 @@ export function SpecialCharactersPicker({
           justifyContent: 'space-between',
         }}
       >
-        <span>Click inserts at cursor position</span>
-        <span>← / → flip pages</span>
+        <span>{t('special_chars.insert')}</span>
+        <span>← / →</span>
       </div>
     </div>
+    </>
   );
 }

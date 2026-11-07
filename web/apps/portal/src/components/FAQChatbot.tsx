@@ -269,7 +269,7 @@ answer: "You have 3 ways to reset your password: (1) Use one of your 5 one-time 
         id: 48,
         question: "How do superadmin emergency backup recovery codes work?",
         keywords: ["superadmin", "emergency", "backup", "recovery", "codes", "lockout"],
-        answer: "During initial setup (setup_admin.py) or in Admin Dashboard > Security, 5 single-use emergency backup codes are generated and hashed with Argon2id. If the Superadmin loses their password or 2FA device, any unused recovery code can be used once to regain access."
+        answer: "At registration (and again when you first enable 2FA) you receive one-time recovery codes — save them securely; they cannot be regenerated later. If you lose them, ask a supervisor to reset your password and/or 2FA from Admin → Users."
       }
     ]
   },
@@ -499,12 +499,15 @@ interface FAQChatbotProps {
   onOpenChange?: (open: boolean) => void;
   /** Legacy floating corner FAB — off by default so Special Characters owns bottom-right. */
   showFloatingButton?: boolean;
+  /** overlay = floating panel; page = full Help route layout */
+  variant?: 'overlay' | 'page';
 }
 
 export function FAQChatbot({
   isOpen: controlledOpen,
   onOpenChange,
   showFloatingButton = false,
+  variant = 'overlay',
 }: FAQChatbotProps = {}) {
   const { t, locale, jumpToElement } = useI18n();
   const { isExamActive } = useExam();
@@ -747,13 +750,16 @@ export function FAQChatbot({
   };
 
   // Disable chatbot during exam taking (after hooks)
-  if (isExamActive) {
+  if (isExamActive && variant !== 'page') {
     return null;
   }
 
+  const pageMode = variant === 'page';
+  const showWindow = pageMode || isOpen;
+
   return (
-    <div className={`faq-chatbot-container${showFloatingButton ? '' : ' faq-chatbot-container--menu'}`}>
-      {showFloatingButton && (
+    <div className={`faq-chatbot-container${showFloatingButton ? '' : ' faq-chatbot-container--menu'}${pageMode ? ' faq-chatbot-container--page' : ''}`}>
+      {showFloatingButton && !pageMode && (
         <button
           type="button"
           className="faq-chatbot-button"
@@ -765,19 +771,21 @@ export function FAQChatbot({
         </button>
       )}
 
-      {/* Chat Window — opened from hamburger Help (or legacy FAB) */}
-      {isOpen && (
-        <div className="faq-chatbot-window">
+      {/* Chat Window — Help page, hamburger overlay, or legacy FAB */}
+      {showWindow && (
+        <div className={`faq-chatbot-window${pageMode ? ' faq-chatbot-window--page' : ''}`}>
           <div className="faq-chatbot-header">
             <h3>{t("faq.title")}</h3>
-            <button
-              type="button"
-              className="faq-chatbot-close"
-              onClick={() => setIsOpen(false)}
-              aria-label={t("faq.close_aria")}
-            >
-              ×
-            </button>
+            {!pageMode && (
+              <button
+                type="button"
+                className="faq-chatbot-close"
+                onClick={() => setIsOpen(false)}
+                aria-label={t("faq.close_aria")}
+              >
+                ×
+              </button>
+            )}
           </div>
           
           <div className="faq-chatbot-messages">

@@ -5,6 +5,7 @@ import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { useAuth } from '../contexts/AuthContext';
+import { LanguageSelector } from '../components/LanguageSelector';
 
 export function ResetPassword() {
   const [searchParams] = useSearchParams();
@@ -103,8 +104,19 @@ export function ResetPassword() {
         justifyContent: 'center',
         backgroundColor: 'var(--bg-color)',
         boxSizing: 'border-box',
+        position: 'relative',
       }}
     >
+      <div
+        style={{
+          position: 'absolute',
+          top: 'max(1rem, env(safe-area-inset-top))',
+          right: 'max(1rem, env(safe-area-inset-right))',
+          zIndex: 5,
+        }}
+      >
+        <LanguageSelector variant="pill" />
+      </div>
       <div
         style={{
           padding: '2rem',

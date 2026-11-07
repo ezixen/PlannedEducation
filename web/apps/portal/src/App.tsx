@@ -22,10 +22,13 @@ import { TeacherDashboard } from './pages/TeacherDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { AIGradingUpload } from './pages/AIGradingUpload';
 import { Messages } from './pages/Messages';
+import { Help } from './pages/Help';
 
 /**
- * Auth pages (login/register/reset) must NOT render Messages or Special Characters
- * chrome — those belong only inside the authenticated Layout shell.
+ * Auth pages (login/register/reset) keep their own language selector.
+ * Messages / special-characters chrome lives only in the authenticated Layout shell
+ * (header button normally; compact right-edge dock while taking an exam).
+ * Help opens as its own route (often in a new tab from the menu).
  */
 function App() {
   return (
@@ -40,6 +43,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/reset-password" element={<ResetPassword />} />
+                    <Route path="/help" element={<Help />} />
                     <Route path="/" element={<ProtectedRoute />}>
                       <Route index element={<Dashboard />} />
                       <Route path="settings" element={<Settings />} />

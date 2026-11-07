@@ -5,7 +5,6 @@ import { apiClient } from '../api';
 import { DeploymentConfigPanel } from '../components/DeploymentConfigPanel';
 import { CreateUserModal } from '../components/CreateUserModal';
 import { TeacherApprovalPanel } from '../components/TeacherApprovalPanel';
-import { AdminBackupCodesModal } from '../components/AdminBackupCodesModal';
 import { DatabaseBackupPanel } from '../components/DatabaseBackupPanel';
 import { formatDateDdMmYyyy, formatDateTimeDdMmYyyy } from '../lib/dateTime';
 
@@ -94,12 +93,10 @@ export function AdminDashboard() {
   const [userRoleFilter, setUserRoleFilter] = useState<'all' | 'admin' | 'teacher' | 'student' | 'parent'>('all');
   const [examStatusFilter, setExamStatusFilter] = useState<'all' | 'published' | 'draft'>('all');
   const [showCreateUserModal, setShowCreateUserModal] = useState(false);
-  const [showBackupCodesModal, setShowBackupCodesModal] = useState(false);
-  
+
   // Admin Direct Password Reset State
   const [resetPwdUser, setResetPwdUser] = useState<AdminUser | null>(null);
   const [customPassword, setCustomPassword] = useState('');
-  const [reset2FA, setReset2FA] = useState(false);
   const [resetResult, setResetResult] = useState<{ username: string; email: string; tempPass: string; reset2fa: boolean } | null>(null);
   const [resetSubmitting, setResetSubmitting] = useState(false);
   const [copiedPass, setCopiedPass] = useState(false);
@@ -288,19 +285,19 @@ export function AdminDashboard() {
     if (!resetPwdUser) return;
     setResetSubmitting(true);
     try {
+      // Password-only: never clears 2FA here — use Reset 2FA button for that.
       const response = await apiClient.post(`/admin/users/${resetPwdUser.id}/reset-password`, {
         new_password: customPassword.trim() || null,
-        reset_2fa: reset2FA,
+        reset_2fa: false,
       });
       setResetResult({
         username: response.data.username,
         email: response.data.email,
         tempPass: response.data.temporary_password,
-        reset2fa: response.data.reset_2fa,
+        reset2fa: false,
       });
       setResetPwdUser(null);
       setCustomPassword('');
-      setReset2FA(false);
       setCopiedPass(false);
       showSuccess(t('admin.password_reset_ok', { username: response.data.username }));
       fetchUsers();
@@ -308,6 +305,22 @@ export function AdminDashboard() {
       showError(t('admin.failed_reset_password'), err.response?.data?.detail || err.message);
     } finally {
       setResetSubmitting(false);
+    }
+  };
+
+  const handleAdminReset2FA = async (user: AdminUser) => {
+    if (!window.confirm(t('admin.confirm_reset_2fa_only', { username: user.username }))) {
+      return;
+    }
+    setLoading(true);
+    try {
+      await apiClient.post(`/admin/users/${user.id}/reset-2fa`);
+      showSuccess(t('admin.reset_2fa_only_ok', { username: user.username }));
+      fetchUsers();
+    } catch (err: any) {
+      showError(t('admin.failed_reset_2fa'), err.response?.data?.detail || err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -371,33 +384,13 @@ export function AdminDashboard() {
 
   return (
     <div style={{ padding: '1.5rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
-        <div>
-          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
-            {t('admin.system_admin')}
-          </h1>
-          <p style={{ color: 'var(--text-muted)' }}>
-            {t('admin.system_subtitle')}
-          </p>
-        </div>
-        <button
-          onClick={() => setShowBackupCodesModal(true)}
-          style={{
-            padding: '0.6rem 1.1rem',
-            backgroundColor: 'rgba(239, 68, 68, 0.1)',
-            color: '#ef4444',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
-            borderRadius: 'var(--radius-md)',
-            cursor: 'pointer',
-            fontWeight: 600,
-            fontSize: '0.85rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-          }}
-        >
-          🛡️ {t('admin.backup_codes')}
-        </button>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.25rem' }}>
+          {t('admin.system_admin')}
+        </h1>
+        <p style={{ color: 'var(--text-muted)' }}>
+          {t('admin.system_subtitle')}
+        </p>
       </div>
 
       {/* Tab Navigation */}
@@ -554,7 +547,6 @@ export function AdminDashboard() {
                             onClick={() => {
                               setResetPwdUser(user);
                               setCustomPassword('');
-                              setReset2FA(false);
                             }}
                             disabled={loading}
                             style={{
@@ -572,6 +564,23 @@ export function AdminDashboard() {
                             title={t("admin.reset_user_title")}
                           >
                             🔑 {t('admin.reset_password')}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleAdminReset2FA(user)}
+                            disabled={loading}
+                            style={{
+                              padding: '0.5rem 0.85rem',
+                              backgroundColor: '#7c3aed',
+                              color: '#fff',
+                              border: 'none',
+                              borderRadius: 'var(--radius-md)',
+                              cursor: loading ? 'not-allowed' : 'pointer',
+                              fontSize: '0.85rem',
+                            }}
+                            title={t('admin.reset_2fa_only_title')}
+                          >
+                            {t('admin.reset_2fa_only_btn')}
                           </button>
                           <button
                             onClick={() => handleToggleUserActive(user)}
@@ -615,7 +624,7 @@ export function AdminDashboard() {
           {/* Admin Reset Password Modal */}
           {resetPwdUser && (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
-              <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
+              <div data-pe-modal="true" className="pe-modal-surface" style={{ backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)', opacity: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1.15rem' }}>🔑 {t('admin.password_reset_title')}</h3>
                   <button onClick={() => setResetPwdUser(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
@@ -643,16 +652,9 @@ export function AdminDashboard() {
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9rem' }}>
-                    <input
-                      type="checkbox"
-                      checked={reset2FA}
-                      onChange={e => setReset2FA(e.target.checked)}
-                    />
-                    <span>{t('admin.reset_2fa_label')}</span>
-                  </label>
-                </div>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
+                  {t('admin.reset_password_leaves_2fa_hint')}
+                </p>
 
                 <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
                   <button
@@ -677,7 +679,7 @@ export function AdminDashboard() {
           {/* Reset Result Dialog */}
           {resetResult && (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
-              <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)' }}>
+              <div data-pe-modal="true" className="pe-modal-surface" style={{ backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '480px', width: '100%', padding: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.3)', opacity: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, color: '#10b981', fontSize: '1.15rem' }}>✅ {t('admin.reset_successful')}</h3>
                   <button onClick={() => setResetResult(null)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
@@ -965,7 +967,7 @@ export function AdminDashboard() {
           {/* Create Job Modal */}
           {showCreateJobModal && (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
-              <div style={{ backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
+              <div data-pe-modal="true" className="pe-modal-surface" style={{ backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '500px', width: '100%', maxHeight: '90vh', overflow: 'auto', opacity: 1 }}>
                 <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <h2 style={{ margin: 0, fontSize: '1.25rem' }}>{t("admin.create_archive_job")}</h2>
                   <button onClick={() => setShowCreateJobModal(false)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: 'var(--text-muted)' }}>×</button>
@@ -1188,12 +1190,6 @@ export function AdminDashboard() {
         isOpen={showCreateUserModal}
         onClose={() => setShowCreateUserModal(false)}
         onUserCreated={fetchUsers}
-      />
-
-      {/* Admin Emergency Recovery Codes Modal */}
-      <AdminBackupCodesModal
-        isOpen={showBackupCodesModal}
-        onClose={() => setShowBackupCodesModal(false)}
       />
     </div>
   );

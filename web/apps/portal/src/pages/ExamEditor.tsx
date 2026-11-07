@@ -6,6 +6,7 @@ import { useI18n } from '../contexts/I18nContext';
 import { useToast } from '../contexts/ToastContext';
 import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
 import { packagesService, MODULE_LANGUAGES, type SpecialCharacterSet } from '../services/packages';
+import { InfoTip } from '../components/InfoTip';
 
 function loadSpecialChars(examId: string): SpecialCharacterSet[] {
   try {
@@ -199,11 +200,15 @@ export function ExamEditor() {
           📁 {moduleCountry}
         </span>
       </div>
-      <p style={{ color: 'gray', marginBottom: '1rem' }}>{exam.seb_config_key ? t('exam_editor.seb_enabled') : t('exam_editor.seb_not_set')}</p>
+      <p style={{ color: 'gray', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+        <span>{exam.seb_config_key ? t('exam_editor.seb_enabled') : t('exam_editor.seb_not_set')}</span>
+        <InfoTip tipKey="info.exam_editor_seb" />
+      </p>
 
       <div style={{ padding: '1.25rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '1.5rem' }}>
         <h3 style={{ margin: '0 0 0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           {t('home_exam.exam_mode_title')}
+          <InfoTip tipKey="info.deployment_home_exam" />
           <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
             {t('home_exam.beta_badge')}
           </span>

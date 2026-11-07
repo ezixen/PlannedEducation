@@ -58,12 +58,11 @@ export function Settings() {
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [activeSection, setActiveSection] = useState<'personal' | 'appearance' | 'security' | 'passkeys' | 'ai' | 'language' | 'messaging'>('personal');
+  const [activeSection, setActiveSection] = useState<'personal' | 'appearance' | 'security' | 'ai' | 'language' | 'messaging'>('personal');
   const [dmVisible, setDmVisible] = useState(true);
   const [savingDmVisibility, setSavingDmVisibility] = useState(false);
 
@@ -72,7 +71,6 @@ export function Settings() {
     if (user) {
       setFullName(user.full_name || '');
       setEmail(user.email || '');
-      setPhone(user.phone_number || '');
       setDmVisible(Boolean(user.is_visible_in_teacher_dm ?? true));
     }
   }, [user]);
@@ -113,7 +111,6 @@ export function Settings() {
     const payload: Record<string, string> = {
       full_name: fullName,
       email,
-      phone_number: phone,
     };
     if (newPassword) {
       payload.password = newPassword;
@@ -180,15 +177,6 @@ export function Settings() {
         <button
           type="button"
           role="tab"
-          aria-selected={activeSection === 'passkeys'}
-          onClick={() => setActiveSection('passkeys')}
-          className={`settings-submenu-btn ${activeSection === 'passkeys' ? 'active' : ''}`}
-        >
-          {t('settings.section_passkeys')}
-        </button>
-        <button
-          type="button"
-          role="tab"
           aria-selected={activeSection === 'ai'}
           onClick={() => setActiveSection('ai')}
           className={`settings-submenu-btn ${activeSection === 'ai' ? 'active' : ''}`}
@@ -251,18 +239,6 @@ export function Settings() {
                   />
                 </label>
               </div>
-
-              <label style={labelStyle}>
-                {t('settings.5')} <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 400 }}>{t('settings.optional_tag')}</span>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={e => setPhone(e.target.value)}
-                  maxLength={32}
-                  autoComplete="tel"
-                  style={inputStyle}
-                />
-              </label>
 
               <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '1rem 0' }} />
               
@@ -374,19 +350,18 @@ export function Settings() {
           </div>
         )}
 
-        {/* Security section */}
+        {/* Security: 2FA + Passkeys together */}
         {activeSection === 'security' && (
-          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_security')}</h2>
-            <TwoFASettings />
-          </div>
-        )}
-
-        {/* Passkeys (WebAuthn) */}
-        {activeSection === 'passkeys' && (
-          <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
-            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_passkeys')}</h2>
-            <PasskeysSettings />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+              <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_security')}</h2>
+              <TwoFASettings />
+            </div>
+            <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-color)' }}>{t('settings.section_passkeys')}</h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', margin: '0 0 1rem' }}>{t('settings.passkeys_under_security_hint')}</p>
+              <PasskeysSettings />
+            </div>
           </div>
         )}
 
