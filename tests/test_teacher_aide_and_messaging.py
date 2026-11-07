@@ -91,7 +91,7 @@ def test_teacher_aide_nomination_and_approval(client, db_session):
     assert student2.id in aides_ids
 
 
-def test_student_dm_policy_disabled_by_default(client, db_session):
+def test_student_dm_policy_requires_opt_in_and_class(client, db_session):
     teacher = _create_user(db_session, "prof_jones@school.edu", "profjones", role="teacher")
     student = _create_user(db_session, "timmy@school.edu", "timmy", role="student")
     other_student = _create_user(db_session, "sally@school.edu", "sally", role="student")
@@ -108,16 +108,26 @@ def test_student_dm_policy_disabled_by_default(client, db_session):
     assert res_s2s.status_code == 403
     assert "not enabled" in res_s2s.json()["detail"].lower()
 
-    # 2. Student attempts to message teacher when disabled -> 403 Forbidden
+    # 2. Student attempts to message teacher without opt-in/class -> 403
     res_s2t = client.post(
         "/chat/messages/direct",
         headers={"Authorization": f"Bearer {s_token}"},
         json={"recipient_id": teacher.id, "content": "Question about exam"},
     )
     assert res_s2t.status_code == 403
-    assert "disabled by default" in res_s2t.json()["detail"].lower()
+    detail = res_s2t.json()["detail"].lower()
+    assert "enabled student messaging" in detail
+    assert "class" in detail
 
-    # 3. Teacher enables student DMs
+    # Empty available-teachers until both opt-in and class enrollment
+    avail_empty = client.get(
+        "/chat/students/available-teachers",
+        headers={"Authorization": f"Bearer {s_token}"},
+    )
+    assert avail_empty.status_code == 200
+    assert avail_empty.json()["teachers"] == []
+
+    # 3. Teacher enables student DMs (still blocked without class)
     toggle_res = client.patch(
         "/auth/teacher/settings/student-dms",
         headers={"Authorization": f"Bearer {t_token}"},
@@ -126,7 +136,30 @@ def test_student_dm_policy_disabled_by_default(client, db_session):
     assert toggle_res.status_code == 200
     assert toggle_res.json()["allow_student_dms"] is True
 
-    # 4. Student can now message teacher successfully
+    res_opt_in_only = client.post(
+        "/chat/messages/direct",
+        headers={"Authorization": f"Bearer {s_token}"},
+        json={"recipient_id": teacher.id, "content": "Still blocked without class"},
+    )
+    assert res_opt_in_only.status_code == 403
+
+    # 4. Enroll student in teacher's class → messaging allowed
+    class_res = client.post(
+        "/auth/teacher/classes",
+        headers={"Authorization": f"Bearer {t_token}"},
+        json={"name": "Period 1", "student_ids": [student.id]},
+    )
+    assert class_res.status_code == 201, class_res.text
+
+    avail = client.get(
+        "/chat/students/available-teachers",
+        headers={"Authorization": f"Bearer {s_token}"},
+    )
+    assert avail.status_code == 200
+    teachers = avail.json()["teachers"]
+    assert len(teachers) == 1
+    assert teachers[0]["id"] == teacher.id
+
     res_s2t_allowed = client.post(
         "/chat/messages/direct",
         headers={"Authorization": f"Bearer {s_token}"},
