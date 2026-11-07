@@ -105,6 +105,21 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
     try {
       const token = getToken();
       if (!token) return;
+      if (user?.role === 'student') {
+        const res = await fetch(`${API_URL}/chat/students/available-teachers`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setTeachers(data.teachers || []);
+          setAdmins([]);
+          setAdminSupportEmail(null);
+        } else {
+          setTeachers([]);
+          setAdmins([]);
+        }
+        return;
+      }
       const res = await fetch(`${API_URL}/chat/teachers-lounge/directory`, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -115,9 +130,9 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
         setAdminSupportEmail(data.admin_support_email || null);
       }
     } catch {
-      // Non-teachers will 403 on lounge directory
+      // Students without available teachers → empty
     }
-  }, []);
+  }, [user?.role]);
 
   const fetchMessages = useCallback(async (partnerId: string) => {
     setLoading(true);
@@ -174,7 +189,7 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
   }, [newMessage, selectedPartner, showError, t, fetchConversations, fetchUnreadCount]);
 
   const deleteMessage = async (messageId: string) => {
-    if (!window.confirm(t('messages.confirm_delete') || 'Delete this message?')) return;
+    if (!window.confirm(t('messages.confirm_delete'))) return;
     try {
       const token = getToken();
       const res = await fetch(`${API_URL}/chat/messages/direct/${messageId}`, {
@@ -183,11 +198,11 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
       });
       if (res.ok) {
         setMessages((prev) => prev.filter((m) => m.id !== messageId));
-        showSuccess(t('messages.deleted') || 'Message deleted');
+        showSuccess(t('messages.deleted'));
         fetchConversations();
       }
     } catch {
-      showError(t('messages.error_delete') || 'Failed to delete message');
+      showError(t('messages.error_delete'));
     }
   };
 
@@ -206,11 +221,9 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
     if (isOpen) {
       fetchConversations();
       fetchUnreadCount();
-      if (user?.role !== 'student') {
-        fetchDirectory();
-      }
+      fetchDirectory();
     }
-  }, [isOpen, fetchConversations, fetchUnreadCount, fetchDirectory, user?.role]);
+  }, [isOpen, fetchConversations, fetchUnreadCount, fetchDirectory]);
 
   useEffect(() => {
     scrollToBottom();
@@ -389,7 +402,36 @@ export function ChatOverlay({ isOpen, onClose }: ChatOverlayProps) {
                   </h3>
                 </div>
                 <div style={{ flex: 1, overflowY: 'auto', padding: '0.5rem' }}>
-                  {conversations.length === 0 ? (
+                  {user?.role === 'student' ? (
+                    teachers.length === 0 ? (
+                      <div style={{ padding: '1.5rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                        {t('messages.student_empty_desc')}
+                      </div>
+                    ) : (
+                      teachers.map((tch) => {
+                        const isSelected = selectedPartner === tch.id;
+                        return (
+                          <button
+                            key={tch.id}
+                            onClick={() => startChatWith(tch.id, tch.name)}
+                            style={{
+                              width: '100%',
+                              padding: '0.75rem',
+                              border: 'none',
+                              backgroundColor: isSelected ? 'var(--primary-color)' : 'transparent',
+                              color: isSelected ? '#fff' : 'var(--text-color)',
+                              borderRadius: 'var(--radius-md)',
+                              cursor: 'pointer',
+                              textAlign: 'left',
+                              marginBottom: '0.5rem',
+                            }}
+                          >
+                            <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{tch.name}</span>
+                          </button>
+                        );
+                      })
+                    )
+                  ) : conversations.length === 0 ? (
                     <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                       {t('messages.no_messages')}
                     </div>

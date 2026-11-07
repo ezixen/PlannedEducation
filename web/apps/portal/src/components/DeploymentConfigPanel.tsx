@@ -712,6 +712,8 @@ export function DeploymentConfigPanel() {
               <input
                 type="number"
                 placeholder="587"
+                min={1}
+                max={65535}
                 value={config.smtp_port ?? 587}
                 onChange={(e) => setConfig({ ...config, smtp_port: parseInt(e.target.value, 10) || 587 })}
                 style={{ width: '100%', padding: '0.6rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}

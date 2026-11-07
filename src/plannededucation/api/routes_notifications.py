@@ -4,9 +4,11 @@ Handles in-platform alerts, unread counts, teacher approval notifications,
 and student-to-teacher/parent password reset requests.
 """
 
+import hashlib
 import json
 import logging
-from datetime import UTC, datetime
+import secrets
+from datetime import UTC, datetime, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
@@ -15,7 +17,6 @@ from sqlalchemy.orm import Session
 from . import auth, database, models, schemas
 from .email_service import send_email
 from .limiter import limiter
-from .routes_admin import generate_temporary_password
 from .routes_auth import _validate_password, get_current_user, get_password_hash
 
 logger = logging.getLogger("plannededucation")
@@ -298,21 +299,46 @@ async def approve_password_reset_request(
     if action_data.get("consumed"):
         raise HTTPException(status_code=400, detail="This reset request was already approved")
 
-    # Determine temporary password
-    if payload.new_password and payload.new_password.strip():
-        temp_pwd = payload.new_password.strip()
-        _validate_password(temp_pwd)
-    else:
-        temp_pwd = generate_temporary_password()
-        _validate_password(temp_pwd)
-
-    target_user.hashed_password = get_password_hash(temp_pwd)
+    # Classroom / supervisor handoff: issue a one-time reset capability token
+    # (same model as teacher quick-reset). Do NOT set a temporary password while
+    # force_password_reset is on — login intercepts before password verify, so a
+    # temp password is unusable and clearing reset_token locked the account.
     auth.revoke_all_refresh_sessions(db, target_user.id)
     auth.clear_legacy_refresh_fields(target_user)
     target_user.password_reset_otp = None
     target_user.password_reset_otp_expires = None
-    target_user.reset_token = None
+    target_user.failed_login_attempts = 0
+    target_user.locked_until = None
+    target_user.is_active = True
     target_user.force_password_reset = True
+    target_user.reset_expires = datetime.now(UTC) + timedelta(hours=24)
+    if current_user.is_admin or current_user.role == "admin":
+        target_user.reset_by_admin_id = current_user.id
+        target_user.reset_by_teacher_id = None
+        target_user.reset_by_parent_id = None
+    elif current_user.role == "teacher":
+        target_user.reset_by_teacher_id = current_user.id
+        target_user.reset_by_admin_id = None
+        target_user.reset_by_parent_id = None
+    elif current_user.role == "parent":
+        target_user.reset_by_parent_id = current_user.id
+        target_user.reset_by_teacher_id = None
+        target_user.reset_by_admin_id = None
+
+    # Optional: supervisor chose the final password now (no login handoff needed).
+    if payload.new_password and payload.new_password.strip():
+        chosen = payload.new_password.strip()
+        _validate_password(chosen)
+        target_user.hashed_password = get_password_hash(chosen)
+        target_user.force_password_reset = False
+        target_user.reset_token = None
+        target_user.reset_expires = None
+        plain_reset_token = None
+    else:
+        plain_reset_token = hashlib.sha256(
+            f"{target_user.id}:{current_user.id}:{secrets.token_hex(32)}".encode()
+        ).hexdigest()
+        target_user.reset_token = plain_reset_token
 
     # Consume notification action atomically so concurrent approvals cannot
     # reuse the same capability.
@@ -337,25 +363,31 @@ async def approve_password_reset_request(
     action_data["consumed"] = True
     notif.action_payload = json.dumps(action_data)
 
-    # F-026: Do NOT put the temporary password in notification messages (in-app or email body).
-    # The temp_pwd is only sent via SMTP; if email is absent, the approver must communicate
-    # the credential out-of-band. The in-app notification omits the credential.
+    if plain_reset_token:
+        user_msg = (
+            f"Your password reset request was approved by "
+            f"{current_user.full_name or current_user.username}. "
+            "Ask them for the one-time reset code, then use "
+            "'My account was reset' on the login page to choose a new password."
+        )
+        link = "/login"
+    else:
+        user_msg = (
+            f"Your password was set by "
+            f"{current_user.full_name or current_user.username}. "
+            "You can sign in with the password they provided."
+        )
+        link = "/login"
     user_notif = models.InAppNotification(
         user_id=target_user.id,
         title="Password Reset Approved",
-        message=(
-            f"Your password reset request was approved by "
-            f"{current_user.full_name or current_user.username}. "
-            "A temporary password was sent to your registered email address. "
-            "Please log in and change it in Settings."
-        ),
+        message=user_msg,
         type="system",
-        link="/settings",
+        link=link,
     )
     db.add(user_notif)
     db.commit()
 
-    # If email is configured, also dispatch email notice
     try:
         await send_email(
             to_email=target_user.email,
@@ -363,19 +395,31 @@ async def approve_password_reset_request(
             text_content=(
                 f"Hello {target_user.full_name or target_user.username},\n\n"
                 f"Your password reset request was approved by {current_user.full_name or current_user.username}.\n\n"
-                "A temporary credential was generated. Obtain it through the secure "
-                "supervisor handoff and change it immediately after signing in.\n\n"
+                "Use the one-time reset code from your supervisor on the login page "
+                "to choose a new password (or sign in if they set one for you).\n\n"
                 f"— PlannedEducation Platform"
             ),
         )
     except Exception as exc:
         logger.warning(f"Could not dispatch password reset email: {exc}")
 
-    # F-026: Never return plaintext credentials in API responses.
-    return {
+    result = {
         "status": "success",
-        "message": f"Password for {target_user.username} was reset successfully. Temporary credentials were dispatched via email.",
+        "message": (
+            f"Password reset approved for {target_user.username}. "
+            + (
+                "Share the reset_token securely; they complete it on the login page."
+                if plain_reset_token
+                else "They can sign in with the password you provided."
+            )
+        ),
+        "requester_id": target_user.id,
+        "requester_email": target_user.email,
     }
+    # One-time supervisor handoff of the capability token (not a password).
+    if plain_reset_token:
+        result["reset_token"] = plain_reset_token
+    return result
 
 
 @router.post("/approve-teacher/{notification_id}")

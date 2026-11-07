@@ -307,6 +307,40 @@ def _require_teacher_or_admin(current_user: models.User) -> None:
     )
 
 
+def _student_enrolled_with_teacher(
+    db: Session, student_id: str, teacher_id: str
+) -> bool:
+    """True when the student is on a roster class owned by this teacher."""
+    return (
+        db.query(models.ClassMembership.id)
+        .join(
+            models.ClassGroup,
+            models.ClassMembership.class_group_id == models.ClassGroup.id,
+        )
+        .filter(
+            models.ClassMembership.student_id == student_id,
+            models.ClassGroup.teacher_id == teacher_id,
+        )
+        .first()
+        is not None
+    )
+
+
+def _student_may_message_teacher(
+    db: Session, student: models.User, teacher: models.User
+) -> bool:
+    """Student DMs require teacher opt-in AND class enrollment."""
+    if teacher.role not in ("teacher", "teacher_aide"):
+        return False
+    if not teacher.is_active:
+        return False
+    if teacher.role == "teacher" and not getattr(teacher, "teacher_approved", False):
+        return False
+    if not getattr(teacher, "allow_student_dms", False):
+        return False
+    return _student_enrolled_with_teacher(db, student.id, teacher.id)
+
+
 @router.get("/lounge/messages", response_model=list[schemas.TeacherLoungeMessageResponse])
 def list_lounge_messages(
     current_user: models.User = Depends(get_current_user),
@@ -735,6 +769,67 @@ def get_teachers_lounge_directory(
     )
 
 
+@router.get(
+    "/students/available-teachers",
+    response_model=schemas.StudentAvailableTeachersResponse,
+)
+def list_student_available_teachers(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(database.get_db),
+):
+    """Teachers this student may message: opted-in in settings AND shared class.
+
+    If none match, returns an empty list — the Messages page stays empty.
+    """
+    if current_user.role != "student":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Student access only",
+        )
+
+    enrolled_teacher_ids = {
+        row[0]
+        for row in (
+            db.query(models.ClassGroup.teacher_id)
+            .join(
+                models.ClassMembership,
+                models.ClassMembership.class_group_id == models.ClassGroup.id,
+            )
+            .filter(models.ClassMembership.student_id == current_user.id)
+            .distinct()
+            .all()
+        )
+    }
+    if not enrolled_teacher_ids:
+        return schemas.StudentAvailableTeachersResponse(teachers=[])
+
+    teachers = (
+        db.query(models.User)
+        .filter(
+            models.User.id.in_(enrolled_teacher_ids),
+            models.User.role.in_(["teacher", "teacher_aide"]),
+            models.User.allow_student_dms == True,  # noqa: E712
+            models.User.is_active == True,  # noqa: E712
+        )
+        .all()
+    )
+    # Approved teachers only (aides already granted via flag)
+    visible = []
+    for t in teachers:
+        if t.role == "teacher" and not getattr(t, "teacher_approved", False):
+            continue
+        visible.append(
+            schemas.TeacherDirectoryItem(
+                id=t.id,
+                name=t.full_name or t.username,
+                role=t.role,
+                email=None,  # do not expose teacher email to students
+                is_aide=bool(getattr(t, "is_teacher_aide", False)),
+            )
+        )
+    return schemas.StudentAvailableTeachersResponse(teachers=visible)
+
+
 @router.post("/messages/direct", response_model=schemas.DirectMessageResponse)
 def send_direct_message(
     payload: schemas.DirectMessageCreate,
@@ -758,14 +853,17 @@ def send_direct_message(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="Direct messaging between students is not enabled",
             )
-        # Students can only message teachers/aides if the teacher enabled student DMs
         if recipient.role in ("teacher", "teacher_aide"):
-            if not getattr(recipient, "allow_student_dms", False):
+            if not _student_may_message_teacher(db, current_user, recipient):
                 raise HTTPException(
                     status_code=status.HTTP_403_FORBIDDEN,
-                    detail="Direct messaging with this teacher is disabled by default. The teacher must enable student messaging in their settings.",
+                    detail=(
+                        "You can only message teachers who enabled student messaging "
+                        "and who have you in their class."
+                    ),
                 )
-        elif recipient.role not in ("admin", "superadmin"):
+        else:
+            # Students never message admins via this channel
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="Students cannot message this user",

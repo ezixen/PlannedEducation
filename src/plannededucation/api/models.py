@@ -257,6 +257,32 @@ class ClassGroup(Base):
     teacher_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
     teacher = relationship("User", back_populates="class_groups")
+    memberships = relationship(
+        "ClassMembership",
+        back_populates="class_group",
+        cascade="all, delete-orphan",
+    )
+
+
+class ClassMembership(Base):
+    """Student enrollment in a teacher's class (roster)."""
+
+    __tablename__ = "class_memberships"
+    __table_args__ = (
+        UniqueConstraint("class_group_id", "student_id", name="uq_class_student"),
+    )
+
+    id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
+    class_group_id = Column(
+        String(36), ForeignKey("class_groups.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    student_id = Column(
+        String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    created_at = Column(DateTime(timezone=True), default=utcnow, nullable=False)
+
+    class_group = relationship("ClassGroup", back_populates="memberships")
+    student = relationship("User", foreign_keys=[student_id])
 
 
 class StudentRecord(Base):

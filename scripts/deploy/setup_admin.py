@@ -118,7 +118,11 @@ def main() -> int:
             existing.is_admin = True
             existing.is_superadmin = True
             existing.is_active = True
-            existing.force_password_reset = True
+            # Installer already set a known strong password — allow immediate login.
+            # Classroom "force reset" is for teacher/admin unlocks that issue a reset token.
+            existing.force_password_reset = False
+            existing.reset_token = None
+            existing.reset_expires = None
             existing.recovery_codes = _encode_recovery_codes(hashed_codes)
             # Invalidate any prior sessions for the bootstrap admin.
             existing.refresh_token_hash = None
@@ -135,7 +139,7 @@ def main() -> int:
                 is_admin=True,
                 is_superadmin=True,
                 is_active=True,
-                force_password_reset=True,
+                force_password_reset=False,
                 recovery_codes=_encode_recovery_codes(hashed_codes),
             )
             db.add(admin)

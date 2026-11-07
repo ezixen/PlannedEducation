@@ -131,7 +131,8 @@ class ExamBase(BaseModel):
 
 
 class ExamCreate(ExamBase):
-    pass
+    """Create exam; optional nested questions are persisted in the same request."""
+    questions: list[QuestionCreate] | None = None
 
 
 class ExamDeliveryModeUpdate(BaseModel):
@@ -901,6 +902,24 @@ class TeacherLoungeDirectoryResponse(BaseModel):
     teachers: list[TeacherDirectoryItem]
     admins: list[TeacherDirectoryItem]
     admin_support_email: str | None = None
+
+
+class StudentAvailableTeachersResponse(BaseModel):
+    """Teachers a student may message: opted-in + shared class membership."""
+    teachers: list[TeacherDirectoryItem]
+
+
+class ClassCreateRequest(BaseModel):
+    name: str = Field(..., min_length=1, max_length=128)
+    student_ids: list[str] = Field(default_factory=list)
+
+
+class ClassResponse(BaseModel):
+    id: str
+    name: str
+    teacher_id: str
+    student_ids: list[str]
+    student_count: int
 
 
 class ExamShareCreate(BaseModel):

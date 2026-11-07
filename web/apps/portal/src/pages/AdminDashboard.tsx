@@ -131,7 +131,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/admin/stats');
       setStats(response.data);
     } catch (err: any) {
-      showError('Failed to load stats', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_stats'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -141,7 +141,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/admin/users');
       setUsers(response.data);
     } catch (err: any) {
-      showError('Failed to load users', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_users'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -153,7 +153,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/admin/exams');
       setExams(response.data);
     } catch (err: any) {
-      showError('Failed to load exams', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_exams'), err.response?.data?.detail || err.message);
     } finally {
       setLoading(false);
     }
@@ -165,7 +165,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/archive/stats');
       setArchiveStats(response.data);
     } catch (err: any) {
-      showError('Failed to load archive stats', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_archive_stats'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -182,7 +182,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/archive/list', { params });
       setArchives(response.data);
     } catch (err: any) {
-      showError('Failed to load archives', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_archives'), err.response?.data?.detail || err.message);
     } finally {
       setArchiveLoading(false);
     }
@@ -194,7 +194,7 @@ export function AdminDashboard() {
       const response = await apiClient.get('/archive/jobs');
       setArchiveJobs(response.data);
     } catch (err: any) {
-      showError('Failed to load archive jobs', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_load_archive_jobs'), err.response?.data?.detail || err.message);
     } finally {
       setArchiveJobLoading(false);
     }
@@ -203,43 +203,43 @@ export function AdminDashboard() {
   const handleCreateArchiveJob = async () => {
     try {
       await apiClient.post('/archive/jobs', newJobParams);
-      showSuccess('Archive job created');
+      showSuccess(t('admin.archive_job_created'));
       setShowCreateJobModal(false);
       fetchArchiveJobs();
     } catch (err: any) {
-      showError('Failed to create archive job', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_create_archive_job'), err.response?.data?.detail || err.message);
     }
   };
 
   const handleStartArchiveJob = async (jobId: string) => {
     try {
       await apiClient.post(`/archive/jobs/${jobId}/start`);
-      showSuccess('Archive job started');
+      showSuccess(t('admin.archive_job_started'));
       fetchArchiveJobs();
     } catch (err: any) {
-      showError('Failed to start archive job', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_start_archive_job'), err.response?.data?.detail || err.message);
     }
   };
 
   const handleRestoreArchive = async (archiveId: string) => {
-    if (!window.confirm('Restore this archive to server storage?')) return;
+    if (!window.confirm(t('admin.confirm_restore_archive'))) return;
     try {
       await apiClient.post('/archive/restore', { archive_id: archiveId, target_location: 'server' });
-      showSuccess('Archive restored');
+      showSuccess(t('admin.archive_restored'));
       fetchArchives();
     } catch (err: any) {
-      showError('Failed to restore archive', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_restore_archive'), err.response?.data?.detail || err.message);
     }
   };
 
   const handleDeleteArchive = async (archiveId: string) => {
-    if (!window.confirm('Delete this archive from server storage? External backup will be kept.')) return;
+    if (!window.confirm(t('admin.confirm_delete_archive'))) return;
     try {
       await apiClient.delete(`/archive/archives/${archiveId}`, { params: { keep_external: true } });
-      showSuccess('Archive deleted from server');
+      showSuccess(t('admin.archive_deleted_server'));
       fetchArchives();
     } catch (err: any) {
-      showError('Failed to delete archive', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_delete_archive'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -253,9 +253,9 @@ export function AdminDashboard() {
       document.body.appendChild(link);
       link.click();
       link.remove();
-      showSuccess('Archive downloaded');
+      showSuccess(t('admin.archive_downloaded'));
     } catch (err: any) {
-      showError('Failed to download archive', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_download_archive'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -264,23 +264,23 @@ export function AdminDashboard() {
       await apiClient.patch(`/admin/users/${user.id}`, null, {
         params: { is_active: !user.is_active },
       });
-      showSuccess(`User ${!user.is_active ? 'activated' : 'deactivated'}`);
+      showSuccess(!user.is_active ? t('admin.user_activated') : t('admin.user_deactivated'));
       fetchUsers();
     } catch (err: any) {
-      showError('Failed to update user', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_update_user'), err.response?.data?.detail || err.message);
     }
   };
 
   const handleDeleteUser = async (user: AdminUser) => {
-    if (!window.confirm(`Are you sure you want to delete user "${user.username}"? This action cannot be undone.`)) {
+    if (!window.confirm(t('admin.confirm_delete_user', { username: user.username }))) {
       return;
     }
     try {
       await apiClient.delete(`/admin/users/${user.id}`);
-      showSuccess('User deleted');
+      showSuccess(t('admin.user_deleted'));
       fetchUsers();
     } catch (err: any) {
-      showError('Failed to delete user', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_delete_user'), err.response?.data?.detail || err.message);
     }
   };
 
@@ -302,30 +302,34 @@ export function AdminDashboard() {
       setCustomPassword('');
       setReset2FA(false);
       setCopiedPass(false);
-      showSuccess(`Password reset successfully for ${response.data.username}`);
+      showSuccess(t('admin.password_reset_ok', { username: response.data.username }));
       fetchUsers();
     } catch (err: any) {
-      showError('Failed to reset password', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_reset_password'), err.response?.data?.detail || err.message);
     } finally {
       setResetSubmitting(false);
     }
   };
 
   const handleDeleteExam = async (exam: AdminExam) => {
-    if (!window.confirm(`Are you sure you want to delete exam "${exam.title}"? This action cannot be undone.`)) {
+    if (!window.confirm(t('admin.confirm_delete_exam', { title: exam.title }))) {
       return;
     }
     try {
       await apiClient.delete(`/admin/exams/${exam.id}`);
-      showSuccess('Exam deleted');
+      showSuccess(t('admin.exam_deleted'));
       fetchExams();
     } catch (err: any) {
-      showError('Failed to delete exam', err.response?.data?.detail || err.message);
+      showError(t('admin.failed_delete_exam'), err.response?.data?.detail || err.message);
     }
   };
 
   useEffect(() => {
+    // Prefetch counts so tab badges are accurate before each tab is opened (D8).
     fetchStats();
+    fetchUsers();
+    fetchExams();
+    fetchArchiveStats();
   }, []);
 
   useEffect(() => {
@@ -400,10 +404,10 @@ export function AdminDashboard() {
       <div className="submenus-bar" role="tablist" aria-label={t("admin.sections_aria")}>
         {[
           { id: 'stats', label: `📊 ${t('admin.statistics')}`, count: null },
-          { id: 'users', label: `👥 ${t('admin.users')}`, count: users.length },
+          { id: 'users', label: `👥 ${t('admin.users')}`, count: stats?.totalUsers ?? users.length },
           { id: 'teachers', label: `🎓 ${t('admin.teacher_approvals')}`, count: null },
-          { id: 'exams', label: `📝 ${t('admin.exams')}`, count: exams.length },
-          { id: 'archives', label: `📦 ${t('admin.archives')}`, count: archives.length },
+          { id: 'exams', label: `📝 ${t('admin.exams')}`, count: stats?.totalExams ?? exams.length },
+          { id: 'archives', label: `📦 ${t('admin.archives')}`, count: archiveStats?.total_archives ?? archives.length },
           { id: 'backups', label: `💾 ${t('admin.backups')}`, count: null },
           { id: 'config', label: `⚙️ ${t('admin.config')}`, count: null },
         ].map(tab => (
@@ -822,10 +826,10 @@ export function AdminDashboard() {
           {archiveStats && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
               {[
-                { label: 'Total Archives', value: archiveStats.total_archives, color: '#8b5cf6', icon: '📦' },
-                { label: 'Total Size', value: `${archiveStats.total_size_mb} MB`, color: '#3b82f6', icon: '💾' },
-                { label: 'Original Size', value: `${archiveStats.original_size_bytes / (1024*1024)} MB`, color: '#6b7280', icon: '📄' },
-                { label: 'Space Saved', value: `${archiveStats.compression_savings_mb} MB`, color: '#10b981', icon: '✨' },
+                { label: t('admin.total_archives'), value: archiveStats.total_archives, color: '#8b5cf6', icon: '📦' },
+                { label: t('admin.total_size'), value: `${archiveStats.total_size_mb} MB`, color: '#3b82f6', icon: '💾' },
+                { label: t('admin.original_size'), value: `${archiveStats.original_size_bytes / (1024*1024)} MB`, color: '#6b7280', icon: '📄' },
+                { label: t('admin.space_saved'), value: `${archiveStats.compression_savings_mb} MB`, color: '#10b981', icon: '✨' },
               ].map((stat, i) => (
                 <div key={i} style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
                   <div style={{ fontSize: '2.5rem', fontWeight: 700, color: stat.color }}>{stat.value}</div>

@@ -1351,7 +1351,7 @@ export function TeacherDashboard() {
 
                         <span style={{ display: 'inline-block', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#10b98120', color: '#10b981' }}>
 
-                          ✓ Completed
+                          ✓ {t('teacher_dashboard.status_completed')}
 
                         </span>
 
@@ -1359,7 +1359,7 @@ export function TeacherDashboard() {
 
                         <span style={{ display: 'inline-block', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#3b82f620', color: '#3b82f6' }}>
 
-                          🟢 In Progress
+                          🟢 {t('teacher_dashboard.status_in_progress')}
 
                         </span>
 
@@ -1367,7 +1367,7 @@ export function TeacherDashboard() {
 
                         <span style={{ display: 'inline-block', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 600, backgroundColor: '#f59e0b20', color: '#f59e0b' }}>
 
-                          ⏳ Not Started
+                          ⏳ {t('teacher_dashboard.status_not_started')}
 
                         </span>
 
@@ -1383,7 +1383,7 @@ export function TeacherDashboard() {
 
                     <td style={{ padding: '0.75rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}>
 
-                      {hb.started_at && !hb.completed_at ? 'In progress' : hb.completed_at ? 'Finished' : '—'}
+                      {hb.started_at && !hb.completed_at ? t('teacher_dashboard.status_in_progress') : hb.completed_at ? t('teacher_dashboard.status_finished') : '—'}
 
                     </td>
 
@@ -1455,7 +1455,7 @@ export function TeacherDashboard() {
 
                       >
 
-                        ⚡ Reset Password
+                        ⚡ {t('teacher_dashboard.btn_reset_password')}
 
                       </button>
 
@@ -2453,7 +2453,7 @@ export function TeacherDashboard() {
 
                                 >
 
-                                  👁️ View
+                                  👁️ {t('teacher_dashboard.btn_view')}
 
                                 </button>
 
@@ -2487,7 +2487,7 @@ export function TeacherDashboard() {
 
                                 >
 
-                                  🔄 Re-correct
+                                  🔄 {t('teacher_dashboard.btn_recorrect')}
 
                                 </button>
 
@@ -2523,7 +2523,7 @@ export function TeacherDashboard() {
 
                                   >
 
-                                    📦 Download
+                                    📦 {t('teacher_dashboard.btn_download')}
 
                                   </button>
 
