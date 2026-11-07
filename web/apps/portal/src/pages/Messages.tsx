@@ -52,11 +52,13 @@ export function Messages() {
   const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
 
-  // Directory for staff
+  // Directory for staff; available teachers for students (opt-in + class)
   const [teachers, setTeachers] = useState<DirectoryItem[]>([]);
   const [admins, setAdmins] = useState<DirectoryItem[]>([]);
+  const [availableTeachers, setAvailableTeachers] = useState<DirectoryItem[]>([]);
   const [adminSupportEmail, setAdminSupportEmail] = useState<string | null>(null);
   const [showDirectory, setShowDirectory] = useState(false);
+  const isStudent = user?.role === 'student';
 
   // Confirmation Modal
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
@@ -79,7 +81,7 @@ export function Messages() {
         setConversations(data);
       }
     } catch {
-      showError(t('messages.error_load') || 'Failed to load conversations');
+      showError(t('messages.error_load'));
     }
   }, [showError, t]);
 
@@ -97,7 +99,25 @@ export function Messages() {
         setAdminSupportEmail(data.admin_support_email || null);
       }
     } catch {
-      // Students 403 on directory
+      // Students 403 on staff lounge directory
+    }
+  }, []);
+
+  const fetchAvailableTeachers = useCallback(async () => {
+    try {
+      const token = getToken();
+      if (!token) return;
+      const res = await fetch(`${API_URL}/chat/students/available-teachers`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setAvailableTeachers(data.teachers || []);
+      } else {
+        setAvailableTeachers([]);
+      }
+    } catch {
+      setAvailableTeachers([]);
     }
   }, []);
 
@@ -113,7 +133,7 @@ export function Messages() {
         setMessages(data);
       }
     } catch {
-      showError(t('messages.error_load') || 'Failed to load messages');
+      showError(t('messages.error_load'));
     } finally {
       setLoading(false);
     }
@@ -143,10 +163,10 @@ export function Messages() {
         fetchConversations();
       } else {
         const err = await res.json().catch(() => null);
-        showError(err?.detail || t('messages.error_send') || 'Failed to send message');
+        showError(err?.detail || t('messages.error_send'));
       }
     } catch {
-      showError(t('messages.error_send') || 'Failed to send message');
+      showError(t('messages.error_send'));
     } finally {
       setSending(false);
     }
@@ -161,11 +181,11 @@ export function Messages() {
       });
       if (res.ok) {
         setMessages((prev) => prev.filter((m) => m.id !== messageId));
-        showSuccess(t('messages.deleted') || 'Message deleted');
+        showSuccess(t('messages.deleted'));
         fetchConversations();
       }
     } catch {
-      showError(t('messages.error_delete') || 'Failed to delete message');
+      showError(t('messages.error_delete'));
     } finally {
       setConfirmDeleteId(null);
     }
@@ -185,7 +205,7 @@ export function Messages() {
     }
     setMessages([]);
     setConfirmClearChat(false);
-    showSuccess(t('messages.history_cleared') || 'Chat history cleared');
+    showSuccess(t('messages.history_cleared'));
     fetchConversations();
   };
 
@@ -198,10 +218,22 @@ export function Messages() {
 
   useEffect(() => {
     fetchConversations();
-    if (user?.role !== 'student') {
+    if (isStudent) {
+      fetchAvailableTeachers();
+    } else {
       fetchDirectory();
     }
-  }, [fetchConversations, fetchDirectory, user?.role]);
+  }, [fetchConversations, fetchDirectory, fetchAvailableTeachers, isStudent]);
+
+  const availableTeacherIds = new Set(availableTeachers.map((t) => t.id));
+  const studentConversations = isStudent
+    ? conversations.filter((conv) => {
+        const partnerId = conv.sender_id === user?.id ? conv.recipient_id : conv.sender_id;
+        return availableTeacherIds.has(partnerId);
+      })
+    : conversations;
+  const studentPageEmpty =
+    isStudent && availableTeachers.length === 0 && studentConversations.length === 0;
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -230,7 +262,7 @@ export function Messages() {
             <Lock size={15} />
             <span>{t('messages.encrypted_at_rest')}</span>
           </div>
-          {user?.role !== 'student' && (
+          {!isStudent && (
             <button
               onClick={() => setShowDirectory(!showDirectory)}
               style={{
@@ -254,6 +286,27 @@ export function Messages() {
         </div>
       </div>
 
+      {studentPageEmpty && (
+        <div
+          style={{
+            padding: '3rem 1.5rem',
+            textAlign: 'center',
+            backgroundColor: 'var(--panel-bg)',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-muted)',
+          }}
+        >
+          <Mail size={48} style={{ opacity: 0.35, marginBottom: '1rem' }} />
+          <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.2rem', color: 'var(--text-color)' }}>
+            {t('messages.student_empty_title')}
+          </h2>
+          <p style={{ margin: 0, maxWidth: '420px', marginInline: 'auto', fontSize: '0.9rem' }}>
+            {t('messages.student_empty_desc')}
+          </p>
+        </div>
+      )}
+
       {/* Admin Support Email Banner */}
       {adminSupportEmail && (
         <div style={{ marginBottom: '1rem', padding: '0.75rem 1rem', borderRadius: 'var(--radius-md)', backgroundColor: 'var(--sidebar-bg)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -264,16 +317,25 @@ export function Messages() {
         </div>
       )}
 
-      {/* Main Grid */}
+      {/* Main Grid — hidden for students when no opted-in class teachers */}
+      {!studentPageEmpty && (
       <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '1.5rem', height: '650px', backgroundColor: 'var(--panel-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', overflow: 'hidden' }}>
         {/* Left Column: Conversations or Directory */}
         <div style={{ borderRight: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'var(--sidebar-bg)' }}>
             <span style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-color)' }}>
-              {showDirectory ? t('messages.directory_title') : t('messages.conversations')}
+              {isStudent
+                ? t('messages.available_teachers')
+                : showDirectory
+                  ? t('messages.directory_title')
+                  : t('messages.conversations')}
             </span>
             <button
-              onClick={() => { fetchConversations(); if (user?.role !== 'student') fetchDirectory(); }}
+              onClick={() => {
+                fetchConversations();
+                if (isStudent) fetchAvailableTeachers();
+                else fetchDirectory();
+              }}
               title={t('messages.refresh')}
               aria-label={t('messages.refresh')}
               style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '0.25rem' }}
@@ -283,7 +345,39 @@ export function Messages() {
           </div>
 
           <div style={{ flex: 1, overflowY: 'auto', padding: '0.75rem' }}>
-            {showDirectory ? (
+            {isStudent ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {availableTeachers.length === 0 ? (
+                  <div style={{ padding: '2rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                    {t('messages.no_available_teachers')}
+                  </div>
+                ) : (
+                  availableTeachers.map((tch) => (
+                    <button
+                      key={tch.id}
+                      onClick={() => startChatWith(tch.id, tch.name)}
+                      style={{
+                        padding: '0.65rem 0.75rem',
+                        borderRadius: 'var(--radius-md)',
+                        border: selectedPartner === tch.id ? '1px solid var(--primary-color)' : '1px solid var(--border-color)',
+                        backgroundColor: selectedPartner === tch.id ? 'var(--primary-color)' : 'var(--bg-color)',
+                        color: selectedPartner === tch.id ? '#fff' : 'var(--text-color)',
+                        textAlign: 'left',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.2rem',
+                      }}
+                    >
+                      <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{tch.name}</span>
+                      <span style={{ fontSize: '0.75rem', opacity: 0.85 }}>
+                        {tch.is_aide ? t('messages.role_aide') : t('messages.role_teacher')}
+                      </span>
+                    </button>
+                  ))
+                )}
+              </div>
+            ) : showDirectory ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase' }}>{t('messages.colleagues')}</span>
                 {teachers.map((tch) => (
@@ -335,12 +429,12 @@ export function Messages() {
                   </>
                 )}
               </div>
-            ) : conversations.length === 0 ? (
+            ) : studentConversations.length === 0 ? (
               <div style={{ padding: '2rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                 {t('messages.no_messages')}
               </div>
             ) : (
-              conversations.map((conv) => {
+              studentConversations.map((conv) => {
                 const partnerId = conv.sender_id === user?.id ? conv.recipient_id : conv.sender_id;
                 const displayName = conv.sender_id === user?.id ? conv.recipient_name : conv.sender_name;
                 const isSelected = selectedPartner === partnerId;
@@ -476,6 +570,7 @@ export function Messages() {
           )}
         </div>
       </div>
+      )}
 
       {/* Confirmation Modal for Individual Delete */}
       {confirmDeleteId && (

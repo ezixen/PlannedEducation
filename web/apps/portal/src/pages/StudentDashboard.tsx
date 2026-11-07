@@ -27,11 +27,18 @@ export function StudentDashboard() {
   const fetchExams = async () => {
     try {
       const response = await apiClient.get('/exams/');
-      setExams(response.data || []);
+      let completed: any[] = [];
       try {
         const subsRes = await apiClient.get('/ai/submissions');
-        setCompletedSubs((subsRes.data || []).filter((s: any) => s.status === 'graded' || s.score !== null));
-      } catch {}
+        completed = (subsRes.data || []).filter((s: any) => s.status === 'graded' || s.score !== null);
+        setCompletedSubs(completed);
+      } catch {
+        setCompletedSubs([]);
+      }
+      const doneExamIds = new Set(
+        completed.map((s: any) => s.exam_id).filter(Boolean),
+      );
+      setExams((response.data || []).filter((e: ExamItem) => !doneExamIds.has(e.id)));
     } catch (err) {
       console.error('Failed to fetch student exams:', err);
     } finally {
@@ -213,7 +220,12 @@ export function StudentDashboard() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-color)' }}>{sub.exam_title}</h3>
                     <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-color)' }}>
-                      {sub.score !== null ? t('student_dashboard.score_pts', { score: String(sub.score) }) : t('student_dashboard.graded')}
+                      {sub.score !== null
+                        ? t('student_dashboard.score_pts', {
+                            score: String(sub.score),
+                            total: String(sub.total_possible ?? sub.points_possible ?? '—'),
+                          })
+                        : t('student_dashboard.graded')}
                     </span>
                   </div>
 

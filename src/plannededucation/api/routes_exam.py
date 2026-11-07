@@ -217,12 +217,16 @@ def create_exam(
 ):
     _require_approved_teacher(current_user)
     payload = exam.model_dump()
+    nested_questions = payload.pop("questions", None) or []
     if payload.get("home_exam_enabled"):
         assert_platform_home_exam_enabled()
     else:
         payload["home_exam_enabled"] = False
     db_exam = models.Exam(**payload, teacher_id=current_user.id)
     db.add(db_exam)
+    db.flush()
+    for q in nested_questions:
+        db.add(models.Question(**q, exam_id=db_exam.id))
     db.commit()
     db.refresh(db_exam)
     return db_exam
@@ -679,8 +683,28 @@ def submit_exam(
             )
             .first()
         )
+        response_text = item.response if hasattr(item, "response") else None
+        if response_text is None and hasattr(item, "answer"):
+            response_text = item.answer
+        if response_text is None:
+            response_text = ""
         if ans:
-            ans.student_response = item.response
+            ans.student_response = response_text
+        else:
+            # Questions may have been added after start, or progressive save skipped.
+            # Upsert so submit still persists answers instead of silently dropping them.
+            q = db.query(models.Question).filter(models.Question.id == item.question_id).first()
+            if q is None or q.exam_id != exam_id:
+                continue
+            db.add(
+                models.Answer(
+                    submission_id=submission.id,
+                    question_id=item.question_id,
+                    student_response=response_text,
+                    generated_question_text=q.text,
+                    generated_options_json=q.options_json,
+                )
+            )
 
     db.commit()
     return {"status": "success", "message": "Exam submitted successfully"}

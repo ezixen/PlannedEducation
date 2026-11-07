@@ -18,8 +18,10 @@ export function WatermarkOverlay() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Only display anti-cheating watermark for students currently taking an exam
-  if (!user || user.role !== 'student' || !location.pathname.startsWith('/exam')) return null;
+  // Only while actively taking an exam (not the student exam list / results).
+  const onActiveExam =
+    /^\/exam\/[^/]+/.test(location.pathname) || location.pathname.startsWith('/take-exam');
+  if (!user || user.role !== 'student' || !onActiveExam) return null;
 
   // Calculate how many watermark items we need to fill the screen
   const density = 250; // pixels per watermark
@@ -28,7 +30,8 @@ export function WatermarkOverlay() {
   const totalWatermarks = cols * rows;
 
   return (
-    <div 
+    <div
+      aria-hidden="true"
       style={{
         position: 'fixed',
         top: 0,
@@ -45,7 +48,7 @@ export function WatermarkOverlay() {
       }}
     >
       {Array.from({ length: totalWatermarks }).map((_, i) => (
-        <div 
+        <div
           key={i}
           style={{
             display: 'flex',

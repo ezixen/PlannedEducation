@@ -97,26 +97,68 @@ export function TeacherClasses() {
     }
   }, []);
 
+  const loadClasses = useCallback(async () => {
+    try {
+      const res = await apiClient.get<any[]>('/auth/teacher/classes');
+      if (!Array.isArray(res.data)) return;
+      setClasses(
+        res.data.map((c) => ({
+          id: c.id,
+          name: c.name,
+          students: (c.student_ids || []).map((sid: string) => {
+            const known = registeredStudents.find((s) => s.id === sid);
+            return known || { id: sid, name: sid, email: '' };
+          }),
+          student_ids: c.student_ids || [],
+          student_count: c.student_count ?? (c.student_ids || []).length,
+        })),
+      );
+    } catch {
+      // ignore
+    }
+  }, [registeredStudents]);
+
   useEffect(() => {
     loadRegisteredStudents();
     loadAides();
     loadTeacherProfile();
   }, [loadRegisteredStudents, loadAides, loadTeacherProfile]);
 
-  // Classes are kept in component state only (no localStorage PII persistence).
+  useEffect(() => {
+    if (registeredStudents.length >= 0) {
+      loadClasses();
+    }
+  }, [loadClasses, registeredStudents.length]);
 
-  const handleCreateClass = (e: React.FormEvent) => {
+  const handleCreateClass = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newClassName.trim()) return;
-
-    const newClass = {
-      id: Date.now(),
-      name: newClassName.trim(),
-      students: registeredStudents,
-    };
-    setClasses(prev => [...prev, newClass]);
-    setNewClassName('');
-    showSuccess(t('teacher_classes.class_created', { name: newClass.name }));
+    try {
+      const res = await apiClient.post('/auth/teacher/classes', {
+        name: newClassName.trim(),
+        student_ids: registeredStudents.map((s) => s.id),
+      });
+      const created = res.data;
+      setClasses((prev) => [
+        ...prev,
+        {
+          id: created.id,
+          name: created.name,
+          students: registeredStudents.filter((s) =>
+            (created.student_ids || []).includes(s.id),
+          ),
+          student_ids: created.student_ids || [],
+          student_count: created.student_count,
+        },
+      ]);
+      setNewClassName('');
+      showSuccess(t('teacher_classes.class_created', { name: created.name }));
+    } catch (err: any) {
+      showError(
+        t('teacher_classes.class_create_failed'),
+        err.response?.data?.detail || err.message,
+      );
+    }
   };
 
   const handleOpenRoster = (cls: any) => {

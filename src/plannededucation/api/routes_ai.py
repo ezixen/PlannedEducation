@@ -1705,14 +1705,23 @@ async def list_teacher_submissions(
         elif s.feedback and s.score is None:
             status_val = "pending_review"
 
+        total_possible = 0
+        for ans in s.answers or []:
+            if ans.question is not None and ans.question.points is not None:
+                total_possible += int(ans.question.points)
+            else:
+                total_possible += 1
+
         result.append({
             "id": s.id,
             "student_name": student_name,
             "student_email": student_email,
             "exam_title": exam_title,
+            "exam_id": s.exam_id,
             "submitted_at": s.completed_at.isoformat() if s.completed_at else (s.started_at.isoformat() if s.started_at else None),
             "status": status_val,
             "score": s.score,
+            "total_possible": total_possible,
             "feedback": s.feedback,
             "question_count": len(s.answers) if s.answers else 0,
             "has_ai_grades": s.feedback is not None and "question_grades" in s.feedback,

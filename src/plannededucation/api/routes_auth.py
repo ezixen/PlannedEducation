@@ -752,6 +752,86 @@ def confirm_password_reset(
 
 # ── Classroom Teacher Quick Password Reset ────────────────────────────────────
 
+@router.get("/teacher/classes", response_model=list[schemas.ClassResponse])
+def list_teacher_classes(
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """List classes owned by the current teacher (with enrolled student ids)."""
+    if not (
+        current_user.role in ("teacher", "admin", "superadmin")
+        and (current_user.teacher_approved or current_user.is_admin)
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Approved teacher or administrator status required",
+        )
+    teacher_id = current_user.id
+    groups = (
+        db.query(models.ClassGroup)
+        .filter(models.ClassGroup.teacher_id == teacher_id)
+        .order_by(models.ClassGroup.name.asc())
+        .all()
+    )
+    out: list[schemas.ClassResponse] = []
+    for g in groups:
+        member_ids = [m.student_id for m in (g.memberships or [])]
+        out.append(
+            schemas.ClassResponse(
+                id=g.id,
+                name=g.name,
+                teacher_id=g.teacher_id,
+                student_ids=member_ids,
+                student_count=len(member_ids),
+            )
+        )
+    return out
+
+
+@router.post("/teacher/classes", response_model=schemas.ClassResponse, status_code=201)
+def create_teacher_class(
+    payload: schemas.ClassCreateRequest,
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    """Create a class roster and enroll the given students."""
+    if not (
+        current_user.role == "teacher" and current_user.teacher_approved
+    ) and not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Approved teacher status required",
+        )
+    group = models.ClassGroup(name=payload.name.strip(), teacher_id=current_user.id)
+    db.add(group)
+    db.flush()
+
+    unique_ids = list(dict.fromkeys(payload.student_ids or []))
+    enrolled: list[str] = []
+    for sid in unique_ids:
+        student = (
+            db.query(models.User)
+            .filter(models.User.id == sid, models.User.role == "student")
+            .first()
+        )
+        if not student:
+            continue
+        db.add(
+            models.ClassMembership(class_group_id=group.id, student_id=student.id)
+        )
+        enrolled.append(student.id)
+
+    db.commit()
+    db.refresh(group)
+    return schemas.ClassResponse(
+        id=group.id,
+        name=group.name,
+        teacher_id=group.teacher_id,
+        student_ids=enrolled,
+        student_count=len(enrolled),
+    )
+
+
 @router.get("/teacher/students")
 def list_students_for_teacher(
     db: Session = Depends(database.get_db),
