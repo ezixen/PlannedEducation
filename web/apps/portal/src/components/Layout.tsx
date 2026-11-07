@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, Globe, ArrowLeft, Plus, Shield, Mail, CircleHelp } from 'lucide-react';
+import { Menu, X, Home, Settings, GraduationCap, LogOut, BookOpen, Users, BrainCircuit, ArrowLeft, Plus, Shield, Mail, CircleHelp } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { useI18n, LOCALE_NAMES } from '../contexts/I18nContext';
+import { useI18n } from '../contexts/I18nContext';
+import { useExam } from '../contexts/ExamContext';
 import { useSpecialCharacters } from '../contexts/SpecialCharactersContext';
 import { WatermarkOverlay } from './WatermarkOverlay';
-import { FAQChatbot } from './FAQChatbot';
 import { NotificationBell } from './NotificationBell';
 import { MessageIcon } from './MessageIcon';
 import { ChatOverlay } from './ChatOverlay';
 import { SpecialCharactersPicker } from './SpecialCharactersPicker';
+import { LanguageSelector } from './LanguageSelector';
 import { apiClient, API_URL } from '../api';
 
 interface DeploymentConfig {
@@ -21,19 +22,25 @@ interface DeploymentConfig {
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout } = useAuth();
-  const { locale, setLocale, availableLocales, t } = useI18n();
+  const { t } = useI18n();
+  const { setExamActive } = useExam();
   const { customCategories } = useSpecialCharacters();
   const location = useLocation();
   const navigate = useNavigate();
   const [headerConfig, setHeaderConfig] = useState<DeploymentConfig>({});
   const [chatOpen, setChatOpen] = useState(false);
-  const [faqOpen, setFaqOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const isTakingExam = /^\/exam\/[^/]+/.test(location.pathname);
 
   // Close menu on route changes; also close floating chat when leaving authenticated shell routes
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  // Keep ExamContext in sync with React Router navigations (popstate alone misses pushState)
+  useEffect(() => {
+    setExamActive(isTakingExam);
+  }, [isTakingExam, setExamActive]);
 
   // Unread DM badge — only while authenticated Layout is mounted
   useEffect(() => {
@@ -189,25 +196,19 @@ export function Layout() {
         <div className="site-header-actions">
           {user && (
             <>
-              <MessageIcon unreadCount={unreadCount} onOpen={() => setChatOpen(true)} />
+              {!isTakingExam && (
+                <MessageIcon unreadCount={unreadCount} onOpen={() => setChatOpen(true)} />
+              )}
               <NotificationBell />
+              {!isTakingExam && (
+                <SpecialCharactersPicker
+                  customCategories={customCategories}
+                  triggerPlacement="header"
+                />
+              )}
             </>
           )}
-          <div className="header-lang-pill">
-            <Globe size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
-            <select
-              value={locale}
-              onChange={(e) => setLocale(e.target.value as any)}
-              aria-label={t('layout.select_language')}
-              className="header-lang-select"
-            >
-              {availableLocales.map((loc) => (
-                <option key={loc} value={loc} style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
-                  {LOCALE_NAMES[loc] || loc.toUpperCase()}
-                </option>
-              ))}
-            </select>
-          </div>
+          <LanguageSelector variant="pill" />
         </div>
       </header>
 
@@ -228,45 +229,20 @@ export function Layout() {
                   <span>{item.label}</span>
                 </Link>
               ))}
-              <button
-                type="button"
-                onClick={() => {
-                  setMenuOpen(false);
-                  setFaqOpen(true);
-                }}
+              <a
+                href="/help"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="nav-item"
-                style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}
+                onClick={() => setMenuOpen(false)}
                 aria-label={t('faq.open_aria')}
               >
                 <CircleHelp size={20} />
                 <span>{t('nav.help')}</span>
-              </button>
+              </a>
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
-              <div style={{ padding: '0.5rem 0.75rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <Globe size={14} /> {t('settings.section_language')}
-                </span>
-                <select
-                  value={locale}
-                  onChange={(e) => setLocale(e.target.value as any)}
-                  aria-label={t('layout.language_menu')}
-                  style={{
-                    width: '100%',
-                    padding: '0.4rem 0.5rem',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1px solid var(--border-color)',
-                    backgroundColor: 'var(--bg-color)',
-                    color: 'var(--text-color)',
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {availableLocales.map((loc) => (
-                    <option key={loc} value={loc}>
-                      {LOCALE_NAMES[loc] || loc.toUpperCase()}
-                    </option>
-                  ))}
-                </select>
+              <div style={{ padding: '0.5rem 0.75rem' }}>
+                <LanguageSelector variant="block" />
               </div>
               <hr style={{ margin: '0.5rem 0', border: 'none', borderTop: '1px solid var(--border-color)' }} />
               <button
@@ -292,9 +268,13 @@ export function Layout() {
         </div>
       </main>
       {/* Authenticated-only chrome: never on /login, /register, /reset-password */}
-      <FAQChatbot isOpen={faqOpen} onOpenChange={setFaqOpen} showFloatingButton={false} />
-      <ChatOverlay isOpen={chatOpen} onClose={() => setChatOpen(false)} />
-      <SpecialCharactersPicker customCategories={customCategories} />
+      {!isTakingExam && <ChatOverlay isOpen={chatOpen} onClose={() => setChatOpen(false)} />}
+      {isTakingExam && (
+        <SpecialCharactersPicker
+          customCategories={customCategories}
+          triggerPlacement="exam"
+        />
+      )}
     </div>
   );
 }

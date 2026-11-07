@@ -3,6 +3,7 @@ import { Users, KeyRound, X, CheckCircle2, UserCheck, ShieldCheck, MessageSquare
 import { apiClient } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
+import { InfoTip } from '../components/InfoTip';
 
 interface StudentRosterItem {
   id: string;
@@ -252,6 +253,7 @@ export function TeacherClasses() {
             <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)' }}>
               {t('teacher_classes.dm_title')}
             </h3>
+            <InfoTip tipKey="info.teacher_classes_dms" />
           </div>
           <p style={{ margin: '0 0 1rem', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
             {t('teacher_classes.dm_desc')}

@@ -107,8 +107,10 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
       }}
     >
       <div
+        data-pe-modal="true"
+        className="pe-modal-surface"
         style={{
-          backgroundColor: 'var(--sidebar-bg)',
+          backgroundColor: 'var(--panel-bg, var(--sidebar-bg, #ffffff))',
           borderRadius: 'var(--radius-lg)',
           border: '1px solid var(--border-color)',
           width: '100%',
@@ -117,6 +119,7 @@ export function ForgotPasswordModal({ isOpen, onClose, defaultEmail = '' }: Forg
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
+          opacity: 1,
         }}
       >
         {/* Header */}

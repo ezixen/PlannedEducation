@@ -1,8 +1,30 @@
 import { useState, useEffect } from 'react';
+import QRCode from 'qrcode';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { apiClient } from '../api';
+
+const recoveryGridStyle: React.CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '0.5rem',
+  marginBottom: '1rem',
+  maxWidth: '100%',
+};
+
+const recoveryCodeStyle: React.CSSProperties = {
+  backgroundColor: 'var(--bg-color)',
+  padding: '0.5rem 0.65rem',
+  borderRadius: 'var(--radius-sm)',
+  border: '1px solid var(--border-color)',
+  fontSize: '0.85rem',
+  wordBreak: 'break-all',
+  maxWidth: '100%',
+  flex: '1 1 7rem',
+  boxSizing: 'border-box',
+  textAlign: 'center',
+};
 
 export function TwoFASettings() {
   const { t } = useI18n();
@@ -12,10 +34,9 @@ export function TwoFASettings() {
   const [totpEnabled, setTotpEnabled] = useState(false);
   const [setupSecret, setSetupSecret] = useState<string>('');
   const [setupQrCodeUri, setSetupQrCodeUri] = useState<string>('');
+  const [qrDataUrl, setQrDataUrl] = useState<string>('');
   const [setupRecoveryCodes, setSetupRecoveryCodes] = useState<string[]>([]);
   const [showSetup, setShowSetup] = useState(false);
-  const [showRecoveryCodes, setShowRecoveryCodes] = useState(false);
-  const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
   const [totpCode, setTotpCode] = useState('');
   const [recoveryCode, setRecoveryCode] = useState('');
   const [loading, setLoading] = useState(false);
@@ -26,6 +47,30 @@ export function TwoFASettings() {
       setTotpEnabled(user.totp_enabled || false);
     }
   }, [user]);
+
+  // Encode otpauth:// URI into a real QR (Google Authenticator compatible)
+  useEffect(() => {
+    if (!setupQrCodeUri) {
+      setQrDataUrl('');
+      return;
+    }
+    let cancelled = false;
+    QRCode.toDataURL(setupQrCodeUri, {
+      width: 200,
+      margin: 2,
+      errorCorrectionLevel: 'M',
+      color: { dark: '#111827', light: '#ffffff' },
+    })
+      .then((url) => {
+        if (!cancelled) setQrDataUrl(url);
+      })
+      .catch(() => {
+        if (!cancelled) setQrDataUrl('');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [setupQrCodeUri]);
 
   const handleSetup = async () => {
     setLoading(true);
@@ -89,23 +134,6 @@ export function TwoFASettings() {
     }
   };
 
-  const handleRegenerateRecoveryCodes = async () => {
-    setLoading(true);
-    try {
-      const response = await apiClient.post('/auth/2fa/regenerate-recovery-codes', {
-        totp_code: totpCode || undefined,
-        recovery_code: recoveryCode || undefined,
-      });
-      setRecoveryCodes(response.data.recovery_codes);
-      setShowRecoveryCodes(true);
-      showSuccess(t('twofa.recovery_regenerated'));
-    } catch (err: any) {
-      showError(t('twofa.recovery_regen_failed'), err.response?.data?.detail || err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '0.625rem',
@@ -156,7 +184,7 @@ export function TwoFASettings() {
   }
 
   return (
-    <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' }}>
+    <div style={{ padding: '1.5rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', maxWidth: '100%', overflow: 'hidden' }}>
       <h3>{t('twofa.1')}</h3>
       {totpEnabled ? (
         <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
@@ -168,22 +196,24 @@ export function TwoFASettings() {
         </p>
       )}
 
-      {/* Setup flow */}
       {showSetup && setupStep === 'verify' && (
-        <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
+        <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', maxWidth: '100%', boxSizing: 'border-box' }}>
           <h4>{t('twofa.2')}</h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
             {t('twofa.scan_qr_desc')}
           </p>
           <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <img
-              src={`data:image/svg+xml;utf8,${encodeURIComponent(
-                `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ffffff"/><rect x="16" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="32" width="16" height="16" fill="#111827"/><rect x="136" y="16" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="152" y="32" width="16" height="16" fill="#111827"/><rect x="16" y="136" width="48" height="48" fill="none" stroke="#111827" stroke-width="8"/><rect x="32" y="152" width="16" height="16" fill="#111827"/><rect x="80" y="80" width="40" height="40" fill="#111827"/><text x="100" y="192" font-family="monospace" font-size="10" text-anchor="middle" fill="#374151">${t('twofa.qr_ready')}</text></svg>`
-              )}`}
-              alt={t('twofa.qr_alt')}
-              data-uri={setupQrCodeUri ? 'configured' : 'empty'}
-              style={{ maxWidth: '100%', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)' }}
-            />
+            {qrDataUrl ? (
+              <img
+                src={qrDataUrl}
+                alt={t('twofa.qr_alt')}
+                width={200}
+                height={200}
+                style={{ maxWidth: '100%', height: 'auto', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', background: '#fff' }}
+              />
+            ) : (
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t('twofa.qr_ready')}</p>
+            )}
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
             {t('twofa.manual_secret_desc')} <code style={{ wordBreak: 'break-all' }}>{setupSecret}</code>
@@ -202,7 +232,7 @@ export function TwoFASettings() {
             style={{ ...inputStyle, textAlign: 'center', letterSpacing: '0.5rem', fontSize: '1.25rem', maxWidth: '200px' }}
             autoComplete="one-time-code"
           />
-          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
             <button onClick={handleConfirm} disabled={loading} style={buttonStyle}>
               {loading ? t('twofa.verifying') : t('twofa.4')}
             </button>
@@ -216,9 +246,9 @@ export function TwoFASettings() {
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
             <strong>{t('twofa.important_notice')}</strong> {t('twofa.recovery_only_way')}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
+          <div style={recoveryGridStyle}>
             {setupRecoveryCodes.map((code, i) => (
-              <code key={i} style={{ backgroundColor: 'var(--bg-color)', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', fontSize: '0.85rem' }}>
+              <code key={i} style={recoveryCodeStyle}>
                 {code}
               </code>
             ))}
@@ -229,7 +259,6 @@ export function TwoFASettings() {
         </div>
       )}
 
-      {/* 2FA Enabled - Management options */}
       {totpEnabled && !showSetup && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -265,33 +294,10 @@ export function TwoFASettings() {
             >
               {loading ? t('twofa.disabling') : t('twofa.9')}
             </button>
-            <button
-              onClick={handleRegenerateRecoveryCodes}
-              disabled={loading}
-              style={secondaryButtonStyle}
-            >
-              {loading ? t('twofa.generating') : t('twofa.regenerate_btn')}
-            </button>
           </div>
-
-          {showRecoveryCodes && recoveryCodes.length > 0 && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-              <h4>{t('twofa.new_codes_title')}</h4>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-                <strong>{t('twofa.important_notice')}</strong> {t('twofa.old_codes_invalid')}
-              </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '0.5rem', marginBottom: '1rem' }}>
-                {recoveryCodes.map((code, i) => (
-                  <code key={i} style={{ backgroundColor: 'var(--sidebar-bg)', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', fontSize: '0.85rem' }}>
-                    {code}
-                  </code>
-                ))}
-              </div>
-              <button onClick={() => setShowRecoveryCodes(false)} style={secondaryButtonStyle}>
-                {t('admin.done')}
-              </button>
-            </div>
-          )}
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: 0 }}>
+            {t('twofa.codes_one_time_hint')}
+          </p>
         </div>
       )}
     </div>

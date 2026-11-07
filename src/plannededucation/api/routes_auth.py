@@ -1336,48 +1336,19 @@ def disable_2fa(
     )
 
 
-@router.post("/2fa/regenerate-recovery-codes", response_model=schemas.RecoveryCodesResponse)
+@router.post("/2fa/regenerate-recovery-codes")
 def regenerate_recovery_codes(
-    payload: schemas.TwoFAReauth,
-    current_user: models.User = Depends(get_current_user),
-    db: Session = Depends(database.get_db),
+    _payload: schemas.TwoFAReauth,
+    _current_user: models.User = Depends(get_current_user),
 ):
-    """Regenerate recovery codes (invalidates old ones). Requires TOTP confirmation."""
-    if not current_user.totp_enabled:
-        raise HTTPException(status_code=400, detail="2FA is not enabled")
-
-    if payload.totp_code:
-        if not current_user.totp_secret or not pyotp.TOTP(current_user.totp_secret).verify(
-            payload.totp_code, valid_window=1
-        ):
-            raise HTTPException(status_code=400, detail="Invalid TOTP code")
-    elif payload.recovery_code:
-        codes = _decode_recovery_codes(current_user.recovery_codes)
-        matching_hash = next(
-            (
-                stored
-                for stored in codes
-                if auth.verify_recovery_code(payload.recovery_code, stored)
-            ),
-            None,
-        )
-        if matching_hash is None:
-            raise HTTPException(status_code=400, detail="Invalid recovery code")
-        current_user.recovery_codes = _encode_recovery_codes(
-            [code for code in codes if code != matching_hash]
-        )
-    else:
-        raise HTTPException(status_code=400, detail="TOTP code or recovery code required")
-
-    recovery_codes = auth.generate_recovery_codes()
-    current_user.recovery_codes = _encode_recovery_codes(
-        [auth.hash_recovery_code(code) for code in recovery_codes]
-    )
-    db.commit()
-
-    return schemas.RecoveryCodesResponse(
-        recovery_codes=recovery_codes,
-        message="New recovery codes generated. Old codes are now invalid. Save these!"
+    """Recovery codes are issued once (registration / first 2FA enroll) and never refreshed."""
+    raise HTTPException(
+        status_code=410,
+        detail=(
+            "Recovery codes cannot be regenerated. Save the codes shown at registration "
+            "or when you first enable 2FA. If they are lost, ask a supervisor to reset "
+            "password and/or 2FA."
+        ),
     )
 
 

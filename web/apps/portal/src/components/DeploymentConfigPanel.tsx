@@ -3,6 +3,7 @@ import { useToast } from '../contexts/ToastContext';
 import { useI18n } from '../contexts/I18nContext';
 import { useAuth } from '../contexts/AuthContext';
 import { apiClient } from '../api';
+import { InfoTip } from './InfoTip';
 
 export interface DeploymentConfig {
   school_name: string;
@@ -606,6 +607,7 @@ export function DeploymentConfigPanel() {
               onChange={(e) => setConfig({ ...config, anonymizer_enabled: e.target.checked })}
             />
             {t('deployment.anonymizer_label')}
+            <InfoTip tipKey="info.deployment_anonymizer" />
           </label>
         </div>
 
@@ -613,6 +615,7 @@ export function DeploymentConfigPanel() {
         <div style={{ marginTop: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: '0 0 0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
             {t('home_exam.platform_title')}
+            <InfoTip tipKey="info.deployment_home_exam" />
             <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '9999px', backgroundColor: '#f59e0b', color: '#111' }}>
               {t('home_exam.beta_badge')}
             </span>
@@ -644,8 +647,9 @@ export function DeploymentConfigPanel() {
 
         {/* Platform support email (superadmin) */}
         <div style={{ marginTop: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
-          <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: '0 0 0.35rem' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: '0 0 0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             {t('deployment.support_email_label')}
+            <InfoTip tipKey="info.deployment_support_email" />
           </h3>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '0.75rem', lineHeight: 1.4 }}>
             {t('deployment.support_email_hint')}
@@ -683,8 +687,9 @@ export function DeploymentConfigPanel() {
             <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-color)', margin: 0 }}>
               {t('deployment.section_email')}
             </h3>
+            <InfoTip tipKey="info.deployment_email" />
             <span style={{ fontSize: '0.75rem', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', padding: '0.15rem 0.5rem', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-              100% Optional
+              {t('deployment.optional_badge')}
             </span>
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.825rem', marginBottom: '1rem', lineHeight: 1.4 }}>
@@ -693,8 +698,9 @@ export function DeploymentConfigPanel() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.3rem', color: 'var(--text-color)' }}>
                 {t('deployment.smtp_host_label')}
+                <InfoTip tipKey="info.deployment_smtp" />
               </label>
               <input
                 type="text"

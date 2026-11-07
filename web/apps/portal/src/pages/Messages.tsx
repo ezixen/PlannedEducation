@@ -576,7 +576,7 @@ export function Messages() {
       {confirmDeleteId && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setConfirmDeleteId(null)} />
-          <div style={{ backgroundColor: 'var(--panel-bg)', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)' }}>
+          <div data-pe-modal="true" className="pe-modal-surface" style={{ backgroundColor: 'var(--panel-bg, var(--card-bg, #ffffff))', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)', opacity: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--error-color)', marginBottom: '0.75rem' }}>
               <AlertCircle size={20} />
               <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>{t('messages.delete_confirm_title')}</h3>
@@ -606,7 +606,7 @@ export function Messages() {
       {confirmClearChat && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setConfirmClearChat(false)} />
-          <div style={{ backgroundColor: 'var(--panel-bg)', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)' }}>
+          <div data-pe-modal="true" className="pe-modal-surface" style={{ backgroundColor: 'var(--panel-bg, var(--card-bg, #ffffff))', borderRadius: 'var(--radius-md)', padding: '1.5rem', width: '380px', zIndex: 3001, boxShadow: '0 10px 40px rgba(0,0,0,0.3)', border: '1px solid var(--border-color)', opacity: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--error-color)', marginBottom: '0.75rem' }}>
               <AlertCircle size={20} />
               <h3 style={{ margin: 0, fontSize: '1rem', color: 'var(--text-color)' }}>{t('messages.clear_confirm_title')}</h3>

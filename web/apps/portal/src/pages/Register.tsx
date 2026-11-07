@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { apiClient } from '../api';
 import { useI18n } from '../contexts/I18nContext';
+import { LanguageSelector } from '../components/LanguageSelector';
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -105,7 +106,10 @@ export function Register() {
 
   if (registeredData) {
     return (
-      <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', padding: '1rem' }}>
+      <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', padding: '1rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: 'max(1rem, env(safe-area-inset-top))', right: 'max(1rem, env(safe-area-inset-right))', zIndex: 5 }}>
+          <LanguageSelector variant="pill" />
+        </div>
         <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '480px', textAlign: 'center' }}>
           <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔐</div>
           <h1 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-color)', marginBottom: '0.5rem' }}>
@@ -221,7 +225,10 @@ export function Register() {
   }
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', padding: '1rem' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-color)', padding: '1rem', position: 'relative' }}>
+      <div style={{ position: 'absolute', top: 'max(1rem, env(safe-area-inset-top))', right: 'max(1rem, env(safe-area-inset-right))', zIndex: 5 }}>
+        <LanguageSelector variant="pill" />
+      </div>
       <div style={{ padding: '2rem', backgroundColor: 'var(--sidebar-bg)', borderRadius: '8px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '420px', textAlign: 'center' }}>
         <h1 style={{ marginBottom: '0.5rem', color: 'var(--text-color)' }}>{t('login.title')}</h1>
         <p style={{ marginBottom: '1.5rem', color: 'var(--text-muted)' }}>{t('register.subtitle')}</p>

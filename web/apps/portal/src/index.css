@@ -6,6 +6,7 @@
   --sidebar-bg: #ffffff;
   --header-bg: #ffffff;
   --card-bg: #ffffff;
+  --panel-bg: #ffffff;
   --border-color: #e5e7eb;
   --primary-color: #1b6ca8;
   --secondary-color: #4b6584;
@@ -149,6 +150,11 @@ html, body {
     overflow-x: auto !important;
     max-inline-size: 100% !important;
   }
+}
+
+/* Themes always resolve panel surfaces to the opaque card color */
+:root[data-theme] {
+  --panel-bg: var(--card-bg, #ffffff);
 }
 
 :root[data-theme="skyward"] {
@@ -512,6 +518,8 @@ input, select, textarea {
   justify-content: flex-end;
   gap: 0.5rem;
   min-width: 0;
+  overflow: visible;
+  flex-wrap: nowrap;
 }
 
 .header-lang-pill {
@@ -540,6 +548,143 @@ input, select, textarea {
   max-width: 140px;
   min-width: 0;
   text-overflow: ellipsis;
+}
+
+.header-lang-dropdown {
+  position: relative;
+  max-width: 5.5rem;
+  flex-shrink: 0;
+}
+
+.header-lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+.header-lang-trigger-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Position is set via fixed coords in LanguageSelector (viewport-clamped). */
+.header-lang-menu {
+  z-index: 4000;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--panel-bg, #ffffff);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.header-lang-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-color);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.55rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-lang-option:hover,
+.header-lang-option.active {
+  background: var(--hover-color, #d8ecf8);
+  color: var(--primary-color);
+}
+
+.header-special-chars-btn {
+  position: relative;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.45rem;
+  cursor: pointer;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-special-chars-btn:hover {
+  color: var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 8%, var(--sidebar-bg));
+}
+
+/* Compact right-edge dock while taking an exam — stays visible without covering answers */
+.exam-special-chars-dock {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.55rem 0.35rem 0.55rem 0.45rem;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  background: var(--panel-bg, #ffffff);
+  color: var(--text-color);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  writing-mode: horizontal-tb;
+  transition: padding 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exam-special-chars-dock:hover,
+.exam-special-chars-dock:focus-visible {
+  padding-right: 0.55rem;
+  background: var(--panel-bg, #ffffff);
+  color: var(--primary-color);
+  box-shadow: -3px 3px 14px rgba(0, 0, 0, 0.16);
+  outline: none;
+}
+
+/* Opaque popup / modal / overlay panels (never see-through over page content) */
+[data-pe-modal='true'],
+[data-char-picker='true'],
+.pe-modal-surface {
+  background-color: var(--panel-bg, var(--card-bg, #ffffff)) !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.exam-special-chars-dock-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  max-width: 3.2rem;
+  line-height: 1.1;
+  text-align: center;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1358,5 +1503,124 @@ input, select, textarea {
   30% {
     transform: translateY(-6px);
   }
+}
+
+/* —— Help page (dedicated /help route) —— */
+.help-page {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.help-page-header {
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--panel-bg, var(--sidebar-bg, #fff));
+}
+
+.help-page-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.help-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.help-page-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+
+.help-page-subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.help-page-main {
+  flex: 1;
+  padding: 1rem;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.faq-chatbot-container--page {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+.faq-chatbot-window--page {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: min(70vh, 640px) !important;
+  max-height: none !important;
+  bottom: auto !important;
+  right: auto !important;
+  box-shadow: none;
+  border-radius: var(--radius-lg);
+}
+
+/* —— Info tip “i” —— */
+.pe-info-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.pe-info-tip-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  background: var(--panel-bg, #fff);
+  color: var(--primary-color);
+  cursor: help;
+}
+
+.pe-info-tip-bubble {
+  position: absolute;
+  z-index: 2700;
+  left: 50%;
+  bottom: calc(100% + 0.4rem);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(18rem, calc(100vw - 1.5rem));
+  padding: 0.55rem 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-color);
+  background: var(--panel-bg, #ffffff);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  white-space: normal;
+  word-wrap: break-word;
+  pointer-events: none;
 }
 

@@ -240,7 +240,7 @@ class PasswordResetConfirm(BaseModel):
 
 class AdminResetPasswordRequest(BaseModel):
     new_password: str | None = Field(None, min_length=8, max_length=128)
-    reset_2fa: bool = Field(False, description="Reset and disable 2FA/Passkeys for the user")
+    reset_2fa: bool = Field(False, description="Also reset 2FA/Passkeys when resetting password (prefer dedicated /reset-2fa)")
 
 
 class AdminResetPasswordResponse(BaseModel):
@@ -250,6 +250,14 @@ class AdminResetPasswordResponse(BaseModel):
     email: str
     temporary_password: str
     reset_2fa: bool
+    message: str
+
+
+class AdminReset2FAResponse(BaseModel):
+    status: str
+    user_id: str
+    username: str
+    email: str
     message: str
 
 

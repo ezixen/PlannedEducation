@@ -158,6 +158,72 @@ def test_admin_reset_user_password_and_clear_2fa(clean_db):
     assert "access_token" in login_resp.json()
 
 
+def test_admin_reset_password_leaves_2fa_enabled(clean_db):
+    """Password-only reset must leave TOTP enrolled."""
+    admin = _create_user(clean_db, "pwd_only_admin@test.edu", "pwdonlyadmin", role="admin", is_admin=True)
+    teacher = _create_user(clean_db, "pwd_only_teacher@test.edu", "pwdonlyteacher", role="teacher", is_admin=False)
+
+    teacher_headers = _get_auth_headers(teacher.email, "InitialPass#1234")
+    setup_resp = client.post("/auth/2fa/setup", headers=teacher_headers)
+    assert setup_resp.status_code == 200
+    secret = setup_resp.json()["secret"]
+    code = pyotp.TOTP(secret).now()
+    assert client.post("/auth/2fa/confirm", headers=teacher_headers, json={"code": code}).status_code == 200
+
+    clean_db.refresh(teacher)
+    assert teacher.totp_enabled is True
+    assert teacher.totp_secret is not None
+
+    admin_headers = _get_auth_headers(admin.email, "InitialPass#1234")
+    reset_resp = client.post(
+        f"/admin/users/{teacher.id}/reset-password",
+        headers=admin_headers,
+        json={"new_password": "PwdOnlyReset#2026!", "reset_2fa": False},
+    )
+    assert reset_resp.status_code == 200
+    assert reset_resp.json()["reset_2fa"] is False
+
+    clean_db.refresh(teacher)
+    assert teacher.totp_enabled is True
+    assert teacher.totp_secret is not None
+
+
+def test_admin_reset_2fa_only_leaves_password(clean_db):
+    """Dedicated /reset-2fa clears TOTP/passkeys without changing the password hash."""
+    admin = _create_user(clean_db, "2fa_only_admin@test.edu", "2faonlyadmin", role="admin", is_admin=True)
+    teacher = _create_user(clean_db, "2fa_only_teacher@test.edu", "2faonlyteacher", role="teacher", is_admin=False)
+
+    teacher_headers = _get_auth_headers(teacher.email, "InitialPass#1234")
+    setup_resp = client.post("/auth/2fa/setup", headers=teacher_headers)
+    assert setup_resp.status_code == 200
+    secret = setup_resp.json()["secret"]
+    code = pyotp.TOTP(secret).now()
+    assert client.post("/auth/2fa/confirm", headers=teacher_headers, json={"code": code}).status_code == 200
+
+    clean_db.refresh(teacher)
+    old_hash = teacher.hashed_password
+    assert teacher.totp_enabled is True
+
+    admin_headers = _get_auth_headers(admin.email, "InitialPass#1234")
+    reset_resp = client.post(
+        f"/admin/users/{teacher.id}/reset-2fa",
+        headers=admin_headers,
+    )
+    assert reset_resp.status_code == 200
+    assert reset_resp.json()["status"] == "success"
+
+    clean_db.refresh(teacher)
+    assert teacher.totp_enabled is False
+    assert teacher.totp_secret is None
+    assert teacher.recovery_codes is None
+    assert teacher.hashed_password == old_hash
+
+    # Original password still works; login should not require 2FA
+    login_resp = client.post("/auth/token", data={"username": teacher.email, "password": "InitialPass#1234"})
+    assert login_resp.status_code == 200
+    assert "access_token" in login_resp.json()
+
+
 def test_non_admin_cannot_reset_passwords(clean_db):
     """Students cannot access the admin reset-password endpoint."""
     student1 = _create_user(clean_db, "regular_student@test.edu", "regstudent", role="student", is_admin=False)
