@@ -57,7 +57,7 @@ presidio-analyzer>=2.2.366  # Tested: 2.2.364 (Native span redaction, zero crypt
 # For now using OpenAI Whisper API compatible endpoints
 
 # Utilities & HTTP Client
-python-multipart>=0.0.32    # Tested: 0.0.32 (For form data parsing)
+python-multipart>=0.0.33    # Tested: 0.0.32 (For form data parsing)
 httpx>=0.28.1              # Tested: 0.28.1 (Async HTTP client: AI providers, OAuth)
 
 # Passkeys / WebAuthn & Archive Compression (Free, Open-Source)
