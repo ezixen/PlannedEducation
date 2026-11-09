@@ -10,7 +10,7 @@
 # Web Framework
 fastapi>=0.162.0    # Tested: 0.162.0
 uvicorn>=0.54.0     # Tested: 0.54.0
-websockets>=17.3    # Tested: 17.3 (Required for uvicorn WebSocket endpoints)
+websockets>=17.4    # Tested: 17.3 (Required for uvicorn WebSocket endpoints)
 
 # Database
 sqlalchemy>=2.1.6       # Tested: 2.1.6
