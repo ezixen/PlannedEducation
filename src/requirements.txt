@@ -45,7 +45,7 @@ pytesseract>=0.3.13        # Tested: 0.3.13 (Python wrapper for Tesseract OCR)
 pillow>=13.0.0             # Tested: 13.0.0 (Image processing for OCR; eliminated OSV CVEs)
 # Note: Tesseract binary must be installed separately (apt-get install tesseract-ocr)
 # EasyOCR for handwritten text recognition (optional, requires torch)
-easyocr>=1.7.1             # Tested: 1.7.1 (Handwritten text recognition, fallback to Tesseract)
+easyocr>=1.7.2             # Tested: 1.7.1 (Handwritten text recognition, fallback to Tesseract)
 torch>=2.1.0               # Tested: 2.1.0 (PyTorch for EasyOCR, optional - CPU only)
 
 # Presidio PII Scrubber (Free, Open-Source - MIT License)
