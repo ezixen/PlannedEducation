@@ -28,7 +28,7 @@ pyotp>=2.10.0             # Tested: 2.10.0 (TOTP 2FA RFC 6238)
 cryptography>=50.0.2      # Tested: 50.0.2 (Fernet encryption, TLS; eliminates PYSEC-2026-3552/3/4)
 
 # Google OAuth (free)
-google-auth>=2.62.0        # Tested: 2.62.0
+google-auth>=2.62.1        # Tested: 2.62.0
 google-auth-oauthlib>=1.5.0 # Tested: 1.5.0
 
 # Rate Limiting
