@@ -78,6 +78,7 @@ test_results.json
 scripts/testing/
 tests/e2e/
 web/apps/portal/playwright.config.ts
+extract_faq.py
 
 # Development documentation (local PC only, not for public upload)
 docs/dev/
