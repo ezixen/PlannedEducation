@@ -68,6 +68,7 @@ united_earth/
 AGENTS.md
 AGENTS.local.md
 .github/copilot-instructions.md
+.copilot/skills/TOOLS_INVENTORY.md
 
 # Test runner scripts, trackers, and E2E tools (local PC only, not for GitHub or deployments)
 run_tests.py
