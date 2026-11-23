@@ -24,7 +24,7 @@ pydantic-settings>=2.16.2 # Tested: 2.16.1 (Settings management)
 # Authentication & Security
 PyJWT>=2.15.1             # Tested: 2.15.1 (JWT handling)
 argon2-cffi>=25.1.0       # Tested: 25.1.0 (Argon2id password hashing, OWASP recommended)
-pyotp>=2.10.0             # Tested: 2.10.0 (TOTP 2FA RFC 6238)
+pyotp>=2.12.1             # Tested: 2.10.0 (TOTP 2FA RFC 6238)
 cryptography>=50.0.2      # Tested: 50.0.2 (Fernet encryption, TLS; eliminates PYSEC-2026-3552/3/4)
 
 # Google OAuth (free)
